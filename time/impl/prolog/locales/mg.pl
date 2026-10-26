@@ -16,17 +16,17 @@ st_midnight('mg', 'misasakalina').
 st_noon('mg', 'atoandro').
 
 st_pattern('mg', 0, '{h} ora').
-st_pattern('mg', 5, '{h} sy dimy minitra').
-st_pattern('mg', 10, '{h} sy folo minitra').
-st_pattern('mg', 15, '{h} sy fahefatra').
-st_pattern('mg', 20, '{h} sy roapolo minitra').
-st_pattern('mg', 25, '{h} sy dimy amby roapolo minitra').
-st_pattern('mg', 30, '{h} sy sasany').
-st_pattern('mg', 35, 'dimy amby roapolo minitra alohan\'ny {next_h}').
-st_pattern('mg', 40, 'roapolo minitra alohan\'ny {next_h}').
-st_pattern('mg', 45, 'fahefatra alohan\'ny {next_h}').
-st_pattern('mg', 50, 'folo minitra alohan\'ny {next_h}').
-st_pattern('mg', 55, 'dimy minitra alohan\'ny {next_h}').
+st_pattern('mg', 5, '{h} ora sy dimy minitra').
+st_pattern('mg', 10, '{h} ora sy folo minitra').
+st_pattern('mg', 15, '{h} ora sy fahefany').
+st_pattern('mg', 20, '{h} ora sy roapolo minitra').
+st_pattern('mg', 25, '{h} ora sy dimy amby roapolo minitra').
+st_pattern('mg', 30, '{h} ora sy sasany').
+st_pattern('mg', 35, '{next_h} ora latsaka dimy amby roapolo minitra').
+st_pattern('mg', 40, '{next_h} ora latsaka roapolo minitra').
+st_pattern('mg', 45, '{next_h} ora latsaka fahefany').
+st_pattern('mg', 50, '{next_h} ora latsaka folo minitra').
+st_pattern('mg', 55, '{next_h} ora latsaka dimy minitra').
 
 short_st_use24h('mg', false).
 short_st_format('mg', '{h}:{mm} {ampm}').

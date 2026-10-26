@@ -39,10 +39,10 @@ locale_af : Time_Locale = {
 locale_ak : Time_Locale = {
     code = "ak",
     clock = Clock_Config{
-        hours = {"dumien", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"},
-        midnight = "anadwo",
-        noon = "awia",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        hours = {"dumienu", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako"},
+        midnight = "ɔdasuom",
+        noon = "owigyinae",
+        patterns = {Clock_Pattern{minute = 0, pattern = "nnɔn {h}"}, Clock_Pattern{minute = 5, pattern = "nnɔn {h} ne sima anum"}, Clock_Pattern{minute = 10, pattern = "nnɔn {h} ne sima edu"}, Clock_Pattern{minute = 15, pattern = "nnɔn {h} ne sima dunum"}, Clock_Pattern{minute = 20, pattern = "nnɔn {h} ne sima aduonu"}, Clock_Pattern{minute = 25, pattern = "nnɔn {h} ne sima aduonu num"}, Clock_Pattern{minute = 30, pattern = "nnɔn {h} ne fa"}, Clock_Pattern{minute = 35, pattern = "aka sima aduonu num na abɔ nnɔn {next_h}"}, Clock_Pattern{minute = 40, pattern = "aka sima aduonu na abɔ nnɔn {next_h}"}, Clock_Pattern{minute = 45, pattern = "aka sima dunum na abɔ nnɔn {next_h}"}, Clock_Pattern{minute = 50, pattern = "aka sima edu na abɔ nnɔn {next_h}"}, Clock_Pattern{minute = 55, pattern = "aka sima anum na abɔ nnɔn {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -64,10 +64,10 @@ locale_ak : Time_Locale = {
 locale_am : Time_Locale = {
     code = "am",
     clock = Clock_Config{
-        hours = {"አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት", "ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ"},
+        hours = {"ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ", "አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት"},
         midnight = "እኩለ ሌሊት",
         noon = "እኩለ ቀን",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ሰዓት"}, Clock_Pattern{minute = 5, pattern = "{h} ሰዓት ከአምስት ደቂቃ"}, Clock_Pattern{minute = 10, pattern = "{h} ሰዓት ከአሥር ደቂቃ"}, Clock_Pattern{minute = 15, pattern = "{h} ሰዓት ከሩብ"}, Clock_Pattern{minute = 20, pattern = "{h} ሰዓት ከሃያ ደቂቃ"}, Clock_Pattern{minute = 25, pattern = "{h} ሰዓት ከሃያ አምስት ደቂቃ"}, Clock_Pattern{minute = 30, pattern = "{h} ሰዓት ተኩል"}, Clock_Pattern{minute = 35, pattern = "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ"}, Clock_Pattern{minute = 40, pattern = "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ"}, Clock_Pattern{minute = 45, pattern = "ለ{next_h} ሰዓት ሩብ ጉዳይ"}, Clock_Pattern{minute = 50, pattern = "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ"}, Clock_Pattern{minute = 55, pattern = "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -92,7 +92,7 @@ locale_ar : Time_Locale = {
         hours = {"الثانية عشرة", "الواحدة", "الثانية", "الثالثة", "الرابعة", "الخامسة", "السادسة", "السابعة", "الثامنة", "التاسعة", "العاشرة", "الحادية عشرة"},
         midnight = "منتصف الليل",
         noon = "الظهر",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "الساعة {h}"}, Clock_Pattern{minute = 5, pattern = "{h} وخمس دقائق"}, Clock_Pattern{minute = 10, pattern = "{h} وعشر دقائق"}, Clock_Pattern{minute = 15, pattern = "{h} والربع"}, Clock_Pattern{minute = 20, pattern = "{h} والثلث"}, Clock_Pattern{minute = 25, pattern = "{h} والنصف إلا خمس دقائق"}, Clock_Pattern{minute = 30, pattern = "{h} والنصف"}, Clock_Pattern{minute = 35, pattern = "{h} والنصف وخمس دقائق"}, Clock_Pattern{minute = 40, pattern = "{next_h} إلا ثلثًا"}, Clock_Pattern{minute = 45, pattern = "{next_h} إلا ربعًا"}, Clock_Pattern{minute = 50, pattern = "{next_h} إلا عشر دقائق"}, Clock_Pattern{minute = 55, pattern = "{next_h} إلا خمس دقائق"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -114,10 +114,10 @@ locale_ar : Time_Locale = {
 locale_ay : Time_Locale = {
     code = "ay",
     clock = Clock_Config{
-        hours = {"tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani"},
+        hours = {"tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llätunka", "tunka", "tunka mayani"},
         midnight = "aruma chika",
         noon = "chika uru",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ura"}, Clock_Pattern{minute = 5, pattern = "{h} ura phisqa minutuni"}, Clock_Pattern{minute = 10, pattern = "{h} ura tunka minutuni"}, Clock_Pattern{minute = 15, pattern = "{h} ura tunka phisqani minutuni"}, Clock_Pattern{minute = 20, pattern = "{h} ura pä tunka minutuni"}, Clock_Pattern{minute = 25, pattern = "{h} ura pä tunka phisqani minutuni"}, Clock_Pattern{minute = 30, pattern = "{h} ura chikani"}, Clock_Pattern{minute = 35, pattern = "{h} ura kimsa tunka phisqani minutuni"}, Clock_Pattern{minute = 40, pattern = "{h} ura pusi tunka minutuni"}, Clock_Pattern{minute = 45, pattern = "{h} ura pusi tunka phisqani minutuni"}, Clock_Pattern{minute = 50, pattern = "{h} ura phisqa tunka minutuni"}, Clock_Pattern{minute = 55, pattern = "{h} ura phisqa tunka phisqani minutuni"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -142,7 +142,7 @@ locale_az : Time_Locale = {
         hours = {"on iki", "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz", "doqquz", "on", "on bir"},
         midnight = "gecə yarısı",
         noon = "günorta",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "beş keçir {h}"}, Clock_Pattern{minute = 10, pattern = "on keçir {h}"}, Clock_Pattern{minute = 15, pattern = "on beş keçir {h}"}, Clock_Pattern{minute = 20, pattern = "iyirmi keçir {h}"}, Clock_Pattern{minute = 25, pattern = "iyirmi beş keçir {h}"}, Clock_Pattern{minute = 30, pattern = "otuz keçir {h}"}, Clock_Pattern{minute = 35, pattern = "iyirmi beş qalmış {next_h}"}, Clock_Pattern{minute = 40, pattern = "iyirmi qalmış {next_h}"}, Clock_Pattern{minute = 45, pattern = "on beş qalmış {next_h}"}, Clock_Pattern{minute = 50, pattern = "on qalmış {next_h}"}, Clock_Pattern{minute = 55, pattern = "beş qalmış {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saat {h}"}, Clock_Pattern{minute = 5, pattern = "{h} sıfır beş"}, Clock_Pattern{minute = 10, pattern = "{h} on"}, Clock_Pattern{minute = 15, pattern = "{h} on beş"}, Clock_Pattern{minute = 20, pattern = "{h} iyirmi"}, Clock_Pattern{minute = 25, pattern = "{h} iyirmi beş"}, Clock_Pattern{minute = 30, pattern = "{h} otuz"}, Clock_Pattern{minute = 35, pattern = "{h} otuz beş"}, Clock_Pattern{minute = 40, pattern = "{h} qırx"}, Clock_Pattern{minute = 45, pattern = "{h} qırx beş"}, Clock_Pattern{minute = 50, pattern = "{h} əlli"}, Clock_Pattern{minute = 55, pattern = "{h} əlli beş"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -164,10 +164,10 @@ locale_az : Time_Locale = {
 locale_bci : Time_Locale = {
     code = "bci",
     clock = Clock_Config{
-        hours = {"blu-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-kun"},
+        hours = {"blu-nin-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-nin-kun"},
         midnight = "kɔnguɛ afiɛn",
         noon = "nnɔsua",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "dɔ {h}"}, Clock_Pattern{minute = 5, pattern = "dɔ {h} nin miniti nnun"}, Clock_Pattern{minute = 10, pattern = "dɔ {h} nin miniti blu"}, Clock_Pattern{minute = 15, pattern = "dɔ {h} nin miniti blu-nin-nnun"}, Clock_Pattern{minute = 20, pattern = "dɔ {h} nin miniti ablaɔn"}, Clock_Pattern{minute = 25, pattern = "dɔ {h} nin miniti ablaɔn-nin-nnun"}, Clock_Pattern{minute = 30, pattern = "dɔ {h} nin miniti ablasan"}, Clock_Pattern{minute = 35, pattern = "dɔ {h} nin miniti ablasan-nin-nnun"}, Clock_Pattern{minute = 40, pattern = "dɔ {h} nin miniti ablanan"}, Clock_Pattern{minute = 45, pattern = "dɔ {h} nin miniti ablanan-nin-nnun"}, Clock_Pattern{minute = 50, pattern = "dɔ {h} nin miniti ablenun"}, Clock_Pattern{minute = 55, pattern = "dɔ {h} nin miniti ablenun-nin-nnun"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -189,10 +189,10 @@ locale_bci : Time_Locale = {
 locale_be : Time_Locale = {
     code = "be",
     clock = Clock_Config{
-        hours = {"дванаццаць", "адзін", "два", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"},
+        hours = {"дванаццаць", "гадзіна", "дзве", "тры", "чатыры", "пяць", "шэсць", "сем", "восем", "дзевяць", "дзесяць", "адзінаццаць"},
         midnight = "поўнач",
         noon = "поўдзень",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} гадзін"}, Clock_Pattern{minute = 5, pattern = "пяць хвілін пасля {h}"}, Clock_Pattern{minute = 10, pattern = "дзесяць хвілін пасля {h}"}, Clock_Pattern{minute = 15, pattern = "чвэрць пасля {h}"}, Clock_Pattern{minute = 20, pattern = "дваццаць хвілін пасля {h}"}, Clock_Pattern{minute = 25, pattern = "дваццаць пяць хвілін пасля {h}"}, Clock_Pattern{minute = 30, pattern = "палова да {next_h}"}, Clock_Pattern{minute = 35, pattern = "без дваццаці пяці {next_h}"}, Clock_Pattern{minute = 40, pattern = "без дваццаці {next_h}"}, Clock_Pattern{minute = 45, pattern = "без чвэрці {next_h}"}, Clock_Pattern{minute = 50, pattern = "без дзесяці {next_h}"}, Clock_Pattern{minute = 55, pattern = "без пяці {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "роўна {h}"}, Clock_Pattern{minute = 5, pattern = "{h} нуль пяць"}, Clock_Pattern{minute = 10, pattern = "{h} дзесяць"}, Clock_Pattern{minute = 15, pattern = "{h} пятнаццаць"}, Clock_Pattern{minute = 20, pattern = "{h} дваццаць"}, Clock_Pattern{minute = 25, pattern = "{h} дваццаць пяць"}, Clock_Pattern{minute = 30, pattern = "{h} трыццаць"}, Clock_Pattern{minute = 35, pattern = "без дваццаці пяці {next_h}"}, Clock_Pattern{minute = 40, pattern = "без дваццаці {next_h}"}, Clock_Pattern{minute = 45, pattern = "без чвэрці {next_h}"}, Clock_Pattern{minute = 50, pattern = "без дзесяці {next_h}"}, Clock_Pattern{minute = 55, pattern = "без пяці {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -214,10 +214,10 @@ locale_be : Time_Locale = {
 locale_bem : Time_Locale = {
     code = "bem",
     clock = Clock_Config{
-        hours = {"ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo"},
+        hours = {"ikumi na shibili", "imo", "shibili", "shitatu", "shine", "shisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na imo"},
         midnight = "pakati ka bushiku",
         noon = "akasuba",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "insa {h}"}, Clock_Pattern{minute = 5, pattern = "insa {h} na maminiti yasano"}, Clock_Pattern{minute = 10, pattern = "insa {h} na maminiti ikumi"}, Clock_Pattern{minute = 15, pattern = "insa {h} na maminiti ikumi na yasano"}, Clock_Pattern{minute = 20, pattern = "insa {h} na maminiti amakumi yabili"}, Clock_Pattern{minute = 25, pattern = "insa {h} na maminiti amakumi yabili na yasano"}, Clock_Pattern{minute = 30, pattern = "insa {h} na hafu"}, Clock_Pattern{minute = 35, pattern = "insa {h} na maminiti amakumi yatatu na yasano"}, Clock_Pattern{minute = 40, pattern = "insa {h} na maminiti amakumi yane"}, Clock_Pattern{minute = 45, pattern = "insa {h} na maminiti amakumi yane na yasano"}, Clock_Pattern{minute = 50, pattern = "insa {h} na maminiti amakumi yasano"}, Clock_Pattern{minute = 55, pattern = "insa {h} na maminiti amakumi yasano na yasano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -242,7 +242,7 @@ locale_bg : Time_Locale = {
         hours = {"дванадесет", "един", "два", "три", "четири", "пет", "шест", "седем", "осем", "девет", "десет", "единадесет"},
         midnight = "полунощ",
         noon = "обяд",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} часа"}, Clock_Pattern{minute = 5, pattern = "пет na {h}"}, Clock_Pattern{minute = 10, pattern = "десет na {h}"}, Clock_Pattern{minute = 15, pattern = "петнадесет na {h}"}, Clock_Pattern{minute = 20, pattern = "двадесет na {h}"}, Clock_Pattern{minute = 25, pattern = "двадесет и пет na {h}"}, Clock_Pattern{minute = 30, pattern = "тридесет na {h}"}, Clock_Pattern{minute = 35, pattern = "двадесет и пет do {next_h}"}, Clock_Pattern{minute = 40, pattern = "двадесет do {next_h}"}, Clock_Pattern{minute = 45, pattern = "петнадесет do {next_h}"}, Clock_Pattern{minute = 50, pattern = "десет do {next_h}"}, Clock_Pattern{minute = 55, pattern = "пет do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} часа"}, Clock_Pattern{minute = 5, pattern = "{h} и пет"}, Clock_Pattern{minute = 10, pattern = "{h} и десет"}, Clock_Pattern{minute = 15, pattern = "{h} и петнадесет"}, Clock_Pattern{minute = 20, pattern = "{h} и двадесет"}, Clock_Pattern{minute = 25, pattern = "{h} и двадесет и пет"}, Clock_Pattern{minute = 30, pattern = "{h} и половина"}, Clock_Pattern{minute = 35, pattern = "{next_h} без двадесет и пет"}, Clock_Pattern{minute = 40, pattern = "{next_h} без двадесет"}, Clock_Pattern{minute = 45, pattern = "{next_h} без петнадесет"}, Clock_Pattern{minute = 50, pattern = "{next_h} без десет"}, Clock_Pattern{minute = 55, pattern = "{next_h} без пет"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -267,7 +267,7 @@ locale_bi : Time_Locale = {
         hours = {"twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven"},
         midnight = "mednaet",
         noon = "medeldei",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} klok"}, Clock_Pattern{minute = 5, pattern = "faef pas {h}"}, Clock_Pattern{minute = 10, pattern = "ten pas {h}"}, Clock_Pattern{minute = 15, pattern = "kwota pas {h}"}, Clock_Pattern{minute = 20, pattern = "twenti pas {h}"}, Clock_Pattern{minute = 25, pattern = "twenti faef pas {h}"}, Clock_Pattern{minute = 30, pattern = "haf pas {h}"}, Clock_Pattern{minute = 35, pattern = "twenti faef tu {next_h}"}, Clock_Pattern{minute = 40, pattern = "twenti tu {next_h}"}, Clock_Pattern{minute = 45, pattern = "kwota tu {next_h}"}, Clock_Pattern{minute = 50, pattern = "ten tu {next_h}"}, Clock_Pattern{minute = 55, pattern = "faef tu {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -292,7 +292,7 @@ locale_bm : Time_Locale = {
         hours = {"tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"},
         midnight = "dugutilama",
         noon = "tilgari",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "nɛgɛ kaɲɛ {h}"}, Clock_Pattern{minute = 5, pattern = "nɛgɛ kaɲɛ {h} ni miniti duuru"}, Clock_Pattern{minute = 10, pattern = "nɛgɛ kaɲɛ {h} ni miniti tan"}, Clock_Pattern{minute = 15, pattern = "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru"}, Clock_Pattern{minute = 20, pattern = "nɛgɛ kaɲɛ {h} ni miniti mugan"}, Clock_Pattern{minute = 25, pattern = "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru"}, Clock_Pattern{minute = 30, pattern = "nɛgɛ kaɲɛ {h} ni tilancɛ"}, Clock_Pattern{minute = 35, pattern = "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru"}, Clock_Pattern{minute = 40, pattern = "nɛgɛ kaɲɛ {h} ni miniti bi naani"}, Clock_Pattern{minute = 45, pattern = "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru"}, Clock_Pattern{minute = 50, pattern = "nɛgɛ kaɲɛ {h} ni miniti bi duuru"}, Clock_Pattern{minute = 55, pattern = "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -314,10 +314,10 @@ locale_bm : Time_Locale = {
 locale_bn : Time_Locale = {
     code = "bn",
     clock = Clock_Config{
-        hours = {"বারো", "এক", "দুই", "তিন", "চার", "পাঁচ", "ছয়", "সাত", "আট", "নয়", "দশ", "এগারো"},
+        hours = {"বারোটা", "একটা", "দুটো", "তিনটে", "চারটে", "পাঁচটা", "ছটা", "সাতটা", "আটটা", "নটা", "দশটা", "এগারোটা"},
         midnight = "মধ্যরাত",
-        noon = "দুপুর",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        noon = "দুপুর বারোটা",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} বেজে পাঁচ মিনিট"}, Clock_Pattern{minute = 10, pattern = "{h} বেজে দশ মিনিট"}, Clock_Pattern{minute = 15, pattern = "সোয়া {h}"}, Clock_Pattern{minute = 20, pattern = "{h} বেজে বিশ মিনিট"}, Clock_Pattern{minute = 25, pattern = "{h} বেজে পঁচিশ মিনিট"}, Clock_Pattern{minute = 30, pattern = "{h} বেজে ত্রিশ মিনিট"}, Clock_Pattern{minute = 35, pattern = "{next_h} বাজতে পঁচিশ মিনিট বাকি"}, Clock_Pattern{minute = 40, pattern = "{next_h} বাজতে বিশ মিনিট বাকি"}, Clock_Pattern{minute = 45, pattern = "পৌনে {next_h}"}, Clock_Pattern{minute = 50, pattern = "{next_h} বাজতে দশ মিনিট বাকি"}, Clock_Pattern{minute = 55, pattern = "{next_h} বাজতে পাঁচ মিনিট বাকি"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -339,10 +339,10 @@ locale_bn : Time_Locale = {
 locale_br : Time_Locale = {
     code = "br",
     clock = Clock_Config{
-        hours = {"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
+        hours = {"daouzek eur", "un eur", "div eur", "teir eur", "peder eur", "pemp eur", "c'hwec'h eur", "seizh eur", "eizh eur", "nav eur", "dek eur", "unnek eur"},
         midnight = "hanternoz",
         noon = "kreisteiz",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} ha pemp"}, Clock_Pattern{minute = 10, pattern = "{h} ha dek"}, Clock_Pattern{minute = 15, pattern = "{h} ha kard"}, Clock_Pattern{minute = 20, pattern = "{h} hag ugent"}, Clock_Pattern{minute = 25, pattern = "{h} ha pemp warn-ugent"}, Clock_Pattern{minute = 30, pattern = "{h} hanter"}, Clock_Pattern{minute = 35, pattern = "{next_h} nemet pemp warn-ugent"}, Clock_Pattern{minute = 40, pattern = "{next_h} nemet ugent"}, Clock_Pattern{minute = 45, pattern = "{next_h} nemet kard"}, Clock_Pattern{minute = 50, pattern = "{next_h} nemet dek"}, Clock_Pattern{minute = 55, pattern = "{next_h} nemet pemp"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -367,7 +367,7 @@ locale_bs : Time_Locale = {
         hours = {"dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"},
         midnight = "ponoć",
         noon = "podne",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} sati"}, Clock_Pattern{minute = 5, pattern = "pet po {h}"}, Clock_Pattern{minute = 10, pattern = "deset po {h}"}, Clock_Pattern{minute = 15, pattern = "petnaest po {h}"}, Clock_Pattern{minute = 20, pattern = "dvadeset po {h}"}, Clock_Pattern{minute = 25, pattern = "dvadeset pet po {h}"}, Clock_Pattern{minute = 30, pattern = "trideset po {h}"}, Clock_Pattern{minute = 35, pattern = "dvadeset pet do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dvadeset do {next_h}"}, Clock_Pattern{minute = 45, pattern = "petnaest do {next_h}"}, Clock_Pattern{minute = 50, pattern = "deset do {next_h}"}, Clock_Pattern{minute = 55, pattern = "pet do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} i pet"}, Clock_Pattern{minute = 10, pattern = "{h} i deset"}, Clock_Pattern{minute = 15, pattern = "{h} i petnaest"}, Clock_Pattern{minute = 20, pattern = "{h} i dvadeset"}, Clock_Pattern{minute = 25, pattern = "{h} i dvadeset pet"}, Clock_Pattern{minute = 30, pattern = "pola {next_h}"}, Clock_Pattern{minute = 35, pattern = "dvadeset pet do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dvadeset do {next_h}"}, Clock_Pattern{minute = 45, pattern = "petnaest do {next_h}"}, Clock_Pattern{minute = 50, pattern = "deset do {next_h}"}, Clock_Pattern{minute = 55, pattern = "pet do {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -389,10 +389,10 @@ locale_bs : Time_Locale = {
 locale_ca : Time_Locale = {
     code = "ca",
     clock = Clock_Config{
-        hours = {"dotze", "una", "dues", "tres", "quatre", "cinc", "sis", "set", "vuit", "nou", "deu", "onze"},
+        hours = {"les dotze", "la una", "les dues", "les tres", "les quatre", "les cinc", "les sis", "les set", "les vuit", "les nou", "les deu", "les onze"},
         midnight = "mitjanit",
         noon = "migdia",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "cinc past {h}"}, Clock_Pattern{minute = 10, pattern = "deu past {h}"}, Clock_Pattern{minute = 15, pattern = "un quart past {h}"}, Clock_Pattern{minute = 20, pattern = "vint past {h}"}, Clock_Pattern{minute = 25, pattern = "vint-i-cinc past {h}"}, Clock_Pattern{minute = 30, pattern = "mitja past {h}"}, Clock_Pattern{minute = 35, pattern = "vint-i-cinc to {next_h}"}, Clock_Pattern{minute = 40, pattern = "vint to {next_h}"}, Clock_Pattern{minute = 45, pattern = "un quart to {next_h}"}, Clock_Pattern{minute = 50, pattern = "deu to {next_h}"}, Clock_Pattern{minute = 55, pattern = "cinc to {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} en punt"}, Clock_Pattern{minute = 5, pattern = "{h} i cinc"}, Clock_Pattern{minute = 10, pattern = "{h} i deu"}, Clock_Pattern{minute = 15, pattern = "{h} i quart"}, Clock_Pattern{minute = 20, pattern = "{h} i vint"}, Clock_Pattern{minute = 25, pattern = "{h} i vint-i-cinc"}, Clock_Pattern{minute = 30, pattern = "{h} i mitja"}, Clock_Pattern{minute = 35, pattern = "{next_h} menys vint-i-cinc"}, Clock_Pattern{minute = 40, pattern = "{next_h} menys vint"}, Clock_Pattern{minute = 45, pattern = "{next_h} menys quart"}, Clock_Pattern{minute = 50, pattern = "{next_h} menys deu"}, Clock_Pattern{minute = 55, pattern = "{next_h} menys cinc"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -417,7 +417,7 @@ locale_cak : Time_Locale = {
         hours = {"kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"},
         midnight = "nik'aj aq'a'",
         noon = "nik'aj q'ij",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ramaj"}, Clock_Pattern{minute = 5, pattern = "{h} ramaj rik'in wo'o'"}, Clock_Pattern{minute = 10, pattern = "{h} ramaj rik'in lajuj"}, Clock_Pattern{minute = 15, pattern = "{h} ramaj rik'in wolajuj"}, Clock_Pattern{minute = 20, pattern = "{h} ramaj rik'in juk'al"}, Clock_Pattern{minute = 25, pattern = "{h} ramaj rik'in juk'al wo'o'"}, Clock_Pattern{minute = 30, pattern = "{h} ramaj rik'in nik'aj"}, Clock_Pattern{minute = 35, pattern = "{h} ramaj rik'in juk'al wolajuj"}, Clock_Pattern{minute = 40, pattern = "{h} ramaj rik'in kak'al"}, Clock_Pattern{minute = 45, pattern = "{h} ramaj rik'in kak'al wo'o'"}, Clock_Pattern{minute = 50, pattern = "{h} ramaj rik'in kak'al lajuj"}, Clock_Pattern{minute = 55, pattern = "{h} ramaj rik'in kak'al wolajuj"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -439,10 +439,10 @@ locale_cak : Time_Locale = {
 locale_ceb : Time_Locale = {
     code = "ceb",
     clock = Clock_Config{
-        hours = {"dose", "uno", "dos", "tres", "kwatro", "singko", "sais", "siyete", "otso", "nuwebe", "diyes", "onse"},
+        hours = {"alas dose", "ala una", "alas dos", "alas tres", "alas kwatro", "alas singko", "alas sais", "alas siyete", "alas otso", "alas nuwebe", "alas diyes", "alas onse"},
         midnight = "tungang gabii",
         noon = "udtong tutok",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} y singko"}, Clock_Pattern{minute = 10, pattern = "{h} y diyes"}, Clock_Pattern{minute = 15, pattern = "{h} y kinse"}, Clock_Pattern{minute = 20, pattern = "{h} y beynte"}, Clock_Pattern{minute = 25, pattern = "{h} y beynte singko"}, Clock_Pattern{minute = 30, pattern = "{h} y medya"}, Clock_Pattern{minute = 35, pattern = "menos beynte singko para {next_h}"}, Clock_Pattern{minute = 40, pattern = "menos beynte para {next_h}"}, Clock_Pattern{minute = 45, pattern = "menos kinse para {next_h}"}, Clock_Pattern{minute = 50, pattern = "menos diyes para {next_h}"}, Clock_Pattern{minute = 55, pattern = "menos singko para {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -467,7 +467,7 @@ locale_cs : Time_Locale = {
         hours = {"dvanáct", "jedna", "dvě", "tři", "čtyři", "pět", "šest", "sedm", "osm", "devět", "deset", "jedenáct"},
         midnight = "půlnoc",
         noon = "poledne",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} hodin"}, Clock_Pattern{minute = 5, pattern = "pět po {h}"}, Clock_Pattern{minute = 10, pattern = "deset po {h}"}, Clock_Pattern{minute = 15, pattern = "čtvrt po {h}"}, Clock_Pattern{minute = 20, pattern = "dvacet po {h}"}, Clock_Pattern{minute = 25, pattern = "dvacet pět po {h}"}, Clock_Pattern{minute = 30, pattern = "půl po {h}"}, Clock_Pattern{minute = 35, pattern = "dvacet pět do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dvacet do {next_h}"}, Clock_Pattern{minute = 45, pattern = "čtvrt do {next_h}"}, Clock_Pattern{minute = 50, pattern = "deset do {next_h}"}, Clock_Pattern{minute = 55, pattern = "pět do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} nula pět"}, Clock_Pattern{minute = 10, pattern = "{h} deset"}, Clock_Pattern{minute = 15, pattern = "{h} patnáct"}, Clock_Pattern{minute = 20, pattern = "{h} dvacet"}, Clock_Pattern{minute = 25, pattern = "{h} dvacet pět"}, Clock_Pattern{minute = 30, pattern = "{h} třicet"}, Clock_Pattern{minute = 35, pattern = "za dvacet pět minut {next_h}"}, Clock_Pattern{minute = 40, pattern = "za dvacet minut {next_h}"}, Clock_Pattern{minute = 45, pattern = "za patnáct minut {next_h}"}, Clock_Pattern{minute = 50, pattern = "za deset minut {next_h}"}, Clock_Pattern{minute = 55, pattern = "za pět minut {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -492,7 +492,7 @@ locale_cy : Time_Locale = {
         hours = {"deuddeg", "un", "dau", "tri", "pedwar", "pump", "chwech", "saith", "wyth", "naw", "deg", "un ar ddeg"},
         midnight = "hanner nos",
         noon = "hanner dydd",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'r gloch"}, Clock_Pattern{minute = 5, pattern = "pum munud wedi {h}"}, Clock_Pattern{minute = 10, pattern = "deg munud wedi {h}"}, Clock_Pattern{minute = 15, pattern = "chwarter wedi {h}"}, Clock_Pattern{minute = 20, pattern = "ugain munud wedi {h}"}, Clock_Pattern{minute = 25, pattern = "pum munud ar hugain wedi {h}"}, Clock_Pattern{minute = 30, pattern = "hanner awr wedi {h}"}, Clock_Pattern{minute = 35, pattern = "pum munud ar hugain i {next_h}"}, Clock_Pattern{minute = 40, pattern = "ugain munud i {next_h}"}, Clock_Pattern{minute = 45, pattern = "chwarter i {next_h}"}, Clock_Pattern{minute = 50, pattern = "deg munud i {next_h}"}, Clock_Pattern{minute = 55, pattern = "pum munud i {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -567,7 +567,7 @@ locale_din : Time_Locale = {
         hours = {"thiäär ku rou", "tök", "rou", "diäk", "ŋuän", "dhiëc", "dhetem", "dhorou", "bɛ̈t", "dhoŋuan", "thiäär", "thiäär ku tök"},
         midnight = "wakɔ̈u",
         noon = "akɔ̈l ciëŋ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "thä {h}"}, Clock_Pattern{minute = 5, pattern = "thä {h} ku minitö dhiëc"}, Clock_Pattern{minute = 10, pattern = "thä {h} ku minitö thiäär"}, Clock_Pattern{minute = 15, pattern = "thä {h} ku minitö thiäär ku dhiëc"}, Clock_Pattern{minute = 20, pattern = "thä {h} ku minitö thiärou"}, Clock_Pattern{minute = 25, pattern = "thä {h} ku minitö thiärou ku dhiëc"}, Clock_Pattern{minute = 30, pattern = "thä {h} ku minitö thiärdiäk"}, Clock_Pattern{minute = 35, pattern = "thä {h} ku minitö thiärdiäk ku dhiëc"}, Clock_Pattern{minute = 40, pattern = "thä {h} ku minitö thiärŋuan"}, Clock_Pattern{minute = 45, pattern = "thä {h} ku minitö thiärŋuan ku dhiëc"}, Clock_Pattern{minute = 50, pattern = "thä {h} ku minitö thiärdhiëc"}, Clock_Pattern{minute = 55, pattern = "thä {h} ku minitö thiärdhiëc ku dhiëc"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -589,10 +589,10 @@ locale_din : Time_Locale = {
 locale_dje : Time_Locale = {
     code = "dje",
     clock = Clock_Config{
-        hours = {"way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi"},
+        hours = {"iway cindi hinka", "fo", "hinka", "hinza", "taaci", "gu", "iddu", "iyye", "ahakku", "yagga", "iway", "iway cindi fo"},
         midnight = "cin beri",
         noon = "zaari gaaham",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "guuru {h}"}, Clock_Pattern{minute = 5, pattern = "guuru {h} nda miniti gu"}, Clock_Pattern{minute = 10, pattern = "guuru {h} nda miniti iway"}, Clock_Pattern{minute = 15, pattern = "guuru {h} nda miniti iway cindi gu"}, Clock_Pattern{minute = 20, pattern = "guuru {h} nda miniti waranka"}, Clock_Pattern{minute = 25, pattern = "guuru {h} nda miniti waranka cindi gu"}, Clock_Pattern{minute = 30, pattern = "guuru {h} nda jare"}, Clock_Pattern{minute = 35, pattern = "guuru {h} nda miniti waranza cindi gu"}, Clock_Pattern{minute = 40, pattern = "guuru {h} nda miniti waytaaci"}, Clock_Pattern{minute = 45, pattern = "guuru {h} nda miniti waytaaci cindi gu"}, Clock_Pattern{minute = 50, pattern = "guuru {h} nda miniti waygu"}, Clock_Pattern{minute = 55, pattern = "guuru {h} nda miniti waygu cindi gu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -617,7 +617,7 @@ locale_dv : Time_Locale = {
         hours = {"ބާރަ", "އެކެއް", "ދޭއް", "ތިނެއް", "ހަތަރެއް", "ފަހެއް", "ހައެއް", "ހަތެއް", "އަށެއް", "ނުވައެއް", "ދިހައެއް", "އެގާރަ"},
         midnight = "މެންދަމު",
         noon = "މެންދުރު",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ގަޑިން {h}"}, Clock_Pattern{minute = 5, pattern = "{h} ޖަހައި ފަސް މިނެޓު"}, Clock_Pattern{minute = 10, pattern = "{h} ޖަހައި ދިހަ މިނެޓު"}, Clock_Pattern{minute = 15, pattern = "{h} ޖަހައި ފަނަރަ މިނެޓު"}, Clock_Pattern{minute = 20, pattern = "{h} ޖަހައި ވިހި މިނެޓު"}, Clock_Pattern{minute = 25, pattern = "{h} ޖަހައި ފަންސަވީސް މިނެޓު"}, Clock_Pattern{minute = 30, pattern = "{h} ޖަހައި ބައި"}, Clock_Pattern{minute = 35, pattern = "{h} ޖަހައި ތިރީސްފަސް މިނެޓު"}, Clock_Pattern{minute = 40, pattern = "{h} ޖަހައި ސާޅީސް މިނެޓު"}, Clock_Pattern{minute = 45, pattern = "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު"}, Clock_Pattern{minute = 50, pattern = "{h} ޖަހައި ފަންސާސް މިނެޓު"}, Clock_Pattern{minute = 55, pattern = "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -642,7 +642,7 @@ locale_dyu : Time_Locale = {
         hours = {"tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"},
         midnight = "dugutilama",
         noon = "tilgari",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "lɛrɛ {h}"}, Clock_Pattern{minute = 5, pattern = "lɛrɛ {h} ni miniti duuru"}, Clock_Pattern{minute = 10, pattern = "lɛrɛ {h} ni miniti tan"}, Clock_Pattern{minute = 15, pattern = "lɛrɛ {h} ni miniti tan ni duuru"}, Clock_Pattern{minute = 20, pattern = "lɛrɛ {h} ni miniti mugan"}, Clock_Pattern{minute = 25, pattern = "lɛrɛ {h} ni miniti mugan ni duuru"}, Clock_Pattern{minute = 30, pattern = "lɛrɛ {h} ni tilancɛ"}, Clock_Pattern{minute = 35, pattern = "lɛrɛ {h} ni miniti bi saba ni duuru"}, Clock_Pattern{minute = 40, pattern = "lɛrɛ {h} ni miniti bi naani"}, Clock_Pattern{minute = 45, pattern = "lɛrɛ {h} ni miniti bi naani ni duuru"}, Clock_Pattern{minute = 50, pattern = "lɛrɛ {h} ni miniti bi duuru"}, Clock_Pattern{minute = 55, pattern = "lɛrɛ {h} ni miniti bi duuru ni duuru"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -667,7 +667,7 @@ locale_dz : Time_Locale = {
         hours = {"བཅུ་གཉིས", "གཅིག", "གཉིས", "གསུམ", "བཞི", "ལྔ", "དྲུག", "བདུན", "བརྒྱད", "དགུ", "བཅུ", "བཅུ་གཅིག"},
         midnight = "ནམ་ཕྱེད",
         noon = "ཉིན་གུང",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ཆུ་ཚོད་{h}"}, Clock_Pattern{minute = 5, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ"}, Clock_Pattern{minute = 10, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ"}, Clock_Pattern{minute = 15, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ"}, Clock_Pattern{minute = 20, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ"}, Clock_Pattern{minute = 25, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ"}, Clock_Pattern{minute = 30, pattern = "ཆུ་ཚོད་{h}་དང་ཕྱེད"}, Clock_Pattern{minute = 35, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ"}, Clock_Pattern{minute = 40, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ"}, Clock_Pattern{minute = 45, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ"}, Clock_Pattern{minute = 50, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ"}, Clock_Pattern{minute = 55, pattern = "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -692,7 +692,7 @@ locale_ee : Time_Locale = {
         hours = {"wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"},
         midnight = "zã titina",
         noon = "ŋdɔ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ga {h}"}, Clock_Pattern{minute = 5, pattern = "ga {h} kple aɖabaƒoƒo atɔ̃"}, Clock_Pattern{minute = 10, pattern = "ga {h} kple aɖabaƒoƒo ewo"}, Clock_Pattern{minute = 15, pattern = "ga {h} kple aɖabaƒoƒo wuiatɔ̃"}, Clock_Pattern{minute = 20, pattern = "ga {h} kple aɖabaƒoƒo blaeve"}, Clock_Pattern{minute = 25, pattern = "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃"}, Clock_Pattern{minute = 30, pattern = "ga {h} kple afã"}, Clock_Pattern{minute = 35, pattern = "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃"}, Clock_Pattern{minute = 40, pattern = "ga {h} kple aɖabaƒoƒo blaene"}, Clock_Pattern{minute = 45, pattern = "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃"}, Clock_Pattern{minute = 50, pattern = "ga {h} kple aɖabaƒoƒo blaatɔ̃"}, Clock_Pattern{minute = 55, pattern = "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -792,7 +792,7 @@ locale_et : Time_Locale = {
         hours = {"kaksteist", "üks", "kaks", "kolm", "neli", "viis", "kuus", "seitse", "kaheksa", "üheksa", "kümme", "üksteist"},
         midnight = "kesköö",
         noon = "keskpäev",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "viis efter {h}"}, Clock_Pattern{minute = 10, pattern = "kümme efter {h}"}, Clock_Pattern{minute = 15, pattern = "veerand efter {h}"}, Clock_Pattern{minute = 20, pattern = "kakskümmend efter {h}"}, Clock_Pattern{minute = 25, pattern = "kakskümmend viis efter {h}"}, Clock_Pattern{minute = 30, pattern = "pool efter {h}"}, Clock_Pattern{minute = 35, pattern = "kakskümmend viis enne {next_h}"}, Clock_Pattern{minute = 40, pattern = "kakskümmend enne {next_h}"}, Clock_Pattern{minute = 45, pattern = "veerand enne {next_h}"}, Clock_Pattern{minute = 50, pattern = "kümme enne {next_h}"}, Clock_Pattern{minute = 55, pattern = "viis enne {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "kell {h}"}, Clock_Pattern{minute = 5, pattern = "viis minutit {h} läbi"}, Clock_Pattern{minute = 10, pattern = "kümme minutit {h} läbi"}, Clock_Pattern{minute = 15, pattern = "veerand {next_h}"}, Clock_Pattern{minute = 20, pattern = "kakskümmend minutit {h} läbi"}, Clock_Pattern{minute = 25, pattern = "kakskümmend viis minutit {h} läbi"}, Clock_Pattern{minute = 30, pattern = "pool {next_h}"}, Clock_Pattern{minute = 35, pattern = "kolmkümmend viis minutit {h} läbi"}, Clock_Pattern{minute = 40, pattern = "kahekümne minuti pärast {next_h}"}, Clock_Pattern{minute = 45, pattern = "kolmveerand {next_h}"}, Clock_Pattern{minute = 50, pattern = "kümne minuti pärast {next_h}"}, Clock_Pattern{minute = 55, pattern = "viie minuti pärast {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -814,10 +814,10 @@ locale_et : Time_Locale = {
 locale_eu : Time_Locale = {
     code = "eu",
     clock = Clock_Config{
-        hours = {"hamabi", "bat", "bi", "hiru", "lau", "bost", "sei", "zazpi", "zortzi", "bederatzi", "hamar", "hamaika"},
+        hours = {"hamabiak", "ordu bata", "ordu biak", "hirurak", "laurak", "bostak", "seiak", "zazpiak", "zortziak", "bederatziak", "hamarrak", "hamaikak"},
         midnight = "gauerdia",
         noon = "eguerdia",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} eta bost"}, Clock_Pattern{minute = 10, pattern = "{h} eta hamar"}, Clock_Pattern{minute = 15, pattern = "{h} eta laurden"}, Clock_Pattern{minute = 20, pattern = "{h} eta hogei"}, Clock_Pattern{minute = 25, pattern = "{h} eta hogeita bost"}, Clock_Pattern{minute = 30, pattern = "{h} eta erdiak"}, Clock_Pattern{minute = 35, pattern = "{next_h} hogeita bost gutxi"}, Clock_Pattern{minute = 40, pattern = "{next_h} hogei gutxi"}, Clock_Pattern{minute = 45, pattern = "{next_h} laurden gutxi"}, Clock_Pattern{minute = 50, pattern = "{next_h} hamar gutxi"}, Clock_Pattern{minute = 55, pattern = "{next_h} bost gutxi"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -867,7 +867,7 @@ locale_fan : Time_Locale = {
         hours = {"awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"},
         midnight = "akiri alúk",
         noon = "ewaŋ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "awola {h}"}, Clock_Pattern{minute = 5, pattern = "awola {h} ai minit tán"}, Clock_Pattern{minute = 10, pattern = "awola {h} ai minit awom"}, Clock_Pattern{minute = 15, pattern = "awola {h} ai minit awom ai tán"}, Clock_Pattern{minute = 20, pattern = "awola {h} ai minit mewom mebú"}, Clock_Pattern{minute = 25, pattern = "awola {h} ai minit mewom mebú ai tán"}, Clock_Pattern{minute = 30, pattern = "awola {h} ai minit mewom melaa"}, Clock_Pattern{minute = 35, pattern = "awola {h} ai minit mewom melaa ai tán"}, Clock_Pattern{minute = 40, pattern = "awola {h} ai minit mewom menyin"}, Clock_Pattern{minute = 45, pattern = "awola {h} ai minit mewom menyin ai tán"}, Clock_Pattern{minute = 50, pattern = "awola {h} ai minit mewom metán"}, Clock_Pattern{minute = 55, pattern = "awola {h} ai minit mewom metán ai tán"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -892,7 +892,7 @@ locale_ff : Time_Locale = {
         hours = {"sappo e ɗiɗi", "go'o", "ɗiɗi", "tati", "nay", "joy", "jeegom", "jeeɗiɗi", "jeetati", "jeenay", "sappo", "sappo e go'o"},
         midnight = "jamma hejjere",
         noon = "zuhr",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "waktu {h}"}, Clock_Pattern{minute = 5, pattern = "waktu {h} e hojomaaje joy"}, Clock_Pattern{minute = 10, pattern = "waktu {h} e hojomaaje sappo"}, Clock_Pattern{minute = 15, pattern = "waktu {h} e hojomaaje sappo e joy"}, Clock_Pattern{minute = 20, pattern = "waktu {h} e hojomaaje noogas"}, Clock_Pattern{minute = 25, pattern = "waktu {h} e hojomaaje noogas e joy"}, Clock_Pattern{minute = 30, pattern = "waktu {h} e feccere"}, Clock_Pattern{minute = 35, pattern = "waktu {h} e hojomaaje cappanɗe tati e joy"}, Clock_Pattern{minute = 40, pattern = "waktu {h} e hojomaaje cappanɗe nay"}, Clock_Pattern{minute = 45, pattern = "waktu {h} e hojomaaje cappanɗe nay e joy"}, Clock_Pattern{minute = 50, pattern = "waktu {h} e hojomaaje cappanɗe joy"}, Clock_Pattern{minute = 55, pattern = "waktu {h} e hojomaaje cappanɗe joy e joy"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -917,7 +917,7 @@ locale_fi : Time_Locale = {
         hours = {"kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista"},
         midnight = "keskiyö",
         noon = "keskipäivä",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "viisi yli {h}"}, Clock_Pattern{minute = 10, pattern = "kymmenen yli {h}"}, Clock_Pattern{minute = 15, pattern = "vartti yli {h}"}, Clock_Pattern{minute = 20, pattern = "kaksikymmentä yli {h}"}, Clock_Pattern{minute = 25, pattern = "kaksikymmentäviisi yli {h}"}, Clock_Pattern{minute = 30, pattern = "puoli yli {h}"}, Clock_Pattern{minute = 35, pattern = "kaksikymmentäviisi vaille {next_h}"}, Clock_Pattern{minute = 40, pattern = "kaksikymmentä vaille {next_h}"}, Clock_Pattern{minute = 45, pattern = "vartti vaille {next_h}"}, Clock_Pattern{minute = 50, pattern = "kymmenen vaille {next_h}"}, Clock_Pattern{minute = 55, pattern = "viisi vaille {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "kello {h}"}, Clock_Pattern{minute = 5, pattern = "viisi yli {h}"}, Clock_Pattern{minute = 10, pattern = "kymmenen yli {h}"}, Clock_Pattern{minute = 15, pattern = "vartti yli {h}"}, Clock_Pattern{minute = 20, pattern = "kaksikymmentä yli {h}"}, Clock_Pattern{minute = 25, pattern = "kaksikymmentäviisi yli {h}"}, Clock_Pattern{minute = 30, pattern = "puoli {next_h}"}, Clock_Pattern{minute = 35, pattern = "kaksikymmentäviisi vaille {next_h}"}, Clock_Pattern{minute = 40, pattern = "kaksikymmentä vaille {next_h}"}, Clock_Pattern{minute = 45, pattern = "vartti vaille {next_h}"}, Clock_Pattern{minute = 50, pattern = "kymmenen vaille {next_h}"}, Clock_Pattern{minute = 55, pattern = "viisi vaille {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -939,10 +939,10 @@ locale_fi : Time_Locale = {
 locale_fil : Time_Locale = {
     code = "fil",
     clock = Clock_Config{
-        hours = {"dose", "una", "dos", "tres", "kwatro", "singko", "seis", "syete", "otso", "nuwebe", "diyes", "onse"},
+        hours = {"alas-dose", "ala-una", "alas-dos", "alas-tres", "alas-kuwatro", "alas-singko", "alas-sais", "alas-siyete", "alas-otso", "alas-nuwebe", "alas-diyes", "alas-onse"},
         midnight = "hatinggabi",
         noon = "tanghali",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "lima dan {h}"}, Clock_Pattern{minute = 10, pattern = "sampu dan {h}"}, Clock_Pattern{minute = 15, pattern = "labinlima dan {h}"}, Clock_Pattern{minute = 20, pattern = "dalawampu dan {h}"}, Clock_Pattern{minute = 25, pattern = "dalawampu't lima dan {h}"}, Clock_Pattern{minute = 30, pattern = "tatlumpu dan {h}"}, Clock_Pattern{minute = 35, pattern = "dalawampu't lima bago mag {next_h}"}, Clock_Pattern{minute = 40, pattern = "dalawampu bago mag {next_h}"}, Clock_Pattern{minute = 45, pattern = "labinlima bago mag {next_h}"}, Clock_Pattern{minute = 50, pattern = "sampu bago mag {next_h}"}, Clock_Pattern{minute = 55, pattern = "lima bago mag {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} y singko"}, Clock_Pattern{minute = 10, pattern = "{h} y diyes"}, Clock_Pattern{minute = 15, pattern = "{h} y kinse"}, Clock_Pattern{minute = 20, pattern = "{h} y beynte"}, Clock_Pattern{minute = 25, pattern = "{h} y beynte singko"}, Clock_Pattern{minute = 30, pattern = "{h} y medya"}, Clock_Pattern{minute = 35, pattern = "menos beynte singko para {next_h}"}, Clock_Pattern{minute = 40, pattern = "menos beynte para {next_h}"}, Clock_Pattern{minute = 45, pattern = "menos kinse para {next_h}"}, Clock_Pattern{minute = 50, pattern = "menos diyes para {next_h}"}, Clock_Pattern{minute = 55, pattern = "menos singko para {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -967,7 +967,7 @@ locale_fj : Time_Locale = {
         hours = {"tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"},
         midnight = "bogi levu",
         noon = "sigalevu",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} na kaloko"}, Clock_Pattern{minute = 5, pattern = "{h} na kaloko ka lima na miniti"}, Clock_Pattern{minute = 10, pattern = "{h} na kaloko ka tini na miniti"}, Clock_Pattern{minute = 15, pattern = "{h} na kaloko ka tini ka lima na miniti"}, Clock_Pattern{minute = 20, pattern = "{h} na kaloko ka ruasagavulu na miniti"}, Clock_Pattern{minute = 25, pattern = "{h} na kaloko ka ruasagavulu ka lima na miniti"}, Clock_Pattern{minute = 30, pattern = "{h} na kaloko ka tolusagavulu na miniti"}, Clock_Pattern{minute = 35, pattern = "{h} na kaloko ka tolusagavulu ka lima na miniti"}, Clock_Pattern{minute = 40, pattern = "{h} na kaloko ka vāsagavulu na miniti"}, Clock_Pattern{minute = 45, pattern = "{h} na kaloko ka vāsagavulu ka lima na miniti"}, Clock_Pattern{minute = 50, pattern = "{h} na kaloko ka limasagavulu na miniti"}, Clock_Pattern{minute = 55, pattern = "{h} na kaloko ka limasagavulu ka lima na miniti"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -989,10 +989,10 @@ locale_fj : Time_Locale = {
 locale_fon : Time_Locale = {
     code = "fon",
     clock = Clock_Config{
-        hours = {"wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "ɖokpo-wǒ"},
+        hours = {"wěwè", "ɖokpo", "wè", "atɔn", "ɛnɛ", "atɔ́ɔ́n", "ayizɛ̀n", "tɛnwè", "tantɔn", "tɛnɛnɛ", "wǒ", "wěɖokpo"},
         midnight = "zǎnmɛ",
         noon = "hwemɛnu",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "gan {h}"}, Clock_Pattern{minute = 5, pattern = "gan {h} kpo cɛju atɔ́ɔ́n kpo"}, Clock_Pattern{minute = 10, pattern = "gan {h} kpo cɛju wǒ kpo"}, Clock_Pattern{minute = 15, pattern = "gan {h} kpo cɛju afɔtɔ́n kpo"}, Clock_Pattern{minute = 20, pattern = "gan {h} kpo cɛju ko kpo"}, Clock_Pattern{minute = 25, pattern = "gan {h} kpo cɛju koatɔ́ɔ́n kpo"}, Clock_Pattern{minute = 30, pattern = "gan {h} kpo cɛju gban kpo"}, Clock_Pattern{minute = 35, pattern = "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo"}, Clock_Pattern{minute = 40, pattern = "gan {h} kpo cɛju kanɖé kpo"}, Clock_Pattern{minute = 45, pattern = "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo"}, Clock_Pattern{minute = 50, pattern = "gan {h} kpo cɛju kanɖéwǒ kpo"}, Clock_Pattern{minute = 55, pattern = "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1042,7 +1042,7 @@ locale_ga : Time_Locale = {
         hours = {"dó dhéag", "haon", "dó", "trí", "ceathair", "cúig", "sé", "seacht", "hocht", "naoi", "deich", "haon déag"},
         midnight = "meán oíche",
         noon = "meán lae",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "a {h} a chlog"}, Clock_Pattern{minute = 5, pattern = "cúig tar éis a {h}"}, Clock_Pattern{minute = 10, pattern = "deich tar éis a {h}"}, Clock_Pattern{minute = 15, pattern = "ceathrú tar éis a {h}"}, Clock_Pattern{minute = 20, pattern = "fiche tar éis a {h}"}, Clock_Pattern{minute = 25, pattern = "fiche cúig tar éis a {h}"}, Clock_Pattern{minute = 30, pattern = "leathuair tar éis a {h}"}, Clock_Pattern{minute = 35, pattern = "fiche cúig chun a {next_h}"}, Clock_Pattern{minute = 40, pattern = "fiche chun a {next_h}"}, Clock_Pattern{minute = 45, pattern = "ceathrú chun a {next_h}"}, Clock_Pattern{minute = 50, pattern = "deich chun a {next_h}"}, Clock_Pattern{minute = 55, pattern = "cúig chun a {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1064,10 +1064,10 @@ locale_ga : Time_Locale = {
 locale_gd : Time_Locale = {
     code = "gd",
     clock = Clock_Config{
-        hours = {"dà-dheug", "aon", "dà", "trì", "ceithir", "còig", "sia", "seachd", "ochd", "naoi", "deich", "aon-deug"},
+        hours = {"dà uair dheug", "uair", "dà uair", "trì uairean", "ceithir uairean", "còig uairean", "sia uairean", "seachd uairean", "ochd uairean", "naoi uairean", "deich uairean", "aon uair deug"},
         midnight = "meadhan-oidhche",
         noon = "meadhan-latha",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "còig mionaidean an dèidh {h}"}, Clock_Pattern{minute = 10, pattern = "deich mionaidean an dèidh {h}"}, Clock_Pattern{minute = 15, pattern = "cairteal an dèidh {h}"}, Clock_Pattern{minute = 20, pattern = "fichead mionaid an dèidh {h}"}, Clock_Pattern{minute = 25, pattern = "còig mionaidean fichead an dèidh {h}"}, Clock_Pattern{minute = 30, pattern = "leth-uair an dèidh {h}"}, Clock_Pattern{minute = 35, pattern = "còig mionaidean fichead gu {next_h}"}, Clock_Pattern{minute = 40, pattern = "fichead mionaid gu {next_h}"}, Clock_Pattern{minute = 45, pattern = "cairteal gu {next_h}"}, Clock_Pattern{minute = 50, pattern = "deich mionaidean gu {next_h}"}, Clock_Pattern{minute = 55, pattern = "còig mionaidean gu {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1115,9 +1115,9 @@ locale_gn : Time_Locale = {
     code = "gn",
     clock = Clock_Config{
         hours = {"pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"},
-        midnight = "pyhareve",
+        midnight = "pyharepyte",
         noon = "asaje",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} ha po"}, Clock_Pattern{minute = 10, pattern = "{h} ha pa"}, Clock_Pattern{minute = 15, pattern = "{h} ha pa po"}, Clock_Pattern{minute = 20, pattern = "{h} ha mokõi pa"}, Clock_Pattern{minute = 25, pattern = "{h} ha mokõi pa po"}, Clock_Pattern{minute = 30, pattern = "{h} ha mbohapy pa"}, Clock_Pattern{minute = 35, pattern = "{next_h} mba'e mokõi pa po"}, Clock_Pattern{minute = 40, pattern = "{next_h} mba'e mokõi pa"}, Clock_Pattern{minute = 45, pattern = "{next_h} mba'e pa po"}, Clock_Pattern{minute = 50, pattern = "{next_h} mba'e pa"}, Clock_Pattern{minute = 55, pattern = "{next_h} mba'e po"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} ha po"}, Clock_Pattern{minute = 10, pattern = "{h} ha pa"}, Clock_Pattern{minute = 15, pattern = "{h} ha pa po"}, Clock_Pattern{minute = 20, pattern = "{h} ha mokõi pa"}, Clock_Pattern{minute = 25, pattern = "{h} ha mokõi pa po"}, Clock_Pattern{minute = 30, pattern = "{h} ha mbohapy pa"}, Clock_Pattern{minute = 35, pattern = "{h} ha mbohapy pa po"}, Clock_Pattern{minute = 40, pattern = "{h} ha irundy pa"}, Clock_Pattern{minute = 45, pattern = "{h} ha irundy pa po"}, Clock_Pattern{minute = 50, pattern = "{h} ha po pa"}, Clock_Pattern{minute = 55, pattern = "{h} ha po pa po"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1141,8 +1141,8 @@ locale_gu : Time_Locale = {
     clock = Clock_Config{
         hours = {"બાર", "એક", "બે", "ત્રણ", "ચાર", "પાંચ", "છ", "સાત", "આઠ", "નવ", "દસ", "અગિયાર"},
         midnight = "મધ્યરાત્રિ",
-        noon = "બપોર",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        noon = "બપોરે બાર વાગ્યે",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} વાગ્યે"}, Clock_Pattern{minute = 5, pattern = "{h} વાગીને પાંચ મિનિટ"}, Clock_Pattern{minute = 10, pattern = "{h} વાગીને દસ મિનિટ"}, Clock_Pattern{minute = 15, pattern = "સવા {h}"}, Clock_Pattern{minute = 20, pattern = "{h} વાગીને વીસ મિનિટ"}, Clock_Pattern{minute = 25, pattern = "{h} વાગીને પચીસ મિનિટ"}, Clock_Pattern{minute = 30, pattern = "{h} વાગીને ત્રીસ મિનિટ"}, Clock_Pattern{minute = 35, pattern = "{h} વાગીને પાંત્રીસ મિનિટ"}, Clock_Pattern{minute = 40, pattern = "{h} વાગીને ચાલીસ મિનિટ"}, Clock_Pattern{minute = 45, pattern = "પોણા {next_h}"}, Clock_Pattern{minute = 50, pattern = "{next_h} વાગવામાં દસ મિનિટ"}, Clock_Pattern{minute = 55, pattern = "{next_h} વાગવામાં પાંચ મિનિટ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1164,10 +1164,10 @@ locale_gu : Time_Locale = {
 locale_gv : Time_Locale = {
     code = "gv",
     clock = Clock_Config{
-        hours = {"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
+        hours = {"daa-yeig", "nane", "jees", "tree", "kiare", "queig", "shey", "shiaght", "hoght", "nuy", "jeih", "nane-jeig"},
         midnight = "mean oie",
         noon = "munlaa",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} er y chlag"}, Clock_Pattern{minute = 5, pattern = "queig minnidyn lurg {h}"}, Clock_Pattern{minute = 10, pattern = "jeih minnidyn lurg {h}"}, Clock_Pattern{minute = 15, pattern = "kerroo lurg {h}"}, Clock_Pattern{minute = 20, pattern = "feed minnid lurg {h}"}, Clock_Pattern{minute = 25, pattern = "queig minnidyn as feed lurg {h}"}, Clock_Pattern{minute = 30, pattern = "lieh-oor lurg {h}"}, Clock_Pattern{minute = 35, pattern = "queig minnidyn as feed gys {next_h}"}, Clock_Pattern{minute = 40, pattern = "feed minnid gys {next_h}"}, Clock_Pattern{minute = 45, pattern = "kerroo gys {next_h}"}, Clock_Pattern{minute = 50, pattern = "jeih minnidyn gys {next_h}"}, Clock_Pattern{minute = 55, pattern = "queig minnidyn gys {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1189,10 +1189,10 @@ locale_gv : Time_Locale = {
 locale_ha : Time_Locale = {
     code = "ha",
     clock = Clock_Config{
-        hours = {"sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "goma sha ɗaya"},
+        hours = {"sha biyu", "ɗaya", "biyu", "uku", "huɗu", "biyar", "shida", "bakwai", "takwas", "tara", "goma", "sha ɗaya"},
         midnight = "tsakar dare",
         noon = "tsakar rana",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ƙarfe {h}"}, Clock_Pattern{minute = 5, pattern = "ƙarfe {h} da minti biyar"}, Clock_Pattern{minute = 10, pattern = "ƙarfe {h} da minti goma"}, Clock_Pattern{minute = 15, pattern = "ƙarfe {h} da kwata"}, Clock_Pattern{minute = 20, pattern = "ƙarfe {h} da minti ashirin"}, Clock_Pattern{minute = 25, pattern = "ƙarfe {h} da minti ashirin da biyar"}, Clock_Pattern{minute = 30, pattern = "ƙarfe {h} da rabi"}, Clock_Pattern{minute = 35, pattern = "ƙarfe {next_h} saura minti ashirin da biyar"}, Clock_Pattern{minute = 40, pattern = "ƙarfe {next_h} saura minti ashirin"}, Clock_Pattern{minute = 45, pattern = "ƙarfe {next_h} saura kwata"}, Clock_Pattern{minute = 50, pattern = "ƙarfe {next_h} saura minti goma"}, Clock_Pattern{minute = 55, pattern = "ƙarfe {next_h} saura minti biyar"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1241,8 +1241,8 @@ locale_hi : Time_Locale = {
     clock = Clock_Config{
         hours = {"बारह", "एक", "दो", "तीन", "चार", "पाँच", "छह", "सात", "आठ", "नौ", "दस", "ग्यारह"},
         midnight = "आधी रात",
-        noon = "दोपहर",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        noon = "दोपहर के बारह बजे",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} बजे"}, Clock_Pattern{minute = 5, pattern = "{h} बजकर पाँच मिनट"}, Clock_Pattern{minute = 10, pattern = "{h} बजकर दस मिनट"}, Clock_Pattern{minute = 15, pattern = "सवा {h} बजे"}, Clock_Pattern{minute = 20, pattern = "{h} बजकर बीस मिनट"}, Clock_Pattern{minute = 25, pattern = "{h} बजकर पच्चीस मिनट"}, Clock_Pattern{minute = 30, pattern = "{h} बजकर तीस मिनट"}, Clock_Pattern{minute = 35, pattern = "{h} बजकर पैंतीस मिनट"}, Clock_Pattern{minute = 40, pattern = "{h} बजकर चालीस मिनट"}, Clock_Pattern{minute = 45, pattern = "पौने {next_h} बजे"}, Clock_Pattern{minute = 50, pattern = "{next_h} बजने में दस मिनट"}, Clock_Pattern{minute = 55, pattern = "{next_h} बजने में पाँच मिनट"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1267,7 +1267,7 @@ locale_hmn : Time_Locale = {
         hours = {"kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib"},
         midnight = "ib tag hmo",
         noon = "tav su",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} teev"}, Clock_Pattern{minute = 5, pattern = "{h} teev tsib feeb"}, Clock_Pattern{minute = 10, pattern = "{h} teev kaum feeb"}, Clock_Pattern{minute = 15, pattern = "{h} teev kaum tsib feeb"}, Clock_Pattern{minute = 20, pattern = "{h} teev nees nkaum feeb"}, Clock_Pattern{minute = 25, pattern = "{h} teev nees nkaum tsib feeb"}, Clock_Pattern{minute = 30, pattern = "{h} teev ib nrab"}, Clock_Pattern{minute = 35, pattern = "{h} teev peb caug tsib feeb"}, Clock_Pattern{minute = 40, pattern = "{h} teev plaub caug feeb"}, Clock_Pattern{minute = 45, pattern = "{h} teev plaub caug tsib feeb"}, Clock_Pattern{minute = 50, pattern = "{h} teev tsib caug feeb"}, Clock_Pattern{minute = 55, pattern = "{h} teev tsib caug tsib feeb"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1292,7 +1292,7 @@ locale_hr : Time_Locale = {
         hours = {"dvanaest", "jedan", "dva", "tri", "četiri", "pet", "šest", "sedam", "osam", "devet", "deset", "jedanaest"},
         midnight = "ponoć",
         noon = "podne",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} sati"}, Clock_Pattern{minute = 5, pattern = "pet po {h}"}, Clock_Pattern{minute = 10, pattern = "deset po {h}"}, Clock_Pattern{minute = 15, pattern = "petnaest po {h}"}, Clock_Pattern{minute = 20, pattern = "dvadeset po {h}"}, Clock_Pattern{minute = 25, pattern = "dvadeset pet po {h}"}, Clock_Pattern{minute = 30, pattern = "trideset po {h}"}, Clock_Pattern{minute = 35, pattern = "dvadeset pet do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dvadeset do {next_h}"}, Clock_Pattern{minute = 45, pattern = "petnaest do {next_h}"}, Clock_Pattern{minute = 50, pattern = "deset do {next_h}"}, Clock_Pattern{minute = 55, pattern = "pet do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} i pet"}, Clock_Pattern{minute = 10, pattern = "{h} i deset"}, Clock_Pattern{minute = 15, pattern = "{h} i petnaest"}, Clock_Pattern{minute = 20, pattern = "{h} i dvadeset"}, Clock_Pattern{minute = 25, pattern = "{h} i dvadeset pet"}, Clock_Pattern{minute = 30, pattern = "pola {next_h}"}, Clock_Pattern{minute = 35, pattern = "dvadeset pet do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dvadeset do {next_h}"}, Clock_Pattern{minute = 45, pattern = "petnaest do {next_h}"}, Clock_Pattern{minute = 50, pattern = "deset do {next_h}"}, Clock_Pattern{minute = 55, pattern = "pet do {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1314,10 +1314,10 @@ locale_hr : Time_Locale = {
 locale_ht : Time_Locale = {
     code = "ht",
     clock = Clock_Config{
-        hours = {"douz", "en", "de", "twa", "kat", "senk", "sis", "sèt", "uit", "nèf", "dis", "onz"},
-        midnight = "minui",
+        hours = {"douzè", "inè", "dezè", "twazè", "katrè", "senkè", "sizè", "setè", "uitè", "nevè", "dizè", "onzè"},
+        midnight = "minwi",
         noon = "midi",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} è"}, Clock_Pattern{minute = 5, pattern = "{h} è senk"}, Clock_Pattern{minute = 10, pattern = "{h} è dis"}, Clock_Pattern{minute = 15, pattern = "{h} è ka"}, Clock_Pattern{minute = 20, pattern = "{h} è ven"}, Clock_Pattern{minute = 25, pattern = "{h} è vennsenk"}, Clock_Pattern{minute = 30, pattern = "{h} è demi"}, Clock_Pattern{minute = 35, pattern = "{next_h} mwen vennsenk"}, Clock_Pattern{minute = 40, pattern = "{next_h} mwen ven"}, Clock_Pattern{minute = 45, pattern = "{next_h} mwen ka"}, Clock_Pattern{minute = 50, pattern = "{next_h} mwen dis"}, Clock_Pattern{minute = 55, pattern = "{next_h} mwen senk"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} senk"}, Clock_Pattern{minute = 10, pattern = "{h} dis"}, Clock_Pattern{minute = 15, pattern = "{h} e ka"}, Clock_Pattern{minute = 20, pattern = "{h} ven"}, Clock_Pattern{minute = 25, pattern = "{h} vennsenk"}, Clock_Pattern{minute = 30, pattern = "{h} edmi"}, Clock_Pattern{minute = 35, pattern = "{next_h} mwen vennsenk"}, Clock_Pattern{minute = 40, pattern = "{next_h} mwen ven"}, Clock_Pattern{minute = 45, pattern = "{next_h} mwen ka"}, Clock_Pattern{minute = 50, pattern = "{next_h} mwen dis"}, Clock_Pattern{minute = 55, pattern = "{next_h} mwen senk"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1342,7 +1342,7 @@ locale_hu : Time_Locale = {
         hours = {"tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy"},
         midnight = "éjfél",
         noon = "dél",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} óra"}, Clock_Pattern{minute = 5, pattern = "öt múlt {h}"}, Clock_Pattern{minute = 10, pattern = "tíz múlt {h}"}, Clock_Pattern{minute = 15, pattern = "negyed múlt {h}"}, Clock_Pattern{minute = 20, pattern = "húsz múlt {h}"}, Clock_Pattern{minute = 25, pattern = "huszonöt múlt {h}"}, Clock_Pattern{minute = 30, pattern = "fél múlt {h}"}, Clock_Pattern{minute = 35, pattern = "huszonöt múlva {next_h}"}, Clock_Pattern{minute = 40, pattern = "húsz múlva {next_h}"}, Clock_Pattern{minute = 45, pattern = "negyed múlva {next_h}"}, Clock_Pattern{minute = 50, pattern = "tíz múlva {next_h}"}, Clock_Pattern{minute = 55, pattern = "öt múlva {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} óra"}, Clock_Pattern{minute = 5, pattern = "öt perccel múlt {h}"}, Clock_Pattern{minute = 10, pattern = "tíz perccel múlt {h}"}, Clock_Pattern{minute = 15, pattern = "negyed {next_h}"}, Clock_Pattern{minute = 20, pattern = "húsz perccel múlt {h}"}, Clock_Pattern{minute = 25, pattern = "öt perc múlva fél {next_h}"}, Clock_Pattern{minute = 30, pattern = "fél {next_h}"}, Clock_Pattern{minute = 35, pattern = "öt perccel múlt fél {next_h}"}, Clock_Pattern{minute = 40, pattern = "húsz perc múlva {next_h}"}, Clock_Pattern{minute = 45, pattern = "háromnegyed {next_h}"}, Clock_Pattern{minute = 50, pattern = "tíz perc múlva {next_h}"}, Clock_Pattern{minute = 55, pattern = "öt perc múlva {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1364,10 +1364,10 @@ locale_hu : Time_Locale = {
 locale_hy : Time_Locale = {
     code = "hy",
     clock = Clock_Config{
-        hours = {"տասներկու", "մեկ", "երկու", "երեք", "չորս", "հինգ", "վեց", "յոթ", "ութ", "ինը", "տաս", "տասնմեկ"},
+        hours = {"տասներկուսն", "մեկն", "երկուսն", "երեքն", "չորսն", "հինգն", "վեցն", "յոթն", "ութն", "ինն", "տասն", "տասնմեկն"},
         midnight = "կեսգիշեր",
         noon = "կեսօր",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ժամը {h} է"}, Clock_Pattern{minute = 5, pattern = "{h} անց հինգ"}, Clock_Pattern{minute = 10, pattern = "{h} անց տասը"}, Clock_Pattern{minute = 15, pattern = "{h} անց տասնհինգ"}, Clock_Pattern{minute = 20, pattern = "{h} անց քսան"}, Clock_Pattern{minute = 25, pattern = "{h} անց քսանհինգ"}, Clock_Pattern{minute = 30, pattern = "{h} անց կես"}, Clock_Pattern{minute = 35, pattern = "{h} անց երեսունհինգ"}, Clock_Pattern{minute = 40, pattern = "{h} անց քառասուն"}, Clock_Pattern{minute = 45, pattern = "{h} անց քառասունհինգ"}, Clock_Pattern{minute = 50, pattern = "{h} անց հիսուն"}, Clock_Pattern{minute = 55, pattern = "{h} անց հիսունհինգ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1392,7 +1392,7 @@ locale_id : Time_Locale = {
         hours = {"dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"},
         midnight = "tengah malam",
         noon = "tengah hari",
-        patterns = {Clock_Pattern{minute = 0, pattern = "pukul {h}"}, Clock_Pattern{minute = 5, pattern = "lima lewat {h}"}, Clock_Pattern{minute = 10, pattern = "sepuluh lewat {h}"}, Clock_Pattern{minute = 15, pattern = "seperempat lewat {h}"}, Clock_Pattern{minute = 20, pattern = "dua puluh lewat {h}"}, Clock_Pattern{minute = 25, pattern = "dua puluh lima lewat {h}"}, Clock_Pattern{minute = 30, pattern = "setengah lewat {h}"}, Clock_Pattern{minute = 35, pattern = "dua puluh lima menjelang {next_h}"}, Clock_Pattern{minute = 40, pattern = "dua puluh menjelang {next_h}"}, Clock_Pattern{minute = 45, pattern = "seperempat menjelang {next_h}"}, Clock_Pattern{minute = 50, pattern = "sepuluh menjelang {next_h}"}, Clock_Pattern{minute = 55, pattern = "lima menjelang {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "pukul {h}"}, Clock_Pattern{minute = 5, pattern = "pukul {h} lewat lima"}, Clock_Pattern{minute = 10, pattern = "pukul {h} lewat sepuluh"}, Clock_Pattern{minute = 15, pattern = "pukul {h} lewat seperempat"}, Clock_Pattern{minute = 20, pattern = "pukul {h} lewat dua puluh"}, Clock_Pattern{minute = 25, pattern = "pukul {h} lewat dua puluh lima"}, Clock_Pattern{minute = 30, pattern = "pukul setengah {next_h}"}, Clock_Pattern{minute = 35, pattern = "pukul {next_h} kurang dua puluh lima"}, Clock_Pattern{minute = 40, pattern = "pukul {next_h} kurang dua puluh"}, Clock_Pattern{minute = 45, pattern = "pukul {next_h} kurang seperempat"}, Clock_Pattern{minute = 50, pattern = "pukul {next_h} kurang sepuluh"}, Clock_Pattern{minute = 55, pattern = "pukul {next_h} kurang lima"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1416,8 +1416,8 @@ locale_ig : Time_Locale = {
     clock = Clock_Config{
         hours = {"iri na abụọ", "otu", "abụọ", "atọ", "anọ", "ise", "isii", "asaa", "asatọ", "itoolu", "iri", "iri na otu"},
         midnight = "etiti abalị",
-        noon = "ehihie",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        noon = "etiti ehihie",
+        patterns = {Clock_Pattern{minute = 0, pattern = "elekere {h}"}, Clock_Pattern{minute = 5, pattern = "elekere {h} na nkeji ise"}, Clock_Pattern{minute = 10, pattern = "elekere {h} na nkeji iri"}, Clock_Pattern{minute = 15, pattern = "elekere {h} na nkeji iri na ise"}, Clock_Pattern{minute = 20, pattern = "elekere {h} na nkeji iri abụọ"}, Clock_Pattern{minute = 25, pattern = "elekere {h} na nkeji iri abụọ na ise"}, Clock_Pattern{minute = 30, pattern = "elekere {h} na ọkara"}, Clock_Pattern{minute = 35, pattern = "elekere {h} na nkeji iri atọ na ise"}, Clock_Pattern{minute = 40, pattern = "elekere {h} na nkeji iri anọ"}, Clock_Pattern{minute = 45, pattern = "elekere {h} na nkeji iri anọ na ise"}, Clock_Pattern{minute = 50, pattern = "elekere {h} na nkeji iri ise"}, Clock_Pattern{minute = 55, pattern = "elekere {h} na nkeji iri ise na ise"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1464,10 +1464,10 @@ locale_is : Time_Locale = {
 locale_it : Time_Locale = {
     code = "it",
     clock = Clock_Config{
-        hours = {"dodici", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici"},
+        hours = {"le dodici", "l'una", "le due", "le tre", "le quattro", "le cinque", "le sei", "le sette", "le otto", "le nove", "le dieci", "le undici"},
         midnight = "mezzanotte",
         noon = "mezzogiorno",
-        patterns = {Clock_Pattern{minute = 0, pattern = "le {h}"}, Clock_Pattern{minute = 5, pattern = "{h} e cinque"}, Clock_Pattern{minute = 10, pattern = "{h} e dieci"}, Clock_Pattern{minute = 15, pattern = "{h} e un quarto"}, Clock_Pattern{minute = 20, pattern = "{h} e venti"}, Clock_Pattern{minute = 25, pattern = "{h} e venticinque"}, Clock_Pattern{minute = 30, pattern = "{h} e mezza"}, Clock_Pattern{minute = 35, pattern = "{next_h} meno venticinque"}, Clock_Pattern{minute = 40, pattern = "{next_h} meno venti"}, Clock_Pattern{minute = 45, pattern = "{next_h} meno un quarto"}, Clock_Pattern{minute = 50, pattern = "{next_h} meno dieci"}, Clock_Pattern{minute = 55, pattern = "{next_h} meno cinque"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} e cinque"}, Clock_Pattern{minute = 10, pattern = "{h} e dieci"}, Clock_Pattern{minute = 15, pattern = "{h} e un quarto"}, Clock_Pattern{minute = 20, pattern = "{h} e venti"}, Clock_Pattern{minute = 25, pattern = "{h} e venticinque"}, Clock_Pattern{minute = 30, pattern = "{h} e mezza"}, Clock_Pattern{minute = 35, pattern = "{next_h} meno venticinque"}, Clock_Pattern{minute = 40, pattern = "{next_h} meno venti"}, Clock_Pattern{minute = 45, pattern = "{next_h} meno un quarto"}, Clock_Pattern{minute = 50, pattern = "{next_h} meno dieci"}, Clock_Pattern{minute = 55, pattern = "{next_h} meno cinque"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1516,8 +1516,8 @@ locale_jv : Time_Locale = {
     clock = Clock_Config{
         hours = {"rolas", "siji", "loro", "telu", "papat", "lima", "enem", "pitu", "wolu", "sanga", "sepuluh", "sewelas"},
         midnight = "tengah wengi",
-        noon = "awan",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        noon = "tengah awan",
+        patterns = {Clock_Pattern{minute = 0, pattern = "jam {h}"}, Clock_Pattern{minute = 5, pattern = "jam {h} luwih limang menit"}, Clock_Pattern{minute = 10, pattern = "jam {h} luwih sepuluh menit"}, Clock_Pattern{minute = 15, pattern = "jam {h} luwih seprapat"}, Clock_Pattern{minute = 20, pattern = "jam {h} luwih rong puluh menit"}, Clock_Pattern{minute = 25, pattern = "jam {h} luwih selawé menit"}, Clock_Pattern{minute = 30, pattern = "jam setengah {next_h}"}, Clock_Pattern{minute = 35, pattern = "jam {next_h} kurang selawé menit"}, Clock_Pattern{minute = 40, pattern = "jam {next_h} kurang rong puluh menit"}, Clock_Pattern{minute = 45, pattern = "jam {next_h} kurang seprapat"}, Clock_Pattern{minute = 50, pattern = "jam {next_h} kurang sepuluh menit"}, Clock_Pattern{minute = 55, pattern = "jam {next_h} kurang limang menit"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1542,7 +1542,7 @@ locale_ka : Time_Locale = {
         hours = {"თორმეტი", "ერთი", "ორი", "სამი", "ოთხი", "ხუთი", "ექვსი", "შვიდი", "რვა", "ცხრა", "ათი", "თერთმეტი"},
         midnight = "შუაღამე",
         noon = "შუადღე",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "ხუთი past {h}"}, Clock_Pattern{minute = 10, pattern = "ათი past {h}"}, Clock_Pattern{minute = 15, pattern = "თხუთმეტი past {h}"}, Clock_Pattern{minute = 20, pattern = "ოცი past {h}"}, Clock_Pattern{minute = 25, pattern = "ოცდახუთი past {h}"}, Clock_Pattern{minute = 30, pattern = "ოცდაათი past {h}"}, Clock_Pattern{minute = 35, pattern = "ოცდახუთი to {next_h}"}, Clock_Pattern{minute = 40, pattern = "ოცი to {next_h}"}, Clock_Pattern{minute = 45, pattern = "თხუთმეტი to {next_h}"}, Clock_Pattern{minute = 50, pattern = "ათი to {next_h}"}, Clock_Pattern{minute = 55, pattern = "ხუთი to {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} საათი"}, Clock_Pattern{minute = 5, pattern = "{h} საათი და ხუთი წუთი"}, Clock_Pattern{minute = 10, pattern = "{h} საათი და ათი წუთი"}, Clock_Pattern{minute = 15, pattern = "{h} საათი და თხუთმეტი წუთი"}, Clock_Pattern{minute = 20, pattern = "{h} საათი და ოცი წუთი"}, Clock_Pattern{minute = 25, pattern = "{h} საათი და ოცდახუთი წუთი"}, Clock_Pattern{minute = 30, pattern = "{h} საათი და ოცდაათი წუთი"}, Clock_Pattern{minute = 35, pattern = "{h} საათი და ოცდათხუთმეტი წუთი"}, Clock_Pattern{minute = 40, pattern = "{h} საათი და ორმოცი წუთი"}, Clock_Pattern{minute = 45, pattern = "{h} საათი და ორმოცდახუთი წუთი"}, Clock_Pattern{minute = 50, pattern = "{h} საათი და ორმოცდაათი წუთი"}, Clock_Pattern{minute = 55, pattern = "{h} საათი და ორმოცდათხუთმეტი წუთი"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1567,7 +1567,7 @@ locale_kbp : Time_Locale = {
         hours = {"hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm"},
         midnight = "ɖoo hɛkʊ",
         noon = "wɩsɩ taa",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ñɩɣyʊʊ {h}"}, Clock_Pattern{minute = 5, pattern = "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ"}, Clock_Pattern{minute = 10, pattern = "ñɩɣyʊʊ {h} nɛ miniti hiu"}, Clock_Pattern{minute = 15, pattern = "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ"}, Clock_Pattern{minute = 20, pattern = "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ"}, Clock_Pattern{minute = 25, pattern = "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ"}, Clock_Pattern{minute = 30, pattern = "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ"}, Clock_Pattern{minute = 35, pattern = "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ"}, Clock_Pattern{minute = 40, pattern = "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza"}, Clock_Pattern{minute = 45, pattern = "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ"}, Clock_Pattern{minute = 50, pattern = "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa"}, Clock_Pattern{minute = 55, pattern = "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1589,10 +1589,10 @@ locale_kbp : Time_Locale = {
 locale_kek : Time_Locale = {
     code = "kek",
     clock = Clock_Config{
-        hours = {"kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju"},
+        hours = {"kab'laju", "jun", "kiib'", "oxib'", "kaahib'", "oob'", "waqib'", "wuqub'", "waqxaqib'", "b'eleeb'", "lajeeb'", "junlaju"},
         midnight = "chaq' xkab'",
         noon = "chaq' chaab'il",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} hoonal"}, Clock_Pattern{minute = 5, pattern = "{h} hoonal rik'in oob' minuut"}, Clock_Pattern{minute = 10, pattern = "{h} hoonal rik'in lajeeb' minuut"}, Clock_Pattern{minute = 15, pattern = "{h} hoonal rik'in o'laju minuut"}, Clock_Pattern{minute = 20, pattern = "{h} hoonal rik'in junmay minuut"}, Clock_Pattern{minute = 25, pattern = "{h} hoonal rik'in oob' xkak'aal minuut"}, Clock_Pattern{minute = 30, pattern = "{h} hoonal rik'in yijach"}, Clock_Pattern{minute = 35, pattern = "{h} hoonal rik'in o'laju xkak'aal minuut"}, Clock_Pattern{minute = 40, pattern = "{h} hoonal rik'in kaak'aal minuut"}, Clock_Pattern{minute = 45, pattern = "{h} hoonal rik'in oob' roxk'aal minuut"}, Clock_Pattern{minute = 50, pattern = "{h} hoonal rik'in lajeeb' roxk'aal minuut"}, Clock_Pattern{minute = 55, pattern = "{h} hoonal rik'in o'laju roxk'aal minuut"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1614,10 +1614,10 @@ locale_kek : Time_Locale = {
 locale_ki : Time_Locale = {
     code = "ki",
     clock = Clock_Config{
-        hours = {"ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano", "ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe"},
+        hours = {"ithathatũ", "mũgwanja", "inyanya", "kenda", "ikũmi", "ikũmi na ĩmwe", "ikũmi na igĩrĩ", "ĩmwe", "igĩrĩ", "ithatũ", "inya", "ithano"},
         midnight = "ũtukũ gatagatĩ",
         noon = "mũthenya gatagatĩ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "thaa {h}"}, Clock_Pattern{minute = 5, pattern = "thaa {h} na ndagĩka ithano"}, Clock_Pattern{minute = 10, pattern = "thaa {h} na ndagĩka ikũmi"}, Clock_Pattern{minute = 15, pattern = "thaa {h} na ndagĩka ikũmi na ithano"}, Clock_Pattern{minute = 20, pattern = "thaa {h} na ndagĩka mĩrongo ĩĩrĩ"}, Clock_Pattern{minute = 25, pattern = "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano"}, Clock_Pattern{minute = 30, pattern = "thaa {h} na nuthu"}, Clock_Pattern{minute = 35, pattern = "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano"}, Clock_Pattern{minute = 40, pattern = "thaa {h} na ndagĩka mĩrongo ĩna"}, Clock_Pattern{minute = 45, pattern = "thaa {h} na ndagĩka mĩrongo ĩna na ithano"}, Clock_Pattern{minute = 50, pattern = "thaa {h} na ndagĩka mĩrongo ĩtano"}, Clock_Pattern{minute = 55, pattern = "thaa {h} na ndagĩka mĩrongo ĩtano na ithano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1642,7 +1642,7 @@ locale_kk : Time_Locale = {
         hours = {"он екі", "бір", "екі", "үш", "төрт", "бес", "алты", "жеті", "сегіз", "тоғыз", "он", "он бір"},
         midnight = "түн ортасы",
         noon = "түс",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "бес past {h}"}, Clock_Pattern{minute = 10, pattern = "он past {h}"}, Clock_Pattern{minute = 15, pattern = "он бес past {h}"}, Clock_Pattern{minute = 20, pattern = "жиырма past {h}"}, Clock_Pattern{minute = 25, pattern = "жиырма бес past {h}"}, Clock_Pattern{minute = 30, pattern = "отыз past {h}"}, Clock_Pattern{minute = 35, pattern = "жиырма бес to {next_h}"}, Clock_Pattern{minute = 40, pattern = "жиырма to {next_h}"}, Clock_Pattern{minute = 45, pattern = "он бес to {next_h}"}, Clock_Pattern{minute = 50, pattern = "он to {next_h}"}, Clock_Pattern{minute = 55, pattern = "бес to {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "сағат {h}"}, Clock_Pattern{minute = 5, pattern = "{h} нөл бес"}, Clock_Pattern{minute = 10, pattern = "{h} он"}, Clock_Pattern{minute = 15, pattern = "{h} он бес"}, Clock_Pattern{minute = 20, pattern = "{h} жиырма"}, Clock_Pattern{minute = 25, pattern = "{h} жиырма бес"}, Clock_Pattern{minute = 30, pattern = "{h} жарым"}, Clock_Pattern{minute = 35, pattern = "{h} отыз бес"}, Clock_Pattern{minute = 40, pattern = "{h} қырық"}, Clock_Pattern{minute = 45, pattern = "{h} қырық бес"}, Clock_Pattern{minute = 50, pattern = "{h} елу"}, Clock_Pattern{minute = 55, pattern = "{h} елу бес"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1664,10 +1664,10 @@ locale_kk : Time_Locale = {
 locale_kl : Time_Locale = {
     code = "kl",
     clock = Clock_Config{
-        hours = {"akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq"},
+        hours = {"aqqaneq-marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "aqqaneq-ataaseq"},
         midnight = "unnuap qeqqa",
         noon = "ulloqeqqap qeqqa",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "nalunaaqutaq {h}"}, Clock_Pattern{minute = 5, pattern = "{h} qaangiullugu minutsit tallimat"}, Clock_Pattern{minute = 10, pattern = "{h} qaangiullugu minutsit qulit"}, Clock_Pattern{minute = 15, pattern = "{h} qaangiullugu minutsit aqqaneq-tallimat"}, Clock_Pattern{minute = 20, pattern = "{h} qaangiullugu minutsit marlunnik qulillit"}, Clock_Pattern{minute = 25, pattern = "{h} qaangiullugu minutsit marlunnik qulillit tallimallu"}, Clock_Pattern{minute = 30, pattern = "{h} affarlu"}, Clock_Pattern{minute = 35, pattern = "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu"}, Clock_Pattern{minute = 40, pattern = "{next_h} sioqqullugu minutsit marlunnik qulillit"}, Clock_Pattern{minute = 45, pattern = "{next_h} sioqqullugu minutsit aqqaneq-tallimat"}, Clock_Pattern{minute = 50, pattern = "{next_h} sioqqullugu minutsit qulit"}, Clock_Pattern{minute = 55, pattern = "{next_h} sioqqullugu minutsit tallimat"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1692,7 +1692,7 @@ locale_km : Time_Locale = {
         hours = {"ដប់ពីរ", "មួយ", "ពីរ", "បី", "បួន", "ប្រាំ", "ប្រាំមួយ", "ប្រាំពីរ", "ប្រាំបី", "ប្រាំបួន", "ដប់", "ដប់មួយ"},
         midnight = "កណ្ដាលអធ្រាត្រ",
         noon = "ថ្ងៃត្រង់",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ម៉ោង{h}"}, Clock_Pattern{minute = 5, pattern = "ម៉ោង{h} ប្រាំនាទី"}, Clock_Pattern{minute = 10, pattern = "ម៉ោង{h} ដប់នាទី"}, Clock_Pattern{minute = 15, pattern = "ម៉ោង{h} ដប់ប្រាំនាទី"}, Clock_Pattern{minute = 20, pattern = "ម៉ោង{h} ម្ភៃនាទី"}, Clock_Pattern{minute = 25, pattern = "ម៉ោង{h} ម្ភៃប្រាំនាទី"}, Clock_Pattern{minute = 30, pattern = "ម៉ោង{h}កន្លះ"}, Clock_Pattern{minute = 35, pattern = "ម៉ោង{h} សាមសិបប្រាំនាទី"}, Clock_Pattern{minute = 40, pattern = "ម៉ោង{h} សែសិបនាទី"}, Clock_Pattern{minute = 45, pattern = "ម៉ោង{h} សែសិបប្រាំនាទី"}, Clock_Pattern{minute = 50, pattern = "ម៉ោង{h} ហាសិបនាទី"}, Clock_Pattern{minute = 55, pattern = "ម៉ោង{h} ហាសិបប្រាំនាទី"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1716,8 +1716,8 @@ locale_kn : Time_Locale = {
     clock = Clock_Config{
         hours = {"ಹನ್ನೆರಡು", "ಒಂದು", "ಎರಡು", "ಮೂರು", "ನಾಲ್ಕು", "ಐದು", "ಆರು", "ಏಳು", "ಎಂಟು", "ಒಂಬತ್ತು", "ಹತ್ತು", "ಹನ್ನೊಂದು"},
         midnight = "ಮಧ್ಯರಾತ್ರಿ",
-        noon = "ಮಧ್ಯಾಹ್ನ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        noon = "ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ಗಂಟೆ"}, Clock_Pattern{minute = 5, pattern = "{h} ಗಂಟೆ ಐದು ನಿಮಿಷ"}, Clock_Pattern{minute = 10, pattern = "{h} ಗಂಟೆ ಹತ್ತು ನಿಮಿಷ"}, Clock_Pattern{minute = 15, pattern = "{h} ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ"}, Clock_Pattern{minute = 20, pattern = "{h} ಗಂಟೆ ಇಪ್ಪತ್ತು ನಿಮಿಷ"}, Clock_Pattern{minute = 25, pattern = "{h} ಗಂಟೆ ಇಪ್ಪತ್ತೈದು ನಿಮಿಷ"}, Clock_Pattern{minute = 30, pattern = "{h} ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ"}, Clock_Pattern{minute = 35, pattern = "{h} ಗಂಟೆ ಮೂವತ್ತೈದು ನಿಮಿಷ"}, Clock_Pattern{minute = 40, pattern = "{h} ಗಂಟೆ ನಲವತ್ತು ನಿಮಿಷ"}, Clock_Pattern{minute = 45, pattern = "{h} ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ"}, Clock_Pattern{minute = 50, pattern = "{h} ಗಂಟೆ ಐವತ್ತು ನಿಮಿಷ"}, Clock_Pattern{minute = 55, pattern = "{h} ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1764,10 +1764,10 @@ locale_ko : Time_Locale = {
 locale_kpe : Time_Locale = {
     code = "kpe",
     clock = Clock_Config{
-        hours = {"puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"},
+        hours = {"puu da feere", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"},
         midnight = "kpindi kɔlɛ",
         noon = "tili-ma",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "awa {h}"}, Clock_Pattern{minute = 5, pattern = "awa {h} da miniti lɔɔlu"}, Clock_Pattern{minute = 10, pattern = "awa {h} da miniti puu"}, Clock_Pattern{minute = 15, pattern = "awa {h} da miniti puu da lɔɔlu"}, Clock_Pattern{minute = 20, pattern = "awa {h} da miniti puu feere"}, Clock_Pattern{minute = 25, pattern = "awa {h} da miniti puu feere da lɔɔlu"}, Clock_Pattern{minute = 30, pattern = "awa {h} da miniti puu sawa"}, Clock_Pattern{minute = 35, pattern = "awa {h} da miniti puu sawa da lɔɔlu"}, Clock_Pattern{minute = 40, pattern = "awa {h} da miniti puu naŋ"}, Clock_Pattern{minute = 45, pattern = "awa {h} da miniti puu naŋ da lɔɔlu"}, Clock_Pattern{minute = 50, pattern = "awa {h} da miniti puu lɔɔlu"}, Clock_Pattern{minute = 55, pattern = "awa {h} da miniti puu lɔɔlu da lɔɔlu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1817,7 +1817,7 @@ locale_ktu : Time_Locale = {
         hours = {"zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"},
         midnight = "midi ya butu",
         noon = "midi",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ngunga {h}"}, Clock_Pattern{minute = 5, pattern = "ngunga {h} na miniti tanu"}, Clock_Pattern{minute = 10, pattern = "ngunga {h} na miniti zomi"}, Clock_Pattern{minute = 15, pattern = "ngunga {h} na miniti zomi na tanu"}, Clock_Pattern{minute = 20, pattern = "ngunga {h} na miniti makumi zole"}, Clock_Pattern{minute = 25, pattern = "ngunga {h} na miniti makumi zole na tanu"}, Clock_Pattern{minute = 30, pattern = "ngunga {h} na ndambu"}, Clock_Pattern{minute = 35, pattern = "ngunga {h} na miniti makumi tatu na tanu"}, Clock_Pattern{minute = 40, pattern = "ngunga {h} na miniti makumi ya"}, Clock_Pattern{minute = 45, pattern = "ngunga {h} na miniti makumi ya na tanu"}, Clock_Pattern{minute = 50, pattern = "ngunga {h} na miniti makumi tanu"}, Clock_Pattern{minute = 55, pattern = "ngunga {h} na miniti makumi tanu na tanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1842,7 +1842,7 @@ locale_ku : Time_Locale = {
         hours = {"diwanzdeh", "yek", "du", "sê", "çar", "pênc", "şeş", "heft", "heşt", "neh", "deh", "yanzdeh"},
         midnight = "nîvê şevê",
         noon = "nîvro",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saet {h}"}, Clock_Pattern{minute = 5, pattern = "{h} û pênc deqe"}, Clock_Pattern{minute = 10, pattern = "{h} û deh deqe"}, Clock_Pattern{minute = 15, pattern = "{h} û çaryek"}, Clock_Pattern{minute = 20, pattern = "{h} û bîst deqe"}, Clock_Pattern{minute = 25, pattern = "{h} û bîst û pênc deqe"}, Clock_Pattern{minute = 30, pattern = "{h} û nîv"}, Clock_Pattern{minute = 35, pattern = "{next_h} kêm bîst û pênc deqe"}, Clock_Pattern{minute = 40, pattern = "{next_h} kêm bîst deqe"}, Clock_Pattern{minute = 45, pattern = "{next_h} kêm çaryek"}, Clock_Pattern{minute = 50, pattern = "{next_h} kêm deh deqe"}, Clock_Pattern{minute = 55, pattern = "{next_h} kêm pênc deqe"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1864,10 +1864,10 @@ locale_ku : Time_Locale = {
 locale_kw : Time_Locale = {
     code = "kw",
     clock = Clock_Config{
-        hours = {"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
+        hours = {"dewdhek", "unn", "diw", "teyr", "peder", "pymp", "hwegh", "seyth", "eth", "naw", "deg", "unnek"},
         midnight = "hanter nos",
         noon = "hanter dydh",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} eur"}, Clock_Pattern{minute = 5, pattern = "pymp mynysen wosa {h}"}, Clock_Pattern{minute = 10, pattern = "deg mynysen wosa {h}"}, Clock_Pattern{minute = 15, pattern = "kwarter wosa {h}"}, Clock_Pattern{minute = 20, pattern = "ugens mynysen wosa {h}"}, Clock_Pattern{minute = 25, pattern = "pymp mynysen warn ugens wosa {h}"}, Clock_Pattern{minute = 30, pattern = "hanter wosa {h}"}, Clock_Pattern{minute = 35, pattern = "pymp mynysen warn ugens dhe {next_h}"}, Clock_Pattern{minute = 40, pattern = "ugens mynysen dhe {next_h}"}, Clock_Pattern{minute = 45, pattern = "kwarter dhe {next_h}"}, Clock_Pattern{minute = 50, pattern = "deg mynysen dhe {next_h}"}, Clock_Pattern{minute = 55, pattern = "pymp mynysen dhe {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1892,7 +1892,7 @@ locale_ky : Time_Locale = {
         hours = {"он эки", "бир", "эки", "үч", "төрт", "беш", "алты", "жети", "сегиз", "тогуз", "он", "он бир"},
         midnight = "түн ортосу",
         noon = "түш",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "саат {h}"}, Clock_Pattern{minute = 5, pattern = "{h} нөл беш"}, Clock_Pattern{minute = 10, pattern = "{h} он"}, Clock_Pattern{minute = 15, pattern = "{h} он беш"}, Clock_Pattern{minute = 20, pattern = "{h} жыйырма"}, Clock_Pattern{minute = 25, pattern = "{h} жыйырма беш"}, Clock_Pattern{minute = 30, pattern = "{h} жарым"}, Clock_Pattern{minute = 35, pattern = "{h} отуз беш"}, Clock_Pattern{minute = 40, pattern = "{h} кырк"}, Clock_Pattern{minute = 45, pattern = "{h} кырк беш"}, Clock_Pattern{minute = 50, pattern = "{h} элүү"}, Clock_Pattern{minute = 55, pattern = "{h} элүү беш"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1939,10 +1939,10 @@ locale_lb : Time_Locale = {
 locale_lg : Time_Locale = {
     code = "lg",
     clock = Clock_Config{
-        hours = {"kkumi na bbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano", "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi na emu"},
+        hours = {"mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi n'emu", "kkumi n'ebbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano"},
         midnight = "ekiro eky'omu ttumbi",
         noon = "ettuntu",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "essaawa {h}"}, Clock_Pattern{minute = 5, pattern = "essaawa {h} n'eddakiika ttaano"}, Clock_Pattern{minute = 10, pattern = "essaawa {h} n'eddakiika kkumi"}, Clock_Pattern{minute = 15, pattern = "essaawa {h} n'eddakiika kkumi na ttaano"}, Clock_Pattern{minute = 20, pattern = "essaawa {h} n'eddakiika abiri"}, Clock_Pattern{minute = 25, pattern = "essaawa {h} n'eddakiika abiri mu ttaano"}, Clock_Pattern{minute = 30, pattern = "essaawa {h} n'ekitundu"}, Clock_Pattern{minute = 35, pattern = "essaawa {h} n'eddakiika asatu mu ttaano"}, Clock_Pattern{minute = 40, pattern = "essaawa {h} n'eddakiika ana"}, Clock_Pattern{minute = 45, pattern = "essaawa {h} n'eddakiika ana mu ttaano"}, Clock_Pattern{minute = 50, pattern = "essaawa {h} n'eddakiika ataano"}, Clock_Pattern{minute = 55, pattern = "essaawa {h} n'eddakiika ataano mu ttaano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1965,9 +1965,9 @@ locale_ln : Time_Locale = {
     code = "ln",
     clock = Clock_Config{
         hours = {"zómi na míbalé", "mɔ̌kɔ́", "míbalé", "mísáto", "mínéi", "mítáno", "motóba", "nsambo", "mwambe", "libwá", "zómi", "zómi na mɔ̌kɔ́"},
-        midnight = "mpɔ́kwa",
-        noon = "ntɔ́ngɔ́",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        midnight = "midí ya butú",
+        noon = "midí",
+        patterns = {Clock_Pattern{minute = 0, pattern = "ngonga ya {h}"}, Clock_Pattern{minute = 5, pattern = "ngonga ya {h} na miniti mítáno"}, Clock_Pattern{minute = 10, pattern = "ngonga ya {h} na miniti zómi"}, Clock_Pattern{minute = 15, pattern = "ngonga ya {h} na miniti zómi na mítáno"}, Clock_Pattern{minute = 20, pattern = "ngonga ya {h} na miniti ntúkú míbalé"}, Clock_Pattern{minute = 25, pattern = "ngonga ya {h} na miniti ntúkú míbalé na mítáno"}, Clock_Pattern{minute = 30, pattern = "ngonga ya {h} na ndámbo"}, Clock_Pattern{minute = 35, pattern = "ngonga ya {h} na miniti ntúkú mísáto na mítáno"}, Clock_Pattern{minute = 40, pattern = "ngonga ya {h} na miniti ntúkú mínéi"}, Clock_Pattern{minute = 45, pattern = "ngonga ya {h} na miniti ntúkú mínéi na mítáno"}, Clock_Pattern{minute = 50, pattern = "ngonga ya {h} na miniti ntúkú mítáno"}, Clock_Pattern{minute = 55, pattern = "ngonga ya {h} na miniti ntúkú mítáno na mítáno"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -1992,7 +1992,7 @@ locale_lo : Time_Locale = {
         hours = {"ສິບສອງ", "ໜຶ່ງ", "ສອງ", "ສາມ", "ສີ່", "ຫ້າ", "ຫົກ", "ເຈັດ", "ແປດ", "ເກົ້າ", "ສິບ", "ສິບເອັດ"},
         midnight = "ທ່ຽງຄືນ",
         noon = "ທ່ຽງ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}ໂມງ"}, Clock_Pattern{minute = 5, pattern = "{h}ໂມງ ຫ້ານາທີ"}, Clock_Pattern{minute = 10, pattern = "{h}ໂມງ ສິບນາທີ"}, Clock_Pattern{minute = 15, pattern = "{h}ໂມງ ສິບຫ້ານາທີ"}, Clock_Pattern{minute = 20, pattern = "{h}ໂມງ ຊາວນາທີ"}, Clock_Pattern{minute = 25, pattern = "{h}ໂມງ ຊາວຫ້ານາທີ"}, Clock_Pattern{minute = 30, pattern = "{h}ໂມງເຄິ່ງ"}, Clock_Pattern{minute = 35, pattern = "{h}ໂມງ ສາມສິບຫ້ານາທີ"}, Clock_Pattern{minute = 40, pattern = "{h}ໂມງ ສີ່ສິບນາທີ"}, Clock_Pattern{minute = 45, pattern = "{h}ໂມງ ສີ່ສິບຫ້ານາທີ"}, Clock_Pattern{minute = 50, pattern = "{h}ໂມງ ຫ້າສິບນາທີ"}, Clock_Pattern{minute = 55, pattern = "{h}ໂມງ ຫ້າສິບຫ້ານາທີ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2039,10 +2039,10 @@ locale_lt : Time_Locale = {
 locale_luo : Time_Locale = {
     code = "luo",
     clock = Clock_Config{
-        hours = {"apar gi ariyo", "achiel", "ariyo", "adek", "ang'wen", "abich", "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gi achiel"},
+        hours = {"auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gachiel", "apar gariyo", "achiel", "ariyo", "adek", "ang'wen", "abich"},
         midnight = "dier otieno",
         noon = "odiechieng' tir",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saa {h}"}, Clock_Pattern{minute = 5, pattern = "saa {h} gi dakika abich"}, Clock_Pattern{minute = 10, pattern = "saa {h} gi dakika apar"}, Clock_Pattern{minute = 15, pattern = "saa {h} gi dakika apar gabich"}, Clock_Pattern{minute = 20, pattern = "saa {h} gi dakika piero ariyo"}, Clock_Pattern{minute = 25, pattern = "saa {h} gi dakika piero ariyo gabich"}, Clock_Pattern{minute = 30, pattern = "saa {h} gi nus"}, Clock_Pattern{minute = 35, pattern = "saa {h} gi dakika piero adek gabich"}, Clock_Pattern{minute = 40, pattern = "saa {h} gi dakika piero ang'wen"}, Clock_Pattern{minute = 45, pattern = "saa {h} gi dakika piero ang'wen gabich"}, Clock_Pattern{minute = 50, pattern = "saa {h} gi dakika piero abich"}, Clock_Pattern{minute = 55, pattern = "saa {h} gi dakika piero abich gabich"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2089,10 +2089,10 @@ locale_lv : Time_Locale = {
 locale_mam : Time_Locale = {
     code = "mam",
     clock = Clock_Config{
-        hours = {"kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj"},
+        hours = {"kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'elaj", "laj", "junlaj"},
         midnight = "nik' aq'b'il",
         noon = "nik' q'ij",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} or"}, Clock_Pattern{minute = 5, pattern = "{h} or tuk' jwe' minut"}, Clock_Pattern{minute = 10, pattern = "{h} or tuk' laj minut"}, Clock_Pattern{minute = 15, pattern = "{h} or tuk' o'laj minut"}, Clock_Pattern{minute = 20, pattern = "{h} or tuk' winqan minut"}, Clock_Pattern{minute = 25, pattern = "{h} or tuk' jwe' toj ka'wnaq minut"}, Clock_Pattern{minute = 30, pattern = "{h} or tuk' nik'"}, Clock_Pattern{minute = 35, pattern = "{h} or tuk' o'laj toj ka'wnaq minut"}, Clock_Pattern{minute = 40, pattern = "{h} or tuk' ka'wnaq minut"}, Clock_Pattern{minute = 45, pattern = "{h} or tuk' jwe' toj oxk'al minut"}, Clock_Pattern{minute = 50, pattern = "{h} or tuk' laj toj oxk'al minut"}, Clock_Pattern{minute = 55, pattern = "{h} or tuk' o'laj toj oxk'al minut"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2114,10 +2114,10 @@ locale_mam : Time_Locale = {
 locale_men : Time_Locale = {
     code = "men",
     clock = Clock_Config{
-        hours = {"pu wɛlɛ", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"},
+        hours = {"pu mahu fele", "yila", "fele", "sawa", "nani", "lɔlu", "wɛita", "wɔfela", "wayakpa", "taawu", "pu", "pu mahu yila"},
         midnight = "kpindi gbɔyɔŋ",
         noon = "ndɔlei-ma",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "awa {h}"}, Clock_Pattern{minute = 5, pattern = "awa {h} kɛ miniti lɔɔlu"}, Clock_Pattern{minute = 10, pattern = "awa {h} kɛ miniti pu"}, Clock_Pattern{minute = 15, pattern = "awa {h} kɛ miniti pu mahu lɔɔlu"}, Clock_Pattern{minute = 20, pattern = "awa {h} kɛ miniti nuu yila gboyongo"}, Clock_Pattern{minute = 25, pattern = "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu"}, Clock_Pattern{minute = 30, pattern = "awa {h} kɛ miniti nuu yila gboyongo mahu pu"}, Clock_Pattern{minute = 35, pattern = "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu"}, Clock_Pattern{minute = 40, pattern = "awa {h} kɛ miniti nuu fele gboyongo"}, Clock_Pattern{minute = 45, pattern = "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu"}, Clock_Pattern{minute = 50, pattern = "awa {h} kɛ miniti nuu fele gboyongo mahu pu"}, Clock_Pattern{minute = 55, pattern = "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2139,10 +2139,10 @@ locale_men : Time_Locale = {
 locale_mfe : Time_Locale = {
     code = "mfe",
     clock = Clock_Config{
-        hours = {"douz", "enn", "de", "trwa", "kat", "senk", "sis", "set", "wit", "nef", "dis", "onz"},
+        hours = {"douzer", "enn er", "dezer", "trwazer", "katrer", "senker", "sizer", "seter", "witer", "never", "dizer", "onzer"},
         midnight = "minwi",
         noon = "midi",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} senk"}, Clock_Pattern{minute = 10, pattern = "{h} dis"}, Clock_Pattern{minute = 15, pattern = "{h} ekar"}, Clock_Pattern{minute = 20, pattern = "{h} vin"}, Clock_Pattern{minute = 25, pattern = "{h} vennsenk"}, Clock_Pattern{minute = 30, pattern = "{h} edmi"}, Clock_Pattern{minute = 35, pattern = "{next_h} mwin vennsenk"}, Clock_Pattern{minute = 40, pattern = "{next_h} mwin vin"}, Clock_Pattern{minute = 45, pattern = "{next_h} mwin kar"}, Clock_Pattern{minute = 50, pattern = "{next_h} mwin dis"}, Clock_Pattern{minute = 55, pattern = "{next_h} mwin senk"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2167,7 +2167,7 @@ locale_mg : Time_Locale = {
         hours = {"roa ambin'ny folo", "iray", "roa", "telo", "efatra", "dimy", "enina", "fito", "valo", "sivy", "folo", "iraika ambin'ny folo"},
         midnight = "misasakalina",
         noon = "atoandro",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ora"}, Clock_Pattern{minute = 5, pattern = "{h} sy dimy minitra"}, Clock_Pattern{minute = 10, pattern = "{h} sy folo minitra"}, Clock_Pattern{minute = 15, pattern = "{h} sy fahefatra"}, Clock_Pattern{minute = 20, pattern = "{h} sy roapolo minitra"}, Clock_Pattern{minute = 25, pattern = "{h} sy dimy amby roapolo minitra"}, Clock_Pattern{minute = 30, pattern = "{h} sy sasany"}, Clock_Pattern{minute = 35, pattern = "dimy amby roapolo minitra alohan'ny {next_h}"}, Clock_Pattern{minute = 40, pattern = "roapolo minitra alohan'ny {next_h}"}, Clock_Pattern{minute = 45, pattern = "fahefatra alohan'ny {next_h}"}, Clock_Pattern{minute = 50, pattern = "folo minitra alohan'ny {next_h}"}, Clock_Pattern{minute = 55, pattern = "dimy minitra alohan'ny {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ora"}, Clock_Pattern{minute = 5, pattern = "{h} ora sy dimy minitra"}, Clock_Pattern{minute = 10, pattern = "{h} ora sy folo minitra"}, Clock_Pattern{minute = 15, pattern = "{h} ora sy fahefany"}, Clock_Pattern{minute = 20, pattern = "{h} ora sy roapolo minitra"}, Clock_Pattern{minute = 25, pattern = "{h} ora sy dimy amby roapolo minitra"}, Clock_Pattern{minute = 30, pattern = "{h} ora sy sasany"}, Clock_Pattern{minute = 35, pattern = "{next_h} ora latsaka dimy amby roapolo minitra"}, Clock_Pattern{minute = 40, pattern = "{next_h} ora latsaka roapolo minitra"}, Clock_Pattern{minute = 45, pattern = "{next_h} ora latsaka fahefany"}, Clock_Pattern{minute = 50, pattern = "{next_h} ora latsaka folo minitra"}, Clock_Pattern{minute = 55, pattern = "{next_h} ora latsaka dimy minitra"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2217,7 +2217,7 @@ locale_mk : Time_Locale = {
         hours = {"дванаесет", "еден", "два", "три", "четири", "пет", "шест", "седум", "осум", "девет", "десет", "единаесет"},
         midnight = "полноќ",
         noon = "пладне",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} часа"}, Clock_Pattern{minute = 5, pattern = "пет po {h}"}, Clock_Pattern{minute = 10, pattern = "десет po {h}"}, Clock_Pattern{minute = 15, pattern = "петнаесет po {h}"}, Clock_Pattern{minute = 20, pattern = "дваесет po {h}"}, Clock_Pattern{minute = 25, pattern = "дваесет и пет po {h}"}, Clock_Pattern{minute = 30, pattern = "триесет po {h}"}, Clock_Pattern{minute = 35, pattern = "дваесет и пет do {next_h}"}, Clock_Pattern{minute = 40, pattern = "дваесет do {next_h}"}, Clock_Pattern{minute = 45, pattern = "петнаесет do {next_h}"}, Clock_Pattern{minute = 50, pattern = "десет do {next_h}"}, Clock_Pattern{minute = 55, pattern = "пет do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} часот"}, Clock_Pattern{minute = 5, pattern = "{h} и пет"}, Clock_Pattern{minute = 10, pattern = "{h} и десет"}, Clock_Pattern{minute = 15, pattern = "{h} и петнаесет"}, Clock_Pattern{minute = 20, pattern = "{h} и дваесет"}, Clock_Pattern{minute = 25, pattern = "{h} и дваесет и пет"}, Clock_Pattern{minute = 30, pattern = "{h} и пол"}, Clock_Pattern{minute = 35, pattern = "дваесет и пет до {next_h}"}, Clock_Pattern{minute = 40, pattern = "дваесет до {next_h}"}, Clock_Pattern{minute = 45, pattern = "петнаесет до {next_h}"}, Clock_Pattern{minute = 50, pattern = "десет до {next_h}"}, Clock_Pattern{minute = 55, pattern = "пет до {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2239,10 +2239,10 @@ locale_mk : Time_Locale = {
 locale_ml : Time_Locale = {
     code = "ml",
     clock = Clock_Config{
-        hours = {"പന്ത്രണ്ട്", "ഒന്ന്", "രണ്ട്", "മൂന്ന്", "നാല്", "അഞ്ച്", "ആറ്", "ഏഴ്", "എട്ട്", "ഒമ്പത്", "പത്ത്", "പതിനൊന്ന്"},
+        hours = {"പന്ത്രണ്ട", "ഒന്ന", "രണ്ട", "മൂന്ന", "നാല", "അഞ്ച", "ആറ", "ഏഴ", "എട്ട", "ഒമ്പത", "പത്ത", "പതിനൊന്ന"},
         midnight = "അർദ്ധരാത്രി",
         noon = "ഉച്ച",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}് മണി"}, Clock_Pattern{minute = 5, pattern = "{h}് മണി അഞ്ച് മിനിറ്റ്"}, Clock_Pattern{minute = 10, pattern = "{h}് മണി പത്ത് മിനിറ്റ്"}, Clock_Pattern{minute = 15, pattern = "{h}േകാൽ"}, Clock_Pattern{minute = 20, pattern = "{h}് മണി ഇരുപത് മിനിറ്റ്"}, Clock_Pattern{minute = 25, pattern = "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്"}, Clock_Pattern{minute = 30, pattern = "{h}ര"}, Clock_Pattern{minute = 35, pattern = "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്"}, Clock_Pattern{minute = 40, pattern = "{h}് മണി നാൽപ്പത് മിനിറ്റ്"}, Clock_Pattern{minute = 45, pattern = "{h}േമുക്കാൽ"}, Clock_Pattern{minute = 50, pattern = "{h}് മണി അമ്പത് മിനിറ്റ്"}, Clock_Pattern{minute = 55, pattern = "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2264,10 +2264,10 @@ locale_ml : Time_Locale = {
 locale_mn : Time_Locale = {
     code = "mn",
     clock = Clock_Config{
-        hours = {"арван хоёр", "нэг", "хоёр", "гурав", "дөрөв", "тав", "зургаа", "долоо", "найм", "ес", "арав", "арван нэг"},
+        hours = {"арван хоёр", "нэг", "хоёр", "гурван", "дөрвөн", "таван", "зургаан", "долоон", "найман", "есөн", "арван", "арван нэгэн"},
         midnight = "шөнө дунд",
         noon = "үд дунд",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} цаг"}, Clock_Pattern{minute = 5, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 10, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 15, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 20, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 25, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 30, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 35, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 40, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 45, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 50, pattern = "{h} цаг {m} минут"}, Clock_Pattern{minute = 55, pattern = "{h} цаг {m} минут"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} цаг"}, Clock_Pattern{minute = 5, pattern = "{h} цаг таван минут"}, Clock_Pattern{minute = 10, pattern = "{h} цаг арван минут"}, Clock_Pattern{minute = 15, pattern = "{h} цаг арван таван минут"}, Clock_Pattern{minute = 20, pattern = "{h} цаг хорин минут"}, Clock_Pattern{minute = 25, pattern = "{h} цаг хорин таван минут"}, Clock_Pattern{minute = 30, pattern = "{h} цаг хагас"}, Clock_Pattern{minute = 35, pattern = "{h} цаг гучин таван минут"}, Clock_Pattern{minute = 40, pattern = "{h} цаг дөчин минут"}, Clock_Pattern{minute = 45, pattern = "{h} цаг дөчин таван минут"}, Clock_Pattern{minute = 50, pattern = "{h} цаг тавин минут"}, Clock_Pattern{minute = 55, pattern = "{h} цаг тавин таван минут"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2289,10 +2289,10 @@ locale_mn : Time_Locale = {
 locale_mnk : Time_Locale = {
     code = "mnk",
     clock = Clock_Config{
-        hours = {"tan ning fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ ning kiliŋ"},
+        hours = {"taŋ niŋ fula", "kiliŋ", "fula", "saba", "naani", "luulu", "wɔɔrɔ", "wolonfila", "sey", "kɔnɔntɔ", "taŋ", "taŋ niŋ kiliŋ"},
         midnight = "sutu-tili-laŋ",
         noon = "tili-konto",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "talaŋ {h}"}, Clock_Pattern{minute = 5, pattern = "talaŋ {h} aniŋ miniti luulu"}, Clock_Pattern{minute = 10, pattern = "talaŋ {h} aniŋ miniti taŋ"}, Clock_Pattern{minute = 15, pattern = "talaŋ {h} aniŋ miniti taŋ niŋ luulu"}, Clock_Pattern{minute = 20, pattern = "talaŋ {h} aniŋ miniti muwaŋ"}, Clock_Pattern{minute = 25, pattern = "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu"}, Clock_Pattern{minute = 30, pattern = "talaŋ {h} aniŋ talantee"}, Clock_Pattern{minute = 35, pattern = "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu"}, Clock_Pattern{minute = 40, pattern = "talaŋ {h} aniŋ miniti taŋ naani"}, Clock_Pattern{minute = 45, pattern = "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu"}, Clock_Pattern{minute = 50, pattern = "talaŋ {h} aniŋ miniti taŋ luulu"}, Clock_Pattern{minute = 55, pattern = "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2314,10 +2314,10 @@ locale_mnk : Time_Locale = {
 locale_mos : Time_Locale = {
     code = "mos",
     clock = Clock_Config{
-        hours = {"piig la a yiibu", "a yembre", "a yiibu", "a tãabo", "a naase", "a nu", "a yoobe", "a yopoe", "a niini", "a wae", "piiga", "piig la a yembre"},
+        hours = {"lɛɛr piig la a yiibu", "lɛɛr a yembre", "lɛɛr a yiibu", "lɛɛr a tãabo", "lɛɛr a naase", "lɛɛr a nu", "lɛɛr a yoobe", "lɛɛr a yopoe", "lɛɛr a nii", "lɛɛr a wae", "lɛɛr piiga", "lɛɛr piig la a yembre"},
         midnight = "yʋng-vɩɩse",
         noon = "wĩntoog zabre",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} la minit a nu"}, Clock_Pattern{minute = 10, pattern = "{h} la minit piiga"}, Clock_Pattern{minute = 15, pattern = "{h} la minit piig la a nu"}, Clock_Pattern{minute = 20, pattern = "{h} la minit pisi"}, Clock_Pattern{minute = 25, pattern = "{h} la minit pisi la a nu"}, Clock_Pattern{minute = 30, pattern = "{h} la pʋɩ-sʋka"}, Clock_Pattern{minute = 35, pattern = "{h} la minit pis-tã la a nu"}, Clock_Pattern{minute = 40, pattern = "{h} la minit pis-naase"}, Clock_Pattern{minute = 45, pattern = "{h} la minit pis-naase la a nu"}, Clock_Pattern{minute = 50, pattern = "{h} la minit pis-nu"}, Clock_Pattern{minute = 55, pattern = "{h} la minit pis-nu la a nu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2342,7 +2342,7 @@ locale_mr : Time_Locale = {
         hours = {"बारा", "एक", "दोन", "तीन", "चार", "पाच", "सहा", "सात", "आठ", "नऊ", "दहा", "अकरा"},
         midnight = "मध्यरात्र",
         noon = "दुपार",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} वाजता"}, Clock_Pattern{minute = 5, pattern = "{h} वाजून पाच मिनिटे"}, Clock_Pattern{minute = 10, pattern = "{h} वाजून दहा मिनिटे"}, Clock_Pattern{minute = 15, pattern = "सव्वा {h}"}, Clock_Pattern{minute = 20, pattern = "{h} वाजून वीस मिनिटे"}, Clock_Pattern{minute = 25, pattern = "{h} वाजून पंचवीस मिनिटे"}, Clock_Pattern{minute = 30, pattern = "{h} वाजून तीस मिनिटे"}, Clock_Pattern{minute = 35, pattern = "{next_h} वाजायला पंचवीस मिनिटे"}, Clock_Pattern{minute = 40, pattern = "{next_h} वाजायला वीस मिनिटे"}, Clock_Pattern{minute = 45, pattern = "पावणे {next_h}"}, Clock_Pattern{minute = 50, pattern = "{next_h} वाजायला दहा मिनिटे"}, Clock_Pattern{minute = 55, pattern = "{next_h} वाजायला पाच मिनिटे"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2367,7 +2367,7 @@ locale_ms : Time_Locale = {
         hours = {"dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "lapan", "sembilan", "sepuluh", "sebelas"},
         midnight = "tengah malam",
         noon = "tengah hari",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "lima lewat {h}"}, Clock_Pattern{minute = 10, pattern = "sepuluh lewat {h}"}, Clock_Pattern{minute = 15, pattern = "suku lewat {h}"}, Clock_Pattern{minute = 20, pattern = "dua puluh lewat {h}"}, Clock_Pattern{minute = 25, pattern = "dua puluh lima lewat {h}"}, Clock_Pattern{minute = 30, pattern = "setengah lewat {h}"}, Clock_Pattern{minute = 35, pattern = "dua puluh lima menjelang {next_h}"}, Clock_Pattern{minute = 40, pattern = "dua puluh menjelang {next_h}"}, Clock_Pattern{minute = 45, pattern = "suku menjelang {next_h}"}, Clock_Pattern{minute = 50, pattern = "sepuluh menjelang {next_h}"}, Clock_Pattern{minute = 55, pattern = "lima menjelang {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "pukul {h}"}, Clock_Pattern{minute = 5, pattern = "pukul {h} lima minit"}, Clock_Pattern{minute = 10, pattern = "pukul {h} sepuluh minit"}, Clock_Pattern{minute = 15, pattern = "pukul {h} suku"}, Clock_Pattern{minute = 20, pattern = "pukul {h} dua puluh minit"}, Clock_Pattern{minute = 25, pattern = "pukul {h} dua puluh lima minit"}, Clock_Pattern{minute = 30, pattern = "pukul {h} setengah"}, Clock_Pattern{minute = 35, pattern = "pukul {next_h} kurang dua puluh lima minit"}, Clock_Pattern{minute = 40, pattern = "pukul {next_h} kurang dua puluh minit"}, Clock_Pattern{minute = 45, pattern = "pukul {next_h} kurang suku"}, Clock_Pattern{minute = 50, pattern = "pukul {next_h} kurang sepuluh minit"}, Clock_Pattern{minute = 55, pattern = "pukul {next_h} kurang lima minit"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2389,10 +2389,10 @@ locale_ms : Time_Locale = {
 locale_mt : Time_Locale = {
     code = "mt",
     clock = Clock_Config{
-        hours = {"tnax", "waħda", "tnejn", "tlieta", "erbgħa", "ħamsa", "sitta", "sebgħa", "tmienja", "disgħa", "għaxra", "ħdax"},
-        midnight = "nofsinhar",
+        hours = {"it-tnax", "is-siegħa", "is-sagħtejn", "it-tlieta", "l-erbgħa", "il-ħamsa", "is-sitta", "is-sebgħa", "it-tmienja", "id-disgħa", "l-għaxra", "il-ħdax"},
+        midnight = "nofsillejl",
         noon = "nofsinhar",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} u ħamsa"}, Clock_Pattern{minute = 10, pattern = "{h} u għaxra"}, Clock_Pattern{minute = 15, pattern = "{h} u kwart"}, Clock_Pattern{minute = 20, pattern = "{h} u għoxrin"}, Clock_Pattern{minute = 25, pattern = "{h} u ħamsa u għoxrin"}, Clock_Pattern{minute = 30, pattern = "{h} u nofs"}, Clock_Pattern{minute = 35, pattern = "{next_h} neqsin ħamsa u għoxrin"}, Clock_Pattern{minute = 40, pattern = "{next_h} neqsin għoxrin"}, Clock_Pattern{minute = 45, pattern = "{next_h} neqsin kwart"}, Clock_Pattern{minute = 50, pattern = "{next_h} neqsin għaxra"}, Clock_Pattern{minute = 55, pattern = "{next_h} neqsin ħamsa"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2417,7 +2417,7 @@ locale_my : Time_Locale = {
         hours = {"ဆယ့်နှစ်", "တစ်", "နှစ်", "သုံး", "လေး", "ငါး", "ခြောက်", "ခုနစ်", "ရှစ်", "ကိုး", "ဆယ်", "ဆယ့်တစ်"},
         midnight = "သန်းခေါင်",
         noon = "မွန်းတည့်",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}နာရီ"}, Clock_Pattern{minute = 5, pattern = "{h}နာရီ ငါးမိနစ်"}, Clock_Pattern{minute = 10, pattern = "{h}နာရီ ဆယ်မိနစ်"}, Clock_Pattern{minute = 15, pattern = "{h}နာရီ ဆယ့်ငါးမိနစ်"}, Clock_Pattern{minute = 20, pattern = "{h}နာရီ နှစ်ဆယ်မိနစ်"}, Clock_Pattern{minute = 25, pattern = "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်"}, Clock_Pattern{minute = 30, pattern = "{h}နာရီခွဲ"}, Clock_Pattern{minute = 35, pattern = "{h}နာရီ သုံးဆယ့်ငါးမိနစ်"}, Clock_Pattern{minute = 40, pattern = "{h}နာရီ လေးဆယ်မိနစ်"}, Clock_Pattern{minute = 45, pattern = "{h}နာရီ လေးဆယ့်ငါးမိနစ်"}, Clock_Pattern{minute = 50, pattern = "{h}နာရီ ငါးဆယ်မိနစ်"}, Clock_Pattern{minute = 55, pattern = "{h}နာရီ ငါးဆယ့်ငါးမိနစ်"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2439,7 +2439,7 @@ locale_my : Time_Locale = {
 locale_nb : Time_Locale = {
     code = "nb",
     clock = Clock_Config{
-        hours = {"tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"},
+        hours = {"tolv", "ett", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"},
         midnight = "midnatt",
         noon = "middag",
         patterns = {Clock_Pattern{minute = 0, pattern = "klokka {h}"}, Clock_Pattern{minute = 5, pattern = "fem over {h}"}, Clock_Pattern{minute = 10, pattern = "ti over {h}"}, Clock_Pattern{minute = 15, pattern = "kvart over {h}"}, Clock_Pattern{minute = 20, pattern = "tjue over {h}"}, Clock_Pattern{minute = 25, pattern = "fem på halv {next_h}"}, Clock_Pattern{minute = 30, pattern = "halv {next_h}"}, Clock_Pattern{minute = 35, pattern = "fem over halv {next_h}"}, Clock_Pattern{minute = 40, pattern = "tjue på {next_h}"}, Clock_Pattern{minute = 45, pattern = "kvart på {next_h}"}, Clock_Pattern{minute = 50, pattern = "ti på {next_h}"}, Clock_Pattern{minute = 55, pattern = "fem på {next_h}"}},
@@ -2464,10 +2464,10 @@ locale_nb : Time_Locale = {
 locale_nd : Time_Locale = {
     code = "nd",
     clock = Clock_Config{
-        hours = {"litshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyangalombili", "isitshiyangalolunye", "litshumi", "litshumi lanye"},
+        hours = {"letshumi lambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesitshiyangalombili", "lesitshiyangalolunye", "letshumi", "letshumi lanye"},
         midnight = "phakathi kobusuku",
         noon = "emini",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ihola {h}"}, Clock_Pattern{minute = 5, pattern = "ihola {h} lemizuzu emihlanu"}, Clock_Pattern{minute = 10, pattern = "ihola {h} lemizuzu elitshumi"}, Clock_Pattern{minute = 15, pattern = "ihola {h} lemizuzu elitshumi lanhlanu"}, Clock_Pattern{minute = 20, pattern = "ihola {h} lemizuzu engamatshumi amabili"}, Clock_Pattern{minute = 25, pattern = "ihola {h} lemizuzu engamatshumi amabili lanhlanu"}, Clock_Pattern{minute = 30, pattern = "ihola {h} lengxenye"}, Clock_Pattern{minute = 35, pattern = "ihola {h} lemizuzu engamatshumi amathathu lanhlanu"}, Clock_Pattern{minute = 40, pattern = "ihola {h} lemizuzu engamatshumi amane"}, Clock_Pattern{minute = 45, pattern = "ihola {h} lemizuzu engamatshumi amane lanhlanu"}, Clock_Pattern{minute = 50, pattern = "ihola {h} lemizuzu engamatshumi amahlanu"}, Clock_Pattern{minute = 55, pattern = "ihola {h} lemizuzu engamatshumi amahlanu lanhlanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2492,7 +2492,7 @@ locale_ne : Time_Locale = {
         hours = {"बाह्र", "एक", "दुई", "तीन", "चार", "पाँच", "छ", "सात", "आठ", "नौ", "दश", "एघार"},
         midnight = "मध्यरात",
         noon = "मध्यान्ह",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} बजे"}, Clock_Pattern{minute = 5, pattern = "{h} बजेर पाँच मिनेट"}, Clock_Pattern{minute = 10, pattern = "{h} बजेर दश मिनेट"}, Clock_Pattern{minute = 15, pattern = "सवा {h} बजे"}, Clock_Pattern{minute = 20, pattern = "{h} बजेर बीस मिनेट"}, Clock_Pattern{minute = 25, pattern = "{h} बजेर पच्चीस मिनेट"}, Clock_Pattern{minute = 30, pattern = "{h} बजेर तीस मिनेट"}, Clock_Pattern{minute = 35, pattern = "{next_h} बज्न पच्चीस मिनेट बाँकी"}, Clock_Pattern{minute = 40, pattern = "{next_h} बज्न बीस मिनेट बाँकी"}, Clock_Pattern{minute = 45, pattern = "पौने {next_h} बजे"}, Clock_Pattern{minute = 50, pattern = "{next_h} बज्न दश मिनेट बाँकी"}, Clock_Pattern{minute = 55, pattern = "{next_h} बज्न पाँच मिनेट बाँकी"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2517,7 +2517,7 @@ locale_ng : Time_Locale = {
         hours = {"omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe"},
         midnight = "onguloshi pakati",
         noon = "omutenya",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "otundi {h}"}, Clock_Pattern{minute = 5, pattern = "otundi {h} noominute ntano"}, Clock_Pattern{minute = 10, pattern = "otundi {h} noominute omulongo"}, Clock_Pattern{minute = 15, pattern = "otundi {h} noominute omulongo nantano"}, Clock_Pattern{minute = 20, pattern = "otundi {h} noominute omilongo mbali"}, Clock_Pattern{minute = 25, pattern = "otundi {h} noominute omilongo mbali nantano"}, Clock_Pattern{minute = 30, pattern = "otundi {h} netata"}, Clock_Pattern{minute = 35, pattern = "otundi {h} noominute omilongo ndatu nantano"}, Clock_Pattern{minute = 40, pattern = "otundi {h} noominute omilongo ne"}, Clock_Pattern{minute = 45, pattern = "otundi {h} noominute omilongo ne nantano"}, Clock_Pattern{minute = 50, pattern = "otundi {h} noominute omilongo ntano"}, Clock_Pattern{minute = 55, pattern = "otundi {h} noominute omilongo ntano nantano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2541,8 +2541,8 @@ locale_nl : Time_Locale = {
     clock = Clock_Config{
         hours = {"twaalf", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf"},
         midnight = "middernacht",
-        noon = "middag",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} uur"}, Clock_Pattern{minute = 5, pattern = "vijf over {h}"}, Clock_Pattern{minute = 10, pattern = "tien over {h}"}, Clock_Pattern{minute = 15, pattern = "kwart over {h}"}, Clock_Pattern{minute = 20, pattern = "twintig over {h}"}, Clock_Pattern{minute = 25, pattern = "vijf voor half {next_h}"}, Clock_Pattern{minute = 30, pattern = "half {next_h}"}, Clock_Pattern{minute = 35, pattern = "vijf over half {next_h}"}, Clock_Pattern{minute = 40, pattern = "twintig voor {next_h}"}, Clock_Pattern{minute = 45, pattern = "kwart voor {next_h}"}, Clock_Pattern{minute = 50, pattern = "tien voor {next_h}"}, Clock_Pattern{minute = 55, pattern = "vijf voor {next_h}"}},
+        noon = "twaalf uur 's middags",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} uur"}, Clock_Pattern{minute = 5, pattern = "vijf over {h}"}, Clock_Pattern{minute = 10, pattern = "tien over {h}"}, Clock_Pattern{minute = 15, pattern = "kwart over {h}"}, Clock_Pattern{minute = 20, pattern = "tien voor half {next_h}"}, Clock_Pattern{minute = 25, pattern = "vijf voor half {next_h}"}, Clock_Pattern{minute = 30, pattern = "half {next_h}"}, Clock_Pattern{minute = 35, pattern = "vijf over half {next_h}"}, Clock_Pattern{minute = 40, pattern = "tien over half {next_h}"}, Clock_Pattern{minute = 45, pattern = "kwart voor {next_h}"}, Clock_Pattern{minute = 50, pattern = "tien voor {next_h}"}, Clock_Pattern{minute = 55, pattern = "vijf voor {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2564,10 +2564,10 @@ locale_nl : Time_Locale = {
 locale_nr : Time_Locale = {
     code = "nr",
     clock = Clock_Config{
-        hours = {"itshumi lambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isitshiyagalombili", "isitshiyagalolunye", "itshumi", "itshumi lanye"},
+        hours = {"letjhumi nambili", "lokuthoma", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithandathu", "lekhomba", "lobunane", "lethoba", "letjhumi", "letjhumi nanye"},
         midnight = "phakathi kobusuku",
         noon = "emini",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ihora {h}"}, Clock_Pattern{minute = 5, pattern = "ihora {h} nemizuzu emihlanu"}, Clock_Pattern{minute = 10, pattern = "ihora {h} nemizuzu elitjhumi"}, Clock_Pattern{minute = 15, pattern = "ihora {h} nemizuzu elitjhumi nanhlanu"}, Clock_Pattern{minute = 20, pattern = "ihora {h} nemizuzu engamatjhumi amabili"}, Clock_Pattern{minute = 25, pattern = "ihora {h} nemizuzu engamatjhumi amabili nanhlanu"}, Clock_Pattern{minute = 30, pattern = "ihora {h} nesiquntu"}, Clock_Pattern{minute = 35, pattern = "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu"}, Clock_Pattern{minute = 40, pattern = "ihora {h} nemizuzu engamatjhumi amane"}, Clock_Pattern{minute = 45, pattern = "ihora {h} nemizuzu engamatjhumi amane nanhlanu"}, Clock_Pattern{minute = 50, pattern = "ihora {h} nemizuzu engamatjhumi amahlanu"}, Clock_Pattern{minute = 55, pattern = "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2589,10 +2589,10 @@ locale_nr : Time_Locale = {
 locale_nso : Time_Locale = {
     code = "nso",
     clock = Clock_Config{
-        hours = {"lesome pedi", "tee", "pedi", "tharo", "nne", "hlano", "tshela", "šupa", "seswai", "senyane", "lesome", "lesome tee"},
+        hours = {"lesomepedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshela", "bošupa", "seswai", "senyane", "lesome", "lesometee"},
         midnight = "bošego gare",
         noon = "mosegare",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "iri ya {h}"}, Clock_Pattern{minute = 5, pattern = "iri ya {h} le metsotso ye mehlano"}, Clock_Pattern{minute = 10, pattern = "iri ya {h} le metsotso ye lesome"}, Clock_Pattern{minute = 15, pattern = "iri ya {h} le kotara"}, Clock_Pattern{minute = 20, pattern = "iri ya {h} le metsotso ye masomepedi"}, Clock_Pattern{minute = 25, pattern = "iri ya {h} le metsotso ye masomepedi-hlano"}, Clock_Pattern{minute = 30, pattern = "iri ya {h} le seripagare"}, Clock_Pattern{minute = 35, pattern = "iri ya {h} le metsotso ye masometharo-hlano"}, Clock_Pattern{minute = 40, pattern = "iri ya {h} le metsotso ye masomenne"}, Clock_Pattern{minute = 45, pattern = "iri ya {h} le metsotso ye masomenne-hlano"}, Clock_Pattern{minute = 50, pattern = "iri ya {h} le metsotso ye masomehlano"}, Clock_Pattern{minute = 55, pattern = "iri ya {h} le metsotso ye masomehlano-hlano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2614,10 +2614,10 @@ locale_nso : Time_Locale = {
 locale_nus : Time_Locale = {
     code = "nus",
     clock = Clock_Config{
-        hours = {"thiäär ke rou", "tök", "rou", "diäk", "ŋuan", "dhiëc", "bäkɛl", "dhorou", "bät", "kuɔn", "thiäär", "thiäär ku tök"},
+        hours = {"wäl wi̱ rɛw", "kɛl", "rɛw", "diɔk", "ŋuaan", "dhieec", "bäkɛl", "bäärɔw", "bädäk", "bäŋuan", "wäl", "wäl wi̱ kɛl"},
         midnight = "wakɔ̈u",
         noon = "cäŋ kɔ̈k",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "thaar {h}"}, Clock_Pattern{minute = 5, pattern = "thaar {h} kɛnɛ minit dhieec"}, Clock_Pattern{minute = 10, pattern = "thaar {h} kɛnɛ minit wäl"}, Clock_Pattern{minute = 15, pattern = "thaar {h} kɛnɛ minit wäl wi̱ dhieec"}, Clock_Pattern{minute = 20, pattern = "thaar {h} kɛnɛ minit jiɛn rɛw"}, Clock_Pattern{minute = 25, pattern = "thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec"}, Clock_Pattern{minute = 30, pattern = "thaar {h} kɛnɛ minit jiɛn diɔk"}, Clock_Pattern{minute = 35, pattern = "thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec"}, Clock_Pattern{minute = 40, pattern = "thaar {h} kɛnɛ minit jiɛn ŋuaan"}, Clock_Pattern{minute = 45, pattern = "thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec"}, Clock_Pattern{minute = 50, pattern = "thaar {h} kɛnɛ minit jiɛn dhieec"}, Clock_Pattern{minute = 55, pattern = "thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2639,10 +2639,10 @@ locale_nus : Time_Locale = {
 locale_ny : Time_Locale = {
     code = "ny",
     clock = Clock_Config{
-        hours = {"khumi ndi ziwiri", "imodzi", "ziwiri", "zitatu", "zinayi", "zisanu", "zisanu ndi chimodzi", "zisanu ndi ziwiri", "zisanu ndi zitatu", "zisanu ndi zinayi", "khumi", "khumi ndi chimodzi"},
+        hours = {"lakhumi ndi chiwiri", "loyamba", "lachiwiri", "lachitatu", "lachinayi", "lachisanu", "lachisanu ndi chimodzi", "lachisanu ndi chiwiri", "lachisanu ndi chitatu", "lachisanu ndi chinayi", "lakhumi", "lakhumi ndi chimodzi"},
         midnight = "pakati pausiku",
         noon = "usana",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ola {h}"}, Clock_Pattern{minute = 5, pattern = "ola {h} ndi mphindi zisanu"}, Clock_Pattern{minute = 10, pattern = "ola {h} ndi mphindi khumi"}, Clock_Pattern{minute = 15, pattern = "ola {h} ndi mphindi khumi ndi zisanu"}, Clock_Pattern{minute = 20, pattern = "ola {h} ndi mphindi makumi awiri"}, Clock_Pattern{minute = 25, pattern = "ola {h} ndi mphindi makumi awiri ndi zisanu"}, Clock_Pattern{minute = 30, pattern = "ola {h} ndi theka"}, Clock_Pattern{minute = 35, pattern = "ola {h} ndi mphindi makumi atatu ndi zisanu"}, Clock_Pattern{minute = 40, pattern = "ola {h} ndi mphindi makumi anayi"}, Clock_Pattern{minute = 45, pattern = "ola {h} ndi mphindi makumi anayi ndi zisanu"}, Clock_Pattern{minute = 50, pattern = "ola {h} ndi mphindi makumi asanu"}, Clock_Pattern{minute = 55, pattern = "ola {h} ndi mphindi makumi asanu ndi zisanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2664,10 +2664,10 @@ locale_ny : Time_Locale = {
 locale_om : Time_Locale = {
     code = "om",
     clock = Clock_Config{
-        hours = {"kudha lama", "tokko", "lama", "sadii", "afur", "shan", "jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko"},
+        hours = {"jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko", "kudha lama", "tokko", "lama", "sadii", "afur", "shan"},
         midnight = "walakkii halkan",
         noon = "guyyaa walakkaa",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "sa'aatii {h}"}, Clock_Pattern{minute = 5, pattern = "sa'aatii {h} fi daqiiqaa shan"}, Clock_Pattern{minute = 10, pattern = "sa'aatii {h} fi daqiiqaa kudhan"}, Clock_Pattern{minute = 15, pattern = "sa'aatii {h} fi daqiiqaa kudha shan"}, Clock_Pattern{minute = 20, pattern = "sa'aatii {h} fi daqiiqaa digdama"}, Clock_Pattern{minute = 25, pattern = "sa'aatii {h} fi daqiiqaa digdamii shan"}, Clock_Pattern{minute = 30, pattern = "sa'aatii {h} fi walakkaa"}, Clock_Pattern{minute = 35, pattern = "sa'aatii {h} fi daqiiqaa soddomii shan"}, Clock_Pattern{minute = 40, pattern = "sa'aatii {h} fi daqiiqaa afurtama"}, Clock_Pattern{minute = 45, pattern = "sa'aatii {h} fi daqiiqaa afurtamii shan"}, Clock_Pattern{minute = 50, pattern = "sa'aatii {h} fi daqiiqaa shantama"}, Clock_Pattern{minute = 55, pattern = "sa'aatii {h} fi daqiiqaa shantamii shan"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2692,7 +2692,7 @@ locale_or : Time_Locale = {
         hours = {"ବାରଟା", "ଗୋଟିଏ", "ଦୁଇଟା", "ତିନିଟା", "ଚାରିଟା", "ପାଞ୍ଚଟା", "ଛଅଟା", "ସାତଟା", "ଆଠଟା", "ନଅଟା", "ଦଶଟା", "ଏଗାରଟା"},
         midnight = "ମଧ୍ୟରାତ୍ରି",
         noon = "ମଧ୍ୟାହ୍ନ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍"}, Clock_Pattern{minute = 10, pattern = "{h} ବାଜି ଦଶ ମିନିଟ୍"}, Clock_Pattern{minute = 15, pattern = "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍"}, Clock_Pattern{minute = 20, pattern = "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍"}, Clock_Pattern{minute = 25, pattern = "{h} ବାଜି ପଚିଶ ମିନିଟ୍"}, Clock_Pattern{minute = 30, pattern = "{h} ବାଜି ତିରିଶ ମିନିଟ୍"}, Clock_Pattern{minute = 35, pattern = "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍"}, Clock_Pattern{minute = 40, pattern = "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍"}, Clock_Pattern{minute = 45, pattern = "ପାଉଣେ {next_h}"}, Clock_Pattern{minute = 50, pattern = "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍"}, Clock_Pattern{minute = 55, pattern = "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2717,7 +2717,7 @@ locale_pa : Time_Locale = {
         hours = {"ਬਾਰਾਂ", "ਇੱਕ", "ਦੋ", "ਤਿੰਨ", "ਚਾਰ", "ਪੰਜ", "ਛੇ", "ਸੱਤ", "ਅੱਠ", "ਨੌਂ", "ਦਸ", "ਗਿਆਰਾਂ"},
         midnight = "ਅੱਧੀ ਰਾਤ",
         noon = "ਦੁਪਹਿਰ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ਵਜੇ"}, Clock_Pattern{minute = 5, pattern = "{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ"}, Clock_Pattern{minute = 10, pattern = "{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ"}, Clock_Pattern{minute = 15, pattern = "ਸਵਾ {h} ਵਜੇ"}, Clock_Pattern{minute = 20, pattern = "{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ"}, Clock_Pattern{minute = 25, pattern = "{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ"}, Clock_Pattern{minute = 30, pattern = "{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ"}, Clock_Pattern{minute = 35, pattern = "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ"}, Clock_Pattern{minute = 40, pattern = "{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ"}, Clock_Pattern{minute = 45, pattern = "ਪੌਣੇ {next_h} ਵਜੇ"}, Clock_Pattern{minute = 50, pattern = "{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ"}, Clock_Pattern{minute = 55, pattern = "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2742,7 +2742,7 @@ locale_pis : Time_Locale = {
         hours = {"twelf", "wan", "tu", "tri", "foa", "faev", "sikis", "seven", "eit", "naen", "ten", "eleven"},
         midnight = "midonaet",
         noon = "midei",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} kilok"}, Clock_Pattern{minute = 5, pattern = "faev minit pas {h}"}, Clock_Pattern{minute = 10, pattern = "ten minit pas {h}"}, Clock_Pattern{minute = 15, pattern = "kwata pas {h}"}, Clock_Pattern{minute = 20, pattern = "twenti minit pas {h}"}, Clock_Pattern{minute = 25, pattern = "twenti faev minit pas {h}"}, Clock_Pattern{minute = 30, pattern = "haf pas {h}"}, Clock_Pattern{minute = 35, pattern = "twenti faev minit tu {next_h}"}, Clock_Pattern{minute = 40, pattern = "twenti minit tu {next_h}"}, Clock_Pattern{minute = 45, pattern = "kwata tu {next_h}"}, Clock_Pattern{minute = 50, pattern = "ten minit tu {next_h}"}, Clock_Pattern{minute = 55, pattern = "faev minit tu {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2767,7 +2767,7 @@ locale_pl : Time_Locale = {
         hours = {"dwunasta", "pierwsza", "druga", "trzecia", "czwarta", "piąta", "szósta", "siódma", "ósma", "dziewiąta", "dziesiąta", "jedenasta"},
         midnight = "północ",
         noon = "południe",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "pięć po {h}"}, Clock_Pattern{minute = 10, pattern = "dziesięć po {h}"}, Clock_Pattern{minute = 15, pattern = "piętnaście po {h}"}, Clock_Pattern{minute = 20, pattern = "dwadzieścia po {h}"}, Clock_Pattern{minute = 25, pattern = "dwadzieścia pięć po {h}"}, Clock_Pattern{minute = 30, pattern = "trzydzieści po {h}"}, Clock_Pattern{minute = 35, pattern = "dwadzieścia pięć do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dwadzieścia do {next_h}"}, Clock_Pattern{minute = 45, pattern = "piętnaście do {next_h}"}, Clock_Pattern{minute = 50, pattern = "dziesięć do {next_h}"}, Clock_Pattern{minute = 55, pattern = "pięć do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} pięć"}, Clock_Pattern{minute = 10, pattern = "{h} dziesięć"}, Clock_Pattern{minute = 15, pattern = "{h} piętnaście"}, Clock_Pattern{minute = 20, pattern = "{h} dwadzieścia"}, Clock_Pattern{minute = 25, pattern = "{h} dwadzieścia pięć"}, Clock_Pattern{minute = 30, pattern = "{h} trzydzieści"}, Clock_Pattern{minute = 35, pattern = "za dwadzieścia pięć {next_h}"}, Clock_Pattern{minute = 40, pattern = "za dwadzieścia {next_h}"}, Clock_Pattern{minute = 45, pattern = "za kwadrans {next_h}"}, Clock_Pattern{minute = 50, pattern = "za dziesięć {next_h}"}, Clock_Pattern{minute = 55, pattern = "za pięć {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2789,10 +2789,10 @@ locale_pl : Time_Locale = {
 locale_pov : Time_Locale = {
     code = "pov",
     clock = Clock_Config{
-        hours = {"dozi", "un", "dos", "tres", "kuatru", "sinku", "seis", "seti", "oitu", "novi", "des", "onzi"},
+        hours = {"dozi ora", "un ora", "dos ora", "tres ora", "kuatru ora", "sinku ora", "seis ora", "seti ora", "oitu ora", "novi ora", "des ora", "onzi ora"},
         midnight = "meia noti",
         noon = "meiu dia",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} i sinku"}, Clock_Pattern{minute = 10, pattern = "{h} i des"}, Clock_Pattern{minute = 15, pattern = "{h} i kinzi"}, Clock_Pattern{minute = 20, pattern = "{h} i vinti"}, Clock_Pattern{minute = 25, pattern = "{h} i vinti i sinku"}, Clock_Pattern{minute = 30, pattern = "{h} i meiu"}, Clock_Pattern{minute = 35, pattern = "{h} i trinta i sinku"}, Clock_Pattern{minute = 40, pattern = "{h} i kuarenta"}, Clock_Pattern{minute = 45, pattern = "{h} i kuarenta i sinku"}, Clock_Pattern{minute = 50, pattern = "{h} i sinkuenta"}, Clock_Pattern{minute = 55, pattern = "{h} i sinkuenta i sinku"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2814,10 +2814,10 @@ locale_pov : Time_Locale = {
 locale_ps : Time_Locale = {
     code = "ps",
     clock = Clock_Config{
-        hours = {"دولس", "یو", "دوه", "درې", "څلور", "پنځه", "شپږ", "اووه", "اته", "نهه", "لس", "یوولس"},
+        hours = {"دولس بجې", "یوه بجه", "دوه بجې", "درې بجې", "څلور بجې", "پنځه بجې", "شپږ بجې", "اووه بجې", "اته بجې", "نهه بجې", "لس بجې", "یوولس بجې"},
         midnight = "نیمه شپه",
         noon = "غرمه",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} او پنځه دقیقې"}, Clock_Pattern{minute = 10, pattern = "{h} او لس دقیقې"}, Clock_Pattern{minute = 15, pattern = "{h} او پنځلس دقیقې"}, Clock_Pattern{minute = 20, pattern = "{h} او شل دقیقې"}, Clock_Pattern{minute = 25, pattern = "{h} او پنځه ویشت دقیقې"}, Clock_Pattern{minute = 30, pattern = "{h} او دېرش دقیقې"}, Clock_Pattern{minute = 35, pattern = "{h} او پنځه دېرش دقیقې"}, Clock_Pattern{minute = 40, pattern = "{h} او څلوېښت دقیقې"}, Clock_Pattern{minute = 45, pattern = "{h} او پنځه څلوېښت دقیقې"}, Clock_Pattern{minute = 50, pattern = "{h} او پنځوس دقیقې"}, Clock_Pattern{minute = 55, pattern = "{h} او پنځه پنځوس دقیقې"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2842,7 +2842,7 @@ locale_pt : Time_Locale = {
         hours = {"doze", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze"},
         midnight = "meia-noite",
         noon = "meio-dia",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} horas"}, Clock_Pattern{minute = 5, pattern = "{h} e cinco"}, Clock_Pattern{minute = 10, pattern = "{h} e dez"}, Clock_Pattern{minute = 15, pattern = "{h} e um quarto"}, Clock_Pattern{minute = 20, pattern = "{h} e vinte"}, Clock_Pattern{minute = 25, pattern = "{h} e vinte e cinco"}, Clock_Pattern{minute = 30, pattern = "{h} e meia"}, Clock_Pattern{minute = 35, pattern = "vinte e cinco para as {next_h}"}, Clock_Pattern{minute = 40, pattern = "vinte para as {next_h}"}, Clock_Pattern{minute = 45, pattern = "um quarto para as {next_h}"}, Clock_Pattern{minute = 50, pattern = "dez para as {next_h}"}, Clock_Pattern{minute = 55, pattern = "cinco para as {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} em ponto"}, Clock_Pattern{minute = 5, pattern = "{h} e cinco"}, Clock_Pattern{minute = 10, pattern = "{h} e dez"}, Clock_Pattern{minute = 15, pattern = "{h} e um quarto"}, Clock_Pattern{minute = 20, pattern = "{h} e vinte"}, Clock_Pattern{minute = 25, pattern = "{h} e vinte e cinco"}, Clock_Pattern{minute = 30, pattern = "{h} e meia"}, Clock_Pattern{minute = 35, pattern = "vinte e cinco para as {next_h}"}, Clock_Pattern{minute = 40, pattern = "vinte para as {next_h}"}, Clock_Pattern{minute = 45, pattern = "um quarto para as {next_h}"}, Clock_Pattern{minute = 50, pattern = "dez para as {next_h}"}, Clock_Pattern{minute = 55, pattern = "cinco para as {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2867,7 +2867,7 @@ locale_qu : Time_Locale = {
         hours = {"chunka iskayniyuq", "huk", "iskay", "kimsa", "tawa", "pichqa", "suqta", "qanchis", "pusaq", "isqun", "chunka", "chunka hukniyuq"},
         midnight = "chawpi tuta",
         noon = "chawpi p'unchaw",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} pichqa"}, Clock_Pattern{minute = 10, pattern = "{h} chunka"}, Clock_Pattern{minute = 15, pattern = "{h} chunka pichqayuq"}, Clock_Pattern{minute = 20, pattern = "{h} iskay chunka"}, Clock_Pattern{minute = 25, pattern = "{h} iskay chunka pichqayuq"}, Clock_Pattern{minute = 30, pattern = "{h} kimsa chunka"}, Clock_Pattern{minute = 35, pattern = "{next_h} mana iskay chunka pichqayuq"}, Clock_Pattern{minute = 40, pattern = "{next_h} mana iskay chunka"}, Clock_Pattern{minute = 45, pattern = "{next_h} mana chunka pichqayuq"}, Clock_Pattern{minute = 50, pattern = "{next_h} mana chunka"}, Clock_Pattern{minute = 55, pattern = "{next_h} mana pichqa"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ura"}, Clock_Pattern{minute = 5, pattern = "{h} ura pichqa"}, Clock_Pattern{minute = 10, pattern = "{h} ura chunka"}, Clock_Pattern{minute = 15, pattern = "{h} ura chunka pichqayuq"}, Clock_Pattern{minute = 20, pattern = "{h} ura iskay chunka"}, Clock_Pattern{minute = 25, pattern = "{h} ura iskay chunka pichqayuq"}, Clock_Pattern{minute = 30, pattern = "{h} ura kimsa chunka"}, Clock_Pattern{minute = 35, pattern = "{h} ura kimsa chunka pichqayuq"}, Clock_Pattern{minute = 40, pattern = "{h} ura tawa chunka"}, Clock_Pattern{minute = 45, pattern = "{h} ura tawa chunka pichqayuq"}, Clock_Pattern{minute = 50, pattern = "{h} ura pichqa chunka"}, Clock_Pattern{minute = 55, pattern = "{h} ura pichqa chunka pichqayuq"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2889,10 +2889,10 @@ locale_qu : Time_Locale = {
 locale_quc : Time_Locale = {
     code = "quc",
     clock = Clock_Config{
-        hours = {"kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj"},
+        hours = {"kab'lajuj", "jun", "keb'", "oxib'", "kajib'", "job'", "waqib'", "wuqub'", "wajxaqib'", "b'elejeb'", "lajuj", "julajuj"},
         midnight = "nik'aj aq'ab'",
         noon = "nik'aj q'ij",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ramaj"}, Clock_Pattern{minute = 5, pattern = "{h} ramaj job'"}, Clock_Pattern{minute = 10, pattern = "{h} ramaj lajuj"}, Clock_Pattern{minute = 15, pattern = "{h} ramaj olajuj"}, Clock_Pattern{minute = 20, pattern = "{h} ramaj juwinaq"}, Clock_Pattern{minute = 25, pattern = "{h} ramaj juwinaq job'"}, Clock_Pattern{minute = 30, pattern = "{h} ramaj juwinaq lajuj"}, Clock_Pattern{minute = 35, pattern = "{h} ramaj juwinaq olajuj"}, Clock_Pattern{minute = 40, pattern = "{h} ramaj kawinaq"}, Clock_Pattern{minute = 45, pattern = "{h} ramaj kawinaq job'"}, Clock_Pattern{minute = 50, pattern = "{h} ramaj kawinaq lajuj"}, Clock_Pattern{minute = 55, pattern = "{h} ramaj kawinaq olajuj"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2917,7 +2917,7 @@ locale_ro : Time_Locale = {
         hours = {"douăsprezece", "unu", "două", "trei", "patru", "cinci", "șase", "șapte", "opt", "nouă", "zece", "unsprezece"},
         midnight = "miezul nopții",
         noon = "amiază",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ore"}, Clock_Pattern{minute = 5, pattern = "cinci peste {h}"}, Clock_Pattern{minute = 10, pattern = "zece peste {h}"}, Clock_Pattern{minute = 15, pattern = "un sfert peste {h}"}, Clock_Pattern{minute = 20, pattern = "douăzeci peste {h}"}, Clock_Pattern{minute = 25, pattern = "douăzeci și cinci peste {h}"}, Clock_Pattern{minute = 30, pattern = "jumătate peste {h}"}, Clock_Pattern{minute = 35, pattern = "douăzeci și cinci înainte de {next_h}"}, Clock_Pattern{minute = 40, pattern = "douăzeci înainte de {next_h}"}, Clock_Pattern{minute = 45, pattern = "un sfert înainte de {next_h}"}, Clock_Pattern{minute = 50, pattern = "zece înainte de {next_h}"}, Clock_Pattern{minute = 55, pattern = "cinci înainte de {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ora {h}"}, Clock_Pattern{minute = 5, pattern = "{h} și cinci"}, Clock_Pattern{minute = 10, pattern = "{h} și zece"}, Clock_Pattern{minute = 15, pattern = "{h} și un sfert"}, Clock_Pattern{minute = 20, pattern = "{h} și douăzeci"}, Clock_Pattern{minute = 25, pattern = "{h} și douăzeci și cinci"}, Clock_Pattern{minute = 30, pattern = "{h} și jumătate"}, Clock_Pattern{minute = 35, pattern = "{next_h} fără douăzeci și cinci"}, Clock_Pattern{minute = 40, pattern = "{next_h} fără douăzeci"}, Clock_Pattern{minute = 45, pattern = "{next_h} fără un sfert"}, Clock_Pattern{minute = 50, pattern = "{next_h} fără zece"}, Clock_Pattern{minute = 55, pattern = "{next_h} fără cinci"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2942,7 +2942,7 @@ locale_ru : Time_Locale = {
         hours = {"двенадцать", "час", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать"},
         midnight = "полночь",
         noon = "полдень",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} часа"}, Clock_Pattern{minute = 5, pattern = "пять po {h}"}, Clock_Pattern{minute = 10, pattern = "десять po {h}"}, Clock_Pattern{minute = 15, pattern = "пятнадцать po {h}"}, Clock_Pattern{minute = 20, pattern = "двадцать po {h}"}, Clock_Pattern{minute = 25, pattern = "двадцать пять po {h}"}, Clock_Pattern{minute = 30, pattern = "тридцать po {h}"}, Clock_Pattern{minute = 35, pattern = "двадцать пять do {next_h}"}, Clock_Pattern{minute = 40, pattern = "двадцать do {next_h}"}, Clock_Pattern{minute = 45, pattern = "пятнадцать do {next_h}"}, Clock_Pattern{minute = 50, pattern = "десять do {next_h}"}, Clock_Pattern{minute = 55, pattern = "пять do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ровно {h}"}, Clock_Pattern{minute = 5, pattern = "{h} ноль пять"}, Clock_Pattern{minute = 10, pattern = "{h} десять"}, Clock_Pattern{minute = 15, pattern = "{h} пятнадцать"}, Clock_Pattern{minute = 20, pattern = "{h} двадцать"}, Clock_Pattern{minute = 25, pattern = "{h} двадцать пять"}, Clock_Pattern{minute = 30, pattern = "{h} тридцать"}, Clock_Pattern{minute = 35, pattern = "без двадцати пяти {next_h}"}, Clock_Pattern{minute = 40, pattern = "без двадцати {next_h}"}, Clock_Pattern{minute = 45, pattern = "без четверти {next_h}"}, Clock_Pattern{minute = 50, pattern = "без десяти {next_h}"}, Clock_Pattern{minute = 55, pattern = "без пяти {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2964,10 +2964,10 @@ locale_ru : Time_Locale = {
 locale_rw : Time_Locale = {
     code = "rw",
     clock = Clock_Config{
-        hours = {"cumi n'ebyiri", "rimwe", "ebyiri", "eshatu", "enye", "eshanu", "esheshatu", "indwi", "umunani", "icyenda", "icumi", "cumi n'imwe"},
-        midnight = "igicuku",
-        noon = "saa sita",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        hours = {"sita", "saba", "munani", "cyenda", "kumi", "kumi n'imwe", "kumi n'ebyiri", "moya", "mbiri", "tatu", "ine", "tanu"},
+        midnight = "saa sita z'ijoro",
+        noon = "saa sita z'amanywa",
+        patterns = {Clock_Pattern{minute = 0, pattern = "saa {h}"}, Clock_Pattern{minute = 5, pattern = "saa {h} n'iminota itanu"}, Clock_Pattern{minute = 10, pattern = "saa {h} n'iminota icumi"}, Clock_Pattern{minute = 15, pattern = "saa {h} n'iminota cumi n'itanu"}, Clock_Pattern{minute = 20, pattern = "saa {h} n'iminota makumyabiri"}, Clock_Pattern{minute = 25, pattern = "saa {h} n'iminota makumyabiri n'itanu"}, Clock_Pattern{minute = 30, pattern = "saa {h} n'igice"}, Clock_Pattern{minute = 35, pattern = "saa {h} n'iminota mirongo itatu n'itanu"}, Clock_Pattern{minute = 40, pattern = "saa {h} n'iminota mirongo ine"}, Clock_Pattern{minute = 45, pattern = "saa {h} n'iminota mirongo ine n'itanu"}, Clock_Pattern{minute = 50, pattern = "saa {h} n'iminota mirongo itanu"}, Clock_Pattern{minute = 55, pattern = "saa {h} n'iminota mirongo itanu n'itanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -2989,10 +2989,10 @@ locale_rw : Time_Locale = {
 locale_sar : Time_Locale = {
     code = "sar",
     clock = Clock_Config{
-        hours = {"mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "kɨ̀ndá", "ɗìi", "mùtá", "sɔ̀", "mɨ̀ndɨ̀", "mɨ̀ndɨ̀ kɨ̀ndá", "mɨ̀sá", "mɨ̀ndɨ̀ mùtá", "mɨ̀ndɨ̀ sɔ̀", "mɔ̀ɔ́", "mɔ̀ɔ́ kɨ̀ndá"},
+        hours = {"lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "lɛɛr kɨ̀ndá", "lɛɛr ɗìi", "lɛɛr mùtá", "lɛɛr sɔ̀", "lɛɛr mɨ̀ndɨ̀", "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá", "lɛɛr mɨ̀sá", "lɛɛr mɨ̀ndɨ̀ mùtá", "lɛɛr mɨ̀ndɨ̀ sɔ̀", "lɛɛr mɔ̀ɔ́", "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá"},
         midnight = "badɔ",
         noon = "mbɔr ndɔ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} kɨ̀ minít mɨ̀ndɨ̀"}, Clock_Pattern{minute = 10, pattern = "{h} kɨ̀ minít mɔ̀ɔ́"}, Clock_Pattern{minute = 15, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"}, Clock_Pattern{minute = 20, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi"}, Clock_Pattern{minute = 25, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"}, Clock_Pattern{minute = 30, pattern = "{h} kɩ̀ ndá̰ŋ"}, Clock_Pattern{minute = 35, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"}, Clock_Pattern{minute = 40, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀"}, Clock_Pattern{minute = 45, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"}, Clock_Pattern{minute = 50, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀"}, Clock_Pattern{minute = 55, pattern = "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3014,10 +3014,10 @@ locale_sar : Time_Locale = {
 locale_sd : Time_Locale = {
     code = "sd",
     clock = Clock_Config{
-        hours = {"ٻارھ", "ھڪ", "ٻه", "ٽي", "چار", "پنج", "ڇھ", "ست", "اٺ", "نائن", "ڏھ", "يارھ"},
+        hours = {"ٻارهن", "هڪ", "ٻه", "ٽي", "چار", "پنج", "ڇهه", "ست", "اٺ", "نوَ", "ڏهه", "يارهن"},
         midnight = "اڌ رات",
         noon = "ٽپھر",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} وڳي"}, Clock_Pattern{minute = 5, pattern = "{h} وڳي پنج منٽ"}, Clock_Pattern{minute = 10, pattern = "{h} وڳي ڏهه منٽ"}, Clock_Pattern{minute = 15, pattern = "سوا {h} وڳي"}, Clock_Pattern{minute = 20, pattern = "{h} وڳي ويهه منٽ"}, Clock_Pattern{minute = 25, pattern = "{h} وڳي پنجويهه منٽ"}, Clock_Pattern{minute = 30, pattern = "{h} وڳي ٽيهه منٽ"}, Clock_Pattern{minute = 35, pattern = "{next_h} وڳڻ ۾ پنجويهه منٽ"}, Clock_Pattern{minute = 40, pattern = "{next_h} وڳڻ ۾ ويهه منٽ"}, Clock_Pattern{minute = 45, pattern = "پوڻا {next_h} وڳي"}, Clock_Pattern{minute = 50, pattern = "{next_h} وڳڻ ۾ ڏهه منٽ"}, Clock_Pattern{minute = 55, pattern = "{next_h} وڳڻ ۾ پنج منٽ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3039,10 +3039,10 @@ locale_sd : Time_Locale = {
 locale_sg : Time_Locale = {
     code = "sg",
     clock = Clock_Config{
-        hours = {"bâlè-ûse", "ôko", "ûse", "otâ", "usïö", "okü", "ömënë", "mbïrïmbïrï", "mënâmbârâ", "gonambâlâ", "bâlè", "bâlè na ôko"},
+        hours = {"balë-ôko na ûse", "ôko", "ûse", "otâ", "usïö", "okü", "omanä", "mbâsâmbârâ", "miombe", "gümbâyä", "balë-ôko", "balë-ôko na ôko"},
         midnight = "gï na lögö",
         noon = "lâ nzönï",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ngbonga {h}"}, Clock_Pattern{minute = 5, pattern = "ngbonga {h} na minüti okü"}, Clock_Pattern{minute = 10, pattern = "ngbonga {h} na minüti balë-ôko"}, Clock_Pattern{minute = 15, pattern = "ngbonga {h} na minüti balë-ôko na okü"}, Clock_Pattern{minute = 20, pattern = "ngbonga {h} na minüti balë-ûse"}, Clock_Pattern{minute = 25, pattern = "ngbonga {h} na minüti balë-ûse na okü"}, Clock_Pattern{minute = 30, pattern = "ngbonga {h} na ndâmbo"}, Clock_Pattern{minute = 35, pattern = "ngbonga {h} na minüti balë-otâ na okü"}, Clock_Pattern{minute = 40, pattern = "ngbonga {h} na minüti balë-usïö"}, Clock_Pattern{minute = 45, pattern = "ngbonga {h} na minüti balë-usïö na okü"}, Clock_Pattern{minute = 50, pattern = "ngbonga {h} na minüti balë-okü"}, Clock_Pattern{minute = 55, pattern = "ngbonga {h} na minüti balë-okü na okü"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3064,10 +3064,10 @@ locale_sg : Time_Locale = {
 locale_shi : Time_Locale = {
     code = "shi",
     clock = Clock_Config{
-        hours = {"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
-        midnight = "ⵏⵚ ⵏ ⵉⴹ",
-        noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        hours = {"tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"},
+        midnight = "nṣ n iḍ",
+        noon = "tizwarnin",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} d smmus tusdiqin"}, Clock_Pattern{minute = 10, pattern = "{h} d mraw tusdiqin"}, Clock_Pattern{minute = 15, pattern = "{h} d rrbɛ"}, Clock_Pattern{minute = 20, pattern = "{h} d ɛcrin n tusdiqt"}, Clock_Pattern{minute = 25, pattern = "{h} d xmsa u ɛcrin n tusdiqt"}, Clock_Pattern{minute = 30, pattern = "{h} d uzgen"}, Clock_Pattern{minute = 35, pattern = "{h} d xmsa u tlatin n tusdiqt"}, Clock_Pattern{minute = 40, pattern = "{h} d ṛbɛin n tusdiqt"}, Clock_Pattern{minute = 45, pattern = "{h} d xmsa u ṛbɛin n tusdiqt"}, Clock_Pattern{minute = 50, pattern = "{h} d xmsin n tusdiqt"}, Clock_Pattern{minute = 55, pattern = "{h} d xmsa u xmsin n tusdiqt"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3092,7 +3092,7 @@ locale_shn : Time_Locale = {
         hours = {"သိပ်းသွင်", "ၼိုင်ႈ", "သွင်", "သၢမ်", "သီႇ", "ႁႃႈ", "ႁူၵ်း", "ၸဵတ်း", "ပႅတ်ႇ", "ၵဝ်ႈ", "သိပ်း", "သိပ်းဢဵတ်း"},
         midnight = "ၵၢင်ၶိုၼ်း",
         noon = "ၵၢင်ဝၼ်း",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}မူင်း"}, Clock_Pattern{minute = 5, pattern = "{h}မူင်း ႁႃႈမိၼိတ်ႉ"}, Clock_Pattern{minute = 10, pattern = "{h}မူင်း သိပ်းမိၼိတ်ႉ"}, Clock_Pattern{minute = 15, pattern = "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ"}, Clock_Pattern{minute = 20, pattern = "{h}မူင်း သၢဝ်းမိၼိတ်ႉ"}, Clock_Pattern{minute = 25, pattern = "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ"}, Clock_Pattern{minute = 30, pattern = "{h}မူင်းၶိုင်ႈ"}, Clock_Pattern{minute = 35, pattern = "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ"}, Clock_Pattern{minute = 40, pattern = "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ"}, Clock_Pattern{minute = 45, pattern = "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ"}, Clock_Pattern{minute = 50, pattern = "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ"}, Clock_Pattern{minute = 55, pattern = "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3117,7 +3117,7 @@ locale_si : Time_Locale = {
         hours = {"දොළහ", "එක", "දෙක", "තුන", "හතර", "පහ", "හය", "හත", "අට", "නවය", "දහය", "එකොළහ"},
         midnight = "මධ්‍යම රාත්‍රිය",
         noon = "මධ්‍යාහ්නය",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}යි"}, Clock_Pattern{minute = 5, pattern = "{h}යි විනාඩි පහයි"}, Clock_Pattern{minute = 10, pattern = "{h}යි විනාඩි දහයයි"}, Clock_Pattern{minute = 15, pattern = "{h}යි කාලයි"}, Clock_Pattern{minute = 20, pattern = "{h}යි විනාඩි විස්සයි"}, Clock_Pattern{minute = 25, pattern = "{h}යි විනාඩි විසිපහයි"}, Clock_Pattern{minute = 30, pattern = "{h} හමාරයි"}, Clock_Pattern{minute = 35, pattern = "{next_h}ට විනාඩි විසිපහයි"}, Clock_Pattern{minute = 40, pattern = "{next_h}ට විනාඩි විස්සයි"}, Clock_Pattern{minute = 45, pattern = "{next_h}ට කාලයි"}, Clock_Pattern{minute = 50, pattern = "{next_h}ට විනාඩි දහයයි"}, Clock_Pattern{minute = 55, pattern = "{next_h}ට විනාඩි පහයි"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3142,7 +3142,7 @@ locale_sk : Time_Locale = {
         hours = {"dvanásť", "jedna", "dve", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť", "desať", "jedenásť"},
         midnight = "polnoc",
         noon = "poludnie",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} hodín"}, Clock_Pattern{minute = 5, pattern = "päť po {h}"}, Clock_Pattern{minute = 10, pattern = "desať po {h}"}, Clock_Pattern{minute = 15, pattern = "štvrť po {h}"}, Clock_Pattern{minute = 20, pattern = "dvadsať po {h}"}, Clock_Pattern{minute = 25, pattern = "dvadsať päť po {h}"}, Clock_Pattern{minute = 30, pattern = "pol po {h}"}, Clock_Pattern{minute = 35, pattern = "dvadsať päť do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dvadsať do {next_h}"}, Clock_Pattern{minute = 45, pattern = "štvrť do {next_h}"}, Clock_Pattern{minute = 50, pattern = "desať do {next_h}"}, Clock_Pattern{minute = 55, pattern = "päť do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} nula päť"}, Clock_Pattern{minute = 10, pattern = "{h} desať"}, Clock_Pattern{minute = 15, pattern = "{h} pätnásť"}, Clock_Pattern{minute = 20, pattern = "{h} dvadsať"}, Clock_Pattern{minute = 25, pattern = "{h} dvadsaťpäť"}, Clock_Pattern{minute = 30, pattern = "{h} tridsať"}, Clock_Pattern{minute = 35, pattern = "o dvadsaťpäť minút {next_h}"}, Clock_Pattern{minute = 40, pattern = "o dvadsať minút {next_h}"}, Clock_Pattern{minute = 45, pattern = "o pätnásť minút {next_h}"}, Clock_Pattern{minute = 50, pattern = "o desať minút {next_h}"}, Clock_Pattern{minute = 55, pattern = "o päť minút {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3167,7 +3167,7 @@ locale_sl : Time_Locale = {
         hours = {"dvanajst", "ena", "dve", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet", "deset", "enajst"},
         midnight = "polnoč",
         noon = "poldne",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ura"}, Clock_Pattern{minute = 5, pattern = "pet po {h}"}, Clock_Pattern{minute = 10, pattern = "deset po {h}"}, Clock_Pattern{minute = 15, pattern = "petnajst po {h}"}, Clock_Pattern{minute = 20, pattern = "dvajset po {h}"}, Clock_Pattern{minute = 25, pattern = "dvajset pet po {h}"}, Clock_Pattern{minute = 30, pattern = "trideset po {h}"}, Clock_Pattern{minute = 35, pattern = "dvajset pet do {next_h}"}, Clock_Pattern{minute = 40, pattern = "dvajset do {next_h}"}, Clock_Pattern{minute = 45, pattern = "petnajst do {next_h}"}, Clock_Pattern{minute = 50, pattern = "deset do {next_h}"}, Clock_Pattern{minute = 55, pattern = "pet do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "pet čez {h}"}, Clock_Pattern{minute = 10, pattern = "deset čez {h}"}, Clock_Pattern{minute = 15, pattern = "petnajst čez {h}"}, Clock_Pattern{minute = 20, pattern = "dvajset čez {h}"}, Clock_Pattern{minute = 25, pattern = "petindvajset čez {h}"}, Clock_Pattern{minute = 30, pattern = "{h} trideset"}, Clock_Pattern{minute = 35, pattern = "{h} petintrideset"}, Clock_Pattern{minute = 40, pattern = "{h} štirideset"}, Clock_Pattern{minute = 45, pattern = "{h} petinštirideset"}, Clock_Pattern{minute = 50, pattern = "{h} petdeset"}, Clock_Pattern{minute = 55, pattern = "{h} petinpetdeset"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3189,10 +3189,10 @@ locale_sl : Time_Locale = {
 locale_sn : Time_Locale = {
     code = "sn",
     clock = Clock_Config{
-        hours = {"gumi nembiri", "imwe", "mbiri", "nhatu", "ina", "shanu", "nhanhatu", "nomwe", "sere", "pfumbamwe", "gumi", "gumi neimwe"},
-        midnight = "usiku hwepakati",
+        hours = {"dzava gumi nembiri", "yava imwe", "dzava mbiri", "dzava nhatu", "dzava ina", "dzava shanu", "dzava nhanhatu", "dzava nomwe", "dzava sere", "dzava pfumbamwe", "dzava gumi", "dzava gumi neimwe"},
+        midnight = "pakati peusiku",
         noon = "masikati",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} nemaminitsi mashanu"}, Clock_Pattern{minute = 10, pattern = "{h} nemaminitsi gumi"}, Clock_Pattern{minute = 15, pattern = "{h} nemaminitsi gumi nemashanu"}, Clock_Pattern{minute = 20, pattern = "{h} nemaminitsi makumi maviri"}, Clock_Pattern{minute = 25, pattern = "{h} nemaminitsi makumi maviri nemashanu"}, Clock_Pattern{minute = 30, pattern = "{h} nehafu"}, Clock_Pattern{minute = 35, pattern = "{h} nemaminitsi makumi matatu nemashanu"}, Clock_Pattern{minute = 40, pattern = "{h} nemaminitsi makumi mana"}, Clock_Pattern{minute = 45, pattern = "{h} nemaminitsi makumi mana nemashanu"}, Clock_Pattern{minute = 50, pattern = "{h} nemaminitsi makumi mashanu"}, Clock_Pattern{minute = 55, pattern = "{h} nemaminitsi makumi mashanu nemashanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3214,10 +3214,10 @@ locale_sn : Time_Locale = {
 locale_snk : Time_Locale = {
     code = "snk",
     clock = Clock_Config{
-        hours = {"tanmu fillo", "baane", "fillo", "sikko", "naaxato", "karago", "tunmu", "ñerru", "segu", "kaburu", "tanmu", "tanmu baane"},
+        hours = {"waxati tanmu do fillo", "waxati baane", "waxati fillo", "waxati sikko", "waxati naaxato", "waxati karago", "waxati tunmu", "waxati ñerru", "waxati segu", "waxati kaburu", "waxati tanmu", "waxati tanmu do baane"},
         midnight = "sulen noxo",
         noon = "tili seren",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} do miniti karago"}, Clock_Pattern{minute = 10, pattern = "{h} do miniti tanmu"}, Clock_Pattern{minute = 15, pattern = "{h} do miniti tanmu do karago"}, Clock_Pattern{minute = 20, pattern = "{h} do miniti tanpille"}, Clock_Pattern{minute = 25, pattern = "{h} do miniti tanpille do karago"}, Clock_Pattern{minute = 30, pattern = "{h} do faabe"}, Clock_Pattern{minute = 35, pattern = "{h} do miniti tanjikke do karago"}, Clock_Pattern{minute = 40, pattern = "{h} do miniti tannaxate"}, Clock_Pattern{minute = 45, pattern = "{h} do miniti tannaxate do karago"}, Clock_Pattern{minute = 50, pattern = "{h} do miniti tankarage"}, Clock_Pattern{minute = 55, pattern = "{h} do miniti tankarage do karago"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3239,10 +3239,10 @@ locale_snk : Time_Locale = {
 locale_so : Time_Locale = {
     code = "so",
     clock = Clock_Config{
-        hours = {"laba iyo toban", "kow", "laba", "saddex", "afar", "shan", "lix", "toddoba", "siddeed", "sagaal", "toban", "kow iyo toban"},
+        hours = {"laba iyo tobanka", "kowda", "labada", "saddexda", "afarta", "shanta", "lixda", "toddobada", "siddeedda", "sagaasha", "tobanka", "kow iyo tobanka"},
         midnight = "saqda dhexe",
         noon = "duhur",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} iyo shan"}, Clock_Pattern{minute = 10, pattern = "{h} iyo toban"}, Clock_Pattern{minute = 15, pattern = "{h} iyo rubuc"}, Clock_Pattern{minute = 20, pattern = "{h} iyo labaatan"}, Clock_Pattern{minute = 25, pattern = "{h} iyo shan iyo labaatan"}, Clock_Pattern{minute = 30, pattern = "{h} iyo bar"}, Clock_Pattern{minute = 35, pattern = "{next_h} shan iyo labaatan la'"}, Clock_Pattern{minute = 40, pattern = "{next_h} labaatan la'"}, Clock_Pattern{minute = 45, pattern = "{next_h} rubuc la'"}, Clock_Pattern{minute = 50, pattern = "{next_h} toban la'"}, Clock_Pattern{minute = 55, pattern = "{next_h} shan la'"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3267,7 +3267,7 @@ locale_sq : Time_Locale = {
         hours = {"dymbëdhjetë", "një", "dy", "tre", "katër", "pesë", "gjashtë", "shtatë", "tetë", "nëntë", "dhjetë", "njëmbëdhjetë"},
         midnight = "mesnata",
         noon = "mesdita",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "pesë past {h}"}, Clock_Pattern{minute = 10, pattern = "dhjetë past {h}"}, Clock_Pattern{minute = 15, pattern = "një çerek past {h}"}, Clock_Pattern{minute = 20, pattern = "njëzet past {h}"}, Clock_Pattern{minute = 25, pattern = "njëzet e pesë past {h}"}, Clock_Pattern{minute = 30, pattern = "gjysma past {h}"}, Clock_Pattern{minute = 35, pattern = "njëzet e pesë to {next_h}"}, Clock_Pattern{minute = 40, pattern = "njëzet to {next_h}"}, Clock_Pattern{minute = 45, pattern = "një çerek to {next_h}"}, Clock_Pattern{minute = 50, pattern = "dhjetë to {next_h}"}, Clock_Pattern{minute = 55, pattern = "pesë to {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ora {h}"}, Clock_Pattern{minute = 5, pattern = "{h} e pesë"}, Clock_Pattern{minute = 10, pattern = "{h} e dhjetë"}, Clock_Pattern{minute = 15, pattern = "{h} e një çerek"}, Clock_Pattern{minute = 20, pattern = "{h} e njëzet"}, Clock_Pattern{minute = 25, pattern = "{h} e njëzet e pesë"}, Clock_Pattern{minute = 30, pattern = "{h} e gjysmë"}, Clock_Pattern{minute = 35, pattern = "{next_h} pa njëzet e pesë"}, Clock_Pattern{minute = 40, pattern = "{next_h} pa njëzet"}, Clock_Pattern{minute = 45, pattern = "{next_h} pa një çerek"}, Clock_Pattern{minute = 50, pattern = "{next_h} pa dhjetë"}, Clock_Pattern{minute = 55, pattern = "{next_h} pa pesë"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3292,7 +3292,7 @@ locale_sr : Time_Locale = {
         hours = {"дванаест", "један", "два", "три", "четири", "пет", "шест", "седам", "осам", "девет", "десет", "једанаест"},
         midnight = "поноћ",
         noon = "подне",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} часа"}, Clock_Pattern{minute = 5, pattern = "пет po {h}"}, Clock_Pattern{minute = 10, pattern = "десет po {h}"}, Clock_Pattern{minute = 15, pattern = "петнаест po {h}"}, Clock_Pattern{minute = 20, pattern = "двадесет po {h}"}, Clock_Pattern{minute = 25, pattern = "двадесет пет po {h}"}, Clock_Pattern{minute = 30, pattern = "тридесет po {h}"}, Clock_Pattern{minute = 35, pattern = "двадесет пет do {next_h}"}, Clock_Pattern{minute = 40, pattern = "двадесет do {next_h}"}, Clock_Pattern{minute = 45, pattern = "петнаест do {next_h}"}, Clock_Pattern{minute = 50, pattern = "десет do {next_h}"}, Clock_Pattern{minute = 55, pattern = "пет do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} и пет"}, Clock_Pattern{minute = 10, pattern = "{h} и десет"}, Clock_Pattern{minute = 15, pattern = "{h} и петнаест"}, Clock_Pattern{minute = 20, pattern = "{h} и двадесет"}, Clock_Pattern{minute = 25, pattern = "{h} и двадесет пет"}, Clock_Pattern{minute = 30, pattern = "пола {next_h}"}, Clock_Pattern{minute = 35, pattern = "двадесет пет до {next_h}"}, Clock_Pattern{minute = 40, pattern = "двадесет до {next_h}"}, Clock_Pattern{minute = 45, pattern = "петнаест до {next_h}"}, Clock_Pattern{minute = 50, pattern = "десет до {next_h}"}, Clock_Pattern{minute = 55, pattern = "пет до {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3314,10 +3314,10 @@ locale_sr : Time_Locale = {
 locale_ss : Time_Locale = {
     code = "ss",
     clock = Clock_Config{
-        hours = {"lishumi nambili", "kunye", "kubili", "kutsatfu", "kune", "kusihlanu", "sitfupha", "sikhombisa", "siphohlongo", "sifisagcina", "lishumi", "lishumi nakunye"},
+        hours = {"lelishumi nakubili", "lekucala", "lesibili", "lesitsatfu", "lesine", "lesihlanu", "lesitfupha", "lesikhombisa", "lesiphohlongo", "lemfica", "lelishumi", "lelishumi nakunye"},
         midnight = "phakathi kwebusuku",
         noon = "emini",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "lihora {h}"}, Clock_Pattern{minute = 5, pattern = "lihora {h} nemizuzu lemihlanu"}, Clock_Pattern{minute = 10, pattern = "lihora {h} nemizuzu lelishumi"}, Clock_Pattern{minute = 15, pattern = "lihora {h} nemizuzu lelishumi nesihlanu"}, Clock_Pattern{minute = 20, pattern = "lihora {h} nemizuzu lemashumi lamabili"}, Clock_Pattern{minute = 25, pattern = "lihora {h} nemizuzu lemashumi lamabili nesihlanu"}, Clock_Pattern{minute = 30, pattern = "lihora {h} nenhafu"}, Clock_Pattern{minute = 35, pattern = "lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu"}, Clock_Pattern{minute = 40, pattern = "lihora {h} nemizuzu lemashumi lamane"}, Clock_Pattern{minute = 45, pattern = "lihora {h} nemizuzu lemashumi lamane nesihlanu"}, Clock_Pattern{minute = 50, pattern = "lihora {h} nemizuzu lemashumi lasihlanu"}, Clock_Pattern{minute = 55, pattern = "lihora {h} nemizuzu lemashumi lasihlanu nesihlanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3339,10 +3339,10 @@ locale_ss : Time_Locale = {
 locale_st : Time_Locale = {
     code = "st",
     clock = Clock_Config{
-        hours = {"leshome le metso e mmedi", "e nngwe", "tse pedi", "tse tharo", "tse nne", "tse hlano", "tse tshelela", "tse supileng", "tse robedi", "tse robong", "leshome", "leshome le motso o le mong"},
+        hours = {"leshome le metso e mmedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshelela", "bosupa", "borobedi", "borobong", "leshome", "leshome le motso o le mong"},
         midnight = "hara bosiu",
         noon = "motsheare",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "hora ya {h}"}, Clock_Pattern{minute = 5, pattern = "hora ya {h} le metsotso e mehlano"}, Clock_Pattern{minute = 10, pattern = "hora ya {h} le metsotso e leshome"}, Clock_Pattern{minute = 15, pattern = "hora ya {h} le kotara"}, Clock_Pattern{minute = 20, pattern = "hora ya {h} le metsotso e mashome a mabedi"}, Clock_Pattern{minute = 25, pattern = "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano"}, Clock_Pattern{minute = 30, pattern = "hora ya {h} le halofo"}, Clock_Pattern{minute = 35, pattern = "hora ya {h} le metsotso e mashome a mararo a metso e mehlano"}, Clock_Pattern{minute = 40, pattern = "hora ya {h} le metsotso e mashome a mane"}, Clock_Pattern{minute = 45, pattern = "hora ya {h} le metsotso e mashome a mane a metso e mehlano"}, Clock_Pattern{minute = 50, pattern = "hora ya {h} le metsotso e mashome a mahlano"}, Clock_Pattern{minute = 55, pattern = "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3367,7 +3367,7 @@ locale_su : Time_Locale = {
         hours = {"dua welas", "hiji", "dua", "tilu", "opat", "lima", "genep", "tujuh", "dalapan", "salapan", "sapuluh", "sabelas"},
         midnight = "tengah peuting",
         noon = "beurang",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "jam {h}"}, Clock_Pattern{minute = 5, pattern = "jam {h} leuwih lima menit"}, Clock_Pattern{minute = 10, pattern = "jam {h} leuwih sapuluh menit"}, Clock_Pattern{minute = 15, pattern = "jam {h} leuwih saparapat"}, Clock_Pattern{minute = 20, pattern = "jam {h} leuwih dua puluh menit"}, Clock_Pattern{minute = 25, pattern = "jam {h} leuwih dua puluh lima menit"}, Clock_Pattern{minute = 30, pattern = "satengah {next_h}"}, Clock_Pattern{minute = 35, pattern = "jam {next_h} kurang dua puluh lima menit"}, Clock_Pattern{minute = 40, pattern = "jam {next_h} kurang dua puluh menit"}, Clock_Pattern{minute = 45, pattern = "jam {next_h} kurang saparapat"}, Clock_Pattern{minute = 50, pattern = "jam {next_h} kurang sapuluh menit"}, Clock_Pattern{minute = 55, pattern = "jam {next_h} kurang lima menit"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3389,10 +3389,10 @@ locale_su : Time_Locale = {
 locale_suk : Time_Locale = {
     code = "suk",
     clock = Clock_Config{
-        hours = {"kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"},
+        hours = {"sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"},
         midnight = "usiku gati",
         noon = "adhuhuri",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saa {h}"}, Clock_Pattern{minute = 5, pattern = "saa {h} na dakika tano"}, Clock_Pattern{minute = 10, pattern = "saa {h} na dakika kumi"}, Clock_Pattern{minute = 15, pattern = "saa {h} na robo"}, Clock_Pattern{minute = 20, pattern = "saa {h} na dakika ishirini"}, Clock_Pattern{minute = 25, pattern = "saa {h} na dakika ishirini na tano"}, Clock_Pattern{minute = 30, pattern = "saa {h} na nusu"}, Clock_Pattern{minute = 35, pattern = "saa {next_h} kasoro dakika ishirini na tano"}, Clock_Pattern{minute = 40, pattern = "saa {next_h} kasoro dakika ishirini"}, Clock_Pattern{minute = 45, pattern = "saa {next_h} kasoro robo"}, Clock_Pattern{minute = 50, pattern = "saa {next_h} kasoro dakika kumi"}, Clock_Pattern{minute = 55, pattern = "saa {next_h} kasoro dakika tano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3439,10 +3439,10 @@ locale_sv : Time_Locale = {
 locale_sw : Time_Locale = {
     code = "sw",
     clock = Clock_Config{
-        hours = {"kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"},
-        midnight = "usiku wa manane",
-        noon = "adhuhuri",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "tano kupita {h}"}, Clock_Pattern{minute = 10, pattern = "kumi kupita {h}"}, Clock_Pattern{minute = 15, pattern = "robo kupita {h}"}, Clock_Pattern{minute = 20, pattern = "ishirini kupita {h}"}, Clock_Pattern{minute = 25, pattern = "ishirini na tano kupita {h}"}, Clock_Pattern{minute = 30, pattern = "nusu kupita {h}"}, Clock_Pattern{minute = 35, pattern = "ishirini na tano kabla ya {next_h}"}, Clock_Pattern{minute = 40, pattern = "ishirini kabla ya {next_h}"}, Clock_Pattern{minute = 45, pattern = "robo kabla ya {next_h}"}, Clock_Pattern{minute = 50, pattern = "kumi kabla ya {next_h}"}, Clock_Pattern{minute = 55, pattern = "tano kabla ya {next_h}"}},
+        hours = {"sita", "saba", "nane", "tisa", "kumi", "kumi na moja", "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano"},
+        midnight = "saa sita usiku",
+        noon = "saa sita mchana",
+        patterns = {Clock_Pattern{minute = 0, pattern = "saa {h}"}, Clock_Pattern{minute = 5, pattern = "saa {h} na dakika tano"}, Clock_Pattern{minute = 10, pattern = "saa {h} na dakika kumi"}, Clock_Pattern{minute = 15, pattern = "saa {h} na robo"}, Clock_Pattern{minute = 20, pattern = "saa {h} na dakika ishirini"}, Clock_Pattern{minute = 25, pattern = "saa {h} na dakika ishirini na tano"}, Clock_Pattern{minute = 30, pattern = "saa {h} na nusu"}, Clock_Pattern{minute = 35, pattern = "saa {next_h} kasoro dakika ishirini na tano"}, Clock_Pattern{minute = 40, pattern = "saa {next_h} kasoro dakika ishirini"}, Clock_Pattern{minute = 45, pattern = "saa {next_h} kasoro robo"}, Clock_Pattern{minute = 50, pattern = "saa {next_h} kasoro dakika kumi"}, Clock_Pattern{minute = 55, pattern = "saa {next_h} kasoro dakika tano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3464,10 +3464,10 @@ locale_sw : Time_Locale = {
 locale_ta : Time_Locale = {
     code = "ta",
     clock = Clock_Config{
-        hours = {"பன்னிரண்டு", "ஒன்று", "இரண்டு", "மூன்று", "நான்கு", "ஐந்து", "ஆறு", "ஏழு", "எட்டு", "ஒன்பது", "பத்து", "பதினொன்று"},
+        hours = {"பன்னிரண்ட", "ஒன்ற", "இரண்ட", "மூன்ற", "நான்க", "ஐந்த", "ஆற", "ஏழ", "எட்ட", "ஒன்பத", "பத்த", "பதினொன்ற"},
         midnight = "நள்ளிரவு",
         noon = "நண்பகல்",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}ு மணி"}, Clock_Pattern{minute = 5, pattern = "{h}ு மணி ஐந்து நிமிடம்"}, Clock_Pattern{minute = 10, pattern = "{h}ு மணி பத்து நிமிடம்"}, Clock_Pattern{minute = 15, pattern = "{h}ே கால்"}, Clock_Pattern{minute = 20, pattern = "{h}ு மணி இருபது நிமிடம்"}, Clock_Pattern{minute = 25, pattern = "{h}ு மணி இருபத்தைந்து நிமிடம்"}, Clock_Pattern{minute = 30, pattern = "{h}ரை"}, Clock_Pattern{minute = 35, pattern = "{h}ு மணி முப்பத்தைந்து நிமிடம்"}, Clock_Pattern{minute = 40, pattern = "{h}ு மணி நாற்பது நிமிடம்"}, Clock_Pattern{minute = 45, pattern = "{h}ே முக்கால்"}, Clock_Pattern{minute = 50, pattern = "{h}ு மணி ஐம்பது நிமிடம்"}, Clock_Pattern{minute = 55, pattern = "{h}ு மணி ஐம்பத்தைந்து நிமிடம்"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3492,7 +3492,7 @@ locale_te : Time_Locale = {
         hours = {"పన్నెండు", "ఒకటి", "రెండు", "మూడు", "నాలుగు", "ఐదు", "ఆరు", "ఏడు", "ఎనిమిది", "తొమ్మిది", "పది", "పదకొండు"},
         midnight = "అర్ధరాత్రి",
         noon = "మధ్యాహ్నం",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} అయింది"}, Clock_Pattern{minute = 5, pattern = "{h} దాటి ఐదు నిమిషాలు"}, Clock_Pattern{minute = 10, pattern = "{h} దాటి పది నిమిషాలు"}, Clock_Pattern{minute = 15, pattern = "{h}ంపావు"}, Clock_Pattern{minute = 20, pattern = "{h} దాటి ఇరవై నిమిషాలు"}, Clock_Pattern{minute = 25, pattern = "{h} దాటి ఇరవై ఐదు నిమిషాలు"}, Clock_Pattern{minute = 30, pattern = "{h}న్నర"}, Clock_Pattern{minute = 35, pattern = "{h} దాటి ముప్పై ఐదు నిమిషాలు"}, Clock_Pattern{minute = 40, pattern = "{next_h} కావడానికి ఇరవై నిమిషాలు"}, Clock_Pattern{minute = 45, pattern = "పావు తక్కువ {next_h}"}, Clock_Pattern{minute = 50, pattern = "{next_h} కావడానికి పది నిమిషాలు"}, Clock_Pattern{minute = 55, pattern = "{next_h} కావడానికి ఐదు నిమిషాలు"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3514,10 +3514,10 @@ locale_te : Time_Locale = {
 locale_tem : Time_Locale = {
     code = "tem",
     clock = Clock_Config{
-        hours = {"pɛn pu", "kɩrɩŋ", "rɔŋ", "rasar", "rɔŋ-anat", "rɔman", "rɔmata", "rɔmbot", "rɔmɔntat", "rɔmɔntaŋka", "pɛn", "pɛn nɛ kɩrɩŋ"},
+        hours = {"awa pɛn nɛ rɔŋ", "awa kɩrɩŋ", "awa rɔŋ", "awa rasar", "awa rɔŋ-anat", "awa rɔman", "awa rɔmata", "awa rɔmbot", "awa rɔmɔntat", "awa rɔmɔntaŋka", "awa pɛn", "awa pɛn nɛ kɩrɩŋ"},
         midnight = "rofɛt anpa",
         noon = "lən",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} nɛ minit rɔman"}, Clock_Pattern{minute = 10, pattern = "{h} nɛ minit pɛn"}, Clock_Pattern{minute = 15, pattern = "{h} nɛ minit pɛn nɛ rɔman"}, Clock_Pattern{minute = 20, pattern = "{h} nɛ minit kɩgba"}, Clock_Pattern{minute = 25, pattern = "{h} nɛ minit kɩgba nɛ rɔman"}, Clock_Pattern{minute = 30, pattern = "{h} a gbankɛ"}, Clock_Pattern{minute = 35, pattern = "{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman"}, Clock_Pattern{minute = 40, pattern = "{h} nɛ minit tɔgba rɔŋ"}, Clock_Pattern{minute = 45, pattern = "{h} nɛ minit tɔgba rɔŋ nɛ rɔman"}, Clock_Pattern{minute = 50, pattern = "{h} nɛ minit tɔgba rɔŋ nɛ pɛn"}, Clock_Pattern{minute = 55, pattern = "{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3542,7 +3542,7 @@ locale_tet : Time_Locale = {
         hours = {"sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"},
         midnight = "meiu-kalan",
         noon = "meiu-loron",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "tuku {h}"}, Clock_Pattern{minute = 5, pattern = "tuku {h} ho minutu lima"}, Clock_Pattern{minute = 10, pattern = "tuku {h} ho minutu sanulu"}, Clock_Pattern{minute = 15, pattern = "tuku {h} ho minutu sanulu-resin-lima"}, Clock_Pattern{minute = 20, pattern = "tuku {h} ho minutu ruanulu"}, Clock_Pattern{minute = 25, pattern = "tuku {h} ho minutu ruanulu-resin-lima"}, Clock_Pattern{minute = 30, pattern = "tuku {h} ho balun"}, Clock_Pattern{minute = 35, pattern = "tuku {h} ho minutu tolunulu-resin-lima"}, Clock_Pattern{minute = 40, pattern = "tuku {h} ho minutu haatnulu"}, Clock_Pattern{minute = 45, pattern = "tuku {h} ho minutu haatnulu-resin-lima"}, Clock_Pattern{minute = 50, pattern = "tuku {h} ho minutu limanulu"}, Clock_Pattern{minute = 55, pattern = "tuku {h} ho minutu limanulu-resin-lima"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3567,7 +3567,7 @@ locale_tg : Time_Locale = {
         hours = {"дувоздаҳ", "як", "ду", "се", "чор", "панҷ", "шаш", "ҳафт", "ҳашт", "нӯҳ", "даҳ", "ёздаҳ"},
         midnight = "нимишаб",
         noon = "нимирӯз",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "соати {h}"}, Clock_Pattern{minute = 5, pattern = "соати {h} ва панҷ дақиқа"}, Clock_Pattern{minute = 10, pattern = "соати {h} ва даҳ дақиқа"}, Clock_Pattern{minute = 15, pattern = "соати {h} ва понздаҳ дақиқа"}, Clock_Pattern{minute = 20, pattern = "соати {h} ва бист дақиқа"}, Clock_Pattern{minute = 25, pattern = "соати {h} ва бисту панҷ дақиқа"}, Clock_Pattern{minute = 30, pattern = "соати {h} ва ним"}, Clock_Pattern{minute = 35, pattern = "соати {h} ва сию панҷ дақиқа"}, Clock_Pattern{minute = 40, pattern = "соати {h} ва чил дақиқа"}, Clock_Pattern{minute = 45, pattern = "соати {h} ва чилу панҷ дақиқа"}, Clock_Pattern{minute = 50, pattern = "соати {h} ва панҷоҳ дақиқа"}, Clock_Pattern{minute = 55, pattern = "соати {h} ва панҷоҳу панҷ дақиқа"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3617,7 +3617,7 @@ locale_ti : Time_Locale = {
         hours = {"ዓሰርተ ክልተ", "ሓደ", "ክልተ", "ሰለስተ", "ኣርባዕተ", "ሓሙሽተ", "ሽድሽተ", "ሸውዓተ", "ሸሞንተ", "ትሽዓተ", "ዓሰርተ", "ዓሰርተ ሓደ"},
         midnight = "ፍርቂ ለይቲ",
         noon = "ቀትሪ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} ሰዓት"}, Clock_Pattern{minute = 5, pattern = "{h}ን ሓሙሽተን"}, Clock_Pattern{minute = 10, pattern = "{h}ን ዓሰርተን"}, Clock_Pattern{minute = 15, pattern = "{h}ን ርብዒን"}, Clock_Pattern{minute = 20, pattern = "{h}ን ዕስራን"}, Clock_Pattern{minute = 25, pattern = "{h}ን ዕስራን ሓሙሽተን"}, Clock_Pattern{minute = 30, pattern = "{h}ን ፈረቓን"}, Clock_Pattern{minute = 35, pattern = "{h}ን ሰላሳን ሓሙሽተን"}, Clock_Pattern{minute = 40, pattern = "ዕስራ ጎደል {next_h}"}, Clock_Pattern{minute = 45, pattern = "ርብዒ ጎደል {next_h}"}, Clock_Pattern{minute = 50, pattern = "ዓሰርተ ጎደል {next_h}"}, Clock_Pattern{minute = 55, pattern = "ሓሙሽተ ጎደል {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3642,7 +3642,7 @@ locale_tig : Time_Locale = {
         hours = {"ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante"},
         midnight = "nəs-leyla",
         noon = "qayḥ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saʿa {h}"}, Clock_Pattern{minute = 5, pattern = "saʿa {h} we ḥamməste"}, Clock_Pattern{minute = 10, pattern = "saʿa {h} we ʿasərte"}, Clock_Pattern{minute = 15, pattern = "saʿa {h} we ʿasərte we ḥamməste"}, Clock_Pattern{minute = 20, pattern = "saʿa {h} we ʿəsra"}, Clock_Pattern{minute = 25, pattern = "saʿa {h} we ʿəsra we ḥamməste"}, Clock_Pattern{minute = 30, pattern = "saʿa {h} we nəs"}, Clock_Pattern{minute = 35, pattern = "saʿa {h} we salasa we ḥamməste"}, Clock_Pattern{minute = 40, pattern = "saʿa {h} we arbaʿa"}, Clock_Pattern{minute = 45, pattern = "saʿa {h} we arbaʿa we ḥamməste"}, Clock_Pattern{minute = 50, pattern = "saʿa {h} we ḥamsa"}, Clock_Pattern{minute = 55, pattern = "saʿa {h} we ḥamsa we ḥamməste"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3667,7 +3667,7 @@ locale_tk : Time_Locale = {
         hours = {"on iki", "bir", "iki", "üç", "dört", "bäş", "alty", "ýedi", "sekiz", "dokuz", "on", "on bir"},
         midnight = "ýary gije",
         noon = "günorta",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "sagat {h}"}, Clock_Pattern{minute = 5, pattern = "sagat {h} bäş minut"}, Clock_Pattern{minute = 10, pattern = "sagat {h} on minut"}, Clock_Pattern{minute = 15, pattern = "sagat {h} on bäş minut"}, Clock_Pattern{minute = 20, pattern = "sagat {h} ýigrimi minut"}, Clock_Pattern{minute = 25, pattern = "sagat {h} ýigrimi bäş minut"}, Clock_Pattern{minute = 30, pattern = "sagat {h} ýarym"}, Clock_Pattern{minute = 35, pattern = "sagat {h} otuz bäş minut"}, Clock_Pattern{minute = 40, pattern = "sagat {h} kyrk minut"}, Clock_Pattern{minute = 45, pattern = "sagat {h} kyrk bäş minut"}, Clock_Pattern{minute = 50, pattern = "sagat {h} elli minut"}, Clock_Pattern{minute = 55, pattern = "sagat {h} elli bäş minut"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3689,10 +3689,10 @@ locale_tk : Time_Locale = {
 locale_tn : Time_Locale = {
     code = "tn",
     clock = Clock_Config{
-        hours = {"lesome le bobedi", "nngwe", "pedi", "tharo", "nne", "tlhano", "thataro", "supa", "robedi", "robongwe", "lesome", "lesome le bongwe"},
+        hours = {"ya lesome le bobedi", "ya ntlha", "ya bobedi", "ya boraro", "ya bone", "ya botlhano", "ya borataro", "ya bosupa", "ya borobedi", "ya borobongwe", "ya lesome", "ya lesome le bongwe"},
         midnight = "bosigo jwa magareng",
         noon = "motshegare",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ura {h}"}, Clock_Pattern{minute = 5, pattern = "ura {h} le metsotso e metlhano"}, Clock_Pattern{minute = 10, pattern = "ura {h} le metsotso e le lesome"}, Clock_Pattern{minute = 15, pattern = "ura {h} le kotara"}, Clock_Pattern{minute = 20, pattern = "ura {h} le metsotso e le masome a mabedi"}, Clock_Pattern{minute = 25, pattern = "ura {h} le metsotso e le masome a mabedi le botlhano"}, Clock_Pattern{minute = 30, pattern = "ura {h} le halofo"}, Clock_Pattern{minute = 35, pattern = "ura {h} le metsotso e le masome a mararo le botlhano"}, Clock_Pattern{minute = 40, pattern = "ura {h} le metsotso e le masome a mane"}, Clock_Pattern{minute = 45, pattern = "ura {h} le metsotso e le masome a mane le botlhano"}, Clock_Pattern{minute = 50, pattern = "ura {h} le metsotso e le masome a matlhano"}, Clock_Pattern{minute = 55, pattern = "ura {h} le metsotso e le masome a matlhano le botlhano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3717,7 +3717,7 @@ locale_tpi : Time_Locale = {
         hours = {"twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven"},
         midnight = "biknait",
         noon = "belo",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} kilok"}, Clock_Pattern{minute = 5, pattern = "faiv minit pas {h}"}, Clock_Pattern{minute = 10, pattern = "ten minit pas {h}"}, Clock_Pattern{minute = 15, pattern = "kwata pas {h}"}, Clock_Pattern{minute = 20, pattern = "twenti minit pas {h}"}, Clock_Pattern{minute = 25, pattern = "twenti faiv minit pas {h}"}, Clock_Pattern{minute = 30, pattern = "hap pas {h}"}, Clock_Pattern{minute = 35, pattern = "teti faiv minit pas {h}"}, Clock_Pattern{minute = 40, pattern = "foti minit pas {h}"}, Clock_Pattern{minute = 45, pattern = "foti faiv minit pas {h}"}, Clock_Pattern{minute = 50, pattern = "fifti minit pas {h}"}, Clock_Pattern{minute = 55, pattern = "fifti faiv minit pas {h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3742,7 +3742,7 @@ locale_tr : Time_Locale = {
         hours = {"on iki", "bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz", "on", "on bir"},
         midnight = "gece yarısı",
         noon = "öğle",
-        patterns = {Clock_Pattern{minute = 0, pattern = "saat {h}"}, Clock_Pattern{minute = 5, pattern = "{h}'i beş geçiyor"}, Clock_Pattern{minute = 10, pattern = "{h}'i on geçiyor"}, Clock_Pattern{minute = 15, pattern = "{h}'i çeyrek geçiyor"}, Clock_Pattern{minute = 20, pattern = "{h}'i yirmi geçiyor"}, Clock_Pattern{minute = 25, pattern = "{h}'i yirmi beş geçiyor"}, Clock_Pattern{minute = 30, pattern = "{h} buçuk"}, Clock_Pattern{minute = 35, pattern = "{next_h}'e yirmi beş var"}, Clock_Pattern{minute = 40, pattern = "{next_h}'e yirmi var"}, Clock_Pattern{minute = 45, pattern = "{next_h}'e çeyrek var"}, Clock_Pattern{minute = 50, pattern = "{next_h}'e on var"}, Clock_Pattern{minute = 55, pattern = "{next_h}'e beş var"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saat {h}"}, Clock_Pattern{minute = 5, pattern = "saat {h} sıfır beş"}, Clock_Pattern{minute = 10, pattern = "saat {h} on"}, Clock_Pattern{minute = 15, pattern = "saat {h} on beş"}, Clock_Pattern{minute = 20, pattern = "saat {h} yirmi"}, Clock_Pattern{minute = 25, pattern = "saat {h} yirmi beş"}, Clock_Pattern{minute = 30, pattern = "saat {h} buçuk"}, Clock_Pattern{minute = 35, pattern = "saat {h} otuz beş"}, Clock_Pattern{minute = 40, pattern = "saat {h} kırk"}, Clock_Pattern{minute = 45, pattern = "saat {h} kırk beş"}, Clock_Pattern{minute = 50, pattern = "saat {h} elli"}, Clock_Pattern{minute = 55, pattern = "saat {h} elli beş"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3764,10 +3764,10 @@ locale_tr : Time_Locale = {
 locale_ts : Time_Locale = {
     code = "ts",
     clock = Clock_Config{
-        hours = {"khume mbiri", "yin'we", "mbirhi", "nharhu", "mune", "ntlhanu", "tsevu", "nkombo", "nhungu", "kaye", "khume", "khume yin'we"},
+        hours = {"ya khume mbirhi", "yo sungula", "ya vumbirhi", "ya vunharhu", "ya vumune", "ya vuntlhanu", "ya vutsevu", "ya vunkombo", "ya vunhungu", "ya vukaye", "ya khume", "ya khume n'we"},
         midnight = "vusiku exikarhi",
         noon = "nhlekanhi",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "awara {h}"}, Clock_Pattern{minute = 5, pattern = "awara {h} na timinete ta ntlhanu"}, Clock_Pattern{minute = 10, pattern = "awara {h} na timinete ta khume"}, Clock_Pattern{minute = 15, pattern = "awara {h} na kotara"}, Clock_Pattern{minute = 20, pattern = "awara {h} na timinete ta makume mambirhi"}, Clock_Pattern{minute = 25, pattern = "awara {h} na timinete ta makume mambirhi na ntlhanu"}, Clock_Pattern{minute = 30, pattern = "awara {h} na hafu"}, Clock_Pattern{minute = 35, pattern = "awara {h} na timinete ta makume manharhu na ntlhanu"}, Clock_Pattern{minute = 40, pattern = "awara {h} na timinete ta makume mune"}, Clock_Pattern{minute = 45, pattern = "awara {h} na timinete ta makume mune na ntlhanu"}, Clock_Pattern{minute = 50, pattern = "awara {h} na timinete ta makume ntlhanu"}, Clock_Pattern{minute = 55, pattern = "awara {h} na timinete ta makume ntlhanu na ntlhanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3792,7 +3792,7 @@ locale_tum : Time_Locale = {
         hours = {"khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza"},
         midnight = "pakati pa usiku",
         noon = "muhanya",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} koloko"}, Clock_Pattern{minute = 5, pattern = "{h} koloko na maminiti vinkhondi"}, Clock_Pattern{minute = 10, pattern = "{h} koloko na maminiti khumi"}, Clock_Pattern{minute = 15, pattern = "{h} koloko na maminiti khumi na vinkhondi"}, Clock_Pattern{minute = 20, pattern = "{h} koloko na maminiti makhumi ghaŵiri"}, Clock_Pattern{minute = 25, pattern = "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi"}, Clock_Pattern{minute = 30, pattern = "{h} koloko na hafu"}, Clock_Pattern{minute = 35, pattern = "{h} koloko na maminiti makhumi ghatatu na vinkhondi"}, Clock_Pattern{minute = 40, pattern = "{h} koloko na maminiti makhumi ghanayi"}, Clock_Pattern{minute = 45, pattern = "{h} koloko na maminiti makhumi ghanayi na vinkhondi"}, Clock_Pattern{minute = 50, pattern = "{h} koloko na maminiti makhumi ghankhondi"}, Clock_Pattern{minute = 55, pattern = "{h} koloko na maminiti makhumi ghankhondi na vinkhondi"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3814,10 +3814,10 @@ locale_tum : Time_Locale = {
 locale_tzm : Time_Locale = {
     code = "tzm",
     clock = Clock_Config{
-        hours = {"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
-        midnight = "ⵏⵚ ⵏ ⵉⴹ",
-        noon = "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        hours = {"tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"},
+        midnight = "nṣ n iḍ",
+        noon = "tizwarnin",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} d smmus tusdiqin"}, Clock_Pattern{minute = 10, pattern = "{h} d mraw tusdiqin"}, Clock_Pattern{minute = 15, pattern = "{h} d rrbɛ"}, Clock_Pattern{minute = 20, pattern = "{h} d ɛcrin n tusdiqt"}, Clock_Pattern{minute = 25, pattern = "{h} d xmsa u ɛcrin n tusdiqt"}, Clock_Pattern{minute = 30, pattern = "{h} d uzgen"}, Clock_Pattern{minute = 35, pattern = "{h} d xmsa u tlatin n tusdiqt"}, Clock_Pattern{minute = 40, pattern = "{h} d ṛbɛin n tusdiqt"}, Clock_Pattern{minute = 45, pattern = "{h} d xmsa u ṛbɛin n tusdiqt"}, Clock_Pattern{minute = 50, pattern = "{h} d xmsin n tusdiqt"}, Clock_Pattern{minute = 55, pattern = "{h} d xmsa u xmsin n tusdiqt"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3842,7 +3842,7 @@ locale_uk : Time_Locale = {
         hours = {"дванадцята", "перша", "друга", "третя", "четверта", "п'ята", "шоста", "сьома", "восьма", "дев'ята", "десята", "одинадцята"},
         midnight = "опівніч",
         noon = "полудень",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} часа"}, Clock_Pattern{minute = 5, pattern = "п'ять po {h}"}, Clock_Pattern{minute = 10, pattern = "десять po {h}"}, Clock_Pattern{minute = 15, pattern = "п'ятнадцять po {h}"}, Clock_Pattern{minute = 20, pattern = "двадцять po {h}"}, Clock_Pattern{minute = 25, pattern = "двадцять п'ять po {h}"}, Clock_Pattern{minute = 30, pattern = "тридцять po {h}"}, Clock_Pattern{minute = 35, pattern = "двадцять п'ять do {next_h}"}, Clock_Pattern{minute = 40, pattern = "двадцять do {next_h}"}, Clock_Pattern{minute = 45, pattern = "п'ятнадцять do {next_h}"}, Clock_Pattern{minute = 50, pattern = "десять do {next_h}"}, Clock_Pattern{minute = 55, pattern = "п'ять do {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} година"}, Clock_Pattern{minute = 5, pattern = "{h} нуль п'ять"}, Clock_Pattern{minute = 10, pattern = "{h} десять"}, Clock_Pattern{minute = 15, pattern = "{h} п'ятнадцять"}, Clock_Pattern{minute = 20, pattern = "{h} двадцять"}, Clock_Pattern{minute = 25, pattern = "{h} двадцять п'ять"}, Clock_Pattern{minute = 30, pattern = "{h} тридцять"}, Clock_Pattern{minute = 35, pattern = "за двадцять п'ять хвилин {next_h}"}, Clock_Pattern{minute = 40, pattern = "за двадцять хвилин {next_h}"}, Clock_Pattern{minute = 45, pattern = "за чверть {next_h}"}, Clock_Pattern{minute = 50, pattern = "за десять хвилин {next_h}"}, Clock_Pattern{minute = 55, pattern = "за п'ять хвилин {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3864,10 +3864,10 @@ locale_uk : Time_Locale = {
 locale_umb : Time_Locale = {
     code = "umb",
     clock = Clock_Config{
-        hours = {"olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi"},
+        hours = {"ekwi la vali", "mosi", "vali", "tatu", "kwãla", "tãlo", "epandu", "epanduvali", "ecelãla", "ecea", "ekwi", "ekwi la mosi"},
         midnight = "ocitapi",
         noon = "ocivali",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ohola {h}"}, Clock_Pattern{minute = 5, pattern = "ohola {h} la tãlo"}, Clock_Pattern{minute = 10, pattern = "ohola {h} la ekwi"}, Clock_Pattern{minute = 15, pattern = "ohola {h} la ekwi la tãlo"}, Clock_Pattern{minute = 20, pattern = "ohola {h} la akũi avali"}, Clock_Pattern{minute = 25, pattern = "ohola {h} la akũi avali la tãlo"}, Clock_Pattern{minute = 30, pattern = "ohola {h} la oñali"}, Clock_Pattern{minute = 35, pattern = "ohola {h} la akũi atatu la tãlo"}, Clock_Pattern{minute = 40, pattern = "ohola {h} la akũi akwãla"}, Clock_Pattern{minute = 45, pattern = "ohola {h} la akũi akwãla la tãlo"}, Clock_Pattern{minute = 50, pattern = "ohola {h} la akũi atãlo"}, Clock_Pattern{minute = 55, pattern = "ohola {h} la akũi atãlo la tãlo"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3892,7 +3892,7 @@ locale_ur : Time_Locale = {
         hours = {"بارہ", "ایک", "دو", "تین", "چار", "پانچ", "چھ", "سات", "آٹھ", "نو", "دس", "گیارہ"},
         midnight = "آدھی رات",
         noon = "دوپہر",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} بجے"}, Clock_Pattern{minute = 5, pattern = "{h} بج کر پانچ منٹ"}, Clock_Pattern{minute = 10, pattern = "{h} بج کر دس منٹ"}, Clock_Pattern{minute = 15, pattern = "سوا {h} بجے"}, Clock_Pattern{minute = 20, pattern = "{h} بج کر بیس منٹ"}, Clock_Pattern{minute = 25, pattern = "{h} بج کر پچیس منٹ"}, Clock_Pattern{minute = 30, pattern = "{h} بج کر تیس منٹ"}, Clock_Pattern{minute = 35, pattern = "{h} بج کر پینتیس منٹ"}, Clock_Pattern{minute = 40, pattern = "{next_h} بجنے میں بیس منٹ"}, Clock_Pattern{minute = 45, pattern = "پونے {next_h} بجے"}, Clock_Pattern{minute = 50, pattern = "{next_h} بجنے میں دس منٹ"}, Clock_Pattern{minute = 55, pattern = "{next_h} بجنے میں پانچ منٹ"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3917,7 +3917,7 @@ locale_uz : Time_Locale = {
         hours = {"o'n ikki", "bir", "ikki", "uch", "to'rt", "besh", "olti", "yetti", "sakkiz", "to'qqiz", "o'n", "o'n bir"},
         midnight = "yarim tun",
         noon = "tush",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "besh past {h}"}, Clock_Pattern{minute = 10, pattern = "o'n past {h}"}, Clock_Pattern{minute = 15, pattern = "o'n besh past {h}"}, Clock_Pattern{minute = 20, pattern = "yigirma past {h}"}, Clock_Pattern{minute = 25, pattern = "yigirma besh past {h}"}, Clock_Pattern{minute = 30, pattern = "o'ttiz past {h}"}, Clock_Pattern{minute = 35, pattern = "yigirma besh to {next_h}"}, Clock_Pattern{minute = 40, pattern = "yigirma to {next_h}"}, Clock_Pattern{minute = 45, pattern = "o'n besh to {next_h}"}, Clock_Pattern{minute = 50, pattern = "o'n to {next_h}"}, Clock_Pattern{minute = 55, pattern = "besh to {next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "soat {h}"}, Clock_Pattern{minute = 5, pattern = "soat {h} nol besh"}, Clock_Pattern{minute = 10, pattern = "soat {h} o'n"}, Clock_Pattern{minute = 15, pattern = "soat {h} o'n besh"}, Clock_Pattern{minute = 20, pattern = "soat {h} yigirma"}, Clock_Pattern{minute = 25, pattern = "soat {h} yigirma besh"}, Clock_Pattern{minute = 30, pattern = "soat {h} yarim"}, Clock_Pattern{minute = 35, pattern = "soat {h} o'ttiz besh"}, Clock_Pattern{minute = 40, pattern = "soat {h} qirq"}, Clock_Pattern{minute = 45, pattern = "soat {h} qirq besh"}, Clock_Pattern{minute = 50, pattern = "soat {h} ellik"}, Clock_Pattern{minute = 55, pattern = "soat {h} ellik besh"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3939,10 +3939,10 @@ locale_uz : Time_Locale = {
 locale_ve : Time_Locale = {
     code = "ve",
     clock = Clock_Config{
-        hours = {"fumimbili", "thihi", "mbili", "raru", "ina", "thanu", "rathi", "sumbe", "malo", "tahe", "fumi", "fuminthihi"},
+        hours = {"ya fumi na mbili", "ya u thoma", "ya vhuvhili", "ya vhuraru", "ya vhuṋa", "ya vhuṱanu", "ya vhurathi", "ya vhusumbe", "ya vhumalo", "ya vhuṱahe", "ya fumi", "ya fumi na nthihi"},
         midnight = "vhukati ha vhusiku",
         noon = "vhukati ha masiari",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "awara {h}"}, Clock_Pattern{minute = 5, pattern = "awara {h} na ṱhanu"}, Clock_Pattern{minute = 10, pattern = "awara {h} na fumi"}, Clock_Pattern{minute = 15, pattern = "awara {h} na kotara"}, Clock_Pattern{minute = 20, pattern = "awara {h} na mahumi mavhili"}, Clock_Pattern{minute = 25, pattern = "awara {h} na mahumi mavhili na ṱhanu"}, Clock_Pattern{minute = 30, pattern = "awara {h} na hafu"}, Clock_Pattern{minute = 35, pattern = "awara {h} na mahumi mararu na ṱhanu"}, Clock_Pattern{minute = 40, pattern = "awara {h} na mahumi maṋa"}, Clock_Pattern{minute = 45, pattern = "awara {h} na mahumi maṋa na ṱhanu"}, Clock_Pattern{minute = 50, pattern = "awara {h} na mahumi maṱanu"}, Clock_Pattern{minute = 55, pattern = "awara {h} na mahumi maṱanu na ṱhanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3966,8 +3966,8 @@ locale_vi : Time_Locale = {
     clock = Clock_Config{
         hours = {"mười hai", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín", "mười", "mười một"},
         midnight = "nửa đêm",
-        noon = "trưa",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "năm qua {h}"}, Clock_Pattern{minute = 10, pattern = "mười qua {h}"}, Clock_Pattern{minute = 15, pattern = "mười lăm qua {h}"}, Clock_Pattern{minute = 20, pattern = "hai mươi qua {h}"}, Clock_Pattern{minute = 25, pattern = "hai mươi lăm qua {h}"}, Clock_Pattern{minute = 30, pattern = "ba mươi qua {h}"}, Clock_Pattern{minute = 35, pattern = "hai mươi lăm trước {next_h}"}, Clock_Pattern{minute = 40, pattern = "hai mươi trước {next_h}"}, Clock_Pattern{minute = 45, pattern = "mười lăm trước {next_h}"}, Clock_Pattern{minute = 50, pattern = "mười trước {next_h}"}, Clock_Pattern{minute = 55, pattern = "năm trước {next_h}"}},
+        noon = "mười hai giờ trưa",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h} giờ"}, Clock_Pattern{minute = 5, pattern = "{h} giờ năm phút"}, Clock_Pattern{minute = 10, pattern = "{h} giờ mười phút"}, Clock_Pattern{minute = 15, pattern = "{h} giờ mười lăm phút"}, Clock_Pattern{minute = 20, pattern = "{h} giờ hai mươi phút"}, Clock_Pattern{minute = 25, pattern = "{h} giờ hai mươi lăm phút"}, Clock_Pattern{minute = 30, pattern = "{h} giờ rưỡi"}, Clock_Pattern{minute = 35, pattern = "{next_h} giờ kém hai mươi lăm"}, Clock_Pattern{minute = 40, pattern = "{next_h} giờ kém hai mươi"}, Clock_Pattern{minute = 45, pattern = "{next_h} giờ kém mười lăm"}, Clock_Pattern{minute = 50, pattern = "{next_h} giờ kém mười"}, Clock_Pattern{minute = 55, pattern = "{next_h} giờ kém năm"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -3992,7 +3992,7 @@ locale_vmw : Time_Locale = {
         hours = {"khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa"},
         midnight = "usiku wopakhala",
         noon = "muttana",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "hora {h}"}, Clock_Pattern{minute = 5, pattern = "hora {h} na thanu"}, Clock_Pattern{minute = 10, pattern = "hora {h} na khumi"}, Clock_Pattern{minute = 15, pattern = "hora {h} na khumi na thanu"}, Clock_Pattern{minute = 20, pattern = "hora {h} na makhumi mapili"}, Clock_Pattern{minute = 25, pattern = "hora {h} na makhumi mapili na thanu"}, Clock_Pattern{minute = 30, pattern = "hora {h} na mettenhe"}, Clock_Pattern{minute = 35, pattern = "hora {h} na makhumi mararu na thanu"}, Clock_Pattern{minute = 40, pattern = "hora {h} na makhumi mancheche"}, Clock_Pattern{minute = 45, pattern = "hora {h} na makhumi mancheche na thanu"}, Clock_Pattern{minute = 50, pattern = "hora {h} na makhumi mathanu"}, Clock_Pattern{minute = 55, pattern = "hora {h} na makhumi mathanu na thanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4014,10 +4014,10 @@ locale_vmw : Time_Locale = {
 locale_wo : Time_Locale = {
     code = "wo",
     clock = Clock_Config{
-        hours = {"fukki ñaar", "benn", "ñaar", "ñett", "ñeent", "juróom", "juróom-benn", "juróom-ñaar", "juróom-ñett", "juróom-ñeent", "fukk", "fukki benn"},
-        midnight = "bu guddi",
-        noon = "ci àttaya",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        hours = {"fukk ak ñaari waxtu", "benn waxtu", "ñaari waxtu", "ñetti waxtu", "ñeenti waxtu", "juróomi waxtu", "juróom-benni waxtu", "juróom-ñaari waxtu", "juróom-ñetti waxtu", "juróom-ñeenti waxtu", "fukki waxtu", "fukk ak benn waxtu"},
+        midnight = "digg-guddi",
+        noon = "digg-bëccëg",
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}"}, Clock_Pattern{minute = 5, pattern = "{h} ak juróomi simili"}, Clock_Pattern{minute = 10, pattern = "{h} ak fukki simili"}, Clock_Pattern{minute = 15, pattern = "{h} ak fukk ak juróomi simili"}, Clock_Pattern{minute = 20, pattern = "{h} ak ñaar-fukki simili"}, Clock_Pattern{minute = 25, pattern = "{h} ak ñaar-fukk ak juróomi simili"}, Clock_Pattern{minute = 30, pattern = "{h} ak genn-wàll"}, Clock_Pattern{minute = 35, pattern = "{next_h} des na ñaar-fukk ak juróomi simili"}, Clock_Pattern{minute = 40, pattern = "{next_h} des na ñaar-fukki simili"}, Clock_Pattern{minute = 45, pattern = "{next_h} des na fukk ak juróomi simili"}, Clock_Pattern{minute = 50, pattern = "{next_h} des na fukki simili"}, Clock_Pattern{minute = 55, pattern = "{next_h} des na juróomi simili"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4039,10 +4039,10 @@ locale_wo : Time_Locale = {
 locale_xh : Time_Locale = {
     code = "xh",
     clock = Clock_Config{
-        hours = {"ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye"},
+        hours = {"yeshumi elinesibini", "yokuqala", "yesibini", "yesithathu", "yesine", "yesihlanu", "yesithandathu", "yesixhenxe", "yesibhozo", "yethoba", "yeshumi", "yeshumi elinanye"},
         midnight = "ezinzulwini zobusuku",
         noon = "emini",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "intsimbi {h}"}, Clock_Pattern{minute = 5, pattern = "imizuzu emihlanu emva kwentsimbi {h}"}, Clock_Pattern{minute = 10, pattern = "imizuzu elishumi emva kwentsimbi {h}"}, Clock_Pattern{minute = 15, pattern = "ikota emva kwentsimbi {h}"}, Clock_Pattern{minute = 20, pattern = "imizuzu engamashumi amabini emva kwentsimbi {h}"}, Clock_Pattern{minute = 25, pattern = "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}"}, Clock_Pattern{minute = 30, pattern = "isiqingatha emva kwentsimbi {h}"}, Clock_Pattern{minute = 35, pattern = "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}"}, Clock_Pattern{minute = 40, pattern = "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}"}, Clock_Pattern{minute = 45, pattern = "ikota ukuya kwintsimbi {next_h}"}, Clock_Pattern{minute = 50, pattern = "imizuzu elishumi ukuya kwintsimbi {next_h}"}, Clock_Pattern{minute = 55, pattern = "imizuzu emihlanu ukuya kwintsimbi {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4067,7 +4067,7 @@ locale_yao : Time_Locale = {
         hours = {"likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo"},
         midnight = "pakati pa usiku",
         noon = "pakati pa lisiku",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saa {h}"}, Clock_Pattern{minute = 5, pattern = "saa {h} na nsano"}, Clock_Pattern{minute = 10, pattern = "saa {h} na likumi"}, Clock_Pattern{minute = 15, pattern = "saa {h} na likumi na nsano"}, Clock_Pattern{minute = 20, pattern = "saa {h} na makumi gaŵili"}, Clock_Pattern{minute = 25, pattern = "saa {h} na makumi gaŵili na nsano"}, Clock_Pattern{minute = 30, pattern = "saa {h} na nusu"}, Clock_Pattern{minute = 35, pattern = "saa {h} na makumi gatatu na nsano"}, Clock_Pattern{minute = 40, pattern = "saa {h} na makumi ncece"}, Clock_Pattern{minute = 45, pattern = "saa {h} na makumi ncece na nsano"}, Clock_Pattern{minute = 50, pattern = "saa {h} na makumi nsano"}, Clock_Pattern{minute = 55, pattern = "saa {h} na makumi nsano na nsano"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4090,9 +4090,9 @@ locale_yo : Time_Locale = {
     code = "yo",
     clock = Clock_Config{
         hours = {"méjìlá", "kan", "méjì", "mẹ́ta", "mẹ́rin", "márùn-ún", "mẹ́fà", "méje", "mẹ́jọ", "mẹ́sàn-án", "mẹ́wàá", "mọ́kànlá"},
-        midnight = "àárọ̀ òru",
-        noon = "ọ̀sán",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        midnight = "ọ̀gànjọ́ òru",
+        noon = "ọ̀sán gangan",
+        patterns = {Clock_Pattern{minute = 0, pattern = "aago {h}"}, Clock_Pattern{minute = 5, pattern = "aago {h} kọjá ìṣẹ́jú márùn-ún"}, Clock_Pattern{minute = 10, pattern = "aago {h} kọjá ìṣẹ́jú mẹ́wàá"}, Clock_Pattern{minute = 15, pattern = "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"}, Clock_Pattern{minute = 20, pattern = "aago {h} kọjá ogún ìṣẹ́jú"}, Clock_Pattern{minute = 25, pattern = "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"}, Clock_Pattern{minute = 30, pattern = "aago {h} àbọ̀"}, Clock_Pattern{minute = 35, pattern = "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"}, Clock_Pattern{minute = 40, pattern = "aago {next_h} kù ogún ìṣẹ́jú"}, Clock_Pattern{minute = 45, pattern = "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"}, Clock_Pattern{minute = 50, pattern = "aago {next_h} kù ìṣẹ́jú mẹ́wàá"}, Clock_Pattern{minute = 55, pattern = "aago {next_h} kù ìṣẹ́jú márùn-ún"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4114,10 +4114,10 @@ locale_yo : Time_Locale = {
 locale_yue : Time_Locale = {
     code = "yue",
     clock = Clock_Config{
-        hours = {"十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"},
+        hours = {"十二", "一", "兩", "三", "四", "五", "六", "七", "八", "九", "十", "十一"},
         midnight = "午夜",
         noon = "正午",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}點整"}, Clock_Pattern{minute = 5, pattern = "{h}點零五分"}, Clock_Pattern{minute = 10, pattern = "{h}點十分"}, Clock_Pattern{minute = 15, pattern = "{h}點十五分"}, Clock_Pattern{minute = 20, pattern = "{h}點二十分"}, Clock_Pattern{minute = 25, pattern = "{h}點二十五分"}, Clock_Pattern{minute = 30, pattern = "{h}點半"}, Clock_Pattern{minute = 35, pattern = "{h}點三十五分"}, Clock_Pattern{minute = 40, pattern = "{h}點四十分"}, Clock_Pattern{minute = 45, pattern = "{h}點四十五分"}, Clock_Pattern{minute = 50, pattern = "{h}點五十分"}, Clock_Pattern{minute = 55, pattern = "{h}點五十五分"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}點正"}, Clock_Pattern{minute = 5, pattern = "{h}點一個字"}, Clock_Pattern{minute = 10, pattern = "{h}點兩個字"}, Clock_Pattern{minute = 15, pattern = "{h}點三個字"}, Clock_Pattern{minute = 20, pattern = "{h}點四個字"}, Clock_Pattern{minute = 25, pattern = "{h}點五個字"}, Clock_Pattern{minute = 30, pattern = "{h}點半"}, Clock_Pattern{minute = 35, pattern = "{h}點七個字"}, Clock_Pattern{minute = 40, pattern = "{h}點八個字"}, Clock_Pattern{minute = 45, pattern = "{h}點九個字"}, Clock_Pattern{minute = 50, pattern = "{h}點十個字"}, Clock_Pattern{minute = 55, pattern = "{h}點十一個字"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4139,10 +4139,10 @@ locale_yue : Time_Locale = {
 locale_zdj : Time_Locale = {
     code = "zdj",
     clock = Clock_Config{
-        hours = {"kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"},
+        hours = {"kumi na mbili", "moja", "mbili", "ndraru", "nne", "ntsanu", "sita", "saba", "nane", "shenda", "kumi", "kumi na moja"},
         midnight = "usiku wa manane",
         noon = "adhuhuri",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}:00"}, Clock_Pattern{minute = 5, pattern = "{h}:05"}, Clock_Pattern{minute = 10, pattern = "{h}:10"}, Clock_Pattern{minute = 15, pattern = "{h}:15"}, Clock_Pattern{minute = 20, pattern = "{h}:20"}, Clock_Pattern{minute = 25, pattern = "{h}:25"}, Clock_Pattern{minute = 30, pattern = "{h}:30"}, Clock_Pattern{minute = 35, pattern = "{h}:35"}, Clock_Pattern{minute = 40, pattern = "{h}:40"}, Clock_Pattern{minute = 45, pattern = "{h}:45"}, Clock_Pattern{minute = 50, pattern = "{h}:50"}, Clock_Pattern{minute = 55, pattern = "{h}:55"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "saa {h}"}, Clock_Pattern{minute = 5, pattern = "saa {h} na ntsanu"}, Clock_Pattern{minute = 10, pattern = "saa {h} na kumi"}, Clock_Pattern{minute = 15, pattern = "saa {h} na kumi na ntsanu"}, Clock_Pattern{minute = 20, pattern = "saa {h} na shirini"}, Clock_Pattern{minute = 25, pattern = "saa {h} na shirini na ntsanu"}, Clock_Pattern{minute = 30, pattern = "saa {h} na nusu"}, Clock_Pattern{minute = 35, pattern = "saa {h} na thalathini na ntsanu"}, Clock_Pattern{minute = 40, pattern = "saa {h} na arubaini"}, Clock_Pattern{minute = 45, pattern = "saa {h} na arubaini na ntsanu"}, Clock_Pattern{minute = 50, pattern = "saa {h} na hamsini"}, Clock_Pattern{minute = 55, pattern = "saa {h} na hamsini na ntsanu"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4164,10 +4164,10 @@ locale_zdj : Time_Locale = {
 locale_zh : Time_Locale = {
     code = "zh",
     clock = Clock_Config{
-        hours = {"十二", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一"},
+        hours = {"十二", "一", "两", "三", "四", "五", "六", "七", "八", "九", "十", "十一"},
         midnight = "午夜",
         noon = "正午",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h}点整"}, Clock_Pattern{minute = 5, pattern = "{h}点五分"}, Clock_Pattern{minute = 10, pattern = "{h}点十分"}, Clock_Pattern{minute = 15, pattern = "{h}点十五分"}, Clock_Pattern{minute = 20, pattern = "{h}点二十分"}, Clock_Pattern{minute = 25, pattern = "{h}点二十五分"}, Clock_Pattern{minute = 30, pattern = "{h}点半"}, Clock_Pattern{minute = 35, pattern = "{h}点三十五分"}, Clock_Pattern{minute = 40, pattern = "{h}点四十分"}, Clock_Pattern{minute = 45, pattern = "{h}点四十五分"}, Clock_Pattern{minute = 50, pattern = "{h}点五十分"}, Clock_Pattern{minute = 55, pattern = "{h}点五十五分"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "{h}点整"}, Clock_Pattern{minute = 5, pattern = "{h}点零五分"}, Clock_Pattern{minute = 10, pattern = "{h}点十分"}, Clock_Pattern{minute = 15, pattern = "{h}点十五分"}, Clock_Pattern{minute = 20, pattern = "{h}点二十分"}, Clock_Pattern{minute = 25, pattern = "{h}点二十五分"}, Clock_Pattern{minute = 30, pattern = "{h}点半"}, Clock_Pattern{minute = 35, pattern = "{h}点三十五分"}, Clock_Pattern{minute = 40, pattern = "{h}点四十分"}, Clock_Pattern{minute = 45, pattern = "{h}点四十五分"}, Clock_Pattern{minute = 50, pattern = "{h}点五十分"}, Clock_Pattern{minute = 55, pattern = "{h}点五十五分"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{
@@ -4189,10 +4189,10 @@ locale_zh : Time_Locale = {
 locale_zu : Time_Locale = {
     code = "zu",
     clock = Clock_Config{
-        hours = {"ishumi nambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isishiyagalombili", "isishiyagalolunye", "ishumi", "ishumi nanye"},
+        hours = {"leshumi nambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesishiyagalombili", "lesishiyagalolunye", "leshumi", "leshumi nanye"},
         midnight = "phakathi kwamabili",
         noon = "emini",
-        patterns = {Clock_Pattern{minute = 0, pattern = "{h} o'clock"}, Clock_Pattern{minute = 5, pattern = "emva kwemizuzu emihlanu ngo-{h}"}, Clock_Pattern{minute = 10, pattern = "emva kwemizuzu eyishumi ngo-{h}"}, Clock_Pattern{minute = 15, pattern = "ikota edlule ngo-{h}"}, Clock_Pattern{minute = 20, pattern = "emva kwemizuzu engamashumi amabili ngo-{h}"}, Clock_Pattern{minute = 25, pattern = "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}"}, Clock_Pattern{minute = 30, pattern = "uhhafu edlule ngo-{h}"}, Clock_Pattern{minute = 35, pattern = "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}"}, Clock_Pattern{minute = 40, pattern = "imizuzu engamashumi amabili ngaphambi kuka-{next_h}"}, Clock_Pattern{minute = 45, pattern = "ikota ngaphambi kuka-{next_h}"}, Clock_Pattern{minute = 50, pattern = "imizuzu eyishumi ngaphambi kuka-{next_h}"}, Clock_Pattern{minute = 55, pattern = "imizuzu emihlanu ngaphambi kuka-{next_h}"}},
+        patterns = {Clock_Pattern{minute = 0, pattern = "ihora {h}"}, Clock_Pattern{minute = 5, pattern = "imizuzu emihlanu emva kwehora {h}"}, Clock_Pattern{minute = 10, pattern = "imizuzu eyishumi emva kwehora {h}"}, Clock_Pattern{minute = 15, pattern = "ikota emva kwehora {h}"}, Clock_Pattern{minute = 20, pattern = "imizuzu engamashumi amabili emva kwehora {h}"}, Clock_Pattern{minute = 25, pattern = "imizuzu engamashumi amabili nanhlanu emva kwehora {h}"}, Clock_Pattern{minute = 30, pattern = "uhhafu emva kwehora {h}"}, Clock_Pattern{minute = 35, pattern = "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}"}, Clock_Pattern{minute = 40, pattern = "imizuzu engamashumi amabili ngaphambi kwehora {next_h}"}, Clock_Pattern{minute = 45, pattern = "ikota ngaphambi kwehora {next_h}"}, Clock_Pattern{minute = 50, pattern = "imizuzu eyishumi ngaphambi kwehora {next_h}"}, Clock_Pattern{minute = 55, pattern = "imizuzu emihlanu ngaphambi kwehora {next_h}"}},
     },
     short_override = Time_Compactness_Override{
         clock = Short_Clock_Config{

@@ -36,6 +36,6 @@
    "ɣilad"
    "ɣ {0} zzrin"
    "ɣ {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f #f "ɣ {0} zzrin" "ɣ {0}")
+   (duration-compactness-override (hash "type" "pluralized" "forms" (hash "one" "{n} tasint" "other" "{n} tisinin")) (hash "type" "pluralized" "forms" (hash "one" "{n} tusdiqt" "other" "{n} tusdiqin")) (hash "type" "pluralized" "forms" (hash "one" "{n} tasragt" "other" "{n} tisragin")) (hash "type" "pluralized" "forms" (hash "one" "{n} ass" "other" "{n} ussan")) (hash "type" "pluralized" "forms" (hash "one" "{n} imalass" "other" "{n} imalassn")) (hash "type" "pluralized" "forms" (hash "one" "{n} ayyur" "other" "{n} ayyurn")) (hash "type" "pluralized" "forms" (hash "one" "{n} aseggas" "other" "{n} iseggasen")) #f #f "ɣ {0} zzrin" "ɣ {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "ɣ {0} zzrin" "ɣ {0}")
   ))

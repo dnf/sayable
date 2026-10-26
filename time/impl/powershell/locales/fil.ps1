@@ -10,22 +10,22 @@
 # Source: locales/fil.json
 
 function locale_fil {
-    $hours = @('dose', 'una', 'dos', 'tres', 'kwatro', 'singko', 'seis', 'syete', 'otso', 'nuwebe', 'diyes', 'onse')
+    $hours = @('alas-dose', 'ala-una', 'alas-dos', 'alas-tres', 'alas-kuwatro', 'alas-singko', 'alas-sais', 'alas-siyete', 'alas-otso', 'alas-nuwebe', 'alas-diyes', 'alas-onse')
     $midnight = 'hatinggabi'
     $noon = 'tanghali'
     $patterns = @{}
-    $patterns[0] = '{h} o''clock'
-    $patterns[5] = 'lima dan {h}'
-    $patterns[10] = 'sampu dan {h}'
-    $patterns[15] = 'labinlima dan {h}'
-    $patterns[20] = 'dalawampu dan {h}'
-    $patterns[25] = 'dalawampu''t lima dan {h}'
-    $patterns[30] = 'tatlumpu dan {h}'
-    $patterns[35] = 'dalawampu''t lima bago mag {next_h}'
-    $patterns[40] = 'dalawampu bago mag {next_h}'
-    $patterns[45] = 'labinlima bago mag {next_h}'
-    $patterns[50] = 'sampu bago mag {next_h}'
-    $patterns[55] = 'lima bago mag {next_h}'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} y singko'
+    $patterns[10] = '{h} y diyes'
+    $patterns[15] = '{h} y kinse'
+    $patterns[20] = '{h} y beynte'
+    $patterns[25] = '{h} y beynte singko'
+    $patterns[30] = '{h} y medya'
+    $patterns[35] = 'menos beynte singko para {next_h}'
+    $patterns[40] = 'menos beynte para {next_h}'
+    $patterns[45] = 'menos kinse para {next_h}'
+    $patterns[50] = 'menos diyes para {next_h}'
+    $patterns[55] = 'menos singko para {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

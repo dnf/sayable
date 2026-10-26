@@ -23,13 +23,13 @@ const SduDurationLocale sdu_locale_pl = {
     "pl",
     plural_pl,
     {
-        { NULL, { NULL, "{n} sekunda", NULL, "{n} sekundy", "{n} sekund", "{n} sekund" } },
-        { NULL, { NULL, "{n} minuta", NULL, "{n} minuty", "{n} minut", "{n} minut" } },
-        { NULL, { NULL, "{n} godzina", NULL, "{n} godziny", "{n} godzin", "{n} godzin" } },
-        { NULL, { NULL, "{n} dzień", NULL, "{n} dni", "{n} dni", "{n} dni" } },
-        { NULL, { NULL, "{n} tydzień", NULL, "{n} tygodnie", "{n} tygodni", "{n} tygodni" } },
-        { NULL, { NULL, "{n} miesiąc", NULL, "{n} miesiące", "{n} miesięcy", "{n} miesięcy" } },
-        { NULL, { NULL, "{n} rok", NULL, "{n} lata", "{n} lat", "{n} lat" } }
+        { NULL, { NULL, "{n} sekunda", NULL, "{n} sekundy", "{n} sekund", "{n} sekundy" } },
+        { NULL, { NULL, "{n} minuta", NULL, "{n} minuty", "{n} minut", "{n} minuty" } },
+        { NULL, { NULL, "{n} godzina", NULL, "{n} godziny", "{n} godzin", "{n} godziny" } },
+        { NULL, { NULL, "{n} dzień", NULL, "{n} dni", "{n} dni", "{n} dnia" } },
+        { NULL, { NULL, "{n} tydzień", NULL, "{n} tygodnie", "{n} tygodni", "{n} tygodnia" } },
+        { NULL, { NULL, "{n} miesiąc", NULL, "{n} miesiące", "{n} miesięcy", "{n} miesiąca" } },
+        { NULL, { NULL, "{n} rok", NULL, "{n} lata", "{n} lat", "{n} roku" } }
     },
     "{n} i pół", ", ",
     "właśnie teraz",

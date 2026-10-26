@@ -19,11 +19,23 @@ import SayableAge.Types exposing (..)
 locale : Locale
 locale =
     { code = "kl"
-    , plural = \n -> Other
-    , day = Simple "ullut {n}"
-    , week = Simple "sapaatit {n}"
-    , month = Simple "qaammatit {n}"
-    , year = Simple "ukiut {n}"
+    , plural = \n -> if n == 1 then One else Other
+    , day = Pluralized
+      [ ( One, "ulloq {n}" )
+      , ( Other, "ullut {n}" )
+      ]
+    , week = Pluralized
+      [ ( One, "sapaatip akunnera {n}" )
+      , ( Other, "sapaatip akunneri {n}" )
+      ]
+    , month = Pluralized
+      [ ( One, "qaammat {n}" )
+      , ( Other, "qaammatit {n}" )
+      ]
+    , year = Pluralized
+      [ ( One, "ukioq {n}" )
+      , ( Other, "ukiut {n}" )
+      ]
     , half = "{0} affaa"
     , delimiter = ", "
     , justBorn = "Inuuneq nutaaq"
@@ -38,7 +50,7 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "ull. {n}")
-            , ovrWeek = Just (Simple "sap. {n}")
+            , ovrWeek = Just (Simple "sap. ak. {n}")
             , ovrMonth = Just (Simple "qaam. {n}")
             , ovrYear = Just (Simple "uk. {n}")
             , ovrHalf = Nothing
@@ -51,7 +63,7 @@ locale =
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

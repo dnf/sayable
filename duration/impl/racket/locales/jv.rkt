@@ -30,7 +30,7 @@
          "year" (hash "type" "simple" "form" "{n} taun"))
    "{0} setengah"
    ", "
-   "saiki"
+   "lagi waé"
    "{0} kepungkur"
    "ing {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} dtk") (hash "type" "simple" "form" "{n} mnt") (hash "type" "simple" "form" "{n} jam") (hash "type" "simple" "form" "{n} dina") (hash "type" "simple" "form" "{n} peken") (hash "type" "simple" "form" "{n} sasi") (hash "type" "simple" "form" "{n} taun") #f #f "{0} kepungkur" "ing {0}")

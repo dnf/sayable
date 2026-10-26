@@ -33,20 +33,20 @@ pub const locale_shi = AgeLocale{
 	delimiter: ', '
 	just_born: 'Iɣ d illul'
 	newborn: stage_neutral('Iɣ d illul')
-	infant: stage_neutral('Agellid')
+	infant: stage_neutral('Llufan')
 	toddler: stage_gendered('Aḥenjir', 'Taḥenjirt')
-	child: stage_gendered('Afrux', 'Tafruxṭ')
+	child: stage_gendered('Afrux', 'Tafruxt')
 	teenager: stage_gendered('Aɛrim', 'Taɛrimt')
 	adult: stage_gendered('Argaz', 'Tamṭṭuṭ')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('{n} d')
+		day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'})
 		has_day: true
-		week: simple_unit('{n} wk')
+		week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.few: '{n} imalassn', PluralCategory.other: '{n} imalass'})
 		has_week: true
-		month: simple_unit('{n} mo')
+		month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.few: '{n} ayyurn', PluralCategory.other: '{n} ayyur'})
 		has_month: true
-		year: simple_unit('{n} yr')
+		year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.few: '{n} iseggasen', PluralCategory.other: '{n} aseggas'})
 		has_year: true
 	}
 	has_compact: true

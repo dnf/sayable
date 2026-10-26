@@ -24,15 +24,15 @@
    (hash "second" (hash "type" "simple" "form" "{n} hēkona")
          "minute" (hash "type" "simple" "form" "{n} meneti")
          "hour" (hash "type" "simple" "form" "{n} hāora")
-         "day" (hash "type" "simple" "form" "rā {n}")
-         "week" (hash "type" "simple" "form" "wiki {n}")
-         "month" (hash "type" "simple" "form" "marama {n}")
-         "year" (hash "type" "simple" "form" "tau {n}"))
-   "{0}½"
+         "day" (hash "type" "simple" "form" "{n} rā")
+         "week" (hash "type" "simple" "form" "{n} wiki")
+         "month" (hash "type" "simple" "form" "{n} marama")
+         "year" (hash "type" "simple" "form" "{n} tau"))
+   "{n}½"
    ", "
    "ināianei"
    "{0} i mua"
    "ā te {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} hēk") (hash "type" "simple" "form" "{n} men") (hash "type" "simple" "form" "{n} hāo") (hash "type" "simple" "form" "rā {n}") (hash "type" "simple" "form" "w {n}") (hash "type" "simple" "form" "m {n}") (hash "type" "simple" "form" "t {n}") #f #f "{0} i mua" "ā te {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} hēk") (hash "type" "simple" "form" "{n} men") (hash "type" "simple" "form" "{n} hāo") (hash "type" "simple" "form" "{n} rā") (hash "type" "simple" "form" "{n} w") (hash "type" "simple" "form" "{n} m") (hash "type" "simple" "form" "{n} t") #f #f "{0} i mua" "ā te {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n}hēk") (hash "type" "simple" "form" "{n}men") (hash "type" "simple" "form" "{n}hāo") (hash "type" "simple" "form" "{n}r") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}t") "{n}½" "" "{0} i mua" "ā te {0}")
   ))

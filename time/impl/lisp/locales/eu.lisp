@@ -17,10 +17,10 @@
   (make-time-locale
    :code "eu"
    :clock (make-clock-config
-    :hours (list "hamabi" "bat" "bi" "hiru" "lau" "bost" "sei" "zazpi" "zortzi" "bederatzi" "hamar" "hamaika")
+    :hours (list "hamabiak" "ordu bata" "ordu biak" "hirurak" "laurak" "bostak" "seiak" "zazpiak" "zortziak" "bederatziak" "hamarrak" "hamaikak")
     :midnight "gauerdia"
     :noon "eguerdia"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} eta bost") (cons 10 "{h} eta hamar") (cons 15 "{h} eta laurden") (cons 20 "{h} eta hogei") (cons 25 "{h} eta hogeita bost") (cons 30 "{h} eta erdiak") (cons 35 "{next_h} hogeita bost gutxi") (cons 40 "{next_h} hogei gutxi") (cons 45 "{next_h} laurden gutxi") (cons 50 "{next_h} hamar gutxi") (cons 55 "{next_h} bost gutxi")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

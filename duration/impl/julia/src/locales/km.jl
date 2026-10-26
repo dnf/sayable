@@ -27,7 +27,7 @@ const KM = DurationLocale(
     delimiter = ", ",
     just_now = "ឥឡូវនេះ",
     ago = "{0}មុន",
-    in_future = "ក្នុង{0}",
+    in_future = "{0}ទៀត",
     short_override = DurationCompactnessOverride(
         units = Dict(
             "second" => "{n} វិនាទី",
@@ -39,7 +39,7 @@ const KM = DurationLocale(
             "year" => "{n} ឆ្នាំ",
         ),
         ago = "{0}មុន",
-        in_future = "ក្នុង{0}",
+        in_future = "{0}ទៀត",
     ),
     compact_override = DurationCompactnessOverride(
         units = Dict(
@@ -54,6 +54,6 @@ const KM = DurationLocale(
         half = "{n}½",
         delimiter = "",
         ago = "{0}មុន",
-        in_future = "ក្នុង{0}",
+        in_future = "{0}ទៀត",
     ),
 )

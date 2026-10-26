@@ -20,7 +20,7 @@ our sub locale() {
         day-format => '{n}.',
         day-format-exceptions => {},
         date-pattern => '{day} {month}',
-        date-pattern-with-year => '{day} {month} {year}',
+        date-pattern-with-year => '{year}. gada {day} {month}',
         today => 'šodien',
         tomorrow => 'rīt',
         yesterday => 'vakar',
@@ -34,7 +34,7 @@ our sub locale() {
             weekdays => ('sv', 'pr', 'ot', 'tr', 'ce', 'pk', 'se'),
             day-format => '{n}.',
             date-pattern => '{day} {month}',
-            date-pattern-with-year => '{day} {month} {year}',
+            date-pattern-with-year => '{year}. gada {day} {month}',
         },
         compact => {
             date-pattern => '{d}.{m}.',

@@ -17,15 +17,15 @@ proc plural_te {n} {
 proc locale_duration_te {} {
     set code {te}
     set units [dict create \
-        second "{n} సెకను" \
-        minute "{n} నిమిషం" \
-        hour "{n} గంట" \
+        second [dict create one "{n} సెకను" other "{n} సెకన్లు"] \
+        minute [dict create one "{n} నిమిషం" other "{n} నిమిషాలు"] \
+        hour [dict create one "{n} గంట" other "{n} గంటలు"] \
         day [dict create one "{n} రోజు" other "{n} రోజులు"] \
         week [dict create one "{n} వారం" other "{n} వారాలు"] \
         month [dict create one "{n} నెల" other "{n} నెలలు"] \
         year [dict create one "{n} సంవత్సరం" other "{n} సంవత్సరాలు"] \
     ]
-    set half "{0}న్నర"
+    set half "{n}½"
     set delimiter {, }
     set just_now {ఇప్పుడే}
     set ago "{0} క్రితం"

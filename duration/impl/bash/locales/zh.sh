@@ -20,7 +20,7 @@ _sayableduration_locale_zh() {
     _unit_day='{n}天'
     _unit_week='{n}周'
     _unit_month='{n}个月'
-    _unit_year='{n}岁'
+    _unit_year='{n}年'
     _half='{0}半'
     _delimiter=''
     _just_now='刚刚'

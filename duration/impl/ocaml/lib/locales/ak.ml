@@ -42,7 +42,10 @@ let locale : duration_locale =
       { ovr_second = Some (Simple "sɛkɛnd {n}")
       ; ovr_minute = Some (Simple "sema {n}")
       ; ovr_hour = Some (Simple "dɔnhwere {n}")
-      ; ovr_day = Some (Simple "nna {n}")
+      ; ovr_day = Some (Pluralized
+        [ (One, "da {n}")
+        ; (Other, "nna {n}")
+        ])
       ; ovr_week = Some (Pluralized
         [ (One, "dapɛn {n}")
         ; (Other, "nnapɛn {n}")
@@ -64,7 +67,10 @@ let locale : duration_locale =
       { ovr_second = Some (Simple "sɛk {n}")
       ; ovr_minute = Some (Simple "sem {n}")
       ; ovr_hour = Some (Simple "dɔn {n}")
-      ; ovr_day = Some (Simple "nna {n}")
+      ; ovr_day = Some (Pluralized
+        [ (One, "da {n}")
+        ; (Other, "nna {n}")
+        ])
       ; ovr_week = Some (Pluralized
         [ (One, "dapɛn {n}")
         ; (Other, "nnapɛn {n}")

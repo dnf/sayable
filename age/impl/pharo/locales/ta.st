@@ -23,7 +23,7 @@ ta
 		'month'. (Dictionary newFromPairs: { #one. '{n} மாதம்'. #other. '{n} மாதங்கள்' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} வயது'. #other. '{n} வயது' }).
 	}).
-	locale half: '{0}ரை'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justBorn: 'பிறந்த குழந்தை'.
 	locale stages: (Dictionary newFromPairs: {

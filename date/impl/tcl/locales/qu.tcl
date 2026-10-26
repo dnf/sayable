@@ -21,7 +21,7 @@ proc locale_date_qu {} {
     set tomorrow {paqarin}
     set yesterday {qayna}
     set day_after_tomorrow {minchha}
-    set day_before_yesterday {qayna p'unchaw}
+    set day_before_yesterday {qayninpa}
     set this_weekday "kay {weekday}"
     set next_weekday "hamuq {weekday}"
     set last_weekday "qayna {weekday}"

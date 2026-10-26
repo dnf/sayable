@@ -20,7 +20,7 @@
     :hours (list "sanulu-resin-rua" "ida" "rua" "tolu" "haat" "lima" "neen" "hitu" "ualu" "sia" "sanulu" "sanulu-resin-ida")
     :midnight "meiu-kalan"
     :noon "meiu-loron"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "tuku {h}") (cons 5 "tuku {h} ho minutu lima") (cons 10 "tuku {h} ho minutu sanulu") (cons 15 "tuku {h} ho minutu sanulu-resin-lima") (cons 20 "tuku {h} ho minutu ruanulu") (cons 25 "tuku {h} ho minutu ruanulu-resin-lima") (cons 30 "tuku {h} ho balun") (cons 35 "tuku {h} ho minutu tolunulu-resin-lima") (cons 40 "tuku {h} ho minutu haatnulu") (cons 45 "tuku {h} ho minutu haatnulu-resin-lima") (cons 50 "tuku {h} ho minutu limanulu") (cons 55 "tuku {h} ho minutu limanulu-resin-lima")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -28,7 +28,7 @@ var TA = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} மாதம்", sa.Other: "{n} மாதங்கள்"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} வயது", sa.Other: "{n} வயது"}),
 	},
-	Half:      "{0}ரை",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustBorn:  "பிறந்த குழந்தை",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

@@ -20,7 +20,7 @@
     :hours (list "dó dhéag" "haon" "dó" "trí" "ceathair" "cúig" "sé" "seacht" "hocht" "naoi" "deich" "haon déag")
     :midnight "meán oíche"
     :noon "meán lae"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "a {h} a chlog") (cons 5 "cúig tar éis a {h}") (cons 10 "deich tar éis a {h}") (cons 15 "ceathrú tar éis a {h}") (cons 20 "fiche tar éis a {h}") (cons 25 "fiche cúig tar éis a {h}") (cons 30 "leathuair tar éis a {h}") (cons 35 "fiche cúig chun a {next_h}") (cons 40 "fiche chun a {next_h}") (cons 45 "ceathrú chun a {next_h}") (cons 50 "deich chun a {next_h}") (cons 55 "cúig chun a {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

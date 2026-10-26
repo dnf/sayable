@@ -17,7 +17,7 @@ const StTimeLocale st_locale_fj = {
         { "tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua" },
         "bogi levu",
         "sigalevu",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} na kaloko", "{h} na kaloko ka lima na miniti", "{h} na kaloko ka tini na miniti", "{h} na kaloko ka tini ka lima na miniti", "{h} na kaloko ka ruasagavulu na miniti", "{h} na kaloko ka ruasagavulu ka lima na miniti", "{h} na kaloko ka tolusagavulu na miniti", "{h} na kaloko ka tolusagavulu ka lima na miniti", "{h} na kaloko ka vāsagavulu na miniti", "{h} na kaloko ka vāsagavulu ka lima na miniti", "{h} na kaloko ka limasagavulu na miniti", "{h} na kaloko ka limasagavulu ka lima na miniti" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

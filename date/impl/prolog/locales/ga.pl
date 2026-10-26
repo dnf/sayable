@@ -23,7 +23,7 @@ sd_tomorrow('ga', 'amárach').
 sd_yesterday('ga', 'inné').
 sd_day_after_tomorrow('ga', 'arú amárach').
 sd_day_before_yesterday('ga', 'arú inné').
-sd_this_weekday('ga', 'an {weekday} seo').
+sd_this_weekday('ga', '{weekday} seo').
 sd_next_weekday('ga', '{weekday} seo chugainn').
 sd_last_weekday('ga', '{weekday} seo caite').
 

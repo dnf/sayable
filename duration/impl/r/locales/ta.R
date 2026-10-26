@@ -19,9 +19,9 @@ locale_ta <- list(
     day = list(one = "{n} நாள்", other = "{n} நாட்கள்"),
     week = list(one = "{n} வாரம்", other = "{n} வாரங்கள்"),
     month = list(one = "{n} மாதம்", other = "{n} மாதங்கள்"),
-    year = list(one = "{n} வயது", other = "{n} வயது")
+    year = list(one = "{n} ஆண்டு", other = "{n} ஆண்டுகள்")
   ),
-  half = "{0}ரை",
+  half = "{n}½",
   delimiter = ", ",
   just_now = "இப்போதுதான்",
   ago = "{0} முன்",

@@ -11,10 +11,10 @@
 
 function loc = locale_wo()
   loc.code = 'wo';
-  loc.clock.hours = {'fukki ñaar', 'benn', 'ñaar', 'ñett', 'ñeent', 'juróom', 'juróom-benn', 'juróom-ñaar', 'juróom-ñett', 'juróom-ñeent', 'fukk', 'fukki benn'};
-  loc.clock.midnight = 'bu guddi';
-  loc.clock.noon = 'ci àttaya';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.hours = {'fukk ak ñaari waxtu', 'benn waxtu', 'ñaari waxtu', 'ñetti waxtu', 'ñeenti waxtu', 'juróomi waxtu', 'juróom-benni waxtu', 'juróom-ñaari waxtu', 'juróom-ñetti waxtu', 'juróom-ñeenti waxtu', 'fukki waxtu', 'fukk ak benn waxtu'};
+  loc.clock.midnight = 'digg-guddi';
+  loc.clock.noon = 'digg-bëccëg';
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} ak juróomi simili', "p10", '{h} ak fukki simili', "p15", '{h} ak fukk ak juróomi simili', "p20", '{h} ak ñaar-fukki simili', "p25", '{h} ak ñaar-fukk ak juróomi simili', "p30", '{h} ak genn-wàll', "p35", '{next_h} des na ñaar-fukk ak juróomi simili', "p40", '{next_h} des na ñaar-fukki simili', "p45", '{next_h} des na fukk ak juróomi simili', "p50", '{next_h} des na fukki simili', "p55", '{next_h} des na juróomi simili');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

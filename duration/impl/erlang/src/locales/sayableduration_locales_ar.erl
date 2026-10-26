@@ -17,9 +17,9 @@ locale() ->
     #duration_locale{
         code = "ar",
         plural = fun(0) -> zero; (1) -> one; (2) -> two; (N) when N rem 100 >= 3, N rem 100 =< 10 -> few; (N) when N rem 100 >= 11, N rem 100 =< 99 -> many; (_) -> other end,
-        second = {pluralized, [{zero, "{n} ثانية"}, {one, "ثانية واحدة"}, {two, "ثانيتان"}, {few, "{n} ثوانٍ"}, {many, "{n} ثانية"}, {other, "{n} ثانية"}]},
-        minute = {pluralized, [{zero, "{n} دقيقة"}, {one, "دقيقة واحدة"}, {two, "دقيقتان"}, {few, "{n} دقائق"}, {many, "{n} دقيقة"}, {other, "{n} دقيقة"}]},
-        hour = {pluralized, [{zero, "{n} ساعة"}, {one, "ساعة واحدة"}, {two, "ساعتان"}, {few, "{n} ساعات"}, {many, "{n} ساعة"}, {other, "{n} ساعة"}]},
+        second = {pluralized, [{zero, "{n} ثانية"}, {one, "ثانية"}, {two, "ثانيتان"}, {few, "{n} ثوانٍ"}, {many, "{n} ثانية"}, {other, "{n} ثانية"}]},
+        minute = {pluralized, [{zero, "{n} دقيقة"}, {one, "دقيقة"}, {two, "دقيقتان"}, {few, "{n} دقائق"}, {many, "{n} دقيقة"}, {other, "{n} دقيقة"}]},
+        hour = {pluralized, [{zero, "{n} ساعة"}, {one, "ساعة"}, {two, "ساعتان"}, {few, "{n} ساعات"}, {many, "{n} ساعة"}, {other, "{n} ساعة"}]},
         day = {pluralized, [{zero, "{n} يوم"}, {one, "يوم"}, {two, "يومان"}, {few, "{n} أيام"}, {many, "{n} يومًا"}, {other, "{n} يوم"}]},
         week = {pluralized, [{zero, "{n} أسبوع"}, {one, "أسبوع"}, {two, "أسبوعان"}, {few, "{n} أسابيع"}, {many, "{n} أسبوعًا"}, {other, "{n} أسبوع"}]},
         month = {pluralized, [{zero, "{n} شهر"}, {one, "شهر"}, {two, "شهران"}, {few, "{n} أشهر"}, {many, "{n} شهرًا"}, {other, "{n} شهر"}]},
@@ -30,5 +30,5 @@ locale() ->
         ago = "منذ {0}",
         in_future = "بعد {0}",
         short = {just, #duration_compactness_override{second = {just, {simple, "{n} ث"}}, minute = {just, {simple, "{n} د"}}, hour = {just, {simple, "{n} س"}}, day = {just, {pluralized, [{zero, "{n} يوم"}, {one, "يوم"}, {two, "يومان"}, {few, "{n} أيام"}, {many, "{n} يومًا"}, {other, "{n} يوم"}]}}, week = {just, {pluralized, [{zero, "{n} أسبوع"}, {one, "أسبوع"}, {two, "أسبوعان"}, {few, "{n} أسابيع"}, {many, "{n} أسبوعًا"}, {other, "{n} أسبوع"}]}}, month = {just, {pluralized, [{zero, "{n} شهر"}, {one, "شهر"}, {two, "شهران"}, {few, "{n} أشهر"}, {many, "{n} شهرًا"}, {other, "{n} شهر"}]}}, year = {just, {pluralized, [{zero, "{n} سنة"}, {one, "سنة واحدة"}, {two, "سنتان"}, {few, "{n} سنوات"}, {many, "{n} سنة"}, {other, "{n} سنة"}]}}, half = nothing, delimiter = nothing, ago = {just, "منذ {0}"}, in_future = {just, "بعد {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n} ث"}}, minute = {just, {simple, "{n} د"}}, hour = {just, {simple, "{n} س"}}, day = {just, {simple, "{n} ي"}}, week = {just, {simple, "{n} أ"}}, month = {just, {pluralized, [{zero, "{n} شهر"}, {one, "شهر"}, {two, "شهران"}, {few, "{n} أشهر"}, {many, "{n} شهرًا"}, {other, "{n} شهر"}]}}, year = {just, {simple, "{n} سنة"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "منذ {0}"}, in_future = {just, "بعد {0}"}}}
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n} ث"}}, minute = {just, {simple, "{n} د"}}, hour = {just, {simple, "{n} س"}}, day = {just, {simple, "{n} ي"}}, week = {just, {simple, "{n} أ"}}, month = {just, {simple, "{n} شهر"}}, year = {just, {simple, "{n} سنة"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "منذ {0}"}, in_future = {just, "بعد {0}"}}}
     }.

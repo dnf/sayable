@@ -33,7 +33,7 @@ locale = Locale
       [ (One, "{n} año")
       , (Other, "{n} años")
       ]
-    , localeHalf = "{n} y medio"
+    , localeHalf = "{0} y medio"
     , localeDelimiter = ", "
     , localeJustBorn = "Recién nacido"
     , localeStages = Stages

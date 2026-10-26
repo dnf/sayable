@@ -11,22 +11,22 @@
 
 % Sindhi locale.
 
-st_hours('sd', ['ٻارھ', 'ھڪ', 'ٻه', 'ٽي', 'چار', 'پنج', 'ڇھ', 'ست', 'اٺ', 'نائن', 'ڏھ', 'يارھ']).
+st_hours('sd', ['ٻارهن', 'هڪ', 'ٻه', 'ٽي', 'چار', 'پنج', 'ڇهه', 'ست', 'اٺ', 'نوَ', 'ڏهه', 'يارهن']).
 st_midnight('sd', 'اڌ رات').
 st_noon('sd', 'ٽپھر').
 
-st_pattern('sd', 0, '{h}:00').
-st_pattern('sd', 5, '{h}:05').
-st_pattern('sd', 10, '{h}:10').
-st_pattern('sd', 15, '{h}:15').
-st_pattern('sd', 20, '{h}:20').
-st_pattern('sd', 25, '{h}:25').
-st_pattern('sd', 30, '{h}:30').
-st_pattern('sd', 35, '{h}:35').
-st_pattern('sd', 40, '{h}:40').
-st_pattern('sd', 45, '{h}:45').
-st_pattern('sd', 50, '{h}:50').
-st_pattern('sd', 55, '{h}:55').
+st_pattern('sd', 0, '{h} وڳي').
+st_pattern('sd', 5, '{h} وڳي پنج منٽ').
+st_pattern('sd', 10, '{h} وڳي ڏهه منٽ').
+st_pattern('sd', 15, 'سوا {h} وڳي').
+st_pattern('sd', 20, '{h} وڳي ويهه منٽ').
+st_pattern('sd', 25, '{h} وڳي پنجويهه منٽ').
+st_pattern('sd', 30, '{h} وڳي ٽيهه منٽ').
+st_pattern('sd', 35, '{next_h} وڳڻ ۾ پنجويهه منٽ').
+st_pattern('sd', 40, '{next_h} وڳڻ ۾ ويهه منٽ').
+st_pattern('sd', 45, 'پوڻا {next_h} وڳي').
+st_pattern('sd', 50, '{next_h} وڳڻ ۾ ڏهه منٽ').
+st_pattern('sd', 55, '{next_h} وڳڻ ۾ پنج منٽ').
 
 short_st_use24h('sd', false).
 short_st_format('sd', '{h}:{mm} {ampm}').

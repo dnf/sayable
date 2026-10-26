@@ -25,7 +25,7 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} setmana" "other" "{n} setmanes"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} mes" "other" "{n} mesos"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} any" "other" "{n} anys")))
-   "{n} i mig"
+   "{0} i mig"
    ", "
    "Nounat"
    (hash "newborn" (stage-label #f "Nounat" "Nounada")

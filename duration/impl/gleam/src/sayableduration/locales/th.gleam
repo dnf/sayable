@@ -28,7 +28,7 @@ pub fn locale() -> types.DurationLocale {
     delimiter: " ",
     just_now: "เมื่อกี้",
     ago: "{0}ที่แล้ว",
-    in_future: "ใน{0}",
+    in_future: "ในอีก {0}",
     short: Ok(types.CompactnessOverride(
       units: Ok([
         #("second", types.SimpleUnit("{n} วิ")),
@@ -42,7 +42,7 @@ pub fn locale() -> types.DurationLocale {
       half: Error(Nil),
       delimiter: Error(Nil),
       ago: Ok("{0}ที่แล้ว"),
-      in_future: Ok("ใน{0}"),
+      in_future: Ok("ในอีก {0}"),
     )),
     compact: Ok(types.CompactnessOverride(
       units: Ok([
@@ -57,7 +57,7 @@ pub fn locale() -> types.DurationLocale {
       half: Ok("{n}½"),
       delimiter: Ok(""),
       ago: Ok("{0}ที่แล้ว"),
-      in_future: Ok("ใน{0}"),
+      in_future: Ok("ในอีก {0}"),
     )),
   )
 }

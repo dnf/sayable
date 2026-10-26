@@ -30,7 +30,7 @@ locale = DurationLocale
     , localeDelimiter = " "
     , localeJustNow = "เมื่อกี้"
     , localeAgo = "{0}ที่แล้ว"
-    , localeInFuture = "ใน{0}"
+    , localeInFuture = "ในอีก {0}"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Simple "{n} วิ")
@@ -43,7 +43,7 @@ locale = DurationLocale
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0}ที่แล้ว"
-            , ovrInFuture = Just "ใน{0}"
+            , ovrInFuture = Just "ในอีก {0}"
             }
     , localeCompact = Just $
         CompactnessOverride
@@ -57,6 +57,6 @@ locale = DurationLocale
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0}ที่แล้ว"
-            , ovrInFuture = Just "ใน{0}"
+            , ovrInFuture = Just "ในอีก {0}"
             }
     }

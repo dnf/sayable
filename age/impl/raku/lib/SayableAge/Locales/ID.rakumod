@@ -22,7 +22,7 @@ our sub locale() {
             month => '{n} bulan',
             year => '{n} tahun',
         },
-        half => '{0} setengah',
+        half => '{n} setengah',
         delimiter => ', ',
         just-born => 'Baru lahir',
         stages => {

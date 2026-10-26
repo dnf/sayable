@@ -11,10 +11,10 @@
 
 function loc = locale_mt()
   loc.code = 'mt';
-  loc.clock.hours = {'tnax', 'waħda', 'tnejn', 'tlieta', 'erbgħa', 'ħamsa', 'sitta', 'sebgħa', 'tmienja', 'disgħa', 'għaxra', 'ħdax'};
-  loc.clock.midnight = 'nofsinhar';
+  loc.clock.hours = {'it-tnax', 'is-siegħa', 'is-sagħtejn', 'it-tlieta', 'l-erbgħa', 'il-ħamsa', 'is-sitta', 'is-sebgħa', 'it-tmienja', 'id-disgħa', 'l-għaxra', 'il-ħdax'};
+  loc.clock.midnight = 'nofsillejl';
   loc.clock.noon = 'nofsinhar';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} u ħamsa', "p10", '{h} u għaxra', "p15", '{h} u kwart', "p20", '{h} u għoxrin', "p25", '{h} u ħamsa u għoxrin', "p30", '{h} u nofs', "p35", '{next_h} neqsin ħamsa u għoxrin', "p40", '{next_h} neqsin għoxrin', "p45", '{next_h} neqsin kwart', "p50", '{next_h} neqsin għaxra', "p55", '{next_h} neqsin ħamsa');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

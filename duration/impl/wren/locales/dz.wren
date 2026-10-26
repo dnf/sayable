@@ -23,7 +23,7 @@ class DZLocale {
       "year": "ལོ་ {n}",
     }
   }
-  static half { "{0} ཕྱེད" }
+  static half { "{0} དང་ཕྱེད" }
   static delimiter { " " }
   static justNow { "ད་ལྟ" }
   static ago { "{0} ཧེ་མ" }

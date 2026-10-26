@@ -54,7 +54,7 @@ pub fn locale() -> types.DurationLocale {
         #("month", types.SimpleUnit("{n}mo")),
         #("year", types.SimpleUnit("{n}y")),
       ]),
-      half: Error(Nil),
+      half: Ok("{n}½"),
       delimiter: Ok(""),
       ago: Ok("{0} k'o chi"),
       in_future: Ok("pa {0}"),

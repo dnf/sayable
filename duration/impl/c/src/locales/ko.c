@@ -26,7 +26,7 @@ const SduDurationLocale sdu_locale_ko = {
         { "{n}일", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n}주", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n}개월", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n}살", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n}년", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} 반", " ",
     "방금",

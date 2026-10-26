@@ -11,8 +11,8 @@
 
 proc locale_date_hy {} {
     set code {hy}
-    set months [list {Հունվար} {Փետրվար} {Մարտ} {Ապրիլ} {Մայիս} {Հունիս} {Հուլիս} {Օգոստոս} {Սեպտեմբեր} {Հոկտեմբեր} {Նոյեմբեր} {Դեկտեմբեր}]
-    set weekdays [list {Կիրակի} {Երկուշաբթի} {Երեքշաբթի} {Չորեքշաբթի} {Հինգշաբթի} {Ուրբաթ} {Շաբաթ}]
+    set months [list {հունվար} {փետրվար} {մարտ} {ապրիլ} {մայիս} {հունիս} {հուլիս} {օգոստոս} {սեպտեմբեր} {հոկտեմբեր} {նոյեմբեր} {դեկտեմբեր}]
+    set weekdays [list {կիրակի} {երկուշաբթի} {երեքշաբթի} {չորեքշաբթի} {հինգշաբթի} {ուրբաթ} {շաբաթ}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
@@ -20,15 +20,15 @@ proc locale_date_hy {} {
     set today {այսօր}
     set tomorrow {վաղը}
     set yesterday {երեկ}
-    set day_after_tomorrow {վաղը մյուս օրը}
-    set day_before_yesterday {երեկ մյուս օրը}
+    set day_after_tomorrow {վաղը չէ մյուս օրը}
+    set day_before_yesterday {երեկ չէ առաջի օրը}
     set this_weekday "այս {weekday}"
     set next_weekday "հաջորդ {weekday}"
     set last_weekday "անցած {weekday}"
-    set months_in_date ""
+    set months_in_date [list {հունվարի} {փետրվարի} {մարտի} {ապրիլի} {մայիսի} {հունիսի} {հուլիսի} {օգոստոսի} {սեպտեմբերի} {հոկտեմբերի} {նոյեմբերի} {դեկտեմբերի}]
     set short [dict create \
-        months [list {Հնվ} {Փտր} {Մրտ} {Ապր} {Մյս} {Հնս} {Հլս} {Օգս} {Սեպ} {Հկտ} {Նոյ} {Դեկ}] \
-        weekdays [list {Կիր} {Երկ} {Երք} {Չրք} {Հնգ} {Ուր} {Շբթ}] \
+        months [list {հնվ} {փտր} {մրտ} {ապր} {մյս} {հնս} {հլս} {օգս} {սեպ} {հկտ} {նոյ} {դեկ}] \
+        weekdays [list {կիր} {երկ} {երք} {չրք} {հնգ} {ուր} {շբթ}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \
         date_pattern_with_year "{day} {month} {year}" \

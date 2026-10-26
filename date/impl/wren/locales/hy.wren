@@ -12,10 +12,10 @@
 class HYLocale {
   static code { "hy" }
   static months {
-    return ["Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"]
+    return ["հունվար", "փետրվար", "մարտ", "ապրիլ", "մայիս", "հունիս", "հուլիս", "օգոստոս", "սեպտեմբեր", "հոկտեմբեր", "նոյեմբեր", "դեկտեմբեր"]
   }
   static weekdays {
-    return ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"]
+    return ["կիրակի", "երկուշաբթի", "երեքշաբթի", "չորեքշաբթի", "հինգշաբթի", "ուրբաթ", "շաբաթ"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {
@@ -26,16 +26,18 @@ class HYLocale {
   static today { "այսօր" }
   static tomorrow { "վաղը" }
   static yesterday { "երեկ" }
-  static dayAfterTomorrow { "վաղը մյուս օրը" }
-  static dayBeforeYesterday { "երեկ մյուս օրը" }
+  static dayAfterTomorrow { "վաղը չէ մյուս օրը" }
+  static dayBeforeYesterday { "երեկ չէ առաջի օրը" }
   static thisWeekday { "այս {weekday}" }
   static nextWeekday { "հաջորդ {weekday}" }
   static lastWeekday { "անցած {weekday}" }
-  static monthsInDate { null }
+  static monthsInDate {
+    return ["հունվարի", "փետրվարի", "մարտի", "ապրիլի", "մայիսի", "հունիսի", "հուլիսի", "օգոստոսի", "սեպտեմբերի", "հոկտեմբերի", "նոյեմբերի", "դեկտեմբերի"]
+  }
   static short {
     return {
-      "months": ["Հնվ", "Փտր", "Մրտ", "Ապր", "Մյս", "Հնս", "Հլս", "Օգս", "Սեպ", "Հկտ", "Նոյ", "Դեկ"],
-      "weekdays": ["Կիր", "Երկ", "Երք", "Չրք", "Հնգ", "Ուր", "Շբթ"],
+      "months": ["հնվ", "փտր", "մրտ", "ապր", "մյս", "հնս", "հլս", "օգս", "սեպ", "հկտ", "նոյ", "դեկ"],
+      "weekdays": ["կիր", "երկ", "երք", "չրք", "հնգ", "ուր", "շբթ"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
       "datePatternWithYear": "{day} {month} {year}",

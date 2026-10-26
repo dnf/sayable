@@ -10,22 +10,22 @@
 # Source: locales/nus.json
 
 function locale_nus {
-    $hours = @('thiäär ke rou', 'tök', 'rou', 'diäk', 'ŋuan', 'dhiëc', 'bäkɛl', 'dhorou', 'bät', 'kuɔn', 'thiäär', 'thiäär ku tök')
+    $hours = @('wäl wi̱ rɛw', 'kɛl', 'rɛw', 'diɔk', 'ŋuaan', 'dhieec', 'bäkɛl', 'bäärɔw', 'bädäk', 'bäŋuan', 'wäl', 'wäl wi̱ kɛl')
     $midnight = 'wakɔ̈u'
     $noon = 'cäŋ kɔ̈k'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'thaar {h}'
+    $patterns[5] = 'thaar {h} kɛnɛ minit dhieec'
+    $patterns[10] = 'thaar {h} kɛnɛ minit wäl'
+    $patterns[15] = 'thaar {h} kɛnɛ minit wäl wi̱ dhieec'
+    $patterns[20] = 'thaar {h} kɛnɛ minit jiɛn rɛw'
+    $patterns[25] = 'thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec'
+    $patterns[30] = 'thaar {h} kɛnɛ minit jiɛn diɔk'
+    $patterns[35] = 'thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec'
+    $patterns[40] = 'thaar {h} kɛnɛ minit jiɛn ŋuaan'
+    $patterns[45] = 'thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec'
+    $patterns[50] = 'thaar {h} kɛnɛ minit jiɛn dhieec'
+    $patterns[55] = 'thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec'
     $clock = @{
         hours = $hours
         midnight = $midnight

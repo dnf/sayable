@@ -17,10 +17,10 @@ final ig = AgeLocale(
   plural: (int n) {
     return PluralCategory.other;
   },
-  day: simpleUnit('{n} ụbọchị'),
-  week: simpleUnit('{n} izu'),
-  month: simpleUnit('{n} ọnwa'),
-  year: simpleUnit('{n} afọ'),
+  day: simpleUnit('ụbọchị {n}'),
+  week: simpleUnit('izu {n}'),
+  month: simpleUnit('ọnwa {n}'),
+  year: simpleUnit('afọ {n}'),
   half: '{0} na ọkara',
   delimiter: ', ',
   justBorn: 'Nwa ọhụrụ',
@@ -28,13 +28,13 @@ final ig = AgeLocale(
   infant: stageNeutral('Nwa ọhụrụ'),
   toddler: stageNeutral('Nwa nta'),
   child: stageNeutral('Nwa'),
-  teenager: stageNeutral('Nwokorobịa'),
+  teenager: stageGendered('Nwokorobịa', 'Agbọghọbịa'),
   adult: stageNeutral('Okenye'),
   short: CompactnessOverride(
-    day: simpleUnit('{n} ụbọchị'),
-    week: simpleUnit('{n} izu'),
-    month: simpleUnit('{n} ọnwa'),
-    year: simpleUnit('{n} afọ'),
+    day: simpleUnit('ụbọchị {n}'),
+    week: simpleUnit('izu {n}'),
+    month: simpleUnit('ọnwa {n}'),
+    year: simpleUnit('afọ {n}'),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

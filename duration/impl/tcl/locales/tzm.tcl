@@ -32,13 +32,13 @@ proc locale_duration_tzm {} {
     set in_future "ɣ {0}"
     set short [dict create \
         units [dict create \
-            second "{n}s" \
-            minute "{n}m" \
-            hour "{n}h" \
-            day "{n}d" \
-            week "{n}w" \
-            month "{n}mo" \
-            year "{n}y" \
+            second [dict create one "{n} tasint" other "{n} tisinin"] \
+            minute [dict create one "{n} tusdiqt" other "{n} tusdiqin"] \
+            hour [dict create one "{n} tasragt" other "{n} tisragin"] \
+            day [dict create one "{n} ass" other "{n} ussan"] \
+            week [dict create one "{n} imalass" other "{n} imalassn"] \
+            month [dict create one "{n} ayyur" other "{n} ayyurn"] \
+            year [dict create one "{n} aseggas" other "{n} iseggasen"] \
         ] \
         ago "ɣ {0} zzrin" \
         in_future "ɣ {0}" \

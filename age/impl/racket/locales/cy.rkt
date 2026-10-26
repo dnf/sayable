@@ -28,10 +28,10 @@
         [(= n 3) "few"]
         [(= n 6) "many"]
         [else "other"]))
-   (hash "day" (hash "type" "pluralized" "forms" (hash "zero" "{n} diwrnod" "one" "{n} diwrnod" "two" "{n} ddiwrnod" "few" "{n} diwrnod" "many" "{n} niwrnod" "other" "{n} diwrnod"))
+   (hash "day" (hash "type" "pluralized" "forms" (hash "zero" "{n} diwrnod" "one" "{n} diwrnod" "two" "{n} ddiwrnod" "few" "{n} diwrnod" "many" "{n} diwrnod" "other" "{n} diwrnod"))
          "week" (hash "type" "pluralized" "forms" (hash "zero" "{n} wythnos" "one" "{n} wythnos" "two" "{n} wythnos" "few" "{n} wythnos" "many" "{n} wythnos" "other" "{n} wythnos"))
          "month" (hash "type" "pluralized" "forms" (hash "zero" "{n} mis" "one" "{n} mis" "two" "{n} fis" "few" "{n} mis" "many" "{n} mis" "other" "{n} mis"))
-         "year" (hash "type" "pluralized" "forms" (hash "zero" "{n} blwyddyn" "one" "{n} blwyddyn" "two" "{n} flynedd" "few" "{n} blynedd" "many" "{n} blynedd" "other" "{n} blynedd")))
+         "year" (hash "type" "pluralized" "forms" (hash "zero" "{n} blwyddyn" "one" "{n} flwyddyn" "two" "{n} flynedd" "few" "{n} blynedd" "many" "{n} blynedd" "other" "{n} blynedd")))
    "{0} a hanner"
    ", "
    "Newydd-anedig"

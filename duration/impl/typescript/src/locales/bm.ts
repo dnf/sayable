@@ -27,7 +27,7 @@ export const bm: DurationLocale = {
   delimiter: ', ',
   justNow: 'sisan',
   ago: '{0} bɔlen',
-  inFuture: 'ka {0}',
+  inFuture: '{0} kɔnɔ',
   short: {
     units: {
       second: 'sek. {n}',
@@ -39,7 +39,7 @@ export const bm: DurationLocale = {
       year:   'san {n}',
     },
     ago: '{0} bɔlen',
-    inFuture: 'ka {0}',
+    inFuture: '{0} kɔnɔ',
   },
   compact: {
     units: {
@@ -54,6 +54,6 @@ export const bm: DurationLocale = {
     half: '{n}½',
     delimiter: '',
     ago: '{0} bɔlen',
-    inFuture: 'ka {0}',
+    inFuture: '{0} kɔnɔ',
   },
 };

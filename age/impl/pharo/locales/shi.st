@@ -33,18 +33,18 @@ shi
 	locale justBorn: 'Iɣ d illul'.
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. 'Iɣ d illul'.
-		#infant. 'Agellid'.
+		#infant. 'Llufan'.
 		#toddler. (Dictionary newFromPairs: { #m. 'Aḥenjir'. #f. 'Taḥenjirt' }).
-		#child. (Dictionary newFromPairs: { #m. 'Afrux'. #f. 'Tafruxṭ' }).
+		#child. (Dictionary newFromPairs: { #m. 'Afrux'. #f. 'Tafruxt' }).
 		#teenager. (Dictionary newFromPairs: { #m. 'Aɛrim'. #f. 'Taɛrimt' }).
 		#adult. (Dictionary newFromPairs: { #m. 'Argaz'. #f. 'Tamṭṭuṭ' }).
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. '{n} d'.
-			'week'. '{n} wk'.
-			'month'. '{n} mo'.
-			'year'. '{n} yr'.
+			'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #few. '{n} ussan'. #other. '{n} ass' }).
+			'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #few. '{n} imalassn'. #other. '{n} imalass' }).
+			'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #few. '{n} ayyurn'. #other. '{n} ayyur' }).
+			'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #few. '{n} iseggasen'. #other. '{n} aseggas' }).
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {

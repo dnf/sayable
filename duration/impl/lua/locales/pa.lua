@@ -16,7 +16,7 @@ M.plural = function(n) return (n == 0 or n == 1) and "one" or "other" end
 M.units = {
     second = "{n} ਸਕਿੰਟ",
     minute = "{n} ਮਿੰਟ",
-    hour = "{n} ਘੰਟਾ",
+    hour = { one = "{n} ਘੰਟਾ", other = "{n} ਘੰਟੇ" },
     day = { one = "{n} ਦਿਨ", other = "{n} ਦਿਨ" },
     week = { one = "{n} ਹਫ਼ਤਾ", other = "{n} ਹਫ਼ਤੇ" },
     month = { one = "{n} ਮਹੀਨਾ", other = "{n} ਮਹੀਨੇ" },

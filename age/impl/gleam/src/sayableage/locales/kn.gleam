@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.PluralUnit([#(types.One, "{n} ವಾರ"), #(types.Other, "{n} ವಾರಗಳು")]),
     month: types.PluralUnit([#(types.One, "{n} ತಿಂಗಳು"), #(types.Other, "{n} ತಿಂಗಳುಗಳು")]),
     year: types.PluralUnit([#(types.One, "{n} ವರ್ಷ"), #(types.Other, "{n} ವರ್ಷಗಳು")]),
-    half: "{0}ವರೆ",
+    half: "{n}½",
     delimiter: ", ",
     just_born: "ನವಜಾತ ಶಿಶು",
     newborn: types.NeutralStage("ನವಜಾತ ಶಿಶು"),

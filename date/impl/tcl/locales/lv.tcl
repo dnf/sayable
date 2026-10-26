@@ -16,7 +16,7 @@ proc locale_date_lv {} {
     set day_format "{n}."
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
-    set date_pattern_with_year "{day} {month} {year}"
+    set date_pattern_with_year "{year}. gada {day} {month}"
     set today {šodien}
     set tomorrow {rīt}
     set yesterday {vakar}
@@ -31,7 +31,7 @@ proc locale_date_lv {} {
         weekdays [list {sv} {pr} {ot} {tr} {ce} {pk} {se}] \
         day_format "{n}." \
         date_pattern "{day} {month}" \
-        date_pattern_with_year "{day} {month} {year}" \
+        date_pattern_with_year "{year}. gada {day} {month}" \
     ]
     set compact [dict create \
         date_pattern "{d}.{m}." \

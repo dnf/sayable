@@ -39,10 +39,10 @@ locale = DateLocale
         , "penktadienis"
         , "šeštadienis"
         ]
-    , localeDayFormat = "{n}."
+    , localeDayFormat = "{n} d."
     , localeDayFormatExceptions = []
-    , localeDatePattern = "{day} {month}"
-    , localeDatePatternWithYear = "{day} {month} {year}"
+    , localeDatePattern = "{month} {day}"
+    , localeDatePatternWithYear = "{year} m. {month} {day}"
     , localeToday = "šiandien"
     , localeTomorrow = "rytoj"
     , localeYesterday = "vakar"
@@ -91,10 +91,10 @@ locale = DateLocale
                 , "pn"
                 , "št"
                 ]
-            , ovrDayFormat = Just "{n}."
+            , ovrDayFormat = Just "{n} d."
             , ovrDayFormatExceptions = Nothing
-            , ovrDatePattern = Just "{day} {month}"
-            , ovrDatePatternWithYear = Just "{day} {month} {year}"
+            , ovrDatePattern = Just "{month} {day}"
+            , ovrDatePatternWithYear = Just "{year} m. {month} {day}"
             , ovrToday = Nothing
             , ovrTomorrow = Nothing
             , ovrYesterday = Nothing

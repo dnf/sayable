@@ -26,7 +26,7 @@ locale() ->
         year = {simple, "{n} taun"},
         half = "{0} satengah",
         delimiter = ", ",
-        just_now = "ayeuna",
+        just_now = "nembé",
         ago = "{0} kapengker",
         in_future = "dina {0}",
         short = {just, #duration_compactness_override{second = {just, {simple, "{n} dtk"}}, minute = {just, {simple, "{n} mnt"}}, hour = {just, {simple, "{n} jam"}}, day = {just, {simple, "{n} dinten"}}, week = {just, {simple, "{n} minggu"}}, month = {just, {simple, "{n} sasih"}}, year = {just, {simple, "{n} taun"}}, half = nothing, delimiter = nothing, ago = {just, "{0} kapengker"}, in_future = {just, "dina {0}"}}},

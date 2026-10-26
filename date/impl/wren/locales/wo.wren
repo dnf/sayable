@@ -26,11 +26,11 @@ class WOLocale {
   static today { "tey" }
   static tomorrow { "suba" }
   static yesterday { "démb" }
-  static dayAfterTomorrow { "suba-suba" }
-  static dayBeforeYesterday { "démb-démb" }
-  static thisWeekday { "{weekday} bi" }
-  static nextWeekday { "{weekday} bi ñëw" }
-  static lastWeekday { "{weekday} bi weex" }
+  static dayAfterTomorrow { "gannaaw-suba" }
+  static dayBeforeYesterday { "bërki-démb" }
+  static thisWeekday { "{weekday} jii" }
+  static nextWeekday { "{weekday} jiy ñëw" }
+  static lastWeekday { "{weekday} ji weesu" }
   static monthsInDate { null }
   static short {
     return {

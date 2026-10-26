@@ -16,11 +16,11 @@
 (defparameter *locale-kl*
   (make-age-locale
    :code "kl"
-   :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :day "ullut {n}")
-               (cons :week "sapaatit {n}")
-               (cons :month "qaammatit {n}")
-               (cons :year "ukiut {n}"))
+   :plural (lambda (n) (if (= n 1) :one :other))
+   :units (list (cons :day '((:one . "ulloq {n}") (:other . "ullut {n}")))
+               (cons :week '((:one . "sapaatip akunnera {n}") (:other . "sapaatip akunneri {n}")))
+               (cons :month '((:one . "qaammat {n}") (:other . "qaammatit {n}")))
+               (cons :year '((:one . "ukioq {n}") (:other . "ukiut {n}"))))
    :half "{0} affaa"
    :delimiter ", "
    :just-born "Inuuneq nutaaq"
@@ -31,12 +31,13 @@
                  (cons :teenager "Inuusuttuaq")
                  (cons :adult "Inuk"))
    :short-units (list (cons :day "ull. {n}")
-                       (cons :week "sap. {n}")
+                       (cons :week "sap. ak. {n}")
                        (cons :month "qaam. {n}")
                        (cons :year "uk. {n}"))
    :compact-units (list (cons :day "{n}d")
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
 ))

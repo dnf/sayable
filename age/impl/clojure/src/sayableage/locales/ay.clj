@@ -14,13 +14,13 @@
 (def locale
   {:code "ay"
    :plural (fn [_] :other)
-   :day {:type :simple :form "uru {n}"}
-   :week {:type :simple :form "simana {n}"}
-   :month {:type :simple :form "phaxsi {n}"}
-   :year {:type :simple :form "mara {n}"}
+   :day {:type :simple :form "{n} uru"}
+   :week {:type :simple :form "{n} simana"}
+   :month {:type :simple :form "{n} phaxsi"}
+   :year {:type :simple :form "{n} mara"}
    :half "{0} chika"
    :delimiter ", "
    :just-born "Wawa machaqa"
    :stages {:newborn {:type :neutral :label "Wawa machaqa"} :infant {:type :neutral :label "Wawa"} :toddler {:type :neutral :label "Jisk'a wawa"} :child {:type :neutral :label "Yuqalla"} :teenager {:type :neutral :label "Wayna"} :adult {:type :neutral :label "Jaqi"}}
    :short {:day {:type :simple :form "{n} ur."} :week {:type :simple :form "{n} sim."} :month {:type :simple :form "{n} phx."} :year {:type :simple :form "{n} mr."} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

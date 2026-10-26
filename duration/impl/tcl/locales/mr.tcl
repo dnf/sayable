@@ -18,7 +18,7 @@ proc locale_duration_mr {} {
     set code {mr}
     set units [dict create \
         second "{n} सेकंद" \
-        minute "{n} मिनिट" \
+        minute [dict create one "{n} मिनिट" other "{n} मिनिटे"] \
         hour "{n} तास" \
         day [dict create one "{n} दिवस" other "{n} दिवस"] \
         week [dict create one "{n} आठवडा" other "{n} आठवडे"] \

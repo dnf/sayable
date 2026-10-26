@@ -6,36 +6,44 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [si.json](../../locales/si.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Standard Sinhala past/to system: '{h}යි' (තුනයි = it's three), '{h}යි කාලයි' (quarter past), '{h} හමාරයි' (half past), '{next_h}ට කාලයි' (quarter to, next hour in dative), '{next_h}ට විනාඩි දහයයි' (ten to). Minute phrases include විනාඩි so 'තුනයි පහයි' cannot be misread as 'three and five'. Compromise: 'හමාරයි' is written with a space ('තුන හමාරයි') rather than fused ('තුනහමාරයි') because the fused form has sandhi for hours ending in හ (පහමාරයි, එකොළහමාරයි, දොළහමාරයි) that a single template cannot produce; the spaced form is understood and attested in informal writing but the fused spelling is the more usual one. Both '{h}යි' and '{h}ට' attach cleanly to all 12 hour names.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal         | Short          | Compact   |
-| ----------------- | -------------- | -------------- | --------- |
-| Born today        | අලුත උපන්      | අලුත උපන්      | අලුත උපන් |
-| 1 day             | දින 1          | දින 1          | දි 1      |
-| 3 days            | දින 3          | දින 3          | දි 3      |
-| 6 days            | දින 6          | දින 6          | දි 6      |
-| 1 week            | සති 1          | සති 1          | ස 1       |
-| 1 week, 1 day     | සති 1, දින 1   | සති 1, දින 1   | ස 1දි 1   |
-| 2 weeks           | සති 2          | සති 2          | ස 2       |
-| 2 weeks, 3 days   | සති 2, දින 3   | සති 2, දින 3   | ස 2දි 3   |
-| 3 months          | මාස 3          | මාස 3          | මා 3      |
-| 6 months          | මාස 6          | මාස 6          | මා 6      |
-| 11 months         | මාස 11         | මාස 11         | මා 11     |
-| 12 months         | මාස 12         | මාස 12         | මා 12     |
-| 23 months         | මාස 23         | මාස 23         | මා 23     |
-| 2 years           | වසර 2          | වසර 2          | ව 2       |
-| 2 years, 1 month  | වසර 2, මාස 1   | වසර 2, මාස 1   | ව 2මා 1   |
-| 2 years, 6 months | වසර 2, මාස 6   | වසර 2, මාස 6   | ව 2මා 6   |
-| 3 years           | වසර 3          | වසර 3          | ව 3       |
-| 3½ years          | වසර 3යි භාගයයි | වසර 3යි භාගයයි | ව 3½      |
-| 5 years           | වසර 5          | වසර 5          | ව 5       |
-| 5½ years          | වසර 5යි භාගයයි | වසර 5යි භාගයයි | ව 5½      |
-| 7 years           | වසර 7          | වසර 7          | ව 7       |
-| 10 years          | වසර 10         | වසර 10         | ව 10      |
-| 18 years          | වසර 18         | වසර 18         | ව 18      |
-| 45 years          | වසර 45         | වසර 45         | ව 45      |
+| Age               | Normal       | Short        | Compact   |
+| ----------------- | ------------ | ------------ | --------- |
+| Born today        | අලුත උපන්    | අලුත උපන්    | අලුත උපන් |
+| 1 day             | දින 1        | දින 1        | දි 1      |
+| 3 days            | දින 3        | දින 3        | දි 3      |
+| 6 days            | දින 6        | දින 6        | දි 6      |
+| 1 week            | සති 1        | සති 1        | ස 1       |
+| 1 week, 1 day     | සති 1, දින 1 | සති 1, දින 1 | ස 1දි 1   |
+| 2 weeks           | සති 2        | සති 2        | ස 2       |
+| 2 weeks, 3 days   | සති 2, දින 3 | සති 2, දින 3 | ස 2දි 3   |
+| 3 months          | මාස 3        | මාස 3        | මා 3      |
+| 6 months          | මාස 6        | මාස 6        | මා 6      |
+| 11 months         | මාස 11       | මාස 11       | මා 11     |
+| 12 months         | මාස 12       | මාස 12       | මා 12     |
+| 23 months         | මාස 23       | මාස 23       | මා 23     |
+| 2 years           | වසර 2        | වසර 2        | ව 2       |
+| 2 years, 1 month  | වසර 2, මාස 1 | වසර 2, මාස 1 | ව 2මා 1   |
+| 2 years, 6 months | වසර 2, මාස 6 | වසර 2, මාස 6 | ව 2මා 6   |
+| 3 years           | වසර 3        | වසර 3        | ව 3       |
+| 3½ years          | වසර 3½       | වසර 3½       | ව 3½      |
+| 5 years           | වසර 5        | වසර 5        | ව 5       |
+| 5½ years          | වසර 5½       | වසර 5½       | ව 5½      |
+| 7 years           | වසර 7        | වසර 7        | ව 7       |
+| 10 years          | වසර 10       | වසර 10       | ව 10      |
+| 18 years          | වසර 18       | වසර 18       | ව 18      |
+| 45 years          | වසර 45       | වසර 45       | ව 45      |
 
 ### Stages
 
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | අනිද්දා            | 17/3    |
 | Day before yesterday | පෙරේදා             | 13/3    |
 | This Thursday (+5)   | මේ බ්‍රහස්පතින්දා  | 20/3    |
-| Last Monday (-4)     | පසුගිය අඟහරුවාදා   | 11/3    |
-| Next Wednesday (+12) | ඊළඟ බ්‍රහස්පතින්දා | 27/3    |
-| Same month (+20)     | 4 අප්‍රේල්         | 4/4     |
+| Last Tuesday (-4)    | පසුගිය අඟහරුවාදා   | 11/3    |
+| Next Thursday (+12)  | ඊළඟ බ්‍රහස්පතින්දා | 27/3    |
+| Same year (+20)      | 4 අප්‍රේල්         | 4/4     |
 | Different year       | 10 ජනවාරි 2026     | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                 | Short          | Compact  |
-| --------------------- | ---------------------- | -------------- | -------- |
-| 0 seconds             | දැන්                   | දැන්           | දැන්     |
-| 1 second              | 1 තත්පරය               | තත් 1          | ත 1      |
-| 30 seconds            | 30 තත්පරය              | තත් 30         | ත 30     |
-| 1 minute              | 1 මිනිත්තුව            | මිනි 1         | මි 1     |
-| 2 minutes, 15 seconds | 2 මිනිත්තුව, 15 තත්පරය | මිනි 2, තත් 15 | මි 2ත 15 |
-| 5 minutes             | 5 මිනිත්තුව            | මිනි 5         | මි 5     |
-| 45 minutes            | 45 මිනිත්තුව           | මිනි 45        | මි 45    |
-| 1 hour                | 1 පැය                  | පැය 1          | පැය 1    |
-| 1½ hours              | 1 පැයයි භාගයයි         | පැය 1යි භාගයයි | පැය 1½   |
-| 3 hours               | 3 පැය                  | පැය 3          | පැය 3    |
-| 6 hours               | 6 පැය                  | පැය 6          | පැය 6    |
-| 1 day                 | දින 1                  | දින 1          | දි 1     |
-| 1½ days               | දින 1යි භාගයයි         | දින 1යි භාගයයි | දි 1½    |
-| 3 days                | දින 3                  | දින 3          | දි 3     |
-| 1 week                | සති 1                  | සති 1          | ස 1      |
-| 2 weeks, 3 days       | සති 2, දින 3           | සති 2, දින 3   | ස 2දි 3  |
-| 1 month               | මාස 1                  | මාස 1          | මා 1     |
-| 6 months              | මාස 6                  | මාස 6          | මා 6     |
-| 1 year                | වසර 1                  | වසර 1          | ව 1      |
-| 2 years, 3 months     | වසර 2, මාස 3           | වසර 2, මාස 3   | ව 2මා 3  |
+| Duration              | Normal               | Short          | Compact  |
+| --------------------- | -------------------- | -------------- | -------- |
+| 0 seconds             | දැන්                 | දැන්           | දැන්     |
+| 1 second              | තත්පර 1              | තත් 1          | ත 1      |
+| 30 seconds            | තත්පර 30             | තත් 30         | ත 30     |
+| 1 minute              | මිනිත්තු 1           | මිනි 1         | මි 1     |
+| 2 minutes, 15 seconds | මිනිත්තු 2, තත්පර 15 | මිනි 2, තත් 15 | මි 2ත 15 |
+| 5 minutes             | මිනිත්තු 5           | මිනි 5         | මි 5     |
+| 45 minutes            | මිනිත්තු 45          | මිනි 45        | මි 45    |
+| 1 hour                | පැය 1                | පැය 1          | පැය 1    |
+| 1½ hours              | පැය 1½               | පැය 1½         | පැය 1½   |
+| 3 hours               | පැය 3                | පැය 3          | පැය 3    |
+| 6 hours               | පැය 6                | පැය 6          | පැය 6    |
+| 1 day                 | දින 1                | දින 1          | දි 1     |
+| 1½ days               | දින 1½               | දින 1½         | දි 1½    |
+| 3 days                | දින 3                | දින 3          | දි 3     |
+| 1 week                | සති 1                | සති 1          | ස 1      |
+| 2 weeks, 3 days       | සති 2, දින 3         | සති 2, දින 3   | ස 2දි 3  |
+| 1 month               | මාස 1                | මාස 1          | මා 1     |
+| 6 months              | මාස 6                | මාස 6          | මා 6     |
+| 1 year                | වසර 1                | වසර 1          | ව 1      |
+| 2 years, 3 months     | වසර 2, මාස 3         | වසර 2, මාස 3   | ව 2මා 3  |
 
 ### Relative time
 
-| Offset        | Normal           | Compact    |
-| ------------- | ---------------- | ---------- |
-| 5 minutes ago | 5 මිනිත්තුවට පෙර | මි 5ට පෙර  |
-| 2 hours ago   | 2 පැයට පෙර       | පැය 2ට පෙර |
-| in 30 minutes | 30 මිනිත්තුවකින් | මි 30කින්  |
-| in 3 hours    | 3 පැයකින්        | පැය 3කින්  |
+| Offset        | Normal          | Compact    |
+| ------------- | --------------- | ---------- |
+| 5 minutes ago | මිනිත්තු 5ට පෙර | මි 5ට පෙර  |
+| 2 hours ago   | පැය 2ට පෙර      | පැය 2ට පෙර |
+| in 30 minutes | මිනිත්තු 30කින් | මි 30කින්  |
+| in 3 hours    | පැය 3කින්       | පැය 3කින්  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal          | Short | Compact |
-| --------------- | --------------- | ----- | ------- |
-| Midnight        | මධ්‍යම රාත්‍රිය | 0:00  | 0:00    |
-| 1:00 AM         | එක:00           | 1:00  | 1:00    |
-| 5 past 9        | නවය:05          | 9:05  | 9:05    |
-| Quarter past 10 | දහය:15          | 10:15 | 10:15   |
-| Half past 11    | එකොළහ:30        | 11:30 | 11:30   |
-| Noon            | මධ්‍යාහ්නය      | 12:00 | 12:00   |
-| Quarter to 3    | දෙක:45          | 14:45 | 14:45   |
-| 5 to 6          | පහ:55           | 17:55 | 17:55   |
-| 8 o'clock PM    | අට:00           | 20:00 | 20:00   |
-| 10:30 PM        | දහය:30          | 22:30 | 22:30   |
-| 11:58 PM        | මධ්‍යම රාත්‍රිය | 23:58 | 23:58   |
+| Time            | Normal            | Short | Compact |
+| --------------- | ----------------- | ----- | ------- |
+| Midnight        | මධ්‍යම රාත්‍රිය   | 0:00  | 0:00    |
+| 1:00 AM         | එකයි              | 1:00  | 1:00    |
+| 5 past 9        | නවයයි විනාඩි පහයි | 9:05  | 9:05    |
+| Quarter past 10 | දහයයි කාලයි       | 10:15 | 10:15   |
+| Half past 11    | එකොළහ හමාරයි      | 11:30 | 11:30   |
+| Noon            | මධ්‍යාහ්නය        | 12:00 | 12:00   |
+| Quarter to 3    | තුනට කාලයි        | 14:45 | 14:45   |
+| 5 to 6          | හයට විනාඩි පහයි   | 17:55 | 17:55   |
+| 8 o'clock PM    | අටයි              | 20:00 | 20:00   |
+| 10:30 PM        | දහය හමාරයි        | 22:30 | 22:30   |
+| 11:58 PM        | මධ්‍යම රාත්‍රිය   | 23:58 | 23:58   |

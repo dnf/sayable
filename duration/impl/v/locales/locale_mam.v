@@ -23,7 +23,7 @@ pub const locale_mam = DurationLocale{
 	minute: simple_unit('{n} minuto')
 	hour: simple_unit('{n} hora')
 	day: simple_unit('{n} q\'ij')
-	week: simple_unit('{n} xjaw')
+	week: simple_unit('{n} seman')
 	month: simple_unit('{n} xjaw')
 	year: simple_unit('{n} ab\'q\'ii')
 	half: '{0} nik\''
@@ -41,7 +41,7 @@ pub const locale_mam = DurationLocale{
 		has_hour: true
 		day: simple_unit('{n} q\'ij')
 		has_day: true
-		week: simple_unit('{n} xjaw')
+		week: simple_unit('{n} seman')
 		has_week: true
 		month: simple_unit('{n} xjaw')
 		has_month: true
@@ -68,6 +68,8 @@ pub const locale_mam = DurationLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 		ago: '{0} chi\'j'

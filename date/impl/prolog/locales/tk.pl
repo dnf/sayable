@@ -11,8 +11,8 @@
 
 % Turkmen locale.
 
-sd_months('tk', ['Ýanwar', 'Fewral', 'Mart', 'Aprel', 'Maý', 'Iýun', 'Iýul', 'Awgust', 'Sentýabr', 'Oktýabr', 'Noýabr', 'Dekabr']).
-sd_weekdays('tk', ['Ýekşenbe', 'Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe']).
+sd_months('tk', ['ýanwar', 'fewral', 'mart', 'aprel', 'maý', 'iýun', 'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr']).
+sd_weekdays('tk', ['ýekşenbe', 'duşenbe', 'sişenbe', 'çarşenbe', 'penşenbe', 'anna', 'şenbe']).
 sd_day_format('tk', '{n}').
 
 sd_date_pattern('tk', '{day} {month}').
@@ -27,8 +27,8 @@ sd_this_weekday('tk', 'şu {weekday}').
 sd_next_weekday('tk', 'indiki {weekday}').
 sd_last_weekday('tk', 'geçen {weekday}').
 
-short_sd_months('tk', ['Ýan', 'Few', 'Mar', 'Apr', 'Maý', 'Iýn', 'Iýl', 'Awg', 'Sen', 'Okt', 'Noý', 'Dek']).
-short_sd_weekdays('tk', ['Ýek', 'Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen']).
+short_sd_months('tk', ['ýan', 'few', 'mar', 'apr', 'maý', 'iýn', 'iýl', 'awg', 'sen', 'okt', 'noý', 'dek']).
+short_sd_weekdays('tk', ['ýek', 'duş', 'siş', 'çar', 'pen', 'ann', 'şen']).
 short_sd_day_format('tk', '{n}').
 short_sd_clear_exceptions('tk').
 short_sd_date_pattern('tk', '{day} {month}').

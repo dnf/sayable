@@ -493,7 +493,7 @@ static void test_sayableage_spanish(void) {
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_es, SA_NORMAL, "2023-06-15", "2025-12-15");
     ASSERT_EQ("ES years+months", rc, buf, "2 a\xc3\xb1os, 6 meses"); // 25.9
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_es, SA_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("ES half marker", rc, buf, "3 y medio a\xc3\xb1os"); // 25.10
+    ASSERT_EQ("ES half marker", rc, buf, "3 a\xc3\xb1os y medio"); // 25.10
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_es, SA_NORMAL, "2022-06-15", "2025-06-15");
     ASSERT_EQ("ES integer years", rc, buf, "3 a\xc3\xb1os"); // 25.11
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_es, SA_NORMAL, "2018-06-15", "2025-06-15");
@@ -561,7 +561,7 @@ static void test_locale_hebrew(void) {
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-15", "2025-06-15");
     ASSERT_EQ("he justBorn", rc, buf, "\xd7\xa8\xd7\xa7 \xd7\xa0\xd7\x95\xd7\x9c\xd7\x93");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-14", "2025-06-15");
-    ASSERT_EQ("he 1 day one", rc, buf, "\xd7\x99\xd7\x95\xd7\x9d 1");
+    ASSERT_EQ("he 1 day one", rc, buf, "\xd7\x99\xd7\x95\xd7\x9d");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-12", "2025-06-15");
     ASSERT_EQ("he 3 days other", rc, buf, "3 \xd7\x99\xd7\x9e\xd7\x99\xd7\x9d");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-06-01", "2025-06-15");
@@ -573,7 +573,7 @@ static void test_locale_hebrew(void) {
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2025-03-15", "2025-06-15");
     ASSERT_EQ("he 3 months", rc, buf, "3 \xd7\x97\xd7\x95\xd7\x93\xd7\xa9\xd7\x99\xd7\x9d");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2023-06-15", "2025-07-15");
-    ASSERT_EQ("he 2y dual 1m one", rc, buf, "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9 1");
+    ASSERT_EQ("he 2y dual 1m one", rc, buf, "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2022-06-15", "2025-12-15");
     ASSERT_EQ("he 3.5y half", rc, buf, "3 \xd7\xa9\xd7\xa0\xd7\x99\xd7\x9d \xd7\x95\xd7\x97\xd7\xa6\xd7\x99");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_he, SA_NORMAL, "2018-06-15", "2025-06-15");
@@ -633,7 +633,7 @@ static void test_locale_indonesian(void) {
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2025-01-15", "2025-07-15");
     ASSERT_EQ("id 6 months", rc, buf, "6 bulan");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2022-06-15", "2025-12-15");
-    ASSERT_EQ("id 3.5y half", rc, buf, "3 tahun setengah");
+    ASSERT_EQ("id 3.5y half", rc, buf, "3 setengah tahun");
     rc = sa_format_age(buf, sizeof(buf), &sa_locale_id, SA_NORMAL, "2018-06-15", "2025-06-15");
     ASSERT_EQ("id 7y", rc, buf, "7 tahun");
 }

@@ -13,9 +13,9 @@
 
 (def locale
   {:code "ay"
-   :clock {:hours ["tunka payani" "maya" "paya" "kimsa" "pusi" "phisqa" "suxta" "paqallqu" "kimsaqallqu" "llantunka" "tunka" "tunka mayani"]
+   :clock {:hours ["tunka payani" "maya" "paya" "kimsa" "pusi" "phisqa" "suxta" "paqallqu" "kimsaqallqu" "llätunka" "tunka" "tunka mayani"]
            :midnight "aruma chika"
            :noon "chika uru"
-           :patterns {0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"}}
+           :patterns {0 "{h} ura" 5 "{h} ura phisqa minutuni" 10 "{h} ura tunka minutuni" 15 "{h} ura tunka phisqani minutuni" 20 "{h} ura pä tunka minutuni" 25 "{h} ura pä tunka phisqani minutuni" 30 "{h} ura chikani" 35 "{h} ura kimsa tunka phisqani minutuni" 40 "{h} ura pusi tunka minutuni" 45 "{h} ura pusi tunka phisqani minutuni" 50 "{h} ura phisqa tunka minutuni" 55 "{h} ura phisqa tunka phisqani minutuni"}}
    :short {:clock {:use-24h false :am-pm ["AM" "PM"] :format "{h}:{mm} {ampm}"}}
    :compact {:clock {:use-24h false :am-pm ["a" "p"] :format "{h}:{mm}{ampm}"}}})

@@ -22,7 +22,7 @@ module SayableDuration
         "month" => UnitForms.new("{n} моҳ"),
         "year" => UnitForms.new("{n} сол"),
       },
-      half: "{0} ним",
+      half: "{0}у ним",
       delimiter: ", ",
       just_now: "ҳамин ҳоло",
       ago: "{0} пеш",

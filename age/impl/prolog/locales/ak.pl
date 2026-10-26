@@ -32,10 +32,13 @@ sa_stage('ak', newborn, _, 'Abofra foforo').
 sa_stage('ak', infant, _, 'Akwadaa').
 sa_stage('ak', toddler, _, 'Abofra').
 sa_stage('ak', child, _, 'Abofra').
+sa_stage('ak', teenager, m, 'Abarimaa').
+sa_stage('ak', teenager, f, 'Abaayewa').
 sa_stage('ak', teenager, _, 'Abarimaa').
 sa_stage('ak', adult, _, 'Ɔpanyin').
 
-short_sa_unit('ak', day, _, 'nna {n}').
+short_sa_unit('ak', day, one, 'da {n}').
+short_sa_unit('ak', day, other, 'nna {n}').
 short_sa_unit('ak', week, one, 'dapɛn {n}').
 short_sa_unit('ak', week, other, 'nnapɛn {n}').
 short_sa_unit('ak', month, one, 'bosome {n}').
@@ -43,7 +46,8 @@ short_sa_unit('ak', month, other, 'abosome {n}').
 short_sa_unit('ak', year, one, 'afe {n}').
 short_sa_unit('ak', year, other, 'mfe {n}').
 
-compact_sa_unit('ak', day, _, 'nna {n}').
+compact_sa_unit('ak', day, one, 'da {n}').
+compact_sa_unit('ak', day, other, 'nna {n}').
 compact_sa_unit('ak', week, one, 'dapɛn {n}').
 compact_sa_unit('ak', week, other, 'nnapɛn {n}').
 compact_sa_unit('ak', month, one, 'bos {n}').

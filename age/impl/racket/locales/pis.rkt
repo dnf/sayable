@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} wik")
          "month" (hash "type" "simple" "form" "{n} manis")
          "year" (hash "type" "simple" "form" "{n} yia"))
-   "{n} en haf"
+   "{0} en haf"
    ", "
    "Niufala bebi"
    (hash "newborn" (stage-label "Niufala bebi" #f #f)
@@ -35,5 +35,5 @@
          "teenager" (stage-label "Yangfala" #f #f)
          "adult" (stage-label "Bigfala" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} dei") (hash "type" "simple" "form" "{n} wik") (hash "type" "simple" "form" "{n} man") (hash "type" "simple" "form" "{n} yia") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

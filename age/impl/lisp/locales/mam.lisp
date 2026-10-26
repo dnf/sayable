@@ -18,7 +18,7 @@
    :code "mam"
    :plural (lambda (n) (declare (ignore n)) :other)
    :units (list (cons :day "{n} q'ij")
-               (cons :week "{n} xjaw")
+               (cons :week "{n} seman")
                (cons :month "{n} xjaw")
                (cons :year "{n} ab'q'ii"))
    :half "{0} nik'"
@@ -31,12 +31,13 @@
                  (cons :teenager "Q'a")
                  (cons :adult "Xjal"))
    :short-units (list (cons :day "{n} q'ij")
-                       (cons :week "{n} xjaw")
+                       (cons :week "{n} seman")
                        (cons :month "{n} xjaw")
                        (cons :year "{n} ab'."))
    :compact-units (list (cons :day "{n}d")
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
 ))

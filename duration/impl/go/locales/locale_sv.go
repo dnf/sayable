@@ -34,7 +34,7 @@ var SV = sd.DurationLocale{
 	Half:      "{n}½",
 	Delimiter: ", ",
 	JustNow:   "just nu",
-	Ago:       "{0} sedan",
+	Ago:       "för {0} sedan",
 	InFuture:  "om {0}",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "{n} s"},
@@ -44,7 +44,7 @@ var SV = sd.DurationLocale{
 		Week:     &sd.UnitForms{Simple: "{n} v"},
 		Month:    &sd.UnitForms{Simple: "{n} mån"},
 		Year:     &sd.UnitForms{Simple: "{n} år"},
-		Ago:      strPtr("{0} sedan"),
+		Ago:      strPtr("för {0} sedan"),
 		InFuture: strPtr("om {0}"),
 	},
 	Compact: &sd.CompactnessOverride{
@@ -56,7 +56,7 @@ var SV = sd.DurationLocale{
 		Month:     &sd.UnitForms{Simple: "{n}m"},
 		Year:      &sd.UnitForms{Simple: "{n}å"},
 		Delimiter: strPtr(""),
-		Ago:       strPtr("{0} sedan"),
+		Ago:       strPtr("för {0} sedan"),
 		InFuture:  strPtr("om {0}"),
 	},
 }

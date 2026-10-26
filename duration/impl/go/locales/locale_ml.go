@@ -17,7 +17,7 @@ import sd "github.com/dnf/sayable/duration/impl/go"
 var ML = sd.DurationLocale{
 	Code: "ml",
 	Plural: func(n int) sd.PluralCategory {
-		if n == 0 || n == 1 {
+		if n == 1 {
 			return sd.One
 		}
 		return sd.Other
@@ -31,7 +31,7 @@ var ML = sd.DurationLocale{
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} മാസം", sd.Other: "{n} മാസങ്ങൾ"}),
 		Year:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} വർഷം", sd.Other: "{n} വർഷങ്ങൾ"}),
 	},
-	Half:      "{0} ര",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustNow:   "ഇപ്പോൾ",
 	Ago:       "{0} മുമ്പ്",

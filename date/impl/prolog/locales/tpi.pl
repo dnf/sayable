@@ -22,7 +22,7 @@ sd_today('tpi', 'tude').
 sd_tomorrow('tpi', 'tumora').
 sd_yesterday('tpi', 'asde').
 sd_day_after_tomorrow('tpi', 'haptumora').
-sd_day_before_yesterday('tpi', 'asde bipo').
+sd_day_before_yesterday('tpi', 'hapasde').
 sd_this_weekday('tpi', 'dispela {weekday}').
 sd_next_weekday('tpi', '{weekday} bihain').
 sd_last_weekday('tpi', '{weekday} bipo').

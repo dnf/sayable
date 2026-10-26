@@ -17,16 +17,16 @@ locale :: Locale
 locale = Locale
     { localeCode = "wo"
     , localePlural = \_ -> Other
-    , localeDay = Simple "bés {n}"
-    , localeWeek = Simple "ayubés {n}"
-    , localeMonth = Simple "weer {n}"
-    , localeYear = Simple "at {n}"
+    , localeDay = Simple "{n} fan"
+    , localeWeek = Simple "{n} ayubés"
+    , localeMonth = Simple "{n} weer"
+    , localeYear = Simple "{n} at"
     , localeHalf = "{0} ak genn-wàll"
     , localeDelimiter = ", "
     , localeJustBorn = "Dees ko sax juddu"
     , localeStages = Stages
         { stageNewborn = Neutral "Dees ko sax juddu"
-        , stageInfant = Neutral "Njàmbaar bu ndaw"
+        , stageInfant = Neutral "Liir"
         , stageToddler = Neutral "Xale bu ndaw"
         , stageChild = Neutral "Xale"
         , stageTeenager = Neutral "Ndaw-ndaw"
@@ -34,20 +34,20 @@ locale = Locale
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "bés {n}")
-            , ovrWeek = Just (Simple "ayub. {n}")
-            , ovrMonth = Just (Simple "weer {n}")
-            , ovrYear = Just (Simple "at {n}")
+            { ovrDay = Just (Simple "{n} fan")
+            , ovrWeek = Just (Simple "{n} ayub.")
+            , ovrMonth = Just (Simple "{n} weer")
+            , ovrYear = Just (Simple "{n} at")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , localeCompact = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "bés {n}")
-            , ovrWeek = Just (Simple "ayub {n}")
-            , ovrMonth = Just (Simple "weer {n}")
-            , ovrYear = Just (Simple "at {n}")
+            { ovrDay = Just (Simple "{n} fan")
+            , ovrWeek = Just (Simple "{n} ayub")
+            , ovrMonth = Just (Simple "{n} weer")
+            , ovrYear = Just (Simple "{n} at")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

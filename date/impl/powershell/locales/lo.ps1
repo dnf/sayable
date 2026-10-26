@@ -20,10 +20,10 @@ function locale_lo {
     $tomorrow = 'ມື້ອື່ນ'
     $yesterday = 'ມື້ວານ'
     $dayAfterTomorrow = 'ມື້ຮື'
-    $dayBeforeYesterday = 'ມື້ກ່ອນ'
+    $dayBeforeYesterday = 'ມື້ຊືນ'
     $thisWeekday = '{weekday}ນີ້'
     $nextWeekday = '{weekday}ໜ້າ'
-    $lastWeekday = '{weekday}ແລ້ວ'
+    $lastWeekday = '{weekday}ທີ່ແລ້ວ'
     $monthsInDate = $null
     $short = @{
         months = @('ມ.ກ.', 'ກ.ພ.', 'ມ.ນ.', 'ມ.ສ.', 'ພ.ພ.', 'ມ.ຖ.', 'ກ.ລ.', 'ສ.ຫ.', 'ກ.ຍ.', 'ຕ.ລ.', 'ພ.ຈ.', 'ທ.ວ.')

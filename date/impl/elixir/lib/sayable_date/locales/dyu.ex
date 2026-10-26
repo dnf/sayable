@@ -26,7 +26,7 @@ defmodule SayableDate.Locales.DYU do
         "Utikalo",
         "Sɛtanburukalo",
         "Ɔkutɔburukalo",
-        "Nowanburdukalo",
+        "Nowanburukalo",
         "Desanburukalo"
       ],
       weekdays: [

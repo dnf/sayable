@@ -25,10 +25,10 @@ locale() ->
         month = {simple, "{n} ເດືອນ"},
         year = {simple, "{n} ປີ"},
         half = "{0}ເຄິ່ງ",
-        delimiter = "",
+        delimiter = " ",
         just_now = "ຫາກໍ",
         ago = "{0} ກ່ອນ",
-        in_future = "ໃນ {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} ວິ."}}, minute = {just, {simple, "{n} ນທ."}}, hour = {just, {simple, "{n} ຊມ."}}, day = {just, {simple, "{n} ມ."}}, week = {just, {simple, "{n} ອທ."}}, month = {just, {simple, "{n} ດ."}}, year = {just, {simple, "{n} ປ."}}, half = nothing, delimiter = nothing, ago = {just, "{0} ກ່ອນ"}, in_future = {just, "ໃນ {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} ກ່ອນ"}, in_future = {just, "ໃນ {0}"}}}
+        in_future = "ໃນອີກ {0}",
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} ວິ."}}, minute = {just, {simple, "{n} ນທ."}}, hour = {just, {simple, "{n} ຊມ."}}, day = {just, {simple, "{n} ມ."}}, week = {just, {simple, "{n} ອທ."}}, month = {just, {simple, "{n} ດ."}}, year = {just, {simple, "{n} ປ."}}, half = nothing, delimiter = nothing, ago = {just, "{0} ກ່ອນ"}, in_future = {just, "ໃນອີກ {0}"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} ກ່ອນ"}, in_future = {just, "ໃນອີກ {0}"}}}
     }.

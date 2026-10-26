@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [mfe.json](../../locales/mfe.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): French-derived liaison system as in Haitian: hours 'enn er', 'dezer', 'trwazer', 'katrer', 'senker', 'sizer', 'seter', 'witer', 'never', 'dizer', 'onzer', 'douzer'; '{h} senk/dis/ekar/vin/vennsenk', '{h} edmi' (edmi already used in age.half), '{next_h} mwin kar/dis/vin/vennsenk/senk'. Doubts: the Lortograf Kreol Morisien spellings of 'enn er' (vs 'iner'), 'ekar' (vs 'e kar'), 'vin'/'vennsenk' (vs 'vinn'/'vensenk'), and 'mwin kar' (vs 'mwin lekar'). The structure is right; the spelling needs a native check.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | apre dimin     | 17/3    |
 | Day before yesterday | avan yer       | 13/3    |
 | This Thursday (+5)   | Zedi la        | 20/3    |
-| Last Monday (-4)     | Mardi pase     | 11/3    |
-| Next Wednesday (+12) | Zedi prosenn   | 27/3    |
-| Same month (+20)     | 4 Avril        | 4/4     |
+| Last Tuesday (-4)    | Mardi pase     | 11/3    |
+| Next Thursday (+12)  | Zedi prosenn   | 27/3    |
+| Same year (+20)      | 4 Avril        | 4/4     |
 | Different year       | 10 Zanvie 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal  | Short    | Compact |
-| --------------- | ------- | -------- | ------- |
-| Midnight        | minwi   | 12:00 AM | 12:00a  |
-| 1:00 AM         | enn:00  | 1:00 AM  | 1:00a   |
-| 5 past 9        | nef:05  | 9:05 AM  | 9:05a   |
-| Quarter past 10 | dis:15  | 10:15 AM | 10:15a  |
-| Half past 11    | onz:30  | 11:30 AM | 11:30a  |
-| Noon            | midi    | 12:00 PM | 12:00p  |
-| Quarter to 3    | de:45   | 2:45 PM  | 2:45p   |
-| 5 to 6          | senk:55 | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | wit:00  | 8:00 PM  | 8:00p   |
-| 10:30 PM        | dis:30  | 10:30 PM | 10:30p  |
-| 11:58 PM        | minwi   | 11:58 PM | 11:58p  |
+| Time            | Normal           | Short    | Compact |
+| --------------- | ---------------- | -------- | ------- |
+| Midnight        | minwi            | 12:00 AM | 12:00a  |
+| 1:00 AM         | enn er           | 1:00 AM  | 1:00a   |
+| 5 past 9        | never senk       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | dizer ekar       | 10:15 AM | 10:15a  |
+| Half past 11    | onzer edmi       | 11:30 AM | 11:30a  |
+| Noon            | midi             | 12:00 PM | 12:00p  |
+| Quarter to 3    | trwazer mwin kar | 2:45 PM  | 2:45p   |
+| 5 to 6          | sizer mwin senk  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | witer            | 8:00 PM  | 8:00p   |
+| 10:30 PM        | dizer edmi       | 10:30 PM | 10:30p  |
+| 11:58 PM        | minwi            | 11:58 PM | 11:58p  |

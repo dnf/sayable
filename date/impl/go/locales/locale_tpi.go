@@ -26,7 +26,7 @@ var TPI = sdate.DateLocale{
 	Tomorrow:  "tumora",
 	Yesterday: "asde",
 	DayAfterTomorrow:  strPtr("haptumora"),
-	DayBeforeYesterday: strPtr("asde bipo"),
+	DayBeforeYesterday: strPtr("hapasde"),
 	ThisWeekday:       strPtr("dispela {weekday}"),
 	NextWeekday:       strPtr("{weekday} bihain"),
 	LastWeekday:       strPtr("{weekday} bipo"),

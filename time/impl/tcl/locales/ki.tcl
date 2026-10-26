@@ -11,22 +11,22 @@
 
 proc locale_time_ki {} {
     set code {ki}
-    set hours [list {ikũmi na igĩrĩ} {ĩmwe} {igĩrĩ} {ithatũ} {inya} {ithano} {ithathatũ} {mũgwanja} {inyanya} {kenda} {ikũmi} {ikũmi na ĩmwe}]
+    set hours [list {ithathatũ} {mũgwanja} {inyanya} {kenda} {ikũmi} {ikũmi na ĩmwe} {ikũmi na igĩrĩ} {ĩmwe} {igĩrĩ} {ithatũ} {inya} {ithano}]
     set midnight {ũtukũ gatagatĩ}
     set noon {mũthenya gatagatĩ}
     set patterns [dict create \
-        0 "{h}:00" \
-        5 "{h}:05" \
-        10 "{h}:10" \
-        15 "{h}:15" \
-        20 "{h}:20" \
-        25 "{h}:25" \
-        30 "{h}:30" \
-        35 "{h}:35" \
-        40 "{h}:40" \
-        45 "{h}:45" \
-        50 "{h}:50" \
-        55 "{h}:55" \
+        0 "thaa {h}" \
+        5 "thaa {h} na ndagĩka ithano" \
+        10 "thaa {h} na ndagĩka ikũmi" \
+        15 "thaa {h} na ndagĩka ikũmi na ithano" \
+        20 "thaa {h} na ndagĩka mĩrongo ĩĩrĩ" \
+        25 "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano" \
+        30 "thaa {h} na nuthu" \
+        35 "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano" \
+        40 "thaa {h} na ndagĩka mĩrongo ĩna" \
+        45 "thaa {h} na ndagĩka mĩrongo ĩna na ithano" \
+        50 "thaa {h} na ndagĩka mĩrongo ĩtano" \
+        55 "thaa {h} na ndagĩka mĩrongo ĩtano na ithano" \
     ]
     set clock_config [dict create \
         hours $hours \

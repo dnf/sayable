@@ -41,7 +41,7 @@ defmodule SayableDate.Locales.KL do
       day_format: "{n}.",
       day_format_exceptions: %{},
       date_pattern: "{month} {day}",
-      date_pattern_with_year: "{day} {month} {year}",
+      date_pattern_with_year: "{month} {day} {year}",
       today: "ullumi",
       tomorrow: "aqagu",
       yesterday: "ippassaq",
@@ -77,7 +77,7 @@ defmodule SayableDate.Locales.KL do
         ],
         day_format: "{n}.",
         date_pattern: "{month} {day}",
-        date_pattern_with_year: "{day} {month} {year}"
+        date_pattern_with_year: "{month} {day} {year}"
       },
       compact: %{
         date_pattern: "{m}-{d}",

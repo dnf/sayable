@@ -20,7 +20,7 @@ class PISLocale {
       "year": "{n} yia",
     }
   }
-  static half { "{n} en haf" }
+  static half { "{0} en haf" }
   static delimiter { ", " }
   static justBorn { "Niufala bebi" }
   static stages {
@@ -51,6 +51,7 @@ class PISLocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

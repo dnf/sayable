@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_pov = {
     "pov",
     {
-        { "dozi", "un", "dos", "tres", "kuatru", "sinku", "seis", "seti", "oitu", "novi", "des", "onzi" },
+        { "dozi ora", "un ora", "dos ora", "tres ora", "kuatru ora", "sinku ora", "seis ora", "seti ora", "oitu ora", "novi ora", "des ora", "onzi ora" },
         "meia noti",
         "meiu dia",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} i sinku", "{h} i des", "{h} i kinzi", "{h} i vinti", "{h} i vinti i sinku", "{h} i meiu", "{h} i trinta i sinku", "{h} i kuarenta", "{h} i kuarenta i sinku", "{h} i sinkuenta", "{h} i sinkuenta i sinku" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

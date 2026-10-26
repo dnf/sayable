@@ -40,7 +40,7 @@ pub fn locale() -> types.AgeLocale {
     compact: Ok(types.CompactnessOverride(
       day: Ok(types.SimpleUnit("{n} ي")),
       week: Ok(types.SimpleUnit("{n} أ")),
-      month: Ok(types.PluralUnit([#(types.Zero, "{n} شهر"), #(types.One, "شهر"), #(types.Two, "شهران"), #(types.Few, "{n} أشهر"), #(types.Many, "{n} شهرًا"), #(types.Other, "{n} شهر")])),
+      month: Ok(types.SimpleUnit("{n} شهر")),
       year: Ok(types.SimpleUnit("{n} سنة")),
       half: Ok("{n}½"),
       delimiter: Ok(""),

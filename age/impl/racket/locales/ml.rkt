@@ -20,12 +20,12 @@
 (define ml
   (age-locale
    "ml"
-   (lambda (n) (if (or (= n 0) (= n 1)) "one" "other"))
+   (lambda (n) (if (= n 1) "one" "other"))
    (hash "day" (hash "type" "pluralized" "forms" (hash "one" "{n} ദിവസം" "other" "{n} ദിവസങ്ങൾ"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} ആഴ്ച" "other" "{n} ആഴ്ചകൾ"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} മാസം" "other" "{n} മാസങ്ങൾ"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} വയസ്സ്" "other" "{n} വയസ്സ്")))
-   "{0} ര"
+   "{n}½"
    ", "
    "നവജാതശിശു"
    (hash "newborn" (stage-label "നവജാതശിശു" #f #f)

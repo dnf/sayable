@@ -34,14 +34,14 @@ fn _plural(n: Int) -> String:
 fn build_he() -> AgeLocale:
     """Build the Hebrew locale."""
 
-    var day = plural_unit(one="יום {n}", two="יומיים", other="{n} ימים")
-    var week = plural_unit(one="שבוע {n}", two="שבועיים", other="{n} שבועות")
-    var month = plural_unit(one="חודש {n}", two="חודשיים", other="{n} חודשים")
+    var day = plural_unit(one="יום", two="יומיים", other="{n} ימים")
+    var week = plural_unit(one="שבוע", two="שבועיים", other="{n} שבועות")
+    var month = plural_unit(one="חודש", two="חודשיים", other="{n} חודשים")
     var year = plural_unit(one="שנה", two="שנתיים", other="{n} שנים")
 
     var newborn = stage_gendered("רק נולד", "רק נולדה")
-    var infant = stage_neutral("תינוק")
-    var toddler = stage_neutral("פעוט")
+    var infant = stage_gendered("תינוק", "תינוקת")
+    var toddler = stage_gendered("פעוט", "פעוטה")
     var child = stage_gendered("ילד", "ילדה")
     var teenager = stage_gendered("נער", "נערה")
     var adult = stage_gendered("מבוגר", "מבוגרת")

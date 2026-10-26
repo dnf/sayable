@@ -17,10 +17,10 @@ defmodule SayableAge.Locales.SO do
       code: "so",
       plural: (fn 1 -> :one; _ -> :other end),
       units: %{
-        day: %{one: "maalin {n}", other: "maalmood {n}"},
-        week: %{one: "toddobaad {n}", other: "toddobaadyo {n}"},
-        month: %{one: "bil {n}", other: "bilood {n}"},
-        year: %{one: "sano {n}", other: "sanooyin {n}"}
+        day: %{one: "{n} maalin", other: "{n} maalmood"},
+        week: "{n} toddobaad",
+        month: %{one: "{n} bil", other: "{n} bilood"},
+        year: "{n} sano"
       },
       half: "{n}½",
       delimiter: ", ",

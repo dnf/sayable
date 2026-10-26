@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ve = {
     "ve",
     {
-        { "fumimbili", "thihi", "mbili", "raru", "ina", "thanu", "rathi", "sumbe", "malo", "tahe", "fumi", "fuminthihi" },
+        { "ya fumi na mbili", "ya u thoma", "ya vhuvhili", "ya vhuraru", "ya vhuṋa", "ya vhuṱanu", "ya vhurathi", "ya vhusumbe", "ya vhumalo", "ya vhuṱahe", "ya fumi", "ya fumi na nthihi" },
         "vhukati ha vhusiku",
         "vhukati ha masiari",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "awara {h}", "awara {h} na ṱhanu", "awara {h} na fumi", "awara {h} na kotara", "awara {h} na mahumi mavhili", "awara {h} na mahumi mavhili na ṱhanu", "awara {h} na hafu", "awara {h} na mahumi mararu na ṱhanu", "awara {h} na mahumi maṋa", "awara {h} na mahumi maṋa na ṱhanu", "awara {h} na mahumi maṱanu", "awara {h} na mahumi maṱanu na ṱhanu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

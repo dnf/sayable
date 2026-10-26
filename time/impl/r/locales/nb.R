@@ -12,7 +12,7 @@
 locale_nb <- list(
   code = "nb",
   clock = list(
-    hours = c("tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"),
+    hours = c("tolv", "ett", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"),
     midnight = "midnatt",
     noon = "middag",
     patterns = list(

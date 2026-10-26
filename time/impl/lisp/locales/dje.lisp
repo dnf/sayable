@@ -17,10 +17,10 @@
   (make-time-locale
    :code "dje"
    :clock (make-clock-config
-    :hours (list "way cindi" "afoo" "ihinka" "ihinza" "itaaci" "igu" "iddu" "iyye" "isahkay" "iyegga" "iwoy" "iwoy cindi")
+    :hours (list "iway cindi hinka" "fo" "hinka" "hinza" "taaci" "gu" "iddu" "iyye" "ahakku" "yagga" "iway" "iway cindi fo")
     :midnight "cin beri"
     :noon "zaari gaaham"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "guuru {h}") (cons 5 "guuru {h} nda miniti gu") (cons 10 "guuru {h} nda miniti iway") (cons 15 "guuru {h} nda miniti iway cindi gu") (cons 20 "guuru {h} nda miniti waranka") (cons 25 "guuru {h} nda miniti waranka cindi gu") (cons 30 "guuru {h} nda jare") (cons 35 "guuru {h} nda miniti waranza cindi gu") (cons 40 "guuru {h} nda miniti waytaaci") (cons 45 "guuru {h} nda miniti waytaaci cindi gu") (cons 50 "guuru {h} nda miniti waygu") (cons 55 "guuru {h} nda miniti waygu cindi gu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

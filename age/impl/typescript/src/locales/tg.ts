@@ -20,7 +20,7 @@ export const tg: AgeLocale = {
     month: '{n} моҳ',
     year:  '{n} сол',
   },
-  half: '{0} ним',
+  half: '{0}у ним',
   delimiter: ', ',
   justBorn: 'Навзод',
   stages: {

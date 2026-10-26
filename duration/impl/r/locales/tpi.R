@@ -21,7 +21,7 @@ locale_tpi <- list(
     month = "{n} mun",
     year = "{n} yia"
   ),
-  half = "{n} na hap",
+  half = "{0} na hap",
   delimiter = ", ",
   just_now = "nau tasol",
   ago = "{0} i go pinis",
@@ -49,6 +49,7 @@ locale_tpi <- list(
       month = "{n}mo",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} i go pinis",
     in_future = "long {0}"

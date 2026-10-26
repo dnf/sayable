@@ -26,9 +26,9 @@ const SduDurationLocale sdu_locale_ta = {
         { NULL, { NULL, "{n} நாள்", NULL, NULL, NULL, "{n} நாட்கள்" } },
         { NULL, { NULL, "{n} வாரம்", NULL, NULL, NULL, "{n} வாரங்கள்" } },
         { NULL, { NULL, "{n} மாதம்", NULL, NULL, NULL, "{n} மாதங்கள்" } },
-        { NULL, { NULL, "{n} வயது", NULL, NULL, NULL, "{n} வயது" } }
+        { NULL, { NULL, "{n} ஆண்டு", NULL, NULL, NULL, "{n} ஆண்டுகள்" } }
     },
-    "{0}ரை", ", ",
+    "{n}½", ", ",
     "இப்போதுதான்",
     "{0} முன்", "{0} கழித்து",
     true, { true, { "{n} விநாடி", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} நிமி.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ம.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "{n} நாள்", NULL, NULL, NULL, "{n} நாட்கள்" } }, true, { NULL, { NULL, "{n} வாரம்", NULL, NULL, NULL, "{n} வார." } }, true, { NULL, { NULL, "{n} மாதம்", NULL, NULL, NULL, "{n} மாத." } }, true, { NULL, { NULL, "{n} ஆண்டு", NULL, NULL, NULL, "{n} ஆண்டு." } }, false, NULL, false, NULL, true, "{0} முன்", true, "{0} கழித்து" },

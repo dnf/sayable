@@ -49,6 +49,7 @@ locale_tet <- list(
       month = "{n}mo",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} liu ba",
     in_future = "iha {0}"

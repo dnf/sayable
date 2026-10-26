@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_mt = {
     "mt",
     {
-        { "tnax", "waħda", "tnejn", "tlieta", "erbgħa", "ħamsa", "sitta", "sebgħa", "tmienja", "disgħa", "għaxra", "ħdax" },
+        { "it-tnax", "is-siegħa", "is-sagħtejn", "it-tlieta", "l-erbgħa", "il-ħamsa", "is-sitta", "is-sebgħa", "it-tmienja", "id-disgħa", "l-għaxra", "il-ħdax" },
+        "nofsillejl",
         "nofsinhar",
-        "nofsinhar",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} u ħamsa", "{h} u għaxra", "{h} u kwart", "{h} u għoxrin", "{h} u ħamsa u għoxrin", "{h} u nofs", "{next_h} neqsin ħamsa u għoxrin", "{next_h} neqsin għoxrin", "{next_h} neqsin kwart", "{next_h} neqsin għaxra", "{next_h} neqsin ħamsa" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

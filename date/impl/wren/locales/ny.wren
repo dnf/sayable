@@ -28,9 +28,9 @@ class NYLocale {
   static yesterday { "dzulo" }
   static dayAfterTomorrow { "mkucha" }
   static dayBeforeYesterday { "dzana" }
-  static thisWeekday { "{weekday} ino" }
-  static nextWeekday { "{weekday} yotsatira" }
-  static lastWeekday { "{weekday} yatha" }
+  static thisWeekday { "{weekday} lino" }
+  static nextWeekday { "{weekday} lotsatira" }
+  static lastWeekday { "{weekday} latha" }
   static monthsInDate { null }
   static short {
     return {

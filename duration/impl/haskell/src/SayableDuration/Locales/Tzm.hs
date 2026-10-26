@@ -54,13 +54,34 @@ locale = DurationLocale
     , localeInFuture = "ɣ {0}"
     , localeShort = Just $
         CompactnessOverride
-            { ovrSecond = Just (Simple "{n}s")
-            , ovrMinute = Just (Simple "{n}m")
-            , ovrHour = Just (Simple "{n}h")
-            , ovrDay = Just (Simple "{n}d")
-            , ovrWeek = Just (Simple "{n}w")
-            , ovrMonth = Just (Simple "{n}mo")
-            , ovrYear = Just (Simple "{n}y")
+            { ovrSecond = Just (Pluralized
+              [ (One, "{n} tasint")
+              , (Other, "{n} tisinin")
+              ])
+            , ovrMinute = Just (Pluralized
+              [ (One, "{n} tusdiqt")
+              , (Other, "{n} tusdiqin")
+              ])
+            , ovrHour = Just (Pluralized
+              [ (One, "{n} tasragt")
+              , (Other, "{n} tisragin")
+              ])
+            , ovrDay = Just (Pluralized
+              [ (One, "{n} ass")
+              , (Other, "{n} ussan")
+              ])
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} imalass")
+              , (Other, "{n} imalassn")
+              ])
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} ayyur")
+              , (Other, "{n} ayyurn")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} aseggas")
+              , (Other, "{n} iseggasen")
+              ])
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "ɣ {0} zzrin"

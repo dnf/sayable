@@ -11,10 +11,10 @@
 
 function loc = locale_fon()
   loc.code = 'fon';
-  loc.clock.hours = {'wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'ɖokpo-wǒ'};
+  loc.clock.hours = {'wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'wěɖokpo'};
   loc.clock.midnight = 'zǎnmɛ';
   loc.clock.noon = 'hwemɛnu';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'gan {h}', "p5", 'gan {h} kpo cɛju atɔ́ɔ́n kpo', "p10", 'gan {h} kpo cɛju wǒ kpo', "p15", 'gan {h} kpo cɛju afɔtɔ́n kpo', "p20", 'gan {h} kpo cɛju ko kpo', "p25", 'gan {h} kpo cɛju koatɔ́ɔ́n kpo', "p30", 'gan {h} kpo cɛju gban kpo', "p35", 'gan {h} kpo cɛju gbanatɔ́ɔ́n kpo', "p40", 'gan {h} kpo cɛju kanɖé kpo', "p45", 'gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo', "p50", 'gan {h} kpo cɛju kanɖéwǒ kpo', "p55", 'gan {h} kpo cɛju kanɖéafɔtɔ́n kpo');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

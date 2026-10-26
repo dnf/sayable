@@ -25,7 +25,7 @@ pub fn locale() -> DurationLocale {
             month: UnitForms::simple("{n} މަސް"),
             year: UnitForms::simple("{n} އަހަރު"),
         },
-        half: "{0} ބައި".to_string(),
+        half: "{n}½".to_string(),
         delimiter: "، ".to_string(),
         just_now: "މިހާރު".to_string(),
         ago: "މީގެ {0} ކުރިން".to_string(),

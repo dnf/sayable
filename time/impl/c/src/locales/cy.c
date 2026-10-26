@@ -17,7 +17,7 @@ const StTimeLocale st_locale_cy = {
         { "deuddeg", "un", "dau", "tri", "pedwar", "pump", "chwech", "saith", "wyth", "naw", "deg", "un ar ddeg" },
         "hanner nos",
         "hanner dydd",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} o'r gloch", "pum munud wedi {h}", "deg munud wedi {h}", "chwarter wedi {h}", "ugain munud wedi {h}", "pum munud ar hugain wedi {h}", "hanner awr wedi {h}", "pum munud ar hugain i {next_h}", "ugain munud i {next_h}", "chwarter i {next_h}", "deg munud i {next_h}", "pum munud i {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

@@ -28,9 +28,9 @@ pub fn locale() -> DateLocale {
         yesterday: "dzulo".to_string(),
         day_after_tomorrow: Some("mkucha".to_string()),
         day_before_yesterday: Some("dzana".to_string()),
-        this_weekday: Some("{weekday} ino".to_string()),
-        next_weekday: Some("{weekday} yotsatira".to_string()),
-        last_weekday: Some("{weekday} yatha".to_string()),
+        this_weekday: Some("{weekday} lino".to_string()),
+        next_weekday: Some("{weekday} lotsatira".to_string()),
+        last_weekday: Some("{weekday} latha".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {
             months: Some(["Jan".to_string(), "Feb".to_string(), "Mat".to_string(), "Epu".to_string(), "Mey".to_string(), "Jun".to_string(), "Jul".to_string(), "Oga".to_string(), "Sep".to_string(), "Okt".to_string(), "Nov".to_string(), "Dis".to_string()]),

@@ -30,7 +30,7 @@ pub fn locale() -> DurationLocale {
         half: "{0} sy sasany".to_string(),
         delimiter: ", ".to_string(),
         just_now: "vao haingana".to_string(),
-        ago: "{0} lasa".to_string(),
+        ago: "{0} lasa izay".to_string(),
         in_future: "ao anatin'ny {0}".to_string(),
         short: Some(CompactnessOverride {
             second: Some(UnitForms::simple("{n} seg")),
@@ -42,7 +42,7 @@ pub fn locale() -> DurationLocale {
             year: Some(UnitForms::simple("{n} tna")),
             half: None,
             delimiter: None,
-            ago: Some("{0} lasa".to_string()),
+            ago: Some("{0} lasa izay".to_string()),
             in_future: Some("ao anatin'ny {0}".to_string()),
         }),
         compact: Some(CompactnessOverride {

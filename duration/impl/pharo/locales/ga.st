@@ -29,7 +29,7 @@ ga
 	locale units: (Dictionary newFromPairs: {
 		'second'. (Dictionary newFromPairs: { #one. '{n} soicind'. #two. '{n} shoicind'. #few. '{n} shoicind'. #many. '{n} soicind'. #other. '{n} soicind' }).
 		'minute'. (Dictionary newFromPairs: { #one. '{n} nóiméad'. #two. '{n} nóiméad'. #few. '{n} nóiméad'. #many. '{n} nóiméad'. #other. '{n} nóiméad' }).
-		'hour'. (Dictionary newFromPairs: { #one. '{n} uair'. #two. '{n} uair'. #few. '{n} huaire'. #many. '{n} n-uaire'. #other. '{n} uair' }).
+		'hour'. (Dictionary newFromPairs: { #one. '{n} uair an chloig'. #two. '{n} uair an chloig'. #few. '{n} huaire an chloig'. #many. '{n} n-uaire an chloig'. #other. '{n} uair an chloig' }).
 		'day'. (Dictionary newFromPairs: { #one. '{n} lá'. #two. '{n} lá'. #few. '{n} lá'. #many. '{n} lá'. #other. '{n} lá' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} seachtain'. #two. '{n} sheachtain'. #few. '{n} seachtaine'. #many. '{n} seachtaine'. #other. '{n} seachtain' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} mhí'. #two. '{n} mhí'. #few. '{n} mhí'. #many. '{n} mí'. #other. '{n} mí' }).

@@ -15,7 +15,7 @@ class SQLocale {
     return ["janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"]
   }
   static weekdays {
-    return ["e diel", "e hënë", "e martë", "e mërkurë", "e enjte", "e premte", "e shtunë"]
+    return ["të dielën", "të hënën", "të martën", "të mërkurën", "të enjten", "të premten", "të shtunën"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {
@@ -28,8 +28,8 @@ class SQLocale {
   static yesterday { "dje" }
   static dayAfterTomorrow { "pasnesër" }
   static dayBeforeYesterday { "pardje" }
-  static thisWeekday { "këtë {weekday}" }
-  static nextWeekday { "{weekday} tjetër" }
+  static thisWeekday { "{weekday}" }
+  static nextWeekday { "{weekday} e ardhshme" }
   static lastWeekday { "{weekday} e kaluar" }
   static monthsInDate { null }
   static short {

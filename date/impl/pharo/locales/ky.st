@@ -16,12 +16,12 @@ ky
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'ky'.
-	locale months: (OrderedCollection withAll: { 'Январь'. 'Февраль'. 'Март'. 'Апрель'. 'Май'. 'Июнь'. 'Июль'. 'Август'. 'Сентябрь'. 'Октябрь'. 'Ноябрь'. 'Декабрь' }).
-	locale weekdays: (OrderedCollection withAll: { 'Жекшемби'. 'Дүйшөмбү'. 'Шейшемби'. 'Шаршемби'. 'Бейшемби'. 'Жума'. 'Ишемби' }).
-	locale dayFormat: '{n}'.
+	locale months: (OrderedCollection withAll: { 'январь'. 'февраль'. 'март'. 'апрель'. 'май'. 'июнь'. 'июль'. 'август'. 'сентябрь'. 'октябрь'. 'ноябрь'. 'декабрь' }).
+	locale weekdays: (OrderedCollection withAll: { 'жекшемби'. 'дүйшөмбү'. 'шейшемби'. 'шаршемби'. 'бейшемби'. 'жума'. 'ишемби' }).
+	locale dayFormat: '{n}-'.
 	locale dayFormatExceptions: Dictionary new.
-	locale datePattern: '{day} {month}'.
-	locale datePatternWithYear: '{day} {month} {year}'.
+	locale datePattern: '{day}{month}'.
+	locale datePatternWithYear: '{year}-ж., {day}{month}'.
 	locale today: 'бүгүн'.
 	locale tomorrow: 'эртең'.
 	locale yesterday: 'кечээ'.
@@ -32,8 +32,8 @@ ky
 	locale lastWeekday: 'өткөн {weekday}'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { 'Янв'. 'Фев'. 'Мар'. 'Апр'. 'Май'. 'Июн'. 'Июл'. 'Авг'. 'Сен'. 'Окт'. 'Ноя'. 'Дек' }).
-		#weekdays. (OrderedCollection withAll: { 'Жек'. 'Дүй'. 'Шей'. 'Шар'. 'Бей'. 'Жум'. 'Ише' }).
+		#months. (OrderedCollection withAll: { 'янв'. 'фев'. 'мар'. 'апр'. 'май'. 'июн'. 'июл'. 'авг'. 'сен'. 'окт'. 'ноя'. 'дек' }).
+		#weekdays. (OrderedCollection withAll: { 'жек'. 'дүй'. 'шей'. 'шар'. 'бей'. 'жум'. 'ише' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
 		#datePatternWithYear. '{day} {month} {year}'.

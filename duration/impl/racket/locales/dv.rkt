@@ -28,7 +28,7 @@
          "week" (hash "type" "simple" "form" "{n} ހަފްތާ")
          "month" (hash "type" "simple" "form" "{n} މަސް")
          "year" (hash "type" "simple" "form" "{n} އަހަރު"))
-   "{0} ބައި"
+   "{n}½"
    "، "
    "މިހާރު"
    "މީގެ {0} ކުރިން"

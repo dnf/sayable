@@ -595,7 +595,7 @@
 *> Source: locales/ak.json
        INIT-LOCALE-AK.
            MOVE "ak" TO WS-ACT-CODE
-           MOVE "dumien"
+           MOVE "dumienu"
                TO WS-ACT-HOUR(1)
            MOVE "baako"
                TO WS-ACT-HOUR(2)
@@ -619,33 +619,33 @@
                TO WS-ACT-HOUR(11)
            MOVE "dubaako"
                TO WS-ACT-HOUR(12)
-           MOVE "anadwo"
+           MOVE "ɔdasuom"
                TO WS-ACT-MIDNIGHT
-           MOVE "awia"
+           MOVE "owigyinae"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "nnɔn {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "nnɔn {h} ne sima anum"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "nnɔn {h} ne sima edu"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "nnɔn {h} ne sima dunum"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "nnɔn {h} ne sima aduonu"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "nnɔn {h} ne sima aduonu num"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "nnɔn {h} ne fa"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "aka sima aduonu num na abɔ nnɔn {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "aka sima aduonu na abɔ nnɔn {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "aka sima dunum na abɔ nnɔn {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "aka sima edu na abɔ nnɔn {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "aka sima anum na abɔ nnɔn {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -670,57 +670,57 @@
 *> Source: locales/am.json
        INIT-LOCALE-AM.
            MOVE "am" TO WS-ACT-CODE
-           MOVE "አሥራ ሁለት"
-               TO WS-ACT-HOUR(1)
-           MOVE "አንድ"
-               TO WS-ACT-HOUR(2)
-           MOVE "ሁለት"
-               TO WS-ACT-HOUR(3)
-           MOVE "ሦስት"
-               TO WS-ACT-HOUR(4)
-           MOVE "አራት"
-               TO WS-ACT-HOUR(5)
-           MOVE "አምስት"
-               TO WS-ACT-HOUR(6)
            MOVE "ስድስት"
-               TO WS-ACT-HOUR(7)
+               TO WS-ACT-HOUR(1)
            MOVE "ሰባት"
-               TO WS-ACT-HOUR(8)
+               TO WS-ACT-HOUR(2)
            MOVE "ስምንት"
-               TO WS-ACT-HOUR(9)
+               TO WS-ACT-HOUR(3)
            MOVE "ዘጠኝ"
-               TO WS-ACT-HOUR(10)
+               TO WS-ACT-HOUR(4)
            MOVE "አሥር"
-               TO WS-ACT-HOUR(11)
+               TO WS-ACT-HOUR(5)
            MOVE "አሥራ አንድ"
+               TO WS-ACT-HOUR(6)
+           MOVE "አሥራ ሁለት"
+               TO WS-ACT-HOUR(7)
+           MOVE "አንድ"
+               TO WS-ACT-HOUR(8)
+           MOVE "ሁለት"
+               TO WS-ACT-HOUR(9)
+           MOVE "ሦስት"
+               TO WS-ACT-HOUR(10)
+           MOVE "አራት"
+               TO WS-ACT-HOUR(11)
+           MOVE "አምስት"
                TO WS-ACT-HOUR(12)
            MOVE "እኩለ ሌሊት"
                TO WS-ACT-MIDNIGHT
            MOVE "እኩለ ቀን"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} ሰዓት"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ሰዓት ከአምስት ደቂቃ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ሰዓት ከአሥር ደቂቃ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ሰዓት ከሩብ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ሰዓት ከሃያ ደቂቃ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ሰዓት ከሃያ አምስት ደቂቃ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ሰዓት ተኩል"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ለ{next_h} ሰዓት ሩብ ጉዳይ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -773,29 +773,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "الظهر"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "الساعة {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} وخمس دقائق"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} وعشر دقائق"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} والربع"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} والثلث"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} والنصف إلا خمس دقائق"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} والنصف"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} والنصف وخمس دقائق"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} إلا ثلثًا"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} إلا ربعًا"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} إلا عشر دقائق"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} إلا خمس دقائق"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -838,7 +838,7 @@
                TO WS-ACT-HOUR(8)
            MOVE "kimsaqallqu"
                TO WS-ACT-HOUR(9)
-           MOVE "llantunka"
+           MOVE "llätunka"
                TO WS-ACT-HOUR(10)
            MOVE "tunka"
                TO WS-ACT-HOUR(11)
@@ -848,29 +848,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "chika uru"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} ura"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ura phisqa minutuni"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ura tunka minutuni"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ura tunka phisqani minutuni"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ura pä tunka minutuni"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ura pä tunka phisqani minutuni"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ura chikani"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} ura kimsa tunka phisqani minutuni"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} ura pusi tunka minutuni"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} ura pusi tunka phisqani minutuni"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} ura phisqa tunka minutuni"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} ura phisqa tunka phisqani minutuni"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -923,29 +923,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "günorta"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "saat {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "beş keçir {h}"
+           MOVE "{h} sıfır beş"
                TO WS-ACT-PATTERN(2)
-           MOVE "on keçir {h}"
+           MOVE "{h} on"
                TO WS-ACT-PATTERN(3)
-           MOVE "on beş keçir {h}"
+           MOVE "{h} on beş"
                TO WS-ACT-PATTERN(4)
-           MOVE "iyirmi keçir {h}"
+           MOVE "{h} iyirmi"
                TO WS-ACT-PATTERN(5)
-           MOVE "iyirmi beş keçir {h}"
+           MOVE "{h} iyirmi beş"
                TO WS-ACT-PATTERN(6)
-           MOVE "otuz keçir {h}"
+           MOVE "{h} otuz"
                TO WS-ACT-PATTERN(7)
-           MOVE "iyirmi beş qalmış {next_h}"
+           MOVE "{h} otuz beş"
                TO WS-ACT-PATTERN(8)
-           MOVE "iyirmi qalmış {next_h}"
+           MOVE "{h} qırx"
                TO WS-ACT-PATTERN(9)
-           MOVE "on beş qalmış {next_h}"
+           MOVE "{h} qırx beş"
                TO WS-ACT-PATTERN(10)
-           MOVE "on qalmış {next_h}"
+           MOVE "{h} əlli"
                TO WS-ACT-PATTERN(11)
-           MOVE "beş qalmış {next_h}"
+           MOVE "{h} əlli beş"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -970,7 +970,7 @@
 *> Source: locales/bci.json
        INIT-LOCALE-BCI.
            MOVE "bci" TO WS-ACT-CODE
-           MOVE "blu-nɲɔn"
+           MOVE "blu-nin-nɲɔn"
                TO WS-ACT-HOUR(1)
            MOVE "kun"
                TO WS-ACT-HOUR(2)
@@ -992,35 +992,35 @@
                TO WS-ACT-HOUR(10)
            MOVE "blu"
                TO WS-ACT-HOUR(11)
-           MOVE "blu-kun"
+           MOVE "blu-nin-kun"
                TO WS-ACT-HOUR(12)
            MOVE "kɔnguɛ afiɛn"
                TO WS-ACT-MIDNIGHT
            MOVE "nnɔsua"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "dɔ {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "dɔ {h} nin miniti nnun"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "dɔ {h} nin miniti blu"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "dɔ {h} nin miniti blu-nin-nnun"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "dɔ {h} nin miniti ablaɔn"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "dɔ {h} nin miniti ablaɔn-nin-nnun"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "dɔ {h} nin miniti ablasan"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "dɔ {h} nin miniti ablasan-nin-nnun"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "dɔ {h} nin miniti ablanan"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "dɔ {h} nin miniti ablanan-nin-nnun"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "dɔ {h} nin miniti ablenun"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "dɔ {h} nin miniti ablenun-nin-nnun"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -1047,9 +1047,9 @@
            MOVE "be" TO WS-ACT-CODE
            MOVE "дванаццаць"
                TO WS-ACT-HOUR(1)
-           MOVE "адзін"
+           MOVE "гадзіна"
                TO WS-ACT-HOUR(2)
-           MOVE "два"
+           MOVE "дзве"
                TO WS-ACT-HOUR(3)
            MOVE "тры"
                TO WS-ACT-HOUR(4)
@@ -1073,19 +1073,19 @@
                TO WS-ACT-MIDNIGHT
            MOVE "поўдзень"
                TO WS-ACT-NOON
-           MOVE "{h} гадзін"
+           MOVE "роўна {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "пяць хвілін пасля {h}"
+           MOVE "{h} нуль пяць"
                TO WS-ACT-PATTERN(2)
-           MOVE "дзесяць хвілін пасля {h}"
+           MOVE "{h} дзесяць"
                TO WS-ACT-PATTERN(3)
-           MOVE "чвэрць пасля {h}"
+           MOVE "{h} пятнаццаць"
                TO WS-ACT-PATTERN(4)
-           MOVE "дваццаць хвілін пасля {h}"
+           MOVE "{h} дваццаць"
                TO WS-ACT-PATTERN(5)
-           MOVE "дваццаць пяць хвілін пасля {h}"
+           MOVE "{h} дваццаць пяць"
                TO WS-ACT-PATTERN(6)
-           MOVE "палова да {next_h}"
+           MOVE "{h} трыццаць"
                TO WS-ACT-PATTERN(7)
            MOVE "без дваццаці пяці {next_h}"
                TO WS-ACT-PATTERN(8)
@@ -1120,17 +1120,17 @@
 *> Source: locales/bem.json
        INIT-LOCALE-BEM.
            MOVE "bem" TO WS-ACT-CODE
-           MOVE "ikumi na ibili"
+           MOVE "ikumi na shibili"
                TO WS-ACT-HOUR(1)
-           MOVE "cimo"
+           MOVE "imo"
                TO WS-ACT-HOUR(2)
-           MOVE "fibili"
+           MOVE "shibili"
                TO WS-ACT-HOUR(3)
-           MOVE "fitatu"
+           MOVE "shitatu"
                TO WS-ACT-HOUR(4)
-           MOVE "fine"
+           MOVE "shine"
                TO WS-ACT-HOUR(5)
-           MOVE "fisano"
+           MOVE "shisano"
                TO WS-ACT-HOUR(6)
            MOVE "mutanda"
                TO WS-ACT-HOUR(7)
@@ -1142,35 +1142,35 @@
                TO WS-ACT-HOUR(10)
            MOVE "ikumi"
                TO WS-ACT-HOUR(11)
-           MOVE "ikumi na cimo"
+           MOVE "ikumi na imo"
                TO WS-ACT-HOUR(12)
            MOVE "pakati ka bushiku"
                TO WS-ACT-MIDNIGHT
            MOVE "akasuba"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "insa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "insa {h} na maminiti yasano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "insa {h} na maminiti ikumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "insa {h} na maminiti ikumi na yasano"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "insa {h} na maminiti amakumi yabili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "insa {h} na maminiti amakumi yabili na yasano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "insa {h} na hafu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "insa {h} na maminiti amakumi yatatu na yasano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "insa {h} na maminiti amakumi yane"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "insa {h} na maminiti amakumi yane na yasano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "insa {h} na maminiti amakumi yasano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "insa {h} na maminiti amakumi yasano na yasano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -1225,27 +1225,27 @@
                TO WS-ACT-NOON
            MOVE "{h} часа"
                TO WS-ACT-PATTERN(1)
-           MOVE "пет na {h}"
+           MOVE "{h} и пет"
                TO WS-ACT-PATTERN(2)
-           MOVE "десет na {h}"
+           MOVE "{h} и десет"
                TO WS-ACT-PATTERN(3)
-           MOVE "петнадесет na {h}"
+           MOVE "{h} и петнадесет"
                TO WS-ACT-PATTERN(4)
-           MOVE "двадесет na {h}"
+           MOVE "{h} и двадесет"
                TO WS-ACT-PATTERN(5)
-           MOVE "двадесет и пет na {h}"
+           MOVE "{h} и двадесет и пет"
                TO WS-ACT-PATTERN(6)
-           MOVE "тридесет na {h}"
+           MOVE "{h} и половина"
                TO WS-ACT-PATTERN(7)
-           MOVE "двадесет и пет do {next_h}"
+           MOVE "{next_h} без двадесет и пет"
                TO WS-ACT-PATTERN(8)
-           MOVE "двадесет do {next_h}"
+           MOVE "{next_h} без двадесет"
                TO WS-ACT-PATTERN(9)
-           MOVE "петнадесет do {next_h}"
+           MOVE "{next_h} без петнадесет"
                TO WS-ACT-PATTERN(10)
-           MOVE "десет do {next_h}"
+           MOVE "{next_h} без десет"
                TO WS-ACT-PATTERN(11)
-           MOVE "пет do {next_h}"
+           MOVE "{next_h} без пет"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -1298,29 +1298,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "medeldei"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} klok"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "faef pas {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ten pas {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "kwota pas {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "twenti pas {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "twenti faef pas {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "haf pas {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "twenti faef tu {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "twenti tu {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "kwota tu {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ten tu {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "faef tu {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -1373,29 +1373,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "tilgari"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "nɛgɛ kaɲɛ {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti duuru"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti tan"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti mugan"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "nɛgɛ kaɲɛ {h} ni tilancɛ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti bi naani"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti bi duuru"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -1420,57 +1420,57 @@
 *> Source: locales/bn.json
        INIT-LOCALE-BN.
            MOVE "bn" TO WS-ACT-CODE
-           MOVE "বারো"
+           MOVE "বারোটা"
                TO WS-ACT-HOUR(1)
-           MOVE "এক"
+           MOVE "একটা"
                TO WS-ACT-HOUR(2)
-           MOVE "দুই"
+           MOVE "দুটো"
                TO WS-ACT-HOUR(3)
-           MOVE "তিন"
+           MOVE "তিনটে"
                TO WS-ACT-HOUR(4)
-           MOVE "চার"
+           MOVE "চারটে"
                TO WS-ACT-HOUR(5)
-           MOVE "পাঁচ"
+           MOVE "পাঁচটা"
                TO WS-ACT-HOUR(6)
-           MOVE "ছয়"
+           MOVE "ছটা"
                TO WS-ACT-HOUR(7)
-           MOVE "সাত"
+           MOVE "সাতটা"
                TO WS-ACT-HOUR(8)
-           MOVE "আট"
+           MOVE "আটটা"
                TO WS-ACT-HOUR(9)
-           MOVE "নয়"
+           MOVE "নটা"
                TO WS-ACT-HOUR(10)
-           MOVE "দশ"
+           MOVE "দশটা"
                TO WS-ACT-HOUR(11)
-           MOVE "এগারো"
+           MOVE "এগারোটা"
                TO WS-ACT-HOUR(12)
            MOVE "মধ্যরাত"
                TO WS-ACT-MIDNIGHT
-           MOVE "দুপুর"
+           MOVE "দুপুর বারোটা"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} বেজে পাঁচ মিনিট"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} বেজে দশ মিনিট"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "সোয়া {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} বেজে বিশ মিনিট"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} বেজে পঁচিশ মিনিট"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} বেজে ত্রিশ মিনিট"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} বাজতে পঁচিশ মিনিট বাকি"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} বাজতে বিশ মিনিট বাকি"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "পৌনে {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} বাজতে দশ মিনিট বাকি"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} বাজতে পাঁচ মিনিট বাকি"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -1495,57 +1495,57 @@
 *> Source: locales/br.json
        INIT-LOCALE-BR.
            MOVE "br" TO WS-ACT-CODE
-           MOVE "12"
+           MOVE "daouzek eur"
                TO WS-ACT-HOUR(1)
-           MOVE "1"
+           MOVE "un eur"
                TO WS-ACT-HOUR(2)
-           MOVE "2"
+           MOVE "div eur"
                TO WS-ACT-HOUR(3)
-           MOVE "3"
+           MOVE "teir eur"
                TO WS-ACT-HOUR(4)
-           MOVE "4"
+           MOVE "peder eur"
                TO WS-ACT-HOUR(5)
-           MOVE "5"
+           MOVE "pemp eur"
                TO WS-ACT-HOUR(6)
-           MOVE "6"
+           MOVE "c'hwec'h eur"
                TO WS-ACT-HOUR(7)
-           MOVE "7"
+           MOVE "seizh eur"
                TO WS-ACT-HOUR(8)
-           MOVE "8"
+           MOVE "eizh eur"
                TO WS-ACT-HOUR(9)
-           MOVE "9"
+           MOVE "nav eur"
                TO WS-ACT-HOUR(10)
-           MOVE "10"
+           MOVE "dek eur"
                TO WS-ACT-HOUR(11)
-           MOVE "11"
+           MOVE "unnek eur"
                TO WS-ACT-HOUR(12)
            MOVE "hanternoz"
                TO WS-ACT-MIDNIGHT
            MOVE "kreisteiz"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ha pemp"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ha dek"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ha kard"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} hag ugent"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ha pemp warn-ugent"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} hanter"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} nemet pemp warn-ugent"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} nemet ugent"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} nemet kard"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} nemet dek"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} nemet pemp"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -1598,19 +1598,19 @@
                TO WS-ACT-MIDNIGHT
            MOVE "podne"
                TO WS-ACT-NOON
-           MOVE "{h} sati"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "pet po {h}"
+           MOVE "{h} i pet"
                TO WS-ACT-PATTERN(2)
-           MOVE "deset po {h}"
+           MOVE "{h} i deset"
                TO WS-ACT-PATTERN(3)
-           MOVE "petnaest po {h}"
+           MOVE "{h} i petnaest"
                TO WS-ACT-PATTERN(4)
-           MOVE "dvadeset po {h}"
+           MOVE "{h} i dvadeset"
                TO WS-ACT-PATTERN(5)
-           MOVE "dvadeset pet po {h}"
+           MOVE "{h} i dvadeset pet"
                TO WS-ACT-PATTERN(6)
-           MOVE "trideset po {h}"
+           MOVE "pola {next_h}"
                TO WS-ACT-PATTERN(7)
            MOVE "dvadeset pet do {next_h}"
                TO WS-ACT-PATTERN(8)
@@ -1645,57 +1645,57 @@
 *> Source: locales/ca.json
        INIT-LOCALE-CA.
            MOVE "ca" TO WS-ACT-CODE
-           MOVE "dotze"
+           MOVE "les dotze"
                TO WS-ACT-HOUR(1)
-           MOVE "una"
+           MOVE "la una"
                TO WS-ACT-HOUR(2)
-           MOVE "dues"
+           MOVE "les dues"
                TO WS-ACT-HOUR(3)
-           MOVE "tres"
+           MOVE "les tres"
                TO WS-ACT-HOUR(4)
-           MOVE "quatre"
+           MOVE "les quatre"
                TO WS-ACT-HOUR(5)
-           MOVE "cinc"
+           MOVE "les cinc"
                TO WS-ACT-HOUR(6)
-           MOVE "sis"
+           MOVE "les sis"
                TO WS-ACT-HOUR(7)
-           MOVE "set"
+           MOVE "les set"
                TO WS-ACT-HOUR(8)
-           MOVE "vuit"
+           MOVE "les vuit"
                TO WS-ACT-HOUR(9)
-           MOVE "nou"
+           MOVE "les nou"
                TO WS-ACT-HOUR(10)
-           MOVE "deu"
+           MOVE "les deu"
                TO WS-ACT-HOUR(11)
-           MOVE "onze"
+           MOVE "les onze"
                TO WS-ACT-HOUR(12)
            MOVE "mitjanit"
                TO WS-ACT-MIDNIGHT
            MOVE "migdia"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "{h} en punt"
                TO WS-ACT-PATTERN(1)
-           MOVE "cinc past {h}"
+           MOVE "{h} i cinc"
                TO WS-ACT-PATTERN(2)
-           MOVE "deu past {h}"
+           MOVE "{h} i deu"
                TO WS-ACT-PATTERN(3)
-           MOVE "un quart past {h}"
+           MOVE "{h} i quart"
                TO WS-ACT-PATTERN(4)
-           MOVE "vint past {h}"
+           MOVE "{h} i vint"
                TO WS-ACT-PATTERN(5)
-           MOVE "vint-i-cinc past {h}"
+           MOVE "{h} i vint-i-cinc"
                TO WS-ACT-PATTERN(6)
-           MOVE "mitja past {h}"
+           MOVE "{h} i mitja"
                TO WS-ACT-PATTERN(7)
-           MOVE "vint-i-cinc to {next_h}"
+           MOVE "{next_h} menys vint-i-cinc"
                TO WS-ACT-PATTERN(8)
-           MOVE "vint to {next_h}"
+           MOVE "{next_h} menys vint"
                TO WS-ACT-PATTERN(9)
-           MOVE "un quart to {next_h}"
+           MOVE "{next_h} menys quart"
                TO WS-ACT-PATTERN(10)
-           MOVE "deu to {next_h}"
+           MOVE "{next_h} menys deu"
                TO WS-ACT-PATTERN(11)
-           MOVE "cinc to {next_h}"
+           MOVE "{next_h} menys cinc"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -1748,29 +1748,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "nik'aj q'ij"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} ramaj"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ramaj rik'in wo'o'"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ramaj rik'in lajuj"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ramaj rik'in wolajuj"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ramaj rik'in juk'al"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ramaj rik'in juk'al wo'o'"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ramaj rik'in nik'aj"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} ramaj rik'in juk'al wolajuj"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} ramaj rik'in kak'al"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} ramaj rik'in kak'al wo'o'"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} ramaj rik'in kak'al lajuj"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} ramaj rik'in kak'al wolajuj"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -1795,57 +1795,57 @@
 *> Source: locales/ceb.json
        INIT-LOCALE-CEB.
            MOVE "ceb" TO WS-ACT-CODE
-           MOVE "dose"
+           MOVE "alas dose"
                TO WS-ACT-HOUR(1)
-           MOVE "uno"
+           MOVE "ala una"
                TO WS-ACT-HOUR(2)
-           MOVE "dos"
+           MOVE "alas dos"
                TO WS-ACT-HOUR(3)
-           MOVE "tres"
+           MOVE "alas tres"
                TO WS-ACT-HOUR(4)
-           MOVE "kwatro"
+           MOVE "alas kwatro"
                TO WS-ACT-HOUR(5)
-           MOVE "singko"
+           MOVE "alas singko"
                TO WS-ACT-HOUR(6)
-           MOVE "sais"
+           MOVE "alas sais"
                TO WS-ACT-HOUR(7)
-           MOVE "siyete"
+           MOVE "alas siyete"
                TO WS-ACT-HOUR(8)
-           MOVE "otso"
+           MOVE "alas otso"
                TO WS-ACT-HOUR(9)
-           MOVE "nuwebe"
+           MOVE "alas nuwebe"
                TO WS-ACT-HOUR(10)
-           MOVE "diyes"
+           MOVE "alas diyes"
                TO WS-ACT-HOUR(11)
-           MOVE "onse"
+           MOVE "alas onse"
                TO WS-ACT-HOUR(12)
            MOVE "tungang gabii"
                TO WS-ACT-MIDNIGHT
            MOVE "udtong tutok"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} y singko"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} y diyes"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} y kinse"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} y beynte"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} y beynte singko"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} y medya"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "menos beynte singko para {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "menos beynte para {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "menos kinse para {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "menos diyes para {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "menos singko para {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -1898,29 +1898,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "poledne"
                TO WS-ACT-NOON
-           MOVE "{h} hodin"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "pět po {h}"
+           MOVE "{h} nula pět"
                TO WS-ACT-PATTERN(2)
-           MOVE "deset po {h}"
+           MOVE "{h} deset"
                TO WS-ACT-PATTERN(3)
-           MOVE "čtvrt po {h}"
+           MOVE "{h} patnáct"
                TO WS-ACT-PATTERN(4)
-           MOVE "dvacet po {h}"
+           MOVE "{h} dvacet"
                TO WS-ACT-PATTERN(5)
-           MOVE "dvacet pět po {h}"
+           MOVE "{h} dvacet pět"
                TO WS-ACT-PATTERN(6)
-           MOVE "půl po {h}"
+           MOVE "{h} třicet"
                TO WS-ACT-PATTERN(7)
-           MOVE "dvacet pět do {next_h}"
+           MOVE "za dvacet pět minut {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "dvacet do {next_h}"
+           MOVE "za dvacet minut {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "čtvrt do {next_h}"
+           MOVE "za patnáct minut {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "deset do {next_h}"
+           MOVE "za deset minut {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "pět do {next_h}"
+           MOVE "za pět minut {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -1973,29 +1973,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "hanner dydd"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} o'r gloch"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "pum munud wedi {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "deg munud wedi {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "chwarter wedi {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ugain munud wedi {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "pum munud ar hugain wedi {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "hanner awr wedi {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "pum munud ar hugain i {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ugain munud i {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "chwarter i {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "deg munud i {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "pum munud i {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -2198,29 +2198,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "akɔ̈l ciëŋ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "thä {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "thä {h} ku minitö dhiëc"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "thä {h} ku minitö thiäär"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "thä {h} ku minitö thiäär ku dhiëc"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "thä {h} ku minitö thiärou"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "thä {h} ku minitö thiärou ku dhiëc"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "thä {h} ku minitö thiärdiäk"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "thä {h} ku minitö thiärdiäk ku dhiëc"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "thä {h} ku minitö thiärŋuan"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "thä {h} ku minitö thiärŋuan ku dhiëc"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "thä {h} ku minitö thiärdhiëc"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "thä {h} ku minitö thiärdhiëc ku dhiëc"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -2245,57 +2245,57 @@
 *> Source: locales/dje.json
        INIT-LOCALE-DJE.
            MOVE "dje" TO WS-ACT-CODE
-           MOVE "way cindi"
+           MOVE "iway cindi hinka"
                TO WS-ACT-HOUR(1)
-           MOVE "afoo"
+           MOVE "fo"
                TO WS-ACT-HOUR(2)
-           MOVE "ihinka"
+           MOVE "hinka"
                TO WS-ACT-HOUR(3)
-           MOVE "ihinza"
+           MOVE "hinza"
                TO WS-ACT-HOUR(4)
-           MOVE "itaaci"
+           MOVE "taaci"
                TO WS-ACT-HOUR(5)
-           MOVE "igu"
+           MOVE "gu"
                TO WS-ACT-HOUR(6)
            MOVE "iddu"
                TO WS-ACT-HOUR(7)
            MOVE "iyye"
                TO WS-ACT-HOUR(8)
-           MOVE "isahkay"
+           MOVE "ahakku"
                TO WS-ACT-HOUR(9)
-           MOVE "iyegga"
+           MOVE "yagga"
                TO WS-ACT-HOUR(10)
-           MOVE "iwoy"
+           MOVE "iway"
                TO WS-ACT-HOUR(11)
-           MOVE "iwoy cindi"
+           MOVE "iway cindi fo"
                TO WS-ACT-HOUR(12)
            MOVE "cin beri"
                TO WS-ACT-MIDNIGHT
            MOVE "zaari gaaham"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "guuru {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "guuru {h} nda miniti gu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "guuru {h} nda miniti iway"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "guuru {h} nda miniti iway cindi gu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "guuru {h} nda miniti waranka"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "guuru {h} nda miniti waranka cindi gu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "guuru {h} nda jare"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "guuru {h} nda miniti waranza cindi gu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "guuru {h} nda miniti waytaaci"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "guuru {h} nda miniti waytaaci cindi gu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "guuru {h} nda miniti waygu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "guuru {h} nda miniti waygu cindi gu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -2348,29 +2348,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "މެންދުރު"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ގަޑިން {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ޖަހައި ފަސް މިނެޓު"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ޖަހައި ދިހަ މިނެޓު"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ޖަހައި ފަނަރަ މިނެޓު"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ޖަހައި ވިހި މިނެޓު"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ޖަހައި ފަންސަވީސް މިނެޓު"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ޖަހައި ބައި"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} ޖަހައި ތިރީސްފަސް މިނެޓު"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} ޖަހައި ސާޅީސް މިނެޓު"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} ޖަހައި ފަންސާސް މިނެޓު"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -2423,29 +2423,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "tilgari"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "lɛrɛ {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "lɛrɛ {h} ni miniti duuru"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "lɛrɛ {h} ni miniti tan"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "lɛrɛ {h} ni miniti tan ni duuru"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "lɛrɛ {h} ni miniti mugan"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "lɛrɛ {h} ni miniti mugan ni duuru"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "lɛrɛ {h} ni tilancɛ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "lɛrɛ {h} ni miniti bi saba ni duuru"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "lɛrɛ {h} ni miniti bi naani"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "lɛrɛ {h} ni miniti bi naani ni duuru"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "lɛrɛ {h} ni miniti bi duuru"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "lɛrɛ {h} ni miniti bi duuru ni duuru"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -2498,29 +2498,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ཉིན་གུང"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ཆུ་ཚོད་{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ཆུ་ཚོད་{h}་དང་ཕྱེད"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -2573,29 +2573,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ŋdɔ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ga {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ga {h} kple aɖabaƒoƒo atɔ̃"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ga {h} kple aɖabaƒoƒo ewo"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ga {h} kple aɖabaƒoƒo wuiatɔ̃"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ga {h} kple aɖabaƒoƒo blaeve"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ga {h} kple afã"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ga {h} kple aɖabaƒoƒo blaene"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ga {h} kple aɖabaƒoƒo blaatɔ̃"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -2873,29 +2873,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "keskpäev"
                TO WS-ACT-NOON
-           MOVE "{h}"
+           MOVE "kell {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "viis efter {h}"
+           MOVE "viis minutit {h} läbi"
                TO WS-ACT-PATTERN(2)
-           MOVE "kümme efter {h}"
+           MOVE "kümme minutit {h} läbi"
                TO WS-ACT-PATTERN(3)
-           MOVE "veerand efter {h}"
+           MOVE "veerand {next_h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "kakskümmend efter {h}"
+           MOVE "kakskümmend minutit {h} läbi"
                TO WS-ACT-PATTERN(5)
-           MOVE "kakskümmend viis efter {h}"
+           MOVE "kakskümmend viis minutit {h} läbi"
                TO WS-ACT-PATTERN(6)
-           MOVE "pool efter {h}"
+           MOVE "pool {next_h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "kakskümmend viis enne {next_h}"
+           MOVE "kolmkümmend viis minutit {h} läbi"
                TO WS-ACT-PATTERN(8)
-           MOVE "kakskümmend enne {next_h}"
+           MOVE "kahekümne minuti pärast {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "veerand enne {next_h}"
+           MOVE "kolmveerand {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "kümme enne {next_h}"
+           MOVE "kümne minuti pärast {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "viis enne {next_h}"
+           MOVE "viie minuti pärast {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -2920,57 +2920,57 @@
 *> Source: locales/eu.json
        INIT-LOCALE-EU.
            MOVE "eu" TO WS-ACT-CODE
-           MOVE "hamabi"
+           MOVE "hamabiak"
                TO WS-ACT-HOUR(1)
-           MOVE "bat"
+           MOVE "ordu bata"
                TO WS-ACT-HOUR(2)
-           MOVE "bi"
+           MOVE "ordu biak"
                TO WS-ACT-HOUR(3)
-           MOVE "hiru"
+           MOVE "hirurak"
                TO WS-ACT-HOUR(4)
-           MOVE "lau"
+           MOVE "laurak"
                TO WS-ACT-HOUR(5)
-           MOVE "bost"
+           MOVE "bostak"
                TO WS-ACT-HOUR(6)
-           MOVE "sei"
+           MOVE "seiak"
                TO WS-ACT-HOUR(7)
-           MOVE "zazpi"
+           MOVE "zazpiak"
                TO WS-ACT-HOUR(8)
-           MOVE "zortzi"
+           MOVE "zortziak"
                TO WS-ACT-HOUR(9)
-           MOVE "bederatzi"
+           MOVE "bederatziak"
                TO WS-ACT-HOUR(10)
-           MOVE "hamar"
+           MOVE "hamarrak"
                TO WS-ACT-HOUR(11)
-           MOVE "hamaika"
+           MOVE "hamaikak"
                TO WS-ACT-HOUR(12)
            MOVE "gauerdia"
                TO WS-ACT-MIDNIGHT
            MOVE "eguerdia"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} eta bost"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} eta hamar"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} eta laurden"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} eta hogei"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} eta hogeita bost"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} eta erdiak"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} hogeita bost gutxi"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} hogei gutxi"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} laurden gutxi"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} hamar gutxi"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} bost gutxi"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -3098,29 +3098,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ewaŋ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "awola {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "awola {h} ai minit tán"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "awola {h} ai minit awom"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "awola {h} ai minit awom ai tán"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "awola {h} ai minit mewom mebú"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "awola {h} ai minit mewom mebú ai tán"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "awola {h} ai minit mewom melaa"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "awola {h} ai minit mewom melaa ai tán"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "awola {h} ai minit mewom menyin"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "awola {h} ai minit mewom menyin ai tán"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "awola {h} ai minit mewom metán"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "awola {h} ai minit mewom metán ai tán"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3173,29 +3173,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "zuhr"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "waktu {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "waktu {h} e hojomaaje joy"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "waktu {h} e hojomaaje sappo"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "waktu {h} e hojomaaje sappo e joy"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "waktu {h} e hojomaaje noogas"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "waktu {h} e hojomaaje noogas e joy"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "waktu {h} e feccere"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "waktu {h} e hojomaaje cappanɗe tati e joy"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "waktu {h} e hojomaaje cappanɗe nay"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "waktu {h} e hojomaaje cappanɗe nay e joy"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "waktu {h} e hojomaaje cappanɗe joy"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "waktu {h} e hojomaaje cappanɗe joy e joy"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3248,7 +3248,7 @@
                TO WS-ACT-MIDNIGHT
            MOVE "keskipäivä"
                TO WS-ACT-NOON
-           MOVE "{h}"
+           MOVE "kello {h}"
                TO WS-ACT-PATTERN(1)
            MOVE "viisi yli {h}"
                TO WS-ACT-PATTERN(2)
@@ -3260,7 +3260,7 @@
                TO WS-ACT-PATTERN(5)
            MOVE "kaksikymmentäviisi yli {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "puoli yli {h}"
+           MOVE "puoli {next_h}"
                TO WS-ACT-PATTERN(7)
            MOVE "kaksikymmentäviisi vaille {next_h}"
                TO WS-ACT-PATTERN(8)
@@ -3295,57 +3295,57 @@
 *> Source: locales/fil.json
        INIT-LOCALE-FIL.
            MOVE "fil" TO WS-ACT-CODE
-           MOVE "dose"
+           MOVE "alas-dose"
                TO WS-ACT-HOUR(1)
-           MOVE "una"
+           MOVE "ala-una"
                TO WS-ACT-HOUR(2)
-           MOVE "dos"
+           MOVE "alas-dos"
                TO WS-ACT-HOUR(3)
-           MOVE "tres"
+           MOVE "alas-tres"
                TO WS-ACT-HOUR(4)
-           MOVE "kwatro"
+           MOVE "alas-kuwatro"
                TO WS-ACT-HOUR(5)
-           MOVE "singko"
+           MOVE "alas-singko"
                TO WS-ACT-HOUR(6)
-           MOVE "seis"
+           MOVE "alas-sais"
                TO WS-ACT-HOUR(7)
-           MOVE "syete"
+           MOVE "alas-siyete"
                TO WS-ACT-HOUR(8)
-           MOVE "otso"
+           MOVE "alas-otso"
                TO WS-ACT-HOUR(9)
-           MOVE "nuwebe"
+           MOVE "alas-nuwebe"
                TO WS-ACT-HOUR(10)
-           MOVE "diyes"
+           MOVE "alas-diyes"
                TO WS-ACT-HOUR(11)
-           MOVE "onse"
+           MOVE "alas-onse"
                TO WS-ACT-HOUR(12)
            MOVE "hatinggabi"
                TO WS-ACT-MIDNIGHT
            MOVE "tanghali"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "lima dan {h}"
+           MOVE "{h} y singko"
                TO WS-ACT-PATTERN(2)
-           MOVE "sampu dan {h}"
+           MOVE "{h} y diyes"
                TO WS-ACT-PATTERN(3)
-           MOVE "labinlima dan {h}"
+           MOVE "{h} y kinse"
                TO WS-ACT-PATTERN(4)
-           MOVE "dalawampu dan {h}"
+           MOVE "{h} y beynte"
                TO WS-ACT-PATTERN(5)
-           MOVE "dalawampu't lima dan {h}"
+           MOVE "{h} y beynte singko"
                TO WS-ACT-PATTERN(6)
-           MOVE "tatlumpu dan {h}"
+           MOVE "{h} y medya"
                TO WS-ACT-PATTERN(7)
-           MOVE "dalawampu't lima bago mag {next_h}"
+           MOVE "menos beynte singko para {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "dalawampu bago mag {next_h}"
+           MOVE "menos beynte para {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "labinlima bago mag {next_h}"
+           MOVE "menos kinse para {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "sampu bago mag {next_h}"
+           MOVE "menos diyes para {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "lima bago mag {next_h}"
+           MOVE "menos singko para {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3398,29 +3398,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "sigalevu"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} na kaloko"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} na kaloko ka lima na miniti"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} na kaloko ka tini na miniti"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} na kaloko ka tini ka lima na miniti"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} na kaloko ka ruasagavulu na miniti"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} na kaloko ka ruasagavulu ka lima na miniti"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} na kaloko ka tolusagavulu na miniti"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} na kaloko ka tolusagavulu ka lima na miniti"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} na kaloko ka vāsagavulu na miniti"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} na kaloko ka vāsagavulu ka lima na miniti"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} na kaloko ka limasagavulu na miniti"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} na kaloko ka limasagavulu ka lima na miniti"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3467,35 +3467,35 @@
                TO WS-ACT-HOUR(10)
            MOVE "wǒ"
                TO WS-ACT-HOUR(11)
-           MOVE "ɖokpo-wǒ"
+           MOVE "wěɖokpo"
                TO WS-ACT-HOUR(12)
            MOVE "zǎnmɛ"
                TO WS-ACT-MIDNIGHT
            MOVE "hwemɛnu"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "gan {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "gan {h} kpo cɛju atɔ́ɔ́n kpo"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "gan {h} kpo cɛju wǒ kpo"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "gan {h} kpo cɛju afɔtɔ́n kpo"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "gan {h} kpo cɛju ko kpo"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "gan {h} kpo cɛju koatɔ́ɔ́n kpo"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "gan {h} kpo cɛju gban kpo"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "gan {h} kpo cɛju kanɖé kpo"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "gan {h} kpo cɛju kanɖéwǒ kpo"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3623,29 +3623,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "meán lae"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "a {h} a chlog"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "cúig tar éis a {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "deich tar éis a {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ceathrú tar éis a {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "fiche tar éis a {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "fiche cúig tar éis a {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "leathuair tar éis a {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "fiche cúig chun a {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "fiche chun a {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ceathrú chun a {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "deich chun a {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "cúig chun a {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -3670,57 +3670,57 @@
 *> Source: locales/gd.json
        INIT-LOCALE-GD.
            MOVE "gd" TO WS-ACT-CODE
-           MOVE "dà-dheug"
+           MOVE "dà uair dheug"
                TO WS-ACT-HOUR(1)
-           MOVE "aon"
+           MOVE "uair"
                TO WS-ACT-HOUR(2)
-           MOVE "dà"
+           MOVE "dà uair"
                TO WS-ACT-HOUR(3)
-           MOVE "trì"
+           MOVE "trì uairean"
                TO WS-ACT-HOUR(4)
-           MOVE "ceithir"
+           MOVE "ceithir uairean"
                TO WS-ACT-HOUR(5)
-           MOVE "còig"
+           MOVE "còig uairean"
                TO WS-ACT-HOUR(6)
-           MOVE "sia"
+           MOVE "sia uairean"
                TO WS-ACT-HOUR(7)
-           MOVE "seachd"
+           MOVE "seachd uairean"
                TO WS-ACT-HOUR(8)
-           MOVE "ochd"
+           MOVE "ochd uairean"
                TO WS-ACT-HOUR(9)
-           MOVE "naoi"
+           MOVE "naoi uairean"
                TO WS-ACT-HOUR(10)
-           MOVE "deich"
+           MOVE "deich uairean"
                TO WS-ACT-HOUR(11)
-           MOVE "aon-deug"
+           MOVE "aon uair deug"
                TO WS-ACT-HOUR(12)
            MOVE "meadhan-oidhche"
                TO WS-ACT-MIDNIGHT
            MOVE "meadhan-latha"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "còig mionaidean an dèidh {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "deich mionaidean an dèidh {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "cairteal an dèidh {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "fichead mionaid an dèidh {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "còig mionaidean fichead an dèidh {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "leth-uair an dèidh {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "còig mionaidean fichead gu {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "fichead mionaid gu {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "cairteal gu {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "deich mionaidean gu {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "còig mionaidean gu {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -3844,7 +3844,7 @@
                TO WS-ACT-HOUR(11)
            MOVE "pa peteĩ"
                TO WS-ACT-HOUR(12)
-           MOVE "pyhareve"
+           MOVE "pyharepyte"
                TO WS-ACT-MIDNIGHT
            MOVE "asaje"
                TO WS-ACT-NOON
@@ -3862,15 +3862,15 @@
                TO WS-ACT-PATTERN(6)
            MOVE "{h} ha mbohapy pa"
                TO WS-ACT-PATTERN(7)
-           MOVE "{next_h} mba'e mokõi pa po"
+           MOVE "{h} ha mbohapy pa po"
                TO WS-ACT-PATTERN(8)
-           MOVE "{next_h} mba'e mokõi pa"
+           MOVE "{h} ha irundy pa"
                TO WS-ACT-PATTERN(9)
-           MOVE "{next_h} mba'e pa po"
+           MOVE "{h} ha irundy pa po"
                TO WS-ACT-PATTERN(10)
-           MOVE "{next_h} mba'e pa"
+           MOVE "{h} ha po pa"
                TO WS-ACT-PATTERN(11)
-           MOVE "{next_h} mba'e po"
+           MOVE "{h} ha po pa po"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3921,31 +3921,31 @@
                TO WS-ACT-HOUR(12)
            MOVE "મધ્યરાત્રિ"
                TO WS-ACT-MIDNIGHT
-           MOVE "બપોર"
+           MOVE "બપોરે બાર વાગ્યે"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} વાગ્યે"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} વાગીને પાંચ મિનિટ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} વાગીને દસ મિનિટ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "સવા {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} વાગીને વીસ મિનિટ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} વાગીને પચીસ મિનિટ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} વાગીને ત્રીસ મિનિટ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} વાગીને પાંત્રીસ મિનિટ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} વાગીને ચાલીસ મિનિટ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "પોણા {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} વાગવામાં દસ મિનિટ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} વાગવામાં પાંચ મિનિટ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -3970,57 +3970,57 @@
 *> Source: locales/gv.json
        INIT-LOCALE-GV.
            MOVE "gv" TO WS-ACT-CODE
-           MOVE "12"
+           MOVE "daa-yeig"
                TO WS-ACT-HOUR(1)
-           MOVE "1"
+           MOVE "nane"
                TO WS-ACT-HOUR(2)
-           MOVE "2"
+           MOVE "jees"
                TO WS-ACT-HOUR(3)
-           MOVE "3"
+           MOVE "tree"
                TO WS-ACT-HOUR(4)
-           MOVE "4"
+           MOVE "kiare"
                TO WS-ACT-HOUR(5)
-           MOVE "5"
+           MOVE "queig"
                TO WS-ACT-HOUR(6)
-           MOVE "6"
+           MOVE "shey"
                TO WS-ACT-HOUR(7)
-           MOVE "7"
+           MOVE "shiaght"
                TO WS-ACT-HOUR(8)
-           MOVE "8"
+           MOVE "hoght"
                TO WS-ACT-HOUR(9)
-           MOVE "9"
+           MOVE "nuy"
                TO WS-ACT-HOUR(10)
-           MOVE "10"
+           MOVE "jeih"
                TO WS-ACT-HOUR(11)
-           MOVE "11"
+           MOVE "nane-jeig"
                TO WS-ACT-HOUR(12)
            MOVE "mean oie"
                TO WS-ACT-MIDNIGHT
            MOVE "munlaa"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} er y chlag"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "queig minnidyn lurg {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "jeih minnidyn lurg {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "kerroo lurg {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "feed minnid lurg {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "queig minnidyn as feed lurg {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "lieh-oor lurg {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "queig minnidyn as feed gys {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "feed minnid gys {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "kerroo gys {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "jeih minnidyn gys {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "queig minnidyn gys {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -4067,35 +4067,35 @@
                TO WS-ACT-HOUR(10)
            MOVE "goma"
                TO WS-ACT-HOUR(11)
-           MOVE "goma sha ɗaya"
+           MOVE "sha ɗaya"
                TO WS-ACT-HOUR(12)
            MOVE "tsakar dare"
                TO WS-ACT-MIDNIGHT
            MOVE "tsakar rana"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ƙarfe {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ƙarfe {h} da minti biyar"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ƙarfe {h} da minti goma"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ƙarfe {h} da kwata"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ƙarfe {h} da minti ashirin"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ƙarfe {h} da minti ashirin da biyar"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ƙarfe {h} da rabi"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ƙarfe {next_h} saura minti ashirin da biyar"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ƙarfe {next_h} saura minti ashirin"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ƙarfe {next_h} saura kwata"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ƙarfe {next_h} saura minti goma"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ƙarfe {next_h} saura minti biyar"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -4221,31 +4221,31 @@
                TO WS-ACT-HOUR(12)
            MOVE "आधी रात"
                TO WS-ACT-MIDNIGHT
-           MOVE "दोपहर"
+           MOVE "दोपहर के बारह बजे"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} बजे"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} बजकर पाँच मिनट"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} बजकर दस मिनट"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "सवा {h} बजे"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} बजकर बीस मिनट"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} बजकर पच्चीस मिनट"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} बजकर तीस मिनट"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} बजकर पैंतीस मिनट"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} बजकर चालीस मिनट"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "पौने {next_h} बजे"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} बजने में दस मिनट"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} बजने में पाँच मिनट"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -4298,29 +4298,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "tav su"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} teev"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} teev tsib feeb"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} teev kaum feeb"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} teev kaum tsib feeb"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} teev nees nkaum feeb"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} teev nees nkaum tsib feeb"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} teev ib nrab"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} teev peb caug tsib feeb"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} teev plaub caug feeb"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} teev plaub caug tsib feeb"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} teev tsib caug feeb"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} teev tsib caug tsib feeb"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -4373,19 +4373,19 @@
                TO WS-ACT-MIDNIGHT
            MOVE "podne"
                TO WS-ACT-NOON
-           MOVE "{h} sati"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "pet po {h}"
+           MOVE "{h} i pet"
                TO WS-ACT-PATTERN(2)
-           MOVE "deset po {h}"
+           MOVE "{h} i deset"
                TO WS-ACT-PATTERN(3)
-           MOVE "petnaest po {h}"
+           MOVE "{h} i petnaest"
                TO WS-ACT-PATTERN(4)
-           MOVE "dvadeset po {h}"
+           MOVE "{h} i dvadeset"
                TO WS-ACT-PATTERN(5)
-           MOVE "dvadeset pet po {h}"
+           MOVE "{h} i dvadeset pet"
                TO WS-ACT-PATTERN(6)
-           MOVE "trideset po {h}"
+           MOVE "pola {next_h}"
                TO WS-ACT-PATTERN(7)
            MOVE "dvadeset pet do {next_h}"
                TO WS-ACT-PATTERN(8)
@@ -4420,47 +4420,47 @@
 *> Source: locales/ht.json
        INIT-LOCALE-HT.
            MOVE "ht" TO WS-ACT-CODE
-           MOVE "douz"
+           MOVE "douzè"
                TO WS-ACT-HOUR(1)
-           MOVE "en"
+           MOVE "inè"
                TO WS-ACT-HOUR(2)
-           MOVE "de"
+           MOVE "dezè"
                TO WS-ACT-HOUR(3)
-           MOVE "twa"
+           MOVE "twazè"
                TO WS-ACT-HOUR(4)
-           MOVE "kat"
+           MOVE "katrè"
                TO WS-ACT-HOUR(5)
-           MOVE "senk"
+           MOVE "senkè"
                TO WS-ACT-HOUR(6)
-           MOVE "sis"
+           MOVE "sizè"
                TO WS-ACT-HOUR(7)
-           MOVE "sèt"
+           MOVE "setè"
                TO WS-ACT-HOUR(8)
-           MOVE "uit"
+           MOVE "uitè"
                TO WS-ACT-HOUR(9)
-           MOVE "nèf"
+           MOVE "nevè"
                TO WS-ACT-HOUR(10)
-           MOVE "dis"
+           MOVE "dizè"
                TO WS-ACT-HOUR(11)
-           MOVE "onz"
+           MOVE "onzè"
                TO WS-ACT-HOUR(12)
-           MOVE "minui"
+           MOVE "minwi"
                TO WS-ACT-MIDNIGHT
            MOVE "midi"
                TO WS-ACT-NOON
-           MOVE "{h} è"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h} è senk"
+           MOVE "{h} senk"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h} è dis"
+           MOVE "{h} dis"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h} è ka"
+           MOVE "{h} e ka"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h} è ven"
+           MOVE "{h} ven"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h} è vennsenk"
+           MOVE "{h} vennsenk"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h} è demi"
+           MOVE "{h} edmi"
                TO WS-ACT-PATTERN(7)
            MOVE "{next_h} mwen vennsenk"
                TO WS-ACT-PATTERN(8)
@@ -4525,27 +4525,27 @@
                TO WS-ACT-NOON
            MOVE "{h} óra"
                TO WS-ACT-PATTERN(1)
-           MOVE "öt múlt {h}"
+           MOVE "öt perccel múlt {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "tíz múlt {h}"
+           MOVE "tíz perccel múlt {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "negyed múlt {h}"
+           MOVE "negyed {next_h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "húsz múlt {h}"
+           MOVE "húsz perccel múlt {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "huszonöt múlt {h}"
+           MOVE "öt perc múlva fél {next_h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "fél múlt {h}"
+           MOVE "fél {next_h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "huszonöt múlva {next_h}"
+           MOVE "öt perccel múlt fél {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "húsz múlva {next_h}"
+           MOVE "húsz perc múlva {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "negyed múlva {next_h}"
+           MOVE "háromnegyed {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "tíz múlva {next_h}"
+           MOVE "tíz perc múlva {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "öt múlva {next_h}"
+           MOVE "öt perc múlva {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -4570,57 +4570,57 @@
 *> Source: locales/hy.json
        INIT-LOCALE-HY.
            MOVE "hy" TO WS-ACT-CODE
-           MOVE "տասներկու"
+           MOVE "տասներկուսն"
                TO WS-ACT-HOUR(1)
-           MOVE "մեկ"
+           MOVE "մեկն"
                TO WS-ACT-HOUR(2)
-           MOVE "երկու"
+           MOVE "երկուսն"
                TO WS-ACT-HOUR(3)
-           MOVE "երեք"
+           MOVE "երեքն"
                TO WS-ACT-HOUR(4)
-           MOVE "չորս"
+           MOVE "չորսն"
                TO WS-ACT-HOUR(5)
-           MOVE "հինգ"
+           MOVE "հինգն"
                TO WS-ACT-HOUR(6)
-           MOVE "վեց"
+           MOVE "վեցն"
                TO WS-ACT-HOUR(7)
-           MOVE "յոթ"
+           MOVE "յոթն"
                TO WS-ACT-HOUR(8)
-           MOVE "ութ"
+           MOVE "ութն"
                TO WS-ACT-HOUR(9)
-           MOVE "ինը"
+           MOVE "ինն"
                TO WS-ACT-HOUR(10)
-           MOVE "տաս"
+           MOVE "տասն"
                TO WS-ACT-HOUR(11)
-           MOVE "տասնմեկ"
+           MOVE "տասնմեկն"
                TO WS-ACT-HOUR(12)
            MOVE "կեսգիշեր"
                TO WS-ACT-MIDNIGHT
            MOVE "կեսօր"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ժամը {h} է"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} անց հինգ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} անց տասը"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} անց տասնհինգ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} անց քսան"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} անց քսանհինգ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} անց կես"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} անց երեսունհինգ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} անց քառասուն"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} անց քառասունհինգ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} անց հիսուն"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} անց հիսունհինգ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -4675,27 +4675,27 @@
                TO WS-ACT-NOON
            MOVE "pukul {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "lima lewat {h}"
+           MOVE "pukul {h} lewat lima"
                TO WS-ACT-PATTERN(2)
-           MOVE "sepuluh lewat {h}"
+           MOVE "pukul {h} lewat sepuluh"
                TO WS-ACT-PATTERN(3)
-           MOVE "seperempat lewat {h}"
+           MOVE "pukul {h} lewat seperempat"
                TO WS-ACT-PATTERN(4)
-           MOVE "dua puluh lewat {h}"
+           MOVE "pukul {h} lewat dua puluh"
                TO WS-ACT-PATTERN(5)
-           MOVE "dua puluh lima lewat {h}"
+           MOVE "pukul {h} lewat dua puluh lima"
                TO WS-ACT-PATTERN(6)
-           MOVE "setengah lewat {h}"
+           MOVE "pukul setengah {next_h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "dua puluh lima menjelang {next_h}"
+           MOVE "pukul {next_h} kurang dua puluh lima"
                TO WS-ACT-PATTERN(8)
-           MOVE "dua puluh menjelang {next_h}"
+           MOVE "pukul {next_h} kurang dua puluh"
                TO WS-ACT-PATTERN(9)
-           MOVE "seperempat menjelang {next_h}"
+           MOVE "pukul {next_h} kurang seperempat"
                TO WS-ACT-PATTERN(10)
-           MOVE "sepuluh menjelang {next_h}"
+           MOVE "pukul {next_h} kurang sepuluh"
                TO WS-ACT-PATTERN(11)
-           MOVE "lima menjelang {next_h}"
+           MOVE "pukul {next_h} kurang lima"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -4746,31 +4746,31 @@
                TO WS-ACT-HOUR(12)
            MOVE "etiti abalị"
                TO WS-ACT-MIDNIGHT
-           MOVE "ehihie"
+           MOVE "etiti ehihie"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "elekere {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "elekere {h} na nkeji ise"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "elekere {h} na nkeji iri"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "elekere {h} na nkeji iri na ise"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "elekere {h} na nkeji iri abụọ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "elekere {h} na nkeji iri abụọ na ise"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "elekere {h} na ọkara"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "elekere {h} na nkeji iri atọ na ise"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "elekere {h} na nkeji iri anọ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "elekere {h} na nkeji iri anọ na ise"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "elekere {h} na nkeji iri ise"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "elekere {h} na nkeji iri ise na ise"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -4870,35 +4870,35 @@
 *> Source: locales/it.json
        INIT-LOCALE-IT.
            MOVE "it" TO WS-ACT-CODE
-           MOVE "dodici"
+           MOVE "le dodici"
                TO WS-ACT-HOUR(1)
-           MOVE "una"
+           MOVE "l'una"
                TO WS-ACT-HOUR(2)
-           MOVE "due"
+           MOVE "le due"
                TO WS-ACT-HOUR(3)
-           MOVE "tre"
+           MOVE "le tre"
                TO WS-ACT-HOUR(4)
-           MOVE "quattro"
+           MOVE "le quattro"
                TO WS-ACT-HOUR(5)
-           MOVE "cinque"
+           MOVE "le cinque"
                TO WS-ACT-HOUR(6)
-           MOVE "sei"
+           MOVE "le sei"
                TO WS-ACT-HOUR(7)
-           MOVE "sette"
+           MOVE "le sette"
                TO WS-ACT-HOUR(8)
-           MOVE "otto"
+           MOVE "le otto"
                TO WS-ACT-HOUR(9)
-           MOVE "nove"
+           MOVE "le nove"
                TO WS-ACT-HOUR(10)
-           MOVE "dieci"
+           MOVE "le dieci"
                TO WS-ACT-HOUR(11)
-           MOVE "undici"
+           MOVE "le undici"
                TO WS-ACT-HOUR(12)
            MOVE "mezzanotte"
                TO WS-ACT-MIDNIGHT
            MOVE "mezzogiorno"
                TO WS-ACT-NOON
-           MOVE "le {h}"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
            MOVE "{h} e cinque"
                TO WS-ACT-PATTERN(2)
@@ -5046,31 +5046,31 @@
                TO WS-ACT-HOUR(12)
            MOVE "tengah wengi"
                TO WS-ACT-MIDNIGHT
-           MOVE "awan"
+           MOVE "tengah awan"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "jam {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "jam {h} luwih limang menit"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "jam {h} luwih sepuluh menit"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "jam {h} luwih seprapat"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "jam {h} luwih rong puluh menit"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "jam {h} luwih selawé menit"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "jam setengah {next_h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "jam {next_h} kurang selawé menit"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "jam {next_h} kurang rong puluh menit"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "jam {next_h} kurang seprapat"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "jam {next_h} kurang sepuluh menit"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "jam {next_h} kurang limang menit"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -5123,29 +5123,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "შუადღე"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "{h} საათი"
                TO WS-ACT-PATTERN(1)
-           MOVE "ხუთი past {h}"
+           MOVE "{h} საათი და ხუთი წუთი"
                TO WS-ACT-PATTERN(2)
-           MOVE "ათი past {h}"
+           MOVE "{h} საათი და ათი წუთი"
                TO WS-ACT-PATTERN(3)
-           MOVE "თხუთმეტი past {h}"
+           MOVE "{h} საათი და თხუთმეტი წუთი"
                TO WS-ACT-PATTERN(4)
-           MOVE "ოცი past {h}"
+           MOVE "{h} საათი და ოცი წუთი"
                TO WS-ACT-PATTERN(5)
-           MOVE "ოცდახუთი past {h}"
+           MOVE "{h} საათი და ოცდახუთი წუთი"
                TO WS-ACT-PATTERN(6)
-           MOVE "ოცდაათი past {h}"
+           MOVE "{h} საათი და ოცდაათი წუთი"
                TO WS-ACT-PATTERN(7)
-           MOVE "ოცდახუთი to {next_h}"
+           MOVE "{h} საათი და ოცდათხუთმეტი წუთი"
                TO WS-ACT-PATTERN(8)
-           MOVE "ოცი to {next_h}"
+           MOVE "{h} საათი და ორმოცი წუთი"
                TO WS-ACT-PATTERN(9)
-           MOVE "თხუთმეტი to {next_h}"
+           MOVE "{h} საათი და ორმოცდახუთი წუთი"
                TO WS-ACT-PATTERN(10)
-           MOVE "ათი to {next_h}"
+           MOVE "{h} საათი და ორმოცდაათი წუთი"
                TO WS-ACT-PATTERN(11)
-           MOVE "ხუთი to {next_h}"
+           MOVE "{h} საათი და ორმოცდათხუთმეტი წუთი"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -5198,29 +5198,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "wɩsɩ taa"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ñɩɣyʊʊ {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti hiu"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -5249,23 +5249,23 @@
                TO WS-ACT-HOUR(1)
            MOVE "jun"
                TO WS-ACT-HOUR(2)
-           MOVE "kab'"
+           MOVE "kiib'"
                TO WS-ACT-HOUR(3)
            MOVE "oxib'"
                TO WS-ACT-HOUR(4)
-           MOVE "kab'ib'"
+           MOVE "kaahib'"
                TO WS-ACT-HOUR(5)
-           MOVE "o'ib'"
+           MOVE "oob'"
                TO WS-ACT-HOUR(6)
            MOVE "waqib'"
                TO WS-ACT-HOUR(7)
-           MOVE "uqub'"
+           MOVE "wuqub'"
                TO WS-ACT-HOUR(8)
-           MOVE "wajxaqib'"
+           MOVE "waqxaqib'"
                TO WS-ACT-HOUR(9)
-           MOVE "b'elejeb'"
+           MOVE "b'eleeb'"
                TO WS-ACT-HOUR(10)
-           MOVE "lajeb'"
+           MOVE "lajeeb'"
                TO WS-ACT-HOUR(11)
            MOVE "junlaju"
                TO WS-ACT-HOUR(12)
@@ -5273,29 +5273,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "chaq' chaab'il"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} hoonal"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} hoonal rik'in oob' minuut"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} hoonal rik'in lajeeb' minuut"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} hoonal rik'in o'laju minuut"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} hoonal rik'in junmay minuut"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} hoonal rik'in oob' xkak'aal minuut"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} hoonal rik'in yijach"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} hoonal rik'in o'laju xkak'aal minuut"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} hoonal rik'in kaak'aal minuut"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} hoonal rik'in oob' roxk'aal minuut"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} hoonal rik'in lajeeb' roxk'aal minuut"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} hoonal rik'in o'laju roxk'aal minuut"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -5320,57 +5320,57 @@
 *> Source: locales/ki.json
        INIT-LOCALE-KI.
            MOVE "ki" TO WS-ACT-CODE
-           MOVE "ikũmi na igĩrĩ"
-               TO WS-ACT-HOUR(1)
-           MOVE "ĩmwe"
-               TO WS-ACT-HOUR(2)
-           MOVE "igĩrĩ"
-               TO WS-ACT-HOUR(3)
-           MOVE "ithatũ"
-               TO WS-ACT-HOUR(4)
-           MOVE "inya"
-               TO WS-ACT-HOUR(5)
-           MOVE "ithano"
-               TO WS-ACT-HOUR(6)
            MOVE "ithathatũ"
-               TO WS-ACT-HOUR(7)
+               TO WS-ACT-HOUR(1)
            MOVE "mũgwanja"
-               TO WS-ACT-HOUR(8)
+               TO WS-ACT-HOUR(2)
            MOVE "inyanya"
-               TO WS-ACT-HOUR(9)
+               TO WS-ACT-HOUR(3)
            MOVE "kenda"
-               TO WS-ACT-HOUR(10)
+               TO WS-ACT-HOUR(4)
            MOVE "ikũmi"
-               TO WS-ACT-HOUR(11)
+               TO WS-ACT-HOUR(5)
            MOVE "ikũmi na ĩmwe"
+               TO WS-ACT-HOUR(6)
+           MOVE "ikũmi na igĩrĩ"
+               TO WS-ACT-HOUR(7)
+           MOVE "ĩmwe"
+               TO WS-ACT-HOUR(8)
+           MOVE "igĩrĩ"
+               TO WS-ACT-HOUR(9)
+           MOVE "ithatũ"
+               TO WS-ACT-HOUR(10)
+           MOVE "inya"
+               TO WS-ACT-HOUR(11)
+           MOVE "ithano"
                TO WS-ACT-HOUR(12)
            MOVE "ũtukũ gatagatĩ"
                TO WS-ACT-MIDNIGHT
            MOVE "mũthenya gatagatĩ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "thaa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "thaa {h} na ndagĩka ithano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "thaa {h} na ndagĩka ikũmi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "thaa {h} na ndagĩka ikũmi na ithano"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "thaa {h} na ndagĩka mĩrongo ĩĩrĩ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "thaa {h} na nuthu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "thaa {h} na ndagĩka mĩrongo ĩna"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "thaa {h} na ndagĩka mĩrongo ĩna na ithano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "thaa {h} na ndagĩka mĩrongo ĩtano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "thaa {h} na ndagĩka mĩrongo ĩtano na ithano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -5423,29 +5423,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "түс"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "сағат {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "бес past {h}"
+           MOVE "{h} нөл бес"
                TO WS-ACT-PATTERN(2)
-           MOVE "он past {h}"
+           MOVE "{h} он"
                TO WS-ACT-PATTERN(3)
-           MOVE "он бес past {h}"
+           MOVE "{h} он бес"
                TO WS-ACT-PATTERN(4)
-           MOVE "жиырма past {h}"
+           MOVE "{h} жиырма"
                TO WS-ACT-PATTERN(5)
-           MOVE "жиырма бес past {h}"
+           MOVE "{h} жиырма бес"
                TO WS-ACT-PATTERN(6)
-           MOVE "отыз past {h}"
+           MOVE "{h} жарым"
                TO WS-ACT-PATTERN(7)
-           MOVE "жиырма бес to {next_h}"
+           MOVE "{h} отыз бес"
                TO WS-ACT-PATTERN(8)
-           MOVE "жиырма to {next_h}"
+           MOVE "{h} қырық"
                TO WS-ACT-PATTERN(9)
-           MOVE "он бес to {next_h}"
+           MOVE "{h} қырық бес"
                TO WS-ACT-PATTERN(10)
-           MOVE "он to {next_h}"
+           MOVE "{h} елу"
                TO WS-ACT-PATTERN(11)
-           MOVE "бес to {next_h}"
+           MOVE "{h} елу бес"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -5470,7 +5470,7 @@
 *> Source: locales/kl.json
        INIT-LOCALE-KL.
            MOVE "kl" TO WS-ACT-CODE
-           MOVE "akunneq marluk"
+           MOVE "aqqaneq-marluk"
                TO WS-ACT-HOUR(1)
            MOVE "ataaseq"
                TO WS-ACT-HOUR(2)
@@ -5492,35 +5492,35 @@
                TO WS-ACT-HOUR(10)
            MOVE "qulit"
                TO WS-ACT-HOUR(11)
-           MOVE "akunneq ataaseq"
+           MOVE "aqqaneq-ataaseq"
                TO WS-ACT-HOUR(12)
            MOVE "unnuap qeqqa"
                TO WS-ACT-MIDNIGHT
            MOVE "ulloqeqqap qeqqa"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "nalunaaqutaq {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} qaangiullugu minutsit tallimat"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} qaangiullugu minutsit qulit"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} qaangiullugu minutsit aqqaneq-tallimat"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} qaangiullugu minutsit marlunnik qulillit"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} qaangiullugu minutsit marlunnik qulillit tallimallu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} affarlu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} sioqqullugu minutsit marlunnik qulillit"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} sioqqullugu minutsit aqqaneq-tallimat"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} sioqqullugu minutsit qulit"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} sioqqullugu minutsit tallimat"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -5573,29 +5573,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ថ្ងៃត្រង់"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ម៉ោង{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ម៉ោង{h} ប្រាំនាទី"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ម៉ោង{h} ដប់នាទី"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ម៉ោង{h} ដប់ប្រាំនាទី"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ម៉ោង{h} ម្ភៃនាទី"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ម៉ោង{h} ម្ភៃប្រាំនាទី"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ម៉ោង{h}កន្លះ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ម៉ោង{h} សាមសិបប្រាំនាទី"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ម៉ោង{h} សែសិបនាទី"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ម៉ោង{h} សែសិបប្រាំនាទី"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ម៉ោង{h} ហាសិបនាទី"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ម៉ោង{h} ហាសិបប្រាំនាទី"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -5646,31 +5646,31 @@
                TO WS-ACT-HOUR(12)
            MOVE "ಮಧ್ಯರಾತ್ರಿ"
                TO WS-ACT-MIDNIGHT
-           MOVE "ಮಧ್ಯಾಹ್ನ"
+           MOVE "ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} ಗಂಟೆ"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ಗಂಟೆ ಐದು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ಗಂಟೆ ಹತ್ತು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ಗಂಟೆ ಇಪ್ಪತ್ತು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ಗಂಟೆ ಇಪ್ಪತ್ತೈದು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} ಗಂಟೆ ಮೂವತ್ತೈದು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} ಗಂಟೆ ನಲವತ್ತು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} ಗಂಟೆ ಐವತ್ತು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -5770,7 +5770,7 @@
 *> Source: locales/kpe.json
        INIT-LOCALE-KPE.
            MOVE "kpe" TO WS-ACT-CODE
-           MOVE "puu lɔŋ"
+           MOVE "puu da feere"
                TO WS-ACT-HOUR(1)
            MOVE "tɔŋ"
                TO WS-ACT-HOUR(2)
@@ -5798,29 +5798,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "tili-ma"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "awa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "awa {h} da miniti lɔɔlu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "awa {h} da miniti puu"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "awa {h} da miniti puu da lɔɔlu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "awa {h} da miniti puu feere"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "awa {h} da miniti puu feere da lɔɔlu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "awa {h} da miniti puu sawa"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "awa {h} da miniti puu sawa da lɔɔlu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "awa {h} da miniti puu naŋ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "awa {h} da miniti puu naŋ da lɔɔlu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "awa {h} da miniti puu lɔɔlu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "awa {h} da miniti puu lɔɔlu da lɔɔlu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -5948,29 +5948,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "midi"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ngunga {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ngunga {h} na miniti tanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ngunga {h} na miniti zomi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ngunga {h} na miniti zomi na tanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ngunga {h} na miniti makumi zole"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ngunga {h} na miniti makumi zole na tanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ngunga {h} na ndambu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ngunga {h} na miniti makumi tatu na tanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ngunga {h} na miniti makumi ya"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ngunga {h} na miniti makumi ya na tanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ngunga {h} na miniti makumi tanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ngunga {h} na miniti makumi tanu na tanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -6023,29 +6023,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "nîvro"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "saet {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} û pênc deqe"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} û deh deqe"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} û çaryek"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} û bîst deqe"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} û bîst û pênc deqe"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} û nîv"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} kêm bîst û pênc deqe"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} kêm bîst deqe"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} kêm çaryek"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} kêm deh deqe"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} kêm pênc deqe"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -6070,57 +6070,57 @@
 *> Source: locales/kw.json
        INIT-LOCALE-KW.
            MOVE "kw" TO WS-ACT-CODE
-           MOVE "12"
+           MOVE "dewdhek"
                TO WS-ACT-HOUR(1)
-           MOVE "1"
+           MOVE "unn"
                TO WS-ACT-HOUR(2)
-           MOVE "2"
+           MOVE "diw"
                TO WS-ACT-HOUR(3)
-           MOVE "3"
+           MOVE "teyr"
                TO WS-ACT-HOUR(4)
-           MOVE "4"
+           MOVE "peder"
                TO WS-ACT-HOUR(5)
-           MOVE "5"
+           MOVE "pymp"
                TO WS-ACT-HOUR(6)
-           MOVE "6"
+           MOVE "hwegh"
                TO WS-ACT-HOUR(7)
-           MOVE "7"
+           MOVE "seyth"
                TO WS-ACT-HOUR(8)
-           MOVE "8"
+           MOVE "eth"
                TO WS-ACT-HOUR(9)
-           MOVE "9"
+           MOVE "naw"
                TO WS-ACT-HOUR(10)
-           MOVE "10"
+           MOVE "deg"
                TO WS-ACT-HOUR(11)
-           MOVE "11"
+           MOVE "unnek"
                TO WS-ACT-HOUR(12)
            MOVE "hanter nos"
                TO WS-ACT-MIDNIGHT
            MOVE "hanter dydh"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} eur"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "pymp mynysen wosa {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "deg mynysen wosa {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "kwarter wosa {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ugens mynysen wosa {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "pymp mynysen warn ugens wosa {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "hanter wosa {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "pymp mynysen warn ugens dhe {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ugens mynysen dhe {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "kwarter dhe {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "deg mynysen dhe {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "pymp mynysen dhe {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -6173,29 +6173,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "түш"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "саат {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} нөл беш"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} он"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} он беш"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} жыйырма"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} жыйырма беш"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} жарым"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} отуз беш"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} кырк"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} кырк беш"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} элүү"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} элүү беш"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -6295,57 +6295,57 @@
 *> Source: locales/lg.json
        INIT-LOCALE-LG.
            MOVE "lg" TO WS-ACT-CODE
-           MOVE "kkumi na bbiri"
-               TO WS-ACT-HOUR(1)
-           MOVE "emu"
-               TO WS-ACT-HOUR(2)
-           MOVE "bbiri"
-               TO WS-ACT-HOUR(3)
-           MOVE "ssatu"
-               TO WS-ACT-HOUR(4)
-           MOVE "nnya"
-               TO WS-ACT-HOUR(5)
-           MOVE "ttaano"
-               TO WS-ACT-HOUR(6)
            MOVE "mukaaga"
-               TO WS-ACT-HOUR(7)
+               TO WS-ACT-HOUR(1)
            MOVE "musanvu"
-               TO WS-ACT-HOUR(8)
+               TO WS-ACT-HOUR(2)
            MOVE "munaana"
-               TO WS-ACT-HOUR(9)
+               TO WS-ACT-HOUR(3)
            MOVE "mwenda"
-               TO WS-ACT-HOUR(10)
+               TO WS-ACT-HOUR(4)
            MOVE "kkumi"
+               TO WS-ACT-HOUR(5)
+           MOVE "kkumi n'emu"
+               TO WS-ACT-HOUR(6)
+           MOVE "kkumi n'ebbiri"
+               TO WS-ACT-HOUR(7)
+           MOVE "emu"
+               TO WS-ACT-HOUR(8)
+           MOVE "bbiri"
+               TO WS-ACT-HOUR(9)
+           MOVE "ssatu"
+               TO WS-ACT-HOUR(10)
+           MOVE "nnya"
                TO WS-ACT-HOUR(11)
-           MOVE "kkumi na emu"
+           MOVE "ttaano"
                TO WS-ACT-HOUR(12)
            MOVE "ekiro eky'omu ttumbi"
                TO WS-ACT-MIDNIGHT
            MOVE "ettuntu"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "essaawa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "essaawa {h} n'eddakiika ttaano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "essaawa {h} n'eddakiika kkumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "essaawa {h} n'eddakiika kkumi na ttaano"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "essaawa {h} n'eddakiika abiri"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "essaawa {h} n'eddakiika abiri mu ttaano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "essaawa {h} n'ekitundu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "essaawa {h} n'eddakiika asatu mu ttaano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "essaawa {h} n'eddakiika ana"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "essaawa {h} n'eddakiika ana mu ttaano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "essaawa {h} n'eddakiika ataano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "essaawa {h} n'eddakiika ataano mu ttaano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -6394,33 +6394,33 @@
                TO WS-ACT-HOUR(11)
            MOVE "zómi na mɔ̌kɔ́"
                TO WS-ACT-HOUR(12)
-           MOVE "mpɔ́kwa"
+           MOVE "midí ya butú"
                TO WS-ACT-MIDNIGHT
-           MOVE "ntɔ́ngɔ́"
+           MOVE "midí"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ngonga ya {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ngonga ya {h} na miniti mítáno"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ngonga ya {h} na miniti zómi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ngonga ya {h} na miniti zómi na mítáno"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ngonga ya {h} na miniti ntúkú míbalé"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ngonga ya {h} na miniti ntúkú míbalé na mítáno"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ngonga ya {h} na ndámbo"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ngonga ya {h} na miniti ntúkú mísáto na mítáno"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ngonga ya {h} na miniti ntúkú mínéi"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ngonga ya {h} na miniti ntúkú mínéi na mítáno"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ngonga ya {h} na miniti ntúkú mítáno"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ngonga ya {h} na miniti ntúkú mítáno na mítáno"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -6473,29 +6473,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ທ່ຽງ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}ໂມງ"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h}ໂມງ ຫ້ານາທີ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h}ໂມງ ສິບນາທີ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}ໂມງ ສິບຫ້ານາທີ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h}ໂມງ ຊາວນາທີ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h}ໂມງ ຊາວຫ້ານາທີ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h}ໂມງເຄິ່ງ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h}ໂມງ ສາມສິບຫ້ານາທີ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h}ໂມງ ສີ່ສິບນາທີ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h}ໂມງ ສີ່ສິບຫ້ານາທີ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h}ໂມງ ຫ້າສິບນາທີ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h}ໂມງ ຫ້າສິບຫ້ານາທີ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -6595,57 +6595,57 @@
 *> Source: locales/luo.json
        INIT-LOCALE-LUO.
            MOVE "luo" TO WS-ACT-CODE
-           MOVE "apar gi ariyo"
-               TO WS-ACT-HOUR(1)
-           MOVE "achiel"
-               TO WS-ACT-HOUR(2)
-           MOVE "ariyo"
-               TO WS-ACT-HOUR(3)
-           MOVE "adek"
-               TO WS-ACT-HOUR(4)
-           MOVE "ang'wen"
-               TO WS-ACT-HOUR(5)
-           MOVE "abich"
-               TO WS-ACT-HOUR(6)
            MOVE "auchiel"
-               TO WS-ACT-HOUR(7)
+               TO WS-ACT-HOUR(1)
            MOVE "abiriyo"
-               TO WS-ACT-HOUR(8)
+               TO WS-ACT-HOUR(2)
            MOVE "aboro"
-               TO WS-ACT-HOUR(9)
+               TO WS-ACT-HOUR(3)
            MOVE "ochiko"
-               TO WS-ACT-HOUR(10)
+               TO WS-ACT-HOUR(4)
            MOVE "apar"
+               TO WS-ACT-HOUR(5)
+           MOVE "apar gachiel"
+               TO WS-ACT-HOUR(6)
+           MOVE "apar gariyo"
+               TO WS-ACT-HOUR(7)
+           MOVE "achiel"
+               TO WS-ACT-HOUR(8)
+           MOVE "ariyo"
+               TO WS-ACT-HOUR(9)
+           MOVE "adek"
+               TO WS-ACT-HOUR(10)
+           MOVE "ang'wen"
                TO WS-ACT-HOUR(11)
-           MOVE "apar gi achiel"
+           MOVE "abich"
                TO WS-ACT-HOUR(12)
            MOVE "dier otieno"
                TO WS-ACT-MIDNIGHT
            MOVE "odiechieng' tir"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "saa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "saa {h} gi dakika abich"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "saa {h} gi dakika apar"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "saa {h} gi dakika apar gabich"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "saa {h} gi dakika piero ariyo"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "saa {h} gi dakika piero ariyo gabich"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "saa {h} gi nus"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "saa {h} gi dakika piero adek gabich"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "saa {h} gi dakika piero ang'wen"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "saa {h} gi dakika piero ang'wen gabich"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "saa {h} gi dakika piero abich"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "saa {h} gi dakika piero abich gabich"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -6763,7 +6763,7 @@
                TO WS-ACT-HOUR(8)
            MOVE "wajxaq"
                TO WS-ACT-HOUR(9)
-           MOVE "b'alaj"
+           MOVE "b'elaj"
                TO WS-ACT-HOUR(10)
            MOVE "laj"
                TO WS-ACT-HOUR(11)
@@ -6773,29 +6773,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "nik' q'ij"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} or"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} or tuk' jwe' minut"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} or tuk' laj minut"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} or tuk' o'laj minut"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} or tuk' winqan minut"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} or tuk' jwe' toj ka'wnaq minut"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} or tuk' nik'"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} or tuk' o'laj toj ka'wnaq minut"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} or tuk' ka'wnaq minut"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} or tuk' jwe' toj oxk'al minut"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} or tuk' laj toj oxk'al minut"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} or tuk' o'laj toj oxk'al minut"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -6820,7 +6820,7 @@
 *> Source: locales/men.json
        INIT-LOCALE-MEN.
            MOVE "men" TO WS-ACT-CODE
-           MOVE "pu wɛlɛ"
+           MOVE "pu mahu fele"
                TO WS-ACT-HOUR(1)
            MOVE "yila"
                TO WS-ACT-HOUR(2)
@@ -6848,29 +6848,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ndɔlei-ma"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "awa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "awa {h} kɛ miniti lɔɔlu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "awa {h} kɛ miniti pu"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "awa {h} kɛ miniti pu mahu lɔɔlu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "awa {h} kɛ miniti nuu yila gboyongo"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "awa {h} kɛ miniti nuu yila gboyongo mahu pu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "awa {h} kɛ miniti nuu fele gboyongo"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "awa {h} kɛ miniti nuu fele gboyongo mahu pu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -6895,57 +6895,57 @@
 *> Source: locales/mfe.json
        INIT-LOCALE-MFE.
            MOVE "mfe" TO WS-ACT-CODE
-           MOVE "douz"
+           MOVE "douzer"
                TO WS-ACT-HOUR(1)
-           MOVE "enn"
+           MOVE "enn er"
                TO WS-ACT-HOUR(2)
-           MOVE "de"
+           MOVE "dezer"
                TO WS-ACT-HOUR(3)
-           MOVE "trwa"
+           MOVE "trwazer"
                TO WS-ACT-HOUR(4)
-           MOVE "kat"
+           MOVE "katrer"
                TO WS-ACT-HOUR(5)
-           MOVE "senk"
+           MOVE "senker"
                TO WS-ACT-HOUR(6)
-           MOVE "sis"
+           MOVE "sizer"
                TO WS-ACT-HOUR(7)
-           MOVE "set"
+           MOVE "seter"
                TO WS-ACT-HOUR(8)
-           MOVE "wit"
+           MOVE "witer"
                TO WS-ACT-HOUR(9)
-           MOVE "nef"
+           MOVE "never"
                TO WS-ACT-HOUR(10)
-           MOVE "dis"
+           MOVE "dizer"
                TO WS-ACT-HOUR(11)
-           MOVE "onz"
+           MOVE "onzer"
                TO WS-ACT-HOUR(12)
            MOVE "minwi"
                TO WS-ACT-MIDNIGHT
            MOVE "midi"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} senk"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} dis"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ekar"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} vin"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} vennsenk"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} edmi"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} mwin vennsenk"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} mwin vin"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} mwin kar"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} mwin dis"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} mwin senk"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -7000,27 +7000,27 @@
                TO WS-ACT-NOON
            MOVE "{h} ora"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h} sy dimy minitra"
+           MOVE "{h} ora sy dimy minitra"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h} sy folo minitra"
+           MOVE "{h} ora sy folo minitra"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h} sy fahefatra"
+           MOVE "{h} ora sy fahefany"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h} sy roapolo minitra"
+           MOVE "{h} ora sy roapolo minitra"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h} sy dimy amby roapolo minitra"
+           MOVE "{h} ora sy dimy amby roapolo minitra"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h} sy sasany"
+           MOVE "{h} ora sy sasany"
                TO WS-ACT-PATTERN(7)
-           MOVE "dimy amby roapolo minitra alohan'ny {next_h}"
+           MOVE "{next_h} ora latsaka dimy amby roapolo minitra"
                TO WS-ACT-PATTERN(8)
-           MOVE "roapolo minitra alohan'ny {next_h}"
+           MOVE "{next_h} ora latsaka roapolo minitra"
                TO WS-ACT-PATTERN(9)
-           MOVE "fahefatra alohan'ny {next_h}"
+           MOVE "{next_h} ora latsaka fahefany"
                TO WS-ACT-PATTERN(10)
-           MOVE "folo minitra alohan'ny {next_h}"
+           MOVE "{next_h} ora latsaka folo minitra"
                TO WS-ACT-PATTERN(11)
-           MOVE "dimy minitra alohan'ny {next_h}"
+           MOVE "{next_h} ora latsaka dimy minitra"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -7148,29 +7148,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "пладне"
                TO WS-ACT-NOON
-           MOVE "{h} часа"
+           MOVE "{h} часот"
                TO WS-ACT-PATTERN(1)
-           MOVE "пет po {h}"
+           MOVE "{h} и пет"
                TO WS-ACT-PATTERN(2)
-           MOVE "десет po {h}"
+           MOVE "{h} и десет"
                TO WS-ACT-PATTERN(3)
-           MOVE "петнаесет po {h}"
+           MOVE "{h} и петнаесет"
                TO WS-ACT-PATTERN(4)
-           MOVE "дваесет po {h}"
+           MOVE "{h} и дваесет"
                TO WS-ACT-PATTERN(5)
-           MOVE "дваесет и пет po {h}"
+           MOVE "{h} и дваесет и пет"
                TO WS-ACT-PATTERN(6)
-           MOVE "триесет po {h}"
+           MOVE "{h} и пол"
                TO WS-ACT-PATTERN(7)
-           MOVE "дваесет и пет do {next_h}"
+           MOVE "дваесет и пет до {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "дваесет do {next_h}"
+           MOVE "дваесет до {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "петнаесет do {next_h}"
+           MOVE "петнаесет до {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "десет do {next_h}"
+           MOVE "десет до {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "пет do {next_h}"
+           MOVE "пет до {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -7195,57 +7195,57 @@
 *> Source: locales/ml.json
        INIT-LOCALE-ML.
            MOVE "ml" TO WS-ACT-CODE
-           MOVE "പന്ത്രണ്ട്"
+           MOVE "പന്ത്രണ്ട"
                TO WS-ACT-HOUR(1)
-           MOVE "ഒന്ന്"
+           MOVE "ഒന്ന"
                TO WS-ACT-HOUR(2)
-           MOVE "രണ്ട്"
+           MOVE "രണ്ട"
                TO WS-ACT-HOUR(3)
-           MOVE "മൂന്ന്"
+           MOVE "മൂന്ന"
                TO WS-ACT-HOUR(4)
-           MOVE "നാല്"
+           MOVE "നാല"
                TO WS-ACT-HOUR(5)
-           MOVE "അഞ്ച്"
+           MOVE "അഞ്ച"
                TO WS-ACT-HOUR(6)
-           MOVE "ആറ്"
+           MOVE "ആറ"
                TO WS-ACT-HOUR(7)
-           MOVE "ഏഴ്"
+           MOVE "ഏഴ"
                TO WS-ACT-HOUR(8)
-           MOVE "എട്ട്"
+           MOVE "എട്ട"
                TO WS-ACT-HOUR(9)
-           MOVE "ഒമ്പത്"
+           MOVE "ഒമ്പത"
                TO WS-ACT-HOUR(10)
-           MOVE "പത്ത്"
+           MOVE "പത്ത"
                TO WS-ACT-HOUR(11)
-           MOVE "പതിനൊന്ന്"
+           MOVE "പതിനൊന്ന"
                TO WS-ACT-HOUR(12)
            MOVE "അർദ്ധരാത്രി"
                TO WS-ACT-MIDNIGHT
            MOVE "ഉച്ച"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}് മണി"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h}് മണി അഞ്ച് മിനിറ്റ്"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h}് മണി പത്ത് മിനിറ്റ്"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}േകാൽ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h}് മണി ഇരുപത് മിനിറ്റ്"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h}ര"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h}് മണി നാൽപ്പത് മിനിറ്റ്"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h}േമുക്കാൽ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h}് മണി അമ്പത് മിനിറ്റ്"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -7276,23 +7276,23 @@
                TO WS-ACT-HOUR(2)
            MOVE "хоёр"
                TO WS-ACT-HOUR(3)
-           MOVE "гурав"
+           MOVE "гурван"
                TO WS-ACT-HOUR(4)
-           MOVE "дөрөв"
+           MOVE "дөрвөн"
                TO WS-ACT-HOUR(5)
-           MOVE "тав"
+           MOVE "таван"
                TO WS-ACT-HOUR(6)
-           MOVE "зургаа"
+           MOVE "зургаан"
                TO WS-ACT-HOUR(7)
-           MOVE "долоо"
+           MOVE "долоон"
                TO WS-ACT-HOUR(8)
-           MOVE "найм"
+           MOVE "найман"
                TO WS-ACT-HOUR(9)
-           MOVE "ес"
+           MOVE "есөн"
                TO WS-ACT-HOUR(10)
-           MOVE "арав"
+           MOVE "арван"
                TO WS-ACT-HOUR(11)
-           MOVE "арван нэг"
+           MOVE "арван нэгэн"
                TO WS-ACT-HOUR(12)
            MOVE "шөнө дунд"
                TO WS-ACT-MIDNIGHT
@@ -7300,27 +7300,27 @@
                TO WS-ACT-NOON
            MOVE "{h} цаг"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг таван минут"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг арван минут"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг арван таван минут"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг хорин минут"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг хорин таван минут"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг хагас"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг гучин таван минут"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг дөчин минут"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг дөчин таван минут"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг тавин минут"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h} цаг {m} минут"
+           MOVE "{h} цаг тавин таван минут"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -7345,7 +7345,7 @@
 *> Source: locales/mnk.json
        INIT-LOCALE-MNK.
            MOVE "mnk" TO WS-ACT-CODE
-           MOVE "tan ning fula"
+           MOVE "taŋ niŋ fula"
                TO WS-ACT-HOUR(1)
            MOVE "kiliŋ"
                TO WS-ACT-HOUR(2)
@@ -7367,35 +7367,35 @@
                TO WS-ACT-HOUR(10)
            MOVE "taŋ"
                TO WS-ACT-HOUR(11)
-           MOVE "taŋ ning kiliŋ"
+           MOVE "taŋ niŋ kiliŋ"
                TO WS-ACT-HOUR(12)
            MOVE "sutu-tili-laŋ"
                TO WS-ACT-MIDNIGHT
            MOVE "tili-konto"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "talaŋ {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "talaŋ {h} aniŋ miniti luulu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "talaŋ {h} aniŋ miniti taŋ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "talaŋ {h} aniŋ miniti taŋ niŋ luulu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "talaŋ {h} aniŋ miniti muwaŋ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "talaŋ {h} aniŋ talantee"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "talaŋ {h} aniŋ miniti taŋ naani"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "talaŋ {h} aniŋ miniti taŋ luulu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -7420,57 +7420,57 @@
 *> Source: locales/mos.json
        INIT-LOCALE-MOS.
            MOVE "mos" TO WS-ACT-CODE
-           MOVE "piig la a yiibu"
+           MOVE "lɛɛr piig la a yiibu"
                TO WS-ACT-HOUR(1)
-           MOVE "a yembre"
+           MOVE "lɛɛr a yembre"
                TO WS-ACT-HOUR(2)
-           MOVE "a yiibu"
+           MOVE "lɛɛr a yiibu"
                TO WS-ACT-HOUR(3)
-           MOVE "a tãabo"
+           MOVE "lɛɛr a tãabo"
                TO WS-ACT-HOUR(4)
-           MOVE "a naase"
+           MOVE "lɛɛr a naase"
                TO WS-ACT-HOUR(5)
-           MOVE "a nu"
+           MOVE "lɛɛr a nu"
                TO WS-ACT-HOUR(6)
-           MOVE "a yoobe"
+           MOVE "lɛɛr a yoobe"
                TO WS-ACT-HOUR(7)
-           MOVE "a yopoe"
+           MOVE "lɛɛr a yopoe"
                TO WS-ACT-HOUR(8)
-           MOVE "a niini"
+           MOVE "lɛɛr a nii"
                TO WS-ACT-HOUR(9)
-           MOVE "a wae"
+           MOVE "lɛɛr a wae"
                TO WS-ACT-HOUR(10)
-           MOVE "piiga"
+           MOVE "lɛɛr piiga"
                TO WS-ACT-HOUR(11)
-           MOVE "piig la a yembre"
+           MOVE "lɛɛr piig la a yembre"
                TO WS-ACT-HOUR(12)
            MOVE "yʋng-vɩɩse"
                TO WS-ACT-MIDNIGHT
            MOVE "wĩntoog zabre"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} la minit a nu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} la minit piiga"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} la minit piig la a nu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} la minit pisi"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} la minit pisi la a nu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} la pʋɩ-sʋka"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} la minit pis-tã la a nu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} la minit pis-naase"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} la minit pis-naase la a nu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} la minit pis-nu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} la minit pis-nu la a nu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -7523,29 +7523,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "दुपार"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} वाजता"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} वाजून पाच मिनिटे"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} वाजून दहा मिनिटे"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "सव्वा {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} वाजून वीस मिनिटे"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} वाजून पंचवीस मिनिटे"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} वाजून तीस मिनिटे"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} वाजायला पंचवीस मिनिटे"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} वाजायला वीस मिनिटे"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "पावणे {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} वाजायला दहा मिनिटे"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} वाजायला पाच मिनिटे"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -7598,29 +7598,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "tengah hari"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "pukul {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "lima lewat {h}"
+           MOVE "pukul {h} lima minit"
                TO WS-ACT-PATTERN(2)
-           MOVE "sepuluh lewat {h}"
+           MOVE "pukul {h} sepuluh minit"
                TO WS-ACT-PATTERN(3)
-           MOVE "suku lewat {h}"
+           MOVE "pukul {h} suku"
                TO WS-ACT-PATTERN(4)
-           MOVE "dua puluh lewat {h}"
+           MOVE "pukul {h} dua puluh minit"
                TO WS-ACT-PATTERN(5)
-           MOVE "dua puluh lima lewat {h}"
+           MOVE "pukul {h} dua puluh lima minit"
                TO WS-ACT-PATTERN(6)
-           MOVE "setengah lewat {h}"
+           MOVE "pukul {h} setengah"
                TO WS-ACT-PATTERN(7)
-           MOVE "dua puluh lima menjelang {next_h}"
+           MOVE "pukul {next_h} kurang dua puluh lima minit"
                TO WS-ACT-PATTERN(8)
-           MOVE "dua puluh menjelang {next_h}"
+           MOVE "pukul {next_h} kurang dua puluh minit"
                TO WS-ACT-PATTERN(9)
-           MOVE "suku menjelang {next_h}"
+           MOVE "pukul {next_h} kurang suku"
                TO WS-ACT-PATTERN(10)
-           MOVE "sepuluh menjelang {next_h}"
+           MOVE "pukul {next_h} kurang sepuluh minit"
                TO WS-ACT-PATTERN(11)
-           MOVE "lima menjelang {next_h}"
+           MOVE "pukul {next_h} kurang lima minit"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -7645,57 +7645,57 @@
 *> Source: locales/mt.json
        INIT-LOCALE-MT.
            MOVE "mt" TO WS-ACT-CODE
-           MOVE "tnax"
+           MOVE "it-tnax"
                TO WS-ACT-HOUR(1)
-           MOVE "waħda"
+           MOVE "is-siegħa"
                TO WS-ACT-HOUR(2)
-           MOVE "tnejn"
+           MOVE "is-sagħtejn"
                TO WS-ACT-HOUR(3)
-           MOVE "tlieta"
+           MOVE "it-tlieta"
                TO WS-ACT-HOUR(4)
-           MOVE "erbgħa"
+           MOVE "l-erbgħa"
                TO WS-ACT-HOUR(5)
-           MOVE "ħamsa"
+           MOVE "il-ħamsa"
                TO WS-ACT-HOUR(6)
-           MOVE "sitta"
+           MOVE "is-sitta"
                TO WS-ACT-HOUR(7)
-           MOVE "sebgħa"
+           MOVE "is-sebgħa"
                TO WS-ACT-HOUR(8)
-           MOVE "tmienja"
+           MOVE "it-tmienja"
                TO WS-ACT-HOUR(9)
-           MOVE "disgħa"
+           MOVE "id-disgħa"
                TO WS-ACT-HOUR(10)
-           MOVE "għaxra"
+           MOVE "l-għaxra"
                TO WS-ACT-HOUR(11)
-           MOVE "ħdax"
+           MOVE "il-ħdax"
                TO WS-ACT-HOUR(12)
-           MOVE "nofsinhar"
+           MOVE "nofsillejl"
                TO WS-ACT-MIDNIGHT
            MOVE "nofsinhar"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} u ħamsa"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} u għaxra"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} u kwart"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} u għoxrin"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} u ħamsa u għoxrin"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} u nofs"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} neqsin ħamsa u għoxrin"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} neqsin għoxrin"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} neqsin kwart"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} neqsin għaxra"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} neqsin ħamsa"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -7748,29 +7748,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "မွန်းတည့်"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}နာရီ"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h}နာရီ ငါးမိနစ်"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h}နာရီ ဆယ်မိနစ်"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}နာရီ ဆယ့်ငါးမိနစ်"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h}နာရီ နှစ်ဆယ်မိနစ်"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h}နာရီခွဲ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h}နာရီ သုံးဆယ့်ငါးမိနစ်"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h}နာရီ လေးဆယ်မိနစ်"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h}နာရီ လေးဆယ့်ငါးမိနစ်"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h}နာရီ ငါးဆယ်မိနစ်"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h}နာရီ ငါးဆယ့်ငါးမိနစ်"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -7797,7 +7797,7 @@
            MOVE "nb" TO WS-ACT-CODE
            MOVE "tolv"
                TO WS-ACT-HOUR(1)
-           MOVE "en"
+           MOVE "ett"
                TO WS-ACT-HOUR(2)
            MOVE "to"
                TO WS-ACT-HOUR(3)
@@ -7870,57 +7870,57 @@
 *> Source: locales/nd.json
        INIT-LOCALE-ND.
            MOVE "nd" TO WS-ACT-CODE
-           MOVE "litshumi lambili"
+           MOVE "letshumi lambili"
                TO WS-ACT-HOUR(1)
-           MOVE "kunye"
+           MOVE "lokuqala"
                TO WS-ACT-HOUR(2)
-           MOVE "kubili"
+           MOVE "lesibili"
                TO WS-ACT-HOUR(3)
-           MOVE "kuthathu"
+           MOVE "lesithathu"
                TO WS-ACT-HOUR(4)
-           MOVE "kune"
+           MOVE "lesine"
                TO WS-ACT-HOUR(5)
-           MOVE "kuhlanu"
+           MOVE "lesihlanu"
                TO WS-ACT-HOUR(6)
-           MOVE "isithupha"
+           MOVE "lesithupha"
                TO WS-ACT-HOUR(7)
-           MOVE "isikhombisa"
+           MOVE "lesikhombisa"
                TO WS-ACT-HOUR(8)
-           MOVE "isitshiyangalombili"
+           MOVE "lesitshiyangalombili"
                TO WS-ACT-HOUR(9)
-           MOVE "isitshiyangalolunye"
+           MOVE "lesitshiyangalolunye"
                TO WS-ACT-HOUR(10)
-           MOVE "litshumi"
+           MOVE "letshumi"
                TO WS-ACT-HOUR(11)
-           MOVE "litshumi lanye"
+           MOVE "letshumi lanye"
                TO WS-ACT-HOUR(12)
            MOVE "phakathi kobusuku"
                TO WS-ACT-MIDNIGHT
            MOVE "emini"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ihola {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ihola {h} lemizuzu emihlanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ihola {h} lemizuzu elitshumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ihola {h} lemizuzu elitshumi lanhlanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ihola {h} lemizuzu engamatshumi amabili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ihola {h} lemizuzu engamatshumi amabili lanhlanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ihola {h} lengxenye"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ihola {h} lemizuzu engamatshumi amathathu lanhlanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ihola {h} lemizuzu engamatshumi amane"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ihola {h} lemizuzu engamatshumi amane lanhlanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ihola {h} lemizuzu engamatshumi amahlanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ihola {h} lemizuzu engamatshumi amahlanu lanhlanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -7973,29 +7973,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "मध्यान्ह"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} बजे"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} बजेर पाँच मिनेट"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} बजेर दश मिनेट"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "सवा {h} बजे"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} बजेर बीस मिनेट"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} बजेर पच्चीस मिनेट"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} बजेर तीस मिनेट"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} बज्न पच्चीस मिनेट बाँकी"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} बज्न बीस मिनेट बाँकी"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "पौने {next_h} बजे"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} बज्न दश मिनेट बाँकी"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} बज्न पाँच मिनेट बाँकी"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8048,29 +8048,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "omutenya"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "otundi {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "otundi {h} noominute ntano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "otundi {h} noominute omulongo"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "otundi {h} noominute omulongo nantano"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "otundi {h} noominute omilongo mbali"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "otundi {h} noominute omilongo mbali nantano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "otundi {h} netata"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "otundi {h} noominute omilongo ndatu nantano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "otundi {h} noominute omilongo ne"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "otundi {h} noominute omilongo ne nantano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "otundi {h} noominute omilongo ntano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "otundi {h} noominute omilongo ntano nantano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8121,7 +8121,7 @@
                TO WS-ACT-HOUR(12)
            MOVE "middernacht"
                TO WS-ACT-MIDNIGHT
-           MOVE "middag"
+           MOVE "twaalf uur 's middags"
                TO WS-ACT-NOON
            MOVE "{h} uur"
                TO WS-ACT-PATTERN(1)
@@ -8131,7 +8131,7 @@
                TO WS-ACT-PATTERN(3)
            MOVE "kwart over {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "twintig over {h}"
+           MOVE "tien voor half {next_h}"
                TO WS-ACT-PATTERN(5)
            MOVE "vijf voor half {next_h}"
                TO WS-ACT-PATTERN(6)
@@ -8139,7 +8139,7 @@
                TO WS-ACT-PATTERN(7)
            MOVE "vijf over half {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "twintig voor {next_h}"
+           MOVE "tien over half {next_h}"
                TO WS-ACT-PATTERN(9)
            MOVE "kwart voor {next_h}"
                TO WS-ACT-PATTERN(10)
@@ -8170,57 +8170,57 @@
 *> Source: locales/nr.json
        INIT-LOCALE-NR.
            MOVE "nr" TO WS-ACT-CODE
-           MOVE "itshumi lambili"
+           MOVE "letjhumi nambili"
                TO WS-ACT-HOUR(1)
-           MOVE "kunye"
+           MOVE "lokuthoma"
                TO WS-ACT-HOUR(2)
-           MOVE "kubili"
+           MOVE "lesibili"
                TO WS-ACT-HOUR(3)
-           MOVE "kuthathu"
+           MOVE "lesithathu"
                TO WS-ACT-HOUR(4)
-           MOVE "kune"
+           MOVE "lesine"
                TO WS-ACT-HOUR(5)
-           MOVE "kuhlanu"
+           MOVE "lesihlanu"
                TO WS-ACT-HOUR(6)
-           MOVE "isithupha"
+           MOVE "lesithandathu"
                TO WS-ACT-HOUR(7)
-           MOVE "isikhombisa"
+           MOVE "lekhomba"
                TO WS-ACT-HOUR(8)
-           MOVE "isitshiyagalombili"
+           MOVE "lobunane"
                TO WS-ACT-HOUR(9)
-           MOVE "isitshiyagalolunye"
+           MOVE "lethoba"
                TO WS-ACT-HOUR(10)
-           MOVE "itshumi"
+           MOVE "letjhumi"
                TO WS-ACT-HOUR(11)
-           MOVE "itshumi lanye"
+           MOVE "letjhumi nanye"
                TO WS-ACT-HOUR(12)
            MOVE "phakathi kobusuku"
                TO WS-ACT-MIDNIGHT
            MOVE "emini"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ihora {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ihora {h} nemizuzu emihlanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ihora {h} nemizuzu elitjhumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ihora {h} nemizuzu elitjhumi nanhlanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ihora {h} nemizuzu engamatjhumi amabili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ihora {h} nemizuzu engamatjhumi amabili nanhlanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ihora {h} nesiquntu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ihora {h} nemizuzu engamatjhumi amane"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ihora {h} nemizuzu engamatjhumi amane nanhlanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ihora {h} nemizuzu engamatjhumi amahlanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8245,21 +8245,21 @@
 *> Source: locales/nso.json
        INIT-LOCALE-NSO.
            MOVE "nso" TO WS-ACT-CODE
-           MOVE "lesome pedi"
+           MOVE "lesomepedi"
                TO WS-ACT-HOUR(1)
-           MOVE "tee"
+           MOVE "pele"
                TO WS-ACT-HOUR(2)
-           MOVE "pedi"
+           MOVE "bobedi"
                TO WS-ACT-HOUR(3)
-           MOVE "tharo"
+           MOVE "boraro"
                TO WS-ACT-HOUR(4)
-           MOVE "nne"
+           MOVE "bone"
                TO WS-ACT-HOUR(5)
-           MOVE "hlano"
+           MOVE "bohlano"
                TO WS-ACT-HOUR(6)
-           MOVE "tshela"
+           MOVE "botshela"
                TO WS-ACT-HOUR(7)
-           MOVE "šupa"
+           MOVE "bošupa"
                TO WS-ACT-HOUR(8)
            MOVE "seswai"
                TO WS-ACT-HOUR(9)
@@ -8267,35 +8267,35 @@
                TO WS-ACT-HOUR(10)
            MOVE "lesome"
                TO WS-ACT-HOUR(11)
-           MOVE "lesome tee"
+           MOVE "lesometee"
                TO WS-ACT-HOUR(12)
            MOVE "bošego gare"
                TO WS-ACT-MIDNIGHT
            MOVE "mosegare"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "iri ya {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "iri ya {h} le metsotso ye mehlano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "iri ya {h} le metsotso ye lesome"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "iri ya {h} le kotara"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "iri ya {h} le metsotso ye masomepedi"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "iri ya {h} le metsotso ye masomepedi-hlano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "iri ya {h} le seripagare"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "iri ya {h} le metsotso ye masometharo-hlano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "iri ya {h} le metsotso ye masomenne"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "iri ya {h} le metsotso ye masomenne-hlano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "iri ya {h} le metsotso ye masomehlano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "iri ya {h} le metsotso ye masomehlano-hlano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8320,57 +8320,57 @@
 *> Source: locales/nus.json
        INIT-LOCALE-NUS.
            MOVE "nus" TO WS-ACT-CODE
-           MOVE "thiäär ke rou"
+           MOVE "wäl wi̱ rɛw"
                TO WS-ACT-HOUR(1)
-           MOVE "tök"
+           MOVE "kɛl"
                TO WS-ACT-HOUR(2)
-           MOVE "rou"
+           MOVE "rɛw"
                TO WS-ACT-HOUR(3)
-           MOVE "diäk"
+           MOVE "diɔk"
                TO WS-ACT-HOUR(4)
-           MOVE "ŋuan"
+           MOVE "ŋuaan"
                TO WS-ACT-HOUR(5)
-           MOVE "dhiëc"
+           MOVE "dhieec"
                TO WS-ACT-HOUR(6)
            MOVE "bäkɛl"
                TO WS-ACT-HOUR(7)
-           MOVE "dhorou"
+           MOVE "bäärɔw"
                TO WS-ACT-HOUR(8)
-           MOVE "bät"
+           MOVE "bädäk"
                TO WS-ACT-HOUR(9)
-           MOVE "kuɔn"
+           MOVE "bäŋuan"
                TO WS-ACT-HOUR(10)
-           MOVE "thiäär"
+           MOVE "wäl"
                TO WS-ACT-HOUR(11)
-           MOVE "thiäär ku tök"
+           MOVE "wäl wi̱ kɛl"
                TO WS-ACT-HOUR(12)
            MOVE "wakɔ̈u"
                TO WS-ACT-MIDNIGHT
            MOVE "cäŋ kɔ̈k"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "thaar {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "thaar {h} kɛnɛ minit dhieec"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "thaar {h} kɛnɛ minit wäl"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "thaar {h} kɛnɛ minit wäl wi̱ dhieec"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "thaar {h} kɛnɛ minit jiɛn rɛw"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "thaar {h} kɛnɛ minit jiɛn diɔk"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "thaar {h} kɛnɛ minit jiɛn ŋuaan"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "thaar {h} kɛnɛ minit jiɛn dhieec"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8395,57 +8395,57 @@
 *> Source: locales/ny.json
        INIT-LOCALE-NY.
            MOVE "ny" TO WS-ACT-CODE
-           MOVE "khumi ndi ziwiri"
+           MOVE "lakhumi ndi chiwiri"
                TO WS-ACT-HOUR(1)
-           MOVE "imodzi"
+           MOVE "loyamba"
                TO WS-ACT-HOUR(2)
-           MOVE "ziwiri"
+           MOVE "lachiwiri"
                TO WS-ACT-HOUR(3)
-           MOVE "zitatu"
+           MOVE "lachitatu"
                TO WS-ACT-HOUR(4)
-           MOVE "zinayi"
+           MOVE "lachinayi"
                TO WS-ACT-HOUR(5)
-           MOVE "zisanu"
+           MOVE "lachisanu"
                TO WS-ACT-HOUR(6)
-           MOVE "zisanu ndi chimodzi"
+           MOVE "lachisanu ndi chimodzi"
                TO WS-ACT-HOUR(7)
-           MOVE "zisanu ndi ziwiri"
+           MOVE "lachisanu ndi chiwiri"
                TO WS-ACT-HOUR(8)
-           MOVE "zisanu ndi zitatu"
+           MOVE "lachisanu ndi chitatu"
                TO WS-ACT-HOUR(9)
-           MOVE "zisanu ndi zinayi"
+           MOVE "lachisanu ndi chinayi"
                TO WS-ACT-HOUR(10)
-           MOVE "khumi"
+           MOVE "lakhumi"
                TO WS-ACT-HOUR(11)
-           MOVE "khumi ndi chimodzi"
+           MOVE "lakhumi ndi chimodzi"
                TO WS-ACT-HOUR(12)
            MOVE "pakati pausiku"
                TO WS-ACT-MIDNIGHT
            MOVE "usana"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ola {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ola {h} ndi mphindi zisanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ola {h} ndi mphindi khumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ola {h} ndi mphindi khumi ndi zisanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ola {h} ndi mphindi makumi awiri"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ola {h} ndi mphindi makumi awiri ndi zisanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ola {h} ndi theka"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ola {h} ndi mphindi makumi atatu ndi zisanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ola {h} ndi mphindi makumi anayi"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ola {h} ndi mphindi makumi anayi ndi zisanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ola {h} ndi mphindi makumi asanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ola {h} ndi mphindi makumi asanu ndi zisanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8470,57 +8470,57 @@
 *> Source: locales/om.json
        INIT-LOCALE-OM.
            MOVE "om" TO WS-ACT-CODE
-           MOVE "kudha lama"
-               TO WS-ACT-HOUR(1)
-           MOVE "tokko"
-               TO WS-ACT-HOUR(2)
-           MOVE "lama"
-               TO WS-ACT-HOUR(3)
-           MOVE "sadii"
-               TO WS-ACT-HOUR(4)
-           MOVE "afur"
-               TO WS-ACT-HOUR(5)
-           MOVE "shan"
-               TO WS-ACT-HOUR(6)
            MOVE "jaha"
-               TO WS-ACT-HOUR(7)
+               TO WS-ACT-HOUR(1)
            MOVE "torba"
-               TO WS-ACT-HOUR(8)
+               TO WS-ACT-HOUR(2)
            MOVE "saddeet"
-               TO WS-ACT-HOUR(9)
+               TO WS-ACT-HOUR(3)
            MOVE "sagal"
-               TO WS-ACT-HOUR(10)
+               TO WS-ACT-HOUR(4)
            MOVE "kudhan"
-               TO WS-ACT-HOUR(11)
+               TO WS-ACT-HOUR(5)
            MOVE "kudha tokko"
+               TO WS-ACT-HOUR(6)
+           MOVE "kudha lama"
+               TO WS-ACT-HOUR(7)
+           MOVE "tokko"
+               TO WS-ACT-HOUR(8)
+           MOVE "lama"
+               TO WS-ACT-HOUR(9)
+           MOVE "sadii"
+               TO WS-ACT-HOUR(10)
+           MOVE "afur"
+               TO WS-ACT-HOUR(11)
+           MOVE "shan"
                TO WS-ACT-HOUR(12)
            MOVE "walakkii halkan"
                TO WS-ACT-MIDNIGHT
            MOVE "guyyaa walakkaa"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "sa'aatii {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "sa'aatii {h} fi daqiiqaa shan"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "sa'aatii {h} fi daqiiqaa kudhan"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "sa'aatii {h} fi daqiiqaa kudha shan"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "sa'aatii {h} fi daqiiqaa digdama"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "sa'aatii {h} fi daqiiqaa digdamii shan"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "sa'aatii {h} fi walakkaa"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "sa'aatii {h} fi daqiiqaa soddomii shan"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "sa'aatii {h} fi daqiiqaa afurtama"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "sa'aatii {h} fi daqiiqaa afurtamii shan"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "sa'aatii {h} fi daqiiqaa shantama"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "sa'aatii {h} fi daqiiqaa shantamii shan"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8573,29 +8573,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ମଧ୍ୟାହ୍ନ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ବାଜି ଦଶ ମିନିଟ୍"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ବାଜି ପଚିଶ ମିନିଟ୍"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ବାଜି ତିରିଶ ମିନିଟ୍"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ପାଉଣେ {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8648,29 +8648,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ਦੁਪਹਿਰ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} ਵਜੇ"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ਸਵਾ {h} ਵਜੇ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ਪੌਣੇ {next_h} ਵਜੇ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8723,29 +8723,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "midei"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} kilok"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "faev minit pas {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ten minit pas {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "kwata pas {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "twenti minit pas {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "twenti faev minit pas {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "haf pas {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "twenti faev minit tu {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "twenti minit tu {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "kwata tu {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ten minit tu {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "faev minit tu {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8800,27 +8800,27 @@
                TO WS-ACT-NOON
            MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "pięć po {h}"
+           MOVE "{h} pięć"
                TO WS-ACT-PATTERN(2)
-           MOVE "dziesięć po {h}"
+           MOVE "{h} dziesięć"
                TO WS-ACT-PATTERN(3)
-           MOVE "piętnaście po {h}"
+           MOVE "{h} piętnaście"
                TO WS-ACT-PATTERN(4)
-           MOVE "dwadzieścia po {h}"
+           MOVE "{h} dwadzieścia"
                TO WS-ACT-PATTERN(5)
-           MOVE "dwadzieścia pięć po {h}"
+           MOVE "{h} dwadzieścia pięć"
                TO WS-ACT-PATTERN(6)
-           MOVE "trzydzieści po {h}"
+           MOVE "{h} trzydzieści"
                TO WS-ACT-PATTERN(7)
-           MOVE "dwadzieścia pięć do {next_h}"
+           MOVE "za dwadzieścia pięć {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "dwadzieścia do {next_h}"
+           MOVE "za dwadzieścia {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "piętnaście do {next_h}"
+           MOVE "za kwadrans {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "dziesięć do {next_h}"
+           MOVE "za dziesięć {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "pięć do {next_h}"
+           MOVE "za pięć {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -8845,57 +8845,57 @@
 *> Source: locales/pov.json
        INIT-LOCALE-POV.
            MOVE "pov" TO WS-ACT-CODE
-           MOVE "dozi"
+           MOVE "dozi ora"
                TO WS-ACT-HOUR(1)
-           MOVE "un"
+           MOVE "un ora"
                TO WS-ACT-HOUR(2)
-           MOVE "dos"
+           MOVE "dos ora"
                TO WS-ACT-HOUR(3)
-           MOVE "tres"
+           MOVE "tres ora"
                TO WS-ACT-HOUR(4)
-           MOVE "kuatru"
+           MOVE "kuatru ora"
                TO WS-ACT-HOUR(5)
-           MOVE "sinku"
+           MOVE "sinku ora"
                TO WS-ACT-HOUR(6)
-           MOVE "seis"
+           MOVE "seis ora"
                TO WS-ACT-HOUR(7)
-           MOVE "seti"
+           MOVE "seti ora"
                TO WS-ACT-HOUR(8)
-           MOVE "oitu"
+           MOVE "oitu ora"
                TO WS-ACT-HOUR(9)
-           MOVE "novi"
+           MOVE "novi ora"
                TO WS-ACT-HOUR(10)
-           MOVE "des"
+           MOVE "des ora"
                TO WS-ACT-HOUR(11)
-           MOVE "onzi"
+           MOVE "onzi ora"
                TO WS-ACT-HOUR(12)
            MOVE "meia noti"
                TO WS-ACT-MIDNIGHT
            MOVE "meiu dia"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} i sinku"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} i des"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} i kinzi"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} i vinti"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} i vinti i sinku"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} i meiu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} i trinta i sinku"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} i kuarenta"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} i kuarenta i sinku"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} i sinkuenta"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} i sinkuenta i sinku"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -8920,57 +8920,57 @@
 *> Source: locales/ps.json
        INIT-LOCALE-PS.
            MOVE "ps" TO WS-ACT-CODE
-           MOVE "دولس"
+           MOVE "دولس بجې"
                TO WS-ACT-HOUR(1)
-           MOVE "یو"
+           MOVE "یوه بجه"
                TO WS-ACT-HOUR(2)
-           MOVE "دوه"
+           MOVE "دوه بجې"
                TO WS-ACT-HOUR(3)
-           MOVE "درې"
+           MOVE "درې بجې"
                TO WS-ACT-HOUR(4)
-           MOVE "څلور"
+           MOVE "څلور بجې"
                TO WS-ACT-HOUR(5)
-           MOVE "پنځه"
+           MOVE "پنځه بجې"
                TO WS-ACT-HOUR(6)
-           MOVE "شپږ"
+           MOVE "شپږ بجې"
                TO WS-ACT-HOUR(7)
-           MOVE "اووه"
+           MOVE "اووه بجې"
                TO WS-ACT-HOUR(8)
-           MOVE "اته"
+           MOVE "اته بجې"
                TO WS-ACT-HOUR(9)
-           MOVE "نهه"
+           MOVE "نهه بجې"
                TO WS-ACT-HOUR(10)
-           MOVE "لس"
+           MOVE "لس بجې"
                TO WS-ACT-HOUR(11)
-           MOVE "یوولس"
+           MOVE "یوولس بجې"
                TO WS-ACT-HOUR(12)
            MOVE "نیمه شپه"
                TO WS-ACT-MIDNIGHT
            MOVE "غرمه"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} او پنځه دقیقې"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} او لس دقیقې"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} او پنځلس دقیقې"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} او شل دقیقې"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} او پنځه ویشت دقیقې"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} او دېرش دقیقې"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} او پنځه دېرش دقیقې"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} او څلوېښت دقیقې"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} او پنځه څلوېښت دقیقې"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} او پنځوس دقیقې"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} او پنځه پنځوس دقیقې"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9023,7 +9023,7 @@
                TO WS-ACT-MIDNIGHT
            MOVE "meio-dia"
                TO WS-ACT-NOON
-           MOVE "{h} horas"
+           MOVE "{h} em ponto"
                TO WS-ACT-PATTERN(1)
            MOVE "{h} e cinco"
                TO WS-ACT-PATTERN(2)
@@ -9098,29 +9098,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "chawpi p'unchaw"
                TO WS-ACT-NOON
-           MOVE "{h}"
+           MOVE "{h} ura"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h} pichqa"
+           MOVE "{h} ura pichqa"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h} chunka"
+           MOVE "{h} ura chunka"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h} chunka pichqayuq"
+           MOVE "{h} ura chunka pichqayuq"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h} iskay chunka"
+           MOVE "{h} ura iskay chunka"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h} iskay chunka pichqayuq"
+           MOVE "{h} ura iskay chunka pichqayuq"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h} kimsa chunka"
+           MOVE "{h} ura kimsa chunka"
                TO WS-ACT-PATTERN(7)
-           MOVE "{next_h} mana iskay chunka pichqayuq"
+           MOVE "{h} ura kimsa chunka pichqayuq"
                TO WS-ACT-PATTERN(8)
-           MOVE "{next_h} mana iskay chunka"
+           MOVE "{h} ura tawa chunka"
                TO WS-ACT-PATTERN(9)
-           MOVE "{next_h} mana chunka pichqayuq"
+           MOVE "{h} ura tawa chunka pichqayuq"
                TO WS-ACT-PATTERN(10)
-           MOVE "{next_h} mana chunka"
+           MOVE "{h} ura pichqa chunka"
                TO WS-ACT-PATTERN(11)
-           MOVE "{next_h} mana pichqa"
+           MOVE "{h} ura pichqa chunka pichqayuq"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9149,21 +9149,21 @@
                TO WS-ACT-HOUR(1)
            MOVE "jun"
                TO WS-ACT-HOUR(2)
-           MOVE "ka'i'"
+           MOVE "keb'"
                TO WS-ACT-HOUR(3)
-           MOVE "oxi'"
+           MOVE "oxib'"
                TO WS-ACT-HOUR(4)
-           MOVE "kaji'"
+           MOVE "kajib'"
                TO WS-ACT-HOUR(5)
-           MOVE "jo'"
+           MOVE "job'"
                TO WS-ACT-HOUR(6)
-           MOVE "waqi'"
+           MOVE "waqib'"
                TO WS-ACT-HOUR(7)
-           MOVE "wuqu'"
+           MOVE "wuqub'"
                TO WS-ACT-HOUR(8)
-           MOVE "wajxaqi'"
+           MOVE "wajxaqib'"
                TO WS-ACT-HOUR(9)
-           MOVE "b'eleji'"
+           MOVE "b'elejeb'"
                TO WS-ACT-HOUR(10)
            MOVE "lajuj"
                TO WS-ACT-HOUR(11)
@@ -9173,29 +9173,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "nik'aj q'ij"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} ramaj"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ramaj job'"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ramaj lajuj"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ramaj olajuj"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ramaj juwinaq"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ramaj juwinaq job'"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ramaj juwinaq lajuj"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} ramaj juwinaq olajuj"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} ramaj kawinaq"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} ramaj kawinaq job'"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} ramaj kawinaq lajuj"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} ramaj kawinaq olajuj"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9248,29 +9248,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "amiază"
                TO WS-ACT-NOON
-           MOVE "{h} ore"
+           MOVE "ora {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "cinci peste {h}"
+           MOVE "{h} și cinci"
                TO WS-ACT-PATTERN(2)
-           MOVE "zece peste {h}"
+           MOVE "{h} și zece"
                TO WS-ACT-PATTERN(3)
-           MOVE "un sfert peste {h}"
+           MOVE "{h} și un sfert"
                TO WS-ACT-PATTERN(4)
-           MOVE "douăzeci peste {h}"
+           MOVE "{h} și douăzeci"
                TO WS-ACT-PATTERN(5)
-           MOVE "douăzeci și cinci peste {h}"
+           MOVE "{h} și douăzeci și cinci"
                TO WS-ACT-PATTERN(6)
-           MOVE "jumătate peste {h}"
+           MOVE "{h} și jumătate"
                TO WS-ACT-PATTERN(7)
-           MOVE "douăzeci și cinci înainte de {next_h}"
+           MOVE "{next_h} fără douăzeci și cinci"
                TO WS-ACT-PATTERN(8)
-           MOVE "douăzeci înainte de {next_h}"
+           MOVE "{next_h} fără douăzeci"
                TO WS-ACT-PATTERN(9)
-           MOVE "un sfert înainte de {next_h}"
+           MOVE "{next_h} fără un sfert"
                TO WS-ACT-PATTERN(10)
-           MOVE "zece înainte de {next_h}"
+           MOVE "{next_h} fără zece"
                TO WS-ACT-PATTERN(11)
-           MOVE "cinci înainte de {next_h}"
+           MOVE "{next_h} fără cinci"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -9323,29 +9323,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "полдень"
                TO WS-ACT-NOON
-           MOVE "{h} часа"
+           MOVE "ровно {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "пять po {h}"
+           MOVE "{h} ноль пять"
                TO WS-ACT-PATTERN(2)
-           MOVE "десять po {h}"
+           MOVE "{h} десять"
                TO WS-ACT-PATTERN(3)
-           MOVE "пятнадцать po {h}"
+           MOVE "{h} пятнадцать"
                TO WS-ACT-PATTERN(4)
-           MOVE "двадцать po {h}"
+           MOVE "{h} двадцать"
                TO WS-ACT-PATTERN(5)
-           MOVE "двадцать пять po {h}"
+           MOVE "{h} двадцать пять"
                TO WS-ACT-PATTERN(6)
-           MOVE "тридцать po {h}"
+           MOVE "{h} тридцать"
                TO WS-ACT-PATTERN(7)
-           MOVE "двадцать пять do {next_h}"
+           MOVE "без двадцати пяти {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "двадцать do {next_h}"
+           MOVE "без двадцати {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "пятнадцать do {next_h}"
+           MOVE "без четверти {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "десять do {next_h}"
+           MOVE "без десяти {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "пять do {next_h}"
+           MOVE "без пяти {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -9370,57 +9370,57 @@
 *> Source: locales/rw.json
        INIT-LOCALE-RW.
            MOVE "rw" TO WS-ACT-CODE
-           MOVE "cumi n'ebyiri"
+           MOVE "sita"
                TO WS-ACT-HOUR(1)
-           MOVE "rimwe"
+           MOVE "saba"
                TO WS-ACT-HOUR(2)
-           MOVE "ebyiri"
+           MOVE "munani"
                TO WS-ACT-HOUR(3)
-           MOVE "eshatu"
+           MOVE "cyenda"
                TO WS-ACT-HOUR(4)
-           MOVE "enye"
+           MOVE "kumi"
                TO WS-ACT-HOUR(5)
-           MOVE "eshanu"
+           MOVE "kumi n'imwe"
                TO WS-ACT-HOUR(6)
-           MOVE "esheshatu"
+           MOVE "kumi n'ebyiri"
                TO WS-ACT-HOUR(7)
-           MOVE "indwi"
+           MOVE "moya"
                TO WS-ACT-HOUR(8)
-           MOVE "umunani"
+           MOVE "mbiri"
                TO WS-ACT-HOUR(9)
-           MOVE "icyenda"
+           MOVE "tatu"
                TO WS-ACT-HOUR(10)
-           MOVE "icumi"
+           MOVE "ine"
                TO WS-ACT-HOUR(11)
-           MOVE "cumi n'imwe"
+           MOVE "tanu"
                TO WS-ACT-HOUR(12)
-           MOVE "igicuku"
+           MOVE "saa sita z'ijoro"
                TO WS-ACT-MIDNIGHT
-           MOVE "saa sita"
+           MOVE "saa sita z'amanywa"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "saa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "saa {h} n'iminota itanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "saa {h} n'iminota icumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "saa {h} n'iminota cumi n'itanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "saa {h} n'iminota makumyabiri"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "saa {h} n'iminota makumyabiri n'itanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "saa {h} n'igice"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "saa {h} n'iminota mirongo itatu n'itanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "saa {h} n'iminota mirongo ine"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "saa {h} n'iminota mirongo ine n'itanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "saa {h} n'iminota mirongo itanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "saa {h} n'iminota mirongo itanu n'itanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9445,57 +9445,57 @@
 *> Source: locales/sar.json
        INIT-LOCALE-SAR.
            MOVE "sar" TO WS-ACT-CODE
-           MOVE "mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi"
+           MOVE "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi"
                TO WS-ACT-HOUR(1)
-           MOVE "kɨ̀ndá"
+           MOVE "lɛɛr kɨ̀ndá"
                TO WS-ACT-HOUR(2)
-           MOVE "ɗìi"
+           MOVE "lɛɛr ɗìi"
                TO WS-ACT-HOUR(3)
-           MOVE "mùtá"
+           MOVE "lɛɛr mùtá"
                TO WS-ACT-HOUR(4)
-           MOVE "sɔ̀"
+           MOVE "lɛɛr sɔ̀"
                TO WS-ACT-HOUR(5)
-           MOVE "mɨ̀ndɨ̀"
+           MOVE "lɛɛr mɨ̀ndɨ̀"
                TO WS-ACT-HOUR(6)
-           MOVE "mɨ̀ndɨ̀ kɨ̀ndá"
+           MOVE "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá"
                TO WS-ACT-HOUR(7)
-           MOVE "mɨ̀sá"
+           MOVE "lɛɛr mɨ̀sá"
                TO WS-ACT-HOUR(8)
-           MOVE "mɨ̀ndɨ̀ mùtá"
+           MOVE "lɛɛr mɨ̀ndɨ̀ mùtá"
                TO WS-ACT-HOUR(9)
-           MOVE "mɨ̀ndɨ̀ sɔ̀"
+           MOVE "lɛɛr mɨ̀ndɨ̀ sɔ̀"
                TO WS-ACT-HOUR(10)
-           MOVE "mɔ̀ɔ́"
+           MOVE "lɛɛr mɔ̀ɔ́"
                TO WS-ACT-HOUR(11)
-           MOVE "mɔ̀ɔ́ kɨ̀ndá"
+           MOVE "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá"
                TO WS-ACT-HOUR(12)
            MOVE "badɔ"
                TO WS-ACT-MIDNIGHT
            MOVE "mbɔr ndɔ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} kɨ̀ minít mɨ̀ndɨ̀"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} kɩ̀ ndá̰ŋ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9520,9 +9520,9 @@
 *> Source: locales/sd.json
        INIT-LOCALE-SD.
            MOVE "sd" TO WS-ACT-CODE
-           MOVE "ٻارھ"
+           MOVE "ٻارهن"
                TO WS-ACT-HOUR(1)
-           MOVE "ھڪ"
+           MOVE "هڪ"
                TO WS-ACT-HOUR(2)
            MOVE "ٻه"
                TO WS-ACT-HOUR(3)
@@ -9532,45 +9532,45 @@
                TO WS-ACT-HOUR(5)
            MOVE "پنج"
                TO WS-ACT-HOUR(6)
-           MOVE "ڇھ"
+           MOVE "ڇهه"
                TO WS-ACT-HOUR(7)
            MOVE "ست"
                TO WS-ACT-HOUR(8)
            MOVE "اٺ"
                TO WS-ACT-HOUR(9)
-           MOVE "نائن"
+           MOVE "نوَ"
                TO WS-ACT-HOUR(10)
-           MOVE "ڏھ"
+           MOVE "ڏهه"
                TO WS-ACT-HOUR(11)
-           MOVE "يارھ"
+           MOVE "يارهن"
                TO WS-ACT-HOUR(12)
            MOVE "اڌ رات"
                TO WS-ACT-MIDNIGHT
            MOVE "ٽپھر"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} وڳي"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} وڳي پنج منٽ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} وڳي ڏهه منٽ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "سوا {h} وڳي"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} وڳي ويهه منٽ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} وڳي پنجويهه منٽ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} وڳي ٽيهه منٽ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} وڳڻ ۾ پنجويهه منٽ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} وڳڻ ۾ ويهه منٽ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "پوڻا {next_h} وڳي"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} وڳڻ ۾ ڏهه منٽ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} وڳڻ ۾ پنج منٽ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9595,7 +9595,7 @@
 *> Source: locales/sg.json
        INIT-LOCALE-SG.
            MOVE "sg" TO WS-ACT-CODE
-           MOVE "bâlè-ûse"
+           MOVE "balë-ôko na ûse"
                TO WS-ACT-HOUR(1)
            MOVE "ôko"
                TO WS-ACT-HOUR(2)
@@ -9607,45 +9607,45 @@
                TO WS-ACT-HOUR(5)
            MOVE "okü"
                TO WS-ACT-HOUR(6)
-           MOVE "ömënë"
+           MOVE "omanä"
                TO WS-ACT-HOUR(7)
-           MOVE "mbïrïmbïrï"
+           MOVE "mbâsâmbârâ"
                TO WS-ACT-HOUR(8)
-           MOVE "mënâmbârâ"
+           MOVE "miombe"
                TO WS-ACT-HOUR(9)
-           MOVE "gonambâlâ"
+           MOVE "gümbâyä"
                TO WS-ACT-HOUR(10)
-           MOVE "bâlè"
+           MOVE "balë-ôko"
                TO WS-ACT-HOUR(11)
-           MOVE "bâlè na ôko"
+           MOVE "balë-ôko na ôko"
                TO WS-ACT-HOUR(12)
            MOVE "gï na lögö"
                TO WS-ACT-MIDNIGHT
            MOVE "lâ nzönï"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ngbonga {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ngbonga {h} na minüti okü"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ngbonga {h} na minüti balë-ôko"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ngbonga {h} na minüti balë-ôko na okü"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ngbonga {h} na minüti balë-ûse"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ngbonga {h} na minüti balë-ûse na okü"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ngbonga {h} na ndâmbo"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ngbonga {h} na minüti balë-otâ na okü"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ngbonga {h} na minüti balë-usïö"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ngbonga {h} na minüti balë-usïö na okü"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ngbonga {h} na minüti balë-okü"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ngbonga {h} na minüti balë-okü na okü"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9670,57 +9670,57 @@
 *> Source: locales/shi.json
        INIT-LOCALE-SHI.
            MOVE "shi" TO WS-ACT-CODE
-           MOVE "12"
+           MOVE "tis snat d mrawt"
                TO WS-ACT-HOUR(1)
-           MOVE "1"
+           MOVE "tis yat"
                TO WS-ACT-HOUR(2)
-           MOVE "2"
+           MOVE "tis snat"
                TO WS-ACT-HOUR(3)
-           MOVE "3"
+           MOVE "tis kṛaṭṭ"
                TO WS-ACT-HOUR(4)
-           MOVE "4"
+           MOVE "tis kkuẕt"
                TO WS-ACT-HOUR(5)
-           MOVE "5"
+           MOVE "tis smmust"
                TO WS-ACT-HOUR(6)
-           MOVE "6"
+           MOVE "tis sḍist"
                TO WS-ACT-HOUR(7)
-           MOVE "7"
+           MOVE "tis sat"
                TO WS-ACT-HOUR(8)
-           MOVE "8"
+           MOVE "tis tamt"
                TO WS-ACT-HOUR(9)
-           MOVE "9"
+           MOVE "tis tẕat"
                TO WS-ACT-HOUR(10)
-           MOVE "10"
+           MOVE "tis mrawt"
                TO WS-ACT-HOUR(11)
-           MOVE "11"
+           MOVE "tis yat d mrawt"
                TO WS-ACT-HOUR(12)
-           MOVE "ⵏⵚ ⵏ ⵉⴹ"
+           MOVE "nṣ n iḍ"
                TO WS-ACT-MIDNIGHT
-           MOVE "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
+           MOVE "tizwarnin"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} d smmus tusdiqin"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} d mraw tusdiqin"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} d rrbɛ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} d ɛcrin n tusdiqt"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} d xmsa u ɛcrin n tusdiqt"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} d uzgen"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} d xmsa u tlatin n tusdiqt"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} d ṛbɛin n tusdiqt"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} d xmsa u ṛbɛin n tusdiqt"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} d xmsin n tusdiqt"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} d xmsa u xmsin n tusdiqt"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -9773,29 +9773,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ၵၢင်ဝၼ်း"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}မူင်း"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h}မူင်း ႁႃႈမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h}မူင်း သိပ်းမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h}မူင်း သၢဝ်းမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h}မူင်းၶိုင်ႈ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -9848,29 +9848,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "මධ්‍යාහ්නය"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}යි"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h}යි විනාඩි පහයි"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h}යි විනාඩි දහයයි"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}යි කාලයි"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h}යි විනාඩි විස්සයි"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h}යි විනාඩි විසිපහයි"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} හමාරයි"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h}ට විනාඩි විසිපහයි"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h}ට විනාඩි විස්සයි"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h}ට කාලයි"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h}ට විනාඩි දහයයි"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h}ට විනාඩි පහයි"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -9923,29 +9923,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "poludnie"
                TO WS-ACT-NOON
-           MOVE "{h} hodín"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "päť po {h}"
+           MOVE "{h} nula päť"
                TO WS-ACT-PATTERN(2)
-           MOVE "desať po {h}"
+           MOVE "{h} desať"
                TO WS-ACT-PATTERN(3)
-           MOVE "štvrť po {h}"
+           MOVE "{h} pätnásť"
                TO WS-ACT-PATTERN(4)
-           MOVE "dvadsať po {h}"
+           MOVE "{h} dvadsať"
                TO WS-ACT-PATTERN(5)
-           MOVE "dvadsať päť po {h}"
+           MOVE "{h} dvadsaťpäť"
                TO WS-ACT-PATTERN(6)
-           MOVE "pol po {h}"
+           MOVE "{h} tridsať"
                TO WS-ACT-PATTERN(7)
-           MOVE "dvadsať päť do {next_h}"
+           MOVE "o dvadsaťpäť minút {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "dvadsať do {next_h}"
+           MOVE "o dvadsať minút {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "štvrť do {next_h}"
+           MOVE "o pätnásť minút {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "desať do {next_h}"
+           MOVE "o desať minút {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "päť do {next_h}"
+           MOVE "o päť minút {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -9998,29 +9998,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "poldne"
                TO WS-ACT-NOON
-           MOVE "{h} ura"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "pet po {h}"
+           MOVE "pet čez {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "deset po {h}"
+           MOVE "deset čez {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "petnajst po {h}"
+           MOVE "petnajst čez {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "dvajset po {h}"
+           MOVE "dvajset čez {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "dvajset pet po {h}"
+           MOVE "petindvajset čez {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "trideset po {h}"
+           MOVE "{h} trideset"
                TO WS-ACT-PATTERN(7)
-           MOVE "dvajset pet do {next_h}"
+           MOVE "{h} petintrideset"
                TO WS-ACT-PATTERN(8)
-           MOVE "dvajset do {next_h}"
+           MOVE "{h} štirideset"
                TO WS-ACT-PATTERN(9)
-           MOVE "petnajst do {next_h}"
+           MOVE "{h} petinštirideset"
                TO WS-ACT-PATTERN(10)
-           MOVE "deset do {next_h}"
+           MOVE "{h} petdeset"
                TO WS-ACT-PATTERN(11)
-           MOVE "pet do {next_h}"
+           MOVE "{h} petinpetdeset"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -10045,57 +10045,57 @@
 *> Source: locales/sn.json
        INIT-LOCALE-SN.
            MOVE "sn" TO WS-ACT-CODE
-           MOVE "gumi nembiri"
+           MOVE "dzava gumi nembiri"
                TO WS-ACT-HOUR(1)
-           MOVE "imwe"
+           MOVE "yava imwe"
                TO WS-ACT-HOUR(2)
-           MOVE "mbiri"
+           MOVE "dzava mbiri"
                TO WS-ACT-HOUR(3)
-           MOVE "nhatu"
+           MOVE "dzava nhatu"
                TO WS-ACT-HOUR(4)
-           MOVE "ina"
+           MOVE "dzava ina"
                TO WS-ACT-HOUR(5)
-           MOVE "shanu"
+           MOVE "dzava shanu"
                TO WS-ACT-HOUR(6)
-           MOVE "nhanhatu"
+           MOVE "dzava nhanhatu"
                TO WS-ACT-HOUR(7)
-           MOVE "nomwe"
+           MOVE "dzava nomwe"
                TO WS-ACT-HOUR(8)
-           MOVE "sere"
+           MOVE "dzava sere"
                TO WS-ACT-HOUR(9)
-           MOVE "pfumbamwe"
+           MOVE "dzava pfumbamwe"
                TO WS-ACT-HOUR(10)
-           MOVE "gumi"
+           MOVE "dzava gumi"
                TO WS-ACT-HOUR(11)
-           MOVE "gumi neimwe"
+           MOVE "dzava gumi neimwe"
                TO WS-ACT-HOUR(12)
-           MOVE "usiku hwepakati"
+           MOVE "pakati peusiku"
                TO WS-ACT-MIDNIGHT
            MOVE "masikati"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} nemaminitsi mashanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} nemaminitsi gumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} nemaminitsi gumi nemashanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} nemaminitsi makumi maviri"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} nemaminitsi makumi maviri nemashanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} nehafu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} nemaminitsi makumi matatu nemashanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} nemaminitsi makumi mana"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} nemaminitsi makumi mana nemashanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} nemaminitsi makumi mashanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} nemaminitsi makumi mashanu nemashanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10120,57 +10120,57 @@
 *> Source: locales/snk.json
        INIT-LOCALE-SNK.
            MOVE "snk" TO WS-ACT-CODE
-           MOVE "tanmu fillo"
+           MOVE "waxati tanmu do fillo"
                TO WS-ACT-HOUR(1)
-           MOVE "baane"
+           MOVE "waxati baane"
                TO WS-ACT-HOUR(2)
-           MOVE "fillo"
+           MOVE "waxati fillo"
                TO WS-ACT-HOUR(3)
-           MOVE "sikko"
+           MOVE "waxati sikko"
                TO WS-ACT-HOUR(4)
-           MOVE "naaxato"
+           MOVE "waxati naaxato"
                TO WS-ACT-HOUR(5)
-           MOVE "karago"
+           MOVE "waxati karago"
                TO WS-ACT-HOUR(6)
-           MOVE "tunmu"
+           MOVE "waxati tunmu"
                TO WS-ACT-HOUR(7)
-           MOVE "ñerru"
+           MOVE "waxati ñerru"
                TO WS-ACT-HOUR(8)
-           MOVE "segu"
+           MOVE "waxati segu"
                TO WS-ACT-HOUR(9)
-           MOVE "kaburu"
+           MOVE "waxati kaburu"
                TO WS-ACT-HOUR(10)
-           MOVE "tanmu"
+           MOVE "waxati tanmu"
                TO WS-ACT-HOUR(11)
-           MOVE "tanmu baane"
+           MOVE "waxati tanmu do baane"
                TO WS-ACT-HOUR(12)
            MOVE "sulen noxo"
                TO WS-ACT-MIDNIGHT
            MOVE "tili seren"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} do miniti karago"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} do miniti tanmu"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} do miniti tanmu do karago"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} do miniti tanpille"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} do miniti tanpille do karago"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} do faabe"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} do miniti tanjikke do karago"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} do miniti tannaxate"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} do miniti tannaxate do karago"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} do miniti tankarage"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} do miniti tankarage do karago"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10195,57 +10195,57 @@
 *> Source: locales/so.json
        INIT-LOCALE-SO.
            MOVE "so" TO WS-ACT-CODE
-           MOVE "laba iyo toban"
+           MOVE "laba iyo tobanka"
                TO WS-ACT-HOUR(1)
-           MOVE "kow"
+           MOVE "kowda"
                TO WS-ACT-HOUR(2)
-           MOVE "laba"
+           MOVE "labada"
                TO WS-ACT-HOUR(3)
-           MOVE "saddex"
+           MOVE "saddexda"
                TO WS-ACT-HOUR(4)
-           MOVE "afar"
+           MOVE "afarta"
                TO WS-ACT-HOUR(5)
-           MOVE "shan"
+           MOVE "shanta"
                TO WS-ACT-HOUR(6)
-           MOVE "lix"
+           MOVE "lixda"
                TO WS-ACT-HOUR(7)
-           MOVE "toddoba"
+           MOVE "toddobada"
                TO WS-ACT-HOUR(8)
-           MOVE "siddeed"
+           MOVE "siddeedda"
                TO WS-ACT-HOUR(9)
-           MOVE "sagaal"
+           MOVE "sagaasha"
                TO WS-ACT-HOUR(10)
-           MOVE "toban"
+           MOVE "tobanka"
                TO WS-ACT-HOUR(11)
-           MOVE "kow iyo toban"
+           MOVE "kow iyo tobanka"
                TO WS-ACT-HOUR(12)
            MOVE "saqda dhexe"
                TO WS-ACT-MIDNIGHT
            MOVE "duhur"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} iyo shan"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} iyo toban"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} iyo rubuc"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} iyo labaatan"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} iyo shan iyo labaatan"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} iyo bar"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} shan iyo labaatan la'"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} labaatan la'"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} rubuc la'"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} toban la'"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} shan la'"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10298,29 +10298,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "mesdita"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "ora {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "pesë past {h}"
+           MOVE "{h} e pesë"
                TO WS-ACT-PATTERN(2)
-           MOVE "dhjetë past {h}"
+           MOVE "{h} e dhjetë"
                TO WS-ACT-PATTERN(3)
-           MOVE "një çerek past {h}"
+           MOVE "{h} e një çerek"
                TO WS-ACT-PATTERN(4)
-           MOVE "njëzet past {h}"
+           MOVE "{h} e njëzet"
                TO WS-ACT-PATTERN(5)
-           MOVE "njëzet e pesë past {h}"
+           MOVE "{h} e njëzet e pesë"
                TO WS-ACT-PATTERN(6)
-           MOVE "gjysma past {h}"
+           MOVE "{h} e gjysmë"
                TO WS-ACT-PATTERN(7)
-           MOVE "njëzet e pesë to {next_h}"
+           MOVE "{next_h} pa njëzet e pesë"
                TO WS-ACT-PATTERN(8)
-           MOVE "njëzet to {next_h}"
+           MOVE "{next_h} pa njëzet"
                TO WS-ACT-PATTERN(9)
-           MOVE "një çerek to {next_h}"
+           MOVE "{next_h} pa një çerek"
                TO WS-ACT-PATTERN(10)
-           MOVE "dhjetë to {next_h}"
+           MOVE "{next_h} pa dhjetë"
                TO WS-ACT-PATTERN(11)
-           MOVE "pesë to {next_h}"
+           MOVE "{next_h} pa pesë"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -10373,29 +10373,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "подне"
                TO WS-ACT-NOON
-           MOVE "{h} часа"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "пет po {h}"
+           MOVE "{h} и пет"
                TO WS-ACT-PATTERN(2)
-           MOVE "десет po {h}"
+           MOVE "{h} и десет"
                TO WS-ACT-PATTERN(3)
-           MOVE "петнаест po {h}"
+           MOVE "{h} и петнаест"
                TO WS-ACT-PATTERN(4)
-           MOVE "двадесет po {h}"
+           MOVE "{h} и двадесет"
                TO WS-ACT-PATTERN(5)
-           MOVE "двадесет пет po {h}"
+           MOVE "{h} и двадесет пет"
                TO WS-ACT-PATTERN(6)
-           MOVE "тридесет po {h}"
+           MOVE "пола {next_h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "двадесет пет do {next_h}"
+           MOVE "двадесет пет до {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "двадесет do {next_h}"
+           MOVE "двадесет до {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "петнаест do {next_h}"
+           MOVE "петнаест до {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "десет do {next_h}"
+           MOVE "десет до {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "пет do {next_h}"
+           MOVE "пет до {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -10420,57 +10420,57 @@
 *> Source: locales/ss.json
        INIT-LOCALE-SS.
            MOVE "ss" TO WS-ACT-CODE
-           MOVE "lishumi nambili"
+           MOVE "lelishumi nakubili"
                TO WS-ACT-HOUR(1)
-           MOVE "kunye"
+           MOVE "lekucala"
                TO WS-ACT-HOUR(2)
-           MOVE "kubili"
+           MOVE "lesibili"
                TO WS-ACT-HOUR(3)
-           MOVE "kutsatfu"
+           MOVE "lesitsatfu"
                TO WS-ACT-HOUR(4)
-           MOVE "kune"
+           MOVE "lesine"
                TO WS-ACT-HOUR(5)
-           MOVE "kusihlanu"
+           MOVE "lesihlanu"
                TO WS-ACT-HOUR(6)
-           MOVE "sitfupha"
+           MOVE "lesitfupha"
                TO WS-ACT-HOUR(7)
-           MOVE "sikhombisa"
+           MOVE "lesikhombisa"
                TO WS-ACT-HOUR(8)
-           MOVE "siphohlongo"
+           MOVE "lesiphohlongo"
                TO WS-ACT-HOUR(9)
-           MOVE "sifisagcina"
+           MOVE "lemfica"
                TO WS-ACT-HOUR(10)
-           MOVE "lishumi"
+           MOVE "lelishumi"
                TO WS-ACT-HOUR(11)
-           MOVE "lishumi nakunye"
+           MOVE "lelishumi nakunye"
                TO WS-ACT-HOUR(12)
            MOVE "phakathi kwebusuku"
                TO WS-ACT-MIDNIGHT
            MOVE "emini"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "lihora {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "lihora {h} nemizuzu lemihlanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "lihora {h} nemizuzu lelishumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "lihora {h} nemizuzu lelishumi nesihlanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "lihora {h} nemizuzu lemashumi lamabili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "lihora {h} nemizuzu lemashumi lamabili nesihlanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "lihora {h} nenhafu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "lihora {h} nemizuzu lemashumi lamane"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "lihora {h} nemizuzu lemashumi lamane nesihlanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "lihora {h} nemizuzu lemashumi lasihlanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "lihora {h} nemizuzu lemashumi lasihlanu nesihlanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10497,23 +10497,23 @@
            MOVE "st" TO WS-ACT-CODE
            MOVE "leshome le metso e mmedi"
                TO WS-ACT-HOUR(1)
-           MOVE "e nngwe"
+           MOVE "pele"
                TO WS-ACT-HOUR(2)
-           MOVE "tse pedi"
+           MOVE "bobedi"
                TO WS-ACT-HOUR(3)
-           MOVE "tse tharo"
+           MOVE "boraro"
                TO WS-ACT-HOUR(4)
-           MOVE "tse nne"
+           MOVE "bone"
                TO WS-ACT-HOUR(5)
-           MOVE "tse hlano"
+           MOVE "bohlano"
                TO WS-ACT-HOUR(6)
-           MOVE "tse tshelela"
+           MOVE "botshelela"
                TO WS-ACT-HOUR(7)
-           MOVE "tse supileng"
+           MOVE "bosupa"
                TO WS-ACT-HOUR(8)
-           MOVE "tse robedi"
+           MOVE "borobedi"
                TO WS-ACT-HOUR(9)
-           MOVE "tse robong"
+           MOVE "borobong"
                TO WS-ACT-HOUR(10)
            MOVE "leshome"
                TO WS-ACT-HOUR(11)
@@ -10523,29 +10523,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "motsheare"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "hora ya {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "hora ya {h} le metsotso e mehlano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "hora ya {h} le metsotso e leshome"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "hora ya {h} le kotara"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "hora ya {h} le metsotso e mashome a mabedi"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "hora ya {h} le halofo"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "hora ya {h} le metsotso e mashome a mararo a metso e mehlano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "hora ya {h} le metsotso e mashome a mane"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "hora ya {h} le metsotso e mashome a mane a metso e mehlano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "hora ya {h} le metsotso e mashome a mahlano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10598,29 +10598,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "beurang"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "jam {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "jam {h} leuwih lima menit"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "jam {h} leuwih sapuluh menit"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "jam {h} leuwih saparapat"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "jam {h} leuwih dua puluh menit"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "jam {h} leuwih dua puluh lima menit"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "satengah {next_h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "jam {next_h} kurang dua puluh lima menit"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "jam {next_h} kurang dua puluh menit"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "jam {next_h} kurang saparapat"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "jam {next_h} kurang sapuluh menit"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "jam {next_h} kurang lima menit"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10645,57 +10645,57 @@
 *> Source: locales/suk.json
        INIT-LOCALE-SUK.
            MOVE "suk" TO WS-ACT-CODE
-           MOVE "kumi na mbili"
-               TO WS-ACT-HOUR(1)
-           MOVE "moja"
-               TO WS-ACT-HOUR(2)
-           MOVE "mbili"
-               TO WS-ACT-HOUR(3)
-           MOVE "tatu"
-               TO WS-ACT-HOUR(4)
-           MOVE "nne"
-               TO WS-ACT-HOUR(5)
-           MOVE "tano"
-               TO WS-ACT-HOUR(6)
            MOVE "sita"
-               TO WS-ACT-HOUR(7)
+               TO WS-ACT-HOUR(1)
            MOVE "saba"
-               TO WS-ACT-HOUR(8)
+               TO WS-ACT-HOUR(2)
            MOVE "nane"
-               TO WS-ACT-HOUR(9)
+               TO WS-ACT-HOUR(3)
            MOVE "tisa"
-               TO WS-ACT-HOUR(10)
+               TO WS-ACT-HOUR(4)
            MOVE "kumi"
-               TO WS-ACT-HOUR(11)
+               TO WS-ACT-HOUR(5)
            MOVE "kumi na moja"
+               TO WS-ACT-HOUR(6)
+           MOVE "kumi na mbili"
+               TO WS-ACT-HOUR(7)
+           MOVE "moja"
+               TO WS-ACT-HOUR(8)
+           MOVE "mbili"
+               TO WS-ACT-HOUR(9)
+           MOVE "tatu"
+               TO WS-ACT-HOUR(10)
+           MOVE "nne"
+               TO WS-ACT-HOUR(11)
+           MOVE "tano"
                TO WS-ACT-HOUR(12)
            MOVE "usiku gati"
                TO WS-ACT-MIDNIGHT
            MOVE "adhuhuri"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "saa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "saa {h} na dakika tano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "saa {h} na dakika kumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "saa {h} na robo"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "saa {h} na dakika ishirini"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "saa {h} na dakika ishirini na tano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "saa {h} na nusu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "saa {next_h} kasoro dakika ishirini na tano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "saa {next_h} kasoro dakika ishirini"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "saa {next_h} kasoro robo"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "saa {next_h} kasoro dakika kumi"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "saa {next_h} kasoro dakika tano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10795,57 +10795,57 @@
 *> Source: locales/sw.json
        INIT-LOCALE-SW.
            MOVE "sw" TO WS-ACT-CODE
-           MOVE "kumi na mbili"
-               TO WS-ACT-HOUR(1)
-           MOVE "moja"
-               TO WS-ACT-HOUR(2)
-           MOVE "mbili"
-               TO WS-ACT-HOUR(3)
-           MOVE "tatu"
-               TO WS-ACT-HOUR(4)
-           MOVE "nne"
-               TO WS-ACT-HOUR(5)
-           MOVE "tano"
-               TO WS-ACT-HOUR(6)
            MOVE "sita"
-               TO WS-ACT-HOUR(7)
+               TO WS-ACT-HOUR(1)
            MOVE "saba"
-               TO WS-ACT-HOUR(8)
+               TO WS-ACT-HOUR(2)
            MOVE "nane"
-               TO WS-ACT-HOUR(9)
+               TO WS-ACT-HOUR(3)
            MOVE "tisa"
-               TO WS-ACT-HOUR(10)
+               TO WS-ACT-HOUR(4)
            MOVE "kumi"
-               TO WS-ACT-HOUR(11)
+               TO WS-ACT-HOUR(5)
            MOVE "kumi na moja"
+               TO WS-ACT-HOUR(6)
+           MOVE "kumi na mbili"
+               TO WS-ACT-HOUR(7)
+           MOVE "moja"
+               TO WS-ACT-HOUR(8)
+           MOVE "mbili"
+               TO WS-ACT-HOUR(9)
+           MOVE "tatu"
+               TO WS-ACT-HOUR(10)
+           MOVE "nne"
+               TO WS-ACT-HOUR(11)
+           MOVE "tano"
                TO WS-ACT-HOUR(12)
-           MOVE "usiku wa manane"
+           MOVE "saa sita usiku"
                TO WS-ACT-MIDNIGHT
-           MOVE "adhuhuri"
+           MOVE "saa sita mchana"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "saa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "tano kupita {h}"
+           MOVE "saa {h} na dakika tano"
                TO WS-ACT-PATTERN(2)
-           MOVE "kumi kupita {h}"
+           MOVE "saa {h} na dakika kumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "robo kupita {h}"
+           MOVE "saa {h} na robo"
                TO WS-ACT-PATTERN(4)
-           MOVE "ishirini kupita {h}"
+           MOVE "saa {h} na dakika ishirini"
                TO WS-ACT-PATTERN(5)
-           MOVE "ishirini na tano kupita {h}"
+           MOVE "saa {h} na dakika ishirini na tano"
                TO WS-ACT-PATTERN(6)
-           MOVE "nusu kupita {h}"
+           MOVE "saa {h} na nusu"
                TO WS-ACT-PATTERN(7)
-           MOVE "ishirini na tano kabla ya {next_h}"
+           MOVE "saa {next_h} kasoro dakika ishirini na tano"
                TO WS-ACT-PATTERN(8)
-           MOVE "ishirini kabla ya {next_h}"
+           MOVE "saa {next_h} kasoro dakika ishirini"
                TO WS-ACT-PATTERN(9)
-           MOVE "robo kabla ya {next_h}"
+           MOVE "saa {next_h} kasoro robo"
                TO WS-ACT-PATTERN(10)
-           MOVE "kumi kabla ya {next_h}"
+           MOVE "saa {next_h} kasoro dakika kumi"
                TO WS-ACT-PATTERN(11)
-           MOVE "tano kabla ya {next_h}"
+           MOVE "saa {next_h} kasoro dakika tano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -10870,57 +10870,57 @@
 *> Source: locales/ta.json
        INIT-LOCALE-TA.
            MOVE "ta" TO WS-ACT-CODE
-           MOVE "பன்னிரண்டு"
+           MOVE "பன்னிரண்ட"
                TO WS-ACT-HOUR(1)
-           MOVE "ஒன்று"
+           MOVE "ஒன்ற"
                TO WS-ACT-HOUR(2)
-           MOVE "இரண்டு"
+           MOVE "இரண்ட"
                TO WS-ACT-HOUR(3)
-           MOVE "மூன்று"
+           MOVE "மூன்ற"
                TO WS-ACT-HOUR(4)
-           MOVE "நான்கு"
+           MOVE "நான்க"
                TO WS-ACT-HOUR(5)
-           MOVE "ஐந்து"
+           MOVE "ஐந்த"
                TO WS-ACT-HOUR(6)
-           MOVE "ஆறு"
+           MOVE "ஆற"
                TO WS-ACT-HOUR(7)
-           MOVE "ஏழு"
+           MOVE "ஏழ"
                TO WS-ACT-HOUR(8)
-           MOVE "எட்டு"
+           MOVE "எட்ட"
                TO WS-ACT-HOUR(9)
-           MOVE "ஒன்பது"
+           MOVE "ஒன்பத"
                TO WS-ACT-HOUR(10)
-           MOVE "பத்து"
+           MOVE "பத்த"
                TO WS-ACT-HOUR(11)
-           MOVE "பதினொன்று"
+           MOVE "பதினொன்ற"
                TO WS-ACT-HOUR(12)
            MOVE "நள்ளிரவு"
                TO WS-ACT-MIDNIGHT
            MOVE "நண்பகல்"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}ு மணி"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h}ு மணி ஐந்து நிமிடம்"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h}ு மணி பத்து நிமிடம்"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}ே கால்"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h}ு மணி இருபது நிமிடம்"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h}ு மணி இருபத்தைந்து நிமிடம்"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h}ரை"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h}ு மணி முப்பத்தைந்து நிமிடம்"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h}ு மணி நாற்பது நிமிடம்"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h}ே முக்கால்"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h}ு மணி ஐம்பது நிமிடம்"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h}ு மணி ஐம்பத்தைந்து நிமிடம்"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -10973,29 +10973,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "మధ్యాహ్నం"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} అయింది"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} దాటి ఐదు నిమిషాలు"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} దాటి పది నిమిషాలు"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}ంపావు"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} దాటి ఇరవై నిమిషాలు"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} దాటి ఇరవై ఐదు నిమిషాలు"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h}న్నర"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} దాటి ముప్పై ఐదు నిమిషాలు"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} కావడానికి ఇరవై నిమిషాలు"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "పావు తక్కువ {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} కావడానికి పది నిమిషాలు"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} కావడానికి ఐదు నిమిషాలు"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11020,57 +11020,57 @@
 *> Source: locales/tem.json
        INIT-LOCALE-TEM.
            MOVE "tem" TO WS-ACT-CODE
-           MOVE "pɛn pu"
+           MOVE "awa pɛn nɛ rɔŋ"
                TO WS-ACT-HOUR(1)
-           MOVE "kɩrɩŋ"
+           MOVE "awa kɩrɩŋ"
                TO WS-ACT-HOUR(2)
-           MOVE "rɔŋ"
+           MOVE "awa rɔŋ"
                TO WS-ACT-HOUR(3)
-           MOVE "rasar"
+           MOVE "awa rasar"
                TO WS-ACT-HOUR(4)
-           MOVE "rɔŋ-anat"
+           MOVE "awa rɔŋ-anat"
                TO WS-ACT-HOUR(5)
-           MOVE "rɔman"
+           MOVE "awa rɔman"
                TO WS-ACT-HOUR(6)
-           MOVE "rɔmata"
+           MOVE "awa rɔmata"
                TO WS-ACT-HOUR(7)
-           MOVE "rɔmbot"
+           MOVE "awa rɔmbot"
                TO WS-ACT-HOUR(8)
-           MOVE "rɔmɔntat"
+           MOVE "awa rɔmɔntat"
                TO WS-ACT-HOUR(9)
-           MOVE "rɔmɔntaŋka"
+           MOVE "awa rɔmɔntaŋka"
                TO WS-ACT-HOUR(10)
-           MOVE "pɛn"
+           MOVE "awa pɛn"
                TO WS-ACT-HOUR(11)
-           MOVE "pɛn nɛ kɩrɩŋ"
+           MOVE "awa pɛn nɛ kɩrɩŋ"
                TO WS-ACT-HOUR(12)
            MOVE "rofɛt anpa"
                TO WS-ACT-MIDNIGHT
            MOVE "lən"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} nɛ minit rɔman"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} nɛ minit pɛn"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} nɛ minit pɛn nɛ rɔman"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} nɛ minit kɩgba"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} nɛ minit kɩgba nɛ rɔman"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} a gbankɛ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} nɛ minit tɔgba rɔŋ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} nɛ minit tɔgba rɔŋ nɛ rɔman"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} nɛ minit tɔgba rɔŋ nɛ pɛn"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11123,29 +11123,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "meiu-loron"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "tuku {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "tuku {h} ho minutu lima"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "tuku {h} ho minutu sanulu"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "tuku {h} ho minutu sanulu-resin-lima"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "tuku {h} ho minutu ruanulu"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "tuku {h} ho minutu ruanulu-resin-lima"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "tuku {h} ho balun"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "tuku {h} ho minutu tolunulu-resin-lima"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "tuku {h} ho minutu haatnulu"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "tuku {h} ho minutu haatnulu-resin-lima"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "tuku {h} ho minutu limanulu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "tuku {h} ho minutu limanulu-resin-lima"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11198,29 +11198,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "нимирӯз"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "соати {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "соати {h} ва панҷ дақиқа"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "соати {h} ва даҳ дақиқа"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "соати {h} ва понздаҳ дақиқа"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "соати {h} ва бист дақиқа"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "соати {h} ва бисту панҷ дақиқа"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "соати {h} ва ним"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "соати {h} ва сию панҷ дақиқа"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "соати {h} ва чил дақиқа"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "соати {h} ва чилу панҷ дақиқа"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "соати {h} ва панҷоҳ дақиқа"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "соати {h} ва панҷоҳу панҷ дақиқа"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -11348,29 +11348,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "ቀትሪ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} ሰዓት"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h}ን ሓሙሽተን"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h}ን ዓሰርተን"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h}ን ርብዒን"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h}ን ዕስራን"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h}ን ዕስራን ሓሙሽተን"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h}ን ፈረቓን"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h}ን ሰላሳን ሓሙሽተን"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ዕስራ ጎደል {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ርብዒ ጎደል {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ዓሰርተ ጎደል {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ሓሙሽተ ጎደል {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -11423,29 +11423,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "qayḥ"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "saʿa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "saʿa {h} we ḥamməste"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "saʿa {h} we ʿasərte"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "saʿa {h} we ʿasərte we ḥamməste"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "saʿa {h} we ʿəsra"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "saʿa {h} we ʿəsra we ḥamməste"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "saʿa {h} we nəs"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "saʿa {h} we salasa we ḥamməste"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "saʿa {h} we arbaʿa"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "saʿa {h} we arbaʿa we ḥamməste"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "saʿa {h} we ḥamsa"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "saʿa {h} we ḥamsa we ḥamməste"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11498,29 +11498,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "günorta"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "sagat {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "sagat {h} bäş minut"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "sagat {h} on minut"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "sagat {h} on bäş minut"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "sagat {h} ýigrimi minut"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "sagat {h} ýigrimi bäş minut"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "sagat {h} ýarym"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "sagat {h} otuz bäş minut"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "sagat {h} kyrk minut"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "sagat {h} kyrk bäş minut"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "sagat {h} elli minut"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "sagat {h} elli bäş minut"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -11545,57 +11545,57 @@
 *> Source: locales/tn.json
        INIT-LOCALE-TN.
            MOVE "tn" TO WS-ACT-CODE
-           MOVE "lesome le bobedi"
+           MOVE "ya lesome le bobedi"
                TO WS-ACT-HOUR(1)
-           MOVE "nngwe"
+           MOVE "ya ntlha"
                TO WS-ACT-HOUR(2)
-           MOVE "pedi"
+           MOVE "ya bobedi"
                TO WS-ACT-HOUR(3)
-           MOVE "tharo"
+           MOVE "ya boraro"
                TO WS-ACT-HOUR(4)
-           MOVE "nne"
+           MOVE "ya bone"
                TO WS-ACT-HOUR(5)
-           MOVE "tlhano"
+           MOVE "ya botlhano"
                TO WS-ACT-HOUR(6)
-           MOVE "thataro"
+           MOVE "ya borataro"
                TO WS-ACT-HOUR(7)
-           MOVE "supa"
+           MOVE "ya bosupa"
                TO WS-ACT-HOUR(8)
-           MOVE "robedi"
+           MOVE "ya borobedi"
                TO WS-ACT-HOUR(9)
-           MOVE "robongwe"
+           MOVE "ya borobongwe"
                TO WS-ACT-HOUR(10)
-           MOVE "lesome"
+           MOVE "ya lesome"
                TO WS-ACT-HOUR(11)
-           MOVE "lesome le bongwe"
+           MOVE "ya lesome le bongwe"
                TO WS-ACT-HOUR(12)
            MOVE "bosigo jwa magareng"
                TO WS-ACT-MIDNIGHT
            MOVE "motshegare"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ura {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ura {h} le metsotso e metlhano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ura {h} le metsotso e le lesome"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ura {h} le kotara"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ura {h} le metsotso e le masome a mabedi"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ura {h} le metsotso e le masome a mabedi le botlhano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ura {h} le halofo"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ura {h} le metsotso e le masome a mararo le botlhano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ura {h} le metsotso e le masome a mane"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ura {h} le metsotso e le masome a mane le botlhano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ura {h} le metsotso e le masome a matlhano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ura {h} le metsotso e le masome a matlhano le botlhano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11648,29 +11648,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "belo"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} kilok"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "faiv minit pas {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ten minit pas {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "kwata pas {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "twenti minit pas {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "twenti faiv minit pas {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "hap pas {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "teti faiv minit pas {h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "foti minit pas {h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "foti faiv minit pas {h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "fifti minit pas {h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "fifti faiv minit pas {h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11725,27 +11725,27 @@
                TO WS-ACT-NOON
            MOVE "saat {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}'i beş geçiyor"
+           MOVE "saat {h} sıfır beş"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}'i on geçiyor"
+           MOVE "saat {h} on"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}'i çeyrek geçiyor"
+           MOVE "saat {h} on beş"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}'i yirmi geçiyor"
+           MOVE "saat {h} yirmi"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}'i yirmi beş geçiyor"
+           MOVE "saat {h} yirmi beş"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h} buçuk"
+           MOVE "saat {h} buçuk"
                TO WS-ACT-PATTERN(7)
-           MOVE "{next_h}'e yirmi beş var"
+           MOVE "saat {h} otuz beş"
                TO WS-ACT-PATTERN(8)
-           MOVE "{next_h}'e yirmi var"
+           MOVE "saat {h} kırk"
                TO WS-ACT-PATTERN(9)
-           MOVE "{next_h}'e çeyrek var"
+           MOVE "saat {h} kırk beş"
                TO WS-ACT-PATTERN(10)
-           MOVE "{next_h}'e on var"
+           MOVE "saat {h} elli"
                TO WS-ACT-PATTERN(11)
-           MOVE "{next_h}'e beş var"
+           MOVE "saat {h} elli beş"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -11770,57 +11770,57 @@
 *> Source: locales/ts.json
        INIT-LOCALE-TS.
            MOVE "ts" TO WS-ACT-CODE
-           MOVE "khume mbiri"
+           MOVE "ya khume mbirhi"
                TO WS-ACT-HOUR(1)
-           MOVE "yin'we"
+           MOVE "yo sungula"
                TO WS-ACT-HOUR(2)
-           MOVE "mbirhi"
+           MOVE "ya vumbirhi"
                TO WS-ACT-HOUR(3)
-           MOVE "nharhu"
+           MOVE "ya vunharhu"
                TO WS-ACT-HOUR(4)
-           MOVE "mune"
+           MOVE "ya vumune"
                TO WS-ACT-HOUR(5)
-           MOVE "ntlhanu"
+           MOVE "ya vuntlhanu"
                TO WS-ACT-HOUR(6)
-           MOVE "tsevu"
+           MOVE "ya vutsevu"
                TO WS-ACT-HOUR(7)
-           MOVE "nkombo"
+           MOVE "ya vunkombo"
                TO WS-ACT-HOUR(8)
-           MOVE "nhungu"
+           MOVE "ya vunhungu"
                TO WS-ACT-HOUR(9)
-           MOVE "kaye"
+           MOVE "ya vukaye"
                TO WS-ACT-HOUR(10)
-           MOVE "khume"
+           MOVE "ya khume"
                TO WS-ACT-HOUR(11)
-           MOVE "khume yin'we"
+           MOVE "ya khume n'we"
                TO WS-ACT-HOUR(12)
            MOVE "vusiku exikarhi"
                TO WS-ACT-MIDNIGHT
            MOVE "nhlekanhi"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "awara {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "awara {h} na timinete ta ntlhanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "awara {h} na timinete ta khume"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "awara {h} na kotara"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "awara {h} na timinete ta makume mambirhi"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "awara {h} na timinete ta makume mambirhi na ntlhanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "awara {h} na hafu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "awara {h} na timinete ta makume manharhu na ntlhanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "awara {h} na timinete ta makume mune"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "awara {h} na timinete ta makume mune na ntlhanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "awara {h} na timinete ta makume ntlhanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "awara {h} na timinete ta makume ntlhanu na ntlhanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11873,29 +11873,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "muhanya"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} koloko"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} koloko na maminiti vinkhondi"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} koloko na maminiti khumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} koloko na maminiti khumi na vinkhondi"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} koloko na maminiti makhumi ghaŵiri"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} koloko na hafu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} koloko na maminiti makhumi ghatatu na vinkhondi"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} koloko na maminiti makhumi ghanayi"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} koloko na maminiti makhumi ghanayi na vinkhondi"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} koloko na maminiti makhumi ghankhondi"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} koloko na maminiti makhumi ghankhondi na vinkhondi"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -11920,57 +11920,57 @@
 *> Source: locales/tzm.json
        INIT-LOCALE-TZM.
            MOVE "tzm" TO WS-ACT-CODE
-           MOVE "12"
+           MOVE "tis snat d mrawt"
                TO WS-ACT-HOUR(1)
-           MOVE "1"
+           MOVE "tis yat"
                TO WS-ACT-HOUR(2)
-           MOVE "2"
+           MOVE "tis snat"
                TO WS-ACT-HOUR(3)
-           MOVE "3"
+           MOVE "tis kṛaṭṭ"
                TO WS-ACT-HOUR(4)
-           MOVE "4"
+           MOVE "tis kkuẕt"
                TO WS-ACT-HOUR(5)
-           MOVE "5"
+           MOVE "tis smmust"
                TO WS-ACT-HOUR(6)
-           MOVE "6"
+           MOVE "tis sḍist"
                TO WS-ACT-HOUR(7)
-           MOVE "7"
+           MOVE "tis sat"
                TO WS-ACT-HOUR(8)
-           MOVE "8"
+           MOVE "tis tamt"
                TO WS-ACT-HOUR(9)
-           MOVE "9"
+           MOVE "tis tẕat"
                TO WS-ACT-HOUR(10)
-           MOVE "10"
+           MOVE "tis mrawt"
                TO WS-ACT-HOUR(11)
-           MOVE "11"
+           MOVE "tis yat d mrawt"
                TO WS-ACT-HOUR(12)
-           MOVE "ⵏⵚ ⵏ ⵉⴹ"
+           MOVE "nṣ n iḍ"
                TO WS-ACT-MIDNIGHT
-           MOVE "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ"
+           MOVE "tizwarnin"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} d smmus tusdiqin"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} d mraw tusdiqin"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} d rrbɛ"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} d ɛcrin n tusdiqt"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} d xmsa u ɛcrin n tusdiqt"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} d uzgen"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} d xmsa u tlatin n tusdiqt"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{h} d ṛbɛin n tusdiqt"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{h} d xmsa u ṛbɛin n tusdiqt"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{h} d xmsin n tusdiqt"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{h} d xmsa u xmsin n tusdiqt"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -12023,29 +12023,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "полудень"
                TO WS-ACT-NOON
-           MOVE "{h} часа"
+           MOVE "{h} година"
                TO WS-ACT-PATTERN(1)
-           MOVE "п'ять po {h}"
+           MOVE "{h} нуль п'ять"
                TO WS-ACT-PATTERN(2)
-           MOVE "десять po {h}"
+           MOVE "{h} десять"
                TO WS-ACT-PATTERN(3)
-           MOVE "п'ятнадцять po {h}"
+           MOVE "{h} п'ятнадцять"
                TO WS-ACT-PATTERN(4)
-           MOVE "двадцять po {h}"
+           MOVE "{h} двадцять"
                TO WS-ACT-PATTERN(5)
-           MOVE "двадцять п'ять po {h}"
+           MOVE "{h} двадцять п'ять"
                TO WS-ACT-PATTERN(6)
-           MOVE "тридцять po {h}"
+           MOVE "{h} тридцять"
                TO WS-ACT-PATTERN(7)
-           MOVE "двадцять п'ять do {next_h}"
+           MOVE "за двадцять п'ять хвилин {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "двадцять do {next_h}"
+           MOVE "за двадцять хвилин {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "п'ятнадцять do {next_h}"
+           MOVE "за чверть {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "десять do {next_h}"
+           MOVE "за десять хвилин {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "п'ять do {next_h}"
+           MOVE "за п'ять хвилин {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -12070,57 +12070,57 @@
 *> Source: locales/umb.json
        INIT-LOCALE-UMB.
            MOVE "umb" TO WS-ACT-CODE
-           MOVE "olohola likumi na yivali"
+           MOVE "ekwi la vali"
                TO WS-ACT-HOUR(1)
-           MOVE "yimosi"
+           MOVE "mosi"
                TO WS-ACT-HOUR(2)
-           MOVE "yivali"
+           MOVE "vali"
                TO WS-ACT-HOUR(3)
-           MOVE "yitathu"
+           MOVE "tatu"
                TO WS-ACT-HOUR(4)
-           MOVE "yinyali"
+           MOVE "kwãla"
                TO WS-ACT-HOUR(5)
-           MOVE "yitanu"
+           MOVE "tãlo"
                TO WS-ACT-HOUR(6)
-           MOVE "yitathu-va-yivali"
+           MOVE "epandu"
                TO WS-ACT-HOUR(7)
-           MOVE "yisemba"
+           MOVE "epanduvali"
                TO WS-ACT-HOUR(8)
-           MOVE "yinyali-va-yivali"
+           MOVE "ecelãla"
                TO WS-ACT-HOUR(9)
-           MOVE "yitanu-va-yivali"
+           MOVE "ecea"
                TO WS-ACT-HOUR(10)
-           MOVE "likumi"
+           MOVE "ekwi"
                TO WS-ACT-HOUR(11)
-           MOVE "likumi na yimosi"
+           MOVE "ekwi la mosi"
                TO WS-ACT-HOUR(12)
            MOVE "ocitapi"
                TO WS-ACT-MIDNIGHT
            MOVE "ocivali"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "ohola {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "ohola {h} la tãlo"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "ohola {h} la ekwi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ohola {h} la ekwi la tãlo"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "ohola {h} la akũi avali"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "ohola {h} la akũi avali la tãlo"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "ohola {h} la oñali"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "ohola {h} la akũi atatu la tãlo"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "ohola {h} la akũi akwãla"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ohola {h} la akũi akwãla la tãlo"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "ohola {h} la akũi atãlo"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "ohola {h} la akũi atãlo la tãlo"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12173,29 +12173,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "دوپہر"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h} بجے"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} بج کر پانچ منٹ"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} بج کر دس منٹ"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "سوا {h} بجے"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} بج کر بیس منٹ"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} بج کر پچیس منٹ"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} بج کر تیس منٹ"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{h} بج کر پینتیس منٹ"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} بجنے میں بیس منٹ"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "پونے {next_h} بجے"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} بجنے میں دس منٹ"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} بجنے میں پانچ منٹ"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12248,29 +12248,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "tush"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "soat {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "besh past {h}"
+           MOVE "soat {h} nol besh"
                TO WS-ACT-PATTERN(2)
-           MOVE "o'n past {h}"
+           MOVE "soat {h} o'n"
                TO WS-ACT-PATTERN(3)
-           MOVE "o'n besh past {h}"
+           MOVE "soat {h} o'n besh"
                TO WS-ACT-PATTERN(4)
-           MOVE "yigirma past {h}"
+           MOVE "soat {h} yigirma"
                TO WS-ACT-PATTERN(5)
-           MOVE "yigirma besh past {h}"
+           MOVE "soat {h} yigirma besh"
                TO WS-ACT-PATTERN(6)
-           MOVE "o'ttiz past {h}"
+           MOVE "soat {h} yarim"
                TO WS-ACT-PATTERN(7)
-           MOVE "yigirma besh to {next_h}"
+           MOVE "soat {h} o'ttiz besh"
                TO WS-ACT-PATTERN(8)
-           MOVE "yigirma to {next_h}"
+           MOVE "soat {h} qirq"
                TO WS-ACT-PATTERN(9)
-           MOVE "o'n besh to {next_h}"
+           MOVE "soat {h} qirq besh"
                TO WS-ACT-PATTERN(10)
-           MOVE "o'n to {next_h}"
+           MOVE "soat {h} ellik"
                TO WS-ACT-PATTERN(11)
-           MOVE "besh to {next_h}"
+           MOVE "soat {h} ellik besh"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -12295,57 +12295,57 @@
 *> Source: locales/ve.json
        INIT-LOCALE-VE.
            MOVE "ve" TO WS-ACT-CODE
-           MOVE "fumimbili"
+           MOVE "ya fumi na mbili"
                TO WS-ACT-HOUR(1)
-           MOVE "thihi"
+           MOVE "ya u thoma"
                TO WS-ACT-HOUR(2)
-           MOVE "mbili"
+           MOVE "ya vhuvhili"
                TO WS-ACT-HOUR(3)
-           MOVE "raru"
+           MOVE "ya vhuraru"
                TO WS-ACT-HOUR(4)
-           MOVE "ina"
+           MOVE "ya vhuṋa"
                TO WS-ACT-HOUR(5)
-           MOVE "thanu"
+           MOVE "ya vhuṱanu"
                TO WS-ACT-HOUR(6)
-           MOVE "rathi"
+           MOVE "ya vhurathi"
                TO WS-ACT-HOUR(7)
-           MOVE "sumbe"
+           MOVE "ya vhusumbe"
                TO WS-ACT-HOUR(8)
-           MOVE "malo"
+           MOVE "ya vhumalo"
                TO WS-ACT-HOUR(9)
-           MOVE "tahe"
+           MOVE "ya vhuṱahe"
                TO WS-ACT-HOUR(10)
-           MOVE "fumi"
+           MOVE "ya fumi"
                TO WS-ACT-HOUR(11)
-           MOVE "fuminthihi"
+           MOVE "ya fumi na nthihi"
                TO WS-ACT-HOUR(12)
            MOVE "vhukati ha vhusiku"
                TO WS-ACT-MIDNIGHT
            MOVE "vhukati ha masiari"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "awara {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "awara {h} na ṱhanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "awara {h} na fumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "awara {h} na kotara"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "awara {h} na mahumi mavhili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "awara {h} na mahumi mavhili na ṱhanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "awara {h} na hafu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "awara {h} na mahumi mararu na ṱhanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "awara {h} na mahumi maṋa"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "awara {h} na mahumi maṋa na ṱhanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "awara {h} na mahumi maṱanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "awara {h} na mahumi maṱanu na ṱhanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12396,31 +12396,31 @@
                TO WS-ACT-HOUR(12)
            MOVE "nửa đêm"
                TO WS-ACT-MIDNIGHT
-           MOVE "trưa"
+           MOVE "mười hai giờ trưa"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "{h} giờ"
                TO WS-ACT-PATTERN(1)
-           MOVE "năm qua {h}"
+           MOVE "{h} giờ năm phút"
                TO WS-ACT-PATTERN(2)
-           MOVE "mười qua {h}"
+           MOVE "{h} giờ mười phút"
                TO WS-ACT-PATTERN(3)
-           MOVE "mười lăm qua {h}"
+           MOVE "{h} giờ mười lăm phút"
                TO WS-ACT-PATTERN(4)
-           MOVE "hai mươi qua {h}"
+           MOVE "{h} giờ hai mươi phút"
                TO WS-ACT-PATTERN(5)
-           MOVE "hai mươi lăm qua {h}"
+           MOVE "{h} giờ hai mươi lăm phút"
                TO WS-ACT-PATTERN(6)
-           MOVE "ba mươi qua {h}"
+           MOVE "{h} giờ rưỡi"
                TO WS-ACT-PATTERN(7)
-           MOVE "hai mươi lăm trước {next_h}"
+           MOVE "{next_h} giờ kém hai mươi lăm"
                TO WS-ACT-PATTERN(8)
-           MOVE "hai mươi trước {next_h}"
+           MOVE "{next_h} giờ kém hai mươi"
                TO WS-ACT-PATTERN(9)
-           MOVE "mười lăm trước {next_h}"
+           MOVE "{next_h} giờ kém mười lăm"
                TO WS-ACT-PATTERN(10)
-           MOVE "mười trước {next_h}"
+           MOVE "{next_h} giờ kém mười"
                TO WS-ACT-PATTERN(11)
-           MOVE "năm trước {next_h}"
+           MOVE "{next_h} giờ kém năm"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -12473,29 +12473,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "muttana"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "hora {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "hora {h} na thanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "hora {h} na khumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "hora {h} na khumi na thanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "hora {h} na makhumi mapili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "hora {h} na makhumi mapili na thanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "hora {h} na mettenhe"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "hora {h} na makhumi mararu na thanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "hora {h} na makhumi mancheche"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "hora {h} na makhumi mancheche na thanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "hora {h} na makhumi mathanu"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "hora {h} na makhumi mathanu na thanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12520,57 +12520,57 @@
 *> Source: locales/wo.json
        INIT-LOCALE-WO.
            MOVE "wo" TO WS-ACT-CODE
-           MOVE "fukki ñaar"
+           MOVE "fukk ak ñaari waxtu"
                TO WS-ACT-HOUR(1)
-           MOVE "benn"
+           MOVE "benn waxtu"
                TO WS-ACT-HOUR(2)
-           MOVE "ñaar"
+           MOVE "ñaari waxtu"
                TO WS-ACT-HOUR(3)
-           MOVE "ñett"
+           MOVE "ñetti waxtu"
                TO WS-ACT-HOUR(4)
-           MOVE "ñeent"
+           MOVE "ñeenti waxtu"
                TO WS-ACT-HOUR(5)
-           MOVE "juróom"
+           MOVE "juróomi waxtu"
                TO WS-ACT-HOUR(6)
-           MOVE "juróom-benn"
+           MOVE "juróom-benni waxtu"
                TO WS-ACT-HOUR(7)
-           MOVE "juróom-ñaar"
+           MOVE "juróom-ñaari waxtu"
                TO WS-ACT-HOUR(8)
-           MOVE "juróom-ñett"
+           MOVE "juróom-ñetti waxtu"
                TO WS-ACT-HOUR(9)
-           MOVE "juróom-ñeent"
+           MOVE "juróom-ñeenti waxtu"
                TO WS-ACT-HOUR(10)
-           MOVE "fukk"
+           MOVE "fukki waxtu"
                TO WS-ACT-HOUR(11)
-           MOVE "fukki benn"
+           MOVE "fukk ak benn waxtu"
                TO WS-ACT-HOUR(12)
-           MOVE "bu guddi"
+           MOVE "digg-guddi"
                TO WS-ACT-MIDNIGHT
-           MOVE "ci àttaya"
+           MOVE "digg-bëccëg"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "{h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "{h} ak juróomi simili"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "{h} ak fukki simili"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "{h} ak fukk ak juróomi simili"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "{h} ak ñaar-fukki simili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "{h} ak ñaar-fukk ak juróomi simili"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "{h} ak genn-wàll"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "{next_h} des na ñaar-fukk ak juróomi simili"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "{next_h} des na ñaar-fukki simili"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "{next_h} des na fukk ak juróomi simili"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "{next_h} des na fukki simili"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "{next_h} des na juróomi simili"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12595,57 +12595,57 @@
 *> Source: locales/xh.json
        INIT-LOCALE-XH.
            MOVE "xh" TO WS-ACT-CODE
-           MOVE "ishumi elinambini"
+           MOVE "yeshumi elinesibini"
                TO WS-ACT-HOUR(1)
-           MOVE "inye"
+           MOVE "yokuqala"
                TO WS-ACT-HOUR(2)
-           MOVE "ezimbini"
+           MOVE "yesibini"
                TO WS-ACT-HOUR(3)
-           MOVE "ezintathu"
+           MOVE "yesithathu"
                TO WS-ACT-HOUR(4)
-           MOVE "ezine"
+           MOVE "yesine"
                TO WS-ACT-HOUR(5)
-           MOVE "ezintlanu"
+           MOVE "yesihlanu"
                TO WS-ACT-HOUR(6)
-           MOVE "ezintandathu"
+           MOVE "yesithandathu"
                TO WS-ACT-HOUR(7)
-           MOVE "ezisixhenxe"
+           MOVE "yesixhenxe"
                TO WS-ACT-HOUR(8)
-           MOVE "ezisibhozo"
+           MOVE "yesibhozo"
                TO WS-ACT-HOUR(9)
-           MOVE "ethoba"
+           MOVE "yethoba"
                TO WS-ACT-HOUR(10)
-           MOVE "ishumi"
+           MOVE "yeshumi"
                TO WS-ACT-HOUR(11)
-           MOVE "ishumi elinanye"
+           MOVE "yeshumi elinanye"
                TO WS-ACT-HOUR(12)
            MOVE "ezinzulwini zobusuku"
                TO WS-ACT-MIDNIGHT
            MOVE "emini"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "intsimbi {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "imizuzu emihlanu emva kwentsimbi {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "imizuzu elishumi emva kwentsimbi {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "ikota emva kwentsimbi {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "imizuzu engamashumi amabini emva kwentsimbi {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "isiqingatha emva kwentsimbi {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "ikota ukuya kwintsimbi {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "imizuzu elishumi ukuya kwintsimbi {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "imizuzu emihlanu ukuya kwintsimbi {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12698,29 +12698,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "pakati pa lisiku"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "saa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "saa {h} na nsano"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "saa {h} na likumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "saa {h} na likumi na nsano"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "saa {h} na makumi gaŵili"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "saa {h} na makumi gaŵili na nsano"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "saa {h} na nusu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "saa {h} na makumi gatatu na nsano"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "saa {h} na makumi ncece"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "saa {h} na makumi ncece na nsano"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "saa {h} na makumi nsano"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "saa {h} na makumi nsano na nsano"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12769,33 +12769,33 @@
                TO WS-ACT-HOUR(11)
            MOVE "mọ́kànlá"
                TO WS-ACT-HOUR(12)
-           MOVE "àárọ̀ òru"
+           MOVE "ọ̀gànjọ́ òru"
                TO WS-ACT-MIDNIGHT
-           MOVE "ọ̀sán"
+           MOVE "ọ̀sán gangan"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "aago {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "aago {h} kọjá ìṣẹ́jú márùn-ún"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "aago {h} kọjá ìṣẹ́jú mẹ́wàá"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "aago {h} kọjá ogún ìṣẹ́jú"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "aago {h} àbọ̀"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "aago {next_h} kù ogún ìṣẹ́jú"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "aago {next_h} kù ìṣẹ́jú mẹ́wàá"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "aago {next_h} kù ìṣẹ́jú márùn-ún"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12824,7 +12824,7 @@
                TO WS-ACT-HOUR(1)
            MOVE "一"
                TO WS-ACT-HOUR(2)
-           MOVE "二"
+           MOVE "兩"
                TO WS-ACT-HOUR(3)
            MOVE "三"
                TO WS-ACT-HOUR(4)
@@ -12848,29 +12848,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "正午"
                TO WS-ACT-NOON
-           MOVE "{h}點整"
+           MOVE "{h}點正"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}點零五分"
+           MOVE "{h}點一個字"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}點十分"
+           MOVE "{h}點兩個字"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}點十五分"
+           MOVE "{h}點三個字"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}點二十分"
+           MOVE "{h}點四個字"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}點二十五分"
+           MOVE "{h}點五個字"
                TO WS-ACT-PATTERN(6)
            MOVE "{h}點半"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}點三十五分"
+           MOVE "{h}點七個字"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}點四十分"
+           MOVE "{h}點八個字"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}點四十五分"
+           MOVE "{h}點九個字"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}點五十分"
+           MOVE "{h}點十個字"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}點五十五分"
+           MOVE "{h}點十一個字"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 1
@@ -12901,11 +12901,11 @@
                TO WS-ACT-HOUR(2)
            MOVE "mbili"
                TO WS-ACT-HOUR(3)
-           MOVE "tatu"
+           MOVE "ndraru"
                TO WS-ACT-HOUR(4)
            MOVE "nne"
                TO WS-ACT-HOUR(5)
-           MOVE "tano"
+           MOVE "ntsanu"
                TO WS-ACT-HOUR(6)
            MOVE "sita"
                TO WS-ACT-HOUR(7)
@@ -12913,7 +12913,7 @@
                TO WS-ACT-HOUR(8)
            MOVE "nane"
                TO WS-ACT-HOUR(9)
-           MOVE "tisa"
+           MOVE "shenda"
                TO WS-ACT-HOUR(10)
            MOVE "kumi"
                TO WS-ACT-HOUR(11)
@@ -12923,29 +12923,29 @@
                TO WS-ACT-MIDNIGHT
            MOVE "adhuhuri"
                TO WS-ACT-NOON
-           MOVE "{h}:00"
+           MOVE "saa {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}:05"
+           MOVE "saa {h} na ntsanu"
                TO WS-ACT-PATTERN(2)
-           MOVE "{h}:10"
+           MOVE "saa {h} na kumi"
                TO WS-ACT-PATTERN(3)
-           MOVE "{h}:15"
+           MOVE "saa {h} na kumi na ntsanu"
                TO WS-ACT-PATTERN(4)
-           MOVE "{h}:20"
+           MOVE "saa {h} na shirini"
                TO WS-ACT-PATTERN(5)
-           MOVE "{h}:25"
+           MOVE "saa {h} na shirini na ntsanu"
                TO WS-ACT-PATTERN(6)
-           MOVE "{h}:30"
+           MOVE "saa {h} na nusu"
                TO WS-ACT-PATTERN(7)
-           MOVE "{h}:35"
+           MOVE "saa {h} na thalathini na ntsanu"
                TO WS-ACT-PATTERN(8)
-           MOVE "{h}:40"
+           MOVE "saa {h} na arubaini"
                TO WS-ACT-PATTERN(9)
-           MOVE "{h}:45"
+           MOVE "saa {h} na arubaini na ntsanu"
                TO WS-ACT-PATTERN(10)
-           MOVE "{h}:50"
+           MOVE "saa {h} na hamsini"
                TO WS-ACT-PATTERN(11)
-           MOVE "{h}:55"
+           MOVE "saa {h} na hamsini na ntsanu"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0
@@ -12974,7 +12974,7 @@
                TO WS-ACT-HOUR(1)
            MOVE "一"
                TO WS-ACT-HOUR(2)
-           MOVE "二"
+           MOVE "两"
                TO WS-ACT-HOUR(3)
            MOVE "三"
                TO WS-ACT-HOUR(4)
@@ -13000,7 +13000,7 @@
                TO WS-ACT-NOON
            MOVE "{h}点整"
                TO WS-ACT-PATTERN(1)
-           MOVE "{h}点五分"
+           MOVE "{h}点零五分"
                TO WS-ACT-PATTERN(2)
            MOVE "{h}点十分"
                TO WS-ACT-PATTERN(3)
@@ -13045,57 +13045,57 @@
 *> Source: locales/zu.json
        INIT-LOCALE-ZU.
            MOVE "zu" TO WS-ACT-CODE
-           MOVE "ishumi nambili"
+           MOVE "leshumi nambili"
                TO WS-ACT-HOUR(1)
-           MOVE "kunye"
+           MOVE "lokuqala"
                TO WS-ACT-HOUR(2)
-           MOVE "kubili"
+           MOVE "lesibili"
                TO WS-ACT-HOUR(3)
-           MOVE "kuthathu"
+           MOVE "lesithathu"
                TO WS-ACT-HOUR(4)
-           MOVE "kune"
+           MOVE "lesine"
                TO WS-ACT-HOUR(5)
-           MOVE "kuhlanu"
+           MOVE "lesihlanu"
                TO WS-ACT-HOUR(6)
-           MOVE "isithupha"
+           MOVE "lesithupha"
                TO WS-ACT-HOUR(7)
-           MOVE "isikhombisa"
+           MOVE "lesikhombisa"
                TO WS-ACT-HOUR(8)
-           MOVE "isishiyagalombili"
+           MOVE "lesishiyagalombili"
                TO WS-ACT-HOUR(9)
-           MOVE "isishiyagalolunye"
+           MOVE "lesishiyagalolunye"
                TO WS-ACT-HOUR(10)
-           MOVE "ishumi"
+           MOVE "leshumi"
                TO WS-ACT-HOUR(11)
-           MOVE "ishumi nanye"
+           MOVE "leshumi nanye"
                TO WS-ACT-HOUR(12)
            MOVE "phakathi kwamabili"
                TO WS-ACT-MIDNIGHT
            MOVE "emini"
                TO WS-ACT-NOON
-           MOVE "{h} o'clock"
+           MOVE "ihora {h}"
                TO WS-ACT-PATTERN(1)
-           MOVE "emva kwemizuzu emihlanu ngo-{h}"
+           MOVE "imizuzu emihlanu emva kwehora {h}"
                TO WS-ACT-PATTERN(2)
-           MOVE "emva kwemizuzu eyishumi ngo-{h}"
+           MOVE "imizuzu eyishumi emva kwehora {h}"
                TO WS-ACT-PATTERN(3)
-           MOVE "ikota edlule ngo-{h}"
+           MOVE "ikota emva kwehora {h}"
                TO WS-ACT-PATTERN(4)
-           MOVE "emva kwemizuzu engamashumi amabili ngo-{h}"
+           MOVE "imizuzu engamashumi amabili emva kwehora {h}"
                TO WS-ACT-PATTERN(5)
-           MOVE "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}"
+           MOVE "imizuzu engamashumi amabili nanhlanu emva kwehora {h}"
                TO WS-ACT-PATTERN(6)
-           MOVE "uhhafu edlule ngo-{h}"
+           MOVE "uhhafu emva kwehora {h}"
                TO WS-ACT-PATTERN(7)
-           MOVE "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}"
+           MOVE "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}"
                TO WS-ACT-PATTERN(8)
-           MOVE "imizuzu engamashumi amabili ngaphambi kuka-{next_h}"
+           MOVE "imizuzu engamashumi amabili ngaphambi kwehora {next_h}"
                TO WS-ACT-PATTERN(9)
-           MOVE "ikota ngaphambi kuka-{next_h}"
+           MOVE "ikota ngaphambi kwehora {next_h}"
                TO WS-ACT-PATTERN(10)
-           MOVE "imizuzu eyishumi ngaphambi kuka-{next_h}"
+           MOVE "imizuzu eyishumi ngaphambi kwehora {next_h}"
                TO WS-ACT-PATTERN(11)
-           MOVE "imizuzu emihlanu ngaphambi kuka-{next_h}"
+           MOVE "imizuzu emihlanu ngaphambi kwehora {next_h}"
                TO WS-ACT-PATTERN(12)
            MOVE 1 TO WS-ACT-HAS-SHORT
            MOVE 0

@@ -28,7 +28,7 @@ proc locale_duration_mg {} {
     set half "{0} sy sasany"
     set delimiter {, }
     set just_now {vao haingana}
-    set ago "{0} lasa"
+    set ago "{0} lasa izay"
     set in_future "ao anatin'ny {0}"
     set short [dict create \
         units [dict create \
@@ -40,7 +40,7 @@ proc locale_duration_mg {} {
             month "{n} vol" \
             year "{n} tna" \
         ] \
-        ago "{0} lasa" \
+        ago "{0} lasa izay" \
         in_future "ao anatin'ny {0}" \
     ]
     set compact [dict create \

@@ -26,7 +26,7 @@ locale = DurationLocale
         , unitMonth = Simple "{n} моҳ"
         , unitYear = Simple "{n} сол"
         }
-    , localeHalf = "{0} ним"
+    , localeHalf = "{0}у ним"
     , localeDelimiter = ", "
     , localeJustNow = "ҳамин ҳоло"
     , localeAgo = "{0} пеш"

@@ -53,6 +53,7 @@ module SayableDuration
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
         ago: '{0} ပူၼ်ႉမႃး',
         in_future: 'ထႅင်ႈ {0}',
       ),

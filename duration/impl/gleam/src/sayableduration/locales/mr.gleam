@@ -17,7 +17,7 @@ pub fn locale() -> types.DurationLocale {
     plural: fn(n) { case n { 1 -> types.One _ -> types.Other } },
     units: [
       #("second", types.SimpleUnit("{n} सेकंद")),
-      #("minute", types.SimpleUnit("{n} मिनिट")),
+      #("minute", types.PluralUnit([#(types.One, "{n} मिनिट"), #(types.Other, "{n} मिनिटे")])),
       #("hour", types.SimpleUnit("{n} तास")),
       #("day", types.PluralUnit([#(types.One, "{n} दिवस"), #(types.Other, "{n} दिवस")])),
       #("week", types.PluralUnit([#(types.One, "{n} आठवडा"), #(types.Other, "{n} आठवडे")])),

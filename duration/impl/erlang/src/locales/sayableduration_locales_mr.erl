@@ -18,7 +18,7 @@ locale() ->
         code = "mr",
         plural = fun(1) -> one; (_) -> other end,
         second = {simple, "{n} सेकंद"},
-        minute = {simple, "{n} मिनिट"},
+        minute = {pluralized, [{one, "{n} मिनिट"}, {other, "{n} मिनिटे"}]},
         hour = {simple, "{n} तास"},
         day = {pluralized, [{one, "{n} दिवस"}, {other, "{n} दिवस"}]},
         week = {pluralized, [{one, "{n} आठवडा"}, {other, "{n} आठवडे"}]},

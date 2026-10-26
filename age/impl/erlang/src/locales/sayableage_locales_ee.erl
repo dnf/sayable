@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "ee",
         plural = fun(1) -> one; (_) -> other end,
-        day = {pluralized, [{one, "ŋkeke {n}"}, {other, "ŋkekewo {n}"}]},
-        week = {pluralized, [{one, "kɔsiɖa {n}"}, {other, "kɔsiɖawo {n}"}]},
-        month = {pluralized, [{one, "ɣleti {n}"}, {other, "ɣletiwo {n}"}]},
-        year = {pluralized, [{one, "ƒe {n}"}, {other, "ƒewo {n}"}]},
+        day = {simple, "ŋkeke {n}"},
+        week = {simple, "kɔsiɖa {n}"},
+        month = {simple, "ɣleti {n}"},
+        year = {simple, "ƒe {n}"},
         half = "{0} kple afã",
         delimiter = ", ",
         just_born = "Evi yeye",
-        stages = #stages{newborn = {neutral, "Evi yeye"}, infant = {neutral, "Ɖevi"}, toddler = {neutral, "Ɖevi sue"}, child = {neutral, "Ɖevi"}, teenager = {neutral, "Ŋutsuviwo"}, adult = {neutral, "Ame tsitsi"}},
-        short = {just, #compactness_override{day = {just, {simple, "ŋkekewo {n}"}}, week = {just, {pluralized, [{one, "kɔsiɖa {n}"}, {other, "kɔsiɖawo {n}"}]}}, month = {just, {pluralized, [{one, "ɣleti {n}"}, {other, "ɣletiwo {n}"}]}}, year = {just, {pluralized, [{one, "ƒe {n}"}, {other, "ƒewo {n}"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        stages = #stages{newborn = {neutral, "Evi yeye"}, infant = {neutral, "Ɖevi"}, toddler = {neutral, "Ɖevi sue"}, child = {neutral, "Ɖevi"}, teenager = {gendered, "Ɖekakpui", "Ɖetugbi"}, adult = {neutral, "Ame tsitsi"}},
+        short = {just, #compactness_override{day = {just, {simple, "ŋkeke {n}"}}, week = {just, {simple, "kɔsiɖa {n}"}}, month = {just, {simple, "ɣleti {n}"}}, year = {just, {simple, "ƒe {n}"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

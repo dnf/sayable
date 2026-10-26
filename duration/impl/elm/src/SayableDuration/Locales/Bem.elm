@@ -33,7 +33,7 @@ locale =
               ] )
             , ( "hour", Pluralized
               [ ( One, "insa {n}" )
-              , ( Other, "amanso {n}" )
+              , ( Other, "insa {n}" )
               ] )
             , ( "day", Pluralized
               [ ( One, "ubushiku {n}" )

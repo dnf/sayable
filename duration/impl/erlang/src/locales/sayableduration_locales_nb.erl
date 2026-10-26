@@ -27,8 +27,8 @@ locale() ->
         half = "{n}½",
         delimiter = ", ",
         just_now = "akkurat nå",
-        ago = "{0} siden",
+        ago = "for {0} siden",
         in_future = "om {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} sek"}}, minute = {just, {simple, "{n} min"}}, hour = {just, {simple, "{n} t"}}, day = {just, {simple, "{n} d"}}, week = {just, {simple, "{n} u"}}, month = {just, {simple, "{n} md."}}, year = {just, {simple, "{n} år"}}, half = nothing, delimiter = nothing, ago = {just, "{0} siden"}, in_future = {just, "om {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}t"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}u"}}, month = {just, {simple, "{n} m"}}, year = {just, {simple, "{n}å"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} siden"}, in_future = {just, "om {0}"}}}
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} sek"}}, minute = {just, {simple, "{n} min"}}, hour = {just, {simple, "{n} t"}}, day = {just, {simple, "{n} d"}}, week = {just, {simple, "{n} u"}}, month = {just, {simple, "{n} md."}}, year = {just, {simple, "{n} år"}}, half = nothing, delimiter = nothing, ago = {just, "for {0} siden"}, in_future = {just, "om {0}"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}t"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}u"}}, month = {just, {simple, "{n} m"}}, year = {just, {simple, "{n}å"}}, half = nothing, delimiter = {just, ""}, ago = {just, "for {0} siden"}, in_future = {just, "om {0}"}}}
     }.

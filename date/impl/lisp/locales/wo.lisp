@@ -25,11 +25,11 @@
    :today "tey"
    :tomorrow "suba"
    :yesterday "démb"
-   :day-after-tomorrow "suba-suba"
-   :day-before-yesterday "démb-démb"
-   :this-weekday "{weekday} bi"
-   :next-weekday "{weekday} bi ñëw"
-   :last-weekday "{weekday} bi weex"
+   :day-after-tomorrow "gannaaw-suba"
+   :day-before-yesterday "bërki-démb"
+   :this-weekday "{weekday} jii"
+   :next-weekday "{weekday} jiy ñëw"
+   :last-weekday "{weekday} ji weesu"
    :short-months (list "Sam" "Few" "Maa" "Awr" "Mee" "Suw" "Sul" "Ut" "Sep" "Okt" "Now" "Des")
    :short-weekdays (list "Dib" "Alt" "Tal" "Àll" "Alx" "Àjj" "Gaa")
    :short-day-format "{n}"

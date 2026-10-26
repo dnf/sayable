@@ -20,13 +20,13 @@ module SayableDuration
         "day" => UnitForms.new("{n} ngày"),
         "week" => UnitForms.new("{n} tuần"),
         "month" => UnitForms.new("{n} tháng"),
-        "year" => UnitForms.new("{n} tuổi"),
+        "year" => UnitForms.new("{n} năm"),
       },
       half: "{0} rưỡi",
       delimiter: ", ",
       just_now: "vừa xong",
       ago: "{0} trước",
-      in_future: "trong {0}",
+      in_future: "{0} nữa",
       short: CompactnessOverride.new(
         units: {
           "second" => UnitForms.new("{n} giây"),
@@ -38,7 +38,7 @@ module SayableDuration
           "year" => UnitForms.new("{n} năm"),
         },
         ago: "{0} trước",
-        in_future: "trong {0}",
+        in_future: "{0} nữa",
       ),
       compact: CompactnessOverride.new(
         units: {
@@ -53,7 +53,7 @@ module SayableDuration
         delimiter: "",
         half: "{n}½",
         ago: "{0} trước",
-        in_future: "trong {0}",
+        in_future: "{0} nữa",
       ),
     )
   end

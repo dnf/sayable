@@ -29,11 +29,11 @@ sd_unit('ki', month, other, 'mĩerĩ {n}').
 sd_unit('ki', year, one, 'mwaka {n}').
 sd_unit('ki', year, other, 'mĩaka {n}').
 
-sd_half('ki', '{0} na nusu').
+sd_half('ki', '{0} na nuthu').
 sd_delimiter('ki', ', ').
-sd_just_now('ki', 'ũmũthĩ').
+sd_just_now('ki', 'rĩu').
 sd_ago('ki', '{0} ĩhĩtũkĩte').
-sd_in_future('ki', '{0} ĩyothe').
+sd_in_future('ki', 'thutha wa {0}').
 
 short_sd_unit('ki', second, _, 'sek. {n}').
 short_sd_unit('ki', minute, _, 'ndag. {n}').
@@ -47,7 +47,7 @@ short_sd_unit('ki', month, other, 'mĩerĩ {n}').
 short_sd_unit('ki', year, one, 'mwaka {n}').
 short_sd_unit('ki', year, other, 'mĩaka {n}').
 short_sd_ago('ki', '{0} ĩhĩtũkĩte').
-short_sd_in_future('ki', '{0} ĩyothe').
+short_sd_in_future('ki', 'thutha wa {0}').
 
 compact_sd_unit('ki', second, _, '{n}s').
 compact_sd_unit('ki', minute, _, '{n}m').
@@ -58,4 +58,4 @@ compact_sd_unit('ki', month, _, '{n}m').
 compact_sd_unit('ki', year, _, '{n}y').
 compact_sd_delimiter('ki', '').
 compact_sd_ago('ki', '{0} ĩhĩtũkĩte').
-compact_sd_in_future('ki', '{0} ĩyothe').
+compact_sd_in_future('ki', 'thutha wa {0}').

@@ -11,10 +11,10 @@
 
 function loc = locale_gd()
   loc.code = 'gd';
-  loc.clock.hours = {'dà-dheug', 'aon', 'dà', 'trì', 'ceithir', 'còig', 'sia', 'seachd', 'ochd', 'naoi', 'deich', 'aon-deug'};
+  loc.clock.hours = {'dà uair dheug', 'uair', 'dà uair', 'trì uairean', 'ceithir uairean', 'còig uairean', 'sia uairean', 'seachd uairean', 'ochd uairean', 'naoi uairean', 'deich uairean', 'aon uair deug'};
   loc.clock.midnight = 'meadhan-oidhche';
   loc.clock.noon = 'meadhan-latha';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", 'còig mionaidean an dèidh {h}', "p10", 'deich mionaidean an dèidh {h}', "p15", 'cairteal an dèidh {h}', "p20", 'fichead mionaid an dèidh {h}', "p25", 'còig mionaidean fichead an dèidh {h}', "p30", 'leth-uair an dèidh {h}', "p35", 'còig mionaidean fichead gu {next_h}', "p40", 'fichead mionaid gu {next_h}', "p45", 'cairteal gu {next_h}', "p50", 'deich mionaidean gu {next_h}', "p55", 'còig mionaidean gu {next_h}');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

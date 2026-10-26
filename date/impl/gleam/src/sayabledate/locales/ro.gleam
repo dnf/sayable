@@ -15,7 +15,7 @@ pub fn locale() -> types.DateLocale {
   types.DateLocale(
     code: "ro",
     months: ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"],
-    weekdays: ["duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"],
+    weekdays: ["duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta"],
     day_format: "{n}",
     day_format_exceptions: [],
     date_pattern: "{day} {month}",
@@ -25,7 +25,7 @@ pub fn locale() -> types.DateLocale {
     yesterday: "ieri",
     day_after_tomorrow: Ok("poimâine"),
     day_before_yesterday: Ok("alaltăieri"),
-    this_weekday: Ok("această {weekday}"),
+    this_weekday: Ok("{weekday} aceasta"),
     next_weekday: Ok("{weekday} viitoare"),
     last_weekday: Ok("{weekday} trecută"),
     months_in_date: Ok(["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"]),

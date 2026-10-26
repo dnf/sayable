@@ -24,13 +24,13 @@ sub locale {{
     day => '{n} ngày',
     week => '{n} tuần',
     month => '{n} tháng',
-    year => '{n} tuổi',
+    year => '{n} năm',
   },
   half => '{0} rưỡi',
   delimiter => ', ',
   just_now => 'vừa xong',
   ago => '{0} trước',
-  in_future => 'trong {0}',
+  in_future => '{0} nữa',
   short => {
     units => {
       second => '{n} giây',
@@ -42,7 +42,7 @@ sub locale {{
       year => '{n} năm',
     },
     ago => '{0} trước',
-    in_future => 'trong {0}',
+    in_future => '{0} nữa',
   },
   compact => {
     units => {
@@ -57,7 +57,7 @@ sub locale {{
     delimiter => '',
     half => '{n}½',
     ago => '{0} trước',
-    in_future => 'trong {0}',
+    in_future => '{0} nữa',
   },
 }}
 

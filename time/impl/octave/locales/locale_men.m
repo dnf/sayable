@@ -11,10 +11,10 @@
 
 function loc = locale_men()
   loc.code = 'men';
-  loc.clock.hours = {'pu wɛlɛ', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila'};
+  loc.clock.hours = {'pu mahu fele', 'yila', 'fele', 'sawa', 'nani', 'lɔlu', 'wɛita', 'wɔfela', 'wayakpa', 'taawu', 'pu', 'pu mahu yila'};
   loc.clock.midnight = 'kpindi gbɔyɔŋ';
   loc.clock.noon = 'ndɔlei-ma';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'awa {h}', "p5", 'awa {h} kɛ miniti lɔɔlu', "p10", 'awa {h} kɛ miniti pu', "p15", 'awa {h} kɛ miniti pu mahu lɔɔlu', "p20", 'awa {h} kɛ miniti nuu yila gboyongo', "p25", 'awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu', "p30", 'awa {h} kɛ miniti nuu yila gboyongo mahu pu', "p35", 'awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu', "p40", 'awa {h} kɛ miniti nuu fele gboyongo', "p45", 'awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu', "p50", 'awa {h} kɛ miniti nuu fele gboyongo mahu pu', "p55", 'awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

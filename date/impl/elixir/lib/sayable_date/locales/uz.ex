@@ -38,15 +38,15 @@ defmodule SayableDate.Locales.UZ do
         "juma",
         "shanba"
       ],
-      day_format: "{n}",
+      day_format: "{n}-",
       day_format_exceptions: %{},
-      date_pattern: "{day} {month}",
-      date_pattern_with_year: "{day} {month} {year}",
+      date_pattern: "{day}{month}",
+      date_pattern_with_year: "{day}{month}, {year}",
       today: "bugun",
       tomorrow: "ertaga",
       yesterday: "kecha",
       day_after_tomorrow: "indinga",
-      day_before_yesterday: "kechagina",
+      day_before_yesterday: "o'tgan kuni",
       this_weekday: "bu {weekday}",
       next_weekday: "keyingi {weekday}",
       last_weekday: "o'tgan {weekday}",
@@ -75,9 +75,9 @@ defmodule SayableDate.Locales.UZ do
           "jum",
           "shan"
         ],
-        day_format: "{n}",
-        date_pattern: "{day} {month}",
-        date_pattern_with_year: "{day} {month} {year}"
+        day_format: "{n}-",
+        date_pattern: "{day}{month}",
+        date_pattern_with_year: "{day}{month}, {year}"
       },
       compact: %{
         date_pattern: "{d}/{m}",

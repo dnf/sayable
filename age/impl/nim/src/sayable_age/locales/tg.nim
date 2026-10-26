@@ -22,7 +22,7 @@ let TG* = AgeLocale(
     "month": simpleUnit("{n} моҳ"),
     "year": simpleUnit("{n} сол"),
   }.toOrderedTable,
-  half: "{0} ним",
+  half: "{0}у ним",
   delimiter: ", ",
   justBorn: "Навзод",
   stages: {

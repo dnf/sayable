@@ -22,7 +22,7 @@
    "mam"
    (lambda (n) "other")
    (hash "day" (hash "type" "simple" "form" "{n} q'ij")
-         "week" (hash "type" "simple" "form" "{n} xjaw")
+         "week" (hash "type" "simple" "form" "{n} seman")
          "month" (hash "type" "simple" "form" "{n} xjaw")
          "year" (hash "type" "simple" "form" "{n} ab'q'ii"))
    "{0} nik'"
@@ -34,6 +34,6 @@
          "child" (stage-label "K'wal" #f #f)
          "teenager" (stage-label "Q'a" #f #f)
          "adult" (stage-label "Xjal" #f #f))
-   (compactness-override (hash "type" "simple" "form" "{n} q'ij") (hash "type" "simple" "form" "{n} xjaw") (hash "type" "simple" "form" "{n} xjaw") (hash "type" "simple" "form" "{n} ab'.") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n} q'ij") (hash "type" "simple" "form" "{n} seman") (hash "type" "simple" "form" "{n} xjaw") (hash "type" "simple" "form" "{n} ab'.") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

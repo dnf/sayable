@@ -26,7 +26,7 @@ locale = DurationLocale
         , unitMonth = Simple "{n} bulan"
         , unitYear = Simple "{n} tahun"
         }
-    , localeHalf = "{0} setengah"
+    , localeHalf = "{n} setengah"
     , localeDelimiter = ", "
     , localeJustNow = "baru saja"
     , localeAgo = "{0} yang lalu"

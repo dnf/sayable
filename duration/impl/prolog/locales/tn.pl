@@ -15,9 +15,9 @@ sd_plural('tn', 1, one) :- !.
 sd_plural('tn', _, other).
 
 sd_unit('tn', second, one, 'motsotswana {n}').
-sd_unit('tn', second, other, 'dimetsotswana {n}').
-sd_unit('tn', minute, one, 'metsotso {n}').
-sd_unit('tn', minute, other, 'dimetsotso {n}').
+sd_unit('tn', second, other, 'metsotswana {n}').
+sd_unit('tn', minute, one, 'motsotso {n}').
+sd_unit('tn', minute, other, 'metsotso {n}').
 sd_unit('tn', hour, one, 'ura {n}').
 sd_unit('tn', hour, other, 'diura {n}').
 sd_unit('tn', day, one, 'letsatsi {n}').
@@ -36,9 +36,9 @@ sd_ago('tn', '{0} e e fetileng').
 sd_in_future('tn', 'ka {0}').
 
 short_sd_unit('tn', second, one, 'motsotswana {n}').
-short_sd_unit('tn', second, other, 'dimetsotswana {n}').
-short_sd_unit('tn', minute, one, 'metsotso {n}').
-short_sd_unit('tn', minute, other, 'dimetsotso {n}').
+short_sd_unit('tn', second, other, 'metsotswana {n}').
+short_sd_unit('tn', minute, one, 'motsotso {n}').
+short_sd_unit('tn', minute, other, 'metsotso {n}').
 short_sd_unit('tn', hour, one, 'ura {n}').
 short_sd_unit('tn', hour, other, 'diura {n}').
 short_sd_unit('tn', day, one, 'letsatsi {n}').

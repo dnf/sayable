@@ -26,10 +26,10 @@ lo
 	locale tomorrow: 'ມື້ອື່ນ'.
 	locale yesterday: 'ມື້ວານ'.
 	locale dayAfterTomorrow: 'ມື້ຮື'.
-	locale dayBeforeYesterday: 'ມື້ກ່ອນ'.
+	locale dayBeforeYesterday: 'ມື້ຊືນ'.
 	locale thisWeekday: '{weekday}ນີ້'.
 	locale nextWeekday: '{weekday}ໜ້າ'.
-	locale lastWeekday: '{weekday}ແລ້ວ'.
+	locale lastWeekday: '{weekday}ທີ່ແລ້ວ'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'ມ.ກ.'. 'ກ.ພ.'. 'ມ.ນ.'. 'ມ.ສ.'. 'ພ.ພ.'. 'ມ.ຖ.'. 'ກ.ລ.'. 'ສ.ຫ.'. 'ກ.ຍ.'. 'ຕ.ລ.'. 'ພ.ຈ.'. 'ທ.ວ.' }).

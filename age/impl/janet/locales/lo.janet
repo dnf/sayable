@@ -17,7 +17,7 @@
           :month "{n} ເດືອນ"
           :year "{n} ປີ"}
    :half "{0}ເຄິ່ງ"
-   :delimiter ""
+   :delimiter " "
    :just-born "ເກີດໃໝ່"
    :stages {:newborn "ເດັກເກີດໃໝ່"
             :infant "ເດັກນ້ອຍ"
@@ -27,5 +27,5 @@
             :adult "ຜູ້ໃຫຍ່"
 }
    :short {:units {:day "{n} ມ." :week "{n} ອທ." :month "{n} ດ." :year "{n} ປ."}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"}}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½"}
 })

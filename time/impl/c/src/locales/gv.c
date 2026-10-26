@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_gv = {
     "gv",
     {
-        { "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" },
+        { "daa-yeig", "nane", "jees", "tree", "kiare", "queig", "shey", "shiaght", "hoght", "nuy", "jeih", "nane-jeig" },
         "mean oie",
         "munlaa",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} er y chlag", "queig minnidyn lurg {h}", "jeih minnidyn lurg {h}", "kerroo lurg {h}", "feed minnid lurg {h}", "queig minnidyn as feed lurg {h}", "lieh-oor lurg {h}", "queig minnidyn as feed gys {next_h}", "feed minnid gys {next_h}", "kerroo gys {next_h}", "jeih minnidyn gys {next_h}", "queig minnidyn gys {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

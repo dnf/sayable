@@ -10,22 +10,22 @@
 # Source: locales/suk.json
 
 function locale_suk {
-    $hours = @('kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja')
+    $hours = @('sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja', 'kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano')
     $midnight = 'usiku gati'
     $noon = 'adhuhuri'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'saa {h}'
+    $patterns[5] = 'saa {h} na dakika tano'
+    $patterns[10] = 'saa {h} na dakika kumi'
+    $patterns[15] = 'saa {h} na robo'
+    $patterns[20] = 'saa {h} na dakika ishirini'
+    $patterns[25] = 'saa {h} na dakika ishirini na tano'
+    $patterns[30] = 'saa {h} na nusu'
+    $patterns[35] = 'saa {next_h} kasoro dakika ishirini na tano'
+    $patterns[40] = 'saa {next_h} kasoro dakika ishirini'
+    $patterns[45] = 'saa {next_h} kasoro robo'
+    $patterns[50] = 'saa {next_h} kasoro dakika kumi'
+    $patterns[55] = 'saa {next_h} kasoro dakika tano'
     $clock = @{
         hours = $hours
         midnight = $midnight

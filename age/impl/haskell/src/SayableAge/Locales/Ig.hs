@@ -17,10 +17,10 @@ locale :: Locale
 locale = Locale
     { localeCode = "ig"
     , localePlural = \_ -> Other
-    , localeDay = Simple "{n} ụbọchị"
-    , localeWeek = Simple "{n} izu"
-    , localeMonth = Simple "{n} ọnwa"
-    , localeYear = Simple "{n} afọ"
+    , localeDay = Simple "ụbọchị {n}"
+    , localeWeek = Simple "izu {n}"
+    , localeMonth = Simple "ọnwa {n}"
+    , localeYear = Simple "afọ {n}"
     , localeHalf = "{0} na ọkara"
     , localeDelimiter = ", "
     , localeJustBorn = "Nwa ọhụrụ"
@@ -29,15 +29,15 @@ locale = Locale
         , stageInfant = Neutral "Nwa ọhụrụ"
         , stageToddler = Neutral "Nwa nta"
         , stageChild = Neutral "Nwa"
-        , stageTeenager = Neutral "Nwokorobịa"
+        , stageTeenager = Gendered "Nwokorobịa" "Agbọghọbịa"
         , stageAdult = Neutral "Okenye"
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "{n} ụbọchị")
-            , ovrWeek = Just (Simple "{n} izu")
-            , ovrMonth = Just (Simple "{n} ọnwa")
-            , ovrYear = Just (Simple "{n} afọ")
+            { ovrDay = Just (Simple "ụbọchị {n}")
+            , ovrWeek = Just (Simple "izu {n}")
+            , ovrMonth = Just (Simple "ọnwa {n}")
+            , ovrYear = Just (Simple "afọ {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

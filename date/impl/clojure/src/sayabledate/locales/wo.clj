@@ -22,11 +22,11 @@
    :today "tey"
    :tomorrow "suba"
    :yesterday "démb"
-   :day-after-tomorrow "suba-suba"
-   :day-before-yesterday "démb-démb"
-   :this-weekday "{weekday} bi"
-   :next-weekday "{weekday} bi ñëw"
-   :last-weekday "{weekday} bi weex"
+   :day-after-tomorrow "gannaaw-suba"
+   :day-before-yesterday "bërki-démb"
+   :this-weekday "{weekday} jii"
+   :next-weekday "{weekday} jiy ñëw"
+   :last-weekday "{weekday} ji weesu"
    :months-in-date nil
    :short {:months ["Sam" "Few" "Maa" "Awr" "Mee" "Suw" "Sul" "Ut" "Sep" "Okt" "Now" "Des"] :months-in-date nil :weekdays ["Dib" "Alt" "Tal" "Àll" "Alx" "Àjj" "Gaa"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

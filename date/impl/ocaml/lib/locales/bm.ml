@@ -15,7 +15,7 @@ let locale : date_locale =
   { code = "bm"
   ; months =
     [ "Zanwuye"
-    ; "Fewuriye"
+    ; "Feburuye"
     ; "Marisi"
     ; "Awirili"
     ; "Mɛ"
@@ -23,8 +23,8 @@ let locale : date_locale =
     ; "Zuluye"
     ; "Uti"
     ; "Sɛtanburu"
-    ; "ɔkutɔburu"
-    ; "Nowanbudu"
+    ; "Ɔkutɔburu"
+    ; "Nowanburu"
     ; "Desanburu"
     ]
   ; weekdays =
@@ -53,7 +53,7 @@ let locale : date_locale =
   ; short = Some
       { ovr_months = Some
         [ "Zan"
-        ; "Few"
+        ; "Feb"
         ; "Mar"
         ; "Awi"
         ; "Mɛ"
@@ -61,7 +61,7 @@ let locale : date_locale =
         ; "Zul"
         ; "Uti"
         ; "Sɛt"
-        ; "ɔku"
+        ; "Ɔku"
         ; "Now"
         ; "Des"
         ]

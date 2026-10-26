@@ -16,7 +16,11 @@ pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "ml".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -36,7 +40,7 @@ pub fn locale() -> AgeLocale {
                 (PluralCategory::Other, "{n} വയസ്സ്"),
             ]),
         },
-        half: "{0} ര".to_string(),
+        half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_born: "നവജാതശിശു".to_string(),
         stages: Stages {

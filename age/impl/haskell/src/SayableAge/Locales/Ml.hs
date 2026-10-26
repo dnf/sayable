@@ -16,7 +16,7 @@ import SayableAge.Types
 locale :: Locale
 locale = Locale
     { localeCode = "ml"
-    , localePlural = \n -> if n == 0 || n == 1 then One else Other
+    , localePlural = \n -> if n == 1 then One else Other
     , localeDay = Pluralized
       [ (One, "{n} ദിവസം")
       , (Other, "{n} ദിവസങ്ങൾ")
@@ -33,7 +33,7 @@ locale = Locale
       [ (One, "{n} വയസ്സ്")
       , (Other, "{n} വയസ്സ്")
       ]
-    , localeHalf = "{0} ര"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustBorn = "നവജാതശിശു"
     , localeStages = Stages

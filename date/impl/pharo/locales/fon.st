@@ -17,7 +17,7 @@ fon
 	locale := SayableDateLocale new.
 	locale code: 'fon'.
 	locale months: (OrderedCollection withAll: { 'Alɔfí'. 'Alɔnyɔ'. 'Ataɖaxɔ'. 'Tlɛsún'. 'Axɔsún'. 'Ayɛsún'. 'Nùxwásún'. 'Ayidosún'. 'Kɛnísún'. 'Kanyásún'. 'Abɔxwísún'. 'Adɔxwísún' }).
-	locale weekdays: (OrderedCollection withAll: { 'Sidégbe'. 'Tɛnígbe'. 'Talɛtagbe'. 'Azǎngagbe'. 'Nyɔnúgbe'. 'Axɔ́sùgbe'. 'Abámɛ́ta' }).
+	locale weekdays: (OrderedCollection withAll: { 'Aklunɔzángbe'. 'Tɛnígbe'. 'Talɛtagbe'. 'Azǎngagbe'. 'Nyɔnúgbe'. 'Axɔ́sùgbe'. 'Sibigbe' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
@@ -33,7 +33,7 @@ fon
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'Alɔ'. 'Any'. 'Ata'. 'Tlɛ'. 'Axɔ'. 'Ayɛ'. 'Nùx'. 'Ayi'. 'Kɛn'. 'Kan'. 'Abɔ'. 'Adɔ' }).
-		#weekdays. (OrderedCollection withAll: { 'Sid'. 'Tɛn'. 'Tal'. 'Azǎ'. 'Nyɔ'. 'Axɔ'. 'Abá' }).
+		#weekdays. (OrderedCollection withAll: { 'Akl'. 'Tɛn'. 'Tal'. 'Azǎ'. 'Nyɔ'. 'Axɔ'. 'Sib' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
 		#datePatternWithYear. '{day} {month} {year}'.

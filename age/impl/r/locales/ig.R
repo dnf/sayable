@@ -13,10 +13,10 @@ locale_ig <- list(
   code = "ig",
   plural = function(n) "other",
   units = list(
-    day = "{n} ụbọchị",
-    week = "{n} izu",
-    month = "{n} ọnwa",
-    year = "{n} afọ"
+    day = "ụbọchị {n}",
+    week = "izu {n}",
+    month = "ọnwa {n}",
+    year = "afọ {n}"
   ),
   half = "{0} na ọkara",
   delimiter = ", ",
@@ -26,15 +26,15 @@ locale_ig <- list(
     infant = "Nwa ọhụrụ",
     toddler = "Nwa nta",
     child = "Nwa",
-    teenager = "Nwokorobịa",
+    teenager = list(m = "Nwokorobịa", f = "Agbọghọbịa"),
     adult = "Okenye"
   ),
   short = list(
     units = list(
-      day = "{n} ụbọchị",
-      week = "{n} izu",
-      month = "{n} ọnwa",
-      year = "{n} afọ"
+      day = "ụbọchị {n}",
+      week = "izu {n}",
+      month = "ọnwa {n}",
+      year = "afọ {n}"
     )
   ),
   compact = list(

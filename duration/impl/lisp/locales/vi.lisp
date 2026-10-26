@@ -23,12 +23,12 @@
                (cons :day "{n} ngày")
                (cons :week "{n} tuần")
                (cons :month "{n} tháng")
-               (cons :year "{n} tuổi"))
+               (cons :year "{n} năm"))
    :half "{0} rưỡi"
    :delimiter ", "
    :just-now "vừa xong"
    :ago "{0} trước"
-   :in-future "trong {0}"
+   :in-future "{0} nữa"
    :short-units (list (cons :second "{n} giây")
                        (cons :minute "{n} phút")
                        (cons :hour "{n} giờ")
@@ -37,7 +37,7 @@
                        (cons :month "{n} tháng")
                        (cons :year "{n} năm"))
    :short-ago "{0} trước"
-   :short-in-future "trong {0}"
+   :short-in-future "{0} nữa"
    :compact-units (list (cons :second "{n} giây")
                        (cons :minute "{n} phút")
                        (cons :hour "{n} giờ")
@@ -48,5 +48,5 @@
    :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} trước"
-   :compact-in-future "trong {0}"
+   :compact-in-future "{0} nữa"
 ))

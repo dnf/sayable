@@ -32,7 +32,7 @@ pub const locale_mg = DurationLocale{
 	half: '{0} sy sasany'
 	delimiter: ', '
 	just_now: 'vao haingana'
-	ago: '{0} lasa'
+	ago: '{0} lasa izay'
 	in_future: 'ao anatin\'ny {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
@@ -50,7 +50,7 @@ pub const locale_mg = DurationLocale{
 		has_month: true
 		year: simple_unit('{n} tna')
 		has_year: true
-		ago: '{0} lasa'
+		ago: '{0} lasa izay'
 		has_ago: true
 		in_future: 'ao anatin\'ny {0}'
 		has_in_future: true

@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ms = {
         { "dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "lapan", "sembilan", "sepuluh", "sebelas" },
         "tengah malam",
         "tengah hari",
-        { "{h} o'clock", "lima lewat {h}", "sepuluh lewat {h}", "suku lewat {h}", "dua puluh lewat {h}", "dua puluh lima lewat {h}", "setengah lewat {h}", "dua puluh lima menjelang {next_h}", "dua puluh menjelang {next_h}", "suku menjelang {next_h}", "sepuluh menjelang {next_h}", "lima menjelang {next_h}" }
+        { "pukul {h}", "pukul {h} lima minit", "pukul {h} sepuluh minit", "pukul {h} suku", "pukul {h} dua puluh minit", "pukul {h} dua puluh lima minit", "pukul {h} setengah", "pukul {next_h} kurang dua puluh lima minit", "pukul {next_h} kurang dua puluh minit", "pukul {next_h} kurang suku", "pukul {next_h} kurang sepuluh minit", "pukul {next_h} kurang lima minit" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

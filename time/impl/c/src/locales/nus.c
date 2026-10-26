@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_nus = {
     "nus",
     {
-        { "thiäär ke rou", "tök", "rou", "diäk", "ŋuan", "dhiëc", "bäkɛl", "dhorou", "bät", "kuɔn", "thiäär", "thiäär ku tök" },
+        { "wäl wi̱ rɛw", "kɛl", "rɛw", "diɔk", "ŋuaan", "dhieec", "bäkɛl", "bäärɔw", "bädäk", "bäŋuan", "wäl", "wäl wi̱ kɛl" },
         "wakɔ̈u",
         "cäŋ kɔ̈k",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "thaar {h}", "thaar {h} kɛnɛ minit dhieec", "thaar {h} kɛnɛ minit wäl", "thaar {h} kɛnɛ minit wäl wi̱ dhieec", "thaar {h} kɛnɛ minit jiɛn rɛw", "thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec", "thaar {h} kɛnɛ minit jiɛn diɔk", "thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec", "thaar {h} kɛnɛ minit jiɛn ŋuaan", "thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec", "thaar {h} kɛnɛ minit jiɛn dhieec", "thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

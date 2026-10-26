@@ -18,9 +18,9 @@
    :code "ln"
    :clock (make-clock-config
     :hours (list "zómi na míbalé" "mɔ̌kɔ́" "míbalé" "mísáto" "mínéi" "mítáno" "motóba" "nsambo" "mwambe" "libwá" "zómi" "zómi na mɔ̌kɔ́")
-    :midnight "mpɔ́kwa"
-    :noon "ntɔ́ngɔ́"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :midnight "midí ya butú"
+    :noon "midí"
+    :patterns (list (cons 0 "ngonga ya {h}") (cons 5 "ngonga ya {h} na miniti mítáno") (cons 10 "ngonga ya {h} na miniti zómi") (cons 15 "ngonga ya {h} na miniti zómi na mítáno") (cons 20 "ngonga ya {h} na miniti ntúkú míbalé") (cons 25 "ngonga ya {h} na miniti ntúkú míbalé na mítáno") (cons 30 "ngonga ya {h} na ndámbo") (cons 35 "ngonga ya {h} na miniti ntúkú mísáto na mítáno") (cons 40 "ngonga ya {h} na miniti ntúkú mínéi") (cons 45 "ngonga ya {h} na miniti ntúkú mínéi na mítáno") (cons 50 "ngonga ya {h} na miniti ntúkú mítáno") (cons 55 "ngonga ya {h} na miniti ntúkú mítáno na mítáno")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

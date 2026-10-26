@@ -18,21 +18,21 @@ ln
 	locale code: 'ln'.
 	clock := Dictionary new.
 	clock at: #hours put: (OrderedCollection withAll: { 'zómi na míbalé'. 'mɔ̌kɔ́'. 'míbalé'. 'mísáto'. 'mínéi'. 'mítáno'. 'motóba'. 'nsambo'. 'mwambe'. 'libwá'. 'zómi'. 'zómi na mɔ̌kɔ́' }).
-	clock at: #midnight put: 'mpɔ́kwa'.
-	clock at: #noon put: 'ntɔ́ngɔ́'.
+	clock at: #midnight put: 'midí ya butú'.
+	clock at: #noon put: 'midí'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'ngonga ya {h}'.
+		5. 'ngonga ya {h} na miniti mítáno'.
+		10. 'ngonga ya {h} na miniti zómi'.
+		15. 'ngonga ya {h} na miniti zómi na mítáno'.
+		20. 'ngonga ya {h} na miniti ntúkú míbalé'.
+		25. 'ngonga ya {h} na miniti ntúkú míbalé na mítáno'.
+		30. 'ngonga ya {h} na ndámbo'.
+		35. 'ngonga ya {h} na miniti ntúkú mísáto na mítáno'.
+		40. 'ngonga ya {h} na miniti ntúkú mínéi'.
+		45. 'ngonga ya {h} na miniti ntúkú mínéi na mítáno'.
+		50. 'ngonga ya {h} na miniti ntúkú mítáno'.
+		55. 'ngonga ya {h} na miniti ntúkú mítáno na mítáno'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

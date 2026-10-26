@@ -36,7 +36,7 @@ ak
 			'second'. 'sɛkɛnd {n}'.
 			'minute'. 'sema {n}'.
 			'hour'. 'dɔnhwere {n}'.
-			'day'. 'nna {n}'.
+			'day'. (Dictionary newFromPairs: { #one. 'da {n}'. #other. 'nna {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'dapɛn {n}'. #other. 'nnapɛn {n}' }).
 			'month'. (Dictionary newFromPairs: { #one. 'bosome {n}'. #other. 'abosome {n}' }).
 			'year'. (Dictionary newFromPairs: { #one. 'afe {n}'. #other. 'mfe {n}' }).
@@ -49,7 +49,7 @@ ak
 			'second'. 'sɛk {n}'.
 			'minute'. 'sem {n}'.
 			'hour'. 'dɔn {n}'.
-			'day'. 'nna {n}'.
+			'day'. (Dictionary newFromPairs: { #one. 'da {n}'. #other. 'nna {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'dapɛn {n}'. #other. 'nnapɛn {n}' }).
 			'month'. (Dictionary newFromPairs: { #one. 'bos {n}'. #other. 'abos {n}' }).
 			'year'. (Dictionary newFromPairs: { #one. 'afe {n}'. #other. 'mfe {n}' }).

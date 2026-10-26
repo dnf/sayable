@@ -13,17 +13,17 @@ locale_wo <- list(
   code = "wo",
   plural = function(n) "other",
   units = list(
-    day = "bés {n}",
-    week = "ayubés {n}",
-    month = "weer {n}",
-    year = "at {n}"
+    day = "{n} fan",
+    week = "{n} ayubés",
+    month = "{n} weer",
+    year = "{n} at"
   ),
   half = "{0} ak genn-wàll",
   delimiter = ", ",
   just_born = "Dees ko sax juddu",
   stages = list(
     newborn = "Dees ko sax juddu",
-    infant = "Njàmbaar bu ndaw",
+    infant = "Liir",
     toddler = "Xale bu ndaw",
     child = "Xale",
     teenager = "Ndaw-ndaw",
@@ -31,18 +31,18 @@ locale_wo <- list(
   ),
   short = list(
     units = list(
-      day = "bés {n}",
-      week = "ayub. {n}",
-      month = "weer {n}",
-      year = "at {n}"
+      day = "{n} fan",
+      week = "{n} ayub.",
+      month = "{n} weer",
+      year = "{n} at"
     )
   ),
   compact = list(
     units = list(
-      day = "bés {n}",
-      week = "ayub {n}",
-      month = "weer {n}",
-      year = "at {n}"
+      day = "{n} fan",
+      week = "{n} ayub",
+      month = "{n} weer",
+      year = "{n} at"
     ),
     half = "{n}½",
     delimiter = ""

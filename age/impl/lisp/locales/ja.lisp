@@ -38,4 +38,5 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
 ))

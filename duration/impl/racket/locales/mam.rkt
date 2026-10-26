@@ -25,7 +25,7 @@
          "minute" (hash "type" "simple" "form" "{n} minuto")
          "hour" (hash "type" "simple" "form" "{n} hora")
          "day" (hash "type" "simple" "form" "{n} q'ij")
-         "week" (hash "type" "simple" "form" "{n} xjaw")
+         "week" (hash "type" "simple" "form" "{n} seman")
          "month" (hash "type" "simple" "form" "{n} xjaw")
          "year" (hash "type" "simple" "form" "{n} ab'q'ii"))
    "{0} nik'"
@@ -33,6 +33,6 @@
    "iky'x"
    "{0} chi'j"
    "tu'n {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} seg.") (hash "type" "simple" "form" "{n} min.") (hash "type" "simple" "form" "{n} hora") (hash "type" "simple" "form" "{n} q'ij") (hash "type" "simple" "form" "{n} xjaw") (hash "type" "simple" "form" "{n} xjaw") (hash "type" "simple" "form" "{n} ab'.") #f #f "{0} chi'j" "tu'n {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} chi'j" "tu'n {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} seg.") (hash "type" "simple" "form" "{n} min.") (hash "type" "simple" "form" "{n} hora") (hash "type" "simple" "form" "{n} q'ij") (hash "type" "simple" "form" "{n} seman") (hash "type" "simple" "form" "{n} xjaw") (hash "type" "simple" "form" "{n} ab'.") #f #f "{0} chi'j" "tu'n {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} chi'j" "tu'n {0}")
   ))

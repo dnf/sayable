@@ -72,10 +72,10 @@ Relative to Saturday, March 15, 2025.
 | Yesterday            | ieri             | ieri    |
 | Day after tomorrow   | poimâine         | 17.3.   |
 | Day before yesterday | alaltăieri       | 13.3.   |
-| This Thursday (+5)   | această joi      | 20.3.   |
-| Last Monday (-4)     | marți trecută    | 11.3.   |
-| Next Wednesday (+12) | joi viitoare     | 27.3.   |
-| Same month (+20)     | 4 aprilie        | 4.4.    |
+| This Thursday (+5)   | joia aceasta     | 20.3.   |
+| Last Tuesday (-4)    | marțea trecută   | 11.3.   |
+| Next Thursday (+12)  | joia viitoare    | 27.3.   |
+| Same year (+20)      | 4 aprilie        | 4.4.    |
 | Different year       | 10 ianuarie 2026 | 10.1.26 |
 
 ## Duration
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                    | Short | Compact |
-| --------------- | ------------------------- | ----- | ------- |
-| Midnight        | miezul nopții             | 0:00  | 0:00    |
-| 1:00 AM         | unu ore                   | 1:00  | 1:00    |
-| 5 past 9        | cinci peste nouă          | 9:05  | 9:05    |
-| Quarter past 10 | un sfert peste zece       | 10:15 | 10:15   |
-| Half past 11    | jumătate peste unsprezece | 11:30 | 11:30   |
-| Noon            | amiază                    | 12:00 | 12:00   |
-| Quarter to 3    | un sfert înainte de trei  | 14:45 | 14:45   |
-| 5 to 6          | cinci înainte de șase     | 17:55 | 17:55   |
-| 8 o'clock PM    | opt ore                   | 20:00 | 20:00   |
-| 10:30 PM        | jumătate peste zece       | 22:30 | 22:30   |
-| 11:58 PM        | miezul nopții             | 23:58 | 23:58   |
+| Time            | Normal                 | Short | Compact |
+| --------------- | ---------------------- | ----- | ------- |
+| Midnight        | miezul nopții          | 0:00  | 0:00    |
+| 1:00 AM         | ora unu                | 1:00  | 1:00    |
+| 5 past 9        | nouă și cinci          | 9:05  | 9:05    |
+| Quarter past 10 | zece și un sfert       | 10:15 | 10:15   |
+| Half past 11    | unsprezece și jumătate | 11:30 | 11:30   |
+| Noon            | amiază                 | 12:00 | 12:00   |
+| Quarter to 3    | trei fără un sfert     | 14:45 | 14:45   |
+| 5 to 6          | șase fără cinci        | 17:55 | 17:55   |
+| 8 o'clock PM    | ora opt                | 20:00 | 20:00   |
+| 10:30 PM        | zece și jumătate       | 22:30 | 22:30   |
+| 11:58 PM        | miezul nopții          | 23:58 | 23:58   |

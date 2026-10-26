@@ -14,7 +14,7 @@
 (def locale
   {:code "fon"
    :months ["Alɔfí" "Alɔnyɔ" "Ataɖaxɔ" "Tlɛsún" "Axɔsún" "Ayɛsún" "Nùxwásún" "Ayidosún" "Kɛnísún" "Kanyásún" "Abɔxwísún" "Adɔxwísún"]
-   :weekdays ["Sidégbe" "Tɛnígbe" "Talɛtagbe" "Azǎngagbe" "Nyɔnúgbe" "Axɔ́sùgbe" "Abámɛ́ta"]
+   :weekdays ["Aklunɔzángbe" "Tɛnígbe" "Talɛtagbe" "Azǎngagbe" "Nyɔnúgbe" "Axɔ́sùgbe" "Sibigbe"]
    :day-format "{n}"
    :day-format-exceptions {}
    :date-pattern "{day} {month}"
@@ -28,5 +28,5 @@
    :next-weekday "{weekday} e ja"
    :last-weekday "{weekday} e wá yí"
    :months-in-date nil
-   :short {:months ["Alɔ" "Any" "Ata" "Tlɛ" "Axɔ" "Ayɛ" "Nùx" "Ayi" "Kɛn" "Kan" "Abɔ" "Adɔ"] :months-in-date nil :weekdays ["Sid" "Tɛn" "Tal" "Azǎ" "Nyɔ" "Axɔ" "Abá"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["Alɔ" "Any" "Ata" "Tlɛ" "Axɔ" "Ayɛ" "Nùx" "Ayi" "Kɛn" "Kan" "Abɔ" "Adɔ"] :months-in-date nil :weekdays ["Akl" "Tɛn" "Tal" "Azǎ" "Nyɔ" "Axɔ" "Sib"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

@@ -29,7 +29,7 @@ gl
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. (Dictionary newFromPairs: { #m. 'Recén nacido'. #f. 'Recén nacida' }).
 		#infant. 'Bebé'.
-		#toddler. 'Neno'.
+		#toddler. (Dictionary newFromPairs: { #m. 'Neno pequeno'. #f. 'Nena pequena' }).
 		#child. (Dictionary newFromPairs: { #m. 'Neno'. #f. 'Nena' }).
 		#teenager. 'Adolescente'.
 		#adult. (Dictionary newFromPairs: { #m. 'Adulto'. #f. 'Adulta' }).

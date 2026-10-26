@@ -16,17 +16,17 @@ st_midnight('bg', 'полунощ').
 st_noon('bg', 'обяд').
 
 st_pattern('bg', 0, '{h} часа').
-st_pattern('bg', 5, 'пет na {h}').
-st_pattern('bg', 10, 'десет na {h}').
-st_pattern('bg', 15, 'петнадесет na {h}').
-st_pattern('bg', 20, 'двадесет na {h}').
-st_pattern('bg', 25, 'двадесет и пет na {h}').
-st_pattern('bg', 30, 'тридесет na {h}').
-st_pattern('bg', 35, 'двадесет и пет do {next_h}').
-st_pattern('bg', 40, 'двадесет do {next_h}').
-st_pattern('bg', 45, 'петнадесет do {next_h}').
-st_pattern('bg', 50, 'десет do {next_h}').
-st_pattern('bg', 55, 'пет do {next_h}').
+st_pattern('bg', 5, '{h} и пет').
+st_pattern('bg', 10, '{h} и десет').
+st_pattern('bg', 15, '{h} и петнадесет').
+st_pattern('bg', 20, '{h} и двадесет').
+st_pattern('bg', 25, '{h} и двадесет и пет').
+st_pattern('bg', 30, '{h} и половина').
+st_pattern('bg', 35, '{next_h} без двадесет и пет').
+st_pattern('bg', 40, '{next_h} без двадесет').
+st_pattern('bg', 45, '{next_h} без петнадесет').
+st_pattern('bg', 50, '{next_h} без десет').
+st_pattern('bg', 55, '{next_h} без пет').
 
 short_st_use24h('bg', true).
 short_st_format('bg', '{h}:{mm}').

@@ -15,18 +15,18 @@ st_hours('kbp', ['hiu nɛ naalɛ', 'kʊɖʊm', 'naalɛ', 'naadozo', 'naanaza', '
 st_midnight('kbp', 'ɖoo hɛkʊ').
 st_noon('kbp', 'wɩsɩ taa').
 
-st_pattern('kbp', 0, '{h}:00').
-st_pattern('kbp', 5, '{h}:05').
-st_pattern('kbp', 10, '{h}:10').
-st_pattern('kbp', 15, '{h}:15').
-st_pattern('kbp', 20, '{h}:20').
-st_pattern('kbp', 25, '{h}:25').
-st_pattern('kbp', 30, '{h}:30').
-st_pattern('kbp', 35, '{h}:35').
-st_pattern('kbp', 40, '{h}:40').
-st_pattern('kbp', 45, '{h}:45').
-st_pattern('kbp', 50, '{h}:50').
-st_pattern('kbp', 55, '{h}:55').
+st_pattern('kbp', 0, 'ñɩɣyʊʊ {h}').
+st_pattern('kbp', 5, 'ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ').
+st_pattern('kbp', 10, 'ñɩɣyʊʊ {h} nɛ miniti hiu').
+st_pattern('kbp', 15, 'ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ').
+st_pattern('kbp', 20, 'ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ').
+st_pattern('kbp', 25, 'ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ').
+st_pattern('kbp', 30, 'ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ').
+st_pattern('kbp', 35, 'ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ').
+st_pattern('kbp', 40, 'ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza').
+st_pattern('kbp', 45, 'ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ').
+st_pattern('kbp', 50, 'ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa').
+st_pattern('kbp', 55, 'ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ').
 
 short_st_use24h('kbp', false).
 short_st_format('kbp', '{h}:{mm} {ampm}').

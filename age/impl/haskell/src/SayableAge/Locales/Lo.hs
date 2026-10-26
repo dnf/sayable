@@ -22,7 +22,7 @@ locale = Locale
     , localeMonth = Simple "{n} ເດືອນ"
     , localeYear = Simple "{n} ປີ"
     , localeHalf = "{0}ເຄິ່ງ"
-    , localeDelimiter = ""
+    , localeDelimiter = " "
     , localeJustBorn = "ເກີດໃໝ່"
     , localeStages = Stages
         { stageNewborn = Neutral "ເດັກເກີດໃໝ່"
@@ -48,7 +48,7 @@ locale = Locale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }

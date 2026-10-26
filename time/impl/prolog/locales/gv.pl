@@ -11,22 +11,22 @@
 
 % Manx locale.
 
-st_hours('gv', ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']).
+st_hours('gv', ['daa-yeig', 'nane', 'jees', 'tree', 'kiare', 'queig', 'shey', 'shiaght', 'hoght', 'nuy', 'jeih', 'nane-jeig']).
 st_midnight('gv', 'mean oie').
 st_noon('gv', 'munlaa').
 
-st_pattern('gv', 0, '{h}:00').
-st_pattern('gv', 5, '{h}:05').
-st_pattern('gv', 10, '{h}:10').
-st_pattern('gv', 15, '{h}:15').
-st_pattern('gv', 20, '{h}:20').
-st_pattern('gv', 25, '{h}:25').
-st_pattern('gv', 30, '{h}:30').
-st_pattern('gv', 35, '{h}:35').
-st_pattern('gv', 40, '{h}:40').
-st_pattern('gv', 45, '{h}:45').
-st_pattern('gv', 50, '{h}:50').
-st_pattern('gv', 55, '{h}:55').
+st_pattern('gv', 0, '{h} er y chlag').
+st_pattern('gv', 5, 'queig minnidyn lurg {h}').
+st_pattern('gv', 10, 'jeih minnidyn lurg {h}').
+st_pattern('gv', 15, 'kerroo lurg {h}').
+st_pattern('gv', 20, 'feed minnid lurg {h}').
+st_pattern('gv', 25, 'queig minnidyn as feed lurg {h}').
+st_pattern('gv', 30, 'lieh-oor lurg {h}').
+st_pattern('gv', 35, 'queig minnidyn as feed gys {next_h}').
+st_pattern('gv', 40, 'feed minnid gys {next_h}').
+st_pattern('gv', 45, 'kerroo gys {next_h}').
+st_pattern('gv', 50, 'jeih minnidyn gys {next_h}').
+st_pattern('gv', 55, 'queig minnidyn gys {next_h}').
 
 short_st_use24h('gv', true).
 short_st_format('gv', '{h}:{mm}').

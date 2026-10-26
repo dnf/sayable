@@ -20,7 +20,7 @@ class DZLocale {
       "year": "ལོ་ {n}",
     }
   }
-  static half { "{0} ཕྱེད" }
+  static half { "{0} དང་ཕྱེད" }
   static delimiter { " " }
   static justBorn { "གསར་སྐྱེས" }
   static stages {

@@ -563,7 +563,7 @@
 (assert-eq "25.9" ((pt-es :format-age) "2023-06-15" "2025-12-15") "2 años, 6 meses")
 
 # 25.10
-(assert-eq "25.10" ((pt-es :format-age) "2022-06-15" "2025-12-15") "3 y medio años")
+(assert-eq "25.10" ((pt-es :format-age) "2022-06-15" "2025-12-15") "3 años y medio")
 
 # 25.11
 (assert-eq "25.11" ((pt-es :format-age) "2022-06-15" "2025-06-15") "3 años")
@@ -670,7 +670,7 @@
 (assert-eq "29.1" ((pt-he :format-age) "2025-06-15" "2025-06-15") "רק נולד")
 
 # 29.2
-(assert-eq "29.2" ((pt-he :format-age) "2025-06-14" "2025-06-15") "יום 1")
+(assert-eq "29.2" ((pt-he :format-age) "2025-06-14" "2025-06-15") "יום")
 
 # 29.3
 (assert-eq "29.3" ((pt-he :format-age) "2025-06-12" "2025-06-15") "3 ימים")
@@ -688,7 +688,7 @@
 (assert-eq "29.7" ((pt-he :format-age) "2025-03-15" "2025-06-15") "3 חודשים")
 
 # 29.8
-(assert-eq "29.8" ((pt-he :format-age) "2023-06-15" "2025-07-15") "שנתיים, חודש 1")
+(assert-eq "29.8" ((pt-he :format-age) "2023-06-15" "2025-07-15") "שנתיים, חודש")
 
 # 29.9
 (assert-eq "29.9" ((pt-he :format-age) "2022-06-15" "2025-12-15") "3 שנים וחצי")
@@ -772,7 +772,7 @@
 (assert-eq "29.31" ((pt-id :format-age) "2025-01-15" "2025-07-15") "6 bulan")
 
 # 29.32
-(assert-eq "29.32" ((pt-id :format-age) "2022-06-15" "2025-12-15") "3 tahun setengah")
+(assert-eq "29.32" ((pt-id :format-age) "2022-06-15" "2025-12-15") "3 setengah tahun")
 
 # 29.33
 (assert-eq "29.33" ((pt-id :format-age) "2018-06-15" "2025-06-15") "7 tahun")

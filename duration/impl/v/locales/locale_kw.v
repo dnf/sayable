@@ -38,10 +38,10 @@ pub const locale_kw = DurationLocale{
 	second: plural_unit({PluralCategory.zero: '{n} sekond', PluralCategory.one: '{n} sekond', PluralCategory.two: '{n} sekond', PluralCategory.few: '{n} sekond', PluralCategory.many: '{n} sekond', PluralCategory.other: '{n} sekondow'})
 	minute: plural_unit({PluralCategory.zero: '{n} mynysen', PluralCategory.one: '{n} mynysen', PluralCategory.two: '{n} vynysen', PluralCategory.few: '{n} mynysen', PluralCategory.many: '{n} mynysen', PluralCategory.other: '{n} mynysen'})
 	hour: plural_unit({PluralCategory.zero: '{n} our', PluralCategory.one: '{n} our', PluralCategory.two: '{n} our', PluralCategory.few: '{n} our', PluralCategory.many: '{n} our', PluralCategory.other: '{n} our'})
-	day: plural_unit({PluralCategory.zero: '{n} dydh', PluralCategory.one: 'dydh', PluralCategory.two: '{n} dhydh', PluralCategory.few: '{n} dydh', PluralCategory.many: '{n} dydh', PluralCategory.other: '{n} dydh'})
-	week: plural_unit({PluralCategory.zero: '{n} seythun', PluralCategory.one: 'seythun', PluralCategory.two: '{n} seythun', PluralCategory.few: '{n} seythun', PluralCategory.many: '{n} seythun', PluralCategory.other: '{n} seythun'})
-	month: plural_unit({PluralCategory.zero: '{n} mis', PluralCategory.one: 'mis', PluralCategory.two: '{n} vis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'})
-	year: plural_unit({PluralCategory.zero: '{n} blydhen', PluralCategory.one: 'blydhen', PluralCategory.two: '{n} vlydhen', PluralCategory.few: '{n} blydhen', PluralCategory.many: '{n} blydhen', PluralCategory.other: '{n} blydhen'})
+	day: plural_unit({PluralCategory.zero: '{n} dydh', PluralCategory.one: '{n} dydh', PluralCategory.two: '{n} dhydh', PluralCategory.few: '{n} dydh', PluralCategory.many: '{n} dydh', PluralCategory.other: '{n} dydh'})
+	week: plural_unit({PluralCategory.zero: '{n} seythun', PluralCategory.one: '{n} seythun', PluralCategory.two: '{n} seythun', PluralCategory.few: '{n} seythun', PluralCategory.many: '{n} seythun', PluralCategory.other: '{n} seythun'})
+	month: plural_unit({PluralCategory.zero: '{n} mis', PluralCategory.one: '{n} mis', PluralCategory.two: '{n} vis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'})
+	year: plural_unit({PluralCategory.zero: '{n} blydhen', PluralCategory.one: '{n} blydhen', PluralCategory.two: '{n} vlydhen', PluralCategory.few: '{n} blydhen', PluralCategory.many: '{n} blydhen', PluralCategory.other: '{n} blydhen'})
 	half: '{0} hag hanter'
 	delimiter: ', '
 	just_now: 'lemmyn'

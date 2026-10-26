@@ -48,7 +48,7 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Мало дете".to_string()),
             child: StageLabel::Neutral("Дете".to_string()),
             teenager: StageLabel::Neutral("Тинејџер".to_string()),
-            adult: StageLabel::Neutral("Возрасен".to_string()),
+            adult: StageLabel::Gendered { m: "Возрасен".to_string(), f: "Возрасна".to_string() },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

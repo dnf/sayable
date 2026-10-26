@@ -20,11 +20,11 @@ locale = DurationLocale
     , localeUnits = Units
         { unitSecond = Pluralized
           [ (One, "motsotswana {n}")
-          , (Other, "dimetsotswana {n}")
+          , (Other, "metsotswana {n}")
           ]
         , unitMinute = Pluralized
-          [ (One, "metsotso {n}")
-          , (Other, "dimetsotso {n}")
+          [ (One, "motsotso {n}")
+          , (Other, "metsotso {n}")
           ]
         , unitHour = Pluralized
           [ (One, "hora {n}")
@@ -56,11 +56,11 @@ locale = DurationLocale
         CompactnessOverride
             { ovrSecond = Just (Pluralized
               [ (One, "motsotswana {n}")
-              , (Other, "dimetsotswana {n}")
+              , (Other, "metsotswana {n}")
               ])
             , ovrMinute = Just (Pluralized
-              [ (One, "metsotso {n}")
-              , (Other, "dimetsotso {n}")
+              [ (One, "motsotso {n}")
+              , (Other, "metsotso {n}")
               ])
             , ovrHour = Just (Pluralized
               [ (One, "hora {n}")

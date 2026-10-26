@@ -29,7 +29,7 @@
                  (cons :toddler "Batang paslit")
                  (cons :child "Bata")
                  (cons :teenager "Tinedyer")
-                 (cons :adult "Matanda"))
+                 (cons :adult "Adulto"))
    :short-units (list (cons :day "{n} araw")
                        (cons :week '((:one . "{n} linggo") (:other . "{n} na linggo")))
                        (cons :month "{n} buwan")

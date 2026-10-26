@@ -27,10 +27,10 @@ lo
 		'year'. '{n} ປີ'.
 	}).
 	locale half: '{0}ເຄິ່ງ'.
-	locale delimiter: ''.
+	locale delimiter: ' '.
 	locale justNow: 'ຫາກໍ'.
 	locale ago: '{0} ກ່ອນ'.
-	locale inFuture: 'ໃນ {0}'.
+	locale inFuture: 'ໃນອີກ {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'second'. '{n} ວິ.'.
@@ -42,7 +42,7 @@ lo
 			'year'. '{n} ປ.'.
 		}).
 		#ago. '{0} ກ່ອນ'.
-		#inFuture. 'ໃນ {0}'.
+		#inFuture. 'ໃນອີກ {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
@@ -51,13 +51,13 @@ lo
 			'hour'. '{n}h'.
 			'day'. '{n}d'.
 			'week'. '{n}w'.
-			'month'. '{n}m'.
+			'month'. '{n}mo'.
 			'year'. '{n}y'.
 		}).
 		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} ກ່ອນ'.
-		#inFuture. 'ໃນ {0}'.
+		#inFuture. 'ໃນອີກ {0}'.
 	}).
 	^ locale
 ! !

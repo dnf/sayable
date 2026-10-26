@@ -25,7 +25,7 @@ locale_km <- list(
   delimiter = ", ",
   just_now = "ឥឡូវនេះ",
   ago = "{0}មុន",
-  in_future = "ក្នុង{0}",
+  in_future = "{0}ទៀត",
   short = list(
     units = list(
       second = "{n} វិនាទី",
@@ -37,7 +37,7 @@ locale_km <- list(
       year = "{n} ឆ្នាំ"
     ),
     ago = "{0}មុន",
-    in_future = "ក្នុង{0}"
+    in_future = "{0}ទៀត"
   ),
   compact = list(
     units = list(
@@ -52,6 +52,6 @@ locale_km <- list(
     half = "{n}½",
     delimiter = "",
     ago = "{0}មុន",
-    in_future = "ក្នុង{0}"
+    in_future = "{0}ទៀត"
   )
 )

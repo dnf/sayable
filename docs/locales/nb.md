@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | i overmorgen    | 17.3.    |
 | Day before yesterday | i forgårs       | 13.3.    |
 | This Thursday (+5)   | denne torsdag   | 20.3.    |
-| Last Monday (-4)     | forrige tirsdag | 11.3.    |
-| Next Wednesday (+12) | neste torsdag   | 27.3.    |
-| Same month (+20)     | 4. april        | 4.4.     |
+| Last Tuesday (-4)    | forrige tirsdag | 11.3.    |
+| Next Thursday (+12)  | neste torsdag   | 27.3.    |
+| Same year (+20)      | 4. april        | 4.4.     |
 | Different year       | 10. januar 2026 | 10.1.26  |
 
 ## Duration
@@ -107,12 +107,12 @@ Relative to Saturday, March 15, 2025.
 
 ### Relative time
 
-| Offset        | Normal           | Compact  |
-| ------------- | ---------------- | -------- |
-| 5 minutes ago | 5 minutter siden | 5m siden |
-| 2 hours ago   | 2 timer siden    | 2t siden |
-| in 30 minutes | om 30 minutter   | om 30m   |
-| in 3 hours    | om 3 timer       | om 3t    |
+| Offset        | Normal               | Compact      |
+| ------------- | -------------------- | ------------ |
+| 5 minutes ago | for 5 minutter siden | for 5m siden |
+| 2 hours ago   | for 2 timer siden    | for 2t siden |
+| in 30 minutes | om 30 minutter       | om 30m       |
+| in 3 hours    | om 3 timer           | om 3t        |
 
 ## Time
 
@@ -121,7 +121,7 @@ Relative to Saturday, March 15, 2025.
 | Time            | Normal        | Short | Compact |
 | --------------- | ------------- | ----- | ------- |
 | Midnight        | midnatt       | 0:00  | 0:00    |
-| 1:00 AM         | klokka en     | 1:00  | 1:00    |
+| 1:00 AM         | klokka ett    | 1:00  | 1:00    |
 | 5 past 9        | fem over ni   | 9:05  | 9:05    |
 | Quarter past 10 | kvart over ti | 10:15 | 10:15   |
 | Half past 11    | halv tolv     | 11:30 | 11:30   |

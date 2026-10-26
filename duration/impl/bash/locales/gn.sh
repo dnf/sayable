@@ -16,9 +16,9 @@ _sayableduration_plural_gn() {
 }
 
 _sayableduration_locale_gn() {
-    _unit_second='{n} aravo'\''i'
-    _unit_minute='{n} aravo'
-    _unit_hour='{n} aravo guasu'
+    _unit_second='{n} aravo'\''ive'
+    _unit_minute='{n} aravo'\''i'
+    _unit_hour='{n} aravo'
     _unit_day='{n} ára'
     _unit_week='{n} arapokõindy'
     _unit_month='{n} jasy'
@@ -28,9 +28,9 @@ _sayableduration_locale_gn() {
     _just_now='ko'\''ágã'
     _ago='{0} ohasava'\''ekue'
     _in_future='{0} rire'
-    _short_unit_second='{n} ara'\''i'
-    _short_unit_minute='{n} ara'
-    _short_unit_hour='{n} ara g'
+    _short_unit_second='{n} aravo'\''ive'
+    _short_unit_minute='{n} aravo'\''i'
+    _short_unit_hour='{n} aravo'
     _short_unit_day='{n} ára'
     _short_unit_week='{n} ara'
     _short_unit_month='{n} jas'

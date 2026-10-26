@@ -11,10 +11,10 @@
 
 function loc = locale_dje()
   loc.code = 'dje';
-  loc.clock.hours = {'way cindi', 'afoo', 'ihinka', 'ihinza', 'itaaci', 'igu', 'iddu', 'iyye', 'isahkay', 'iyegga', 'iwoy', 'iwoy cindi'};
+  loc.clock.hours = {'iway cindi hinka', 'fo', 'hinka', 'hinza', 'taaci', 'gu', 'iddu', 'iyye', 'ahakku', 'yagga', 'iway', 'iway cindi fo'};
   loc.clock.midnight = 'cin beri';
   loc.clock.noon = 'zaari gaaham';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'guuru {h}', "p5", 'guuru {h} nda miniti gu', "p10", 'guuru {h} nda miniti iway', "p15", 'guuru {h} nda miniti iway cindi gu', "p20", 'guuru {h} nda miniti waranka', "p25", 'guuru {h} nda miniti waranka cindi gu', "p30", 'guuru {h} nda jare', "p35", 'guuru {h} nda miniti waranza cindi gu', "p40", 'guuru {h} nda miniti waytaaci', "p45", 'guuru {h} nda miniti waytaaci cindi gu', "p50", 'guuru {h} nda miniti waygu', "p55", 'guuru {h} nda miniti waygu cindi gu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

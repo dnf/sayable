@@ -18,7 +18,7 @@
 (def locale
   {:code "shi"
    :plural plural
-   :units {:second {:one "{n} tasint" :few "{n} tasinin" :other "{n} tasinin"}
+   :units {:second {:one "{n} tasint" :few "{n} tisinin" :other "{n} tisinin"}
           :minute {:one "{n} tusdiqt" :few "{n} tusdiqin" :other "{n} tusdiqin"}
           :hour {:one "{n} tasragt" :few "{n} tisragin" :other "{n} tisragin"}
           :day {:one "{n} ass" :few "{n} ussan" :other "{n} ass"}
@@ -30,6 +30,6 @@
    :just-now "ɣilad"
    :ago "ɣ {0} zzrin"
    :in-future "ɣ {0}"
-   :short {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
+   :short {:units {:second {:one "{n} tasint" :few "{n} tasinin" :other "{n} tasinin"} :minute {:one "{n} tusdiqt" :few "{n} tusdiqin" :other "{n} tusdiqin"} :hour {:one "{n} tasragt" :few "{n} tisragin" :other "{n} tisragin"} :day {:one "{n} ass" :few "{n} ussan" :other "{n} ass"} :week {:one "{n} imalass" :few "{n} imalassn" :other "{n} imalass"} :month {:one "{n} ayyur" :few "{n} ayyurn" :other "{n} ayyur"} :year {:one "{n} aseggas" :few "{n} iseggasen" :other "{n} aseggas"}} :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
    :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
 })

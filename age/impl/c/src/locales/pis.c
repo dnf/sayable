@@ -25,7 +25,7 @@ const SaLocale sa_locale_pis = {
         { "{n} manis", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} yia", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n} en haf", ", ", "Niufala bebi",
+    "{0} en haf", ", ", "Niufala bebi",
     {
         { "Niufala bebi", "" },
         { "Bebi", "" },
@@ -35,5 +35,5 @@ const SaLocale sa_locale_pis = {
         { "Bigfala", "" }
     },
     true, { true, { "{n} dei", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wik", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} man", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yia", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

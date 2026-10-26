@@ -23,7 +23,7 @@
           :week {:one "{n} vika" :other "{n} vikur"}
           :month {:one "{n} mánuður" :other "{n} mánuðir"}
           :year {:one "{n} ár" :other "{n} ár"}}
-   :half "{0} og hálft"
+   :half "{n} og hálft"
    :delimiter ", "
    :just-born "Nýfætt"
    :stages {:newborn "Nýfæðingur"

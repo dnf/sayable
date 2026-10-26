@@ -10,21 +10,21 @@
 # Source: locales/shi.json
 
 _sayabletime_locale_shi() {
-    _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
-    _clock_midnight='ⵏⵚ ⵏ ⵉⴹ'
-    _clock_noon='ⵜⵉⵣⵡⴰⵔⵏⵉⵏ'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_hours=('tis snat d mrawt' 'tis yat' 'tis snat' 'tis kṛaṭṭ' 'tis kkuẕt' 'tis smmust' 'tis sḍist' 'tis sat' 'tis tamt' 'tis tẕat' 'tis mrawt' 'tis yat d mrawt')
+    _clock_midnight='nṣ n iḍ'
+    _clock_noon='tizwarnin'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} d smmus tusdiqin'
+    _clock_pattern_10='{h} d mraw tusdiqin'
+    _clock_pattern_15='{h} d rrbɛ'
+    _clock_pattern_20='{h} d ɛcrin n tusdiqt'
+    _clock_pattern_25='{h} d xmsa u ɛcrin n tusdiqt'
+    _clock_pattern_30='{h} d uzgen'
+    _clock_pattern_35='{h} d xmsa u tlatin n tusdiqt'
+    _clock_pattern_40='{h} d ṛbɛin n tusdiqt'
+    _clock_pattern_45='{h} d xmsa u ṛbɛin n tusdiqt'
+    _clock_pattern_50='{h} d xmsin n tusdiqt'
+    _clock_pattern_55='{h} d xmsa u xmsin n tusdiqt'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

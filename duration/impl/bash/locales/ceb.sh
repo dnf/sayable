@@ -23,7 +23,7 @@ _sayableduration_locale_ceb() {
     _unit_week='{n} ka semana'
     _unit_month='{n} ka bulan'
     _unit_year='{n} ka tuig'
-    _half='{n}½'
+    _half='{0} ug tunga'
     _delimiter=', '
     _just_now='karon lang'
     _ago='{0} ang milabay'

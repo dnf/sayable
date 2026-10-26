@@ -17,7 +17,7 @@ nb
 	locale := SayableTimeLocale new.
 	locale code: 'nb'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'tolv'. 'en'. 'to'. 'tre'. 'fire'. 'fem'. 'seks'. 'sju'. 'åtte'. 'ni'. 'ti'. 'elleve' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'tolv'. 'ett'. 'to'. 'tre'. 'fire'. 'fem'. 'seks'. 'sju'. 'åtte'. 'ni'. 'ti'. 'elleve' }).
 	clock at: #midnight put: 'midnatt'.
 	clock at: #noon put: 'middag'.
 	clock at: #patterns put: (Dictionary newFromPairs: {

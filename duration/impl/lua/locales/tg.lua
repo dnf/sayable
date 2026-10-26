@@ -22,7 +22,7 @@ M.units = {
     month = "{n} моҳ",
     year = "{n} сол",
 }
-M.half = "{0} ним"
+M.half = "{0}у ним"
 M.delimiter = ", "
 M.just_now = "ҳамин ҳоло"
 M.ago = "{0} пеш"

@@ -11,10 +11,10 @@
 
 function loc = locale_sg()
   loc.code = 'sg';
-  loc.clock.hours = {'bâlè-ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'ömënë', 'mbïrïmbïrï', 'mënâmbârâ', 'gonambâlâ', 'bâlè', 'bâlè na ôko'};
+  loc.clock.hours = {'balë-ôko na ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'omanä', 'mbâsâmbârâ', 'miombe', 'gümbâyä', 'balë-ôko', 'balë-ôko na ôko'};
   loc.clock.midnight = 'gï na lögö';
   loc.clock.noon = 'lâ nzönï';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'ngbonga {h}', "p5", 'ngbonga {h} na minüti okü', "p10", 'ngbonga {h} na minüti balë-ôko', "p15", 'ngbonga {h} na minüti balë-ôko na okü', "p20", 'ngbonga {h} na minüti balë-ûse', "p25", 'ngbonga {h} na minüti balë-ûse na okü', "p30", 'ngbonga {h} na ndâmbo', "p35", 'ngbonga {h} na minüti balë-otâ na okü', "p40", 'ngbonga {h} na minüti balë-usïö', "p45", 'ngbonga {h} na minüti balë-usïö na okü', "p50", 'ngbonga {h} na minüti balë-okü', "p55", 'ngbonga {h} na minüti balë-okü na okü');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

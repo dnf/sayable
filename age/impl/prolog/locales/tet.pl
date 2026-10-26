@@ -38,4 +38,5 @@ compact_sa_unit('tet', day, _, '{n}d').
 compact_sa_unit('tet', week, _, '{n}w').
 compact_sa_unit('tet', month, _, '{n}m').
 compact_sa_unit('tet', year, _, '{n}y').
+compact_sa_half('tet', '{n}½').
 compact_sa_delimiter('tet', '').

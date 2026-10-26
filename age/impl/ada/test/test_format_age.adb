@@ -965,7 +965,7 @@ procedure Test_Format_Age is
       --  25.10
       Assert_Eq ("ES half marker",
          Sayableage.Format_Age (Loc.all, Normal, "2022-06-15", "2025-12-15"),
-         "3 y medio a" & N_Tilde & "os");
+         "3 a" & N_Tilde & "os y medio");
 
       --  25.11
       Assert_Eq ("ES integer years",
@@ -1098,9 +1098,9 @@ procedure Test_Format_Age is
          Character'Val (16#D7#) & "");
 
       --  29.2 1 day one
-      Assert_Contains ("he 1 day one",
+      Assert_Eq ("he 1 day one",
          Sayableage.Format_Age (Loc.all, Normal, "2025-06-14", "2025-06-15"),
-         "1");
+         Character'Val (16#D7#) & Character'Val (16#99#) & Character'Val (16#D7#) & Character'Val (16#95#) & Character'Val (16#D7#) & Character'Val (16#9D#));
 
       --  29.3 3 days other
       Assert_Contains ("he 3 days other",
@@ -1127,8 +1127,9 @@ procedure Test_Format_Age is
          "3");
 
       --  29.8 2y dual + 1m one
-      Assert_True ("he 2y1m not empty",
-         Sayableage.Format_Age (Loc.all, Normal, "2023-06-15", "2025-07-15")'Length > 0);
+      Assert_Eq ("he 2y1m dual + one",
+         Sayableage.Format_Age (Loc.all, Normal, "2023-06-15", "2025-07-15"),
+         Character'Val (16#D7#) & Character'Val (16#A9#) & Character'Val (16#D7#) & Character'Val (16#A0#) & Character'Val (16#D7#) & Character'Val (16#AA#) & Character'Val (16#D7#) & Character'Val (16#99#) & Character'Val (16#D7#) & Character'Val (16#99#) & Character'Val (16#D7#) & Character'Val (16#9D#) & ", " & Character'Val (16#D7#) & Character'Val (16#97#) & Character'Val (16#D7#) & Character'Val (16#95#) & Character'Val (16#D7#) & Character'Val (16#93#) & Character'Val (16#D7#) & Character'Val (16#A9#));
 
       --  29.9 3.5 years half
       Assert_Contains ("he 3.5y half",
@@ -1264,7 +1265,7 @@ procedure Test_Format_Age is
       --  29.32 3.5y half
       Assert_Eq ("id 3.5y half",
          Sayableage.Format_Age (Loc.all, Normal, "2022-06-15", "2025-12-15"),
-         "3 tahun setengah");
+         "3 setengah tahun");
 
       --  29.33 7y
       Assert_Eq ("id 7y",

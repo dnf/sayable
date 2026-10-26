@@ -36,7 +36,7 @@ pub const locale_mk = AgeLocale{
 	toddler: stage_neutral('Мало дете')
 	child: stage_neutral('Дете')
 	teenager: stage_neutral('Тинејџер')
-	adult: stage_neutral('Возрасен')
+	adult: stage_gendered('Возрасен', 'Возрасна')
 	has_short: true
 	short_override: CompactnessOverride{
 		day: plural_unit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дена'})

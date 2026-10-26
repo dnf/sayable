@@ -26,7 +26,7 @@ locale_fon <- list(
     infant = "Vǐ",
     toddler = "Vǐ",
     child = "Vǐ",
-    teenager = "Nyɔ̌nu",
+    teenager = list(m = "Dɔnkpɛvu", f = "Ɖyɔ̌vǐ"),
     adult = "Mɛ̌xo"
   ),
   short = list(

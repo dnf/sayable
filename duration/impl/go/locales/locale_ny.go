@@ -23,9 +23,9 @@ var NY = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.SimpleUnit("{n} sekondi"),
-		Minute: sd.SimpleUnit("{n} mphindi"),
-		Hour:   sd.SimpleUnit("{n} ola"),
+		Second: sd.SimpleUnit("sekondi {n}"),
+		Minute: sd.SimpleUnit("mphindi {n}"),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "ola {n}", sd.Other: "maola {n}"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "tsiku {n}", sd.Other: "masiku {n}"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "sabata {n}", sd.Other: "masabata {n}"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mwezi {n}", sd.Other: "miyezi {n}"}),
@@ -39,7 +39,7 @@ var NY = sd.DurationLocale{
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "sek {n}"},
 		Minute:   &sd.UnitForms{Simple: "mph {n}"},
-		Hour:     &sd.UnitForms{Simple: "ola {n}"},
+		Hour:     unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "ola {n}", sd.Other: "maola {n}"})),
 		Day:      unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "tsiku {n}", sd.Other: "mas {n}"})),
 		Week:     unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "sabata {n}", sd.Other: "masab {n}"})),
 		Month:    unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "mwezi {n}", sd.Other: "miyezi {n}"})),

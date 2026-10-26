@@ -22,8 +22,8 @@ function locale_tg {
     $dayAfterTomorrow = 'пасфардо'
     $dayBeforeYesterday = 'парирӯз'
     $thisWeekday = 'ин {weekday}'
-    $nextWeekday = '{weekday}-и оянда'
-    $lastWeekday = '{weekday}-и гузашта'
+    $nextWeekday = '{weekday}и оянда'
+    $lastWeekday = '{weekday}и гузашта'
     $monthsInDate = $null
     $short = @{
         months = @('Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек')

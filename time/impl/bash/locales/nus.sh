@@ -10,21 +10,21 @@
 # Source: locales/nus.json
 
 _sayabletime_locale_nus() {
-    _clock_hours=('thiäär ke rou' 'tök' 'rou' 'diäk' 'ŋuan' 'dhiëc' 'bäkɛl' 'dhorou' 'bät' 'kuɔn' 'thiäär' 'thiäär ku tök')
+    _clock_hours=('wäl wi̱ rɛw' 'kɛl' 'rɛw' 'diɔk' 'ŋuaan' 'dhieec' 'bäkɛl' 'bäärɔw' 'bädäk' 'bäŋuan' 'wäl' 'wäl wi̱ kɛl')
     _clock_midnight='wakɔ̈u'
     _clock_noon='cäŋ kɔ̈k'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='thaar {h}'
+    _clock_pattern_5='thaar {h} kɛnɛ minit dhieec'
+    _clock_pattern_10='thaar {h} kɛnɛ minit wäl'
+    _clock_pattern_15='thaar {h} kɛnɛ minit wäl wi̱ dhieec'
+    _clock_pattern_20='thaar {h} kɛnɛ minit jiɛn rɛw'
+    _clock_pattern_25='thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec'
+    _clock_pattern_30='thaar {h} kɛnɛ minit jiɛn diɔk'
+    _clock_pattern_35='thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec'
+    _clock_pattern_40='thaar {h} kɛnɛ minit jiɛn ŋuaan'
+    _clock_pattern_45='thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec'
+    _clock_pattern_50='thaar {h} kɛnɛ minit jiɛn dhieec'
+    _clock_pattern_55='thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

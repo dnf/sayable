@@ -18,7 +18,7 @@ pub fn locale() -> types.DurationLocale {
     units: [
       #("second", types.PluralUnit([#(types.One, "{n} diog"), #(types.Two, "{n} dhiog"), #(types.Few, "{n} diogan"), #(types.Other, "{n} diog")])),
       #("minute", types.PluralUnit([#(types.One, "{n} mhionaid"), #(types.Two, "{n} mhionaid"), #(types.Few, "{n} mionaidean"), #(types.Other, "{n} mionaid")])),
-      #("hour", types.PluralUnit([#(types.One, "{n} uair"), #(types.Two, "{n} uair"), #(types.Few, "{n} uairean"), #(types.Other, "{n} uair")])),
+      #("hour", types.PluralUnit([#(types.One, "{n} uair a thìde"), #(types.Two, "{n} uair a thìde"), #(types.Few, "{n} uairean a thìde"), #(types.Other, "{n} uair a thìde")])),
       #("day", types.PluralUnit([#(types.One, "{n} latha"), #(types.Two, "{n} latha"), #(types.Few, "{n} làithean"), #(types.Other, "{n} latha")])),
       #("week", types.PluralUnit([#(types.One, "{n} sheachdain"), #(types.Two, "{n} sheachdain"), #(types.Few, "{n} seachdainean"), #(types.Other, "{n} seachdain")])),
       #("month", types.PluralUnit([#(types.One, "{n} mhìos"), #(types.Two, "{n} mhìos"), #(types.Few, "{n} mìosan"), #(types.Other, "{n} mìos")])),

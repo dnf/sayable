@@ -25,7 +25,7 @@ our sub locale() {
         tomorrow => 'kusasa',
         yesterday => 'izolo',
         day-after-tomorrow => 'ngomhlomunye',
-        day-before-yesterday => 'usuku olwedlule izolo',
+        day-before-yesterday => 'kuthangi',
         this-weekday => 'leli {weekday}',
         next-weekday => '{weekday} elizayo',
         last-weekday => '{weekday} eledlule',

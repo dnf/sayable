@@ -29,7 +29,7 @@ pub const locale_tk = DurationLocale{
 	week: simple_unit('{n} hepde')
 	month: simple_unit('{n} aý')
 	year: simple_unit('{n} ýyl')
-	half: '{0}½'
+	half: '{n} ýarym'
 	delimiter: ', '
 	just_now: 'häzir'
 	ago: '{0} öň'

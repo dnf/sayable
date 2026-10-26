@@ -15,7 +15,7 @@ module SayableAge
       plural: ->(n : Int32) { PluralCategory::Other },
       units: {
         "day" => UnitForms.new("{n} q'ij"),
-        "week" => UnitForms.new("{n} xjaw"),
+        "week" => UnitForms.new("{n} seman"),
         "month" => UnitForms.new("{n} xjaw"),
         "year" => UnitForms.new("{n} ab'q'ii"),
       },
@@ -33,7 +33,7 @@ module SayableAge
       short: CompactnessOverride.new(
         units: {
           "day" => UnitForms.new("{n} q'ij"),
-          "week" => UnitForms.new("{n} xjaw"),
+          "week" => UnitForms.new("{n} seman"),
           "month" => UnitForms.new("{n} xjaw"),
           "year" => UnitForms.new("{n} ab'."),
         },
@@ -46,6 +46,7 @@ module SayableAge
           "year" => UnitForms.new("{n}y"),
         },
         delimiter: "",
+        half: "{n}½",
       ),
     )
   end

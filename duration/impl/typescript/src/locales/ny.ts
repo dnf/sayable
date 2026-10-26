@@ -15,9 +15,9 @@ export const ny: DurationLocale = {
   code: 'ny',
   plural: (n) => (n === 1 ? 'one' : 'other'),
   units: {
-    second: '{n} sekondi',
-    minute: '{n} mphindi',
-    hour:   '{n} ola',
+    second: 'sekondi {n}',
+    minute: 'mphindi {n}',
+    hour:   { one: 'ola {n}', other: 'maola {n}' },
     day:    { one: 'tsiku {n}', other: 'masiku {n}' },
     week:   { one: 'sabata {n}', other: 'masabata {n}' },
     month:  { one: 'mwezi {n}', other: 'miyezi {n}' },
@@ -32,7 +32,7 @@ export const ny: DurationLocale = {
     units: {
       second: 'sek {n}',
       minute: 'mph {n}',
-      hour:   'ola {n}',
+      hour:   { one: 'ola {n}', other: 'maola {n}' },
       day:    { one: 'tsiku {n}', other: 'mas {n}' },
       week:   { one: 'sabata {n}', other: 'masab {n}' },
       month:  { one: 'mwezi {n}', other: 'miyezi {n}' },

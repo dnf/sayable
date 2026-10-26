@@ -18,12 +18,12 @@
           :day "{n} ngày"
           :week "{n} tuần"
           :month "{n} tháng"
-          :year "{n} tuổi"}
+          :year "{n} năm"}
    :half "{0} rưỡi"
    :delimiter ", "
    :just-now "vừa xong"
    :ago "{0} trước"
-   :in-future "trong {0}"
-   :short {:units {:second "{n} giây" :minute "{n} phút" :hour "{n} giờ" :day "{n} ngày" :week "{n} tuần" :month "{n} tháng" :year "{n} năm"} :ago "{0} trước" :in-future "trong {0}"}
-   :compact {:units {:second "{n} giây" :minute "{n} phút" :hour "{n} giờ" :day "{n} ngày" :week "{n} tuần" :month "{n} tháng" :year "{n} năm"} :half "{n}½" :delimiter "" :ago "{0} trước" :in-future "trong {0}"}
+   :in-future "{0} nữa"
+   :short {:units {:second "{n} giây" :minute "{n} phút" :hour "{n} giờ" :day "{n} ngày" :week "{n} tuần" :month "{n} tháng" :year "{n} năm"} :ago "{0} trước" :in-future "{0} nữa"}
+   :compact {:units {:second "{n} giây" :minute "{n} phút" :hour "{n} giờ" :day "{n} ngày" :week "{n} tuần" :month "{n} tháng" :year "{n} năm"} :half "{n}½" :delimiter "" :ago "{0} trước" :in-future "{0} nữa"}
 })

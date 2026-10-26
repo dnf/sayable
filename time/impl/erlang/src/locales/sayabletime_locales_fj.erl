@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "fj",
-        clock = #clock_config{hours = ["tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"], midnight = "bogi levu", noon = "sigalevu", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["tini ka rua", "dua", "rua", "tolu", "vā", "lima", "ono", "vitu", "walu", "ciwa", "tini", "tini ka dua"], midnight = "bogi levu", noon = "sigalevu", patterns = [{0, "{h} na kaloko"}, {5, "{h} na kaloko ka lima na miniti"}, {10, "{h} na kaloko ka tini na miniti"}, {15, "{h} na kaloko ka tini ka lima na miniti"}, {20, "{h} na kaloko ka ruasagavulu na miniti"}, {25, "{h} na kaloko ka ruasagavulu ka lima na miniti"}, {30, "{h} na kaloko ka tolusagavulu na miniti"}, {35, "{h} na kaloko ka tolusagavulu ka lima na miniti"}, {40, "{h} na kaloko ka vāsagavulu na miniti"}, {45, "{h} na kaloko ka vāsagavulu ka lima na miniti"}, {50, "{h} na kaloko ka limasagavulu na miniti"}, {55, "{h} na kaloko ka limasagavulu ka lima na miniti"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

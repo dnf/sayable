@@ -22,7 +22,7 @@ from ..locale import (
 fn build_nb() -> TimeLocale:
     """Build the Norwegian Bokmål locale."""
     var hour0 = "tolv"
-    var hour1 = "en"
+    var hour1 = "ett"
     var hour2 = "to"
     var hour3 = "tre"
     var hour4 = "fire"

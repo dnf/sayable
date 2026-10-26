@@ -30,7 +30,7 @@ const SduDurationLocale sdu_locale_dyu = {
     },
     "{0} ni tilancɛ", ", ",
     "sisan",
-    "{0} tɛmɛnen", "ka {0}",
-    true, { true, { "sɛk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "min. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "lɛr. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "don {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "dɔgɔk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "kalo {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "san {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} tɛmɛnen", true, "ka {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} tɛmɛnen", true, "ka {0}" }
+    "{0} tɛmɛnen", "{0} kɔnɔ",
+    true, { true, { "sɛk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "min. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "lɛr. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "don {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "dɔgɔk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "kalo {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "san {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} tɛmɛnen", true, "{0} kɔnɔ" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} tɛmɛnen", true, "{0} kɔnɔ" }
 };

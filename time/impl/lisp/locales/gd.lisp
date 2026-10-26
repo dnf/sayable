@@ -17,10 +17,10 @@
   (make-time-locale
    :code "gd"
    :clock (make-clock-config
-    :hours (list "dà-dheug" "aon" "dà" "trì" "ceithir" "còig" "sia" "seachd" "ochd" "naoi" "deich" "aon-deug")
+    :hours (list "dà uair dheug" "uair" "dà uair" "trì uairean" "ceithir uairean" "còig uairean" "sia uairean" "seachd uairean" "ochd uairean" "naoi uairean" "deich uairean" "aon uair deug")
     :midnight "meadhan-oidhche"
     :noon "meadhan-latha"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "còig mionaidean an dèidh {h}") (cons 10 "deich mionaidean an dèidh {h}") (cons 15 "cairteal an dèidh {h}") (cons 20 "fichead mionaid an dèidh {h}") (cons 25 "còig mionaidean fichead an dèidh {h}") (cons 30 "leth-uair an dèidh {h}") (cons 35 "còig mionaidean fichead gu {next_h}") (cons 40 "fichead mionaid gu {next_h}") (cons 45 "cairteal gu {next_h}") (cons 50 "deich mionaidean gu {next_h}") (cons 55 "còig mionaidean gu {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

@@ -32,7 +32,7 @@ var TH = sd.DurationLocale{
 	Delimiter: " ",
 	JustNow:   "เมื่อกี้",
 	Ago:       "{0}ที่แล้ว",
-	InFuture:  "ใน{0}",
+	InFuture:  "ในอีก {0}",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "{n} วิ"},
 		Minute:   &sd.UnitForms{Simple: "{n} นาที"},
@@ -42,7 +42,7 @@ var TH = sd.DurationLocale{
 		Month:    &sd.UnitForms{Simple: "{n} เดือน"},
 		Year:     &sd.UnitForms{Simple: "{n} ปี"},
 		Ago:      strPtr("{0}ที่แล้ว"),
-		InFuture: strPtr("ใน{0}"),
+		InFuture: strPtr("ในอีก {0}"),
 	},
 	Compact: &sd.CompactnessOverride{
 		Second:    &sd.UnitForms{Simple: "{n}วิ"},
@@ -55,6 +55,6 @@ var TH = sd.DurationLocale{
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0}ที่แล้ว"),
-		InFuture:  strPtr("ใน{0}"),
+		InFuture:  strPtr("ในอีก {0}"),
 	},
 }

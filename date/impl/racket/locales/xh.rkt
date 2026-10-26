@@ -30,7 +30,7 @@
    "ngomso"
    "izolo"
    "ngomhlomunye"
-   "kutshanje"
+   "izolo elinye"
    "le {weekday}"
    "{weekday} ezayo"
    "{weekday} edlulileyo"

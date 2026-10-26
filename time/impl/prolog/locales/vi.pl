@@ -13,20 +13,20 @@
 
 st_hours('vi', ['mười hai', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười', 'mười một']).
 st_midnight('vi', 'nửa đêm').
-st_noon('vi', 'trưa').
+st_noon('vi', 'mười hai giờ trưa').
 
-st_pattern('vi', 0, '{h} o\'clock').
-st_pattern('vi', 5, 'năm qua {h}').
-st_pattern('vi', 10, 'mười qua {h}').
-st_pattern('vi', 15, 'mười lăm qua {h}').
-st_pattern('vi', 20, 'hai mươi qua {h}').
-st_pattern('vi', 25, 'hai mươi lăm qua {h}').
-st_pattern('vi', 30, 'ba mươi qua {h}').
-st_pattern('vi', 35, 'hai mươi lăm trước {next_h}').
-st_pattern('vi', 40, 'hai mươi trước {next_h}').
-st_pattern('vi', 45, 'mười lăm trước {next_h}').
-st_pattern('vi', 50, 'mười trước {next_h}').
-st_pattern('vi', 55, 'năm trước {next_h}').
+st_pattern('vi', 0, '{h} giờ').
+st_pattern('vi', 5, '{h} giờ năm phút').
+st_pattern('vi', 10, '{h} giờ mười phút').
+st_pattern('vi', 15, '{h} giờ mười lăm phút').
+st_pattern('vi', 20, '{h} giờ hai mươi phút').
+st_pattern('vi', 25, '{h} giờ hai mươi lăm phút').
+st_pattern('vi', 30, '{h} giờ rưỡi').
+st_pattern('vi', 35, '{next_h} giờ kém hai mươi lăm').
+st_pattern('vi', 40, '{next_h} giờ kém hai mươi').
+st_pattern('vi', 45, '{next_h} giờ kém mười lăm').
+st_pattern('vi', 50, '{next_h} giờ kém mười').
+st_pattern('vi', 55, '{next_h} giờ kém năm').
 
 short_st_use24h('vi', true).
 short_st_format('vi', '{h}:{mm}').

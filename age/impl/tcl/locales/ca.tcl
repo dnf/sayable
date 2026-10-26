@@ -22,7 +22,7 @@ proc locale_ca {} {
         month [dict create one "{n} mes" other "{n} mesos"] \
         year [dict create one "{n} any" other "{n} anys"] \
     ]
-    set half "{n} i mig"
+    set half "{0} i mig"
     set delimiter {, }
     set just_born {Nounat}
     set stages [dict create \

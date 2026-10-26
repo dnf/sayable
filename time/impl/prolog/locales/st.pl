@@ -11,22 +11,22 @@
 
 % Southern Sotho locale.
 
-st_hours('st', ['leshome le metso e mmedi', 'e nngwe', 'tse pedi', 'tse tharo', 'tse nne', 'tse hlano', 'tse tshelela', 'tse supileng', 'tse robedi', 'tse robong', 'leshome', 'leshome le motso o le mong']).
+st_hours('st', ['leshome le metso e mmedi', 'pele', 'bobedi', 'boraro', 'bone', 'bohlano', 'botshelela', 'bosupa', 'borobedi', 'borobong', 'leshome', 'leshome le motso o le mong']).
 st_midnight('st', 'hara bosiu').
 st_noon('st', 'motsheare').
 
-st_pattern('st', 0, '{h}:00').
-st_pattern('st', 5, '{h}:05').
-st_pattern('st', 10, '{h}:10').
-st_pattern('st', 15, '{h}:15').
-st_pattern('st', 20, '{h}:20').
-st_pattern('st', 25, '{h}:25').
-st_pattern('st', 30, '{h}:30').
-st_pattern('st', 35, '{h}:35').
-st_pattern('st', 40, '{h}:40').
-st_pattern('st', 45, '{h}:45').
-st_pattern('st', 50, '{h}:50').
-st_pattern('st', 55, '{h}:55').
+st_pattern('st', 0, 'hora ya {h}').
+st_pattern('st', 5, 'hora ya {h} le metsotso e mehlano').
+st_pattern('st', 10, 'hora ya {h} le metsotso e leshome').
+st_pattern('st', 15, 'hora ya {h} le kotara').
+st_pattern('st', 20, 'hora ya {h} le metsotso e mashome a mabedi').
+st_pattern('st', 25, 'hora ya {h} le metsotso e mashome a mabedi a metso e mehlano').
+st_pattern('st', 30, 'hora ya {h} le halofo').
+st_pattern('st', 35, 'hora ya {h} le metsotso e mashome a mararo a metso e mehlano').
+st_pattern('st', 40, 'hora ya {h} le metsotso e mashome a mane').
+st_pattern('st', 45, 'hora ya {h} le metsotso e mashome a mane a metso e mehlano').
+st_pattern('st', 50, 'hora ya {h} le metsotso e mashome a mahlano').
+st_pattern('st', 55, 'hora ya {h} le metsotso e mashome a mahlano a metso e mehlano').
 
 short_st_use24h('st', false).
 short_st_format('st', '{h}:{mm} {ampm}').

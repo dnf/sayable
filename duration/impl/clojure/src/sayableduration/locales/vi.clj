@@ -20,11 +20,11 @@
    :day {:type :simple :form "{n} ngày"}
    :week {:type :simple :form "{n} tuần"}
    :month {:type :simple :form "{n} tháng"}
-   :year {:type :simple :form "{n} tuổi"}
+   :year {:type :simple :form "{n} năm"}
    :half "{0} rưỡi"
    :delimiter ", "
    :just-now "vừa xong"
    :ago "{0} trước"
-   :in-future "trong {0}"
-   :short {:second {:type :simple :form "{n} giây"} :minute {:type :simple :form "{n} phút"} :hour {:type :simple :form "{n} giờ"} :day {:type :simple :form "{n} ngày"} :week {:type :simple :form "{n} tuần"} :month {:type :simple :form "{n} tháng"} :year {:type :simple :form "{n} năm"} :half nil :delimiter nil :ago "{0} trước" :in-future "trong {0}"}
-   :compact {:second {:type :simple :form "{n} giây"} :minute {:type :simple :form "{n} phút"} :hour {:type :simple :form "{n} giờ"} :day {:type :simple :form "{n} ngày"} :week {:type :simple :form "{n} tuần"} :month {:type :simple :form "{n} tháng"} :year {:type :simple :form "{n} năm"} :half "{n}½" :delimiter "" :ago "{0} trước" :in-future "trong {0}"}})
+   :in-future "{0} nữa"
+   :short {:second {:type :simple :form "{n} giây"} :minute {:type :simple :form "{n} phút"} :hour {:type :simple :form "{n} giờ"} :day {:type :simple :form "{n} ngày"} :week {:type :simple :form "{n} tuần"} :month {:type :simple :form "{n} tháng"} :year {:type :simple :form "{n} năm"} :half nil :delimiter nil :ago "{0} trước" :in-future "{0} nữa"}
+   :compact {:second {:type :simple :form "{n} giây"} :minute {:type :simple :form "{n} phút"} :hour {:type :simple :form "{n} giờ"} :day {:type :simple :form "{n} ngày"} :week {:type :simple :form "{n} tuần"} :month {:type :simple :form "{n} tháng"} :year {:type :simple :form "{n} năm"} :half "{n}½" :delimiter "" :ago "{0} trước" :in-future "{0} nữa"}})

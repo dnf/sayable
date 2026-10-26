@@ -11,10 +11,10 @@
 
 function loc = locale_sar()
   loc.code = 'sar';
-  loc.clock.hours = {'mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'kɨ̀ndá', 'ɗìi', 'mùtá', 'sɔ̀', 'mɨ̀ndɨ̀', 'mɨ̀ndɨ̀ kɨ̀ndá', 'mɨ̀sá', 'mɨ̀ndɨ̀ mùtá', 'mɨ̀ndɨ̀ sɔ̀', 'mɔ̀ɔ́', 'mɔ̀ɔ́ kɨ̀ndá'};
+  loc.clock.hours = {'lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'lɛɛr kɨ̀ndá', 'lɛɛr ɗìi', 'lɛɛr mùtá', 'lɛɛr sɔ̀', 'lɛɛr mɨ̀ndɨ̀', 'lɛɛr mɨ̀ndɨ̀ kɨ̀ndá', 'lɛɛr mɨ̀sá', 'lɛɛr mɨ̀ndɨ̀ mùtá', 'lɛɛr mɨ̀ndɨ̀ sɔ̀', 'lɛɛr mɔ̀ɔ́', 'lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá'};
   loc.clock.midnight = 'badɔ';
   loc.clock.noon = 'mbɔr ndɔ';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} kɨ̀ minít mɨ̀ndɨ̀', "p10", '{h} kɨ̀ minít mɔ̀ɔ́', "p15", '{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀', "p20", '{h} kɨ̀ minít mɔ̀ɔ́ ɗìi', "p25", '{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀', "p30", '{h} kɩ̀ ndá̰ŋ', "p35", '{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀', "p40", '{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀', "p45", '{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀', "p50", '{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀', "p55", '{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

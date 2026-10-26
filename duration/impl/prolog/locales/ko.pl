@@ -19,7 +19,7 @@ sd_unit('ko', hour, _, '{n}시간').
 sd_unit('ko', day, _, '{n}일').
 sd_unit('ko', week, _, '{n}주').
 sd_unit('ko', month, _, '{n}개월').
-sd_unit('ko', year, _, '{n}살').
+sd_unit('ko', year, _, '{n}년').
 
 sd_half('ko', '{0} 반').
 sd_delimiter('ko', ' ').

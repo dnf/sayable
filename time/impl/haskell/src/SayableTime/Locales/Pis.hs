@@ -22,18 +22,18 @@ locale = TimeLocale
             , clockMidnight = "midonaet"
             , clockNoon = "midei"
             , clockPatterns =
-                [ (0, "{h}:00")
-                , (5, "{h}:05")
-                , (10, "{h}:10")
-                , (15, "{h}:15")
-                , (20, "{h}:20")
-                , (25, "{h}:25")
-                , (30, "{h}:30")
-                , (35, "{h}:35")
-                , (40, "{h}:40")
-                , (45, "{h}:45")
-                , (50, "{h}:50")
-                , (55, "{h}:55")
+                [ (0, "{h} kilok")
+                , (5, "faev minit pas {h}")
+                , (10, "ten minit pas {h}")
+                , (15, "kwata pas {h}")
+                , (20, "twenti minit pas {h}")
+                , (25, "twenti faev minit pas {h}")
+                , (30, "haf pas {h}")
+                , (35, "twenti faev minit tu {next_h}")
+                , (40, "twenti minit tu {next_h}")
+                , (45, "kwata tu {next_h}")
+                , (50, "ten minit tu {next_h}")
+                , (55, "faev minit tu {next_h}")
                 ]
             }
     , localeShort = Just $ CompactnessOverride $ Just $

@@ -20,7 +20,7 @@
     :hours (list "dwunasta" "pierwsza" "druga" "trzecia" "czwarta" "piąta" "szósta" "siódma" "ósma" "dziewiąta" "dziesiąta" "jedenasta")
     :midnight "północ"
     :noon "południe"
-    :patterns (list (cons 0 "{h}") (cons 5 "pięć po {h}") (cons 10 "dziesięć po {h}") (cons 15 "piętnaście po {h}") (cons 20 "dwadzieścia po {h}") (cons 25 "dwadzieścia pięć po {h}") (cons 30 "trzydzieści po {h}") (cons 35 "dwadzieścia pięć do {next_h}") (cons 40 "dwadzieścia do {next_h}") (cons 45 "piętnaście do {next_h}") (cons 50 "dziesięć do {next_h}") (cons 55 "pięć do {next_h}")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} pięć") (cons 10 "{h} dziesięć") (cons 15 "{h} piętnaście") (cons 20 "{h} dwadzieścia") (cons 25 "{h} dwadzieścia pięć") (cons 30 "{h} trzydzieści") (cons 35 "za dwadzieścia pięć {next_h}") (cons 40 "za dwadzieścia {next_h}") (cons 45 "za kwadrans {next_h}") (cons 50 "za dziesięć {next_h}") (cons 55 "za pięć {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

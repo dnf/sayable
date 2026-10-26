@@ -33,4 +33,5 @@ function loc = locale_ja()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
 endfunction

@@ -11,10 +11,10 @@
 
 function loc = locale_sw()
   loc.code = 'sw';
-  loc.clock.hours = {'kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'};
-  loc.clock.midnight = 'usiku wa manane';
-  loc.clock.noon = 'adhuhuri';
-  loc.clock.patterns = struct("p0", '{h} o''clock', "p5", 'tano kupita {h}', "p10", 'kumi kupita {h}', "p15", 'robo kupita {h}', "p20", 'ishirini kupita {h}', "p25", 'ishirini na tano kupita {h}', "p30", 'nusu kupita {h}', "p35", 'ishirini na tano kabla ya {next_h}', "p40", 'ishirini kabla ya {next_h}', "p45", 'robo kabla ya {next_h}', "p50", 'kumi kabla ya {next_h}', "p55", 'tano kabla ya {next_h}');
+  loc.clock.hours = {'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja', 'kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano'};
+  loc.clock.midnight = 'saa sita usiku';
+  loc.clock.noon = 'saa sita mchana';
+  loc.clock.patterns = struct("p0", 'saa {h}', "p5", 'saa {h} na dakika tano', "p10", 'saa {h} na dakika kumi', "p15", 'saa {h} na robo', "p20", 'saa {h} na dakika ishirini', "p25", 'saa {h} na dakika ishirini na tano', "p30", 'saa {h} na nusu', "p35", 'saa {next_h} kasoro dakika ishirini na tano', "p40", 'saa {next_h} kasoro dakika ishirini', "p45", 'saa {next_h} kasoro robo', "p50", 'saa {next_h} kasoro dakika kumi', "p55", 'saa {next_h} kasoro dakika tano');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

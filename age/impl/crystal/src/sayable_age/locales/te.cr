@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new(one: "{n} నెల", other: "{n} నెలలు"),
         "year" => UnitForms.new(one: "{n} సంవత్సరం", other: "{n} సంవత్సరాలు"),
       },
-      half: "{0}న్నర",
+      half: "{n}½",
       delimiter: ", ",
       just_born: "నవజాత శిశువు",
       stages: {

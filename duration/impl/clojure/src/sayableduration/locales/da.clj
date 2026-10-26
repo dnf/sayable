@@ -24,7 +24,7 @@
    :half "{n}½"
    :delimiter ", "
    :just-now "lige nu"
-   :ago "{0} siden"
+   :ago "for {0} siden"
    :in-future "om {0}"
    :short {:second {:type :simple :form "{n} sek."} :minute {:type :simple :form "{n} min."} :hour {:type :simple :form "{n} t."} :day {:type :pluralized :forms {:one "{n} dag" :other "{n} dage"}} :week {:type :pluralized :forms {:one "{n} uge" :other "{n} uger"}} :month {:type :pluralized :forms {:one "{n} md." :other "{n} mdr."}} :year {:type :simple :form "{n} år"} :half nil :delimiter nil :ago "{0} siden" :in-future "om {0}"}
    :compact {:second {:type :simple :form "{n} s"} :minute {:type :simple :form "{n} m"} :hour {:type :simple :form "{n} t"} :day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} u"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} år"} :half nil :delimiter "" :ago "{0} siden" :in-future "om {0}"}})

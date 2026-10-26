@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | the day after tomorrow   | 3/17      |
 | Day before yesterday | the day before yesterday | 3/13      |
 | This Thursday (+5)   | this Thursday            | 3/20      |
-| Last Monday (-4)     | last Tuesday             | 3/11      |
-| Next Wednesday (+12) | next Thursday            | 3/27      |
-| Same month (+20)     | April 4th                | 4/4       |
+| Last Tuesday (-4)    | last Tuesday             | 3/11      |
+| Next Thursday (+12)  | next Thursday            | 3/27      |
+| Same year (+20)      | April 4th                | 4/4       |
 | Different year       | January 10th, 2026       | 1/10/26   |
 
 ## Duration

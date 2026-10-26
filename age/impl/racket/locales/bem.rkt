@@ -33,7 +33,7 @@
          "toddler" (stage-label "Umwana" #f #f)
          "child" (stage-label "Umwana" #f #f)
          "teenager" (stage-label "Umunyamata" #f #f)
-         "adult" (stage-label "Umulumendo" #f #f))
+         "adult" (stage-label "Umukalamba" #f #f))
    (compactness-override (hash "type" "pluralized" "forms" (hash "one" "ubushiku {n}" "other" "inshiku {n}")) (hash "type" "pluralized" "forms" (hash "one" "umulungu {n}" "other" "imilungu {n}")) (hash "type" "pluralized" "forms" (hash "one" "umweshi {n}" "other" "imyeshi {n}")) (hash "type" "pluralized" "forms" (hash "one" "umwaka {n}" "other" "imyaka {n}")) #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

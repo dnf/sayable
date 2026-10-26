@@ -60,7 +60,7 @@ class ARLocale {
       "units": {
         "day": "{n} ي",
         "week": "{n} أ",
-        "month": {"zero": "{n} شهر", "one": "شهر", "two": "شهران", "few": "{n} أشهر", "many": "{n} شهرًا", "other": "{n} شهر"},
+        "month": "{n} شهر",
         "year": "{n} سنة",
       },
       "half": "{n}½",

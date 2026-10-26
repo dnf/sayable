@@ -26,7 +26,7 @@ pub const locale_es = AgeLocale{
 	week: plural_unit({PluralCategory.one: '{n} semana', PluralCategory.other: '{n} semanas'})
 	month: plural_unit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} meses'})
 	year: plural_unit({PluralCategory.one: '{n} año', PluralCategory.other: '{n} años'})
-	half: '{n} y medio'
+	half: '{0} y medio'
 	delimiter: ', '
 	just_born: 'Recién nacido'
 	newborn: stage_gendered('Recién nacido', 'Recién nacida')

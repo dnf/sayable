@@ -14,8 +14,8 @@ module SayableDuration
       code: "qu",
       plural: ->(n : Int32) { PluralCategory::Other },
       units: {
-        "second" => UnitForms.new("{n} ñiqin"),
-        "minute" => UnitForms.new("{n} chiniku"),
+        "second" => UnitForms.new("{n} sikundu"),
+        "minute" => UnitForms.new("{n} minutu"),
         "hour" => UnitForms.new("{n} ura"),
         "day" => UnitForms.new("{n} p'unchaw"),
         "week" => UnitForms.new("{n} simana"),
@@ -29,8 +29,8 @@ module SayableDuration
       in_future: "{0} qhipata",
       short: CompactnessOverride.new(
         units: {
-          "second" => UnitForms.new("{n} ñiq"),
-          "minute" => UnitForms.new("{n} chi"),
+          "second" => UnitForms.new("{n} sik"),
+          "minute" => UnitForms.new("{n} min"),
           "hour" => UnitForms.new("{n} ura"),
           "day" => UnitForms.new("{n} p'un"),
           "week" => UnitForms.new("{n} sim"),

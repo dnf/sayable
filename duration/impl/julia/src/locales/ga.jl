@@ -23,7 +23,7 @@ const GA = DurationLocale(
     units = Dict(
         "second" => Dict("one" => "{n} soicind", "two" => "{n} shoicind", "few" => "{n} shoicind", "many" => "{n} soicind", "other" => "{n} soicind"),
         "minute" => Dict("one" => "{n} nóiméad", "two" => "{n} nóiméad", "few" => "{n} nóiméad", "many" => "{n} nóiméad", "other" => "{n} nóiméad"),
-        "hour" => Dict("one" => "{n} uair", "two" => "{n} uair", "few" => "{n} huaire", "many" => "{n} n-uaire", "other" => "{n} uair"),
+        "hour" => Dict("one" => "{n} uair an chloig", "two" => "{n} uair an chloig", "few" => "{n} huaire an chloig", "many" => "{n} n-uaire an chloig", "other" => "{n} uair an chloig"),
         "day" => Dict("one" => "{n} lá", "two" => "{n} lá", "few" => "{n} lá", "many" => "{n} lá", "other" => "{n} lá"),
         "week" => Dict("one" => "{n} seachtain", "two" => "{n} sheachtain", "few" => "{n} seachtaine", "many" => "{n} seachtaine", "other" => "{n} seachtain"),
         "month" => Dict("one" => "{n} mhí", "two" => "{n} mhí", "few" => "{n} mhí", "many" => "{n} mí", "other" => "{n} mí"),

@@ -22,7 +22,7 @@ sd_today('zu', 'namuhla').
 sd_tomorrow('zu', 'kusasa').
 sd_yesterday('zu', 'izolo').
 sd_day_after_tomorrow('zu', 'ngomhlomunye').
-sd_day_before_yesterday('zu', 'usuku olwedlule izolo').
+sd_day_before_yesterday('zu', 'kuthangi').
 sd_this_weekday('zu', 'leli {weekday}').
 sd_next_weekday('zu', '{weekday} elizayo').
 sd_last_weekday('zu', '{weekday} eledlule').

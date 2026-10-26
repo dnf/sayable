@@ -34,7 +34,7 @@ fn build_vi() -> AgeLocale:
     var year = simple_unit("{n} tuổi")
 
     var newborn = stage_neutral("Sơ sinh")
-    var infant = stage_neutral("Trẻ sơ sinh")
+    var infant = stage_neutral("Trẻ nhũ nhi")
     var toddler = stage_neutral("Trẻ mới biết đi")
     var child = stage_neutral("Trẻ em")
     var teenager = stage_neutral("Thiếu niên")

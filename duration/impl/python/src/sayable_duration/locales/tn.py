@@ -17,8 +17,8 @@ TN = DurationLocale(
     code="tn",
     plural=lambda n: "one" if n == 1 else "other",
     units={
-        "second": {"one": "motsotswana {n}", "other": "dimetsotswana {n}"},
-        "minute": {"one": "metsotso {n}", "other": "dimetsotso {n}"},
+        "second": {"one": "motsotswana {n}", "other": "metsotswana {n}"},
+        "minute": {"one": "motsotso {n}", "other": "metsotso {n}"},
         "hour": {"one": "ura {n}", "other": "diura {n}"},
         "day": {"one": "letsatsi {n}", "other": "malatsi {n}"},
         "week": {"one": "beke {n}", "other": "dibeke {n}"},
@@ -32,8 +32,8 @@ TN = DurationLocale(
     in_future="ka {0}",
     short=CompactnessOverride(
         units={
-            "second": {"one": "motsotswana {n}", "other": "dimetsotswana {n}"},
-            "minute": {"one": "metsotso {n}", "other": "dimetsotso {n}"},
+            "second": {"one": "motsotswana {n}", "other": "metsotswana {n}"},
+            "minute": {"one": "motsotso {n}", "other": "metsotso {n}"},
             "hour": {"one": "ura {n}", "other": "diura {n}"},
             "day": {"one": "letsatsi {n}", "other": "malatsi {n}"},
             "week": {"one": "beke {n}", "other": "dibeke {n}"},

@@ -24,7 +24,7 @@ locale() ->
         half = "{0} rưỡi",
         delimiter = ", ",
         just_born = "Sơ sinh",
-        stages = #stages{newborn = {neutral, "Sơ sinh"}, infant = {neutral, "Trẻ sơ sinh"}, toddler = {neutral, "Trẻ mới biết đi"}, child = {neutral, "Trẻ em"}, teenager = {neutral, "Thiếu niên"}, adult = {neutral, "Người lớn"}},
+        stages = #stages{newborn = {neutral, "Sơ sinh"}, infant = {neutral, "Trẻ nhũ nhi"}, toddler = {neutral, "Trẻ mới biết đi"}, child = {neutral, "Trẻ em"}, teenager = {neutral, "Thiếu niên"}, adult = {neutral, "Người lớn"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} ngày"}}, week = {just, {simple, "{n} tuần"}}, month = {just, {simple, "{n} tháng"}}, year = {just, {simple, "{n} năm"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n} ngày"}}, week = {just, {simple, "{n} tuần"}}, month = {just, {simple, "{n} tháng"}}, year = {just, {simple, "{n} năm"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

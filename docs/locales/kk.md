@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [kk.json](../../locales/kk.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Listed only under schemaLimits, but the data had English past/to/o'clock, so the within-schema part was applied: "сағат {h}" (:00), "{h} жарым" (:30, idiomatic), and the digital reading in words for the rest ("екі он бес", "екі нөл бес", "екі қырық бес"), grammatical for every hour. Idiomatic "екіден он бес минут өтті" (abl) / "үшке он бес минут қалды" (dat) need case lists (schema follow-up). Revert if touching schemaLimits-only locales is unwanted.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | бүрсігүні       | 17/3    |
 | Day before yesterday | алдыңғы күні    | 13/3    |
 | This Thursday (+5)   | осы бейсенбі    | 20/3    |
-| Last Monday (-4)     | өткен сейсенбі  | 11/3    |
-| Next Wednesday (+12) | келесі бейсенбі | 27/3    |
-| Same month (+20)     | 4 сәуір         | 4/4     |
+| Last Tuesday (-4)    | өткен сейсенбі  | 11/3    |
+| Next Thursday (+12)  | келесі бейсенбі | 27/3    |
+| Same year (+20)      | 4 сәуір         | 4/4     |
 | Different year       | 10 қаңтар 2026  | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal           | Short | Compact |
-| --------------- | ---------------- | ----- | ------- |
-| Midnight        | түн ортасы       | 0:00  | 0:00    |
-| 1:00 AM         | бір o'clock      | 1:00  | 1:00    |
-| 5 past 9        | бес past тоғыз   | 9:05  | 9:05    |
-| Quarter past 10 | он бес past он   | 10:15 | 10:15   |
-| Half past 11    | отыз past он бір | 11:30 | 11:30   |
-| Noon            | түс              | 12:00 | 12:00   |
-| Quarter to 3    | он бес to үш     | 14:45 | 14:45   |
-| 5 to 6          | бес to алты      | 17:55 | 17:55   |
-| 8 o'clock PM    | сегіз o'clock    | 20:00 | 20:00   |
-| 10:30 PM        | отыз past он     | 22:30 | 22:30   |
-| 11:58 PM        | түн ортасы       | 23:58 | 23:58   |
+| Time            | Normal        | Short | Compact |
+| --------------- | ------------- | ----- | ------- |
+| Midnight        | түн ортасы    | 0:00  | 0:00    |
+| 1:00 AM         | сағат бір     | 1:00  | 1:00    |
+| 5 past 9        | тоғыз нөл бес | 9:05  | 9:05    |
+| Quarter past 10 | он он бес     | 10:15 | 10:15   |
+| Half past 11    | он бір жарым  | 11:30 | 11:30   |
+| Noon            | түс           | 12:00 | 12:00   |
+| Quarter to 3    | екі қырық бес | 14:45 | 14:45   |
+| 5 to 6          | бес елу бес   | 17:55 | 17:55   |
+| 8 o'clock PM    | сағат сегіз   | 20:00 | 20:00   |
+| 10:30 PM        | он жарым      | 22:30 | 22:30   |
+| 11:58 PM        | түн ортасы    | 23:58 | 23:58   |

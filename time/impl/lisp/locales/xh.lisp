@@ -17,10 +17,10 @@
   (make-time-locale
    :code "xh"
    :clock (make-clock-config
-    :hours (list "ishumi elinambini" "inye" "ezimbini" "ezintathu" "ezine" "ezintlanu" "ezintandathu" "ezisixhenxe" "ezisibhozo" "ethoba" "ishumi" "ishumi elinanye")
+    :hours (list "yeshumi elinesibini" "yokuqala" "yesibini" "yesithathu" "yesine" "yesihlanu" "yesithandathu" "yesixhenxe" "yesibhozo" "yethoba" "yeshumi" "yeshumi elinanye")
     :midnight "ezinzulwini zobusuku"
     :noon "emini"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "intsimbi {h}") (cons 5 "imizuzu emihlanu emva kwentsimbi {h}") (cons 10 "imizuzu elishumi emva kwentsimbi {h}") (cons 15 "ikota emva kwentsimbi {h}") (cons 20 "imizuzu engamashumi amabini emva kwentsimbi {h}") (cons 25 "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}") (cons 30 "isiqingatha emva kwentsimbi {h}") (cons 35 "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}") (cons 40 "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}") (cons 45 "ikota ukuya kwintsimbi {next_h}") (cons 50 "imizuzu elishumi ukuya kwintsimbi {next_h}") (cons 55 "imizuzu emihlanu ukuya kwintsimbi {next_h}")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

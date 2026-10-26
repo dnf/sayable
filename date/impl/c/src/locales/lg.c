@@ -31,7 +31,7 @@ const SdDateLocale sd_locale_lg = {
     "enkya",
     "jjo",
     "enkya ogwa",
-    "jjo edda",
+    "jjuuzi",
     "{weekday} eno",
     "{weekday} eddirira",
     "{weekday} eggudde",

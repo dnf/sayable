@@ -21,7 +21,7 @@
                (cons :week '((:one . "{n} semana") (:other . "{n} semanas")))
                (cons :month '((:one . "{n} mes") (:other . "{n} meses")))
                (cons :year '((:one . "{n} año") (:other . "{n} años"))))
-   :half "{n} y medio"
+   :half "{0} y medio"
    :delimiter ", "
    :just-born "Recién nacido"
    :stages (list (cons :newborn '((:m . "Recién nacido") (:f . "Recién nacida")))

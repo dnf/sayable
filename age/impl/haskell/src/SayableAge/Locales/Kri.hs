@@ -21,7 +21,7 @@ locale = Locale
     , localeWeek = Simple "{n} wik"
     , localeMonth = Simple "{n} mont"
     , localeYear = Simple "{n} ia"
-    , localeHalf = "{n} na af"
+    , localeHalf = "{0} ɛn af"
     , localeDelimiter = ", "
     , localeJustBorn = "Nyubon bebi"
     , localeStages = Stages
@@ -48,7 +48,7 @@ locale = Locale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

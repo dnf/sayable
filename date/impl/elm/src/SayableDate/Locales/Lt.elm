@@ -43,10 +43,10 @@ locale =
         , "penktadienis"
         , "šeštadienis"
         ]
-    , dayFormat = "{n}."
+    , dayFormat = "{n} d."
     , dayFormatExceptions = Dict.empty
-    , datePattern = "{day} {month}"
-    , datePatternWithYear = "{day} {month} {year}"
+    , datePattern = "{month} {day}"
+    , datePatternWithYear = "{year} m. {month} {day}"
     , today = "šiandien"
     , tomorrow = "rytoj"
     , yesterday = "vakar"
@@ -96,10 +96,10 @@ locale =
                 , "pn"
                 , "št"
                 ]
-            , ovrDayFormat = Just "{n}."
+            , ovrDayFormat = Just "{n} d."
             , ovrDayFormatExceptions = Just Dict.empty
-            , ovrDatePattern = Just "{day} {month}"
-            , ovrDatePatternWithYear = Just "{day} {month} {year}"
+            , ovrDatePattern = Just "{month} {day}"
+            , ovrDatePatternWithYear = Just "{year} m. {month} {day}"
             , ovrToday = Nothing
             , ovrTomorrow = Nothing
             , ovrYesterday = Nothing

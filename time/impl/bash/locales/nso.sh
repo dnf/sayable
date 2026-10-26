@@ -10,21 +10,21 @@
 # Source: locales/nso.json
 
 _sayabletime_locale_nso() {
-    _clock_hours=('lesome pedi' 'tee' 'pedi' 'tharo' 'nne' 'hlano' 'tshela' 'šupa' 'seswai' 'senyane' 'lesome' 'lesome tee')
+    _clock_hours=('lesomepedi' 'pele' 'bobedi' 'boraro' 'bone' 'bohlano' 'botshela' 'bošupa' 'seswai' 'senyane' 'lesome' 'lesometee')
     _clock_midnight='bošego gare'
     _clock_noon='mosegare'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='iri ya {h}'
+    _clock_pattern_5='iri ya {h} le metsotso ye mehlano'
+    _clock_pattern_10='iri ya {h} le metsotso ye lesome'
+    _clock_pattern_15='iri ya {h} le kotara'
+    _clock_pattern_20='iri ya {h} le metsotso ye masomepedi'
+    _clock_pattern_25='iri ya {h} le metsotso ye masomepedi-hlano'
+    _clock_pattern_30='iri ya {h} le seripagare'
+    _clock_pattern_35='iri ya {h} le metsotso ye masometharo-hlano'
+    _clock_pattern_40='iri ya {h} le metsotso ye masomenne'
+    _clock_pattern_45='iri ya {h} le metsotso ye masomenne-hlano'
+    _clock_pattern_50='iri ya {h} le metsotso ye masomehlano'
+    _clock_pattern_55='iri ya {h} le metsotso ye masomehlano-hlano'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

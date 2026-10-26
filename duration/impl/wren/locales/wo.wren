@@ -14,50 +14,50 @@ class WOLocale {
   static plural { Fn.new {|n| "other" } }
   static units {
     return {
-      "second": "saa-yépp {n}",
-      "minute": "simili {n}",
-      "hour": "waxtu {n}",
-      "day": "bés {n}",
-      "week": "ayubés {n}",
-      "month": "weer {n}",
-      "year": "at {n}",
+      "second": "{n} saa",
+      "minute": "{n} simili",
+      "hour": "{n} waxtu",
+      "day": "{n} fan",
+      "week": "{n} ayubés",
+      "month": "{n} weer",
+      "year": "{n} at",
     }
   }
   static half { "{0} ak genn-wàll" }
   static delimiter { ", " }
   static justNow { "léegi" }
   static ago { "{0} ci ginaaw" }
-  static inFuture { "ci {0}" }
+  static inFuture { "fileek {0}" }
   static short {
     return {
       "units": {
-        "second": "saa-y. {n}",
-        "minute": "sim. {n}",
-        "hour": "wax. {n}",
-        "day": "bés {n}",
-        "week": "ayub. {n}",
-        "month": "weer {n}",
-        "year": "at {n}",
+        "second": "{n} saa",
+        "minute": "{n} sim.",
+        "hour": "{n} wax.",
+        "day": "{n} fan",
+        "week": "{n} ayub.",
+        "month": "{n} weer",
+        "year": "{n} at",
       },
       "ago": "{0} ci ginaaw",
-      "inFuture": "ci {0}",
+      "inFuture": "fileek {0}",
     }
   }
   static compact {
     return {
       "units": {
-        "second": "saa {n}",
-        "minute": "sim {n}",
-        "hour": "wax {n}",
-        "day": "bés {n}",
-        "week": "ayub {n}",
-        "month": "weer {n}",
-        "year": "at {n}",
+        "second": "{n} saa",
+        "minute": "{n} sim",
+        "hour": "{n} wax",
+        "day": "{n} fan",
+        "week": "{n} ayub",
+        "month": "{n} weer",
+        "year": "{n} at",
       },
       "half": "{n}½",
       "delimiter": "",
       "ago": "{0} ci gin.",
-      "inFuture": "ci {0}",
+      "inFuture": "fileek {0}",
     }
   }
 }

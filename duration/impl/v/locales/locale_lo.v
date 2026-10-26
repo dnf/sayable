@@ -27,10 +27,10 @@ pub const locale_lo = DurationLocale{
 	month: simple_unit('{n} ເດືອນ')
 	year: simple_unit('{n} ປີ')
 	half: '{0}ເຄິ່ງ'
-	delimiter: ''
+	delimiter: ' '
 	just_now: 'ຫາກໍ'
 	ago: '{0} ກ່ອນ'
-	in_future: 'ໃນ {0}'
+	in_future: 'ໃນອີກ {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
 		second: simple_unit('{n} ວິ.')
@@ -49,7 +49,7 @@ pub const locale_lo = DurationLocale{
 		has_year: true
 		ago: '{0} ກ່ອນ'
 		has_ago: true
-		in_future: 'ໃນ {0}'
+		in_future: 'ໃນອີກ {0}'
 		has_in_future: true
 	}
 	has_compact: true
@@ -64,7 +64,7 @@ pub const locale_lo = DurationLocale{
 		has_day: true
 		week: simple_unit('{n}w')
 		has_week: true
-		month: simple_unit('{n}m')
+		month: simple_unit('{n}mo')
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
@@ -74,7 +74,7 @@ pub const locale_lo = DurationLocale{
 		has_delimiter: true
 		ago: '{0} ກ່ອນ'
 		has_ago: true
-		in_future: 'ໃນ {0}'
+		in_future: 'ໃນອີກ {0}'
 		has_in_future: true
 	}
 }

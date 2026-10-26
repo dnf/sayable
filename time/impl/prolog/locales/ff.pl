@@ -15,18 +15,18 @@ st_hours('ff', ['sappo e ɗiɗi', 'go\'o', 'ɗiɗi', 'tati', 'nay', 'joy', 'jeeg
 st_midnight('ff', 'jamma hejjere').
 st_noon('ff', 'zuhr').
 
-st_pattern('ff', 0, '{h}:00').
-st_pattern('ff', 5, '{h}:05').
-st_pattern('ff', 10, '{h}:10').
-st_pattern('ff', 15, '{h}:15').
-st_pattern('ff', 20, '{h}:20').
-st_pattern('ff', 25, '{h}:25').
-st_pattern('ff', 30, '{h}:30').
-st_pattern('ff', 35, '{h}:35').
-st_pattern('ff', 40, '{h}:40').
-st_pattern('ff', 45, '{h}:45').
-st_pattern('ff', 50, '{h}:50').
-st_pattern('ff', 55, '{h}:55').
+st_pattern('ff', 0, 'waktu {h}').
+st_pattern('ff', 5, 'waktu {h} e hojomaaje joy').
+st_pattern('ff', 10, 'waktu {h} e hojomaaje sappo').
+st_pattern('ff', 15, 'waktu {h} e hojomaaje sappo e joy').
+st_pattern('ff', 20, 'waktu {h} e hojomaaje noogas').
+st_pattern('ff', 25, 'waktu {h} e hojomaaje noogas e joy').
+st_pattern('ff', 30, 'waktu {h} e feccere').
+st_pattern('ff', 35, 'waktu {h} e hojomaaje cappanɗe tati e joy').
+st_pattern('ff', 40, 'waktu {h} e hojomaaje cappanɗe nay').
+st_pattern('ff', 45, 'waktu {h} e hojomaaje cappanɗe nay e joy').
+st_pattern('ff', 50, 'waktu {h} e hojomaaje cappanɗe joy').
+st_pattern('ff', 55, 'waktu {h} e hojomaaje cappanɗe joy e joy').
 
 short_st_use24h('ff', false).
 short_st_format('ff', '{h}:{mm} {ampm}').

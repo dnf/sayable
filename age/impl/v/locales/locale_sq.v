@@ -28,8 +28,8 @@ pub const locale_sq = AgeLocale{
 	year: plural_unit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'})
 	half: '{0} e gjysmë'
 	delimiter: ', '
-	just_born: 'Sapolindur'
-	newborn: stage_gendered('Sapolindur', 'Sapolindure')
+	just_born: 'I sapolindur'
+	newborn: stage_gendered('I sapolindur', 'E sapolindur')
 	infant: stage_neutral('Foshnjë')
 	toddler: stage_gendered('Fëmijë i vogël', 'Fëmijë e vogël')
 	child: stage_neutral('Fëmijë')

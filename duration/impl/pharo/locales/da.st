@@ -29,7 +29,7 @@ da
 	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'lige nu'.
-	locale ago: '{0} siden'.
+	locale ago: 'for {0} siden'.
 	locale inFuture: 'om {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {

@@ -22,28 +22,28 @@ fn plural_ha(n int) PluralCategory {
 pub const locale_ha = AgeLocale{
 	code: 'ha'
 	plural: plural_ha
-	day: plural_unit({PluralCategory.one: '{n} kwana', PluralCategory.other: '{n} kwanaki'})
-	week: plural_unit({PluralCategory.one: '{n} mako', PluralCategory.other: '{n} makonni'})
-	month: plural_unit({PluralCategory.one: '{n} wata', PluralCategory.other: '{n} watanni'})
-	year: plural_unit({PluralCategory.one: '{n} shekara', PluralCategory.other: '{n} shekaru'})
+	day: plural_unit({PluralCategory.one: 'kwana {n}', PluralCategory.other: 'kwanaki {n}'})
+	week: plural_unit({PluralCategory.one: 'mako {n}', PluralCategory.other: 'makonni {n}'})
+	month: plural_unit({PluralCategory.one: 'wata {n}', PluralCategory.other: 'watanni {n}'})
+	year: plural_unit({PluralCategory.one: 'shekara {n}', PluralCategory.other: 'shekaru {n}'})
 	half: '{n}½'
 	delimiter: ', '
 	just_born: 'Sabon haihuwa'
 	newborn: stage_neutral('Jariri')
 	infant: stage_neutral('Jariri')
-	toddler: stage_neutral('Ƙaramin yaro')
-	child: stage_neutral('Yaro')
-	teenager: stage_neutral('Saurayi')
+	toddler: stage_gendered('Ƙaramin yaro', 'Ƙaramar yarinya')
+	child: stage_gendered('Yaro', 'Yarinya')
+	teenager: stage_gendered('Saurayi', 'Budurwa')
 	adult: stage_neutral('Babba')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('{n} kw.')
+		day: simple_unit('kw. {n}')
 		has_day: true
-		week: simple_unit('{n} mk.')
+		week: simple_unit('mk. {n}')
 		has_week: true
-		month: simple_unit('{n} wt.')
+		month: simple_unit('wt. {n}')
 		has_month: true
-		year: simple_unit('{n} shk.')
+		year: simple_unit('shk. {n}')
 		has_year: true
 	}
 	has_compact: true

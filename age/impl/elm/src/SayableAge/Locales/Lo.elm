@@ -25,7 +25,7 @@ locale =
     , month = Simple "{n} ເດືອນ"
     , year = Simple "{n} ປີ"
     , half = "{0}ເຄິ່ງ"
-    , delimiter = ""
+    , delimiter = " "
     , justBorn = "ເກີດໃໝ່"
     , stages =
         { newborn = Neutral "ເດັກເກີດໃໝ່"
@@ -51,7 +51,7 @@ locale =
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }

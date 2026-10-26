@@ -24,13 +24,13 @@ final vi = DurationLocale(
     'day': simpleUnit('{n} ngày'),
     'week': simpleUnit('{n} tuần'),
     'month': simpleUnit('{n} tháng'),
-    'year': simpleUnit('{n} tuổi'),
+    'year': simpleUnit('{n} năm'),
   },
   half: '{0} rưỡi',
   delimiter: ', ',
   justNow: 'vừa xong',
   ago: '{0} trước',
-  inFuture: 'trong {0}',
+  inFuture: '{0} nữa',
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('{n} giây'),
@@ -42,7 +42,7 @@ final vi = DurationLocale(
       'year': simpleUnit('{n} năm'),
     },
     ago: '{0} trước',
-    inFuture: 'trong {0}',
+    inFuture: '{0} nữa',
   ),
   compact: CompactnessOverride(
     units: {
@@ -57,6 +57,6 @@ final vi = DurationLocale(
     half: '{n}½',
     delimiter: '',
     ago: '{0} trước',
-    inFuture: 'trong {0}',
+    inFuture: '{0} nữa',
   ),
 );

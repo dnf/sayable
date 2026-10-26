@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ht"
    :clock (make-clock-config
-    :hours (list "douz" "en" "de" "twa" "kat" "senk" "sis" "sèt" "uit" "nèf" "dis" "onz")
-    :midnight "minui"
+    :hours (list "douzè" "inè" "dezè" "twazè" "katrè" "senkè" "sizè" "setè" "uitè" "nevè" "dizè" "onzè")
+    :midnight "minwi"
     :noon "midi"
-    :patterns (list (cons 0 "{h} è") (cons 5 "{h} è senk") (cons 10 "{h} è dis") (cons 15 "{h} è ka") (cons 20 "{h} è ven") (cons 25 "{h} è vennsenk") (cons 30 "{h} è demi") (cons 35 "{next_h} mwen vennsenk") (cons 40 "{next_h} mwen ven") (cons 45 "{next_h} mwen ka") (cons 50 "{next_h} mwen dis") (cons 55 "{next_h} mwen senk")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} senk") (cons 10 "{h} dis") (cons 15 "{h} e ka") (cons 20 "{h} ven") (cons 25 "{h} vennsenk") (cons 30 "{h} edmi") (cons 35 "{next_h} mwen vennsenk") (cons 40 "{next_h} mwen ven") (cons 45 "{next_h} mwen ka") (cons 50 "{next_h} mwen dis") (cons 55 "{next_h} mwen senk")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

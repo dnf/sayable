@@ -24,7 +24,7 @@ locale() ->
         half = "{0} kpo vlavo kpo",
         delimiter = ", ",
         just_born = "Vǐ yɔ̌yɔ́",
-        stages = #stages{newborn = {neutral, "Vǐ yɔ̌yɔ́"}, infant = {neutral, "Vǐ"}, toddler = {neutral, "Vǐ"}, child = {neutral, "Vǐ"}, teenager = {neutral, "Nyɔ̌nu"}, adult = {neutral, "Mɛ̌xo"}},
+        stages = #stages{newborn = {neutral, "Vǐ yɔ̌yɔ́"}, infant = {neutral, "Vǐ"}, toddler = {neutral, "Vǐ"}, child = {neutral, "Vǐ"}, teenager = {gendered, "Dɔnkpɛvu", "Ɖyɔ̌vǐ"}, adult = {neutral, "Mɛ̌xo"}},
         short = {just, #compactness_override{day = {just, {simple, "azǎn {n}"}}, week = {just, {simple, "aklunɔ̌zán {n}"}}, month = {just, {simple, "sun {n}"}}, year = {just, {simple, "xwè {n}"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

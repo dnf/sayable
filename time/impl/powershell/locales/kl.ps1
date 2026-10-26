@@ -10,22 +10,22 @@
 # Source: locales/kl.json
 
 function locale_kl {
-    $hours = @('akunneq marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'akunneq ataaseq')
+    $hours = @('aqqaneq-marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'aqqaneq-ataaseq')
     $midnight = 'unnuap qeqqa'
     $noon = 'ulloqeqqap qeqqa'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'nalunaaqutaq {h}'
+    $patterns[5] = '{h} qaangiullugu minutsit tallimat'
+    $patterns[10] = '{h} qaangiullugu minutsit qulit'
+    $patterns[15] = '{h} qaangiullugu minutsit aqqaneq-tallimat'
+    $patterns[20] = '{h} qaangiullugu minutsit marlunnik qulillit'
+    $patterns[25] = '{h} qaangiullugu minutsit marlunnik qulillit tallimallu'
+    $patterns[30] = '{h} affarlu'
+    $patterns[35] = '{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu'
+    $patterns[40] = '{next_h} sioqqullugu minutsit marlunnik qulillit'
+    $patterns[45] = '{next_h} sioqqullugu minutsit aqqaneq-tallimat'
+    $patterns[50] = '{next_h} sioqqullugu minutsit qulit'
+    $patterns[55] = '{next_h} sioqqullugu minutsit tallimat'
     $clock = @{
         hours = $hours
         midnight = $midnight

@@ -51,7 +51,7 @@ let TET* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     justBorn: none(string),
   )),

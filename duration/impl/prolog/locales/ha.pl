@@ -14,20 +14,20 @@
 sd_plural('ha', 1, one) :- !.
 sd_plural('ha', _, other).
 
-sd_unit('ha', second, one, '{n} daƙiƙa').
-sd_unit('ha', second, other, '{n} daƙiƙoƙi').
-sd_unit('ha', minute, one, '{n} minti').
-sd_unit('ha', minute, other, '{n} mintoci').
-sd_unit('ha', hour, one, '{n} awa').
-sd_unit('ha', hour, other, '{n} awanni').
-sd_unit('ha', day, one, '{n} kwana').
-sd_unit('ha', day, other, '{n} kwanaki').
-sd_unit('ha', week, one, '{n} mako').
-sd_unit('ha', week, other, '{n} makonni').
-sd_unit('ha', month, one, '{n} wata').
-sd_unit('ha', month, other, '{n} watanni').
-sd_unit('ha', year, one, '{n} shekara').
-sd_unit('ha', year, other, '{n} shekaru').
+sd_unit('ha', second, one, 'daƙiƙa {n}').
+sd_unit('ha', second, other, 'daƙiƙoƙi {n}').
+sd_unit('ha', minute, one, 'minti {n}').
+sd_unit('ha', minute, other, 'mintoci {n}').
+sd_unit('ha', hour, one, 'awa {n}').
+sd_unit('ha', hour, other, 'awanni {n}').
+sd_unit('ha', day, one, 'kwana {n}').
+sd_unit('ha', day, other, 'kwanaki {n}').
+sd_unit('ha', week, one, 'mako {n}').
+sd_unit('ha', week, other, 'makonni {n}').
+sd_unit('ha', month, one, 'wata {n}').
+sd_unit('ha', month, other, 'watanni {n}').
+sd_unit('ha', year, one, 'shekara {n}').
+sd_unit('ha', year, other, 'shekaru {n}').
 
 sd_half('ha', '{n}½').
 sd_delimiter('ha', ', ').
@@ -35,13 +35,13 @@ sd_just_now('ha', 'yanzu').
 sd_ago('ha', '{0} da suka wuce').
 sd_in_future('ha', 'cikin {0}').
 
-short_sd_unit('ha', second, _, '{n} daƙ.').
-short_sd_unit('ha', minute, _, '{n} mnt.').
-short_sd_unit('ha', hour, _, '{n} awa').
-short_sd_unit('ha', day, _, '{n} kw.').
-short_sd_unit('ha', week, _, '{n} mk.').
-short_sd_unit('ha', month, _, '{n} wt.').
-short_sd_unit('ha', year, _, '{n} shk.').
+short_sd_unit('ha', second, _, 'daƙ. {n}').
+short_sd_unit('ha', minute, _, 'mnt. {n}').
+short_sd_unit('ha', hour, _, 'awa {n}').
+short_sd_unit('ha', day, _, 'kw. {n}').
+short_sd_unit('ha', week, _, 'mk. {n}').
+short_sd_unit('ha', month, _, 'wt. {n}').
+short_sd_unit('ha', year, _, 'shk. {n}').
 short_sd_ago('ha', '{0} da suka wuce').
 short_sd_in_future('ha', 'cikin {0}').
 

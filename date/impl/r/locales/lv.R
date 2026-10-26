@@ -16,7 +16,7 @@ locale_lv <- list(
   day_format = "{n}.",
   day_format_exceptions = list(),
   date_pattern = "{day} {month}",
-  date_pattern_with_year = "{day} {month} {year}",
+  date_pattern_with_year = "{year}. gada {day} {month}",
   today = "šodien",
   tomorrow = "rīt",
   yesterday = "vakar",
@@ -30,7 +30,7 @@ locale_lv <- list(
     weekdays = c("sv", "pr", "ot", "tr", "ce", "pk", "se"),
     day_format = "{n}.",
     date_pattern = "{day} {month}",
-    date_pattern_with_year = "{day} {month} {year}"
+    date_pattern_with_year = "{year}. gada {day} {month}"
   ),
   compact = list(
     date_pattern = "{d}.{m}.",

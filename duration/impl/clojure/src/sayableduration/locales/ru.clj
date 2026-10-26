@@ -14,13 +14,13 @@
 (def locale
   {:code "ru"
    :plural (fn [n] (cond (and (== (mod n 10) 1) (not= (mod n 100) 11)) :one (and (<= 2 (mod n 10) 4) (not (<= 12 (mod n 100) 14))) :few :else :many))
-   :second {:type :pluralized :forms {:one "{n} секунда" :few "{n} секунды" :many "{n} секунд" :other "{n} секунд"}}
-   :minute {:type :pluralized :forms {:one "{n} минута" :few "{n} минуты" :many "{n} минут" :other "{n} минут"}}
-   :hour {:type :pluralized :forms {:one "{n} час" :few "{n} часа" :many "{n} часов" :other "{n} часов"}}
-   :day {:type :pluralized :forms {:one "{n} день" :few "{n} дня" :many "{n} дней" :other "{n} дней"}}
-   :week {:type :pluralized :forms {:one "{n} неделя" :few "{n} недели" :many "{n} недель" :other "{n} недель"}}
-   :month {:type :pluralized :forms {:one "{n} месяц" :few "{n} месяца" :many "{n} месяцев" :other "{n} месяцев"}}
-   :year {:type :pluralized :forms {:one "{n} год" :few "{n} года" :many "{n} лет" :other "{n} лет"}}
+   :second {:type :pluralized :forms {:one "{n} секунда" :few "{n} секунды" :many "{n} секунд" :other "{n} секунды"}}
+   :minute {:type :pluralized :forms {:one "{n} минута" :few "{n} минуты" :many "{n} минут" :other "{n} минуты"}}
+   :hour {:type :pluralized :forms {:one "{n} час" :few "{n} часа" :many "{n} часов" :other "{n} часа"}}
+   :day {:type :pluralized :forms {:one "{n} день" :few "{n} дня" :many "{n} дней" :other "{n} дня"}}
+   :week {:type :pluralized :forms {:one "{n} неделя" :few "{n} недели" :many "{n} недель" :other "{n} недели"}}
+   :month {:type :pluralized :forms {:one "{n} месяц" :few "{n} месяца" :many "{n} месяцев" :other "{n} месяца"}}
+   :year {:type :pluralized :forms {:one "{n} год" :few "{n} года" :many "{n} лет" :other "{n} года"}}
    :half "{n} с половиной"
    :delimiter ", "
    :just-now "только что"

@@ -17,7 +17,7 @@ import sa "github.com/dnf/sayable/age/impl/go"
 var ML = sa.AgeLocale{
 	Code: "ml",
 	Plural: func(n int) sa.PluralCategory {
-		if n == 0 || n == 1 {
+		if n == 1 {
 			return sa.One
 		}
 		return sa.Other
@@ -28,7 +28,7 @@ var ML = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} മാസം", sa.Other: "{n} മാസങ്ങൾ"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} വയസ്സ്", sa.Other: "{n} വയസ്സ്"}),
 	},
-	Half:      "{0} ര",
+	Half:      "{n}½",
 	Delimiter: ", ",
 	JustBorn:  "നവജാതശിശു",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

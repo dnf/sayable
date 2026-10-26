@@ -21,7 +21,7 @@ locale = Locale
     , localeWeek = Simple "{n} hepde"
     , localeMonth = Simple "{n} aý"
     , localeYear = Simple "{n} ýaş"
-    , localeHalf = "{0}½"
+    , localeHalf = "{n} ýarym"
     , localeDelimiter = ", "
     , localeJustBorn = "Täze doglan"
     , localeStages = Stages
@@ -30,7 +30,7 @@ locale = Locale
         , stageToddler = Neutral "Kiçijik"
         , stageChild = Neutral "Çaga"
         , stageTeenager = Neutral "Ýetginjek"
-        , stageAdult = Neutral "Ulular"
+        , stageAdult = Neutral "Uly adam"
         }
     , localeShort = Just $
         CompactnessOverride

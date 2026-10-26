@@ -41,5 +41,6 @@ final ja = AgeLocale(
     week: simpleUnit('{n}w'),
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
+    half: '{n}½',
   ),
 );

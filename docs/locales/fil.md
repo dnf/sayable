@@ -46,7 +46,7 @@ Plural rule: `other_only` (categories: other)
 | Toddler  | Batang paslit |
 | Child    | Bata          |
 | Teenager | Tinedyer      |
-| Adult    | Matanda       |
+| Adult    | Adulto        |
 
 ## Date
 
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | samakalawa         | 3/17    |
 | Day before yesterday | kamakalawa         | 3/13    |
 | This Thursday (+5)   | itong Huwebes      | 3/20    |
-| Last Monday (-4)     | nakaraang Martes   | 3/11    |
-| Next Wednesday (+12) | susunod na Huwebes | 3/27    |
-| Same month (+20)     | Abril 4            | 4/4     |
+| Last Tuesday (-4)    | nakaraang Martes   | 3/11    |
+| Next Thursday (+12)  | susunod na Huwebes | 3/27    |
+| Same year (+20)      | Abril 4            | 4/4     |
 | Different year       | Enero 10, 2026     | 1/10/26 |
 
 ## Duration
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                  | Short    | Compact |
-| --------------- | ----------------------- | -------- | ------- |
-| Midnight        | hatinggabi              | 12:00 AM | 12:00a  |
-| 1:00 AM         | una o'clock             | 1:00 AM  | 1:00a   |
-| 5 past 9        | lima dan nuwebe         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | labinlima dan diyes     | 10:15 AM | 10:15a  |
-| Half past 11    | tatlumpu dan onse       | 11:30 AM | 11:30a  |
-| Noon            | tanghali                | 12:00 PM | 12:00p  |
-| Quarter to 3    | labinlima bago mag tres | 2:45 PM  | 2:45p   |
-| 5 to 6          | lima bago mag seis      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | otso o'clock            | 8:00 PM  | 8:00p   |
-| 10:30 PM        | tatlumpu dan diyes      | 10:30 PM | 10:30p  |
-| 11:58 PM        | hatinggabi              | 11:58 PM | 11:58p  |
+| Time            | Normal                      | Short    | Compact |
+| --------------- | --------------------------- | -------- | ------- |
+| Midnight        | hatinggabi                  | 12:00 AM | 12:00a  |
+| 1:00 AM         | ala-una                     | 1:00 AM  | 1:00a   |
+| 5 past 9        | alas-nuwebe y singko        | 9:05 AM  | 9:05a   |
+| Quarter past 10 | alas-diyes y kinse          | 10:15 AM | 10:15a  |
+| Half past 11    | alas-onse y medya           | 11:30 AM | 11:30a  |
+| Noon            | tanghali                    | 12:00 PM | 12:00p  |
+| Quarter to 3    | menos kinse para alas-tres  | 2:45 PM  | 2:45p   |
+| 5 to 6          | menos singko para alas-sais | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | alas-otso                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | alas-diyes y medya          | 10:30 PM | 10:30p  |
+| 11:58 PM        | hatinggabi                  | 11:58 PM | 11:58p  |

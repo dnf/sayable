@@ -51,6 +51,7 @@ function locale_quc {
             month = '{n}mo'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
         ago = '{0} k''o chi'
         inFuture = 'pa {0}'

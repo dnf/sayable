@@ -28,7 +28,7 @@ our sub locale() {
         half => '{0} sy sasany',
         delimiter => ', ',
         just-now => 'vao haingana',
-        ago => '{0} lasa',
+        ago => '{0} lasa izay',
         in-future => 'ao anatin\'ny {0}',
         short => {
             units => {
@@ -40,7 +40,7 @@ our sub locale() {
                 month => '{n} vol',
                 year => '{n} tna',
             },
-            ago => '{0} lasa',
+            ago => '{0} lasa izay',
             in-future => 'ao anatin\'ny {0}',
         },
         compact => {

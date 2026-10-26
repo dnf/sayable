@@ -50,7 +50,7 @@ fn build_nb() -> DurationLocale:
     short_ovr.has_month = True
     short_ovr.year = simple_unit("{n} år")
     short_ovr.has_year = True
-    short_ovr.ago = "{0} siden"
+    short_ovr.ago = "for {0} siden"
     short_ovr.has_ago = True
     short_ovr.in_future = "om {0}"
     short_ovr.has_in_future = True
@@ -72,7 +72,7 @@ fn build_nb() -> DurationLocale:
     compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
-    compact_ovr.ago = "{0} siden"
+    compact_ovr.ago = "for {0} siden"
     compact_ovr.has_ago = True
     compact_ovr.in_future = "om {0}"
     compact_ovr.has_in_future = True
@@ -90,7 +90,7 @@ fn build_nb() -> DurationLocale:
         half="{n}½",
         delimiter=", ",
         just_now="akkurat nå",
-        ago="{0} siden",
+        ago="for {0} siden",
         in_future="om {0}",
         short_override=short_ovr,
         has_short=True,

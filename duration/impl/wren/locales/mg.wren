@@ -26,7 +26,7 @@ class MGLocale {
   static half { "{0} sy sasany" }
   static delimiter { ", " }
   static justNow { "vao haingana" }
-  static ago { "{0} lasa" }
+  static ago { "{0} lasa izay" }
   static inFuture { "ao anatin'ny {0}" }
   static short {
     return {
@@ -39,7 +39,7 @@ class MGLocale {
         "month": "{n} vol",
         "year": "{n} tna",
       },
-      "ago": "{0} lasa",
+      "ago": "{0} lasa izay",
       "inFuture": "ao anatin'ny {0}",
     }
   }

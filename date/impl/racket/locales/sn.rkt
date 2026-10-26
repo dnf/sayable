@@ -29,7 +29,7 @@
    "nhasi"
    "mangwana"
    "nezuro"
-   "mangwanani"
+   "kuswera mangwana"
    "nezuro rakapera"
    "{weekday} ino"
    "{weekday} inotevera"

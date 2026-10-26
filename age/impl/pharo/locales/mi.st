@@ -18,12 +18,12 @@ mi
 	locale code: 'mi'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. 'rā {n}'.
-		'week'. 'wiki {n}'.
-		'month'. 'marama {n}'.
-		'year'. 'tau {n}'.
+		'day'. '{n} rā'.
+		'week'. '{n} wiki'.
+		'month'. '{n} marama'.
+		'year'. '{n} tau'.
 	}).
-	locale half: '{0}½'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justBorn: 'Pēpi hou'.
 	locale stages: (Dictionary newFromPairs: {
@@ -36,10 +36,10 @@ mi
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. 'rā {n}'.
-			'week'. 'w {n}'.
-			'month'. 'm {n}'.
-			'year'. 't {n}'.
+			'day'. '{n} rā'.
+			'week'. '{n} w'.
+			'month'. '{n} m'.
+			'year'. '{n} t'.
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {

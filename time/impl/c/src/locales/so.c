@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_so = {
     "so",
     {
-        { "laba iyo toban", "kow", "laba", "saddex", "afar", "shan", "lix", "toddoba", "siddeed", "sagaal", "toban", "kow iyo toban" },
+        { "laba iyo tobanka", "kowda", "labada", "saddexda", "afarta", "shanta", "lixda", "toddobada", "siddeedda", "sagaasha", "tobanka", "kow iyo tobanka" },
         "saqda dhexe",
         "duhur",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} iyo shan", "{h} iyo toban", "{h} iyo rubuc", "{h} iyo labaatan", "{h} iyo shan iyo labaatan", "{h} iyo bar", "{next_h} shan iyo labaatan la'", "{next_h} labaatan la'", "{next_h} rubuc la'", "{next_h} toban la'", "{next_h} shan la'" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

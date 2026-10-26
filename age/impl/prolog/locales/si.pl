@@ -24,7 +24,7 @@ sa_unit('si', month, other, 'මාස {n}').
 sa_unit('si', year, one, 'වසර {n}').
 sa_unit('si', year, other, 'වසර {n}').
 
-sa_half('si', '{0}යි භාගයයි').
+sa_half('si', '{n}½').
 sa_delimiter('si', ', ').
 sa_just_born('si', 'අලුත උපන්').
 

@@ -14,10 +14,10 @@ class EELocale {
   static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "day": {"one": "ŋkeke {n}", "other": "ŋkekewo {n}"},
-      "week": {"one": "kɔsiɖa {n}", "other": "kɔsiɖawo {n}"},
-      "month": {"one": "ɣleti {n}", "other": "ɣletiwo {n}"},
-      "year": {"one": "ƒe {n}", "other": "ƒewo {n}"},
+      "day": "ŋkeke {n}",
+      "week": "kɔsiɖa {n}",
+      "month": "ɣleti {n}",
+      "year": "ƒe {n}",
     }
   }
   static half { "{0} kple afã" }
@@ -29,17 +29,17 @@ class EELocale {
       "infant": "Ɖevi",
       "toddler": "Ɖevi sue",
       "child": "Ɖevi",
-      "teenager": "Ŋutsuviwo",
+      "teenager": {"m": "Ɖekakpui", "f": "Ɖetugbi"},
       "adult": "Ame tsitsi",
     }
   }
   static short {
     return {
       "units": {
-        "day": "ŋkekewo {n}",
-        "week": {"one": "kɔsiɖa {n}", "other": "kɔsiɖawo {n}"},
-        "month": {"one": "ɣleti {n}", "other": "ɣletiwo {n}"},
-        "year": {"one": "ƒe {n}", "other": "ƒewo {n}"},
+        "day": "ŋkeke {n}",
+        "week": "kɔsiɖa {n}",
+        "month": "ɣleti {n}",
+        "year": "ƒe {n}",
       },
     }
   }

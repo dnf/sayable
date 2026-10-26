@@ -26,7 +26,7 @@ pub const locale_kri = DurationLocale{
 	week: simple_unit('{n} wik')
 	month: simple_unit('{n} mont')
 	year: simple_unit('{n} ia')
-	half: '{n} na af'
+	half: '{0} ɛn af'
 	delimiter: ', '
 	just_now: 'jos naw'
 	ago: '{0} bak'
@@ -68,6 +68,8 @@ pub const locale_kri = DurationLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 		ago: '{0} bak'

@@ -20,7 +20,7 @@ class KRILocale {
       "year": "{n} ia",
     }
   }
-  static half { "{n} na af" }
+  static half { "{0} ɛn af" }
   static delimiter { ", " }
   static justBorn { "Nyubon bebi" }
   static stages {
@@ -51,6 +51,7 @@ class KRILocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

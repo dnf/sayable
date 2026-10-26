@@ -23,9 +23,9 @@ locale =
     , plural = \n -> if n == 1 then One else Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "{n} aravo'i" )
-            , ( "minute", Simple "{n} aravo" )
-            , ( "hour", Simple "{n} aravo guasu" )
+            [ ( "second", Simple "{n} aravo'ive" )
+            , ( "minute", Simple "{n} aravo'i" )
+            , ( "hour", Simple "{n} aravo" )
             , ( "day", Simple "{n} ára" )
             , ( "week", Simple "{n} arapokõindy" )
             , ( "month", Simple "{n} jasy" )
@@ -41,9 +41,9 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n} ara'i" )
-                        , ( "minute", Simple "{n} ara" )
-                        , ( "hour", Simple "{n} ara g" )
+                        [ ( "second", Simple "{n} aravo'ive" )
+                        , ( "minute", Simple "{n} aravo'i" )
+                        , ( "hour", Simple "{n} aravo" )
                         , ( "day", Simple "{n} ára" )
                         , ( "week", Simple "{n} ara" )
                         , ( "month", Simple "{n} jas" )

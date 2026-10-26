@@ -27,9 +27,9 @@ fn build_si() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = simple_unit("{n} තත්පරය")
-    var minute = simple_unit("{n} මිනිත්තුව")
-    var hour = simple_unit("{n} පැය")
+    var second = simple_unit("තත්පර {n}")
+    var minute = simple_unit("මිනිත්තු {n}")
+    var hour = simple_unit("පැය {n}")
     var day = plural_unit(one="දින {n}", other="දින {n}")
     var week = plural_unit(one="සති {n}", other="සති {n}")
     var month = plural_unit(one="මාස {n}", other="මාස {n}")
@@ -89,7 +89,7 @@ fn build_si() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}යි භාගයයි",
+        half="{n}½",
         delimiter=", ",
         just_now="දැන්",
         ago="{0}ට පෙර",

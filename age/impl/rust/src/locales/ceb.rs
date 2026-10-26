@@ -24,7 +24,7 @@ pub fn locale() -> AgeLocale {
             month: UnitForms::simple("{n} ka bulan"),
             year: UnitForms::simple("{n} ka tuig"),
         },
-        half: "{n}½".to_string(),
+        half: "{0} ug tunga".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Bag-ong natawo".to_string(),
         stages: Stages {

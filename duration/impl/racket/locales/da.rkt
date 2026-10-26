@@ -31,7 +31,7 @@
    "{n}½"
    ", "
    "lige nu"
-   "{0} siden"
+   "for {0} siden"
    "om {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} sek.") (hash "type" "simple" "form" "{n} min.") (hash "type" "simple" "form" "{n} t.") (hash "type" "pluralized" "forms" (hash "one" "{n} dag" "other" "{n} dage")) (hash "type" "pluralized" "forms" (hash "one" "{n} uge" "other" "{n} uger")) (hash "type" "pluralized" "forms" (hash "one" "{n} md." "other" "{n} mdr.")) (hash "type" "simple" "form" "{n} år") #f #f "{0} siden" "om {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n} s") (hash "type" "simple" "form" "{n} m") (hash "type" "simple" "form" "{n} t") (hash "type" "simple" "form" "{n} d") (hash "type" "simple" "form" "{n} u") (hash "type" "simple" "form" "{n} m") (hash "type" "simple" "form" "{n} år") #f "" "{0} siden" "om {0}")

@@ -15,9 +15,9 @@ const NY = DurationLocale(
     code = "ny",
     plural = n -> n == 1 ? "one" : "other",
     units = Dict(
-        "second" => "{n} sekondi",
-        "minute" => "{n} mphindi",
-        "hour" => "{n} ola",
+        "second" => "sekondi {n}",
+        "minute" => "mphindi {n}",
+        "hour" => Dict("one" => "ola {n}", "other" => "maola {n}"),
         "day" => Dict("one" => "tsiku {n}", "other" => "masiku {n}"),
         "week" => Dict("one" => "sabata {n}", "other" => "masabata {n}"),
         "month" => Dict("one" => "mwezi {n}", "other" => "miyezi {n}"),
@@ -32,7 +32,7 @@ const NY = DurationLocale(
         units = Dict(
             "second" => "sek {n}",
             "minute" => "mph {n}",
-            "hour" => "ola {n}",
+            "hour" => Dict("one" => "ola {n}", "other" => "maola {n}"),
             "day" => Dict("one" => "tsiku {n}", "other" => "mas {n}"),
             "week" => Dict("one" => "sabata {n}", "other" => "masab {n}"),
             "month" => Dict("one" => "mwezi {n}", "other" => "miyezi {n}"),

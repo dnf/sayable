@@ -21,7 +21,7 @@ locale() ->
         day_format = "{n}.",
         day_format_exceptions = [],
         date_pattern = "{day} {month}",
-        date_pattern_with_year = "{day} {month} {year}",
+        date_pattern_with_year = "{year}. gada {day} {month}",
         today = "šodien",
         tomorrow = "rīt",
         yesterday = "vakar",
@@ -31,6 +31,6 @@ locale() ->
         next_weekday = {just, "nākamā {weekday}"},
         last_weekday = {just, "pagājusī {weekday}"},
         months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["janv", "febr", "marts", "apr", "maijs", "jūn", "jūl", "aug", "sept", "okt", "nov", "dec"]}, months_in_date = nothing, weekdays = {just, ["sv", "pr", "ot", "tr", "ce", "pk", "se"]}, day_format = {just, "{n}."}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        short = {just, #date_compactness_override{months = {just, ["janv", "febr", "marts", "apr", "maijs", "jūn", "jūl", "aug", "sept", "okt", "nov", "dec"]}, months_in_date = nothing, weekdays = {just, ["sv", "pr", "ot", "tr", "ce", "pk", "se"]}, day_format = {just, "{n}."}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{year}. gada {day} {month}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}.{m}."}, date_pattern_with_year = {just, "{d}.{m}.{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

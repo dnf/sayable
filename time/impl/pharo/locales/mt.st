@@ -17,22 +17,22 @@ mt
 	locale := SayableTimeLocale new.
 	locale code: 'mt'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'tnax'. 'waħda'. 'tnejn'. 'tlieta'. 'erbgħa'. 'ħamsa'. 'sitta'. 'sebgħa'. 'tmienja'. 'disgħa'. 'għaxra'. 'ħdax' }).
-	clock at: #midnight put: 'nofsinhar'.
+	clock at: #hours put: (OrderedCollection withAll: { 'it-tnax'. 'is-siegħa'. 'is-sagħtejn'. 'it-tlieta'. 'l-erbgħa'. 'il-ħamsa'. 'is-sitta'. 'is-sebgħa'. 'it-tmienja'. 'id-disgħa'. 'l-għaxra'. 'il-ħdax' }).
+	clock at: #midnight put: 'nofsillejl'.
 	clock at: #noon put: 'nofsinhar'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h}'.
+		5. '{h} u ħamsa'.
+		10. '{h} u għaxra'.
+		15. '{h} u kwart'.
+		20. '{h} u għoxrin'.
+		25. '{h} u ħamsa u għoxrin'.
+		30. '{h} u nofs'.
+		35. '{next_h} neqsin ħamsa u għoxrin'.
+		40. '{next_h} neqsin għoxrin'.
+		45. '{next_h} neqsin kwart'.
+		50. '{next_h} neqsin għaxra'.
+		55. '{next_h} neqsin ħamsa'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

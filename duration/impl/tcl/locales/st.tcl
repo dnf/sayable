@@ -17,8 +17,8 @@ proc plural_st {n} {
 proc locale_duration_st {} {
     set code {st}
     set units [dict create \
-        second [dict create one "motsotswana {n}" other "dimetsotswana {n}"] \
-        minute [dict create one "metsotso {n}" other "dimetsotso {n}"] \
+        second [dict create one "motsotswana {n}" other "metsotswana {n}"] \
+        minute [dict create one "motsotso {n}" other "metsotso {n}"] \
         hour [dict create one "hora {n}" other "dihora {n}"] \
         day [dict create one "letsatsi {n}" other "matsatsi {n}"] \
         week [dict create one "beke {n}" other "dibeke {n}"] \
@@ -32,8 +32,8 @@ proc locale_duration_st {} {
     set in_future "ka {0}"
     set short [dict create \
         units [dict create \
-            second [dict create one "motsotswana {n}" other "dimetsotswana {n}"] \
-            minute [dict create one "metsotso {n}" other "dimetsotso {n}"] \
+            second [dict create one "motsotswana {n}" other "metsotswana {n}"] \
+            minute [dict create one "motsotso {n}" other "metsotso {n}"] \
             hour [dict create one "hora {n}" other "dihora {n}"] \
             day [dict create one "letsatsi {n}" other "matsatsi {n}"] \
             week [dict create one "beke {n}" other "dibeke {n}"] \

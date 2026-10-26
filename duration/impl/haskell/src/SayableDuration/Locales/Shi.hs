@@ -20,8 +20,8 @@ locale = DurationLocale
     , localeUnits = Units
         { unitSecond = Pluralized
           [ (One, "{n} tasint")
-          , (Few, "{n} tasinin")
-          , (Other, "{n} tasinin")
+          , (Few, "{n} tisinin")
+          , (Other, "{n} tisinin")
           ]
         , unitMinute = Pluralized
           [ (One, "{n} tusdiqt")
@@ -61,13 +61,41 @@ locale = DurationLocale
     , localeInFuture = "ɣ {0}"
     , localeShort = Just $
         CompactnessOverride
-            { ovrSecond = Just (Simple "{n}s")
-            , ovrMinute = Just (Simple "{n}m")
-            , ovrHour = Just (Simple "{n}h")
-            , ovrDay = Just (Simple "{n}d")
-            , ovrWeek = Just (Simple "{n}w")
-            , ovrMonth = Just (Simple "{n}mo")
-            , ovrYear = Just (Simple "{n}y")
+            { ovrSecond = Just (Pluralized
+              [ (One, "{n} tasint")
+              , (Few, "{n} tasinin")
+              , (Other, "{n} tasinin")
+              ])
+            , ovrMinute = Just (Pluralized
+              [ (One, "{n} tusdiqt")
+              , (Few, "{n} tusdiqin")
+              , (Other, "{n} tusdiqin")
+              ])
+            , ovrHour = Just (Pluralized
+              [ (One, "{n} tasragt")
+              , (Few, "{n} tisragin")
+              , (Other, "{n} tisragin")
+              ])
+            , ovrDay = Just (Pluralized
+              [ (One, "{n} ass")
+              , (Few, "{n} ussan")
+              , (Other, "{n} ass")
+              ])
+            , ovrWeek = Just (Pluralized
+              [ (One, "{n} imalass")
+              , (Few, "{n} imalassn")
+              , (Other, "{n} imalass")
+              ])
+            , ovrMonth = Just (Pluralized
+              [ (One, "{n} ayyur")
+              , (Few, "{n} ayyurn")
+              , (Other, "{n} ayyur")
+              ])
+            , ovrYear = Just (Pluralized
+              [ (One, "{n} aseggas")
+              , (Few, "{n} iseggasen")
+              , (Other, "{n} aseggas")
+              ])
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "ɣ {0} zzrin"

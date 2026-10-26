@@ -44,7 +44,7 @@ locale =
         , infant = Neutral "Lesea"
         , toddler = Neutral "Ngwana yo monnye"
         , child = Neutral "Ngwana"
-        , teenager = Neutral "Lekgarebe"
+        , teenager = Neutral "Mosha"
         , adult = Neutral "Motho yo mogolo"
         }
     , short =

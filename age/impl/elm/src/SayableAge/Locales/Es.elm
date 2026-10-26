@@ -36,7 +36,7 @@ locale =
       [ ( One, "{n} año" )
       , ( Other, "{n} años" )
       ]
-    , half = "{n} y medio"
+    , half = "{0} y medio"
     , delimiter = ", "
     , justBorn = "Recién nacido"
     , stages =

@@ -20,7 +20,7 @@ sub locale {{
     hours => ['deuddeg', 'un', 'dau', 'tri', 'pedwar', 'pump', 'chwech', 'saith', 'wyth', 'naw', 'deg', 'un ar ddeg'],
     midnight => 'hanner nos',
     noon => 'hanner dydd',
-    patterns => { 0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55' },
+    patterns => { 0 => '{h} o\'r gloch', 5 => 'pum munud wedi {h}', 10 => 'deg munud wedi {h}', 15 => 'chwarter wedi {h}', 20 => 'ugain munud wedi {h}', 25 => 'pum munud ar hugain wedi {h}', 30 => 'hanner awr wedi {h}', 35 => 'pum munud ar hugain i {next_h}', 40 => 'ugain munud i {next_h}', 45 => 'chwarter i {next_h}', 50 => 'deg munud i {next_h}', 55 => 'pum munud i {next_h}' },
   },
   short => {
     clock => {

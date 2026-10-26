@@ -26,7 +26,7 @@ sub locale {{
     month => { one => 'මාස {n}', other => 'මාස {n}' },
     year => { one => 'වසර {n}', other => 'වසර {n}' },
   },
-  half => '{0}යි භාගයයි',
+  half => '{n}½',
   delimiter => ', ',
   just_born => 'අලුත උපන්',
   stages => {

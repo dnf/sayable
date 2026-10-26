@@ -17,8 +17,8 @@ our sub locale() {
         code => 'tn',
         plural => -> $n { $n == 1 ?? 'one' !! 'other' },
         units => {
-            second => { one => 'motsotswana {n}', other => 'dimetsotswana {n}' },
-            minute => { one => 'metsotso {n}', other => 'dimetsotso {n}' },
+            second => { one => 'motsotswana {n}', other => 'metsotswana {n}' },
+            minute => { one => 'motsotso {n}', other => 'metsotso {n}' },
             hour => { one => 'ura {n}', other => 'diura {n}' },
             day => { one => 'letsatsi {n}', other => 'malatsi {n}' },
             week => { one => 'beke {n}', other => 'dibeke {n}' },
@@ -32,8 +32,8 @@ our sub locale() {
         in-future => 'ka {0}',
         short => {
             units => {
-                second => { one => 'motsotswana {n}', other => 'dimetsotswana {n}' },
-                minute => { one => 'metsotso {n}', other => 'dimetsotso {n}' },
+                second => { one => 'motsotswana {n}', other => 'metsotswana {n}' },
+                minute => { one => 'motsotso {n}', other => 'metsotso {n}' },
                 hour => { one => 'ura {n}', other => 'diura {n}' },
                 day => { one => 'letsatsi {n}', other => 'malatsi {n}' },
                 week => { one => 'beke {n}', other => 'dibeke {n}' },

@@ -27,7 +27,7 @@ locale =
             , ( "minute", Simple "{n} minuto" )
             , ( "hour", Simple "{n} hora" )
             , ( "day", Simple "{n} q'ij" )
-            , ( "week", Simple "{n} xjaw" )
+            , ( "week", Simple "{n} seman" )
             , ( "month", Simple "{n} xjaw" )
             , ( "year", Simple "{n} ab'q'ii" )
             ]
@@ -45,7 +45,7 @@ locale =
                         , ( "minute", Simple "{n} min." )
                         , ( "hour", Simple "{n} hora" )
                         , ( "day", Simple "{n} q'ij" )
-                        , ( "week", Simple "{n} xjaw" )
+                        , ( "week", Simple "{n} seman" )
                         , ( "month", Simple "{n} xjaw" )
                         , ( "year", Simple "{n} ab'." )
                         ]
@@ -69,7 +69,7 @@ locale =
                         , ( "year", Simple "{n}y" )
                         ]
                     )
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} chi'j"
             , ovrInFuture = Just "tu'n {0}"

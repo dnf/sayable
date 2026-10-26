@@ -23,39 +23,18 @@ locale =
     , plural = \n -> if n == 1 then One else Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekend {n}" )
-              , ( Other, "sekendwo {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "aɖabaƒoƒo {n}" )
-              , ( Other, "aɖabaƒoƒowo {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "gaƒoƒo {n}" )
-              , ( Other, "gaƒoƒowo {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "ŋkeke {n}" )
-              , ( Other, "ŋkekewo {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "kɔsiɖa {n}" )
-              , ( Other, "kɔsiɖawo {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ɣleti {n}" )
-              , ( Other, "ɣletiwo {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "ƒe {n}" )
-              , ( Other, "ƒewo {n}" )
-              ] )
+            [ ( "second", Simple "sekend {n}" )
+            , ( "minute", Simple "aɖabaƒoƒo {n}" )
+            , ( "hour", Simple "gaƒoƒo {n}" )
+            , ( "day", Simple "ŋkeke {n}" )
+            , ( "week", Simple "kɔsiɖa {n}" )
+            , ( "month", Simple "ɣleti {n}" )
+            , ( "year", Simple "ƒe {n}" )
             ]
     , half = "{0} kple afã"
     , delimiter = ", "
     , justNow = "fifia"
-    , ago = "ɖe {0} me"
+    , ago = "{0} si va yi"
     , inFuture = "le {0} me"
     , short =
         Just
@@ -65,24 +44,15 @@ locale =
                         [ ( "second", Simple "sek. {n}" )
                         , ( "minute", Simple "aɖaba. {n}" )
                         , ( "hour", Simple "gaƒ. {n}" )
-                        , ( "day", Simple "ŋkekewo {n}" )
-                        , ( "week", Pluralized
-                          [ ( One, "kɔsiɖa {n}" )
-                          , ( Other, "kɔsiɖawo {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "ɣleti {n}" )
-                          , ( Other, "ɣletiwo {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "ƒe {n}" )
-                          , ( Other, "ƒewo {n}" )
-                          ] )
+                        , ( "day", Simple "ŋkeke {n}" )
+                        , ( "week", Simple "kɔsiɖa {n}" )
+                        , ( "month", Simple "ɣleti {n}" )
+                        , ( "year", Simple "ƒe {n}" )
                         ]
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "ɖe {0} me"
+            , ovrAgo = Just "{0} si va yi"
             , ovrInFuture = Just "le {0} me"
             }
     , compact =
@@ -101,7 +71,7 @@ locale =
                     )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
-            , ovrAgo = Just "ɖe {0} me"
+            , ovrAgo = Just "{0} si va yi"
             , ovrInFuture = Just "le {0} me"
             }
     }

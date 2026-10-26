@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "ig",
-        clock = #clock_config{hours = ["iri na abụọ", "otu", "abụọ", "atọ", "anọ", "ise", "isii", "asaa", "asatọ", "itoolu", "iri", "iri na otu"], midnight = "etiti abalị", noon = "ehihie", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["iri na abụọ", "otu", "abụọ", "atọ", "anọ", "ise", "isii", "asaa", "asatọ", "itoolu", "iri", "iri na otu"], midnight = "etiti abalị", noon = "etiti ehihie", patterns = [{0, "elekere {h}"}, {5, "elekere {h} na nkeji ise"}, {10, "elekere {h} na nkeji iri"}, {15, "elekere {h} na nkeji iri na ise"}, {20, "elekere {h} na nkeji iri abụọ"}, {25, "elekere {h} na nkeji iri abụọ na ise"}, {30, "elekere {h} na ọkara"}, {35, "elekere {h} na nkeji iri atọ na ise"}, {40, "elekere {h} na nkeji iri anọ"}, {45, "elekere {h} na nkeji iri anọ na ise"}, {50, "elekere {h} na nkeji iri ise"}, {55, "elekere {h} na nkeji iri ise na ise"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

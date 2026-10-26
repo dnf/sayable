@@ -47,6 +47,7 @@ proc locale_kek {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

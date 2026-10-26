@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_br = {
     "br",
     {
-        { "12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" },
+        { "daouzek eur", "un eur", "div eur", "teir eur", "peder eur", "pemp eur", "c'hwec'h eur", "seizh eur", "eizh eur", "nav eur", "dek eur", "unnek eur" },
         "hanternoz",
         "kreisteiz",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} ha pemp", "{h} ha dek", "{h} ha kard", "{h} hag ugent", "{h} ha pemp warn-ugent", "{h} hanter", "{next_h} nemet pemp warn-ugent", "{next_h} nemet ugent", "{next_h} nemet kard", "{next_h} nemet dek", "{next_h} nemet pemp" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

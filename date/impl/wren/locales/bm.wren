@@ -12,7 +12,7 @@
 class BMLocale {
   static code { "bm" }
   static months {
-    return ["Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"]
+    return ["Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu"]
   }
   static weekdays {
     return ["Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"]
@@ -34,7 +34,7 @@ class BMLocale {
   static monthsInDate { null }
   static short {
     return {
-      "months": ["Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"],
+      "months": ["Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"],
       "weekdays": ["Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",

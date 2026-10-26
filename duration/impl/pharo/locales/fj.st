@@ -26,7 +26,7 @@ fj
 		'month'. '{n} na vula'.
 		'year'. '{n} na yabaki'.
 	}).
-	locale half: '{n} kei na levu ni wasei'.
+	locale half: '{0} kei na veimama'.
 	locale delimiter: ', '.
 	locale justNow: 'edaidai ga'.
 	locale ago: '{0} sa oti'.
@@ -54,6 +54,7 @@ fj
 			'month'. '{n}mo'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} sa oti'.
 		#inFuture. 'ena {0}'.

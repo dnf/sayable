@@ -17,7 +17,7 @@ M.weekdays = { "svētdiena", "pirmdiena", "otrdiena", "trešdiena", "ceturtdiena
 M.day_format = "{n}."
 M.day_format_exceptions = {}
 M.date_pattern = "{day} {month}"
-M.date_pattern_with_year = "{day} {month} {year}"
+M.date_pattern_with_year = "{year}. gada {day} {month}"
 M.today = "šodien"
 M.tomorrow = "rīt"
 M.yesterday = "vakar"
@@ -31,7 +31,7 @@ M.short = {
     weekdays = { "sv", "pr", "ot", "tr", "ce", "pk", "se" },
     day_format = "{n}.",
     date_pattern = "{day} {month}",
-    date_pattern_with_year = "{day} {month} {year}",
+    date_pattern_with_year = "{year}. gada {day} {month}",
 }
 M.compact = {
     date_pattern = "{d}.{m}.",

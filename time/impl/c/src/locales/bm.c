@@ -17,7 +17,7 @@ const StTimeLocale st_locale_bm = {
         { "tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen" },
         "dugutilama",
         "tilgari",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "nɛgɛ kaɲɛ {h}", "nɛgɛ kaɲɛ {h} ni miniti duuru", "nɛgɛ kaɲɛ {h} ni miniti tan", "nɛgɛ kaɲɛ {h} ni miniti tan ni duuru", "nɛgɛ kaɲɛ {h} ni miniti mugan", "nɛgɛ kaɲɛ {h} ni miniti mugan ni duuru", "nɛgɛ kaɲɛ {h} ni tilancɛ", "nɛgɛ kaɲɛ {h} ni miniti bi saba ni duuru", "nɛgɛ kaɲɛ {h} ni miniti bi naani", "nɛgɛ kaɲɛ {h} ni miniti bi naani ni duuru", "nɛgɛ kaɲɛ {h} ni miniti bi duuru", "nɛgɛ kaɲɛ {h} ni miniti bi duuru ni duuru" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

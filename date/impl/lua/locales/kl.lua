@@ -17,7 +17,7 @@ M.weekdays = { "sapaat", "ataasinngorneq", "marlunngorneq", "pingasunngorneq", "
 M.day_format = "{n}."
 M.day_format_exceptions = {}
 M.date_pattern = "{month} {day}"
-M.date_pattern_with_year = "{day} {month} {year}"
+M.date_pattern_with_year = "{month} {day} {year}"
 M.today = "ullumi"
 M.tomorrow = "aqagu"
 M.yesterday = "ippassaq"
@@ -31,7 +31,7 @@ M.short = {
     weekdays = { "sap", "ata", "mar", "pin", "sis", "tal", "arf" },
     day_format = "{n}.",
     date_pattern = "{month} {day}",
-    date_pattern_with_year = "{day} {month} {year}",
+    date_pattern_with_year = "{month} {day} {year}",
 }
 M.compact = {
     date_pattern = "{m}-{d}",

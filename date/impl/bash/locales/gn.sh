@@ -15,7 +15,7 @@ _sayabledate_locale_gn() {
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
-    _today='ko'\''ágã'
+    _today='ko árape'
     _tomorrow='ko'\''ẽrõ'
     _yesterday='kuehe'
     _day_after_tomorrow='ko'\''ẽrõ rire'

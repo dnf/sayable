@@ -20,8 +20,8 @@ proc locale_date_mi {} {
     set today {i tēnei rā}
     set tomorrow {āpōpō}
     set yesterday {inanahi}
-    set day_after_tomorrow {tērā āpōpō}
-    set day_before_yesterday {tērā inanahi}
+    set day_after_tomorrow {ātahirā}
+    set day_before_yesterday {inātahirā}
     set this_weekday "tēnei {weekday}"
     set next_weekday "{weekday} e heke mai nei"
     set last_weekday "{weekday} kua hori"

@@ -26,7 +26,7 @@
    :just-born "Recén nacido"
    :stages (list (cons :newborn '((:m . "Recén nacido") (:f . "Recén nacida")))
                  (cons :infant "Bebé")
-                 (cons :toddler "Neno")
+                 (cons :toddler '((:m . "Neno pequeno") (:f . "Nena pequena")))
                  (cons :child '((:m . "Neno") (:f . "Nena")))
                  (cons :teenager "Adolescente")
                  (cons :adult '((:m . "Adulto") (:f . "Adulta"))))

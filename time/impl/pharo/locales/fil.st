@@ -17,22 +17,22 @@ fil
 	locale := SayableTimeLocale new.
 	locale code: 'fil'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'dose'. 'una'. 'dos'. 'tres'. 'kwatro'. 'singko'. 'seis'. 'syete'. 'otso'. 'nuwebe'. 'diyes'. 'onse' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'alas-dose'. 'ala-una'. 'alas-dos'. 'alas-tres'. 'alas-kuwatro'. 'alas-singko'. 'alas-sais'. 'alas-siyete'. 'alas-otso'. 'alas-nuwebe'. 'alas-diyes'. 'alas-onse' }).
 	clock at: #midnight put: 'hatinggabi'.
 	clock at: #noon put: 'tanghali'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h} o''clock'.
-		5. 'lima dan {h}'.
-		10. 'sampu dan {h}'.
-		15. 'labinlima dan {h}'.
-		20. 'dalawampu dan {h}'.
-		25. 'dalawampu''t lima dan {h}'.
-		30. 'tatlumpu dan {h}'.
-		35. 'dalawampu''t lima bago mag {next_h}'.
-		40. 'dalawampu bago mag {next_h}'.
-		45. 'labinlima bago mag {next_h}'.
-		50. 'sampu bago mag {next_h}'.
-		55. 'lima bago mag {next_h}'.
+		0. '{h}'.
+		5. '{h} y singko'.
+		10. '{h} y diyes'.
+		15. '{h} y kinse'.
+		20. '{h} y beynte'.
+		25. '{h} y beynte singko'.
+		30. '{h} y medya'.
+		35. 'menos beynte singko para {next_h}'.
+		40. 'menos beynte para {next_h}'.
+		45. 'menos kinse para {next_h}'.
+		50. 'menos diyes para {next_h}'.
+		55. 'menos singko para {next_h}'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

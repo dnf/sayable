@@ -21,7 +21,7 @@
         "other": "{n} anys"
       }
     },
-    "half": "{n} i mig",
+    "half": "{0} i mig",
     "delimiter": ", ",
     "justBorn": "Nounat",
     "stages": {
@@ -84,6 +84,20 @@
       "novembre",
       "desembre"
     ],
+    "monthsInDate": [
+      "de gener",
+      "de febrer",
+      "de març",
+      "d'abril",
+      "de maig",
+      "de juny",
+      "de juliol",
+      "d'agost",
+      "de setembre",
+      "d'octubre",
+      "de novembre",
+      "de desembre"
+    ],
     "weekdays": [
       "diumenge",
       "dilluns",
@@ -94,8 +108,8 @@
       "dissabte"
     ],
     "dayFormat": "{n}",
-    "datePattern": "{day} de {month}",
-    "datePatternWithYear": "{day} de {month} de {year}",
+    "datePattern": "{day} {month}",
+    "datePatternWithYear": "{day} {month} de {year}",
     "today": "avui",
     "tomorrow": "demà",
     "yesterday": "ahir",
@@ -130,7 +144,7 @@
       ],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}"
+      "datePatternWithYear": "{day} {month} de {year}"
     },
     "compact": {
       "datePattern": "{d}/{m}",
@@ -233,34 +247,34 @@
   "time": {
     "clock": {
       "hours": [
-        "dotze",
-        "una",
-        "dues",
-        "tres",
-        "quatre",
-        "cinc",
-        "sis",
-        "set",
-        "vuit",
-        "nou",
-        "deu",
-        "onze"
+        "les dotze",
+        "la una",
+        "les dues",
+        "les tres",
+        "les quatre",
+        "les cinc",
+        "les sis",
+        "les set",
+        "les vuit",
+        "les nou",
+        "les deu",
+        "les onze"
       ],
       "midnight": "mitjanit",
       "noon": "migdia",
       "patterns": {
-        "0": "{h} o'clock",
-        "5": "cinc past {h}",
-        "10": "deu past {h}",
-        "15": "un quart past {h}",
-        "20": "vint past {h}",
-        "25": "vint-i-cinc past {h}",
-        "30": "mitja past {h}",
-        "35": "vint-i-cinc to {next_h}",
-        "40": "vint to {next_h}",
-        "45": "un quart to {next_h}",
-        "50": "deu to {next_h}",
-        "55": "cinc to {next_h}"
+        "0": "{h} en punt",
+        "5": "{h} i cinc",
+        "10": "{h} i deu",
+        "15": "{h} i quart",
+        "20": "{h} i vint",
+        "25": "{h} i vint-i-cinc",
+        "30": "{h} i mitja",
+        "35": "{next_h} menys vint-i-cinc",
+        "40": "{next_h} menys vint",
+        "45": "{next_h} menys quart",
+        "50": "{next_h} menys deu",
+        "55": "{next_h} menys cinc"
       }
     },
     "short": {
@@ -275,5 +289,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Listed as a schemaLimit, but the patterns were English ('cinc past dues'), so I replaced them with the no-schema minute system: hours carry the article ('la una', 'les dues'), patterns '{h} en punt', '{h} i cinc', '{h} i quart', '{h} i mitja', '{next_h} menys quart' etc. -> 'la una en punt', 'les dues i quart', 'les tres menys quart'. This is standard Valencian/Balearic and understood everywhere; the Central-Catalan bell system ('un quart de quatre') still needs schema support, as the audit says. Overwrite freely if a schema change lands."
+    }
+  ]
 }

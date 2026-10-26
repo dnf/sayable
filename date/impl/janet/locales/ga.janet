@@ -22,7 +22,7 @@
    :yesterday "inné"
    :day-after-tomorrow "arú amárach"
    :day-before-yesterday "arú inné"
-   :this-weekday "an {weekday} seo"
+   :this-weekday "{weekday} seo"
    :next-weekday "{weekday} seo chugainn"
    :last-weekday "{weekday} seo caite"
    :short {:months @["Ean" "Feabh" "Már" "Aib" "Beal" "Meith" "Iúil" "Lún" "MFómh" "DFómh" "Samh" "Noll"] :weekdays @["Domh" "Luan" "Máirt" "Céad" "Déar" "Aoine" "Sath"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}

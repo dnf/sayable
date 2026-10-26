@@ -27,7 +27,7 @@ sub locale {{
   yesterday => 'ትማሊ',
   day_after_tomorrow => 'ድሕሪ ጽባሕ',
   day_before_yesterday => 'ቅድሚ ትማሊ',
-  this_weekday => 'እዛ {weekday}',
+  this_weekday => 'እዚ {weekday}',
   next_weekday => 'ዝመጽእ {weekday}',
   last_weekday => 'ዝሓለፈ {weekday}',
   short => {

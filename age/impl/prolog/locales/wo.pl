@@ -13,30 +13,30 @@
 
 sa_plural('wo', _, other).
 
-sa_unit('wo', day, _, 'bés {n}').
-sa_unit('wo', week, _, 'ayubés {n}').
-sa_unit('wo', month, _, 'weer {n}').
-sa_unit('wo', year, _, 'at {n}').
+sa_unit('wo', day, _, '{n} fan').
+sa_unit('wo', week, _, '{n} ayubés').
+sa_unit('wo', month, _, '{n} weer').
+sa_unit('wo', year, _, '{n} at').
 
 sa_half('wo', '{0} ak genn-wàll').
 sa_delimiter('wo', ', ').
 sa_just_born('wo', 'Dees ko sax juddu').
 
 sa_stage('wo', newborn, _, 'Dees ko sax juddu').
-sa_stage('wo', infant, _, 'Njàmbaar bu ndaw').
+sa_stage('wo', infant, _, 'Liir').
 sa_stage('wo', toddler, _, 'Xale bu ndaw').
 sa_stage('wo', child, _, 'Xale').
 sa_stage('wo', teenager, _, 'Ndaw-ndaw').
 sa_stage('wo', adult, _, 'Mag').
 
-short_sa_unit('wo', day, _, 'bés {n}').
-short_sa_unit('wo', week, _, 'ayub. {n}').
-short_sa_unit('wo', month, _, 'weer {n}').
-short_sa_unit('wo', year, _, 'at {n}').
+short_sa_unit('wo', day, _, '{n} fan').
+short_sa_unit('wo', week, _, '{n} ayub.').
+short_sa_unit('wo', month, _, '{n} weer').
+short_sa_unit('wo', year, _, '{n} at').
 
-compact_sa_unit('wo', day, _, 'bés {n}').
-compact_sa_unit('wo', week, _, 'ayub {n}').
-compact_sa_unit('wo', month, _, 'weer {n}').
-compact_sa_unit('wo', year, _, 'at {n}').
+compact_sa_unit('wo', day, _, '{n} fan').
+compact_sa_unit('wo', week, _, '{n} ayub').
+compact_sa_unit('wo', month, _, '{n} weer').
+compact_sa_unit('wo', year, _, '{n} at').
 compact_sa_half('wo', '{n}½').
 compact_sa_delimiter('wo', '').

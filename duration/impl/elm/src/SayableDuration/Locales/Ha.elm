@@ -24,32 +24,32 @@ locale =
     , units =
         Dict.fromList
             [ ( "second", Pluralized
-              [ ( One, "{n} daƙiƙa" )
-              , ( Other, "{n} daƙiƙoƙi" )
+              [ ( One, "daƙiƙa {n}" )
+              , ( Other, "daƙiƙoƙi {n}" )
               ] )
             , ( "minute", Pluralized
-              [ ( One, "{n} minti" )
-              , ( Other, "{n} mintoci" )
+              [ ( One, "minti {n}" )
+              , ( Other, "mintoci {n}" )
               ] )
             , ( "hour", Pluralized
-              [ ( One, "{n} awa" )
-              , ( Other, "{n} awanni" )
+              [ ( One, "awa {n}" )
+              , ( Other, "awanni {n}" )
               ] )
             , ( "day", Pluralized
-              [ ( One, "{n} kwana" )
-              , ( Other, "{n} kwanaki" )
+              [ ( One, "kwana {n}" )
+              , ( Other, "kwanaki {n}" )
               ] )
             , ( "week", Pluralized
-              [ ( One, "{n} mako" )
-              , ( Other, "{n} makonni" )
+              [ ( One, "mako {n}" )
+              , ( Other, "makonni {n}" )
               ] )
             , ( "month", Pluralized
-              [ ( One, "{n} wata" )
-              , ( Other, "{n} watanni" )
+              [ ( One, "wata {n}" )
+              , ( Other, "watanni {n}" )
               ] )
             , ( "year", Pluralized
-              [ ( One, "{n} shekara" )
-              , ( Other, "{n} shekaru" )
+              [ ( One, "shekara {n}" )
+              , ( Other, "shekaru {n}" )
               ] )
             ]
     , half = "{n}½"
@@ -62,13 +62,13 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n} daƙ." )
-                        , ( "minute", Simple "{n} mnt." )
-                        , ( "hour", Simple "{n} awa" )
-                        , ( "day", Simple "{n} kw." )
-                        , ( "week", Simple "{n} mk." )
-                        , ( "month", Simple "{n} wt." )
-                        , ( "year", Simple "{n} shk." )
+                        [ ( "second", Simple "daƙ. {n}" )
+                        , ( "minute", Simple "mnt. {n}" )
+                        , ( "hour", Simple "awa {n}" )
+                        , ( "day", Simple "kw. {n}" )
+                        , ( "week", Simple "mk. {n}" )
+                        , ( "month", Simple "wt. {n}" )
+                        , ( "year", Simple "shk. {n}" )
                         ]
                     )
             , ovrHalf = Nothing

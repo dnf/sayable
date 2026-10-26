@@ -13,10 +13,12 @@
 
 sd_months('eu', ['urtarril', 'otsail', 'martxo', 'apiril', 'maiatz', 'ekain', 'uztail', 'abuztu', 'irail', 'urri', 'azaro', 'abendu']).
 sd_weekdays('eu', ['igandea', 'astelehena', 'asteartea', 'asteazkena', 'osteguna', 'ostirala', 'larunbata']).
-sd_day_format('eu', '{n}').
+sd_day_format('eu', '{n}a').
+sd_day_format_exception('eu', '11', '{n}').
+sd_day_format_exception('eu', '31', '{n}').
 
-sd_date_pattern('eu', '{month}ren {day}').
-sd_date_pattern_with_year('eu', '{year}ko {month}ren {day}').
+sd_date_pattern('eu', '{month} {day}').
+sd_date_pattern_with_year('eu', '{year}ko {month} {day}').
 
 sd_today('eu', 'gaur').
 sd_tomorrow('eu', 'bihar').
@@ -26,6 +28,7 @@ sd_day_before_yesterday('eu', 'herenegun').
 sd_this_weekday('eu', '{weekday} hau').
 sd_next_weekday('eu', 'hurrengo {weekday}').
 sd_last_weekday('eu', 'aurreko {weekday}').
+sd_months_in_date('eu', ['urtarrilaren', 'otsailaren', 'martxoaren', 'apirilaren', 'maiatzaren', 'ekainaren', 'uztailaren', 'abuztuaren', 'irailaren', 'urriaren', 'azaroaren', 'abenduaren']).
 
 short_sd_months('eu', ['urt', 'ots', 'mar', 'api', 'mai', 'eka', 'uzt', 'abu', 'ira', 'urr', 'aza', 'abe']).
 short_sd_weekdays('eu', ['ig', 'al', 'ar', 'az', 'og', 'or', 'lr']).

@@ -22,11 +22,11 @@ fn plural_mi(n int) PluralCategory {
 pub const locale_mi = AgeLocale{
 	code: 'mi'
 	plural: plural_mi
-	day: simple_unit('rā {n}')
-	week: simple_unit('wiki {n}')
-	month: simple_unit('marama {n}')
-	year: simple_unit('tau {n}')
-	half: '{0}½'
+	day: simple_unit('{n} rā')
+	week: simple_unit('{n} wiki')
+	month: simple_unit('{n} marama')
+	year: simple_unit('{n} tau')
+	half: '{n}½'
 	delimiter: ', '
 	just_born: 'Pēpi hou'
 	newborn: stage_neutral('Pēpi hou')
@@ -37,13 +37,13 @@ pub const locale_mi = AgeLocale{
 	adult: stage_neutral('Pakeke')
 	has_short: true
 	short_override: CompactnessOverride{
-		day: simple_unit('rā {n}')
+		day: simple_unit('{n} rā')
 		has_day: true
-		week: simple_unit('w {n}')
+		week: simple_unit('{n} w')
 		has_week: true
-		month: simple_unit('m {n}')
+		month: simple_unit('{n} m')
 		has_month: true
-		year: simple_unit('t {n}')
+		year: simple_unit('{n} t')
 		has_year: true
 	}
 	has_compact: true

@@ -14,13 +14,13 @@
 (def locale
   {:code "so"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :pluralized :forms {:one "ilbiriqsi {n}" :other "ilbiriqsiyaal {n}"}}
-   :minute {:type :pluralized :forms {:one "daqiiqad {n}" :other "daqiiqadood {n}"}}
-   :hour {:type :pluralized :forms {:one "saacad {n}" :other "saacadood {n}"}}
-   :day {:type :pluralized :forms {:one "maalin {n}" :other "maalmood {n}"}}
-   :week {:type :pluralized :forms {:one "toddobaad {n}" :other "toddobaadyo {n}"}}
-   :month {:type :pluralized :forms {:one "bil {n}" :other "bilood {n}"}}
-   :year {:type :pluralized :forms {:one "sano {n}" :other "sanooyin {n}"}}
+   :second {:type :simple :form "{n} ilbiriqsi"}
+   :minute {:type :pluralized :forms {:one "{n} daqiiqad" :other "{n} daqiiqo"}}
+   :hour {:type :pluralized :forms {:one "{n} saacad" :other "{n} saacadood"}}
+   :day {:type :pluralized :forms {:one "{n} maalin" :other "{n} maalmood"}}
+   :week {:type :simple :form "{n} toddobaad"}
+   :month {:type :pluralized :forms {:one "{n} bil" :other "{n} bilood"}}
+   :year {:type :simple :form "{n} sano"}
    :half "{n}½"
    :delimiter ", "
    :just-now "hadda"

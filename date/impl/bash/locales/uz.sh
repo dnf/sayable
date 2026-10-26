@@ -12,22 +12,22 @@
 _sayabledate_locale_uz() {
     _months=('yanvar' 'fevral' 'mart' 'aprel' 'may' 'iyun' 'iyul' 'avgust' 'sentabr' 'oktabr' 'noyabr' 'dekabr')
     _weekdays=('yakshanba' 'dushanba' 'seshanba' 'chorshanba' 'payshanba' 'juma' 'shanba')
-    _day_format='{n}'
-    _date_pattern='{day} {month}'
-    _date_pattern_with_year='{day} {month} {year}'
+    _day_format='{n}-'
+    _date_pattern='{day}{month}'
+    _date_pattern_with_year='{day}{month}, {year}'
     _today='bugun'
     _tomorrow='ertaga'
     _yesterday='kecha'
     _day_after_tomorrow='indinga'
-    _day_before_yesterday='kechagina'
+    _day_before_yesterday='o'\''tgan kuni'
     _this_weekday='bu {weekday}'
     _next_weekday='keyingi {weekday}'
     _last_weekday='o'\''tgan {weekday}'
     _short_months=('yan' 'fev' 'mar' 'apr' 'may' 'iyn' 'iyl' 'avg' 'sen' 'okt' 'noy' 'dek')
     _short_weekdays=('yak' 'dush' 'sesh' 'chor' 'pay' 'jum' 'shan')
-    _short_day_format='{n}'
-    _short_date_pattern='{day} {month}'
-    _short_date_pattern_with_year='{day} {month} {year}'
+    _short_day_format='{n}-'
+    _short_date_pattern='{day}{month}'
+    _short_date_pattern_with_year='{day}{month}, {year}'
     _compact_date_pattern='{d}/{m}'
     _compact_date_pattern_with_year='{d}/{m}/{yy}'
 }

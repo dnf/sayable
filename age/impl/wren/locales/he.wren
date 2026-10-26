@@ -22,9 +22,9 @@ class HELocale {
   static plural { Fn.new {|n| Plural.call(n) } }
   static units {
     return {
-      "day": {"one": "יום {n}", "two": "יומיים", "other": "{n} ימים"},
-      "week": {"one": "שבוע {n}", "two": "שבועיים", "other": "{n} שבועות"},
-      "month": {"one": "חודש {n}", "two": "חודשיים", "other": "{n} חודשים"},
+      "day": {"one": "יום", "two": "יומיים", "other": "{n} ימים"},
+      "week": {"one": "שבוע", "two": "שבועיים", "other": "{n} שבועות"},
+      "month": {"one": "חודש", "two": "חודשיים", "other": "{n} חודשים"},
       "year": {"one": "שנה", "two": "שנתיים", "other": "{n} שנים"},
     }
   }
@@ -34,8 +34,8 @@ class HELocale {
   static stages {
     return {
       "newborn": {"m": "רק נולד", "f": "רק נולדה"},
-      "infant": "תינוק",
-      "toddler": "פעוט",
+      "infant": {"m": "תינוק", "f": "תינוקת"},
+      "toddler": {"m": "פעוט", "f": "פעוטה"},
       "child": {"m": "ילד", "f": "ילדה"},
       "teenager": {"m": "נער", "f": "נערה"},
       "adult": {"m": "מבוגר", "f": "מבוגרת"},

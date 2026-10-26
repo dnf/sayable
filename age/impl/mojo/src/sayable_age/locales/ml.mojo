@@ -26,7 +26,7 @@ from ..locale import (
 fn build_ml() -> AgeLocale:
     """Build the Malayalam locale."""
     fn plural(n: Int) -> String:
-        if n == 0 or n == 1:
+        if n == 1:
             return "one"
         return "other"
 
@@ -73,7 +73,7 @@ fn build_ml() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} ര",
+        half="{n}½",
         delimiter=", ",
         just_born="നവജാതശിശു",
         newborn=newborn,

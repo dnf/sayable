@@ -27,10 +27,10 @@ final lo = DurationLocale(
     'year': simpleUnit('{n} ປີ'),
   },
   half: '{0}ເຄິ່ງ',
-  delimiter: '',
+  delimiter: ' ',
   justNow: 'ຫາກໍ',
   ago: '{0} ກ່ອນ',
-  inFuture: 'ໃນ {0}',
+  inFuture: 'ໃນອີກ {0}',
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('{n} ວິ.'),
@@ -42,7 +42,7 @@ final lo = DurationLocale(
       'year': simpleUnit('{n} ປ.'),
     },
     ago: '{0} ກ່ອນ',
-    inFuture: 'ໃນ {0}',
+    inFuture: 'ໃນອີກ {0}',
   ),
   compact: CompactnessOverride(
     units: {
@@ -51,12 +51,12 @@ final lo = DurationLocale(
       'hour': simpleUnit('{n}h'),
       'day': simpleUnit('{n}d'),
       'week': simpleUnit('{n}w'),
-      'month': simpleUnit('{n}m'),
+      'month': simpleUnit('{n}mo'),
       'year': simpleUnit('{n}y'),
     },
     half: '{n}½',
     delimiter: '',
     ago: '{0} ກ່ອນ',
-    inFuture: 'ໃນ {0}',
+    inFuture: 'ໃນອີກ {0}',
   ),
 );

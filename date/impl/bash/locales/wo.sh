@@ -18,11 +18,11 @@ _sayabledate_locale_wo() {
     _today='tey'
     _tomorrow='suba'
     _yesterday='démb'
-    _day_after_tomorrow='suba-suba'
-    _day_before_yesterday='démb-démb'
-    _this_weekday='{weekday} bi'
-    _next_weekday='{weekday} bi ñëw'
-    _last_weekday='{weekday} bi weex'
+    _day_after_tomorrow='gannaaw-suba'
+    _day_before_yesterday='bërki-démb'
+    _this_weekday='{weekday} jii'
+    _next_weekday='{weekday} jiy ñëw'
+    _last_weekday='{weekday} ji weesu'
     _short_months=('Sam' 'Few' 'Maa' 'Awr' 'Mee' 'Suw' 'Sul' 'Ut' 'Sep' 'Okt' 'Now' 'Des')
     _short_weekdays=('Dib' 'Alt' 'Tal' 'Àll' 'Alx' 'Àjj' 'Gaa')
     _short_day_format='{n}'

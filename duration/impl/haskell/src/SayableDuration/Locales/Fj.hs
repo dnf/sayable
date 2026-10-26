@@ -26,7 +26,7 @@ locale = DurationLocale
         , unitMonth = Simple "{n} na vula"
         , unitYear = Simple "{n} na yabaki"
         }
-    , localeHalf = "{n} kei na levu ni wasei"
+    , localeHalf = "{0} kei na veimama"
     , localeDelimiter = ", "
     , localeJustNow = "edaidai ga"
     , localeAgo = "{0} sa oti"
@@ -54,7 +54,7 @@ locale = DurationLocale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}mo")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} sa oti"
             , ovrInFuture = Just "ena {0}"

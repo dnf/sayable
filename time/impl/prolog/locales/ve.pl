@@ -11,22 +11,22 @@
 
 % Venda locale.
 
-st_hours('ve', ['fumimbili', 'thihi', 'mbili', 'raru', 'ina', 'thanu', 'rathi', 'sumbe', 'malo', 'tahe', 'fumi', 'fuminthihi']).
+st_hours('ve', ['ya fumi na mbili', 'ya u thoma', 'ya vhuvhili', 'ya vhuraru', 'ya vhuṋa', 'ya vhuṱanu', 'ya vhurathi', 'ya vhusumbe', 'ya vhumalo', 'ya vhuṱahe', 'ya fumi', 'ya fumi na nthihi']).
 st_midnight('ve', 'vhukati ha vhusiku').
 st_noon('ve', 'vhukati ha masiari').
 
-st_pattern('ve', 0, '{h}:00').
-st_pattern('ve', 5, '{h}:05').
-st_pattern('ve', 10, '{h}:10').
-st_pattern('ve', 15, '{h}:15').
-st_pattern('ve', 20, '{h}:20').
-st_pattern('ve', 25, '{h}:25').
-st_pattern('ve', 30, '{h}:30').
-st_pattern('ve', 35, '{h}:35').
-st_pattern('ve', 40, '{h}:40').
-st_pattern('ve', 45, '{h}:45').
-st_pattern('ve', 50, '{h}:50').
-st_pattern('ve', 55, '{h}:55').
+st_pattern('ve', 0, 'awara {h}').
+st_pattern('ve', 5, 'awara {h} na ṱhanu').
+st_pattern('ve', 10, 'awara {h} na fumi').
+st_pattern('ve', 15, 'awara {h} na kotara').
+st_pattern('ve', 20, 'awara {h} na mahumi mavhili').
+st_pattern('ve', 25, 'awara {h} na mahumi mavhili na ṱhanu').
+st_pattern('ve', 30, 'awara {h} na hafu').
+st_pattern('ve', 35, 'awara {h} na mahumi mararu na ṱhanu').
+st_pattern('ve', 40, 'awara {h} na mahumi maṋa').
+st_pattern('ve', 45, 'awara {h} na mahumi maṋa na ṱhanu').
+st_pattern('ve', 50, 'awara {h} na mahumi maṱanu').
+st_pattern('ve', 55, 'awara {h} na mahumi maṱanu na ṱhanu').
 
 short_st_use24h('ve', false).
 short_st_format('ve', '{h}:{mm} {ampm}').

@@ -17,7 +17,7 @@ mn
 	locale := SayableDateLocale new.
 	locale code: 'mn'.
 	locale months: (OrderedCollection withAll: { 'Нэгдүгээр сар'. 'Хоёрдугаар сар'. 'Гуравдугаар сар'. 'Дөрөвдүгээр сар'. 'Тавдугаар сар'. 'Зургаадугаар сар'. 'Долоодугаар сар'. 'Наймдугаар сар'. 'Есдүгээр сар'. 'Аравдугаар сар'. 'Арван нэгдүгээр сар'. 'Арван хоёрдугаар сар' }).
-	locale weekdays: (OrderedCollection withAll: { 'Ням'. 'Даваа'. 'Мягмар'. 'Лхагва'. 'Пүрэв'. 'Баасан'. 'Бямба' }).
+	locale weekdays: (OrderedCollection withAll: { 'ням'. 'даваа'. 'мягмар'. 'лхагва'. 'пүрэв'. 'баасан'. 'бямба' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{month} {day}'.
@@ -30,7 +30,7 @@ mn
 	locale thisWeekday: 'энэ {weekday}'.
 	locale nextWeekday: 'ирэх {weekday}'.
 	locale lastWeekday: 'өнгөрсөн {weekday}'.
-	locale monthsInDate: nil.
+	locale monthsInDate: (OrderedCollection withAll: { 'нэгдүгээр сарын'. 'хоёрдугаар сарын'. 'гуравдугаар сарын'. 'дөрөвдүгээр сарын'. 'тавдугаар сарын'. 'зургаадугаар сарын'. 'долоодугаар сарын'. 'наймдугаар сарын'. 'есдүгээр сарын'. 'аравдугаар сарын'. 'арван нэгдүгээр сарын'. 'арван хоёрдугаар сарын' }).
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { '1-р сар'. '2-р сар'. '3-р сар'. '4-р сар'. '5-р сар'. '6-р сар'. '7-р сар'. '8-р сар'. '9-р сар'. '10-р сар'. '11-р сар'. '12-р сар' }).
 		#weekdays. (OrderedCollection withAll: { 'Ня'. 'Да'. 'Мя'. 'Лх'. 'Пү'. 'Ба'. 'Бя' }).

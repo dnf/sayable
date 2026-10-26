@@ -10,22 +10,22 @@
 # Source: locales/dje.json
 
 function locale_dje {
-    $hours = @('way cindi', 'afoo', 'ihinka', 'ihinza', 'itaaci', 'igu', 'iddu', 'iyye', 'isahkay', 'iyegga', 'iwoy', 'iwoy cindi')
+    $hours = @('iway cindi hinka', 'fo', 'hinka', 'hinza', 'taaci', 'gu', 'iddu', 'iyye', 'ahakku', 'yagga', 'iway', 'iway cindi fo')
     $midnight = 'cin beri'
     $noon = 'zaari gaaham'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'guuru {h}'
+    $patterns[5] = 'guuru {h} nda miniti gu'
+    $patterns[10] = 'guuru {h} nda miniti iway'
+    $patterns[15] = 'guuru {h} nda miniti iway cindi gu'
+    $patterns[20] = 'guuru {h} nda miniti waranka'
+    $patterns[25] = 'guuru {h} nda miniti waranka cindi gu'
+    $patterns[30] = 'guuru {h} nda jare'
+    $patterns[35] = 'guuru {h} nda miniti waranza cindi gu'
+    $patterns[40] = 'guuru {h} nda miniti waytaaci'
+    $patterns[45] = 'guuru {h} nda miniti waytaaci cindi gu'
+    $patterns[50] = 'guuru {h} nda miniti waygu'
+    $patterns[55] = 'guuru {h} nda miniti waygu cindi gu'
     $clock = @{
         hours = $hours
         midnight = $midnight

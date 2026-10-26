@@ -35,10 +35,10 @@ var CY = sa.AgeLocale{
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} diwrnod", sa.One: "{n} diwrnod", sa.Two: "{n} ddiwrnod", sa.Few: "{n} diwrnod", sa.Many: "{n} niwrnod", sa.Other: "{n} diwrnod"}),
+		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} diwrnod", sa.One: "{n} diwrnod", sa.Two: "{n} ddiwrnod", sa.Few: "{n} diwrnod", sa.Many: "{n} diwrnod", sa.Other: "{n} diwrnod"}),
 		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} wythnos", sa.One: "{n} wythnos", sa.Two: "{n} wythnos", sa.Few: "{n} wythnos", sa.Many: "{n} wythnos", sa.Other: "{n} wythnos"}),
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} mis", sa.One: "{n} mis", sa.Two: "{n} fis", sa.Few: "{n} mis", sa.Many: "{n} mis", sa.Other: "{n} mis"}),
-		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} blwyddyn", sa.One: "{n} blwyddyn", sa.Two: "{n} flynedd", sa.Few: "{n} blynedd", sa.Many: "{n} blynedd", sa.Other: "{n} blynedd"}),
+		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} blwyddyn", sa.One: "{n} flwyddyn", sa.Two: "{n} flynedd", sa.Few: "{n} blynedd", sa.Many: "{n} blynedd", sa.Other: "{n} blynedd"}),
 	},
 	Half:      "{0} a hanner",
 	Delimiter: ", ",

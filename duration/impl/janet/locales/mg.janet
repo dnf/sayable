@@ -22,8 +22,8 @@
    :half "{0} sy sasany"
    :delimiter ", "
    :just-now "vao haingana"
-   :ago "{0} lasa"
+   :ago "{0} lasa izay"
    :in-future "ao anatin'ny {0}"
-   :short {:units {:second "{n} seg" :minute "{n} min" :hour "{n} ora" :day "{n} and" :week "{n} her" :month "{n} vol" :year "{n} tna"} :ago "{0} lasa" :in-future "ao anatin'ny {0}"}
+   :short {:units {:second "{n} seg" :minute "{n} min" :hour "{n} ora" :day "{n} and" :week "{n} her" :month "{n} vol" :year "{n} tna"} :ago "{0} lasa izay" :in-future "ao anatin'ny {0}"}
    :compact {:units {:second "{n} s" :minute "{n} m" :hour "{n} o" :day "{n} a" :week "{n} h" :month "{n} v" :year "{n} t"} :half "{n}½" :delimiter "" :ago "{0} lasa" :in-future "ao anatin'ny {0}"}
 })

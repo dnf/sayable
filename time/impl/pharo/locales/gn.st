@@ -18,7 +18,7 @@ gn
 	locale code: 'gn'.
 	clock := Dictionary new.
 	clock at: #hours put: (OrderedCollection withAll: { 'pa mokõi'. 'peteĩ'. 'mokõi'. 'mbohapy'. 'irundy'. 'po'. 'poteĩ'. 'pokõi'. 'poapy'. 'porundy'. 'pa'. 'pa peteĩ' }).
-	clock at: #midnight put: 'pyhareve'.
+	clock at: #midnight put: 'pyharepyte'.
 	clock at: #noon put: 'asaje'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
 		0. '{h}'.
@@ -28,11 +28,11 @@ gn
 		20. '{h} ha mokõi pa'.
 		25. '{h} ha mokõi pa po'.
 		30. '{h} ha mbohapy pa'.
-		35. '{next_h} mba''e mokõi pa po'.
-		40. '{next_h} mba''e mokõi pa'.
-		45. '{next_h} mba''e pa po'.
-		50. '{next_h} mba''e pa'.
-		55. '{next_h} mba''e po'.
+		35. '{h} ha mbohapy pa po'.
+		40. '{h} ha irundy pa'.
+		45. '{h} ha irundy pa po'.
+		50. '{h} ha po pa'.
+		55. '{h} ha po pa po'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

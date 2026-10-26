@@ -11,175 +11,179 @@ regenerates the locale code in every implementation and the example pages in
 [docs/locales/](../docs/locales/). Never edit generated files by hand. See
 [adding a locale](../docs/adding-a-locale.md) for the field reference.
 
+Places where the data is known to be uncertain are listed in
+[docs/locales/README.md](../docs/locales/README.md), the best place for a
+linguist to start.
+
 ## All 168 locales
 
-| Language | Code | Plural rule | Source | Examples |
-| -------- | ---- | ----------- | ------ | -------- |
-| Afrikaans | `af` | `one_other` | [af.json](af.json) | [examples](../docs/locales/af.md) |
-| Akan | `ak` | `one_other_zero_one` | [ak.json](ak.json) | [examples](../docs/locales/ak.md) |
-| Albanian | `sq` | `one_other` | [sq.json](sq.json) | [examples](../docs/locales/sq.md) |
-| Amharic | `am` | `one_other_zero_one` | [am.json](am.json) | [examples](../docs/locales/am.md) |
-| Arabic | `ar` | `ar` | [ar.json](ar.json) | [examples](../docs/locales/ar.md) |
-| Armenian | `hy` | `one_other_zero_one` | [hy.json](hy.json) | [examples](../docs/locales/hy.md) |
-| Aymara | `ay` | `other_only` | [ay.json](ay.json) | [examples](../docs/locales/ay.md) |
-| Azerbaijani | `az` | `one_other` | [az.json](az.json) | [examples](../docs/locales/az.md) |
-| Bambara | `bm` | `other_only` | [bm.json](bm.json) | [examples](../docs/locales/bm.md) |
-| Baoulé | `bci` | `other_only` | [bci.json](bci.json) | [examples](../docs/locales/bci.md) |
-| Basque | `eu` | `other_only` | [eu.json](eu.json) | [examples](../docs/locales/eu.md) |
-| Belarusian | `be` | `ru_uk` | [be.json](be.json) | [examples](../docs/locales/be.md) |
-| Bemba | `bem` | `one_other` | [bem.json](bem.json) | [examples](../docs/locales/bem.md) |
-| Bengali | `bn` | `one_other_zero_one` | [bn.json](bn.json) | [examples](../docs/locales/bn.md) |
-| Bislama | `bi` | `other_only` | [bi.json](bi.json) | [examples](../docs/locales/bi.md) |
-| Bosnian | `bs` | `slavic_bcs` | [bs.json](bs.json) | [examples](../docs/locales/bs.md) |
-| Breton | `br` | `br` | [br.json](br.json) | [examples](../docs/locales/br.md) |
-| Bulgarian | `bg` | `one_other` | [bg.json](bg.json) | [examples](../docs/locales/bg.md) |
-| Burmese | `my` | `other_only` | [my.json](my.json) | [examples](../docs/locales/my.md) |
-| Cantonese | `yue` | `other_only` | [yue.json](yue.json) | [examples](../docs/locales/yue.md) |
-| Catalan | `ca` | `one_other` | [ca.json](ca.json) | [examples](../docs/locales/ca.md) |
-| Cebuano | `ceb` | `one_other_zero_one` | [ceb.json](ceb.json) | [examples](../docs/locales/ceb.md) |
-| Central Atlas Tamazight | `tzm` | `tzm` | [tzm.json](tzm.json) | [examples](../docs/locales/tzm.md) |
-| Chichewa | `ny` | `one_other` | [ny.json](ny.json) | [examples](../docs/locales/ny.md) |
-| Chinese | `zh` | `other_only` | [zh.json](zh.json) | [examples](../docs/locales/zh.md) |
-| Comorian | `zdj` | `other_only` | [zdj.json](zdj.json) | [examples](../docs/locales/zdj.md) |
-| Cornish | `kw` | `kw` | [kw.json](kw.json) | [examples](../docs/locales/kw.md) |
-| Croatian | `hr` | `slavic_bcs` | [hr.json](hr.json) | [examples](../docs/locales/hr.md) |
-| Czech | `cs` | `cs_sk` | [cs.json](cs.json) | [examples](../docs/locales/cs.md) |
-| Danish | `da` | `one_other` | [da.json](da.json) | [examples](../docs/locales/da.md) |
-| Dhivehi | `dv` | `other_only` | [dv.json](dv.json) | [examples](../docs/locales/dv.md) |
-| Dholuo | `luo` | `one_other` | [luo.json](luo.json) | [examples](../docs/locales/luo.md) |
-| Dinka | `din` | `one_other` | [din.json](din.json) | [examples](../docs/locales/din.md) |
-| Dutch | `nl` | `one_other` | [nl.json](nl.json) | [examples](../docs/locales/nl.md) |
-| Dyula | `dyu` | `other_only` | [dyu.json](dyu.json) | [examples](../docs/locales/dyu.md) |
-| Dzongkha | `dz` | `other_only` | [dz.json](dz.json) | [examples](../docs/locales/dz.md) |
-| English | `en` | `one_other` | [en.json](en.json) | [examples](../docs/locales/en.md) |
-| Estonian | `et` | `one_other` | [et.json](et.json) | [examples](../docs/locales/et.md) |
-| Ewe | `ee` | `one_other` | [ee.json](ee.json) | [examples](../docs/locales/ee.md) |
-| Fang | `fan` | `one_other` | [fan.json](fan.json) | [examples](../docs/locales/fan.md) |
-| Fijian | `fj` | `other_only` | [fj.json](fj.json) | [examples](../docs/locales/fj.md) |
-| Filipino | `fil` | `other_only` | [fil.json](fil.json) | [examples](../docs/locales/fil.md) |
-| Finnish | `fi` | `one_other` | [fi.json](fi.json) | [examples](../docs/locales/fi.md) |
-| Fon | `fon` | `other_only` | [fon.json](fon.json) | [examples](../docs/locales/fon.md) |
-| French | `fr` | `one_other_zero_one` | [fr.json](fr.json) | [examples](../docs/locales/fr.md) |
-| Fulah | `ff` | `one_other_zero_one` | [ff.json](ff.json) | [examples](../docs/locales/ff.md) |
-| Galician | `gl` | `one_other` | [gl.json](gl.json) | [examples](../docs/locales/gl.md) |
-| Georgian | `ka` | `one_other` | [ka.json](ka.json) | [examples](../docs/locales/ka.md) |
-| German | `de` | `one_other` | [de.json](de.json) | [examples](../docs/locales/de.md) |
-| Greek | `el` | `one_other` | [el.json](el.json) | [examples](../docs/locales/el.md) |
-| Guarani | `gn` | `one_other` | [gn.json](gn.json) | [examples](../docs/locales/gn.md) |
-| Guinea-Bissau Creole | `pov` | `other_only` | [pov.json](pov.json) | [examples](../docs/locales/pov.md) |
-| Gujarati | `gu` | `one_other_zero_one` | [gu.json](gu.json) | [examples](../docs/locales/gu.md) |
-| Haitian Creole | `ht` | `one_other_zero_one` | [ht.json](ht.json) | [examples](../docs/locales/ht.md) |
-| Hausa | `ha` | `one_other` | [ha.json](ha.json) | [examples](../docs/locales/ha.md) |
-| Hebrew | `he` | `he` | [he.json](he.json) | [examples](../docs/locales/he.md) |
-| Hindi | `hi` | `one_other_zero_one` | [hi.json](hi.json) | [examples](../docs/locales/hi.md) |
-| Hmong | `hmn` | `other_only` | [hmn.json](hmn.json) | [examples](../docs/locales/hmn.md) |
-| Hungarian | `hu` | `other_only` | [hu.json](hu.json) | [examples](../docs/locales/hu.md) |
-| Icelandic | `is` | `mk` | [is.json](is.json) | [examples](../docs/locales/is.md) |
-| Igbo | `ig` | `other_only` | [ig.json](ig.json) | [examples](../docs/locales/ig.md) |
-| Indonesian | `id` | `other_only` | [id.json](id.json) | [examples](../docs/locales/id.md) |
-| Irish | `ga` | `ga` | [ga.json](ga.json) | [examples](../docs/locales/ga.md) |
-| Italian | `it` | `one_other` | [it.json](it.json) | [examples](../docs/locales/it.md) |
-| Japanese | `ja` | `other_only` | [ja.json](ja.json) | [examples](../docs/locales/ja.md) |
-| Javanese | `jv` | `other_only` | [jv.json](jv.json) | [examples](../docs/locales/jv.md) |
-| K'iche' | `quc` | `other_only` | [quc.json](quc.json) | [examples](../docs/locales/quc.md) |
-| Kabiye | `kbp` | `other_only` | [kbp.json](kbp.json) | [examples](../docs/locales/kbp.md) |
-| Kalaallisut | `kl` | `other_only` | [kl.json](kl.json) | [examples](../docs/locales/kl.md) |
-| Kannada | `kn` | `one_other_zero_one` | [kn.json](kn.json) | [examples](../docs/locales/kn.md) |
-| Kaqchikel | `cak` | `other_only` | [cak.json](cak.json) | [examples](../docs/locales/cak.md) |
-| Kazakh | `kk` | `one_other` | [kk.json](kk.json) | [examples](../docs/locales/kk.md) |
-| Khmer | `km` | `other_only` | [km.json](km.json) | [examples](../docs/locales/km.md) |
-| Kikuyu | `ki` | `one_other` | [ki.json](ki.json) | [examples](../docs/locales/ki.md) |
-| Kinyarwanda | `rw` | `one_other` | [rw.json](rw.json) | [examples](../docs/locales/rw.md) |
-| Kituba | `ktu` | `one_other` | [ktu.json](ktu.json) | [examples](../docs/locales/ktu.md) |
-| Korean | `ko` | `other_only` | [ko.json](ko.json) | [examples](../docs/locales/ko.md) |
-| Kpelle | `kpe` | `other_only` | [kpe.json](kpe.json) | [examples](../docs/locales/kpe.md) |
-| Krio | `kri` | `other_only` | [kri.json](kri.json) | [examples](../docs/locales/kri.md) |
-| Kurdish | `ku` | `one_other` | [ku.json](ku.json) | [examples](../docs/locales/ku.md) |
-| Kyrgyz | `ky` | `one_other` | [ky.json](ky.json) | [examples](../docs/locales/ky.md) |
-| Lao | `lo` | `other_only` | [lo.json](lo.json) | [examples](../docs/locales/lo.md) |
-| Latvian | `lv` | `lv` | [lv.json](lv.json) | [examples](../docs/locales/lv.md) |
-| Lingala | `ln` | `one_other_zero_one` | [ln.json](ln.json) | [examples](../docs/locales/ln.md) |
-| Lithuanian | `lt` | `lt` | [lt.json](lt.json) | [examples](../docs/locales/lt.md) |
-| Luganda | `lg` | `one_other` | [lg.json](lg.json) | [examples](../docs/locales/lg.md) |
-| Luxembourgish | `lb` | `one_other` | [lb.json](lb.json) | [examples](../docs/locales/lb.md) |
-| Macedonian | `mk` | `mk` | [mk.json](mk.json) | [examples](../docs/locales/mk.md) |
-| Makhuwa | `vmw` | `one_other` | [vmw.json](vmw.json) | [examples](../docs/locales/vmw.md) |
-| Malagasy | `mg` | `one_other_zero_one` | [mg.json](mg.json) | [examples](../docs/locales/mg.md) |
-| Malay | `ms` | `other_only` | [ms.json](ms.json) | [examples](../docs/locales/ms.md) |
-| Malayalam | `ml` | `one_other_zero_one` | [ml.json](ml.json) | [examples](../docs/locales/ml.md) |
-| Maltese | `mt` | `mt` | [mt.json](mt.json) | [examples](../docs/locales/mt.md) |
-| Mam | `mam` | `other_only` | [mam.json](mam.json) | [examples](../docs/locales/mam.md) |
-| Mandinka | `mnk` | `other_only` | [mnk.json](mnk.json) | [examples](../docs/locales/mnk.md) |
-| Manx | `gv` | `gv` | [gv.json](gv.json) | [examples](../docs/locales/gv.md) |
-| Marathi | `mr` | `one_other` | [mr.json](mr.json) | [examples](../docs/locales/mr.md) |
-| Mauritian Creole | `mfe` | `other_only` | [mfe.json](mfe.json) | [examples](../docs/locales/mfe.md) |
-| Mende | `men` | `one_other` | [men.json](men.json) | [examples](../docs/locales/men.md) |
-| Mongolian | `mn` | `one_other` | [mn.json](mn.json) | [examples](../docs/locales/mn.md) |
-| Moore | `mos` | `other_only` | [mos.json](mos.json) | [examples](../docs/locales/mos.md) |
-| Māori | `mi` | `one_other` | [mi.json](mi.json) | [examples](../docs/locales/mi.md) |
-| Nepali | `ne` | `one_other` | [ne.json](ne.json) | [examples](../docs/locales/ne.md) |
-| Northern Ndebele | `nd` | `one_other` | [nd.json](nd.json) | [examples](../docs/locales/nd.md) |
-| Northern Sotho | `nso` | `one_other` | [nso.json](nso.json) | [examples](../docs/locales/nso.md) |
-| Norwegian Bokmål | `nb` | `one_other` | [nb.json](nb.json) | [examples](../docs/locales/nb.md) |
-| Nuer | `nus` | `one_other` | [nus.json](nus.json) | [examples](../docs/locales/nus.md) |
-| Odia | `or` | `one_other` | [or.json](or.json) | [examples](../docs/locales/or.md) |
-| Oromo | `om` | `one_other` | [om.json](om.json) | [examples](../docs/locales/om.md) |
-| Oshiwambo | `ng` | `one_other` | [ng.json](ng.json) | [examples](../docs/locales/ng.md) |
-| Pashto | `ps` | `one_other` | [ps.json](ps.json) | [examples](../docs/locales/ps.md) |
-| Persian | `fa` | `one_other_zero_one` | [fa.json](fa.json) | [examples](../docs/locales/fa.md) |
-| Pijin | `pis` | `other_only` | [pis.json](pis.json) | [examples](../docs/locales/pis.md) |
-| Polish | `pl` | `pl` | [pl.json](pl.json) | [examples](../docs/locales/pl.md) |
-| Portuguese | `pt` | `one_other_zero_one` | [pt.json](pt.json) | [examples](../docs/locales/pt.md) |
-| Punjabi | `pa` | `one_other_zero_one` | [pa.json](pa.json) | [examples](../docs/locales/pa.md) |
-| Q'eqchi' | `kek` | `other_only` | [kek.json](kek.json) | [examples](../docs/locales/kek.md) |
-| Quechua | `qu` | `other_only` | [qu.json](qu.json) | [examples](../docs/locales/qu.md) |
-| Romanian | `ro` | `ro` | [ro.json](ro.json) | [examples](../docs/locales/ro.md) |
-| Russian | `ru` | `ru_uk` | [ru.json](ru.json) | [examples](../docs/locales/ru.md) |
-| Sango | `sg` | `other_only` | [sg.json](sg.json) | [examples](../docs/locales/sg.md) |
-| Sara | `sar` | `other_only` | [sar.json](sar.json) | [examples](../docs/locales/sar.md) |
-| Scottish Gaelic | `gd` | `gd` | [gd.json](gd.json) | [examples](../docs/locales/gd.md) |
-| Serbian | `sr` | `slavic_bcs` | [sr.json](sr.json) | [examples](../docs/locales/sr.md) |
-| Shan | `shn` | `other_only` | [shn.json](shn.json) | [examples](../docs/locales/shn.md) |
-| Shona | `sn` | `one_other` | [sn.json](sn.json) | [examples](../docs/locales/sn.md) |
-| Sindhi | `sd` | `one_other` | [sd.json](sd.json) | [examples](../docs/locales/sd.md) |
-| Sinhala | `si` | `one_other_zero_one` | [si.json](si.json) | [examples](../docs/locales/si.md) |
-| siSwati | `ss` | `one_other` | [ss.json](ss.json) | [examples](../docs/locales/ss.md) |
-| Slovak | `sk` | `cs_sk` | [sk.json](sk.json) | [examples](../docs/locales/sk.md) |
-| Slovenian | `sl` | `sl` | [sl.json](sl.json) | [examples](../docs/locales/sl.md) |
-| Somali | `so` | `one_other` | [so.json](so.json) | [examples](../docs/locales/so.md) |
-| Soninke | `snk` | `other_only` | [snk.json](snk.json) | [examples](../docs/locales/snk.md) |
-| Southern Ndebele | `nr` | `one_other` | [nr.json](nr.json) | [examples](../docs/locales/nr.md) |
-| Southern Sotho | `st` | `one_other` | [st.json](st.json) | [examples](../docs/locales/st.md) |
-| Spanish | `es` | `one_other` | [es.json](es.json) | [examples](../docs/locales/es.md) |
-| Sukuma | `suk` | `one_other` | [suk.json](suk.json) | [examples](../docs/locales/suk.md) |
-| Sundanese | `su` | `other_only` | [su.json](su.json) | [examples](../docs/locales/su.md) |
-| Swahili | `sw` | `one_other` | [sw.json](sw.json) | [examples](../docs/locales/sw.md) |
-| Swedish | `sv` | `one_other` | [sv.json](sv.json) | [examples](../docs/locales/sv.md) |
-| Tachelhit | `shi` | `shi` | [shi.json](shi.json) | [examples](../docs/locales/shi.md) |
-| Tajik | `tg` | `other_only` | [tg.json](tg.json) | [examples](../docs/locales/tg.md) |
-| Tamil | `ta` | `one_other` | [ta.json](ta.json) | [examples](../docs/locales/ta.md) |
-| Telugu | `te` | `one_other` | [te.json](te.json) | [examples](../docs/locales/te.md) |
-| Temne | `tem` | `one_other` | [tem.json](tem.json) | [examples](../docs/locales/tem.md) |
-| Tetum | `tet` | `other_only` | [tet.json](tet.json) | [examples](../docs/locales/tet.md) |
-| Thai | `th` | `other_only` | [th.json](th.json) | [examples](../docs/locales/th.md) |
-| Tigre | `tig` | `one_other` | [tig.json](tig.json) | [examples](../docs/locales/tig.md) |
-| Tigrinya | `ti` | `one_other_zero_one` | [ti.json](ti.json) | [examples](../docs/locales/ti.md) |
-| Tok Pisin | `tpi` | `other_only` | [tpi.json](tpi.json) | [examples](../docs/locales/tpi.md) |
-| Tsonga | `ts` | `one_other` | [ts.json](ts.json) | [examples](../docs/locales/ts.md) |
-| Tswana | `tn` | `one_other` | [tn.json](tn.json) | [examples](../docs/locales/tn.md) |
-| Tumbuka | `tum` | `one_other` | [tum.json](tum.json) | [examples](../docs/locales/tum.md) |
-| Turkish | `tr` | `one_other` | [tr.json](tr.json) | [examples](../docs/locales/tr.md) |
-| Turkmen | `tk` | `one_other` | [tk.json](tk.json) | [examples](../docs/locales/tk.md) |
-| Ukrainian | `uk` | `ru_uk` | [uk.json](uk.json) | [examples](../docs/locales/uk.md) |
-| Umbundu | `umb` | `one_other` | [umb.json](umb.json) | [examples](../docs/locales/umb.md) |
-| Urdu | `ur` | `one_other` | [ur.json](ur.json) | [examples](../docs/locales/ur.md) |
-| Uzbek | `uz` | `one_other` | [uz.json](uz.json) | [examples](../docs/locales/uz.md) |
-| Venda | `ve` | `one_other` | [ve.json](ve.json) | [examples](../docs/locales/ve.md) |
-| Vietnamese | `vi` | `other_only` | [vi.json](vi.json) | [examples](../docs/locales/vi.md) |
-| Welsh | `cy` | `cy` | [cy.json](cy.json) | [examples](../docs/locales/cy.md) |
-| Wolof | `wo` | `other_only` | [wo.json](wo.json) | [examples](../docs/locales/wo.md) |
-| Xhosa | `xh` | `one_other` | [xh.json](xh.json) | [examples](../docs/locales/xh.md) |
-| Yao | `yao` | `one_other` | [yao.json](yao.json) | [examples](../docs/locales/yao.md) |
-| Yoruba | `yo` | `other_only` | [yo.json](yo.json) | [examples](../docs/locales/yo.md) |
-| Zarma | `dje` | `other_only` | [dje.json](dje.json) | [examples](../docs/locales/dje.md) |
-| Zulu | `zu` | `one_other_zero_one` | [zu.json](zu.json) | [examples](../docs/locales/zu.md) |
+| Language | Code | Plural rule | Source | Examples | Review |
+| -------- | ---- | ----------- | ------ | -------- | ------ |
+| Afrikaans | `af` | `one_other` | [af.json](af.json) | [examples](../docs/locales/af.md) | — |
+| Akan | `ak` | `one_other_zero_one` | [ak.json](ak.json) | [examples](../docs/locales/ak.md) | [medium](../docs/locales/ak.md#needs-review) |
+| Albanian | `sq` | `one_other` | [sq.json](sq.json) | [examples](../docs/locales/sq.md) | — |
+| Amharic | `am` | `one_other_zero_one` | [am.json](am.json) | [examples](../docs/locales/am.md) | [medium](../docs/locales/am.md#needs-review) |
+| Arabic | `ar` | `ar` | [ar.json](ar.json) | [examples](../docs/locales/ar.md) | — |
+| Armenian | `hy` | `one_other_zero_one` | [hy.json](hy.json) | [examples](../docs/locales/hy.md) | [medium](../docs/locales/hy.md#needs-review) |
+| Aymara | `ay` | `other_only` | [ay.json](ay.json) | [examples](../docs/locales/ay.md) | [low](../docs/locales/ay.md#needs-review) |
+| Azerbaijani | `az` | `one_other` | [az.json](az.json) | [examples](../docs/locales/az.md) | [medium](../docs/locales/az.md#needs-review) |
+| Bambara | `bm` | `other_only` | [bm.json](bm.json) | [examples](../docs/locales/bm.md) | [medium](../docs/locales/bm.md#needs-review) |
+| Baoulé | `bci` | `other_only` | [bci.json](bci.json) | [examples](../docs/locales/bci.md) | [low](../docs/locales/bci.md#needs-review) |
+| Basque | `eu` | `other_only` | [eu.json](eu.json) | [examples](../docs/locales/eu.md) | [medium](../docs/locales/eu.md#needs-review) |
+| Belarusian | `be` | `ru_uk` | [be.json](be.json) | [examples](../docs/locales/be.md) | [medium](../docs/locales/be.md#needs-review) |
+| Bemba | `bem` | `one_other` | [bem.json](bem.json) | [examples](../docs/locales/bem.md) | [low](../docs/locales/bem.md#needs-review) |
+| Bengali | `bn` | `one_other_zero_one` | [bn.json](bn.json) | [examples](../docs/locales/bn.md) | [medium](../docs/locales/bn.md#needs-review) |
+| Bislama | `bi` | `other_only` | [bi.json](bi.json) | [examples](../docs/locales/bi.md) | [medium](../docs/locales/bi.md#needs-review) |
+| Bosnian | `bs` | `slavic_bcs` | [bs.json](bs.json) | [examples](../docs/locales/bs.md) | — |
+| Breton | `br` | `br` | [br.json](br.json) | [examples](../docs/locales/br.md) | [medium](../docs/locales/br.md#needs-review) |
+| Bulgarian | `bg` | `one_other` | [bg.json](bg.json) | [examples](../docs/locales/bg.md) | — |
+| Burmese | `my` | `other_only` | [my.json](my.json) | [examples](../docs/locales/my.md) | — |
+| Cantonese | `yue` | `other_only` | [yue.json](yue.json) | [examples](../docs/locales/yue.md) | [medium](../docs/locales/yue.md#needs-review) |
+| Catalan | `ca` | `one_other` | [ca.json](ca.json) | [examples](../docs/locales/ca.md) | [medium](../docs/locales/ca.md#needs-review) |
+| Cebuano | `ceb` | `one_other_zero_one` | [ceb.json](ceb.json) | [examples](../docs/locales/ceb.md) | [medium](../docs/locales/ceb.md#needs-review) |
+| Central Atlas Tamazight | `tzm` | `tzm` | [tzm.json](tzm.json) | [examples](../docs/locales/tzm.md) | [low](../docs/locales/tzm.md#needs-review) |
+| Chichewa | `ny` | `one_other` | [ny.json](ny.json) | [examples](../docs/locales/ny.md) | [medium](../docs/locales/ny.md#needs-review) |
+| Chinese | `zh` | `other_only` | [zh.json](zh.json) | [examples](../docs/locales/zh.md) | — |
+| Comorian | `zdj` | `other_only` | [zdj.json](zdj.json) | [examples](../docs/locales/zdj.md) | [low](../docs/locales/zdj.md#needs-review) |
+| Cornish | `kw` | `kw` | [kw.json](kw.json) | [examples](../docs/locales/kw.md) | [medium](../docs/locales/kw.md#needs-review) |
+| Croatian | `hr` | `slavic_bcs` | [hr.json](hr.json) | [examples](../docs/locales/hr.md) | — |
+| Czech | `cs` | `cs_sk` | [cs.json](cs.json) | [examples](../docs/locales/cs.md) | [medium](../docs/locales/cs.md#needs-review) |
+| Danish | `da` | `one_other` | [da.json](da.json) | [examples](../docs/locales/da.md) | — |
+| Dhivehi | `dv` | `other_only` | [dv.json](dv.json) | [examples](../docs/locales/dv.md) | [low](../docs/locales/dv.md#needs-review) |
+| Dholuo | `luo` | `one_other` | [luo.json](luo.json) | [examples](../docs/locales/luo.md) | [medium](../docs/locales/luo.md#needs-review) |
+| Dinka | `din` | `one_other` | [din.json](din.json) | [examples](../docs/locales/din.md) | [low](../docs/locales/din.md#needs-review) |
+| Dutch | `nl` | `one_other` | [nl.json](nl.json) | [examples](../docs/locales/nl.md) | — |
+| Dyula | `dyu` | `other_only` | [dyu.json](dyu.json) | [examples](../docs/locales/dyu.md) | [medium](../docs/locales/dyu.md#needs-review) |
+| Dzongkha | `dz` | `other_only` | [dz.json](dz.json) | [examples](../docs/locales/dz.md) | [medium](../docs/locales/dz.md#needs-review) |
+| English | `en` | `one_other` | [en.json](en.json) | [examples](../docs/locales/en.md) | — |
+| Estonian | `et` | `one_other` | [et.json](et.json) | [examples](../docs/locales/et.md) | — |
+| Ewe | `ee` | `one_other` | [ee.json](ee.json) | [examples](../docs/locales/ee.md) | [medium](../docs/locales/ee.md#needs-review) |
+| Fang | `fan` | `one_other` | [fan.json](fan.json) | [examples](../docs/locales/fan.md) | [low](../docs/locales/fan.md#needs-review) |
+| Fijian | `fj` | `other_only` | [fj.json](fj.json) | [examples](../docs/locales/fj.md) | [low](../docs/locales/fj.md#needs-review) |
+| Filipino | `fil` | `other_only` | [fil.json](fil.json) | [examples](../docs/locales/fil.md) | — |
+| Finnish | `fi` | `one_other` | [fi.json](fi.json) | [examples](../docs/locales/fi.md) | — |
+| Fon | `fon` | `other_only` | [fon.json](fon.json) | [examples](../docs/locales/fon.md) | [low](../docs/locales/fon.md#needs-review) |
+| French | `fr` | `one_other_zero_one` | [fr.json](fr.json) | [examples](../docs/locales/fr.md) | — |
+| Fulah | `ff` | `one_other_zero_one` | [ff.json](ff.json) | [examples](../docs/locales/ff.md) | [medium](../docs/locales/ff.md#needs-review) |
+| Galician | `gl` | `one_other` | [gl.json](gl.json) | [examples](../docs/locales/gl.md) | — |
+| Georgian | `ka` | `one_other` | [ka.json](ka.json) | [examples](../docs/locales/ka.md) | [medium](../docs/locales/ka.md#needs-review) |
+| German | `de` | `one_other` | [de.json](de.json) | [examples](../docs/locales/de.md) | — |
+| Greek | `el` | `one_other` | [el.json](el.json) | [examples](../docs/locales/el.md) | — |
+| Guarani | `gn` | `one_other` | [gn.json](gn.json) | [examples](../docs/locales/gn.md) | [medium](../docs/locales/gn.md#needs-review) |
+| Guinea-Bissau Creole | `pov` | `other_only` | [pov.json](pov.json) | [examples](../docs/locales/pov.md) | [low](../docs/locales/pov.md#needs-review) |
+| Gujarati | `gu` | `one_other_zero_one` | [gu.json](gu.json) | [examples](../docs/locales/gu.md) | [medium](../docs/locales/gu.md#needs-review) |
+| Haitian Creole | `ht` | `one_other_zero_one` | [ht.json](ht.json) | [examples](../docs/locales/ht.md) | [medium](../docs/locales/ht.md#needs-review) |
+| Hausa | `ha` | `one_other` | [ha.json](ha.json) | [examples](../docs/locales/ha.md) | — |
+| Hebrew | `he` | `he` | [he.json](he.json) | [examples](../docs/locales/he.md) | — |
+| Hindi | `hi` | `one_other_zero_one` | [hi.json](hi.json) | [examples](../docs/locales/hi.md) | — |
+| Hmong | `hmn` | `other_only` | [hmn.json](hmn.json) | [examples](../docs/locales/hmn.md) | [medium](../docs/locales/hmn.md#needs-review) |
+| Hungarian | `hu` | `other_only` | [hu.json](hu.json) | [examples](../docs/locales/hu.md) | — |
+| Icelandic | `is` | `mk` | [is.json](is.json) | [examples](../docs/locales/is.md) | — |
+| Igbo | `ig` | `other_only` | [ig.json](ig.json) | [examples](../docs/locales/ig.md) | [medium](../docs/locales/ig.md#needs-review) |
+| Indonesian | `id` | `other_only` | [id.json](id.json) | [examples](../docs/locales/id.md) | — |
+| Irish | `ga` | `ga` | [ga.json](ga.json) | [examples](../docs/locales/ga.md) | — |
+| Italian | `it` | `one_other` | [it.json](it.json) | [examples](../docs/locales/it.md) | — |
+| Japanese | `ja` | `other_only` | [ja.json](ja.json) | [examples](../docs/locales/ja.md) | — |
+| Javanese | `jv` | `other_only` | [jv.json](jv.json) | [examples](../docs/locales/jv.md) | [medium](../docs/locales/jv.md#needs-review) |
+| K'iche' | `quc` | `other_only` | [quc.json](quc.json) | [examples](../docs/locales/quc.md) | [low](../docs/locales/quc.md#needs-review) |
+| Kabiye | `kbp` | `other_only` | [kbp.json](kbp.json) | [examples](../docs/locales/kbp.md) | [low](../docs/locales/kbp.md#needs-review) |
+| Kalaallisut | `kl` | `one_other` | [kl.json](kl.json) | [examples](../docs/locales/kl.md) | [low](../docs/locales/kl.md#needs-review) |
+| Kannada | `kn` | `one_other_zero_one` | [kn.json](kn.json) | [examples](../docs/locales/kn.md) | [medium](../docs/locales/kn.md#needs-review) |
+| Kaqchikel | `cak` | `other_only` | [cak.json](cak.json) | [examples](../docs/locales/cak.md) | [low](../docs/locales/cak.md#needs-review) |
+| Kazakh | `kk` | `one_other` | [kk.json](kk.json) | [examples](../docs/locales/kk.md) | [medium](../docs/locales/kk.md#needs-review) |
+| Khmer | `km` | `other_only` | [km.json](km.json) | [examples](../docs/locales/km.md) | — |
+| Kikuyu | `ki` | `one_other` | [ki.json](ki.json) | [examples](../docs/locales/ki.md) | [medium](../docs/locales/ki.md#needs-review) |
+| Kinyarwanda | `rw` | `one_other` | [rw.json](rw.json) | [examples](../docs/locales/rw.md) | [medium](../docs/locales/rw.md#needs-review) |
+| Kituba | `ktu` | `one_other` | [ktu.json](ktu.json) | [examples](../docs/locales/ktu.md) | [low](../docs/locales/ktu.md#needs-review) |
+| Korean | `ko` | `other_only` | [ko.json](ko.json) | [examples](../docs/locales/ko.md) | — |
+| Kpelle | `kpe` | `other_only` | [kpe.json](kpe.json) | [examples](../docs/locales/kpe.md) | [low](../docs/locales/kpe.md#needs-review) |
+| Krio | `kri` | `other_only` | [kri.json](kri.json) | [examples](../docs/locales/kri.md) | — |
+| Kurdish | `ku` | `one_other` | [ku.json](ku.json) | [examples](../docs/locales/ku.md) | [medium](../docs/locales/ku.md#needs-review) |
+| Kyrgyz | `ky` | `one_other` | [ky.json](ky.json) | [examples](../docs/locales/ky.md) | [low](../docs/locales/ky.md#needs-review) |
+| Lao | `lo` | `other_only` | [lo.json](lo.json) | [examples](../docs/locales/lo.md) | [medium](../docs/locales/lo.md#needs-review) |
+| Latvian | `lv` | `lv` | [lv.json](lv.json) | [examples](../docs/locales/lv.md) | [low](../docs/locales/lv.md#needs-review) |
+| Lingala | `ln` | `one_other_zero_one` | [ln.json](ln.json) | [examples](../docs/locales/ln.md) | [medium](../docs/locales/ln.md#needs-review) |
+| Lithuanian | `lt` | `lt` | [lt.json](lt.json) | [examples](../docs/locales/lt.md) | [low](../docs/locales/lt.md#needs-review) |
+| Luganda | `lg` | `one_other` | [lg.json](lg.json) | [examples](../docs/locales/lg.md) | [medium](../docs/locales/lg.md#needs-review) |
+| Luxembourgish | `lb` | `one_other` | [lb.json](lb.json) | [examples](../docs/locales/lb.md) | [medium](../docs/locales/lb.md#needs-review) |
+| Macedonian | `mk` | `mk` | [mk.json](mk.json) | [examples](../docs/locales/mk.md) | — |
+| Makhuwa | `vmw` | `one_other` | [vmw.json](vmw.json) | [examples](../docs/locales/vmw.md) | [low](../docs/locales/vmw.md#needs-review) |
+| Malagasy | `mg` | `one_other_zero_one` | [mg.json](mg.json) | [examples](../docs/locales/mg.md) | — |
+| Malay | `ms` | `other_only` | [ms.json](ms.json) | [examples](../docs/locales/ms.md) | [medium](../docs/locales/ms.md#needs-review) |
+| Malayalam | `ml` | `one_other` | [ml.json](ml.json) | [examples](../docs/locales/ml.md) | [medium](../docs/locales/ml.md#needs-review) |
+| Maltese | `mt` | `mt` | [mt.json](mt.json) | [examples](../docs/locales/mt.md) | [medium](../docs/locales/mt.md#needs-review) |
+| Mam | `mam` | `other_only` | [mam.json](mam.json) | [examples](../docs/locales/mam.md) | [low](../docs/locales/mam.md#needs-review) |
+| Mandinka | `mnk` | `other_only` | [mnk.json](mnk.json) | [examples](../docs/locales/mnk.md) | [medium](../docs/locales/mnk.md#needs-review) |
+| Manx | `gv` | `gv` | [gv.json](gv.json) | [examples](../docs/locales/gv.md) | [low](../docs/locales/gv.md#needs-review) |
+| Marathi | `mr` | `one_other` | [mr.json](mr.json) | [examples](../docs/locales/mr.md) | [medium](../docs/locales/mr.md#needs-review) |
+| Mauritian Creole | `mfe` | `other_only` | [mfe.json](mfe.json) | [examples](../docs/locales/mfe.md) | [low](../docs/locales/mfe.md#needs-review) |
+| Mende | `men` | `one_other` | [men.json](men.json) | [examples](../docs/locales/men.md) | [low](../docs/locales/men.md#needs-review) |
+| Mongolian | `mn` | `one_other` | [mn.json](mn.json) | [examples](../docs/locales/mn.md) | — |
+| Moore | `mos` | `other_only` | [mos.json](mos.json) | [examples](../docs/locales/mos.md) | [low](../docs/locales/mos.md#needs-review) |
+| Māori | `mi` | `one_other` | [mi.json](mi.json) | [examples](../docs/locales/mi.md) | [medium](../docs/locales/mi.md#needs-review) |
+| Nepali | `ne` | `one_other` | [ne.json](ne.json) | [examples](../docs/locales/ne.md) | [medium](../docs/locales/ne.md#needs-review) |
+| Northern Ndebele | `nd` | `one_other` | [nd.json](nd.json) | [examples](../docs/locales/nd.md) | [low](../docs/locales/nd.md#needs-review) |
+| Northern Sotho | `nso` | `one_other` | [nso.json](nso.json) | [examples](../docs/locales/nso.md) | [medium](../docs/locales/nso.md#needs-review) |
+| Norwegian Bokmål | `nb` | `one_other` | [nb.json](nb.json) | [examples](../docs/locales/nb.md) | — |
+| Nuer | `nus` | `one_other` | [nus.json](nus.json) | [examples](../docs/locales/nus.md) | [low](../docs/locales/nus.md#needs-review) |
+| Odia | `or` | `one_other` | [or.json](or.json) | [examples](../docs/locales/or.md) | [low](../docs/locales/or.md#needs-review) |
+| Oromo | `om` | `one_other` | [om.json](om.json) | [examples](../docs/locales/om.md) | [medium](../docs/locales/om.md#needs-review) |
+| Oshiwambo | `ng` | `one_other` | [ng.json](ng.json) | [examples](../docs/locales/ng.md) | [low](../docs/locales/ng.md#needs-review) |
+| Pashto | `ps` | `one_other` | [ps.json](ps.json) | [examples](../docs/locales/ps.md) | [low](../docs/locales/ps.md#needs-review) |
+| Persian | `fa` | `one_other_zero_one` | [fa.json](fa.json) | [examples](../docs/locales/fa.md) | — |
+| Pijin | `pis` | `other_only` | [pis.json](pis.json) | [examples](../docs/locales/pis.md) | [medium](../docs/locales/pis.md#needs-review) |
+| Polish | `pl` | `pl` | [pl.json](pl.json) | [examples](../docs/locales/pl.md) | — |
+| Portuguese | `pt` | `one_other_zero_one` | [pt.json](pt.json) | [examples](../docs/locales/pt.md) | — |
+| Punjabi | `pa` | `one_other_zero_one` | [pa.json](pa.json) | [examples](../docs/locales/pa.md) | [medium](../docs/locales/pa.md#needs-review) |
+| Q'eqchi' | `kek` | `other_only` | [kek.json](kek.json) | [examples](../docs/locales/kek.md) | [low](../docs/locales/kek.md#needs-review) |
+| Quechua | `qu` | `other_only` | [qu.json](qu.json) | [examples](../docs/locales/qu.md) | [low](../docs/locales/qu.md#needs-review) |
+| Romanian | `ro` | `ro` | [ro.json](ro.json) | [examples](../docs/locales/ro.md) | — |
+| Russian | `ru` | `ru_uk` | [ru.json](ru.json) | [examples](../docs/locales/ru.md) | — |
+| Sango | `sg` | `other_only` | [sg.json](sg.json) | [examples](../docs/locales/sg.md) | [low](../docs/locales/sg.md#needs-review) |
+| Sara | `sar` | `other_only` | [sar.json](sar.json) | [examples](../docs/locales/sar.md) | [low](../docs/locales/sar.md#needs-review) |
+| Scottish Gaelic | `gd` | `gd` | [gd.json](gd.json) | [examples](../docs/locales/gd.md) | [low](../docs/locales/gd.md#needs-review) |
+| Serbian | `sr` | `slavic_bcs` | [sr.json](sr.json) | [examples](../docs/locales/sr.md) | — |
+| Shan | `shn` | `other_only` | [shn.json](shn.json) | [examples](../docs/locales/shn.md) | [medium](../docs/locales/shn.md#needs-review) |
+| Shona | `sn` | `one_other` | [sn.json](sn.json) | [examples](../docs/locales/sn.md) | [low](../docs/locales/sn.md#needs-review) |
+| Sindhi | `sd` | `one_other` | [sd.json](sd.json) | [examples](../docs/locales/sd.md) | [low](../docs/locales/sd.md#needs-review) |
+| Sinhala | `si` | `one_other_zero_one` | [si.json](si.json) | [examples](../docs/locales/si.md) | [medium](../docs/locales/si.md#needs-review) |
+| siSwati | `ss` | `one_other` | [ss.json](ss.json) | [examples](../docs/locales/ss.md) | [low](../docs/locales/ss.md#needs-review) |
+| Slovak | `sk` | `cs_sk` | [sk.json](sk.json) | [examples](../docs/locales/sk.md) | [medium](../docs/locales/sk.md#needs-review) |
+| Slovenian | `sl` | `sl` | [sl.json](sl.json) | [examples](../docs/locales/sl.md) | [medium](../docs/locales/sl.md#needs-review) |
+| Somali | `so` | `one_other` | [so.json](so.json) | [examples](../docs/locales/so.md) | [medium](../docs/locales/so.md#needs-review) |
+| Soninke | `snk` | `other_only` | [snk.json](snk.json) | [examples](../docs/locales/snk.md) | [low](../docs/locales/snk.md#needs-review) |
+| Southern Ndebele | `nr` | `one_other` | [nr.json](nr.json) | [examples](../docs/locales/nr.md) | [low](../docs/locales/nr.md#needs-review) |
+| Southern Sotho | `st` | `one_other` | [st.json](st.json) | [examples](../docs/locales/st.md) | [medium](../docs/locales/st.md#needs-review) |
+| Spanish | `es` | `one_other` | [es.json](es.json) | [examples](../docs/locales/es.md) | — |
+| Sukuma | `suk` | `one_other` | [suk.json](suk.json) | [examples](../docs/locales/suk.md) | [low](../docs/locales/suk.md#needs-review) |
+| Sundanese | `su` | `other_only` | [su.json](su.json) | [examples](../docs/locales/su.md) | — |
+| Swahili | `sw` | `one_other` | [sw.json](sw.json) | [examples](../docs/locales/sw.md) | — |
+| Swedish | `sv` | `one_other` | [sv.json](sv.json) | [examples](../docs/locales/sv.md) | — |
+| Tachelhit | `shi` | `shi` | [shi.json](shi.json) | [examples](../docs/locales/shi.md) | [low](../docs/locales/shi.md#needs-review) |
+| Tajik | `tg` | `other_only` | [tg.json](tg.json) | [examples](../docs/locales/tg.md) | [medium](../docs/locales/tg.md#needs-review) |
+| Tamil | `ta` | `one_other` | [ta.json](ta.json) | [examples](../docs/locales/ta.md) | [medium](../docs/locales/ta.md#needs-review) |
+| Telugu | `te` | `one_other` | [te.json](te.json) | [examples](../docs/locales/te.md) | [medium](../docs/locales/te.md#needs-review) |
+| Temne | `tem` | `one_other` | [tem.json](tem.json) | [examples](../docs/locales/tem.md) | [low](../docs/locales/tem.md#needs-review) |
+| Tetum | `tet` | `other_only` | [tet.json](tet.json) | [examples](../docs/locales/tet.md) | [medium](../docs/locales/tet.md#needs-review) |
+| Thai | `th` | `other_only` | [th.json](th.json) | [examples](../docs/locales/th.md) | [low](../docs/locales/th.md#needs-review) |
+| Tigre | `tig` | `one_other` | [tig.json](tig.json) | [examples](../docs/locales/tig.md) | [low](../docs/locales/tig.md#needs-review) |
+| Tigrinya | `ti` | `one_other_zero_one` | [ti.json](ti.json) | [examples](../docs/locales/ti.md) | [medium](../docs/locales/ti.md#needs-review) |
+| Tok Pisin | `tpi` | `other_only` | [tpi.json](tpi.json) | [examples](../docs/locales/tpi.md) | [medium](../docs/locales/tpi.md#needs-review) |
+| Tsonga | `ts` | `one_other` | [ts.json](ts.json) | [examples](../docs/locales/ts.md) | [medium](../docs/locales/ts.md#needs-review) |
+| Tswana | `tn` | `one_other` | [tn.json](tn.json) | [examples](../docs/locales/tn.md) | [medium](../docs/locales/tn.md#needs-review) |
+| Tumbuka | `tum` | `one_other` | [tum.json](tum.json) | [examples](../docs/locales/tum.md) | [low](../docs/locales/tum.md#needs-review) |
+| Turkish | `tr` | `one_other` | [tr.json](tr.json) | [examples](../docs/locales/tr.md) | [medium](../docs/locales/tr.md#needs-review) |
+| Turkmen | `tk` | `one_other` | [tk.json](tk.json) | [examples](../docs/locales/tk.md) | [low](../docs/locales/tk.md#needs-review) |
+| Ukrainian | `uk` | `ru_uk` | [uk.json](uk.json) | [examples](../docs/locales/uk.md) | [medium](../docs/locales/uk.md#needs-review) |
+| Umbundu | `umb` | `one_other` | [umb.json](umb.json) | [examples](../docs/locales/umb.md) | [low](../docs/locales/umb.md#needs-review) |
+| Urdu | `ur` | `one_other` | [ur.json](ur.json) | [examples](../docs/locales/ur.md) | [medium](../docs/locales/ur.md#needs-review) |
+| Uzbek | `uz` | `one_other` | [uz.json](uz.json) | [examples](../docs/locales/uz.md) | [medium](../docs/locales/uz.md#needs-review) |
+| Venda | `ve` | `one_other` | [ve.json](ve.json) | [examples](../docs/locales/ve.md) | [low](../docs/locales/ve.md#needs-review) |
+| Vietnamese | `vi` | `other_only` | [vi.json](vi.json) | [examples](../docs/locales/vi.md) | — |
+| Welsh | `cy` | `cy` | [cy.json](cy.json) | [examples](../docs/locales/cy.md) | [medium](../docs/locales/cy.md#needs-review) |
+| Wolof | `wo` | `other_only` | [wo.json](wo.json) | [examples](../docs/locales/wo.md) | [medium](../docs/locales/wo.md#needs-review) |
+| Xhosa | `xh` | `one_other` | [xh.json](xh.json) | [examples](../docs/locales/xh.md) | — |
+| Yao | `yao` | `one_other` | [yao.json](yao.json) | [examples](../docs/locales/yao.md) | [low](../docs/locales/yao.md#needs-review) |
+| Yoruba | `yo` | `other_only` | [yo.json](yo.json) | [examples](../docs/locales/yo.md) | [medium](../docs/locales/yo.md#needs-review) |
+| Zarma | `dje` | `other_only` | [dje.json](dje.json) | [examples](../docs/locales/dje.md) | [medium](../docs/locales/dje.md#needs-review) |
+| Zulu | `zu` | `one_other_zero_one` | [zu.json](zu.json) | [examples](../docs/locales/zu.md) | [medium](../docs/locales/zu.md#needs-review) |

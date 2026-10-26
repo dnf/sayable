@@ -20,7 +20,7 @@ class DVLocale {
       "year": "{n} އަހަރު",
     }
   }
-  static half { "{0} ބައި" }
+  static half { "{n}½" }
   static delimiter { "، " }
   static justBorn { "އަލަށް އުފަންވި" }
   static stages {

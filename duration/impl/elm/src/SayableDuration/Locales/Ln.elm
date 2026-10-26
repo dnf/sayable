@@ -23,9 +23,9 @@ locale =
     , plural = \n -> if n == 0 || n == 1 then One else Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "{n} segɔnde" )
-            , ( "minute", Simple "{n} moniti" )
-            , ( "hour", Simple "{n} ngonga" )
+            [ ( "second", Simple "segɔnde {n}" )
+            , ( "minute", Simple "miniti {n}" )
+            , ( "hour", Simple "ngonga {n}" )
             , ( "day", Pluralized
               [ ( One, "mokolo {n}" )
               , ( Other, "mikolo {n}" )

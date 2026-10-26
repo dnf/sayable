@@ -22,7 +22,7 @@ let DZ* = AgeLocale(
     "month": simpleUnit("ཟླ་ {n}"),
     "year": simpleUnit("ལོ་ {n}"),
   }.toOrderedTable,
-  half: "{0} ཕྱེད",
+  half: "{0} དང་ཕྱེད",
   delimiter: " ",
   justBorn: "གསར་སྐྱེས",
   stages: {

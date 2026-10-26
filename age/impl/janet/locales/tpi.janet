@@ -16,7 +16,7 @@
           :week "{n} wik"
           :month "{n} mun"
           :year "{n} yia"}
-   :half "{n} na hap"
+   :half "{0} na hap"
    :delimiter ", "
    :just-born "Nupela pikinini"
    :stages {:newborn "Nupela pikinini"
@@ -27,5 +27,5 @@
             :adult "Bikpela man"
 }
    :short {:units {:day "{n} de" :week "{n} wik" :month "{n} mun" :year "{n} yia"}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

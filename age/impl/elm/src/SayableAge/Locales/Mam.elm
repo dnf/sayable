@@ -21,7 +21,7 @@ locale =
     { code = "mam"
     , plural = \n -> Other
     , day = Simple "{n} q'ij"
-    , week = Simple "{n} xjaw"
+    , week = Simple "{n} seman"
     , month = Simple "{n} xjaw"
     , year = Simple "{n} ab'q'ii"
     , half = "{0} nik'"
@@ -38,7 +38,7 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "{n} q'ij")
-            , ovrWeek = Just (Simple "{n} xjaw")
+            , ovrWeek = Just (Simple "{n} seman")
             , ovrMonth = Just (Simple "{n} xjaw")
             , ovrYear = Just (Simple "{n} ab'.")
             , ovrHalf = Nothing
@@ -51,7 +51,7 @@ locale =
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

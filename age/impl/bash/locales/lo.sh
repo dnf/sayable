@@ -19,7 +19,7 @@ _sayableage_locale_lo() {
     _unit_month='{n} ເດືອນ'
     _unit_year='{n} ປີ'
     _half='{0}ເຄິ່ງ'
-    _delimiter=''
+    _delimiter=' '
     _just_born='ເກີດໃໝ່'
     _stage_newborn='ເດັກເກີດໃໝ່'
     _stage_infant='ເດັກນ້ອຍ'
@@ -35,5 +35,6 @@ _sayableage_locale_lo() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _plural_func=_sayableage_plural_lo
 }

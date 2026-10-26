@@ -28,7 +28,7 @@ let SV* = DurationLocale(
   half: "{n}½",
   delimiter: ", ",
   justNow: "just nu",
-  ago: "{0} sedan",
+  ago: "för {0} sedan",
   inFuture: "om {0}",
   short: some(CompactnessOverride(
     units: some({
@@ -42,7 +42,7 @@ let SV* = DurationLocale(
     }.toOrderedTable),
     half: none(string),
     delimiter: none(string),
-    ago: some("{0} sedan"),
+    ago: some("för {0} sedan"),
     inFuture: some("om {0}"),
   )),
   compact: some(CompactnessOverride(
@@ -57,7 +57,7 @@ let SV* = DurationLocale(
     }.toOrderedTable),
     half: none(string),
     delimiter: some(""),
-    ago: some("{0} sedan"),
+    ago: some("för {0} sedan"),
     inFuture: some("om {0}"),
   )),
 )

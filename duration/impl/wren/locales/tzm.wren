@@ -38,13 +38,13 @@ class TZMLocale {
   static short {
     return {
       "units": {
-        "second": "{n}s",
-        "minute": "{n}m",
-        "hour": "{n}h",
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}mo",
-        "year": "{n}y",
+        "second": {"one": "{n} tasint", "other": "{n} tisinin"},
+        "minute": {"one": "{n} tusdiqt", "other": "{n} tusdiqin"},
+        "hour": {"one": "{n} tasragt", "other": "{n} tisragin"},
+        "day": {"one": "{n} ass", "other": "{n} ussan"},
+        "week": {"one": "{n} imalass", "other": "{n} imalassn"},
+        "month": {"one": "{n} ayyur", "other": "{n} ayyurn"},
+        "year": {"one": "{n} aseggas", "other": "{n} iseggasen"},
       },
       "ago": "ɣ {0} zzrin",
       "inFuture": "ɣ {0}",

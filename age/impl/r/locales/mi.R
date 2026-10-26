@@ -13,12 +13,12 @@ locale_mi <- list(
   code = "mi",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    day = "rā {n}",
-    week = "wiki {n}",
-    month = "marama {n}",
-    year = "tau {n}"
+    day = "{n} rā",
+    week = "{n} wiki",
+    month = "{n} marama",
+    year = "{n} tau"
   ),
-  half = "{0}½",
+  half = "{n}½",
   delimiter = ", ",
   just_born = "Pēpi hou",
   stages = list(
@@ -31,10 +31,10 @@ locale_mi <- list(
   ),
   short = list(
     units = list(
-      day = "rā {n}",
-      week = "w {n}",
-      month = "m {n}",
-      year = "t {n}"
+      day = "{n} rā",
+      week = "{n} w",
+      month = "{n} m",
+      year = "{n} t"
     )
   ),
   compact = list(

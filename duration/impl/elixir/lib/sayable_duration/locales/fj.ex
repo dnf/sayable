@@ -25,7 +25,7 @@ defmodule SayableDuration.Locales.FJ do
         month: "{n} na vula",
         year: "{n} na yabaki"
       },
-      half: "{n} kei na levu ni wasei",
+      half: "{0} kei na veimama",
       delimiter: ", ",
       just_now: "edaidai ga",
       ago: "{0} sa oti",
@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.FJ do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} sa oti",
         in_future: "ena {0}"

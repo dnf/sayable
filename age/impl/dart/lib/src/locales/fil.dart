@@ -29,7 +29,7 @@ final fil = AgeLocale(
   toddler: stageNeutral('Batang paslit'),
   child: stageNeutral('Bata'),
   teenager: stageNeutral('Tinedyer'),
-  adult: stageNeutral('Matanda'),
+  adult: stageNeutral('Adulto'),
   short: CompactnessOverride(
     day: simpleUnit('{n} araw'),
     week: pluralUnit({PluralCategory.one: '{n} linggo', PluralCategory.other: '{n} na linggo'}),

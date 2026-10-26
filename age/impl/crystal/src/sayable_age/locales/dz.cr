@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new("ཟླ་ {n}"),
         "year" => UnitForms.new("ལོ་ {n}"),
       },
-      half: "{0} ཕྱེད",
+      half: "{0} དང་ཕྱེད",
       delimiter: " ",
       just_born: "གསར་སྐྱེས",
       stages: {

@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var LG = st.TimeLocale{
 	Code: "lg",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"kkumi na bbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano", "mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi na emu"},
+		Hours:    [12]string{"mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi n'emu", "kkumi n'ebbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano"},
 		Midnight: "ekiro eky'omu ttumbi",
 		Noon:     "ettuntu",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "essaawa {h}", 5: "essaawa {h} n'eddakiika ttaano", 10: "essaawa {h} n'eddakiika kkumi", 15: "essaawa {h} n'eddakiika kkumi na ttaano", 20: "essaawa {h} n'eddakiika abiri", 25: "essaawa {h} n'eddakiika abiri mu ttaano", 30: "essaawa {h} n'ekitundu", 35: "essaawa {h} n'eddakiika asatu mu ttaano", 40: "essaawa {h} n'eddakiika ana", 45: "essaawa {h} n'eddakiika ana mu ttaano", 50: "essaawa {h} n'eddakiika ataano", 55: "essaawa {h} n'eddakiika ataano mu ttaano"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

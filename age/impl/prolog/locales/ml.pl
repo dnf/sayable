@@ -11,7 +11,6 @@
 
 % Malayalam locale.
 
-sa_plural('ml', 0, one) :- !.
 sa_plural('ml', 1, one) :- !.
 sa_plural('ml', _, other).
 
@@ -24,7 +23,7 @@ sa_unit('ml', month, other, '{n} മാസങ്ങൾ').
 sa_unit('ml', year, one, '{n} വയസ്സ്').
 sa_unit('ml', year, other, '{n} വയസ്സ്').
 
-sa_half('ml', '{0} ര').
+sa_half('ml', '{n}½').
 sa_delimiter('ml', ', ').
 sa_just_born('ml', 'നവജാതശിശു').
 

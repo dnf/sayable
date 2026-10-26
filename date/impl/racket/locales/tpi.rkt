@@ -30,7 +30,7 @@
    "tumora"
    "asde"
    "haptumora"
-   "asde bipo"
+   "hapasde"
    "dispela {weekday}"
    "{weekday} bihain"
    "{weekday} bipo"

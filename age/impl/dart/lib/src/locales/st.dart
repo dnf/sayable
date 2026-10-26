@@ -27,7 +27,7 @@ final st = AgeLocale(
   justBorn: 'O sa tswa hlaha',
   newborn: stageNeutral('Lesea le sa tswa hlaha'),
   infant: stageNeutral('Lesea'),
-  toddler: stageNeutral('Ngwanana'),
+  toddler: stageNeutral('Ngwana e monyane'),
   child: stageNeutral('Ngwana'),
   teenager: stageNeutral('Mosha'),
   adult: stageNeutral('Motho e moholo'),

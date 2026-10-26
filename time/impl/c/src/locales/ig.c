@@ -16,8 +16,8 @@ const StTimeLocale st_locale_ig = {
     {
         { "iri na abụọ", "otu", "abụọ", "atọ", "anọ", "ise", "isii", "asaa", "asatọ", "itoolu", "iri", "iri na otu" },
         "etiti abalị",
-        "ehihie",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        "etiti ehihie",
+        { "elekere {h}", "elekere {h} na nkeji ise", "elekere {h} na nkeji iri", "elekere {h} na nkeji iri na ise", "elekere {h} na nkeji iri abụọ", "elekere {h} na nkeji iri abụọ na ise", "elekere {h} na ọkara", "elekere {h} na nkeji iri atọ na ise", "elekere {h} na nkeji iri anọ", "elekere {h} na nkeji iri anọ na ise", "elekere {h} na nkeji iri ise", "elekere {h} na nkeji iri ise na ise" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

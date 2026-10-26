@@ -11,22 +11,22 @@
 
 % Bengali locale.
 
-st_hours('bn', ['বারো', 'এক', 'দুই', 'তিন', 'চার', 'পাঁচ', 'ছয়', 'সাত', 'আট', 'নয়', 'দশ', 'এগারো']).
+st_hours('bn', ['বারোটা', 'একটা', 'দুটো', 'তিনটে', 'চারটে', 'পাঁচটা', 'ছটা', 'সাতটা', 'আটটা', 'নটা', 'দশটা', 'এগারোটা']).
 st_midnight('bn', 'মধ্যরাত').
-st_noon('bn', 'দুপুর').
+st_noon('bn', 'দুপুর বারোটা').
 
-st_pattern('bn', 0, '{h}:00').
-st_pattern('bn', 5, '{h}:05').
-st_pattern('bn', 10, '{h}:10').
-st_pattern('bn', 15, '{h}:15').
-st_pattern('bn', 20, '{h}:20').
-st_pattern('bn', 25, '{h}:25').
-st_pattern('bn', 30, '{h}:30').
-st_pattern('bn', 35, '{h}:35').
-st_pattern('bn', 40, '{h}:40').
-st_pattern('bn', 45, '{h}:45').
-st_pattern('bn', 50, '{h}:50').
-st_pattern('bn', 55, '{h}:55').
+st_pattern('bn', 0, '{h}').
+st_pattern('bn', 5, '{h} বেজে পাঁচ মিনিট').
+st_pattern('bn', 10, '{h} বেজে দশ মিনিট').
+st_pattern('bn', 15, 'সোয়া {h}').
+st_pattern('bn', 20, '{h} বেজে বিশ মিনিট').
+st_pattern('bn', 25, '{h} বেজে পঁচিশ মিনিট').
+st_pattern('bn', 30, '{h} বেজে ত্রিশ মিনিট').
+st_pattern('bn', 35, '{next_h} বাজতে পঁচিশ মিনিট বাকি').
+st_pattern('bn', 40, '{next_h} বাজতে বিশ মিনিট বাকি').
+st_pattern('bn', 45, 'পৌনে {next_h}').
+st_pattern('bn', 50, '{next_h} বাজতে দশ মিনিট বাকি').
+st_pattern('bn', 55, '{next_h} বাজতে পাঁচ মিনিট বাকি').
 
 short_st_use24h('bn', false).
 short_st_format('bn', '{h}:{mm} {ampm}').

@@ -24,9 +24,9 @@ proc locale_sq {} {
     ]
     set half "{0} e gjysmë"
     set delimiter {, }
-    set just_born {Sapolindur}
+    set just_born {I sapolindur}
     set stages [dict create \
-        newborn [dict create m {Sapolindur} f {Sapolindure}] \
+        newborn [dict create m {I sapolindur} f {E sapolindur}] \
         infant {Foshnjë} \
         toddler [dict create m {Fëmijë i vogël} f {Fëmijë e vogël}] \
         child {Fëmijë} \

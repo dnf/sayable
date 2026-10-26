@@ -22,7 +22,7 @@ defmodule SayableAge.Locales.PIS do
         month: "{n} manis",
         year: "{n} yia"
       },
-      half: "{n} en haf",
+      half: "{0} en haf",
       delimiter: ", ",
       just_born: "Niufala bebi",
       stages: %{
@@ -48,6 +48,7 @@ defmodule SayableAge.Locales.PIS do
           month: "{n}m",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: ""
       }
     }

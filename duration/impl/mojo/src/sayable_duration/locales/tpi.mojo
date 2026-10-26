@@ -68,6 +68,8 @@ fn build_tpi() -> DurationLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} i go pinis"
@@ -85,7 +87,7 @@ fn build_tpi() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{n} na hap",
+        half="{0} na hap",
         delimiter=", ",
         just_now="nau tasol",
         ago="{0} i go pinis",

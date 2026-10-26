@@ -367,7 +367,7 @@
   (testing "25.9 2 years, 6 months"
     (is (= "2 años, 6 meses" (age-locale es/locale "2023-06-15" "2025-12-15"))))
   (testing "25.10 3.5 years"
-    (is (= "3 y medio años" (age-locale es/locale "2022-06-15" "2025-12-15"))))
+    (is (= "3 años y medio" (age-locale es/locale "2022-06-15" "2025-12-15"))))
   (testing "25.11 3 years"
     (is (= "3 años" (age-locale es/locale "2022-06-15" "2025-06-15"))))
   (testing "25.12 7 years"
@@ -436,7 +436,7 @@
   (testing "29.1 Newborn"
     (is (= "רק נולד" (age-locale he/locale "2025-06-15" "2025-06-15"))))
   (testing "29.2 1 day"
-    (is (= "יום 1" (age-locale he/locale "2025-06-14" "2025-06-15"))))
+    (is (= "יום" (age-locale he/locale "2025-06-14" "2025-06-15"))))
   (testing "29.3 3 days"
     (is (= "3 ימים" (age-locale he/locale "2025-06-12" "2025-06-15"))))
   (testing "29.4 2 weeks"
@@ -448,7 +448,7 @@
   (testing "29.7 3 months"
     (is (= "3 חודשים" (age-locale he/locale "2025-03-15" "2025-06-15"))))
   (testing "29.8 2 years, 1 month"
-    (is (= "שנתיים, חודש 1" (age-locale he/locale "2023-06-15" "2025-07-15"))))
+    (is (= "שנתיים, חודש" (age-locale he/locale "2023-06-15" "2025-07-15"))))
   (testing "29.9 3.5 years"
     (is (= "3 שנים וחצי" (age-locale he/locale "2022-06-15" "2025-12-15"))))
   (testing "29.10 7 years"
@@ -505,7 +505,7 @@
   (testing "29.31 6 months"
     (is (= "6 bulan" (age-locale id/locale "2025-01-15" "2025-07-15"))))
   (testing "29.32 3.5 years"
-    (is (= "3 tahun setengah" (age-locale id/locale "2022-06-15" "2025-12-15"))))
+    (is (= "3 setengah tahun" (age-locale id/locale "2022-06-15" "2025-12-15"))))
   (testing "29.33 7 years"
     (is (= "7 tahun" (age-locale id/locale "2018-06-15" "2025-06-15")))))
 

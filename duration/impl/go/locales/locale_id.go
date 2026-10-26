@@ -28,7 +28,7 @@ var ID = sd.DurationLocale{
 		Month:  sd.SimpleUnit("{n} bulan"),
 		Year:   sd.SimpleUnit("{n} tahun"),
 	},
-	Half:      "{0} setengah",
+	Half:      "{n} setengah",
 	Delimiter: ", ",
 	JustNow:   "baru saja",
 	Ago:       "{0} yang lalu",

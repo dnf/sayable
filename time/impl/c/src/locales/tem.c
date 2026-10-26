@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_tem = {
     "tem",
     {
-        { "pɛn pu", "kɩrɩŋ", "rɔŋ", "rasar", "rɔŋ-anat", "rɔman", "rɔmata", "rɔmbot", "rɔmɔntat", "rɔmɔntaŋka", "pɛn", "pɛn nɛ kɩrɩŋ" },
+        { "awa pɛn nɛ rɔŋ", "awa kɩrɩŋ", "awa rɔŋ", "awa rasar", "awa rɔŋ-anat", "awa rɔman", "awa rɔmata", "awa rɔmbot", "awa rɔmɔntat", "awa rɔmɔntaŋka", "awa pɛn", "awa pɛn nɛ kɩrɩŋ" },
         "rofɛt anpa",
         "lən",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} nɛ minit rɔman", "{h} nɛ minit pɛn", "{h} nɛ minit pɛn nɛ rɔman", "{h} nɛ minit kɩgba", "{h} nɛ minit kɩgba nɛ rɔman", "{h} a gbankɛ", "{h} nɛ minit kɩgba nɛ pɛn nɛ rɔman", "{h} nɛ minit tɔgba rɔŋ", "{h} nɛ minit tɔgba rɔŋ nɛ rɔman", "{h} nɛ minit tɔgba rɔŋ nɛ pɛn", "{h} nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

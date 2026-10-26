@@ -17,12 +17,12 @@ class EULocale {
   static weekdays {
     return ["igandea", "astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata"]
   }
-  static dayFormat { "{n}" }
+  static dayFormat { "{n}a" }
   static dayFormatExceptions {
-    return {}
+    return {"11": "{n}", "31": "{n}"}
   }
-  static datePattern { "{month}ren {day}" }
-  static datePatternWithYear { "{year}ko {month}ren {day}" }
+  static datePattern { "{month} {day}" }
+  static datePatternWithYear { "{year}ko {month} {day}" }
   static today { "gaur" }
   static tomorrow { "bihar" }
   static yesterday { "atzo" }
@@ -31,7 +31,9 @@ class EULocale {
   static thisWeekday { "{weekday} hau" }
   static nextWeekday { "hurrengo {weekday}" }
   static lastWeekday { "aurreko {weekday}" }
-  static monthsInDate { null }
+  static monthsInDate {
+    return ["urtarrilaren", "otsailaren", "martxoaren", "apirilaren", "maiatzaren", "ekainaren", "uztailaren", "abuztuaren", "irailaren", "urriaren", "azaroaren", "abenduaren"]
+  }
   static short {
     return {
       "months": ["urt", "ots", "mar", "api", "mai", "eka", "uzt", "abu", "ira", "urr", "aza", "abe"],

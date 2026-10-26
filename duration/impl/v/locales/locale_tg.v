@@ -26,7 +26,7 @@ pub const locale_tg = DurationLocale{
 	week: simple_unit('{n} ҳафта')
 	month: simple_unit('{n} моҳ')
 	year: simple_unit('{n} сол')
-	half: '{0} ним'
+	half: '{0}у ним'
 	delimiter: ', '
 	just_now: 'ҳамин ҳоло'
 	ago: '{0} пеш'

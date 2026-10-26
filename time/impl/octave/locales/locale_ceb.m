@@ -11,10 +11,10 @@
 
 function loc = locale_ceb()
   loc.code = 'ceb';
-  loc.clock.hours = {'dose', 'uno', 'dos', 'tres', 'kwatro', 'singko', 'sais', 'siyete', 'otso', 'nuwebe', 'diyes', 'onse'};
+  loc.clock.hours = {'alas dose', 'ala una', 'alas dos', 'alas tres', 'alas kwatro', 'alas singko', 'alas sais', 'alas siyete', 'alas otso', 'alas nuwebe', 'alas diyes', 'alas onse'};
   loc.clock.midnight = 'tungang gabii';
   loc.clock.noon = 'udtong tutok';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} y singko', "p10", '{h} y diyes', "p15", '{h} y kinse', "p20", '{h} y beynte', "p25", '{h} y beynte singko', "p30", '{h} y medya', "p35", 'menos beynte singko para {next_h}', "p40", 'menos beynte para {next_h}', "p45", 'menos kinse para {next_h}', "p50", 'menos diyes para {next_h}', "p55", 'menos singko para {next_h}');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

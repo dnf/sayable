@@ -22,9 +22,9 @@ pub const locale_mi = DateLocale{
 	today: 'i tēnei rā'
 	tomorrow: 'āpōpō'
 	yesterday: 'inanahi'
-	day_after_tomorrow: 'tērā āpōpō'
+	day_after_tomorrow: 'ātahirā'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'tērā inanahi'
+	day_before_yesterday: 'inātahirā'
 	has_day_before_yesterday: true
 	this_weekday: 'tēnei {weekday}'
 	has_this_weekday: true

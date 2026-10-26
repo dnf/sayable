@@ -18,7 +18,7 @@
    :code "mr"
    :plural (lambda (n) (if (= n 1) :one :other))
    :units (list (cons :second "{n} सेकंद")
-               (cons :minute "{n} मिनिट")
+               (cons :minute '((:one . "{n} मिनिट") (:other . "{n} मिनिटे")))
                (cons :hour "{n} तास")
                (cons :day '((:one . "{n} दिवस") (:other . "{n} दिवस")))
                (cons :week '((:one . "{n} आठवडा") (:other . "{n} आठवडे")))

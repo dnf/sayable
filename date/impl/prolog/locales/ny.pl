@@ -23,9 +23,9 @@ sd_tomorrow('ny', 'mawa').
 sd_yesterday('ny', 'dzulo').
 sd_day_after_tomorrow('ny', 'mkucha').
 sd_day_before_yesterday('ny', 'dzana').
-sd_this_weekday('ny', '{weekday} ino').
-sd_next_weekday('ny', '{weekday} yotsatira').
-sd_last_weekday('ny', '{weekday} yatha').
+sd_this_weekday('ny', '{weekday} lino').
+sd_next_weekday('ny', '{weekday} lotsatira').
+sd_last_weekday('ny', '{weekday} latha').
 
 short_sd_months('ny', ['Jan', 'Feb', 'Mat', 'Epu', 'Mey', 'Jun', 'Jul', 'Oga', 'Sep', 'Okt', 'Nov', 'Dis']).
 short_sd_weekdays('ny', ['Lam', 'Lol', 'Lch', 'Lct', 'Lcn', 'Lcs', 'Low']).

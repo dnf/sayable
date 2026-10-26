@@ -29,7 +29,7 @@ fn build_pa() -> DurationLocale:
 
     var second = simple_unit("{n} ਸਕਿੰਟ")
     var minute = simple_unit("{n} ਮਿੰਟ")
-    var hour = simple_unit("{n} ਘੰਟਾ")
+    var hour = plural_unit(one="{n} ਘੰਟਾ", other="{n} ਘੰਟੇ")
     var day = plural_unit(one="{n} ਦਿਨ", other="{n} ਦਿਨ")
     var week = plural_unit(one="{n} ਹਫ਼ਤਾ", other="{n} ਹਫ਼ਤੇ")
     var month = plural_unit(one="{n} ਮਹੀਨਾ", other="{n} ਮਹੀਨੇ")

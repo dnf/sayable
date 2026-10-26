@@ -18,7 +18,7 @@
    :week {:type :pluralized :forms {:one "{n} వారం" :other "{n} వారాలు"}}
    :month {:type :pluralized :forms {:one "{n} నెల" :other "{n} నెలలు"}}
    :year {:type :pluralized :forms {:one "{n} సంవత్సరం" :other "{n} సంవత్సరాలు"}}
-   :half "{0}న్నర"
+   :half "{n}½"
    :delimiter ", "
    :just-born "నవజాత శిశువు"
    :stages {:newborn {:type :neutral :label "నవజాత శిశువు"} :infant {:type :neutral :label "శిశువు"} :toddler {:type :neutral :label "చిన్న బిడ్డ"} :child {:type :neutral :label "బిడ్డ"} :teenager {:type :neutral :label "కౌమారదశ"} :adult {:type :neutral :label "వయోజనులు"}}

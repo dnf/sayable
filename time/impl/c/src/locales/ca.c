@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ca = {
     "ca",
     {
-        { "dotze", "una", "dues", "tres", "quatre", "cinc", "sis", "set", "vuit", "nou", "deu", "onze" },
+        { "les dotze", "la una", "les dues", "les tres", "les quatre", "les cinc", "les sis", "les set", "les vuit", "les nou", "les deu", "les onze" },
         "mitjanit",
         "migdia",
-        { "{h} o'clock", "cinc past {h}", "deu past {h}", "un quart past {h}", "vint past {h}", "vint-i-cinc past {h}", "mitja past {h}", "vint-i-cinc to {next_h}", "vint to {next_h}", "un quart to {next_h}", "deu to {next_h}", "cinc to {next_h}" }
+        { "{h} en punt", "{h} i cinc", "{h} i deu", "{h} i quart", "{h} i vint", "{h} i vint-i-cinc", "{h} i mitja", "{next_h} menys vint-i-cinc", "{next_h} menys vint", "{next_h} menys quart", "{next_h} menys deu", "{next_h} menys cinc" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

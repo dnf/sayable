@@ -15,9 +15,9 @@ sd_plural('ln', 0, one) :- !.
 sd_plural('ln', 1, one) :- !.
 sd_plural('ln', _, other).
 
-sd_unit('ln', second, _, '{n} segɔnde').
-sd_unit('ln', minute, _, '{n} moniti').
-sd_unit('ln', hour, _, '{n} ngonga').
+sd_unit('ln', second, _, 'segɔnde {n}').
+sd_unit('ln', minute, _, 'miniti {n}').
+sd_unit('ln', hour, _, 'ngonga {n}').
 sd_unit('ln', day, one, 'mokolo {n}').
 sd_unit('ln', day, other, 'mikolo {n}').
 sd_unit('ln', week, one, 'poso {n}').

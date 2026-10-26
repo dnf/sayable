@@ -18,9 +18,9 @@ sw
 	locale code: 'sw'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} sekunde'.
-		'minute'. '{n} dakika'.
-		'hour'. '{n} saa'.
+		'second'. 'sekunde {n}'.
+		'minute'. 'dakika {n}'.
+		'hour'. 'saa {n}'.
 		'day'. (Dictionary newFromPairs: { #one. 'siku {n}'. #other. 'siku {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'wiki {n}'. #other. 'wiki {n}' }).
 		'month'. (Dictionary newFromPairs: { #one. 'mwezi {n}'. #other. 'miezi {n}' }).

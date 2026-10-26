@@ -45,8 +45,8 @@ locale =
         ]
     , dayFormat = "{n}"
     , dayFormatExceptions = Dict.empty
-    , datePattern = "{day} de {month}"
-    , datePatternWithYear = "{day} de {month} de {year}"
+    , datePattern = "{day} {month}"
+    , datePatternWithYear = "{day} {month} de {year}"
     , today = "avui"
     , tomorrow = "demà"
     , yesterday = "ahir"
@@ -55,7 +55,21 @@ locale =
     , thisWeekday = Just "aquest {weekday}"
     , nextWeekday = Just "{weekday} que ve"
     , lastWeekday = Just "{weekday} passat"
-    , monthsInDate = Nothing
+    , monthsInDate =
+        Just
+            [ "de gener"
+            , "de febrer"
+            , "de març"
+            , "d'abril"
+            , "de maig"
+            , "de juny"
+            , "de juliol"
+            , "d'agost"
+            , "de setembre"
+            , "d'octubre"
+            , "de novembre"
+            , "de desembre"
+            ]
     , short =
         Just
             { ovrMonths = Just
@@ -85,7 +99,7 @@ locale =
             , ovrDayFormat = Just "{n}"
             , ovrDayFormatExceptions = Just Dict.empty
             , ovrDatePattern = Just "{day} {month}"
-            , ovrDatePatternWithYear = Just "{day} {month} {year}"
+            , ovrDatePatternWithYear = Just "{day} {month} de {year}"
             , ovrToday = Nothing
             , ovrTomorrow = Nothing
             , ovrYesterday = Nothing

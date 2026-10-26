@@ -11,7 +11,7 @@
 
 class MLLocale {
   static code { "ml" }
-  static plural { Fn.new {|n| (n == 0 || n == 1) ? "one" : "other" } }
+  static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
       "day": {"one": "{n} ദിവസം", "other": "{n} ദിവസങ്ങൾ"},
@@ -20,7 +20,7 @@ class MLLocale {
       "year": {"one": "{n} വയസ്സ്", "other": "{n} വയസ്സ്"},
     }
   }
-  static half { "{0} ര" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justBorn { "നവജാതശിശു" }
   static stages {

@@ -21,7 +21,7 @@
                (cons :week "{n} minggu")
                (cons :month "{n} bulan")
                (cons :year "{n} tahun"))
-   :half "{0} setengah"
+   :half "{n} setengah"
    :delimiter ", "
    :just-born "Baru lahir"
    :stages (list (cons :newborn "Baru lahir")

@@ -20,7 +20,7 @@
     :hours (list "roa ambin'ny folo" "iray" "roa" "telo" "efatra" "dimy" "enina" "fito" "valo" "sivy" "folo" "iraika ambin'ny folo")
     :midnight "misasakalina"
     :noon "atoandro"
-    :patterns (list (cons 0 "{h} ora") (cons 5 "{h} sy dimy minitra") (cons 10 "{h} sy folo minitra") (cons 15 "{h} sy fahefatra") (cons 20 "{h} sy roapolo minitra") (cons 25 "{h} sy dimy amby roapolo minitra") (cons 30 "{h} sy sasany") (cons 35 "dimy amby roapolo minitra alohan'ny {next_h}") (cons 40 "roapolo minitra alohan'ny {next_h}") (cons 45 "fahefatra alohan'ny {next_h}") (cons 50 "folo minitra alohan'ny {next_h}") (cons 55 "dimy minitra alohan'ny {next_h}")))
+    :patterns (list (cons 0 "{h} ora") (cons 5 "{h} ora sy dimy minitra") (cons 10 "{h} ora sy folo minitra") (cons 15 "{h} ora sy fahefany") (cons 20 "{h} ora sy roapolo minitra") (cons 25 "{h} ora sy dimy amby roapolo minitra") (cons 30 "{h} ora sy sasany") (cons 35 "{next_h} ora latsaka dimy amby roapolo minitra") (cons 40 "{next_h} ora latsaka roapolo minitra") (cons 45 "{next_h} ora latsaka fahefany") (cons 50 "{next_h} ora latsaka folo minitra") (cons 55 "{next_h} ora latsaka dimy minitra")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

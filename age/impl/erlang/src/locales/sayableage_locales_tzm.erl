@@ -24,7 +24,7 @@ locale() ->
         half = "{0} d uzgen",
         delimiter = ", ",
         just_born = "Iɣ d illul",
-        stages = #stages{newborn = {neutral, "Iɣ d illul"}, infant = {neutral, "Agellid"}, toddler = {gendered, "Aḥenjir", "Taḥenjirt"}, child = {gendered, "Afrux", "Tafruxṭ"}, teenager = {gendered, "Aɛrim", "Taɛrimt"}, adult = {gendered, "Argaz", "Tamṭṭuṭ"}},
-        short = {just, #compactness_override{day = {just, {simple, "{n} d"}}, week = {just, {simple, "{n} wk"}}, month = {just, {simple, "{n} mo"}}, year = {just, {simple, "{n} yr"}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        stages = #stages{newborn = {neutral, "Iɣ d illul"}, infant = {neutral, "Llufan"}, toddler = {gendered, "Aḥenjir", "Taḥenjirt"}, child = {gendered, "Afrux", "Tafruxt"}, teenager = {gendered, "Aɛrim", "Taɛrimt"}, adult = {gendered, "Argaz", "Tamṭṭuṭ"}},
+        short = {just, #compactness_override{day = {just, {pluralized, [{one, "{n} ass"}, {other, "{n} ussan"}]}}, week = {just, {pluralized, [{one, "{n} imalass"}, {other, "{n} imalassn"}]}}, month = {just, {pluralized, [{one, "{n} ayyur"}, {other, "{n} ayyurn"}]}}, year = {just, {pluralized, [{one, "{n} aseggas"}, {other, "{n} iseggasen"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

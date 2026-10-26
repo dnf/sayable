@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_bem = {
     "bem",
     {
-        { "ikumi na ibili", "cimo", "fibili", "fitatu", "fine", "fisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na cimo" },
+        { "ikumi na shibili", "imo", "shibili", "shitatu", "shine", "shisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na imo" },
         "pakati ka bushiku",
         "akasuba",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "insa {h}", "insa {h} na maminiti yasano", "insa {h} na maminiti ikumi", "insa {h} na maminiti ikumi na yasano", "insa {h} na maminiti amakumi yabili", "insa {h} na maminiti amakumi yabili na yasano", "insa {h} na hafu", "insa {h} na maminiti amakumi yatatu na yasano", "insa {h} na maminiti amakumi yane", "insa {h} na maminiti amakumi yane na yasano", "insa {h} na maminiti amakumi yasano", "insa {h} na maminiti amakumi yasano na yasano" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

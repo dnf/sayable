@@ -14,17 +14,17 @@
 (def locale
   {:code "ee"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :pluralized :forms {:one "sekend {n}" :other "sekendwo {n}"}}
-   :minute {:type :pluralized :forms {:one "aɖabaƒoƒo {n}" :other "aɖabaƒoƒowo {n}"}}
-   :hour {:type :pluralized :forms {:one "gaƒoƒo {n}" :other "gaƒoƒowo {n}"}}
-   :day {:type :pluralized :forms {:one "ŋkeke {n}" :other "ŋkekewo {n}"}}
-   :week {:type :pluralized :forms {:one "kɔsiɖa {n}" :other "kɔsiɖawo {n}"}}
-   :month {:type :pluralized :forms {:one "ɣleti {n}" :other "ɣletiwo {n}"}}
-   :year {:type :pluralized :forms {:one "ƒe {n}" :other "ƒewo {n}"}}
+   :second {:type :simple :form "sekend {n}"}
+   :minute {:type :simple :form "aɖabaƒoƒo {n}"}
+   :hour {:type :simple :form "gaƒoƒo {n}"}
+   :day {:type :simple :form "ŋkeke {n}"}
+   :week {:type :simple :form "kɔsiɖa {n}"}
+   :month {:type :simple :form "ɣleti {n}"}
+   :year {:type :simple :form "ƒe {n}"}
    :half "{0} kple afã"
    :delimiter ", "
    :just-now "fifia"
-   :ago "ɖe {0} me"
+   :ago "{0} si va yi"
    :in-future "le {0} me"
-   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "aɖaba. {n}"} :hour {:type :simple :form "gaƒ. {n}"} :day {:type :simple :form "ŋkekewo {n}"} :week {:type :pluralized :forms {:one "kɔsiɖa {n}" :other "kɔsiɖawo {n}"}} :month {:type :pluralized :forms {:one "ɣleti {n}" :other "ɣletiwo {n}"}} :year {:type :pluralized :forms {:one "ƒe {n}" :other "ƒewo {n}"}} :half nil :delimiter nil :ago "ɖe {0} me" :in-future "le {0} me"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "ɖe {0} me" :in-future "le {0} me"}})
+   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "aɖaba. {n}"} :hour {:type :simple :form "gaƒ. {n}"} :day {:type :simple :form "ŋkeke {n}"} :week {:type :simple :form "kɔsiɖa {n}"} :month {:type :simple :form "ɣleti {n}"} :year {:type :simple :form "ƒe {n}"} :half nil :delimiter nil :ago "{0} si va yi" :in-future "le {0} me"}
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} si va yi" :in-future "le {0} me"}})

@@ -30,5 +30,5 @@ locale() ->
         ago = "{0} dhau los",
         in_future = "hauv {0}",
         short = {just, #duration_compactness_override{second = {just, {simple, "{n} chib"}}, minute = {just, {simple, "{n} feeb"}}, hour = {just, {simple, "{n} teev"}}, day = {just, {simple, "{n} hnub"}}, week = {just, {simple, "{n} lim tiam"}}, month = {just, {simple, "{n} hlis"}}, year = {just, {simple, "{n} xyoo"}}, half = nothing, delimiter = nothing, ago = {just, "{0} dhau los"}, in_future = {just, "hauv {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} dhau los"}, in_future = {just, "hauv {0}"}}}
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} dhau los"}, in_future = {just, "hauv {0}"}}}
     }.

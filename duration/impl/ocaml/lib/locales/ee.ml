@@ -14,59 +14,29 @@ open Types
 let locale : duration_locale =
   { code = "ee"
   ; plural = (fun n -> if n = 1 then One else Other)
-  ; second = Pluralized
-      [ (One, "sekend {n}")
-      ; (Other, "sekendwo {n}")
-      ]
-  ; minute = Pluralized
-      [ (One, "aɖabaƒoƒo {n}")
-      ; (Other, "aɖabaƒoƒowo {n}")
-      ]
-  ; hour = Pluralized
-      [ (One, "gaƒoƒo {n}")
-      ; (Other, "gaƒoƒowo {n}")
-      ]
-  ; day = Pluralized
-      [ (One, "ŋkeke {n}")
-      ; (Other, "ŋkekewo {n}")
-      ]
-  ; week = Pluralized
-      [ (One, "kɔsiɖa {n}")
-      ; (Other, "kɔsiɖawo {n}")
-      ]
-  ; month = Pluralized
-      [ (One, "ɣleti {n}")
-      ; (Other, "ɣletiwo {n}")
-      ]
-  ; year = Pluralized
-      [ (One, "ƒe {n}")
-      ; (Other, "ƒewo {n}")
-      ]
+  ; second = Simple "sekend {n}"
+  ; minute = Simple "aɖabaƒoƒo {n}"
+  ; hour = Simple "gaƒoƒo {n}"
+  ; day = Simple "ŋkeke {n}"
+  ; week = Simple "kɔsiɖa {n}"
+  ; month = Simple "ɣleti {n}"
+  ; year = Simple "ƒe {n}"
   ; half = "{0} kple afã"
   ; delimiter = ", "
   ; just_now = "fifia"
-  ; ago = "ɖe {0} me"
+  ; ago = "{0} si va yi"
   ; in_future = "le {0} me"
   ; short = Some
       { ovr_second = Some (Simple "sek. {n}")
       ; ovr_minute = Some (Simple "aɖaba. {n}")
       ; ovr_hour = Some (Simple "gaƒ. {n}")
-      ; ovr_day = Some (Simple "ŋkekewo {n}")
-      ; ovr_week = Some (Pluralized
-        [ (One, "kɔsiɖa {n}")
-        ; (Other, "kɔsiɖawo {n}")
-        ])
-      ; ovr_month = Some (Pluralized
-        [ (One, "ɣleti {n}")
-        ; (Other, "ɣletiwo {n}")
-        ])
-      ; ovr_year = Some (Pluralized
-        [ (One, "ƒe {n}")
-        ; (Other, "ƒewo {n}")
-        ])
+      ; ovr_day = Some (Simple "ŋkeke {n}")
+      ; ovr_week = Some (Simple "kɔsiɖa {n}")
+      ; ovr_month = Some (Simple "ɣleti {n}")
+      ; ovr_year = Some (Simple "ƒe {n}")
       ; ovr_half = None
       ; ovr_delimiter = None
-      ; ovr_ago = Some "ɖe {0} me"
+      ; ovr_ago = Some "{0} si va yi"
       ; ovr_in_future = Some "le {0} me"
       }
   ; compact = Some
@@ -79,7 +49,7 @@ let locale : duration_locale =
       ; ovr_year = Some (Simple "{n}y")
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
-      ; ovr_ago = Some "ɖe {0} me"
+      ; ovr_ago = Some "{0} si va yi"
       ; ovr_in_future = Some "le {0} me"
       }
   }

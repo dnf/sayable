@@ -37,8 +37,8 @@ fn build_mt() -> DurationLocale:
     """Build the Maltese locale."""
 
     var second = plural_unit(one="{n} sekonda", two="{n} sekondi", few="{n} sekondi", many="{n}-il sekonda", other="{n} sekonda")
-    var minute = plural_unit(one="{n} minuta", two="{n} minuti", few="{n} minuti", many="{n}-il minuta", other="{n} minuta")
-    var hour = plural_unit(one="{n} siegħa", two="{n} sigħat", few="{n} sigħat", many="{n}-il siegħa", other="{n} siegħa")
+    var minute = plural_unit(one="{n} minuta", two="minutejn", few="{n} minuti", many="{n}-il minuta", other="{n} minuta")
+    var hour = plural_unit(one="{n} siegħa", two="sagħtejn", few="{n} sigħat", many="{n}-il siegħa", other="{n} siegħa")
     var day = plural_unit(one="ġurnata", two="jumejn", few="{n} ijiem", many="{n}-il jum", other="{n} jum")
     var week = plural_unit(one="ġimgħa", two="ġimgħatejn", few="{n} ġimgħat", many="{n}-il ġimgħa", other="{n} ġimgħa")
     var month = plural_unit(one="xahar", two="xahrejn", few="{n} xhur", many="{n}-il xahar", other="{n} xahar")

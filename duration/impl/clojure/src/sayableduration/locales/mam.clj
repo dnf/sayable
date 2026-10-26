@@ -18,7 +18,7 @@
    :minute {:type :simple :form "{n} minuto"}
    :hour {:type :simple :form "{n} hora"}
    :day {:type :simple :form "{n} q'ij"}
-   :week {:type :simple :form "{n} xjaw"}
+   :week {:type :simple :form "{n} seman"}
    :month {:type :simple :form "{n} xjaw"}
    :year {:type :simple :form "{n} ab'q'ii"}
    :half "{0} nik'"
@@ -26,5 +26,5 @@
    :just-now "iky'x"
    :ago "{0} chi'j"
    :in-future "tu'n {0}"
-   :short {:second {:type :simple :form "{n} seg."} :minute {:type :simple :form "{n} min."} :hour {:type :simple :form "{n} hora"} :day {:type :simple :form "{n} q'ij"} :week {:type :simple :form "{n} xjaw"} :month {:type :simple :form "{n} xjaw"} :year {:type :simple :form "{n} ab'."} :half nil :delimiter nil :ago "{0} chi'j" :in-future "tu'n {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} chi'j" :in-future "tu'n {0}"}})
+   :short {:second {:type :simple :form "{n} seg."} :minute {:type :simple :form "{n} min."} :hour {:type :simple :form "{n} hora"} :day {:type :simple :form "{n} q'ij"} :week {:type :simple :form "{n} seman"} :month {:type :simple :form "{n} xjaw"} :year {:type :simple :form "{n} ab'."} :half nil :delimiter nil :ago "{0} chi'j" :in-future "tu'n {0}"}
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} chi'j" :in-future "tu'n {0}"}})

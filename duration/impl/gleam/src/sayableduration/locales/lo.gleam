@@ -25,10 +25,10 @@ pub fn locale() -> types.DurationLocale {
       #("year", types.SimpleUnit("{n} ປີ")),
     ],
     half: "{0}ເຄິ່ງ",
-    delimiter: "",
+    delimiter: " ",
     just_now: "ຫາກໍ",
     ago: "{0} ກ່ອນ",
-    in_future: "ໃນ {0}",
+    in_future: "ໃນອີກ {0}",
     short: Ok(types.CompactnessOverride(
       units: Ok([
         #("second", types.SimpleUnit("{n} ວິ.")),
@@ -42,7 +42,7 @@ pub fn locale() -> types.DurationLocale {
       half: Error(Nil),
       delimiter: Error(Nil),
       ago: Ok("{0} ກ່ອນ"),
-      in_future: Ok("ໃນ {0}"),
+      in_future: Ok("ໃນອີກ {0}"),
     )),
     compact: Ok(types.CompactnessOverride(
       units: Ok([
@@ -51,13 +51,13 @@ pub fn locale() -> types.DurationLocale {
         #("hour", types.SimpleUnit("{n}h")),
         #("day", types.SimpleUnit("{n}d")),
         #("week", types.SimpleUnit("{n}w")),
-        #("month", types.SimpleUnit("{n}m")),
+        #("month", types.SimpleUnit("{n}mo")),
         #("year", types.SimpleUnit("{n}y")),
       ]),
       half: Ok("{n}½"),
       delimiter: Ok(""),
       ago: Ok("{0} ກ່ອນ"),
-      in_future: Ok("ໃນ {0}"),
+      in_future: Ok("ໃນອີກ {0}"),
     )),
   )
 }

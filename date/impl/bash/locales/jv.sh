@@ -19,7 +19,7 @@ _sayabledate_locale_jv() {
     _tomorrow='sesuk'
     _yesterday='wingi'
     _day_after_tomorrow='embèn'
-    _day_before_yesterday='dhèk wingi'
+    _day_before_yesterday='wingenané'
     _this_weekday='{weekday} iki'
     _next_weekday='{weekday} ngarep'
     _last_weekday='{weekday} wingi'

@@ -10,21 +10,21 @@
 # Source: locales/pov.json
 
 _sayabletime_locale_pov() {
-    _clock_hours=('dozi' 'un' 'dos' 'tres' 'kuatru' 'sinku' 'seis' 'seti' 'oitu' 'novi' 'des' 'onzi')
+    _clock_hours=('dozi ora' 'un ora' 'dos ora' 'tres ora' 'kuatru ora' 'sinku ora' 'seis ora' 'seti ora' 'oitu ora' 'novi ora' 'des ora' 'onzi ora')
     _clock_midnight='meia noti'
     _clock_noon='meiu dia'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} i sinku'
+    _clock_pattern_10='{h} i des'
+    _clock_pattern_15='{h} i kinzi'
+    _clock_pattern_20='{h} i vinti'
+    _clock_pattern_25='{h} i vinti i sinku'
+    _clock_pattern_30='{h} i meiu'
+    _clock_pattern_35='{h} i trinta i sinku'
+    _clock_pattern_40='{h} i kuarenta'
+    _clock_pattern_45='{h} i kuarenta i sinku'
+    _clock_pattern_50='{h} i sinkuenta'
+    _clock_pattern_55='{h} i sinkuenta i sinku'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

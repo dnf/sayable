@@ -17,8 +17,8 @@
   (make-duration-locale
    :code "qu"
    :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :second "{n} ñiqin")
-               (cons :minute "{n} chiniku")
+   :units (list (cons :second "{n} sikundu")
+               (cons :minute "{n} minutu")
                (cons :hour "{n} ura")
                (cons :day "{n} p'unchaw")
                (cons :week "{n} simana")
@@ -29,8 +29,8 @@
    :just-now "kunanlla"
    :ago "{0} ñawpaqta"
    :in-future "{0} qhipata"
-   :short-units (list (cons :second "{n} ñiq")
-                       (cons :minute "{n} chi")
+   :short-units (list (cons :second "{n} sik")
+                       (cons :minute "{n} min")
                        (cons :hour "{n} ura")
                        (cons :day "{n} p'un")
                        (cons :week "{n} sim")

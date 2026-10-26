@@ -17,7 +17,7 @@
   (make-date-locale
    :code "ro"
    :months (list "ianuarie" "februarie" "martie" "aprilie" "mai" "iunie" "iulie" "august" "septembrie" "octombrie" "noiembrie" "decembrie")
-   :weekdays (list "duminică" "luni" "marți" "miercuri" "joi" "vineri" "sâmbătă")
+   :weekdays (list "duminica" "lunea" "marțea" "miercurea" "joia" "vinerea" "sâmbăta")
    :day-format "{n}"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
@@ -27,7 +27,7 @@
    :yesterday "ieri"
    :day-after-tomorrow "poimâine"
    :day-before-yesterday "alaltăieri"
-   :this-weekday "această {weekday}"
+   :this-weekday "{weekday} aceasta"
    :next-weekday "{weekday} viitoare"
    :last-weekday "{weekday} trecută"
    :months-in-date (list "ianuarie" "februarie" "martie" "aprilie" "mai" "iunie" "iulie" "august" "septembrie" "octombrie" "noiembrie" "decembrie")

@@ -13,7 +13,7 @@
 
 (def locale
   {:code "bm"
-   :months ["Zanwuye" "Fewuriye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "ɔkutɔburu" "Nowanbudu" "Desanburu"]
+   :months ["Zanwuye" "Feburuye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "Ɔkutɔburu" "Nowanburu" "Desanburu"]
    :weekdays ["Kari" "Ntɛnɛn" "Tarata" "Araba" "Alamisa" "Juma" "Sibiri"]
    :day-format "{n}"
    :day-format-exceptions {}
@@ -28,5 +28,5 @@
    :next-weekday "{weekday} nata"
    :last-weekday "{weekday} tɛmɛnen"
    :months-in-date nil
-   :short {:months ["Zan" "Few" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "ɔku" "Now" "Des"] :months-in-date nil :weekdays ["Kar" "Ntɛ" "Tar" "Ara" "Ala" "Jum" "Sib"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["Zan" "Feb" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "Ɔku" "Now" "Des"] :months-in-date nil :weekdays ["Kar" "Ntɛ" "Tar" "Ara" "Ala" "Jum" "Sib"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

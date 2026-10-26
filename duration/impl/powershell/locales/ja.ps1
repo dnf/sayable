@@ -21,7 +21,7 @@ function locale_ja {
         day = '{n}日'
         week = '{n}週'
         month = '{n}ヶ月'
-        year = '{n}歳'
+        year = '{n}年'
     }
     $half = '{0}半'
     $delimiter = ''
@@ -51,6 +51,7 @@ function locale_ja {
             month = '{n}m'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
         ago = '{0}前'
         inFuture = '{0}後'

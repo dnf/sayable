@@ -30,7 +30,7 @@
          "year" (hash "type" "simple" "form" "{n} taun"))
    "{0} satengah"
    ", "
-   "ayeuna"
+   "nembé"
    "{0} kapengker"
    "dina {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} dtk") (hash "type" "simple" "form" "{n} mnt") (hash "type" "simple" "form" "{n} jam") (hash "type" "simple" "form" "{n} dinten") (hash "type" "simple" "form" "{n} minggu") (hash "type" "simple" "form" "{n} sasih") (hash "type" "simple" "form" "{n} taun") #f #f "{0} kapengker" "dina {0}")

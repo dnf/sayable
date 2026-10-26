@@ -31,7 +31,7 @@ locale =
             , "qaq"
             , "wuq"
             , "wajxaq"
-            , "b'alaj"
+            , "b'elaj"
             , "laj"
             , "junlaj"
             ]
@@ -39,18 +39,18 @@ locale =
         , noon = "nik' q'ij"
         , patterns =
             Dict.fromList
-                [ ( 0, "{h}:00" )
-                , ( 5, "{h}:05" )
-                , ( 10, "{h}:10" )
-                , ( 15, "{h}:15" )
-                , ( 20, "{h}:20" )
-                , ( 25, "{h}:25" )
-                , ( 30, "{h}:30" )
-                , ( 35, "{h}:35" )
-                , ( 40, "{h}:40" )
-                , ( 45, "{h}:45" )
-                , ( 50, "{h}:50" )
-                , ( 55, "{h}:55" )
+                [ ( 0, "{h} or" )
+                , ( 5, "{h} or tuk' jwe' minut" )
+                , ( 10, "{h} or tuk' laj minut" )
+                , ( 15, "{h} or tuk' o'laj minut" )
+                , ( 20, "{h} or tuk' winqan minut" )
+                , ( 25, "{h} or tuk' jwe' toj ka'wnaq minut" )
+                , ( 30, "{h} or tuk' nik'" )
+                , ( 35, "{h} or tuk' o'laj toj ka'wnaq minut" )
+                , ( 40, "{h} or tuk' ka'wnaq minut" )
+                , ( 45, "{h} or tuk' jwe' toj oxk'al minut" )
+                , ( 50, "{h} or tuk' laj toj oxk'al minut" )
+                , ( 55, "{h} or tuk' o'laj toj oxk'al minut" )
                 ]
         }
     , short =

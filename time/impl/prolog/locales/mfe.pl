@@ -11,22 +11,22 @@
 
 % Mauritian Creole locale.
 
-st_hours('mfe', ['douz', 'enn', 'de', 'trwa', 'kat', 'senk', 'sis', 'set', 'wit', 'nef', 'dis', 'onz']).
+st_hours('mfe', ['douzer', 'enn er', 'dezer', 'trwazer', 'katrer', 'senker', 'sizer', 'seter', 'witer', 'never', 'dizer', 'onzer']).
 st_midnight('mfe', 'minwi').
 st_noon('mfe', 'midi').
 
-st_pattern('mfe', 0, '{h}:00').
-st_pattern('mfe', 5, '{h}:05').
-st_pattern('mfe', 10, '{h}:10').
-st_pattern('mfe', 15, '{h}:15').
-st_pattern('mfe', 20, '{h}:20').
-st_pattern('mfe', 25, '{h}:25').
-st_pattern('mfe', 30, '{h}:30').
-st_pattern('mfe', 35, '{h}:35').
-st_pattern('mfe', 40, '{h}:40').
-st_pattern('mfe', 45, '{h}:45').
-st_pattern('mfe', 50, '{h}:50').
-st_pattern('mfe', 55, '{h}:55').
+st_pattern('mfe', 0, '{h}').
+st_pattern('mfe', 5, '{h} senk').
+st_pattern('mfe', 10, '{h} dis').
+st_pattern('mfe', 15, '{h} ekar').
+st_pattern('mfe', 20, '{h} vin').
+st_pattern('mfe', 25, '{h} vennsenk').
+st_pattern('mfe', 30, '{h} edmi').
+st_pattern('mfe', 35, '{next_h} mwin vennsenk').
+st_pattern('mfe', 40, '{next_h} mwin vin').
+st_pattern('mfe', 45, '{next_h} mwin kar').
+st_pattern('mfe', 50, '{next_h} mwin dis').
+st_pattern('mfe', 55, '{next_h} mwin senk').
 
 short_st_use24h('mfe', false).
 short_st_format('mfe', '{h}:{mm} {ampm}').

@@ -15,18 +15,18 @@ st_hours('shn', ['သိပ်းသွင်', 'ၼိုင်ႈ', 'သွင
 st_midnight('shn', 'ၵၢင်ၶိုၼ်း').
 st_noon('shn', 'ၵၢင်ဝၼ်း').
 
-st_pattern('shn', 0, '{h}:00').
-st_pattern('shn', 5, '{h}:05').
-st_pattern('shn', 10, '{h}:10').
-st_pattern('shn', 15, '{h}:15').
-st_pattern('shn', 20, '{h}:20').
-st_pattern('shn', 25, '{h}:25').
-st_pattern('shn', 30, '{h}:30').
-st_pattern('shn', 35, '{h}:35').
-st_pattern('shn', 40, '{h}:40').
-st_pattern('shn', 45, '{h}:45').
-st_pattern('shn', 50, '{h}:50').
-st_pattern('shn', 55, '{h}:55').
+st_pattern('shn', 0, '{h}မူင်း').
+st_pattern('shn', 5, '{h}မူင်း ႁႃႈမိၼိတ်ႉ').
+st_pattern('shn', 10, '{h}မူင်း သိပ်းမိၼိတ်ႉ').
+st_pattern('shn', 15, '{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ').
+st_pattern('shn', 20, '{h}မူင်း သၢဝ်းမိၼိတ်ႉ').
+st_pattern('shn', 25, '{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ').
+st_pattern('shn', 30, '{h}မူင်းၶိုင်ႈ').
+st_pattern('shn', 35, '{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ').
+st_pattern('shn', 40, '{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ').
+st_pattern('shn', 45, '{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ').
+st_pattern('shn', 50, '{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ').
+st_pattern('shn', 55, '{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ').
 
 short_st_use24h('shn', false).
 short_st_format('shn', '{h}:{mm} {ampm}').

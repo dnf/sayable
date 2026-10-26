@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [sn.json](../../locales/sn.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Shona has no past/to system in common Shona-only speech (people code-switch to English). Used the idiomatic answer to 'Dzava nguvai?': hours carry the copula so 1 o'clock gets the class-9 singular ('yava imwe') and the rest class 10 ('dzava mbiri' ...). Minutes additive with class-6 numerals: '{h} nemaminitsi gumi', 'makumi maviri', 'makumi mana nemashanu' ...; '{h} nehafu' for half. Compromise: every phrase reads as 'it is now ...', which is natural as an answer to 'what time is it' but awkward inside a sentence ('at ...'). Also changed midnight 'usiku hwepakati' (unidiomatic) to 'pakati peusiku'. Doubts: whether 'nekota' would be preferred for :15/:45; the copula framing itself.
+
 ## Age
 
 ### Age formatting
@@ -70,64 +78,64 @@ Relative to Saturday, March 15, 2025.
 | Today                | nhasi            | nhasi    |
 | Tomorrow             | mangwana         | mangwana |
 | Yesterday            | nezuro           | nezuro   |
-| Day after tomorrow   | mangwanani       | 17/3     |
+| Day after tomorrow   | kuswera mangwana | 17/3     |
 | Day before yesterday | nezuro rakapera  | 13/3     |
 | This Thursday (+5)   | China ino        | 20/3     |
-| Last Monday (-4)     | Chipiri yapfuura | 11/3     |
-| Next Wednesday (+12) | China inotevera  | 27/3     |
-| Same month (+20)     | 4 Kubvumbi       | 4/4      |
+| Last Tuesday (-4)    | Chipiri yapfuura | 11/3     |
+| Next Thursday (+12)  | China inotevera  | 27/3     |
+| Same year (+20)      | 4 Kubvumbi       | 4/4      |
 | Different year       | 10 Ndira 2026    | 10/1/26  |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal               | Short           | Compact    |
-| --------------------- | -------------------- | --------------- | ---------- |
-| 0 seconds             | izvozvi              | izvozvi         | izvozvi    |
-| 1 second              | 1 sekondi            | sek 1           | s 1        |
-| 30 seconds            | 30 sekondi           | sek 30          | s 30       |
-| 1 minute              | 1 miniti             | min 1           | m 1        |
-| 2 minutes, 15 seconds | 2 miniti, 15 sekondi | min 2, sek 15   | m 2s 15    |
-| 5 minutes             | 5 miniti             | min 5           | m 5        |
-| 45 minutes            | 45 miniti            | min 45          | m 45       |
-| 1 hour                | 1 awa                | awa 1           | a 1        |
-| 1½ hours              | 1½ awa               | awa 1½          | a 1½       |
-| 3 hours               | 3 awa                | awa 3           | a 3        |
-| 6 hours               | 6 awa                | awa 6           | a 6        |
-| 1 day                 | zuva 1               | zuva 1          | z 1        |
-| 1½ days               | mazuva 1½            | maz 1½          | maz 1½     |
-| 3 days                | mazuva 3             | maz 3           | maz 3      |
-| 1 week                | vhiki 1              | vhiki 1         | vh 1       |
-| 2 weeks, 3 days       | mavhiki 2, mazuva 3  | mavh 2, maz 3   | mvh 2maz 3 |
-| 1 month               | mwedzi 1             | mwedzi 1        | mw 1       |
-| 6 months              | mwedzi 6             | mwedzi 6        | mw 6       |
-| 1 year                | gore 1               | gore 1          | g 1        |
-| 2 years, 3 months     | makore 2, mwedzi 3   | mak 2, mwedzi 3 | mak 2mw 3  |
+| Duration              | Normal                    | Short           | Compact    |
+| --------------------- | ------------------------- | --------------- | ---------- |
+| 0 seconds             | izvozvi                   | izvozvi         | izvozvi    |
+| 1 second              | sekondi 1                 | sek 1           | s 1        |
+| 30 seconds            | masekondi 30              | sek 30          | s 30       |
+| 1 minute              | miniti 1                  | min 1           | m 1        |
+| 2 minutes, 15 seconds | maminitsi 2, masekondi 15 | min 2, sek 15   | m 2s 15    |
+| 5 minutes             | maminitsi 5               | min 5           | m 5        |
+| 45 minutes            | maminitsi 45              | min 45          | m 45       |
+| 1 hour                | awa 1                     | awa 1           | a 1        |
+| 1½ hours              | maawa 1½                  | awa 1½          | a 1½       |
+| 3 hours               | maawa 3                   | awa 3           | a 3        |
+| 6 hours               | maawa 6                   | awa 6           | a 6        |
+| 1 day                 | zuva 1                    | zuva 1          | z 1        |
+| 1½ days               | mazuva 1½                 | maz 1½          | maz 1½     |
+| 3 days                | mazuva 3                  | maz 3           | maz 3      |
+| 1 week                | vhiki 1                   | vhiki 1         | vh 1       |
+| 2 weeks, 3 days       | mavhiki 2, mazuva 3       | mavh 2, maz 3   | mvh 2maz 3 |
+| 1 month               | mwedzi 1                  | mwedzi 1        | mw 1       |
+| 6 months              | mwedzi 6                  | mwedzi 6        | mw 6       |
+| 1 year                | gore 1                    | gore 1          | g 1        |
+| 2 years, 3 months     | makore 2, mwedzi 3        | mak 2, mwedzi 3 | mak 2mw 3  |
 
 ### Relative time
 
-| Offset        | Normal            | Compact      |
-| ------------- | ----------------- | ------------ |
-| 5 minutes ago | 5 miniti yapfuura | m 5 yapfuura |
-| 2 hours ago   | 2 awa yapfuura    | a 2 yapfuura |
-| in 30 minutes | mu30 miniti       | mum 30       |
-| in 3 hours    | mu3 awa           | mua 3        |
+| Offset        | Normal               | Compact      |
+| ------------- | -------------------- | ------------ |
+| 5 minutes ago | maminitsi 5 yapfuura | m 5 yapfuura |
+| 2 hours ago   | maawa 2 yapfuura     | a 2 yapfuura |
+| in 30 minutes | mumaminitsi 30       | mum 30       |
+| in 3 hours    | mumaawa 3            | mua 3        |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | usiku hwepakati | 12:00 AM | 12:00a  |
-| 1:00 AM         | imwe:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | pfumbamwe:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | gumi:15         | 10:15 AM | 10:15a  |
-| Half past 11    | gumi neimwe:30  | 11:30 AM | 11:30a  |
-| Noon            | masikati        | 12:00 PM | 12:00p  |
-| Quarter to 3    | mbiri:45        | 2:45 PM  | 2:45p   |
-| 5 to 6          | shanu:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | sere:00         | 8:00 PM  | 8:00p   |
-| 10:30 PM        | gumi:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | usiku hwepakati | 11:58 PM | 11:58p  |
+| Time            | Normal                                           | Short    | Compact |
+| --------------- | ------------------------------------------------ | -------- | ------- |
+| Midnight        | pakati peusiku                                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | yava imwe                                        | 1:00 AM  | 1:00a   |
+| 5 past 9        | dzava pfumbamwe nemaminitsi mashanu              | 9:05 AM  | 9:05a   |
+| Quarter past 10 | dzava gumi nemaminitsi gumi nemashanu            | 10:15 AM | 10:15a  |
+| Half past 11    | dzava gumi neimwe nehafu                         | 11:30 AM | 11:30a  |
+| Noon            | masikati                                         | 12:00 PM | 12:00p  |
+| Quarter to 3    | dzava mbiri nemaminitsi makumi mana nemashanu    | 2:45 PM  | 2:45p   |
+| 5 to 6          | dzava shanu nemaminitsi makumi mashanu nemashanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | dzava sere                                       | 8:00 PM  | 8:00p   |
+| 10:30 PM        | dzava gumi nehafu                                | 10:30 PM | 10:30p  |
+| 11:58 PM        | pakati peusiku                                   | 11:58 PM | 11:58p  |

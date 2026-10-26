@@ -27,4 +27,4 @@
    :ago "{0} liu ba"
    :in-future "iha {0}"
    :short {:second {:type :simple :form "seg. {n}"} :minute {:type :simple :form "min. {n}"} :hour {:type :simple :form "oras {n}"} :day {:type :simple :form "loron {n}"} :week {:type :simple :form "sem. {n}"} :month {:type :simple :form "fulan {n}"} :year {:type :simple :form "tinan {n}"} :half nil :delimiter nil :ago "{0} liu ba" :in-future "iha {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} liu ba" :in-future "iha {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} liu ba" :in-future "iha {0}"}})

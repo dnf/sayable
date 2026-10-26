@@ -31,7 +31,7 @@ locale =
             , ( "month", Simple "{n} aý" )
             , ( "year", Simple "{n} ýyl" )
             ]
-    , half = "{0}½"
+    , half = "{n} ýarym"
     , delimiter = ", "
     , justNow = "häzir"
     , ago = "{0} öň"

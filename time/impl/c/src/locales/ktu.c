@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ktu = {
         { "zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi" },
         "midi ya butu",
         "midi",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ngunga {h}", "ngunga {h} na miniti tanu", "ngunga {h} na miniti zomi", "ngunga {h} na miniti zomi na tanu", "ngunga {h} na miniti makumi zole", "ngunga {h} na miniti makumi zole na tanu", "ngunga {h} na ndambu", "ngunga {h} na miniti makumi tatu na tanu", "ngunga {h} na miniti makumi ya", "ngunga {h} na miniti makumi ya na tanu", "ngunga {h} na miniti makumi tanu", "ngunga {h} na miniti makumi tanu na tanu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

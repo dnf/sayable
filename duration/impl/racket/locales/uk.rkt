@@ -27,13 +27,13 @@
           [(and (= mod10 1) (not (= mod100 11))) "one"]
           [(and (>= mod10 2) (<= mod10 4) (or (< mod100 12) (> mod100 14))) "few"]
           [else "many"])))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} секунда" "few" "{n} секунди" "many" "{n} секунд" "other" "{n} секунд"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} хвилина" "few" "{n} хвилини" "many" "{n} хвилин" "other" "{n} хвилин"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} година" "few" "{n} години" "many" "{n} годин" "other" "{n} годин"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} день" "few" "{n} дні" "many" "{n} днів" "other" "{n} днів"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} тиждень" "few" "{n} тижні" "many" "{n} тижнів" "other" "{n} тижнів"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} місяць" "few" "{n} місяці" "many" "{n} місяців" "other" "{n} місяців"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} рік" "few" "{n} роки" "many" "{n} років" "other" "{n} років")))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} секунда" "few" "{n} секунди" "many" "{n} секунд" "other" "{n} секунди"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} хвилина" "few" "{n} хвилини" "many" "{n} хвилин" "other" "{n} хвилини"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} година" "few" "{n} години" "many" "{n} годин" "other" "{n} години"))
+         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} день" "few" "{n} дні" "many" "{n} днів" "other" "{n} дня"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} тиждень" "few" "{n} тижні" "many" "{n} тижнів" "other" "{n} тижня"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} місяць" "few" "{n} місяці" "many" "{n} місяців" "other" "{n} місяця"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} рік" "few" "{n} роки" "many" "{n} років" "other" "{n} року")))
    "{n} з половиною"
    ", "
    "щойно"

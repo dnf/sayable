@@ -10,11 +10,11 @@
 # Source: locales/it.json
 
 function locale_it {
-    $hours = @('dodici', 'una', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci', 'undici')
+    $hours = @('le dodici', 'l''una', 'le due', 'le tre', 'le quattro', 'le cinque', 'le sei', 'le sette', 'le otto', 'le nove', 'le dieci', 'le undici')
     $midnight = 'mezzanotte'
     $noon = 'mezzogiorno'
     $patterns = @{}
-    $patterns[0] = 'le {h}'
+    $patterns[0] = '{h}'
     $patterns[5] = '{h} e cinque'
     $patterns[10] = '{h} e dieci'
     $patterns[15] = '{h} e un quarto'

@@ -25,7 +25,7 @@ module SayableAge
       stages: {
         "newborn" => StageLabel.new(m: "Recén nacido", f: "Recén nacida"),
         "infant" => StageLabel.new("Bebé"),
-        "toddler" => StageLabel.new("Neno"),
+        "toddler" => StageLabel.new(m: "Neno pequeno", f: "Nena pequena"),
         "child" => StageLabel.new(m: "Neno", f: "Nena"),
         "teenager" => StageLabel.new("Adolescente"),
         "adult" => StageLabel.new(m: "Adulto", f: "Adulta"),

@@ -417,7 +417,7 @@ begin
   { 25.9 }
   AssertEqual('25.9', '2 años, 6 meses', FormatAge(ES, csNormal, '2023-06-15', '2025-12-15'));
   { 25.10 }
-  AssertEqual('25.10', '3 y medio años', FormatAge(ES, csNormal, '2022-06-15', '2025-12-15'));
+  AssertEqual('25.10', '3 años y medio', FormatAge(ES, csNormal, '2022-06-15', '2025-12-15'));
   { 25.11 }
   AssertEqual('25.11', '3 años', FormatAge(ES, csNormal, '2022-06-15', '2025-06-15'));
   { 25.12 }

@@ -22,7 +22,7 @@ let TPI* = AgeLocale(
     "month": simpleUnit("{n} mun"),
     "year": simpleUnit("{n} yia"),
   }.toOrderedTable,
-  half: "{n} na hap",
+  half: "{0} na hap",
   delimiter: ", ",
   justBorn: "Nupela pikinini",
   stages: {
@@ -51,7 +51,7 @@ let TPI* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     justBorn: none(string),
   )),

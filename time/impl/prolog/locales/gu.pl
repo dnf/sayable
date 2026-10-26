@@ -13,20 +13,20 @@
 
 st_hours('gu', ['બાર', 'એક', 'બે', 'ત્રણ', 'ચાર', 'પાંચ', 'છ', 'સાત', 'આઠ', 'નવ', 'દસ', 'અગિયાર']).
 st_midnight('gu', 'મધ્યરાત્રિ').
-st_noon('gu', 'બપોર').
+st_noon('gu', 'બપોરે બાર વાગ્યે').
 
-st_pattern('gu', 0, '{h}:00').
-st_pattern('gu', 5, '{h}:05').
-st_pattern('gu', 10, '{h}:10').
-st_pattern('gu', 15, '{h}:15').
-st_pattern('gu', 20, '{h}:20').
-st_pattern('gu', 25, '{h}:25').
-st_pattern('gu', 30, '{h}:30').
-st_pattern('gu', 35, '{h}:35').
-st_pattern('gu', 40, '{h}:40').
-st_pattern('gu', 45, '{h}:45').
-st_pattern('gu', 50, '{h}:50').
-st_pattern('gu', 55, '{h}:55').
+st_pattern('gu', 0, '{h} વાગ્યે').
+st_pattern('gu', 5, '{h} વાગીને પાંચ મિનિટ').
+st_pattern('gu', 10, '{h} વાગીને દસ મિનિટ').
+st_pattern('gu', 15, 'સવા {h}').
+st_pattern('gu', 20, '{h} વાગીને વીસ મિનિટ').
+st_pattern('gu', 25, '{h} વાગીને પચીસ મિનિટ').
+st_pattern('gu', 30, '{h} વાગીને ત્રીસ મિનિટ').
+st_pattern('gu', 35, '{h} વાગીને પાંત્રીસ મિનિટ').
+st_pattern('gu', 40, '{h} વાગીને ચાલીસ મિનિટ').
+st_pattern('gu', 45, 'પોણા {next_h}').
+st_pattern('gu', 50, '{next_h} વાગવામાં દસ મિનિટ').
+st_pattern('gu', 55, '{next_h} વાગવામાં પાંચ મિનિટ').
 
 short_st_use24h('gu', false).
 short_st_format('gu', '{h}:{mm} {ampm}').

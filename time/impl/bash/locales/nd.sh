@@ -10,21 +10,21 @@
 # Source: locales/nd.json
 
 _sayabletime_locale_nd() {
-    _clock_hours=('litshumi lambili' 'kunye' 'kubili' 'kuthathu' 'kune' 'kuhlanu' 'isithupha' 'isikhombisa' 'isitshiyangalombili' 'isitshiyangalolunye' 'litshumi' 'litshumi lanye')
+    _clock_hours=('letshumi lambili' 'lokuqala' 'lesibili' 'lesithathu' 'lesine' 'lesihlanu' 'lesithupha' 'lesikhombisa' 'lesitshiyangalombili' 'lesitshiyangalolunye' 'letshumi' 'letshumi lanye')
     _clock_midnight='phakathi kobusuku'
     _clock_noon='emini'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='ihola {h}'
+    _clock_pattern_5='ihola {h} lemizuzu emihlanu'
+    _clock_pattern_10='ihola {h} lemizuzu elitshumi'
+    _clock_pattern_15='ihola {h} lemizuzu elitshumi lanhlanu'
+    _clock_pattern_20='ihola {h} lemizuzu engamatshumi amabili'
+    _clock_pattern_25='ihola {h} lemizuzu engamatshumi amabili lanhlanu'
+    _clock_pattern_30='ihola {h} lengxenye'
+    _clock_pattern_35='ihola {h} lemizuzu engamatshumi amathathu lanhlanu'
+    _clock_pattern_40='ihola {h} lemizuzu engamatshumi amane'
+    _clock_pattern_45='ihola {h} lemizuzu engamatshumi amane lanhlanu'
+    _clock_pattern_50='ihola {h} lemizuzu engamatshumi amahlanu'
+    _clock_pattern_55='ihola {h} lemizuzu engamatshumi amahlanu lanhlanu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

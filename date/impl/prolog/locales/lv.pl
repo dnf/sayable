@@ -16,7 +16,7 @@ sd_weekdays('lv', ['svētdiena', 'pirmdiena', 'otrdiena', 'trešdiena', 'ceturtd
 sd_day_format('lv', '{n}.').
 
 sd_date_pattern('lv', '{day} {month}').
-sd_date_pattern_with_year('lv', '{day} {month} {year}').
+sd_date_pattern_with_year('lv', '{year}. gada {day} {month}').
 
 sd_today('lv', 'šodien').
 sd_tomorrow('lv', 'rīt').
@@ -32,7 +32,7 @@ short_sd_weekdays('lv', ['sv', 'pr', 'ot', 'tr', 'ce', 'pk', 'se']).
 short_sd_day_format('lv', '{n}.').
 short_sd_clear_exceptions('lv').
 short_sd_date_pattern('lv', '{day} {month}').
-short_sd_date_pattern_with_year('lv', '{day} {month} {year}').
+short_sd_date_pattern_with_year('lv', '{year}. gada {day} {month}').
 
 compact_sd_date_pattern('lv', '{d}.{m}.').
 compact_sd_date_pattern_with_year('lv', '{d}.{m}.{yy}').

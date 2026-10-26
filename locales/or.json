@@ -219,18 +219,18 @@
       "midnight": "ମଧ୍ୟରାତ୍ରି",
       "noon": "ମଧ୍ୟାହ୍ନ",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍",
+        "10": "{h} ବାଜି ଦଶ ମିନିଟ୍",
+        "15": "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍",
+        "20": "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍",
+        "25": "{h} ବାଜି ପଚିଶ ମିନିଟ୍",
+        "30": "{h} ବାଜି ତିରିଶ ମିନିଟ୍",
+        "35": "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍",
+        "40": "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍",
+        "45": "ପାଉଣେ {next_h}",
+        "50": "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍",
+        "55": "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍"
       }
     },
     "short": {
@@ -253,5 +253,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Hours already carry the -ଟା classifier, so :00 is the bare hour ('ତିନିଟା'). Used 'ତିନିଟା ବାଜି ଦଶ ମିନିଟ୍' (past), 'ଚାରିଟା ବାଜିବାକୁ ଦଶ ମିନିଟ୍' (to), 'ପାଉଣେ ଚାରିଟା' (:45). :15 is additive 'ବାଜି ପନ୍ଦର ମିନିଟ୍' (not sure of the Odia quarter-past word) and :30 is additive 'ବାଜି ତିରିଶ ମିନିଟ୍' because 'ସାଢ଼େ ଗୋଟିଏ/ଦୁଇଟା' would be wrong (ଦେଢ଼ଟା / ଅଢ଼େଇଟା). Doubts: exact idiom of 'ବାଜି ... ମିନିଟ୍' and 'ବାଜିବାକୁ' as fragments; whether hours[1] should be 'ଗୋଟାଏ' rather than 'ଗୋଟିଏ' for one o'clock (left unchanged, not in the audit)."
+    }
+  ]
 }

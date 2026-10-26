@@ -12,22 +12,22 @@
 locale_om <- list(
   code = "om",
   clock = list(
-    hours = c("kudha lama", "tokko", "lama", "sadii", "afur", "shan", "jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko"),
+    hours = c("jaha", "torba", "saddeet", "sagal", "kudhan", "kudha tokko", "kudha lama", "tokko", "lama", "sadii", "afur", "shan"),
     midnight = "walakkii halkan",
     noon = "guyyaa walakkaa",
     patterns = list(
-      "0" = "{h}:00",
-      "5" = "{h}:05",
-      "10" = "{h}:10",
-      "15" = "{h}:15",
-      "20" = "{h}:20",
-      "25" = "{h}:25",
-      "30" = "{h}:30",
-      "35" = "{h}:35",
-      "40" = "{h}:40",
-      "45" = "{h}:45",
-      "50" = "{h}:50",
-      "55" = "{h}:55"
+      "0" = "sa'aatii {h}",
+      "5" = "sa'aatii {h} fi daqiiqaa shan",
+      "10" = "sa'aatii {h} fi daqiiqaa kudhan",
+      "15" = "sa'aatii {h} fi daqiiqaa kudha shan",
+      "20" = "sa'aatii {h} fi daqiiqaa digdama",
+      "25" = "sa'aatii {h} fi daqiiqaa digdamii shan",
+      "30" = "sa'aatii {h} fi walakkaa",
+      "35" = "sa'aatii {h} fi daqiiqaa soddomii shan",
+      "40" = "sa'aatii {h} fi daqiiqaa afurtama",
+      "45" = "sa'aatii {h} fi daqiiqaa afurtamii shan",
+      "50" = "sa'aatii {h} fi daqiiqaa shantama",
+      "55" = "sa'aatii {h} fi daqiiqaa shantamii shan"
     )
   ),
   short = list(

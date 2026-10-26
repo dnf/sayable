@@ -12,7 +12,7 @@
 #include "sayableduration/sayableduration.h"
 
 static SduPluralCategory plural_ml(int n) {
-    if (n == 0 || n == 1) return SDU_ONE;
+    if (n == 1) return SDU_ONE;
     return SDU_OTHER;
 }
 
@@ -28,7 +28,7 @@ const SduDurationLocale sdu_locale_ml = {
         { NULL, { NULL, "{n} മാസം", NULL, NULL, NULL, "{n} മാസങ്ങൾ" } },
         { NULL, { NULL, "{n} വർഷം", NULL, NULL, NULL, "{n} വർഷങ്ങൾ" } }
     },
-    "{0} ര", ", ",
+    "{n}½", ", ",
     "ഇപ്പോൾ",
     "{0} മുമ്പ്", "{0} കഴിഞ്ഞ്",
     true, { true, { "{n} സെ॰", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} മി॰", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} മ॰", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ദിവസം", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ആഴ്ച", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} മാസം", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} വർഷം", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} മുമ്പ്", true, "{0} കഴിഞ്ഞ്" },

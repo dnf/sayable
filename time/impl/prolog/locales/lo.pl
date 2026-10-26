@@ -15,18 +15,18 @@ st_hours('lo', ['ສິບສອງ', 'ໜຶ່ງ', 'ສອງ', 'ສາມ', 
 st_midnight('lo', 'ທ່ຽງຄືນ').
 st_noon('lo', 'ທ່ຽງ').
 
-st_pattern('lo', 0, '{h}:00').
-st_pattern('lo', 5, '{h}:05').
-st_pattern('lo', 10, '{h}:10').
-st_pattern('lo', 15, '{h}:15').
-st_pattern('lo', 20, '{h}:20').
-st_pattern('lo', 25, '{h}:25').
-st_pattern('lo', 30, '{h}:30').
-st_pattern('lo', 35, '{h}:35').
-st_pattern('lo', 40, '{h}:40').
-st_pattern('lo', 45, '{h}:45').
-st_pattern('lo', 50, '{h}:50').
-st_pattern('lo', 55, '{h}:55').
+st_pattern('lo', 0, '{h}ໂມງ').
+st_pattern('lo', 5, '{h}ໂມງ ຫ້ານາທີ').
+st_pattern('lo', 10, '{h}ໂມງ ສິບນາທີ').
+st_pattern('lo', 15, '{h}ໂມງ ສິບຫ້ານາທີ').
+st_pattern('lo', 20, '{h}ໂມງ ຊາວນາທີ').
+st_pattern('lo', 25, '{h}ໂມງ ຊາວຫ້ານາທີ').
+st_pattern('lo', 30, '{h}ໂມງເຄິ່ງ').
+st_pattern('lo', 35, '{h}ໂມງ ສາມສິບຫ້ານາທີ').
+st_pattern('lo', 40, '{h}ໂມງ ສີ່ສິບນາທີ').
+st_pattern('lo', 45, '{h}ໂມງ ສີ່ສິບຫ້ານາທີ').
+st_pattern('lo', 50, '{h}ໂມງ ຫ້າສິບນາທີ').
+st_pattern('lo', 55, '{h}ໂມງ ຫ້າສິບຫ້ານາທີ').
 
 short_st_use24h('lo', true).
 short_st_format('lo', '{h}:{mm}').

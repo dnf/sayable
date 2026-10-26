@@ -14,7 +14,7 @@ locale_mam <- list(
   plural = function(n) "other",
   units = list(
     day = "{n} q'ij",
-    week = "{n} xjaw",
+    week = "{n} seman",
     month = "{n} xjaw",
     year = "{n} ab'q'ii"
   ),
@@ -32,7 +32,7 @@ locale_mam <- list(
   short = list(
     units = list(
       day = "{n} q'ij",
-      week = "{n} xjaw",
+      week = "{n} seman",
       month = "{n} xjaw",
       year = "{n} ab'."
     )
@@ -44,6 +44,7 @@ locale_mam <- list(
       month = "{n}m",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = ""
   )
 )

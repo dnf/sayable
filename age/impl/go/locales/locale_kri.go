@@ -25,7 +25,7 @@ var KRI = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} mont"),
 		Year:  sa.SimpleUnit("{n} ia"),
 	},
-	Half:      "{n} na af",
+	Half:      "{0} ɛn af",
 	Delimiter: ", ",
 	JustBorn:  "Nyubon bebi",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
@@ -48,5 +48,6 @@ var KRI = sa.AgeLocale{
 		Month:     &sa.UnitForms{Simple: "{n}m"},
 		Year:      &sa.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 	},
 }

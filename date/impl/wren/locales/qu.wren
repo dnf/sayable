@@ -27,7 +27,7 @@ class QULocale {
   static tomorrow { "paqarin" }
   static yesterday { "qayna" }
   static dayAfterTomorrow { "minchha" }
-  static dayBeforeYesterday { "qayna p'unchaw" }
+  static dayBeforeYesterday { "qayninpa" }
   static thisWeekday { "kay {weekday}" }
   static nextWeekday { "hamuq {weekday}" }
   static lastWeekday { "qayna {weekday}" }

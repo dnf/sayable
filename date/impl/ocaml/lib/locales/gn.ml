@@ -41,7 +41,7 @@ let locale : date_locale =
     []
   ; date_pattern = "{day} {month}"
   ; date_pattern_with_year = "{day} {month} {year}"
-  ; today = "ko'ágã"
+  ; today = "ko árape"
   ; tomorrow = "ko'ẽrõ"
   ; yesterday = "kuehe"
   ; day_after_tomorrow = Some "ko'ẽrõ rire"

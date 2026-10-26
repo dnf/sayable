@@ -16,8 +16,8 @@
 (defparameter *locale-hy*
   (make-date-locale
    :code "hy"
-   :months (list "Հունվար" "Փետրվար" "Մարտ" "Ապրիլ" "Մայիս" "Հունիս" "Հուլիս" "Օգոստոս" "Սեպտեմբեր" "Հոկտեմբեր" "Նոյեմբեր" "Դեկտեմբեր")
-   :weekdays (list "Կիրակի" "Երկուշաբթի" "Երեքշաբթի" "Չորեքշաբթի" "Հինգշաբթի" "Ուրբաթ" "Շաբաթ")
+   :months (list "հունվար" "փետրվար" "մարտ" "ապրիլ" "մայիս" "հունիս" "հուլիս" "օգոստոս" "սեպտեմբեր" "հոկտեմբեր" "նոյեմբեր" "դեկտեմբեր")
+   :weekdays (list "կիրակի" "երկուշաբթի" "երեքշաբթի" "չորեքշաբթի" "հինգշաբթի" "ուրբաթ" "շաբաթ")
    :day-format "{n}"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
@@ -25,13 +25,14 @@
    :today "այսօր"
    :tomorrow "վաղը"
    :yesterday "երեկ"
-   :day-after-tomorrow "վաղը մյուս օրը"
-   :day-before-yesterday "երեկ մյուս օրը"
+   :day-after-tomorrow "վաղը չէ մյուս օրը"
+   :day-before-yesterday "երեկ չէ առաջի օրը"
    :this-weekday "այս {weekday}"
    :next-weekday "հաջորդ {weekday}"
    :last-weekday "անցած {weekday}"
-   :short-months (list "Հնվ" "Փտր" "Մրտ" "Ապր" "Մյս" "Հնս" "Հլս" "Օգս" "Սեպ" "Հկտ" "Նոյ" "Դեկ")
-   :short-weekdays (list "Կիր" "Երկ" "Երք" "Չրք" "Հնգ" "Ուր" "Շբթ")
+   :months-in-date (list "հունվարի" "փետրվարի" "մարտի" "ապրիլի" "մայիսի" "հունիսի" "հուլիսի" "օգոստոսի" "սեպտեմբերի" "հոկտեմբերի" "նոյեմբերի" "դեկտեմբերի")
+   :short-months (list "հնվ" "փտր" "մրտ" "ապր" "մյս" "հնս" "հլս" "օգս" "սեպ" "հկտ" "նոյ" "դեկ")
+   :short-weekdays (list "կիր" "երկ" "երք" "չրք" "հնգ" "ուր" "շբթ")
    :short-day-format "{n}"
    :short-date-pattern "{day} {month}"
    :short-date-pattern-with-year "{day} {month} {year}"

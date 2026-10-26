@@ -18,13 +18,13 @@ ig
 	locale code: 'ig'.
 	locale plural: [ :n | #other ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} sekọnd'.
-		'minute'. '{n} nkeji'.
-		'hour'. '{n} awa'.
-		'day'. '{n} ụbọchị'.
-		'week'. '{n} izu'.
-		'month'. '{n} ọnwa'.
-		'year'. '{n} afọ'.
+		'second'. 'sekọnd {n}'.
+		'minute'. 'nkeji {n}'.
+		'hour'. 'awa {n}'.
+		'day'. 'ụbọchị {n}'.
+		'week'. 'izu {n}'.
+		'month'. 'ọnwa {n}'.
+		'year'. 'afọ {n}'.
 	}).
 	locale half: '{0} na ọkara'.
 	locale delimiter: ', '.
@@ -33,13 +33,13 @@ ig
 	locale inFuture: 'na {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. '{n} sek.'.
-			'minute'. '{n} nkeji'.
-			'hour'. '{n} awa'.
-			'day'. '{n} ụbọchị'.
-			'week'. '{n} izu'.
-			'month'. '{n} ọnwa'.
-			'year'. '{n} afọ'.
+			'second'. 'sek. {n}'.
+			'minute'. 'nkeji {n}'.
+			'hour'. 'awa {n}'.
+			'day'. 'ụbọchị {n}'.
+			'week'. 'izu {n}'.
+			'month'. 'ọnwa {n}'.
+			'year'. 'afọ {n}'.
 		}).
 		#ago. '{0} gara aga'.
 		#inFuture. 'na {0}'.

@@ -17,7 +17,7 @@ const StTimeLocale st_locale_fan = {
         { "awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg" },
         "akiri alúk",
         "ewaŋ",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "awola {h}", "awola {h} ai minit tán", "awola {h} ai minit awom", "awola {h} ai minit awom ai tán", "awola {h} ai minit mewom mebú", "awola {h} ai minit mewom mebú ai tán", "awola {h} ai minit mewom melaa", "awola {h} ai minit mewom melaa ai tán", "awola {h} ai minit mewom menyin", "awola {h} ai minit mewom menyin ai tán", "awola {h} ai minit mewom metán", "awola {h} ai minit mewom metán ai tán" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

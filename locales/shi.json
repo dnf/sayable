@@ -30,14 +30,14 @@
     "justBorn": "Iɣ d illul",
     "stages": {
       "newborn": "Iɣ d illul",
-      "infant": "Agellid",
+      "infant": "Llufan",
       "toddler": {
         "m": "Aḥenjir",
         "f": "Taḥenjirt"
       },
       "child": {
         "m": "Afrux",
-        "f": "Tafruxṭ"
+        "f": "Tafruxt"
       },
       "teenager": {
         "m": "Aɛrim",
@@ -50,10 +50,26 @@
     },
     "short": {
       "units": {
-        "day": "{n} d",
-        "week": "{n} wk",
-        "month": "{n} mo",
-        "year": "{n} yr"
+        "day": {
+          "one": "{n} ass",
+          "few": "{n} ussan",
+          "other": "{n} ass"
+        },
+        "week": {
+          "one": "{n} imalass",
+          "few": "{n} imalassn",
+          "other": "{n} imalass"
+        },
+        "month": {
+          "one": "{n} ayyur",
+          "few": "{n} ayyurn",
+          "other": "{n} ayyur"
+        },
+        "year": {
+          "one": "{n} aseggas",
+          "few": "{n} iseggasen",
+          "other": "{n} aseggas"
+        }
       }
     },
     "compact": {
@@ -69,60 +85,60 @@
   },
   "date": {
     "months": [
-      "ⵉⵏⵏⴰⵢⵔ",
-      "ⴱⵕⴰⵢⵕ",
-      "ⵎⴰⵕⵚ",
-      "ⵉⴱⵔⵉⵔ",
-      "ⵎⴰⵢⵢⵓ",
-      "ⵢⵓⵏⵢⵓ",
-      "ⵢⵓⵍⵢⵓⵣ",
-      "ⵖⵓⵛⵜ",
-      "ⵛⵓⵜⴰⵏⴱⵉⵔ",
-      "ⴽⵜⵓⴱⵔ",
-      "ⵏⵓⵡⴰⵏⴱⵉⵔ",
-      "ⴷⵓⵊⴰⵏⴱⵉⵔ"
+      "innayr",
+      "bṛayṛ",
+      "maṛṣ",
+      "ibrir",
+      "mayyu",
+      "yunyu",
+      "yulyuz",
+      "ɣuct",
+      "cutanbir",
+      "ktubr",
+      "nuwanbir",
+      "dujanbir"
     ],
     "weekdays": [
-      "ⴰⵙⴰⵎⴰⵙ",
-      "ⴰⵢⵏⴰⵙ",
-      "ⴰⵙⵉⵏⴰⵙ",
-      "ⴰⴽⵕⴰⵙ",
-      "ⴰⴽⵡⴰⵙ",
-      "ⴰⵙⵉⵎⵡⴰⵙ",
-      "ⴰⵙⵉⴹⵢⴰⵙ"
+      "asamas",
+      "aynas",
+      "asinas",
+      "akṛas",
+      "akwas",
+      "asimwas",
+      "asiḍyas"
     ],
     "dayFormat": "{n}",
     "datePattern": "{day} {month}",
     "datePatternWithYear": "{day} {month} {year}",
-    "today": "ⴰⵙⵙⴰ",
-    "tomorrow": "ⴰⵙⴽⴽⴰ",
-    "yesterday": "ⵉⴹⵍⵍⵉ",
-    "thisWeekday": "{weekday} ⴰⴷ",
-    "nextWeekday": "{weekday} ⴷ ⵉⴷⴷⴰⵏ",
-    "lastWeekday": "{weekday} ⵉⵣⵔⵉⵏ",
+    "today": "assa",
+    "tomorrow": "askka",
+    "yesterday": "iḍlli",
+    "thisWeekday": "{weekday} ad",
+    "nextWeekday": "{weekday} d iddan",
+    "lastWeekday": "{weekday} izrin",
     "short": {
       "months": [
-        "ⵉⵏⵏ",
-        "ⴱⵕⴰ",
-        "ⵎⴰⵕ",
-        "ⵉⴱⵔ",
-        "ⵎⴰⵢ",
-        "ⵢⵓⵏ",
-        "ⵢⵓⵍ",
-        "ⵖⵓⵛ",
-        "ⵛⵓⵜ",
-        "ⴽⵜⵓ",
-        "ⵏⵓⵡ",
-        "ⴷⵓⵊ"
+        "inn",
+        "bṛa",
+        "maṛ",
+        "ibr",
+        "may",
+        "yun",
+        "yul",
+        "ɣuc",
+        "cut",
+        "ktu",
+        "nuw",
+        "duj"
       ],
       "weekdays": [
-        "ⴰⵙⴰ",
-        "ⴰⵢⵏ",
-        "ⴰⵙⵉ",
-        "ⴰⴽⵕ",
-        "ⴰⴽⵡ",
-        "ⴰⵙⵉⵎ",
-        "ⴰⵙⵉⴹ"
+        "asa",
+        "ayn",
+        "asi",
+        "akṛ",
+        "akw",
+        "asim",
+        "asiḍ"
       ],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
@@ -137,8 +153,8 @@
     "units": {
       "second": {
         "one": "{n} tasint",
-        "few": "{n} tasinin",
-        "other": "{n} tasinin"
+        "few": "{n} tisinin",
+        "other": "{n} tisinin"
       },
       "minute": {
         "one": "{n} tusdiqt",
@@ -178,13 +194,41 @@
     "inFuture": "ɣ {0}",
     "short": {
       "units": {
-        "second": "{n}s",
-        "minute": "{n}m",
-        "hour": "{n}h",
-        "day": "{n}d",
-        "week": "{n}w",
-        "month": "{n}mo",
-        "year": "{n}y"
+        "second": {
+          "one": "{n} tasint",
+          "few": "{n} tasinin",
+          "other": "{n} tasinin"
+        },
+        "minute": {
+          "one": "{n} tusdiqt",
+          "few": "{n} tusdiqin",
+          "other": "{n} tusdiqin"
+        },
+        "hour": {
+          "one": "{n} tasragt",
+          "few": "{n} tisragin",
+          "other": "{n} tisragin"
+        },
+        "day": {
+          "one": "{n} ass",
+          "few": "{n} ussan",
+          "other": "{n} ass"
+        },
+        "week": {
+          "one": "{n} imalass",
+          "few": "{n} imalassn",
+          "other": "{n} imalass"
+        },
+        "month": {
+          "one": "{n} ayyur",
+          "few": "{n} ayyurn",
+          "other": "{n} ayyur"
+        },
+        "year": {
+          "one": "{n} aseggas",
+          "few": "{n} iseggasen",
+          "other": "{n} aseggas"
+        }
       },
       "ago": "ɣ {0} zzrin",
       "inFuture": "ɣ {0}",
@@ -224,34 +268,34 @@
   "time": {
     "clock": {
       "hours": [
-        "12",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11"
+        "tis snat d mrawt",
+        "tis yat",
+        "tis snat",
+        "tis kṛaṭṭ",
+        "tis kkuẕt",
+        "tis smmust",
+        "tis sḍist",
+        "tis sat",
+        "tis tamt",
+        "tis tẕat",
+        "tis mrawt",
+        "tis yat d mrawt"
       ],
-      "midnight": "ⵏⵚ ⵏ ⵉⴹ",
-      "noon": "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
+      "midnight": "nṣ n iḍ",
+      "noon": "tizwarnin",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "{h} d smmus tusdiqin",
+        "10": "{h} d mraw tusdiqin",
+        "15": "{h} d rrbɛ",
+        "20": "{h} d ɛcrin n tusdiqt",
+        "25": "{h} d xmsa u ɛcrin n tusdiqt",
+        "30": "{h} d uzgen",
+        "35": "{h} d xmsa u tlatin n tusdiqt",
+        "40": "{h} d ṛbɛin n tusdiqt",
+        "45": "{h} d xmsa u ṛbɛin n tusdiqt",
+        "50": "{h} d xmsin n tusdiqt",
+        "55": "{h} d xmsa u xmsin n tusdiqt"
       }
     },
     "short": {
@@ -266,5 +310,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Best effort: hours as the feminine ordinal 'tis' + numeral ('tis snat' 2:00, 'tis yat' 1:00, 'tis snat d mrawt' 12:xx), 'tis snat d uzgen' (2:30), 'tis snat d rrbɛ' (2:15), 'tis snat d mraw tusdiqin' (2:10), 20+ minutes with the everyday Arabic-loan numerals and 'n' + singular ('d ɛcrin n tusdiqt', 'd xmsa u ṛbɛin n tusdiqt'). Doubts: whether 'tis yat' is used for one o'clock (vs 'tamzwarut'); whether speakers prefer a subtractive 'quarter to' form (not attempted); the locale's minute word 'tusdiqt' (IRCAM uses tusdidt); in practice many Moroccan Amazigh speakers tell time in Darija. For tzm the same phrases were used; Central Atlas forms may differ. noon/midnight transliterated to Latin (tizwarnin = midday prayer time, nṣ n iḍ = half of night)."
+    }
+  ]
 }

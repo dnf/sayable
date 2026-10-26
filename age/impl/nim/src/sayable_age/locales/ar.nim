@@ -58,7 +58,7 @@ let AR* = AgeLocale(
     units: some({
       "day": simpleUnit("{n} ي"),
       "week": simpleUnit("{n} أ"),
-      "month": pluralUnit(@[(pcZero, "{n} شهر"), (pcOne, "شهر"), (pcTwo, "شهران"), (pcFew, "{n} أشهر"), (pcMany, "{n} شهرًا"), (pcOther, "{n} شهر")]),
+      "month": simpleUnit("{n} شهر"),
       "year": simpleUnit("{n} سنة"),
     }.toOrderedTable),
     half: some("{n}½"),

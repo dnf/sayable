@@ -21,7 +21,7 @@
                (cons :week "{n} hepde")
                (cons :month "{n} aý")
                (cons :year "{n} ýaş"))
-   :half "{0}½"
+   :half "{n} ýarym"
    :delimiter ", "
    :just-born "Täze doglan"
    :stages (list (cons :newborn "Täze doglan")
@@ -29,7 +29,7 @@
                  (cons :toddler "Kiçijik")
                  (cons :child "Çaga")
                  (cons :teenager "Ýetginjek")
-                 (cons :adult "Ulular"))
+                 (cons :adult "Uly adam"))
    :short-units (list (cons :day "{n} g")
                        (cons :week "{n} h")
                        (cons :month "{n} a")

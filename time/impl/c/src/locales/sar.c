@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_sar = {
     "sar",
     {
-        { "mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "kɨ̀ndá", "ɗìi", "mùtá", "sɔ̀", "mɨ̀ndɨ̀", "mɨ̀ndɨ̀ kɨ̀ndá", "mɨ̀sá", "mɨ̀ndɨ̀ mùtá", "mɨ̀ndɨ̀ sɔ̀", "mɔ̀ɔ́", "mɔ̀ɔ́ kɨ̀ndá" },
+        { "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "lɛɛr kɨ̀ndá", "lɛɛr ɗìi", "lɛɛr mùtá", "lɛɛr sɔ̀", "lɛɛr mɨ̀ndɨ̀", "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá", "lɛɛr mɨ̀sá", "lɛɛr mɨ̀ndɨ̀ mùtá", "lɛɛr mɨ̀ndɨ̀ sɔ̀", "lɛɛr mɔ̀ɔ́", "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá" },
         "badɔ",
         "mbɔr ndɔ",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} kɨ̀ minít mɨ̀ndɨ̀", "{h} kɨ̀ minít mɔ̀ɔ́", "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi", "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", "{h} kɩ̀ ndá̰ŋ", "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀", "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀", "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀", "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

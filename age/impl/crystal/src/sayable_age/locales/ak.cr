@@ -27,12 +27,12 @@ module SayableAge
         "infant" => StageLabel.new("Akwadaa"),
         "toddler" => StageLabel.new("Abofra"),
         "child" => StageLabel.new("Abofra"),
-        "teenager" => StageLabel.new("Abarimaa"),
+        "teenager" => StageLabel.new(m: "Abarimaa", f: "Abaayewa"),
         "adult" => StageLabel.new("Ɔpanyin"),
       },
       short: CompactnessOverride.new(
         units: {
-          "day" => UnitForms.new("nna {n}"),
+          "day" => UnitForms.new(one: "da {n}", other: "nna {n}"),
           "week" => UnitForms.new(one: "dapɛn {n}", other: "nnapɛn {n}"),
           "month" => UnitForms.new(one: "bosome {n}", other: "abosome {n}"),
           "year" => UnitForms.new(one: "afe {n}", other: "mfe {n}"),
@@ -40,7 +40,7 @@ module SayableAge
       ),
       compact: CompactnessOverride.new(
         units: {
-          "day" => UnitForms.new("nna {n}"),
+          "day" => UnitForms.new(one: "da {n}", other: "nna {n}"),
           "week" => UnitForms.new(one: "dapɛn {n}", other: "nnapɛn {n}"),
           "month" => UnitForms.new(one: "bos {n}", other: "abos {n}"),
           "year" => UnitForms.new(one: "afe {n}", other: "mfe {n}"),

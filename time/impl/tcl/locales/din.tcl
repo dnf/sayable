@@ -15,18 +15,18 @@ proc locale_time_din {} {
     set midnight {wakɔ̈u}
     set noon {akɔ̈l ciëŋ}
     set patterns [dict create \
-        0 "{h}:00" \
-        5 "{h}:05" \
-        10 "{h}:10" \
-        15 "{h}:15" \
-        20 "{h}:20" \
-        25 "{h}:25" \
-        30 "{h}:30" \
-        35 "{h}:35" \
-        40 "{h}:40" \
-        45 "{h}:45" \
-        50 "{h}:50" \
-        55 "{h}:55" \
+        0 "thä {h}" \
+        5 "thä {h} ku minitö dhiëc" \
+        10 "thä {h} ku minitö thiäär" \
+        15 "thä {h} ku minitö thiäär ku dhiëc" \
+        20 "thä {h} ku minitö thiärou" \
+        25 "thä {h} ku minitö thiärou ku dhiëc" \
+        30 "thä {h} ku minitö thiärdiäk" \
+        35 "thä {h} ku minitö thiärdiäk ku dhiëc" \
+        40 "thä {h} ku minitö thiärŋuan" \
+        45 "thä {h} ku minitö thiärŋuan ku dhiëc" \
+        50 "thä {h} ku minitö thiärdhiëc" \
+        55 "thä {h} ku minitö thiärdhiëc ku dhiëc" \
     ]
     set clock_config [dict create \
         hours $hours \

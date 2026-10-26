@@ -14,9 +14,9 @@
 (def locale
   {:code "sn"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :simple :form "{n} sekondi"}
-   :minute {:type :simple :form "{n} miniti"}
-   :hour {:type :simple :form "{n} awa"}
+   :second {:type :pluralized :forms {:one "sekondi {n}" :other "masekondi {n}"}}
+   :minute {:type :pluralized :forms {:one "miniti {n}" :other "maminitsi {n}"}}
+   :hour {:type :pluralized :forms {:one "awa {n}" :other "maawa {n}"}}
    :day {:type :pluralized :forms {:one "zuva {n}" :other "mazuva {n}"}}
    :week {:type :pluralized :forms {:one "vhiki {n}" :other "mavhiki {n}"}}
    :month {:type :pluralized :forms {:one "mwedzi {n}" :other "mwedzi {n}"}}

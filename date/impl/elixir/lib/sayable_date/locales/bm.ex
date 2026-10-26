@@ -17,7 +17,7 @@ defmodule SayableDate.Locales.BM do
       code: "bm",
       months: [
         "Zanwuye",
-        "Fewuriye",
+        "Feburuye",
         "Marisi",
         "Awirili",
         "Mɛ",
@@ -25,8 +25,8 @@ defmodule SayableDate.Locales.BM do
         "Zuluye",
         "Uti",
         "Sɛtanburu",
-        "ɔkutɔburu",
-        "Nowanbudu",
+        "Ɔkutɔburu",
+        "Nowanburu",
         "Desanburu"
       ],
       weekdays: [
@@ -54,7 +54,7 @@ defmodule SayableDate.Locales.BM do
       short: %{
         months: [
           "Zan",
-          "Few",
+          "Feb",
           "Mar",
           "Awi",
           "Mɛ",
@@ -62,7 +62,7 @@ defmodule SayableDate.Locales.BM do
           "Zul",
           "Uti",
           "Sɛt",
-          "ɔku",
+          "Ɔku",
           "Now",
           "Des"
         ],

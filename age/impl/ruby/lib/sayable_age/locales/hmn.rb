@@ -48,6 +48,7 @@ module SayableAge
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
       ),
     )
   end

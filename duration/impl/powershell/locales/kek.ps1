@@ -51,6 +51,7 @@ function locale_kek {
             month = '{n}mo'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
         ago = '{0} qakab'''
         inFuture = 'chi {0}'

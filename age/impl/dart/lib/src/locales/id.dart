@@ -21,7 +21,7 @@ final id = AgeLocale(
   week: simpleUnit('{n} minggu'),
   month: simpleUnit('{n} bulan'),
   year: simpleUnit('{n} tahun'),
-  half: '{0} setengah',
+  half: '{n} setengah',
   delimiter: ', ',
   justBorn: 'Baru lahir',
   newborn: stageNeutral('Baru lahir'),

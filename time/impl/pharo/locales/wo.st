@@ -17,22 +17,22 @@ wo
 	locale := SayableTimeLocale new.
 	locale code: 'wo'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'fukki ñaar'. 'benn'. 'ñaar'. 'ñett'. 'ñeent'. 'juróom'. 'juróom-benn'. 'juróom-ñaar'. 'juróom-ñett'. 'juróom-ñeent'. 'fukk'. 'fukki benn' }).
-	clock at: #midnight put: 'bu guddi'.
-	clock at: #noon put: 'ci àttaya'.
+	clock at: #hours put: (OrderedCollection withAll: { 'fukk ak ñaari waxtu'. 'benn waxtu'. 'ñaari waxtu'. 'ñetti waxtu'. 'ñeenti waxtu'. 'juróomi waxtu'. 'juróom-benni waxtu'. 'juróom-ñaari waxtu'. 'juróom-ñetti waxtu'. 'juróom-ñeenti waxtu'. 'fukki waxtu'. 'fukk ak benn waxtu' }).
+	clock at: #midnight put: 'digg-guddi'.
+	clock at: #noon put: 'digg-bëccëg'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h}'.
+		5. '{h} ak juróomi simili'.
+		10. '{h} ak fukki simili'.
+		15. '{h} ak fukk ak juróomi simili'.
+		20. '{h} ak ñaar-fukki simili'.
+		25. '{h} ak ñaar-fukk ak juróomi simili'.
+		30. '{h} ak genn-wàll'.
+		35. '{next_h} des na ñaar-fukk ak juróomi simili'.
+		40. '{next_h} des na ñaar-fukki simili'.
+		45. '{next_h} des na fukk ak juróomi simili'.
+		50. '{next_h} des na fukki simili'.
+		55. '{next_h} des na juróomi simili'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

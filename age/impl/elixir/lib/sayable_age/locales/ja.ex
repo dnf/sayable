@@ -47,7 +47,8 @@ defmodule SayableAge.Locales.JA do
           week: "{n}w",
           month: "{n}m",
           year: "{n}y"
-        }
+        },
+        half: "{n}½"
       }
     }
   end

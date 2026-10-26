@@ -18,31 +18,31 @@ sd_plural('uk', _, many).
 sd_unit('uk', second, one, '{n} секунда').
 sd_unit('uk', second, few, '{n} секунди').
 sd_unit('uk', second, many, '{n} секунд').
-sd_unit('uk', second, other, '{n} секунд').
+sd_unit('uk', second, other, '{n} секунди').
 sd_unit('uk', minute, one, '{n} хвилина').
 sd_unit('uk', minute, few, '{n} хвилини').
 sd_unit('uk', minute, many, '{n} хвилин').
-sd_unit('uk', minute, other, '{n} хвилин').
+sd_unit('uk', minute, other, '{n} хвилини').
 sd_unit('uk', hour, one, '{n} година').
 sd_unit('uk', hour, few, '{n} години').
 sd_unit('uk', hour, many, '{n} годин').
-sd_unit('uk', hour, other, '{n} годин').
+sd_unit('uk', hour, other, '{n} години').
 sd_unit('uk', day, one, '{n} день').
 sd_unit('uk', day, few, '{n} дні').
 sd_unit('uk', day, many, '{n} днів').
-sd_unit('uk', day, other, '{n} днів').
+sd_unit('uk', day, other, '{n} дня').
 sd_unit('uk', week, one, '{n} тиждень').
 sd_unit('uk', week, few, '{n} тижні').
 sd_unit('uk', week, many, '{n} тижнів').
-sd_unit('uk', week, other, '{n} тижнів').
+sd_unit('uk', week, other, '{n} тижня').
 sd_unit('uk', month, one, '{n} місяць').
 sd_unit('uk', month, few, '{n} місяці').
 sd_unit('uk', month, many, '{n} місяців').
-sd_unit('uk', month, other, '{n} місяців').
+sd_unit('uk', month, other, '{n} місяця').
 sd_unit('uk', year, one, '{n} рік').
 sd_unit('uk', year, few, '{n} роки').
 sd_unit('uk', year, many, '{n} років').
-sd_unit('uk', year, other, '{n} років').
+sd_unit('uk', year, other, '{n} року').
 
 sd_half('uk', '{n} з половиною').
 sd_delimiter('uk', ', ').

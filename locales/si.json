@@ -21,7 +21,7 @@
         "other": "වසර {n}"
       }
     },
-    "half": "{0}යි භාගයයි",
+    "half": "{n}½",
     "delimiter": ", ",
     "justBorn": "අලුත උපන්",
     "stages": {
@@ -121,9 +121,9 @@
   },
   "duration": {
     "units": {
-      "second": "{n} තත්පරය",
-      "minute": "{n} මිනිත්තුව",
-      "hour": "{n} පැය",
+      "second": "තත්පර {n}",
+      "minute": "මිනිත්තු {n}",
+      "hour": "පැය {n}",
       "day": {
         "one": "දින {n}",
         "other": "දින {n}"
@@ -141,7 +141,7 @@
         "other": "වසර {n}"
       }
     },
-    "half": "{0}යි භාගයයි",
+    "half": "{n}½",
     "delimiter": ", ",
     "justNow": "දැන්",
     "ago": "{0}ට පෙර",
@@ -210,18 +210,18 @@
       "midnight": "මධ්‍යම රාත්‍රිය",
       "noon": "මධ්‍යාහ්නය",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}යි",
+        "5": "{h}යි විනාඩි පහයි",
+        "10": "{h}යි විනාඩි දහයයි",
+        "15": "{h}යි කාලයි",
+        "20": "{h}යි විනාඩි විස්සයි",
+        "25": "{h}යි විනාඩි විසිපහයි",
+        "30": "{h} හමාරයි",
+        "35": "{next_h}ට විනාඩි විසිපහයි",
+        "40": "{next_h}ට විනාඩි විස්සයි",
+        "45": "{next_h}ට කාලයි",
+        "50": "{next_h}ට විනාඩි දහයයි",
+        "55": "{next_h}ට විනාඩි පහයි"
       }
     },
     "short": {
@@ -236,5 +236,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Standard Sinhala past/to system: '{h}යි' (තුනයි = it's three), '{h}යි කාලයි' (quarter past), '{h} හමාරයි' (half past), '{next_h}ට කාලයි' (quarter to, next hour in dative), '{next_h}ට විනාඩි දහයයි' (ten to). Minute phrases include විනාඩි so 'තුනයි පහයි' cannot be misread as 'three and five'. Compromise: 'හමාරයි' is written with a space ('තුන හමාරයි') rather than fused ('තුනහමාරයි') because the fused form has sandhi for hours ending in හ (පහමාරයි, එකොළහමාරයි, දොළහමාරයි) that a single template cannot produce; the spaced form is understood and attested in informal writing but the fused spelling is the more usual one. Both '{h}යි' and '{h}ට' attach cleanly to all 12 hour names."
+    }
+  ]
 }

@@ -18,7 +18,7 @@ locale_bi <- list(
     month = "{n} manis",
     year = "{n} yia"
   ),
-  half = "{n} mo haf",
+  half = "{0} mo haf",
   delimiter = ", ",
   just_born = "Niufala bebe",
   stages = list(
@@ -44,6 +44,7 @@ locale_bi <- list(
       month = "{n}m",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = ""
   )
 )

@@ -23,7 +23,7 @@
    :delimiter ", "
    :just-now "ឥឡូវនេះ"
    :ago "{0}មុន"
-   :in-future "ក្នុង{0}"
-   :short {:units {:second "{n} វិនាទី" :minute "{n} នាទី" :hour "{n} ម៉ោង" :day "{n} ថ្ងៃ" :week "{n} សប្ដាហ៍" :month "{n} ខែ" :year "{n} ឆ្នាំ"} :ago "{0}មុន" :in-future "ក្នុង{0}"}
-   :compact {:units {:second "{n} វិនាទី" :minute "{n} នាទី" :hour "{n} ម៉ោង" :day "{n} ថ្ងៃ" :week "{n} សប្ដាហ៍" :month "{n} ខែ" :year "{n} ឆ្នាំ"} :half "{n}½" :delimiter "" :ago "{0}មុន" :in-future "ក្នុង{0}"}
+   :in-future "{0}ទៀត"
+   :short {:units {:second "{n} វិនាទី" :minute "{n} នាទី" :hour "{n} ម៉ោង" :day "{n} ថ្ងៃ" :week "{n} សប្ដាហ៍" :month "{n} ខែ" :year "{n} ឆ្នាំ"} :ago "{0}មុន" :in-future "{0}ទៀត"}
+   :compact {:units {:second "{n} វិនាទី" :minute "{n} នាទី" :hour "{n} ម៉ោង" :day "{n} ថ្ងៃ" :week "{n} សប្ដាហ៍" :month "{n} ខែ" :year "{n} ឆ្នាំ"} :half "{n}½" :delimiter "" :ago "{0}មុន" :in-future "{0}ទៀត"}
 })

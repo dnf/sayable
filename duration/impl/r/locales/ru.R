@@ -21,13 +21,13 @@ locale_ru <- list(
   code = "ru",
   plural = plural,
   units = list(
-    second = list(one = "{n} секунда", few = "{n} секунды", many = "{n} секунд", other = "{n} секунд"),
-    minute = list(one = "{n} минута", few = "{n} минуты", many = "{n} минут", other = "{n} минут"),
-    hour = list(one = "{n} час", few = "{n} часа", many = "{n} часов", other = "{n} часов"),
-    day = list(one = "{n} день", few = "{n} дня", many = "{n} дней", other = "{n} дней"),
-    week = list(one = "{n} неделя", few = "{n} недели", many = "{n} недель", other = "{n} недель"),
-    month = list(one = "{n} месяц", few = "{n} месяца", many = "{n} месяцев", other = "{n} месяцев"),
-    year = list(one = "{n} год", few = "{n} года", many = "{n} лет", other = "{n} лет")
+    second = list(one = "{n} секунда", few = "{n} секунды", many = "{n} секунд", other = "{n} секунды"),
+    minute = list(one = "{n} минута", few = "{n} минуты", many = "{n} минут", other = "{n} минуты"),
+    hour = list(one = "{n} час", few = "{n} часа", many = "{n} часов", other = "{n} часа"),
+    day = list(one = "{n} день", few = "{n} дня", many = "{n} дней", other = "{n} дня"),
+    week = list(one = "{n} неделя", few = "{n} недели", many = "{n} недель", other = "{n} недели"),
+    month = list(one = "{n} месяц", few = "{n} месяца", many = "{n} месяцев", other = "{n} месяца"),
+    year = list(one = "{n} год", few = "{n} года", many = "{n} лет", other = "{n} года")
   ),
   half = "{n} с половиной",
   delimiter = ", ",

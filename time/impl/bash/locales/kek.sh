@@ -10,21 +10,21 @@
 # Source: locales/kek.json
 
 _sayabletime_locale_kek() {
-    _clock_hours=('kab'\''laju' 'jun' 'kab'\''' 'oxib'\''' 'kab'\''ib'\''' 'o'\''ib'\''' 'waqib'\''' 'uqub'\''' 'wajxaqib'\''' 'b'\''elejeb'\''' 'lajeb'\''' 'junlaju')
+    _clock_hours=('kab'\''laju' 'jun' 'kiib'\''' 'oxib'\''' 'kaahib'\''' 'oob'\''' 'waqib'\''' 'wuqub'\''' 'waqxaqib'\''' 'b'\''eleeb'\''' 'lajeeb'\''' 'junlaju')
     _clock_midnight='chaq'\'' xkab'\'''
     _clock_noon='chaq'\'' chaab'\''il'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h} hoonal'
+    _clock_pattern_5='{h} hoonal rik'\''in oob'\'' minuut'
+    _clock_pattern_10='{h} hoonal rik'\''in lajeeb'\'' minuut'
+    _clock_pattern_15='{h} hoonal rik'\''in o'\''laju minuut'
+    _clock_pattern_20='{h} hoonal rik'\''in junmay minuut'
+    _clock_pattern_25='{h} hoonal rik'\''in oob'\'' xkak'\''aal minuut'
+    _clock_pattern_30='{h} hoonal rik'\''in yijach'
+    _clock_pattern_35='{h} hoonal rik'\''in o'\''laju xkak'\''aal minuut'
+    _clock_pattern_40='{h} hoonal rik'\''in kaak'\''aal minuut'
+    _clock_pattern_45='{h} hoonal rik'\''in oob'\'' roxk'\''aal minuut'
+    _clock_pattern_50='{h} hoonal rik'\''in lajeeb'\'' roxk'\''aal minuut'
+    _clock_pattern_55='{h} hoonal rik'\''in o'\''laju roxk'\''aal minuut'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

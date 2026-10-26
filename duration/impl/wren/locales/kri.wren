@@ -23,7 +23,7 @@ class KRILocale {
       "year": "{n} ia",
     }
   }
-  static half { "{n} na af" }
+  static half { "{0} ɛn af" }
   static delimiter { ", " }
   static justNow { "jos naw" }
   static ago { "{0} bak" }
@@ -54,6 +54,7 @@ class KRILocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
       "ago": "{0} bak",
       "inFuture": "na {0}",

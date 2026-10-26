@@ -17,22 +17,22 @@ nus
 	locale := SayableTimeLocale new.
 	locale code: 'nus'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'thiäär ke rou'. 'tök'. 'rou'. 'diäk'. 'ŋuan'. 'dhiëc'. 'bäkɛl'. 'dhorou'. 'bät'. 'kuɔn'. 'thiäär'. 'thiäär ku tök' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'wäl wi̱ rɛw'. 'kɛl'. 'rɛw'. 'diɔk'. 'ŋuaan'. 'dhieec'. 'bäkɛl'. 'bäärɔw'. 'bädäk'. 'bäŋuan'. 'wäl'. 'wäl wi̱ kɛl' }).
 	clock at: #midnight put: 'wakɔ̈u'.
 	clock at: #noon put: 'cäŋ kɔ̈k'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'thaar {h}'.
+		5. 'thaar {h} kɛnɛ minit dhieec'.
+		10. 'thaar {h} kɛnɛ minit wäl'.
+		15. 'thaar {h} kɛnɛ minit wäl wi̱ dhieec'.
+		20. 'thaar {h} kɛnɛ minit jiɛn rɛw'.
+		25. 'thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec'.
+		30. 'thaar {h} kɛnɛ minit jiɛn diɔk'.
+		35. 'thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec'.
+		40. 'thaar {h} kɛnɛ minit jiɛn ŋuaan'.
+		45. 'thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec'.
+		50. 'thaar {h} kɛnɛ minit jiɛn dhieec'.
+		55. 'thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

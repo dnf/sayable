@@ -18,12 +18,12 @@ proc plural_he {n} {
 proc locale_duration_he {} {
     set code {he}
     set units [dict create \
-        second [dict create one "שנייה {n}" two {שתי שניות} other "{n} שניות"] \
-        minute [dict create one "דקה {n}" two {שתי דקות} other "{n} דקות"] \
-        hour [dict create one "שעה {n}" two {שעתיים} other "{n} שעות"] \
-        day [dict create one "יום {n}" two {יומיים} other "{n} ימים"] \
-        week [dict create one "שבוע {n}" two {שבועיים} other "{n} שבועות"] \
-        month [dict create one "חודש {n}" two {חודשיים} other "{n} חודשים"] \
+        second [dict create one {שנייה} two {שתי שניות} other "{n} שניות"] \
+        minute [dict create one {דקה} two {שתי דקות} other "{n} דקות"] \
+        hour [dict create one {שעה} two {שעתיים} other "{n} שעות"] \
+        day [dict create one {יום} two {יומיים} other "{n} ימים"] \
+        week [dict create one {שבוע} two {שבועיים} other "{n} שבועות"] \
+        month [dict create one {חודש} two {חודשיים} other "{n} חודשים"] \
         year [dict create one {שנה} two {שנתיים} other "{n} שנים"] \
     ]
     set half "{0} וחצי"

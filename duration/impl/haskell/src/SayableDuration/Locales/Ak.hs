@@ -48,7 +48,10 @@ locale = DurationLocale
             { ovrSecond = Just (Simple "sɛkɛnd {n}")
             , ovrMinute = Just (Simple "sema {n}")
             , ovrHour = Just (Simple "dɔnhwere {n}")
-            , ovrDay = Just (Simple "nna {n}")
+            , ovrDay = Just (Pluralized
+              [ (One, "da {n}")
+              , (Other, "nna {n}")
+              ])
             , ovrWeek = Just (Pluralized
               [ (One, "dapɛn {n}")
               , (Other, "nnapɛn {n}")
@@ -71,7 +74,10 @@ locale = DurationLocale
             { ovrSecond = Just (Simple "sɛk {n}")
             , ovrMinute = Just (Simple "sem {n}")
             , ovrHour = Just (Simple "dɔn {n}")
-            , ovrDay = Just (Simple "nna {n}")
+            , ovrDay = Just (Pluralized
+              [ (One, "da {n}")
+              , (Other, "nna {n}")
+              ])
             , ovrWeek = Just (Pluralized
               [ (One, "dapɛn {n}")
               , (Other, "nnapɛn {n}")

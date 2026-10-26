@@ -16,8 +16,8 @@
 locale() ->
     #date_locale{
         code = "hy",
-        months = ["Հունվար", "Փետրվար", "Մարտ", "Ապրիլ", "Մայիս", "Հունիս", "Հուլիս", "Օգոստոս", "Սեպտեմբեր", "Հոկտեմբեր", "Նոյեմբեր", "Դեկտեմբեր"],
-        weekdays = ["Կիրակի", "Երկուշաբթի", "Երեքշաբթի", "Չորեքշաբթի", "Հինգշաբթի", "Ուրբաթ", "Շաբաթ"],
+        months = ["հունվար", "փետրվար", "մարտ", "ապրիլ", "մայիս", "հունիս", "հուլիս", "օգոստոս", "սեպտեմբեր", "հոկտեմբեր", "նոյեմբեր", "դեկտեմբեր"],
+        weekdays = ["կիրակի", "երկուշաբթի", "երեքշաբթի", "չորեքշաբթի", "հինգշաբթի", "ուրբաթ", "շաբաթ"],
         day_format = "{n}",
         day_format_exceptions = [],
         date_pattern = "{day} {month}",
@@ -25,12 +25,12 @@ locale() ->
         today = "այսօր",
         tomorrow = "վաղը",
         yesterday = "երեկ",
-        day_after_tomorrow = {just, "վաղը մյուս օրը"},
-        day_before_yesterday = {just, "երեկ մյուս օրը"},
+        day_after_tomorrow = {just, "վաղը չէ մյուս օրը"},
+        day_before_yesterday = {just, "երեկ չէ առաջի օրը"},
         this_weekday = {just, "այս {weekday}"},
         next_weekday = {just, "հաջորդ {weekday}"},
         last_weekday = {just, "անցած {weekday}"},
-        months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["Հնվ", "Փտր", "Մրտ", "Ապր", "Մյս", "Հնս", "Հլս", "Օգս", "Սեպ", "Հկտ", "Նոյ", "Դեկ"]}, months_in_date = nothing, weekdays = {just, ["Կիր", "Երկ", "Երք", "Չրք", "Հնգ", "Ուր", "Շբթ"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        months_in_date = {just, ["հունվարի", "փետրվարի", "մարտի", "ապրիլի", "մայիսի", "հունիսի", "հուլիսի", "օգոստոսի", "սեպտեմբերի", "հոկտեմբերի", "նոյեմբերի", "դեկտեմբերի"]},
+        short = {just, #date_compactness_override{months = {just, ["հնվ", "փտր", "մրտ", "ապր", "մյս", "հնս", "հլս", "օգս", "սեպ", "հկտ", "նոյ", "դեկ"]}, months_in_date = nothing, weekdays = {just, ["կիր", "երկ", "երք", "չրք", "հնգ", "ուր", "շբթ"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

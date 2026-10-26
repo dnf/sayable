@@ -21,7 +21,7 @@
                (cons :week "{n} wik")
                (cons :month "{n} manis")
                (cons :year "{n} yia"))
-   :half "{n} mo haf"
+   :half "{0} mo haf"
    :delimiter ", "
    :just-born "Niufala bebe"
    :stages (list (cons :newborn "Niufala bebe")
@@ -38,5 +38,6 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
 ))

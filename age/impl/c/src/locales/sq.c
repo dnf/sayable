@@ -25,9 +25,9 @@ const SaLocale sa_locale_sq = {
         { NULL, { NULL, "{n} muaj", NULL, NULL, NULL, "{n} muaj" } },
         { NULL, { NULL, "{n} vit", NULL, NULL, NULL, "{n} vjet" } }
     },
-    "{0} e gjysmë", ", ", "Sapolindur",
+    "{0} e gjysmë", ", ", "I sapolindur",
     {
-        { "Sapolindur", "Sapolindure" },
+        { "I sapolindur", "E sapolindur" },
         { "Foshnjë", "" },
         { "Fëmijë i vogël", "Fëmijë e vogël" },
         { "Fëmijë", "" },

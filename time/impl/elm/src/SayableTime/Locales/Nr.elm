@@ -22,35 +22,35 @@ locale =
     { code = "nr"
     , clock =
         { hours =
-            [ "itshumi lambili"
-            , "kunye"
-            , "kubili"
-            , "kuthathu"
-            , "kune"
-            , "kuhlanu"
-            , "isithupha"
-            , "isikhombisa"
-            , "isitshiyagalombili"
-            , "isitshiyagalolunye"
-            , "itshumi"
-            , "itshumi lanye"
+            [ "letjhumi nambili"
+            , "lokuthoma"
+            , "lesibili"
+            , "lesithathu"
+            , "lesine"
+            , "lesihlanu"
+            , "lesithandathu"
+            , "lekhomba"
+            , "lobunane"
+            , "lethoba"
+            , "letjhumi"
+            , "letjhumi nanye"
             ]
         , midnight = "phakathi kobusuku"
         , noon = "emini"
         , patterns =
             Dict.fromList
-                [ ( 0, "{h}:00" )
-                , ( 5, "{h}:05" )
-                , ( 10, "{h}:10" )
-                , ( 15, "{h}:15" )
-                , ( 20, "{h}:20" )
-                , ( 25, "{h}:25" )
-                , ( 30, "{h}:30" )
-                , ( 35, "{h}:35" )
-                , ( 40, "{h}:40" )
-                , ( 45, "{h}:45" )
-                , ( 50, "{h}:50" )
-                , ( 55, "{h}:55" )
+                [ ( 0, "ihora {h}" )
+                , ( 5, "ihora {h} nemizuzu emihlanu" )
+                , ( 10, "ihora {h} nemizuzu elitjhumi" )
+                , ( 15, "ihora {h} nemizuzu elitjhumi nanhlanu" )
+                , ( 20, "ihora {h} nemizuzu engamatjhumi amabili" )
+                , ( 25, "ihora {h} nemizuzu engamatjhumi amabili nanhlanu" )
+                , ( 30, "ihora {h} nesiquntu" )
+                , ( 35, "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu" )
+                , ( 40, "ihora {h} nemizuzu engamatjhumi amane" )
+                , ( 45, "ihora {h} nemizuzu engamatjhumi amane nanhlanu" )
+                , ( 50, "ihora {h} nemizuzu engamatjhumi amahlanu" )
+                , ( 55, "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu" )
                 ]
         }
     , short =

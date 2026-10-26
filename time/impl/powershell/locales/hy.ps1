@@ -10,22 +10,22 @@
 # Source: locales/hy.json
 
 function locale_hy {
-    $hours = @('տասներկու', 'մեկ', 'երկու', 'երեք', 'չորս', 'հինգ', 'վեց', 'յոթ', 'ութ', 'ինը', 'տաս', 'տասնմեկ')
+    $hours = @('տասներկուսն', 'մեկն', 'երկուսն', 'երեքն', 'չորսն', 'հինգն', 'վեցն', 'յոթն', 'ութն', 'ինն', 'տասն', 'տասնմեկն')
     $midnight = 'կեսգիշեր'
     $noon = 'կեսօր'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ժամը {h} է'
+    $patterns[5] = '{h} անց հինգ'
+    $patterns[10] = '{h} անց տասը'
+    $patterns[15] = '{h} անց տասնհինգ'
+    $patterns[20] = '{h} անց քսան'
+    $patterns[25] = '{h} անց քսանհինգ'
+    $patterns[30] = '{h} անց կես'
+    $patterns[35] = '{h} անց երեսունհինգ'
+    $patterns[40] = '{h} անց քառասուն'
+    $patterns[45] = '{h} անց քառասունհինգ'
+    $patterns[50] = '{h} անց հիսուն'
+    $patterns[55] = '{h} անց հիսունհինգ'
     $clock = @{
         hours = $hours
         midnight = $midnight

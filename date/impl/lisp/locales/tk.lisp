@@ -16,8 +16,8 @@
 (defparameter *locale-tk*
   (make-date-locale
    :code "tk"
-   :months (list "Ýanwar" "Fewral" "Mart" "Aprel" "Maý" "Iýun" "Iýul" "Awgust" "Sentýabr" "Oktýabr" "Noýabr" "Dekabr")
-   :weekdays (list "Ýekşenbe" "Duşenbe" "Sişenbe" "Çarşenbe" "Penşenbe" "Anna" "Şenbe")
+   :months (list "ýanwar" "fewral" "mart" "aprel" "maý" "iýun" "iýul" "awgust" "sentýabr" "oktýabr" "noýabr" "dekabr")
+   :weekdays (list "ýekşenbe" "duşenbe" "sişenbe" "çarşenbe" "penşenbe" "anna" "şenbe")
    :day-format "{n}"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
@@ -30,8 +30,8 @@
    :this-weekday "şu {weekday}"
    :next-weekday "indiki {weekday}"
    :last-weekday "geçen {weekday}"
-   :short-months (list "Ýan" "Few" "Mar" "Apr" "Maý" "Iýn" "Iýl" "Awg" "Sen" "Okt" "Noý" "Dek")
-   :short-weekdays (list "Ýek" "Duş" "Siş" "Çar" "Pen" "Ann" "Şen")
+   :short-months (list "ýan" "few" "mar" "apr" "maý" "iýn" "iýl" "awg" "sen" "okt" "noý" "dek")
+   :short-weekdays (list "ýek" "duş" "siş" "çar" "pen" "ann" "şen")
    :short-day-format "{n}"
    :short-date-pattern "{day} {month}"
    :short-date-pattern-with-year "{day} {month} {year}"

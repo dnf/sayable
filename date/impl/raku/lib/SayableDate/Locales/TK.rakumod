@@ -15,8 +15,8 @@ unit module SayableDate::Locales::TK;
 our sub locale() {
     {
         code => 'tk',
-        months => ('Ýanwar', 'Fewral', 'Mart', 'Aprel', 'Maý', 'Iýun', 'Iýul', 'Awgust', 'Sentýabr', 'Oktýabr', 'Noýabr', 'Dekabr'),
-        weekdays => ('Ýekşenbe', 'Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe'),
+        months => ('ýanwar', 'fewral', 'mart', 'aprel', 'maý', 'iýun', 'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr'),
+        weekdays => ('ýekşenbe', 'duşenbe', 'sişenbe', 'çarşenbe', 'penşenbe', 'anna', 'şenbe'),
         day-format => '{n}',
         day-format-exceptions => {},
         date-pattern => '{day} {month}',
@@ -30,8 +30,8 @@ our sub locale() {
         next-weekday => 'indiki {weekday}',
         last-weekday => 'geçen {weekday}',
         short => {
-            months => ('Ýan', 'Few', 'Mar', 'Apr', 'Maý', 'Iýn', 'Iýl', 'Awg', 'Sen', 'Okt', 'Noý', 'Dek'),
-            weekdays => ('Ýek', 'Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen'),
+            months => ('ýan', 'few', 'mar', 'apr', 'maý', 'iýn', 'iýl', 'awg', 'sen', 'okt', 'noý', 'dek'),
+            weekdays => ('ýek', 'duş', 'siş', 'çar', 'pen', 'ann', 'şen'),
             day-format => '{n}',
             date-pattern => '{day} {month}',
             date-pattern-with-year => '{day} {month} {year}',

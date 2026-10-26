@@ -18,7 +18,7 @@ proc plural_shi {n} {
 proc locale_duration_shi {} {
     set code {shi}
     set units [dict create \
-        second [dict create one "{n} tasint" few "{n} tasinin" other "{n} tasinin"] \
+        second [dict create one "{n} tasint" few "{n} tisinin" other "{n} tisinin"] \
         minute [dict create one "{n} tusdiqt" few "{n} tusdiqin" other "{n} tusdiqin"] \
         hour [dict create one "{n} tasragt" few "{n} tisragin" other "{n} tisragin"] \
         day [dict create one "{n} ass" few "{n} ussan" other "{n} ass"] \
@@ -33,13 +33,13 @@ proc locale_duration_shi {} {
     set in_future "ɣ {0}"
     set short [dict create \
         units [dict create \
-            second "{n}s" \
-            minute "{n}m" \
-            hour "{n}h" \
-            day "{n}d" \
-            week "{n}w" \
-            month "{n}mo" \
-            year "{n}y" \
+            second [dict create one "{n} tasint" few "{n} tasinin" other "{n} tasinin"] \
+            minute [dict create one "{n} tusdiqt" few "{n} tusdiqin" other "{n} tusdiqin"] \
+            hour [dict create one "{n} tasragt" few "{n} tisragin" other "{n} tisragin"] \
+            day [dict create one "{n} ass" few "{n} ussan" other "{n} ass"] \
+            week [dict create one "{n} imalass" few "{n} imalassn" other "{n} imalass"] \
+            month [dict create one "{n} ayyur" few "{n} ayyurn" other "{n} ayyur"] \
+            year [dict create one "{n} aseggas" few "{n} iseggasen" other "{n} aseggas"] \
         ] \
         ago "ɣ {0} zzrin" \
         in_future "ɣ {0}" \

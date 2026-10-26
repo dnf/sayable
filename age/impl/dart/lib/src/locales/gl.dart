@@ -27,7 +27,7 @@ final gl = AgeLocale(
   justBorn: 'Recén nacido',
   newborn: stageGendered('Recén nacido', 'Recén nacida'),
   infant: stageNeutral('Bebé'),
-  toddler: stageNeutral('Neno'),
+  toddler: stageGendered('Neno pequeno', 'Nena pequena'),
   child: stageGendered('Neno', 'Nena'),
   teenager: stageNeutral('Adolescente'),
   adult: stageGendered('Adulto', 'Adulta'),

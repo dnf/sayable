@@ -17,7 +17,7 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 var RO = sdate.DateLocale{
 	Code: "ro",
 	Months:   [12]string{"ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"},
-	Weekdays: [7]string{"duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"},
+	Weekdays: [7]string{"duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta"},
 	DayFormat: "{n}",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",
@@ -27,7 +27,7 @@ var RO = sdate.DateLocale{
 	Yesterday: "ieri",
 	DayAfterTomorrow:  strPtr("poimâine"),
 	DayBeforeYesterday: strPtr("alaltăieri"),
-	ThisWeekday:       strPtr("această {weekday}"),
+	ThisWeekday:       strPtr("{weekday} aceasta"),
 	NextWeekday:       strPtr("{weekday} viitoare"),
 	LastWeekday:       strPtr("{weekday} trecută"),
 	MonthsInDate: &[12]string{"ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"},

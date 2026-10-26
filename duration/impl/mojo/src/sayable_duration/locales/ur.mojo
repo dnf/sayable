@@ -29,7 +29,7 @@ fn build_ur() -> DurationLocale:
 
     var second = simple_unit("{n} سیکنڈ")
     var minute = simple_unit("{n} منٹ")
-    var hour = simple_unit("{n} گھنٹہ")
+    var hour = plural_unit(one="{n} گھنٹہ", other="{n} گھنٹے")
     var day = plural_unit(one="{n} دن", other="{n} دن")
     var week = plural_unit(one="{n} ہفتہ", other="{n} ہفتے")
     var month = plural_unit(one="{n} مہینہ", other="{n} مہینے")

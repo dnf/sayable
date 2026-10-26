@@ -38,7 +38,7 @@ defmodule SayableDate.Locales.GD do
         "DihAoine",
         "DiSathairne"
       ],
-      day_format: "{n}",
+      day_format: "{n}mh",
       day_format_exceptions: %{},
       date_pattern: "{day} {month}",
       date_pattern_with_year: "{day} {month} {year}",
@@ -50,7 +50,20 @@ defmodule SayableDate.Locales.GD do
       this_weekday: "{weekday} seo",
       next_weekday: "{weekday} sa tighinn",
       last_weekday: "{weekday} seo chaidh",
-      months_in_date: nil,
+      months_in_date: [
+        "dhen Fhaoilleach",
+        "dhen Ghearran",
+        "dhen Mhàrt",
+        "dhen Ghiblean",
+        "dhen Chèitean",
+        "dhen Ògmhios",
+        "dhen Iuchar",
+        "dhen Lùnastal",
+        "dhen t-Sultain",
+        "dhen Dàmhair",
+        "dhen t-Samhain",
+        "dhen Dùbhlachd"
+      ],
       short: %{
         months: [
           "Faoi",

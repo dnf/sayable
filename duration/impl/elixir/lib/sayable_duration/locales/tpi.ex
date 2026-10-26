@@ -25,7 +25,7 @@ defmodule SayableDuration.Locales.TPI do
         month: "{n} mun",
         year: "{n} yia"
       },
-      half: "{n} na hap",
+      half: "{0} na hap",
       delimiter: ", ",
       just_now: "nau tasol",
       ago: "{0} i go pinis",
@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.TPI do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} i go pinis",
         in_future: "long {0}"

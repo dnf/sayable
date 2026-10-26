@@ -14,9 +14,9 @@
 sd_plural('sw', 1, one) :- !.
 sd_plural('sw', _, other).
 
-sd_unit('sw', second, _, '{n} sekunde').
-sd_unit('sw', minute, _, '{n} dakika').
-sd_unit('sw', hour, _, '{n} saa').
+sd_unit('sw', second, _, 'sekunde {n}').
+sd_unit('sw', minute, _, 'dakika {n}').
+sd_unit('sw', hour, _, 'saa {n}').
 sd_unit('sw', day, one, 'siku {n}').
 sd_unit('sw', day, other, 'siku {n}').
 sd_unit('sw', week, one, 'wiki {n}').

@@ -32,7 +32,7 @@
    ", "
    "ឥឡូវនេះ"
    "{0}មុន"
-   "ក្នុង{0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} វិនាទី") (hash "type" "simple" "form" "{n} នាទី") (hash "type" "simple" "form" "{n} ម៉ោង") (hash "type" "simple" "form" "{n} ថ្ងៃ") (hash "type" "simple" "form" "{n} សប្ដាហ៍") (hash "type" "simple" "form" "{n} ខែ") (hash "type" "simple" "form" "{n} ឆ្នាំ") #f #f "{0}មុន" "ក្នុង{0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n} វិនាទី") (hash "type" "simple" "form" "{n} នាទី") (hash "type" "simple" "form" "{n} ម៉ោង") (hash "type" "simple" "form" "{n} ថ្ងៃ") (hash "type" "simple" "form" "{n} សប្ដាហ៍") (hash "type" "simple" "form" "{n} ខែ") (hash "type" "simple" "form" "{n} ឆ្នាំ") "{n}½" "" "{0}មុន" "ក្នុង{0}")
+   "{0}ទៀត"
+   (duration-compactness-override (hash "type" "simple" "form" "{n} វិនាទី") (hash "type" "simple" "form" "{n} នាទី") (hash "type" "simple" "form" "{n} ម៉ោង") (hash "type" "simple" "form" "{n} ថ្ងៃ") (hash "type" "simple" "form" "{n} សប្ដាហ៍") (hash "type" "simple" "form" "{n} ខែ") (hash "type" "simple" "form" "{n} ឆ្នាំ") #f #f "{0}មុន" "{0}ទៀត")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} វិនាទី") (hash "type" "simple" "form" "{n} នាទី") (hash "type" "simple" "form" "{n} ម៉ោង") (hash "type" "simple" "form" "{n} ថ្ងៃ") (hash "type" "simple" "form" "{n} សប្ដាហ៍") (hash "type" "simple" "form" "{n} ខែ") (hash "type" "simple" "form" "{n} ឆ្នាំ") "{n}½" "" "{0}មុន" "{0}ទៀត")
   ))

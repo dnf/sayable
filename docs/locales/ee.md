@@ -6,47 +6,55 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ee.json](../../locales/ee.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Ewe 'ga {h}' (ga = o'clock, from gaƒoƒo 'bell strike'), additive 'ga {h} kple aɖabaƒoƒo N' (aɖabaƒoƒo = minute, already used by this locale) and 'ga {h} kple afã' (half). Ewe numerals: atɔ̃, ewo, wuiatɔ̃, blaeve, blaetɔ̃, blaene, blaatɔ̃ with 'vɔ' for the units. Standard 12-hour count. No subtractive form: Ewe speakers mostly state hour + minutes.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal                | Short                 | Compact  |
-| ----------------- | --------------------- | --------------------- | -------- |
-| Born today        | Evi yeye              | Evi yeye              | Evi yeye |
-| 1 day             | ŋkeke 1               | ŋkekewo 1             | 1d       |
-| 3 days            | ŋkekewo 3             | ŋkekewo 3             | 3d       |
-| 6 days            | ŋkekewo 6             | ŋkekewo 6             | 6d       |
-| 1 week            | kɔsiɖa 1              | kɔsiɖa 1              | 1w       |
-| 1 week, 1 day     | kɔsiɖa 1, ŋkeke 1     | kɔsiɖa 1, ŋkekewo 1   | 1w1d     |
-| 2 weeks           | kɔsiɖawo 2            | kɔsiɖawo 2            | 2w       |
-| 2 weeks, 3 days   | kɔsiɖawo 2, ŋkekewo 3 | kɔsiɖawo 2, ŋkekewo 3 | 2w3d     |
-| 3 months          | ɣletiwo 3             | ɣletiwo 3             | 3m       |
-| 6 months          | ɣletiwo 6             | ɣletiwo 6             | 6m       |
-| 11 months         | ɣletiwo 11            | ɣletiwo 11            | 11m      |
-| 12 months         | ɣletiwo 12            | ɣletiwo 12            | 12m      |
-| 23 months         | ɣletiwo 23            | ɣletiwo 23            | 23m      |
-| 2 years           | ƒewo 2                | ƒewo 2                | 2y       |
-| 2 years, 1 month  | ƒewo 2, ɣleti 1       | ƒewo 2, ɣleti 1       | 2y1m     |
-| 2 years, 6 months | ƒewo 2, ɣletiwo 6     | ƒewo 2, ɣletiwo 6     | 2y6m     |
-| 3 years           | ƒewo 3                | ƒewo 3                | 3y       |
-| 3½ years          | ƒewo 3 kple afã       | ƒewo 3 kple afã       | 3½y      |
-| 5 years           | ƒewo 5                | ƒewo 5                | 5y       |
-| 5½ years          | ƒewo 5 kple afã       | ƒewo 5 kple afã       | 5½y      |
-| 7 years           | ƒewo 7                | ƒewo 7                | 7y       |
-| 10 years          | ƒewo 10               | ƒewo 10               | 10y      |
-| 18 years          | ƒewo 18               | ƒewo 18               | 18y      |
-| 45 years          | ƒewo 45               | ƒewo 45               | 45y      |
+| Age               | Normal            | Short             | Compact  |
+| ----------------- | ----------------- | ----------------- | -------- |
+| Born today        | Evi yeye          | Evi yeye          | Evi yeye |
+| 1 day             | ŋkeke 1           | ŋkeke 1           | 1d       |
+| 3 days            | ŋkeke 3           | ŋkeke 3           | 3d       |
+| 6 days            | ŋkeke 6           | ŋkeke 6           | 6d       |
+| 1 week            | kɔsiɖa 1          | kɔsiɖa 1          | 1w       |
+| 1 week, 1 day     | kɔsiɖa 1, ŋkeke 1 | kɔsiɖa 1, ŋkeke 1 | 1w1d     |
+| 2 weeks           | kɔsiɖa 2          | kɔsiɖa 2          | 2w       |
+| 2 weeks, 3 days   | kɔsiɖa 2, ŋkeke 3 | kɔsiɖa 2, ŋkeke 3 | 2w3d     |
+| 3 months          | ɣleti 3           | ɣleti 3           | 3m       |
+| 6 months          | ɣleti 6           | ɣleti 6           | 6m       |
+| 11 months         | ɣleti 11          | ɣleti 11          | 11m      |
+| 12 months         | ɣleti 12          | ɣleti 12          | 12m      |
+| 23 months         | ɣleti 23          | ɣleti 23          | 23m      |
+| 2 years           | ƒe 2              | ƒe 2              | 2y       |
+| 2 years, 1 month  | ƒe 2, ɣleti 1     | ƒe 2, ɣleti 1     | 2y1m     |
+| 2 years, 6 months | ƒe 2, ɣleti 6     | ƒe 2, ɣleti 6     | 2y6m     |
+| 3 years           | ƒe 3              | ƒe 3              | 3y       |
+| 3½ years          | ƒe 3 kple afã     | ƒe 3 kple afã     | 3½y      |
+| 5 years           | ƒe 5              | ƒe 5              | 5y       |
+| 5½ years          | ƒe 5 kple afã     | ƒe 5 kple afã     | 5½y      |
+| 7 years           | ƒe 7              | ƒe 7              | 7y       |
+| 10 years          | ƒe 10             | ƒe 10             | 10y      |
+| 18 years          | ƒe 18             | ƒe 18             | 18y      |
+| 45 years          | ƒe 45             | ƒe 45             | 45y      |
 
 ### Stages
 
-| Stage    | Label      |
-| -------- | ---------- |
-| Newborn  | Evi yeye   |
-| Infant   | Ɖevi       |
-| Toddler  | Ɖevi sue   |
-| Child    | Ɖevi       |
-| Teenager | Ŋutsuviwo  |
-| Adult    | Ame tsitsi |
+| Stage    | Label              |
+| -------- | ------------------ |
+| Newborn  | Evi yeye           |
+| Infant   | Ɖevi               |
+| Toddler  | Ɖevi sue           |
+| Child    | Ɖevi               |
+| Teenager | Ɖekakpui / Ɖetugbi |
+| Adult    | Ame tsitsi         |
 
 ## Date
 
@@ -65,69 +73,69 @@ Plural rule: `one_other` (categories: one, other)
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal          | Compact |
-| -------------------- | --------------- | ------- |
-| Today                | egbe            | egbe    |
-| Tomorrow             | etsɔ            | etsɔ    |
-| Yesterday            | etso            | etso    |
-| Day after tomorrow   | etsɔ megbe      | 17/3    |
-| Day before yesterday | etso nyitsɔ     | 13/3    |
-| This Thursday (+5)   | Yawoɖa sia      | 20/3    |
-| Last Monday (-4)     | Braɖa si va yi  | 11/3    |
-| Next Wednesday (+12) | Yawoɖa si gbɔna | 27/3    |
-| Same month (+20)     | 4 Afɔfĩe        | 4/4     |
-| Different year       | 10 Dzove 2026   | 10/1/26 |
+| Offset               | Normal          | Compact       |
+| -------------------- | --------------- | ------------- |
+| Today                | egbe            | egbe          |
+| Tomorrow             | etsɔ si gbɔna   | etsɔ si gbɔna |
+| Yesterday            | etsɔ si va yi   | etsɔ si va yi |
+| Day after tomorrow   | nyitsɔ si gbɔna | 17/3          |
+| Day before yesterday | nyitsɔ si va yi | 13/3          |
+| This Thursday (+5)   | Yawoɖa sia      | 20/3          |
+| Last Tuesday (-4)    | Blaɖa si va yi  | 11/3          |
+| Next Thursday (+12)  | Yawoɖa si gbɔna | 27/3          |
+| Same year (+20)      | 4 Afɔfĩe        | 4/4           |
+| Different year       | 10 Dzove 2026   | 10/1/26       |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                     | Short                 | Compact |
-| --------------------- | -------------------------- | --------------------- | ------- |
-| 0 seconds             | fifia                      | fifia                 | fifia   |
-| 1 second              | sekend 1                   | sek. 1                | 1s      |
-| 30 seconds            | sekendwo 30                | sek. 30               | 30s     |
-| 1 minute              | aɖabaƒoƒo 1                | aɖaba. 1              | 1m      |
-| 2 minutes, 15 seconds | aɖabaƒoƒowo 2, sekendwo 15 | aɖaba. 2, sek. 15     | 2m15s   |
-| 5 minutes             | aɖabaƒoƒowo 5              | aɖaba. 5              | 5m      |
-| 45 minutes            | aɖabaƒoƒowo 45             | aɖaba. 45             | 45m     |
-| 1 hour                | gaƒoƒo 1                   | gaƒ. 1                | 1h      |
-| 1½ hours              | gaƒoƒowo 1 kple afã        | gaƒ. 1 kple afã       | 1½h     |
-| 3 hours               | gaƒoƒowo 3                 | gaƒ. 3                | 3h      |
-| 6 hours               | gaƒoƒowo 6                 | gaƒ. 6                | 6h      |
-| 1 day                 | ŋkeke 1                    | ŋkekewo 1             | 1d      |
-| 1½ days               | ŋkekewo 1 kple afã         | ŋkekewo 1 kple afã    | 1½d     |
-| 3 days                | ŋkekewo 3                  | ŋkekewo 3             | 3d      |
-| 1 week                | kɔsiɖa 1                   | kɔsiɖa 1              | 1w      |
-| 2 weeks, 3 days       | kɔsiɖawo 2, ŋkekewo 3      | kɔsiɖawo 2, ŋkekewo 3 | 2w3d    |
-| 1 month               | ɣleti 1                    | ɣleti 1               | 1m      |
-| 6 months              | ɣletiwo 6                  | ɣletiwo 6             | 6m      |
-| 1 year                | ƒe 1                       | ƒe 1                  | 1y      |
-| 2 years, 3 months     | ƒewo 2, ɣletiwo 3          | ƒewo 2, ɣletiwo 3     | 2y3m    |
+| Duration              | Normal                 | Short             | Compact |
+| --------------------- | ---------------------- | ----------------- | ------- |
+| 0 seconds             | fifia                  | fifia             | fifia   |
+| 1 second              | sekend 1               | sek. 1            | 1s      |
+| 30 seconds            | sekend 30              | sek. 30           | 30s     |
+| 1 minute              | aɖabaƒoƒo 1            | aɖaba. 1          | 1m      |
+| 2 minutes, 15 seconds | aɖabaƒoƒo 2, sekend 15 | aɖaba. 2, sek. 15 | 2m15s   |
+| 5 minutes             | aɖabaƒoƒo 5            | aɖaba. 5          | 5m      |
+| 45 minutes            | aɖabaƒoƒo 45           | aɖaba. 45         | 45m     |
+| 1 hour                | gaƒoƒo 1               | gaƒ. 1            | 1h      |
+| 1½ hours              | gaƒoƒo 1 kple afã      | gaƒ. 1 kple afã   | 1½h     |
+| 3 hours               | gaƒoƒo 3               | gaƒ. 3            | 3h      |
+| 6 hours               | gaƒoƒo 6               | gaƒ. 6            | 6h      |
+| 1 day                 | ŋkeke 1                | ŋkeke 1           | 1d      |
+| 1½ days               | ŋkeke 1 kple afã       | ŋkeke 1 kple afã  | 1½d     |
+| 3 days                | ŋkeke 3                | ŋkeke 3           | 3d      |
+| 1 week                | kɔsiɖa 1               | kɔsiɖa 1          | 1w      |
+| 2 weeks, 3 days       | kɔsiɖa 2, ŋkeke 3      | kɔsiɖa 2, ŋkeke 3 | 2w3d    |
+| 1 month               | ɣleti 1                | ɣleti 1           | 1m      |
+| 6 months              | ɣleti 6                | ɣleti 6           | 6m      |
+| 1 year                | ƒe 1                   | ƒe 1              | 1y      |
+| 2 years, 3 months     | ƒe 2, ɣleti 3          | ƒe 2, ɣleti 3     | 2y3m    |
 
 ### Relative time
 
-| Offset        | Normal               | Compact   |
-| ------------- | -------------------- | --------- |
-| 5 minutes ago | ɖe aɖabaƒoƒowo 5 me  | ɖe 5m me  |
-| 2 hours ago   | ɖe gaƒoƒowo 2 me     | ɖe 2h me  |
-| in 30 minutes | le aɖabaƒoƒowo 30 me | le 30m me |
-| in 3 hours    | le gaƒoƒowo 3 me     | le 3h me  |
+| Offset        | Normal               | Compact     |
+| ------------- | -------------------- | ----------- |
+| 5 minutes ago | aɖabaƒoƒo 5 si va yi | 5m si va yi |
+| 2 hours ago   | gaƒoƒo 2 si va yi    | 2h si va yi |
+| in 30 minutes | le aɖabaƒoƒo 30 me   | le 30m me   |
+| in 3 hours    | le gaƒoƒo 3 me       | le 3h me    |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal     | Short    | Compact |
-| --------------- | ---------- | -------- | ------- |
-| Midnight        | zã titina  | 12:00 AM | 12:00a  |
-| 1:00 AM         | ɖeka:00    | 1:00 AM  | 1:00a   |
-| 5 past 9        | asieke:05  | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ewo:15     | 10:15 AM | 10:15a  |
-| Half past 11    | wuiɖeka:30 | 11:30 AM | 11:30a  |
-| Noon            | ŋdɔ        | 12:00 PM | 12:00p  |
-| Quarter to 3    | eve:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | atɔ̃:55    | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | enyi:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ewo:30     | 10:30 PM | 10:30p  |
-| 11:58 PM        | zã titina  | 11:58 PM | 11:58p  |
+| Time            | Normal                                 | Short    | Compact |
+| --------------- | -------------------------------------- | -------- | ------- |
+| Midnight        | zã titina                              | 12:00 AM | 12:00a  |
+| 1:00 AM         | ga ɖeka                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | ga asieke kple aɖabaƒoƒo atɔ̃          | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ga ewo kple aɖabaƒoƒo wuiatɔ̃          | 10:15 AM | 10:15a  |
+| Half past 11    | ga wuiɖeka kple afã                    | 11:30 AM | 11:30a  |
+| Noon            | ŋdɔ                                    | 12:00 PM | 12:00p  |
+| Quarter to 3    | ga eve kple aɖabaƒoƒo blaene vɔ atɔ̃   | 2:45 PM  | 2:45p   |
+| 5 to 6          | ga atɔ̃ kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃ | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ga enyi                                | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ga ewo kple afã                        | 10:30 PM | 10:30p  |
+| 11:58 PM        | zã titina                              | 11:58 PM | 11:58p  |

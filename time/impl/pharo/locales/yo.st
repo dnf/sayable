@@ -18,21 +18,21 @@ yo
 	locale code: 'yo'.
 	clock := Dictionary new.
 	clock at: #hours put: (OrderedCollection withAll: { 'méjìlá'. 'kan'. 'méjì'. 'mẹ́ta'. 'mẹ́rin'. 'márùn-ún'. 'mẹ́fà'. 'méje'. 'mẹ́jọ'. 'mẹ́sàn-án'. 'mẹ́wàá'. 'mọ́kànlá' }).
-	clock at: #midnight put: 'àárọ̀ òru'.
-	clock at: #noon put: 'ọ̀sán'.
+	clock at: #midnight put: 'ọ̀gànjọ́ òru'.
+	clock at: #noon put: 'ọ̀sán gangan'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'aago {h}'.
+		5. 'aago {h} kọjá ìṣẹ́jú márùn-ún'.
+		10. 'aago {h} kọjá ìṣẹ́jú mẹ́wàá'.
+		15. 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún'.
+		20. 'aago {h} kọjá ogún ìṣẹ́jú'.
+		25. 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n'.
+		30. 'aago {h} àbọ̀'.
+		35. 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n'.
+		40. 'aago {next_h} kù ogún ìṣẹ́jú'.
+		45. 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún'.
+		50. 'aago {next_h} kù ìṣẹ́jú mẹ́wàá'.
+		55. 'aago {next_h} kù ìṣẹ́jú márùn-ún'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

@@ -51,6 +51,7 @@ export const shn: DurationLocale = {
       month:  '{n}mo',
       year:   '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} ပူၼ်ႉမႃး',
     inFuture: 'ထႅင်ႈ {0}',

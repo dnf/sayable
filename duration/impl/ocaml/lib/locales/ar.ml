@@ -16,7 +16,7 @@ let locale : duration_locale =
   ; plural = (fun n -> if n = 0 then Zero else if n = 1 then One else if n = 2 then Two else let mod100 = n mod 100 in if mod100 >= 3 && mod100 <= 10 then Few else if mod100 >= 11 && mod100 <= 99 then Many else Other)
   ; second = Pluralized
       [ (Zero, "{n} ثانية")
-      ; (One, "ثانية واحدة")
+      ; (One, "ثانية")
       ; (Two, "ثانيتان")
       ; (Few, "{n} ثوانٍ")
       ; (Many, "{n} ثانية")
@@ -24,7 +24,7 @@ let locale : duration_locale =
       ]
   ; minute = Pluralized
       [ (Zero, "{n} دقيقة")
-      ; (One, "دقيقة واحدة")
+      ; (One, "دقيقة")
       ; (Two, "دقيقتان")
       ; (Few, "{n} دقائق")
       ; (Many, "{n} دقيقة")
@@ -32,7 +32,7 @@ let locale : duration_locale =
       ]
   ; hour = Pluralized
       [ (Zero, "{n} ساعة")
-      ; (One, "ساعة واحدة")
+      ; (One, "ساعة")
       ; (Two, "ساعتان")
       ; (Few, "{n} ساعات")
       ; (Many, "{n} ساعة")
@@ -122,14 +122,7 @@ let locale : duration_locale =
       ; ovr_hour = Some (Simple "{n} س")
       ; ovr_day = Some (Simple "{n} ي")
       ; ovr_week = Some (Simple "{n} أ")
-      ; ovr_month = Some (Pluralized
-        [ (Zero, "{n} شهر")
-        ; (One, "شهر")
-        ; (Two, "شهران")
-        ; (Few, "{n} أشهر")
-        ; (Many, "{n} شهرًا")
-        ; (Other, "{n} شهر")
-        ])
+      ; ovr_month = Some (Simple "{n} شهر")
       ; ovr_year = Some (Simple "{n} سنة")
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""

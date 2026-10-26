@@ -27,7 +27,7 @@ function locale_nb {
     $half = '{n}½'
     $delimiter = ', '
     $justNow = 'akkurat nå'
-    $ago = '{0} siden'
+    $ago = 'for {0} siden'
     $inFuture = 'om {0}'
     $short = @{
         units = @{
@@ -39,7 +39,7 @@ function locale_nb {
             month = '{n} md.'
             year = '{n} år'
         }
-        ago = '{0} siden'
+        ago = 'for {0} siden'
         inFuture = 'om {0}'
     }
     $compact = @{
@@ -53,7 +53,7 @@ function locale_nb {
             year = '{n}å'
         }
         delimiter = ''
-        ago = '{0} siden'
+        ago = 'for {0} siden'
         inFuture = 'om {0}'
     }
     return @{

@@ -73,7 +73,7 @@ fn build_ca() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{n} i mig",
+        half="{0} i mig",
         delimiter=", ",
         just_born="Nounat",
         newborn=newborn,

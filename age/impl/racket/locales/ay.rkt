@@ -21,10 +21,10 @@
   (age-locale
    "ay"
    (lambda (n) "other")
-   (hash "day" (hash "type" "simple" "form" "uru {n}")
-         "week" (hash "type" "simple" "form" "simana {n}")
-         "month" (hash "type" "simple" "form" "phaxsi {n}")
-         "year" (hash "type" "simple" "form" "mara {n}"))
+   (hash "day" (hash "type" "simple" "form" "{n} uru")
+         "week" (hash "type" "simple" "form" "{n} simana")
+         "month" (hash "type" "simple" "form" "{n} phaxsi")
+         "year" (hash "type" "simple" "form" "{n} mara"))
    "{0} chika"
    ", "
    "Wawa machaqa"
@@ -35,5 +35,5 @@
          "teenager" (stage-label "Wayna" #f #f)
          "adult" (stage-label "Jaqi" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} ur.") (hash "type" "simple" "form" "{n} sim.") (hash "type" "simple" "form" "{n} phx.") (hash "type" "simple" "form" "{n} mr.") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

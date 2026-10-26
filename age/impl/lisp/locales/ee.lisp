@@ -17,10 +17,10 @@
   (make-age-locale
    :code "ee"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :day '((:one . "ŋkeke {n}") (:other . "ŋkekewo {n}")))
-               (cons :week '((:one . "kɔsiɖa {n}") (:other . "kɔsiɖawo {n}")))
-               (cons :month '((:one . "ɣleti {n}") (:other . "ɣletiwo {n}")))
-               (cons :year '((:one . "ƒe {n}") (:other . "ƒewo {n}"))))
+   :units (list (cons :day "ŋkeke {n}")
+               (cons :week "kɔsiɖa {n}")
+               (cons :month "ɣleti {n}")
+               (cons :year "ƒe {n}"))
    :half "{0} kple afã"
    :delimiter ", "
    :just-born "Evi yeye"
@@ -28,12 +28,12 @@
                  (cons :infant "Ɖevi")
                  (cons :toddler "Ɖevi sue")
                  (cons :child "Ɖevi")
-                 (cons :teenager "Ŋutsuviwo")
+                 (cons :teenager '((:m . "Ɖekakpui") (:f . "Ɖetugbi")))
                  (cons :adult "Ame tsitsi"))
-   :short-units (list (cons :day "ŋkekewo {n}")
-                       (cons :week '((:one . "kɔsiɖa {n}") (:other . "kɔsiɖawo {n}")))
-                       (cons :month '((:one . "ɣleti {n}") (:other . "ɣletiwo {n}")))
-                       (cons :year '((:one . "ƒe {n}") (:other . "ƒewo {n}"))))
+   :short-units (list (cons :day "ŋkeke {n}")
+                       (cons :week "kɔsiɖa {n}")
+                       (cons :month "ɣleti {n}")
+                       (cons :year "ƒe {n}"))
    :compact-units (list (cons :day "{n}d")
                        (cons :week "{n}w")
                        (cons :month "{n}m")

@@ -25,7 +25,7 @@ let DV* = DurationLocale(
     "month": simpleUnit("{n} މަސް"),
     "year": simpleUnit("{n} އަހަރު"),
   }.toOrderedTable,
-  half: "{0} ބައި",
+  half: "{n}½",
   delimiter: "، ",
   justNow: "މިހާރު",
   ago: "މީގެ {0} ކުރިން",

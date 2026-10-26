@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | übermorgen          | 17.3.   |
 | Day before yesterday | vorgestern          | 13.3.   |
 | This Thursday (+5)   | diesen Donnerstag   | 20.3.   |
-| Last Monday (-4)     | letzten Dienstag    | 11.3.   |
-| Next Wednesday (+12) | nächsten Donnerstag | 27.3.   |
-| Same month (+20)     | 4. April            | 4.4.    |
+| Last Tuesday (-4)    | letzten Dienstag    | 11.3.   |
+| Next Thursday (+12)  | nächsten Donnerstag | 27.3.   |
+| Same year (+20)      | 4. April            | 4.4.    |
 | Different year       | 10. Januar 2026     | 10.1.26 |
 
 ## Duration

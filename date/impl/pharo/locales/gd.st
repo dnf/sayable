@@ -18,7 +18,7 @@ gd
 	locale code: 'gd'.
 	locale months: (OrderedCollection withAll: { 'Am Faoilleach'. 'An Gearran'. 'Am Màrt'. 'An Giblean'. 'An Cèitean'. 'An t-Ògmhios'. 'An t-Iuchar'. 'An Lùnastal'. 'An t-Sultain'. 'An Dàmhair'. 'An t-Samhain'. 'An Dùbhlachd' }).
 	locale weekdays: (OrderedCollection withAll: { 'DiDòmhnaich'. 'DiLuain'. 'DiMàirt'. 'DiCiadain'. 'DiarDaoin'. 'DihAoine'. 'DiSathairne' }).
-	locale dayFormat: '{n}'.
+	locale dayFormat: '{n}mh'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
 	locale datePatternWithYear: '{day} {month} {year}'.
@@ -30,7 +30,7 @@ gd
 	locale thisWeekday: '{weekday} seo'.
 	locale nextWeekday: '{weekday} sa tighinn'.
 	locale lastWeekday: '{weekday} seo chaidh'.
-	locale monthsInDate: nil.
+	locale monthsInDate: (OrderedCollection withAll: { 'dhen Fhaoilleach'. 'dhen Ghearran'. 'dhen Mhàrt'. 'dhen Ghiblean'. 'dhen Chèitean'. 'dhen Ògmhios'. 'dhen Iuchar'. 'dhen Lùnastal'. 'dhen t-Sultain'. 'dhen Dàmhair'. 'dhen t-Samhain'. 'dhen Dùbhlachd' }).
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'Faoi'. 'Gearr'. 'Màrt'. 'Gibl'. 'Cèit'. 'Ògmh'. 'Iuch'. 'Lùna'. 'Sult'. 'Dàmh'. 'Samh'. 'Dùbh' }).
 		#weekdays. (OrderedCollection withAll: { 'DiD'. 'DiL'. 'DiM'. 'DiC'. 'Dia'. 'Dih'. 'DiS' }).

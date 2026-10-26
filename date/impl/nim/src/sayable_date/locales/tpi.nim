@@ -25,7 +25,7 @@ let TPI* = DateLocale(
   tomorrow: "tumora",
   yesterday: "asde",
   dayAfterTomorrow: some("haptumora"),
-  dayBeforeYesterday: some("asde bipo"),
+  dayBeforeYesterday: some("hapasde"),
   thisWeekday: some("dispela {weekday}"),
   nextWeekday: some("{weekday} bihain"),
   lastWeekday: some("{weekday} bipo"),

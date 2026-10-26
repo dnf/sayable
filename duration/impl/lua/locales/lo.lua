@@ -23,10 +23,10 @@ M.units = {
     year = "{n} ປີ",
 }
 M.half = "{0}ເຄິ່ງ"
-M.delimiter = ""
+M.delimiter = " "
 M.just_now = "ຫາກໍ"
 M.ago = "{0} ກ່ອນ"
-M.in_future = "ໃນ {0}"
+M.in_future = "ໃນອີກ {0}"
 M.short = {
     units = {
         second = "{n} ວິ.",
@@ -38,7 +38,7 @@ M.short = {
         year = "{n} ປ.",
     },
     ago = "{0} ກ່ອນ",
-    in_future = "ໃນ {0}",
+    in_future = "ໃນອີກ {0}",
 }
 M.compact = {
     units = {
@@ -47,13 +47,13 @@ M.compact = {
         hour = "{n}h",
         day = "{n}d",
         week = "{n}w",
-        month = "{n}m",
+        month = "{n}mo",
         year = "{n}y",
     },
     half = "{n}½",
     delimiter = "",
     ago = "{0} ກ່ອນ",
-    in_future = "ໃນ {0}",
+    in_future = "ໃນອີກ {0}",
 }
 
 return M

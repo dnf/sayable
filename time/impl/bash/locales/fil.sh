@@ -10,21 +10,21 @@
 # Source: locales/fil.json
 
 _sayabletime_locale_fil() {
-    _clock_hours=('dose' 'una' 'dos' 'tres' 'kwatro' 'singko' 'seis' 'syete' 'otso' 'nuwebe' 'diyes' 'onse')
+    _clock_hours=('alas-dose' 'ala-una' 'alas-dos' 'alas-tres' 'alas-kuwatro' 'alas-singko' 'alas-sais' 'alas-siyete' 'alas-otso' 'alas-nuwebe' 'alas-diyes' 'alas-onse')
     _clock_midnight='hatinggabi'
     _clock_noon='tanghali'
-    _clock_pattern_0='{h} o'\''clock'
-    _clock_pattern_5='lima dan {h}'
-    _clock_pattern_10='sampu dan {h}'
-    _clock_pattern_15='labinlima dan {h}'
-    _clock_pattern_20='dalawampu dan {h}'
-    _clock_pattern_25='dalawampu'\''t lima dan {h}'
-    _clock_pattern_30='tatlumpu dan {h}'
-    _clock_pattern_35='dalawampu'\''t lima bago mag {next_h}'
-    _clock_pattern_40='dalawampu bago mag {next_h}'
-    _clock_pattern_45='labinlima bago mag {next_h}'
-    _clock_pattern_50='sampu bago mag {next_h}'
-    _clock_pattern_55='lima bago mag {next_h}'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} y singko'
+    _clock_pattern_10='{h} y diyes'
+    _clock_pattern_15='{h} y kinse'
+    _clock_pattern_20='{h} y beynte'
+    _clock_pattern_25='{h} y beynte singko'
+    _clock_pattern_30='{h} y medya'
+    _clock_pattern_35='menos beynte singko para {next_h}'
+    _clock_pattern_40='menos beynte para {next_h}'
+    _clock_pattern_45='menos kinse para {next_h}'
+    _clock_pattern_50='menos diyes para {next_h}'
+    _clock_pattern_55='menos singko para {next_h}'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

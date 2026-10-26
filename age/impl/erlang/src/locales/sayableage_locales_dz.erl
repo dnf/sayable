@@ -21,7 +21,7 @@ locale() ->
         week = {simple, "བདུན་ཕྲག་ {n}"},
         month = {simple, "ཟླ་ {n}"},
         year = {simple, "ལོ་ {n}"},
-        half = "{0} ཕྱེད",
+        half = "{0} དང་ཕྱེད",
         delimiter = " ",
         just_born = "གསར་སྐྱེས",
         stages = #stages{newborn = {neutral, "གསར་སྐྱེས"}, infant = {neutral, "ཕྲུ་གུ"}, toddler = {neutral, "བྱིས་པ"}, child = {neutral, "ཨ་ཅུང"}, teenager = {neutral, "ན་གཞོན"}, adult = {neutral, "མི་ལོན་ཚང"}},

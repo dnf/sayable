@@ -29,14 +29,14 @@ class AKLocale {
       "infant": "Akwadaa",
       "toddler": "Abofra",
       "child": "Abofra",
-      "teenager": "Abarimaa",
+      "teenager": {"m": "Abarimaa", "f": "Abaayewa"},
       "adult": "Ɔpanyin",
     }
   }
   static short {
     return {
       "units": {
-        "day": "nna {n}",
+        "day": {"one": "da {n}", "other": "nna {n}"},
         "week": {"one": "dapɛn {n}", "other": "nnapɛn {n}"},
         "month": {"one": "bosome {n}", "other": "abosome {n}"},
         "year": {"one": "afe {n}", "other": "mfe {n}"},
@@ -46,7 +46,7 @@ class AKLocale {
   static compact {
     return {
       "units": {
-        "day": "nna {n}",
+        "day": {"one": "da {n}", "other": "nna {n}"},
         "week": {"one": "dapɛn {n}", "other": "nnapɛn {n}"},
         "month": {"one": "bos {n}", "other": "abos {n}"},
         "year": {"one": "afe {n}", "other": "mfe {n}"},

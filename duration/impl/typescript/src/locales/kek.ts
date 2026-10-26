@@ -51,6 +51,7 @@ export const kek: DurationLocale = {
       month:  '{n}mo',
       year:   '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} qakab\'',
     inFuture: 'chi {0}',

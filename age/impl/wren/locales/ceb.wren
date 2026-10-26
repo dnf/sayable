@@ -20,7 +20,7 @@ class CEBLocale {
       "year": "{n} ka tuig",
     }
   }
-  static half { "{n}½" }
+  static half { "{0} ug tunga" }
   static delimiter { ", " }
   static justBorn { "Bag-ong natawo" }
   static stages {

@@ -49,7 +49,7 @@ fn build_sn() -> DateLocale:
     var today = "nhasi"
     var tomorrow = "mangwana"
     var yesterday = "nezuro"
-    var day_after_tomorrow = "mangwanani"
+    var day_after_tomorrow = "kuswera mangwana"
     var day_before_yesterday = "nezuro rakapera"
     var this_weekday = "{weekday} ino"
     var next_weekday = "{weekday} inotevera"

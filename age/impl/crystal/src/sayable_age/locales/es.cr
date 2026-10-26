@@ -19,7 +19,7 @@ module SayableAge
         "month" => UnitForms.new(one: "{n} mes", other: "{n} meses"),
         "year" => UnitForms.new(one: "{n} año", other: "{n} años"),
       },
-      half: "{n} y medio",
+      half: "{0} y medio",
       delimiter: ", ",
       just_born: "Recién nacido",
       stages: {

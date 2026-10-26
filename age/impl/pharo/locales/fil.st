@@ -32,7 +32,7 @@ fil
 		#toddler. 'Batang paslit'.
 		#child. 'Bata'.
 		#teenager. 'Tinedyer'.
-		#adult. 'Matanda'.
+		#adult. 'Adulto'.
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {

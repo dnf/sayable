@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | kesho kutwa       | 17/3    |
 | Day before yesterday | juzi              | 13/3    |
 | This Thursday (+5)   | Alhamisi hii      | 20/3    |
-| Last Monday (-4)     | Jumanne iliyopita | 11/3    |
-| Next Wednesday (+12) | Alhamisi ijayo    | 27/3    |
-| Same month (+20)     | 4 Aprili          | 4/4     |
+| Last Tuesday (-4)    | Jumanne iliyopita | 11/3    |
+| Next Thursday (+12)  | Alhamisi ijayo    | 27/3    |
+| Same year (+20)      | 4 Aprili          | 4/4     |
 | Different year       | 10 Januari 2026   | 10/1/26 |
 
 ## Duration
@@ -85,16 +85,16 @@ Relative to Saturday, March 15, 2025.
 | Duration              | Normal               | Short                | Compact        |
 | --------------------- | -------------------- | -------------------- | -------------- |
 | 0 seconds             | sasa hivi            | sasa hivi            | sasa hivi      |
-| 1 second              | 1 sekunde            | sekunde 1            | sek 1          |
-| 30 seconds            | 30 sekunde           | sekunde 30           | sek 30         |
-| 1 minute              | 1 dakika             | dakika 1             | dak 1          |
-| 2 minutes, 15 seconds | 2 dakika, 15 sekunde | dakika 2, sekunde 15 | dak 2sek 15    |
-| 5 minutes             | 5 dakika             | dakika 5             | dak 5          |
-| 45 minutes            | 45 dakika            | dakika 45            | dak 45         |
-| 1 hour                | 1 saa                | saa 1                | saa 1          |
-| 1½ hours              | 1 saa na nusu        | saa 1 na nusu        | saa 1½         |
-| 3 hours               | 3 saa                | saa 3                | saa 3          |
-| 6 hours               | 6 saa                | saa 6                | saa 6          |
+| 1 second              | sekunde 1            | sekunde 1            | sek 1          |
+| 30 seconds            | sekunde 30           | sekunde 30           | sek 30         |
+| 1 minute              | dakika 1             | dakika 1             | dak 1          |
+| 2 minutes, 15 seconds | dakika 2, sekunde 15 | dakika 2, sekunde 15 | dak 2sek 15    |
+| 5 minutes             | dakika 5             | dakika 5             | dak 5          |
+| 45 minutes            | dakika 45            | dakika 45            | dak 45         |
+| 1 hour                | saa 1                | saa 1                | saa 1          |
+| 1½ hours              | saa 1 na nusu        | saa 1 na nusu        | saa 1½         |
+| 3 hours               | saa 3                | saa 3                | saa 3          |
+| 6 hours               | saa 6                | saa 6                | saa 6          |
 | 1 day                 | siku 1               | siku 1               | siku 1         |
 | 1½ days               | siku 1 na nusu       | siku 1 na nusu       | siku 1½        |
 | 3 days                | siku 3               | siku 3               | siku 3         |
@@ -109,25 +109,25 @@ Relative to Saturday, March 15, 2025.
 
 | Offset        | Normal             | Compact         |
 | ------------- | ------------------ | --------------- |
-| 5 minutes ago | 5 dakika iliyopita | dak 5 iliyopita |
-| 2 hours ago   | 2 saa iliyopita    | saa 2 iliyopita |
-| in 30 minutes | baada ya 30 dakika | baada ya dak 30 |
-| in 3 hours    | baada ya 3 saa     | baada ya saa 3  |
+| 5 minutes ago | dakika 5 iliyopita | dak 5 iliyopita |
+| 2 hours ago   | saa 2 iliyopita    | saa 2 iliyopita |
+| in 30 minutes | baada ya dakika 30 | baada ya dak 30 |
+| in 3 hours    | baada ya saa 3     | baada ya saa 3  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal                   | Short | Compact |
-| --------------- | ------------------------ | ----- | ------- |
-| Midnight        | usiku wa manane          | 0:00  | 0:00    |
-| 1:00 AM         | moja o'clock             | 1:00  | 1:00    |
-| 5 past 9        | tano kupita tisa         | 9:05  | 9:05    |
-| Quarter past 10 | robo kupita kumi         | 10:15 | 10:15   |
-| Half past 11    | nusu kupita kumi na moja | 11:30 | 11:30   |
-| Noon            | adhuhuri                 | 12:00 | 12:00   |
-| Quarter to 3    | robo kabla ya tatu       | 14:45 | 14:45   |
-| 5 to 6          | tano kabla ya sita       | 17:55 | 17:55   |
-| 8 o'clock PM    | nane o'clock             | 20:00 | 20:00   |
-| 10:30 PM        | nusu kupita kumi         | 22:30 | 22:30   |
-| 11:58 PM        | usiku wa manane          | 23:58 | 23:58   |
+| Time            | Normal                               | Short | Compact |
+| --------------- | ------------------------------------ | ----- | ------- |
+| Midnight        | saa sita usiku                       | 0:00  | 0:00    |
+| 1:00 AM         | saa saba                             | 1:00  | 1:00    |
+| 5 past 9        | saa tatu na dakika tano              | 9:05  | 9:05    |
+| Quarter past 10 | saa nne na robo                      | 10:15 | 10:15   |
+| Half past 11    | saa tano na nusu                     | 11:30 | 11:30   |
+| Noon            | saa sita mchana                      | 12:00 | 12:00   |
+| Quarter to 3    | saa tisa kasoro robo                 | 14:45 | 14:45   |
+| 5 to 6          | saa kumi na mbili kasoro dakika tano | 17:55 | 17:55   |
+| 8 o'clock PM    | saa mbili                            | 20:00 | 20:00   |
+| 10:30 PM        | saa nne na nusu                      | 22:30 | 22:30   |
+| 11:58 PM        | saa sita usiku                       | 23:58 | 23:58   |

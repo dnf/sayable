@@ -30,7 +30,7 @@ function locale_bem {
         toddler = 'Umwana'
         child = 'Umwana'
         teenager = 'Umunyamata'
-        adult = 'Umulumendo'
+        adult = 'Umukalamba'
     }
     $short = @{
         units = @{

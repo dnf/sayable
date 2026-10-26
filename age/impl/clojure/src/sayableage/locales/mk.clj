@@ -21,6 +21,6 @@
    :half "{0} и пол"
    :delimiter ", "
    :just-born "Новороденче"
-   :stages {:newborn {:type :neutral :label "Новороденче"} :infant {:type :neutral :label "Бебе"} :toddler {:type :neutral :label "Мало дете"} :child {:type :neutral :label "Дете"} :teenager {:type :neutral :label "Тинејџер"} :adult {:type :neutral :label "Возрасен"}}
+   :stages {:newborn {:type :neutral :label "Новороденче"} :infant {:type :neutral :label "Бебе"} :toddler {:type :neutral :label "Мало дете"} :child {:type :neutral :label "Дете"} :teenager {:type :neutral :label "Тинејџер"} :adult {:type :gendered :m "Возрасен" :f "Возрасна"}}
    :short {:day {:type :pluralized :forms {:one "{n} ден" :other "{n} дена"}} :week {:type :simple :form "{n} сед."} :month {:type :simple :form "{n} мес."} :year {:type :simple :form "{n} год."} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n} д."} :week {:type :simple :form "{n} с."} :month {:type :simple :form "{n} м."} :year {:type :simple :form "{n} г."} :half "{n}½" :delimiter "" :just-born nil}})

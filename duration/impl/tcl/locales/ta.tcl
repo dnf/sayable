@@ -23,9 +23,9 @@ proc locale_duration_ta {} {
         day [dict create one "{n} நாள்" other "{n} நாட்கள்"] \
         week [dict create one "{n} வாரம்" other "{n} வாரங்கள்"] \
         month [dict create one "{n} மாதம்" other "{n} மாதங்கள்"] \
-        year [dict create one "{n} வயது" other "{n} வயது"] \
+        year [dict create one "{n} ஆண்டு" other "{n} ஆண்டுகள்"] \
     ]
-    set half "{0}ரை"
+    set half "{n}½"
     set delimiter {, }
     set just_now {இப்போதுதான்}
     set ago "{0} முன்"

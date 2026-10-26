@@ -16,8 +16,8 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 // TK is the Turkmen locale.
 var TK = sdate.DateLocale{
 	Code: "tk",
-	Months:   [12]string{"Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"},
-	Weekdays: [7]string{"Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"},
+	Months:   [12]string{"ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"},
+	Weekdays: [7]string{"ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"},
 	DayFormat: "{n}",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",
@@ -32,8 +32,8 @@ var TK = sdate.DateLocale{
 	LastWeekday:       strPtr("geçen {weekday}"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
-		Months:   &[12]string{"Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"},
-		Weekdays: &[7]string{"Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"},
+		Months:   &[12]string{"ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek"},
+		Weekdays: &[7]string{"ýek", "duş", "siş", "çar", "pen", "ann", "şen"},
 		DayFormat:            strPtr("{n}"),
 		DatePattern:          strPtr("{day} {month}"),
 		DatePatternWithYear:  strPtr("{day} {month} {year}"),

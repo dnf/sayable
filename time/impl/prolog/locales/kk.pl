@@ -15,18 +15,18 @@ st_hours('kk', ['он екі', 'бір', 'екі', 'үш', 'төрт', 'бес',
 st_midnight('kk', 'түн ортасы').
 st_noon('kk', 'түс').
 
-st_pattern('kk', 0, '{h} o\'clock').
-st_pattern('kk', 5, 'бес past {h}').
-st_pattern('kk', 10, 'он past {h}').
-st_pattern('kk', 15, 'он бес past {h}').
-st_pattern('kk', 20, 'жиырма past {h}').
-st_pattern('kk', 25, 'жиырма бес past {h}').
-st_pattern('kk', 30, 'отыз past {h}').
-st_pattern('kk', 35, 'жиырма бес to {next_h}').
-st_pattern('kk', 40, 'жиырма to {next_h}').
-st_pattern('kk', 45, 'он бес to {next_h}').
-st_pattern('kk', 50, 'он to {next_h}').
-st_pattern('kk', 55, 'бес to {next_h}').
+st_pattern('kk', 0, 'сағат {h}').
+st_pattern('kk', 5, '{h} нөл бес').
+st_pattern('kk', 10, '{h} он').
+st_pattern('kk', 15, '{h} он бес').
+st_pattern('kk', 20, '{h} жиырма').
+st_pattern('kk', 25, '{h} жиырма бес').
+st_pattern('kk', 30, '{h} жарым').
+st_pattern('kk', 35, '{h} отыз бес').
+st_pattern('kk', 40, '{h} қырық').
+st_pattern('kk', 45, '{h} қырық бес').
+st_pattern('kk', 50, '{h} елу').
+st_pattern('kk', 55, '{h} елу бес').
 
 short_st_use24h('kk', true).
 short_st_format('kk', '{h}:{mm}').

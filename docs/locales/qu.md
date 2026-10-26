@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [qu.json](../../locales/qu.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Dropped the 'mana' (not) subtraction calque; now '{h} ura' plus minutes counted up in Quechua numerals ('iskay ura chunka pichqayuq'). Grammatical and unambiguous, but in practice many speakers tell time in Spanish; a native review is still needed. Kept 'kimsa chunka' for :30 rather than the unverified 'khuskanniyuq'.
+
 ## Age
 
 ### Age formatting
@@ -71,11 +79,11 @@ Relative to Saturday, March 15, 2025.
 | Tomorrow             | paqarin              | paqarin |
 | Yesterday            | qayna                | qayna   |
 | Day after tomorrow   | minchha              | 17/3    |
-| Day before yesterday | qayna p'unchaw       | 13/3    |
+| Day before yesterday | qayninpa             | 13/3    |
 | This Thursday (+5)   | kay Illapachaw       | 20/3    |
-| Last Monday (-4)     | qayna Atipachaw      | 11/3    |
-| Next Wednesday (+12) | hamuq Illapachaw     | 27/3    |
-| Same month (+20)     | 4 Ayriwa             | 4/4     |
+| Last Tuesday (-4)    | qayna Atipachaw      | 11/3    |
+| Next Thursday (+12)  | hamuq Illapachaw     | 27/3    |
+| Same year (+20)      | 4 Ayriwa             | 4/4     |
 | Different year       | 10 Qhulla puquy 2026 | 10/1/26 |
 
 ## Duration
@@ -85,12 +93,12 @@ Relative to Saturday, March 15, 2025.
 | Duration              | Normal                | Short             | Compact  |
 | --------------------- | --------------------- | ----------------- | -------- |
 | 0 seconds             | kunanlla              | kunanlla          | kunanlla |
-| 1 second              | 1 ñiqin               | 1 ñiq             | 1s       |
-| 30 seconds            | 30 ñiqin              | 30 ñiq            | 30s      |
-| 1 minute              | 1 chiniku             | 1 chi             | 1m       |
-| 2 minutes, 15 seconds | 2 chiniku, 15 ñiqin   | 2 chi, 15 ñiq     | 2m15s    |
-| 5 minutes             | 5 chiniku             | 5 chi             | 5m       |
-| 45 minutes            | 45 chiniku            | 45 chi            | 45m      |
+| 1 second              | 1 sikundu             | 1 sik             | 1s       |
+| 30 seconds            | 30 sikundu            | 30 sik            | 30s      |
+| 1 minute              | 1 minutu              | 1 min             | 1m       |
+| 2 minutes, 15 seconds | 2 minutu, 15 sikundu  | 2 min, 15 sik     | 2m15s    |
+| 5 minutes             | 5 minutu              | 5 min             | 5m       |
+| 45 minutes            | 45 minutu             | 45 min            | 45m      |
 | 1 hour                | 1 ura                 | 1 ura             | 1h       |
 | 1½ hours              | 1 ura khuskannin      | 1 ura khuskannin  | 1½h      |
 | 3 hours               | 3 ura                 | 3 ura             | 3h       |
@@ -107,27 +115,27 @@ Relative to Saturday, March 15, 2025.
 
 ### Relative time
 
-| Offset        | Normal             | Compact     |
-| ------------- | ------------------ | ----------- |
-| 5 minutes ago | 5 chiniku ñawpaqta | 5m ñawpaqta |
-| 2 hours ago   | 2 ura ñawpaqta     | 2h ñawpaqta |
-| in 30 minutes | 30 chiniku qhipata | 30m qhipata |
-| in 3 hours    | 3 ura qhipata      | 3h qhipata  |
+| Offset        | Normal            | Compact     |
+| ------------- | ----------------- | ----------- |
+| 5 minutes ago | 5 minutu ñawpaqta | 5m ñawpaqta |
+| 2 hours ago   | 2 ura ñawpaqta    | 2h ñawpaqta |
+| in 30 minutes | 30 minutu qhipata | 30m qhipata |
+| in 3 hours    | 3 ura qhipata     | 3h qhipata  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal                       | Short    | Compact |
-| --------------- | ---------------------------- | -------- | ------- |
-| Midnight        | chawpi tuta                  | 12:00 AM | 12:00a  |
-| 1:00 AM         | huk                          | 1:00 AM  | 1:00a   |
-| 5 past 9        | isqun pichqa                 | 9:05 AM  | 9:05a   |
-| Quarter past 10 | chunka chunka pichqayuq      | 10:15 AM | 10:15a  |
-| Half past 11    | chunka hukniyuq kimsa chunka | 11:30 AM | 11:30a  |
-| Noon            | chawpi p'unchaw              | 12:00 PM | 12:00p  |
-| Quarter to 3    | kimsa mana chunka pichqayuq  | 2:45 PM  | 2:45p   |
-| 5 to 6          | suqta mana pichqa            | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | pusaq                        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | chunka kimsa chunka          | 10:30 PM | 10:30p  |
-| 11:58 PM        | chawpi tuta                  | 11:58 PM | 11:58p  |
+| Time            | Normal                             | Short    | Compact |
+| --------------- | ---------------------------------- | -------- | ------- |
+| Midnight        | chawpi tuta                        | 12:00 AM | 12:00a  |
+| 1:00 AM         | huk ura                            | 1:00 AM  | 1:00a   |
+| 5 past 9        | isqun ura pichqa                   | 9:05 AM  | 9:05a   |
+| Quarter past 10 | chunka ura chunka pichqayuq        | 10:15 AM | 10:15a  |
+| Half past 11    | chunka hukniyuq ura kimsa chunka   | 11:30 AM | 11:30a  |
+| Noon            | chawpi p'unchaw                    | 12:00 PM | 12:00p  |
+| Quarter to 3    | iskay ura tawa chunka pichqayuq    | 2:45 PM  | 2:45p   |
+| 5 to 6          | pichqa ura pichqa chunka pichqayuq | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | pusaq ura                          | 8:00 PM  | 8:00p   |
+| 10:30 PM        | chunka ura kimsa chunka            | 10:30 PM | 10:30p  |
+| 11:58 PM        | chawpi tuta                        | 11:58 PM | 11:58p  |

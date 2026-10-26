@@ -22,7 +22,7 @@ proc locale_es {} {
         month [dict create one "{n} mes" other "{n} meses"] \
         year [dict create one "{n} año" other "{n} años"] \
     ]
-    set half "{n} y medio"
+    set half "{0} y medio"
     set delimiter {, }
     set just_born {Recién nacido}
     set stages [dict create \

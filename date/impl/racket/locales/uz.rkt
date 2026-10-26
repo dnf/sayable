@@ -22,19 +22,19 @@
    "uz"
    (list "yanvar" "fevral" "mart" "aprel" "may" "iyun" "iyul" "avgust" "sentabr" "oktabr" "noyabr" "dekabr")
    (list "yakshanba" "dushanba" "seshanba" "chorshanba" "payshanba" "juma" "shanba")
-   "{n}"
+   "{n}-"
    (hash)
-   "{day} {month}"
-   "{day} {month} {year}"
+   "{day}{month}"
+   "{day}{month}, {year}"
    "bugun"
    "ertaga"
    "kecha"
    "indinga"
-   "kechagina"
+   "o'tgan kuni"
    "bu {weekday}"
    "keyingi {weekday}"
    "o'tgan {weekday}"
    #f
-   (date-compactness-override (list "yan" "fev" "mar" "apr" "may" "iyn" "iyl" "avg" "sen" "okt" "noy" "dek") #f (list "yak" "dush" "sesh" "chor" "pay" "jum" "shan") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "yan" "fev" "mar" "apr" "may" "iyn" "iyl" "avg" "sen" "okt" "noy" "dek") #f (list "yak" "dush" "sesh" "chor" "pay" "jum" "shan") "{n}-" #f "{day}{month}" "{day}{month}, {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

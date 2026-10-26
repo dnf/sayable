@@ -17,7 +17,10 @@
       "infant": "Vǐ",
       "toddler": "Vǐ",
       "child": "Vǐ",
-      "teenager": "Nyɔ̌nu",
+      "teenager": {
+        "m": "Dɔnkpɛvu",
+        "f": "Ɖyɔ̌vǐ"
+      },
       "adult": "Mɛ̌xo"
     },
     "short": {
@@ -55,13 +58,13 @@
       "Adɔxwísún"
     ],
     "weekdays": [
-      "Sidégbe",
+      "Aklunɔzángbe",
       "Tɛnígbe",
       "Talɛtagbe",
       "Azǎngagbe",
       "Nyɔnúgbe",
       "Axɔ́sùgbe",
-      "Abámɛ́ta"
+      "Sibigbe"
     ],
     "dayFormat": "{n}",
     "datePattern": "{day} {month}",
@@ -90,13 +93,13 @@
         "Adɔ"
       ],
       "weekdays": [
-        "Sid",
+        "Akl",
         "Tɛn",
         "Tal",
         "Azǎ",
         "Nyɔ",
         "Axɔ",
-        "Abá"
+        "Sib"
       ],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
@@ -181,23 +184,23 @@
         "tantɔn",
         "tɛnɛnɛ",
         "wǒ",
-        "ɖokpo-wǒ"
+        "wěɖokpo"
       ],
       "midnight": "zǎnmɛ",
       "noon": "hwemɛnu",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "gan {h}",
+        "5": "gan {h} kpo cɛju atɔ́ɔ́n kpo",
+        "10": "gan {h} kpo cɛju wǒ kpo",
+        "15": "gan {h} kpo cɛju afɔtɔ́n kpo",
+        "20": "gan {h} kpo cɛju ko kpo",
+        "25": "gan {h} kpo cɛju koatɔ́ɔ́n kpo",
+        "30": "gan {h} kpo cɛju gban kpo",
+        "35": "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo",
+        "40": "gan {h} kpo cɛju kanɖé kpo",
+        "45": "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo",
+        "50": "gan {h} kpo cɛju kanɖéwǒ kpo",
+        "55": "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo"
       }
     },
     "short": {
@@ -220,5 +223,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Used 'gan {h}' (gan = hour/o'clock, numeral follows noun as elsewhere in Fon) and additive minutes with the comitative 'kpo ... kpo' and 'cɛju' (minute): 'gan wè kpo cɛju wǒ kpo' = 2:10. Minute numerals use Fon vigesimal forms (ko 20, gban 30, kanɖé 40, kanɖéwǒ 50, afɔtɔ́n 15, koatɔ́ɔ́n 25, gbanatɔ́ɔ́n 35, kanɖéatɔ́ɔ́n 45, kanɖéafɔtɔ́n 55); compound spelling and tone marks are best-effort. No half-hour word used (30 = 'cɛju gban') because I could not verify a Fon 'half' word for clock time. Also corrected hours[11] from 'ɖokpo-wǒ' to 'wěɖokpo' (Fon 11; 12 = wěwè, already correct). Needs a native-speaker check."
+    }
+  ]
 }

@@ -33,17 +33,17 @@ var TZM = sa.AgeLocale{
 	JustBorn:  "Iɣ d illul",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.S("Iɣ d illul"),
-		Infant:   sa.S("Agellid"),
+		Infant:   sa.S("Llufan"),
 		Toddler:  sa.G("Aḥenjir", "Taḥenjirt"),
-		Child:    sa.G("Afrux", "Tafruxṭ"),
+		Child:    sa.G("Afrux", "Tafruxt"),
 		Teenager: sa.G("Aɛrim", "Taɛrimt"),
 		Adult:    sa.G("Argaz", "Tamṭṭuṭ"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.UnitForms{Simple: "{n} d"},
-		Week:  &sa.UnitForms{Simple: "{n} wk"},
-		Month: &sa.UnitForms{Simple: "{n} mo"},
-		Year:  &sa.UnitForms{Simple: "{n} yr"},
+		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ass", sa.Other: "{n} ussan"}),
+		Week:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} imalass", sa.Other: "{n} imalassn"}),
+		Month: unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} ayyur", sa.Other: "{n} ayyurn"}),
+		Year:  unitFormsPtr(map[sa.PluralCategory]string{sa.One: "{n} aseggas", sa.Other: "{n} iseggasen"}),
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n}d"},

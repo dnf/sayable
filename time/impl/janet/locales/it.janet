@@ -11,10 +11,10 @@
 
 (def locale
   {:code "it"
-   :clock {:hours @["dodici" "una" "due" "tre" "quattro" "cinque" "sei" "sette" "otto" "nove" "dieci" "undici"]
+   :clock {:hours @["le dodici" "l'una" "le due" "le tre" "le quattro" "le cinque" "le sei" "le sette" "le otto" "le nove" "le dieci" "le undici"]
            :midnight "mezzanotte"
            :noon "mezzogiorno"
-           :patterns {0 "le {h}" 5 "{h} e cinque" 10 "{h} e dieci" 15 "{h} e un quarto" 20 "{h} e venti" 25 "{h} e venticinque" 30 "{h} e mezza" 35 "{next_h} meno venticinque" 40 "{next_h} meno venti" 45 "{next_h} meno un quarto" 50 "{next_h} meno dieci" 55 "{next_h} meno cinque"}}
+           :patterns {0 "{h}" 5 "{h} e cinque" 10 "{h} e dieci" 15 "{h} e un quarto" 20 "{h} e venti" 25 "{h} e venticinque" 30 "{h} e mezza" 35 "{next_h} meno venticinque" 40 "{next_h} meno venti" 45 "{next_h} meno un quarto" 50 "{next_h} meno dieci" 55 "{next_h} meno cinque"}}
    :short {:clock {:use24h true :format "{h}:{mm}"}}
    :compact {:clock {:use24h true :format "{h}:{mm}"}}
 })

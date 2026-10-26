@@ -14,7 +14,7 @@
 (def locale
   {:code "mn"
    :months ["Нэгдүгээр сар" "Хоёрдугаар сар" "Гуравдугаар сар" "Дөрөвдүгээр сар" "Тавдугаар сар" "Зургаадугаар сар" "Долоодугаар сар" "Наймдугаар сар" "Есдүгээр сар" "Аравдугаар сар" "Арван нэгдүгээр сар" "Арван хоёрдугаар сар"]
-   :weekdays ["Ням" "Даваа" "Мягмар" "Лхагва" "Пүрэв" "Баасан" "Бямба"]
+   :weekdays ["ням" "даваа" "мягмар" "лхагва" "пүрэв" "баасан" "бямба"]
    :day-format "{n}"
    :day-format-exceptions {}
    :date-pattern "{month} {day}"
@@ -27,6 +27,6 @@
    :this-weekday "энэ {weekday}"
    :next-weekday "ирэх {weekday}"
    :last-weekday "өнгөрсөн {weekday}"
-   :months-in-date nil
+   :months-in-date ["нэгдүгээр сарын" "хоёрдугаар сарын" "гуравдугаар сарын" "дөрөвдүгээр сарын" "тавдугаар сарын" "зургаадугаар сарын" "долоодугаар сарын" "наймдугаар сарын" "есдүгээр сарын" "аравдугаар сарын" "арван нэгдүгээр сарын" "арван хоёрдугаар сарын"]
    :short {:months ["1-р сар" "2-р сар" "3-р сар" "4-р сар" "5-р сар" "6-р сар" "7-р сар" "8-р сар" "9-р сар" "10-р сар" "11-р сар" "12-р сар"] :months-in-date nil :weekdays ["Ня" "Да" "Мя" "Лх" "Пү" "Ба" "Бя"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{month} {day}" :date-pattern-with-year "{year} оны {month} {day}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{yy}/{m}/{d}" :date-pattern-with-year "{yy}/{m}/{d}" :today nil :tomorrow nil :yesterday nil}})

@@ -11,7 +11,7 @@
 
 _sayabledate_locale_sq() {
     _months=('janar' 'shkurt' 'mars' 'prill' 'maj' 'qershor' 'korrik' 'gusht' 'shtator' 'tetor' 'nëntor' 'dhjetor')
-    _weekdays=('e diel' 'e hënë' 'e martë' 'e mërkurë' 'e enjte' 'e premte' 'e shtunë')
+    _weekdays=('të dielën' 'të hënën' 'të martën' 'të mërkurën' 'të enjten' 'të premten' 'të shtunën')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
@@ -20,8 +20,8 @@ _sayabledate_locale_sq() {
     _yesterday='dje'
     _day_after_tomorrow='pasnesër'
     _day_before_yesterday='pardje'
-    _this_weekday='këtë {weekday}'
-    _next_weekday='{weekday} tjetër'
+    _this_weekday='{weekday}'
+    _next_weekday='{weekday} e ardhshme'
     _last_weekday='{weekday} e kaluar'
     _short_months=('jan' 'shk' 'mar' 'pri' 'maj' 'qer' 'kor' 'gush' 'sht' 'tet' 'nën' 'dhj')
     _short_weekdays=('Die' 'Hën' 'Mar' 'Mër' 'Enj' 'Pre' 'Sht')

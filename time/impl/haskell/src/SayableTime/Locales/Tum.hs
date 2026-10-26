@@ -22,18 +22,18 @@ locale = TimeLocale
             , clockMidnight = "pakati pa usiku"
             , clockNoon = "muhanya"
             , clockPatterns =
-                [ (0, "{h}:00")
-                , (5, "{h}:05")
-                , (10, "{h}:10")
-                , (15, "{h}:15")
-                , (20, "{h}:20")
-                , (25, "{h}:25")
-                , (30, "{h}:30")
-                , (35, "{h}:35")
-                , (40, "{h}:40")
-                , (45, "{h}:45")
-                , (50, "{h}:50")
-                , (55, "{h}:55")
+                [ (0, "{h} koloko")
+                , (5, "{h} koloko na maminiti vinkhondi")
+                , (10, "{h} koloko na maminiti khumi")
+                , (15, "{h} koloko na maminiti khumi na vinkhondi")
+                , (20, "{h} koloko na maminiti makhumi ghaŵiri")
+                , (25, "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi")
+                , (30, "{h} koloko na hafu")
+                , (35, "{h} koloko na maminiti makhumi ghatatu na vinkhondi")
+                , (40, "{h} koloko na maminiti makhumi ghanayi")
+                , (45, "{h} koloko na maminiti makhumi ghanayi na vinkhondi")
+                , (50, "{h} koloko na maminiti makhumi ghankhondi")
+                , (55, "{h} koloko na maminiti makhumi ghankhondi na vinkhondi")
                 ]
             }
     , localeShort = Just $ CompactnessOverride $ Just $

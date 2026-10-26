@@ -17,10 +17,10 @@
   (make-time-locale
    :code "sw"
    :clock (make-clock-config
-    :hours (list "kumi na mbili" "moja" "mbili" "tatu" "nne" "tano" "sita" "saba" "nane" "tisa" "kumi" "kumi na moja")
-    :midnight "usiku wa manane"
-    :noon "adhuhuri"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "tano kupita {h}") (cons 10 "kumi kupita {h}") (cons 15 "robo kupita {h}") (cons 20 "ishirini kupita {h}") (cons 25 "ishirini na tano kupita {h}") (cons 30 "nusu kupita {h}") (cons 35 "ishirini na tano kabla ya {next_h}") (cons 40 "ishirini kabla ya {next_h}") (cons 45 "robo kabla ya {next_h}") (cons 50 "kumi kabla ya {next_h}") (cons 55 "tano kabla ya {next_h}")))
+    :hours (list "sita" "saba" "nane" "tisa" "kumi" "kumi na moja" "kumi na mbili" "moja" "mbili" "tatu" "nne" "tano")
+    :midnight "saa sita usiku"
+    :noon "saa sita mchana"
+    :patterns (list (cons 0 "saa {h}") (cons 5 "saa {h} na dakika tano") (cons 10 "saa {h} na dakika kumi") (cons 15 "saa {h} na robo") (cons 20 "saa {h} na dakika ishirini") (cons 25 "saa {h} na dakika ishirini na tano") (cons 30 "saa {h} na nusu") (cons 35 "saa {next_h} kasoro dakika ishirini na tano") (cons 40 "saa {next_h} kasoro dakika ishirini") (cons 45 "saa {next_h} kasoro robo") (cons 50 "saa {next_h} kasoro dakika kumi") (cons 55 "saa {next_h} kasoro dakika tano")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

@@ -15,18 +15,18 @@ proc locale_time_ku {} {
     set midnight {nîvê şevê}
     set noon {nîvro}
     set patterns [dict create \
-        0 "{h}:00" \
-        5 "{h}:05" \
-        10 "{h}:10" \
-        15 "{h}:15" \
-        20 "{h}:20" \
-        25 "{h}:25" \
-        30 "{h}:30" \
-        35 "{h}:35" \
-        40 "{h}:40" \
-        45 "{h}:45" \
-        50 "{h}:50" \
-        55 "{h}:55" \
+        0 "saet {h}" \
+        5 "{h} û pênc deqe" \
+        10 "{h} û deh deqe" \
+        15 "{h} û çaryek" \
+        20 "{h} û bîst deqe" \
+        25 "{h} û bîst û pênc deqe" \
+        30 "{h} û nîv" \
+        35 "{next_h} kêm bîst û pênc deqe" \
+        40 "{next_h} kêm bîst deqe" \
+        45 "{next_h} kêm çaryek" \
+        50 "{next_h} kêm deh deqe" \
+        55 "{next_h} kêm pênc deqe" \
     ]
     set clock_config [dict create \
         hours $hours \

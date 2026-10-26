@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [or.json](../../locales/or.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Hours already carry the -ଟା classifier, so :00 is the bare hour ('ତିନିଟା'). Used 'ତିନିଟା ବାଜି ଦଶ ମିନିଟ୍' (past), 'ଚାରିଟା ବାଜିବାକୁ ଦଶ ମିନିଟ୍' (to), 'ପାଉଣେ ଚାରିଟା' (:45). :15 is additive 'ବାଜି ପନ୍ଦର ମିନିଟ୍' (not sure of the Odia quarter-past word) and :30 is additive 'ବାଜି ତିରିଶ ମିନିଟ୍' because 'ସାଢ଼େ ଗୋଟିଏ/ଦୁଇଟା' would be wrong (ଦେଢ଼ଟା / ଅଢ଼େଇଟା). Doubts: exact idiom of 'ବାଜି ... ମିନିଟ୍' and 'ବାଜିବାକୁ' as fragments; whether hours[1] should be 'ଗୋଟାଏ' rather than 'ଗୋଟିଏ' for one o'clock (left unchanged, not in the audit).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ପରଶି            | 17/3       |
 | Day before yesterday | ଗତ ପରଶି         | 13/3       |
 | This Thursday (+5)   | ଏହି ଗୁରୁବାର     | 20/3       |
-| Last Monday (-4)     | ଗତ ମଙ୍ଗଳବାର     | 11/3       |
-| Next Wednesday (+12) | ଆସନ୍ତା ଗୁରୁବାର  | 27/3       |
-| Same month (+20)     | 4 ଏପ୍ରିଲ        | 4/4        |
+| Last Tuesday (-4)    | ଗତ ମଙ୍ଗଳବାର     | 11/3       |
+| Next Thursday (+12)  | ଆସନ୍ତା ଗୁରୁବାର  | 27/3       |
+| Same year (+20)      | 4 ଏପ୍ରିଲ        | 4/4        |
 | Different year       | 10 ଜାନୁଆରୀ 2026 | 10/1/26    |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short    | Compact |
-| --------------- | ---------- | -------- | ------- |
-| Midnight        | ମଧ୍ୟରାତ୍ରି | 12:00 AM | 12:00a  |
-| 1:00 AM         | ଗୋଟିଏ:00   | 1:00 AM  | 1:00a   |
-| 5 past 9        | ନଅଟା:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ଦଶଟା:15    | 10:15 AM | 10:15a  |
-| Half past 11    | ଏଗାରଟା:30  | 11:30 AM | 11:30a  |
-| Noon            | ମଧ୍ୟାହ୍ନ   | 12:00 PM | 12:00p  |
-| Quarter to 3    | ଦୁଇଟା:45   | 2:45 PM  | 2:45p   |
-| 5 to 6          | ପାଞ୍ଚଟା:55 | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | ଆଠଟା:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ଦଶଟା:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | ମଧ୍ୟରାତ୍ରି | 11:58 PM | 11:58p  |
+| Time            | Normal                     | Short    | Compact |
+| --------------- | -------------------------- | -------- | ------- |
+| Midnight        | ମଧ୍ୟରାତ୍ରି                 | 12:00 AM | 12:00a  |
+| 1:00 AM         | ଗୋଟିଏ                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | ନଅଟା ବାଜି ପାଞ୍ଚ ମିନିଟ୍     | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ଦଶଟା ବାଜି ପନ୍ଦର ମିନିଟ୍     | 10:15 AM | 10:15a  |
+| Half past 11    | ଏଗାରଟା ବାଜି ତିରିଶ ମିନିଟ୍   | 11:30 AM | 11:30a  |
+| Noon            | ମଧ୍ୟାହ୍ନ                   | 12:00 PM | 12:00p  |
+| Quarter to 3    | ପାଉଣେ ତିନିଟା               | 2:45 PM  | 2:45p   |
+| 5 to 6          | ଛଅଟା ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍ | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ଆଠଟା                       | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ଦଶଟା ବାଜି ତିରିଶ ମିନିଟ୍     | 10:30 PM | 10:30p  |
+| 11:58 PM        | ମଧ୍ୟରାତ୍ରି                 | 11:58 PM | 11:58p  |

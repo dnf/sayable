@@ -22,43 +22,43 @@ locale = DurationLocale
           [ (One, "{n} секунда")
           , (Few, "{n} секунды")
           , (Many, "{n} секунд")
-          , (Other, "{n} секунд")
+          , (Other, "{n} секунды")
           ]
         , unitMinute = Pluralized
           [ (One, "{n} хвіліна")
           , (Few, "{n} хвіліны")
           , (Many, "{n} хвілін")
-          , (Other, "{n} хвілін")
+          , (Other, "{n} хвіліны")
           ]
         , unitHour = Pluralized
           [ (One, "{n} гадзіна")
           , (Few, "{n} гадзіны")
           , (Many, "{n} гадзін")
-          , (Other, "{n} гадзін")
+          , (Other, "{n} гадзіны")
           ]
         , unitDay = Pluralized
           [ (One, "{n} дзень")
           , (Few, "{n} дні")
           , (Many, "{n} дзён")
-          , (Other, "{n} дзён")
+          , (Other, "{n} дня")
           ]
         , unitWeek = Pluralized
           [ (One, "{n} тыдзень")
           , (Few, "{n} тыдні")
           , (Many, "{n} тыдняў")
-          , (Other, "{n} тыдняў")
+          , (Other, "{n} тыдня")
           ]
         , unitMonth = Pluralized
           [ (One, "{n} месяц")
           , (Few, "{n} месяцы")
           , (Many, "{n} месяцаў")
-          , (Other, "{n} месяцаў")
+          , (Other, "{n} месяца")
           ]
         , unitYear = Pluralized
           [ (One, "{n} год")
           , (Few, "{n} гады")
           , (Many, "{n} гадоў")
-          , (Other, "{n} гадоў")
+          , (Other, "{n} года")
           ]
         }
     , localeHalf = "{n} з паловай"

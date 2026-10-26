@@ -15,7 +15,7 @@ function locale_kl {
     $dayFormat = '{n}.'
     $dayFormatExceptions = @{}
     $datePattern = '{month} {day}'
-    $datePatternWithYear = '{day} {month} {year}'
+    $datePatternWithYear = '{month} {day} {year}'
     $today = 'ullumi'
     $tomorrow = 'aqagu'
     $yesterday = 'ippassaq'
@@ -30,7 +30,7 @@ function locale_kl {
         weekdays = @('sap', 'ata', 'mar', 'pin', 'sis', 'tal', 'arf')
         dayFormat = '{n}.'
         datePattern = '{month} {day}'
-        datePatternWithYear = '{day} {month} {year}'
+        datePatternWithYear = '{month} {day} {year}'
     }
     $compact = @{
         datePattern = '{m}-{d}'

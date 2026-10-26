@@ -30,7 +30,7 @@ pub const locale_ha = DateLocale{
 	has_this_weekday: true
 	next_weekday: '{weekday} mai zuwa'
 	has_next_weekday: true
-	last_weekday: '{weekday} da ya wuce'
+	last_weekday: '{weekday} da ta wuce'
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{

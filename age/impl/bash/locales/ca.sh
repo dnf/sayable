@@ -24,7 +24,7 @@ _sayableage_locale_ca() {
     _unit_month_other='{n} mesos'
     _unit_year_one='{n} any'
     _unit_year_other='{n} anys'
-    _half='{n} i mig'
+    _half='{0} i mig'
     _delimiter=', '
     _just_born='Nounat'
     _stage_newborn_m='Nounat'

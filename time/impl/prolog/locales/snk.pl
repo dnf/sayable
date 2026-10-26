@@ -11,22 +11,22 @@
 
 % Soninke locale.
 
-st_hours('snk', ['tanmu fillo', 'baane', 'fillo', 'sikko', 'naaxato', 'karago', 'tunmu', 'ñerru', 'segu', 'kaburu', 'tanmu', 'tanmu baane']).
+st_hours('snk', ['waxati tanmu do fillo', 'waxati baane', 'waxati fillo', 'waxati sikko', 'waxati naaxato', 'waxati karago', 'waxati tunmu', 'waxati ñerru', 'waxati segu', 'waxati kaburu', 'waxati tanmu', 'waxati tanmu do baane']).
 st_midnight('snk', 'sulen noxo').
 st_noon('snk', 'tili seren').
 
-st_pattern('snk', 0, '{h}:00').
-st_pattern('snk', 5, '{h}:05').
-st_pattern('snk', 10, '{h}:10').
-st_pattern('snk', 15, '{h}:15').
-st_pattern('snk', 20, '{h}:20').
-st_pattern('snk', 25, '{h}:25').
-st_pattern('snk', 30, '{h}:30').
-st_pattern('snk', 35, '{h}:35').
-st_pattern('snk', 40, '{h}:40').
-st_pattern('snk', 45, '{h}:45').
-st_pattern('snk', 50, '{h}:50').
-st_pattern('snk', 55, '{h}:55').
+st_pattern('snk', 0, '{h}').
+st_pattern('snk', 5, '{h} do miniti karago').
+st_pattern('snk', 10, '{h} do miniti tanmu').
+st_pattern('snk', 15, '{h} do miniti tanmu do karago').
+st_pattern('snk', 20, '{h} do miniti tanpille').
+st_pattern('snk', 25, '{h} do miniti tanpille do karago').
+st_pattern('snk', 30, '{h} do faabe').
+st_pattern('snk', 35, '{h} do miniti tanjikke do karago').
+st_pattern('snk', 40, '{h} do miniti tannaxate').
+st_pattern('snk', 45, '{h} do miniti tannaxate do karago').
+st_pattern('snk', 50, '{h} do miniti tankarage').
+st_pattern('snk', 55, '{h} do miniti tankarage do karago').
 
 short_st_use24h('snk', false).
 short_st_format('snk', '{h}:{mm} {ampm}').

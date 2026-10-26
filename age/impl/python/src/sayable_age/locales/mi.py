@@ -17,12 +17,12 @@ MI = AgeLocale(
     code="mi",
     plural=lambda n: "one" if n == 1 else "other",
     units={
-        "day": "rā {n}",
-        "week": "wiki {n}",
-        "month": "marama {n}",
-        "year": "tau {n}",
+        "day": "{n} rā",
+        "week": "{n} wiki",
+        "month": "{n} marama",
+        "year": "{n} tau",
     },
-    half="{0}½",
+    half="{n}½",
     delimiter=", ",
     just_born="Pēpi hou",
     stages={
@@ -35,10 +35,10 @@ MI = AgeLocale(
     },
     short=CompactnessOverride(
         units={
-            "day": "rā {n}",
-            "week": "w {n}",
-            "month": "m {n}",
-            "year": "t {n}",
+            "day": "{n} rā",
+            "week": "{n} w",
+            "month": "{n} m",
+            "year": "{n} t",
         },
     ),
     compact=CompactnessOverride(

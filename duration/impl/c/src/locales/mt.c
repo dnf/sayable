@@ -25,8 +25,8 @@ const SduDurationLocale sdu_locale_mt = {
     plural_mt,
     {
         { NULL, { NULL, "{n} sekonda", "{n} sekondi", "{n} sekondi", "{n}-il sekonda", "{n} sekonda" } },
-        { NULL, { NULL, "{n} minuta", "{n} minuti", "{n} minuti", "{n}-il minuta", "{n} minuta" } },
-        { NULL, { NULL, "{n} siegħa", "{n} sigħat", "{n} sigħat", "{n}-il siegħa", "{n} siegħa" } },
+        { NULL, { NULL, "{n} minuta", "minutejn", "{n} minuti", "{n}-il minuta", "{n} minuta" } },
+        { NULL, { NULL, "{n} siegħa", "sagħtejn", "{n} sigħat", "{n}-il siegħa", "{n} siegħa" } },
         { NULL, { NULL, "ġurnata", "jumejn", "{n} ijiem", "{n}-il jum", "{n} jum" } },
         { NULL, { NULL, "ġimgħa", "ġimgħatejn", "{n} ġimgħat", "{n}-il ġimgħa", "{n} ġimgħa" } },
         { NULL, { NULL, "xahar", "xahrejn", "{n} xhur", "{n}-il xahar", "{n} xahar" } },

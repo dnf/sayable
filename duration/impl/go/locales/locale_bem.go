@@ -25,7 +25,7 @@ var BEM = sd.DurationLocale{
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "isekondi {n}", sd.Other: "amasekondi {n}"}),
 		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "iminiti {n}", sd.Other: "amaminiti {n}"}),
-		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "insa {n}", sd.Other: "amanso {n}"}),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "insa {n}", sd.Other: "insa {n}"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "ubushiku {n}", sd.Other: "inshiku {n}"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "umulungu {n}", sd.Other: "imilungu {n}"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "umweshi {n}", sd.Other: "imyeshi {n}"}),

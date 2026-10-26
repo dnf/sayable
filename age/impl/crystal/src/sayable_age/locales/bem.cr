@@ -28,7 +28,7 @@ module SayableAge
         "toddler" => StageLabel.new("Umwana"),
         "child" => StageLabel.new("Umwana"),
         "teenager" => StageLabel.new("Umunyamata"),
-        "adult" => StageLabel.new("Umulumendo"),
+        "adult" => StageLabel.new("Umukalamba"),
       },
       short: CompactnessOverride.new(
         units: {

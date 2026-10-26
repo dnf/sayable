@@ -19,7 +19,7 @@
    :plural (lambda (n) (if (= n 1) :one :other))
    :units (list (cons :second "{n} سیکنڈ")
                (cons :minute "{n} منٹ")
-               (cons :hour "{n} گھنٹہ")
+               (cons :hour '((:one . "{n} گھنٹہ") (:other . "{n} گھنٹے")))
                (cons :day '((:one . "{n} دن") (:other . "{n} دن")))
                (cons :week '((:one . "{n} ہفتہ") (:other . "{n} ہفتے")))
                (cons :month '((:one . "{n} مہینہ") (:other . "{n} مہینے")))

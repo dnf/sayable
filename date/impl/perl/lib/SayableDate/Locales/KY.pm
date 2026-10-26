@@ -16,12 +16,12 @@ package SayableDate::Locales::KY;
 
 sub locale {{
   code => 'ky',
-  months => ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-  weekdays => ['Жекшемби', 'Дүйшөмбү', 'Шейшемби', 'Шаршемби', 'Бейшемби', 'Жума', 'Ишемби'],
-  day_format => '{n}',
+  months => ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'],
+  weekdays => ['жекшемби', 'дүйшөмбү', 'шейшемби', 'шаршемби', 'бейшемби', 'жума', 'ишемби'],
+  day_format => '{n}-',
   day_format_exceptions => {},
-  date_pattern => '{day} {month}',
-  date_pattern_with_year => '{day} {month} {year}',
+  date_pattern => '{day}{month}',
+  date_pattern_with_year => '{year}-ж., {day}{month}',
   today => 'бүгүн',
   tomorrow => 'эртең',
   yesterday => 'кечээ',
@@ -31,8 +31,8 @@ sub locale {{
   next_weekday => 'кийинки {weekday}',
   last_weekday => 'өткөн {weekday}',
   short => {
-    months => ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    weekdays => ['Жек', 'Дүй', 'Шей', 'Шар', 'Бей', 'Жум', 'Ише'],
+    months => ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+    weekdays => ['жек', 'дүй', 'шей', 'шар', 'бей', 'жум', 'ише'],
     day_format => '{n}',
     date_pattern => '{day} {month}',
     date_pattern_with_year => '{day} {month} {year}',

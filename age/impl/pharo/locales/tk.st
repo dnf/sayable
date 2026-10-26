@@ -23,7 +23,7 @@ tk
 		'month'. '{n} aý'.
 		'year'. '{n} ýaş'.
 	}).
-	locale half: '{0}½'.
+	locale half: '{n} ýarym'.
 	locale delimiter: ', '.
 	locale justBorn: 'Täze doglan'.
 	locale stages: (Dictionary newFromPairs: {
@@ -32,7 +32,7 @@ tk
 		#toddler. 'Kiçijik'.
 		#child. 'Çaga'.
 		#teenager. 'Ýetginjek'.
-		#adult. 'Ulular'.
+		#adult. 'Uly adam'.
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {

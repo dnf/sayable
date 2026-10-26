@@ -15,7 +15,7 @@ module locales
 pub const locale_sq = DateLocale{
 	code: 'sq'
 	months: ['janar', 'shkurt', 'mars', 'prill', 'maj', 'qershor', 'korrik', 'gusht', 'shtator', 'tetor', 'nëntor', 'dhjetor']!
-	weekdays: ['e diel', 'e hënë', 'e martë', 'e mërkurë', 'e enjte', 'e premte', 'e shtunë']!
+	weekdays: ['të dielën', 'të hënën', 'të martën', 'të mërkurën', 'të enjten', 'të premten', 'të shtunën']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
@@ -26,9 +26,9 @@ pub const locale_sq = DateLocale{
 	has_day_after_tomorrow: true
 	day_before_yesterday: 'pardje'
 	has_day_before_yesterday: true
-	this_weekday: 'këtë {weekday}'
+	this_weekday: '{weekday}'
 	has_this_weekday: true
-	next_weekday: '{weekday} tjetër'
+	next_weekday: '{weekday} e ardhshme'
 	has_next_weekday: true
 	last_weekday: '{weekday} e kaluar'
 	has_last_weekday: true

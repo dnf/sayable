@@ -38,10 +38,10 @@ defmodule SayableDate.Locales.LT do
         "penktadienis",
         "šeštadienis"
       ],
-      day_format: "{n}.",
+      day_format: "{n} d.",
       day_format_exceptions: %{},
-      date_pattern: "{day} {month}",
-      date_pattern_with_year: "{day} {month} {year}",
+      date_pattern: "{month} {day}",
+      date_pattern_with_year: "{year} m. {month} {day}",
       today: "šiandien",
       tomorrow: "rytoj",
       yesterday: "vakar",
@@ -88,9 +88,9 @@ defmodule SayableDate.Locales.LT do
           "pn",
           "št"
         ],
-        day_format: "{n}.",
-        date_pattern: "{day} {month}",
-        date_pattern_with_year: "{day} {month} {year}"
+        day_format: "{n} d.",
+        date_pattern: "{month} {day}",
+        date_pattern_with_year: "{year} m. {month} {day}"
       },
       compact: %{
         date_pattern: "{m}-{d}",

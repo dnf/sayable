@@ -25,7 +25,7 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} వారం" "other" "{n} వారాలు"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} నెల" "other" "{n} నెలలు"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} సంవత్సరం" "other" "{n} సంవత్సరాలు")))
-   "{0}న్నర"
+   "{n}½"
    ", "
    "నవజాత శిశువు"
    (hash "newborn" (stage-label "నవజాత శిశువు" #f #f)

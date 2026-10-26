@@ -29,12 +29,12 @@ function locale_ak {
         infant = 'Akwadaa'
         toddler = 'Abofra'
         child = 'Abofra'
-        teenager = 'Abarimaa'
+        teenager = @{ m = 'Abarimaa'; f = 'Abaayewa' }
         adult = 'Ɔpanyin'
     }
     $short = @{
         units = @{
-            day = 'nna {n}'
+            day = @{ one = 'da {n}'; other = 'nna {n}' }
             week = @{ one = 'dapɛn {n}'; other = 'nnapɛn {n}' }
             month = @{ one = 'bosome {n}'; other = 'abosome {n}' }
             year = @{ one = 'afe {n}'; other = 'mfe {n}' }
@@ -42,7 +42,7 @@ function locale_ak {
     }
     $compact = @{
         units = @{
-            day = 'nna {n}'
+            day = @{ one = 'da {n}'; other = 'nna {n}' }
             week = @{ one = 'dapɛn {n}'; other = 'nnapɛn {n}' }
             month = @{ one = 'bos {n}'; other = 'abos {n}' }
             year = @{ one = 'afe {n}'; other = 'mfe {n}' }

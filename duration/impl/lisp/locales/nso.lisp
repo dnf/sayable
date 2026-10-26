@@ -17,8 +17,8 @@
   (make-duration-locale
    :code "nso"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second '((:one . "motsotswana {n}") (:other . "dimetsotswana {n}")))
-               (cons :minute '((:one . "metsotso {n}") (:other . "dimetsotso {n}")))
+   :units (list (cons :second '((:one . "motsotswana {n}") (:other . "metsotswana {n}")))
+               (cons :minute '((:one . "motsotso {n}") (:other . "metsotso {n}")))
                (cons :hour '((:one . "iri {n}") (:other . "diiri {n}")))
                (cons :day '((:one . "letšatši {n}") (:other . "matšatši {n}")))
                (cons :week '((:one . "beke {n}") (:other . "dibeke {n}")))
@@ -29,8 +29,8 @@
    :just-now "bjale"
    :ago "{0} ye e fetilego"
    :in-future "ka {0}"
-   :short-units (list (cons :second '((:one . "mots. {n}") (:other . "dimets. {n}")))
-                       (cons :minute '((:one . "mets. {n}") (:other . "dimets. {n}")))
+   :short-units (list (cons :second '((:one . "motsotsw. {n}") (:other . "metsotsw. {n}")))
+                       (cons :minute '((:one . "mots. {n}") (:other . "mets. {n}")))
                        (cons :hour '((:one . "iri {n}") (:other . "diiri {n}")))
                        (cons :day '((:one . "letšatši {n}") (:other . "matšatši {n}")))
                        (cons :week '((:one . "beke {n}") (:other . "dibeke {n}")))

@@ -34,5 +34,5 @@
    "{0} k'o chi"
    "pa {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} tz'aq.") (hash "type" "simple" "form" "{n} ch'ut.") (hash "type" "simple" "form" "{n} ram.") (hash "type" "simple" "form" "{n} q'ij") (hash "type" "simple" "form" "{n} wuqq'ij") (hash "type" "simple" "form" "{n} ik'") (hash "type" "simple" "form" "{n} jun.") #f #f "{0} k'o chi" "pa {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} k'o chi" "pa {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} k'o chi" "pa {0}")
   ))

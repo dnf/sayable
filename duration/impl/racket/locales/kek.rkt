@@ -34,5 +34,5 @@
    "{0} qakab'"
    "chi {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} seg.") (hash "type" "simple" "form" "{n} min.") (hash "type" "simple" "form" "{n} hora") (hash "type" "simple" "form" "{n} q'e") (hash "type" "simple" "form" "{n} sem.") (hash "type" "simple" "form" "{n} po") (hash "type" "simple" "form" "{n} chih.") #f #f "{0} qakab'" "chi {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} qakab'" "chi {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} qakab'" "chi {0}")
   ))

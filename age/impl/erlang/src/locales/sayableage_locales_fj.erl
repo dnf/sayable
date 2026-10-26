@@ -21,10 +21,10 @@ locale() ->
         week = {simple, "{n} na macawa"},
         month = {simple, "{n} na vula"},
         year = {simple, "{n} na yabaki"},
-        half = "{n} kei na levu ni wasei",
+        half = "{0} kei na veimama",
         delimiter = ", ",
         just_born = "Gone vou",
         stages = #stages{newborn = {neutral, "Gone vou"}, infant = {neutral, "Gone lalai"}, toddler = {neutral, "Gone lailai"}, child = {neutral, "Gone"}, teenager = {neutral, "Cauravou"}, adult = {neutral, "Tamata qase"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} siga"}}, week = {just, {simple, "{n} mac."}}, month = {just, {simple, "{n} vula"}}, year = {just, {simple, "{n} yab."}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, just_born = nothing}}
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

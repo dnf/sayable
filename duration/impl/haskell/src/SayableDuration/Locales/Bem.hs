@@ -28,7 +28,7 @@ locale = DurationLocale
           ]
         , unitHour = Pluralized
           [ (One, "insa {n}")
-          , (Other, "amanso {n}")
+          , (Other, "insa {n}")
           ]
         , unitDay = Pluralized
           [ (One, "ubushiku {n}")

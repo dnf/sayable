@@ -736,7 +736,7 @@ test_case(test_25_9) :-
 % 25.10: Half marker
 test_case(test_25_10) :-
     format_age('es', '2022-06-15', '2025-12-15', normal, Result),
-    Result == '3 y medio años'.
+    Result == '3 años y medio'.
 
 % 25.11: No half
 test_case(test_25_11) :-
@@ -882,7 +882,7 @@ test_case(test_29_1) :-
 % 29.2: 1 day — one form
 test_case(test_29_2) :-
     format_age('he', '2025-06-14', '2025-06-15', normal, Result),
-    Result == 'יום 1'.
+    Result == 'יום'.
 
 % 29.3: 3 days — other form
 test_case(test_29_3) :-
@@ -912,7 +912,7 @@ test_case(test_29_7) :-
 % 29.8: 2y dual + 1m one
 test_case(test_29_8) :-
     format_age('he', '2023-06-15', '2025-07-15', normal, Result),
-    Result == 'שנתיים, חודש 1'.
+    Result == 'שנתיים, חודש'.
 
 % 29.9: 3½ years — half marker
 test_case(test_29_9) :-
@@ -1032,7 +1032,7 @@ test_case(test_29_31) :-
 % 29.32: 3½ years — half marker
 test_case(test_29_32) :-
     format_age('id', '2022-06-15', '2025-12-15', normal, Result),
-    Result == '3 tahun setengah'.
+    Result == '3 setengah tahun'.
 
 % 29.33: 7+ years
 test_case(test_29_33) :-

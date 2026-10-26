@@ -29,7 +29,7 @@ sub locale {{
   half => '{n}½',
   delimiter => ', ',
   just_now => 'lige nu',
-  ago => '{0} siden',
+  ago => 'for {0} siden',
   in_future => 'om {0}',
   short => {
     units => {

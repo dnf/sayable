@@ -29,7 +29,7 @@ locale() ->
         day_before_yesterday = {just, "shekaranjiya"},
         this_weekday = {just, "wannan {weekday}"},
         next_weekday = {just, "{weekday} mai zuwa"},
-        last_weekday = {just, "{weekday} da ya wuce"},
+        last_weekday = {just, "{weekday} da ta wuce"},
         months_in_date = nothing,
         short = {just, #date_compactness_override{months = {just, ["Jan", "Fab", "Mar", "Afr", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis"]}, months_in_date = nothing, weekdays = {just, ["Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}

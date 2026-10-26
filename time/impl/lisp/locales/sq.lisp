@@ -20,7 +20,7 @@
     :hours (list "dymbëdhjetë" "një" "dy" "tre" "katër" "pesë" "gjashtë" "shtatë" "tetë" "nëntë" "dhjetë" "njëmbëdhjetë")
     :midnight "mesnata"
     :noon "mesdita"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "pesë past {h}") (cons 10 "dhjetë past {h}") (cons 15 "një çerek past {h}") (cons 20 "njëzet past {h}") (cons 25 "njëzet e pesë past {h}") (cons 30 "gjysma past {h}") (cons 35 "njëzet e pesë to {next_h}") (cons 40 "njëzet to {next_h}") (cons 45 "një çerek to {next_h}") (cons 50 "dhjetë to {next_h}") (cons 55 "pesë to {next_h}")))
+    :patterns (list (cons 0 "ora {h}") (cons 5 "{h} e pesë") (cons 10 "{h} e dhjetë") (cons 15 "{h} e një çerek") (cons 20 "{h} e njëzet") (cons 25 "{h} e njëzet e pesë") (cons 30 "{h} e gjysmë") (cons 35 "{next_h} pa njëzet e pesë") (cons 40 "{next_h} pa njëzet") (cons 45 "{next_h} pa një çerek") (cons 50 "{next_h} pa dhjetë") (cons 55 "{next_h} pa pesë")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

@@ -21,7 +21,7 @@ proc locale_tg {} {
         month "{n} моҳ" \
         year "{n} сол" \
     ]
-    set half "{0} ним"
+    set half "{0}у ним"
     set delimiter {, }
     set just_born {Навзод}
     set stages [dict create \

@@ -31,9 +31,9 @@
    "dzulo"
    "mkucha"
    "dzana"
-   "{weekday} ino"
-   "{weekday} yotsatira"
-   "{weekday} yatha"
+   "{weekday} lino"
+   "{weekday} lotsatira"
+   "{weekday} latha"
    #f
    (date-compactness-override (list "Jan" "Feb" "Mat" "Epu" "Mey" "Jun" "Jul" "Oga" "Sep" "Okt" "Nov" "Dis") #f (list "Lam" "Lol" "Lch" "Lct" "Lcn" "Lcs" "Low") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)

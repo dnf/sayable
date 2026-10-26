@@ -45,6 +45,7 @@ module SayableAge
           "month" => UnitForms.new("{n}m"),
           "year" => UnitForms.new("{n}y"),
         },
+        half: "{n}½",
       ),
     )
   end

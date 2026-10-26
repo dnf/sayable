@@ -22,7 +22,7 @@ our sub locale() {
             month => '{n} моҳ',
             year => '{n} сол',
         },
-        half => '{0} ним',
+        half => '{0}у ним',
         delimiter => ', ',
         just-born => 'Навзод',
         stages => {

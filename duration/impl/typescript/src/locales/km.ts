@@ -27,7 +27,7 @@ export const km: DurationLocale = {
   delimiter: ', ',
   justNow: 'ឥឡូវនេះ',
   ago: '{0}មុន',
-  inFuture: 'ក្នុង{0}',
+  inFuture: '{0}ទៀត',
   short: {
     units: {
       second: '{n} វិនាទី',
@@ -39,7 +39,7 @@ export const km: DurationLocale = {
       year:   '{n} ឆ្នាំ',
     },
     ago: '{0}មុន',
-    inFuture: 'ក្នុង{0}',
+    inFuture: '{0}ទៀត',
   },
   compact: {
     units: {
@@ -54,6 +54,6 @@ export const km: DurationLocale = {
     half: '{n}½',
     delimiter: '',
     ago: '{0}មុន',
-    inFuture: 'ក្នុង{0}',
+    inFuture: '{0}ទៀត',
   },
 };

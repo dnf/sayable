@@ -10,7 +10,7 @@
 # Source: locales/ml.json
 
 proc plural_ml {n} {
-    if {$n == 0 || $n == 1} { return "one" }
+    if {$n == 1} { return "one" }
     return "other"
 }
 
@@ -25,7 +25,7 @@ proc locale_duration_ml {} {
         month [dict create one "{n} മാസം" other "{n} മാസങ്ങൾ"] \
         year [dict create one "{n} വർഷം" other "{n} വർഷങ്ങൾ"] \
     ]
-    set half "{0} ര"
+    set half "{n}½"
     set delimiter {, }
     set just_now {ഇപ്പോൾ}
     set ago "{0} മുമ്പ്"

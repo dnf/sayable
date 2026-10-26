@@ -17,7 +17,7 @@ const StTimeLocale st_locale_hmn = {
         { "kaum ob", "ib", "ob", "peb", "plaub", "tsib", "rau", "xya", "yim", "cuaj", "kaum", "kaum ib" },
         "ib tag hmo",
         "tav su",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} teev", "{h} teev tsib feeb", "{h} teev kaum feeb", "{h} teev kaum tsib feeb", "{h} teev nees nkaum feeb", "{h} teev nees nkaum tsib feeb", "{h} teev ib nrab", "{h} teev peb caug tsib feeb", "{h} teev plaub caug feeb", "{h} teev plaub caug tsib feeb", "{h} teev tsib caug feeb", "{h} teev tsib caug tsib feeb" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

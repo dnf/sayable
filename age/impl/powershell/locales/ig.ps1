@@ -15,10 +15,10 @@ function plural_ig([int]$n) {
 
 function locale_ig {
     $units = @{
-        day = '{n} ụbọchị'
-        week = '{n} izu'
-        month = '{n} ọnwa'
-        year = '{n} afọ'
+        day = 'ụbọchị {n}'
+        week = 'izu {n}'
+        month = 'ọnwa {n}'
+        year = 'afọ {n}'
     }
     $half = '{0} na ọkara'
     $delimiter = ', '
@@ -28,15 +28,15 @@ function locale_ig {
         infant = 'Nwa ọhụrụ'
         toddler = 'Nwa nta'
         child = 'Nwa'
-        teenager = 'Nwokorobịa'
+        teenager = @{ m = 'Nwokorobịa'; f = 'Agbọghọbịa' }
         adult = 'Okenye'
     }
     $short = @{
         units = @{
-            day = '{n} ụbọchị'
-            week = '{n} izu'
-            month = '{n} ọnwa'
-            year = '{n} afọ'
+            day = 'ụbọchị {n}'
+            week = 'izu {n}'
+            month = 'ọnwa {n}'
+            year = 'afọ {n}'
         }
     }
     $compact = @{

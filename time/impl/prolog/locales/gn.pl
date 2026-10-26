@@ -12,7 +12,7 @@
 % Guarani locale.
 
 st_hours('gn', ['pa mokõi', 'peteĩ', 'mokõi', 'mbohapy', 'irundy', 'po', 'poteĩ', 'pokõi', 'poapy', 'porundy', 'pa', 'pa peteĩ']).
-st_midnight('gn', 'pyhareve').
+st_midnight('gn', 'pyharepyte').
 st_noon('gn', 'asaje').
 
 st_pattern('gn', 0, '{h}').
@@ -22,11 +22,11 @@ st_pattern('gn', 15, '{h} ha pa po').
 st_pattern('gn', 20, '{h} ha mokõi pa').
 st_pattern('gn', 25, '{h} ha mokõi pa po').
 st_pattern('gn', 30, '{h} ha mbohapy pa').
-st_pattern('gn', 35, '{next_h} mba\'e mokõi pa po').
-st_pattern('gn', 40, '{next_h} mba\'e mokõi pa').
-st_pattern('gn', 45, '{next_h} mba\'e pa po').
-st_pattern('gn', 50, '{next_h} mba\'e pa').
-st_pattern('gn', 55, '{next_h} mba\'e po').
+st_pattern('gn', 35, '{h} ha mbohapy pa po').
+st_pattern('gn', 40, '{h} ha irundy pa').
+st_pattern('gn', 45, '{h} ha irundy pa po').
+st_pattern('gn', 50, '{h} ha po pa').
+st_pattern('gn', 55, '{h} ha po pa po').
 
 short_st_use24h('gn', false).
 short_st_format('gn', '{h}:{mm} {ampm}').

@@ -27,7 +27,7 @@ function locale_bm {
     $delimiter = ', '
     $justNow = 'sisan'
     $ago = '{0} bɔlen'
-    $inFuture = 'ka {0}'
+    $inFuture = '{0} kɔnɔ'
     $short = @{
         units = @{
             second = 'sek. {n}'
@@ -39,7 +39,7 @@ function locale_bm {
             year = 'san {n}'
         }
         ago = '{0} bɔlen'
-        inFuture = 'ka {0}'
+        inFuture = '{0} kɔnɔ'
     }
     $compact = @{
         units = @{
@@ -54,7 +54,7 @@ function locale_bm {
         half = '{n}½'
         delimiter = ''
         ago = '{0} bɔlen'
-        inFuture = 'ka {0}'
+        inFuture = '{0} kɔnɔ'
     }
     return @{
         code = 'bm'

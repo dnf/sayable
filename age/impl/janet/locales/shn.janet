@@ -27,5 +27,5 @@
             :adult "ၵူၼ်းလူင်"
 }
    :short {:units {:day "{n} ဝၼ်း" :week "{n} ဝူင်ႈ" :month "{n} လိူၼ်" :year "{n} ပီ"}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

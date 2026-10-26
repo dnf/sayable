@@ -12,18 +12,18 @@
 (def locale
   {:code "ee"
    :plural (fn [n] (if (= n 1) :one :other))
-   :units {:second {:one "sekend {n}" :other "sekendwo {n}"}
-          :minute {:one "aɖabaƒoƒo {n}" :other "aɖabaƒoƒowo {n}"}
-          :hour {:one "gaƒoƒo {n}" :other "gaƒoƒowo {n}"}
-          :day {:one "ŋkeke {n}" :other "ŋkekewo {n}"}
-          :week {:one "kɔsiɖa {n}" :other "kɔsiɖawo {n}"}
-          :month {:one "ɣleti {n}" :other "ɣletiwo {n}"}
-          :year {:one "ƒe {n}" :other "ƒewo {n}"}}
+   :units {:second "sekend {n}"
+          :minute "aɖabaƒoƒo {n}"
+          :hour "gaƒoƒo {n}"
+          :day "ŋkeke {n}"
+          :week "kɔsiɖa {n}"
+          :month "ɣleti {n}"
+          :year "ƒe {n}"}
    :half "{0} kple afã"
    :delimiter ", "
    :just-now "fifia"
-   :ago "ɖe {0} me"
+   :ago "{0} si va yi"
    :in-future "le {0} me"
-   :short {:units {:second "sek. {n}" :minute "aɖaba. {n}" :hour "gaƒ. {n}" :day "ŋkekewo {n}" :week {:one "kɔsiɖa {n}" :other "kɔsiɖawo {n}"} :month {:one "ɣleti {n}" :other "ɣletiwo {n}"} :year {:one "ƒe {n}" :other "ƒewo {n}"}} :ago "ɖe {0} me" :in-future "le {0} me"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "ɖe {0} me" :in-future "le {0} me"}
+   :short {:units {:second "sek. {n}" :minute "aɖaba. {n}" :hour "gaƒ. {n}" :day "ŋkeke {n}" :week "kɔsiɖa {n}" :month "ɣleti {n}" :year "ƒe {n}"} :ago "{0} si va yi" :in-future "le {0} me"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} si va yi" :in-future "le {0} me"}
 })

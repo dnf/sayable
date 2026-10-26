@@ -19,7 +19,7 @@ function locale_mam {
         minute = '{n} minuto'
         hour = '{n} hora'
         day = '{n} q''ij'
-        week = '{n} xjaw'
+        week = '{n} seman'
         month = '{n} xjaw'
         year = '{n} ab''q''ii'
     }
@@ -34,7 +34,7 @@ function locale_mam {
             minute = '{n} min.'
             hour = '{n} hora'
             day = '{n} q''ij'
-            week = '{n} xjaw'
+            week = '{n} seman'
             month = '{n} xjaw'
             year = '{n} ab''.'
         }
@@ -51,6 +51,7 @@ function locale_mam {
             month = '{n}mo'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
         ago = '{0} chi''j'
         inFuture = 'tu''n {0}'

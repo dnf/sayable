@@ -27,7 +27,7 @@ class XHLocale {
   static tomorrow { "ngomso" }
   static yesterday { "izolo" }
   static dayAfterTomorrow { "ngomhlomunye" }
-  static dayBeforeYesterday { "kutshanje" }
+  static dayBeforeYesterday { "izolo elinye" }
   static thisWeekday { "le {weekday}" }
   static nextWeekday { "{weekday} ezayo" }
   static lastWeekday { "{weekday} edlulileyo" }

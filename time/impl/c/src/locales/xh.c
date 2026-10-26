@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_xh = {
     "xh",
     {
-        { "ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye" },
+        { "yeshumi elinesibini", "yokuqala", "yesibini", "yesithathu", "yesine", "yesihlanu", "yesithandathu", "yesixhenxe", "yesibhozo", "yethoba", "yeshumi", "yeshumi elinanye" },
         "ezinzulwini zobusuku",
         "emini",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "intsimbi {h}", "imizuzu emihlanu emva kwentsimbi {h}", "imizuzu elishumi emva kwentsimbi {h}", "ikota emva kwentsimbi {h}", "imizuzu engamashumi amabini emva kwentsimbi {h}", "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}", "isiqingatha emva kwentsimbi {h}", "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}", "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}", "ikota ukuya kwintsimbi {next_h}", "imizuzu elishumi ukuya kwintsimbi {next_h}", "imizuzu emihlanu ukuya kwintsimbi {next_h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

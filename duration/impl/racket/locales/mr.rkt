@@ -22,7 +22,7 @@
    "mr"
    (lambda (n) (if (= n 1) "one" "other"))
    (hash "second" (hash "type" "simple" "form" "{n} सेकंद")
-         "minute" (hash "type" "simple" "form" "{n} मिनिट")
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} मिनिट" "other" "{n} मिनिटे"))
          "hour" (hash "type" "simple" "form" "{n} तास")
          "day" (hash "type" "pluralized" "forms" (hash "one" "{n} दिवस" "other" "{n} दिवस"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} आठवडा" "other" "{n} आठवडे"))

@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ak = {
     "ak",
     {
-        { "dumien", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako" },
-        "anadwo",
-        "awia",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "dumienu", "baako", "mmienu", "mmiensa", "anan", "anum", "nsia", "nson", "nwɔtwe", "nkron", "edu", "dubaako" },
+        "ɔdasuom",
+        "owigyinae",
+        { "nnɔn {h}", "nnɔn {h} ne sima anum", "nnɔn {h} ne sima edu", "nnɔn {h} ne sima dunum", "nnɔn {h} ne sima aduonu", "nnɔn {h} ne sima aduonu num", "nnɔn {h} ne fa", "aka sima aduonu num na abɔ nnɔn {next_h}", "aka sima aduonu na abɔ nnɔn {next_h}", "aka sima dunum na abɔ nnɔn {next_h}", "aka sima edu na abɔ nnɔn {next_h}", "aka sima anum na abɔ nnɔn {next_h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

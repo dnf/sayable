@@ -11,22 +11,22 @@
 
 proc locale_time_mnk {} {
     set code {mnk}
-    set hours [list {tan ning fula} {kiliŋ} {fula} {saba} {naani} {luulu} {wɔɔrɔ} {wolonfila} {sey} {kɔnɔntɔ} {taŋ} {taŋ ning kiliŋ}]
+    set hours [list {taŋ niŋ fula} {kiliŋ} {fula} {saba} {naani} {luulu} {wɔɔrɔ} {wolonfila} {sey} {kɔnɔntɔ} {taŋ} {taŋ niŋ kiliŋ}]
     set midnight {sutu-tili-laŋ}
     set noon {tili-konto}
     set patterns [dict create \
-        0 "{h}:00" \
-        5 "{h}:05" \
-        10 "{h}:10" \
-        15 "{h}:15" \
-        20 "{h}:20" \
-        25 "{h}:25" \
-        30 "{h}:30" \
-        35 "{h}:35" \
-        40 "{h}:40" \
-        45 "{h}:45" \
-        50 "{h}:50" \
-        55 "{h}:55" \
+        0 "talaŋ {h}" \
+        5 "talaŋ {h} aniŋ miniti luulu" \
+        10 "talaŋ {h} aniŋ miniti taŋ" \
+        15 "talaŋ {h} aniŋ miniti taŋ niŋ luulu" \
+        20 "talaŋ {h} aniŋ miniti muwaŋ" \
+        25 "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu" \
+        30 "talaŋ {h} aniŋ talantee" \
+        35 "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu" \
+        40 "talaŋ {h} aniŋ miniti taŋ naani" \
+        45 "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu" \
+        50 "talaŋ {h} aniŋ miniti taŋ luulu" \
+        55 "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu" \
     ]
     set clock_config [dict create \
         hours $hours \

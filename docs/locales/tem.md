@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tem.json](../../locales/tem.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort, very low confidence: 'awa rɔŋ' (2:00), 'awa rɔŋ nɛ minit pɛn' (2:10), 'awa rɔŋ a gbankɛ' (2:30). awa/minit/'a gbankɛ' are the locale's own hour/minute/half words; existing numerals kept, 12 made consistent with 11 ('pɛn nɛ rɔŋ'). Doubts: I could not verify the existing numeral names (I recall Temne 10 as tɔfɔt, not pɛn); 20 'kɩgba' and 40 'tɔgba rɔŋ' (two twenties, vigesimal) are from memory; 'nɛ' as connector taken from the existing 11. Needs a speaker.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | tənɔŋ tənɔŋ     | 17/3    |
 | Day before yesterday | yenɛ yenɛ       | 13/3    |
 | This Thursday (+5)   | Lənɛr yi        | 20/3    |
-| Last Monday (-4)     | Ləsalɛ ro ba kɛ | 11/3    |
-| Next Wednesday (+12) | Lənɛr ro ba     | 27/3    |
-| Same month (+20)     | 4 Epril         | 4/4     |
+| Last Tuesday (-4)    | Ləsalɛ ro ba kɛ | 11/3    |
+| Next Thursday (+12)  | Lənɛr ro ba     | 27/3    |
+| Same year (+20)      | 4 Epril         | 4/4     |
 | Different year       | 10 Janɛri 2026  | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | rofɛt anpa      | 12:00 AM | 12:00a  |
-| 1:00 AM         | kɩrɩŋ:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | rɔmɔntaŋka:05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | pɛn:15          | 10:15 AM | 10:15a  |
-| Half past 11    | pɛn nɛ kɩrɩŋ:30 | 11:30 AM | 11:30a  |
-| Noon            | lən             | 12:00 PM | 12:00p  |
-| Quarter to 3    | rɔŋ:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | rɔman:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | rɔmɔntat:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | pɛn:30          | 10:30 PM | 10:30p  |
-| 11:58 PM        | rofɛt anpa      | 11:58 PM | 11:58p  |
+| Time            | Normal                                       | Short    | Compact |
+| --------------- | -------------------------------------------- | -------- | ------- |
+| Midnight        | rofɛt anpa                                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | awa kɩrɩŋ                                    | 1:00 AM  | 1:00a   |
+| 5 past 9        | awa rɔmɔntaŋka nɛ minit rɔman                | 9:05 AM  | 9:05a   |
+| Quarter past 10 | awa pɛn nɛ minit pɛn nɛ rɔman                | 10:15 AM | 10:15a  |
+| Half past 11    | awa pɛn nɛ kɩrɩŋ a gbankɛ                    | 11:30 AM | 11:30a  |
+| Noon            | lən                                          | 12:00 PM | 12:00p  |
+| Quarter to 3    | awa rɔŋ nɛ minit tɔgba rɔŋ nɛ rɔman          | 2:45 PM  | 2:45p   |
+| 5 to 6          | awa rɔman nɛ minit tɔgba rɔŋ nɛ pɛn nɛ rɔman | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | awa rɔmɔntat                                 | 8:00 PM  | 8:00p   |
+| 10:30 PM        | awa pɛn a gbankɛ                             | 10:30 PM | 10:30p  |
+| 11:58 PM        | rofɛt anpa                                   | 11:58 PM | 11:58p  |

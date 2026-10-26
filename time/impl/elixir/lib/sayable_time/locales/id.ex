@@ -34,17 +34,17 @@ defmodule SayableTime.Locales.ID do
         noon: "tengah hari",
         patterns: %{
           0 => "pukul {h}",
-          5 => "lima lewat {h}",
-          10 => "sepuluh lewat {h}",
-          15 => "seperempat lewat {h}",
-          20 => "dua puluh lewat {h}",
-          25 => "dua puluh lima lewat {h}",
-          30 => "setengah lewat {h}",
-          35 => "dua puluh lima menjelang {next_h}",
-          40 => "dua puluh menjelang {next_h}",
-          45 => "seperempat menjelang {next_h}",
-          50 => "sepuluh menjelang {next_h}",
-          55 => "lima menjelang {next_h}"
+          5 => "pukul {h} lewat lima",
+          10 => "pukul {h} lewat sepuluh",
+          15 => "pukul {h} lewat seperempat",
+          20 => "pukul {h} lewat dua puluh",
+          25 => "pukul {h} lewat dua puluh lima",
+          30 => "pukul setengah {next_h}",
+          35 => "pukul {next_h} kurang dua puluh lima",
+          40 => "pukul {next_h} kurang dua puluh",
+          45 => "pukul {next_h} kurang seperempat",
+          50 => "pukul {next_h} kurang sepuluh",
+          55 => "pukul {next_h} kurang lima"
         }
       },
       short: %{

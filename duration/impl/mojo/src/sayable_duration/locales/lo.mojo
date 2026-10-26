@@ -50,7 +50,7 @@ fn build_lo() -> DurationLocale:
     short_ovr.has_year = True
     short_ovr.ago = "{0} ກ່ອນ"
     short_ovr.has_ago = True
-    short_ovr.in_future = "ໃນ {0}"
+    short_ovr.in_future = "ໃນອີກ {0}"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
@@ -64,7 +64,7 @@ fn build_lo() -> DurationLocale:
     compact_ovr.has_day = True
     compact_ovr.week = simple_unit("{n}w")
     compact_ovr.has_week = True
-    compact_ovr.month = simple_unit("{n}m")
+    compact_ovr.month = simple_unit("{n}mo")
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
@@ -74,7 +74,7 @@ fn build_lo() -> DurationLocale:
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} ກ່ອນ"
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "ໃນ {0}"
+    compact_ovr.in_future = "ໃນອີກ {0}"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -88,10 +88,10 @@ fn build_lo() -> DurationLocale:
         month=month,
         year=year,
         half="{0}ເຄິ່ງ",
-        delimiter="",
+        delimiter=" ",
         just_now="ຫາກໍ",
         ago="{0} ກ່ອນ",
-        in_future="ໃນ {0}",
+        in_future="ໃນອີກ {0}",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

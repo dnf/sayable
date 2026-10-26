@@ -22,7 +22,7 @@ final lo = AgeLocale(
   month: simpleUnit('{n} ເດືອນ'),
   year: simpleUnit('{n} ປີ'),
   half: '{0}ເຄິ່ງ',
-  delimiter: '',
+  delimiter: ' ',
   justBorn: 'ເກີດໃໝ່',
   newborn: stageNeutral('ເດັກເກີດໃໝ່'),
   infant: stageNeutral('ເດັກນ້ອຍ'),
@@ -41,5 +41,6 @@ final lo = AgeLocale(
     week: simpleUnit('{n}w'),
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
+    half: '{n}½',
   ),
 );

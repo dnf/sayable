@@ -19,8 +19,8 @@ fn plural_qu(n int) PluralCategory {
 pub const locale_qu = DurationLocale{
 	code: 'qu'
 	plural: plural_qu
-	second: simple_unit('{n} ñiqin')
-	minute: simple_unit('{n} chiniku')
+	second: simple_unit('{n} sikundu')
+	minute: simple_unit('{n} minutu')
 	hour: simple_unit('{n} ura')
 	day: simple_unit('{n} p\'unchaw')
 	week: simple_unit('{n} simana')
@@ -33,9 +33,9 @@ pub const locale_qu = DurationLocale{
 	in_future: '{0} qhipata'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('{n} ñiq')
+		second: simple_unit('{n} sik')
 		has_second: true
-		minute: simple_unit('{n} chi')
+		minute: simple_unit('{n} min')
 		has_minute: true
 		hour: simple_unit('{n} ura')
 		has_hour: true

@@ -73,7 +73,7 @@ fn build_te() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}న్నర",
+        half="{n}½",
         delimiter=", ",
         just_born="నవజాత శిశువు",
         newborn=newborn,

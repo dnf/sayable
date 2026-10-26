@@ -25,7 +25,7 @@ function locale_su {
     }
     $half = '{0} satengah'
     $delimiter = ', '
-    $justNow = 'ayeuna'
+    $justNow = 'nembé'
     $ago = '{0} kapengker'
     $inFuture = 'dina {0}'
     $short = @{

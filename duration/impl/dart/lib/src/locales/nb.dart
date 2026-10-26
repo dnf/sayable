@@ -30,7 +30,7 @@ final nb = DurationLocale(
   half: '{n}½',
   delimiter: ', ',
   justNow: 'akkurat nå',
-  ago: '{0} siden',
+  ago: 'for {0} siden',
   inFuture: 'om {0}',
   short: CompactnessOverride(
     units: {
@@ -42,7 +42,7 @@ final nb = DurationLocale(
       'month': simpleUnit('{n} md.'),
       'year': simpleUnit('{n} år'),
     },
-    ago: '{0} siden',
+    ago: 'for {0} siden',
     inFuture: 'om {0}',
   ),
   compact: CompactnessOverride(
@@ -56,7 +56,7 @@ final nb = DurationLocale(
       'year': simpleUnit('{n}å'),
     },
     delimiter: '',
-    ago: '{0} siden',
+    ago: 'for {0} siden',
     inFuture: 'om {0}',
   ),
 );

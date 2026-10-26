@@ -40,7 +40,7 @@ pub fn locale() -> AgeLocale {
                 (PluralCategory::Other, "{n} años"),
             ]),
         },
-        half: "{n} y medio".to_string(),
+        half: "{0} y medio".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Recién nacido".to_string(),
         stages: Stages {

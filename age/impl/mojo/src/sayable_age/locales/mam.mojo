@@ -29,7 +29,7 @@ fn build_mam() -> AgeLocale:
         return "other"
 
     var day = simple_unit("{n} q'ij")
-    var week = simple_unit("{n} xjaw")
+    var week = simple_unit("{n} seman")
     var month = simple_unit("{n} xjaw")
     var year = simple_unit("{n} ab'q'ii")
 
@@ -43,7 +43,7 @@ fn build_mam() -> AgeLocale:
     var short_ovr = CompactnessOverride()
     short_ovr.day = simple_unit("{n} q'ij")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n} xjaw")
+    short_ovr.week = simple_unit("{n} seman")
     short_ovr.has_week = True
     short_ovr.month = simple_unit("{n} xjaw")
     short_ovr.has_month = True
@@ -59,6 +59,8 @@ fn build_mam() -> AgeLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 

@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [kek.json](../../locales/kek.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): No conventional past/to idiom known to me, so used '<hour> hoonal rik'in <minutes> minuut' (hoonal = hour/o'clock, rik'in = with, minuut = minute loan) and 'rik'in yijach' (with half) for :30. Minute numerals use the ALMG vigesimal forms (o'laju 15, junmay 20, oob' xkak'aal 25, o'laju xkak'aal 35, kaak'aal 40, oob' roxk'aal 45, lajeeb' roxk'aal 50, o'laju roxk'aal 55). Doubts: whether 'rik'in' is the connective speakers use; whether speakers would use these vigesimal numerals rather than Spanish ones; the existing noon/midnight ('chaq' chaab'il' / 'chaq' xkab'') look doubtful too (Q'eqchi' noon is usually 'wa'leb'') but I left them. Needs a native check.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 chihab', 1 po | 2 chih., 1 po | 2y1m      |
 | 2 years, 6 months | 2 chihab', 6 po | 2 chih., 6 po | 2y6m      |
 | 3 years           | 3 chihab'       | 3 chih.       | 3y        |
-| 3½ years          | 3 chihab' ro'   | 3 chih. ro'   | 3y ro'    |
+| 3½ years          | 3 chihab' ro'   | 3 chih. ro'   | 3½y       |
 | 5 years           | 5 chihab'       | 5 chih.       | 5y        |
-| 5½ years          | 5 chihab' ro'   | 5 chih. ro'   | 5y ro'    |
+| 5½ years          | 5 chihab' ro'   | 5 chih. ro'   | 5½y       |
 | 7 years           | 7 chihab'       | 7 chih.       | 7y        |
 | 10 years          | 10 chihab'      | 10 chih.      | 10y       |
 | 18 years          | 18 chihab'      | 18 chih.      | 18y       |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | a'in Lunes    | 17/3    |
 | Day before yesterday | Jueves rik'in | 13/3    |
 | This Thursday (+5)   | a'in Jueves   | 20/3    |
-| Last Monday (-4)     | Martes rik'in | 11/3    |
-| Next Wednesday (+12) | Jueves chalen | 27/3    |
-| Same month (+20)     | 4 Abril       | 4/4     |
+| Last Tuesday (-4)    | Martes rik'in | 11/3    |
+| Next Thursday (+12)  | Jueves chalen | 27/3    |
+| Same year (+20)      | 4 Abril       | 4/4     |
 | Different year       | 10 Enero 2026 | 10/1/26 |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 minuto             | 5 min.          | 5m      |
 | 45 minutes            | 45 minuto            | 45 min.         | 45m     |
 | 1 hour                | 1 hora               | 1 hora          | 1h      |
-| 1½ hours              | 1 hora ro'           | 1 hora ro'      | 1h ro'  |
+| 1½ hours              | 1 hora ro'           | 1 hora ro'      | 1½h     |
 | 3 hours               | 3 hora               | 3 hora          | 3h      |
 | 6 hours               | 6 hora               | 6 hora          | 6h      |
 | 1 day                 | 1 q'e                | 1 q'e           | 1d      |
-| 1½ days               | 1 q'e ro'            | 1 q'e ro'       | 1d ro'  |
+| 1½ days               | 1 q'e ro'            | 1 q'e ro'       | 1½d     |
 | 3 days                | 3 q'e                | 3 q'e           | 3d      |
 | 1 week                | 1 seman              | 1 sem.          | 1w      |
 | 2 weeks, 3 days       | 2 seman, 3 q'e       | 2 sem., 3 q'e   | 2w3d    |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal         | Short    | Compact |
-| --------------- | -------------- | -------- | ------- |
-| Midnight        | chaq' xkab'    | 12:00 AM | 12:00a  |
-| 1:00 AM         | jun:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | b'elejeb':05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | lajeb':15      | 10:15 AM | 10:15a  |
-| Half past 11    | junlaju:30     | 11:30 AM | 11:30a  |
-| Noon            | chaq' chaab'il | 12:00 PM | 12:00p  |
-| Quarter to 3    | kab':45        | 2:45 PM  | 2:45p   |
-| 5 to 6          | o'ib':55       | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | wajxaqib':00   | 8:00 PM  | 8:00p   |
-| 10:30 PM        | lajeb':30      | 10:30 PM | 10:30p  |
-| 11:58 PM        | chaq' xkab'    | 11:58 PM | 11:58p  |
+| Time            | Normal                                    | Short    | Compact |
+| --------------- | ----------------------------------------- | -------- | ------- |
+| Midnight        | chaq' xkab'                               | 12:00 AM | 12:00a  |
+| 1:00 AM         | jun hoonal                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | b'eleeb' hoonal rik'in oob' minuut        | 9:05 AM  | 9:05a   |
+| Quarter past 10 | lajeeb' hoonal rik'in o'laju minuut       | 10:15 AM | 10:15a  |
+| Half past 11    | junlaju hoonal rik'in yijach              | 11:30 AM | 11:30a  |
+| Noon            | chaq' chaab'il                            | 12:00 PM | 12:00p  |
+| Quarter to 3    | kiib' hoonal rik'in oob' roxk'aal minuut  | 2:45 PM  | 2:45p   |
+| 5 to 6          | oob' hoonal rik'in o'laju roxk'aal minuut | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | waqxaqib' hoonal                          | 8:00 PM  | 8:00p   |
+| 10:30 PM        | lajeeb' hoonal rik'in yijach              | 10:30 PM | 10:30p  |
+| 11:58 PM        | chaq' xkab'                               | 11:58 PM | 11:58p  |

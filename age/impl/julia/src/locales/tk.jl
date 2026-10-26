@@ -20,7 +20,7 @@ const TK = AgeLocale(
         "month" => "{n} aý",
         "year" => "{n} ýaş",
     ),
-    half = "{0}½",
+    half = "{n} ýarym",
     delimiter = ", ",
     just_born = "Täze doglan",
     stages = Dict(
@@ -29,7 +29,7 @@ const TK = AgeLocale(
         "toddler" => StageLabel("Kiçijik"),
         "child" => StageLabel("Çaga"),
         "teenager" => StageLabel("Ýetginjek"),
-        "adult" => StageLabel("Ulular"),
+        "adult" => StageLabel("Uly adam"),
     ),
     short_override = CompactnessOverride(
         units = Dict(

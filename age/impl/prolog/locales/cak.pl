@@ -38,4 +38,5 @@ compact_sa_unit('cak', day, _, '{n}d').
 compact_sa_unit('cak', week, _, '{n}w').
 compact_sa_unit('cak', month, _, '{n}m').
 compact_sa_unit('cak', year, _, '{n}y').
+compact_sa_half('cak', '{n}½').
 compact_sa_delimiter('cak', '').

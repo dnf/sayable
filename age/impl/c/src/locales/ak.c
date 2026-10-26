@@ -31,9 +31,9 @@ const SaLocale sa_locale_ak = {
         { "Akwadaa", "" },
         { "Abofra", "" },
         { "Abofra", "" },
-        { "Abarimaa", "" },
+        { "Abarimaa", "Abaayewa" },
         { "Ɔpanyin", "" }
     },
-    true, { true, { "nna {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "dapɛn {n}", NULL, NULL, NULL, "nnapɛn {n}" } }, true, { NULL, { NULL, "bosome {n}", NULL, NULL, NULL, "abosome {n}" } }, true, { NULL, { NULL, "afe {n}", NULL, NULL, NULL, "mfe {n}" } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "nna {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "dapɛn {n}", NULL, NULL, NULL, "nnapɛn {n}" } }, true, { NULL, { NULL, "bos {n}", NULL, NULL, NULL, "abos {n}" } }, true, { NULL, { NULL, "afe {n}", NULL, NULL, NULL, "mfe {n}" } }, true, "{n}½", true, "", false, NULL }
+    true, { true, { NULL, { NULL, "da {n}", NULL, NULL, NULL, "nna {n}" } }, true, { NULL, { NULL, "dapɛn {n}", NULL, NULL, NULL, "nnapɛn {n}" } }, true, { NULL, { NULL, "bosome {n}", NULL, NULL, NULL, "abosome {n}" } }, true, { NULL, { NULL, "afe {n}", NULL, NULL, NULL, "mfe {n}" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { NULL, { NULL, "da {n}", NULL, NULL, NULL, "nna {n}" } }, true, { NULL, { NULL, "dapɛn {n}", NULL, NULL, NULL, "nnapɛn {n}" } }, true, { NULL, { NULL, "bos {n}", NULL, NULL, NULL, "abos {n}" } }, true, { NULL, { NULL, "afe {n}", NULL, NULL, NULL, "mfe {n}" } }, true, "{n}½", true, "", false, NULL }
 };

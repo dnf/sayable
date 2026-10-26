@@ -355,7 +355,7 @@ is(SayableAge->format_stage('1980-01-01', '2025-06-15'), 'Adult', '22.3 45 years
       month => { one => '{n} mes', other => '{n} meses' },
       year  => { one => '{n} a' . "\x{F1}" . 'o', other => '{n} a' . "\x{F1}" . 'os' },
     },
-    half => '{n} y medio',
+    half => '{0} y medio',
     delimiter => ', ',
     just_born => "Reci\x{E9}n nacido",
     stages => {
@@ -380,7 +380,7 @@ is(SayableAge->format_stage('1980-01-01', '2025-06-15'), 'Adult', '22.3 45 years
   is($pt->format_age('2025-01-15', '2025-07-15'), '6 meses', '25.7');
   is($pt->format_age('2023-06-15', '2025-07-15'), "2 a\x{F1}os, 1 mes", '25.8');
   is($pt->format_age('2023-06-15', '2025-12-15'), "2 a\x{F1}os, 6 meses", '25.9');
-  is($pt->format_age('2022-06-15', '2025-12-15'), "3 y medio a\x{F1}os", '25.10');
+  is($pt->format_age('2022-06-15', '2025-12-15'), "3 a\x{F1}os y medio", '25.10');
   is($pt->format_age('2022-06-15', '2025-06-15'), "3 a\x{F1}os", '25.11');
   is($pt->format_age('2018-06-15', '2025-06-15'), "7 a\x{F1}os", '25.12');
   is($pt->format_stage('2025-06-15', '2025-06-15'), "Reci\x{E9}n nacido", '25.13');
@@ -526,7 +526,7 @@ is(SayableAge::Locale::resolve_stage('Adult', undef), 'Adult', '28.42 resolve_st
   # 29.1
   is($pt->format_age('2025-06-15', '2025-06-15'), "\x{5E8}\x{5E7} \x{5E0}\x{5D5}\x{5DC}\x{5D3}", '29.1 he just born');
   # 29.2
-  is($pt->format_age('2025-06-14', '2025-06-15'), "\x{5D9}\x{5D5}\x{5DD} 1", '29.2 he one day');
+  is($pt->format_age('2025-06-14', '2025-06-15'), "\x{5D9}\x{5D5}\x{5DD}", '29.2 he one day');
   # 29.3
   is($pt->format_age('2025-06-12', '2025-06-15'), "3 \x{5D9}\x{5DE}\x{5D9}\x{5DD}", '29.3 he three days');
   # 29.4
@@ -538,7 +538,7 @@ is(SayableAge::Locale::resolve_stage('Adult', undef), 'Adult', '28.42 resolve_st
   # 29.7
   is($pt->format_age('2025-03-15', '2025-06-15'), "3 \x{5D7}\x{5D5}\x{5D3}\x{5E9}\x{5D9}\x{5DD}", '29.7 he three months');
   # 29.8
-  is($pt->format_age('2023-06-15', '2025-07-15'), "\x{5E9}\x{5E0}\x{5EA}\x{5D9}\x{5D9}\x{5DD}, \x{5D7}\x{5D5}\x{5D3}\x{5E9} 1", '29.8 he two years dual one month');
+  is($pt->format_age('2023-06-15', '2025-07-15'), "\x{5E9}\x{5E0}\x{5EA}\x{5D9}\x{5D9}\x{5DD}, \x{5D7}\x{5D5}\x{5D3}\x{5E9}", '29.8 he two years dual one month');
   # 29.9
   is($pt->format_age('2022-06-15', '2025-12-15'), "3 \x{5E9}\x{5E0}\x{5D9}\x{5DD} \x{5D5}\x{5D7}\x{5E6}\x{5D9}", '29.9 he half years');
   # 29.10
@@ -601,7 +601,7 @@ is(SayableAge::Locale::resolve_stage('Adult', undef), 'Adult', '28.42 resolve_st
   # 29.31
   is($pt->format_age('2025-01-15', '2025-07-15'), '6 bulan', '29.31 id six months');
   # 29.32
-  is($pt->format_age('2022-06-15', '2025-12-15'), '3 tahun setengah', '29.32 id half years');
+  is($pt->format_age('2022-06-15', '2025-12-15'), '3 setengah tahun', '29.32 id half years');
   # 29.33
   is($pt->format_age('2018-06-15', '2025-06-15'), '7 tahun', '29.33 id seven years');
 }

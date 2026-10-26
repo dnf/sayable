@@ -20,13 +20,13 @@ const SduDurationLocale sdu_locale_so = {
     "so",
     plural_so,
     {
-        { NULL, { NULL, "ilbiriqsi {n}", NULL, NULL, NULL, "ilbiriqsiyaal {n}" } },
-        { NULL, { NULL, "daqiiqad {n}", NULL, NULL, NULL, "daqiiqadood {n}" } },
-        { NULL, { NULL, "saacad {n}", NULL, NULL, NULL, "saacadood {n}" } },
-        { NULL, { NULL, "maalin {n}", NULL, NULL, NULL, "maalmood {n}" } },
-        { NULL, { NULL, "toddobaad {n}", NULL, NULL, NULL, "toddobaadyo {n}" } },
-        { NULL, { NULL, "bil {n}", NULL, NULL, NULL, "bilood {n}" } },
-        { NULL, { NULL, "sano {n}", NULL, NULL, NULL, "sanooyin {n}" } }
+        { "{n} ilbiriqsi", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "{n} daqiiqad", NULL, NULL, NULL, "{n} daqiiqo" } },
+        { NULL, { NULL, "{n} saacad", NULL, NULL, NULL, "{n} saacadood" } },
+        { NULL, { NULL, "{n} maalin", NULL, NULL, NULL, "{n} maalmood" } },
+        { "{n} toddobaad", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "{n} bil", NULL, NULL, NULL, "{n} bilood" } },
+        { "{n} sano", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{n}½", ", ",
     "hadda",

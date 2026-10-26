@@ -32,10 +32,10 @@
    (hash "second" (hash "type" "pluralized" "forms" (hash "zero" "{n} sekond" "one" "{n} sekond" "two" "{n} sekond" "few" "{n} sekond" "many" "{n} sekond" "other" "{n} sekondow"))
          "minute" (hash "type" "pluralized" "forms" (hash "zero" "{n} mynysen" "one" "{n} mynysen" "two" "{n} vynysen" "few" "{n} mynysen" "many" "{n} mynysen" "other" "{n} mynysen"))
          "hour" (hash "type" "pluralized" "forms" (hash "zero" "{n} our" "one" "{n} our" "two" "{n} our" "few" "{n} our" "many" "{n} our" "other" "{n} our"))
-         "day" (hash "type" "pluralized" "forms" (hash "zero" "{n} dydh" "one" "dydh" "two" "{n} dhydh" "few" "{n} dydh" "many" "{n} dydh" "other" "{n} dydh"))
-         "week" (hash "type" "pluralized" "forms" (hash "zero" "{n} seythun" "one" "seythun" "two" "{n} seythun" "few" "{n} seythun" "many" "{n} seythun" "other" "{n} seythun"))
-         "month" (hash "type" "pluralized" "forms" (hash "zero" "{n} mis" "one" "mis" "two" "{n} vis" "few" "{n} mis" "many" "{n} mis" "other" "{n} mis"))
-         "year" (hash "type" "pluralized" "forms" (hash "zero" "{n} blydhen" "one" "blydhen" "two" "{n} vlydhen" "few" "{n} blydhen" "many" "{n} blydhen" "other" "{n} blydhen")))
+         "day" (hash "type" "pluralized" "forms" (hash "zero" "{n} dydh" "one" "{n} dydh" "two" "{n} dhydh" "few" "{n} dydh" "many" "{n} dydh" "other" "{n} dydh"))
+         "week" (hash "type" "pluralized" "forms" (hash "zero" "{n} seythun" "one" "{n} seythun" "two" "{n} seythun" "few" "{n} seythun" "many" "{n} seythun" "other" "{n} seythun"))
+         "month" (hash "type" "pluralized" "forms" (hash "zero" "{n} mis" "one" "{n} mis" "two" "{n} vis" "few" "{n} mis" "many" "{n} mis" "other" "{n} mis"))
+         "year" (hash "type" "pluralized" "forms" (hash "zero" "{n} blydhen" "one" "{n} blydhen" "two" "{n} vlydhen" "few" "{n} blydhen" "many" "{n} blydhen" "other" "{n} blydhen")))
    "{0} hag hanter"
    ", "
    "lemmyn"

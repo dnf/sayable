@@ -24,7 +24,7 @@
     (list "dvanaest" "jedan" "dva" "tri" "četiri" "pet" "šest" "sedam" "osam" "devet" "deset" "jedanaest")
     "ponoć"
     "podne"
-    (hash 0 "{h} sati" 5 "pet po {h}" 10 "deset po {h}" 15 "petnaest po {h}" 20 "dvadeset po {h}" 25 "dvadeset pet po {h}" 30 "trideset po {h}" 35 "dvadeset pet do {next_h}" 40 "dvadeset do {next_h}" 45 "petnaest do {next_h}" 50 "deset do {next_h}" 55 "pet do {next_h}"))
+    (hash 0 "{h}" 5 "{h} i pet" 10 "{h} i deset" 15 "{h} i petnaest" 20 "{h} i dvadeset" 25 "{h} i dvadeset pet" 30 "pola {next_h}" 35 "dvadeset pet do {next_h}" 40 "dvadeset do {next_h}" 45 "petnaest do {next_h}" 50 "deset do {next_h}" 55 "pet do {next_h}"))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
    (time-compactness-override (short-clock-config #t "{h}:{mm}" #f))
   ))

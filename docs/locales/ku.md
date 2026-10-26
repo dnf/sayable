@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ku.json](../../locales/ku.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Kurmanji 'saet sê', 'sê û çaryek', 'sê û nîv', 'sê û deh deqe'; :35-:55 use 'kêm' (less) with {next_h}: 'çar kêm çaryek'. Compromise: in careful Kurmanji the hour before 'kêm' takes the oblique -ê ('çarê kêm çaryek', 'yekê kêm deh deqe'); the schema cannot inflect {next_h} only, so the direct form is used, which is common in speech but not the textbook form.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | dotira           | 17/3    |
 | Day before yesterday | pêroj            | 13/3    |
 | This Thursday (+5)   | vê Pêncşem       | 20/3    |
-| Last Monday (-4)     | Sêşema borî      | 11/3    |
-| Next Wednesday (+12) | Pêncşema bê      | 27/3    |
-| Same month (+20)     | 4 Avrêl          | 4/4     |
+| Last Tuesday (-4)    | Sêşema borî      | 11/3    |
+| Next Thursday (+12)  | Pêncşema bê      | 27/3    |
+| Same year (+20)      | 4 Avrêl          | 4/4     |
 | Different year       | 10 Rêbendan 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short | Compact |
-| --------------- | ---------- | ----- | ------- |
-| Midnight        | nîvê şevê  | 0:00  | 0:00    |
-| 1:00 AM         | yek:00     | 1:00  | 1:00    |
-| 5 past 9        | neh:05     | 9:05  | 9:05    |
-| Quarter past 10 | deh:15     | 10:15 | 10:15   |
-| Half past 11    | yanzdeh:30 | 11:30 | 11:30   |
-| Noon            | nîvro      | 12:00 | 12:00   |
-| Quarter to 3    | du:45      | 14:45 | 14:45   |
-| 5 to 6          | pênc:55    | 17:55 | 17:55   |
-| 8 o'clock PM    | heşt:00    | 20:00 | 20:00   |
-| 10:30 PM        | deh:30     | 22:30 | 22:30   |
-| 11:58 PM        | nîvê şevê  | 23:58 | 23:58   |
+| Time            | Normal            | Short | Compact |
+| --------------- | ----------------- | ----- | ------- |
+| Midnight        | nîvê şevê         | 0:00  | 0:00    |
+| 1:00 AM         | saet yek          | 1:00  | 1:00    |
+| 5 past 9        | neh û pênc deqe   | 9:05  | 9:05    |
+| Quarter past 10 | deh û çaryek      | 10:15 | 10:15   |
+| Half past 11    | yanzdeh û nîv     | 11:30 | 11:30   |
+| Noon            | nîvro             | 12:00 | 12:00   |
+| Quarter to 3    | sê kêm çaryek     | 14:45 | 14:45   |
+| 5 to 6          | şeş kêm pênc deqe | 17:55 | 17:55   |
+| 8 o'clock PM    | saet heşt         | 20:00 | 20:00   |
+| 10:30 PM        | deh û nîv         | 22:30 | 22:30   |
+| 11:58 PM        | nîvê şevê         | 23:58 | 23:58   |

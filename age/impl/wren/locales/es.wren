@@ -20,7 +20,7 @@ class ESLocale {
       "year": {"one": "{n} año", "other": "{n} años"},
     }
   }
-  static half { "{n} y medio" }
+  static half { "{0} y medio" }
   static delimiter { ", " }
   static justBorn { "Recién nacido" }
   static stages {

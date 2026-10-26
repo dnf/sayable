@@ -15,18 +15,18 @@ st_hours('uz', ['o\'n ikki', 'bir', 'ikki', 'uch', 'to\'rt', 'besh', 'olti', 'ye
 st_midnight('uz', 'yarim tun').
 st_noon('uz', 'tush').
 
-st_pattern('uz', 0, '{h} o\'clock').
-st_pattern('uz', 5, 'besh past {h}').
-st_pattern('uz', 10, 'o\'n past {h}').
-st_pattern('uz', 15, 'o\'n besh past {h}').
-st_pattern('uz', 20, 'yigirma past {h}').
-st_pattern('uz', 25, 'yigirma besh past {h}').
-st_pattern('uz', 30, 'o\'ttiz past {h}').
-st_pattern('uz', 35, 'yigirma besh to {next_h}').
-st_pattern('uz', 40, 'yigirma to {next_h}').
-st_pattern('uz', 45, 'o\'n besh to {next_h}').
-st_pattern('uz', 50, 'o\'n to {next_h}').
-st_pattern('uz', 55, 'besh to {next_h}').
+st_pattern('uz', 0, 'soat {h}').
+st_pattern('uz', 5, 'soat {h} nol besh').
+st_pattern('uz', 10, 'soat {h} o\'n').
+st_pattern('uz', 15, 'soat {h} o\'n besh').
+st_pattern('uz', 20, 'soat {h} yigirma').
+st_pattern('uz', 25, 'soat {h} yigirma besh').
+st_pattern('uz', 30, 'soat {h} yarim').
+st_pattern('uz', 35, 'soat {h} o\'ttiz besh').
+st_pattern('uz', 40, 'soat {h} qirq').
+st_pattern('uz', 45, 'soat {h} qirq besh').
+st_pattern('uz', 50, 'soat {h} ellik').
+st_pattern('uz', 55, 'soat {h} ellik besh').
 
 short_st_use24h('uz', true).
 short_st_format('uz', '{h}:{mm}').

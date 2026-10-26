@@ -31,8 +31,8 @@
    "{n}½"
    ", "
    "akkurat nå"
-   "{0} siden"
+   "for {0} siden"
    "om {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} sek") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} t") (hash "type" "simple" "form" "{n} d") (hash "type" "simple" "form" "{n} u") (hash "type" "simple" "form" "{n} md.") (hash "type" "simple" "form" "{n} år") #f #f "{0} siden" "om {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}t") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}u") (hash "type" "simple" "form" "{n} m") (hash "type" "simple" "form" "{n}å") #f "" "{0} siden" "om {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} sek") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} t") (hash "type" "simple" "form" "{n} d") (hash "type" "simple" "form" "{n} u") (hash "type" "simple" "form" "{n} md.") (hash "type" "simple" "form" "{n} år") #f #f "for {0} siden" "om {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}t") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}u") (hash "type" "simple" "form" "{n} m") (hash "type" "simple" "form" "{n}å") #f "" "for {0} siden" "om {0}")
   ))

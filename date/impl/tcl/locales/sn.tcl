@@ -20,7 +20,7 @@ proc locale_date_sn {} {
     set today {nhasi}
     set tomorrow {mangwana}
     set yesterday {nezuro}
-    set day_after_tomorrow {mangwanani}
+    set day_after_tomorrow {kuswera mangwana}
     set day_before_yesterday {nezuro rakapera}
     set this_weekday "{weekday} ino"
     set next_weekday "{weekday} inotevera"

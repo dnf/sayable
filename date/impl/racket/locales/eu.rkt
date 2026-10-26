@@ -22,10 +22,10 @@
    "eu"
    (list "urtarril" "otsail" "martxo" "apiril" "maiatz" "ekain" "uztail" "abuztu" "irail" "urri" "azaro" "abendu")
    (list "igandea" "astelehena" "asteartea" "asteazkena" "osteguna" "ostirala" "larunbata")
-   "{n}"
-   (hash)
-   "{month}ren {day}"
-   "{year}ko {month}ren {day}"
+   "{n}a"
+   (hash "11" "{n}" "31" "{n}")
+   "{month} {day}"
+   "{year}ko {month} {day}"
    "gaur"
    "bihar"
    "atzo"
@@ -34,7 +34,7 @@
    "{weekday} hau"
    "hurrengo {weekday}"
    "aurreko {weekday}"
-   #f
+   (list "urtarrilaren" "otsailaren" "martxoaren" "apirilaren" "maiatzaren" "ekainaren" "uztailaren" "abuztuaren" "irailaren" "urriaren" "azaroaren" "abenduaren")
    (date-compactness-override (list "urt" "ots" "mar" "api" "mai" "eka" "uzt" "abu" "ira" "urr" "aza" "abe") #f (list "ig" "al" "ar" "az" "og" "or" "lr") "{n}" #f "{month} {day}" "{year} {month} {day}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

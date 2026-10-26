@@ -24,7 +24,7 @@ proc locale_is {} {
         month [dict create one "{n} mánuður" other "{n} mánuðir"] \
         year [dict create one "{n} ár" other "{n} ár"] \
     ]
-    set half "{0} og hálft"
+    set half "{n} og hálft"
     set delimiter {, }
     set just_born {Nýfætt}
     set stages [dict create \

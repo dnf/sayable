@@ -15,7 +15,7 @@ class MTLocale {
     return ["Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru"]
   }
   static weekdays {
-    return ["Il-Ħadd", "It-Tnejn", "It-Tlieta", "L-Erbgħa", "Il-Ħamis", "Il-Ġimgħa", "Is-Sibt"]
+    return ["il-Ħadd", "it-Tnejn", "it-Tlieta", "l-Erbgħa", "il-Ħamis", "il-Ġimgħa", "is-Sibt"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {

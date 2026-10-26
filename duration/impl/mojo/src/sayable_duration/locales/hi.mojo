@@ -29,7 +29,7 @@ fn build_hi() -> DurationLocale:
 
     var second = simple_unit("{n} सेकंड")
     var minute = simple_unit("{n} मिनट")
-    var hour = simple_unit("{n} घंटा")
+    var hour = plural_unit(one="{n} घंटा", other="{n} घंटे")
     var day = plural_unit(one="{n} दिन", other="{n} दिन")
     var week = plural_unit(one="{n} सप्ताह", other="{n} सप्ताह")
     var month = plural_unit(one="{n} महीना", other="{n} महीने")

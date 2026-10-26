@@ -21,8 +21,8 @@
   (duration-locale
    "qu"
    (lambda (n) "other")
-   (hash "second" (hash "type" "simple" "form" "{n} ñiqin")
-         "minute" (hash "type" "simple" "form" "{n} chiniku")
+   (hash "second" (hash "type" "simple" "form" "{n} sikundu")
+         "minute" (hash "type" "simple" "form" "{n} minutu")
          "hour" (hash "type" "simple" "form" "{n} ura")
          "day" (hash "type" "simple" "form" "{n} p'unchaw")
          "week" (hash "type" "simple" "form" "{n} simana")
@@ -33,6 +33,6 @@
    "kunanlla"
    "{0} ñawpaqta"
    "{0} qhipata"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} ñiq") (hash "type" "simple" "form" "{n} chi") (hash "type" "simple" "form" "{n} ura") (hash "type" "simple" "form" "{n} p'un") (hash "type" "simple" "form" "{n} sim") (hash "type" "simple" "form" "{n} kil") (hash "type" "simple" "form" "{n} wat") #f #f "{0} ñawpaqta" "{0} qhipata")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} sik") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} ura") (hash "type" "simple" "form" "{n} p'un") (hash "type" "simple" "form" "{n} sim") (hash "type" "simple" "form" "{n} kil") (hash "type" "simple" "form" "{n} wat") #f #f "{0} ñawpaqta" "{0} qhipata")
    (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} ñawpaqta" "{0} qhipata")
   ))

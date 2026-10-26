@@ -18,10 +18,10 @@
    :code "lt"
    :months (list "sausis" "vasaris" "kovas" "balandis" "gegužė" "birželis" "liepa" "rugpjūtis" "rugsėjis" "spalis" "lapkritis" "gruodis")
    :weekdays (list "sekmadienis" "pirmadienis" "antradienis" "trečiadienis" "ketvirtadienis" "penktadienis" "šeštadienis")
-   :day-format "{n}."
+   :day-format "{n} d."
    :day-format-exceptions nil
-   :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern "{month} {day}"
+   :date-pattern-with-year "{year} m. {month} {day}"
    :today "šiandien"
    :tomorrow "rytoj"
    :yesterday "vakar"
@@ -33,9 +33,9 @@
    :months-in-date (list "sausio" "vasario" "kovo" "balandžio" "gegužės" "birželio" "liepos" "rugpjūčio" "rugsėjo" "spalio" "lapkričio" "gruodžio")
    :short-months (list "saus" "vas" "kov" "bal" "geg" "birž" "liep" "rugp" "rugs" "spal" "lapkr" "gruod")
    :short-weekdays (list "sk" "pr" "an" "tr" "kt" "pn" "št")
-   :short-day-format "{n}."
-   :short-date-pattern "{day} {month}"
-   :short-date-pattern-with-year "{day} {month} {year}"
+   :short-day-format "{n} d."
+   :short-date-pattern "{month} {day}"
+   :short-date-pattern-with-year "{year} m. {month} {day}"
    :compact-date-pattern "{m}-{d}"
    :compact-date-pattern-with-year "{yy}-{m}-{d}"
 ))

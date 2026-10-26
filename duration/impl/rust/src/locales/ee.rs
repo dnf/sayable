@@ -23,60 +23,30 @@ pub fn locale() -> DurationLocale {
             }
         },
         units: Units {
-            second: UnitForms::plural(&[
-                (PluralCategory::One, "sekend {n}"),
-                (PluralCategory::Other, "sekendwo {n}"),
-            ]),
-            minute: UnitForms::plural(&[
-                (PluralCategory::One, "aɖabaƒoƒo {n}"),
-                (PluralCategory::Other, "aɖabaƒoƒowo {n}"),
-            ]),
-            hour: UnitForms::plural(&[
-                (PluralCategory::One, "gaƒoƒo {n}"),
-                (PluralCategory::Other, "gaƒoƒowo {n}"),
-            ]),
-            day: UnitForms::plural(&[
-                (PluralCategory::One, "ŋkeke {n}"),
-                (PluralCategory::Other, "ŋkekewo {n}"),
-            ]),
-            week: UnitForms::plural(&[
-                (PluralCategory::One, "kɔsiɖa {n}"),
-                (PluralCategory::Other, "kɔsiɖawo {n}"),
-            ]),
-            month: UnitForms::plural(&[
-                (PluralCategory::One, "ɣleti {n}"),
-                (PluralCategory::Other, "ɣletiwo {n}"),
-            ]),
-            year: UnitForms::plural(&[
-                (PluralCategory::One, "ƒe {n}"),
-                (PluralCategory::Other, "ƒewo {n}"),
-            ]),
+            second: UnitForms::simple("sekend {n}"),
+            minute: UnitForms::simple("aɖabaƒoƒo {n}"),
+            hour: UnitForms::simple("gaƒoƒo {n}"),
+            day: UnitForms::simple("ŋkeke {n}"),
+            week: UnitForms::simple("kɔsiɖa {n}"),
+            month: UnitForms::simple("ɣleti {n}"),
+            year: UnitForms::simple("ƒe {n}"),
         },
         half: "{0} kple afã".to_string(),
         delimiter: ", ".to_string(),
         just_now: "fifia".to_string(),
-        ago: "ɖe {0} me".to_string(),
+        ago: "{0} si va yi".to_string(),
         in_future: "le {0} me".to_string(),
         short: Some(CompactnessOverride {
             second: Some(UnitForms::simple("sek. {n}")),
             minute: Some(UnitForms::simple("aɖaba. {n}")),
             hour: Some(UnitForms::simple("gaƒ. {n}")),
-            day: Some(UnitForms::simple("ŋkekewo {n}")),
-            week: Some(UnitForms::plural(&[
-                (PluralCategory::One, "kɔsiɖa {n}"),
-                (PluralCategory::Other, "kɔsiɖawo {n}"),
-            ])),
-            month: Some(UnitForms::plural(&[
-                (PluralCategory::One, "ɣleti {n}"),
-                (PluralCategory::Other, "ɣletiwo {n}"),
-            ])),
-            year: Some(UnitForms::plural(&[
-                (PluralCategory::One, "ƒe {n}"),
-                (PluralCategory::Other, "ƒewo {n}"),
-            ])),
+            day: Some(UnitForms::simple("ŋkeke {n}")),
+            week: Some(UnitForms::simple("kɔsiɖa {n}")),
+            month: Some(UnitForms::simple("ɣleti {n}")),
+            year: Some(UnitForms::simple("ƒe {n}")),
             half: None,
             delimiter: None,
-            ago: Some("ɖe {0} me".to_string()),
+            ago: Some("{0} si va yi".to_string()),
             in_future: Some("le {0} me".to_string()),
         }),
         compact: Some(CompactnessOverride {
@@ -89,7 +59,7 @@ pub fn locale() -> DurationLocale {
             year: Some(UnitForms::simple("{n}y")),
             half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
-            ago: Some("ɖe {0} me".to_string()),
+            ago: Some("{0} si va yi".to_string()),
             in_future: Some("le {0} me".to_string()),
         }),
         format_number: None,

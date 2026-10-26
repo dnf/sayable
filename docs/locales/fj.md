@@ -6,36 +6,44 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [fj.json](../../locales/fj.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Used '{h} na kaloko' for the hour and an additive '... ka <minutes> na miniti' for minutes (ka = and, miniti = minute), with Fijian numerals (tini ka lima 15, ruasagavulu 20, tolusagavulu 30, vāsagavulu 40, limasagavulu 50). I did not use a 'past/to' construction or 'veimama' for :30 because I could not confirm the idiomatic syntax; the result is long and reads like a careful literal statement rather than casual speech. Native review advised. Specific doubts: (1) Fijian likely has a real 'past/to' idiom (something like 'sivia' = past, 'vo' = remaining) that I could not pin down, so the additive form may sound stilted; (2) ':30' should probably use 'veimama' (half) rather than 'tolusagavulu na miniti'; (3) whether 'ka' is the right conjunction between the hour and the minutes.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal                           | Short                       | Compact                 |
-| ----------------- | -------------------------------- | --------------------------- | ----------------------- |
-| Born today        | Gone vou                         | Gone vou                    | Gone vou                |
-| 1 day             | 1 na siga                        | 1 siga                      | 1d                      |
-| 3 days            | 3 na siga                        | 3 siga                      | 3d                      |
-| 6 days            | 6 na siga                        | 6 siga                      | 6d                      |
-| 1 week            | 1 na macawa                      | 1 mac.                      | 1w                      |
-| 1 week, 1 day     | 1 na macawa, 1 na siga           | 1 mac., 1 siga              | 1w1d                    |
-| 2 weeks           | 2 na macawa                      | 2 mac.                      | 2w                      |
-| 2 weeks, 3 days   | 2 na macawa, 3 na siga           | 2 mac., 3 siga              | 2w3d                    |
-| 3 months          | 3 na vula                        | 3 vula                      | 3m                      |
-| 6 months          | 6 na vula                        | 6 vula                      | 6m                      |
-| 11 months         | 11 na vula                       | 11 vula                     | 11m                     |
-| 12 months         | 12 na vula                       | 12 vula                     | 12m                     |
-| 23 months         | 23 na vula                       | 23 vula                     | 23m                     |
-| 2 years           | 2 na yabaki                      | 2 yab.                      | 2y                      |
-| 2 years, 1 month  | 2 na yabaki, 1 na vula           | 2 yab., 1 vula              | 2y1m                    |
-| 2 years, 6 months | 2 na yabaki, 6 na vula           | 2 yab., 6 vula              | 2y6m                    |
-| 3 years           | 3 na yabaki                      | 3 yab.                      | 3y                      |
-| 3½ years          | 3 kei na levu ni wasei na yabaki | 3 kei na levu ni wasei yab. | 3 kei na levu ni waseiy |
-| 5 years           | 5 na yabaki                      | 5 yab.                      | 5y                      |
-| 5½ years          | 5 kei na levu ni wasei na yabaki | 5 kei na levu ni wasei yab. | 5 kei na levu ni waseiy |
-| 7 years           | 7 na yabaki                      | 7 yab.                      | 7y                      |
-| 10 years          | 10 na yabaki                     | 10 yab.                     | 10y                     |
-| 18 years          | 18 na yabaki                     | 18 yab.                     | 18y                     |
-| 45 years          | 45 na yabaki                     | 45 yab.                     | 45y                     |
+| Age               | Normal                     | Short                 | Compact  |
+| ----------------- | -------------------------- | --------------------- | -------- |
+| Born today        | Gone vou                   | Gone vou              | Gone vou |
+| 1 day             | 1 na siga                  | 1 siga                | 1d       |
+| 3 days            | 3 na siga                  | 3 siga                | 3d       |
+| 6 days            | 6 na siga                  | 6 siga                | 6d       |
+| 1 week            | 1 na macawa                | 1 mac.                | 1w       |
+| 1 week, 1 day     | 1 na macawa, 1 na siga     | 1 mac., 1 siga        | 1w1d     |
+| 2 weeks           | 2 na macawa                | 2 mac.                | 2w       |
+| 2 weeks, 3 days   | 2 na macawa, 3 na siga     | 2 mac., 3 siga        | 2w3d     |
+| 3 months          | 3 na vula                  | 3 vula                | 3m       |
+| 6 months          | 6 na vula                  | 6 vula                | 6m       |
+| 11 months         | 11 na vula                 | 11 vula               | 11m      |
+| 12 months         | 12 na vula                 | 12 vula               | 12m      |
+| 23 months         | 23 na vula                 | 23 vula               | 23m      |
+| 2 years           | 2 na yabaki                | 2 yab.                | 2y       |
+| 2 years, 1 month  | 2 na yabaki, 1 na vula     | 2 yab., 1 vula        | 2y1m     |
+| 2 years, 6 months | 2 na yabaki, 6 na vula     | 2 yab., 6 vula        | 2y6m     |
+| 3 years           | 3 na yabaki                | 3 yab.                | 3y       |
+| 3½ years          | 3 na yabaki kei na veimama | 3 yab. kei na veimama | 3½y      |
+| 5 years           | 5 na yabaki                | 5 yab.                | 5y       |
+| 5½ years          | 5 na yabaki kei na veimama | 5 yab. kei na veimama | 5½y      |
+| 7 years           | 7 na yabaki                | 7 yab.                | 7y       |
+| 10 years          | 10 na yabaki               | 10 yab.               | 10y      |
+| 18 years          | 18 na yabaki               | 18 yab.               | 18y      |
+| 45 years          | 45 na yabaki               | 45 yab.               | 45y      |
 
 ### Stages
 
@@ -73,37 +81,37 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | bogi rua ni mataka  | 17/3    |
 | Day before yesterday | nanoa edua          | 13/3    |
 | This Thursday (+5)   | na Lotulevu oqo     | 20/3    |
-| Last Monday (-4)     | na Tusiti sa oti    | 11/3    |
-| Next Wednesday (+12) | na Lotulevu mai oqo | 27/3    |
-| Same month (+20)     | 4 Epereli           | 4/4     |
+| Last Tuesday (-4)    | na Tusiti sa oti    | 11/3    |
+| Next Thursday (+12)  | na Lotulevu mai oqo | 27/3    |
+| Same year (+20)      | 4 Epereli           | 4/4     |
 | Different year       | 10 Janueri 2026     | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                         | Short                       | Compact                 |
-| --------------------- | ------------------------------ | --------------------------- | ----------------------- |
-| 0 seconds             | edaidai ga                     | edaidai ga                  | edaidai ga              |
-| 1 second              | 1 na sekodi                    | 1 sek                       | 1s                      |
-| 30 seconds            | 30 na sekodi                   | 30 sek                      | 30s                     |
-| 1 minute              | 1 na miniti                    | 1 min                       | 1m                      |
-| 2 minutes, 15 seconds | 2 na miniti, 15 na sekodi      | 2 min, 15 sek               | 2m15s                   |
-| 5 minutes             | 5 na miniti                    | 5 min                       | 5m                      |
-| 45 minutes            | 45 na miniti                   | 45 min                      | 45m                     |
-| 1 hour                | 1 na aua                       | 1 aua                       | 1h                      |
-| 1½ hours              | 1 kei na levu ni wasei na aua  | 1 kei na levu ni wasei aua  | 1 kei na levu ni waseih |
-| 3 hours               | 3 na aua                       | 3 aua                       | 3h                      |
-| 6 hours               | 6 na aua                       | 6 aua                       | 6h                      |
-| 1 day                 | 1 na siga                      | 1 siga                      | 1d                      |
-| 1½ days               | 1 kei na levu ni wasei na siga | 1 kei na levu ni wasei siga | 1 kei na levu ni waseid |
-| 3 days                | 3 na siga                      | 3 siga                      | 3d                      |
-| 1 week                | 1 na macawa                    | 1 mac                       | 1w                      |
-| 2 weeks, 3 days       | 2 na macawa, 3 na siga         | 2 mac, 3 siga               | 2w3d                    |
-| 1 month               | 1 na vula                      | 1 vul                       | 1mo                     |
-| 6 months              | 6 na vula                      | 6 vul                       | 6mo                     |
-| 1 year                | 1 na yabaki                    | 1 yab                       | 1y                      |
-| 2 years, 3 months     | 2 na yabaki, 3 na vula         | 2 yab, 3 vul                | 2y3mo                   |
+| Duration              | Normal                    | Short                 | Compact    |
+| --------------------- | ------------------------- | --------------------- | ---------- |
+| 0 seconds             | edaidai ga                | edaidai ga            | edaidai ga |
+| 1 second              | 1 na sekodi               | 1 sek                 | 1s         |
+| 30 seconds            | 30 na sekodi              | 30 sek                | 30s        |
+| 1 minute              | 1 na miniti               | 1 min                 | 1m         |
+| 2 minutes, 15 seconds | 2 na miniti, 15 na sekodi | 2 min, 15 sek         | 2m15s      |
+| 5 minutes             | 5 na miniti               | 5 min                 | 5m         |
+| 45 minutes            | 45 na miniti              | 45 min                | 45m        |
+| 1 hour                | 1 na aua                  | 1 aua                 | 1h         |
+| 1½ hours              | 1 na aua kei na veimama   | 1 aua kei na veimama  | 1½h        |
+| 3 hours               | 3 na aua                  | 3 aua                 | 3h         |
+| 6 hours               | 6 na aua                  | 6 aua                 | 6h         |
+| 1 day                 | 1 na siga                 | 1 siga                | 1d         |
+| 1½ days               | 1 na siga kei na veimama  | 1 siga kei na veimama | 1½d        |
+| 3 days                | 3 na siga                 | 3 siga                | 3d         |
+| 1 week                | 1 na macawa               | 1 mac                 | 1w         |
+| 2 weeks, 3 days       | 2 na macawa, 3 na siga    | 2 mac, 3 siga         | 2w3d       |
+| 1 month               | 1 na vula                 | 1 vul                 | 1mo        |
+| 6 months              | 6 na vula                 | 6 vul                 | 6mo        |
+| 1 year                | 1 na yabaki               | 1 yab                 | 1y         |
+| 2 years, 3 months     | 2 na yabaki, 3 na vula    | 2 yab, 3 vul          | 2y3mo      |
 
 ### Relative time
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal         | Short    | Compact |
-| --------------- | -------------- | -------- | ------- |
-| Midnight        | bogi levu      | 12:00 AM | 12:00a  |
-| 1:00 AM         | dua:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | ciwa:05        | 9:05 AM  | 9:05a   |
-| Quarter past 10 | tini:15        | 10:15 AM | 10:15a  |
-| Half past 11    | tini ka dua:30 | 11:30 AM | 11:30a  |
-| Noon            | sigalevu       | 12:00 PM | 12:00p  |
-| Quarter to 3    | rua:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | lima:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | walu:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | tini:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | bogi levu      | 11:58 PM | 11:58p  |
+| Time            | Normal                                           | Short    | Compact |
+| --------------- | ------------------------------------------------ | -------- | ------- |
+| Midnight        | bogi levu                                        | 12:00 AM | 12:00a  |
+| 1:00 AM         | dua na kaloko                                    | 1:00 AM  | 1:00a   |
+| 5 past 9        | ciwa na kaloko ka lima na miniti                 | 9:05 AM  | 9:05a   |
+| Quarter past 10 | tini na kaloko ka tini ka lima na miniti         | 10:15 AM | 10:15a  |
+| Half past 11    | tini ka dua na kaloko ka tolusagavulu na miniti  | 11:30 AM | 11:30a  |
+| Noon            | sigalevu                                         | 12:00 PM | 12:00p  |
+| Quarter to 3    | rua na kaloko ka vāsagavulu ka lima na miniti    | 2:45 PM  | 2:45p   |
+| 5 to 6          | lima na kaloko ka limasagavulu ka lima na miniti | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | walu na kaloko                                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | tini na kaloko ka tolusagavulu na miniti         | 10:30 PM | 10:30p  |
+| 11:58 PM        | bogi levu                                        | 11:58 PM | 11:58p  |

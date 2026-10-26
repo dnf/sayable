@@ -20,10 +20,10 @@ class TALocale {
       "day": {"one": "{n} நாள்", "other": "{n} நாட்கள்"},
       "week": {"one": "{n} வாரம்", "other": "{n} வாரங்கள்"},
       "month": {"one": "{n} மாதம்", "other": "{n} மாதங்கள்"},
-      "year": {"one": "{n} வயது", "other": "{n} வயது"},
+      "year": {"one": "{n} ஆண்டு", "other": "{n} ஆண்டுகள்"},
     }
   }
-  static half { "{0}ரை" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justNow { "இப்போதுதான்" }
   static ago { "{0} முன்" }

@@ -13,13 +13,13 @@
 
 sd_plural('ig', _, other).
 
-sd_unit('ig', second, _, '{n} sekọnd').
-sd_unit('ig', minute, _, '{n} nkeji').
-sd_unit('ig', hour, _, '{n} awa').
-sd_unit('ig', day, _, '{n} ụbọchị').
-sd_unit('ig', week, _, '{n} izu').
-sd_unit('ig', month, _, '{n} ọnwa').
-sd_unit('ig', year, _, '{n} afọ').
+sd_unit('ig', second, _, 'sekọnd {n}').
+sd_unit('ig', minute, _, 'nkeji {n}').
+sd_unit('ig', hour, _, 'awa {n}').
+sd_unit('ig', day, _, 'ụbọchị {n}').
+sd_unit('ig', week, _, 'izu {n}').
+sd_unit('ig', month, _, 'ọnwa {n}').
+sd_unit('ig', year, _, 'afọ {n}').
 
 sd_half('ig', '{0} na ọkara').
 sd_delimiter('ig', ', ').
@@ -27,13 +27,13 @@ sd_just_now('ig', 'ugbu a').
 sd_ago('ig', '{0} gara aga').
 sd_in_future('ig', 'na {0}').
 
-short_sd_unit('ig', second, _, '{n} sek.').
-short_sd_unit('ig', minute, _, '{n} nkeji').
-short_sd_unit('ig', hour, _, '{n} awa').
-short_sd_unit('ig', day, _, '{n} ụbọchị').
-short_sd_unit('ig', week, _, '{n} izu').
-short_sd_unit('ig', month, _, '{n} ọnwa').
-short_sd_unit('ig', year, _, '{n} afọ').
+short_sd_unit('ig', second, _, 'sek. {n}').
+short_sd_unit('ig', minute, _, 'nkeji {n}').
+short_sd_unit('ig', hour, _, 'awa {n}').
+short_sd_unit('ig', day, _, 'ụbọchị {n}').
+short_sd_unit('ig', week, _, 'izu {n}').
+short_sd_unit('ig', month, _, 'ọnwa {n}').
+short_sd_unit('ig', year, _, 'afọ {n}').
 short_sd_ago('ig', '{0} gara aga').
 short_sd_in_future('ig', 'na {0}').
 

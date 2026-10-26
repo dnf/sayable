@@ -11,7 +11,7 @@
 
 function loc = locale_dyu()
   loc.code = 'dyu';
-  loc.months = {'Zanwuyekalo', 'Feburuyekalo', 'Marisikalo', 'Awirilikalo', 'Mɛkalo', 'Zuwɛnkalo', 'Zuluyekalo', 'Utikalo', 'Sɛtanburukalo', 'Ɔkutɔburukalo', 'Nowanburdukalo', 'Desanburukalo'};
+  loc.months = {'Zanwuyekalo', 'Feburuyekalo', 'Marisikalo', 'Awirilikalo', 'Mɛkalo', 'Zuwɛnkalo', 'Zuluyekalo', 'Utikalo', 'Sɛtanburukalo', 'Ɔkutɔburukalo', 'Nowanburukalo', 'Desanburukalo'};
   loc.weekdays = {'Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri'};
   loc.day_format = '{n}';
   loc.day_format_exceptions = struct();

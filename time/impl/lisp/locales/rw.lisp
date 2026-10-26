@@ -17,10 +17,10 @@
   (make-time-locale
    :code "rw"
    :clock (make-clock-config
-    :hours (list "cumi n'ebyiri" "rimwe" "ebyiri" "eshatu" "enye" "eshanu" "esheshatu" "indwi" "umunani" "icyenda" "icumi" "cumi n'imwe")
-    :midnight "igicuku"
-    :noon "saa sita"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :hours (list "sita" "saba" "munani" "cyenda" "kumi" "kumi n'imwe" "kumi n'ebyiri" "moya" "mbiri" "tatu" "ine" "tanu")
+    :midnight "saa sita z'ijoro"
+    :noon "saa sita z'amanywa"
+    :patterns (list (cons 0 "saa {h}") (cons 5 "saa {h} n'iminota itanu") (cons 10 "saa {h} n'iminota icumi") (cons 15 "saa {h} n'iminota cumi n'itanu") (cons 20 "saa {h} n'iminota makumyabiri") (cons 25 "saa {h} n'iminota makumyabiri n'itanu") (cons 30 "saa {h} n'igice") (cons 35 "saa {h} n'iminota mirongo itatu n'itanu") (cons 40 "saa {h} n'iminota mirongo ine") (cons 45 "saa {h} n'iminota mirongo ine n'itanu") (cons 50 "saa {h} n'iminota mirongo itanu") (cons 55 "saa {h} n'iminota mirongo itanu n'itanu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

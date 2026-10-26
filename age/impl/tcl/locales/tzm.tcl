@@ -27,18 +27,18 @@ proc locale_tzm {} {
     set just_born {Iɣ d illul}
     set stages [dict create \
         newborn {Iɣ d illul} \
-        infant {Agellid} \
+        infant {Llufan} \
         toddler [dict create m {Aḥenjir} f {Taḥenjirt}] \
-        child [dict create m {Afrux} f {Tafruxṭ}] \
+        child [dict create m {Afrux} f {Tafruxt}] \
         teenager [dict create m {Aɛrim} f {Taɛrimt}] \
         adult [dict create m {Argaz} f {Tamṭṭuṭ}] \
     ]
     set short [dict create \
         units [dict create \
-            day "{n} d" \
-            week "{n} wk" \
-            month "{n} mo" \
-            year "{n} yr" \
+            day [dict create one "{n} ass" other "{n} ussan"] \
+            week [dict create one "{n} imalass" other "{n} imalassn"] \
+            month [dict create one "{n} ayyur" other "{n} ayyurn"] \
+            year [dict create one "{n} aseggas" other "{n} iseggasen"] \
         ] \
     ]
     set compact [dict create \

@@ -25,8 +25,8 @@ locale =
         Dict.fromList
             [ ( "second", Pluralized
               [ ( One, "{n} tasint" )
-              , ( Few, "{n} tasinin" )
-              , ( Other, "{n} tasinin" )
+              , ( Few, "{n} tisinin" )
+              , ( Other, "{n} tisinin" )
               ] )
             , ( "minute", Pluralized
               [ ( One, "{n} tusdiqt" )
@@ -69,13 +69,41 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n}s" )
-                        , ( "minute", Simple "{n}m" )
-                        , ( "hour", Simple "{n}h" )
-                        , ( "day", Simple "{n}d" )
-                        , ( "week", Simple "{n}w" )
-                        , ( "month", Simple "{n}mo" )
-                        , ( "year", Simple "{n}y" )
+                        [ ( "second", Pluralized
+                          [ ( One, "{n} tasint" )
+                          , ( Few, "{n} tasinin" )
+                          , ( Other, "{n} tasinin" )
+                          ] )
+                        , ( "minute", Pluralized
+                          [ ( One, "{n} tusdiqt" )
+                          , ( Few, "{n} tusdiqin" )
+                          , ( Other, "{n} tusdiqin" )
+                          ] )
+                        , ( "hour", Pluralized
+                          [ ( One, "{n} tasragt" )
+                          , ( Few, "{n} tisragin" )
+                          , ( Other, "{n} tisragin" )
+                          ] )
+                        , ( "day", Pluralized
+                          [ ( One, "{n} ass" )
+                          , ( Few, "{n} ussan" )
+                          , ( Other, "{n} ass" )
+                          ] )
+                        , ( "week", Pluralized
+                          [ ( One, "{n} imalass" )
+                          , ( Few, "{n} imalassn" )
+                          , ( Other, "{n} imalass" )
+                          ] )
+                        , ( "month", Pluralized
+                          [ ( One, "{n} ayyur" )
+                          , ( Few, "{n} ayyurn" )
+                          , ( Other, "{n} ayyur" )
+                          ] )
+                        , ( "year", Pluralized
+                          [ ( One, "{n} aseggas" )
+                          , ( Few, "{n} iseggasen" )
+                          , ( Other, "{n} aseggas" )
+                          ] )
                         ]
                     )
             , ovrHalf = Nothing

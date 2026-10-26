@@ -17,14 +17,14 @@
   (make-duration-locale
    :code "te"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second "{n} సెకను")
-               (cons :minute "{n} నిమిషం")
-               (cons :hour "{n} గంట")
+   :units (list (cons :second '((:one . "{n} సెకను") (:other . "{n} సెకన్లు")))
+               (cons :minute '((:one . "{n} నిమిషం") (:other . "{n} నిమిషాలు")))
+               (cons :hour '((:one . "{n} గంట") (:other . "{n} గంటలు")))
                (cons :day '((:one . "{n} రోజు") (:other . "{n} రోజులు")))
                (cons :week '((:one . "{n} వారం") (:other . "{n} వారాలు")))
                (cons :month '((:one . "{n} నెల") (:other . "{n} నెలలు")))
                (cons :year '((:one . "{n} సంవత్సరం") (:other . "{n} సంవత్సరాలు"))))
-   :half "{0}న్నర"
+   :half "{n}½"
    :delimiter ", "
    :just-now "ఇప్పుడే"
    :ago "{0} క్రితం"

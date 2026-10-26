@@ -15,16 +15,17 @@ import '../types.dart';
 final kl = DurationLocale(
   code: 'kl',
   plural: (int n) {
+    if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
   units: {
-    'second': simpleUnit('sekundit {n}'),
-    'minute': simpleUnit('minutsit {n}'),
-    'hour': simpleUnit('nalunaaqutap akunnera {n}'),
-    'day': simpleUnit('ullut {n}'),
-    'week': simpleUnit('sapaatit {n}'),
-    'month': simpleUnit('qaammatit {n}'),
-    'year': simpleUnit('ukiut {n}'),
+    'second': pluralUnit({PluralCategory.one: 'sekundi {n}', PluralCategory.other: 'sekundit {n}'}),
+    'minute': pluralUnit({PluralCategory.one: 'minutsi {n}', PluralCategory.other: 'minutsit {n}'}),
+    'hour': pluralUnit({PluralCategory.one: 'nalunaaquttap akunnera {n}', PluralCategory.other: 'nalunaaquttap akunneri {n}'}),
+    'day': pluralUnit({PluralCategory.one: 'ulloq {n}', PluralCategory.other: 'ullut {n}'}),
+    'week': pluralUnit({PluralCategory.one: 'sapaatip akunnera {n}', PluralCategory.other: 'sapaatip akunneri {n}'}),
+    'month': pluralUnit({PluralCategory.one: 'qaammat {n}', PluralCategory.other: 'qaammatit {n}'}),
+    'year': pluralUnit({PluralCategory.one: 'ukioq {n}', PluralCategory.other: 'ukiut {n}'}),
   },
   half: '{0} affaa',
   delimiter: ', ',
@@ -37,7 +38,7 @@ final kl = DurationLocale(
       'minute': simpleUnit('min. {n}'),
       'hour': simpleUnit('nal. {n}'),
       'day': simpleUnit('ull. {n}'),
-      'week': simpleUnit('sap. {n}'),
+      'week': simpleUnit('sap. ak. {n}'),
       'month': simpleUnit('qaam. {n}'),
       'year': simpleUnit('uk. {n}'),
     },
@@ -54,6 +55,7 @@ final kl = DurationLocale(
       'month': simpleUnit('{n}mo'),
       'year': simpleUnit('{n}y'),
     },
+    half: '{n}½',
     delimiter: '',
     ago: '{0} matuma siorna',
     inFuture: '{0} siunissami',

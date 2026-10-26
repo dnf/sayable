@@ -11,22 +11,22 @@
 
 % Tamil locale.
 
-st_hours('ta', ['பன்னிரண்டு', 'ஒன்று', 'இரண்டு', 'மூன்று', 'நான்கு', 'ஐந்து', 'ஆறு', 'ஏழு', 'எட்டு', 'ஒன்பது', 'பத்து', 'பதினொன்று']).
+st_hours('ta', ['பன்னிரண்ட', 'ஒன்ற', 'இரண்ட', 'மூன்ற', 'நான்க', 'ஐந்த', 'ஆற', 'ஏழ', 'எட்ட', 'ஒன்பத', 'பத்த', 'பதினொன்ற']).
 st_midnight('ta', 'நள்ளிரவு').
 st_noon('ta', 'நண்பகல்').
 
-st_pattern('ta', 0, '{h}:00').
-st_pattern('ta', 5, '{h}:05').
-st_pattern('ta', 10, '{h}:10').
-st_pattern('ta', 15, '{h}:15').
-st_pattern('ta', 20, '{h}:20').
-st_pattern('ta', 25, '{h}:25').
-st_pattern('ta', 30, '{h}:30').
-st_pattern('ta', 35, '{h}:35').
-st_pattern('ta', 40, '{h}:40').
-st_pattern('ta', 45, '{h}:45').
-st_pattern('ta', 50, '{h}:50').
-st_pattern('ta', 55, '{h}:55').
+st_pattern('ta', 0, '{h}ு மணி').
+st_pattern('ta', 5, '{h}ு மணி ஐந்து நிமிடம்').
+st_pattern('ta', 10, '{h}ு மணி பத்து நிமிடம்').
+st_pattern('ta', 15, '{h}ே கால்').
+st_pattern('ta', 20, '{h}ு மணி இருபது நிமிடம்').
+st_pattern('ta', 25, '{h}ு மணி இருபத்தைந்து நிமிடம்').
+st_pattern('ta', 30, '{h}ரை').
+st_pattern('ta', 35, '{h}ு மணி முப்பத்தைந்து நிமிடம்').
+st_pattern('ta', 40, '{h}ு மணி நாற்பது நிமிடம்').
+st_pattern('ta', 45, '{h}ே முக்கால்').
+st_pattern('ta', 50, '{h}ு மணி ஐம்பது நிமிடம்').
+st_pattern('ta', 55, '{h}ு மணி ஐம்பத்தைந்து நிமிடம்').
 
 short_st_use24h('ta', false).
 short_st_format('ta', '{h}:{mm} {ampm}').

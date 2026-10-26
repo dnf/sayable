@@ -24,11 +24,11 @@
                (cons :week '((:one . "kiumia {n}") (:other . "kiumia {n}")))
                (cons :month '((:one . "mwerĩ {n}") (:other . "mĩerĩ {n}")))
                (cons :year '((:one . "mwaka {n}") (:other . "mĩaka {n}"))))
-   :half "{0} na nusu"
+   :half "{0} na nuthu"
    :delimiter ", "
-   :just-now "ũmũthĩ"
+   :just-now "rĩu"
    :ago "{0} ĩhĩtũkĩte"
-   :in-future "{0} ĩyothe"
+   :in-future "thutha wa {0}"
    :short-units (list (cons :second "sek. {n}")
                        (cons :minute "ndag. {n}")
                        (cons :hour '((:one . "ithaa {n}") (:other . "mathaa {n}")))
@@ -37,7 +37,7 @@
                        (cons :month '((:one . "mwerĩ {n}") (:other . "mĩerĩ {n}")))
                        (cons :year '((:one . "mwaka {n}") (:other . "mĩaka {n}"))))
    :short-ago "{0} ĩhĩtũkĩte"
-   :short-in-future "{0} ĩyothe"
+   :short-in-future "thutha wa {0}"
    :compact-units (list (cons :second "{n}s")
                        (cons :minute "{n}m")
                        (cons :hour "{n}h")
@@ -47,5 +47,5 @@
                        (cons :year "{n}y"))
    :compact-delimiter ""
    :compact-ago "{0} ĩhĩtũkĩte"
-   :compact-in-future "{0} ĩyothe"
+   :compact-in-future "thutha wa {0}"
 ))

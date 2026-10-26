@@ -21,7 +21,7 @@ sd_unit('kri', week, _, '{n} wik').
 sd_unit('kri', month, _, '{n} mont').
 sd_unit('kri', year, _, '{n} ia').
 
-sd_half('kri', '{n} na af').
+sd_half('kri', '{0} ɛn af').
 sd_delimiter('kri', ', ').
 sd_just_now('kri', 'jos naw').
 sd_ago('kri', '{0} bak').
@@ -44,6 +44,7 @@ compact_sd_unit('kri', day, _, '{n}d').
 compact_sd_unit('kri', week, _, '{n}w').
 compact_sd_unit('kri', month, _, '{n}m').
 compact_sd_unit('kri', year, _, '{n}y').
+compact_sd_half('kri', '{n}½').
 compact_sd_delimiter('kri', '').
 compact_sd_ago('kri', '{0} bak').
 compact_sd_in_future('kri', 'na {0}').

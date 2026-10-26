@@ -26,7 +26,7 @@ class SNLocale {
   static today { "nhasi" }
   static tomorrow { "mangwana" }
   static yesterday { "nezuro" }
-  static dayAfterTomorrow { "mangwanani" }
+  static dayAfterTomorrow { "kuswera mangwana" }
   static dayBeforeYesterday { "nezuro rakapera" }
   static thisWeekday { "{weekday} ino" }
   static nextWeekday { "{weekday} inotevera" }

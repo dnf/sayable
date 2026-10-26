@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [mr.json](../../locales/mr.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): 'तीन वाजता', 'तीन वाजून दहा मिनिटे', 'सव्वा तीन', 'पावणे चार', 'चार वाजायला दहा मिनिटे'. Compromise: :30 uses the formal additive 'तीन वाजून तीस मिनिटे' instead of 'साडे तीन', because 'साडे एक' and 'साडे दोन' are plain errors (must be 'दीड' / 'अडीच') and the schema has no per-hour override; a formal-but-correct form everywhere was preferred over an idiomatic form that is wrong for 1:30 and 2:30. Switch :30 to 'साडे {h}' once 1:30/2:30 overrides exist.
+
 ## Age
 
 ### Age formatting
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | परवा             | 17/3    |
 | Day before yesterday | परवा             | 13/3    |
 | This Thursday (+5)   | हा गुरुवार       | 20/3    |
-| Last Monday (-4)     | मागील मंगळवार    | 11/3    |
-| Next Wednesday (+12) | पुढील गुरुवार    | 27/3    |
-| Same month (+20)     | 4 एप्रिल         | 4/4     |
+| Last Tuesday (-4)    | मागील मंगळवार    | 11/3    |
+| Next Thursday (+12)  | पुढील गुरुवार    | 27/3    |
+| Same year (+20)      | 4 एप्रिल         | 4/4     |
 | Different year       | 10 जानेवारी 2026 | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal            | Short            | Compact |
-| --------------------- | ----------------- | ---------------- | ------- |
-| 0 seconds             | आत्ताच            | आत्ताच           | आत्ताच  |
-| 1 second              | 1 सेकंद           | 1 से             | 1से     |
-| 30 seconds            | 30 सेकंद          | 30 से            | 30से    |
-| 1 minute              | 1 मिनिट           | 1 मिनि           | 1मि     |
-| 2 minutes, 15 seconds | 2 मिनिट, 15 सेकंद | 2 मिनि, 15 से    | 2मि15से |
-| 5 minutes             | 5 मिनिट           | 5 मिनि           | 5मि     |
-| 45 minutes            | 45 मिनिट          | 45 मिनि          | 45मि    |
-| 1 hour                | 1 तास             | 1 ता             | 1ता     |
-| 1½ hours              | साडे 1 तास        | साडे 1 ता        | 1½ता    |
-| 3 hours               | 3 तास             | 3 ता             | 3ता     |
-| 6 hours               | 6 तास             | 6 ता             | 6ता     |
-| 1 day                 | 1 दिवस            | 1 दिवस           | 1दि     |
-| 1½ days               | साडे 1 दिवस       | साडे 1 दिवस      | 1½दि    |
-| 3 days                | 3 दिवस            | 3 दिवस           | 3दि     |
-| 1 week                | 1 आठवडा           | 1 आ              | 1आ      |
-| 2 weeks, 3 days       | 2 आठवडे, 3 दिवस   | 2 आ, 3 दिवस      | 2आ3दि   |
-| 1 month               | 1 महिना           | 1 महिना          | 1म      |
-| 6 months              | 6 महिने           | 6 महिने          | 6म      |
-| 1 year                | 1 वर्ष            | 1 वर्ष           | 1व      |
-| 2 years, 3 months     | 2 वर्षे, 3 महिने  | 2 वर्षे, 3 महिने | 2व3म    |
+| Duration              | Normal             | Short            | Compact |
+| --------------------- | ------------------ | ---------------- | ------- |
+| 0 seconds             | आत्ताच             | आत्ताच           | आत्ताच  |
+| 1 second              | 1 सेकंद            | 1 से             | 1से     |
+| 30 seconds            | 30 सेकंद           | 30 से            | 30से    |
+| 1 minute              | 1 मिनिट            | 1 मिनि           | 1मि     |
+| 2 minutes, 15 seconds | 2 मिनिटे, 15 सेकंद | 2 मिनि, 15 से    | 2मि15से |
+| 5 minutes             | 5 मिनिटे           | 5 मिनि           | 5मि     |
+| 45 minutes            | 45 मिनिटे          | 45 मिनि          | 45मि    |
+| 1 hour                | 1 तास              | 1 ता             | 1ता     |
+| 1½ hours              | साडे 1 तास         | साडे 1 ता        | 1½ता    |
+| 3 hours               | 3 तास              | 3 ता             | 3ता     |
+| 6 hours               | 6 तास              | 6 ता             | 6ता     |
+| 1 day                 | 1 दिवस             | 1 दिवस           | 1दि     |
+| 1½ days               | साडे 1 दिवस        | साडे 1 दिवस      | 1½दि    |
+| 3 days                | 3 दिवस             | 3 दिवस           | 3दि     |
+| 1 week                | 1 आठवडा            | 1 आ              | 1आ      |
+| 2 weeks, 3 days       | 2 आठवडे, 3 दिवस    | 2 आ, 3 दिवस      | 2आ3दि   |
+| 1 month               | 1 महिना            | 1 महिना          | 1म      |
+| 6 months              | 6 महिने            | 6 महिने          | 6म      |
+| 1 year                | 1 वर्ष             | 1 वर्ष           | 1व      |
+| 2 years, 3 months     | 2 वर्षे, 3 महिने   | 2 वर्षे, 3 महिने | 2व3म    |
 
 ### Relative time
 
-| Offset        | Normal         | Compact    |
-| ------------- | -------------- | ---------- |
-| 5 minutes ago | 5 मिनिट पूर्वी | 5मि पूर्वी |
-| 2 hours ago   | 2 तास पूर्वी   | 2ता पूर्वी |
-| in 30 minutes | 30 मिनिट मध्ये | 30मि मध्ये |
-| in 3 hours    | 3 तास मध्ये    | 3ता मध्ये  |
+| Offset        | Normal          | Compact    |
+| ------------- | --------------- | ---------- |
+| 5 minutes ago | 5 मिनिटे पूर्वी | 5मि पूर्वी |
+| 2 hours ago   | 2 तास पूर्वी    | 2ता पूर्वी |
+| in 30 minutes | 30 मिनिटे मध्ये | 30मि मध्ये |
+| in 3 hours    | 3 तास मध्ये     | 3ता मध्ये  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal    | Short    | Compact |
-| --------------- | --------- | -------- | ------- |
-| Midnight        | मध्यरात्र | 12:00 AM | 12:00a  |
-| 1:00 AM         | एक:00     | 1:00 AM  | 1:00a   |
-| 5 past 9        | नऊ:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | दहा:15    | 10:15 AM | 10:15a  |
-| Half past 11    | अकरा:30   | 11:30 AM | 11:30a  |
-| Noon            | दुपार     | 12:00 PM | 12:00p  |
-| Quarter to 3    | दोन:45    | 2:45 PM  | 2:45p   |
-| 5 to 6          | पाच:55    | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | आठ:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | दहा:30    | 10:30 PM | 10:30p  |
-| 11:58 PM        | मध्यरात्र | 11:58 PM | 11:58p  |
+| Time            | Normal                 | Short    | Compact |
+| --------------- | ---------------------- | -------- | ------- |
+| Midnight        | मध्यरात्र              | 12:00 AM | 12:00a  |
+| 1:00 AM         | एक वाजता               | 1:00 AM  | 1:00a   |
+| 5 past 9        | नऊ वाजून पाच मिनिटे    | 9:05 AM  | 9:05a   |
+| Quarter past 10 | सव्वा दहा              | 10:15 AM | 10:15a  |
+| Half past 11    | अकरा वाजून तीस मिनिटे  | 11:30 AM | 11:30a  |
+| Noon            | दुपार                  | 12:00 PM | 12:00p  |
+| Quarter to 3    | पावणे तीन              | 2:45 PM  | 2:45p   |
+| 5 to 6          | सहा वाजायला पाच मिनिटे | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | आठ वाजता               | 8:00 PM  | 8:00p   |
+| 10:30 PM        | दहा वाजून तीस मिनिटे   | 10:30 PM | 10:30p  |
+| 11:58 PM        | मध्यरात्र              | 11:58 PM | 11:58p  |

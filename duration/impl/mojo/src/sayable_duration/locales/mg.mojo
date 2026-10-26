@@ -50,7 +50,7 @@ fn build_mg() -> DurationLocale:
     short_ovr.has_month = True
     short_ovr.year = simple_unit("{n} tna")
     short_ovr.has_year = True
-    short_ovr.ago = "{0} lasa"
+    short_ovr.ago = "{0} lasa izay"
     short_ovr.has_ago = True
     short_ovr.in_future = "ao anatin'ny {0}"
     short_ovr.has_in_future = True
@@ -92,7 +92,7 @@ fn build_mg() -> DurationLocale:
         half="{0} sy sasany",
         delimiter=", ",
         just_now="vao haingana",
-        ago="{0} lasa",
+        ago="{0} lasa izay",
         in_future="ao anatin'ny {0}",
         short_override=short_ovr,
         has_short=True,

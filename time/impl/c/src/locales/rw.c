@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_rw = {
     "rw",
     {
-        { "cumi n'ebyiri", "rimwe", "ebyiri", "eshatu", "enye", "eshanu", "esheshatu", "indwi", "umunani", "icyenda", "icumi", "cumi n'imwe" },
-        "igicuku",
-        "saa sita",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "sita", "saba", "munani", "cyenda", "kumi", "kumi n'imwe", "kumi n'ebyiri", "moya", "mbiri", "tatu", "ine", "tanu" },
+        "saa sita z'ijoro",
+        "saa sita z'amanywa",
+        { "saa {h}", "saa {h} n'iminota itanu", "saa {h} n'iminota icumi", "saa {h} n'iminota cumi n'itanu", "saa {h} n'iminota makumyabiri", "saa {h} n'iminota makumyabiri n'itanu", "saa {h} n'igice", "saa {h} n'iminota mirongo itatu n'itanu", "saa {h} n'iminota mirongo ine", "saa {h} n'iminota mirongo ine n'itanu", "saa {h} n'iminota mirongo itanu", "saa {h} n'iminota mirongo itanu n'itanu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -10,24 +10,24 @@
 # Source: locales/tzm.json
 
 function locale_tzm {
-    $months = @('ⵉⵏⵏⴰⵢⵔ', 'ⴱⵕⴰⵢⵕ', 'ⵎⴰⵕⵚ', 'ⵉⴱⵔⵉⵔ', 'ⵎⴰⵢⵢⵓ', 'ⵢⵓⵏⵢⵓ', 'ⵢⵓⵍⵢⵓⵣ', 'ⵖⵓⵛⵜ', 'ⵛⵓⵜⴰⵏⴱⵉⵔ', 'ⴽⵜⵓⴱⵔ', 'ⵏⵓⵡⴰⵏⴱⵉⵔ', 'ⴷⵓⵊⴰⵏⴱⵉⵔ')
-    $weekdays = @('ⴰⵙⴰⵎⴰⵙ', 'ⴰⵢⵏⴰⵙ', 'ⴰⵙⵉⵏⴰⵙ', 'ⴰⴽⵕⴰⵙ', 'ⴰⴽⵡⴰⵙ', 'ⴰⵙⵉⵎⵡⴰⵙ', 'ⴰⵙⵉⴹⵢⴰⵙ')
+    $months = @('Yennayer', 'Yebrayer', 'Mars', 'Ibrir', 'Mayyu', 'Yunyu', 'Yulyuz', 'Ɣuct', 'Cutanbir', 'Kṭuber', 'Nwanbir', 'Dujanbir')
+    $weekdays = @('Asamas', 'Aynas', 'Asinas', 'Akras', 'Akwas', 'Asimwas', 'Asiḍyas')
     $dayFormat = '{n}'
     $dayFormatExceptions = @{}
     $datePattern = '{day} {month}'
     $datePatternWithYear = '{day} {month} {year}'
-    $today = 'ⴰⵙⵙⴰ'
-    $tomorrow = 'ⴰⵙⴽⴽⴰ'
-    $yesterday = 'ⵉⴹⵍⵍⵉ'
+    $today = 'Assa'
+    $tomorrow = 'Asekka'
+    $yesterday = 'Assenaṭ'
     $dayAfterTomorrow = $null
     $dayBeforeYesterday = $null
-    $thisWeekday = '{weekday} ⴰⴷ'
-    $nextWeekday = '{weekday} ⴷ ⵉⴷⴷⴰⵏ'
-    $lastWeekday = '{weekday} ⵉⵣⵔⵉⵏ'
+    $thisWeekday = '{weekday} ad'
+    $nextWeekday = '{weekday} d iddan'
+    $lastWeekday = '{weekday} izrin'
     $monthsInDate = $null
     $short = @{
-        months = @('ⵉⵏⵏ', 'ⴱⵕⴰ', 'ⵎⴰⵕ', 'ⵉⴱⵔ', 'ⵎⴰⵢ', 'ⵢⵓⵏ', 'ⵢⵓⵍ', 'ⵖⵓⵛ', 'ⵛⵓⵜ', 'ⴽⵜⵓ', 'ⵏⵓⵡ', 'ⴷⵓⵊ')
-        weekdays = @('ⴰⵙⴰ', 'ⴰⵢⵏ', 'ⴰⵙⵉ', 'ⴰⴽⵕ', 'ⴰⴽⵡ', 'ⴰⵙⵉⵎ', 'ⴰⵙⵉⴹ')
+        months = @('Yen', 'Yeb', 'Mar', 'Ibr', 'May', 'Yun', 'Yul', 'Ɣuc', 'Cut', 'Kṭu', 'Nwa', 'Duj')
+        weekdays = @('Asa', 'Ayn', 'Asn', 'Akr', 'Akw', 'Asm', 'Asḍ')
         dayFormat = '{n}'
         datePattern = '{day} {month}'
         datePatternWithYear = '{day} {month} {year}'

@@ -30,7 +30,7 @@ sd_unit('kn', month, other, '{n} ತಿಂಗಳುಗಳು').
 sd_unit('kn', year, one, '{n} ವರ್ಷ').
 sd_unit('kn', year, other, '{n} ವರ್ಷಗಳು').
 
-sd_half('kn', '{0}ವರೆ').
+sd_half('kn', '{n}½').
 sd_delimiter('kn', ', ').
 sd_just_now('kn', 'ಈಗಷ್ಟೇ').
 sd_ago('kn', '{0} ಹಿಂದೆ').

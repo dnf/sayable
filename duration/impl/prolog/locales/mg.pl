@@ -26,7 +26,7 @@ sd_unit('mg', year, _, '{n} taona').
 sd_half('mg', '{0} sy sasany').
 sd_delimiter('mg', ', ').
 sd_just_now('mg', 'vao haingana').
-sd_ago('mg', '{0} lasa').
+sd_ago('mg', '{0} lasa izay').
 sd_in_future('mg', 'ao anatin\'ny {0}').
 
 short_sd_unit('mg', second, _, '{n} seg').
@@ -36,7 +36,7 @@ short_sd_unit('mg', day, _, '{n} and').
 short_sd_unit('mg', week, _, '{n} her').
 short_sd_unit('mg', month, _, '{n} vol').
 short_sd_unit('mg', year, _, '{n} tna').
-short_sd_ago('mg', '{0} lasa').
+short_sd_ago('mg', '{0} lasa izay').
 short_sd_in_future('mg', 'ao anatin\'ny {0}').
 
 compact_sd_unit('mg', second, _, '{n} s').

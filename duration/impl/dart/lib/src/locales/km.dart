@@ -30,7 +30,7 @@ final km = DurationLocale(
   delimiter: ', ',
   justNow: 'ឥឡូវនេះ',
   ago: '{0}មុន',
-  inFuture: 'ក្នុង{0}',
+  inFuture: '{0}ទៀត',
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('{n} វិនាទី'),
@@ -42,7 +42,7 @@ final km = DurationLocale(
       'year': simpleUnit('{n} ឆ្នាំ'),
     },
     ago: '{0}មុន',
-    inFuture: 'ក្នុង{0}',
+    inFuture: '{0}ទៀត',
   ),
   compact: CompactnessOverride(
     units: {
@@ -57,6 +57,6 @@ final km = DurationLocale(
     half: '{n}½',
     delimiter: '',
     ago: '{0}មុន',
-    inFuture: 'ក្នុង{0}',
+    inFuture: '{0}ទៀត',
   ),
 );

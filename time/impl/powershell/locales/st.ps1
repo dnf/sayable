@@ -10,22 +10,22 @@
 # Source: locales/st.json
 
 function locale_st {
-    $hours = @('leshome le metso e mmedi', 'e nngwe', 'tse pedi', 'tse tharo', 'tse nne', 'tse hlano', 'tse tshelela', 'tse supileng', 'tse robedi', 'tse robong', 'leshome', 'leshome le motso o le mong')
+    $hours = @('leshome le metso e mmedi', 'pele', 'bobedi', 'boraro', 'bone', 'bohlano', 'botshelela', 'bosupa', 'borobedi', 'borobong', 'leshome', 'leshome le motso o le mong')
     $midnight = 'hara bosiu'
     $noon = 'motsheare'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'hora ya {h}'
+    $patterns[5] = 'hora ya {h} le metsotso e mehlano'
+    $patterns[10] = 'hora ya {h} le metsotso e leshome'
+    $patterns[15] = 'hora ya {h} le kotara'
+    $patterns[20] = 'hora ya {h} le metsotso e mashome a mabedi'
+    $patterns[25] = 'hora ya {h} le metsotso e mashome a mabedi a metso e mehlano'
+    $patterns[30] = 'hora ya {h} le halofo'
+    $patterns[35] = 'hora ya {h} le metsotso e mashome a mararo a metso e mehlano'
+    $patterns[40] = 'hora ya {h} le metsotso e mashome a mane'
+    $patterns[45] = 'hora ya {h} le metsotso e mashome a mane a metso e mehlano'
+    $patterns[50] = 'hora ya {h} le metsotso e mashome a mahlano'
+    $patterns[55] = 'hora ya {h} le metsotso e mashome a mahlano a metso e mehlano'
     $clock = @{
         hours = $hours
         midnight = $midnight

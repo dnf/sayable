@@ -24,7 +24,7 @@ proc locale_duration_tpi {} {
         month "{n} mun" \
         year "{n} yia" \
     ]
-    set half "{n} na hap"
+    set half "{0} na hap"
     set delimiter {, }
     set just_now {nau tasol}
     set ago "{0} i go pinis"
@@ -52,6 +52,7 @@ proc locale_duration_tpi {} {
             month "{n}mo" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
         ago "{0} i go pinis" \
         in_future "long {0}" \

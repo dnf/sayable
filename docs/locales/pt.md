@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | depois de amanhã      | 17/3    |
 | Day before yesterday | anteontem             | 13/3    |
 | This Thursday (+5)   | esta quinta-feira     | 20/3    |
-| Last Monday (-4)     | passada terça-feira   | 11/3    |
-| Next Wednesday (+12) | próxima quinta-feira  | 27/3    |
-| Same month (+20)     | 4 de abril            | 4/4     |
+| Last Tuesday (-4)    | passada terça-feira   | 11/3    |
+| Next Thursday (+12)  | próxima quinta-feira  | 27/3    |
+| Same year (+20)      | 4 de abril            | 4/4     |
 | Different year       | 10 de janeiro de 2026 | 10/1/26 |
 
 ## Duration
@@ -121,13 +121,13 @@ Relative to Saturday, March 15, 2025.
 | Time            | Normal                 | Short | Compact |
 | --------------- | ---------------------- | ----- | ------- |
 | Midnight        | meia-noite             | 0:00  | 0:00    |
-| 1:00 AM         | uma horas              | 1:00  | 1:00    |
+| 1:00 AM         | uma em ponto           | 1:00  | 1:00    |
 | 5 past 9        | nove e cinco           | 9:05  | 9:05    |
 | Quarter past 10 | dez e um quarto        | 10:15 | 10:15   |
 | Half past 11    | onze e meia            | 11:30 | 11:30   |
 | Noon            | meio-dia               | 12:00 | 12:00   |
 | Quarter to 3    | um quarto para as três | 14:45 | 14:45   |
 | 5 to 6          | cinco para as seis     | 17:55 | 17:55   |
-| 8 o'clock PM    | oito horas             | 20:00 | 20:00   |
+| 8 o'clock PM    | oito em ponto          | 20:00 | 20:00   |
 | 10:30 PM        | dez e meia             | 22:30 | 22:30   |
 | 11:58 PM        | meia-noite             | 23:58 | 23:58   |

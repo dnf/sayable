@@ -50,7 +50,7 @@ fn build_th() -> DurationLocale:
     short_ovr.has_year = True
     short_ovr.ago = "{0}ที่แล้ว"
     short_ovr.has_ago = True
-    short_ovr.in_future = "ใน{0}"
+    short_ovr.in_future = "ในอีก {0}"
     short_ovr.has_in_future = True
 
     var compact_ovr = CompactnessOverride()
@@ -74,7 +74,7 @@ fn build_th() -> DurationLocale:
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0}ที่แล้ว"
     compact_ovr.has_ago = True
-    compact_ovr.in_future = "ใน{0}"
+    compact_ovr.in_future = "ในอีก {0}"
     compact_ovr.has_in_future = True
 
     return DurationLocale(
@@ -91,7 +91,7 @@ fn build_th() -> DurationLocale:
         delimiter=" ",
         just_now="เมื่อกี้",
         ago="{0}ที่แล้ว",
-        in_future="ใน{0}",
+        in_future="ในอีก {0}",
         short_override=short_ovr,
         has_short=True,
         compact_override=compact_ovr,

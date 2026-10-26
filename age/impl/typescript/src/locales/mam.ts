@@ -16,7 +16,7 @@ export const mam: AgeLocale = {
   plural: () => 'other',
   units: {
     day:   '{n} q\'ij',
-    week:  '{n} xjaw',
+    week:  '{n} seman',
     month: '{n} xjaw',
     year:  '{n} ab\'q\'ii',
   },
@@ -34,7 +34,7 @@ export const mam: AgeLocale = {
   short: {
     units: {
       day:   '{n} q\'ij',
-      week:  '{n} xjaw',
+      week:  '{n} seman',
       month: '{n} xjaw',
       year:  '{n} ab\'.',
     },
@@ -46,6 +46,7 @@ export const mam: AgeLocale = {
       month: '{n}m',
       year:  '{n}y',
     },
+    half: '{n}½',
     delimiter: '',
   },
 };

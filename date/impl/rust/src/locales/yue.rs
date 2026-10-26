@@ -17,7 +17,7 @@ use crate::types::{CompactnessOverride, DateLocale};
 pub fn locale() -> DateLocale {
     DateLocale {
         code: "yue".to_string(),
-        months: ["一月".to_string(), "二月".to_string(), "三月".to_string(), "四月".to_string(), "五月".to_string(), "六月".to_string(), "七月".to_string(), "八月".to_string(), "九月".to_string(), "十月".to_string(), "十一月".to_string(), "十二月".to_string()],
+        months: ["1月".to_string(), "2月".to_string(), "3月".to_string(), "4月".to_string(), "5月".to_string(), "6月".to_string(), "7月".to_string(), "8月".to_string(), "9月".to_string(), "10月".to_string(), "11月".to_string(), "12月".to_string()],
         weekdays: ["星期日".to_string(), "星期一".to_string(), "星期二".to_string(), "星期三".to_string(), "星期四".to_string(), "星期五".to_string(), "星期六".to_string()],
         day_format: "{n}日".to_string(),
         day_format_exceptions: HashMap::new(),
@@ -33,7 +33,7 @@ pub fn locale() -> DateLocale {
         last_weekday: Some("上個{weekday}".to_string()),
         months_in_date: None,
         short: Some(CompactnessOverride {
-            months: Some(["一月".to_string(), "二月".to_string(), "三月".to_string(), "四月".to_string(), "五月".to_string(), "六月".to_string(), "七月".to_string(), "八月".to_string(), "九月".to_string(), "十月".to_string(), "十一月".to_string(), "十二月".to_string()]),
+            months: Some(["1月".to_string(), "2月".to_string(), "3月".to_string(), "4月".to_string(), "5月".to_string(), "6月".to_string(), "7月".to_string(), "8月".to_string(), "9月".to_string(), "10月".to_string(), "11月".to_string(), "12月".to_string()]),
             months_in_date: None,
             weekdays: Some(["日".to_string(), "一".to_string(), "二".to_string(), "三".to_string(), "四".to_string(), "五".to_string(), "六".to_string()]),
             day_format: Some("{n}日".to_string()),

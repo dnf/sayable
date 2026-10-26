@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.SimpleUnit("{n} hepde"),
     month: types.SimpleUnit("{n} aý"),
     year: types.SimpleUnit("{n} ýaş"),
-    half: "{0}½",
+    half: "{n} ýarym",
     delimiter: ", ",
     just_born: "Täze doglan",
     newborn: types.NeutralStage("Täze doglan"),
@@ -27,7 +27,7 @@ pub fn locale() -> types.AgeLocale {
     toddler: types.NeutralStage("Kiçijik"),
     child: types.NeutralStage("Çaga"),
     teenager: types.NeutralStage("Ýetginjek"),
-    adult: types.NeutralStage("Ulular"),
+    adult: types.NeutralStage("Uly adam"),
     short: Ok(types.CompactnessOverride(
       day: Ok(types.SimpleUnit("{n} g")),
       week: Ok(types.SimpleUnit("{n} h")),

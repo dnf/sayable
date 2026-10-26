@@ -11,24 +11,24 @@
 
 proc locale_date_tzm {} {
     set code {tzm}
-    set months [list {ⵉⵏⵏⴰⵢⵔ} {ⴱⵕⴰⵢⵕ} {ⵎⴰⵕⵚ} {ⵉⴱⵔⵉⵔ} {ⵎⴰⵢⵢⵓ} {ⵢⵓⵏⵢⵓ} {ⵢⵓⵍⵢⵓⵣ} {ⵖⵓⵛⵜ} {ⵛⵓⵜⴰⵏⴱⵉⵔ} {ⴽⵜⵓⴱⵔ} {ⵏⵓⵡⴰⵏⴱⵉⵔ} {ⴷⵓⵊⴰⵏⴱⵉⵔ}]
-    set weekdays [list {ⴰⵙⴰⵎⴰⵙ} {ⴰⵢⵏⴰⵙ} {ⴰⵙⵉⵏⴰⵙ} {ⴰⴽⵕⴰⵙ} {ⴰⴽⵡⴰⵙ} {ⴰⵙⵉⵎⵡⴰⵙ} {ⴰⵙⵉⴹⵢⴰⵙ}]
+    set months [list {Yennayer} {Yebrayer} {Mars} {Ibrir} {Mayyu} {Yunyu} {Yulyuz} {Ɣuct} {Cutanbir} {Kṭuber} {Nwanbir} {Dujanbir}]
+    set weekdays [list {Asamas} {Aynas} {Asinas} {Akras} {Akwas} {Asimwas} {Asiḍyas}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
     set date_pattern_with_year "{day} {month} {year}"
-    set today {ⴰⵙⵙⴰ}
-    set tomorrow {ⴰⵙⴽⴽⴰ}
-    set yesterday {ⵉⴹⵍⵍⵉ}
+    set today {Assa}
+    set tomorrow {Asekka}
+    set yesterday {Assenaṭ}
     set day_after_tomorrow ""
     set day_before_yesterday ""
-    set this_weekday "{weekday} ⴰⴷ"
-    set next_weekday "{weekday} ⴷ ⵉⴷⴷⴰⵏ"
-    set last_weekday "{weekday} ⵉⵣⵔⵉⵏ"
+    set this_weekday "{weekday} ad"
+    set next_weekday "{weekday} d iddan"
+    set last_weekday "{weekday} izrin"
     set months_in_date ""
     set short [dict create \
-        months [list {ⵉⵏⵏ} {ⴱⵕⴰ} {ⵎⴰⵕ} {ⵉⴱⵔ} {ⵎⴰⵢ} {ⵢⵓⵏ} {ⵢⵓⵍ} {ⵖⵓⵛ} {ⵛⵓⵜ} {ⴽⵜⵓ} {ⵏⵓⵡ} {ⴷⵓⵊ}] \
-        weekdays [list {ⴰⵙⴰ} {ⴰⵢⵏ} {ⴰⵙⵉ} {ⴰⴽⵕ} {ⴰⴽⵡ} {ⴰⵙⵉⵎ} {ⴰⵙⵉⴹ}] \
+        months [list {Yen} {Yeb} {Mar} {Ibr} {May} {Yun} {Yul} {Ɣuc} {Cut} {Kṭu} {Nwa} {Duj}] \
+        weekdays [list {Asa} {Ayn} {Asn} {Akr} {Akw} {Asm} {Asḍ}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \
         date_pattern_with_year "{day} {month} {year}" \

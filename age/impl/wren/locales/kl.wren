@@ -11,13 +11,13 @@
 
 class KLLocale {
   static code { "kl" }
-  static plural { Fn.new {|n| "other" } }
+  static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "day": "ullut {n}",
-      "week": "sapaatit {n}",
-      "month": "qaammatit {n}",
-      "year": "ukiut {n}",
+      "day": {"one": "ulloq {n}", "other": "ullut {n}"},
+      "week": {"one": "sapaatip akunnera {n}", "other": "sapaatip akunneri {n}"},
+      "month": {"one": "qaammat {n}", "other": "qaammatit {n}"},
+      "year": {"one": "ukioq {n}", "other": "ukiut {n}"},
     }
   }
   static half { "{0} affaa" }
@@ -37,7 +37,7 @@ class KLLocale {
     return {
       "units": {
         "day": "ull. {n}",
-        "week": "sap. {n}",
+        "week": "sap. ak. {n}",
         "month": "qaam. {n}",
         "year": "uk. {n}",
       },
@@ -51,6 +51,7 @@ class KLLocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

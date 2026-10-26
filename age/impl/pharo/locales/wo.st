@@ -18,17 +18,17 @@ wo
 	locale code: 'wo'.
 	locale plural: [ :n | #other ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. 'bés {n}'.
-		'week'. 'ayubés {n}'.
-		'month'. 'weer {n}'.
-		'year'. 'at {n}'.
+		'day'. '{n} fan'.
+		'week'. '{n} ayubés'.
+		'month'. '{n} weer'.
+		'year'. '{n} at'.
 	}).
 	locale half: '{0} ak genn-wàll'.
 	locale delimiter: ', '.
 	locale justBorn: 'Dees ko sax juddu'.
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. 'Dees ko sax juddu'.
-		#infant. 'Njàmbaar bu ndaw'.
+		#infant. 'Liir'.
 		#toddler. 'Xale bu ndaw'.
 		#child. 'Xale'.
 		#teenager. 'Ndaw-ndaw'.
@@ -36,18 +36,18 @@ wo
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. 'bés {n}'.
-			'week'. 'ayub. {n}'.
-			'month'. 'weer {n}'.
-			'year'. 'at {n}'.
+			'day'. '{n} fan'.
+			'week'. '{n} ayub.'.
+			'month'. '{n} weer'.
+			'year'. '{n} at'.
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. 'bés {n}'.
-			'week'. 'ayub {n}'.
-			'month'. 'weer {n}'.
-			'year'. 'at {n}'.
+			'day'. '{n} fan'.
+			'week'. '{n} ayub'.
+			'month'. '{n} weer'.
+			'year'. '{n} at'.
 		}).
 		#half. '{n}½'.
 		#delimiter. ''.

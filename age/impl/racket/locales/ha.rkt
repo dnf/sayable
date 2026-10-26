@@ -21,19 +21,19 @@
   (age-locale
    "ha"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "{n} kwana" "other" "{n} kwanaki"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} mako" "other" "{n} makonni"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} wata" "other" "{n} watanni"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} shekara" "other" "{n} shekaru")))
+   (hash "day" (hash "type" "pluralized" "forms" (hash "one" "kwana {n}" "other" "kwanaki {n}"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "mako {n}" "other" "makonni {n}"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "wata {n}" "other" "watanni {n}"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "shekara {n}" "other" "shekaru {n}")))
    "{n}½"
    ", "
    "Sabon haihuwa"
    (hash "newborn" (stage-label "Jariri" #f #f)
          "infant" (stage-label "Jariri" #f #f)
-         "toddler" (stage-label "Ƙaramin yaro" #f #f)
-         "child" (stage-label "Yaro" #f #f)
-         "teenager" (stage-label "Saurayi" #f #f)
+         "toddler" (stage-label #f "Ƙaramin yaro" "Ƙaramar yarinya")
+         "child" (stage-label #f "Yaro" "Yarinya")
+         "teenager" (stage-label #f "Saurayi" "Budurwa")
          "adult" (stage-label "Babba" #f #f))
-   (compactness-override (hash "type" "simple" "form" "{n} kw.") (hash "type" "simple" "form" "{n} mk.") (hash "type" "simple" "form" "{n} wt.") (hash "type" "simple" "form" "{n} shk.") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "kw. {n}") (hash "type" "simple" "form" "mk. {n}") (hash "type" "simple" "form" "wt. {n}") (hash "type" "simple" "form" "shk. {n}") #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
   ))

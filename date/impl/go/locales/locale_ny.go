@@ -27,9 +27,9 @@ var NY = sdate.DateLocale{
 	Yesterday: "dzulo",
 	DayAfterTomorrow:  strPtr("mkucha"),
 	DayBeforeYesterday: strPtr("dzana"),
-	ThisWeekday:       strPtr("{weekday} ino"),
-	NextWeekday:       strPtr("{weekday} yotsatira"),
-	LastWeekday:       strPtr("{weekday} yatha"),
+	ThisWeekday:       strPtr("{weekday} lino"),
+	NextWeekday:       strPtr("{weekday} lotsatira"),
+	LastWeekday:       strPtr("{weekday} latha"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
 		Months:   &[12]string{"Jan", "Feb", "Mat", "Epu", "Mey", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"},

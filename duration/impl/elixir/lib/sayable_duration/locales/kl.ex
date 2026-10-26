@@ -15,15 +15,15 @@ defmodule SayableDuration.Locales.KL do
   def locale do
     %{
       code: "kl",
-      plural: (fn _ -> :other end),
+      plural: (fn 1 -> :one; _ -> :other end),
       units: %{
-        second: "sekundit {n}",
-        minute: "minutsit {n}",
-        hour: "nalunaaqutap akunnera {n}",
-        day: "ullut {n}",
-        week: "sapaatit {n}",
-        month: "qaammatit {n}",
-        year: "ukiut {n}"
+        second: %{one: "sekundi {n}", other: "sekundit {n}"},
+        minute: %{one: "minutsi {n}", other: "minutsit {n}"},
+        hour: %{one: "nalunaaquttap akunnera {n}", other: "nalunaaquttap akunneri {n}"},
+        day: %{one: "ulloq {n}", other: "ullut {n}"},
+        week: %{one: "sapaatip akunnera {n}", other: "sapaatip akunneri {n}"},
+        month: %{one: "qaammat {n}", other: "qaammatit {n}"},
+        year: %{one: "ukioq {n}", other: "ukiut {n}"}
       },
       half: "{0} affaa",
       delimiter: ", ",
@@ -36,7 +36,7 @@ defmodule SayableDuration.Locales.KL do
           minute: "min. {n}",
           hour: "nal. {n}",
           day: "ull. {n}",
-          week: "sap. {n}",
+          week: "sap. ak. {n}",
           month: "qaam. {n}",
           year: "uk. {n}"
         },
@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.KL do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} matuma siorna",
         in_future: "{0} siunissami"

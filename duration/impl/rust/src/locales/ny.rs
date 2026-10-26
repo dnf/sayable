@@ -23,9 +23,12 @@ pub fn locale() -> DurationLocale {
             }
         },
         units: Units {
-            second: UnitForms::simple("{n} sekondi"),
-            minute: UnitForms::simple("{n} mphindi"),
-            hour: UnitForms::simple("{n} ola"),
+            second: UnitForms::simple("sekondi {n}"),
+            minute: UnitForms::simple("mphindi {n}"),
+            hour: UnitForms::plural(&[
+                (PluralCategory::One, "ola {n}"),
+                (PluralCategory::Other, "maola {n}"),
+            ]),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "tsiku {n}"),
                 (PluralCategory::Other, "masiku {n}"),
@@ -51,7 +54,10 @@ pub fn locale() -> DurationLocale {
         short: Some(CompactnessOverride {
             second: Some(UnitForms::simple("sek {n}")),
             minute: Some(UnitForms::simple("mph {n}")),
-            hour: Some(UnitForms::simple("ola {n}")),
+            hour: Some(UnitForms::plural(&[
+                (PluralCategory::One, "ola {n}"),
+                (PluralCategory::Other, "maola {n}"),
+            ])),
             day: Some(UnitForms::plural(&[
                 (PluralCategory::One, "tsiku {n}"),
                 (PluralCategory::Other, "mas {n}"),

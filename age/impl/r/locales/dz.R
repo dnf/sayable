@@ -18,7 +18,7 @@ locale_dz <- list(
     month = "ཟླ་ {n}",
     year = "ལོ་ {n}"
   ),
-  half = "{0} ཕྱེད",
+  half = "{0} དང་ཕྱེད",
   delimiter = " ",
   just_born = "གསར་སྐྱེས",
   stages = list(

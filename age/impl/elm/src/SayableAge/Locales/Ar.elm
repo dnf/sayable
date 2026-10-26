@@ -111,14 +111,7 @@ locale =
         Just
             { ovrDay = Just (Simple "{n} ي")
             , ovrWeek = Just (Simple "{n} أ")
-            , ovrMonth = Just (Pluralized
-                  [ ( Zero, "{n} شهر" )
-                  , ( One, "شهر" )
-                  , ( Two, "شهران" )
-                  , ( Few, "{n} أشهر" )
-                  , ( Many, "{n} شهرًا" )
-                  , ( Other, "{n} شهر" )
-                  ])
+            , ovrMonth = Just (Simple "{n} شهر")
             , ovrYear = Just (Simple "{n} سنة")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""

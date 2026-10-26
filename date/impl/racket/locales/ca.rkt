@@ -24,8 +24,8 @@
    (list "diumenge" "dilluns" "dimarts" "dimecres" "dijous" "divendres" "dissabte")
    "{n}"
    (hash)
-   "{day} de {month}"
-   "{day} de {month} de {year}"
+   "{day} {month}"
+   "{day} {month} de {year}"
    "avui"
    "demà"
    "ahir"
@@ -34,7 +34,7 @@
    "aquest {weekday}"
    "{weekday} que ve"
    "{weekday} passat"
-   #f
-   (date-compactness-override (list "gen" "feb" "març" "abr" "maig" "juny" "jul" "ag" "set" "oct" "nov" "des") #f (list "dg" "dl" "dt" "dc" "dj" "dv" "ds") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (list "de gener" "de febrer" "de març" "d'abril" "de maig" "de juny" "de juliol" "d'agost" "de setembre" "d'octubre" "de novembre" "de desembre")
+   (date-compactness-override (list "gen" "feb" "març" "abr" "maig" "juny" "jul" "ag" "set" "oct" "nov" "des") #f (list "dg" "dl" "dt" "dc" "dj" "dv" "ds") "{n}" #f "{day} {month}" "{day} {month} de {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

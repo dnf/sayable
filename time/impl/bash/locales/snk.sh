@@ -10,21 +10,21 @@
 # Source: locales/snk.json
 
 _sayabletime_locale_snk() {
-    _clock_hours=('tanmu fillo' 'baane' 'fillo' 'sikko' 'naaxato' 'karago' 'tunmu' 'ñerru' 'segu' 'kaburu' 'tanmu' 'tanmu baane')
+    _clock_hours=('waxati tanmu do fillo' 'waxati baane' 'waxati fillo' 'waxati sikko' 'waxati naaxato' 'waxati karago' 'waxati tunmu' 'waxati ñerru' 'waxati segu' 'waxati kaburu' 'waxati tanmu' 'waxati tanmu do baane')
     _clock_midnight='sulen noxo'
     _clock_noon='tili seren'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} do miniti karago'
+    _clock_pattern_10='{h} do miniti tanmu'
+    _clock_pattern_15='{h} do miniti tanmu do karago'
+    _clock_pattern_20='{h} do miniti tanpille'
+    _clock_pattern_25='{h} do miniti tanpille do karago'
+    _clock_pattern_30='{h} do faabe'
+    _clock_pattern_35='{h} do miniti tanjikke do karago'
+    _clock_pattern_40='{h} do miniti tannaxate'
+    _clock_pattern_45='{h} do miniti tannaxate do karago'
+    _clock_pattern_50='{h} do miniti tankarage'
+    _clock_pattern_55='{h} do miniti tankarage do karago'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

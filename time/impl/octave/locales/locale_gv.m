@@ -11,10 +11,10 @@
 
 function loc = locale_gv()
   loc.code = 'gv';
-  loc.clock.hours = {'12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'};
+  loc.clock.hours = {'daa-yeig', 'nane', 'jees', 'tree', 'kiare', 'queig', 'shey', 'shiaght', 'hoght', 'nuy', 'jeih', 'nane-jeig'};
   loc.clock.midnight = 'mean oie';
   loc.clock.noon = 'munlaa';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h} er y chlag', "p5", 'queig minnidyn lurg {h}', "p10", 'jeih minnidyn lurg {h}', "p15", 'kerroo lurg {h}', "p20", 'feed minnid lurg {h}', "p25", 'queig minnidyn as feed lurg {h}', "p30", 'lieh-oor lurg {h}', "p35", 'queig minnidyn as feed gys {next_h}', "p40", 'feed minnid gys {next_h}', "p45", 'kerroo gys {next_h}', "p50", 'jeih minnidyn gys {next_h}', "p55", 'queig minnidyn gys {next_h}');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

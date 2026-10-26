@@ -29,11 +29,11 @@ pub const locale_ki = DurationLocale{
 	week: plural_unit({PluralCategory.one: 'kiumia {n}', PluralCategory.other: 'kiumia {n}'})
 	month: plural_unit({PluralCategory.one: 'mwerĩ {n}', PluralCategory.other: 'mĩerĩ {n}'})
 	year: plural_unit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'mĩaka {n}'})
-	half: '{0} na nusu'
+	half: '{0} na nuthu'
 	delimiter: ', '
-	just_now: 'ũmũthĩ'
+	just_now: 'rĩu'
 	ago: '{0} ĩhĩtũkĩte'
-	in_future: '{0} ĩyothe'
+	in_future: 'thutha wa {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
 		second: simple_unit('sek. {n}')
@@ -52,7 +52,7 @@ pub const locale_ki = DurationLocale{
 		has_year: true
 		ago: '{0} ĩhĩtũkĩte'
 		has_ago: true
-		in_future: '{0} ĩyothe'
+		in_future: 'thutha wa {0}'
 		has_in_future: true
 	}
 	has_compact: true
@@ -75,7 +75,7 @@ pub const locale_ki = DurationLocale{
 		has_delimiter: true
 		ago: '{0} ĩhĩtũkĩte'
 		has_ago: true
-		in_future: '{0} ĩyothe'
+		in_future: 'thutha wa {0}'
 		has_in_future: true
 	}
 }

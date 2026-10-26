@@ -18,7 +18,7 @@
    :week {:type :pluralized :forms {:one "{n} vika" :other "{n} vikur"}}
    :month {:type :pluralized :forms {:one "{n} mánuður" :other "{n} mánuðir"}}
    :year {:type :pluralized :forms {:one "{n} ár" :other "{n} ár"}}
-   :half "{0} og hálft"
+   :half "{n} og hálft"
    :delimiter ", "
    :just-born "Nýfætt"
    :stages {:newborn {:type :neutral :label "Nýfæðingur"} :infant {:type :neutral :label "Ungbarn"} :toddler {:type :neutral :label "Smábarn"} :child {:type :neutral :label "Barn"} :teenager {:type :neutral :label "Unglingur"} :adult {:type :neutral :label "Fullorðinn"}}

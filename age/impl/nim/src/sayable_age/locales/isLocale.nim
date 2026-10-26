@@ -28,7 +28,7 @@ let ISLOCALE* = AgeLocale(
     "month": pluralUnit(@[(pcOne, "{n} mánuður"), (pcOther, "{n} mánuðir")]),
     "year": pluralUnit(@[(pcOne, "{n} ár"), (pcOther, "{n} ár")]),
   }.toOrderedTable,
-  half: "{0} og hálft",
+  half: "{n} og hálft",
   delimiter: ", ",
   justBorn: "Nýfætt",
   stages: {

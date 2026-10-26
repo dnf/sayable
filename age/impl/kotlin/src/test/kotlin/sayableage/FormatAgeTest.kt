@@ -837,7 +837,7 @@ class FormatAgeTest {
                 month = pluralUnit(mapOf(PluralCategory.ONE to "{n} mes", PluralCategory.OTHER to "{n} meses")),
                 year = pluralUnit(mapOf(PluralCategory.ONE to "{n} a\u00F1o", PluralCategory.OTHER to "{n} a\u00F1os"))
             ),
-            half = "{n} y medio",
+            half = "{0} y medio",
             delimiter = ", ",
             justBorn = "Reci\u00E9n nacido",
             stages = Stages(
@@ -861,7 +861,7 @@ class FormatAgeTest {
         assertEquals("6 meses", pt.formatAge("2025-01-15", "2025-07-15"))
         assertEquals("2 a\u00F1os, 1 mes", pt.formatAge("2023-06-15", "2025-07-15"))
         assertEquals("2 a\u00F1os, 6 meses", pt.formatAge("2023-06-15", "2025-12-15"))
-        assertEquals("3 y medio a\u00F1os", pt.formatAge("2022-06-15", "2025-12-15"))
+        assertEquals("3 a\u00F1os y medio", pt.formatAge("2022-06-15", "2025-12-15"))
         assertEquals("3 a\u00F1os", pt.formatAge("2022-06-15", "2025-06-15"))
         assertEquals("7 a\u00F1os", pt.formatAge("2018-06-15", "2025-06-15"))
 
@@ -1102,13 +1102,13 @@ class FormatAgeTest {
     fun `Hebrew locale — dual forms`() {
         val pt = SayableAge(Locales.HE)
         assertEquals("רק נולד", pt.formatAge("2025-06-15", "2025-06-15"))
-        assertEquals("יום 1", pt.formatAge("2025-06-14", "2025-06-15"))
+        assertEquals("יום", pt.formatAge("2025-06-14", "2025-06-15"))
         assertEquals("3 ימים", pt.formatAge("2025-06-12", "2025-06-15"))
         assertEquals("שבועיים", pt.formatAge("2025-06-01", "2025-06-15"))
         assertEquals("3 שבועות", pt.formatAge("2025-05-25", "2025-06-15"))
         assertEquals("6 חודשים", pt.formatAge("2025-01-15", "2025-07-15"))
         assertEquals("3 חודשים", pt.formatAge("2025-03-15", "2025-06-15"))
-        assertEquals("שנתיים, חודש 1", pt.formatAge("2023-06-15", "2025-07-15"))
+        assertEquals("שנתיים, חודש", pt.formatAge("2023-06-15", "2025-07-15"))
         assertEquals("3 שנים וחצי", pt.formatAge("2022-06-15", "2025-12-15"))
         assertEquals("7 שנים", pt.formatAge("2018-06-15", "2025-06-15"))
         assertEquals("רק נולד", pt.formatStage("2025-06-15", "2025-06-15", "m"))
@@ -1150,7 +1150,7 @@ class FormatAgeTest {
         assertEquals("1 hari", pt.formatAge("2025-06-14", "2025-06-15"))
         assertEquals("3 hari", pt.formatAge("2025-06-12", "2025-06-15"))
         assertEquals("6 bulan", pt.formatAge("2025-01-15", "2025-07-15"))
-        assertEquals("3 tahun setengah", pt.formatAge("2022-06-15", "2025-12-15"))
+        assertEquals("3 setengah tahun", pt.formatAge("2022-06-15", "2025-12-15"))
         assertEquals("7 tahun", pt.formatAge("2018-06-15", "2025-06-15"))
     }
 

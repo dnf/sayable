@@ -21,12 +21,12 @@ const SduDurationLocale sdu_locale_he = {
     "he",
     plural_he,
     {
-        { NULL, { NULL, "שנייה {n}", "שתי שניות", NULL, NULL, "{n} שניות" } },
-        { NULL, { NULL, "דקה {n}", "שתי דקות", NULL, NULL, "{n} דקות" } },
-        { NULL, { NULL, "שעה {n}", "שעתיים", NULL, NULL, "{n} שעות" } },
-        { NULL, { NULL, "יום {n}", "יומיים", NULL, NULL, "{n} ימים" } },
-        { NULL, { NULL, "שבוע {n}", "שבועיים", NULL, NULL, "{n} שבועות" } },
-        { NULL, { NULL, "חודש {n}", "חודשיים", NULL, NULL, "{n} חודשים" } },
+        { NULL, { NULL, "שנייה", "שתי שניות", NULL, NULL, "{n} שניות" } },
+        { NULL, { NULL, "דקה", "שתי דקות", NULL, NULL, "{n} דקות" } },
+        { NULL, { NULL, "שעה", "שעתיים", NULL, NULL, "{n} שעות" } },
+        { NULL, { NULL, "יום", "יומיים", NULL, NULL, "{n} ימים" } },
+        { NULL, { NULL, "שבוע", "שבועיים", NULL, NULL, "{n} שבועות" } },
+        { NULL, { NULL, "חודש", "חודשיים", NULL, NULL, "{n} חודשים" } },
         { NULL, { NULL, "שנה", "שנתיים", NULL, NULL, "{n} שנים" } }
     },
     "{0} וחצי", ", ",

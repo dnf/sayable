@@ -20,9 +20,9 @@ _sayabledate_locale_ny() {
     _yesterday='dzulo'
     _day_after_tomorrow='mkucha'
     _day_before_yesterday='dzana'
-    _this_weekday='{weekday} ino'
-    _next_weekday='{weekday} yotsatira'
-    _last_weekday='{weekday} yatha'
+    _this_weekday='{weekday} lino'
+    _next_weekday='{weekday} lotsatira'
+    _last_weekday='{weekday} latha'
     _short_months=('Jan' 'Feb' 'Mat' 'Epu' 'Mey' 'Jun' 'Jul' 'Oga' 'Sep' 'Okt' 'Nov' 'Dis')
     _short_weekdays=('Lam' 'Lol' 'Lch' 'Lct' 'Lcn' 'Lcs' 'Low')
     _short_day_format='{n}'

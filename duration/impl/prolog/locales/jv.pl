@@ -23,7 +23,7 @@ sd_unit('jv', year, _, '{n} taun').
 
 sd_half('jv', '{0} setengah').
 sd_delimiter('jv', ', ').
-sd_just_now('jv', 'saiki').
+sd_just_now('jv', 'lagi waé').
 sd_ago('jv', '{0} kepungkur').
 sd_in_future('jv', 'ing {0}').
 

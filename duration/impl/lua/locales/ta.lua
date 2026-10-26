@@ -20,9 +20,9 @@ M.units = {
     day = { one = "{n} நாள்", other = "{n} நாட்கள்" },
     week = { one = "{n} வாரம்", other = "{n} வாரங்கள்" },
     month = { one = "{n} மாதம்", other = "{n} மாதங்கள்" },
-    year = { one = "{n} வயது", other = "{n} வயது" },
+    year = { one = "{n} ஆண்டு", other = "{n} ஆண்டுகள்" },
 }
-M.half = "{0}ரை"
+M.half = "{n}½"
 M.delimiter = ", "
 M.just_now = "இப்போதுதான்"
 M.ago = "{0} முன்"

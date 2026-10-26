@@ -15,18 +15,18 @@ st_hours('az', ['on iki', 'bir', 'iki', 'üç', 'dörd', 'beş', 'altı', 'yeddi
 st_midnight('az', 'gecə yarısı').
 st_noon('az', 'günorta').
 
-st_pattern('az', 0, '{h} o\'clock').
-st_pattern('az', 5, 'beş keçir {h}').
-st_pattern('az', 10, 'on keçir {h}').
-st_pattern('az', 15, 'on beş keçir {h}').
-st_pattern('az', 20, 'iyirmi keçir {h}').
-st_pattern('az', 25, 'iyirmi beş keçir {h}').
-st_pattern('az', 30, 'otuz keçir {h}').
-st_pattern('az', 35, 'iyirmi beş qalmış {next_h}').
-st_pattern('az', 40, 'iyirmi qalmış {next_h}').
-st_pattern('az', 45, 'on beş qalmış {next_h}').
-st_pattern('az', 50, 'on qalmış {next_h}').
-st_pattern('az', 55, 'beş qalmış {next_h}').
+st_pattern('az', 0, 'saat {h}').
+st_pattern('az', 5, '{h} sıfır beş').
+st_pattern('az', 10, '{h} on').
+st_pattern('az', 15, '{h} on beş').
+st_pattern('az', 20, '{h} iyirmi').
+st_pattern('az', 25, '{h} iyirmi beş').
+st_pattern('az', 30, '{h} otuz').
+st_pattern('az', 35, '{h} otuz beş').
+st_pattern('az', 40, '{h} qırx').
+st_pattern('az', 45, '{h} qırx beş').
+st_pattern('az', 50, '{h} əlli').
+st_pattern('az', 55, '{h} əlli beş').
 
 short_st_use24h('az', true).
 short_st_format('az', '{h}:{mm}').

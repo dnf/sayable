@@ -51,7 +51,7 @@ fn build_dz() -> DateLocale:
     var yesterday = "ཁ་ཙ"
     var day_after_tomorrow = "གནངས་ཚེ"
     var day_before_yesterday = "ཁ་ཉིམ"
-    var this_weekday = "འདི་ {weekday}"
+    var this_weekday = "{weekday} འདི"
     var next_weekday = "{weekday} ཤུལ་མ"
     var last_weekday = "{weekday} ཧེ་མ"
     var has_months_in_date = False

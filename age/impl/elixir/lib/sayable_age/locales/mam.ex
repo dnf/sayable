@@ -18,7 +18,7 @@ defmodule SayableAge.Locales.MAM do
       plural: (fn _ -> :other end),
       units: %{
         day: "{n} q'ij",
-        week: "{n} xjaw",
+        week: "{n} seman",
         month: "{n} xjaw",
         year: "{n} ab'q'ii"
       },
@@ -36,7 +36,7 @@ defmodule SayableAge.Locales.MAM do
       short: %{
         units: %{
           day: "{n} q'ij",
-          week: "{n} xjaw",
+          week: "{n} seman",
           month: "{n} xjaw",
           year: "{n} ab'."
         }
@@ -48,6 +48,7 @@ defmodule SayableAge.Locales.MAM do
           month: "{n}m",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: ""
       }
     }

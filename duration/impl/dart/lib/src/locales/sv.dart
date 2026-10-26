@@ -30,7 +30,7 @@ final sv = DurationLocale(
   half: '{n}½',
   delimiter: ', ',
   justNow: 'just nu',
-  ago: '{0} sedan',
+  ago: 'för {0} sedan',
   inFuture: 'om {0}',
   short: CompactnessOverride(
     units: {
@@ -42,7 +42,7 @@ final sv = DurationLocale(
       'month': simpleUnit('{n} mån'),
       'year': simpleUnit('{n} år'),
     },
-    ago: '{0} sedan',
+    ago: 'för {0} sedan',
     inFuture: 'om {0}',
   ),
   compact: CompactnessOverride(
@@ -56,7 +56,7 @@ final sv = DurationLocale(
       'year': simpleUnit('{n}å'),
     },
     delimiter: '',
-    ago: '{0} sedan',
+    ago: 'för {0} sedan',
     inFuture: 'om {0}',
   ),
 );

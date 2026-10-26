@@ -33,7 +33,7 @@ var FON = sa.AgeLocale{
 		Infant:   sa.S("Vǐ"),
 		Toddler:  sa.S("Vǐ"),
 		Child:    sa.S("Vǐ"),
-		Teenager: sa.S("Nyɔ̌nu"),
+		Teenager: sa.G("Dɔnkpɛvu", "Ɖyɔ̌vǐ"),
 		Adult:    sa.S("Mɛ̌xo"),
 	},
 	Short: &sa.CompactnessOverride{

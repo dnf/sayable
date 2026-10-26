@@ -51,7 +51,7 @@ fn build_ga() -> DateLocale:
     var yesterday = "inné"
     var day_after_tomorrow = "arú amárach"
     var day_before_yesterday = "arú inné"
-    var this_weekday = "an {weekday} seo"
+    var this_weekday = "{weekday} seo"
     var next_weekday = "{weekday} seo chugainn"
     var last_weekday = "{weekday} seo caite"
     var has_months_in_date = False

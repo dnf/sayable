@@ -10,22 +10,22 @@
 # Source: locales/lg.json
 
 function locale_lg {
-    $hours = @('kkumi na bbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano', 'mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi na emu')
+    $hours = @('mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi n''emu', 'kkumi n''ebbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano')
     $midnight = 'ekiro eky''omu ttumbi'
     $noon = 'ettuntu'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'essaawa {h}'
+    $patterns[5] = 'essaawa {h} n''eddakiika ttaano'
+    $patterns[10] = 'essaawa {h} n''eddakiika kkumi'
+    $patterns[15] = 'essaawa {h} n''eddakiika kkumi na ttaano'
+    $patterns[20] = 'essaawa {h} n''eddakiika abiri'
+    $patterns[25] = 'essaawa {h} n''eddakiika abiri mu ttaano'
+    $patterns[30] = 'essaawa {h} n''ekitundu'
+    $patterns[35] = 'essaawa {h} n''eddakiika asatu mu ttaano'
+    $patterns[40] = 'essaawa {h} n''eddakiika ana'
+    $patterns[45] = 'essaawa {h} n''eddakiika ana mu ttaano'
+    $patterns[50] = 'essaawa {h} n''eddakiika ataano'
+    $patterns[55] = 'essaawa {h} n''eddakiika ataano mu ttaano'
     $clock = @{
         hours = $hours
         midnight = $midnight

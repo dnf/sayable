@@ -22,10 +22,10 @@ sd_today('lo', 'ມື້ນີ້').
 sd_tomorrow('lo', 'ມື້ອື່ນ').
 sd_yesterday('lo', 'ມື້ວານ').
 sd_day_after_tomorrow('lo', 'ມື້ຮື').
-sd_day_before_yesterday('lo', 'ມື້ກ່ອນ').
+sd_day_before_yesterday('lo', 'ມື້ຊືນ').
 sd_this_weekday('lo', '{weekday}ນີ້').
 sd_next_weekday('lo', '{weekday}ໜ້າ').
-sd_last_weekday('lo', '{weekday}ແລ້ວ').
+sd_last_weekday('lo', '{weekday}ທີ່ແລ້ວ').
 
 short_sd_months('lo', ['ມ.ກ.', 'ກ.ພ.', 'ມ.ນ.', 'ມ.ສ.', 'ພ.ພ.', 'ມ.ຖ.', 'ກ.ລ.', 'ສ.ຫ.', 'ກ.ຍ.', 'ຕ.ລ.', 'ພ.ຈ.', 'ທ.ວ.']).
 short_sd_weekdays('lo', ['ອາທິດ', 'ຈັນ', 'ອັງຄານ', 'ພຸດ', 'ພະຫັດ', 'ສຸກ', 'ເສົາ']).

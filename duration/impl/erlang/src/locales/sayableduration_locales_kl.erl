@@ -16,19 +16,19 @@
 locale() ->
     #duration_locale{
         code = "kl",
-        plural = fun(_) -> other end,
-        second = {simple, "sekundit {n}"},
-        minute = {simple, "minutsit {n}"},
-        hour = {simple, "nalunaaqutap akunnera {n}"},
-        day = {simple, "ullut {n}"},
-        week = {simple, "sapaatit {n}"},
-        month = {simple, "qaammatit {n}"},
-        year = {simple, "ukiut {n}"},
+        plural = fun(1) -> one; (_) -> other end,
+        second = {pluralized, [{one, "sekundi {n}"}, {other, "sekundit {n}"}]},
+        minute = {pluralized, [{one, "minutsi {n}"}, {other, "minutsit {n}"}]},
+        hour = {pluralized, [{one, "nalunaaquttap akunnera {n}"}, {other, "nalunaaquttap akunneri {n}"}]},
+        day = {pluralized, [{one, "ulloq {n}"}, {other, "ullut {n}"}]},
+        week = {pluralized, [{one, "sapaatip akunnera {n}"}, {other, "sapaatip akunneri {n}"}]},
+        month = {pluralized, [{one, "qaammat {n}"}, {other, "qaammatit {n}"}]},
+        year = {pluralized, [{one, "ukioq {n}"}, {other, "ukiut {n}"}]},
         half = "{0} affaa",
         delimiter = ", ",
         just_now = "maanna",
         ago = "{0} matuma siorna",
         in_future = "{0} siunissami",
-        short = {just, #duration_compactness_override{second = {just, {simple, "sek. {n}"}}, minute = {just, {simple, "min. {n}"}}, hour = {just, {simple, "nal. {n}"}}, day = {just, {simple, "ull. {n}"}}, week = {just, {simple, "sap. {n}"}}, month = {just, {simple, "qaam. {n}"}}, year = {just, {simple, "uk. {n}"}}, half = nothing, delimiter = nothing, ago = {just, "{0} matuma siorna"}, in_future = {just, "{0} siunissami"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} matuma siorna"}, in_future = {just, "{0} siunissami"}}}
+        short = {just, #duration_compactness_override{second = {just, {simple, "sek. {n}"}}, minute = {just, {simple, "min. {n}"}}, hour = {just, {simple, "nal. {n}"}}, day = {just, {simple, "ull. {n}"}}, week = {just, {simple, "sap. ak. {n}"}}, month = {just, {simple, "qaam. {n}"}}, year = {just, {simple, "uk. {n}"}}, half = nothing, delimiter = nothing, ago = {just, "{0} matuma siorna"}, in_future = {just, "{0} siunissami"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} matuma siorna"}, in_future = {just, "{0} siunissami"}}}
     }.

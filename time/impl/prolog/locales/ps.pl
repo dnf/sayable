@@ -11,22 +11,22 @@
 
 % Pashto locale.
 
-st_hours('ps', ['دولس', 'یو', 'دوه', 'درې', 'څلور', 'پنځه', 'شپږ', 'اووه', 'اته', 'نهه', 'لس', 'یوولس']).
+st_hours('ps', ['دولس بجې', 'یوه بجه', 'دوه بجې', 'درې بجې', 'څلور بجې', 'پنځه بجې', 'شپږ بجې', 'اووه بجې', 'اته بجې', 'نهه بجې', 'لس بجې', 'یوولس بجې']).
 st_midnight('ps', 'نیمه شپه').
 st_noon('ps', 'غرمه').
 
-st_pattern('ps', 0, '{h}:00').
-st_pattern('ps', 5, '{h}:05').
-st_pattern('ps', 10, '{h}:10').
-st_pattern('ps', 15, '{h}:15').
-st_pattern('ps', 20, '{h}:20').
-st_pattern('ps', 25, '{h}:25').
-st_pattern('ps', 30, '{h}:30').
-st_pattern('ps', 35, '{h}:35').
-st_pattern('ps', 40, '{h}:40').
-st_pattern('ps', 45, '{h}:45').
-st_pattern('ps', 50, '{h}:50').
-st_pattern('ps', 55, '{h}:55').
+st_pattern('ps', 0, '{h}').
+st_pattern('ps', 5, '{h} او پنځه دقیقې').
+st_pattern('ps', 10, '{h} او لس دقیقې').
+st_pattern('ps', 15, '{h} او پنځلس دقیقې').
+st_pattern('ps', 20, '{h} او شل دقیقې').
+st_pattern('ps', 25, '{h} او پنځه ویشت دقیقې').
+st_pattern('ps', 30, '{h} او دېرش دقیقې').
+st_pattern('ps', 35, '{h} او پنځه دېرش دقیقې').
+st_pattern('ps', 40, '{h} او څلوېښت دقیقې').
+st_pattern('ps', 45, '{h} او پنځه څلوېښت دقیقې').
+st_pattern('ps', 50, '{h} او پنځوس دقیقې').
+st_pattern('ps', 55, '{h} او پنځه پنځوس دقیقې').
 
 short_st_use24h('ps', false).
 short_st_format('ps', '{h}:{mm} {ampm}').

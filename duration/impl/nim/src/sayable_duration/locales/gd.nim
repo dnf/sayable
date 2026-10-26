@@ -25,7 +25,7 @@ let GD* = DurationLocale(
   units: {
     "second": pluralUnit(@[(pcOne, "{n} diog"), (pcTwo, "{n} dhiog"), (pcFew, "{n} diogan"), (pcOther, "{n} diog")]),
     "minute": pluralUnit(@[(pcOne, "{n} mhionaid"), (pcTwo, "{n} mhionaid"), (pcFew, "{n} mionaidean"), (pcOther, "{n} mionaid")]),
-    "hour": pluralUnit(@[(pcOne, "{n} uair"), (pcTwo, "{n} uair"), (pcFew, "{n} uairean"), (pcOther, "{n} uair")]),
+    "hour": pluralUnit(@[(pcOne, "{n} uair a thìde"), (pcTwo, "{n} uair a thìde"), (pcFew, "{n} uairean a thìde"), (pcOther, "{n} uair a thìde")]),
     "day": pluralUnit(@[(pcOne, "{n} latha"), (pcTwo, "{n} latha"), (pcFew, "{n} làithean"), (pcOther, "{n} latha")]),
     "week": pluralUnit(@[(pcOne, "{n} sheachdain"), (pcTwo, "{n} sheachdain"), (pcFew, "{n} seachdainean"), (pcOther, "{n} seachdain")]),
     "month": pluralUnit(@[(pcOne, "{n} mhìos"), (pcTwo, "{n} mhìos"), (pcFew, "{n} mìosan"), (pcOther, "{n} mìos")]),

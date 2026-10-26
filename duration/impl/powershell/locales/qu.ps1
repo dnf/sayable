@@ -15,8 +15,8 @@ function plural_qu([int]$n) {
 
 function locale_qu {
     $units = @{
-        second = '{n} ñiqin'
-        minute = '{n} chiniku'
+        second = '{n} sikundu'
+        minute = '{n} minutu'
         hour = '{n} ura'
         day = '{n} p''unchaw'
         week = '{n} simana'
@@ -30,8 +30,8 @@ function locale_qu {
     $inFuture = '{0} qhipata'
     $short = @{
         units = @{
-            second = '{n} ñiq'
-            minute = '{n} chi'
+            second = '{n} sik'
+            minute = '{n} min'
             hour = '{n} ura'
             day = '{n} p''un'
             week = '{n} sim'

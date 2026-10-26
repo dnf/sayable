@@ -55,7 +55,7 @@ locale =
     , half = "{n}½"
     , delimiter = ", "
     , justNow = "akkurat nå"
-    , ago = "{0} siden"
+    , ago = "for {0} siden"
     , inFuture = "om {0}"
     , short =
         Just
@@ -73,7 +73,7 @@ locale =
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "{0} siden"
+            , ovrAgo = Just "for {0} siden"
             , ovrInFuture = Just "om {0}"
             }
     , compact =
@@ -92,7 +92,7 @@ locale =
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Just ""
-            , ovrAgo = Just "{0} siden"
+            , ovrAgo = Just "for {0} siden"
             , ovrInFuture = Just "om {0}"
             }
     }

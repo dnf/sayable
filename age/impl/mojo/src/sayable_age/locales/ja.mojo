@@ -59,6 +59,8 @@ fn build_ja() -> AgeLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
 
     return AgeLocale(
         code="ja",

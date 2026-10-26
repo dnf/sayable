@@ -10,16 +10,16 @@
 # Source: locales/be.json
 
 _sayabletime_locale_be() {
-    _clock_hours=('дванаццаць' 'адзін' 'два' 'тры' 'чатыры' 'пяць' 'шэсць' 'сем' 'восем' 'дзевяць' 'дзесяць' 'адзінаццаць')
+    _clock_hours=('дванаццаць' 'гадзіна' 'дзве' 'тры' 'чатыры' 'пяць' 'шэсць' 'сем' 'восем' 'дзевяць' 'дзесяць' 'адзінаццаць')
     _clock_midnight='поўнач'
     _clock_noon='поўдзень'
-    _clock_pattern_0='{h} гадзін'
-    _clock_pattern_5='пяць хвілін пасля {h}'
-    _clock_pattern_10='дзесяць хвілін пасля {h}'
-    _clock_pattern_15='чвэрць пасля {h}'
-    _clock_pattern_20='дваццаць хвілін пасля {h}'
-    _clock_pattern_25='дваццаць пяць хвілін пасля {h}'
-    _clock_pattern_30='палова да {next_h}'
+    _clock_pattern_0='роўна {h}'
+    _clock_pattern_5='{h} нуль пяць'
+    _clock_pattern_10='{h} дзесяць'
+    _clock_pattern_15='{h} пятнаццаць'
+    _clock_pattern_20='{h} дваццаць'
+    _clock_pattern_25='{h} дваццаць пяць'
+    _clock_pattern_30='{h} трыццаць'
     _clock_pattern_35='без дваццаці пяці {next_h}'
     _clock_pattern_40='без дваццаці {next_h}'
     _clock_pattern_45='без чвэрці {next_h}'

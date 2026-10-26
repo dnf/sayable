@@ -25,7 +25,7 @@ locale_bm <- list(
   delimiter = ", ",
   just_now = "sisan",
   ago = "{0} bɔlen",
-  in_future = "ka {0}",
+  in_future = "{0} kɔnɔ",
   short = list(
     units = list(
       second = "sek. {n}",
@@ -37,7 +37,7 @@ locale_bm <- list(
       year = "san {n}"
     ),
     ago = "{0} bɔlen",
-    in_future = "ka {0}"
+    in_future = "{0} kɔnɔ"
   ),
   compact = list(
     units = list(
@@ -52,6 +52,6 @@ locale_bm <- list(
     half = "{n}½",
     delimiter = "",
     ago = "{0} bɔlen",
-    in_future = "ka {0}"
+    in_future = "{0} kɔnɔ"
   )
 )

@@ -41,8 +41,8 @@ locale = DateLocale
         ]
     , localeDayFormat = "{n}"
     , localeDayFormatExceptions = []
-    , localeDatePattern = "{day} de {month}"
-    , localeDatePatternWithYear = "{day} de {month} de {year}"
+    , localeDatePattern = "{day} {month}"
+    , localeDatePatternWithYear = "{day} {month} de {year}"
     , localeToday = "avui"
     , localeTomorrow = "demà"
     , localeYesterday = "ahir"
@@ -51,7 +51,20 @@ locale = DateLocale
     , localeThisWeekday = Just "aquest {weekday}"
     , localeNextWeekday = Just "{weekday} que ve"
     , localeLastWeekday = Just "{weekday} passat"
-    , localeMonthsInDate = Nothing
+    , localeMonthsInDate = Just $
+        [ "de gener"
+        , "de febrer"
+        , "de març"
+        , "d'abril"
+        , "de maig"
+        , "de juny"
+        , "de juliol"
+        , "d'agost"
+        , "de setembre"
+        , "d'octubre"
+        , "de novembre"
+        , "de desembre"
+        ]
     , localeShort = Just $
         CompactnessOverride
             { ovrMonths = Just $
@@ -81,7 +94,7 @@ locale = DateLocale
             , ovrDayFormat = Just "{n}"
             , ovrDayFormatExceptions = Nothing
             , ovrDatePattern = Just "{day} {month}"
-            , ovrDatePatternWithYear = Just "{day} {month} {year}"
+            , ovrDatePatternWithYear = Just "{day} {month} de {year}"
             , ovrToday = Nothing
             , ovrTomorrow = Nothing
             , ovrYesterday = Nothing

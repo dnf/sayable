@@ -15,9 +15,9 @@ const LN = DurationLocale(
     code = "ln",
     plural = n -> n in (0, 1) ? "one" : "other",
     units = Dict(
-        "second" => "{n} segɔnde",
-        "minute" => "{n} moniti",
-        "hour" => "{n} ngonga",
+        "second" => "segɔnde {n}",
+        "minute" => "miniti {n}",
+        "hour" => "ngonga {n}",
         "day" => Dict("one" => "mokolo {n}", "other" => "mikolo {n}"),
         "week" => Dict("one" => "poso {n}", "other" => "baposo {n}"),
         "month" => Dict("one" => "sanza {n}", "other" => "basanza {n}"),

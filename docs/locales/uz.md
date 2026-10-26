@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [uz.json](../../locales/uz.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Beyond the dataFixes list: the clock patterns contained English ('bir o'clock', 'besh past ikki', 'o'n besh to uch'), which Job B says to remove, so I applied the audit's within-schema wording 'soat {h}' / 'soat {h} yarim' and words-only additive forms for the rest ('soat ikki o'n besh', 'soat ikki qirq besh', 'soat ikki nol besh'). Idiomatic 'ikkidan o'n besh daqiqa o'tdi' / 'uchga o'n besh daqiqa qoldi' need ablative/dative lists (schemaLimits). Doubt: 'soat ikki yarim' vs bare 'ikki yarim' (both heard).
+
 ## Age
 
 ### Age formatting
@@ -54,12 +62,12 @@ Plural rule: `one_other` (categories: one, other)
 
 | Date        | Normal    | Short  | Compact |
 | ----------- | --------- | ------ | ------- |
-| January 1   | 1 yanvar  | 1 yan  | 1/1     |
-| February 14 | 14 fevral | 14 fev | 14/2    |
-| March 15    | 15 mart   | 15 mar | 15/3    |
-| July 4      | 4 iyul    | 4 iyl  | 4/7     |
-| October 31  | 31 oktabr | 31 okt | 31/10   |
-| December 25 | 25 dekabr | 25 dek | 25/12   |
+| January 1   | 1-yanvar  | 1-yan  | 1/1     |
+| February 14 | 14-fevral | 14-fev | 14/2    |
+| March 15    | 15-mart   | 15-mar | 15/3    |
+| July 4      | 4-iyul    | 4-iyl  | 4/7     |
+| October 31  | 31-oktabr | 31-okt | 31/10   |
+| December 25 | 25-dekabr | 25-dek | 25/12   |
 
 ### Relative dates
 
@@ -71,12 +79,12 @@ Relative to Saturday, March 15, 2025.
 | Tomorrow             | ertaga            | ertaga  |
 | Yesterday            | kecha             | kecha   |
 | Day after tomorrow   | indinga           | 17/3    |
-| Day before yesterday | kechagina         | 13/3    |
+| Day before yesterday | o'tgan kuni       | 13/3    |
 | This Thursday (+5)   | bu payshanba      | 20/3    |
-| Last Monday (-4)     | o'tgan seshanba   | 11/3    |
-| Next Wednesday (+12) | keyingi payshanba | 27/3    |
-| Same month (+20)     | 4 aprel           | 4/4     |
-| Different year       | 10 yanvar 2026    | 10/1/26 |
+| Last Tuesday (-4)    | o'tgan seshanba   | 11/3    |
+| Next Thursday (+12)  | keyingi payshanba | 27/3    |
+| Same year (+20)      | 4-aprel           | 4/4     |
+| Different year       | 10-yanvar, 2026   | 10/1/26 |
 
 ## Duration
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal              | Short | Compact |
-| --------------- | ------------------- | ----- | ------- |
-| Midnight        | yarim tun           | 0:00  | 0:00    |
-| 1:00 AM         | bir o'clock         | 1:00  | 1:00    |
-| 5 past 9        | besh past to'qqiz   | 9:05  | 9:05    |
-| Quarter past 10 | o'n besh past o'n   | 10:15 | 10:15   |
-| Half past 11    | o'ttiz past o'n bir | 11:30 | 11:30   |
-| Noon            | tush                | 12:00 | 12:00   |
-| Quarter to 3    | o'n besh to uch     | 14:45 | 14:45   |
-| 5 to 6          | besh to olti        | 17:55 | 17:55   |
-| 8 o'clock PM    | sakkiz o'clock      | 20:00 | 20:00   |
-| 10:30 PM        | o'ttiz past o'n     | 22:30 | 22:30   |
-| 11:58 PM        | yarim tun           | 23:58 | 23:58   |
+| Time            | Normal                | Short | Compact |
+| --------------- | --------------------- | ----- | ------- |
+| Midnight        | yarim tun             | 0:00  | 0:00    |
+| 1:00 AM         | soat bir              | 1:00  | 1:00    |
+| 5 past 9        | soat to'qqiz nol besh | 9:05  | 9:05    |
+| Quarter past 10 | soat o'n o'n besh     | 10:15 | 10:15   |
+| Half past 11    | soat o'n bir yarim    | 11:30 | 11:30   |
+| Noon            | tush                  | 12:00 | 12:00   |
+| Quarter to 3    | soat ikki qirq besh   | 14:45 | 14:45   |
+| 5 to 6          | soat besh ellik besh  | 17:55 | 17:55   |
+| 8 o'clock PM    | soat sakkiz           | 20:00 | 20:00   |
+| 10:30 PM        | soat o'n yarim        | 22:30 | 22:30   |
+| 11:58 PM        | yarim tun             | 23:58 | 23:58   |

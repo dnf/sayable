@@ -27,7 +27,7 @@ let VI* = AgeLocale(
   justBorn: "Sơ sinh",
   stages: {
     "newborn": stageNeutral("Sơ sinh"),
-    "infant": stageNeutral("Trẻ sơ sinh"),
+    "infant": stageNeutral("Trẻ nhũ nhi"),
     "toddler": stageNeutral("Trẻ mới biết đi"),
     "child": stageNeutral("Trẻ em"),
     "teenager": stageNeutral("Thiếu niên"),

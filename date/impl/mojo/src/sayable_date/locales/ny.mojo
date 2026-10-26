@@ -51,9 +51,9 @@ fn build_ny() -> DateLocale:
     var yesterday = "dzulo"
     var day_after_tomorrow = "mkucha"
     var day_before_yesterday = "dzana"
-    var this_weekday = "{weekday} ino"
-    var next_weekday = "{weekday} yotsatira"
-    var last_weekday = "{weekday} yatha"
+    var this_weekday = "{weekday} lino"
+    var next_weekday = "{weekday} lotsatira"
+    var last_weekday = "{weekday} latha"
     var has_months_in_date = False
 
     var short_ovr = build_compactness_override()

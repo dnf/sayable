@@ -10,22 +10,22 @@
 # Source: locales/sn.json
 
 function locale_sn {
-    $hours = @('gumi nembiri', 'imwe', 'mbiri', 'nhatu', 'ina', 'shanu', 'nhanhatu', 'nomwe', 'sere', 'pfumbamwe', 'gumi', 'gumi neimwe')
-    $midnight = 'usiku hwepakati'
+    $hours = @('dzava gumi nembiri', 'yava imwe', 'dzava mbiri', 'dzava nhatu', 'dzava ina', 'dzava shanu', 'dzava nhanhatu', 'dzava nomwe', 'dzava sere', 'dzava pfumbamwe', 'dzava gumi', 'dzava gumi neimwe')
+    $midnight = 'pakati peusiku'
     $noon = 'masikati'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} nemaminitsi mashanu'
+    $patterns[10] = '{h} nemaminitsi gumi'
+    $patterns[15] = '{h} nemaminitsi gumi nemashanu'
+    $patterns[20] = '{h} nemaminitsi makumi maviri'
+    $patterns[25] = '{h} nemaminitsi makumi maviri nemashanu'
+    $patterns[30] = '{h} nehafu'
+    $patterns[35] = '{h} nemaminitsi makumi matatu nemashanu'
+    $patterns[40] = '{h} nemaminitsi makumi mana'
+    $patterns[45] = '{h} nemaminitsi makumi mana nemashanu'
+    $patterns[50] = '{h} nemaminitsi makumi mashanu'
+    $patterns[55] = '{h} nemaminitsi makumi mashanu nemashanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

@@ -23,8 +23,8 @@ pub fn locale() -> DurationLocale {
         units: Units {
             second: UnitForms::plural(&[
                 (PluralCategory::One, "{n} tasint"),
-                (PluralCategory::Few, "{n} tasinin"),
-                (PluralCategory::Other, "{n} tasinin"),
+                (PluralCategory::Few, "{n} tisinin"),
+                (PluralCategory::Other, "{n} tisinin"),
             ]),
             minute: UnitForms::plural(&[
                 (PluralCategory::One, "{n} tusdiqt"),
@@ -63,13 +63,41 @@ pub fn locale() -> DurationLocale {
         ago: "ɣ {0} zzrin".to_string(),
         in_future: "ɣ {0}".to_string(),
         short: Some(CompactnessOverride {
-            second: Some(UnitForms::simple("{n}s")),
-            minute: Some(UnitForms::simple("{n}m")),
-            hour: Some(UnitForms::simple("{n}h")),
-            day: Some(UnitForms::simple("{n}d")),
-            week: Some(UnitForms::simple("{n}w")),
-            month: Some(UnitForms::simple("{n}mo")),
-            year: Some(UnitForms::simple("{n}y")),
+            second: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} tasint"),
+                (PluralCategory::Few, "{n} tasinin"),
+                (PluralCategory::Other, "{n} tasinin"),
+            ])),
+            minute: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} tusdiqt"),
+                (PluralCategory::Few, "{n} tusdiqin"),
+                (PluralCategory::Other, "{n} tusdiqin"),
+            ])),
+            hour: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} tasragt"),
+                (PluralCategory::Few, "{n} tisragin"),
+                (PluralCategory::Other, "{n} tisragin"),
+            ])),
+            day: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ass"),
+                (PluralCategory::Few, "{n} ussan"),
+                (PluralCategory::Other, "{n} ass"),
+            ])),
+            week: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} imalass"),
+                (PluralCategory::Few, "{n} imalassn"),
+                (PluralCategory::Other, "{n} imalass"),
+            ])),
+            month: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} ayyur"),
+                (PluralCategory::Few, "{n} ayyurn"),
+                (PluralCategory::Other, "{n} ayyur"),
+            ])),
+            year: Some(UnitForms::plural(&[
+                (PluralCategory::One, "{n} aseggas"),
+                (PluralCategory::Few, "{n} iseggasen"),
+                (PluralCategory::Other, "{n} aseggas"),
+            ])),
             half: None,
             delimiter: None,
             ago: Some("ɣ {0} zzrin".to_string()),

@@ -44,6 +44,7 @@ compact_sd_unit('quc', day, _, '{n}d').
 compact_sd_unit('quc', week, _, '{n}w').
 compact_sd_unit('quc', month, _, '{n}mo').
 compact_sd_unit('quc', year, _, '{n}y').
+compact_sd_half('quc', '{n}½').
 compact_sd_delimiter('quc', '').
 compact_sd_ago('quc', '{0} k\'o chi').
 compact_sd_in_future('quc', 'pa {0}').

@@ -56,7 +56,10 @@ locale =
                         [ ( "second", Simple "sɛkɛnd {n}" )
                         , ( "minute", Simple "sema {n}" )
                         , ( "hour", Simple "dɔnhwere {n}" )
-                        , ( "day", Simple "nna {n}" )
+                        , ( "day", Pluralized
+                          [ ( One, "da {n}" )
+                          , ( Other, "nna {n}" )
+                          ] )
                         , ( "week", Pluralized
                           [ ( One, "dapɛn {n}" )
                           , ( Other, "nnapɛn {n}" )
@@ -84,7 +87,10 @@ locale =
                         [ ( "second", Simple "sɛk {n}" )
                         , ( "minute", Simple "sem {n}" )
                         , ( "hour", Simple "dɔn {n}" )
-                        , ( "day", Simple "nna {n}" )
+                        , ( "day", Pluralized
+                          [ ( One, "da {n}" )
+                          , ( Other, "nna {n}" )
+                          ] )
                         , ( "week", Pluralized
                           [ ( One, "dapɛn {n}" )
                           , ( Other, "nnapɛn {n}" )

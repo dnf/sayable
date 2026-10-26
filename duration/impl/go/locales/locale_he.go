@@ -26,12 +26,12 @@ var HE = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "שנייה {n}", sd.Two: "שתי שניות", sd.Other: "{n} שניות"}),
-		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "דקה {n}", sd.Two: "שתי דקות", sd.Other: "{n} דקות"}),
-		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "שעה {n}", sd.Two: "שעתיים", sd.Other: "{n} שעות"}),
-		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "יום {n}", sd.Two: "יומיים", sd.Other: "{n} ימים"}),
-		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "שבוע {n}", sd.Two: "שבועיים", sd.Other: "{n} שבועות"}),
-		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "חודש {n}", sd.Two: "חודשיים", sd.Other: "{n} חודשים"}),
+		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "שנייה", sd.Two: "שתי שניות", sd.Other: "{n} שניות"}),
+		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "דקה", sd.Two: "שתי דקות", sd.Other: "{n} דקות"}),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "שעה", sd.Two: "שעתיים", sd.Other: "{n} שעות"}),
+		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "יום", sd.Two: "יומיים", sd.Other: "{n} ימים"}),
+		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "שבוע", sd.Two: "שבועיים", sd.Other: "{n} שבועות"}),
+		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "חודש", sd.Two: "חודשיים", sd.Other: "{n} חודשים"}),
 		Year:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "שנה", sd.Two: "שנתיים", sd.Other: "{n} שנים"}),
 	},
 	Half:      "{0} וחצי",

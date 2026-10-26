@@ -23,7 +23,7 @@ es
 		'month'. (Dictionary newFromPairs: { #one. '{n} mes'. #other. '{n} meses' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} año'. #other. '{n} años' }).
 	}).
-	locale half: '{n} y medio'.
+	locale half: '{0} y medio'.
 	locale delimiter: ', '.
 	locale justBorn: 'Recién nacido'.
 	locale stages: (Dictionary newFromPairs: {

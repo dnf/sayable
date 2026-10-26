@@ -22,13 +22,13 @@ fn plural_so(n int) PluralCategory {
 pub const locale_so = DurationLocale{
 	code: 'so'
 	plural: plural_so
-	second: plural_unit({PluralCategory.one: 'ilbiriqsi {n}', PluralCategory.other: 'ilbiriqsiyaal {n}'})
-	minute: plural_unit({PluralCategory.one: 'daqiiqad {n}', PluralCategory.other: 'daqiiqadood {n}'})
-	hour: plural_unit({PluralCategory.one: 'saacad {n}', PluralCategory.other: 'saacadood {n}'})
-	day: plural_unit({PluralCategory.one: 'maalin {n}', PluralCategory.other: 'maalmood {n}'})
-	week: plural_unit({PluralCategory.one: 'toddobaad {n}', PluralCategory.other: 'toddobaadyo {n}'})
-	month: plural_unit({PluralCategory.one: 'bil {n}', PluralCategory.other: 'bilood {n}'})
-	year: plural_unit({PluralCategory.one: 'sano {n}', PluralCategory.other: 'sanooyin {n}'})
+	second: simple_unit('{n} ilbiriqsi')
+	minute: plural_unit({PluralCategory.one: '{n} daqiiqad', PluralCategory.other: '{n} daqiiqo'})
+	hour: plural_unit({PluralCategory.one: '{n} saacad', PluralCategory.other: '{n} saacadood'})
+	day: plural_unit({PluralCategory.one: '{n} maalin', PluralCategory.other: '{n} maalmood'})
+	week: simple_unit('{n} toddobaad')
+	month: plural_unit({PluralCategory.one: '{n} bil', PluralCategory.other: '{n} bilood'})
+	year: simple_unit('{n} sano')
 	half: '{n}½'
 	delimiter: ', '
 	just_now: 'hadda'

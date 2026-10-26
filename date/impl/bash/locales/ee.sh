@@ -10,21 +10,21 @@
 # Source: locales/ee.json
 
 _sayabledate_locale_ee() {
-    _months=('Dzove' 'Dzodze' 'Tedoxe' 'Afɔfĩe' 'Damɛ' 'Masa' 'Siamlɔm' 'Dasiamime' 'Anyɔnyɔ' 'Kele' 'Adeɛmekpɔxe' 'Dzome')
-    _weekdays=('Kɔsiɖa' 'Dzoɖa' 'Braɖa' 'Kuɖa' 'Yawoɖa' 'Fiɖa' 'Memleɖa')
+    _months=('Dzove' 'Dzodze' 'Tedoxe' 'Afɔfĩe' 'Dama' 'Masa' 'Siamlɔm' 'Deasiamime' 'Anyɔnyɔ' 'Kele' 'Adeɛmekpɔxe' 'Dzome')
+    _weekdays=('Kɔsiɖa' 'Dzoɖa' 'Blaɖa' 'Kuɖa' 'Yawoɖa' 'Fiɖa' 'Memleɖa')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
     _today='egbe'
-    _tomorrow='etsɔ'
-    _yesterday='etso'
-    _day_after_tomorrow='etsɔ megbe'
-    _day_before_yesterday='etso nyitsɔ'
+    _tomorrow='etsɔ si gbɔna'
+    _yesterday='etsɔ si va yi'
+    _day_after_tomorrow='nyitsɔ si gbɔna'
+    _day_before_yesterday='nyitsɔ si va yi'
     _this_weekday='{weekday} sia'
     _next_weekday='{weekday} si gbɔna'
     _last_weekday='{weekday} si va yi'
-    _short_months=('Dzv' 'Dzd' 'Ted' 'Afɔ' 'Dam' 'Mas' 'Sia' 'Das' 'Any' 'Kel' 'Ade' 'Dzm')
-    _short_weekdays=('Kɔs' 'Dzo' 'Bra' 'Kuɖ' 'Yaw' 'Fiɖ' 'Mem')
+    _short_months=('Dzv' 'Dzd' 'Ted' 'Afɔ' 'Dam' 'Mas' 'Sia' 'Dea' 'Any' 'Kel' 'Ade' 'Dzm')
+    _short_weekdays=('Kɔs' 'Dzo' 'Bla' 'Kuɖ' 'Yaw' 'Fiɖ' 'Mem')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
     _short_date_pattern_with_year='{day} {month} {year}'

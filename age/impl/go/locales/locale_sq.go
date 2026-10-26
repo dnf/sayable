@@ -30,9 +30,9 @@ var SQ = sa.AgeLocale{
 	},
 	Half:      "{0} e gjysmë",
 	Delimiter: ", ",
-	JustBorn:  "Sapolindur",
+	JustBorn:  "I sapolindur",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
-		Newborn:  sa.G("Sapolindur", "Sapolindure"),
+		Newborn:  sa.G("I sapolindur", "E sapolindur"),
 		Infant:   sa.S("Foshnjë"),
 		Toddler:  sa.G("Fëmijë i vogël", "Fëmijë e vogël"),
 		Child:    sa.S("Fëmijë"),

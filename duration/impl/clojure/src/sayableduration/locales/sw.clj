@@ -14,9 +14,9 @@
 (def locale
   {:code "sw"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :simple :form "{n} sekunde"}
-   :minute {:type :simple :form "{n} dakika"}
-   :hour {:type :simple :form "{n} saa"}
+   :second {:type :simple :form "sekunde {n}"}
+   :minute {:type :simple :form "dakika {n}"}
+   :hour {:type :simple :form "saa {n}"}
    :day {:type :pluralized :forms {:one "siku {n}" :other "siku {n}"}}
    :week {:type :pluralized :forms {:one "wiki {n}" :other "wiki {n}"}}
    :month {:type :pluralized :forms {:one "mwezi {n}" :other "miezi {n}"}}

@@ -21,9 +21,9 @@
   (duration-locale
    "gn"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "simple" "form" "{n} aravo'i")
-         "minute" (hash "type" "simple" "form" "{n} aravo")
-         "hour" (hash "type" "simple" "form" "{n} aravo guasu")
+   (hash "second" (hash "type" "simple" "form" "{n} aravo'ive")
+         "minute" (hash "type" "simple" "form" "{n} aravo'i")
+         "hour" (hash "type" "simple" "form" "{n} aravo")
          "day" (hash "type" "simple" "form" "{n} ára")
          "week" (hash "type" "simple" "form" "{n} arapokõindy")
          "month" (hash "type" "simple" "form" "{n} jasy")
@@ -33,6 +33,6 @@
    "ko'ágã"
    "{0} ohasava'ekue"
    "{0} rire"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} ara'i") (hash "type" "simple" "form" "{n} ara") (hash "type" "simple" "form" "{n} ara g") (hash "type" "simple" "form" "{n} ára") (hash "type" "simple" "form" "{n} ara") (hash "type" "simple" "form" "{n} jas") (hash "type" "simple" "form" "{n} ary") #f #f "{0} ohasava'ekue" "{0} rire")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} aravo'ive") (hash "type" "simple" "form" "{n} aravo'i") (hash "type" "simple" "form" "{n} aravo") (hash "type" "simple" "form" "{n} ára") (hash "type" "simple" "form" "{n} ara") (hash "type" "simple" "form" "{n} jas") (hash "type" "simple" "form" "{n} ary") #f #f "{0} ohasava'ekue" "{0} rire")
    (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} ohasava'ekue" "{0} rire")
   ))

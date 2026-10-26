@@ -29,7 +29,7 @@ proc locale_fon {} {
         infant {Vǐ} \
         toddler {Vǐ} \
         child {Vǐ} \
-        teenager {Nyɔ̌nu} \
+        teenager [dict create m {Dɔnkpɛvu} f {Ɖyɔ̌vǐ}] \
         adult {Mɛ̌xo} \
     ]
     set short [dict create \

@@ -24,7 +24,7 @@
                (cons :week "{n} wik")
                (cons :month "{n} manis")
                (cons :year "{n} yia"))
-   :half "{n} en haf"
+   :half "{0} en haf"
    :delimiter ", "
    :just-now "nomoa nao"
    :ago "{0} bifoa"
@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}mo")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} bifoa"
    :compact-in-future "long {0}"

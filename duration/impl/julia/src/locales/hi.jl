@@ -17,7 +17,7 @@ const HI = DurationLocale(
     units = Dict(
         "second" => "{n} सेकंड",
         "minute" => "{n} मिनट",
-        "hour" => "{n} घंटा",
+        "hour" => Dict("one" => "{n} घंटा", "other" => "{n} घंटे"),
         "day" => Dict("one" => "{n} दिन", "other" => "{n} दिन"),
         "week" => Dict("one" => "{n} सप्ताह", "other" => "{n} सप्ताह"),
         "month" => Dict("one" => "{n} महीना", "other" => "{n} महीने"),

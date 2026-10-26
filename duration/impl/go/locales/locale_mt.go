@@ -34,8 +34,8 @@ var MT = sd.DurationLocale{
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} sekonda", sd.Two: "{n} sekondi", sd.Few: "{n} sekondi", sd.Many: "{n}-il sekonda", sd.Other: "{n} sekonda"}),
-		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} minuta", sd.Two: "{n} minuti", sd.Few: "{n} minuti", sd.Many: "{n}-il minuta", sd.Other: "{n} minuta"}),
-		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} siegħa", sd.Two: "{n} sigħat", sd.Few: "{n} sigħat", sd.Many: "{n}-il siegħa", sd.Other: "{n} siegħa"}),
+		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} minuta", sd.Two: "minutejn", sd.Few: "{n} minuti", sd.Many: "{n}-il minuta", sd.Other: "{n} minuta"}),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} siegħa", sd.Two: "sagħtejn", sd.Few: "{n} sigħat", sd.Many: "{n}-il siegħa", sd.Other: "{n} siegħa"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "ġurnata", sd.Two: "jumejn", sd.Few: "{n} ijiem", sd.Many: "{n}-il jum", sd.Other: "{n} jum"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "ġimgħa", sd.Two: "ġimgħatejn", sd.Few: "{n} ġimgħat", sd.Many: "{n}-il ġimgħa", sd.Other: "{n} ġimgħa"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "xahar", sd.Two: "xahrejn", sd.Few: "{n} xhur", sd.Many: "{n}-il xahar", sd.Other: "{n} xahar"}),

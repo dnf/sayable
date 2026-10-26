@@ -30,12 +30,12 @@ let FF* = AgeLocale(
     "infant": stageNeutral("Ɓinngel"),
     "toddler": stageNeutral("Cukalel"),
     "child": stageNeutral("Suka"),
-    "teenager": stageNeutral("Suka debbo"),
+    "teenager": stageGendered("Suka gorko", "Suka debbo"),
     "adult": stageNeutral("Mawɗo"),
   }.toOrderedTable,
   short: some(CompactnessOverride(
     units: some({
-      "day": simpleUnit("ñalɗe {n}"),
+      "day": pluralUnit(@[(pcOne, "ñalawma {n}"), (pcOther, "ñalɗe {n}")]),
       "week": pluralUnit(@[(pcOne, "yontere {n}"), (pcOther, "yontereeji {n}")]),
       "month": pluralUnit(@[(pcOne, "lewru {n}"), (pcOther, "lebbi {n}")]),
       "year": pluralUnit(@[(pcOne, "hitaande {n}"), (pcOther, "duuɓi {n}")]),
@@ -46,7 +46,7 @@ let FF* = AgeLocale(
   )),
   compact: some(CompactnessOverride(
     units: some({
-      "day": simpleUnit("ñalɗe {n}"),
+      "day": pluralUnit(@[(pcOne, "ñalawma {n}"), (pcOther, "ñalɗe {n}")]),
       "week": pluralUnit(@[(pcOne, "yont {n}"), (pcOther, "yontji {n}")]),
       "month": pluralUnit(@[(pcOne, "lew {n}"), (pcOther, "leb {n}")]),
       "year": pluralUnit(@[(pcOne, "hit {n}"), (pcOther, "duuɓi {n}")]),

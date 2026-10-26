@@ -26,7 +26,7 @@ tpi
 	locale tomorrow: 'tumora'.
 	locale yesterday: 'asde'.
 	locale dayAfterTomorrow: 'haptumora'.
-	locale dayBeforeYesterday: 'asde bipo'.
+	locale dayBeforeYesterday: 'hapasde'.
 	locale thisWeekday: 'dispela {weekday}'.
 	locale nextWeekday: '{weekday} bihain'.
 	locale lastWeekday: '{weekday} bipo'.

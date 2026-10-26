@@ -17,9 +17,9 @@
   (make-duration-locale
    :code "sw"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second "{n} sekunde")
-               (cons :minute "{n} dakika")
-               (cons :hour "{n} saa")
+   :units (list (cons :second "sekunde {n}")
+               (cons :minute "dakika {n}")
+               (cons :hour "saa {n}")
                (cons :day '((:one . "siku {n}") (:other . "siku {n}")))
                (cons :week '((:one . "wiki {n}") (:other . "wiki {n}")))
                (cons :month '((:one . "mwezi {n}") (:other . "miezi {n}")))

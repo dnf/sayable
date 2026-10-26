@@ -25,12 +25,12 @@
         [(= n 1) "one"]
         [(= n 2) "two"]
         [else "other"]))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "שנייה {n}" "two" "שתי שניות" "other" "{n} שניות"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "דקה {n}" "two" "שתי דקות" "other" "{n} דקות"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "שעה {n}" "two" "שעתיים" "other" "{n} שעות"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "יום {n}" "two" "יומיים" "other" "{n} ימים"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "שבוע {n}" "two" "שבועיים" "other" "{n} שבועות"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "חודש {n}" "two" "חודשיים" "other" "{n} חודשים"))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "שנייה" "two" "שתי שניות" "other" "{n} שניות"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "דקה" "two" "שתי דקות" "other" "{n} דקות"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "שעה" "two" "שעתיים" "other" "{n} שעות"))
+         "day" (hash "type" "pluralized" "forms" (hash "one" "יום" "two" "יומיים" "other" "{n} ימים"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "שבוע" "two" "שבועיים" "other" "{n} שבועות"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "חודש" "two" "חודשיים" "other" "{n} חודשים"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "שנה" "two" "שנתיים" "other" "{n} שנים")))
    "{0} וחצי"
    ", "

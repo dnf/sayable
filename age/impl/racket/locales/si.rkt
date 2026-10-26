@@ -25,7 +25,7 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "සති {n}" "other" "සති {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "මාස {n}" "other" "මාස {n}"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "වසර {n}" "other" "වසර {n}")))
-   "{0}යි භාගයයි"
+   "{n}½"
    ", "
    "අලුත උපන්"
    (hash "newborn" (stage-label "අලුත උපන්" #f #f)

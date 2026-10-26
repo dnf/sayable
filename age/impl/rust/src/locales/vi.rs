@@ -27,7 +27,7 @@ pub fn locale() -> AgeLocale {
         just_born: "Sơ sinh".to_string(),
         stages: Stages {
             newborn: StageLabel::Neutral("Sơ sinh".to_string()),
-            infant: StageLabel::Neutral("Trẻ sơ sinh".to_string()),
+            infant: StageLabel::Neutral("Trẻ nhũ nhi".to_string()),
             toddler: StageLabel::Neutral("Trẻ mới biết đi".to_string()),
             child: StageLabel::Neutral("Trẻ em".to_string()),
             teenager: StageLabel::Neutral("Thiếu niên".to_string()),

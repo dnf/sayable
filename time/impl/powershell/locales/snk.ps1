@@ -10,22 +10,22 @@
 # Source: locales/snk.json
 
 function locale_snk {
-    $hours = @('tanmu fillo', 'baane', 'fillo', 'sikko', 'naaxato', 'karago', 'tunmu', 'ñerru', 'segu', 'kaburu', 'tanmu', 'tanmu baane')
+    $hours = @('waxati tanmu do fillo', 'waxati baane', 'waxati fillo', 'waxati sikko', 'waxati naaxato', 'waxati karago', 'waxati tunmu', 'waxati ñerru', 'waxati segu', 'waxati kaburu', 'waxati tanmu', 'waxati tanmu do baane')
     $midnight = 'sulen noxo'
     $noon = 'tili seren'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} do miniti karago'
+    $patterns[10] = '{h} do miniti tanmu'
+    $patterns[15] = '{h} do miniti tanmu do karago'
+    $patterns[20] = '{h} do miniti tanpille'
+    $patterns[25] = '{h} do miniti tanpille do karago'
+    $patterns[30] = '{h} do faabe'
+    $patterns[35] = '{h} do miniti tanjikke do karago'
+    $patterns[40] = '{h} do miniti tannaxate'
+    $patterns[45] = '{h} do miniti tannaxate do karago'
+    $patterns[50] = '{h} do miniti tankarage'
+    $patterns[55] = '{h} do miniti tankarage do karago'
     $clock = @{
         hours = $hours
         midnight = $midnight

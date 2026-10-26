@@ -24,11 +24,11 @@ locale() ->
         week = {simple, "{n} wik"},
         month = {simple, "{n} manis"},
         year = {simple, "{n} yia"},
-        half = "{n} mo haf",
+        half = "{0} mo haf",
         delimiter = ", ",
         just_now = "jas nao",
         ago = "{0} bifo",
         in_future = "long {0}",
         short = {just, #duration_compactness_override{second = {just, {simple, "{n} sek"}}, minute = {just, {simple, "{n} min"}}, hour = {just, {simple, "{n} aoa"}}, day = {just, {simple, "{n} dei"}}, week = {just, {simple, "{n} wik"}}, month = {just, {simple, "{n} man"}}, year = {just, {simple, "{n} yia"}}, half = nothing, delimiter = nothing, ago = {just, "{0} bifo"}, in_future = {just, "long {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} bifo"}, in_future = {just, "long {0}"}}}
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} bifo"}, in_future = {just, "long {0}"}}}
     }.

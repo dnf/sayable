@@ -25,7 +25,7 @@ const SaLocale sa_locale_ca = {
         { NULL, { NULL, "{n} mes", NULL, NULL, NULL, "{n} mesos" } },
         { NULL, { NULL, "{n} any", NULL, NULL, NULL, "{n} anys" } }
     },
-    "{n} i mig", ", ", "Nounat",
+    "{0} i mig", ", ", "Nounat",
     {
         { "Nounat", "Nounada" },
         { "Nadó", "" },

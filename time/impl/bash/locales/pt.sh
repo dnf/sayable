@@ -13,7 +13,7 @@ _sayabletime_locale_pt() {
     _clock_hours=('doze' 'uma' 'duas' 'três' 'quatro' 'cinco' 'seis' 'sete' 'oito' 'nove' 'dez' 'onze')
     _clock_midnight='meia-noite'
     _clock_noon='meio-dia'
-    _clock_pattern_0='{h} horas'
+    _clock_pattern_0='{h} em ponto'
     _clock_pattern_5='{h} e cinco'
     _clock_pattern_10='{h} e dez'
     _clock_pattern_15='{h} e um quarto'

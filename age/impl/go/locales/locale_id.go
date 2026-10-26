@@ -25,7 +25,7 @@ var ID = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} bulan"),
 		Year:  sa.SimpleUnit("{n} tahun"),
 	},
-	Half:      "{0} setengah",
+	Half:      "{n} setengah",
 	Delimiter: ", ",
 	JustBorn:  "Baru lahir",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

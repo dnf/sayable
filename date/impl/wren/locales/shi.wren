@@ -12,10 +12,10 @@
 class SHILocale {
   static code { "shi" }
   static months {
-    return ["ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ"]
+    return ["innayr", "bṛayṛ", "maṛṣ", "ibrir", "mayyu", "yunyu", "yulyuz", "ɣuct", "cutanbir", "ktubr", "nuwanbir", "dujanbir"]
   }
   static weekdays {
-    return ["ⴰⵙⴰⵎⴰⵙ", "ⴰⵢⵏⴰⵙ", "ⴰⵙⵉⵏⴰⵙ", "ⴰⴽⵕⴰⵙ", "ⴰⴽⵡⴰⵙ", "ⴰⵙⵉⵎⵡⴰⵙ", "ⴰⵙⵉⴹⵢⴰⵙ"]
+    return ["asamas", "aynas", "asinas", "akṛas", "akwas", "asimwas", "asiḍyas"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {
@@ -23,19 +23,19 @@ class SHILocale {
   }
   static datePattern { "{day} {month}" }
   static datePatternWithYear { "{day} {month} {year}" }
-  static today { "ⴰⵙⵙⴰ" }
-  static tomorrow { "ⴰⵙⴽⴽⴰ" }
-  static yesterday { "ⵉⴹⵍⵍⵉ" }
+  static today { "assa" }
+  static tomorrow { "askka" }
+  static yesterday { "iḍlli" }
   static dayAfterTomorrow { null }
   static dayBeforeYesterday { null }
-  static thisWeekday { "{weekday} ⴰⴷ" }
-  static nextWeekday { "{weekday} ⴷ ⵉⴷⴷⴰⵏ" }
-  static lastWeekday { "{weekday} ⵉⵣⵔⵉⵏ" }
+  static thisWeekday { "{weekday} ad" }
+  static nextWeekday { "{weekday} d iddan" }
+  static lastWeekday { "{weekday} izrin" }
   static monthsInDate { null }
   static short {
     return {
-      "months": ["ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ"],
-      "weekdays": ["ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"],
+      "months": ["inn", "bṛa", "maṛ", "ibr", "may", "yun", "yul", "ɣuc", "cut", "ktu", "nuw", "duj"],
+      "weekdays": ["asa", "ayn", "asi", "akṛ", "akw", "asim", "asiḍ"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
       "datePatternWithYear": "{day} {month} {year}",

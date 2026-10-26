@@ -25,7 +25,7 @@ locale_th <- list(
   delimiter = " ",
   just_now = "เมื่อกี้",
   ago = "{0}ที่แล้ว",
-  in_future = "ใน{0}",
+  in_future = "ในอีก {0}",
   short = list(
     units = list(
       second = "{n} วิ",
@@ -37,7 +37,7 @@ locale_th <- list(
       year = "{n} ปี"
     ),
     ago = "{0}ที่แล้ว",
-    in_future = "ใน{0}"
+    in_future = "ในอีก {0}"
   ),
   compact = list(
     units = list(
@@ -52,6 +52,6 @@ locale_th <- list(
     half = "{n}½",
     delimiter = "",
     ago = "{0}ที่แล้ว",
-    in_future = "ใน{0}"
+    in_future = "ในอีก {0}"
   )
 )

@@ -25,7 +25,7 @@ sd_half('km', '{0}កន្លះ').
 sd_delimiter('km', ', ').
 sd_just_now('km', 'ឥឡូវនេះ').
 sd_ago('km', '{0}មុន').
-sd_in_future('km', 'ក្នុង{0}').
+sd_in_future('km', '{0}ទៀត').
 
 short_sd_unit('km', second, _, '{n} វិនាទី').
 short_sd_unit('km', minute, _, '{n} នាទី').
@@ -35,7 +35,7 @@ short_sd_unit('km', week, _, '{n} សប្ដាហ៍').
 short_sd_unit('km', month, _, '{n} ខែ').
 short_sd_unit('km', year, _, '{n} ឆ្នាំ').
 short_sd_ago('km', '{0}មុន').
-short_sd_in_future('km', 'ក្នុង{0}').
+short_sd_in_future('km', '{0}ទៀត').
 
 compact_sd_unit('km', second, _, '{n} វិនាទី').
 compact_sd_unit('km', minute, _, '{n} នាទី').
@@ -47,4 +47,4 @@ compact_sd_unit('km', year, _, '{n} ឆ្នាំ').
 compact_sd_half('km', '{n}½').
 compact_sd_delimiter('km', '').
 compact_sd_ago('km', '{0}មុន').
-compact_sd_in_future('km', 'ក្នុង{0}').
+compact_sd_in_future('km', '{0}ទៀត').

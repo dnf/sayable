@@ -22,7 +22,7 @@ _sayabledate_locale_ha() {
     _day_before_yesterday='shekaranjiya'
     _this_weekday='wannan {weekday}'
     _next_weekday='{weekday} mai zuwa'
-    _last_weekday='{weekday} da ya wuce'
+    _last_weekday='{weekday} da ta wuce'
     _short_months=('Jan' 'Fab' 'Mar' 'Afr' 'May' 'Yun' 'Yul' 'Agu' 'Sat' 'Okt' 'Nuw' 'Dis')
     _short_weekdays=('Lah' 'Lit' 'Tal' 'Lar' 'Alh' 'Jum' 'Asa')
     _short_day_format='{n}'

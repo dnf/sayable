@@ -16,7 +16,7 @@ let locale : duration_locale =
   ; plural = (fun n -> if n = 0 || n = 1 then One else Other)
   ; second = Simple "{n} সেকেন্ড"
   ; minute = Simple "{n} মিনিট"
-  ; hour = Simple "{n} ঘন্টা"
+  ; hour = Simple "{n} ঘণ্টা"
   ; day = Pluralized
       [ (One, "{n} দিন")
       ; (Other, "{n} দিন")

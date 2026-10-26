@@ -27,7 +27,7 @@ let locale : locale =
     ; toddler = Neutral "Batang paslit"
     ; child = Neutral "Bata"
     ; teenager = Neutral "Tinedyer"
-    ; adult = Neutral "Matanda"
+    ; adult = Neutral "Adulto"
     }
   ; short = Some
       { ovr_day = Some (Simple "{n} araw")

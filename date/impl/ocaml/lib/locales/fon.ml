@@ -28,13 +28,13 @@ let locale : date_locale =
     ; "Adɔxwísún"
     ]
   ; weekdays =
-    [ "Sidégbe"
+    [ "Aklunɔzángbe"
     ; "Tɛnígbe"
     ; "Talɛtagbe"
     ; "Azǎngagbe"
     ; "Nyɔnúgbe"
     ; "Axɔ́sùgbe"
-    ; "Abámɛ́ta"
+    ; "Sibigbe"
     ]
   ; day_format = "{n}"
   ; day_format_exceptions =
@@ -67,13 +67,13 @@ let locale : date_locale =
         ]
       ; ovr_months_in_date = None
       ; ovr_weekdays = Some
-        [ "Sid"
+        [ "Akl"
         ; "Tɛn"
         ; "Tal"
         ; "Azǎ"
         ; "Nyɔ"
         ; "Axɔ"
-        ; "Abá"
+        ; "Sib"
         ]
       ; ovr_day_format = Some "{n}"
       ; ovr_day_format_exceptions = Some []

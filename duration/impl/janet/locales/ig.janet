@@ -12,18 +12,18 @@
 (def locale
   {:code "ig"
    :plural (fn [_n] :other)
-   :units {:second "{n} sekọnd"
-          :minute "{n} nkeji"
-          :hour "{n} awa"
-          :day "{n} ụbọchị"
-          :week "{n} izu"
-          :month "{n} ọnwa"
-          :year "{n} afọ"}
+   :units {:second "sekọnd {n}"
+          :minute "nkeji {n}"
+          :hour "awa {n}"
+          :day "ụbọchị {n}"
+          :week "izu {n}"
+          :month "ọnwa {n}"
+          :year "afọ {n}"}
    :half "{0} na ọkara"
    :delimiter ", "
    :just-now "ugbu a"
    :ago "{0} gara aga"
    :in-future "na {0}"
-   :short {:units {:second "{n} sek." :minute "{n} nkeji" :hour "{n} awa" :day "{n} ụbọchị" :week "{n} izu" :month "{n} ọnwa" :year "{n} afọ"} :ago "{0} gara aga" :in-future "na {0}"}
+   :short {:units {:second "sek. {n}" :minute "nkeji {n}" :hour "awa {n}" :day "ụbọchị {n}" :week "izu {n}" :month "ọnwa {n}" :year "afọ {n}"} :ago "{0} gara aga" :in-future "na {0}"}
    :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} gara aga" :in-future "na {0}"}
 })

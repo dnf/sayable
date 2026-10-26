@@ -20,7 +20,7 @@ sub locale {{
     hours => ['on iki', 'bir', 'iki', 'üç', 'dört', 'bäş', 'alty', 'ýedi', 'sekiz', 'dokuz', 'on', 'on bir'],
     midnight => 'ýary gije',
     noon => 'günorta',
-    patterns => { 0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55' },
+    patterns => { 0 => 'sagat {h}', 5 => 'sagat {h} bäş minut', 10 => 'sagat {h} on minut', 15 => 'sagat {h} on bäş minut', 20 => 'sagat {h} ýigrimi minut', 25 => 'sagat {h} ýigrimi bäş minut', 30 => 'sagat {h} ýarym', 35 => 'sagat {h} otuz bäş minut', 40 => 'sagat {h} kyrk minut', 45 => 'sagat {h} kyrk bäş minut', 50 => 'sagat {h} elli minut', 55 => 'sagat {h} elli bäş minut' },
   },
   short => {
     clock => {

@@ -16,8 +16,8 @@ tk
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'tk'.
-	locale months: (OrderedCollection withAll: { 'Ýanwar'. 'Fewral'. 'Mart'. 'Aprel'. 'Maý'. 'Iýun'. 'Iýul'. 'Awgust'. 'Sentýabr'. 'Oktýabr'. 'Noýabr'. 'Dekabr' }).
-	locale weekdays: (OrderedCollection withAll: { 'Ýekşenbe'. 'Duşenbe'. 'Sişenbe'. 'Çarşenbe'. 'Penşenbe'. 'Anna'. 'Şenbe' }).
+	locale months: (OrderedCollection withAll: { 'ýanwar'. 'fewral'. 'mart'. 'aprel'. 'maý'. 'iýun'. 'iýul'. 'awgust'. 'sentýabr'. 'oktýabr'. 'noýabr'. 'dekabr' }).
+	locale weekdays: (OrderedCollection withAll: { 'ýekşenbe'. 'duşenbe'. 'sişenbe'. 'çarşenbe'. 'penşenbe'. 'anna'. 'şenbe' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
@@ -32,8 +32,8 @@ tk
 	locale lastWeekday: 'geçen {weekday}'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { 'Ýan'. 'Few'. 'Mar'. 'Apr'. 'Maý'. 'Iýn'. 'Iýl'. 'Awg'. 'Sen'. 'Okt'. 'Noý'. 'Dek' }).
-		#weekdays. (OrderedCollection withAll: { 'Ýek'. 'Duş'. 'Siş'. 'Çar'. 'Pen'. 'Ann'. 'Şen' }).
+		#months. (OrderedCollection withAll: { 'ýan'. 'few'. 'mar'. 'apr'. 'maý'. 'iýn'. 'iýl'. 'awg'. 'sen'. 'okt'. 'noý'. 'dek' }).
+		#weekdays. (OrderedCollection withAll: { 'ýek'. 'duş'. 'siş'. 'çar'. 'pen'. 'ann'. 'şen' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
 		#datePatternWithYear. '{day} {month} {year}'.

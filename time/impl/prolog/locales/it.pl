@@ -11,11 +11,11 @@
 
 % Italian locale.
 
-st_hours('it', ['dodici', 'una', 'due', 'tre', 'quattro', 'cinque', 'sei', 'sette', 'otto', 'nove', 'dieci', 'undici']).
+st_hours('it', ['le dodici', 'l\'una', 'le due', 'le tre', 'le quattro', 'le cinque', 'le sei', 'le sette', 'le otto', 'le nove', 'le dieci', 'le undici']).
 st_midnight('it', 'mezzanotte').
 st_noon('it', 'mezzogiorno').
 
-st_pattern('it', 0, 'le {h}').
+st_pattern('it', 0, '{h}').
 st_pattern('it', 5, '{h} e cinque').
 st_pattern('it', 10, '{h} e dieci').
 st_pattern('it', 15, '{h} e un quarto').

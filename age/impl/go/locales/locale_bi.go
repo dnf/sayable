@@ -25,7 +25,7 @@ var BI = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} manis"),
 		Year:  sa.SimpleUnit("{n} yia"),
 	},
-	Half:      "{n} mo haf",
+	Half:      "{0} mo haf",
 	Delimiter: ", ",
 	JustBorn:  "Niufala bebe",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
@@ -48,5 +48,6 @@ var BI = sa.AgeLocale{
 		Month:     &sa.UnitForms{Simple: "{n}m"},
 		Year:      &sa.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 	},
 }

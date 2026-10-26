@@ -178,43 +178,43 @@
         "one": "{n} sekunda",
         "few": "{n} sekundy",
         "many": "{n} sekund",
-        "other": "{n} sekund"
+        "other": "{n} sekundy"
       },
       "minute": {
         "one": "{n} minuta",
         "few": "{n} minuty",
         "many": "{n} minut",
-        "other": "{n} minut"
+        "other": "{n} minuty"
       },
       "hour": {
         "one": "{n} godzina",
         "few": "{n} godziny",
         "many": "{n} godzin",
-        "other": "{n} godzin"
+        "other": "{n} godziny"
       },
       "day": {
         "one": "{n} dzień",
         "few": "{n} dni",
         "many": "{n} dni",
-        "other": "{n} dni"
+        "other": "{n} dnia"
       },
       "week": {
         "one": "{n} tydzień",
         "few": "{n} tygodnie",
         "many": "{n} tygodni",
-        "other": "{n} tygodni"
+        "other": "{n} tygodnia"
       },
       "month": {
         "one": "{n} miesiąc",
         "few": "{n} miesiące",
         "many": "{n} miesięcy",
-        "other": "{n} miesięcy"
+        "other": "{n} miesiąca"
       },
       "year": {
         "one": "{n} rok",
         "few": "{n} lata",
         "many": "{n} lat",
-        "other": "{n} lat"
+        "other": "{n} roku"
       }
     },
     "half": "{n} i pół",
@@ -304,17 +304,17 @@
       "noon": "południe",
       "patterns": {
         "0": "{h}",
-        "5": "pięć po {h}",
-        "10": "dziesięć po {h}",
-        "15": "piętnaście po {h}",
-        "20": "dwadzieścia po {h}",
-        "25": "dwadzieścia pięć po {h}",
-        "30": "trzydzieści po {h}",
-        "35": "dwadzieścia pięć do {next_h}",
-        "40": "dwadzieścia do {next_h}",
-        "45": "piętnaście do {next_h}",
-        "50": "dziesięć do {next_h}",
-        "55": "pięć do {next_h}"
+        "5": "{h} pięć",
+        "10": "{h} dziesięć",
+        "15": "{h} piętnaście",
+        "20": "{h} dwadzieścia",
+        "25": "{h} dwadzieścia pięć",
+        "30": "{h} trzydzieści",
+        "35": "za dwadzieścia pięć {next_h}",
+        "40": "za dwadzieścia {next_h}",
+        "45": "za kwadrans {next_h}",
+        "50": "za dziesięć {next_h}",
+        "55": "za pięć {next_h}"
       }
     },
     "short": {

@@ -17,9 +17,9 @@ locale() ->
     #duration_locale{
         code = "ny",
         plural = fun(1) -> one; (_) -> other end,
-        second = {simple, "{n} sekondi"},
-        minute = {simple, "{n} mphindi"},
-        hour = {simple, "{n} ola"},
+        second = {simple, "sekondi {n}"},
+        minute = {simple, "mphindi {n}"},
+        hour = {pluralized, [{one, "ola {n}"}, {other, "maola {n}"}]},
         day = {pluralized, [{one, "tsiku {n}"}, {other, "masiku {n}"}]},
         week = {pluralized, [{one, "sabata {n}"}, {other, "masabata {n}"}]},
         month = {pluralized, [{one, "mwezi {n}"}, {other, "miyezi {n}"}]},
@@ -29,6 +29,6 @@ locale() ->
         just_now = "tsopano",
         ago = "{0} zapitazo",
         in_future = "mu {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "sek {n}"}}, minute = {just, {simple, "mph {n}"}}, hour = {just, {simple, "ola {n}"}}, day = {just, {pluralized, [{one, "tsiku {n}"}, {other, "mas {n}"}]}}, week = {just, {pluralized, [{one, "sabata {n}"}, {other, "masab {n}"}]}}, month = {just, {pluralized, [{one, "mwezi {n}"}, {other, "miyezi {n}"}]}}, year = {just, {pluralized, [{one, "chaka {n}"}, {other, "zaka {n}"}]}}, half = nothing, delimiter = nothing, ago = {just, "{0} zapitazo"}, in_future = {just, "mu {0}"}}},
+        short = {just, #duration_compactness_override{second = {just, {simple, "sek {n}"}}, minute = {just, {simple, "mph {n}"}}, hour = {just, {pluralized, [{one, "ola {n}"}, {other, "maola {n}"}]}}, day = {just, {pluralized, [{one, "tsiku {n}"}, {other, "mas {n}"}]}}, week = {just, {pluralized, [{one, "sabata {n}"}, {other, "masab {n}"}]}}, month = {just, {pluralized, [{one, "mwezi {n}"}, {other, "miyezi {n}"}]}}, year = {just, {pluralized, [{one, "chaka {n}"}, {other, "zaka {n}"}]}}, half = nothing, delimiter = nothing, ago = {just, "{0} zapitazo"}, in_future = {just, "mu {0}"}}},
         compact = {just, #duration_compactness_override{second = {just, {simple, "s {n}"}}, minute = {just, {simple, "m {n}"}}, hour = {just, {simple, "o {n}"}}, day = {just, {pluralized, [{one, "ts {n}"}, {other, "mas {n}"}]}}, week = {just, {pluralized, [{one, "sab {n}"}, {other, "msb {n}"}]}}, month = {just, {pluralized, [{one, "mw {n}"}, {other, "miy {n}"}]}}, year = {just, {pluralized, [{one, "ch {n}"}, {other, "z {n}"}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} zapitazo"}, in_future = {just, "mu {0}"}}}
     }.

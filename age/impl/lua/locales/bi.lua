@@ -19,7 +19,7 @@ M.units = {
     month = "{n} manis",
     year = "{n} yia",
 }
-M.half = "{n} mo haf"
+M.half = "{0} mo haf"
 M.delimiter = ", "
 M.just_born = "Niufala bebe"
 M.stages = {
@@ -45,6 +45,7 @@ M.compact = {
         month = "{n}m",
         year = "{n}y",
     },
+    half = "{n}½",
     delimiter = "",
 }
 

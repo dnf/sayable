@@ -22,7 +22,7 @@ module SayableDuration
         end
       },
       units: {
-        "second" => UnitForms.new(one: "{n} tasint", few: "{n} tasinin", other: "{n} tasinin"),
+        "second" => UnitForms.new(one: "{n} tasint", few: "{n} tisinin", other: "{n} tisinin"),
         "minute" => UnitForms.new(one: "{n} tusdiqt", few: "{n} tusdiqin", other: "{n} tusdiqin"),
         "hour" => UnitForms.new(one: "{n} tasragt", few: "{n} tisragin", other: "{n} tisragin"),
         "day" => UnitForms.new(one: "{n} ass", few: "{n} ussan", other: "{n} ass"),
@@ -37,13 +37,13 @@ module SayableDuration
       in_future: "ɣ {0}",
       short: CompactnessOverride.new(
         units: {
-          "second" => UnitForms.new("{n}s"),
-          "minute" => UnitForms.new("{n}m"),
-          "hour" => UnitForms.new("{n}h"),
-          "day" => UnitForms.new("{n}d"),
-          "week" => UnitForms.new("{n}w"),
-          "month" => UnitForms.new("{n}mo"),
-          "year" => UnitForms.new("{n}y"),
+          "second" => UnitForms.new(one: "{n} tasint", few: "{n} tasinin", other: "{n} tasinin"),
+          "minute" => UnitForms.new(one: "{n} tusdiqt", few: "{n} tusdiqin", other: "{n} tusdiqin"),
+          "hour" => UnitForms.new(one: "{n} tasragt", few: "{n} tisragin", other: "{n} tisragin"),
+          "day" => UnitForms.new(one: "{n} ass", few: "{n} ussan", other: "{n} ass"),
+          "week" => UnitForms.new(one: "{n} imalass", few: "{n} imalassn", other: "{n} imalass"),
+          "month" => UnitForms.new(one: "{n} ayyur", few: "{n} ayyurn", other: "{n} ayyur"),
+          "year" => UnitForms.new(one: "{n} aseggas", few: "{n} iseggasen", other: "{n} aseggas"),
         },
         ago: "ɣ {0} zzrin",
         in_future: "ɣ {0}",

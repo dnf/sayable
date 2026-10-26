@@ -13,8 +13,8 @@
 
 sd_plural('qu', _, other).
 
-sd_unit('qu', second, _, '{n} ñiqin').
-sd_unit('qu', minute, _, '{n} chiniku').
+sd_unit('qu', second, _, '{n} sikundu').
+sd_unit('qu', minute, _, '{n} minutu').
 sd_unit('qu', hour, _, '{n} ura').
 sd_unit('qu', day, _, '{n} p\'unchaw').
 sd_unit('qu', week, _, '{n} simana').
@@ -27,8 +27,8 @@ sd_just_now('qu', 'kunanlla').
 sd_ago('qu', '{0} ñawpaqta').
 sd_in_future('qu', '{0} qhipata').
 
-short_sd_unit('qu', second, _, '{n} ñiq').
-short_sd_unit('qu', minute, _, '{n} chi').
+short_sd_unit('qu', second, _, '{n} sik').
+short_sd_unit('qu', minute, _, '{n} min').
 short_sd_unit('qu', hour, _, '{n} ura').
 short_sd_unit('qu', day, _, '{n} p\'un').
 short_sd_unit('qu', week, _, '{n} sim').

@@ -49,6 +49,7 @@ shn
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 	}).
 	^ locale

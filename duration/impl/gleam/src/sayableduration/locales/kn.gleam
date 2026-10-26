@@ -24,7 +24,7 @@ pub fn locale() -> types.DurationLocale {
       #("month", types.PluralUnit([#(types.One, "{n} ತಿಂಗಳು"), #(types.Other, "{n} ತಿಂಗಳುಗಳು")])),
       #("year", types.PluralUnit([#(types.One, "{n} ವರ್ಷ"), #(types.Other, "{n} ವರ್ಷಗಳು")])),
     ],
-    half: "{0}ವರೆ",
+    half: "{n}½",
     delimiter: ", ",
     just_now: "ಈಗಷ್ಟೇ",
     ago: "{0} ಹಿಂದೆ",

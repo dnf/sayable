@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [quc.json](../../locales/quc.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): '{h} ramaj' (ramaj = hour, as the locale's duration unit) followed by minutes in K'iche' vigesimal numerals (olajuj 15, juwinaq 20, kawinaq 40). Structurally plausible but K'iche' speakers very often tell time in Spanish; the exact idiom (and whether :30 should use nik'aj) needs a native check.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 junab', 1 ik'   | 2 jun., 1 ik'     | 2y1m        |
 | 2 years, 6 months | 2 junab', 6 ik'   | 2 jun., 6 ik'     | 2y6m        |
 | 3 years           | 3 junab'          | 3 jun.            | 3y          |
-| 3½ years          | 3 junab' nik'aj   | 3 jun. nik'aj     | 3y nik'aj   |
+| 3½ years          | 3 junab' nik'aj   | 3 jun. nik'aj     | 3½y         |
 | 5 years           | 5 junab'          | 5 jun.            | 5y          |
-| 5½ years          | 5 junab' nik'aj   | 5 jun. nik'aj     | 5y nik'aj   |
+| 5½ years          | 5 junab' nik'aj   | 5 jun. nik'aj     | 5½y         |
 | 7 years           | 7 junab'          | 7 jun.            | 7y          |
 | 10 years          | 10 junab'         | 10 jun.           | 10y         |
 | 18 years          | 18 junab'         | 18 jun.           | 18y         |
@@ -73,37 +81,37 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | kab'ij chwe'q     | 17/3    |
 | Day before yesterday | kab'ij iwir       | 13/3    |
 | This Thursday (+5)   | we Jueves         | 20/3    |
-| Last Monday (-4)     | Martes ri k'aslik | 11/3    |
-| Next Wednesday (+12) | Jueves ri petinaq | 27/3    |
-| Same month (+20)     | 4 Ukaj ik'        | 4/4     |
+| Last Tuesday (-4)    | Martes ri k'aslik | 11/3    |
+| Next Thursday (+12)  | Jueves ri petinaq | 27/3    |
+| Same year (+20)      | 4 Ukaj ik'        | 4/4     |
 | Different year       | 10 Nab'e ik' 2026 | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                      | Short               | Compact   |
-| --------------------- | --------------------------- | ------------------- | --------- |
-| 0 seconds             | kamik                       | kamik               | kamik     |
-| 1 second              | 1 tz'aqat                   | 1 tz'aq.            | 1s        |
-| 30 seconds            | 30 tz'aqat                  | 30 tz'aq.           | 30s       |
-| 1 minute              | 1 ch'utaq ramaj             | 1 ch'ut.            | 1m        |
-| 2 minutes, 15 seconds | 2 ch'utaq ramaj, 15 tz'aqat | 2 ch'ut., 15 tz'aq. | 2m15s     |
-| 5 minutes             | 5 ch'utaq ramaj             | 5 ch'ut.            | 5m        |
-| 45 minutes            | 45 ch'utaq ramaj            | 45 ch'ut.           | 45m       |
-| 1 hour                | 1 ramaj                     | 1 ram.              | 1h        |
-| 1½ hours              | 1 ramaj nik'aj              | 1 ram. nik'aj       | 1h nik'aj |
-| 3 hours               | 3 ramaj                     | 3 ram.              | 3h        |
-| 6 hours               | 6 ramaj                     | 6 ram.              | 6h        |
-| 1 day                 | 1 q'ij                      | 1 q'ij              | 1d        |
-| 1½ days               | 1 q'ij nik'aj               | 1 q'ij nik'aj       | 1d nik'aj |
-| 3 days                | 3 q'ij                      | 3 q'ij              | 3d        |
-| 1 week                | 1 wuqq'ij                   | 1 wuqq'ij           | 1w        |
-| 2 weeks, 3 days       | 2 wuqq'ij, 3 q'ij           | 2 wuqq'ij, 3 q'ij   | 2w3d      |
-| 1 month               | 1 ik'                       | 1 ik'               | 1mo       |
-| 6 months              | 6 ik'                       | 6 ik'               | 6mo       |
-| 1 year                | 1 junab'                    | 1 jun.              | 1y        |
-| 2 years, 3 months     | 2 junab', 3 ik'             | 2 jun., 3 ik'       | 2y3mo     |
+| Duration              | Normal                      | Short               | Compact |
+| --------------------- | --------------------------- | ------------------- | ------- |
+| 0 seconds             | kamik                       | kamik               | kamik   |
+| 1 second              | 1 tz'aqat                   | 1 tz'aq.            | 1s      |
+| 30 seconds            | 30 tz'aqat                  | 30 tz'aq.           | 30s     |
+| 1 minute              | 1 ch'utaq ramaj             | 1 ch'ut.            | 1m      |
+| 2 minutes, 15 seconds | 2 ch'utaq ramaj, 15 tz'aqat | 2 ch'ut., 15 tz'aq. | 2m15s   |
+| 5 minutes             | 5 ch'utaq ramaj             | 5 ch'ut.            | 5m      |
+| 45 minutes            | 45 ch'utaq ramaj            | 45 ch'ut.           | 45m     |
+| 1 hour                | 1 ramaj                     | 1 ram.              | 1h      |
+| 1½ hours              | 1 ramaj nik'aj              | 1 ram. nik'aj       | 1½h     |
+| 3 hours               | 3 ramaj                     | 3 ram.              | 3h      |
+| 6 hours               | 6 ramaj                     | 6 ram.              | 6h      |
+| 1 day                 | 1 q'ij                      | 1 q'ij              | 1d      |
+| 1½ days               | 1 q'ij nik'aj               | 1 q'ij nik'aj       | 1½d     |
+| 3 days                | 3 q'ij                      | 3 q'ij              | 3d      |
+| 1 week                | 1 wuqq'ij                   | 1 wuqq'ij           | 1w      |
+| 2 weeks, 3 days       | 2 wuqq'ij, 3 q'ij           | 2 wuqq'ij, 3 q'ij   | 2w3d    |
+| 1 month               | 1 ik'                       | 1 ik'               | 1mo     |
+| 6 months              | 6 ik'                       | 6 ik'               | 6mo     |
+| 1 year                | 1 junab'                    | 1 jun.              | 1y      |
+| 2 years, 3 months     | 2 junab', 3 ik'             | 2 jun., 3 ik'       | 2y3mo   |
 
 ### Relative time
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal        | Short    | Compact |
-| --------------- | ------------- | -------- | ------- |
-| Midnight        | nik'aj aq'ab' | 12:00 AM | 12:00a  |
-| 1:00 AM         | jun:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | b'eleji':05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | lajuj:15      | 10:15 AM | 10:15a  |
-| Half past 11    | julajuj:30    | 11:30 AM | 11:30a  |
-| Noon            | nik'aj q'ij   | 12:00 PM | 12:00p  |
-| Quarter to 3    | ka'i':45      | 2:45 PM  | 2:45p   |
-| 5 to 6          | jo':55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | wajxaqi':00   | 8:00 PM  | 8:00p   |
-| 10:30 PM        | lajuj:30      | 10:30 PM | 10:30p  |
-| 11:58 PM        | nik'aj aq'ab' | 11:58 PM | 11:58p  |
+| Time            | Normal                      | Short    | Compact |
+| --------------- | --------------------------- | -------- | ------- |
+| Midnight        | nik'aj aq'ab'               | 12:00 AM | 12:00a  |
+| 1:00 AM         | jun ramaj                   | 1:00 AM  | 1:00a   |
+| 5 past 9        | b'elejeb' ramaj job'        | 9:05 AM  | 9:05a   |
+| Quarter past 10 | lajuj ramaj olajuj          | 10:15 AM | 10:15a  |
+| Half past 11    | julajuj ramaj juwinaq lajuj | 11:30 AM | 11:30a  |
+| Noon            | nik'aj q'ij                 | 12:00 PM | 12:00p  |
+| Quarter to 3    | keb' ramaj kawinaq job'     | 2:45 PM  | 2:45p   |
+| 5 to 6          | job' ramaj kawinaq olajuj   | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | wajxaqib' ramaj             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | lajuj ramaj juwinaq lajuj   | 10:30 PM | 10:30p  |
+| 11:58 PM        | nik'aj aq'ab'               | 11:58 PM | 11:58p  |

@@ -39,7 +39,7 @@ locale = DateLocale
         , "DihAoine"
         , "DiSathairne"
         ]
-    , localeDayFormat = "{n}"
+    , localeDayFormat = "{n}mh"
     , localeDayFormatExceptions = []
     , localeDatePattern = "{day} {month}"
     , localeDatePatternWithYear = "{day} {month} {year}"
@@ -51,7 +51,20 @@ locale = DateLocale
     , localeThisWeekday = Just "{weekday} seo"
     , localeNextWeekday = Just "{weekday} sa tighinn"
     , localeLastWeekday = Just "{weekday} seo chaidh"
-    , localeMonthsInDate = Nothing
+    , localeMonthsInDate = Just $
+        [ "dhen Fhaoilleach"
+        , "dhen Ghearran"
+        , "dhen Mhàrt"
+        , "dhen Ghiblean"
+        , "dhen Chèitean"
+        , "dhen Ògmhios"
+        , "dhen Iuchar"
+        , "dhen Lùnastal"
+        , "dhen t-Sultain"
+        , "dhen Dàmhair"
+        , "dhen t-Samhain"
+        , "dhen Dùbhlachd"
+        ]
     , localeShort = Just $
         CompactnessOverride
             { ovrMonths = Just $

@@ -17,10 +17,10 @@ locale :: Locale
 locale = Locale
     { localeCode = "ay"
     , localePlural = \_ -> Other
-    , localeDay = Simple "uru {n}"
-    , localeWeek = Simple "simana {n}"
-    , localeMonth = Simple "phaxsi {n}"
-    , localeYear = Simple "mara {n}"
+    , localeDay = Simple "{n} uru"
+    , localeWeek = Simple "{n} simana"
+    , localeMonth = Simple "{n} phaxsi"
+    , localeYear = Simple "{n} mara"
     , localeHalf = "{0} chika"
     , localeDelimiter = ", "
     , localeJustBorn = "Wawa machaqa"
@@ -48,7 +48,7 @@ locale = Locale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

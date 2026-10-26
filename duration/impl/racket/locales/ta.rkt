@@ -27,8 +27,8 @@
          "day" (hash "type" "pluralized" "forms" (hash "one" "{n} நாள்" "other" "{n} நாட்கள்"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} வாரம்" "other" "{n} வாரங்கள்"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} மாதம்" "other" "{n} மாதங்கள்"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} வயது" "other" "{n} வயது")))
-   "{0}ரை"
+         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} ஆண்டு" "other" "{n} ஆண்டுகள்")))
+   "{n}½"
    ", "
    "இப்போதுதான்"
    "{0} முன்"

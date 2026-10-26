@@ -24,7 +24,7 @@ locale = DurationLocale
         , unitDay = Simple "{n}日"
         , unitWeek = Simple "{n}週"
         , unitMonth = Simple "{n}ヶ月"
-        , unitYear = Simple "{n}歳"
+        , unitYear = Simple "{n}年"
         }
     , localeHalf = "{0}半"
     , localeDelimiter = ""
@@ -54,7 +54,7 @@ locale = DurationLocale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0}前"
             , ovrInFuture = Just "{0}後"

@@ -11,10 +11,10 @@
 
 (def locale
   {:code "gv"
-   :clock {:hours @["12" "1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11"]
+   :clock {:hours @["daa-yeig" "nane" "jees" "tree" "kiare" "queig" "shey" "shiaght" "hoght" "nuy" "jeih" "nane-jeig"]
            :midnight "mean oie"
            :noon "munlaa"
-           :patterns {0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"}}
+           :patterns {0 "{h} er y chlag" 5 "queig minnidyn lurg {h}" 10 "jeih minnidyn lurg {h}" 15 "kerroo lurg {h}" 20 "feed minnid lurg {h}" 25 "queig minnidyn as feed lurg {h}" 30 "lieh-oor lurg {h}" 35 "queig minnidyn as feed gys {next_h}" 40 "feed minnid gys {next_h}" 45 "kerroo gys {next_h}" 50 "jeih minnidyn gys {next_h}" 55 "queig minnidyn gys {next_h}"}}
    :short {:clock {:use24h true :format "{h}:{mm}"}}
    :compact {:clock {:use24h true :format "{h}:{mm}"}}
 })

@@ -11,17 +11,17 @@
 
 % Haitian Creole locale.
 
-st_hours('ht', ['douz', 'en', 'de', 'twa', 'kat', 'senk', 'sis', 'sèt', 'uit', 'nèf', 'dis', 'onz']).
-st_midnight('ht', 'minui').
+st_hours('ht', ['douzè', 'inè', 'dezè', 'twazè', 'katrè', 'senkè', 'sizè', 'setè', 'uitè', 'nevè', 'dizè', 'onzè']).
+st_midnight('ht', 'minwi').
 st_noon('ht', 'midi').
 
-st_pattern('ht', 0, '{h} è').
-st_pattern('ht', 5, '{h} è senk').
-st_pattern('ht', 10, '{h} è dis').
-st_pattern('ht', 15, '{h} è ka').
-st_pattern('ht', 20, '{h} è ven').
-st_pattern('ht', 25, '{h} è vennsenk').
-st_pattern('ht', 30, '{h} è demi').
+st_pattern('ht', 0, '{h}').
+st_pattern('ht', 5, '{h} senk').
+st_pattern('ht', 10, '{h} dis').
+st_pattern('ht', 15, '{h} e ka').
+st_pattern('ht', 20, '{h} ven').
+st_pattern('ht', 25, '{h} vennsenk').
+st_pattern('ht', 30, '{h} edmi').
 st_pattern('ht', 35, '{next_h} mwen vennsenk').
 st_pattern('ht', 40, '{next_h} mwen ven').
 st_pattern('ht', 45, '{next_h} mwen ka').

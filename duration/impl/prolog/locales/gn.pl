@@ -14,9 +14,9 @@
 sd_plural('gn', 1, one) :- !.
 sd_plural('gn', _, other).
 
-sd_unit('gn', second, _, '{n} aravo\'i').
-sd_unit('gn', minute, _, '{n} aravo').
-sd_unit('gn', hour, _, '{n} aravo guasu').
+sd_unit('gn', second, _, '{n} aravo\'ive').
+sd_unit('gn', minute, _, '{n} aravo\'i').
+sd_unit('gn', hour, _, '{n} aravo').
 sd_unit('gn', day, _, '{n} ára').
 sd_unit('gn', week, _, '{n} arapokõindy').
 sd_unit('gn', month, _, '{n} jasy').
@@ -28,9 +28,9 @@ sd_just_now('gn', 'ko\'ágã').
 sd_ago('gn', '{0} ohasava\'ekue').
 sd_in_future('gn', '{0} rire').
 
-short_sd_unit('gn', second, _, '{n} ara\'i').
-short_sd_unit('gn', minute, _, '{n} ara').
-short_sd_unit('gn', hour, _, '{n} ara g').
+short_sd_unit('gn', second, _, '{n} aravo\'ive').
+short_sd_unit('gn', minute, _, '{n} aravo\'i').
+short_sd_unit('gn', hour, _, '{n} aravo').
 short_sd_unit('gn', day, _, '{n} ára').
 short_sd_unit('gn', week, _, '{n} ara').
 short_sd_unit('gn', month, _, '{n} jas').

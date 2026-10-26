@@ -28,7 +28,7 @@ locale = DurationLocale
         }
     , localeHalf = "{0} satengah"
     , localeDelimiter = ", "
-    , localeJustNow = "ayeuna"
+    , localeJustNow = "nembé"
     , localeAgo = "{0} kapengker"
     , localeInFuture = "dina {0}"
     , localeShort = Just $

@@ -14,7 +14,7 @@
 (def locale
   {:code "shi"
    :plural (fn [n] (if (or (== n 0) (== n 1)) :one (if (<= 2 n 10) :few :other)))
-   :second {:type :pluralized :forms {:one "{n} tasint" :few "{n} tasinin" :other "{n} tasinin"}}
+   :second {:type :pluralized :forms {:one "{n} tasint" :few "{n} tisinin" :other "{n} tisinin"}}
    :minute {:type :pluralized :forms {:one "{n} tusdiqt" :few "{n} tusdiqin" :other "{n} tusdiqin"}}
    :hour {:type :pluralized :forms {:one "{n} tasragt" :few "{n} tisragin" :other "{n} tisragin"}}
    :day {:type :pluralized :forms {:one "{n} ass" :few "{n} ussan" :other "{n} ass"}}
@@ -26,5 +26,5 @@
    :just-now "ɣilad"
    :ago "ɣ {0} zzrin"
    :in-future "ɣ {0}"
-   :short {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter nil :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
+   :short {:second {:type :pluralized :forms {:one "{n} tasint" :few "{n} tasinin" :other "{n} tasinin"}} :minute {:type :pluralized :forms {:one "{n} tusdiqt" :few "{n} tusdiqin" :other "{n} tusdiqin"}} :hour {:type :pluralized :forms {:one "{n} tasragt" :few "{n} tisragin" :other "{n} tisragin"}} :day {:type :pluralized :forms {:one "{n} ass" :few "{n} ussan" :other "{n} ass"}} :week {:type :pluralized :forms {:one "{n} imalass" :few "{n} imalassn" :other "{n} imalass"}} :month {:type :pluralized :forms {:one "{n} ayyur" :few "{n} ayyurn" :other "{n} ayyur"}} :year {:type :pluralized :forms {:one "{n} aseggas" :few "{n} iseggasen" :other "{n} aseggas"}} :half nil :delimiter nil :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}
    :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "ɣ {0} zzrin" :in-future "ɣ {0}"}})

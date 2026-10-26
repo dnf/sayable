@@ -18,7 +18,7 @@ MAM = AgeLocale(
     plural=lambda _n: "other",
     units={
         "day": "{n} q'ij",
-        "week": "{n} xjaw",
+        "week": "{n} seman",
         "month": "{n} xjaw",
         "year": "{n} ab'q'ii",
     },
@@ -36,7 +36,7 @@ MAM = AgeLocale(
     short=CompactnessOverride(
         units={
             "day": "{n} q'ij",
-            "week": "{n} xjaw",
+            "week": "{n} seman",
             "month": "{n} xjaw",
             "year": "{n} ab'.",
         },
@@ -48,6 +48,7 @@ MAM = AgeLocale(
             "month": "{n}m",
             "year": "{n}y",
         },
+        half="{n}½",
         delimiter="",
     ),
 )

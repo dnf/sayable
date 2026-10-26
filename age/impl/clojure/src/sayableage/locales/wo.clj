@@ -14,13 +14,13 @@
 (def locale
   {:code "wo"
    :plural (fn [_] :other)
-   :day {:type :simple :form "bés {n}"}
-   :week {:type :simple :form "ayubés {n}"}
-   :month {:type :simple :form "weer {n}"}
-   :year {:type :simple :form "at {n}"}
+   :day {:type :simple :form "{n} fan"}
+   :week {:type :simple :form "{n} ayubés"}
+   :month {:type :simple :form "{n} weer"}
+   :year {:type :simple :form "{n} at"}
    :half "{0} ak genn-wàll"
    :delimiter ", "
    :just-born "Dees ko sax juddu"
-   :stages {:newborn {:type :neutral :label "Dees ko sax juddu"} :infant {:type :neutral :label "Njàmbaar bu ndaw"} :toddler {:type :neutral :label "Xale bu ndaw"} :child {:type :neutral :label "Xale"} :teenager {:type :neutral :label "Ndaw-ndaw"} :adult {:type :neutral :label "Mag"}}
-   :short {:day {:type :simple :form "bés {n}"} :week {:type :simple :form "ayub. {n}"} :month {:type :simple :form "weer {n}"} :year {:type :simple :form "at {n}"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "bés {n}"} :week {:type :simple :form "ayub {n}"} :month {:type :simple :form "weer {n}"} :year {:type :simple :form "at {n}"} :half "{n}½" :delimiter "" :just-born nil}})
+   :stages {:newborn {:type :neutral :label "Dees ko sax juddu"} :infant {:type :neutral :label "Liir"} :toddler {:type :neutral :label "Xale bu ndaw"} :child {:type :neutral :label "Xale"} :teenager {:type :neutral :label "Ndaw-ndaw"} :adult {:type :neutral :label "Mag"}}
+   :short {:day {:type :simple :form "{n} fan"} :week {:type :simple :form "{n} ayub."} :month {:type :simple :form "{n} weer"} :year {:type :simple :form "{n} at"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n} fan"} :week {:type :simple :form "{n} ayub"} :month {:type :simple :form "{n} weer"} :year {:type :simple :form "{n} at"} :half "{n}½" :delimiter "" :just-born nil}})

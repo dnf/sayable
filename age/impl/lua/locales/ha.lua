@@ -14,10 +14,10 @@ local M = {}
 M.code = "ha"
 M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
-    day = { one = "{n} kwana", other = "{n} kwanaki" },
-    week = { one = "{n} mako", other = "{n} makonni" },
-    month = { one = "{n} wata", other = "{n} watanni" },
-    year = { one = "{n} shekara", other = "{n} shekaru" },
+    day = { one = "kwana {n}", other = "kwanaki {n}" },
+    week = { one = "mako {n}", other = "makonni {n}" },
+    month = { one = "wata {n}", other = "watanni {n}" },
+    year = { one = "shekara {n}", other = "shekaru {n}" },
 }
 M.half = "{n}½"
 M.delimiter = ", "
@@ -25,17 +25,17 @@ M.just_born = "Sabon haihuwa"
 M.stages = {
     newborn = "Jariri",
     infant = "Jariri",
-    toddler = "Ƙaramin yaro",
-    child = "Yaro",
-    teenager = "Saurayi",
+    toddler = { m = "Ƙaramin yaro", f = "Ƙaramar yarinya" },
+    child = { m = "Yaro", f = "Yarinya" },
+    teenager = { m = "Saurayi", f = "Budurwa" },
     adult = "Babba",
 }
 M.short = {
     units = {
-        day = "{n} kw.",
-        week = "{n} mk.",
-        month = "{n} wt.",
-        year = "{n} shk.",
+        day = "kw. {n}",
+        week = "mk. {n}",
+        month = "wt. {n}",
+        year = "shk. {n}",
     },
 }
 M.compact = {

@@ -36,18 +36,18 @@ SHI = AgeLocale(
     just_born="Iɣ d illul",
     stages={
         "newborn": "Iɣ d illul",
-        "infant": "Agellid",
+        "infant": "Llufan",
         "toddler": {"m": "Aḥenjir", "f": "Taḥenjirt"},
-        "child": {"m": "Afrux", "f": "Tafruxṭ"},
+        "child": {"m": "Afrux", "f": "Tafruxt"},
         "teenager": {"m": "Aɛrim", "f": "Taɛrimt"},
         "adult": {"m": "Argaz", "f": "Tamṭṭuṭ"},
     },
     short=CompactnessOverride(
         units={
-            "day": "{n} d",
-            "week": "{n} wk",
-            "month": "{n} mo",
-            "year": "{n} yr",
+            "day": {"one": "{n} ass", "few": "{n} ussan", "other": "{n} ass"},
+            "week": {"one": "{n} imalass", "few": "{n} imalassn", "other": "{n} imalass"},
+            "month": {"one": "{n} ayyur", "few": "{n} ayyurn", "other": "{n} ayyur"},
+            "year": {"one": "{n} aseggas", "few": "{n} iseggasen", "other": "{n} aseggas"},
         },
     ),
     compact=CompactnessOverride(

@@ -794,7 +794,7 @@ contains
     call assert_eq('ES years+months', res, '2 a' // char(195) // char(177) // 'os, 6 meses') ! 25.9
 
     res = pt_format_age(es, PT_NORMAL, '2022-06-15', '2025-12-15')
-    call assert_eq('ES half marker', res, '3 y medio a' // char(195) // char(177) // 'os') ! 25.10
+    call assert_eq('ES half marker', res, '3 a' // char(195) // char(177) // 'os y medio') ! 25.10
 
     res = pt_format_age(es, PT_NORMAL, '2022-06-15', '2025-06-15')
     call assert_eq('ES integer years', res, '3 a' // char(195) // char(177) // 'os') ! 25.11
@@ -897,7 +897,7 @@ contains
 
     ! 29.2 1 day one
     res = pt_format_age(he, PT_NORMAL, '2025-06-14', '2025-06-15')
-    call assert_contains('he 1 day one', res, '1')
+    call assert_eq('he 1 day one', res, char(215)//char(153)//char(215)//char(149)//char(215)//char(157))
 
     ! 29.3 3 days other
     res = pt_format_age(he, PT_NORMAL, '2025-06-12', '2025-06-15')
@@ -921,7 +921,8 @@ contains
 
     ! 29.8 2y dual + 1m one
     res = pt_format_age(he, PT_NORMAL, '2023-06-15', '2025-07-15')
-    call assert_true('he 2y1m not empty', len_trim(res) > 0)
+    call assert_eq('he 2y1m dual + one', res, char(215)//char(169)//char(215)//char(160)//char(215)//char(170)//char(215)//char(153)//char(215)//char(153)//char(215)//char(157) // ', ' // &
+        char(215)//char(151)//char(215)//char(149)//char(215)//char(147)//char(215)//char(169))
 
     ! 29.9 3.5 years half
     res = pt_format_age(he, PT_NORMAL, '2022-06-15', '2025-12-15')
@@ -1047,7 +1048,7 @@ contains
 
     ! 29.32 3.5y half
     res = pt_format_age(id_locale, PT_NORMAL, '2022-06-15', '2025-12-15')
-    call assert_eq('id 3.5y half', res, '3 tahun setengah')
+    call assert_eq('id 3.5y half', res, '3 setengah tahun')
 
     ! 29.33 7y
     res = pt_format_age(id_locale, PT_NORMAL, '2018-06-15', '2025-06-15')

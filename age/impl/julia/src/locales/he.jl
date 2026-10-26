@@ -19,9 +19,9 @@ const HE = AgeLocale(
         return "other"
     end,
     units = Dict(
-        "day" => Dict("one" => "יום {n}", "two" => "יומיים", "other" => "{n} ימים"),
-        "week" => Dict("one" => "שבוע {n}", "two" => "שבועיים", "other" => "{n} שבועות"),
-        "month" => Dict("one" => "חודש {n}", "two" => "חודשיים", "other" => "{n} חודשים"),
+        "day" => Dict("one" => "יום", "two" => "יומיים", "other" => "{n} ימים"),
+        "week" => Dict("one" => "שבוע", "two" => "שבועיים", "other" => "{n} שבועות"),
+        "month" => Dict("one" => "חודש", "two" => "חודשיים", "other" => "{n} חודשים"),
         "year" => Dict("one" => "שנה", "two" => "שנתיים", "other" => "{n} שנים"),
     ),
     half = "{0} וחצי",
@@ -29,8 +29,8 @@ const HE = AgeLocale(
     just_born = "רק נולד",
     stages = Dict(
         "newborn" => GenderedStage("רק נולד", "רק נולדה"),
-        "infant" => StageLabel("תינוק"),
-        "toddler" => StageLabel("פעוט"),
+        "infant" => GenderedStage("תינוק", "תינוקת"),
+        "toddler" => GenderedStage("פעוט", "פעוטה"),
         "child" => GenderedStage("ילד", "ילדה"),
         "teenager" => GenderedStage("נער", "נערה"),
         "adult" => GenderedStage("מבוגר", "מבוגרת"),

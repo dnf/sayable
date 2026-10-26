@@ -17,7 +17,7 @@
   (make-time-locale
    :code "nb"
    :clock (make-clock-config
-    :hours (list "tolv" "en" "to" "tre" "fire" "fem" "seks" "sju" "åtte" "ni" "ti" "elleve")
+    :hours (list "tolv" "ett" "to" "tre" "fire" "fem" "seks" "sju" "åtte" "ni" "ti" "elleve")
     :midnight "midnatt"
     :noon "middag"
     :patterns (list (cons 0 "klokka {h}") (cons 5 "fem over {h}") (cons 10 "ti over {h}") (cons 15 "kvart over {h}") (cons 20 "tjue over {h}") (cons 25 "fem på halv {next_h}") (cons 30 "halv {next_h}") (cons 35 "fem over halv {next_h}") (cons 40 "tjue på {next_h}") (cons 45 "kvart på {next_h}") (cons 50 "ti på {next_h}") (cons 55 "fem på {next_h}")))

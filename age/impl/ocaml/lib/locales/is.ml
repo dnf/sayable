@@ -30,7 +30,7 @@ let locale : locale =
       [ (One, "{n} ár")
       ; (Other, "{n} ár")
       ]
-  ; half = "{0} og hálft"
+  ; half = "{n} og hálft"
   ; delimiter = ", "
   ; just_born = "Nýfætt"
   ; stages =

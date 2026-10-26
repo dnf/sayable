@@ -24,7 +24,7 @@ pub fn locale() -> types.AgeLocale {
     just_born: "O sa tswa hlaha",
     newborn: types.NeutralStage("Lesea le sa tswa hlaha"),
     infant: types.NeutralStage("Lesea"),
-    toddler: types.NeutralStage("Ngwanana"),
+    toddler: types.NeutralStage("Ngwana e monyane"),
     child: types.NeutralStage("Ngwana"),
     teenager: types.NeutralStage("Mosha"),
     adult: types.NeutralStage("Motho e moholo"),

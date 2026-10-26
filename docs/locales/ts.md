@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ts.json](../../locales/ts.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Xitsonga ordinal hours ('awara yo sungula', 'awara ya vumbirhi' …), 'na hafu' / 'na kotara', minutes additive 'na timinete ta <n>'. Doubts: class-6 concord on tens (I wrote 'makume mambirhi/manharhu' but bare 'makume mune/ntlhanu' for 40/50, which is how I recall Tsonga treating 4 and 5); '11' as 'khume n'we'. No 'to' phrases.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | mundzuku wa vumbirhi       | 17/3      |
 | Day before yesterday | tolo ra vumbirhi           | 13/3      |
 | This Thursday (+5)   | Ravumune leyi              | 20/3      |
-| Last Monday (-4)     | Ravumbirhi leyi nga hundza | 11/3      |
-| Next Wednesday (+12) | Ravumune leyi taka         | 27/3      |
-| Same month (+20)     | 4 Dzivamisoko              | 4/4       |
+| Last Tuesday (-4)    | Ravumbirhi leyi nga hundza | 11/3      |
+| Next Thursday (+12)  | Ravumune leyi taka         | 27/3      |
+| Same year (+20)      | 4 Dzivamisoko              | 4/4       |
 | Different year       | 10 Sunguti 2026            | 10/1/26   |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | vusiku exikarhi | 12:00 AM | 12:00a  |
-| 1:00 AM         | yin'we:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | kaye:05         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | khume:15        | 10:15 AM | 10:15a  |
-| Half past 11    | khume yin'we:30 | 11:30 AM | 11:30a  |
-| Noon            | nhlekanhi       | 12:00 PM | 12:00p  |
-| Quarter to 3    | mbirhi:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | ntlhanu:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | nhungu:00       | 8:00 PM  | 8:00p   |
-| 10:30 PM        | khume:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | vusiku exikarhi | 11:58 PM | 11:58p  |
+| Time            | Normal                                                      | Short    | Compact |
+| --------------- | ----------------------------------------------------------- | -------- | ------- |
+| Midnight        | vusiku exikarhi                                             | 12:00 AM | 12:00a  |
+| 1:00 AM         | awara yo sungula                                            | 1:00 AM  | 1:00a   |
+| 5 past 9        | awara ya vukaye na timinete ta ntlhanu                      | 9:05 AM  | 9:05a   |
+| Quarter past 10 | awara ya khume na kotara                                    | 10:15 AM | 10:15a  |
+| Half past 11    | awara ya khume n'we na hafu                                 | 11:30 AM | 11:30a  |
+| Noon            | nhlekanhi                                                   | 12:00 PM | 12:00p  |
+| Quarter to 3    | awara ya vumbirhi na timinete ta makume mune na ntlhanu     | 2:45 PM  | 2:45p   |
+| 5 to 6          | awara ya vuntlhanu na timinete ta makume ntlhanu na ntlhanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | awara ya vunhungu                                           | 8:00 PM  | 8:00p   |
+| 10:30 PM        | awara ya khume na hafu                                      | 10:30 PM | 10:30p  |
+| 11:58 PM        | vusiku exikarhi                                             | 11:58 PM | 11:58p  |

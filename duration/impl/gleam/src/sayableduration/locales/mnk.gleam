@@ -28,7 +28,7 @@ pub fn locale() -> types.DurationLocale {
     delimiter: ", ",
     just_now: "sisan",
     ago: "{0} taata",
-    in_future: "ka {0}",
+    in_future: "{0} kɔnɔ",
     short: Ok(types.CompactnessOverride(
       units: Ok([
         #("second", types.SimpleUnit("sɛk. {n}")),
@@ -42,7 +42,7 @@ pub fn locale() -> types.DurationLocale {
       half: Error(Nil),
       delimiter: Error(Nil),
       ago: Ok("{0} taata"),
-      in_future: Ok("ka {0}"),
+      in_future: Ok("{0} kɔnɔ"),
     )),
     compact: Ok(types.CompactnessOverride(
       units: Ok([
@@ -57,7 +57,7 @@ pub fn locale() -> types.DurationLocale {
       half: Ok("{n}½"),
       delimiter: Ok(""),
       ago: Ok("{0} taata"),
-      in_future: Ok("ka {0}"),
+      in_future: Ok("{0} kɔnɔ"),
     )),
   )
 }

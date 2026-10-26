@@ -17,12 +17,12 @@ let MI* = AgeLocale(
   code: "mi",
   plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
-    "day": simpleUnit("rā {n}"),
-    "week": simpleUnit("wiki {n}"),
-    "month": simpleUnit("marama {n}"),
-    "year": simpleUnit("tau {n}"),
+    "day": simpleUnit("{n} rā"),
+    "week": simpleUnit("{n} wiki"),
+    "month": simpleUnit("{n} marama"),
+    "year": simpleUnit("{n} tau"),
   }.toOrderedTable,
-  half: "{0}½",
+  half: "{n}½",
   delimiter: ", ",
   justBorn: "Pēpi hou",
   stages: {
@@ -35,10 +35,10 @@ let MI* = AgeLocale(
   }.toOrderedTable,
   short: some(CompactnessOverride(
     units: some({
-      "day": simpleUnit("rā {n}"),
-      "week": simpleUnit("w {n}"),
-      "month": simpleUnit("m {n}"),
-      "year": simpleUnit("t {n}"),
+      "day": simpleUnit("{n} rā"),
+      "week": simpleUnit("{n} w"),
+      "month": simpleUnit("{n} m"),
+      "year": simpleUnit("{n} t"),
     }.toOrderedTable),
     half: none(string),
     delimiter: none(string),

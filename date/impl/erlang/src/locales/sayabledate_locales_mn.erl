@@ -17,7 +17,7 @@ locale() ->
     #date_locale{
         code = "mn",
         months = ["Нэгдүгээр сар", "Хоёрдугаар сар", "Гуравдугаар сар", "Дөрөвдүгээр сар", "Тавдугаар сар", "Зургаадугаар сар", "Долоодугаар сар", "Наймдугаар сар", "Есдүгээр сар", "Аравдугаар сар", "Арван нэгдүгээр сар", "Арван хоёрдугаар сар"],
-        weekdays = ["Ням", "Даваа", "Мягмар", "Лхагва", "Пүрэв", "Баасан", "Бямба"],
+        weekdays = ["ням", "даваа", "мягмар", "лхагва", "пүрэв", "баасан", "бямба"],
         day_format = "{n}",
         day_format_exceptions = [],
         date_pattern = "{month} {day}",
@@ -30,7 +30,7 @@ locale() ->
         this_weekday = {just, "энэ {weekday}"},
         next_weekday = {just, "ирэх {weekday}"},
         last_weekday = {just, "өнгөрсөн {weekday}"},
-        months_in_date = nothing,
+        months_in_date = {just, ["нэгдүгээр сарын", "хоёрдугаар сарын", "гуравдугаар сарын", "дөрөвдүгээр сарын", "тавдугаар сарын", "зургаадугаар сарын", "долоодугаар сарын", "наймдугаар сарын", "есдүгээр сарын", "аравдугаар сарын", "арван нэгдүгээр сарын", "арван хоёрдугаар сарын"]},
         short = {just, #date_compactness_override{months = {just, ["1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар"]}, months_in_date = nothing, weekdays = {just, ["Ня", "Да", "Мя", "Лх", "Пү", "Ба", "Бя"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{month} {day}"}, date_pattern_with_year = {just, "{year} оны {month} {day}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{yy}/{m}/{d}"}, date_pattern_with_year = {just, "{yy}/{m}/{d}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

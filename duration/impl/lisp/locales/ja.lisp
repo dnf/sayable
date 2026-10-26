@@ -23,7 +23,7 @@
                (cons :day "{n}日")
                (cons :week "{n}週")
                (cons :month "{n}ヶ月")
-               (cons :year "{n}歳"))
+               (cons :year "{n}年"))
    :half "{0}半"
    :delimiter ""
    :just-now "たった今"
@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0}前"
    :compact-in-future "{0}後"

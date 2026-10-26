@@ -21,7 +21,7 @@ module SayableAge
         'month' => '{n} mun',
         'year' => '{n} yia',
       },
-      half: '{n} na hap',
+      half: '{0} na hap',
       delimiter: ', ',
       just_born: 'Nupela pikinini',
       stages: {
@@ -48,6 +48,7 @@ module SayableAge
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
       ),
     )
   end

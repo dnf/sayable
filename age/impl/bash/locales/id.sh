@@ -18,7 +18,7 @@ _sayableage_locale_id() {
     _unit_week='{n} minggu'
     _unit_month='{n} bulan'
     _unit_year='{n} tahun'
-    _half='{0} setengah'
+    _half='{n} setengah'
     _delimiter=', '
     _just_born='Baru lahir'
     _stage_newborn='Baru lahir'

@@ -21,7 +21,7 @@ final dv = AgeLocale(
   week: simpleUnit('{n} ހަފްތާ'),
   month: simpleUnit('{n} މަސް'),
   year: simpleUnit('{n} އަހަރު'),
-  half: '{0} ބައި',
+  half: '{n}½',
   delimiter: '، ',
   justBorn: 'އަލަށް އުފަންވި',
   newborn: stageNeutral('އަލަށް އުފަންވި'),

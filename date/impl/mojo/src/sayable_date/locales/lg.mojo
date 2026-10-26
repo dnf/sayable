@@ -50,7 +50,7 @@ fn build_lg() -> DateLocale:
     var tomorrow = "enkya"
     var yesterday = "jjo"
     var day_after_tomorrow = "enkya ogwa"
-    var day_before_yesterday = "jjo edda"
+    var day_before_yesterday = "jjuuzi"
     var this_weekday = "{weekday} eno"
     var next_weekday = "{weekday} eddirira"
     var last_weekday = "{weekday} eggudde"

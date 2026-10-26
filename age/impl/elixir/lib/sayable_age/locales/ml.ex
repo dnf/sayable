@@ -15,14 +15,14 @@ defmodule SayableAge.Locales.ML do
   def locale do
     %{
       code: "ml",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: (fn 1 -> :one; _ -> :other end),
       units: %{
         day: %{one: "{n} ദിവസം", other: "{n} ദിവസങ്ങൾ"},
         week: %{one: "{n} ആഴ്ച", other: "{n} ആഴ്ചകൾ"},
         month: %{one: "{n} മാസം", other: "{n} മാസങ്ങൾ"},
         year: %{one: "{n} വയസ്സ്", other: "{n} വയസ്സ്"}
       },
-      half: "{0} ര",
+      half: "{n}½",
       delimiter: ", ",
       just_born: "നവജാതശിശു",
       stages: %{

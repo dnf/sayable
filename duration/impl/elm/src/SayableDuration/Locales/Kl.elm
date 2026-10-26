@@ -20,16 +20,37 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "kl"
-    , plural = \n -> Other
+    , plural = \n -> if n == 1 then One else Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "sekundit {n}" )
-            , ( "minute", Simple "minutsit {n}" )
-            , ( "hour", Simple "nalunaaqutap akunnera {n}" )
-            , ( "day", Simple "ullut {n}" )
-            , ( "week", Simple "sapaatit {n}" )
-            , ( "month", Simple "qaammatit {n}" )
-            , ( "year", Simple "ukiut {n}" )
+            [ ( "second", Pluralized
+              [ ( One, "sekundi {n}" )
+              , ( Other, "sekundit {n}" )
+              ] )
+            , ( "minute", Pluralized
+              [ ( One, "minutsi {n}" )
+              , ( Other, "minutsit {n}" )
+              ] )
+            , ( "hour", Pluralized
+              [ ( One, "nalunaaquttap akunnera {n}" )
+              , ( Other, "nalunaaquttap akunneri {n}" )
+              ] )
+            , ( "day", Pluralized
+              [ ( One, "ulloq {n}" )
+              , ( Other, "ullut {n}" )
+              ] )
+            , ( "week", Pluralized
+              [ ( One, "sapaatip akunnera {n}" )
+              , ( Other, "sapaatip akunneri {n}" )
+              ] )
+            , ( "month", Pluralized
+              [ ( One, "qaammat {n}" )
+              , ( Other, "qaammatit {n}" )
+              ] )
+            , ( "year", Pluralized
+              [ ( One, "ukioq {n}" )
+              , ( Other, "ukiut {n}" )
+              ] )
             ]
     , half = "{0} affaa"
     , delimiter = ", "
@@ -45,7 +66,7 @@ locale =
                         , ( "minute", Simple "min. {n}" )
                         , ( "hour", Simple "nal. {n}" )
                         , ( "day", Simple "ull. {n}" )
-                        , ( "week", Simple "sap. {n}" )
+                        , ( "week", Simple "sap. ak. {n}" )
                         , ( "month", Simple "qaam. {n}" )
                         , ( "year", Simple "uk. {n}" )
                         ]
@@ -69,7 +90,7 @@ locale =
                         , ( "year", Simple "{n}y" )
                         ]
                     )
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} matuma siorna"
             , ovrInFuture = Just "{0} siunissami"

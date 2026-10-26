@@ -28,7 +28,7 @@ locale() ->
         delimiter = ", ",
         just_now = "sisan",
         ago = "{0} bɔlen",
-        in_future = "ka {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "sek. {n}"}}, minute = {just, {simple, "min. {n}"}}, hour = {just, {simple, "lɛr. {n}"}}, day = {just, {simple, "don {n}"}}, week = {just, {simple, "dɔgɔk. {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "san {n}"}}, half = nothing, delimiter = nothing, ago = {just, "{0} bɔlen"}, in_future = {just, "ka {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "sek {n}"}}, minute = {just, {simple, "min {n}"}}, hour = {just, {simple, "lɛr {n}"}}, day = {just, {simple, "don {n}"}}, week = {just, {simple, "dɔgɔk {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "san {n}"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} bɔlen"}, in_future = {just, "ka {0}"}}}
+        in_future = "{0} kɔnɔ",
+        short = {just, #duration_compactness_override{second = {just, {simple, "sek. {n}"}}, minute = {just, {simple, "min. {n}"}}, hour = {just, {simple, "lɛr. {n}"}}, day = {just, {simple, "don {n}"}}, week = {just, {simple, "dɔgɔk. {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "san {n}"}}, half = nothing, delimiter = nothing, ago = {just, "{0} bɔlen"}, in_future = {just, "{0} kɔnɔ"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "sek {n}"}}, minute = {just, {simple, "min {n}"}}, hour = {just, {simple, "lɛr {n}"}}, day = {just, {simple, "don {n}"}}, week = {just, {simple, "dɔgɔk {n}"}}, month = {just, {simple, "kalo {n}"}}, year = {just, {simple, "san {n}"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} bɔlen"}, in_future = {just, "{0} kɔnɔ"}}}
     }.

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ta.json](../../locales/ta.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Tamil tells time additively with fused fractions: மூன்றே கால் (3:15), மூன்றரை (3:30), மூன்றே முக்கால் (3:45). These endings replace the final vowel of the numeral, so the hours list now holds the numeral stems with inherent -a (மூன்ற, ஐந்த, ...) and the patterns add the ending: '{h}ு மணி' -> மூன்று மணி, '{h}ரை' -> மூன்றரை, '{h}ே கால்' -> மூன்றே கால். Verified orthographically for all 12 hours (ஒன்றரை, இரண்டே கால், நான்கரை, பன்னிரண்டே முக்கால், ...). Other minutes use '{h}ு மணி <minutes in words> நிமிடம்' (மூன்று மணி ஐந்து நிமிடம்); 35-55 are additive, as Tamil has no common 'to' idiom. Compromise: 1:00 and 11:00 come out as 'ஒன்று மணி' / 'பதினொன்று மணி' instead of the preferred adjectival 'ஒரு மணி' / 'பதினொரு மணி' (both forms are attested in print, the ஒரு form is more usual); using the adjectival form would break the fractions for those hours. Fractions are given bare (மூன்றரை) without a trailing மணி, which is how the time is normally answered.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `one_other` (categories: one, other)
 | 2 years, 1 month  | 2 வயது, 1 மாதம்       | 2 ஆண்டு., 1 மாதம் | 2 ஆ1 மா        |
 | 2 years, 6 months | 2 வயது, 6 மாதங்கள்    | 2 ஆண்டு., 6 மாத.  | 2 ஆ6 மா        |
 | 3 years           | 3 வயது                | 3 ஆண்டு.          | 3 ஆ            |
-| 3½ years          | 3 வயதுரை              | 3 ஆண்டு.ரை        | 3 ஆரை          |
+| 3½ years          | 3½ வயது               | 3½ ஆண்டு.         | 3½ ஆ           |
 | 5 years           | 5 வயது                | 5 ஆண்டு.          | 5 ஆ            |
-| 5½ years          | 5 வயதுரை              | 5 ஆண்டு.ரை        | 5 ஆரை          |
+| 5½ years          | 5½ வயது               | 5½ ஆண்டு.         | 5½ ஆ           |
 | 7 years           | 7 வயது                | 7 ஆண்டு.          | 7 ஆ            |
 | 10 years          | 10 வயது               | 10 ஆண்டு.         | 10 ஆ           |
 | 18 years          | 18 வயது               | 18 ஆண்டு.         | 18 ஆ           |
@@ -73,37 +81,37 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | நாளை மறுநாள்   | 17/3    |
 | Day before yesterday | முந்தா நாள்    | 13/3    |
 | This Thursday (+5)   | இந்த வியாழன்   | 20/3    |
-| Last Monday (-4)     | கடந்த செவ்வாய் | 11/3    |
-| Next Wednesday (+12) | அடுத்த வியாழன் | 27/3    |
-| Same month (+20)     | 4 ஏப்ரல்       | 4/4     |
+| Last Tuesday (-4)    | கடந்த செவ்வாய் | 11/3    |
+| Next Thursday (+12)  | அடுத்த வியாழன் | 27/3    |
+| Same year (+20)      | 4 ஏப்ரல்       | 4/4     |
 | Different year       | 10 ஜனவரி 2026  | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                | Short              | Compact       |
-| --------------------- | --------------------- | ------------------ | ------------- |
-| 0 seconds             | இப்போதுதான்           | இப்போதுதான்        | இப்போதுதான்   |
-| 1 second              | 1 விநாடி              | 1 விநாடி           | 1 வி.         |
-| 30 seconds            | 30 விநாடி             | 30 விநாடி          | 30 வி.        |
-| 1 minute              | 1 நிமிடம்             | 1 நிமி.            | 1 நிமி.       |
-| 2 minutes, 15 seconds | 2 நிமிடம், 15 விநாடி  | 2 நிமி., 15 விநாடி | 2 நிமி.15 வி. |
-| 5 minutes             | 5 நிமிடம்             | 5 நிமி.            | 5 நிமி.       |
-| 45 minutes            | 45 நிமிடம்            | 45 நிமி.           | 45 நிமி.      |
-| 1 hour                | 1 மணி நேரம்           | 1 ம.               | 1 ம.நே.       |
-| 1½ hours              | 1 மணி நேரம்ரை         | 1 ம.ரை             | 1 ம.நே.ரை     |
-| 3 hours               | 3 மணி நேரம்           | 3 ம.               | 3 ம.நே.       |
-| 6 hours               | 6 மணி நேரம்           | 6 ம.               | 6 ம.நே.       |
-| 1 day                 | 1 நாள்                | 1 நாள்             | 1 நா          |
-| 1½ days               | 1 நாட்கள்ரை           | 1 நாட்கள்ரை        | 1 நாரை        |
-| 3 days                | 3 நாட்கள்             | 3 நாட்கள்          | 3 நா          |
-| 1 week                | 1 வாரம்               | 1 வாரம்            | 1 வா          |
-| 2 weeks, 3 days       | 2 வாரங்கள், 3 நாட்கள் | 2 வார., 3 நாட்கள்  | 2 வா3 நா      |
-| 1 month               | 1 மாதம்               | 1 மாதம்            | 1 மா          |
-| 6 months              | 6 மாதங்கள்            | 6 மாத.             | 6 மா          |
-| 1 year                | 1 வயது                | 1 ஆண்டு            | 1 ஆ           |
-| 2 years, 3 months     | 2 வயது, 3 மாதங்கள்    | 2 ஆண்டு., 3 மாத.   | 2 ஆ3 மா       |
+| Duration              | Normal                 | Short              | Compact       |
+| --------------------- | ---------------------- | ------------------ | ------------- |
+| 0 seconds             | இப்போதுதான்            | இப்போதுதான்        | இப்போதுதான்   |
+| 1 second              | 1 விநாடி               | 1 விநாடி           | 1 வி.         |
+| 30 seconds            | 30 விநாடி              | 30 விநாடி          | 30 வி.        |
+| 1 minute              | 1 நிமிடம்              | 1 நிமி.            | 1 நிமி.       |
+| 2 minutes, 15 seconds | 2 நிமிடம், 15 விநாடி   | 2 நிமி., 15 விநாடி | 2 நிமி.15 வி. |
+| 5 minutes             | 5 நிமிடம்              | 5 நிமி.            | 5 நிமி.       |
+| 45 minutes            | 45 நிமிடம்             | 45 நிமி.           | 45 நிமி.      |
+| 1 hour                | 1 மணி நேரம்            | 1 ம.               | 1 ம.நே.       |
+| 1½ hours              | 1½ மணி நேரம்           | 1½ ம.              | 1½ ம.நே.      |
+| 3 hours               | 3 மணி நேரம்            | 3 ம.               | 3 ம.நே.       |
+| 6 hours               | 6 மணி நேரம்            | 6 ம.               | 6 ம.நே.       |
+| 1 day                 | 1 நாள்                 | 1 நாள்             | 1 நா          |
+| 1½ days               | 1½ நாட்கள்             | 1½ நாட்கள்         | 1½ நா         |
+| 3 days                | 3 நாட்கள்              | 3 நாட்கள்          | 3 நா          |
+| 1 week                | 1 வாரம்                | 1 வாரம்            | 1 வா          |
+| 2 weeks, 3 days       | 2 வாரங்கள், 3 நாட்கள்  | 2 வார., 3 நாட்கள்  | 2 வா3 நா      |
+| 1 month               | 1 மாதம்                | 1 மாதம்            | 1 மா          |
+| 6 months              | 6 மாதங்கள்             | 6 மாத.             | 6 மா          |
+| 1 year                | 1 ஆண்டு                | 1 ஆண்டு            | 1 ஆ           |
+| 2 years, 3 months     | 2 ஆண்டுகள், 3 மாதங்கள் | 2 ஆண்டு., 3 மாத.   | 2 ஆ3 மா       |
 
 ### Relative time
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal       | Short    | Compact |
-| --------------- | ------------ | -------- | ------- |
-| Midnight        | நள்ளிரவு     | 12:00 AM | 12:00a  |
-| 1:00 AM         | ஒன்று:00     | 1:00 AM  | 1:00a   |
-| 5 past 9        | ஒன்பது:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | பத்து:15     | 10:15 AM | 10:15a  |
-| Half past 11    | பதினொன்று:30 | 11:30 AM | 11:30a  |
-| Noon            | நண்பகல்      | 12:00 PM | 12:00p  |
-| Quarter to 3    | இரண்டு:45    | 2:45 PM  | 2:45p   |
-| 5 to 6          | ஐந்து:55     | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | எட்டு:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | பத்து:30     | 10:30 PM | 10:30p  |
-| 11:58 PM        | நள்ளிரவு     | 11:58 PM | 11:58p  |
+| Time            | Normal                         | Short    | Compact |
+| --------------- | ------------------------------ | -------- | ------- |
+| Midnight        | நள்ளிரவு                       | 12:00 AM | 12:00a  |
+| 1:00 AM         | ஒன்று மணி                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | ஒன்பது மணி ஐந்து நிமிடம்       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | பத்தே கால்                     | 10:15 AM | 10:15a  |
+| Half past 11    | பதினொன்றரை                     | 11:30 AM | 11:30a  |
+| Noon            | நண்பகல்                        | 12:00 PM | 12:00p  |
+| Quarter to 3    | இரண்டே முக்கால்                | 2:45 PM  | 2:45p   |
+| 5 to 6          | ஐந்து மணி ஐம்பத்தைந்து நிமிடம் | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | எட்டு மணி                      | 8:00 PM  | 8:00p   |
+| 10:30 PM        | பத்தரை                         | 10:30 PM | 10:30p  |
+| 11:58 PM        | நள்ளிரவு                       | 11:58 PM | 11:58p  |

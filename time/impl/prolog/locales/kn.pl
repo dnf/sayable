@@ -13,20 +13,20 @@
 
 st_hours('kn', ['ಹನ್ನೆರಡು', 'ಒಂದು', 'ಎರಡು', 'ಮೂರು', 'ನಾಲ್ಕು', 'ಐದು', 'ಆರು', 'ಏಳು', 'ಎಂಟು', 'ಒಂಬತ್ತು', 'ಹತ್ತು', 'ಹನ್ನೊಂದು']).
 st_midnight('kn', 'ಮಧ್ಯರಾತ್ರಿ').
-st_noon('kn', 'ಮಧ್ಯಾಹ್ನ').
+st_noon('kn', 'ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ').
 
-st_pattern('kn', 0, '{h}:00').
-st_pattern('kn', 5, '{h}:05').
-st_pattern('kn', 10, '{h}:10').
-st_pattern('kn', 15, '{h}:15').
-st_pattern('kn', 20, '{h}:20').
-st_pattern('kn', 25, '{h}:25').
-st_pattern('kn', 30, '{h}:30').
-st_pattern('kn', 35, '{h}:35').
-st_pattern('kn', 40, '{h}:40').
-st_pattern('kn', 45, '{h}:45').
-st_pattern('kn', 50, '{h}:50').
-st_pattern('kn', 55, '{h}:55').
+st_pattern('kn', 0, '{h} ಗಂಟೆ').
+st_pattern('kn', 5, '{h} ಗಂಟೆ ಐದು ನಿಮಿಷ').
+st_pattern('kn', 10, '{h} ಗಂಟೆ ಹತ್ತು ನಿಮಿಷ').
+st_pattern('kn', 15, '{h} ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ').
+st_pattern('kn', 20, '{h} ಗಂಟೆ ಇಪ್ಪತ್ತು ನಿಮಿಷ').
+st_pattern('kn', 25, '{h} ಗಂಟೆ ಇಪ್ಪತ್ತೈದು ನಿಮಿಷ').
+st_pattern('kn', 30, '{h} ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ').
+st_pattern('kn', 35, '{h} ಗಂಟೆ ಮೂವತ್ತೈದು ನಿಮಿಷ').
+st_pattern('kn', 40, '{h} ಗಂಟೆ ನಲವತ್ತು ನಿಮಿಷ').
+st_pattern('kn', 45, '{h} ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ').
+st_pattern('kn', 50, '{h} ಗಂಟೆ ಐವತ್ತು ನಿಮಿಷ').
+st_pattern('kn', 55, '{h} ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ').
 
 short_st_use24h('kn', false).
 short_st_format('kn', '{h}:{mm} {ampm}').

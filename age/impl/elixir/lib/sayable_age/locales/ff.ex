@@ -30,12 +30,12 @@ defmodule SayableAge.Locales.FF do
         infant: "Ɓinngel",
         toddler: "Cukalel",
         child: "Suka",
-        teenager: "Suka debbo",
+        teenager: %{m: "Suka gorko", f: "Suka debbo"},
         adult: "Mawɗo"
       },
       short: %{
         units: %{
-          day: "ñalɗe {n}",
+          day: %{one: "ñalawma {n}", other: "ñalɗe {n}"},
           week: %{one: "yontere {n}", other: "yontereeji {n}"},
           month: %{one: "lewru {n}", other: "lebbi {n}"},
           year: %{one: "hitaande {n}", other: "duuɓi {n}"}
@@ -43,7 +43,7 @@ defmodule SayableAge.Locales.FF do
       },
       compact: %{
         units: %{
-          day: "ñalɗe {n}",
+          day: %{one: "ñalawma {n}", other: "ñalɗe {n}"},
           week: %{one: "yont {n}", other: "yontji {n}"},
           month: %{one: "lew {n}", other: "leb {n}"},
           year: %{one: "hit {n}", other: "duuɓi {n}"}

@@ -11,22 +11,22 @@
 
 % Tachelhit locale.
 
-sd_months('shi', ['ⵉⵏⵏⴰⵢⵔ', 'ⴱⵕⴰⵢⵕ', 'ⵎⴰⵕⵚ', 'ⵉⴱⵔⵉⵔ', 'ⵎⴰⵢⵢⵓ', 'ⵢⵓⵏⵢⵓ', 'ⵢⵓⵍⵢⵓⵣ', 'ⵖⵓⵛⵜ', 'ⵛⵓⵜⴰⵏⴱⵉⵔ', 'ⴽⵜⵓⴱⵔ', 'ⵏⵓⵡⴰⵏⴱⵉⵔ', 'ⴷⵓⵊⴰⵏⴱⵉⵔ']).
-sd_weekdays('shi', ['ⴰⵙⴰⵎⴰⵙ', 'ⴰⵢⵏⴰⵙ', 'ⴰⵙⵉⵏⴰⵙ', 'ⴰⴽⵕⴰⵙ', 'ⴰⴽⵡⴰⵙ', 'ⴰⵙⵉⵎⵡⴰⵙ', 'ⴰⵙⵉⴹⵢⴰⵙ']).
+sd_months('shi', ['innayr', 'bṛayṛ', 'maṛṣ', 'ibrir', 'mayyu', 'yunyu', 'yulyuz', 'ɣuct', 'cutanbir', 'ktubr', 'nuwanbir', 'dujanbir']).
+sd_weekdays('shi', ['asamas', 'aynas', 'asinas', 'akṛas', 'akwas', 'asimwas', 'asiḍyas']).
 sd_day_format('shi', '{n}').
 
 sd_date_pattern('shi', '{day} {month}').
 sd_date_pattern_with_year('shi', '{day} {month} {year}').
 
-sd_today('shi', 'ⴰⵙⵙⴰ').
-sd_tomorrow('shi', 'ⴰⵙⴽⴽⴰ').
-sd_yesterday('shi', 'ⵉⴹⵍⵍⵉ').
-sd_this_weekday('shi', '{weekday} ⴰⴷ').
-sd_next_weekday('shi', '{weekday} ⴷ ⵉⴷⴷⴰⵏ').
-sd_last_weekday('shi', '{weekday} ⵉⵣⵔⵉⵏ').
+sd_today('shi', 'assa').
+sd_tomorrow('shi', 'askka').
+sd_yesterday('shi', 'iḍlli').
+sd_this_weekday('shi', '{weekday} ad').
+sd_next_weekday('shi', '{weekday} d iddan').
+sd_last_weekday('shi', '{weekday} izrin').
 
-short_sd_months('shi', ['ⵉⵏⵏ', 'ⴱⵕⴰ', 'ⵎⴰⵕ', 'ⵉⴱⵔ', 'ⵎⴰⵢ', 'ⵢⵓⵏ', 'ⵢⵓⵍ', 'ⵖⵓⵛ', 'ⵛⵓⵜ', 'ⴽⵜⵓ', 'ⵏⵓⵡ', 'ⴷⵓⵊ']).
-short_sd_weekdays('shi', ['ⴰⵙⴰ', 'ⴰⵢⵏ', 'ⴰⵙⵉ', 'ⴰⴽⵕ', 'ⴰⴽⵡ', 'ⴰⵙⵉⵎ', 'ⴰⵙⵉⴹ']).
+short_sd_months('shi', ['inn', 'bṛa', 'maṛ', 'ibr', 'may', 'yun', 'yul', 'ɣuc', 'cut', 'ktu', 'nuw', 'duj']).
+short_sd_weekdays('shi', ['asa', 'ayn', 'asi', 'akṛ', 'akw', 'asim', 'asiḍ']).
 short_sd_day_format('shi', '{n}').
 short_sd_clear_exceptions('shi').
 short_sd_date_pattern('shi', '{day} {month}').

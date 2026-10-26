@@ -18,9 +18,9 @@ locale = DurationLocale
     { localeCode = "gn"
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "{n} aravo'i"
-        , unitMinute = Simple "{n} aravo"
-        , unitHour = Simple "{n} aravo guasu"
+        { unitSecond = Simple "{n} aravo'ive"
+        , unitMinute = Simple "{n} aravo'i"
+        , unitHour = Simple "{n} aravo"
         , unitDay = Simple "{n} ára"
         , unitWeek = Simple "{n} arapokõindy"
         , unitMonth = Simple "{n} jasy"
@@ -33,9 +33,9 @@ locale = DurationLocale
     , localeInFuture = "{0} rire"
     , localeShort = Just $
         CompactnessOverride
-            { ovrSecond = Just (Simple "{n} ara'i")
-            , ovrMinute = Just (Simple "{n} ara")
-            , ovrHour = Just (Simple "{n} ara g")
+            { ovrSecond = Just (Simple "{n} aravo'ive")
+            , ovrMinute = Just (Simple "{n} aravo'i")
+            , ovrHour = Just (Simple "{n} aravo")
             , ovrDay = Just (Simple "{n} ára")
             , ovrWeek = Just (Simple "{n} ara")
             , ovrMonth = Just (Simple "{n} jas")

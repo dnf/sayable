@@ -19,7 +19,7 @@ let locale : locale =
       ; (One, "{n} diwrnod")
       ; (Two, "{n} ddiwrnod")
       ; (Few, "{n} diwrnod")
-      ; (Many, "{n} niwrnod")
+      ; (Many, "{n} diwrnod")
       ; (Other, "{n} diwrnod")
       ]
   ; week = Pluralized
@@ -40,7 +40,7 @@ let locale : locale =
       ]
   ; year = Pluralized
       [ (Zero, "{n} blwyddyn")
-      ; (One, "{n} blwyddyn")
+      ; (One, "{n} flwyddyn")
       ; (Two, "{n} flynedd")
       ; (Few, "{n} blynedd")
       ; (Many, "{n} blynedd")

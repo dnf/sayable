@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var XH = st.TimeLocale{
 	Code: "xh",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"ishumi elinambini", "inye", "ezimbini", "ezintathu", "ezine", "ezintlanu", "ezintandathu", "ezisixhenxe", "ezisibhozo", "ethoba", "ishumi", "ishumi elinanye"},
+		Hours:    [12]string{"yeshumi elinesibini", "yokuqala", "yesibini", "yesithathu", "yesine", "yesihlanu", "yesithandathu", "yesixhenxe", "yesibhozo", "yethoba", "yeshumi", "yeshumi elinanye"},
 		Midnight: "ezinzulwini zobusuku",
 		Noon:     "emini",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "intsimbi {h}", 5: "imizuzu emihlanu emva kwentsimbi {h}", 10: "imizuzu elishumi emva kwentsimbi {h}", 15: "ikota emva kwentsimbi {h}", 20: "imizuzu engamashumi amabini emva kwentsimbi {h}", 25: "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}", 30: "isiqingatha emva kwentsimbi {h}", 35: "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}", 40: "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}", 45: "ikota ukuya kwintsimbi {next_h}", 50: "imizuzu elishumi ukuya kwintsimbi {next_h}", 55: "imizuzu emihlanu ukuya kwintsimbi {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

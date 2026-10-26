@@ -17,8 +17,8 @@ locale() ->
     #duration_locale{
         code = "st",
         plural = fun(1) -> one; (_) -> other end,
-        second = {pluralized, [{one, "motsotswana {n}"}, {other, "dimetsotswana {n}"}]},
-        minute = {pluralized, [{one, "metsotso {n}"}, {other, "dimetsotso {n}"}]},
+        second = {pluralized, [{one, "motsotswana {n}"}, {other, "metsotswana {n}"}]},
+        minute = {pluralized, [{one, "motsotso {n}"}, {other, "metsotso {n}"}]},
         hour = {pluralized, [{one, "hora {n}"}, {other, "dihora {n}"}]},
         day = {pluralized, [{one, "letsatsi {n}"}, {other, "matsatsi {n}"}]},
         week = {pluralized, [{one, "beke {n}"}, {other, "dibeke {n}"}]},
@@ -29,6 +29,6 @@ locale() ->
         just_now = "hona jwale",
         ago = "{0} e fetileng",
         in_future = "ka {0}",
-        short = {just, #duration_compactness_override{second = {just, {pluralized, [{one, "motsotswana {n}"}, {other, "dimetsotswana {n}"}]}}, minute = {just, {pluralized, [{one, "metsotso {n}"}, {other, "dimetsotso {n}"}]}}, hour = {just, {pluralized, [{one, "hora {n}"}, {other, "dihora {n}"}]}}, day = {just, {pluralized, [{one, "letsatsi {n}"}, {other, "matsatsi {n}"}]}}, week = {just, {pluralized, [{one, "beke {n}"}, {other, "dibeke {n}"}]}}, month = {just, {pluralized, [{one, "kgw. {n}"}, {other, "dikgw. {n}"}]}}, year = {just, {pluralized, [{one, "sel. {n}"}, {other, "dil. {n}"}]}}, half = nothing, delimiter = nothing, ago = {just, "{0} e fetileng"}, in_future = {just, "ka {0}"}}},
+        short = {just, #duration_compactness_override{second = {just, {pluralized, [{one, "motsotswana {n}"}, {other, "metsotswana {n}"}]}}, minute = {just, {pluralized, [{one, "motsotso {n}"}, {other, "metsotso {n}"}]}}, hour = {just, {pluralized, [{one, "hora {n}"}, {other, "dihora {n}"}]}}, day = {just, {pluralized, [{one, "letsatsi {n}"}, {other, "matsatsi {n}"}]}}, week = {just, {pluralized, [{one, "beke {n}"}, {other, "dibeke {n}"}]}}, month = {just, {pluralized, [{one, "kgw. {n}"}, {other, "dikgw. {n}"}]}}, year = {just, {pluralized, [{one, "sel. {n}"}, {other, "dil. {n}"}]}}, half = nothing, delimiter = nothing, ago = {just, "{0} e fetileng"}, in_future = {just, "ka {0}"}}},
         compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} e fetileng"}, in_future = {just, "ka {0}"}}}
     }.

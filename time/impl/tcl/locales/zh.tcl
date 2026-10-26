@@ -11,12 +11,12 @@
 
 proc locale_time_zh {} {
     set code {zh}
-    set hours [list {十二} {一} {二} {三} {四} {五} {六} {七} {八} {九} {十} {十一}]
+    set hours [list {十二} {一} {两} {三} {四} {五} {六} {七} {八} {九} {十} {十一}]
     set midnight {午夜}
     set noon {正午}
     set patterns [dict create \
         0 "{h}点整" \
-        5 "{h}点五分" \
+        5 "{h}点零五分" \
         10 "{h}点十分" \
         15 "{h}点十五分" \
         20 "{h}点二十分" \

@@ -59,7 +59,7 @@ module SayableAge
         units: {
           "day" => UnitForms.new("{n} ي"),
           "week" => UnitForms.new("{n} أ"),
-          "month" => UnitForms.new(zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"),
+          "month" => UnitForms.new("{n} شهر"),
           "year" => UnitForms.new("{n} سنة"),
         },
         delimiter: "",

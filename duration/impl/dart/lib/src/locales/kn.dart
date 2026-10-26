@@ -27,7 +27,7 @@ final kn = DurationLocale(
     'month': pluralUnit({PluralCategory.one: '{n} ತಿಂಗಳು', PluralCategory.other: '{n} ತಿಂಗಳುಗಳು'}),
     'year': pluralUnit({PluralCategory.one: '{n} ವರ್ಷ', PluralCategory.other: '{n} ವರ್ಷಗಳು'}),
   },
-  half: '{0}ವರೆ',
+  half: '{n}½',
   delimiter: ', ',
   justNow: 'ಈಗಷ್ಟೇ',
   ago: '{0} ಹಿಂದೆ',

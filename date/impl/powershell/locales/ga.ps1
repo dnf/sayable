@@ -21,7 +21,7 @@ function locale_ga {
     $yesterday = 'inné'
     $dayAfterTomorrow = 'arú amárach'
     $dayBeforeYesterday = 'arú inné'
-    $thisWeekday = 'an {weekday} seo'
+    $thisWeekday = '{weekday} seo'
     $nextWeekday = '{weekday} seo chugainn'
     $lastWeekday = '{weekday} seo caite'
     $monthsInDate = $null

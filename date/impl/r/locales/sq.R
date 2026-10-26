@@ -12,7 +12,7 @@
 locale_sq <- list(
   code = "sq",
   months = c("janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"),
-  weekdays = c("e diel", "e hënë", "e martë", "e mërkurë", "e enjte", "e premte", "e shtunë"),
+  weekdays = c("të dielën", "të hënën", "të martën", "të mërkurën", "të enjten", "të premten", "të shtunën"),
   day_format = "{n}",
   day_format_exceptions = list(),
   date_pattern = "{day} {month}",
@@ -22,8 +22,8 @@ locale_sq <- list(
   yesterday = "dje",
   day_after_tomorrow = "pasnesër",
   day_before_yesterday = "pardje",
-  this_weekday = "këtë {weekday}",
-  next_weekday = "{weekday} tjetër",
+  this_weekday = "{weekday}",
+  next_weekday = "{weekday} e ardhshme",
   last_weekday = "{weekday} e kaluar",
   short = list(
     months = c("jan", "shk", "mar", "pri", "maj", "qer", "kor", "gush", "sht", "tet", "nën", "dhj"),

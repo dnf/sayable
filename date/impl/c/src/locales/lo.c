@@ -31,10 +31,10 @@ const SdDateLocale sd_locale_lo = {
     "ມື້ອື່ນ",
     "ມື້ວານ",
     "ມື້ຮື",
-    "ມື້ກ່ອນ",
+    "ມື້ຊືນ",
     "{weekday}ນີ້",
     "{weekday}ໜ້າ",
-    "{weekday}ແລ້ວ",
+    "{weekday}ທີ່ແລ້ວ",
     (const char **)0,
     true, { sd_short_months_lo, (const char **)0, sd_short_weekdays_lo, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }

@@ -20,7 +20,7 @@
     :hours (list "თორმეტი" "ერთი" "ორი" "სამი" "ოთხი" "ხუთი" "ექვსი" "შვიდი" "რვა" "ცხრა" "ათი" "თერთმეტი")
     :midnight "შუაღამე"
     :noon "შუადღე"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "ხუთი past {h}") (cons 10 "ათი past {h}") (cons 15 "თხუთმეტი past {h}") (cons 20 "ოცი past {h}") (cons 25 "ოცდახუთი past {h}") (cons 30 "ოცდაათი past {h}") (cons 35 "ოცდახუთი to {next_h}") (cons 40 "ოცი to {next_h}") (cons 45 "თხუთმეტი to {next_h}") (cons 50 "ათი to {next_h}") (cons 55 "ხუთი to {next_h}")))
+    :patterns (list (cons 0 "{h} საათი") (cons 5 "{h} საათი და ხუთი წუთი") (cons 10 "{h} საათი და ათი წუთი") (cons 15 "{h} საათი და თხუთმეტი წუთი") (cons 20 "{h} საათი და ოცი წუთი") (cons 25 "{h} საათი და ოცდახუთი წუთი") (cons 30 "{h} საათი და ოცდაათი წუთი") (cons 35 "{h} საათი და ოცდათხუთმეტი წუთი") (cons 40 "{h} საათი და ორმოცი წუთი") (cons 45 "{h} საათი და ორმოცდახუთი წუთი") (cons 50 "{h} საათი და ორმოცდაათი წუთი") (cons 55 "{h} საათი და ორმოცდათხუთმეტი წუთი")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

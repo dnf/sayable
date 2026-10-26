@@ -12,7 +12,7 @@
 % Romanian locale.
 
 sd_months('ro', ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie']).
-sd_weekdays('ro', ['duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbătă']).
+sd_weekdays('ro', ['duminica', 'lunea', 'marțea', 'miercurea', 'joia', 'vinerea', 'sâmbăta']).
 sd_day_format('ro', '{n}').
 
 sd_date_pattern('ro', '{day} {month}').
@@ -23,7 +23,7 @@ sd_tomorrow('ro', 'mâine').
 sd_yesterday('ro', 'ieri').
 sd_day_after_tomorrow('ro', 'poimâine').
 sd_day_before_yesterday('ro', 'alaltăieri').
-sd_this_weekday('ro', 'această {weekday}').
+sd_this_weekday('ro', '{weekday} aceasta').
 sd_next_weekday('ro', '{weekday} viitoare').
 sd_last_weekday('ro', '{weekday} trecută').
 sd_months_in_date('ro', ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie']).

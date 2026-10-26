@@ -23,7 +23,7 @@ sd_unit('ceb', week, _, '{n} ka semana').
 sd_unit('ceb', month, _, '{n} ka bulan').
 sd_unit('ceb', year, _, '{n} ka tuig').
 
-sd_half('ceb', '{n}½').
+sd_half('ceb', '{0} ug tunga').
 sd_delimiter('ceb', ', ').
 sd_just_now('ceb', 'karon lang').
 sd_ago('ceb', '{0} ang milabay').

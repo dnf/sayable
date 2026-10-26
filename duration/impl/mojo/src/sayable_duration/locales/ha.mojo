@@ -27,28 +27,28 @@ fn build_ha() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = plural_unit(one="{n} daƙiƙa", other="{n} daƙiƙoƙi")
-    var minute = plural_unit(one="{n} minti", other="{n} mintoci")
-    var hour = plural_unit(one="{n} awa", other="{n} awanni")
-    var day = plural_unit(one="{n} kwana", other="{n} kwanaki")
-    var week = plural_unit(one="{n} mako", other="{n} makonni")
-    var month = plural_unit(one="{n} wata", other="{n} watanni")
-    var year = plural_unit(one="{n} shekara", other="{n} shekaru")
+    var second = plural_unit(one="daƙiƙa {n}", other="daƙiƙoƙi {n}")
+    var minute = plural_unit(one="minti {n}", other="mintoci {n}")
+    var hour = plural_unit(one="awa {n}", other="awanni {n}")
+    var day = plural_unit(one="kwana {n}", other="kwanaki {n}")
+    var week = plural_unit(one="mako {n}", other="makonni {n}")
+    var month = plural_unit(one="wata {n}", other="watanni {n}")
+    var year = plural_unit(one="shekara {n}", other="shekaru {n}")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("{n} daƙ.")
+    short_ovr.second = simple_unit("daƙ. {n}")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("{n} mnt.")
+    short_ovr.minute = simple_unit("mnt. {n}")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("{n} awa")
+    short_ovr.hour = simple_unit("awa {n}")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("{n} kw.")
+    short_ovr.day = simple_unit("kw. {n}")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n} mk.")
+    short_ovr.week = simple_unit("mk. {n}")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("{n} wt.")
+    short_ovr.month = simple_unit("wt. {n}")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("{n} shk.")
+    short_ovr.year = simple_unit("shk. {n}")
     short_ovr.has_year = True
     short_ovr.ago = "{0} da suka wuce"
     short_ovr.has_ago = True

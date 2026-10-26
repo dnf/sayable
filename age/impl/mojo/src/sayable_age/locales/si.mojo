@@ -73,7 +73,7 @@ fn build_si() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}යි භාගයයි",
+        half="{n}½",
         delimiter=", ",
         just_born="අලුත උපන්",
         newborn=newborn,

@@ -16,7 +16,7 @@
           :week "{n} hepde"
           :month "{n} aý"
           :year "{n} ýaş"}
-   :half "{0}½"
+   :half "{n} ýarym"
    :delimiter ", "
    :just-born "Täze doglan"
    :stages {:newborn "Täze doglan"
@@ -24,7 +24,7 @@
             :toddler "Kiçijik"
             :child "Çaga"
             :teenager "Ýetginjek"
-            :adult "Ulular"
+            :adult "Uly adam"
 }
    :short {:units {:day "{n} g" :week "{n} h" :month "{n} a" :year "{n} ý"}}
    :compact {:units {:day "{n}g" :week "{n}h" :month "{n}a" :year "{n}ý"} :half "{n}½" :delimiter ""}

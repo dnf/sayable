@@ -10,22 +10,22 @@
 # Source: locales/yue.json
 
 function locale_yue {
-    $hours = @('十二', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十', '十一')
+    $hours = @('十二', '一', '兩', '三', '四', '五', '六', '七', '八', '九', '十', '十一')
     $midnight = '午夜'
     $noon = '正午'
     $patterns = @{}
-    $patterns[0] = '{h}點整'
-    $patterns[5] = '{h}點零五分'
-    $patterns[10] = '{h}點十分'
-    $patterns[15] = '{h}點十五分'
-    $patterns[20] = '{h}點二十分'
-    $patterns[25] = '{h}點二十五分'
+    $patterns[0] = '{h}點正'
+    $patterns[5] = '{h}點一個字'
+    $patterns[10] = '{h}點兩個字'
+    $patterns[15] = '{h}點三個字'
+    $patterns[20] = '{h}點四個字'
+    $patterns[25] = '{h}點五個字'
     $patterns[30] = '{h}點半'
-    $patterns[35] = '{h}點三十五分'
-    $patterns[40] = '{h}點四十分'
-    $patterns[45] = '{h}點四十五分'
-    $patterns[50] = '{h}點五十分'
-    $patterns[55] = '{h}點五十五分'
+    $patterns[35] = '{h}點七個字'
+    $patterns[40] = '{h}點八個字'
+    $patterns[45] = '{h}點九個字'
+    $patterns[50] = '{h}點十個字'
+    $patterns[55] = '{h}點十一個字'
     $clock = @{
         hours = $hours
         midnight = $midnight

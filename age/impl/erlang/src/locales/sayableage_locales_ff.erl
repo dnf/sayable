@@ -24,7 +24,7 @@ locale() ->
         half = "{n}½",
         delimiter = ", ",
         just_born = "Ɓinngel kesol",
-        stages = #stages{newborn = {neutral, "Ɓinngel kesol"}, infant = {neutral, "Ɓinngel"}, toddler = {neutral, "Cukalel"}, child = {neutral, "Suka"}, teenager = {neutral, "Suka debbo"}, adult = {neutral, "Mawɗo"}},
-        short = {just, #compactness_override{day = {just, {simple, "ñalɗe {n}"}}, week = {just, {pluralized, [{one, "yontere {n}"}, {other, "yontereeji {n}"}]}}, month = {just, {pluralized, [{one, "lewru {n}"}, {other, "lebbi {n}"}]}}, year = {just, {pluralized, [{one, "hitaande {n}"}, {other, "duuɓi {n}"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "ñalɗe {n}"}}, week = {just, {pluralized, [{one, "yont {n}"}, {other, "yontji {n}"}]}}, month = {just, {pluralized, [{one, "lew {n}"}, {other, "leb {n}"}]}}, year = {just, {pluralized, [{one, "hit {n}"}, {other, "duuɓi {n}"}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
+        stages = #stages{newborn = {neutral, "Ɓinngel kesol"}, infant = {neutral, "Ɓinngel"}, toddler = {neutral, "Cukalel"}, child = {neutral, "Suka"}, teenager = {gendered, "Suka gorko", "Suka debbo"}, adult = {neutral, "Mawɗo"}},
+        short = {just, #compactness_override{day = {just, {pluralized, [{one, "ñalawma {n}"}, {other, "ñalɗe {n}"}]}}, week = {just, {pluralized, [{one, "yontere {n}"}, {other, "yontereeji {n}"}]}}, month = {just, {pluralized, [{one, "lewru {n}"}, {other, "lebbi {n}"}]}}, year = {just, {pluralized, [{one, "hitaande {n}"}, {other, "duuɓi {n}"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {pluralized, [{one, "ñalawma {n}"}, {other, "ñalɗe {n}"}]}}, week = {just, {pluralized, [{one, "yont {n}"}, {other, "yontji {n}"}]}}, month = {just, {pluralized, [{one, "lew {n}"}, {other, "leb {n}"}]}}, year = {just, {pluralized, [{one, "hit {n}"}, {other, "duuɓi {n}"}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

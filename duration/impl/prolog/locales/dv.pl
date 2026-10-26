@@ -21,7 +21,7 @@ sd_unit('dv', week, _, '{n} ހަފްތާ').
 sd_unit('dv', month, _, '{n} މަސް').
 sd_unit('dv', year, _, '{n} އަހަރު').
 
-sd_half('dv', '{0} ބައި').
+sd_half('dv', '{n}½').
 sd_delimiter('dv', '، ').
 sd_just_now('dv', 'މިހާރު').
 sd_ago('dv', 'މީގެ {0} ކުރިން').

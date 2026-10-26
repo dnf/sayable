@@ -30,12 +30,12 @@ proc locale_ak {} {
         infant {Akwadaa} \
         toddler {Abofra} \
         child {Abofra} \
-        teenager {Abarimaa} \
+        teenager [dict create m {Abarimaa} f {Abaayewa}] \
         adult {Ɔpanyin} \
     ]
     set short [dict create \
         units [dict create \
-            day "nna {n}" \
+            day [dict create one "da {n}" other "nna {n}"] \
             week [dict create one "dapɛn {n}" other "nnapɛn {n}"] \
             month [dict create one "bosome {n}" other "abosome {n}"] \
             year [dict create one "afe {n}" other "mfe {n}"] \
@@ -43,7 +43,7 @@ proc locale_ak {} {
     ]
     set compact [dict create \
         units [dict create \
-            day "nna {n}" \
+            day [dict create one "da {n}" other "nna {n}"] \
             week [dict create one "dapɛn {n}" other "nnapɛn {n}"] \
             month [dict create one "bos {n}" other "abos {n}"] \
             year [dict create one "afe {n}" other "mfe {n}"] \

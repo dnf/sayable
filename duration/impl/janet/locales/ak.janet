@@ -24,6 +24,6 @@
    :just-now "sɛɛsei"
    :ago "{0} a etwaam"
    :in-future "{0} mu"
-   :short {:units {:second "sɛkɛnd {n}" :minute "sema {n}" :hour "dɔnhwere {n}" :day "nna {n}" :week {:one "dapɛn {n}" :other "nnapɛn {n}"} :month {:one "bosome {n}" :other "abosome {n}"} :year {:one "afe {n}" :other "mfe {n}"}} :ago "{0} a etwaam" :in-future "{0} mu"}
-   :compact {:units {:second "sɛk {n}" :minute "sem {n}" :hour "dɔn {n}" :day "nna {n}" :week {:one "dapɛn {n}" :other "nnapɛn {n}"} :month {:one "bos {n}" :other "abos {n}"} :year {:one "afe {n}" :other "mfe {n}"}} :half "{n}½" :delimiter "" :ago "{0} a etwaam" :in-future "{0} mu"}
+   :short {:units {:second "sɛkɛnd {n}" :minute "sema {n}" :hour "dɔnhwere {n}" :day {:one "da {n}" :other "nna {n}"} :week {:one "dapɛn {n}" :other "nnapɛn {n}"} :month {:one "bosome {n}" :other "abosome {n}"} :year {:one "afe {n}" :other "mfe {n}"}} :ago "{0} a etwaam" :in-future "{0} mu"}
+   :compact {:units {:second "sɛk {n}" :minute "sem {n}" :hour "dɔn {n}" :day {:one "da {n}" :other "nna {n}"} :week {:one "dapɛn {n}" :other "nnapɛn {n}"} :month {:one "bos {n}" :other "abos {n}"} :year {:one "afe {n}" :other "mfe {n}"}} :half "{n}½" :delimiter "" :ago "{0} a etwaam" :in-future "{0} mu"}
 })

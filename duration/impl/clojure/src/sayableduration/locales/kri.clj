@@ -21,10 +21,10 @@
    :week {:type :simple :form "{n} wik"}
    :month {:type :simple :form "{n} mont"}
    :year {:type :simple :form "{n} ia"}
-   :half "{n} na af"
+   :half "{0} ɛn af"
    :delimiter ", "
    :just-now "jos naw"
    :ago "{0} bak"
    :in-future "na {0}"
    :short {:second {:type :simple :form "{n} sek."} :minute {:type :simple :form "{n} min."} :hour {:type :simple :form "{n} awa"} :day {:type :simple :form "{n} de"} :week {:type :simple :form "{n} wik"} :month {:type :simple :form "{n} mont"} :year {:type :simple :form "{n} ia"} :half nil :delimiter nil :ago "{0} bak" :in-future "na {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} bak" :in-future "na {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} bak" :in-future "na {0}"}})

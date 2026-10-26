@@ -25,11 +25,11 @@ wo
 	locale today: 'tey'.
 	locale tomorrow: 'suba'.
 	locale yesterday: 'démb'.
-	locale dayAfterTomorrow: 'suba-suba'.
-	locale dayBeforeYesterday: 'démb-démb'.
-	locale thisWeekday: '{weekday} bi'.
-	locale nextWeekday: '{weekday} bi ñëw'.
-	locale lastWeekday: '{weekday} bi weex'.
+	locale dayAfterTomorrow: 'gannaaw-suba'.
+	locale dayBeforeYesterday: 'bërki-démb'.
+	locale thisWeekday: '{weekday} jii'.
+	locale nextWeekday: '{weekday} jiy ñëw'.
+	locale lastWeekday: '{weekday} ji weesu'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'Sam'. 'Few'. 'Maa'. 'Awr'. 'Mee'. 'Suw'. 'Sul'. 'Ut'. 'Sep'. 'Okt'. 'Now'. 'Des' }).

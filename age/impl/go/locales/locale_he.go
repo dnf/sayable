@@ -26,9 +26,9 @@ var HE = sa.AgeLocale{
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "יום {n}", sa.Two: "יומיים", sa.Other: "{n} ימים"}),
-		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "שבוע {n}", sa.Two: "שבועיים", sa.Other: "{n} שבועות"}),
-		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "חודש {n}", sa.Two: "חודשיים", sa.Other: "{n} חודשים"}),
+		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "יום", sa.Two: "יומיים", sa.Other: "{n} ימים"}),
+		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "שבוע", sa.Two: "שבועיים", sa.Other: "{n} שבועות"}),
+		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "חודש", sa.Two: "חודשיים", sa.Other: "{n} חודשים"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "שנה", sa.Two: "שנתיים", sa.Other: "{n} שנים"}),
 	},
 	Half:      "{0} וחצי",
@@ -36,8 +36,8 @@ var HE = sa.AgeLocale{
 	JustBorn:  "רק נולד",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.G("רק נולד", "רק נולדה"),
-		Infant:   sa.S("תינוק"),
-		Toddler:  sa.S("פעוט"),
+		Infant:   sa.G("תינוק", "תינוקת"),
+		Toddler:  sa.G("פעוט", "פעוטה"),
 		Child:    sa.G("ילד", "ילדה"),
 		Teenager: sa.G("נער", "נערה"),
 		Adult:    sa.G("מבוגר", "מבוגרת"),

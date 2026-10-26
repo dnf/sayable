@@ -22,7 +22,7 @@ our sub locale() {
             month => 'ཟླ་ {n}',
             year => 'ལོ་ {n}',
         },
-        half => '{0} ཕྱེད',
+        half => '{0} དང་ཕྱེད',
         delimiter => ' ',
         just-born => 'གསར་སྐྱེས',
         stages => {

@@ -20,7 +20,7 @@
     :hours (list "diwanzdeh" "yek" "du" "sê" "çar" "pênc" "şeş" "heft" "heşt" "neh" "deh" "yanzdeh")
     :midnight "nîvê şevê"
     :noon "nîvro"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "saet {h}") (cons 5 "{h} û pênc deqe") (cons 10 "{h} û deh deqe") (cons 15 "{h} û çaryek") (cons 20 "{h} û bîst deqe") (cons 25 "{h} û bîst û pênc deqe") (cons 30 "{h} û nîv") (cons 35 "{next_h} kêm bîst û pênc deqe") (cons 40 "{next_h} kêm bîst deqe") (cons 45 "{next_h} kêm çaryek") (cons 50 "{next_h} kêm deh deqe") (cons 55 "{next_h} kêm pênc deqe")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

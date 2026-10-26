@@ -27,4 +27,4 @@
    :ago "{0} k'o chi"
    :in-future "pa {0}"
    :short {:second {:type :simple :form "{n} tz'aq."} :minute {:type :simple :form "{n} ch'ut."} :hour {:type :simple :form "{n} ram."} :day {:type :simple :form "{n} q'ij"} :week {:type :simple :form "{n} wuqq'ij"} :month {:type :simple :form "{n} ik'"} :year {:type :simple :form "{n} jun."} :half nil :delimiter nil :ago "{0} k'o chi" :in-future "pa {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} k'o chi" :in-future "pa {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} k'o chi" :in-future "pa {0}"}})

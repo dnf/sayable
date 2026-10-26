@@ -25,7 +25,7 @@
   (make-duration-locale
    :code "shi"
    :plural #'plural-shi
-   :units (list (cons :second '((:one . "{n} tasint") (:few . "{n} tasinin") (:other . "{n} tasinin")))
+   :units (list (cons :second '((:one . "{n} tasint") (:few . "{n} tisinin") (:other . "{n} tisinin")))
                (cons :minute '((:one . "{n} tusdiqt") (:few . "{n} tusdiqin") (:other . "{n} tusdiqin")))
                (cons :hour '((:one . "{n} tasragt") (:few . "{n} tisragin") (:other . "{n} tisragin")))
                (cons :day '((:one . "{n} ass") (:few . "{n} ussan") (:other . "{n} ass")))
@@ -37,13 +37,13 @@
    :just-now "ɣilad"
    :ago "ɣ {0} zzrin"
    :in-future "ɣ {0}"
-   :short-units (list (cons :second "{n}s")
-                       (cons :minute "{n}m")
-                       (cons :hour "{n}h")
-                       (cons :day "{n}d")
-                       (cons :week "{n}w")
-                       (cons :month "{n}mo")
-                       (cons :year "{n}y"))
+   :short-units (list (cons :second '((:one . "{n} tasint") (:few . "{n} tasinin") (:other . "{n} tasinin")))
+                       (cons :minute '((:one . "{n} tusdiqt") (:few . "{n} tusdiqin") (:other . "{n} tusdiqin")))
+                       (cons :hour '((:one . "{n} tasragt") (:few . "{n} tisragin") (:other . "{n} tisragin")))
+                       (cons :day '((:one . "{n} ass") (:few . "{n} ussan") (:other . "{n} ass")))
+                       (cons :week '((:one . "{n} imalass") (:few . "{n} imalassn") (:other . "{n} imalass")))
+                       (cons :month '((:one . "{n} ayyur") (:few . "{n} ayyurn") (:other . "{n} ayyur")))
+                       (cons :year '((:one . "{n} aseggas") (:few . "{n} iseggasen") (:other . "{n} aseggas"))))
    :short-ago "ɣ {0} zzrin"
    :short-in-future "ɣ {0}"
    :compact-units (list (cons :second "{n}s")

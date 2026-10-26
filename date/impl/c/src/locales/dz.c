@@ -32,7 +32,7 @@ const SdDateLocale sd_locale_dz = {
     "ཁ་ཙ",
     "གནངས་ཚེ",
     "ཁ་ཉིམ",
-    "འདི་ {weekday}",
+    "{weekday} འདི",
     "{weekday} ཤུལ་མ",
     "{weekday} ཧེ་མ",
     (const char **)0,

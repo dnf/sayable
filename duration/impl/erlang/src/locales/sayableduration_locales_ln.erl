@@ -17,9 +17,9 @@ locale() ->
     #duration_locale{
         code = "ln",
         plural = fun(N) when N =:= 0; N =:= 1 -> one; (_) -> other end,
-        second = {simple, "{n} segɔnde"},
-        minute = {simple, "{n} moniti"},
-        hour = {simple, "{n} ngonga"},
+        second = {simple, "segɔnde {n}"},
+        minute = {simple, "miniti {n}"},
+        hour = {simple, "ngonga {n}"},
         day = {pluralized, [{one, "mokolo {n}"}, {other, "mikolo {n}"}]},
         week = {pluralized, [{one, "poso {n}"}, {other, "baposo {n}"}]},
         month = {pluralized, [{one, "sanza {n}"}, {other, "basanza {n}"}]},

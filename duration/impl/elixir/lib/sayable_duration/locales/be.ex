@@ -17,13 +17,13 @@ defmodule SayableDuration.Locales.BE do
       code: "be",
       plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :many end),
       units: %{
-        second: %{one: "{n} секунда", few: "{n} секунды", many: "{n} секунд", other: "{n} секунд"},
-        minute: %{one: "{n} хвіліна", few: "{n} хвіліны", many: "{n} хвілін", other: "{n} хвілін"},
-        hour: %{one: "{n} гадзіна", few: "{n} гадзіны", many: "{n} гадзін", other: "{n} гадзін"},
-        day: %{one: "{n} дзень", few: "{n} дні", many: "{n} дзён", other: "{n} дзён"},
-        week: %{one: "{n} тыдзень", few: "{n} тыдні", many: "{n} тыдняў", other: "{n} тыдняў"},
-        month: %{one: "{n} месяц", few: "{n} месяцы", many: "{n} месяцаў", other: "{n} месяцаў"},
-        year: %{one: "{n} год", few: "{n} гады", many: "{n} гадоў", other: "{n} гадоў"}
+        second: %{one: "{n} секунда", few: "{n} секунды", many: "{n} секунд", other: "{n} секунды"},
+        minute: %{one: "{n} хвіліна", few: "{n} хвіліны", many: "{n} хвілін", other: "{n} хвіліны"},
+        hour: %{one: "{n} гадзіна", few: "{n} гадзіны", many: "{n} гадзін", other: "{n} гадзіны"},
+        day: %{one: "{n} дзень", few: "{n} дні", many: "{n} дзён", other: "{n} дня"},
+        week: %{one: "{n} тыдзень", few: "{n} тыдні", many: "{n} тыдняў", other: "{n} тыдня"},
+        month: %{one: "{n} месяц", few: "{n} месяцы", many: "{n} месяцаў", other: "{n} месяца"},
+        year: %{one: "{n} год", few: "{n} гады", many: "{n} гадоў", other: "{n} года"}
       },
       half: "{n} з паловай",
       delimiter: ", ",

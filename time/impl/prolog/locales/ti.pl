@@ -15,18 +15,18 @@ st_hours('ti', ['ዓሰርተ ክልተ', 'ሓደ', 'ክልተ', 'ሰለስተ',
 st_midnight('ti', 'ፍርቂ ለይቲ').
 st_noon('ti', 'ቀትሪ').
 
-st_pattern('ti', 0, '{h}:00').
-st_pattern('ti', 5, '{h}:05').
-st_pattern('ti', 10, '{h}:10').
-st_pattern('ti', 15, '{h}:15').
-st_pattern('ti', 20, '{h}:20').
-st_pattern('ti', 25, '{h}:25').
-st_pattern('ti', 30, '{h}:30').
-st_pattern('ti', 35, '{h}:35').
-st_pattern('ti', 40, '{h}:40').
-st_pattern('ti', 45, '{h}:45').
-st_pattern('ti', 50, '{h}:50').
-st_pattern('ti', 55, '{h}:55').
+st_pattern('ti', 0, '{h} ሰዓት').
+st_pattern('ti', 5, '{h}ን ሓሙሽተን').
+st_pattern('ti', 10, '{h}ን ዓሰርተን').
+st_pattern('ti', 15, '{h}ን ርብዒን').
+st_pattern('ti', 20, '{h}ን ዕስራን').
+st_pattern('ti', 25, '{h}ን ዕስራን ሓሙሽተን').
+st_pattern('ti', 30, '{h}ን ፈረቓን').
+st_pattern('ti', 35, '{h}ን ሰላሳን ሓሙሽተን').
+st_pattern('ti', 40, 'ዕስራ ጎደል {next_h}').
+st_pattern('ti', 45, 'ርብዒ ጎደል {next_h}').
+st_pattern('ti', 50, 'ዓሰርተ ጎደል {next_h}').
+st_pattern('ti', 55, 'ሓሙሽተ ጎደል {next_h}').
 
 short_st_use24h('ti', true).
 short_st_format('ti', '{h}:{mm}').

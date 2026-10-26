@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | i övermorgon    | 17/3    |
 | Day before yesterday | i förrgår       | 13/3    |
 | This Thursday (+5)   | denna torsdag   | 20/3    |
-| Last Monday (-4)     | förra tisdag    | 11/3    |
-| Next Wednesday (+12) | nästa torsdag   | 27/3    |
-| Same month (+20)     | 4 april         | 4/4     |
+| Last Tuesday (-4)    | förra tisdag    | 11/3    |
+| Next Thursday (+12)  | nästa torsdag   | 27/3    |
+| Same year (+20)      | 4 april         | 4/4     |
 | Different year       | 10 januari 2026 | 26-1-10 |
 
 ## Duration
@@ -107,12 +107,12 @@ Relative to Saturday, March 15, 2025.
 
 ### Relative time
 
-| Offset        | Normal          | Compact  |
-| ------------- | --------------- | -------- |
-| 5 minutes ago | 5 minuter sedan | 5m sedan |
-| 2 hours ago   | 2 timmar sedan  | 2h sedan |
-| in 30 minutes | om 30 minuter   | om 30m   |
-| in 3 hours    | om 3 timmar     | om 3h    |
+| Offset        | Normal              | Compact      |
+| ------------- | ------------------- | ------------ |
+| 5 minutes ago | för 5 minuter sedan | för 5m sedan |
+| 2 hours ago   | för 2 timmar sedan  | för 2h sedan |
+| in 30 minutes | om 30 minuter       | om 30m       |
+| in 3 hours    | om 3 timmar         | om 3h        |
 
 ## Time
 

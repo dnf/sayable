@@ -50,7 +50,7 @@ fn build_zu() -> DateLocale:
     var tomorrow = "kusasa"
     var yesterday = "izolo"
     var day_after_tomorrow = "ngomhlomunye"
-    var day_before_yesterday = "usuku olwedlule izolo"
+    var day_before_yesterday = "kuthangi"
     var this_weekday = "leli {weekday}"
     var next_weekday = "{weekday} elizayo"
     var last_weekday = "{weekday} eledlule"

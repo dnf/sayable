@@ -11,10 +11,10 @@
 
 function loc = locale_ca()
   loc.code = 'ca';
-  loc.clock.hours = {'dotze', 'una', 'dues', 'tres', 'quatre', 'cinc', 'sis', 'set', 'vuit', 'nou', 'deu', 'onze'};
+  loc.clock.hours = {'les dotze', 'la una', 'les dues', 'les tres', 'les quatre', 'les cinc', 'les sis', 'les set', 'les vuit', 'les nou', 'les deu', 'les onze'};
   loc.clock.midnight = 'mitjanit';
   loc.clock.noon = 'migdia';
-  loc.clock.patterns = struct("p0", '{h} o''clock', "p5", 'cinc past {h}', "p10", 'deu past {h}', "p15", 'un quart past {h}', "p20", 'vint past {h}', "p25", 'vint-i-cinc past {h}', "p30", 'mitja past {h}', "p35", 'vint-i-cinc to {next_h}', "p40", 'vint to {next_h}', "p45", 'un quart to {next_h}', "p50", 'deu to {next_h}', "p55", 'cinc to {next_h}');
+  loc.clock.patterns = struct("p0", '{h} en punt', "p5", '{h} i cinc', "p10", '{h} i deu', "p15", '{h} i quart', "p20", '{h} i vint', "p25", '{h} i vint-i-cinc', "p30", '{h} i mitja', "p35", '{next_h} menys vint-i-cinc', "p40", '{next_h} menys vint', "p45", '{next_h} menys quart', "p50", '{next_h} menys deu', "p55", '{next_h} menys cinc');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

@@ -30,8 +30,8 @@
    :code "mt"
    :plural #'plural-mt
    :units (list (cons :second '((:one . "{n} sekonda") (:two . "{n} sekondi") (:few . "{n} sekondi") (:many . "{n}-il sekonda") (:other . "{n} sekonda")))
-               (cons :minute '((:one . "{n} minuta") (:two . "{n} minuti") (:few . "{n} minuti") (:many . "{n}-il minuta") (:other . "{n} minuta")))
-               (cons :hour '((:one . "{n} siegħa") (:two . "{n} sigħat") (:few . "{n} sigħat") (:many . "{n}-il siegħa") (:other . "{n} siegħa")))
+               (cons :minute '((:one . "{n} minuta") (:two . "minutejn") (:few . "{n} minuti") (:many . "{n}-il minuta") (:other . "{n} minuta")))
+               (cons :hour '((:one . "{n} siegħa") (:two . "sagħtejn") (:few . "{n} sigħat") (:many . "{n}-il siegħa") (:other . "{n} siegħa")))
                (cons :day '((:one . "ġurnata") (:two . "jumejn") (:few . "{n} ijiem") (:many . "{n}-il jum") (:other . "{n} jum")))
                (cons :week '((:one . "ġimgħa") (:two . "ġimgħatejn") (:few . "{n} ġimgħat") (:many . "{n}-il ġimgħa") (:other . "{n} ġimgħa")))
                (cons :month '((:one . "xahar") (:two . "xahrejn") (:few . "{n} xhur") (:many . "{n}-il xahar") (:other . "{n} xahar")))

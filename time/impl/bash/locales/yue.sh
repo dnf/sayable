@@ -10,21 +10,21 @@
 # Source: locales/yue.json
 
 _sayabletime_locale_yue() {
-    _clock_hours=('十二' '一' '二' '三' '四' '五' '六' '七' '八' '九' '十' '十一')
+    _clock_hours=('十二' '一' '兩' '三' '四' '五' '六' '七' '八' '九' '十' '十一')
     _clock_midnight='午夜'
     _clock_noon='正午'
-    _clock_pattern_0='{h}點整'
-    _clock_pattern_5='{h}點零五分'
-    _clock_pattern_10='{h}點十分'
-    _clock_pattern_15='{h}點十五分'
-    _clock_pattern_20='{h}點二十分'
-    _clock_pattern_25='{h}點二十五分'
+    _clock_pattern_0='{h}點正'
+    _clock_pattern_5='{h}點一個字'
+    _clock_pattern_10='{h}點兩個字'
+    _clock_pattern_15='{h}點三個字'
+    _clock_pattern_20='{h}點四個字'
+    _clock_pattern_25='{h}點五個字'
     _clock_pattern_30='{h}點半'
-    _clock_pattern_35='{h}點三十五分'
-    _clock_pattern_40='{h}點四十分'
-    _clock_pattern_45='{h}點四十五分'
-    _clock_pattern_50='{h}點五十分'
-    _clock_pattern_55='{h}點五十五分'
+    _clock_pattern_35='{h}點七個字'
+    _clock_pattern_40='{h}點八個字'
+    _clock_pattern_45='{h}點九個字'
+    _clock_pattern_50='{h}點十個字'
+    _clock_pattern_55='{h}點十一個字'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

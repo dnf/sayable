@@ -21,7 +21,7 @@ sd_unit('dz', week, _, 'བདུན་ཕྲག་ {n}').
 sd_unit('dz', month, _, 'ཟླ་ {n}').
 sd_unit('dz', year, _, 'ལོ་ {n}').
 
-sd_half('dz', '{0} ཕྱེད').
+sd_half('dz', '{0} དང་ཕྱེད').
 sd_delimiter('dz', ' ').
 sd_just_now('dz', 'ད་ལྟ').
 sd_ago('dz', '{0} ཧེ་མ').

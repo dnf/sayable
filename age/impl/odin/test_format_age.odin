@@ -324,7 +324,7 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 @(test) test_es_6mo :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6 meses", format_age(buf[:], &locale_es, .Normal, "2025-01-15", "2025-07-15")) }
 @(test) test_es_2y1m :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "2 años, 1 mes", format_age(buf[:], &locale_es, .Normal, "2023-06-15", "2025-07-15")) }
 @(test) test_es_2y6m :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "2 años, 6 meses", format_age(buf[:], &locale_es, .Normal, "2023-06-15", "2025-12-15")) }
-@(test) test_es_half :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 y medio años", format_age(buf[:], &locale_es, .Normal, "2022-06-15", "2025-12-15")) }
+@(test) test_es_half :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 años y medio", format_age(buf[:], &locale_es, .Normal, "2022-06-15", "2025-12-15")) }
 @(test) test_es_3y :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 años", format_age(buf[:], &locale_es, .Normal, "2022-06-15", "2025-06-15")) }
 @(test) test_es_7y :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "7 años", format_age(buf[:], &locale_es, .Normal, "2018-06-15", "2025-06-15")) }
 @(test) test_es_stage_newborn :: proc(t: ^testing.T) { expect_str(t, "Recién nacido", format_stage(&locale_es, "2025-06-15", "2025-06-15", "")) }
@@ -390,13 +390,13 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 // Section 29: Locale-specific edge cases
 // ================================================================
 @(test) test_he_born :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "רק נולד", format_age(buf[:], &locale_he, .Normal, "2025-06-15", "2025-06-15")) }
-@(test) test_he_1d :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "יום 1", format_age(buf[:], &locale_he, .Normal, "2025-06-14", "2025-06-15")) }
+@(test) test_he_1d :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "יום", format_age(buf[:], &locale_he, .Normal, "2025-06-14", "2025-06-15")) }
 @(test) test_he_3d :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 ימים", format_age(buf[:], &locale_he, .Normal, "2025-06-12", "2025-06-15")) }
 @(test) test_he_2w :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "שבועיים", format_age(buf[:], &locale_he, .Normal, "2025-06-01", "2025-06-15")) }
 @(test) test_he_3w :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 שבועות", format_age(buf[:], &locale_he, .Normal, "2025-05-25", "2025-06-15")) }
 @(test) test_he_6m :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6 חודשים", format_age(buf[:], &locale_he, .Normal, "2025-01-15", "2025-07-15")) }
 @(test) test_he_3m :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 חודשים", format_age(buf[:], &locale_he, .Normal, "2025-03-15", "2025-06-15")) }
-@(test) test_he_2y1m :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "שנתיים, חודש 1", format_age(buf[:], &locale_he, .Normal, "2023-06-15", "2025-07-15")) }
+@(test) test_he_2y1m :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "שנתיים, חודש", format_age(buf[:], &locale_he, .Normal, "2023-06-15", "2025-07-15")) }
 @(test) test_he_half :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 שנים וחצי", format_age(buf[:], &locale_he, .Normal, "2022-06-15", "2025-12-15")) }
 @(test) test_he_7y :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "7 שנים", format_age(buf[:], &locale_he, .Normal, "2018-06-15", "2025-06-15")) }
 @(test) test_he_stage_m :: proc(t: ^testing.T) { expect_str(t, "רק נולד", format_stage(&locale_he, "2025-06-15", "2025-06-15", "m")) }
@@ -423,7 +423,7 @@ test_7_days_is_1_week :: proc(t: ^testing.T) {
 @(test) test_id_1d :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "1 hari", format_age(buf[:], &locale_id, .Normal, "2025-06-14", "2025-06-15")) }
 @(test) test_id_3d :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 hari", format_age(buf[:], &locale_id, .Normal, "2025-06-12", "2025-06-15")) }
 @(test) test_id_6m :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "6 bulan", format_age(buf[:], &locale_id, .Normal, "2025-01-15", "2025-07-15")) }
-@(test) test_id_half :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 tahun setengah", format_age(buf[:], &locale_id, .Normal, "2022-06-15", "2025-12-15")) }
+@(test) test_id_half :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "3 setengah tahun", format_age(buf[:], &locale_id, .Normal, "2022-06-15", "2025-12-15")) }
 @(test) test_id_7y :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "7 tahun", format_age(buf[:], &locale_id, .Normal, "2018-06-15", "2025-06-15")) }
 
 @(test) test_am_born :: proc(t: ^testing.T) { buf: [256]u8; expect_str(t, "አዲስ የተወለደ", format_age(buf[:], &locale_am, .Normal, "2025-06-15", "2025-06-15")) }

@@ -30,26 +30,26 @@ fn build_ha() -> AgeLocale:
             return "one"
         return "other"
 
-    var day = plural_unit(one="{n} kwana", other="{n} kwanaki")
-    var week = plural_unit(one="{n} mako", other="{n} makonni")
-    var month = plural_unit(one="{n} wata", other="{n} watanni")
-    var year = plural_unit(one="{n} shekara", other="{n} shekaru")
+    var day = plural_unit(one="kwana {n}", other="kwanaki {n}")
+    var week = plural_unit(one="mako {n}", other="makonni {n}")
+    var month = plural_unit(one="wata {n}", other="watanni {n}")
+    var year = plural_unit(one="shekara {n}", other="shekaru {n}")
 
     var newborn = stage_neutral("Jariri")
     var infant = stage_neutral("Jariri")
-    var toddler = stage_neutral("Ƙaramin yaro")
-    var child = stage_neutral("Yaro")
-    var teenager = stage_neutral("Saurayi")
+    var toddler = stage_gendered("Ƙaramin yaro", "Ƙaramar yarinya")
+    var child = stage_gendered("Yaro", "Yarinya")
+    var teenager = stage_gendered("Saurayi", "Budurwa")
     var adult = stage_neutral("Babba")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("{n} kw.")
+    short_ovr.day = simple_unit("kw. {n}")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n} mk.")
+    short_ovr.week = simple_unit("mk. {n}")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("{n} wt.")
+    short_ovr.month = simple_unit("wt. {n}")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("{n} shk.")
+    short_ovr.year = simple_unit("shk. {n}")
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()

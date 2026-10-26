@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | pagéto          | 17/3       |
 | Day before yesterday | mangkukna       | 13/3       |
 | This Thursday (+5)   | Kemis ieu       | 20/3       |
-| Last Monday (-4)     | Salasa kamari   | 11/3       |
-| Next Wednesday (+12) | Kemis payun     | 27/3       |
-| Same month (+20)     | 4 April         | 4/4        |
+| Last Tuesday (-4)    | Salasa kamari   | 11/3       |
+| Next Thursday (+12)  | Kemis payun     | 27/3       |
+| Same year (+20)      | 4 April         | 4/4        |
 | Different year       | 10 Januari 2026 | 10/1/26    |
 
 ## Duration
@@ -84,7 +84,7 @@ Relative to Saturday, March 15, 2025.
 
 | Duration              | Normal             | Short              | Compact   |
 | --------------------- | ------------------ | ------------------ | --------- |
-| 0 seconds             | ayeuna             | ayeuna             | ayeuna    |
+| 0 seconds             | nembé              | nembé              | nembé     |
 | 1 second              | 1 detik            | 1 dtk              | 1dtk      |
 | 30 seconds            | 30 detik           | 30 dtk             | 30dtk     |
 | 1 minute              | 1 menit            | 1 mnt              | 1mnt      |
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal         | Short    | Compact |
-| --------------- | -------------- | -------- | ------- |
-| Midnight        | tengah peuting | 12:00 AM | 12:00a  |
-| 1:00 AM         | hiji:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | salapan:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | sapuluh:15     | 10:15 AM | 10:15a  |
-| Half past 11    | sabelas:30     | 11:30 AM | 11:30a  |
-| Noon            | beurang        | 12:00 PM | 12:00p  |
-| Quarter to 3    | dua:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | lima:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | dalapan:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | sapuluh:30     | 10:30 PM | 10:30p  |
-| 11:58 PM        | tengah peuting | 11:58 PM | 11:58p  |
+| Time            | Normal                        | Short    | Compact |
+| --------------- | ----------------------------- | -------- | ------- |
+| Midnight        | tengah peuting                | 12:00 AM | 12:00a  |
+| 1:00 AM         | jam hiji                      | 1:00 AM  | 1:00a   |
+| 5 past 9        | jam salapan leuwih lima menit | 9:05 AM  | 9:05a   |
+| Quarter past 10 | jam sapuluh leuwih saparapat  | 10:15 AM | 10:15a  |
+| Half past 11    | satengah dua welas            | 11:30 AM | 11:30a  |
+| Noon            | beurang                       | 12:00 PM | 12:00p  |
+| Quarter to 3    | jam tilu kurang saparapat     | 2:45 PM  | 2:45p   |
+| 5 to 6          | jam genep kurang lima menit   | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | jam dalapan                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | satengah sabelas              | 10:30 PM | 10:30p  |
+| 11:58 PM        | tengah peuting                | 11:58 PM | 11:58p  |

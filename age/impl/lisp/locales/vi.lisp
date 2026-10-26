@@ -25,7 +25,7 @@
    :delimiter ", "
    :just-born "Sơ sinh"
    :stages (list (cons :newborn "Sơ sinh")
-                 (cons :infant "Trẻ sơ sinh")
+                 (cons :infant "Trẻ nhũ nhi")
                  (cons :toddler "Trẻ mới biết đi")
                  (cons :child "Trẻ em")
                  (cons :teenager "Thiếu niên")

@@ -12,18 +12,18 @@
 (def locale
   {:code "ha"
    :plural (fn [n] (if (= n 1) :one :other))
-   :units {:second {:one "{n} daƙiƙa" :other "{n} daƙiƙoƙi"}
-          :minute {:one "{n} minti" :other "{n} mintoci"}
-          :hour {:one "{n} awa" :other "{n} awanni"}
-          :day {:one "{n} kwana" :other "{n} kwanaki"}
-          :week {:one "{n} mako" :other "{n} makonni"}
-          :month {:one "{n} wata" :other "{n} watanni"}
-          :year {:one "{n} shekara" :other "{n} shekaru"}}
+   :units {:second {:one "daƙiƙa {n}" :other "daƙiƙoƙi {n}"}
+          :minute {:one "minti {n}" :other "mintoci {n}"}
+          :hour {:one "awa {n}" :other "awanni {n}"}
+          :day {:one "kwana {n}" :other "kwanaki {n}"}
+          :week {:one "mako {n}" :other "makonni {n}"}
+          :month {:one "wata {n}" :other "watanni {n}"}
+          :year {:one "shekara {n}" :other "shekaru {n}"}}
    :half "{n}½"
    :delimiter ", "
    :just-now "yanzu"
    :ago "{0} da suka wuce"
    :in-future "cikin {0}"
-   :short {:units {:second "{n} daƙ." :minute "{n} mnt." :hour "{n} awa" :day "{n} kw." :week "{n} mk." :month "{n} wt." :year "{n} shk."} :ago "{0} da suka wuce" :in-future "cikin {0}"}
+   :short {:units {:second "daƙ. {n}" :minute "mnt. {n}" :hour "awa {n}" :day "kw. {n}" :week "mk. {n}" :month "wt. {n}" :year "shk. {n}"} :ago "{0} da suka wuce" :in-future "cikin {0}"}
    :compact {:units {:second "{n}s" :minute "{n}min" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} da suka wuce" :in-future "cikin {0}"}
 })

@@ -26,7 +26,7 @@ id
 		'month'. '{n} bulan'.
 		'year'. '{n} tahun'.
 	}).
-	locale half: '{0} setengah'.
+	locale half: '{n} setengah'.
 	locale delimiter: ', '.
 	locale justNow: 'baru saja'.
 	locale ago: '{0} yang lalu'.

@@ -15,12 +15,13 @@ import '../types.dart';
 final kl = AgeLocale(
   code: 'kl',
   plural: (int n) {
+    if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: simpleUnit('ullut {n}'),
-  week: simpleUnit('sapaatit {n}'),
-  month: simpleUnit('qaammatit {n}'),
-  year: simpleUnit('ukiut {n}'),
+  day: pluralUnit({PluralCategory.one: 'ulloq {n}', PluralCategory.other: 'ullut {n}'}),
+  week: pluralUnit({PluralCategory.one: 'sapaatip akunnera {n}', PluralCategory.other: 'sapaatip akunneri {n}'}),
+  month: pluralUnit({PluralCategory.one: 'qaammat {n}', PluralCategory.other: 'qaammatit {n}'}),
+  year: pluralUnit({PluralCategory.one: 'ukioq {n}', PluralCategory.other: 'ukiut {n}'}),
   half: '{0} affaa',
   delimiter: ', ',
   justBorn: 'Inuuneq nutaaq',
@@ -32,7 +33,7 @@ final kl = AgeLocale(
   adult: stageNeutral('Inuk'),
   short: CompactnessOverride(
     day: simpleUnit('ull. {n}'),
-    week: simpleUnit('sap. {n}'),
+    week: simpleUnit('sap. ak. {n}'),
     month: simpleUnit('qaam. {n}'),
     year: simpleUnit('uk. {n}'),
   ),
@@ -42,5 +43,6 @@ final kl = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

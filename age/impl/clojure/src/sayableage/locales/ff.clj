@@ -21,6 +21,6 @@
    :half "{n}½"
    :delimiter ", "
    :just-born "Ɓinngel kesol"
-   :stages {:newborn {:type :neutral :label "Ɓinngel kesol"} :infant {:type :neutral :label "Ɓinngel"} :toddler {:type :neutral :label "Cukalel"} :child {:type :neutral :label "Suka"} :teenager {:type :neutral :label "Suka debbo"} :adult {:type :neutral :label "Mawɗo"}}
-   :short {:day {:type :simple :form "ñalɗe {n}"} :week {:type :pluralized :forms {:one "yontere {n}" :other "yontereeji {n}"}} :month {:type :pluralized :forms {:one "lewru {n}" :other "lebbi {n}"}} :year {:type :pluralized :forms {:one "hitaande {n}" :other "duuɓi {n}"}} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "ñalɗe {n}"} :week {:type :pluralized :forms {:one "yont {n}" :other "yontji {n}"}} :month {:type :pluralized :forms {:one "lew {n}" :other "leb {n}"}} :year {:type :pluralized :forms {:one "hit {n}" :other "duuɓi {n}"}} :half "{n}½" :delimiter "" :just-born nil}})
+   :stages {:newborn {:type :neutral :label "Ɓinngel kesol"} :infant {:type :neutral :label "Ɓinngel"} :toddler {:type :neutral :label "Cukalel"} :child {:type :neutral :label "Suka"} :teenager {:type :gendered :m "Suka gorko" :f "Suka debbo"} :adult {:type :neutral :label "Mawɗo"}}
+   :short {:day {:type :pluralized :forms {:one "ñalawma {n}" :other "ñalɗe {n}"}} :week {:type :pluralized :forms {:one "yontere {n}" :other "yontereeji {n}"}} :month {:type :pluralized :forms {:one "lewru {n}" :other "lebbi {n}"}} :year {:type :pluralized :forms {:one "hitaande {n}" :other "duuɓi {n}"}} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :pluralized :forms {:one "ñalawma {n}" :other "ñalɗe {n}"}} :week {:type :pluralized :forms {:one "yont {n}" :other "yontji {n}"}} :month {:type :pluralized :forms {:one "lew {n}" :other "leb {n}"}} :year {:type :pluralized :forms {:one "hit {n}" :other "duuɓi {n}"}} :half "{n}½" :delimiter "" :just-born nil}})

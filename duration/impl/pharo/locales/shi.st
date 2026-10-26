@@ -23,7 +23,7 @@ shi
 					ifTrue: [ #few ]
 					ifFalse: [ #other ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. '{n} tasint'. #few. '{n} tasinin'. #other. '{n} tasinin' }).
+		'second'. (Dictionary newFromPairs: { #one. '{n} tasint'. #few. '{n} tisinin'. #other. '{n} tisinin' }).
 		'minute'. (Dictionary newFromPairs: { #one. '{n} tusdiqt'. #few. '{n} tusdiqin'. #other. '{n} tusdiqin' }).
 		'hour'. (Dictionary newFromPairs: { #one. '{n} tasragt'. #few. '{n} tisragin'. #other. '{n} tisragin' }).
 		'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #few. '{n} ussan'. #other. '{n} ass' }).
@@ -38,13 +38,13 @@ shi
 	locale inFuture: 'ɣ {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. '{n}s'.
-			'minute'. '{n}m'.
-			'hour'. '{n}h'.
-			'day'. '{n}d'.
-			'week'. '{n}w'.
-			'month'. '{n}mo'.
-			'year'. '{n}y'.
+			'second'. (Dictionary newFromPairs: { #one. '{n} tasint'. #few. '{n} tasinin'. #other. '{n} tasinin' }).
+			'minute'. (Dictionary newFromPairs: { #one. '{n} tusdiqt'. #few. '{n} tusdiqin'. #other. '{n} tusdiqin' }).
+			'hour'. (Dictionary newFromPairs: { #one. '{n} tasragt'. #few. '{n} tisragin'. #other. '{n} tisragin' }).
+			'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #few. '{n} ussan'. #other. '{n} ass' }).
+			'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #few. '{n} imalassn'. #other. '{n} imalass' }).
+			'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #few. '{n} ayyurn'. #other. '{n} ayyur' }).
+			'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #few. '{n} iseggasen'. #other. '{n} aseggas' }).
 		}).
 		#ago. 'ɣ {0} zzrin'.
 		#inFuture. 'ɣ {0}'.

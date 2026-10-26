@@ -28,7 +28,7 @@ const SduDurationLocale sdu_locale_dz = {
         { "ཟླ་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "ལོ་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0} ཕྱེད", " ",
+    "{0} དང་ཕྱེད", " ",
     "ད་ལྟ",
     "{0} ཧེ་མ", "{0} ཤུལ་ལས",
     true, { true, { "སྐར་ཆ་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "སྐར་མ་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ཆུ་ཚོད་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ཉིན་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "བདུན་ཕྲག་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ཟླ་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ལོ་ {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ཧེ་མ", true, "{0} ཤུལ་ལས" },

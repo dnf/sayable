@@ -9,7 +9,7 @@
       "month": "ཟླ་ {n}",
       "year": "ལོ་ {n}"
     },
-    "half": "{0} ཕྱེད",
+    "half": "{0} དང་ཕྱེད",
     "delimiter": " ",
     "justBorn": "གསར་སྐྱེས",
     "stages": {
@@ -70,7 +70,7 @@
     "yesterday": "ཁ་ཙ",
     "dayAfterTomorrow": "གནངས་ཚེ",
     "dayBeforeYesterday": "ཁ་ཉིམ",
-    "thisWeekday": "འདི་ {weekday}",
+    "thisWeekday": "{weekday} འདི",
     "nextWeekday": "{weekday} ཤུལ་མ",
     "lastWeekday": "{weekday} ཧེ་མ",
     "short": {
@@ -116,7 +116,7 @@
       "month": "ཟླ་ {n}",
       "year": "ལོ་ {n}"
     },
-    "half": "{0} ཕྱེད",
+    "half": "{0} དང་ཕྱེད",
     "delimiter": " ",
     "justNow": "ད་ལྟ",
     "ago": "{0} ཧེ་མ",
@@ -168,18 +168,18 @@
       "midnight": "ནམ་ཕྱེད",
       "noon": "ཉིན་གུང",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "ཆུ་ཚོད་{h}",
+        "5": "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ",
+        "10": "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ",
+        "15": "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ",
+        "20": "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ",
+        "25": "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ",
+        "30": "ཆུ་ཚོད་{h}་དང་ཕྱེད",
+        "35": "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ",
+        "40": "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ",
+        "45": "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ",
+        "50": "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ",
+        "55": "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ"
       }
     },
     "short": {
@@ -202,5 +202,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "'ཆུ་ཚོད་{h}' on the hour; 'ཆུ་ཚོད་{h}་དང་སྐར་མ་<minutes>' additive (Tibetan-family 'hour X and minute N'); 'ཆུ་ཚོད་{h}་དང་ཕྱེད' for half past. Minute numerals use the written decimal forms (བཅོ་ལྔ, ཉི་ཤུ, ཉེར་ལྔ, སོ་ལྔ, བཞི་བཅུ, ཞེ་ལྔ, ལྔ་བཅུ, ང་ལྔ). Doubts: Dzongkha colloquial may prefer a subtractive 'to' form for :45–:55 and the vigesimal (ཁལ) counting in speech; tsheg-joined spelling chosen over the space-separated style used elsewhere in the file for digits."
+    }
+  ]
 }

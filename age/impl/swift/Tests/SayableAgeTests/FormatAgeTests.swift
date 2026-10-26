@@ -674,7 +674,7 @@ import Testing
                 month: .plural([.one: "{n} mes", .other: "{n} meses"]),
                 year: .plural([.one: "{n} a\u{00F1}o", .other: "{n} a\u{00F1}os"])
             ),
-            half: "{n} y medio",
+            half: "{0} y medio",
             delimiter: ", ",
             justBorn: "Reci\u{00E9}n nacido",
             stages: Stages(
@@ -698,7 +698,7 @@ import Testing
         #expect(pt.formatAge("2025-01-15", "2025-07-15") == "6 meses")
         #expect(pt.formatAge("2023-06-15", "2025-07-15") == "2 a\u{00F1}os, 1 mes")
         #expect(pt.formatAge("2023-06-15", "2025-12-15") == "2 a\u{00F1}os, 6 meses")
-        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 y medio a\u{00F1}os")
+        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 a\u{00F1}os y medio")
         #expect(pt.formatAge("2022-06-15", "2025-06-15") == "3 a\u{00F1}os")
         #expect(pt.formatAge("2018-06-15", "2025-06-15") == "7 a\u{00F1}os")
 
@@ -890,7 +890,7 @@ import Testing
     @Test func hebrewLocaleDualForms() {
         let pt = SayableAgeFormatter(Locales.HE)
         #expect(pt.formatAge("2025-06-15", "2025-06-15") == "\u{05E8}\u{05E7} \u{05E0}\u{05D5}\u{05DC}\u{05D3}")
-        #expect(pt.formatAge("2025-06-14", "2025-06-15") == "\u{05D9}\u{05D5}\u{05DD} 1")
+        #expect(pt.formatAge("2025-06-14", "2025-06-15") == "\u{05D9}\u{05D5}\u{05DD}")
         #expect(pt.formatAge("2025-06-12", "2025-06-15") == "3 \u{05D9}\u{05DE}\u{05D9}\u{05DD}")
         #expect(pt.formatAge("2025-06-01", "2025-06-15") == "\u{05E9}\u{05D1}\u{05D5}\u{05E2}\u{05D9}\u{05D9}\u{05DD}")
         #expect(pt.formatAge("2025-05-25", "2025-06-15") == "3 \u{05E9}\u{05D1}\u{05D5}\u{05E2}\u{05D5}\u{05EA}")
@@ -925,7 +925,7 @@ import Testing
         #expect(pt.formatAge("2025-06-14", "2025-06-15") == "1 hari")
         #expect(pt.formatAge("2025-06-12", "2025-06-15") == "3 hari")
         #expect(pt.formatAge("2025-01-15", "2025-07-15") == "6 bulan")
-        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 tahun setengah")
+        #expect(pt.formatAge("2022-06-15", "2025-12-15") == "3 setengah tahun")
         #expect(pt.formatAge("2018-06-15", "2025-06-15") == "7 tahun")
     }
 

@@ -409,7 +409,7 @@ fn main() {
     // 25.9
     check_age("25.9", "es", sayableage::Compactness.Normal, "2023-06-15", "2025-12-15", "2 años, 6 meses");
     // 25.10
-    check_age("25.10", "es", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 y medio años");
+    check_age("25.10", "es", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 años y medio");
     // 25.11
     check_age("25.11", "es", sayableage::Compactness.Normal, "2022-06-15", "2025-06-15", "3 años");
     // 25.12
@@ -473,7 +473,7 @@ fn main() {
     // 29.1
     check_age("29.1", "he", sayableage::Compactness.Normal, "2025-06-15", "2025-06-15", "רק נולד");
     // 29.2
-    check_age("29.2", "he", sayableage::Compactness.Normal, "2025-06-14", "2025-06-15", "יום 1");
+    check_age("29.2", "he", sayableage::Compactness.Normal, "2025-06-14", "2025-06-15", "יום");
     // 29.3
     check_age("29.3", "he", sayableage::Compactness.Normal, "2025-06-12", "2025-06-15", "3 ימים");
     // 29.4
@@ -485,7 +485,7 @@ fn main() {
     // 29.7
     check_age("29.7", "he", sayableage::Compactness.Normal, "2025-03-15", "2025-06-15", "3 חודשים");
     // 29.8
-    check_age("29.8", "he", sayableage::Compactness.Normal, "2023-06-15", "2025-07-15", "שנתיים, חודש 1");
+    check_age("29.8", "he", sayableage::Compactness.Normal, "2023-06-15", "2025-07-15", "שנתיים, חודש");
     // 29.9
     check_age("29.9", "he", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 שנים וחצי");
     // 29.10
@@ -533,7 +533,7 @@ fn main() {
     // 29.31
     check_age("29.31", "id", sayableage::Compactness.Normal, "2025-01-15", "2025-07-15", "6 bulan");
     // 29.32
-    check_age("29.32", "id", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 tahun setengah");
+    check_age("29.32", "id", sayableage::Compactness.Normal, "2022-06-15", "2025-12-15", "3 setengah tahun");
     // 29.33
     check_age("29.33", "id", sayableage::Compactness.Normal, "2018-06-15", "2025-06-15", "7 tahun");
     // 29.34

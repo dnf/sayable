@@ -35,7 +35,7 @@ fn build_sq() -> AgeLocale:
     var month = plural_unit(one="{n} muaj", other="{n} muaj")
     var year = plural_unit(one="{n} vit", other="{n} vjet")
 
-    var newborn = stage_gendered("Sapolindur", "Sapolindure")
+    var newborn = stage_gendered("I sapolindur", "E sapolindur")
     var infant = stage_neutral("Foshnjë")
     var toddler = stage_gendered("Fëmijë i vogël", "Fëmijë e vogël")
     var child = stage_neutral("Fëmijë")
@@ -75,7 +75,7 @@ fn build_sq() -> AgeLocale:
         year=year,
         half="{0} e gjysmë",
         delimiter=", ",
-        just_born="Sapolindur",
+        just_born="I sapolindur",
         newborn=newborn,
         infant=infant,
         toddler=toddler,

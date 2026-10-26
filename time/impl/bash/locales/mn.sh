@@ -10,21 +10,21 @@
 # Source: locales/mn.json
 
 _sayabletime_locale_mn() {
-    _clock_hours=('арван хоёр' 'нэг' 'хоёр' 'гурав' 'дөрөв' 'тав' 'зургаа' 'долоо' 'найм' 'ес' 'арав' 'арван нэг')
+    _clock_hours=('арван хоёр' 'нэг' 'хоёр' 'гурван' 'дөрвөн' 'таван' 'зургаан' 'долоон' 'найман' 'есөн' 'арван' 'арван нэгэн')
     _clock_midnight='шөнө дунд'
     _clock_noon='үд дунд'
     _clock_pattern_0='{h} цаг'
-    _clock_pattern_5='{h} цаг {m} минут'
-    _clock_pattern_10='{h} цаг {m} минут'
-    _clock_pattern_15='{h} цаг {m} минут'
-    _clock_pattern_20='{h} цаг {m} минут'
-    _clock_pattern_25='{h} цаг {m} минут'
-    _clock_pattern_30='{h} цаг {m} минут'
-    _clock_pattern_35='{h} цаг {m} минут'
-    _clock_pattern_40='{h} цаг {m} минут'
-    _clock_pattern_45='{h} цаг {m} минут'
-    _clock_pattern_50='{h} цаг {m} минут'
-    _clock_pattern_55='{h} цаг {m} минут'
+    _clock_pattern_5='{h} цаг таван минут'
+    _clock_pattern_10='{h} цаг арван минут'
+    _clock_pattern_15='{h} цаг арван таван минут'
+    _clock_pattern_20='{h} цаг хорин минут'
+    _clock_pattern_25='{h} цаг хорин таван минут'
+    _clock_pattern_30='{h} цаг хагас'
+    _clock_pattern_35='{h} цаг гучин таван минут'
+    _clock_pattern_40='{h} цаг дөчин минут'
+    _clock_pattern_45='{h} цаг дөчин таван минут'
+    _clock_pattern_50='{h} цаг тавин минут'
+    _clock_pattern_55='{h} цаг тавин таван минут'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

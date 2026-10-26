@@ -27,5 +27,5 @@
             :adult "Ema boot"
 }
    :short {:units {:day "loron {n}" :week "sem. {n}" :month "fulan {n}" :year "tinan {n}"}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

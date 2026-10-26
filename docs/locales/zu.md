@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [zu.json](../../locales/zu.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Rewrote the English/calqued patterns: ordinal hours with class-5 concord (lokuqala … leshumi nambili), 'ihora {h}' for :00, 'ikota / uhhafu / imizuzu … emva kwehora {h}' for past, '… ngaphambi kwehora {next_h}' for to. Doubt: colloquial Zulu often prefers 'ihora lesibili nohhafu' / 'nekota' over 'uhhafu emva kwehora'; both are understood.
+
 ## Age
 
 ### Age formatting
@@ -65,18 +73,18 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal                | Compact |
-| -------------------- | --------------------- | ------- |
-| Today                | namuhla               | namuhla |
-| Tomorrow             | kusasa                | kusasa  |
-| Yesterday            | izolo                 | izolo   |
-| Day after tomorrow   | ngomhlomunye          | 17/3    |
-| Day before yesterday | usuku olwedlule izolo | 13/3    |
-| This Thursday (+5)   | leli ULwesine         | 20/3    |
-| Last Monday (-4)     | ULwesibili eledlule   | 11/3    |
-| Next Wednesday (+12) | ULwesine elizayo      | 27/3    |
-| Same month (+20)     | 4 Ephreli             | 4/4     |
-| Different year       | 10 Januwari 2026      | 10/1/26 |
+| Offset               | Normal              | Compact |
+| -------------------- | ------------------- | ------- |
+| Today                | namuhla             | namuhla |
+| Tomorrow             | kusasa              | kusasa  |
+| Yesterday            | izolo               | izolo   |
+| Day after tomorrow   | ngomhlomunye        | 17/3    |
+| Day before yesterday | kuthangi            | 13/3    |
+| This Thursday (+5)   | leli ULwesine       | 20/3    |
+| Last Tuesday (-4)    | ULwesibili eledlule | 11/3    |
+| Next Thursday (+12)  | ULwesine elizayo    | 27/3    |
+| Same year (+20)      | 4 Ephreli           | 4/4     |
+| Different year       | 10 Januwari 2026    | 10/1/26 |
 
 ## Duration
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                                        | Short    | Compact |
-| --------------- | --------------------------------------------- | -------- | ------- |
-| Midnight        | phakathi kwamabili                            | 12:00 AM | 12:00a  |
-| 1:00 AM         | kunye o'clock                                 | 1:00 AM  | 1:00a   |
-| 5 past 9        | emva kwemizuzu emihlanu ngo-isishiyagalolunye | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ikota edlule ngo-ishumi                       | 10:15 AM | 10:15a  |
-| Half past 11    | uhhafu edlule ngo-ishumi nanye                | 11:30 AM | 11:30a  |
-| Noon            | emini                                         | 12:00 PM | 12:00p  |
-| Quarter to 3    | ikota ngaphambi kuka-kuthathu                 | 2:45 PM  | 2:45p   |
-| 5 to 6          | imizuzu emihlanu ngaphambi kuka-isithupha     | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | isishiyagalombili o'clock                     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | uhhafu edlule ngo-ishumi                      | 10:30 PM | 10:30p  |
-| 11:58 PM        | phakathi kwamabili                            | 11:58 PM | 11:58p  |
+| Time            | Normal                                           | Short    | Compact |
+| --------------- | ------------------------------------------------ | -------- | ------- |
+| Midnight        | phakathi kwamabili                               | 12:00 AM | 12:00a  |
+| 1:00 AM         | ihora lokuqala                                   | 1:00 AM  | 1:00a   |
+| 5 past 9        | imizuzu emihlanu emva kwehora lesishiyagalolunye | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ikota emva kwehora leshumi                       | 10:15 AM | 10:15a  |
+| Half past 11    | uhhafu emva kwehora leshumi nanye                | 11:30 AM | 11:30a  |
+| Noon            | emini                                            | 12:00 PM | 12:00p  |
+| Quarter to 3    | ikota ngaphambi kwehora lesithathu               | 2:45 PM  | 2:45p   |
+| 5 to 6          | imizuzu emihlanu ngaphambi kwehora lesithupha    | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ihora lesishiyagalombili                         | 8:00 PM  | 8:00p   |
+| 10:30 PM        | uhhafu emva kwehora leshumi                      | 10:30 PM | 10:30p  |
+| 11:58 PM        | phakathi kwamabili                               | 11:58 PM | 11:58p  |

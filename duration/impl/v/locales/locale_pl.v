@@ -27,13 +27,13 @@ fn plural_pl(n int) PluralCategory {
 pub const locale_pl = DurationLocale{
 	code: 'pl'
 	plural: plural_pl
-	second: plural_unit({PluralCategory.one: '{n} sekunda', PluralCategory.few: '{n} sekundy', PluralCategory.many: '{n} sekund', PluralCategory.other: '{n} sekund'})
-	minute: plural_unit({PluralCategory.one: '{n} minuta', PluralCategory.few: '{n} minuty', PluralCategory.many: '{n} minut', PluralCategory.other: '{n} minut'})
-	hour: plural_unit({PluralCategory.one: '{n} godzina', PluralCategory.few: '{n} godziny', PluralCategory.many: '{n} godzin', PluralCategory.other: '{n} godzin'})
-	day: plural_unit({PluralCategory.one: '{n} dzień', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dni', PluralCategory.other: '{n} dni'})
-	week: plural_unit({PluralCategory.one: '{n} tydzień', PluralCategory.few: '{n} tygodnie', PluralCategory.many: '{n} tygodni', PluralCategory.other: '{n} tygodni'})
-	month: plural_unit({PluralCategory.one: '{n} miesiąc', PluralCategory.few: '{n} miesiące', PluralCategory.many: '{n} miesięcy', PluralCategory.other: '{n} miesięcy'})
-	year: plural_unit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} lata', PluralCategory.many: '{n} lat', PluralCategory.other: '{n} lat'})
+	second: plural_unit({PluralCategory.one: '{n} sekunda', PluralCategory.few: '{n} sekundy', PluralCategory.many: '{n} sekund', PluralCategory.other: '{n} sekundy'})
+	minute: plural_unit({PluralCategory.one: '{n} minuta', PluralCategory.few: '{n} minuty', PluralCategory.many: '{n} minut', PluralCategory.other: '{n} minuty'})
+	hour: plural_unit({PluralCategory.one: '{n} godzina', PluralCategory.few: '{n} godziny', PluralCategory.many: '{n} godzin', PluralCategory.other: '{n} godziny'})
+	day: plural_unit({PluralCategory.one: '{n} dzień', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dni', PluralCategory.other: '{n} dnia'})
+	week: plural_unit({PluralCategory.one: '{n} tydzień', PluralCategory.few: '{n} tygodnie', PluralCategory.many: '{n} tygodni', PluralCategory.other: '{n} tygodnia'})
+	month: plural_unit({PluralCategory.one: '{n} miesiąc', PluralCategory.few: '{n} miesiące', PluralCategory.many: '{n} miesięcy', PluralCategory.other: '{n} miesiąca'})
+	year: plural_unit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} lata', PluralCategory.many: '{n} lat', PluralCategory.other: '{n} roku'})
 	half: '{n} i pół'
 	delimiter: ', '
 	just_now: 'właśnie teraz'

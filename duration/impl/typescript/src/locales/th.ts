@@ -27,7 +27,7 @@ export const th: DurationLocale = {
   delimiter: ' ',
   justNow: 'เมื่อกี้',
   ago: '{0}ที่แล้ว',
-  inFuture: 'ใน{0}',
+  inFuture: 'ในอีก {0}',
   short: {
     units: {
       second: '{n} วิ',
@@ -39,7 +39,7 @@ export const th: DurationLocale = {
       year:   '{n} ปี',
     },
     ago: '{0}ที่แล้ว',
-    inFuture: 'ใน{0}',
+    inFuture: 'ในอีก {0}',
   },
   compact: {
     units: {
@@ -54,6 +54,6 @@ export const th: DurationLocale = {
     half: '{n}½',
     delimiter: '',
     ago: '{0}ที่แล้ว',
-    inFuture: 'ใน{0}',
+    inFuture: 'ในอีก {0}',
   },
 };

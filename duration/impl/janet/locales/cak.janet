@@ -25,5 +25,5 @@
    :ago "{0} k'o chi"
    :in-future "pa {0}"
    :short {:units {:second "{n} tz'aq." :minute "{n} ch'ut." :hour "{n} ram." :day "{n} q'ij" :week "{n} wuqq'ij" :month "{n} ik'" :year "{n} jun."} :ago "{0} k'o chi" :in-future "pa {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :delimiter "" :ago "{0} k'o chi" :in-future "pa {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} k'o chi" :in-future "pa {0}"}
 })

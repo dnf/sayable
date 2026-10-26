@@ -24,7 +24,7 @@ locale_nb <- list(
   half = "{n}½",
   delimiter = ", ",
   just_now = "akkurat nå",
-  ago = "{0} siden",
+  ago = "for {0} siden",
   in_future = "om {0}",
   short = list(
     units = list(
@@ -36,7 +36,7 @@ locale_nb <- list(
       month = "{n} md.",
       year = "{n} år"
     ),
-    ago = "{0} siden",
+    ago = "for {0} siden",
     in_future = "om {0}"
   ),
   compact = list(
@@ -50,7 +50,7 @@ locale_nb <- list(
       year = "{n}å"
     ),
     delimiter = "",
-    ago = "{0} siden",
+    ago = "for {0} siden",
     in_future = "om {0}"
   )
 )

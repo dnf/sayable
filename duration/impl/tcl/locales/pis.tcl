@@ -24,7 +24,7 @@ proc locale_duration_pis {} {
         month "{n} manis" \
         year "{n} yia" \
     ]
-    set half "{n} en haf"
+    set half "{0} en haf"
     set delimiter {, }
     set just_now {nomoa nao}
     set ago "{0} bifoa"
@@ -52,6 +52,7 @@ proc locale_duration_pis {} {
             month "{n}mo" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
         ago "{0} bifoa" \
         in_future "long {0}" \

@@ -20,7 +20,7 @@ class BILocale {
       "year": "{n} yia",
     }
   }
-  static half { "{n} mo haf" }
+  static half { "{0} mo haf" }
   static delimiter { ", " }
   static justBorn { "Niufala bebe" }
   static stages {
@@ -51,6 +51,7 @@ class BILocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

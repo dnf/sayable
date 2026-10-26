@@ -17,10 +17,10 @@ proc plural_ee {n} {
 proc locale_ee {} {
     set code {ee}
     set units [dict create \
-        day [dict create one "ŋkeke {n}" other "ŋkekewo {n}"] \
-        week [dict create one "kɔsiɖa {n}" other "kɔsiɖawo {n}"] \
-        month [dict create one "ɣleti {n}" other "ɣletiwo {n}"] \
-        year [dict create one "ƒe {n}" other "ƒewo {n}"] \
+        day "ŋkeke {n}" \
+        week "kɔsiɖa {n}" \
+        month "ɣleti {n}" \
+        year "ƒe {n}" \
     ]
     set half "{0} kple afã"
     set delimiter {, }
@@ -30,15 +30,15 @@ proc locale_ee {} {
         infant {Ɖevi} \
         toddler {Ɖevi sue} \
         child {Ɖevi} \
-        teenager {Ŋutsuviwo} \
+        teenager [dict create m {Ɖekakpui} f {Ɖetugbi}] \
         adult {Ame tsitsi} \
     ]
     set short [dict create \
         units [dict create \
-            day "ŋkekewo {n}" \
-            week [dict create one "kɔsiɖa {n}" other "kɔsiɖawo {n}"] \
-            month [dict create one "ɣleti {n}" other "ɣletiwo {n}"] \
-            year [dict create one "ƒe {n}" other "ƒewo {n}"] \
+            day "ŋkeke {n}" \
+            week "kɔsiɖa {n}" \
+            month "ɣleti {n}" \
+            year "ƒe {n}" \
         ] \
     ]
     set compact [dict create \

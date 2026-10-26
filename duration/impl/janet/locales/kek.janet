@@ -25,5 +25,5 @@
    :ago "{0} qakab'"
    :in-future "chi {0}"
    :short {:units {:second "{n} seg." :minute "{n} min." :hour "{n} hora" :day "{n} q'e" :week "{n} sem." :month "{n} po" :year "{n} chih."} :ago "{0} qakab'" :in-future "chi {0}"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :delimiter "" :ago "{0} qakab'" :in-future "chi {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} qakab'" :in-future "chi {0}"}
 })

@@ -27,10 +27,10 @@ const SduDurationLocale sdu_locale_cy = {
         { NULL, { "{n} eiliad", "{n} eiliad", "{n} eiliad", "{n} eiliad", "{n} eiliad", "{n} eiliad" } },
         { NULL, { "{n} munud", "{n} munud", "{n} funud", "{n} munud", "{n} munud", "{n} munud" } },
         { NULL, { "{n} awr", "{n} awr", "{n} awr", "{n} awr", "{n} awr", "{n} awr" } },
-        { NULL, { "{n} diwrnod", "{n} diwrnod", "{n} ddiwrnod", "{n} diwrnod", "{n} niwrnod", "{n} diwrnod" } },
+        { NULL, { "{n} diwrnod", "{n} diwrnod", "{n} ddiwrnod", "{n} diwrnod", "{n} diwrnod", "{n} diwrnod" } },
         { NULL, { "{n} wythnos", "{n} wythnos", "{n} wythnos", "{n} wythnos", "{n} wythnos", "{n} wythnos" } },
         { NULL, { "{n} mis", "{n} mis", "{n} fis", "{n} mis", "{n} mis", "{n} mis" } },
-        { NULL, { "{n} blwyddyn", "{n} blwyddyn", "{n} flynedd", "{n} blynedd", "{n} blynedd", "{n} blynedd" } }
+        { NULL, { "{n} blwyddyn", "{n} flwyddyn", "{n} flynedd", "{n} blynedd", "{n} blynedd", "{n} blynedd" } }
     },
     "{0} a hanner", ", ",
     "nawr",

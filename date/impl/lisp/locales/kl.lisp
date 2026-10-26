@@ -21,7 +21,7 @@
    :day-format "{n}."
    :day-format-exceptions nil
    :date-pattern "{month} {day}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern-with-year "{month} {day} {year}"
    :today "ullumi"
    :tomorrow "aqagu"
    :yesterday "ippassaq"
@@ -34,7 +34,7 @@
    :short-weekdays (list "sap" "ata" "mar" "pin" "sis" "tal" "arf")
    :short-day-format "{n}."
    :short-date-pattern "{month} {day}"
-   :short-date-pattern-with-year "{day} {month} {year}"
+   :short-date-pattern-with-year "{month} {day} {year}"
    :compact-date-pattern "{m}-{d}"
    :compact-date-pattern-with-year "{year}-{m}-{d}"
 ))

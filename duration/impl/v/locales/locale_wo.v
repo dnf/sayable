@@ -19,54 +19,54 @@ fn plural_wo(n int) PluralCategory {
 pub const locale_wo = DurationLocale{
 	code: 'wo'
 	plural: plural_wo
-	second: simple_unit('saa-yépp {n}')
-	minute: simple_unit('simili {n}')
-	hour: simple_unit('waxtu {n}')
-	day: simple_unit('bés {n}')
-	week: simple_unit('ayubés {n}')
-	month: simple_unit('weer {n}')
-	year: simple_unit('at {n}')
+	second: simple_unit('{n} saa')
+	minute: simple_unit('{n} simili')
+	hour: simple_unit('{n} waxtu')
+	day: simple_unit('{n} fan')
+	week: simple_unit('{n} ayubés')
+	month: simple_unit('{n} weer')
+	year: simple_unit('{n} at')
 	half: '{0} ak genn-wàll'
 	delimiter: ', '
 	just_now: 'léegi'
 	ago: '{0} ci ginaaw'
-	in_future: 'ci {0}'
+	in_future: 'fileek {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('saa-y. {n}')
+		second: simple_unit('{n} saa')
 		has_second: true
-		minute: simple_unit('sim. {n}')
+		minute: simple_unit('{n} sim.')
 		has_minute: true
-		hour: simple_unit('wax. {n}')
+		hour: simple_unit('{n} wax.')
 		has_hour: true
-		day: simple_unit('bés {n}')
+		day: simple_unit('{n} fan')
 		has_day: true
-		week: simple_unit('ayub. {n}')
+		week: simple_unit('{n} ayub.')
 		has_week: true
-		month: simple_unit('weer {n}')
+		month: simple_unit('{n} weer')
 		has_month: true
-		year: simple_unit('at {n}')
+		year: simple_unit('{n} at')
 		has_year: true
 		ago: '{0} ci ginaaw'
 		has_ago: true
-		in_future: 'ci {0}'
+		in_future: 'fileek {0}'
 		has_in_future: true
 	}
 	has_compact: true
 	compact_override: DurationCompactnessOverride{
-		second: simple_unit('saa {n}')
+		second: simple_unit('{n} saa')
 		has_second: true
-		minute: simple_unit('sim {n}')
+		minute: simple_unit('{n} sim')
 		has_minute: true
-		hour: simple_unit('wax {n}')
+		hour: simple_unit('{n} wax')
 		has_hour: true
-		day: simple_unit('bés {n}')
+		day: simple_unit('{n} fan')
 		has_day: true
-		week: simple_unit('ayub {n}')
+		week: simple_unit('{n} ayub')
 		has_week: true
-		month: simple_unit('weer {n}')
+		month: simple_unit('{n} weer')
 		has_month: true
-		year: simple_unit('at {n}')
+		year: simple_unit('{n} at')
 		has_year: true
 		half: '{n}½'
 		has_half: true
@@ -74,7 +74,7 @@ pub const locale_wo = DurationLocale{
 		has_delimiter: true
 		ago: '{0} ci gin.'
 		has_ago: true
-		in_future: 'ci {0}'
+		in_future: 'fileek {0}'
 		has_in_future: true
 	}
 }

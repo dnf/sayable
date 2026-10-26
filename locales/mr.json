@@ -131,7 +131,10 @@
   "duration": {
     "units": {
       "second": "{n} सेकंद",
-      "minute": "{n} मिनिट",
+      "minute": {
+        "one": "{n} मिनिट",
+        "other": "{n} मिनिटे"
+      },
       "hour": "{n} तास",
       "day": {
         "one": "{n} दिवस",
@@ -225,18 +228,18 @@
       "midnight": "मध्यरात्र",
       "noon": "दुपार",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} वाजता",
+        "5": "{h} वाजून पाच मिनिटे",
+        "10": "{h} वाजून दहा मिनिटे",
+        "15": "सव्वा {h}",
+        "20": "{h} वाजून वीस मिनिटे",
+        "25": "{h} वाजून पंचवीस मिनिटे",
+        "30": "{h} वाजून तीस मिनिटे",
+        "35": "{next_h} वाजायला पंचवीस मिनिटे",
+        "40": "{next_h} वाजायला वीस मिनिटे",
+        "45": "पावणे {next_h}",
+        "50": "{next_h} वाजायला दहा मिनिटे",
+        "55": "{next_h} वाजायला पाच मिनिटे"
       }
     },
     "short": {
@@ -259,5 +262,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "'तीन वाजता', 'तीन वाजून दहा मिनिटे', 'सव्वा तीन', 'पावणे चार', 'चार वाजायला दहा मिनिटे'. Compromise: :30 uses the formal additive 'तीन वाजून तीस मिनिटे' instead of 'साडे तीन', because 'साडे एक' and 'साडे दोन' are plain errors (must be 'दीड' / 'अडीच') and the schema has no per-hour override; a formal-but-correct form everywhere was preferred over an idiomatic form that is wrong for 1:30 and 2:30. Switch :30 to 'साडे {h}' once 1:30/2:30 overrides exist."
+    }
+  ]
 }

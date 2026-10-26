@@ -12,7 +12,7 @@
 proc locale_date_sq {} {
     set code {sq}
     set months [list {janar} {shkurt} {mars} {prill} {maj} {qershor} {korrik} {gusht} {shtator} {tetor} {nëntor} {dhjetor}]
-    set weekdays [list {e diel} {e hënë} {e martë} {e mërkurë} {e enjte} {e premte} {e shtunë}]
+    set weekdays [list {të dielën} {të hënën} {të martën} {të mërkurën} {të enjten} {të premten} {të shtunën}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
@@ -22,8 +22,8 @@ proc locale_date_sq {} {
     set yesterday {dje}
     set day_after_tomorrow {pasnesër}
     set day_before_yesterday {pardje}
-    set this_weekday "këtë {weekday}"
-    set next_weekday "{weekday} tjetër"
+    set this_weekday "{weekday}"
+    set next_weekday "{weekday} e ardhshme"
     set last_weekday "{weekday} e kaluar"
     set months_in_date ""
     set short [dict create \

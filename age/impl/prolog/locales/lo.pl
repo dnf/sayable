@@ -19,7 +19,7 @@ sa_unit('lo', month, _, '{n} ເດືອນ').
 sa_unit('lo', year, _, '{n} ປີ').
 
 sa_half('lo', '{0}ເຄິ່ງ').
-sa_delimiter('lo', '').
+sa_delimiter('lo', ' ').
 sa_just_born('lo', 'ເກີດໃໝ່').
 
 sa_stage('lo', newborn, _, 'ເດັກເກີດໃໝ່').
@@ -38,3 +38,4 @@ compact_sa_unit('lo', day, _, '{n}d').
 compact_sa_unit('lo', week, _, '{n}w').
 compact_sa_unit('lo', month, _, '{n}m').
 compact_sa_unit('lo', year, _, '{n}y').
+compact_sa_half('lo', '{n}½').

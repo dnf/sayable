@@ -20,10 +20,10 @@ locale : Locale
 locale =
     { code = "ig"
     , plural = \n -> Other
-    , day = Simple "{n} ụbọchị"
-    , week = Simple "{n} izu"
-    , month = Simple "{n} ọnwa"
-    , year = Simple "{n} afọ"
+    , day = Simple "ụbọchị {n}"
+    , week = Simple "izu {n}"
+    , month = Simple "ọnwa {n}"
+    , year = Simple "afọ {n}"
     , half = "{0} na ọkara"
     , delimiter = ", "
     , justBorn = "Nwa ọhụrụ"
@@ -32,15 +32,15 @@ locale =
         , infant = Neutral "Nwa ọhụrụ"
         , toddler = Neutral "Nwa nta"
         , child = Neutral "Nwa"
-        , teenager = Neutral "Nwokorobịa"
+        , teenager = Gendered "Nwokorobịa" "Agbọghọbịa"
         , adult = Neutral "Okenye"
         }
     , short =
         Just
-            { ovrDay = Just (Simple "{n} ụbọchị")
-            , ovrWeek = Just (Simple "{n} izu")
-            , ovrMonth = Just (Simple "{n} ọnwa")
-            , ovrYear = Just (Simple "{n} afọ")
+            { ovrDay = Just (Simple "ụbọchị {n}")
+            , ovrWeek = Just (Simple "izu {n}")
+            , ovrMonth = Just (Simple "ọnwa {n}")
+            , ovrYear = Just (Simple "afọ {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -19,7 +19,7 @@ locale_shi <- list(
   code = "shi",
   plural = plural,
   units = list(
-    second = list(one = "{n} tasint", few = "{n} tasinin", other = "{n} tasinin"),
+    second = list(one = "{n} tasint", few = "{n} tisinin", other = "{n} tisinin"),
     minute = list(one = "{n} tusdiqt", few = "{n} tusdiqin", other = "{n} tusdiqin"),
     hour = list(one = "{n} tasragt", few = "{n} tisragin", other = "{n} tisragin"),
     day = list(one = "{n} ass", few = "{n} ussan", other = "{n} ass"),
@@ -34,13 +34,13 @@ locale_shi <- list(
   in_future = "ɣ {0}",
   short = list(
     units = list(
-      second = "{n}s",
-      minute = "{n}m",
-      hour = "{n}h",
-      day = "{n}d",
-      week = "{n}w",
-      month = "{n}mo",
-      year = "{n}y"
+      second = list(one = "{n} tasint", few = "{n} tasinin", other = "{n} tasinin"),
+      minute = list(one = "{n} tusdiqt", few = "{n} tusdiqin", other = "{n} tusdiqin"),
+      hour = list(one = "{n} tasragt", few = "{n} tisragin", other = "{n} tisragin"),
+      day = list(one = "{n} ass", few = "{n} ussan", other = "{n} ass"),
+      week = list(one = "{n} imalass", few = "{n} imalassn", other = "{n} imalass"),
+      month = list(one = "{n} ayyur", few = "{n} ayyurn", other = "{n} ayyur"),
+      year = list(one = "{n} aseggas", few = "{n} iseggasen", other = "{n} aseggas")
     ),
     ago = "ɣ {0} zzrin",
     in_future = "ɣ {0}"

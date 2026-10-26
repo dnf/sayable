@@ -47,6 +47,7 @@ proc locale_quc {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

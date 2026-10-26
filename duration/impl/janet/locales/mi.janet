@@ -15,15 +15,15 @@
    :units {:second "{n} hēkona"
           :minute "{n} meneti"
           :hour "{n} hāora"
-          :day "rā {n}"
-          :week "wiki {n}"
-          :month "marama {n}"
-          :year "tau {n}"}
-   :half "{0}½"
+          :day "{n} rā"
+          :week "{n} wiki"
+          :month "{n} marama"
+          :year "{n} tau"}
+   :half "{n}½"
    :delimiter ", "
    :just-now "ināianei"
    :ago "{0} i mua"
    :in-future "ā te {0}"
-   :short {:units {:second "{n} hēk" :minute "{n} men" :hour "{n} hāo" :day "rā {n}" :week "w {n}" :month "m {n}" :year "t {n}"} :ago "{0} i mua" :in-future "ā te {0}"}
+   :short {:units {:second "{n} hēk" :minute "{n} men" :hour "{n} hāo" :day "{n} rā" :week "{n} w" :month "{n} m" :year "{n} t"} :ago "{0} i mua" :in-future "ā te {0}"}
    :compact {:units {:second "{n}hēk" :minute "{n}men" :hour "{n}hāo" :day "{n}r" :week "{n}w" :month "{n}m" :year "{n}t"} :half "{n}½" :delimiter "" :ago "{0} i mua" :in-future "ā te {0}"}
 })

@@ -28,7 +28,7 @@ proc locale_gl {} {
     set stages [dict create \
         newborn [dict create m {Recén nacido} f {Recén nacida}] \
         infant {Bebé} \
-        toddler {Neno} \
+        toddler [dict create m {Neno pequeno} f {Nena pequena}] \
         child [dict create m {Neno} f {Nena}] \
         teenager {Adolescente} \
         adult [dict create m {Adulto} f {Adulta}] \

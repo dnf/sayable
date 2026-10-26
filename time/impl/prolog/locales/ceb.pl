@@ -11,22 +11,22 @@
 
 % Cebuano locale.
 
-st_hours('ceb', ['dose', 'uno', 'dos', 'tres', 'kwatro', 'singko', 'sais', 'siyete', 'otso', 'nuwebe', 'diyes', 'onse']).
+st_hours('ceb', ['alas dose', 'ala una', 'alas dos', 'alas tres', 'alas kwatro', 'alas singko', 'alas sais', 'alas siyete', 'alas otso', 'alas nuwebe', 'alas diyes', 'alas onse']).
 st_midnight('ceb', 'tungang gabii').
 st_noon('ceb', 'udtong tutok').
 
-st_pattern('ceb', 0, '{h}:00').
-st_pattern('ceb', 5, '{h}:05').
-st_pattern('ceb', 10, '{h}:10').
-st_pattern('ceb', 15, '{h}:15').
-st_pattern('ceb', 20, '{h}:20').
-st_pattern('ceb', 25, '{h}:25').
-st_pattern('ceb', 30, '{h}:30').
-st_pattern('ceb', 35, '{h}:35').
-st_pattern('ceb', 40, '{h}:40').
-st_pattern('ceb', 45, '{h}:45').
-st_pattern('ceb', 50, '{h}:50').
-st_pattern('ceb', 55, '{h}:55').
+st_pattern('ceb', 0, '{h}').
+st_pattern('ceb', 5, '{h} y singko').
+st_pattern('ceb', 10, '{h} y diyes').
+st_pattern('ceb', 15, '{h} y kinse').
+st_pattern('ceb', 20, '{h} y beynte').
+st_pattern('ceb', 25, '{h} y beynte singko').
+st_pattern('ceb', 30, '{h} y medya').
+st_pattern('ceb', 35, 'menos beynte singko para {next_h}').
+st_pattern('ceb', 40, 'menos beynte para {next_h}').
+st_pattern('ceb', 45, 'menos kinse para {next_h}').
+st_pattern('ceb', 50, 'menos diyes para {next_h}').
+st_pattern('ceb', 55, 'menos singko para {next_h}').
 
 short_st_use24h('ceb', false).
 short_st_format('ceb', '{h}:{mm} {ampm}').

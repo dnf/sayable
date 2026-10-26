@@ -24,13 +24,13 @@ const SduDurationLocale sdu_locale_mam = {
         { "{n} minuto", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} hora", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} q'ij", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} seman", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ab'q'ii", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} nik'", ", ",
     "iky'x",
     "{0} chi'j", "tu'n {0}",
-    true, { true, { "{n} seg.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hora", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} q'ij", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ab'.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} chi'j", true, "tu'n {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} chi'j", true, "tu'n {0}" }
+    true, { true, { "{n} seg.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hora", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} q'ij", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} seman", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} xjaw", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ab'.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} chi'j", true, "tu'n {0}" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} chi'j", true, "tu'n {0}" }
 };

@@ -32,10 +32,10 @@ locale =
             , ( "year", Simple "{n} ປີ" )
             ]
     , half = "{0}ເຄິ່ງ"
-    , delimiter = ""
+    , delimiter = " "
     , justNow = "ຫາກໍ"
     , ago = "{0} ກ່ອນ"
-    , inFuture = "ໃນ {0}"
+    , inFuture = "ໃນອີກ {0}"
     , short =
         Just
             { ovrUnits =
@@ -53,7 +53,7 @@ locale =
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} ກ່ອນ"
-            , ovrInFuture = Just "ໃນ {0}"
+            , ovrInFuture = Just "ໃນອີກ {0}"
             }
     , compact =
         Just
@@ -65,13 +65,13 @@ locale =
                         , ( "hour", Simple "{n}h" )
                         , ( "day", Simple "{n}d" )
                         , ( "week", Simple "{n}w" )
-                        , ( "month", Simple "{n}m" )
+                        , ( "month", Simple "{n}mo" )
                         , ( "year", Simple "{n}y" )
                         ]
                     )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} ກ່ອນ"
-            , ovrInFuture = Just "ໃນ {0}"
+            , ovrInFuture = Just "ໃນອີກ {0}"
             }
     }

@@ -28,12 +28,12 @@ const AK = AgeLocale(
         "infant" => StageLabel("Akwadaa"),
         "toddler" => StageLabel("Abofra"),
         "child" => StageLabel("Abofra"),
-        "teenager" => StageLabel("Abarimaa"),
+        "teenager" => GenderedStage("Abarimaa", "Abaayewa"),
         "adult" => StageLabel("Ɔpanyin"),
     ),
     short_override = CompactnessOverride(
         units = Dict(
-            "day" => "nna {n}",
+            "day" => Dict("one" => "da {n}", "other" => "nna {n}"),
             "week" => Dict("one" => "dapɛn {n}", "other" => "nnapɛn {n}"),
             "month" => Dict("one" => "bosome {n}", "other" => "abosome {n}"),
             "year" => Dict("one" => "afe {n}", "other" => "mfe {n}"),
@@ -41,7 +41,7 @@ const AK = AgeLocale(
     ),
     compact_override = CompactnessOverride(
         units = Dict(
-            "day" => "nna {n}",
+            "day" => Dict("one" => "da {n}", "other" => "nna {n}"),
             "week" => Dict("one" => "dapɛn {n}", "other" => "nnapɛn {n}"),
             "month" => Dict("one" => "bos {n}", "other" => "abos {n}"),
             "year" => Dict("one" => "afe {n}", "other" => "mfe {n}"),

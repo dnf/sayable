@@ -18,17 +18,17 @@ locale = Locale
     { localeCode = "he"
     , localePlural = \n -> if n == 1 then One else if n == 2 then Two else Other
     , localeDay = Pluralized
-      [ (One, "יום {n}")
+      [ (One, "יום")
       , (Two, "יומיים")
       , (Other, "{n} ימים")
       ]
     , localeWeek = Pluralized
-      [ (One, "שבוע {n}")
+      [ (One, "שבוע")
       , (Two, "שבועיים")
       , (Other, "{n} שבועות")
       ]
     , localeMonth = Pluralized
-      [ (One, "חודש {n}")
+      [ (One, "חודש")
       , (Two, "חודשיים")
       , (Other, "{n} חודשים")
       ]
@@ -42,8 +42,8 @@ locale = Locale
     , localeJustBorn = "רק נולד"
     , localeStages = Stages
         { stageNewborn = Gendered "רק נולד" "רק נולדה"
-        , stageInfant = Neutral "תינוק"
-        , stageToddler = Neutral "פעוט"
+        , stageInfant = Gendered "תינוק" "תינוקת"
+        , stageToddler = Gendered "פעוט" "פעוטה"
         , stageChild = Gendered "ילד" "ילדה"
         , stageTeenager = Gendered "נער" "נערה"
         , stageAdult = Gendered "מבוגר" "מבוגרת"

@@ -30,9 +30,9 @@
   (make-duration-locale
    :code "ar"
    :plural #'plural-ar
-   :units (list (cons :second '((:zero . "{n} ثانية") (:one . "ثانية واحدة") (:two . "ثانيتان") (:few . "{n} ثوانٍ") (:many . "{n} ثانية") (:other . "{n} ثانية")))
-               (cons :minute '((:zero . "{n} دقيقة") (:one . "دقيقة واحدة") (:two . "دقيقتان") (:few . "{n} دقائق") (:many . "{n} دقيقة") (:other . "{n} دقيقة")))
-               (cons :hour '((:zero . "{n} ساعة") (:one . "ساعة واحدة") (:two . "ساعتان") (:few . "{n} ساعات") (:many . "{n} ساعة") (:other . "{n} ساعة")))
+   :units (list (cons :second '((:zero . "{n} ثانية") (:one . "ثانية") (:two . "ثانيتان") (:few . "{n} ثوانٍ") (:many . "{n} ثانية") (:other . "{n} ثانية")))
+               (cons :minute '((:zero . "{n} دقيقة") (:one . "دقيقة") (:two . "دقيقتان") (:few . "{n} دقائق") (:many . "{n} دقيقة") (:other . "{n} دقيقة")))
+               (cons :hour '((:zero . "{n} ساعة") (:one . "ساعة") (:two . "ساعتان") (:few . "{n} ساعات") (:many . "{n} ساعة") (:other . "{n} ساعة")))
                (cons :day '((:zero . "{n} يوم") (:one . "يوم") (:two . "يومان") (:few . "{n} أيام") (:many . "{n} يومًا") (:other . "{n} يوم")))
                (cons :week '((:zero . "{n} أسبوع") (:one . "أسبوع") (:two . "أسبوعان") (:few . "{n} أسابيع") (:many . "{n} أسبوعًا") (:other . "{n} أسبوع")))
                (cons :month '((:zero . "{n} شهر") (:one . "شهر") (:two . "شهران") (:few . "{n} أشهر") (:many . "{n} شهرًا") (:other . "{n} شهر")))
@@ -56,7 +56,7 @@
                        (cons :hour "{n} س")
                        (cons :day "{n} ي")
                        (cons :week "{n} أ")
-                       (cons :month '((:zero . "{n} شهر") (:one . "شهر") (:two . "شهران") (:few . "{n} أشهر") (:many . "{n} شهرًا") (:other . "{n} شهر")))
+                       (cons :month "{n} شهر")
                        (cons :year "{n} سنة"))
    :compact-half "{n}½"
    :compact-delimiter ""

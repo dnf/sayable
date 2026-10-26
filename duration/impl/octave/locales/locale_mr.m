@@ -13,7 +13,7 @@ function loc = locale_mr()
   loc.code = 'mr';
   loc.plural = @(n) ifelse(n == 1, "one", "other");
   loc.units.second = '{n} सेकंद';
-  loc.units.minute = '{n} मिनिट';
+  loc.units.minute = struct("one", '{n} मिनिट', "other", '{n} मिनिटे');
   loc.units.hour = '{n} तास';
   loc.units.day = struct("one", '{n} दिवस', "other", '{n} दिवस');
   loc.units.week = struct("one", '{n} आठवडा', "other", '{n} आठवडे');

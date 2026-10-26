@@ -30,8 +30,8 @@ module SayableDuration
       },
       units: {
         "second" => UnitForms.new(one: "{n} sekonda", two: "{n} sekondi", few: "{n} sekondi", many: "{n}-il sekonda", other: "{n} sekonda"),
-        "minute" => UnitForms.new(one: "{n} minuta", two: "{n} minuti", few: "{n} minuti", many: "{n}-il minuta", other: "{n} minuta"),
-        "hour" => UnitForms.new(one: "{n} siegħa", two: "{n} sigħat", few: "{n} sigħat", many: "{n}-il siegħa", other: "{n} siegħa"),
+        "minute" => UnitForms.new(one: "{n} minuta", two: "minutejn", few: "{n} minuti", many: "{n}-il minuta", other: "{n} minuta"),
+        "hour" => UnitForms.new(one: "{n} siegħa", two: "sagħtejn", few: "{n} sigħat", many: "{n}-il siegħa", other: "{n} siegħa"),
         "day" => UnitForms.new(one: "ġurnata", two: "jumejn", few: "{n} ijiem", many: "{n}-il jum", other: "{n} jum"),
         "week" => UnitForms.new(one: "ġimgħa", two: "ġimgħatejn", few: "{n} ġimgħat", many: "{n}-il ġimgħa", other: "{n} ġimgħa"),
         "month" => UnitForms.new(one: "xahar", two: "xahrejn", few: "{n} xhur", many: "{n}-il xahar", other: "{n} xahar"),

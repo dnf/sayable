@@ -26,7 +26,7 @@ locale = DurationLocale
         , unitMonth = Simple "{n} mun"
         , unitYear = Simple "{n} yia"
         }
-    , localeHalf = "{n} na hap"
+    , localeHalf = "{0} na hap"
     , localeDelimiter = ", "
     , localeJustNow = "nau tasol"
     , localeAgo = "{0} i go pinis"
@@ -54,7 +54,7 @@ locale = DurationLocale
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}mo")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} i go pinis"
             , ovrInFuture = Just "long {0}"

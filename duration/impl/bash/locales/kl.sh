@@ -10,17 +10,26 @@
 # Source: locales/kl.json
 
 _sayableduration_plural_kl() {
+    local n=$1
+    if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
 _sayableduration_locale_kl() {
-    _unit_second='sekundit {n}'
-    _unit_minute='minutsit {n}'
-    _unit_hour='nalunaaqutap akunnera {n}'
-    _unit_day='ullut {n}'
-    _unit_week='sapaatit {n}'
-    _unit_month='qaammatit {n}'
-    _unit_year='ukiut {n}'
+    _unit_second_one='sekundi {n}'
+    _unit_second_other='sekundit {n}'
+    _unit_minute_one='minutsi {n}'
+    _unit_minute_other='minutsit {n}'
+    _unit_hour_one='nalunaaquttap akunnera {n}'
+    _unit_hour_other='nalunaaquttap akunneri {n}'
+    _unit_day_one='ulloq {n}'
+    _unit_day_other='ullut {n}'
+    _unit_week_one='sapaatip akunnera {n}'
+    _unit_week_other='sapaatip akunneri {n}'
+    _unit_month_one='qaammat {n}'
+    _unit_month_other='qaammatit {n}'
+    _unit_year_one='ukioq {n}'
+    _unit_year_other='ukiut {n}'
     _half='{0} affaa'
     _delimiter=', '
     _just_now='maanna'
@@ -30,7 +39,7 @@ _sayableduration_locale_kl() {
     _short_unit_minute='min. {n}'
     _short_unit_hour='nal. {n}'
     _short_unit_day='ull. {n}'
-    _short_unit_week='sap. {n}'
+    _short_unit_week='sap. ak. {n}'
     _short_unit_month='qaam. {n}'
     _short_unit_year='uk. {n}'
     _short_ago='{0} matuma siorna'
@@ -42,6 +51,7 @@ _sayableduration_locale_kl() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}mo'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _compact_ago='{0} matuma siorna'
     _compact_in_future='{0} siunissami'

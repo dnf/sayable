@@ -48,9 +48,9 @@ locale = DateLocale
     , localeYesterday = "dzulo"
     , localeDayAfterTomorrow = Just "mkucha"
     , localeDayBeforeYesterday = Just "dzana"
-    , localeThisWeekday = Just "{weekday} ino"
-    , localeNextWeekday = Just "{weekday} yotsatira"
-    , localeLastWeekday = Just "{weekday} yatha"
+    , localeThisWeekday = Just "{weekday} lino"
+    , localeNextWeekday = Just "{weekday} lotsatira"
+    , localeLastWeekday = Just "{weekday} latha"
     , localeMonthsInDate = Nothing
     , localeShort = Just $
         CompactnessOverride

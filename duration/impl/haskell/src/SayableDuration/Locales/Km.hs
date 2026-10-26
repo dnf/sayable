@@ -30,7 +30,7 @@ locale = DurationLocale
     , localeDelimiter = ", "
     , localeJustNow = "ឥឡូវនេះ"
     , localeAgo = "{0}មុន"
-    , localeInFuture = "ក្នុង{0}"
+    , localeInFuture = "{0}ទៀត"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Simple "{n} វិនាទី")
@@ -43,7 +43,7 @@ locale = DurationLocale
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0}មុន"
-            , ovrInFuture = Just "ក្នុង{0}"
+            , ovrInFuture = Just "{0}ទៀត"
             }
     , localeCompact = Just $
         CompactnessOverride
@@ -57,6 +57,6 @@ locale = DurationLocale
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0}មុន"
-            , ovrInFuture = Just "ក្នុង{0}"
+            , ovrInFuture = Just "{0}ទៀត"
             }
     }

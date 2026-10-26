@@ -25,7 +25,7 @@ const SaLocale sa_locale_si = {
         { NULL, { NULL, "මාස {n}", NULL, NULL, NULL, "මාස {n}" } },
         { NULL, { NULL, "වසර {n}", NULL, NULL, NULL, "වසර {n}" } }
     },
-    "{0}යි භාගයයි", ", ", "අලුත උපන්",
+    "{n}½", ", ", "අලුත උපන්",
     {
         { "අලුත උපන්", "" },
         { "බිළිඳා", "" },

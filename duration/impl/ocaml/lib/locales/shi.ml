@@ -16,8 +16,8 @@ let locale : duration_locale =
   ; plural = (fun n -> if n = 0 || n = 1 then One else if n >= 2 && n <= 10 then Few else Other)
   ; second = Pluralized
       [ (One, "{n} tasint")
-      ; (Few, "{n} tasinin")
-      ; (Other, "{n} tasinin")
+      ; (Few, "{n} tisinin")
+      ; (Other, "{n} tisinin")
       ]
   ; minute = Pluralized
       [ (One, "{n} tusdiqt")
@@ -55,13 +55,41 @@ let locale : duration_locale =
   ; ago = "ɣ {0} zzrin"
   ; in_future = "ɣ {0}"
   ; short = Some
-      { ovr_second = Some (Simple "{n}s")
-      ; ovr_minute = Some (Simple "{n}m")
-      ; ovr_hour = Some (Simple "{n}h")
-      ; ovr_day = Some (Simple "{n}d")
-      ; ovr_week = Some (Simple "{n}w")
-      ; ovr_month = Some (Simple "{n}mo")
-      ; ovr_year = Some (Simple "{n}y")
+      { ovr_second = Some (Pluralized
+        [ (One, "{n} tasint")
+        ; (Few, "{n} tasinin")
+        ; (Other, "{n} tasinin")
+        ])
+      ; ovr_minute = Some (Pluralized
+        [ (One, "{n} tusdiqt")
+        ; (Few, "{n} tusdiqin")
+        ; (Other, "{n} tusdiqin")
+        ])
+      ; ovr_hour = Some (Pluralized
+        [ (One, "{n} tasragt")
+        ; (Few, "{n} tisragin")
+        ; (Other, "{n} tisragin")
+        ])
+      ; ovr_day = Some (Pluralized
+        [ (One, "{n} ass")
+        ; (Few, "{n} ussan")
+        ; (Other, "{n} ass")
+        ])
+      ; ovr_week = Some (Pluralized
+        [ (One, "{n} imalass")
+        ; (Few, "{n} imalassn")
+        ; (Other, "{n} imalass")
+        ])
+      ; ovr_month = Some (Pluralized
+        [ (One, "{n} ayyur")
+        ; (Few, "{n} ayyurn")
+        ; (Other, "{n} ayyur")
+        ])
+      ; ovr_year = Some (Pluralized
+        [ (One, "{n} aseggas")
+        ; (Few, "{n} iseggasen")
+        ; (Other, "{n} aseggas")
+        ])
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "ɣ {0} zzrin"

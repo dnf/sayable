@@ -17,10 +17,10 @@
   (make-time-locale
    :code "nus"
    :clock (make-clock-config
-    :hours (list "thiäär ke rou" "tök" "rou" "diäk" "ŋuan" "dhiëc" "bäkɛl" "dhorou" "bät" "kuɔn" "thiäär" "thiäär ku tök")
+    :hours (list "wäl wi̱ rɛw" "kɛl" "rɛw" "diɔk" "ŋuaan" "dhieec" "bäkɛl" "bäärɔw" "bädäk" "bäŋuan" "wäl" "wäl wi̱ kɛl")
     :midnight "wakɔ̈u"
     :noon "cäŋ kɔ̈k"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "thaar {h}") (cons 5 "thaar {h} kɛnɛ minit dhieec") (cons 10 "thaar {h} kɛnɛ minit wäl") (cons 15 "thaar {h} kɛnɛ minit wäl wi̱ dhieec") (cons 20 "thaar {h} kɛnɛ minit jiɛn rɛw") (cons 25 "thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec") (cons 30 "thaar {h} kɛnɛ minit jiɛn diɔk") (cons 35 "thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec") (cons 40 "thaar {h} kɛnɛ minit jiɛn ŋuaan") (cons 45 "thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec") (cons 50 "thaar {h} kɛnɛ minit jiɛn dhieec") (cons 55 "thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

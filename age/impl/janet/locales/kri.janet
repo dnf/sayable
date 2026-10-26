@@ -16,7 +16,7 @@
           :week "{n} wik"
           :month "{n} mont"
           :year "{n} ia"}
-   :half "{n} na af"
+   :half "{0} ɛn af"
    :delimiter ", "
    :just-born "Nyubon bebi"
    :stages {:newborn "Nyubon bebi"
@@ -27,5 +27,5 @@
             :adult "Big posin"
 }
    :short {:units {:day "{n} de" :week "{n} wik" :month "{n} mont" :year "{n} ia"}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

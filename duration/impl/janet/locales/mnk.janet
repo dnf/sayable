@@ -23,7 +23,7 @@
    :delimiter ", "
    :just-now "sisan"
    :ago "{0} taata"
-   :in-future "ka {0}"
-   :short {:units {:second "sɛk. {n}" :minute "min. {n}" :hour "waati {n}" :day "tili {n}" :week "lɔkɔ {n}" :month "kalo {n}" :year "sanj. {n}"} :ago "{0} taata" :in-future "ka {0}"}
-   :compact {:units {:second "sɛk {n}" :minute "min {n}" :hour "waa {n}" :day "tili {n}" :week "lɔkɔ {n}" :month "kalo {n}" :year "sanj {n}"} :half "{n}½" :delimiter "" :ago "{0} taata" :in-future "ka {0}"}
+   :in-future "{0} kɔnɔ"
+   :short {:units {:second "sɛk. {n}" :minute "min. {n}" :hour "waati {n}" :day "tili {n}" :week "lɔkɔ {n}" :month "kalo {n}" :year "sanj. {n}"} :ago "{0} taata" :in-future "{0} kɔnɔ"}
+   :compact {:units {:second "sɛk {n}" :minute "min {n}" :hour "waa {n}" :day "tili {n}" :week "lɔkɔ {n}" :month "kalo {n}" :year "sanj {n}"} :half "{n}½" :delimiter "" :ago "{0} taata" :in-future "{0} kɔnɔ"}
 })

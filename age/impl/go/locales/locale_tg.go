@@ -25,7 +25,7 @@ var TG = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} моҳ"),
 		Year:  sa.SimpleUnit("{n} сол"),
 	},
-	Half:      "{0} ним",
+	Half:      "{0}у ним",
 	Delimiter: ", ",
 	JustBorn:  "Навзод",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

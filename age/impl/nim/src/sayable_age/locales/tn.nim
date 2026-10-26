@@ -30,7 +30,7 @@ let TN* = AgeLocale(
     "infant": stageNeutral("Lesea"),
     "toddler": stageNeutral("Ngwana yo monnye"),
     "child": stageNeutral("Ngwana"),
-    "teenager": stageNeutral("Lekgarebe"),
+    "teenager": stageNeutral("Mosha"),
     "adult": stageNeutral("Motho yo mogolo"),
   }.toOrderedTable,
   short: some(CompactnessOverride(

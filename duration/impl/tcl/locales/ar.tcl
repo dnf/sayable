@@ -22,9 +22,9 @@ proc plural_ar {n} {
 proc locale_duration_ar {} {
     set code {ar}
     set units [dict create \
-        second [dict create zero "{n} ثانية" one {ثانية واحدة} two {ثانيتان} few "{n} ثوانٍ" many "{n} ثانية" other "{n} ثانية"] \
-        minute [dict create zero "{n} دقيقة" one {دقيقة واحدة} two {دقيقتان} few "{n} دقائق" many "{n} دقيقة" other "{n} دقيقة"] \
-        hour [dict create zero "{n} ساعة" one {ساعة واحدة} two {ساعتان} few "{n} ساعات" many "{n} ساعة" other "{n} ساعة"] \
+        second [dict create zero "{n} ثانية" one {ثانية} two {ثانيتان} few "{n} ثوانٍ" many "{n} ثانية" other "{n} ثانية"] \
+        minute [dict create zero "{n} دقيقة" one {دقيقة} two {دقيقتان} few "{n} دقائق" many "{n} دقيقة" other "{n} دقيقة"] \
+        hour [dict create zero "{n} ساعة" one {ساعة} two {ساعتان} few "{n} ساعات" many "{n} ساعة" other "{n} ساعة"] \
         day [dict create zero "{n} يوم" one {يوم} two {يومان} few "{n} أيام" many "{n} يومًا" other "{n} يوم"] \
         week [dict create zero "{n} أسبوع" one {أسبوع} two {أسبوعان} few "{n} أسابيع" many "{n} أسبوعًا" other "{n} أسبوع"] \
         month [dict create zero "{n} شهر" one {شهر} two {شهران} few "{n} أشهر" many "{n} شهرًا" other "{n} شهر"] \
@@ -55,7 +55,7 @@ proc locale_duration_ar {} {
             hour "{n} س" \
             day "{n} ي" \
             week "{n} أ" \
-            month [dict create zero "{n} شهر" one {شهر} two {شهران} few "{n} أشهر" many "{n} شهرًا" other "{n} شهر"] \
+            month "{n} شهر" \
             year "{n} سنة" \
         ] \
         half "{n}½" \

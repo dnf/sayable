@@ -26,7 +26,7 @@ var KO = sd.DurationLocale{
 		Day:    sd.SimpleUnit("{n}일"),
 		Week:   sd.SimpleUnit("{n}주"),
 		Month:  sd.SimpleUnit("{n}개월"),
-		Year:   sd.SimpleUnit("{n}살"),
+		Year:   sd.SimpleUnit("{n}년"),
 	},
 	Half:      "{0} 반",
 	Delimiter: " ",

@@ -20,7 +20,7 @@ _sayableduration_locale_ko() {
     _unit_day='{n}일'
     _unit_week='{n}주'
     _unit_month='{n}개월'
-    _unit_year='{n}살'
+    _unit_year='{n}년'
     _half='{0} 반'
     _delimiter=' '
     _just_now='방금'

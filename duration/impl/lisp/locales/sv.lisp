@@ -27,7 +27,7 @@
    :half "{n}½"
    :delimiter ", "
    :just-now "just nu"
-   :ago "{0} sedan"
+   :ago "för {0} sedan"
    :in-future "om {0}"
    :short-units (list (cons :second "{n} s")
                        (cons :minute "{n} min")
@@ -36,7 +36,7 @@
                        (cons :week "{n} v")
                        (cons :month "{n} mån")
                        (cons :year "{n} år"))
-   :short-ago "{0} sedan"
+   :short-ago "för {0} sedan"
    :short-in-future "om {0}"
    :compact-units (list (cons :second "{n}s")
                        (cons :minute "{n}m")
@@ -46,6 +46,6 @@
                        (cons :month "{n}m")
                        (cons :year "{n}å"))
    :compact-delimiter ""
-   :compact-ago "{0} sedan"
+   :compact-ago "för {0} sedan"
    :compact-in-future "om {0}"
 ))

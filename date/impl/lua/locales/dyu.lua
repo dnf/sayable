@@ -12,7 +12,7 @@
 local M = {}
 
 M.code = "dyu"
-M.months = { "Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburdukalo", "Desanburukalo" }
+M.months = { "Zanwuyekalo", "Feburuyekalo", "Marisikalo", "Awirilikalo", "Mɛkalo", "Zuwɛnkalo", "Zuluyekalo", "Utikalo", "Sɛtanburukalo", "Ɔkutɔburukalo", "Nowanburukalo", "Desanburukalo" }
 M.weekdays = { "Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri" }
 M.day_format = "{n}"
 M.day_format_exceptions = {}

@@ -24,7 +24,7 @@
                (cons :week "བདུན་ཕྲག་ {n}")
                (cons :month "ཟླ་ {n}")
                (cons :year "ལོ་ {n}"))
-   :half "{0} ཕྱེད"
+   :half "{0} དང་ཕྱེད"
    :delimiter " "
    :just-now "ད་ལྟ"
    :ago "{0} ཧེ་མ"

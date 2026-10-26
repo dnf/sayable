@@ -22,7 +22,7 @@ defmodule SayableAge.Locales.ID do
         month: "{n} bulan",
         year: "{n} tahun"
       },
-      half: "{0} setengah",
+      half: "{n} setengah",
       delimiter: ", ",
       just_born: "Baru lahir",
       stages: %{

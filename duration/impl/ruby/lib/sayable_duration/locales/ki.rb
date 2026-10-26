@@ -24,11 +24,11 @@ module SayableDuration
         'month' => { one: 'mwerĩ {n}', other: 'mĩerĩ {n}' },
         'year' => { one: 'mwaka {n}', other: 'mĩaka {n}' },
       },
-      half: '{0} na nusu',
+      half: '{0} na nuthu',
       delimiter: ', ',
-      just_now: 'ũmũthĩ',
+      just_now: 'rĩu',
       ago: '{0} ĩhĩtũkĩte',
-      in_future: '{0} ĩyothe',
+      in_future: 'thutha wa {0}',
       short: CompactnessOverride.new(
         units: {
           'second' => 'sek. {n}',
@@ -40,7 +40,7 @@ module SayableDuration
           'year' => { one: 'mwaka {n}', other: 'mĩaka {n}' },
         },
         ago: '{0} ĩhĩtũkĩte',
-        in_future: '{0} ĩyothe',
+        in_future: 'thutha wa {0}',
       ),
       compact: CompactnessOverride.new(
         units: {
@@ -54,7 +54,7 @@ module SayableDuration
         },
         delimiter: '',
         ago: '{0} ĩhĩtũkĩte',
-        in_future: '{0} ĩyothe',
+        in_future: 'thutha wa {0}',
       ),
     )
   end

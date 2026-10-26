@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var HT = st.TimeLocale{
 	Code: "ht",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"douz", "en", "de", "twa", "kat", "senk", "sis", "sèt", "uit", "nèf", "dis", "onz"},
-		Midnight: "minui",
+		Hours:    [12]string{"douzè", "inè", "dezè", "twazè", "katrè", "senkè", "sizè", "setè", "uitè", "nevè", "dizè", "onzè"},
+		Midnight: "minwi",
 		Noon:     "midi",
-		Patterns: map[int]string{0: "{h} è", 5: "{h} è senk", 10: "{h} è dis", 15: "{h} è ka", 20: "{h} è ven", 25: "{h} è vennsenk", 30: "{h} è demi", 35: "{next_h} mwen vennsenk", 40: "{next_h} mwen ven", 45: "{next_h} mwen ka", 50: "{next_h} mwen dis", 55: "{next_h} mwen senk"},
+		Patterns: map[int]string{0: "{h}", 5: "{h} senk", 10: "{h} dis", 15: "{h} e ka", 20: "{h} ven", 25: "{h} vennsenk", 30: "{h} edmi", 35: "{next_h} mwen vennsenk", 40: "{next_h} mwen ven", 45: "{next_h} mwen ka", 50: "{next_h} mwen dis", 55: "{next_h} mwen senk"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

@@ -31,7 +31,7 @@ locale =
             , ( "month", Simple "{n} mont" )
             , ( "year", Simple "{n} ia" )
             ]
-    , half = "{n} na af"
+    , half = "{0} ɛn af"
     , delimiter = ", "
     , justNow = "jos naw"
     , ago = "{0} bak"
@@ -69,7 +69,7 @@ locale =
                         , ( "year", Simple "{n}y" )
                         ]
                     )
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} bak"
             , ovrInFuture = Just "na {0}"

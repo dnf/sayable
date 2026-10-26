@@ -26,7 +26,7 @@ pub const locale_ta = AgeLocale{
 	week: plural_unit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வாரங்கள்'})
 	month: plural_unit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாதங்கள்'})
 	year: plural_unit({PluralCategory.one: '{n} வயது', PluralCategory.other: '{n} வயது'})
-	half: '{0}ரை'
+	half: '{n}½'
 	delimiter: ', '
 	just_born: 'பிறந்த குழந்தை'
 	newborn: stage_neutral('பிறந்த குழந்தை')

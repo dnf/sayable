@@ -23,7 +23,7 @@ _sayableduration_locale_jv() {
     _unit_year='{n} taun'
     _half='{0} setengah'
     _delimiter=', '
-    _just_now='saiki'
+    _just_now='lagi waé'
     _ago='{0} kepungkur'
     _in_future='ing {0}'
     _short_unit_second='{n} dtk'

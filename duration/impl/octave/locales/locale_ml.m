@@ -11,7 +11,7 @@
 
 function loc = locale_ml()
   loc.code = 'ml';
-  loc.plural = @(n) ifelse(n == 0 || n == 1, "one", "other");
+  loc.plural = @(n) ifelse(n == 1, "one", "other");
   loc.units.second = struct("one", '{n} സെക്കൻഡ്', "other", '{n} സെക്കൻഡുകൾ');
   loc.units.minute = struct("one", '{n} മിനിറ്റ്', "other", '{n} മിനിറ്റുകൾ');
   loc.units.hour = struct("one", '{n} മണിക്കൂർ', "other", '{n} മണിക്കൂറുകൾ');
@@ -19,7 +19,7 @@ function loc = locale_ml()
   loc.units.week = struct("one", '{n} ആഴ്ച', "other", '{n} ആഴ്ചകൾ');
   loc.units.month = struct("one", '{n} മാസം', "other", '{n} മാസങ്ങൾ');
   loc.units.year = struct("one", '{n} വർഷം', "other", '{n} വർഷങ്ങൾ');
-  loc.half = '{0} ര';
+  loc.half = '{n}½';
   loc.delimiter = ', ';
   loc.just_now = 'ഇപ്പോൾ';
   loc.ago = '{0} മുമ്പ്';

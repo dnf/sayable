@@ -36,7 +36,7 @@ ff
 			'second'. 'majaango {n}'.
 			'minute'. 'hojomaaje {n}'.
 			'hour'. (Dictionary newFromPairs: { #one. 'waktu {n}'. #other. 'waktuuji {n}' }).
-			'day'. 'ñalɗe {n}'.
+			'day'. (Dictionary newFromPairs: { #one. 'ñalawma {n}'. #other. 'ñalɗe {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'yontere {n}'. #other. 'yontereeji {n}' }).
 			'month'. (Dictionary newFromPairs: { #one. 'lewru {n}'. #other. 'lebbi {n}' }).
 			'year'. (Dictionary newFromPairs: { #one. 'hitaande {n}'. #other. 'duuɓi {n}' }).
@@ -49,7 +49,7 @@ ff
 			'second'. 'maj {n}'.
 			'minute'. 'hoj {n}'.
 			'hour'. (Dictionary newFromPairs: { #one. 'wak {n}'. #other. 'wakji {n}' }).
-			'day'. 'ñalɗe {n}'.
+			'day'. (Dictionary newFromPairs: { #one. 'ñalawma {n}'. #other. 'ñalɗe {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'yont {n}'. #other. 'yontji {n}' }).
 			'month'. (Dictionary newFromPairs: { #one. 'lew {n}'. #other. 'leb {n}' }).
 			'year'. (Dictionary newFromPairs: { #one. 'hit {n}'. #other. 'duuɓi {n}' }).

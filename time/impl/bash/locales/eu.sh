@@ -10,21 +10,21 @@
 # Source: locales/eu.json
 
 _sayabletime_locale_eu() {
-    _clock_hours=('hamabi' 'bat' 'bi' 'hiru' 'lau' 'bost' 'sei' 'zazpi' 'zortzi' 'bederatzi' 'hamar' 'hamaika')
+    _clock_hours=('hamabiak' 'ordu bata' 'ordu biak' 'hirurak' 'laurak' 'bostak' 'seiak' 'zazpiak' 'zortziak' 'bederatziak' 'hamarrak' 'hamaikak')
     _clock_midnight='gauerdia'
     _clock_noon='eguerdia'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} eta bost'
+    _clock_pattern_10='{h} eta hamar'
+    _clock_pattern_15='{h} eta laurden'
+    _clock_pattern_20='{h} eta hogei'
+    _clock_pattern_25='{h} eta hogeita bost'
+    _clock_pattern_30='{h} eta erdiak'
+    _clock_pattern_35='{next_h} hogeita bost gutxi'
+    _clock_pattern_40='{next_h} hogei gutxi'
+    _clock_pattern_45='{next_h} laurden gutxi'
+    _clock_pattern_50='{next_h} hamar gutxi'
+    _clock_pattern_55='{next_h} bost gutxi'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

@@ -21,7 +21,7 @@ function locale_te {
         month = @{ one = '{n} నెల'; other = '{n} నెలలు' }
         year = @{ one = '{n} సంవత్సరం'; other = '{n} సంవత్సరాలు' }
     }
-    $half = '{0}న్నర'
+    $half = '{n}½'
     $delimiter = ', '
     $justBorn = 'నవజాత శిశువు'
     $stages = @{

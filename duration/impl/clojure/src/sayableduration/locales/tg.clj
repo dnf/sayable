@@ -21,7 +21,7 @@
    :week {:type :simple :form "{n} ҳафта"}
    :month {:type :simple :form "{n} моҳ"}
    :year {:type :simple :form "{n} сол"}
-   :half "{0} ним"
+   :half "{0}у ним"
    :delimiter ", "
    :just-now "ҳамин ҳоло"
    :ago "{0} пеш"

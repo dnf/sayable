@@ -12,9 +12,9 @@
 _sayabledate_locale_lt() {
     _months=('sausis' 'vasaris' 'kovas' 'balandis' 'gegužė' 'birželis' 'liepa' 'rugpjūtis' 'rugsėjis' 'spalis' 'lapkritis' 'gruodis')
     _weekdays=('sekmadienis' 'pirmadienis' 'antradienis' 'trečiadienis' 'ketvirtadienis' 'penktadienis' 'šeštadienis')
-    _day_format='{n}.'
-    _date_pattern='{day} {month}'
-    _date_pattern_with_year='{day} {month} {year}'
+    _day_format='{n} d.'
+    _date_pattern='{month} {day}'
+    _date_pattern_with_year='{year} m. {month} {day}'
     _today='šiandien'
     _tomorrow='rytoj'
     _yesterday='vakar'
@@ -26,9 +26,9 @@ _sayabledate_locale_lt() {
     _months_in_date=('sausio' 'vasario' 'kovo' 'balandžio' 'gegužės' 'birželio' 'liepos' 'rugpjūčio' 'rugsėjo' 'spalio' 'lapkričio' 'gruodžio')
     _short_months=('saus' 'vas' 'kov' 'bal' 'geg' 'birž' 'liep' 'rugp' 'rugs' 'spal' 'lapkr' 'gruod')
     _short_weekdays=('sk' 'pr' 'an' 'tr' 'kt' 'pn' 'št')
-    _short_day_format='{n}.'
-    _short_date_pattern='{day} {month}'
-    _short_date_pattern_with_year='{day} {month} {year}'
+    _short_day_format='{n} d.'
+    _short_date_pattern='{month} {day}'
+    _short_date_pattern_with_year='{year} m. {month} {day}'
     _compact_date_pattern='{m}-{d}'
     _compact_date_pattern_with_year='{yy}-{m}-{d}'
 }

@@ -15,7 +15,7 @@ let locale : time_locale =
   { code = "men"
   ; clock =
     { hours =
-      [ "pu wɛlɛ"
+      [ "pu mahu fele"
       ; "yila"
       ; "fele"
       ; "sawa"
@@ -31,18 +31,18 @@ let locale : time_locale =
     ; midnight = "kpindi gbɔyɔŋ"
     ; noon = "ndɔlei-ma"
     ; patterns =
-      [ (0, "{h}:00")
-      ; (5, "{h}:05")
-      ; (10, "{h}:10")
-      ; (15, "{h}:15")
-      ; (20, "{h}:20")
-      ; (25, "{h}:25")
-      ; (30, "{h}:30")
-      ; (35, "{h}:35")
-      ; (40, "{h}:40")
-      ; (45, "{h}:45")
-      ; (50, "{h}:50")
-      ; (55, "{h}:55")
+      [ (0, "awa {h}")
+      ; (5, "awa {h} kɛ miniti lɔɔlu")
+      ; (10, "awa {h} kɛ miniti pu")
+      ; (15, "awa {h} kɛ miniti pu mahu lɔɔlu")
+      ; (20, "awa {h} kɛ miniti nuu yila gboyongo")
+      ; (25, "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu")
+      ; (30, "awa {h} kɛ miniti nuu yila gboyongo mahu pu")
+      ; (35, "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu")
+      ; (40, "awa {h} kɛ miniti nuu fele gboyongo")
+      ; (45, "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu")
+      ; (50, "awa {h} kɛ miniti nuu fele gboyongo mahu pu")
+      ; (55, "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu")
       ]
     }
   ; short = Some

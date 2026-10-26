@@ -20,7 +20,7 @@ export const ta: AgeLocale = {
     month: { one: '{n} மாதம்', other: '{n} மாதங்கள்' },
     year:  { one: '{n} வயது', other: '{n} வயது' },
   },
-  half: '{0}ரை',
+  half: '{n}½',
   delimiter: ', ',
   justBorn: 'பிறந்த குழந்தை',
   stages: {

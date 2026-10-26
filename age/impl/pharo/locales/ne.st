@@ -29,7 +29,7 @@ ne
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. 'नवजात शिशु'.
 		#infant. 'शिशु'.
-		#toddler. 'बाल्यकाल'.
+		#toddler. 'सानो बच्चा'.
 		#child. 'बालक'.
 		#teenager. 'किशोर'.
 		#adult. 'वयस्क'.

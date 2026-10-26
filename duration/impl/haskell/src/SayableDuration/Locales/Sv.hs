@@ -50,7 +50,7 @@ locale = DurationLocale
     , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustNow = "just nu"
-    , localeAgo = "{0} sedan"
+    , localeAgo = "för {0} sedan"
     , localeInFuture = "om {0}"
     , localeShort = Just $
         CompactnessOverride
@@ -63,7 +63,7 @@ locale = DurationLocale
             , ovrYear = Just (Simple "{n} år")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "{0} sedan"
+            , ovrAgo = Just "för {0} sedan"
             , ovrInFuture = Just "om {0}"
             }
     , localeCompact = Just $
@@ -77,7 +77,7 @@ locale = DurationLocale
             , ovrYear = Just (Simple "{n}å")
             , ovrHalf = Nothing
             , ovrDelimiter = Just ""
-            , ovrAgo = Just "{0} sedan"
+            , ovrAgo = Just "för {0} sedan"
             , ovrInFuture = Just "om {0}"
             }
     }

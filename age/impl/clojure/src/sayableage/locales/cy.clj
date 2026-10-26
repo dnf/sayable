@@ -14,10 +14,10 @@
 (def locale
   {:code "cy"
    :plural (fn [n] (cond (== n 0) :zero (== n 1) :one (== n 2) :two (== n 3) :few (== n 6) :many :else :other))
-   :day {:type :pluralized :forms {:zero "{n} diwrnod" :one "{n} diwrnod" :two "{n} ddiwrnod" :few "{n} diwrnod" :many "{n} niwrnod" :other "{n} diwrnod"}}
+   :day {:type :pluralized :forms {:zero "{n} diwrnod" :one "{n} diwrnod" :two "{n} ddiwrnod" :few "{n} diwrnod" :many "{n} diwrnod" :other "{n} diwrnod"}}
    :week {:type :pluralized :forms {:zero "{n} wythnos" :one "{n} wythnos" :two "{n} wythnos" :few "{n} wythnos" :many "{n} wythnos" :other "{n} wythnos"}}
    :month {:type :pluralized :forms {:zero "{n} mis" :one "{n} mis" :two "{n} fis" :few "{n} mis" :many "{n} mis" :other "{n} mis"}}
-   :year {:type :pluralized :forms {:zero "{n} blwyddyn" :one "{n} blwyddyn" :two "{n} flynedd" :few "{n} blynedd" :many "{n} blynedd" :other "{n} blynedd"}}
+   :year {:type :pluralized :forms {:zero "{n} blwyddyn" :one "{n} flwyddyn" :two "{n} flynedd" :few "{n} blynedd" :many "{n} blynedd" :other "{n} blynedd"}}
    :half "{0} a hanner"
    :delimiter ", "
    :just-born "Newydd-anedig"

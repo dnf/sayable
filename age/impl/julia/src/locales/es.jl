@@ -20,7 +20,7 @@ const ES = AgeLocale(
         "month" => Dict("one" => "{n} mes", "other" => "{n} meses"),
         "year" => Dict("one" => "{n} año", "other" => "{n} años"),
     ),
-    half = "{n} y medio",
+    half = "{0} y medio",
     delimiter = ", ",
     just_born = "Recién nacido",
     stages = Dict(

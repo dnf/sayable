@@ -6,6 +6,14 @@
 
 Plural rule: `cs_sk` (categories: one, few, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [cs.json](../../locales/cs.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): "0": bare hour ("jedna", "dvě"), :05-:30 colloquial digital reading ("dvě nula pět", "dvě patnáct", "dvě třicet"), :35-:55 "za X minut {next_h}" ("za pět minut tři", nominative is correct). Used "za patnáct minut {next_h}" at :45 rather than the audit's "za čtvrt {next_h}", which I don't believe is standard. Idiomatic "čtvrt na tři", "půl třetí", "tři čtvrtě na tři" need accusative and feminine-ordinal next-hour lists (schema follow-up).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | pozítří        | 17.3.   |
 | Day before yesterday | předevčírem    | 13.3.   |
 | This Thursday (+5)   | toto čtvrtek   | 20.3.   |
-| Last Monday (-4)     | minulé úterý   | 11.3.   |
-| Next Wednesday (+12) | příští čtvrtek | 27.3.   |
-| Same month (+20)     | 4. dubna       | 4.4.    |
+| Last Tuesday (-4)    | minulé úterý   | 11.3.   |
+| Next Thursday (+12)  | příští čtvrtek | 27.3.   |
+| Same year (+20)      | 4. dubna       | 4.4.    |
 | Different year       | 10. ledna 2026 | 10.1.26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short | Compact |
-| --------------- | --------------- | ----- | ------- |
-| Midnight        | půlnoc          | 0:00  | 0:00    |
-| 1:00 AM         | jedna hodin     | 1:00  | 1:00    |
-| 5 past 9        | pět po devět    | 9:05  | 9:05    |
-| Quarter past 10 | čtvrt po deset  | 10:15 | 10:15   |
-| Half past 11    | půl po jedenáct | 11:30 | 11:30   |
-| Noon            | poledne         | 12:00 | 12:00   |
-| Quarter to 3    | čtvrt do tři    | 14:45 | 14:45   |
-| 5 to 6          | pět do šest     | 17:55 | 17:55   |
-| 8 o'clock PM    | osm hodin       | 20:00 | 20:00   |
-| 10:30 PM        | půl po deset    | 22:30 | 22:30   |
-| 11:58 PM        | půlnoc          | 23:58 | 23:58   |
+| Time            | Normal               | Short | Compact |
+| --------------- | -------------------- | ----- | ------- |
+| Midnight        | půlnoc               | 0:00  | 0:00    |
+| 1:00 AM         | jedna                | 1:00  | 1:00    |
+| 5 past 9        | devět nula pět       | 9:05  | 9:05    |
+| Quarter past 10 | deset patnáct        | 10:15 | 10:15   |
+| Half past 11    | jedenáct třicet      | 11:30 | 11:30   |
+| Noon            | poledne              | 12:00 | 12:00   |
+| Quarter to 3    | za patnáct minut tři | 14:45 | 14:45   |
+| 5 to 6          | za pět minut šest    | 17:55 | 17:55   |
+| 8 o'clock PM    | osm                  | 20:00 | 20:00   |
+| 10:30 PM        | deset třicet         | 22:30 | 22:30   |
+| 11:58 PM        | půlnoc               | 23:58 | 23:58   |

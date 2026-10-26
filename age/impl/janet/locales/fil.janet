@@ -24,7 +24,7 @@
             :toddler "Batang paslit"
             :child "Bata"
             :teenager "Tinedyer"
-            :adult "Matanda"
+            :adult "Adulto"
 }
    :short {:units {:day "{n} araw" :week {:one "{n} linggo" :other "{n} na linggo"} :month "{n} buwan" :year "{n} taon"}}
    :compact {:units {:day {:one "{n} araw" :other "{n} na araw"} :week "{n}linggo" :month {:one "{n}buwan" :other "{n} buwan"} :year "{n}taon"} :half "{n}½" :delimiter ""}

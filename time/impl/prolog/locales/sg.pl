@@ -11,22 +11,22 @@
 
 % Sango locale.
 
-st_hours('sg', ['bâlè-ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'ömënë', 'mbïrïmbïrï', 'mënâmbârâ', 'gonambâlâ', 'bâlè', 'bâlè na ôko']).
+st_hours('sg', ['balë-ôko na ûse', 'ôko', 'ûse', 'otâ', 'usïö', 'okü', 'omanä', 'mbâsâmbârâ', 'miombe', 'gümbâyä', 'balë-ôko', 'balë-ôko na ôko']).
 st_midnight('sg', 'gï na lögö').
 st_noon('sg', 'lâ nzönï').
 
-st_pattern('sg', 0, '{h}:00').
-st_pattern('sg', 5, '{h}:05').
-st_pattern('sg', 10, '{h}:10').
-st_pattern('sg', 15, '{h}:15').
-st_pattern('sg', 20, '{h}:20').
-st_pattern('sg', 25, '{h}:25').
-st_pattern('sg', 30, '{h}:30').
-st_pattern('sg', 35, '{h}:35').
-st_pattern('sg', 40, '{h}:40').
-st_pattern('sg', 45, '{h}:45').
-st_pattern('sg', 50, '{h}:50').
-st_pattern('sg', 55, '{h}:55').
+st_pattern('sg', 0, 'ngbonga {h}').
+st_pattern('sg', 5, 'ngbonga {h} na minüti okü').
+st_pattern('sg', 10, 'ngbonga {h} na minüti balë-ôko').
+st_pattern('sg', 15, 'ngbonga {h} na minüti balë-ôko na okü').
+st_pattern('sg', 20, 'ngbonga {h} na minüti balë-ûse').
+st_pattern('sg', 25, 'ngbonga {h} na minüti balë-ûse na okü').
+st_pattern('sg', 30, 'ngbonga {h} na ndâmbo').
+st_pattern('sg', 35, 'ngbonga {h} na minüti balë-otâ na okü').
+st_pattern('sg', 40, 'ngbonga {h} na minüti balë-usïö').
+st_pattern('sg', 45, 'ngbonga {h} na minüti balë-usïö na okü').
+st_pattern('sg', 50, 'ngbonga {h} na minüti balë-okü').
+st_pattern('sg', 55, 'ngbonga {h} na minüti balë-okü na okü').
 
 short_st_use24h('sg', false).
 short_st_format('sg', '{h}:{mm} {ampm}').

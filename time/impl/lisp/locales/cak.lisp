@@ -20,7 +20,7 @@
     :hours (list "kab'lajuj" "jun" "ka'i'" "oxi'" "kaji'" "wo'o'" "waqi'" "wuqu'" "waqxaqi'" "b'eleje'" "lajuj" "julajuj")
     :midnight "nik'aj aq'a'"
     :noon "nik'aj q'ij"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} ramaj") (cons 5 "{h} ramaj rik'in wo'o'") (cons 10 "{h} ramaj rik'in lajuj") (cons 15 "{h} ramaj rik'in wolajuj") (cons 20 "{h} ramaj rik'in juk'al") (cons 25 "{h} ramaj rik'in juk'al wo'o'") (cons 30 "{h} ramaj rik'in nik'aj") (cons 35 "{h} ramaj rik'in juk'al wolajuj") (cons 40 "{h} ramaj rik'in kak'al") (cons 45 "{h} ramaj rik'in kak'al wo'o'") (cons 50 "{h} ramaj rik'in kak'al lajuj") (cons 55 "{h} ramaj rik'in kak'al wolajuj")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -21,7 +21,7 @@ var MAM = sa.AgeLocale{
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
 		Day:   sa.SimpleUnit("{n} q'ij"),
-		Week:  sa.SimpleUnit("{n} xjaw"),
+		Week:  sa.SimpleUnit("{n} seman"),
 		Month: sa.SimpleUnit("{n} xjaw"),
 		Year:  sa.SimpleUnit("{n} ab'q'ii"),
 	},
@@ -38,7 +38,7 @@ var MAM = sa.AgeLocale{
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "{n} q'ij"},
-		Week:  &sa.UnitForms{Simple: "{n} xjaw"},
+		Week:  &sa.UnitForms{Simple: "{n} seman"},
 		Month: &sa.UnitForms{Simple: "{n} xjaw"},
 		Year:  &sa.UnitForms{Simple: "{n} ab'."},
 	},
@@ -48,5 +48,6 @@ var MAM = sa.AgeLocale{
 		Month:     &sa.UnitForms{Simple: "{n}m"},
 		Year:      &sa.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 	},
 }

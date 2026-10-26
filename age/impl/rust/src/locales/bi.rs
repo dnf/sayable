@@ -22,7 +22,7 @@ pub fn locale() -> AgeLocale {
             month: UnitForms::simple("{n} manis"),
             year: UnitForms::simple("{n} yia"),
         },
-        half: "{n} mo haf".to_string(),
+        half: "{0} mo haf".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Niufala bebe".to_string(),
         stages: Stages {
@@ -47,7 +47,7 @@ pub fn locale() -> AgeLocale {
             week: Some(UnitForms::simple("{n}w")),
             month: Some(UnitForms::simple("{n}m")),
             year: Some(UnitForms::simple("{n}y")),
-            half: None,
+            half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             just_born: None,
         }),

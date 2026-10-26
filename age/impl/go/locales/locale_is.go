@@ -30,7 +30,7 @@ var IS = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mánuður", sa.Other: "{n} mánuðir"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} ár", sa.Other: "{n} ár"}),
 	},
-	Half:      "{0} og hálft",
+	Half:      "{n} og hálft",
 	Delimiter: ", ",
 	JustBorn:  "Nýfætt",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_kek = {
     "kek",
     {
-        { "kab'laju", "jun", "kab'", "oxib'", "kab'ib'", "o'ib'", "waqib'", "uqub'", "wajxaqib'", "b'elejeb'", "lajeb'", "junlaju" },
+        { "kab'laju", "jun", "kiib'", "oxib'", "kaahib'", "oob'", "waqib'", "wuqub'", "waqxaqib'", "b'eleeb'", "lajeeb'", "junlaju" },
         "chaq' xkab'",
         "chaq' chaab'il",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} hoonal", "{h} hoonal rik'in oob' minuut", "{h} hoonal rik'in lajeeb' minuut", "{h} hoonal rik'in o'laju minuut", "{h} hoonal rik'in junmay minuut", "{h} hoonal rik'in oob' xkak'aal minuut", "{h} hoonal rik'in yijach", "{h} hoonal rik'in o'laju xkak'aal minuut", "{h} hoonal rik'in kaak'aal minuut", "{h} hoonal rik'in oob' roxk'aal minuut", "{h} hoonal rik'in lajeeb' roxk'aal minuut", "{h} hoonal rik'in o'laju roxk'aal minuut" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

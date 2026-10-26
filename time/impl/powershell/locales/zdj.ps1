@@ -10,22 +10,22 @@
 # Source: locales/zdj.json
 
 function locale_zdj {
-    $hours = @('kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja')
+    $hours = @('kumi na mbili', 'moja', 'mbili', 'ndraru', 'nne', 'ntsanu', 'sita', 'saba', 'nane', 'shenda', 'kumi', 'kumi na moja')
     $midnight = 'usiku wa manane'
     $noon = 'adhuhuri'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'saa {h}'
+    $patterns[5] = 'saa {h} na ntsanu'
+    $patterns[10] = 'saa {h} na kumi'
+    $patterns[15] = 'saa {h} na kumi na ntsanu'
+    $patterns[20] = 'saa {h} na shirini'
+    $patterns[25] = 'saa {h} na shirini na ntsanu'
+    $patterns[30] = 'saa {h} na nusu'
+    $patterns[35] = 'saa {h} na thalathini na ntsanu'
+    $patterns[40] = 'saa {h} na arubaini'
+    $patterns[45] = 'saa {h} na arubaini na ntsanu'
+    $patterns[50] = 'saa {h} na hamsini'
+    $patterns[55] = 'saa {h} na hamsini na ntsanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

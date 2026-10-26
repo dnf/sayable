@@ -23,10 +23,10 @@ var HA = sa.AgeLocale{
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} kwana", sa.Other: "{n} kwanaki"}),
-		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mako", sa.Other: "{n} makonni"}),
-		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} wata", sa.Other: "{n} watanni"}),
-		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} shekara", sa.Other: "{n} shekaru"}),
+		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "kwana {n}", sa.Other: "kwanaki {n}"}),
+		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "mako {n}", sa.Other: "makonni {n}"}),
+		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "wata {n}", sa.Other: "watanni {n}"}),
+		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "shekara {n}", sa.Other: "shekaru {n}"}),
 	},
 	Half:      "{n}½",
 	Delimiter: ", ",
@@ -34,16 +34,16 @@ var HA = sa.AgeLocale{
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.S("Jariri"),
 		Infant:   sa.S("Jariri"),
-		Toddler:  sa.S("Ƙaramin yaro"),
-		Child:    sa.S("Yaro"),
-		Teenager: sa.S("Saurayi"),
+		Toddler:  sa.G("Ƙaramin yaro", "Ƙaramar yarinya"),
+		Child:    sa.G("Yaro", "Yarinya"),
+		Teenager: sa.G("Saurayi", "Budurwa"),
 		Adult:    sa.S("Babba"),
 	},
 	Short: &sa.CompactnessOverride{
-		Day:   &sa.UnitForms{Simple: "{n} kw."},
-		Week:  &sa.UnitForms{Simple: "{n} mk."},
-		Month: &sa.UnitForms{Simple: "{n} wt."},
-		Year:  &sa.UnitForms{Simple: "{n} shk."},
+		Day:   &sa.UnitForms{Simple: "kw. {n}"},
+		Week:  &sa.UnitForms{Simple: "mk. {n}"},
+		Month: &sa.UnitForms{Simple: "wt. {n}"},
+		Year:  &sa.UnitForms{Simple: "shk. {n}"},
 	},
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n}d"},

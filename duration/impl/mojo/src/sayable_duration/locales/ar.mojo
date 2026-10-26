@@ -38,9 +38,9 @@ fn _plural(n: Int) -> String:
 fn build_ar() -> DurationLocale:
     """Build the Arabic locale."""
 
-    var second = plural_unit(zero="{n} ثانية", one="ثانية واحدة", two="ثانيتان", few="{n} ثوانٍ", many="{n} ثانية", other="{n} ثانية")
-    var minute = plural_unit(zero="{n} دقيقة", one="دقيقة واحدة", two="دقيقتان", few="{n} دقائق", many="{n} دقيقة", other="{n} دقيقة")
-    var hour = plural_unit(zero="{n} ساعة", one="ساعة واحدة", two="ساعتان", few="{n} ساعات", many="{n} ساعة", other="{n} ساعة")
+    var second = plural_unit(zero="{n} ثانية", one="ثانية", two="ثانيتان", few="{n} ثوانٍ", many="{n} ثانية", other="{n} ثانية")
+    var minute = plural_unit(zero="{n} دقيقة", one="دقيقة", two="دقيقتان", few="{n} دقائق", many="{n} دقيقة", other="{n} دقيقة")
+    var hour = plural_unit(zero="{n} ساعة", one="ساعة", two="ساعتان", few="{n} ساعات", many="{n} ساعة", other="{n} ساعة")
     var day = plural_unit(zero="{n} يوم", one="يوم", two="يومان", few="{n} أيام", many="{n} يومًا", other="{n} يوم")
     var week = plural_unit(zero="{n} أسبوع", one="أسبوع", two="أسبوعان", few="{n} أسابيع", many="{n} أسبوعًا", other="{n} أسبوع")
     var month = plural_unit(zero="{n} شهر", one="شهر", two="شهران", few="{n} أشهر", many="{n} شهرًا", other="{n} شهر")
@@ -77,7 +77,7 @@ fn build_ar() -> DurationLocale:
     compact_ovr.has_day = True
     compact_ovr.week = simple_unit("{n} أ")
     compact_ovr.has_week = True
-    compact_ovr.month = plural_unit(zero="{n} شهر", one="شهر", two="شهران", few="{n} أشهر", many="{n} شهرًا", other="{n} شهر")
+    compact_ovr.month = simple_unit("{n} شهر")
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n} سنة")
     compact_ovr.has_year = True

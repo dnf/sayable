@@ -22,14 +22,14 @@ fn plural_si(n int) PluralCategory {
 pub const locale_si = DurationLocale{
 	code: 'si'
 	plural: plural_si
-	second: simple_unit('{n} තත්පරය')
-	minute: simple_unit('{n} මිනිත්තුව')
-	hour: simple_unit('{n} පැය')
+	second: simple_unit('තත්පර {n}')
+	minute: simple_unit('මිනිත්තු {n}')
+	hour: simple_unit('පැය {n}')
 	day: plural_unit({PluralCategory.one: 'දින {n}', PluralCategory.other: 'දින {n}'})
 	week: plural_unit({PluralCategory.one: 'සති {n}', PluralCategory.other: 'සති {n}'})
 	month: plural_unit({PluralCategory.one: 'මාස {n}', PluralCategory.other: 'මාස {n}'})
 	year: plural_unit({PluralCategory.one: 'වසර {n}', PluralCategory.other: 'වසර {n}'})
-	half: '{0}යි භාගයයි'
+	half: '{n}½'
 	delimiter: ', '
 	just_now: 'දැන්'
 	ago: '{0}ට පෙර'

@@ -23,8 +23,8 @@
                (cons :year '((:one . "{n} vit") (:other . "{n} vjet"))))
    :half "{0} e gjysmë"
    :delimiter ", "
-   :just-born "Sapolindur"
-   :stages (list (cons :newborn '((:m . "Sapolindur") (:f . "Sapolindure")))
+   :just-born "I sapolindur"
+   :stages (list (cons :newborn '((:m . "I sapolindur") (:f . "E sapolindur")))
                  (cons :infant "Foshnjë")
                  (cons :toddler '((:m . "Fëmijë i vogël") (:f . "Fëmijë e vogël")))
                  (cons :child "Fëmijë")

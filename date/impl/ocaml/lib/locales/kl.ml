@@ -40,7 +40,7 @@ let locale : date_locale =
   ; day_format_exceptions =
     []
   ; date_pattern = "{month} {day}"
-  ; date_pattern_with_year = "{day} {month} {year}"
+  ; date_pattern_with_year = "{month} {day} {year}"
   ; today = "ullumi"
   ; tomorrow = "aqagu"
   ; yesterday = "ippassaq"
@@ -78,7 +78,7 @@ let locale : date_locale =
       ; ovr_day_format = Some "{n}."
       ; ovr_day_format_exceptions = Some []
       ; ovr_date_pattern = Some "{month} {day}"
-      ; ovr_date_pattern_with_year = Some "{day} {month} {year}"
+      ; ovr_date_pattern_with_year = Some "{month} {day} {year}"
       ; ovr_today = None
       ; ovr_tomorrow = None
       ; ovr_yesterday = None

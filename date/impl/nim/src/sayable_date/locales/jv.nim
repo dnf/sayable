@@ -25,7 +25,7 @@ let JV* = DateLocale(
   tomorrow: "sesuk",
   yesterday: "wingi",
   dayAfterTomorrow: some("embèn"),
-  dayBeforeYesterday: some("dhèk wingi"),
+  dayBeforeYesterday: some("wingenané"),
   thisWeekday: some("{weekday} iki"),
   nextWeekday: some("{weekday} ngarep"),
   lastWeekday: some("{weekday} wingi"),

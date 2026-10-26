@@ -29,7 +29,7 @@ _sayableage_locale_st() {
     _just_born='O sa tswa hlaha'
     _stage_newborn='Lesea le sa tswa hlaha'
     _stage_infant='Lesea'
-    _stage_toddler='Ngwanana'
+    _stage_toddler='Ngwana e monyane'
     _stage_child='Ngwana'
     _stage_teenager='Mosha'
     _stage_adult='Motho e moholo'

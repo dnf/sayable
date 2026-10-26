@@ -17,22 +17,22 @@ hy
 	locale := SayableTimeLocale new.
 	locale code: 'hy'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'տասներկու'. 'մեկ'. 'երկու'. 'երեք'. 'չորս'. 'հինգ'. 'վեց'. 'յոթ'. 'ութ'. 'ինը'. 'տաս'. 'տասնմեկ' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'տասներկուսն'. 'մեկն'. 'երկուսն'. 'երեքն'. 'չորսն'. 'հինգն'. 'վեցն'. 'յոթն'. 'ութն'. 'ինն'. 'տասն'. 'տասնմեկն' }).
 	clock at: #midnight put: 'կեսգիշեր'.
 	clock at: #noon put: 'կեսօր'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'ժամը {h} է'.
+		5. '{h} անց հինգ'.
+		10. '{h} անց տասը'.
+		15. '{h} անց տասնհինգ'.
+		20. '{h} անց քսան'.
+		25. '{h} անց քսանհինգ'.
+		30. '{h} անց կես'.
+		35. '{h} անց երեսունհինգ'.
+		40. '{h} անց քառասուն'.
+		45. '{h} անց քառասունհինգ'.
+		50. '{h} անց հիսուն'.
+		55. '{h} անց հիսունհինգ'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

@@ -11,10 +11,10 @@
 
 function loc = locale_ss()
   loc.code = 'ss';
-  loc.clock.hours = {'lishumi nambili', 'kunye', 'kubili', 'kutsatfu', 'kune', 'kusihlanu', 'sitfupha', 'sikhombisa', 'siphohlongo', 'sifisagcina', 'lishumi', 'lishumi nakunye'};
+  loc.clock.hours = {'lelishumi nakubili', 'lekucala', 'lesibili', 'lesitsatfu', 'lesine', 'lesihlanu', 'lesitfupha', 'lesikhombisa', 'lesiphohlongo', 'lemfica', 'lelishumi', 'lelishumi nakunye'};
   loc.clock.midnight = 'phakathi kwebusuku';
   loc.clock.noon = 'emini';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'lihora {h}', "p5", 'lihora {h} nemizuzu lemihlanu', "p10", 'lihora {h} nemizuzu lelishumi', "p15", 'lihora {h} nemizuzu lelishumi nesihlanu', "p20", 'lihora {h} nemizuzu lemashumi lamabili', "p25", 'lihora {h} nemizuzu lemashumi lamabili nesihlanu', "p30", 'lihora {h} nenhafu', "p35", 'lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu', "p40", 'lihora {h} nemizuzu lemashumi lamane', "p45", 'lihora {h} nemizuzu lemashumi lamane nesihlanu', "p50", 'lihora {h} nemizuzu lemashumi lasihlanu', "p55", 'lihora {h} nemizuzu lemashumi lasihlanu nesihlanu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

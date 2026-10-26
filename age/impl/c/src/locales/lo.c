@@ -25,7 +25,7 @@ const SaLocale sa_locale_lo = {
         { "{n} ເດືອນ", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ປີ", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0}ເຄິ່ງ", "", "ເກີດໃໝ່",
+    "{0}ເຄິ່ງ", " ", "ເກີດໃໝ່",
     {
         { "ເດັກເກີດໃໝ່", "" },
         { "ເດັກນ້ອຍ", "" },
@@ -35,5 +35,5 @@ const SaLocale sa_locale_lo = {
         { "ຜູ້ໃຫຍ່", "" }
     },
     true, { true, { "{n} ມ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ອທ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ດ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ປ.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", false, NULL, false, NULL }
 };

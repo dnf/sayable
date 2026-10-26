@@ -18,7 +18,7 @@ final mam = AgeLocale(
     return PluralCategory.other;
   },
   day: simpleUnit('{n} q\'ij'),
-  week: simpleUnit('{n} xjaw'),
+  week: simpleUnit('{n} seman'),
   month: simpleUnit('{n} xjaw'),
   year: simpleUnit('{n} ab\'q\'ii'),
   half: '{0} nik\'',
@@ -32,7 +32,7 @@ final mam = AgeLocale(
   adult: stageNeutral('Xjal'),
   short: CompactnessOverride(
     day: simpleUnit('{n} q\'ij'),
-    week: simpleUnit('{n} xjaw'),
+    week: simpleUnit('{n} seman'),
     month: simpleUnit('{n} xjaw'),
     year: simpleUnit('{n} ab\'.'),
   ),
@@ -42,5 +42,6 @@ final mam = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

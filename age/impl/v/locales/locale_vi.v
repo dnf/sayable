@@ -27,7 +27,7 @@ pub const locale_vi = AgeLocale{
 	delimiter: ', '
 	just_born: 'Sơ sinh'
 	newborn: stage_neutral('Sơ sinh')
-	infant: stage_neutral('Trẻ sơ sinh')
+	infant: stage_neutral('Trẻ nhũ nhi')
 	toddler: stage_neutral('Trẻ mới biết đi')
 	child: stage_neutral('Trẻ em')
 	teenager: stage_neutral('Thiếu niên')

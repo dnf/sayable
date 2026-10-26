@@ -17,10 +17,10 @@
   (make-time-locale
    :code "sar"
    :clock (make-clock-config
-    :hours (list "mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi" "kɨ̀ndá" "ɗìi" "mùtá" "sɔ̀" "mɨ̀ndɨ̀" "mɨ̀ndɨ̀ kɨ̀ndá" "mɨ̀sá" "mɨ̀ndɨ̀ mùtá" "mɨ̀ndɨ̀ sɔ̀" "mɔ̀ɔ́" "mɔ̀ɔ́ kɨ̀ndá")
+    :hours (list "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi" "lɛɛr kɨ̀ndá" "lɛɛr ɗìi" "lɛɛr mùtá" "lɛɛr sɔ̀" "lɛɛr mɨ̀ndɨ̀" "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá" "lɛɛr mɨ̀sá" "lɛɛr mɨ̀ndɨ̀ mùtá" "lɛɛr mɨ̀ndɨ̀ sɔ̀" "lɛɛr mɔ̀ɔ́" "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá")
     :midnight "badɔ"
     :noon "mbɔr ndɔ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} kɨ̀ minít mɨ̀ndɨ̀") (cons 10 "{h} kɨ̀ minít mɔ̀ɔ́") (cons 15 "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀") (cons 20 "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi") (cons 25 "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀") (cons 30 "{h} kɩ̀ ndá̰ŋ") (cons 35 "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀") (cons 40 "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀") (cons 45 "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀") (cons 50 "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀") (cons 55 "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

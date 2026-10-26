@@ -15,9 +15,9 @@ sd_plural('nso', 1, one) :- !.
 sd_plural('nso', _, other).
 
 sd_unit('nso', second, one, 'motsotswana {n}').
-sd_unit('nso', second, other, 'dimetsotswana {n}').
-sd_unit('nso', minute, one, 'metsotso {n}').
-sd_unit('nso', minute, other, 'dimetsotso {n}').
+sd_unit('nso', second, other, 'metsotswana {n}').
+sd_unit('nso', minute, one, 'motsotso {n}').
+sd_unit('nso', minute, other, 'metsotso {n}').
 sd_unit('nso', hour, one, 'iri {n}').
 sd_unit('nso', hour, other, 'diiri {n}').
 sd_unit('nso', day, one, 'letšatši {n}').
@@ -35,10 +35,10 @@ sd_just_now('nso', 'bjale').
 sd_ago('nso', '{0} ye e fetilego').
 sd_in_future('nso', 'ka {0}').
 
-short_sd_unit('nso', second, one, 'mots. {n}').
-short_sd_unit('nso', second, other, 'dimets. {n}').
-short_sd_unit('nso', minute, one, 'mets. {n}').
-short_sd_unit('nso', minute, other, 'dimets. {n}').
+short_sd_unit('nso', second, one, 'motsotsw. {n}').
+short_sd_unit('nso', second, other, 'metsotsw. {n}').
+short_sd_unit('nso', minute, one, 'mots. {n}').
+short_sd_unit('nso', minute, other, 'mets. {n}').
 short_sd_unit('nso', hour, one, 'iri {n}').
 short_sd_unit('nso', hour, other, 'diiri {n}').
 short_sd_unit('nso', day, one, 'letšatši {n}').

@@ -15,7 +15,10 @@ let locale : duration_locale =
   { code = "mr"
   ; plural = (fun n -> if n = 1 then One else Other)
   ; second = Simple "{n} सेकंद"
-  ; minute = Simple "{n} मिनिट"
+  ; minute = Pluralized
+      [ (One, "{n} मिनिट")
+      ; (Other, "{n} मिनिटे")
+      ]
   ; hour = Simple "{n} तास"
   ; day = Pluralized
       [ (One, "{n} दिवस")

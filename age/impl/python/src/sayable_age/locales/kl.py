@@ -15,12 +15,12 @@ from sayable_age.locale import AgeLocale, CompactnessOverride
 
 KL = AgeLocale(
     code="kl",
-    plural=lambda _n: "other",
+    plural=lambda n: "one" if n == 1 else "other",
     units={
-        "day": "ullut {n}",
-        "week": "sapaatit {n}",
-        "month": "qaammatit {n}",
-        "year": "ukiut {n}",
+        "day": {"one": "ulloq {n}", "other": "ullut {n}"},
+        "week": {"one": "sapaatip akunnera {n}", "other": "sapaatip akunneri {n}"},
+        "month": {"one": "qaammat {n}", "other": "qaammatit {n}"},
+        "year": {"one": "ukioq {n}", "other": "ukiut {n}"},
     },
     half="{0} affaa",
     delimiter=", ",
@@ -36,7 +36,7 @@ KL = AgeLocale(
     short=CompactnessOverride(
         units={
             "day": "ull. {n}",
-            "week": "sap. {n}",
+            "week": "sap. ak. {n}",
             "month": "qaam. {n}",
             "year": "uk. {n}",
         },
@@ -48,6 +48,7 @@ KL = AgeLocale(
             "month": "{n}m",
             "year": "{n}y",
         },
+        half="{n}½",
         delimiter="",
     ),
 )

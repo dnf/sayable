@@ -16,7 +16,7 @@
 (defparameter *locale-yue*
   (make-date-locale
    :code "yue"
-   :months (list "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月")
+   :months (list "1月" "2月" "3月" "4月" "5月" "6月" "7月" "8月" "9月" "10月" "11月" "12月")
    :weekdays (list "星期日" "星期一" "星期二" "星期三" "星期四" "星期五" "星期六")
    :day-format "{n}日"
    :day-format-exceptions nil
@@ -30,7 +30,7 @@
    :this-weekday "呢個{weekday}"
    :next-weekday "下個{weekday}"
    :last-weekday "上個{weekday}"
-   :short-months (list "一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月")
+   :short-months (list "1月" "2月" "3月" "4月" "5月" "6月" "7月" "8月" "9月" "10月" "11月" "12月")
    :short-weekdays (list "日" "一" "二" "三" "四" "五" "六")
    :short-day-format "{n}日"
    :short-date-pattern "{month}{day}"

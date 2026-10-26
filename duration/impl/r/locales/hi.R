@@ -15,7 +15,7 @@ locale_hi <- list(
   units = list(
     second = "{n} सेकंड",
     minute = "{n} मिनट",
-    hour = "{n} घंटा",
+    hour = list(one = "{n} घंटा", other = "{n} घंटे"),
     day = list(one = "{n} दिन", other = "{n} दिन"),
     week = list(one = "{n} सप्ताह", other = "{n} सप्ताह"),
     month = list(one = "{n} महीना", other = "{n} महीने"),

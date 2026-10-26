@@ -15,7 +15,7 @@ from sayable_duration.locale import CompactnessOverride, DurationLocale
 
 ML = DurationLocale(
     code="ml",
-    plural=lambda n: "one" if n in (0, 1) else "other",
+    plural=lambda n: "one" if n == 1 else "other",
     units={
         "second": {"one": "{n} സെക്കൻഡ്", "other": "{n} സെക്കൻഡുകൾ"},
         "minute": {"one": "{n} മിനിറ്റ്", "other": "{n} മിനിറ്റുകൾ"},
@@ -25,7 +25,7 @@ ML = DurationLocale(
         "month": {"one": "{n} മാസം", "other": "{n} മാസങ്ങൾ"},
         "year": {"one": "{n} വർഷം", "other": "{n} വർഷങ്ങൾ"},
     },
-    half="{0} ര",
+    half="{n}½",
     delimiter=", ",
     just_now="ഇപ്പോൾ",
     ago="{0} മുമ്പ്",

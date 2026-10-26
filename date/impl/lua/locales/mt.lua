@@ -13,7 +13,7 @@ local M = {}
 
 M.code = "mt"
 M.months = { "Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru" }
-M.weekdays = { "Il-Ħadd", "It-Tnejn", "It-Tlieta", "L-Erbgħa", "Il-Ħamis", "Il-Ġimgħa", "Is-Sibt" }
+M.weekdays = { "il-Ħadd", "it-Tnejn", "it-Tlieta", "l-Erbgħa", "il-Ħamis", "il-Ġimgħa", "is-Sibt" }
 M.day_format = "{n}"
 M.day_format_exceptions = {}
 M.date_pattern = "{day} {month}"

@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ay = {
     "ay",
     {
-        { "tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llantunka", "tunka", "tunka mayani" },
+        { "tunka payani", "maya", "paya", "kimsa", "pusi", "phisqa", "suxta", "paqallqu", "kimsaqallqu", "llätunka", "tunka", "tunka mayani" },
         "aruma chika",
         "chika uru",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} ura", "{h} ura phisqa minutuni", "{h} ura tunka minutuni", "{h} ura tunka phisqani minutuni", "{h} ura pä tunka minutuni", "{h} ura pä tunka phisqani minutuni", "{h} ura chikani", "{h} ura kimsa tunka phisqani minutuni", "{h} ura pusi tunka minutuni", "{h} ura pusi tunka phisqani minutuni", "{h} ura phisqa tunka minutuni", "{h} ura phisqa tunka phisqani minutuni" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

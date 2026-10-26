@@ -27,7 +27,7 @@ pub fn locale() -> DurationLocale {
         units: Units {
             second: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} ثانية"),
-                (PluralCategory::One, "ثانية واحدة"),
+                (PluralCategory::One, "ثانية"),
                 (PluralCategory::Two, "ثانيتان"),
                 (PluralCategory::Few, "{n} ثوانٍ"),
                 (PluralCategory::Many, "{n} ثانية"),
@@ -35,7 +35,7 @@ pub fn locale() -> DurationLocale {
             ]),
             minute: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} دقيقة"),
-                (PluralCategory::One, "دقيقة واحدة"),
+                (PluralCategory::One, "دقيقة"),
                 (PluralCategory::Two, "دقيقتان"),
                 (PluralCategory::Few, "{n} دقائق"),
                 (PluralCategory::Many, "{n} دقيقة"),
@@ -43,7 +43,7 @@ pub fn locale() -> DurationLocale {
             ]),
             hour: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} ساعة"),
-                (PluralCategory::One, "ساعة واحدة"),
+                (PluralCategory::One, "ساعة"),
                 (PluralCategory::Two, "ساعتان"),
                 (PluralCategory::Few, "{n} ساعات"),
                 (PluralCategory::Many, "{n} ساعة"),
@@ -134,14 +134,7 @@ pub fn locale() -> DurationLocale {
             hour: Some(UnitForms::simple("{n} س")),
             day: Some(UnitForms::simple("{n} ي")),
             week: Some(UnitForms::simple("{n} أ")),
-            month: Some(UnitForms::plural(&[
-                (PluralCategory::Zero, "{n} شهر"),
-                (PluralCategory::One, "شهر"),
-                (PluralCategory::Two, "شهران"),
-                (PluralCategory::Few, "{n} أشهر"),
-                (PluralCategory::Many, "{n} شهرًا"),
-                (PluralCategory::Other, "{n} شهر"),
-            ])),
+            month: Some(UnitForms::simple("{n} شهر")),
             year: Some(UnitForms::simple("{n} سنة")),
             half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),

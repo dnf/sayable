@@ -28,7 +28,7 @@ defmodule SayableDuration.Locales.SV do
       half: "{n}½",
       delimiter: ", ",
       just_now: "just nu",
-      ago: "{0} sedan",
+      ago: "för {0} sedan",
       in_future: "om {0}",
       short: %{
         units: %{
@@ -40,7 +40,7 @@ defmodule SayableDuration.Locales.SV do
           month: "{n} mån",
           year: "{n} år"
         },
-        ago: "{0} sedan",
+        ago: "för {0} sedan",
         in_future: "om {0}"
       },
       compact: %{
@@ -54,7 +54,7 @@ defmodule SayableDuration.Locales.SV do
           year: "{n}å"
         },
         delimiter: "",
-        ago: "{0} sedan",
+        ago: "för {0} sedan",
         in_future: "om {0}"
       }
     }

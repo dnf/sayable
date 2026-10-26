@@ -29,7 +29,7 @@ pub fn locale() -> DurationLocale {
         delimiter: " ".to_string(),
         just_now: "เมื่อกี้".to_string(),
         ago: "{0}ที่แล้ว".to_string(),
-        in_future: "ใน{0}".to_string(),
+        in_future: "ในอีก {0}".to_string(),
         short: Some(CompactnessOverride {
             second: Some(UnitForms::simple("{n} วิ")),
             minute: Some(UnitForms::simple("{n} นาที")),
@@ -41,7 +41,7 @@ pub fn locale() -> DurationLocale {
             half: None,
             delimiter: None,
             ago: Some("{0}ที่แล้ว".to_string()),
-            in_future: Some("ใน{0}".to_string()),
+            in_future: Some("ในอีก {0}".to_string()),
         }),
         compact: Some(CompactnessOverride {
             second: Some(UnitForms::simple("{n}วิ")),
@@ -54,7 +54,7 @@ pub fn locale() -> DurationLocale {
             half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             ago: Some("{0}ที่แล้ว".to_string()),
-            in_future: Some("ใน{0}".to_string()),
+            in_future: Some("ในอีก {0}".to_string()),
         }),
         format_number: None,
         format_unit: None,

@@ -11,7 +11,7 @@
 
 locale_ml <- list(
   code = "ml",
-  plural = function(n) if (n == 0 || n == 1) "one" else "other",
+  plural = function(n) if (n == 1) "one" else "other",
   units = list(
     second = list(one = "{n} സെക്കൻഡ്", other = "{n} സെക്കൻഡുകൾ"),
     minute = list(one = "{n} മിനിറ്റ്", other = "{n} മിനിറ്റുകൾ"),
@@ -21,7 +21,7 @@ locale_ml <- list(
     month = list(one = "{n} മാസം", other = "{n} മാസങ്ങൾ"),
     year = list(one = "{n} വർഷം", other = "{n} വർഷങ്ങൾ")
   ),
-  half = "{0} ര",
+  half = "{n}½",
   delimiter = ", ",
   just_now = "ഇപ്പോൾ",
   ago = "{0} മുമ്പ്",

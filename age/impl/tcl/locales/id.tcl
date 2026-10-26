@@ -21,7 +21,7 @@ proc locale_id {} {
         month "{n} bulan" \
         year "{n} tahun" \
     ]
-    set half "{0} setengah"
+    set half "{n} setengah"
     set delimiter {, }
     set just_born {Baru lahir}
     set stages [dict create \

@@ -16,7 +16,7 @@ let locale : time_locale =
   ; clock =
     { hours =
       [ "tolv"
-      ; "en"
+      ; "ett"
       ; "to"
       ; "tre"
       ; "fire"

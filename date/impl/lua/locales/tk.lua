@@ -12,8 +12,8 @@
 local M = {}
 
 M.code = "tk"
-M.months = { "Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr" }
-M.weekdays = { "Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe" }
+M.months = { "ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr" }
+M.weekdays = { "ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe" }
 M.day_format = "{n}"
 M.day_format_exceptions = {}
 M.date_pattern = "{day} {month}"
@@ -27,8 +27,8 @@ M.this_weekday = "şu {weekday}"
 M.next_weekday = "indiki {weekday}"
 M.last_weekday = "geçen {weekday}"
 M.short = {
-    months = { "Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek" },
-    weekdays = { "Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen" },
+    months = { "ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek" },
+    weekdays = { "ýek", "duş", "siş", "çar", "pen", "ann", "şen" },
     day_format = "{n}",
     date_pattern = "{day} {month}",
     date_pattern_with_year = "{day} {month} {year}",

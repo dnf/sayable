@@ -10,22 +10,22 @@
 # Source: locales/wo.json
 
 function locale_wo {
-    $hours = @('fukki ñaar', 'benn', 'ñaar', 'ñett', 'ñeent', 'juróom', 'juróom-benn', 'juróom-ñaar', 'juróom-ñett', 'juróom-ñeent', 'fukk', 'fukki benn')
-    $midnight = 'bu guddi'
-    $noon = 'ci àttaya'
+    $hours = @('fukk ak ñaari waxtu', 'benn waxtu', 'ñaari waxtu', 'ñetti waxtu', 'ñeenti waxtu', 'juróomi waxtu', 'juróom-benni waxtu', 'juróom-ñaari waxtu', 'juróom-ñetti waxtu', 'juróom-ñeenti waxtu', 'fukki waxtu', 'fukk ak benn waxtu')
+    $midnight = 'digg-guddi'
+    $noon = 'digg-bëccëg'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} ak juróomi simili'
+    $patterns[10] = '{h} ak fukki simili'
+    $patterns[15] = '{h} ak fukk ak juróomi simili'
+    $patterns[20] = '{h} ak ñaar-fukki simili'
+    $patterns[25] = '{h} ak ñaar-fukk ak juróomi simili'
+    $patterns[30] = '{h} ak genn-wàll'
+    $patterns[35] = '{next_h} des na ñaar-fukk ak juróomi simili'
+    $patterns[40] = '{next_h} des na ñaar-fukki simili'
+    $patterns[45] = '{next_h} des na fukk ak juróomi simili'
+    $patterns[50] = '{next_h} des na fukki simili'
+    $patterns[55] = '{next_h} des na juróomi simili'
     $clock = @{
         hours = $hours
         midnight = $midnight

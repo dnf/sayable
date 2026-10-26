@@ -26,10 +26,10 @@ var LO = sdate.DateLocale{
 	Tomorrow:  "ມື້ອື່ນ",
 	Yesterday: "ມື້ວານ",
 	DayAfterTomorrow:  strPtr("ມື້ຮື"),
-	DayBeforeYesterday: strPtr("ມື້ກ່ອນ"),
+	DayBeforeYesterday: strPtr("ມື້ຊືນ"),
 	ThisWeekday:       strPtr("{weekday}ນີ້"),
 	NextWeekday:       strPtr("{weekday}ໜ້າ"),
-	LastWeekday:       strPtr("{weekday}ແລ້ວ"),
+	LastWeekday:       strPtr("{weekday}ທີ່ແລ້ວ"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
 		Months:   &[12]string{"ມ.ກ.", "ກ.ພ.", "ມ.ນ.", "ມ.ສ.", "ພ.ພ.", "ມ.ຖ.", "ກ.ລ.", "ສ.ຫ.", "ກ.ຍ.", "ຕ.ລ.", "ພ.ຈ.", "ທ.ວ."},

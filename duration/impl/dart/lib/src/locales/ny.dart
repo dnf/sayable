@@ -19,9 +19,9 @@ final ny = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': simpleUnit('{n} sekondi'),
-    'minute': simpleUnit('{n} mphindi'),
-    'hour': simpleUnit('{n} ola'),
+    'second': simpleUnit('sekondi {n}'),
+    'minute': simpleUnit('mphindi {n}'),
+    'hour': pluralUnit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'}),
     'day': pluralUnit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'masiku {n}'}),
     'week': pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masabata {n}'}),
     'month': pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),
@@ -36,7 +36,7 @@ final ny = DurationLocale(
     units: {
       'second': simpleUnit('sek {n}'),
       'minute': simpleUnit('mph {n}'),
-      'hour': simpleUnit('ola {n}'),
+      'hour': pluralUnit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'}),
       'day': pluralUnit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'mas {n}'}),
       'week': pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masab {n}'}),
       'month': pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),

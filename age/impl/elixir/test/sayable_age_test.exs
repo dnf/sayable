@@ -617,7 +617,7 @@ defmodule SayableAgeTest do
 
   test "25.10 - Spanish: 3½ years" do
     es = SayableAge.Locales.ES.locale()
-    assert age_locale(es, "2022-06-15", "2025-12-15") == {:ok, "3 y medio años"}
+    assert age_locale(es, "2022-06-15", "2025-12-15") == {:ok, "3 años y medio"}
   end
 
   test "25.11 - Spanish: 3 years" do
@@ -750,7 +750,7 @@ defmodule SayableAgeTest do
 
   test "29.2 - Hebrew: 1 day" do
     he = SayableAge.Locales.HE.locale()
-    assert age_locale(he, "2025-06-14", "2025-06-15") == {:ok, "יום 1"}
+    assert age_locale(he, "2025-06-14", "2025-06-15") == {:ok, "יום"}
   end
 
   test "29.3 - Hebrew: 3 days" do
@@ -780,7 +780,7 @@ defmodule SayableAgeTest do
 
   test "29.8 - Hebrew: 2 years, 1 month" do
     he = SayableAge.Locales.HE.locale()
-    assert age_locale(he, "2023-06-15", "2025-07-15") == {:ok, "שנתיים, חודש 1"}
+    assert age_locale(he, "2023-06-15", "2025-07-15") == {:ok, "שנתיים, חודש"}
   end
 
   test "29.9 - Hebrew: 3½ years" do
@@ -903,7 +903,7 @@ defmodule SayableAgeTest do
 
   test "29.32 - Indonesian: 3½ years" do
     id = SayableAge.Locales.ID.locale()
-    assert age_locale(id, "2022-06-15", "2025-12-15") == {:ok, "3 tahun setengah"}
+    assert age_locale(id, "2022-06-15", "2025-12-15") == {:ok, "3 setengah tahun"}
   end
 
   test "29.33 - Indonesian: 7 years" do

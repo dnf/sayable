@@ -68,7 +68,7 @@ fn build_ar() -> AgeLocale:
     compact_ovr.has_day = True
     compact_ovr.week = simple_unit("{n} أ")
     compact_ovr.has_week = True
-    compact_ovr.month = plural_unit(zero="{n} شهر", one="شهر", two="شهران", few="{n} أشهر", many="{n} شهرًا", other="{n} شهر")
+    compact_ovr.month = simple_unit("{n} شهر")
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n} سنة")
     compact_ovr.has_year = True

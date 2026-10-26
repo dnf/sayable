@@ -21,7 +21,7 @@ module SayableAge
         'month' => '{n} na vula',
         'year' => '{n} na yabaki',
       },
-      half: '{n} kei na levu ni wasei',
+      half: '{0} kei na veimama',
       delimiter: ', ',
       just_born: 'Gone vou',
       stages: {
@@ -48,6 +48,7 @@ module SayableAge
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
       ),
     )
   end

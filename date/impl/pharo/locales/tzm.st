@@ -16,24 +16,24 @@ tzm
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'tzm'.
-	locale months: (OrderedCollection withAll: { 'ⵉⵏⵏⴰⵢⵔ'. 'ⴱⵕⴰⵢⵕ'. 'ⵎⴰⵕⵚ'. 'ⵉⴱⵔⵉⵔ'. 'ⵎⴰⵢⵢⵓ'. 'ⵢⵓⵏⵢⵓ'. 'ⵢⵓⵍⵢⵓⵣ'. 'ⵖⵓⵛⵜ'. 'ⵛⵓⵜⴰⵏⴱⵉⵔ'. 'ⴽⵜⵓⴱⵔ'. 'ⵏⵓⵡⴰⵏⴱⵉⵔ'. 'ⴷⵓⵊⴰⵏⴱⵉⵔ' }).
-	locale weekdays: (OrderedCollection withAll: { 'ⴰⵙⴰⵎⴰⵙ'. 'ⴰⵢⵏⴰⵙ'. 'ⴰⵙⵉⵏⴰⵙ'. 'ⴰⴽⵕⴰⵙ'. 'ⴰⴽⵡⴰⵙ'. 'ⴰⵙⵉⵎⵡⴰⵙ'. 'ⴰⵙⵉⴹⵢⴰⵙ' }).
+	locale months: (OrderedCollection withAll: { 'Yennayer'. 'Yebrayer'. 'Mars'. 'Ibrir'. 'Mayyu'. 'Yunyu'. 'Yulyuz'. 'Ɣuct'. 'Cutanbir'. 'Kṭuber'. 'Nwanbir'. 'Dujanbir' }).
+	locale weekdays: (OrderedCollection withAll: { 'Asamas'. 'Aynas'. 'Asinas'. 'Akras'. 'Akwas'. 'Asimwas'. 'Asiḍyas' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
 	locale datePatternWithYear: '{day} {month} {year}'.
-	locale today: 'ⴰⵙⵙⴰ'.
-	locale tomorrow: 'ⴰⵙⴽⴽⴰ'.
-	locale yesterday: 'ⵉⴹⵍⵍⵉ'.
+	locale today: 'Assa'.
+	locale tomorrow: 'Asekka'.
+	locale yesterday: 'Assenaṭ'.
 	locale dayAfterTomorrow: nil.
 	locale dayBeforeYesterday: nil.
-	locale thisWeekday: '{weekday} ⴰⴷ'.
-	locale nextWeekday: '{weekday} ⴷ ⵉⴷⴷⴰⵏ'.
-	locale lastWeekday: '{weekday} ⵉⵣⵔⵉⵏ'.
+	locale thisWeekday: '{weekday} ad'.
+	locale nextWeekday: '{weekday} d iddan'.
+	locale lastWeekday: '{weekday} izrin'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { 'ⵉⵏⵏ'. 'ⴱⵕⴰ'. 'ⵎⴰⵕ'. 'ⵉⴱⵔ'. 'ⵎⴰⵢ'. 'ⵢⵓⵏ'. 'ⵢⵓⵍ'. 'ⵖⵓⵛ'. 'ⵛⵓⵜ'. 'ⴽⵜⵓ'. 'ⵏⵓⵡ'. 'ⴷⵓⵊ' }).
-		#weekdays. (OrderedCollection withAll: { 'ⴰⵙⴰ'. 'ⴰⵢⵏ'. 'ⴰⵙⵉ'. 'ⴰⴽⵕ'. 'ⴰⴽⵡ'. 'ⴰⵙⵉⵎ'. 'ⴰⵙⵉⴹ' }).
+		#months. (OrderedCollection withAll: { 'Yen'. 'Yeb'. 'Mar'. 'Ibr'. 'May'. 'Yun'. 'Yul'. 'Ɣuc'. 'Cut'. 'Kṭu'. 'Nwa'. 'Duj' }).
+		#weekdays. (OrderedCollection withAll: { 'Asa'. 'Ayn'. 'Asn'. 'Akr'. 'Akw'. 'Asm'. 'Asḍ' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.
 		#datePatternWithYear. '{day} {month} {year}'.

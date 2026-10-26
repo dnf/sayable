@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [yue.json](../../locales/yue.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Rewrote to the spoken Hong Kong Cantonese 字 (5-minute unit) system: 兩點一個字 (2:05), 兩點三個字 (2:15), 兩點半, 兩點九個字 (2:45); o'clock as 點正 rather than the Mandarin-flavoured 點整. Used the full 'X個字' form everywhere rather than the shortened 點三/點九 so every slot is unambiguous. Formal 分 readings were correct, so this is a naturalness change.
+
 ## Age
 
 ### Age formatting
@@ -54,12 +62,12 @@ Plural rule: `other_only` (categories: other)
 
 | Date        | Normal | Short  | Compact |
 | ----------- | ------ | ------ | ------- |
-| January 1   | 一月1日   | 一月1日   | 1/1     |
-| February 14 | 二月14日  | 二月14日  | 2/14    |
-| March 15    | 三月15日  | 三月15日  | 3/15    |
-| July 4      | 七月4日   | 七月4日   | 7/4     |
-| October 31  | 十月31日  | 十月31日  | 10/31   |
-| December 25 | 十二月25日 | 十二月25日 | 12/25   |
+| January 1   | 1月1日   | 1月1日   | 1/1     |
+| February 14 | 2月14日  | 2月14日  | 2/14    |
+| March 15    | 3月15日  | 3月15日  | 3/15    |
+| July 4      | 7月4日   | 7月4日   | 7/4     |
+| October 31  | 10月31日 | 10月31日 | 10/31   |
+| December 25 | 12月25日 | 12月25日 | 12/25   |
 
 ### Relative dates
 
@@ -73,10 +81,10 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | 後日         | 3/17    |
 | Day before yesterday | 前日         | 3/13    |
 | This Thursday (+5)   | 呢個星期四      | 3/20    |
-| Last Monday (-4)     | 上個星期二      | 3/11    |
-| Next Wednesday (+12) | 下個星期四      | 3/27    |
-| Same month (+20)     | 四月4日       | 4/4     |
-| Different year       | 2026年一月10日 | 26/1/10 |
+| Last Tuesday (-4)    | 上個星期二      | 3/11    |
+| Next Thursday (+12)  | 下個星期四      | 3/27    |
+| Same year (+20)      | 4月4日       | 4/4     |
+| Different year       | 2026年1月10日 | 26/1/10 |
 
 ## Duration
 
@@ -121,13 +129,13 @@ Relative to Saturday, March 15, 2025.
 | Time            | Normal | Short | Compact |
 | --------------- | ------ | ----- | ------- |
 | Midnight        | 午夜     | 0:00  | 0:00    |
-| 1:00 AM         | 一點整    | 1:00  | 1:00    |
-| 5 past 9        | 九點零五分  | 9:05  | 9:05    |
-| Quarter past 10 | 十點十五分  | 10:15 | 10:15   |
+| 1:00 AM         | 一點正    | 1:00  | 1:00    |
+| 5 past 9        | 九點一個字  | 9:05  | 9:05    |
+| Quarter past 10 | 十點三個字  | 10:15 | 10:15   |
 | Half past 11    | 十一點半   | 11:30 | 11:30   |
 | Noon            | 正午     | 12:00 | 12:00   |
-| Quarter to 3    | 二點四十五分 | 14:45 | 14:45   |
-| 5 to 6          | 五點五十五分 | 17:55 | 17:55   |
-| 8 o'clock PM    | 八點整    | 20:00 | 20:00   |
+| Quarter to 3    | 兩點九個字  | 14:45 | 14:45   |
+| 5 to 6          | 五點十一個字 | 17:55 | 17:55   |
+| 8 o'clock PM    | 八點正    | 20:00 | 20:00   |
 | 10:30 PM        | 十點半    | 22:30 | 22:30   |
 | 11:58 PM        | 午夜     | 23:58 | 23:58   |

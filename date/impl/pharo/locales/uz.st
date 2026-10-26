@@ -18,15 +18,15 @@ uz
 	locale code: 'uz'.
 	locale months: (OrderedCollection withAll: { 'yanvar'. 'fevral'. 'mart'. 'aprel'. 'may'. 'iyun'. 'iyul'. 'avgust'. 'sentabr'. 'oktabr'. 'noyabr'. 'dekabr' }).
 	locale weekdays: (OrderedCollection withAll: { 'yakshanba'. 'dushanba'. 'seshanba'. 'chorshanba'. 'payshanba'. 'juma'. 'shanba' }).
-	locale dayFormat: '{n}'.
+	locale dayFormat: '{n}-'.
 	locale dayFormatExceptions: Dictionary new.
-	locale datePattern: '{day} {month}'.
-	locale datePatternWithYear: '{day} {month} {year}'.
+	locale datePattern: '{day}{month}'.
+	locale datePatternWithYear: '{day}{month}, {year}'.
 	locale today: 'bugun'.
 	locale tomorrow: 'ertaga'.
 	locale yesterday: 'kecha'.
 	locale dayAfterTomorrow: 'indinga'.
-	locale dayBeforeYesterday: 'kechagina'.
+	locale dayBeforeYesterday: 'o''tgan kuni'.
 	locale thisWeekday: 'bu {weekday}'.
 	locale nextWeekday: 'keyingi {weekday}'.
 	locale lastWeekday: 'o''tgan {weekday}'.
@@ -34,9 +34,9 @@ uz
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'yan'. 'fev'. 'mar'. 'apr'. 'may'. 'iyn'. 'iyl'. 'avg'. 'sen'. 'okt'. 'noy'. 'dek' }).
 		#weekdays. (OrderedCollection withAll: { 'yak'. 'dush'. 'sesh'. 'chor'. 'pay'. 'jum'. 'shan' }).
-		#dayFormat. '{n}'.
-		#datePattern. '{day} {month}'.
-		#datePatternWithYear. '{day} {month} {year}'.
+		#dayFormat. '{n}-'.
+		#datePattern. '{day}{month}'.
+		#datePatternWithYear. '{day}{month}, {year}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#datePattern. '{d}/{m}'.

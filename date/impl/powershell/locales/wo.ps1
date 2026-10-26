@@ -19,11 +19,11 @@ function locale_wo {
     $today = 'tey'
     $tomorrow = 'suba'
     $yesterday = 'démb'
-    $dayAfterTomorrow = 'suba-suba'
-    $dayBeforeYesterday = 'démb-démb'
-    $thisWeekday = '{weekday} bi'
-    $nextWeekday = '{weekday} bi ñëw'
-    $lastWeekday = '{weekday} bi weex'
+    $dayAfterTomorrow = 'gannaaw-suba'
+    $dayBeforeYesterday = 'bërki-démb'
+    $thisWeekday = '{weekday} jii'
+    $nextWeekday = '{weekday} jiy ñëw'
+    $lastWeekday = '{weekday} ji weesu'
     $monthsInDate = $null
     $short = @{
         months = @('Sam', 'Few', 'Maa', 'Awr', 'Mee', 'Suw', 'Sul', 'Ut', 'Sep', 'Okt', 'Now', 'Des')

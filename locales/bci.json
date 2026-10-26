@@ -170,7 +170,7 @@
   "time": {
     "clock": {
       "hours": [
-        "blu-nɲɔn",
+        "blu-nin-nɲɔn",
         "kun",
         "nɲɔn",
         "nsan",
@@ -181,23 +181,23 @@
         "mɔcuɛ",
         "ngwlan",
         "blu",
-        "blu-kun"
+        "blu-nin-kun"
       ],
       "midnight": "kɔnguɛ afiɛn",
       "noon": "nnɔsua",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "dɔ {h}",
+        "5": "dɔ {h} nin miniti nnun",
+        "10": "dɔ {h} nin miniti blu",
+        "15": "dɔ {h} nin miniti blu-nin-nnun",
+        "20": "dɔ {h} nin miniti ablaɔn",
+        "25": "dɔ {h} nin miniti ablaɔn-nin-nnun",
+        "30": "dɔ {h} nin miniti ablasan",
+        "35": "dɔ {h} nin miniti ablasan-nin-nnun",
+        "40": "dɔ {h} nin miniti ablanan",
+        "45": "dɔ {h} nin miniti ablanan-nin-nnun",
+        "50": "dɔ {h} nin miniti ablenun",
+        "55": "dɔ {h} nin miniti ablenun-nin-nnun"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Additive 'dɔ {h}' (dɔ = hour/time) and 'dɔ {h} nin miniti N' with Baoulé numerals (nnun, blu, blu-nin-nnun, ablaɔn, ablasan, ablanan, ablenun); :30 given as 'nin miniti ablasan' rather than a half-word I could not confirm. Hours 11/12 corrected to 'blu-nin-kun' / 'blu-nin-nɲɔn' (ten-and-one / ten-and-two). I am not a confident Baoulé speaker: 'dɔ' as the clock-hour word and the loan 'miniti' need native confirmation. Noon/midnight left as they were."
+    }
+  ]
 }

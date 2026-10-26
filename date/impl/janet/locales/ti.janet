@@ -22,7 +22,7 @@
    :yesterday "ትማሊ"
    :day-after-tomorrow "ድሕሪ ጽባሕ"
    :day-before-yesterday "ቅድሚ ትማሊ"
-   :this-weekday "እዛ {weekday}"
+   :this-weekday "እዚ {weekday}"
    :next-weekday "ዝመጽእ {weekday}"
    :last-weekday "ዝሓለፈ {weekday}"
    :short {:months @["ጥሪ" "ለካ" "መጋ" "ሚያ" "ግን" "ሰነ" "ሓም" "ነሓ" "መስ" "ጥቅ" "ሕዳ" "ታሕ"] :weekdays @["ሰንበት" "ሰኑይ" "ሠሉስ" "ረቡዕ" "ሓሙስ" "ዓርቢ" "ቀዳም"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}

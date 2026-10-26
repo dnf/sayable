@@ -19,20 +19,20 @@ jv
 	clock := Dictionary new.
 	clock at: #hours put: (OrderedCollection withAll: { 'rolas'. 'siji'. 'loro'. 'telu'. 'papat'. 'lima'. 'enem'. 'pitu'. 'wolu'. 'sanga'. 'sepuluh'. 'sewelas' }).
 	clock at: #midnight put: 'tengah wengi'.
-	clock at: #noon put: 'awan'.
+	clock at: #noon put: 'tengah awan'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. 'jam {h}'.
+		5. 'jam {h} luwih limang menit'.
+		10. 'jam {h} luwih sepuluh menit'.
+		15. 'jam {h} luwih seprapat'.
+		20. 'jam {h} luwih rong puluh menit'.
+		25. 'jam {h} luwih selawé menit'.
+		30. 'jam setengah {next_h}'.
+		35. 'jam {next_h} kurang selawé menit'.
+		40. 'jam {next_h} kurang rong puluh menit'.
+		45. 'jam {next_h} kurang seprapat'.
+		50. 'jam {next_h} kurang sepuluh menit'.
+		55. 'jam {next_h} kurang limang menit'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

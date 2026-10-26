@@ -20,7 +20,7 @@
     :hours (list "ဆယ့်နှစ်" "တစ်" "နှစ်" "သုံး" "လေး" "ငါး" "ခြောက်" "ခုနစ်" "ရှစ်" "ကိုး" "ဆယ်" "ဆယ့်တစ်")
     :midnight "သန်းခေါင်"
     :noon "မွန်းတည့်"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}နာရီ") (cons 5 "{h}နာရီ ငါးမိနစ်") (cons 10 "{h}နာရီ ဆယ်မိနစ်") (cons 15 "{h}နာရီ ဆယ့်ငါးမိနစ်") (cons 20 "{h}နာရီ နှစ်ဆယ်မိနစ်") (cons 25 "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်") (cons 30 "{h}နာရီခွဲ") (cons 35 "{h}နာရီ သုံးဆယ့်ငါးမိနစ်") (cons 40 "{h}နာရီ လေးဆယ်မိနစ်") (cons 45 "{h}နာရီ လေးဆယ့်ငါးမိနစ်") (cons 50 "{h}နာရီ ငါးဆယ်မိနစ်") (cons 55 "{h}နာရီ ငါးဆယ့်ငါးမိနစ်")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

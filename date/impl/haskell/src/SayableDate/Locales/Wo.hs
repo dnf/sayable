@@ -46,11 +46,11 @@ locale = DateLocale
     , localeToday = "tey"
     , localeTomorrow = "suba"
     , localeYesterday = "démb"
-    , localeDayAfterTomorrow = Just "suba-suba"
-    , localeDayBeforeYesterday = Just "démb-démb"
-    , localeThisWeekday = Just "{weekday} bi"
-    , localeNextWeekday = Just "{weekday} bi ñëw"
-    , localeLastWeekday = Just "{weekday} bi weex"
+    , localeDayAfterTomorrow = Just "gannaaw-suba"
+    , localeDayBeforeYesterday = Just "bërki-démb"
+    , localeThisWeekday = Just "{weekday} jii"
+    , localeNextWeekday = Just "{weekday} jiy ñëw"
+    , localeLastWeekday = Just "{weekday} ji weesu"
     , localeMonthsInDate = Nothing
     , localeShort = Just $
         CompactnessOverride

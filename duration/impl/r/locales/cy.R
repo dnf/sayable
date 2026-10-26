@@ -25,10 +25,10 @@ locale_cy <- list(
     second = list(zero = "{n} eiliad", one = "{n} eiliad", two = "{n} eiliad", few = "{n} eiliad", many = "{n} eiliad", other = "{n} eiliad"),
     minute = list(zero = "{n} munud", one = "{n} munud", two = "{n} funud", few = "{n} munud", many = "{n} munud", other = "{n} munud"),
     hour = list(zero = "{n} awr", one = "{n} awr", two = "{n} awr", few = "{n} awr", many = "{n} awr", other = "{n} awr"),
-    day = list(zero = "{n} diwrnod", one = "{n} diwrnod", two = "{n} ddiwrnod", few = "{n} diwrnod", many = "{n} niwrnod", other = "{n} diwrnod"),
+    day = list(zero = "{n} diwrnod", one = "{n} diwrnod", two = "{n} ddiwrnod", few = "{n} diwrnod", many = "{n} diwrnod", other = "{n} diwrnod"),
     week = list(zero = "{n} wythnos", one = "{n} wythnos", two = "{n} wythnos", few = "{n} wythnos", many = "{n} wythnos", other = "{n} wythnos"),
     month = list(zero = "{n} mis", one = "{n} mis", two = "{n} fis", few = "{n} mis", many = "{n} mis", other = "{n} mis"),
-    year = list(zero = "{n} blwyddyn", one = "{n} blwyddyn", two = "{n} flynedd", few = "{n} blynedd", many = "{n} blynedd", other = "{n} blynedd")
+    year = list(zero = "{n} blwyddyn", one = "{n} flwyddyn", two = "{n} flynedd", few = "{n} blynedd", many = "{n} blynedd", other = "{n} blynedd")
   ),
   half = "{0} a hanner",
   delimiter = ", ",

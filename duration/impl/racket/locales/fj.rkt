@@ -28,11 +28,11 @@
          "week" (hash "type" "simple" "form" "{n} na macawa")
          "month" (hash "type" "simple" "form" "{n} na vula")
          "year" (hash "type" "simple" "form" "{n} na yabaki"))
-   "{n} kei na levu ni wasei"
+   "{0} kei na veimama"
    ", "
    "edaidai ga"
    "{0} sa oti"
    "ena {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} sek") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} aua") (hash "type" "simple" "form" "{n} siga") (hash "type" "simple" "form" "{n} mac") (hash "type" "simple" "form" "{n} vul") (hash "type" "simple" "form" "{n} yab") #f #f "{0} sa oti" "ena {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} sa oti" "ena {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} sa oti" "ena {0}")
   ))

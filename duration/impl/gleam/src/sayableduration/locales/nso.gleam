@@ -16,8 +16,8 @@ pub fn locale() -> types.DurationLocale {
     code: "nso",
     plural: fn(n) { case n { 1 -> types.One _ -> types.Other } },
     units: [
-      #("second", types.PluralUnit([#(types.One, "motsotswana {n}"), #(types.Other, "dimetsotswana {n}")])),
-      #("minute", types.PluralUnit([#(types.One, "metsotso {n}"), #(types.Other, "dimetsotso {n}")])),
+      #("second", types.PluralUnit([#(types.One, "motsotswana {n}"), #(types.Other, "metsotswana {n}")])),
+      #("minute", types.PluralUnit([#(types.One, "motsotso {n}"), #(types.Other, "metsotso {n}")])),
       #("hour", types.PluralUnit([#(types.One, "iri {n}"), #(types.Other, "diiri {n}")])),
       #("day", types.PluralUnit([#(types.One, "letšatši {n}"), #(types.Other, "matšatši {n}")])),
       #("week", types.PluralUnit([#(types.One, "beke {n}"), #(types.Other, "dibeke {n}")])),
@@ -31,8 +31,8 @@ pub fn locale() -> types.DurationLocale {
     in_future: "ka {0}",
     short: Ok(types.CompactnessOverride(
       units: Ok([
-        #("second", types.PluralUnit([#(types.One, "mots. {n}"), #(types.Other, "dimets. {n}")])),
-        #("minute", types.PluralUnit([#(types.One, "mets. {n}"), #(types.Other, "dimets. {n}")])),
+        #("second", types.PluralUnit([#(types.One, "motsotsw. {n}"), #(types.Other, "metsotsw. {n}")])),
+        #("minute", types.PluralUnit([#(types.One, "mots. {n}"), #(types.Other, "mets. {n}")])),
         #("hour", types.PluralUnit([#(types.One, "iri {n}"), #(types.Other, "diiri {n}")])),
         #("day", types.PluralUnit([#(types.One, "letšatši {n}"), #(types.Other, "matšatši {n}")])),
         #("week", types.PluralUnit([#(types.One, "beke {n}"), #(types.Other, "dibeke {n}")])),

@@ -24,7 +24,7 @@ pub fn locale() -> types.DurationLocale {
       #("month", types.SimpleUnit("{n} aý")),
       #("year", types.SimpleUnit("{n} ýyl")),
     ],
-    half: "{0}½",
+    half: "{n} ýarym",
     delimiter: ", ",
     just_now: "häzir",
     ago: "{0} öň",

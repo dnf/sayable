@@ -18,8 +18,8 @@ nso
 	locale code: 'nso'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. 'motsotswana {n}'. #other. 'dimetsotswana {n}' }).
-		'minute'. (Dictionary newFromPairs: { #one. 'metsotso {n}'. #other. 'dimetsotso {n}' }).
+		'second'. (Dictionary newFromPairs: { #one. 'motsotswana {n}'. #other. 'metsotswana {n}' }).
+		'minute'. (Dictionary newFromPairs: { #one. 'motsotso {n}'. #other. 'metsotso {n}' }).
 		'hour'. (Dictionary newFromPairs: { #one. 'iri {n}'. #other. 'diiri {n}' }).
 		'day'. (Dictionary newFromPairs: { #one. 'letšatši {n}'. #other. 'matšatši {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'beke {n}'. #other. 'dibeke {n}' }).
@@ -33,8 +33,8 @@ nso
 	locale inFuture: 'ka {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. (Dictionary newFromPairs: { #one. 'mots. {n}'. #other. 'dimets. {n}' }).
-			'minute'. (Dictionary newFromPairs: { #one. 'mets. {n}'. #other. 'dimets. {n}' }).
+			'second'. (Dictionary newFromPairs: { #one. 'motsotsw. {n}'. #other. 'metsotsw. {n}' }).
+			'minute'. (Dictionary newFromPairs: { #one. 'mots. {n}'. #other. 'mets. {n}' }).
 			'hour'. (Dictionary newFromPairs: { #one. 'iri {n}'. #other. 'diiri {n}' }).
 			'day'. (Dictionary newFromPairs: { #one. 'letšatši {n}'. #other. 'matšatši {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'beke {n}'. #other. 'dibeke {n}' }).

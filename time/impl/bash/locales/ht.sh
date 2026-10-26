@@ -10,16 +10,16 @@
 # Source: locales/ht.json
 
 _sayabletime_locale_ht() {
-    _clock_hours=('douz' 'en' 'de' 'twa' 'kat' 'senk' 'sis' 'sèt' 'uit' 'nèf' 'dis' 'onz')
-    _clock_midnight='minui'
+    _clock_hours=('douzè' 'inè' 'dezè' 'twazè' 'katrè' 'senkè' 'sizè' 'setè' 'uitè' 'nevè' 'dizè' 'onzè')
+    _clock_midnight='minwi'
     _clock_noon='midi'
-    _clock_pattern_0='{h} è'
-    _clock_pattern_5='{h} è senk'
-    _clock_pattern_10='{h} è dis'
-    _clock_pattern_15='{h} è ka'
-    _clock_pattern_20='{h} è ven'
-    _clock_pattern_25='{h} è vennsenk'
-    _clock_pattern_30='{h} è demi'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} senk'
+    _clock_pattern_10='{h} dis'
+    _clock_pattern_15='{h} e ka'
+    _clock_pattern_20='{h} ven'
+    _clock_pattern_25='{h} vennsenk'
+    _clock_pattern_30='{h} edmi'
     _clock_pattern_35='{next_h} mwen vennsenk'
     _clock_pattern_40='{next_h} mwen ven'
     _clock_pattern_45='{next_h} mwen ka'

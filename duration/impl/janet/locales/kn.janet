@@ -19,7 +19,7 @@
           :week {:one "{n} ವಾರ" :other "{n} ವಾರಗಳು"}
           :month {:one "{n} ತಿಂಗಳು" :other "{n} ತಿಂಗಳುಗಳು"}
           :year {:one "{n} ವರ್ಷ" :other "{n} ವರ್ಷಗಳು"}}
-   :half "{0}ವರೆ"
+   :half "{n}½"
    :delimiter ", "
    :just-now "ಈಗಷ್ಟೇ"
    :ago "{0} ಹಿಂದೆ"

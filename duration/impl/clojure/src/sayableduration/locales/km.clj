@@ -25,6 +25,6 @@
    :delimiter ", "
    :just-now "ឥឡូវនេះ"
    :ago "{0}មុន"
-   :in-future "ក្នុង{0}"
-   :short {:second {:type :simple :form "{n} វិនាទី"} :minute {:type :simple :form "{n} នាទី"} :hour {:type :simple :form "{n} ម៉ោង"} :day {:type :simple :form "{n} ថ្ងៃ"} :week {:type :simple :form "{n} សប្ដាហ៍"} :month {:type :simple :form "{n} ខែ"} :year {:type :simple :form "{n} ឆ្នាំ"} :half nil :delimiter nil :ago "{0}មុន" :in-future "ក្នុង{0}"}
-   :compact {:second {:type :simple :form "{n} វិនាទី"} :minute {:type :simple :form "{n} នាទី"} :hour {:type :simple :form "{n} ម៉ោង"} :day {:type :simple :form "{n} ថ្ងៃ"} :week {:type :simple :form "{n} សប្ដាហ៍"} :month {:type :simple :form "{n} ខែ"} :year {:type :simple :form "{n} ឆ្នាំ"} :half "{n}½" :delimiter "" :ago "{0}មុន" :in-future "ក្នុង{0}"}})
+   :in-future "{0}ទៀត"
+   :short {:second {:type :simple :form "{n} វិនាទី"} :minute {:type :simple :form "{n} នាទី"} :hour {:type :simple :form "{n} ម៉ោង"} :day {:type :simple :form "{n} ថ្ងៃ"} :week {:type :simple :form "{n} សប្ដាហ៍"} :month {:type :simple :form "{n} ខែ"} :year {:type :simple :form "{n} ឆ្នាំ"} :half nil :delimiter nil :ago "{0}មុន" :in-future "{0}ទៀត"}
+   :compact {:second {:type :simple :form "{n} វិនាទី"} :minute {:type :simple :form "{n} នាទី"} :hour {:type :simple :form "{n} ម៉ោង"} :day {:type :simple :form "{n} ថ្ងៃ"} :week {:type :simple :form "{n} សប្ដាហ៍"} :month {:type :simple :form "{n} ខែ"} :year {:type :simple :form "{n} ឆ្នាំ"} :half "{n}½" :delimiter "" :ago "{0}មុន" :in-future "{0}ទៀត"}})

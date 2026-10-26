@@ -27,7 +27,7 @@ const SdDateLocale sd_locale_gn = {
     (const SdDayFormatException *)0, 0,
     "{day} {month}",
     "{day} {month} {year}",
-    "ko'ágã",
+    "ko árape",
     "ko'ẽrõ",
     "kuehe",
     "ko'ẽrõ rire",

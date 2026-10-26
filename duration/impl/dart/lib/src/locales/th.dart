@@ -30,7 +30,7 @@ final th = DurationLocale(
   delimiter: ' ',
   justNow: 'เมื่อกี้',
   ago: '{0}ที่แล้ว',
-  inFuture: 'ใน{0}',
+  inFuture: 'ในอีก {0}',
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('{n} วิ'),
@@ -42,7 +42,7 @@ final th = DurationLocale(
       'year': simpleUnit('{n} ปี'),
     },
     ago: '{0}ที่แล้ว',
-    inFuture: 'ใน{0}',
+    inFuture: 'ในอีก {0}',
   ),
   compact: CompactnessOverride(
     units: {
@@ -57,6 +57,6 @@ final th = DurationLocale(
     half: '{n}½',
     delimiter: '',
     ago: '{0}ที่แล้ว',
-    inFuture: 'ใน{0}',
+    inFuture: 'ในอีก {0}',
   ),
 );

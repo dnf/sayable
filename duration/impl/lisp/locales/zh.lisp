@@ -23,7 +23,7 @@
                (cons :day "{n}天")
                (cons :week "{n}周")
                (cons :month "{n}个月")
-               (cons :year "{n}岁"))
+               (cons :year "{n}年"))
    :half "{0}半"
    :delimiter ""
    :just-now "刚刚"

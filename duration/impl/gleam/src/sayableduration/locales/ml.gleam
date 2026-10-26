@@ -14,7 +14,7 @@ import sayableduration/types
 pub fn locale() -> types.DurationLocale {
   types.DurationLocale(
     code: "ml",
-    plural: fn(n) { case n { 0 | 1 -> types.One _ -> types.Other } },
+    plural: fn(n) { case n { 1 -> types.One _ -> types.Other } },
     units: [
       #("second", types.PluralUnit([#(types.One, "{n} സെക്കൻഡ്"), #(types.Other, "{n} സെക്കൻഡുകൾ")])),
       #("minute", types.PluralUnit([#(types.One, "{n} മിനിറ്റ്"), #(types.Other, "{n} മിനിറ്റുകൾ")])),
@@ -24,7 +24,7 @@ pub fn locale() -> types.DurationLocale {
       #("month", types.PluralUnit([#(types.One, "{n} മാസം"), #(types.Other, "{n} മാസങ്ങൾ")])),
       #("year", types.PluralUnit([#(types.One, "{n} വർഷം"), #(types.Other, "{n} വർഷങ്ങൾ")])),
     ],
-    half: "{0} ര",
+    half: "{n}½",
     delimiter: ", ",
     just_now: "ഇപ്പോൾ",
     ago: "{0} മുമ്പ്",

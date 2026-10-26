@@ -14,7 +14,7 @@
 (def locale
   {:code "ro"
    :months ["ianuarie" "februarie" "martie" "aprilie" "mai" "iunie" "iulie" "august" "septembrie" "octombrie" "noiembrie" "decembrie"]
-   :weekdays ["duminică" "luni" "marți" "miercuri" "joi" "vineri" "sâmbătă"]
+   :weekdays ["duminica" "lunea" "marțea" "miercurea" "joia" "vinerea" "sâmbăta"]
    :day-format "{n}"
    :day-format-exceptions {}
    :date-pattern "{day} {month}"
@@ -24,7 +24,7 @@
    :yesterday "ieri"
    :day-after-tomorrow "poimâine"
    :day-before-yesterday "alaltăieri"
-   :this-weekday "această {weekday}"
+   :this-weekday "{weekday} aceasta"
    :next-weekday "{weekday} viitoare"
    :last-weekday "{weekday} trecută"
    :months-in-date ["ianuarie" "februarie" "martie" "aprilie" "mai" "iunie" "iulie" "august" "septembrie" "octombrie" "noiembrie" "decembrie"]

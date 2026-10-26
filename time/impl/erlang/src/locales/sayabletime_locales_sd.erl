@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "sd",
-        clock = #clock_config{hours = ["ٻارھ", "ھڪ", "ٻه", "ٽي", "چار", "پنج", "ڇھ", "ست", "اٺ", "نائن", "ڏھ", "يارھ"], midnight = "اڌ رات", noon = "ٽپھر", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["ٻارهن", "هڪ", "ٻه", "ٽي", "چار", "پنج", "ڇهه", "ست", "اٺ", "نوَ", "ڏهه", "يارهن"], midnight = "اڌ رات", noon = "ٽپھر", patterns = [{0, "{h} وڳي"}, {5, "{h} وڳي پنج منٽ"}, {10, "{h} وڳي ڏهه منٽ"}, {15, "سوا {h} وڳي"}, {20, "{h} وڳي ويهه منٽ"}, {25, "{h} وڳي پنجويهه منٽ"}, {30, "{h} وڳي ٽيهه منٽ"}, {35, "{next_h} وڳڻ ۾ پنجويهه منٽ"}, {40, "{next_h} وڳڻ ۾ ويهه منٽ"}, {45, "پوڻا {next_h} وڳي"}, {50, "{next_h} وڳڻ ۾ ڏهه منٽ"}, {55, "{next_h} وڳڻ ۾ پنج منٽ"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

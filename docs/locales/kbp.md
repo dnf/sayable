@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [kbp.json](../../locales/kbp.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort per orchestrator instruction: 'ñɩɣyʊʊ {h}' (ñɩɣyʊʊ = hour, numeral follows noun) + additive 'nɛ miniti N' (nɛ = and, miniti = minute loan), 'nɛ hɔɔlʊʊ' (half) at 30. Doubts: (1) tens numerals nɩɩlɛ 20 / niidozo 30 / nɩɩnaza 40 / nɩɩnʊwa 50 are from memory and 50 in particular is unverified; (2) whether Kabiye speakers say clock time with ñɩɣyʊʊ + bare numeral or a different idiom (many would say it in French); (3) existing hour names 'naanaza' (4; standard 'naanza') and 'lɛɛtɛ' (8; standard 'lutozo') look doubtful but were left as is. Needs a Kabiye speaker.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | cee wayɩ       | 17/3    |
 | Day before yesterday | ɖooo wayɩ      | 13/3    |
 | This Thursday (+5)   | Aramnza kɩ     | 20/3    |
-| Last Monday (-4)     | Taata nɛ wɛ    | 11/3    |
-| Next Wednesday (+12) | Aramnza nɛ ŋga | 27/3    |
-| Same month (+20)     | 4 Naalɩɩ       | 4/4     |
+| Last Tuesday (-4)    | Taata nɛ wɛ    | 11/3    |
+| Next Thursday (+12)  | Aramnza nɛ ŋga | 27/3    |
+| Same year (+20)      | 4 Naalɩɩ       | 4/4     |
 | Different year       | 10 Kɔlaɣ 2026  | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | ɖoo hɛkʊ        | 12:00 AM | 12:00a  |
-| 1:00 AM         | kʊɖʊm:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | nakʊ:05         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | hiu:15          | 10:15 AM | 10:15a  |
-| Half past 11    | hiu nɛ kʊɖʊm:30 | 11:30 AM | 11:30a  |
-| Noon            | wɩsɩ taa        | 12:00 PM | 12:00p  |
-| Quarter to 3    | naalɛ:45        | 2:45 PM  | 2:45p   |
-| 5 to 6          | kagbanzɩ:55     | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | lɛɛtɛ:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | hiu:30          | 10:30 PM | 10:30p  |
-| 11:58 PM        | ɖoo hɛkʊ        | 11:58 PM | 11:58p  |
+| Time            | Normal                                        | Short    | Compact |
+| --------------- | --------------------------------------------- | -------- | ------- |
+| Midnight        | ɖoo hɛkʊ                                      | 12:00 AM | 12:00a  |
+| 1:00 AM         | ñɩɣyʊʊ kʊɖʊm                                  | 1:00 AM  | 1:00a   |
+| 5 past 9        | ñɩɣyʊʊ nakʊ nɛ miniti kagbanzɩ                | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ñɩɣyʊʊ hiu nɛ miniti hiu nɛ kagbanzɩ          | 10:15 AM | 10:15a  |
+| Half past 11    | ñɩɣyʊʊ hiu nɛ kʊɖʊm nɛ hɔɔlʊʊ                 | 11:30 AM | 11:30a  |
+| Noon            | wɩsɩ taa                                      | 12:00 PM | 12:00p  |
+| Quarter to 3    | ñɩɣyʊʊ naalɛ nɛ miniti nɩɩnaza nɛ kagbanzɩ    | 2:45 PM  | 2:45p   |
+| 5 to 6          | ñɩɣyʊʊ kagbanzɩ nɛ miniti nɩɩnʊwa nɛ kagbanzɩ | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ñɩɣyʊʊ lɛɛtɛ                                  | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ñɩɣyʊʊ hiu nɛ hɔɔlʊʊ                          | 10:30 PM | 10:30p  |
+| 11:58 PM        | ɖoo hɛkʊ                                      | 11:58 PM | 11:58p  |

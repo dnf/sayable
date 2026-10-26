@@ -10,22 +10,22 @@
 # Source: locales/mnk.json
 
 function locale_mnk {
-    $hours = @('tan ning fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ ning kiliŋ')
+    $hours = @('taŋ niŋ fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ niŋ kiliŋ')
     $midnight = 'sutu-tili-laŋ'
     $noon = 'tili-konto'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'talaŋ {h}'
+    $patterns[5] = 'talaŋ {h} aniŋ miniti luulu'
+    $patterns[10] = 'talaŋ {h} aniŋ miniti taŋ'
+    $patterns[15] = 'talaŋ {h} aniŋ miniti taŋ niŋ luulu'
+    $patterns[20] = 'talaŋ {h} aniŋ miniti muwaŋ'
+    $patterns[25] = 'talaŋ {h} aniŋ miniti muwaŋ niŋ luulu'
+    $patterns[30] = 'talaŋ {h} aniŋ talantee'
+    $patterns[35] = 'talaŋ {h} aniŋ miniti taŋ saba niŋ luulu'
+    $patterns[40] = 'talaŋ {h} aniŋ miniti taŋ naani'
+    $patterns[45] = 'talaŋ {h} aniŋ miniti taŋ naani niŋ luulu'
+    $patterns[50] = 'talaŋ {h} aniŋ miniti taŋ luulu'
+    $patterns[55] = 'talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu'
     $clock = @{
         hours = $hours
         midnight = $midnight

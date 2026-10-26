@@ -20,7 +20,7 @@
     :hours (list "omulongo nambali" "imwe" "mbali" "ndatu" "ne" "ntano" "hamano" "heyali" "hetatu" "omugoyi" "omulongo" "omulongo nimwe")
     :midnight "onguloshi pakati"
     :noon "omutenya"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "otundi {h}") (cons 5 "otundi {h} noominute ntano") (cons 10 "otundi {h} noominute omulongo") (cons 15 "otundi {h} noominute omulongo nantano") (cons 20 "otundi {h} noominute omilongo mbali") (cons 25 "otundi {h} noominute omilongo mbali nantano") (cons 30 "otundi {h} netata") (cons 35 "otundi {h} noominute omilongo ndatu nantano") (cons 40 "otundi {h} noominute omilongo ne") (cons 45 "otundi {h} noominute omilongo ne nantano") (cons 50 "otundi {h} noominute omilongo ntano") (cons 55 "otundi {h} noominute omilongo ntano nantano")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

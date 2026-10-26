@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_quc = {
     "quc",
     {
-        { "kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "jo'", "waqi'", "wuqu'", "wajxaqi'", "b'eleji'", "lajuj", "julajuj" },
+        { "kab'lajuj", "jun", "keb'", "oxib'", "kajib'", "job'", "waqib'", "wuqub'", "wajxaqib'", "b'elejeb'", "lajuj", "julajuj" },
         "nik'aj aq'ab'",
         "nik'aj q'ij",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} ramaj", "{h} ramaj job'", "{h} ramaj lajuj", "{h} ramaj olajuj", "{h} ramaj juwinaq", "{h} ramaj juwinaq job'", "{h} ramaj juwinaq lajuj", "{h} ramaj juwinaq olajuj", "{h} ramaj kawinaq", "{h} ramaj kawinaq job'", "{h} ramaj kawinaq lajuj", "{h} ramaj kawinaq olajuj" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

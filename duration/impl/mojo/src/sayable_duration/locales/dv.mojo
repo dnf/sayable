@@ -85,7 +85,7 @@ fn build_dv() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0} ބައި",
+        half="{n}½",
         delimiter="، ",
         just_now="މިހާރު",
         ago="މީގެ {0} ކުރިން",

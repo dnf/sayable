@@ -12,9 +12,9 @@
 function loc = locale_ln()
   loc.code = 'ln';
   loc.clock.hours = {'zómi na míbalé', 'mɔ̌kɔ́', 'míbalé', 'mísáto', 'mínéi', 'mítáno', 'motóba', 'nsambo', 'mwambe', 'libwá', 'zómi', 'zómi na mɔ̌kɔ́'};
-  loc.clock.midnight = 'mpɔ́kwa';
-  loc.clock.noon = 'ntɔ́ngɔ́';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.midnight = 'midí ya butú';
+  loc.clock.noon = 'midí';
+  loc.clock.patterns = struct("p0", 'ngonga ya {h}', "p5", 'ngonga ya {h} na miniti mítáno', "p10", 'ngonga ya {h} na miniti zómi', "p15", 'ngonga ya {h} na miniti zómi na mítáno', "p20", 'ngonga ya {h} na miniti ntúkú míbalé', "p25", 'ngonga ya {h} na miniti ntúkú míbalé na mítáno', "p30", 'ngonga ya {h} na ndámbo', "p35", 'ngonga ya {h} na miniti ntúkú mísáto na mítáno', "p40", 'ngonga ya {h} na miniti ntúkú mínéi', "p45", 'ngonga ya {h} na miniti ntúkú mínéi na mítáno', "p50", 'ngonga ya {h} na miniti ntúkú mítáno', "p55", 'ngonga ya {h} na miniti ntúkú mítáno na mítáno');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

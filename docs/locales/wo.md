@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [wo.json](../../locales/wo.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Hours carry the noun with the Wolof connective numeral: 'benn waxtu', 'ñaari waxtu', ..., 'fukki waxtu', 'fukk ak benn waxtu', 'fukk ak ñaari waxtu'. Past: '{h} ak <minutes> simili' (juróomi / fukki / fukk ak juróomi / ñaar-fukki / ñaar-fukk ak juróomi simili), half '{h} ak genn-wàll'. To: '{next_h} des na <minutes> simili' ('three o'clock has N minutes remaining'), the common Senegalese construction. Check with a speaker whether 'des na' or the additive form is preferred for :35-:55, and whether 'fukk ak benn waxtu' (11) needs a connective.
+
 ## Age
 
 ### Age formatting
@@ -13,36 +21,36 @@ Plural rule: `other_only` (categories: other)
 | Age               | Normal            | Short             | Compact           |
 | ----------------- | ----------------- | ----------------- | ----------------- |
 | Born today        | Dees ko sax juddu | Dees ko sax juddu | Dees ko sax juddu |
-| 1 day             | bés 1             | bés 1             | bés 1             |
-| 3 days            | bés 3             | bés 3             | bés 3             |
-| 6 days            | bés 6             | bés 6             | bés 6             |
-| 1 week            | ayubés 1          | ayub. 1           | ayub 1            |
-| 1 week, 1 day     | ayubés 1, bés 1   | ayub. 1, bés 1    | ayub 1bés 1       |
-| 2 weeks           | ayubés 2          | ayub. 2           | ayub 2            |
-| 2 weeks, 3 days   | ayubés 2, bés 3   | ayub. 2, bés 3    | ayub 2bés 3       |
-| 3 months          | weer 3            | weer 3            | weer 3            |
-| 6 months          | weer 6            | weer 6            | weer 6            |
-| 11 months         | weer 11           | weer 11           | weer 11           |
-| 12 months         | weer 12           | weer 12           | weer 12           |
-| 23 months         | weer 23           | weer 23           | weer 23           |
-| 2 years           | at 2              | at 2              | at 2              |
-| 2 years, 1 month  | at 2, weer 1      | at 2, weer 1      | at 2weer 1        |
-| 2 years, 6 months | at 2, weer 6      | at 2, weer 6      | at 2weer 6        |
-| 3 years           | at 3              | at 3              | at 3              |
-| 3½ years          | at 3 ak genn-wàll | at 3 ak genn-wàll | at 3½             |
-| 5 years           | at 5              | at 5              | at 5              |
-| 5½ years          | at 5 ak genn-wàll | at 5 ak genn-wàll | at 5½             |
-| 7 years           | at 7              | at 7              | at 7              |
-| 10 years          | at 10             | at 10             | at 10             |
-| 18 years          | at 18             | at 18             | at 18             |
-| 45 years          | at 45             | at 45             | at 45             |
+| 1 day             | 1 fan             | 1 fan             | 1 fan             |
+| 3 days            | 3 fan             | 3 fan             | 3 fan             |
+| 6 days            | 6 fan             | 6 fan             | 6 fan             |
+| 1 week            | 1 ayubés          | 1 ayub.           | 1 ayub            |
+| 1 week, 1 day     | 1 ayubés, 1 fan   | 1 ayub., 1 fan    | 1 ayub1 fan       |
+| 2 weeks           | 2 ayubés          | 2 ayub.           | 2 ayub            |
+| 2 weeks, 3 days   | 2 ayubés, 3 fan   | 2 ayub., 3 fan    | 2 ayub3 fan       |
+| 3 months          | 3 weer            | 3 weer            | 3 weer            |
+| 6 months          | 6 weer            | 6 weer            | 6 weer            |
+| 11 months         | 11 weer           | 11 weer           | 11 weer           |
+| 12 months         | 12 weer           | 12 weer           | 12 weer           |
+| 23 months         | 23 weer           | 23 weer           | 23 weer           |
+| 2 years           | 2 at              | 2 at              | 2 at              |
+| 2 years, 1 month  | 2 at, 1 weer      | 2 at, 1 weer      | 2 at1 weer        |
+| 2 years, 6 months | 2 at, 6 weer      | 2 at, 6 weer      | 2 at6 weer        |
+| 3 years           | 3 at              | 3 at              | 3 at              |
+| 3½ years          | 3 at ak genn-wàll | 3 at ak genn-wàll | 3½ at             |
+| 5 years           | 5 at              | 5 at              | 5 at              |
+| 5½ years          | 5 at ak genn-wàll | 5 at ak genn-wàll | 5½ at             |
+| 7 years           | 7 at              | 7 at              | 7 at              |
+| 10 years          | 10 at             | 10 at             | 10 at             |
+| 18 years          | 18 at             | 18 at             | 18 at             |
+| 45 years          | 45 at             | 45 at             | 45 at             |
 
 ### Stages
 
 | Stage    | Label             |
 | -------- | ----------------- |
 | Newborn  | Dees ko sax juddu |
-| Infant   | Njàmbaar bu ndaw  |
+| Infant   | Liir              |
 | Toddler  | Xale bu ndaw      |
 | Child    | Xale              |
 | Teenager | Ndaw-ndaw         |
@@ -70,64 +78,64 @@ Relative to Saturday, March 15, 2025.
 | Today                | tey              | tey     |
 | Tomorrow             | suba             | suba    |
 | Yesterday            | démb             | démb    |
-| Day after tomorrow   | suba-suba        | 17/3    |
-| Day before yesterday | démb-démb        | 13/3    |
-| This Thursday (+5)   | Alxames bi       | 20/3    |
-| Last Monday (-4)     | Talaata bi weex  | 11/3    |
-| Next Wednesday (+12) | Alxames bi ñëw   | 27/3    |
-| Same month (+20)     | 4 Awril          | 4/4     |
+| Day after tomorrow   | gannaaw-suba     | 17/3    |
+| Day before yesterday | bërki-démb       | 13/3    |
+| This Thursday (+5)   | Alxames jii      | 20/3    |
+| Last Tuesday (-4)    | Talaata ji weesu | 11/3    |
+| Next Thursday (+12)  | Alxames jiy ñëw  | 27/3    |
+| Same year (+20)      | 4 Awril          | 4/4     |
 | Different year       | 10 Samwiyee 2026 | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                | Short               | Compact     |
-| --------------------- | --------------------- | ------------------- | ----------- |
-| 0 seconds             | léegi                 | léegi               | léegi       |
-| 1 second              | saa-yépp 1            | saa-y. 1            | saa 1       |
-| 30 seconds            | saa-yépp 30           | saa-y. 30           | saa 30      |
-| 1 minute              | simili 1              | sim. 1              | sim 1       |
-| 2 minutes, 15 seconds | simili 2, saa-yépp 15 | sim. 2, saa-y. 15   | sim 2saa 15 |
-| 5 minutes             | simili 5              | sim. 5              | sim 5       |
-| 45 minutes            | simili 45             | sim. 45             | sim 45      |
-| 1 hour                | waxtu 1               | wax. 1              | wax 1       |
-| 1½ hours              | waxtu 1 ak genn-wàll  | wax. 1 ak genn-wàll | wax 1½      |
-| 3 hours               | waxtu 3               | wax. 3              | wax 3       |
-| 6 hours               | waxtu 6               | wax. 6              | wax 6       |
-| 1 day                 | bés 1                 | bés 1               | bés 1       |
-| 1½ days               | bés 1 ak genn-wàll    | bés 1 ak genn-wàll  | bés 1½      |
-| 3 days                | bés 3                 | bés 3               | bés 3       |
-| 1 week                | ayubés 1              | ayub. 1             | ayub 1      |
-| 2 weeks, 3 days       | ayubés 2, bés 3       | ayub. 2, bés 3      | ayub 2bés 3 |
-| 1 month               | weer 1                | weer 1              | weer 1      |
-| 6 months              | weer 6                | weer 6              | weer 6      |
-| 1 year                | at 1                  | at 1                | at 1        |
-| 2 years, 3 months     | at 2, weer 3          | at 2, weer 3        | at 2weer 3  |
+| Duration              | Normal               | Short               | Compact     |
+| --------------------- | -------------------- | ------------------- | ----------- |
+| 0 seconds             | léegi                | léegi               | léegi       |
+| 1 second              | 1 saa                | 1 saa               | 1 saa       |
+| 30 seconds            | 30 saa               | 30 saa              | 30 saa      |
+| 1 minute              | 1 simili             | 1 sim.              | 1 sim       |
+| 2 minutes, 15 seconds | 2 simili, 15 saa     | 2 sim., 15 saa      | 2 sim15 saa |
+| 5 minutes             | 5 simili             | 5 sim.              | 5 sim       |
+| 45 minutes            | 45 simili            | 45 sim.             | 45 sim      |
+| 1 hour                | 1 waxtu              | 1 wax.              | 1 wax       |
+| 1½ hours              | 1 waxtu ak genn-wàll | 1 wax. ak genn-wàll | 1½ wax      |
+| 3 hours               | 3 waxtu              | 3 wax.              | 3 wax       |
+| 6 hours               | 6 waxtu              | 6 wax.              | 6 wax       |
+| 1 day                 | 1 fan                | 1 fan               | 1 fan       |
+| 1½ days               | 1 fan ak genn-wàll   | 1 fan ak genn-wàll  | 1½ fan      |
+| 3 days                | 3 fan                | 3 fan               | 3 fan       |
+| 1 week                | 1 ayubés             | 1 ayub.             | 1 ayub      |
+| 2 weeks, 3 days       | 2 ayubés, 3 fan      | 2 ayub., 3 fan      | 2 ayub3 fan |
+| 1 month               | 1 weer               | 1 weer              | 1 weer      |
+| 6 months              | 6 weer               | 6 weer              | 6 weer      |
+| 1 year                | 1 at                 | 1 at                | 1 at        |
+| 2 years, 3 months     | 2 at, 3 weer         | 2 at, 3 weer        | 2 at3 weer  |
 
 ### Relative time
 
 | Offset        | Normal             | Compact       |
 | ------------- | ------------------ | ------------- |
-| 5 minutes ago | simili 5 ci ginaaw | sim 5 ci gin. |
-| 2 hours ago   | waxtu 2 ci ginaaw  | wax 2 ci gin. |
-| in 30 minutes | ci simili 30       | ci sim 30     |
-| in 3 hours    | ci waxtu 3         | ci wax 3      |
+| 5 minutes ago | 5 simili ci ginaaw | 5 sim ci gin. |
+| 2 hours ago   | 2 waxtu ci ginaaw  | 2 wax ci gin. |
+| in 30 minutes | fileek 30 simili   | fileek 30 sim |
+| in 3 hours    | fileek 3 waxtu     | fileek 3 wax  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | bu guddi        | 12:00 AM | 12:00a  |
-| 1:00 AM         | benn:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | juróom-ñeent:05 | 9:05 AM  | 9:05a   |
-| Quarter past 10 | fukk:15         | 10:15 AM | 10:15a  |
-| Half past 11    | fukki benn:30   | 11:30 AM | 11:30a  |
-| Noon            | ci àttaya       | 12:00 PM | 12:00p  |
-| Quarter to 3    | ñaar:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | juróom:55       | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | juróom-ñett:00  | 8:00 PM  | 8:00p   |
-| 10:30 PM        | fukk:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | bu guddi        | 11:58 PM | 11:58p  |
+| Time            | Normal                                    | Short    | Compact |
+| --------------- | ----------------------------------------- | -------- | ------- |
+| Midnight        | digg-guddi                                | 12:00 AM | 12:00a  |
+| 1:00 AM         | benn waxtu                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | juróom-ñeenti waxtu ak juróomi simili     | 9:05 AM  | 9:05a   |
+| Quarter past 10 | fukki waxtu ak fukk ak juróomi simili     | 10:15 AM | 10:15a  |
+| Half past 11    | fukk ak benn waxtu ak genn-wàll           | 11:30 AM | 11:30a  |
+| Noon            | digg-bëccëg                               | 12:00 PM | 12:00p  |
+| Quarter to 3    | ñetti waxtu des na fukk ak juróomi simili | 2:45 PM  | 2:45p   |
+| 5 to 6          | juróom-benni waxtu des na juróomi simili  | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | juróom-ñetti waxtu                        | 8:00 PM  | 8:00p   |
+| 10:30 PM        | fukki waxtu ak genn-wàll                  | 10:30 PM | 10:30p  |
+| 11:58 PM        | digg-guddi                                | 11:58 PM | 11:58p  |

@@ -17,10 +17,10 @@ package SayableTime::Locales::ZU;
 sub locale {{
   code => 'zu',
   clock => {
-    hours => ['ishumi nambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isishiyagalombili', 'isishiyagalolunye', 'ishumi', 'ishumi nanye'],
+    hours => ['leshumi nambili', 'lokuqala', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithupha', 'lesikhombisa', 'lesishiyagalombili', 'lesishiyagalolunye', 'leshumi', 'leshumi nanye'],
     midnight => 'phakathi kwamabili',
     noon => 'emini',
-    patterns => { 0 => '{h} o\'clock', 5 => 'emva kwemizuzu emihlanu ngo-{h}', 10 => 'emva kwemizuzu eyishumi ngo-{h}', 15 => 'ikota edlule ngo-{h}', 20 => 'emva kwemizuzu engamashumi amabili ngo-{h}', 25 => 'emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}', 30 => 'uhhafu edlule ngo-{h}', 35 => 'imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}', 40 => 'imizuzu engamashumi amabili ngaphambi kuka-{next_h}', 45 => 'ikota ngaphambi kuka-{next_h}', 50 => 'imizuzu eyishumi ngaphambi kuka-{next_h}', 55 => 'imizuzu emihlanu ngaphambi kuka-{next_h}' },
+    patterns => { 0 => 'ihora {h}', 5 => 'imizuzu emihlanu emva kwehora {h}', 10 => 'imizuzu eyishumi emva kwehora {h}', 15 => 'ikota emva kwehora {h}', 20 => 'imizuzu engamashumi amabili emva kwehora {h}', 25 => 'imizuzu engamashumi amabili nanhlanu emva kwehora {h}', 30 => 'uhhafu emva kwehora {h}', 35 => 'imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}', 40 => 'imizuzu engamashumi amabili ngaphambi kwehora {next_h}', 45 => 'ikota ngaphambi kwehora {next_h}', 50 => 'imizuzu eyishumi ngaphambi kwehora {next_h}', 55 => 'imizuzu emihlanu ngaphambi kwehora {next_h}' },
   },
   short => {
     clock => {

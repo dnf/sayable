@@ -53,6 +53,7 @@ var CAK = sd.DurationLocale{
 		Month:     &sd.UnitForms{Simple: "{n}mo"},
 		Year:      &sd.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0} k'o chi"),
 		InFuture:  strPtr("pa {0}"),
 	},

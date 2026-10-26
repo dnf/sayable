@@ -22,7 +22,7 @@ proc locale_date_dz {} {
     set yesterday {ཁ་ཙ}
     set day_after_tomorrow {གནངས་ཚེ}
     set day_before_yesterday {ཁ་ཉིམ}
-    set this_weekday "འདི་ {weekday}"
+    set this_weekday "{weekday} འདི"
     set next_weekday "{weekday} ཤུལ་མ"
     set last_weekday "{weekday} ཧེ་མ"
     set months_in_date ""

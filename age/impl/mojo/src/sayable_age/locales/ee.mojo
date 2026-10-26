@@ -30,26 +30,26 @@ fn build_ee() -> AgeLocale:
             return "one"
         return "other"
 
-    var day = plural_unit(one="ŋkeke {n}", other="ŋkekewo {n}")
-    var week = plural_unit(one="kɔsiɖa {n}", other="kɔsiɖawo {n}")
-    var month = plural_unit(one="ɣleti {n}", other="ɣletiwo {n}")
-    var year = plural_unit(one="ƒe {n}", other="ƒewo {n}")
+    var day = simple_unit("ŋkeke {n}")
+    var week = simple_unit("kɔsiɖa {n}")
+    var month = simple_unit("ɣleti {n}")
+    var year = simple_unit("ƒe {n}")
 
     var newborn = stage_neutral("Evi yeye")
     var infant = stage_neutral("Ɖevi")
     var toddler = stage_neutral("Ɖevi sue")
     var child = stage_neutral("Ɖevi")
-    var teenager = stage_neutral("Ŋutsuviwo")
+    var teenager = stage_gendered("Ɖekakpui", "Ɖetugbi")
     var adult = stage_neutral("Ame tsitsi")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("ŋkekewo {n}")
+    short_ovr.day = simple_unit("ŋkeke {n}")
     short_ovr.has_day = True
-    short_ovr.week = plural_unit(one="kɔsiɖa {n}", other="kɔsiɖawo {n}")
+    short_ovr.week = simple_unit("kɔsiɖa {n}")
     short_ovr.has_week = True
-    short_ovr.month = plural_unit(one="ɣleti {n}", other="ɣletiwo {n}")
+    short_ovr.month = simple_unit("ɣleti {n}")
     short_ovr.has_month = True
-    short_ovr.year = plural_unit(one="ƒe {n}", other="ƒewo {n}")
+    short_ovr.year = simple_unit("ƒe {n}")
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()

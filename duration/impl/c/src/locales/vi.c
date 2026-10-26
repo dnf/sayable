@@ -26,11 +26,11 @@ const SduDurationLocale sdu_locale_vi = {
         { "{n} ngày", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} tuần", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} tháng", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} tuổi", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n} năm", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} rưỡi", ", ",
     "vừa xong",
-    "{0} trước", "trong {0}",
-    true, { true, { "{n} giây", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} phút", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} giờ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ngày", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tuần", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tháng", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} năm", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} trước", true, "trong {0}" },
-    true, { true, { "{n} giây", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} phút", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} giờ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ngày", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tuần", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tháng", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} năm", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} trước", true, "trong {0}" }
+    "{0} trước", "{0} nữa",
+    true, { true, { "{n} giây", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} phút", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} giờ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ngày", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tuần", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tháng", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} năm", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} trước", true, "{0} nữa" },
+    true, { true, { "{n} giây", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} phút", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} giờ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ngày", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tuần", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tháng", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} năm", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} trước", true, "{0} nữa" }
 };

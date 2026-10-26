@@ -30,7 +30,7 @@ let locale : locale =
       [ (One, "වසර {n}")
       ; (Other, "වසර {n}")
       ]
-  ; half = "{0}යි භාගයයි"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_born = "අලුත උපන්"
   ; stages =

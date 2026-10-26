@@ -40,7 +40,7 @@ fn build_tk() -> AgeLocale:
     var toddler = stage_neutral("Kiçijik")
     var child = stage_neutral("Çaga")
     var teenager = stage_neutral("Ýetginjek")
-    var adult = stage_neutral("Ulular")
+    var adult = stage_neutral("Uly adam")
 
     var short_ovr = CompactnessOverride()
     short_ovr.day = simple_unit("{n} g")
@@ -73,7 +73,7 @@ fn build_tk() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}½",
+        half="{n} ýarym",
         delimiter=", ",
         just_born="Täze doglan",
         newborn=newborn,

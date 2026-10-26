@@ -29,7 +29,7 @@ MNK = DurationLocale(
     delimiter=", ",
     just_now="sisan",
     ago="{0} taata",
-    in_future="ka {0}",
+    in_future="{0} kɔnɔ",
     short=CompactnessOverride(
         units={
             "second": "sɛk. {n}",
@@ -41,7 +41,7 @@ MNK = DurationLocale(
             "year": "sanj. {n}",
         },
         ago="{0} taata",
-        in_future="ka {0}",
+        in_future="{0} kɔnɔ",
     ),
     compact=CompactnessOverride(
         units={
@@ -56,6 +56,6 @@ MNK = DurationLocale(
         half="{n}½",
         delimiter="",
         ago="{0} taata",
-        in_future="ka {0}",
+        in_future="{0} kɔnɔ",
     ),
 )

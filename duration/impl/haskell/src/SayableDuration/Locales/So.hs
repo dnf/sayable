@@ -18,34 +18,25 @@ locale = DurationLocale
     { localeCode = "so"
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Pluralized
-          [ (One, "ilbiriqsi {n}")
-          , (Other, "ilbiriqsiyaal {n}")
-          ]
+        { unitSecond = Simple "{n} ilbiriqsi"
         , unitMinute = Pluralized
-          [ (One, "daqiiqad {n}")
-          , (Other, "daqiiqadood {n}")
+          [ (One, "{n} daqiiqad")
+          , (Other, "{n} daqiiqo")
           ]
         , unitHour = Pluralized
-          [ (One, "saacad {n}")
-          , (Other, "saacadood {n}")
+          [ (One, "{n} saacad")
+          , (Other, "{n} saacadood")
           ]
         , unitDay = Pluralized
-          [ (One, "maalin {n}")
-          , (Other, "maalmood {n}")
+          [ (One, "{n} maalin")
+          , (Other, "{n} maalmood")
           ]
-        , unitWeek = Pluralized
-          [ (One, "toddobaad {n}")
-          , (Other, "toddobaadyo {n}")
-          ]
+        , unitWeek = Simple "{n} toddobaad"
         , unitMonth = Pluralized
-          [ (One, "bil {n}")
-          , (Other, "bilood {n}")
+          [ (One, "{n} bil")
+          , (Other, "{n} bilood")
           ]
-        , unitYear = Pluralized
-          [ (One, "sano {n}")
-          , (Other, "sanooyin {n}")
-          ]
+        , unitYear = Simple "{n} sano"
         }
     , localeHalf = "{n}½"
     , localeDelimiter = ", "

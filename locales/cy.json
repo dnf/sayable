@@ -9,7 +9,7 @@
         "one": "{n} diwrnod",
         "two": "{n} ddiwrnod",
         "few": "{n} diwrnod",
-        "many": "{n} niwrnod",
+        "many": "{n} diwrnod",
         "other": "{n} diwrnod"
       },
       "week": {
@@ -30,7 +30,7 @@
       },
       "year": {
         "zero": "{n} blwyddyn",
-        "one": "{n} blwyddyn",
+        "one": "{n} flwyddyn",
         "two": "{n} flynedd",
         "few": "{n} blynedd",
         "many": "{n} blynedd",
@@ -187,7 +187,7 @@
         "one": "{n} diwrnod",
         "two": "{n} ddiwrnod",
         "few": "{n} diwrnod",
-        "many": "{n} niwrnod",
+        "many": "{n} diwrnod",
         "other": "{n} diwrnod"
       },
       "week": {
@@ -208,7 +208,7 @@
       },
       "year": {
         "zero": "{n} blwyddyn",
-        "one": "{n} blwyddyn",
+        "one": "{n} flwyddyn",
         "two": "{n} flynedd",
         "few": "{n} blynedd",
         "many": "{n} blynedd",
@@ -305,18 +305,18 @@
       "midnight": "hanner nos",
       "noon": "hanner dydd",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} o'r gloch",
+        "5": "pum munud wedi {h}",
+        "10": "deg munud wedi {h}",
+        "15": "chwarter wedi {h}",
+        "20": "ugain munud wedi {h}",
+        "25": "pum munud ar hugain wedi {h}",
+        "30": "hanner awr wedi {h}",
+        "35": "pum munud ar hugain i {next_h}",
+        "40": "ugain munud i {next_h}",
+        "45": "chwarter i {next_h}",
+        "50": "deg munud i {next_h}",
+        "55": "pum munud i {next_h}"
       }
     },
     "short": {
@@ -331,5 +331,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Welsh wedi/i system: '{h} o'r gloch', 'pum munud wedi {h}', 'chwarter wedi', 'hanner awr wedi', 'chwarter i {next_h}' etc. COMPROMISE: 'i' should soft-mutate the next hour (i ddau, i dri, i bedwar, i bump, i ddeg, i ddeuddeg); the schema has one hours list so the :35-:55 buckets print the unmutated hour for 6 of 12 hours. Pattern shape is ready for a mutated next-hour list if the schema gains one."
+    }
+  ]
 }

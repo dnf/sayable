@@ -70,7 +70,7 @@
     "tomorrow": "paqarin",
     "yesterday": "qayna",
     "dayAfterTomorrow": "minchha",
-    "dayBeforeYesterday": "qayna p'unchaw",
+    "dayBeforeYesterday": "qayninpa",
     "thisWeekday": "kay {weekday}",
     "nextWeekday": "hamuq {weekday}",
     "lastWeekday": "qayna {weekday}",
@@ -109,8 +109,8 @@
   },
   "duration": {
     "units": {
-      "second": "{n} ñiqin",
-      "minute": "{n} chiniku",
+      "second": "{n} sikundu",
+      "minute": "{n} minutu",
       "hour": "{n} ura",
       "day": "{n} p'unchaw",
       "week": "{n} simana",
@@ -124,8 +124,8 @@
     "inFuture": "{0} qhipata",
     "short": {
       "units": {
-        "second": "{n} ñiq",
-        "minute": "{n} chi",
+        "second": "{n} sik",
+        "minute": "{n} min",
         "hour": "{n} ura",
         "day": "{n} p'un",
         "week": "{n} sim",
@@ -186,18 +186,18 @@
       "midnight": "chawpi tuta",
       "noon": "chawpi p'unchaw",
       "patterns": {
-        "0": "{h}",
-        "5": "{h} pichqa",
-        "10": "{h} chunka",
-        "15": "{h} chunka pichqayuq",
-        "20": "{h} iskay chunka",
-        "25": "{h} iskay chunka pichqayuq",
-        "30": "{h} kimsa chunka",
-        "35": "{next_h} mana iskay chunka pichqayuq",
-        "40": "{next_h} mana iskay chunka",
-        "45": "{next_h} mana chunka pichqayuq",
-        "50": "{next_h} mana chunka",
-        "55": "{next_h} mana pichqa"
+        "0": "{h} ura",
+        "5": "{h} ura pichqa",
+        "10": "{h} ura chunka",
+        "15": "{h} ura chunka pichqayuq",
+        "20": "{h} ura iskay chunka",
+        "25": "{h} ura iskay chunka pichqayuq",
+        "30": "{h} ura kimsa chunka",
+        "35": "{h} ura kimsa chunka pichqayuq",
+        "40": "{h} ura tawa chunka",
+        "45": "{h} ura tawa chunka pichqayuq",
+        "50": "{h} ura pichqa chunka",
+        "55": "{h} ura pichqa chunka pichqayuq"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Dropped the 'mana' (not) subtraction calque; now '{h} ura' plus minutes counted up in Quechua numerals ('iskay ura chunka pichqayuq'). Grammatical and unambiguous, but in practice many speakers tell time in Spanish; a native review is still needed. Kept 'kimsa chunka' for :30 rather than the unverified 'khuskanniyuq'."
+    }
+  ]
 }

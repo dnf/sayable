@@ -20,7 +20,7 @@ class FJLocale {
       "year": "{n} na yabaki",
     }
   }
-  static half { "{n} kei na levu ni wasei" }
+  static half { "{0} kei na veimama" }
   static delimiter { ", " }
   static justBorn { "Gone vou" }
   static stages {
@@ -51,6 +51,7 @@ class FJLocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

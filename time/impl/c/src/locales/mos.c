@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_mos = {
     "mos",
     {
-        { "piig la a yiibu", "a yembre", "a yiibu", "a tãabo", "a naase", "a nu", "a yoobe", "a yopoe", "a niini", "a wae", "piiga", "piig la a yembre" },
+        { "lɛɛr piig la a yiibu", "lɛɛr a yembre", "lɛɛr a yiibu", "lɛɛr a tãabo", "lɛɛr a naase", "lɛɛr a nu", "lɛɛr a yoobe", "lɛɛr a yopoe", "lɛɛr a nii", "lɛɛr a wae", "lɛɛr piiga", "lɛɛr piig la a yembre" },
         "yʋng-vɩɩse",
         "wĩntoog zabre",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} la minit a nu", "{h} la minit piiga", "{h} la minit piig la a nu", "{h} la minit pisi", "{h} la minit pisi la a nu", "{h} la pʋɩ-sʋka", "{h} la minit pis-tã la a nu", "{h} la minit pis-naase", "{h} la minit pis-naase la a nu", "{h} la minit pis-nu", "{h} la minit pis-nu la a nu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

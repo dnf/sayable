@@ -31,7 +31,7 @@ let BEM* = AgeLocale(
     "toddler": stageNeutral("Umwana"),
     "child": stageNeutral("Umwana"),
     "teenager": stageNeutral("Umunyamata"),
-    "adult": stageNeutral("Umulumendo"),
+    "adult": stageNeutral("Umukalamba"),
   }.toOrderedTable,
   short: some(CompactnessOverride(
     units: some({

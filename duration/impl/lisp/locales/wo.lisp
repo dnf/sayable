@@ -17,36 +17,36 @@
   (make-duration-locale
    :code "wo"
    :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :second "saa-yépp {n}")
-               (cons :minute "simili {n}")
-               (cons :hour "waxtu {n}")
-               (cons :day "bés {n}")
-               (cons :week "ayubés {n}")
-               (cons :month "weer {n}")
-               (cons :year "at {n}"))
+   :units (list (cons :second "{n} saa")
+               (cons :minute "{n} simili")
+               (cons :hour "{n} waxtu")
+               (cons :day "{n} fan")
+               (cons :week "{n} ayubés")
+               (cons :month "{n} weer")
+               (cons :year "{n} at"))
    :half "{0} ak genn-wàll"
    :delimiter ", "
    :just-now "léegi"
    :ago "{0} ci ginaaw"
-   :in-future "ci {0}"
-   :short-units (list (cons :second "saa-y. {n}")
-                       (cons :minute "sim. {n}")
-                       (cons :hour "wax. {n}")
-                       (cons :day "bés {n}")
-                       (cons :week "ayub. {n}")
-                       (cons :month "weer {n}")
-                       (cons :year "at {n}"))
+   :in-future "fileek {0}"
+   :short-units (list (cons :second "{n} saa")
+                       (cons :minute "{n} sim.")
+                       (cons :hour "{n} wax.")
+                       (cons :day "{n} fan")
+                       (cons :week "{n} ayub.")
+                       (cons :month "{n} weer")
+                       (cons :year "{n} at"))
    :short-ago "{0} ci ginaaw"
-   :short-in-future "ci {0}"
-   :compact-units (list (cons :second "saa {n}")
-                       (cons :minute "sim {n}")
-                       (cons :hour "wax {n}")
-                       (cons :day "bés {n}")
-                       (cons :week "ayub {n}")
-                       (cons :month "weer {n}")
-                       (cons :year "at {n}"))
+   :short-in-future "fileek {0}"
+   :compact-units (list (cons :second "{n} saa")
+                       (cons :minute "{n} sim")
+                       (cons :hour "{n} wax")
+                       (cons :day "{n} fan")
+                       (cons :week "{n} ayub")
+                       (cons :month "{n} weer")
+                       (cons :year "{n} at"))
    :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} ci gin."
-   :compact-in-future "ci {0}"
+   :compact-in-future "fileek {0}"
 ))

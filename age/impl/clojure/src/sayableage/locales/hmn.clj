@@ -23,4 +23,4 @@
    :just-born "Nyuam qhuav yug"
    :stages {:newborn {:type :neutral :label "Nyuam qhuav yug"} :infant {:type :neutral :label "Me nyuam mos"} :toddler {:type :neutral :label "Me nyuam tseem taug kev"} :child {:type :neutral :label "Me nyuam"} :teenager {:type :neutral :label "Tub ntxhais hluas"} :adult {:type :neutral :label "Neeg laus"}}
    :short {:day {:type :simple :form "{n} hnub"} :week {:type :simple :form "{n} lim tiam"} :month {:type :simple :form "{n} hlis"} :year {:type :simple :form "{n} xyoo"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

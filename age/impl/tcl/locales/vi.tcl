@@ -26,7 +26,7 @@ proc locale_vi {} {
     set just_born {Sơ sinh}
     set stages [dict create \
         newborn {Sơ sinh} \
-        infant {Trẻ sơ sinh} \
+        infant {Trẻ nhũ nhi} \
         toddler {Trẻ mới biết đi} \
         child {Trẻ em} \
         teenager {Thiếu niên} \

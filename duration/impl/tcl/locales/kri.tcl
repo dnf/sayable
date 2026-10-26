@@ -24,7 +24,7 @@ proc locale_duration_kri {} {
         month "{n} mont" \
         year "{n} ia" \
     ]
-    set half "{n} na af"
+    set half "{0} ɛn af"
     set delimiter {, }
     set just_now {jos naw}
     set ago "{0} bak"
@@ -52,6 +52,7 @@ proc locale_duration_kri {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
         ago "{0} bak" \
         in_future "na {0}" \

@@ -36,7 +36,8 @@ sd_in_future('ak', '{0} mu').
 short_sd_unit('ak', second, _, 'sɛkɛnd {n}').
 short_sd_unit('ak', minute, _, 'sema {n}').
 short_sd_unit('ak', hour, _, 'dɔnhwere {n}').
-short_sd_unit('ak', day, _, 'nna {n}').
+short_sd_unit('ak', day, one, 'da {n}').
+short_sd_unit('ak', day, other, 'nna {n}').
 short_sd_unit('ak', week, one, 'dapɛn {n}').
 short_sd_unit('ak', week, other, 'nnapɛn {n}').
 short_sd_unit('ak', month, one, 'bosome {n}').
@@ -49,7 +50,8 @@ short_sd_in_future('ak', '{0} mu').
 compact_sd_unit('ak', second, _, 'sɛk {n}').
 compact_sd_unit('ak', minute, _, 'sem {n}').
 compact_sd_unit('ak', hour, _, 'dɔn {n}').
-compact_sd_unit('ak', day, _, 'nna {n}').
+compact_sd_unit('ak', day, one, 'da {n}').
+compact_sd_unit('ak', day, other, 'nna {n}').
 compact_sd_unit('ak', week, one, 'dapɛn {n}').
 compact_sd_unit('ak', week, other, 'nnapɛn {n}').
 compact_sd_unit('ak', month, one, 'bos {n}').

@@ -17,9 +17,9 @@ GN = DurationLocale(
     code="gn",
     plural=lambda n: "one" if n == 1 else "other",
     units={
-        "second": "{n} aravo'i",
-        "minute": "{n} aravo",
-        "hour": "{n} aravo guasu",
+        "second": "{n} aravo'ive",
+        "minute": "{n} aravo'i",
+        "hour": "{n} aravo",
         "day": "{n} ára",
         "week": "{n} arapokõindy",
         "month": "{n} jasy",
@@ -32,9 +32,9 @@ GN = DurationLocale(
     in_future="{0} rire",
     short=CompactnessOverride(
         units={
-            "second": "{n} ara'i",
-            "minute": "{n} ara",
-            "hour": "{n} ara g",
+            "second": "{n} aravo'ive",
+            "minute": "{n} aravo'i",
+            "hour": "{n} aravo",
             "day": "{n} ára",
             "week": "{n} ara",
             "month": "{n} jas",

@@ -19,9 +19,9 @@ pub fn locale() -> DurationLocale {
             if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
         },
         units: Units {
-            second: UnitForms::simple("{n} තත්පරය"),
-            minute: UnitForms::simple("{n} මිනිත්තුව"),
-            hour: UnitForms::simple("{n} පැය"),
+            second: UnitForms::simple("තත්පර {n}"),
+            minute: UnitForms::simple("මිනිත්තු {n}"),
+            hour: UnitForms::simple("පැය {n}"),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "දින {n}"),
                 (PluralCategory::Other, "දින {n}"),
@@ -39,7 +39,7 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::Other, "වසර {n}"),
             ]),
         },
-        half: "{0}යි භාගයයි".to_string(),
+        half: "{n}½".to_string(),
         delimiter: ", ".to_string(),
         just_now: "දැන්".to_string(),
         ago: "{0}ට පෙර".to_string(),

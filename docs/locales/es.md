@@ -29,9 +29,9 @@ Plural rule: `one_other` (categories: one, other)
 | 2 years, 1 month  | 2 años, 1 mes     | 2 a, 1 m.     | 2a1m          |
 | 2 years, 6 months | 2 años, 6 meses   | 2 a, 6 m.     | 2a6m          |
 | 3 years           | 3 años            | 3 a           | 3a            |
-| 3½ years          | 3 y medio años    | 3 y medio a   | 3½a           |
+| 3½ years          | 3 años y medio    | 3 a y medio   | 3½a           |
 | 5 years           | 5 años            | 5 a           | 5a            |
-| 5½ years          | 5 y medio años    | 5 y medio a   | 5½a           |
+| 5½ years          | 5 años y medio    | 5 a y medio   | 5½a           |
 | 7 years           | 7 años            | 7 a           | 7a            |
 | 10 years          | 10 años           | 10 a          | 10a           |
 | 18 years          | 18 años           | 18 a          | 18a           |
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | pasado mañana       | 17/3    |
 | Day before yesterday | anteayer            | 13/3    |
 | This Thursday (+5)   | este jueves         | 20/3    |
-| Last Monday (-4)     | el pasado martes    | 11/3    |
-| Next Wednesday (+12) | el próximo jueves   | 27/3    |
-| Same month (+20)     | 4 de abril          | 4/4     |
+| Last Tuesday (-4)    | el pasado martes    | 11/3    |
+| Next Thursday (+12)  | el próximo jueves   | 27/3    |
+| Same year (+20)      | 4 de abril          | 4/4     |
 | Different year       | 10 de enero de 2026 | 10/1/26 |
 
 ## Duration

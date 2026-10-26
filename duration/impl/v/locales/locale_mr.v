@@ -23,7 +23,7 @@ pub const locale_mr = DurationLocale{
 	code: 'mr'
 	plural: plural_mr
 	second: simple_unit('{n} सेकंद')
-	minute: simple_unit('{n} मिनिट')
+	minute: plural_unit({PluralCategory.one: '{n} मिनिट', PluralCategory.other: '{n} मिनिटे'})
 	hour: simple_unit('{n} तास')
 	day: plural_unit({PluralCategory.one: '{n} दिवस', PluralCategory.other: '{n} दिवस'})
 	week: plural_unit({PluralCategory.one: '{n} आठवडा', PluralCategory.other: '{n} आठवडे'})

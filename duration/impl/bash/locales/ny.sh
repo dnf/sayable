@@ -16,9 +16,10 @@ _sayableduration_plural_ny() {
 }
 
 _sayableduration_locale_ny() {
-    _unit_second='{n} sekondi'
-    _unit_minute='{n} mphindi'
-    _unit_hour='{n} ola'
+    _unit_second='sekondi {n}'
+    _unit_minute='mphindi {n}'
+    _unit_hour_one='ola {n}'
+    _unit_hour_other='maola {n}'
     _unit_day_one='tsiku {n}'
     _unit_day_other='masiku {n}'
     _unit_week_one='sabata {n}'
@@ -34,7 +35,8 @@ _sayableduration_locale_ny() {
     _in_future='mu {0}'
     _short_unit_second='sek {n}'
     _short_unit_minute='mph {n}'
-    _short_unit_hour='ola {n}'
+    _short_unit_hour_one='ola {n}'
+    _short_unit_hour_other='maola {n}'
     _short_unit_day_one='tsiku {n}'
     _short_unit_day_other='mas {n}'
     _short_unit_week_one='sabata {n}'

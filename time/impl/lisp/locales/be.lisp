@@ -17,10 +17,10 @@
   (make-time-locale
    :code "be"
    :clock (make-clock-config
-    :hours (list "дванаццаць" "адзін" "два" "тры" "чатыры" "пяць" "шэсць" "сем" "восем" "дзевяць" "дзесяць" "адзінаццаць")
+    :hours (list "дванаццаць" "гадзіна" "дзве" "тры" "чатыры" "пяць" "шэсць" "сем" "восем" "дзевяць" "дзесяць" "адзінаццаць")
     :midnight "поўнач"
     :noon "поўдзень"
-    :patterns (list (cons 0 "{h} гадзін") (cons 5 "пяць хвілін пасля {h}") (cons 10 "дзесяць хвілін пасля {h}") (cons 15 "чвэрць пасля {h}") (cons 20 "дваццаць хвілін пасля {h}") (cons 25 "дваццаць пяць хвілін пасля {h}") (cons 30 "палова да {next_h}") (cons 35 "без дваццаці пяці {next_h}") (cons 40 "без дваццаці {next_h}") (cons 45 "без чвэрці {next_h}") (cons 50 "без дзесяці {next_h}") (cons 55 "без пяці {next_h}")))
+    :patterns (list (cons 0 "роўна {h}") (cons 5 "{h} нуль пяць") (cons 10 "{h} дзесяць") (cons 15 "{h} пятнаццаць") (cons 20 "{h} дваццаць") (cons 25 "{h} дваццаць пяць") (cons 30 "{h} трыццаць") (cons 35 "без дваццаці пяці {next_h}") (cons 40 "без дваццаці {next_h}") (cons 45 "без чвэрці {next_h}") (cons 50 "без дзесяці {next_h}") (cons 55 "без пяці {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

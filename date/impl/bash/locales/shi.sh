@@ -10,19 +10,19 @@
 # Source: locales/shi.json
 
 _sayabledate_locale_shi() {
-    _months=('ⵉⵏⵏⴰⵢⵔ' 'ⴱⵕⴰⵢⵕ' 'ⵎⴰⵕⵚ' 'ⵉⴱⵔⵉⵔ' 'ⵎⴰⵢⵢⵓ' 'ⵢⵓⵏⵢⵓ' 'ⵢⵓⵍⵢⵓⵣ' 'ⵖⵓⵛⵜ' 'ⵛⵓⵜⴰⵏⴱⵉⵔ' 'ⴽⵜⵓⴱⵔ' 'ⵏⵓⵡⴰⵏⴱⵉⵔ' 'ⴷⵓⵊⴰⵏⴱⵉⵔ')
-    _weekdays=('ⴰⵙⴰⵎⴰⵙ' 'ⴰⵢⵏⴰⵙ' 'ⴰⵙⵉⵏⴰⵙ' 'ⴰⴽⵕⴰⵙ' 'ⴰⴽⵡⴰⵙ' 'ⴰⵙⵉⵎⵡⴰⵙ' 'ⴰⵙⵉⴹⵢⴰⵙ')
+    _months=('innayr' 'bṛayṛ' 'maṛṣ' 'ibrir' 'mayyu' 'yunyu' 'yulyuz' 'ɣuct' 'cutanbir' 'ktubr' 'nuwanbir' 'dujanbir')
+    _weekdays=('asamas' 'aynas' 'asinas' 'akṛas' 'akwas' 'asimwas' 'asiḍyas')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
-    _today='ⴰⵙⵙⴰ'
-    _tomorrow='ⴰⵙⴽⴽⴰ'
-    _yesterday='ⵉⴹⵍⵍⵉ'
-    _this_weekday='{weekday} ⴰⴷ'
-    _next_weekday='{weekday} ⴷ ⵉⴷⴷⴰⵏ'
-    _last_weekday='{weekday} ⵉⵣⵔⵉⵏ'
-    _short_months=('ⵉⵏⵏ' 'ⴱⵕⴰ' 'ⵎⴰⵕ' 'ⵉⴱⵔ' 'ⵎⴰⵢ' 'ⵢⵓⵏ' 'ⵢⵓⵍ' 'ⵖⵓⵛ' 'ⵛⵓⵜ' 'ⴽⵜⵓ' 'ⵏⵓⵡ' 'ⴷⵓⵊ')
-    _short_weekdays=('ⴰⵙⴰ' 'ⴰⵢⵏ' 'ⴰⵙⵉ' 'ⴰⴽⵕ' 'ⴰⴽⵡ' 'ⴰⵙⵉⵎ' 'ⴰⵙⵉⴹ')
+    _today='assa'
+    _tomorrow='askka'
+    _yesterday='iḍlli'
+    _this_weekday='{weekday} ad'
+    _next_weekday='{weekday} d iddan'
+    _last_weekday='{weekday} izrin'
+    _short_months=('inn' 'bṛa' 'maṛ' 'ibr' 'may' 'yun' 'yul' 'ɣuc' 'cut' 'ktu' 'nuw' 'duj')
+    _short_weekdays=('asa' 'ayn' 'asi' 'akṛ' 'akw' 'asim' 'asiḍ')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
     _short_date_pattern_with_year='{day} {month} {year}'

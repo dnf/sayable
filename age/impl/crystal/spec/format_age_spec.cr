@@ -872,7 +872,7 @@ describe "i18n — Spanish locale" do
 
   # 25.10
   it "half marker" do
-    formatter.format_age("2022-06-15", "2025-12-15").should eq "3 y medio años"
+    formatter.format_age("2022-06-15", "2025-12-15").should eq "3 años y medio"
   end
 
   # 25.11
@@ -1038,7 +1038,7 @@ describe "Locale — Hebrew" do
 
   # 29.2
   it "1 day — one form" do
-    formatter.format_age("2025-06-14", "2025-06-15").should eq "יום 1"
+    formatter.format_age("2025-06-14", "2025-06-15").should eq "יום"
   end
 
   # 29.3
@@ -1068,7 +1068,7 @@ describe "Locale — Hebrew" do
 
   # 29.8
   it "2y dual + 1m one" do
-    formatter.format_age("2023-06-15", "2025-07-15").should eq "שנתיים, חודש 1"
+    formatter.format_age("2023-06-15", "2025-07-15").should eq "שנתיים, חודש"
   end
 
   # 29.9
@@ -1200,7 +1200,7 @@ describe "Locale — Indonesian" do
 
   # 29.32
   it "3½ years — half marker" do
-    formatter.format_age("2022-06-15", "2025-12-15").should eq "3 tahun setengah"
+    formatter.format_age("2022-06-15", "2025-12-15").should eq "3 setengah tahun"
   end
 
   # 29.33

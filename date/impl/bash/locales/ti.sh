@@ -20,7 +20,7 @@ _sayabledate_locale_ti() {
     _yesterday='ትማሊ'
     _day_after_tomorrow='ድሕሪ ጽባሕ'
     _day_before_yesterday='ቅድሚ ትማሊ'
-    _this_weekday='እዛ {weekday}'
+    _this_weekday='እዚ {weekday}'
     _next_weekday='ዝመጽእ {weekday}'
     _last_weekday='ዝሓለፈ {weekday}'
     _short_months=('ጥሪ' 'ለካ' 'መጋ' 'ሚያ' 'ግን' 'ሰነ' 'ሓም' 'ነሓ' 'መስ' 'ጥቅ' 'ሕዳ' 'ታሕ')

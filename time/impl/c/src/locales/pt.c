@@ -17,7 +17,7 @@ const StTimeLocale st_locale_pt = {
         { "doze", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze" },
         "meia-noite",
         "meio-dia",
-        { "{h} horas", "{h} e cinco", "{h} e dez", "{h} e um quarto", "{h} e vinte", "{h} e vinte e cinco", "{h} e meia", "vinte e cinco para as {next_h}", "vinte para as {next_h}", "um quarto para as {next_h}", "dez para as {next_h}", "cinco para as {next_h}" }
+        { "{h} em ponto", "{h} e cinco", "{h} e dez", "{h} e um quarto", "{h} e vinte", "{h} e vinte e cinco", "{h} e meia", "vinte e cinco para as {next_h}", "vinte para as {next_h}", "um quarto para as {next_h}", "dez para as {next_h}", "cinco para as {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

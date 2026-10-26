@@ -16,8 +16,8 @@ sd_plural('shi', N, few) :- N >= 2, N =< 10, !.
 sd_plural('shi', _, other).
 
 sd_unit('shi', second, one, '{n} tasint').
-sd_unit('shi', second, few, '{n} tasinin').
-sd_unit('shi', second, other, '{n} tasinin').
+sd_unit('shi', second, few, '{n} tisinin').
+sd_unit('shi', second, other, '{n} tisinin').
 sd_unit('shi', minute, one, '{n} tusdiqt').
 sd_unit('shi', minute, few, '{n} tusdiqin').
 sd_unit('shi', minute, other, '{n} tusdiqin').
@@ -43,13 +43,27 @@ sd_just_now('shi', 'ɣilad').
 sd_ago('shi', 'ɣ {0} zzrin').
 sd_in_future('shi', 'ɣ {0}').
 
-short_sd_unit('shi', second, _, '{n}s').
-short_sd_unit('shi', minute, _, '{n}m').
-short_sd_unit('shi', hour, _, '{n}h').
-short_sd_unit('shi', day, _, '{n}d').
-short_sd_unit('shi', week, _, '{n}w').
-short_sd_unit('shi', month, _, '{n}mo').
-short_sd_unit('shi', year, _, '{n}y').
+short_sd_unit('shi', second, one, '{n} tasint').
+short_sd_unit('shi', second, few, '{n} tasinin').
+short_sd_unit('shi', second, other, '{n} tasinin').
+short_sd_unit('shi', minute, one, '{n} tusdiqt').
+short_sd_unit('shi', minute, few, '{n} tusdiqin').
+short_sd_unit('shi', minute, other, '{n} tusdiqin').
+short_sd_unit('shi', hour, one, '{n} tasragt').
+short_sd_unit('shi', hour, few, '{n} tisragin').
+short_sd_unit('shi', hour, other, '{n} tisragin').
+short_sd_unit('shi', day, one, '{n} ass').
+short_sd_unit('shi', day, few, '{n} ussan').
+short_sd_unit('shi', day, other, '{n} ass').
+short_sd_unit('shi', week, one, '{n} imalass').
+short_sd_unit('shi', week, few, '{n} imalassn').
+short_sd_unit('shi', week, other, '{n} imalass').
+short_sd_unit('shi', month, one, '{n} ayyur').
+short_sd_unit('shi', month, few, '{n} ayyurn').
+short_sd_unit('shi', month, other, '{n} ayyur').
+short_sd_unit('shi', year, one, '{n} aseggas').
+short_sd_unit('shi', year, few, '{n} iseggasen').
+short_sd_unit('shi', year, other, '{n} aseggas').
 short_sd_ago('shi', 'ɣ {0} zzrin').
 short_sd_in_future('shi', 'ɣ {0}').
 

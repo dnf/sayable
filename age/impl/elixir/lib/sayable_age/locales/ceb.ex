@@ -22,7 +22,7 @@ defmodule SayableAge.Locales.CEB do
         month: "{n} ka bulan",
         year: "{n} ka tuig"
       },
-      half: "{n}½",
+      half: "{0} ug tunga",
       delimiter: ", ",
       just_born: "Bag-ong natawo",
       stages: %{

@@ -1,14 +1,16 @@
 /// Core formatting logic for sayable-date.
-
 import gleam/bit_array
 import gleam/int
 import gleam/list
 import gleam/result
-import gleam/string
 import sayabledate/types.{
-  type Compactness, type DateLocale, Compact, Normal,
-  Short,
+  type Compactness, type DateLocale, Compact, Normal, Short,
 }
+
+/// Replace every occurrence of a placeholder, matching code points rather
+/// than graphemes (see sayabledate_ffi.erl).
+@external(erlang, "sayabledate_ffi", "replace_all")
+fn replace_placeholder(in: String, pattern: String, with: String) -> String
 
 pub const version = "0.5.0"
 
@@ -65,7 +67,17 @@ pub fn format_relative(
         0 -> Ok(resolved.today)
         1 -> Ok(resolved.tomorrow)
         -1 -> Ok(resolved.yesterday)
-        _ -> format_relative_extended(locale, compactness, resolved, diff, dy, dm, dd, ay)
+        _ ->
+          format_relative_extended(
+            locale,
+            compactness,
+            resolved,
+            diff,
+            dy,
+            dm,
+            dd,
+            ay,
+          )
       }
     }
   }
@@ -88,7 +100,10 @@ type ResolvedLocale {
   )
 }
 
-fn resolve_locale(locale: DateLocale, compactness: Compactness) -> ResolvedLocale {
+fn resolve_locale(
+  locale: DateLocale,
+  compactness: Compactness,
+) -> ResolvedLocale {
   let ovr = case compactness {
     Normal -> Error(Nil)
     Short -> locale.short
@@ -116,16 +131,26 @@ fn resolve_locale(locale: DateLocale, compactness: Compactness) -> ResolvedLocal
             Ok(e) -> e
             Error(Nil) -> []
           }
-        Error(Nil) -> result_unwrap_exceptions(o.day_format_exceptions, locale.day_format_exceptions)
+        Error(Nil) ->
+          result_unwrap_exceptions(
+            o.day_format_exceptions,
+            locale.day_format_exceptions,
+          )
       }
       ResolvedLocale(
         months: result_unwrap_list(o.months, locale.months),
-        months_in_date: pick_months_in_date(o.months_in_date, locale.months_in_date),
+        months_in_date: pick_months_in_date(
+          o.months_in_date,
+          locale.months_in_date,
+        ),
         weekdays: result_unwrap_list(o.weekdays, locale.weekdays),
         day_format: day_fmt,
         day_format_exceptions: exceptions,
         date_pattern: result_unwrap_string(o.date_pattern, locale.date_pattern),
-        date_pattern_with_year: result_unwrap_string(o.date_pattern_with_year, locale.date_pattern_with_year),
+        date_pattern_with_year: result_unwrap_string(
+          o.date_pattern_with_year,
+          locale.date_pattern_with_year,
+        ),
         today: result_unwrap_string(o.today, locale.today),
         tomorrow: result_unwrap_string(o.tomorrow, locale.tomorrow),
         yesterday: result_unwrap_string(o.yesterday, locale.yesterday),
@@ -141,7 +166,10 @@ fn result_unwrap_string(r: Result(String, Nil), default: String) -> String {
   }
 }
 
-fn result_unwrap_list(r: Result(List(String), Nil), default: List(String)) -> List(String) {
+fn result_unwrap_list(
+  r: Result(List(String), Nil),
+  default: List(String),
+) -> List(String) {
   case r {
     Ok(v) -> v
     Error(Nil) -> default
@@ -178,8 +206,9 @@ fn format_absolute(
   include_year: Bool,
 ) -> String {
   let day_str = int.to_string(day)
-  let fmt = find_exception(resolved.day_format_exceptions, day_str, resolved.day_format)
-  let formatted_day = string.replace(fmt, "{n}", day_str)
+  let fmt =
+    find_exception(resolved.day_format_exceptions, day_str, resolved.day_format)
+  let formatted_day = replace_placeholder(fmt, "{n}", day_str)
 
   let month_names = case resolved.months_in_date {
     Ok(mid) -> mid
@@ -193,15 +222,15 @@ fn format_absolute(
   }
   let result =
     pattern
-    |> string.replace("{month}", month_name)
-    |> string.replace("{day}", formatted_day)
-    |> string.replace("{d}", int.to_string(day))
-    |> string.replace("{m}", int.to_string(month))
+    |> replace_placeholder("{month}", month_name)
+    |> replace_placeholder("{day}", formatted_day)
+    |> replace_placeholder("{d}", int.to_string(day))
+    |> replace_placeholder("{m}", int.to_string(month))
   case include_year {
     True ->
       result
-      |> string.replace("{year}", int.to_string(year))
-      |> string.replace("{yy}", pad2(year % 100))
+      |> replace_placeholder("{year}", int.to_string(year))
+      |> replace_placeholder("{yy}", pad2(year % 100))
     False -> result
   }
 }
@@ -223,7 +252,17 @@ fn format_relative_extended(
     True ->
       case locale.day_after_tomorrow {
         Ok(s) -> Ok(s)
-        Error(Nil) -> format_relative_weekday(locale, compactness, resolved, diff, dy, dm, dd, ay)
+        Error(Nil) ->
+          format_relative_weekday(
+            locale,
+            compactness,
+            resolved,
+            diff,
+            dy,
+            dm,
+            dd,
+            ay,
+          )
       }
     False ->
       // Day before yesterday (-2, optional)
@@ -231,9 +270,29 @@ fn format_relative_extended(
         True ->
           case locale.day_before_yesterday {
             Ok(s) -> Ok(s)
-            Error(Nil) -> format_relative_weekday(locale, compactness, resolved, diff, dy, dm, dd, ay)
+            Error(Nil) ->
+              format_relative_weekday(
+                locale,
+                compactness,
+                resolved,
+                diff,
+                dy,
+                dm,
+                dd,
+                ay,
+              )
           }
-        False -> format_relative_weekday(locale, compactness, resolved, diff, dy, dm, dd, ay)
+        False ->
+          format_relative_weekday(
+            locale,
+            compactness,
+            resolved,
+            diff,
+            dy,
+            dm,
+            dd,
+            ay,
+          )
       }
   }
 }
@@ -264,9 +323,10 @@ fn format_relative_weekday(
             Ok(pattern) -> {
               let dow = weekday(dy, dm, dd)
               let weekday_name = list_at(resolved.weekdays, dow)
-              Ok(string.replace(pattern, "{weekday}", weekday_name))
+              Ok(replace_placeholder(pattern, "{weekday}", weekday_name))
             }
-            Error(Nil) -> format_relative_calendar(resolved, diff, dy, dm, dd, ay)
+            Error(Nil) ->
+              format_relative_calendar(resolved, diff, dy, dm, dd, ay)
           }
         False ->
           // Last weekday (-2 to -6)
@@ -276,9 +336,10 @@ fn format_relative_weekday(
                 Ok(pattern) -> {
                   let dow = weekday(dy, dm, dd)
                   let weekday_name = list_at(resolved.weekdays, dow)
-                  Ok(string.replace(pattern, "{weekday}", weekday_name))
+                  Ok(replace_placeholder(pattern, "{weekday}", weekday_name))
                 }
-                Error(Nil) -> format_relative_calendar(resolved, diff, dy, dm, dd, ay)
+                Error(Nil) ->
+                  format_relative_calendar(resolved, diff, dy, dm, dd, ay)
               }
             False ->
               // Next weekday (+7 to +13)
@@ -288,11 +349,13 @@ fn format_relative_weekday(
                     Ok(pattern) -> {
                       let dow = weekday(dy, dm, dd)
                       let weekday_name = list_at(resolved.weekdays, dow)
-                      Ok(string.replace(pattern, "{weekday}", weekday_name))
+                      Ok(replace_placeholder(pattern, "{weekday}", weekday_name))
                     }
-                    Error(Nil) -> format_relative_calendar(resolved, diff, dy, dm, dd, ay)
+                    Error(Nil) ->
+                      format_relative_calendar(resolved, diff, dy, dm, dd, ay)
                   }
-                False -> format_relative_calendar(resolved, diff, dy, dm, dd, ay)
+                False ->
+                  format_relative_calendar(resolved, diff, dy, dm, dd, ay)
               }
           }
       }

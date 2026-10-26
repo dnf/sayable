@@ -25,7 +25,7 @@ var TPI = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} mun"),
 		Year:  sa.SimpleUnit("{n} yia"),
 	},
-	Half:      "{n} na hap",
+	Half:      "{0} na hap",
 	Delimiter: ", ",
 	JustBorn:  "Nupela pikinini",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
@@ -48,5 +48,6 @@ var TPI = sa.AgeLocale{
 		Month:     &sa.UnitForms{Simple: "{n}m"},
 		Year:      &sa.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 	},
 }

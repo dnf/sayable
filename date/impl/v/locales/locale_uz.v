@@ -16,15 +16,15 @@ pub const locale_uz = DateLocale{
 	code: 'uz'
 	months: ['yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avgust', 'sentabr', 'oktabr', 'noyabr', 'dekabr']!
 	weekdays: ['yakshanba', 'dushanba', 'seshanba', 'chorshanba', 'payshanba', 'juma', 'shanba']!
-	day_format: '{n}'
-	date_pattern: '{day} {month}'
-	date_pattern_with_year: '{day} {month} {year}'
+	day_format: '{n}-'
+	date_pattern: '{day}{month}'
+	date_pattern_with_year: '{day}{month}, {year}'
 	today: 'bugun'
 	tomorrow: 'ertaga'
 	yesterday: 'kecha'
 	day_after_tomorrow: 'indinga'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'kechagina'
+	day_before_yesterday: 'o\'tgan kuni'
 	has_day_before_yesterday: true
 	this_weekday: 'bu {weekday}'
 	has_this_weekday: true
@@ -38,11 +38,11 @@ pub const locale_uz = DateLocale{
 		has_months: true
 		weekdays: ['yak', 'dush', 'sesh', 'chor', 'pay', 'jum', 'shan']!
 		has_weekdays: true
-		day_format: '{n}'
+		day_format: '{n}-'
 		has_day_format: true
-		date_pattern: '{day} {month}'
+		date_pattern: '{day}{month}'
 		has_date_pattern: true
-		date_pattern_with_year: '{day} {month} {year}'
+		date_pattern_with_year: '{day}{month}, {year}'
 		has_date_pattern_with_year: true
 	}
 	has_compact: true

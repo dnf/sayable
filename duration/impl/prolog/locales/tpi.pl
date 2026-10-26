@@ -21,7 +21,7 @@ sd_unit('tpi', week, _, '{n} wik').
 sd_unit('tpi', month, _, '{n} mun').
 sd_unit('tpi', year, _, '{n} yia').
 
-sd_half('tpi', '{n} na hap').
+sd_half('tpi', '{0} na hap').
 sd_delimiter('tpi', ', ').
 sd_just_now('tpi', 'nau tasol').
 sd_ago('tpi', '{0} i go pinis').
@@ -44,6 +44,7 @@ compact_sd_unit('tpi', day, _, '{n}d').
 compact_sd_unit('tpi', week, _, '{n}w').
 compact_sd_unit('tpi', month, _, '{n}mo').
 compact_sd_unit('tpi', year, _, '{n}y').
+compact_sd_half('tpi', '{n}½').
 compact_sd_delimiter('tpi', '').
 compact_sd_ago('tpi', '{0} i go pinis').
 compact_sd_in_future('tpi', 'long {0}').

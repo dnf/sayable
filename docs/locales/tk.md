@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tk.json](../../locales/tk.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Words only: 'sagat iki' (2:00), 'sagat iki on bäş minut' (2:15), 'sagat iki ýarym' (2:30), 'sagat iki kyrk bäş minut' (2:45). The idiomatic Turkmen forms ('ikiden on bäş minut geçdi', 'üçe on bäş minut galdy') need ablative/dative hour lists with vowel harmony and are impossible with one hours list (already in schemaLimits). Doubts: whether 'sagat iki ýarym' or 'ikiniň ýarysy' is the usual half-past form; whether speakers include 'minut' in the additive reading ('sagat iki on bäş' vs 'sagat iki on bäş minut'); Turkmen is low-resource and I could not verify against native material. Numerals ýigrimi/otuz/kyrk/elli are standard.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `one_other` (categories: one, other)
 | 2 years, 1 month  | 2 ýaş, 1 aý    | 2 ý, 1 a    | 2ý1a        |
 | 2 years, 6 months | 2 ýaş, 6 aý    | 2 ý, 6 a    | 2ý6a        |
 | 3 years           | 3 ýaş          | 3 ý         | 3ý          |
-| 3½ years          | 3 ýaş½         | 3 ý½        | 3½ý         |
+| 3½ years          | 3 ýarym ýaş    | 3 ýarym ý   | 3½ý         |
 | 5 years           | 5 ýaş          | 5 ý         | 5ý          |
-| 5½ years          | 5 ýaş½         | 5 ý½        | 5½ý         |
+| 5½ years          | 5 ýarym ýaş    | 5 ýarym ý   | 5½ý         |
 | 7 years           | 7 ýaş          | 7 ý         | 7ý          |
 | 10 years          | 10 ýaş         | 10 ý        | 10ý         |
 | 18 years          | 18 ýaş         | 18 ý        | 18ý         |
@@ -46,7 +54,7 @@ Plural rule: `one_other` (categories: one, other)
 | Toddler  | Kiçijik     |
 | Child    | Çaga        |
 | Teenager | Ýetginjek   |
-| Adult    | Ulular      |
+| Adult    | Uly adam    |
 
 ## Date
 
@@ -54,12 +62,12 @@ Plural rule: `one_other` (categories: one, other)
 
 | Date        | Normal     | Short  | Compact |
 | ----------- | ---------- | ------ | ------- |
-| January 1   | 1 Ýanwar   | 1 Ýan  | 1/1     |
-| February 14 | 14 Fewral  | 14 Few | 14/2    |
-| March 15    | 15 Mart    | 15 Mar | 15/3    |
-| July 4      | 4 Iýul     | 4 Iýl  | 4/7     |
-| October 31  | 31 Oktýabr | 31 Okt | 31/10   |
-| December 25 | 25 Dekabr  | 25 Dek | 25/12   |
+| January 1   | 1 ýanwar   | 1 ýan  | 1/1     |
+| February 14 | 14 fewral  | 14 few | 14/2    |
+| March 15    | 15 mart    | 15 mar | 15/3    |
+| July 4      | 4 iýul     | 4 iýl  | 4/7     |
+| October 31  | 31 oktýabr | 31 okt | 31/10   |
+| December 25 | 25 dekabr  | 25 dek | 25/12   |
 
 ### Relative dates
 
@@ -72,11 +80,11 @@ Relative to Saturday, March 15, 2025.
 | Yesterday            | düýn            | düýn    |
 | Day after tomorrow   | birigün         | 17/3    |
 | Day before yesterday | öňňin           | 13/3    |
-| This Thursday (+5)   | şu Penşenbe     | 20/3    |
-| Last Monday (-4)     | geçen Sişenbe   | 11/3    |
-| Next Wednesday (+12) | indiki Penşenbe | 27/3    |
-| Same month (+20)     | 4 Aprel         | 4/4     |
-| Different year       | 10 Ýanwar 2026  | 10/1/26 |
+| This Thursday (+5)   | şu penşenbe     | 20/3    |
+| Last Tuesday (-4)    | geçen sişenbe   | 11/3    |
+| Next Thursday (+12)  | indiki penşenbe | 27/3    |
+| Same year (+20)      | 4 aprel         | 4/4     |
+| Different year       | 10 ýanwar 2026  | 10/1/26 |
 
 ## Duration
 
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 minut            | 5 min         | 5min      |
 | 45 minutes            | 45 minut           | 45 min        | 45min     |
 | 1 hour                | 1 sagat            | 1 sag         | 1sag      |
-| 1½ hours              | 1 sagat½           | 1 sag½        | 1½sag     |
+| 1½ hours              | 1 ýarym sagat      | 1 ýarym sag   | 1½sag     |
 | 3 hours               | 3 sagat            | 3 sag         | 3sag      |
 | 6 hours               | 6 sagat            | 6 sag         | 6sag      |
 | 1 day                 | 1 gün              | 1 g           | 1g        |
-| 1½ days               | 1 gün½             | 1 g½          | 1½g       |
+| 1½ days               | 1 ýarym gün        | 1 ýarym g     | 1½g       |
 | 3 days                | 3 gün              | 3 g           | 3g        |
 | 1 week                | 1 hepde            | 1 h           | 1h        |
 | 2 weeks, 3 days       | 2 hepde, 3 gün     | 2 h, 3 g      | 2h3g      |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal    | Short | Compact |
-| --------------- | --------- | ----- | ------- |
-| Midnight        | ýary gije | 0:00  | 0:00    |
-| 1:00 AM         | bir:00    | 1:00  | 1:00    |
-| 5 past 9        | dokuz:05  | 9:05  | 9:05    |
-| Quarter past 10 | on:15     | 10:15 | 10:15   |
-| Half past 11    | on bir:30 | 11:30 | 11:30   |
-| Noon            | günorta   | 12:00 | 12:00   |
-| Quarter to 3    | iki:45    | 14:45 | 14:45   |
-| 5 to 6          | bäş:55    | 17:55 | 17:55   |
-| 8 o'clock PM    | sekiz:00  | 20:00 | 20:00   |
-| 10:30 PM        | on:30     | 22:30 | 22:30   |
-| 11:58 PM        | ýary gije | 23:58 | 23:58   |
+| Time            | Normal                   | Short | Compact |
+| --------------- | ------------------------ | ----- | ------- |
+| Midnight        | ýary gije                | 0:00  | 0:00    |
+| 1:00 AM         | sagat bir                | 1:00  | 1:00    |
+| 5 past 9        | sagat dokuz bäş minut    | 9:05  | 9:05    |
+| Quarter past 10 | sagat on on bäş minut    | 10:15 | 10:15   |
+| Half past 11    | sagat on bir ýarym       | 11:30 | 11:30   |
+| Noon            | günorta                  | 12:00 | 12:00   |
+| Quarter to 3    | sagat iki kyrk bäş minut | 14:45 | 14:45   |
+| 5 to 6          | sagat bäş elli bäş minut | 17:55 | 17:55   |
+| 8 o'clock PM    | sagat sekiz              | 20:00 | 20:00   |
+| 10:30 PM        | sagat on ýarym           | 22:30 | 22:30   |
+| 11:58 PM        | ýary gije                | 23:58 | 23:58   |

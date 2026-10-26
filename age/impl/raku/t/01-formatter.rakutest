@@ -355,7 +355,7 @@ is SayableAge::format-stage('1980-01-01', '2025-06-15'), 'Adult', '22.3 45 years
             month => { one => '{n} mes', other => '{n} meses' },
             year  => { one => '{n} año', other => '{n} años' },
         },
-        half => '{n} y medio',
+        half => '{0} y medio',
         delimiter => ', ',
         just-born => 'Recién nacido',
         stages => {
@@ -380,7 +380,7 @@ is SayableAge::format-stage('1980-01-01', '2025-06-15'), 'Adult', '22.3 45 years
     is $pt.format-age('2025-01-15', '2025-07-15'), '6 meses', '25.7';
     is $pt.format-age('2023-06-15', '2025-07-15'), '2 años, 1 mes', '25.8';
     is $pt.format-age('2023-06-15', '2025-12-15'), '2 años, 6 meses', '25.9';
-    is $pt.format-age('2022-06-15', '2025-12-15'), '3 y medio años', '25.10';
+    is $pt.format-age('2022-06-15', '2025-12-15'), '3 años y medio', '25.10';
     is $pt.format-age('2022-06-15', '2025-06-15'), '3 años', '25.11';
     is $pt.format-age('2018-06-15', '2025-06-15'), '7 años', '25.12';
     is $pt.format-stage('2025-06-15', '2025-06-15'), 'Recién nacido', '25.13';
@@ -533,7 +533,7 @@ is SayableAge::Locale::resolve-stage('Adult'), 'Adult', '28.42 resolve-stage str
     # 29.1
     is $pt.format-age('2025-06-15', '2025-06-15'), 'רק נולד', '29.1 he just born';
     # 29.2
-    is $pt.format-age('2025-06-14', '2025-06-15'), 'יום 1', '29.2 he one day';
+    is $pt.format-age('2025-06-14', '2025-06-15'), 'יום', '29.2 he one day';
     # 29.3
     is $pt.format-age('2025-06-12', '2025-06-15'), '3 ימים', '29.3 he three days';
     # 29.4
@@ -545,7 +545,7 @@ is SayableAge::Locale::resolve-stage('Adult'), 'Adult', '28.42 resolve-stage str
     # 29.7
     is $pt.format-age('2025-03-15', '2025-06-15'), '3 חודשים', '29.7 he three months';
     # 29.8
-    is $pt.format-age('2023-06-15', '2025-07-15'), 'שנתיים, חודש 1', '29.8 he two years dual one month';
+    is $pt.format-age('2023-06-15', '2025-07-15'), 'שנתיים, חודש', '29.8 he two years dual one month';
     # 29.9
     is $pt.format-age('2022-06-15', '2025-12-15'), '3 שנים וחצי', '29.9 he half years';
     # 29.10
@@ -611,7 +611,7 @@ is SayableAge::Locale::resolve-stage('Adult'), 'Adult', '28.42 resolve-stage str
     # 29.31
     is $pt.format-age('2025-01-15', '2025-07-15'), '6 bulan', '29.31 id six months';
     # 29.32
-    is $pt.format-age('2022-06-15', '2025-12-15'), '3 tahun setengah', '29.32 id half years';
+    is $pt.format-age('2022-06-15', '2025-12-15'), '3 setengah tahun', '29.32 id half years';
     # 29.33
     is $pt.format-age('2018-06-15', '2025-06-15'), '7 tahun', '29.33 id seven years';
 }

@@ -18,11 +18,11 @@ locale = TimeLocale
     { localeCode = "it"
     , localeClock =
         ClockConfig
-            { clockHours = ["dodici", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici"]
+            { clockHours = ["le dodici", "l'una", "le due", "le tre", "le quattro", "le cinque", "le sei", "le sette", "le otto", "le nove", "le dieci", "le undici"]
             , clockMidnight = "mezzanotte"
             , clockNoon = "mezzogiorno"
             , clockPatterns =
-                [ (0, "le {h}")
+                [ (0, "{h}")
                 , (5, "{h} e cinque")
                 , (10, "{h} e dieci")
                 , (15, "{h} e un quarto")

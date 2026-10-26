@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_mam = {
     "mam",
     {
-        { "kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'alaj", "laj", "junlaj" },
+        { "kab'laj", "jun", "kab'", "oxe", "kyaje", "jwe'", "qaq", "wuq", "wajxaq", "b'elaj", "laj", "junlaj" },
         "nik' aq'b'il",
         "nik' q'ij",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} or", "{h} or tuk' jwe' minut", "{h} or tuk' laj minut", "{h} or tuk' o'laj minut", "{h} or tuk' winqan minut", "{h} or tuk' jwe' toj ka'wnaq minut", "{h} or tuk' nik'", "{h} or tuk' o'laj toj ka'wnaq minut", "{h} or tuk' ka'wnaq minut", "{h} or tuk' jwe' toj oxk'al minut", "{h} or tuk' laj toj oxk'al minut", "{h} or tuk' o'laj toj oxk'al minut" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

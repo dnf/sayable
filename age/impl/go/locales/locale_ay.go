@@ -20,10 +20,10 @@ var AY = sa.AgeLocale{
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.SimpleUnit("uru {n}"),
-		Week:  sa.SimpleUnit("simana {n}"),
-		Month: sa.SimpleUnit("phaxsi {n}"),
-		Year:  sa.SimpleUnit("mara {n}"),
+		Day:   sa.SimpleUnit("{n} uru"),
+		Week:  sa.SimpleUnit("{n} simana"),
+		Month: sa.SimpleUnit("{n} phaxsi"),
+		Year:  sa.SimpleUnit("{n} mara"),
 	},
 	Half:      "{0} chika",
 	Delimiter: ", ",
@@ -48,5 +48,6 @@ var AY = sa.AgeLocale{
 		Month:     &sa.UnitForms{Simple: "{n}m"},
 		Year:      &sa.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 	},
 }

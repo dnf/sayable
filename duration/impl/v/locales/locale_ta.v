@@ -28,8 +28,8 @@ pub const locale_ta = DurationLocale{
 	day: plural_unit({PluralCategory.one: '{n} நாள்', PluralCategory.other: '{n} நாட்கள்'})
 	week: plural_unit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வாரங்கள்'})
 	month: plural_unit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாதங்கள்'})
-	year: plural_unit({PluralCategory.one: '{n} வயது', PluralCategory.other: '{n} வயது'})
-	half: '{0}ரை'
+	year: plural_unit({PluralCategory.one: '{n} ஆண்டு', PluralCategory.other: '{n} ஆண்டுகள்'})
+	half: '{n}½'
 	delimiter: ', '
 	just_now: 'இப்போதுதான்'
 	ago: '{0} முன்'

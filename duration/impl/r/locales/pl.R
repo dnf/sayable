@@ -21,13 +21,13 @@ locale_pl <- list(
   code = "pl",
   plural = plural,
   units = list(
-    second = list(one = "{n} sekunda", few = "{n} sekundy", many = "{n} sekund", other = "{n} sekund"),
-    minute = list(one = "{n} minuta", few = "{n} minuty", many = "{n} minut", other = "{n} minut"),
-    hour = list(one = "{n} godzina", few = "{n} godziny", many = "{n} godzin", other = "{n} godzin"),
-    day = list(one = "{n} dzień", few = "{n} dni", many = "{n} dni", other = "{n} dni"),
-    week = list(one = "{n} tydzień", few = "{n} tygodnie", many = "{n} tygodni", other = "{n} tygodni"),
-    month = list(one = "{n} miesiąc", few = "{n} miesiące", many = "{n} miesięcy", other = "{n} miesięcy"),
-    year = list(one = "{n} rok", few = "{n} lata", many = "{n} lat", other = "{n} lat")
+    second = list(one = "{n} sekunda", few = "{n} sekundy", many = "{n} sekund", other = "{n} sekundy"),
+    minute = list(one = "{n} minuta", few = "{n} minuty", many = "{n} minut", other = "{n} minuty"),
+    hour = list(one = "{n} godzina", few = "{n} godziny", many = "{n} godzin", other = "{n} godziny"),
+    day = list(one = "{n} dzień", few = "{n} dni", many = "{n} dni", other = "{n} dnia"),
+    week = list(one = "{n} tydzień", few = "{n} tygodnie", many = "{n} tygodni", other = "{n} tygodnia"),
+    month = list(one = "{n} miesiąc", few = "{n} miesiące", many = "{n} miesięcy", other = "{n} miesiąca"),
+    year = list(one = "{n} rok", few = "{n} lata", many = "{n} lat", other = "{n} roku")
   ),
   half = "{n} i pół",
   delimiter = ", ",

@@ -18,9 +18,9 @@
    :week {:type :simple :form "{n} na macawa"}
    :month {:type :simple :form "{n} na vula"}
    :year {:type :simple :form "{n} na yabaki"}
-   :half "{n} kei na levu ni wasei"
+   :half "{0} kei na veimama"
    :delimiter ", "
    :just-born "Gone vou"
    :stages {:newborn {:type :neutral :label "Gone vou"} :infant {:type :neutral :label "Gone lalai"} :toddler {:type :neutral :label "Gone lailai"} :child {:type :neutral :label "Gone"} :teenager {:type :neutral :label "Cauravou"} :adult {:type :neutral :label "Tamata qase"}}
    :short {:day {:type :simple :form "{n} siga"} :week {:type :simple :form "{n} mac."} :month {:type :simple :form "{n} vula"} :year {:type :simple :form "{n} yab."} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

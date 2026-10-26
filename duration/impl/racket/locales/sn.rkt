@@ -21,9 +21,9 @@
   (duration-locale
    "sn"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "simple" "form" "{n} sekondi")
-         "minute" (hash "type" "simple" "form" "{n} miniti")
-         "hour" (hash "type" "simple" "form" "{n} awa")
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "sekondi {n}" "other" "masekondi {n}"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "miniti {n}" "other" "maminitsi {n}"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "awa {n}" "other" "maawa {n}"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "zuva {n}" "other" "mazuva {n}"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "vhiki {n}" "other" "mavhiki {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "mwedzi {n}" "other" "mwedzi {n}"))

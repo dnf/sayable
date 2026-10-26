@@ -16,7 +16,7 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 KA = DateLocale(
     code="ka",
     months=["იანვარი", "თებერვალი", "მარტი", "აპრილი", "მაისი", "ივნისი", "ივლისი", "აგვისტო", "სექტემბერი", "ოქტომბერი", "ნოემბერი", "დეკემბერი"],
-    weekdays=["კვირა", "ორშაბათი", "სამშაბათი", "ოთხშაბათი", "ხუთშაბათი", "პარასკევი", "შაბათი"],
+    weekdays=["კვირას", "ორშაბათს", "სამშაბათს", "ოთხშაბათს", "ხუთშაბათს", "პარასკევს", "შაბათს"],
     day_format="{n}",
     day_format_exceptions={},
     date_pattern="{day} {month}",

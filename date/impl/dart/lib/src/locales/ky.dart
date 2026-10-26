@@ -14,11 +14,11 @@ import '../types.dart';
 /// Kyrgyz locale.
 final ky = DateLocale(
   code: 'ky',
-  months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-  weekdays: ['Жекшемби', 'Дүйшөмбү', 'Шейшемби', 'Шаршемби', 'Бейшемби', 'Жума', 'Ишемби'],
-  dayFormat: '{n}',
-  datePattern: '{day} {month}',
-  datePatternWithYear: '{day} {month} {year}',
+  months: ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'],
+  weekdays: ['жекшемби', 'дүйшөмбү', 'шейшемби', 'шаршемби', 'бейшемби', 'жума', 'ишемби'],
+  dayFormat: '{n}-',
+  datePattern: '{day}{month}',
+  datePatternWithYear: '{year}-ж., {day}{month}',
   today: 'бүгүн',
   tomorrow: 'эртең',
   yesterday: 'кечээ',
@@ -28,8 +28,8 @@ final ky = DateLocale(
   nextWeekday: 'кийинки {weekday}',
   lastWeekday: 'өткөн {weekday}',
   short: CompactnessOverride(
-    months: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    weekdays: ['Жек', 'Дүй', 'Шей', 'Шар', 'Бей', 'Жум', 'Ише'],
+    months: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+    weekdays: ['жек', 'дүй', 'шей', 'шар', 'бей', 'жум', 'ише'],
     dayFormat: '{n}',
     datePattern: '{day} {month}',
     datePatternWithYear: '{day} {month} {year}',

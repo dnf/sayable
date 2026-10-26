@@ -25,7 +25,7 @@ var BN = sd.DurationLocale{
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.SimpleUnit("{n} সেকেন্ড"),
 		Minute: sd.SimpleUnit("{n} মিনিট"),
-		Hour:   sd.SimpleUnit("{n} ঘন্টা"),
+		Hour:   sd.SimpleUnit("{n} ঘণ্টা"),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} দিন", sd.Other: "{n} দিন"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} সপ্তাহ", sd.Other: "{n} সপ্তাহ"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} মাস", sd.Other: "{n} মাস"}),

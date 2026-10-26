@@ -22,10 +22,10 @@ let locale : duration_locale =
   ; month = Simple "{n} ເດືອນ"
   ; year = Simple "{n} ປີ"
   ; half = "{0}ເຄິ່ງ"
-  ; delimiter = ""
+  ; delimiter = " "
   ; just_now = "ຫາກໍ"
   ; ago = "{0} ກ່ອນ"
-  ; in_future = "ໃນ {0}"
+  ; in_future = "ໃນອີກ {0}"
   ; short = Some
       { ovr_second = Some (Simple "{n} ວິ.")
       ; ovr_minute = Some (Simple "{n} ນທ.")
@@ -37,7 +37,7 @@ let locale : duration_locale =
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "{0} ກ່ອນ"
-      ; ovr_in_future = Some "ໃນ {0}"
+      ; ovr_in_future = Some "ໃນອີກ {0}"
       }
   ; compact = Some
       { ovr_second = Some (Simple "{n}s")
@@ -45,11 +45,11 @@ let locale : duration_locale =
       ; ovr_hour = Some (Simple "{n}h")
       ; ovr_day = Some (Simple "{n}d")
       ; ovr_week = Some (Simple "{n}w")
-      ; ovr_month = Some (Simple "{n}m")
+      ; ovr_month = Some (Simple "{n}mo")
       ; ovr_year = Some (Simple "{n}y")
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_ago = Some "{0} ກ່ອນ"
-      ; ovr_in_future = Some "ໃນ {0}"
+      ; ovr_in_future = Some "ໃນອີກ {0}"
       }
   }

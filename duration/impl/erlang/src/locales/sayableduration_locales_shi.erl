@@ -17,7 +17,7 @@ locale() ->
     #duration_locale{
         code = "shi",
         plural = fun(N) when N =:= 0; N =:= 1 -> one; (N) when N >= 2, N =< 10 -> few; (_) -> other end,
-        second = {pluralized, [{one, "{n} tasint"}, {few, "{n} tasinin"}, {other, "{n} tasinin"}]},
+        second = {pluralized, [{one, "{n} tasint"}, {few, "{n} tisinin"}, {other, "{n} tisinin"}]},
         minute = {pluralized, [{one, "{n} tusdiqt"}, {few, "{n} tusdiqin"}, {other, "{n} tusdiqin"}]},
         hour = {pluralized, [{one, "{n} tasragt"}, {few, "{n} tisragin"}, {other, "{n} tisragin"}]},
         day = {pluralized, [{one, "{n} ass"}, {few, "{n} ussan"}, {other, "{n} ass"}]},
@@ -29,6 +29,6 @@ locale() ->
         just_now = "ɣilad",
         ago = "ɣ {0} zzrin",
         in_future = "ɣ {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = nothing, ago = {just, "ɣ {0} zzrin"}, in_future = {just, "ɣ {0}"}}},
+        short = {just, #duration_compactness_override{second = {just, {pluralized, [{one, "{n} tasint"}, {few, "{n} tasinin"}, {other, "{n} tasinin"}]}}, minute = {just, {pluralized, [{one, "{n} tusdiqt"}, {few, "{n} tusdiqin"}, {other, "{n} tusdiqin"}]}}, hour = {just, {pluralized, [{one, "{n} tasragt"}, {few, "{n} tisragin"}, {other, "{n} tisragin"}]}}, day = {just, {pluralized, [{one, "{n} ass"}, {few, "{n} ussan"}, {other, "{n} ass"}]}}, week = {just, {pluralized, [{one, "{n} imalass"}, {few, "{n} imalassn"}, {other, "{n} imalass"}]}}, month = {just, {pluralized, [{one, "{n} ayyur"}, {few, "{n} ayyurn"}, {other, "{n} ayyur"}]}}, year = {just, {pluralized, [{one, "{n} aseggas"}, {few, "{n} iseggasen"}, {other, "{n} aseggas"}]}}, half = nothing, delimiter = nothing, ago = {just, "ɣ {0} zzrin"}, in_future = {just, "ɣ {0}"}}},
         compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "ɣ {0} zzrin"}, in_future = {just, "ɣ {0}"}}}
     }.

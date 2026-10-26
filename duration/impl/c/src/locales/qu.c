@@ -20,8 +20,8 @@ const SduDurationLocale sdu_locale_qu = {
     "qu",
     plural_qu,
     {
-        { "{n} ñiqin", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} chiniku", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} sikundu", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} minutu", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ura", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} p'unchaw", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} simana", { NULL, NULL, NULL, NULL, NULL, NULL } },
@@ -31,6 +31,6 @@ const SduDurationLocale sdu_locale_qu = {
     "{0} khuskannin", ", ",
     "kunanlla",
     "{0} ñawpaqta", "{0} qhipata",
-    true, { true, { "{n} ñiq", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} chi", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ura", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} p'un", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sim", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} kil", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wat", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ñawpaqta", true, "{0} qhipata" },
+    true, { true, { "{n} sik", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ura", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} p'un", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sim", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} kil", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wat", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ñawpaqta", true, "{0} qhipata" },
     true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} ñawpaqta", true, "{0} qhipata" }
 };

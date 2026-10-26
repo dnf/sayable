@@ -23,12 +23,12 @@ sd_unit('mt', second, few, '{n} sekondi').
 sd_unit('mt', second, many, '{n}-il sekonda').
 sd_unit('mt', second, other, '{n} sekonda').
 sd_unit('mt', minute, one, '{n} minuta').
-sd_unit('mt', minute, two, '{n} minuti').
+sd_unit('mt', minute, two, 'minutejn').
 sd_unit('mt', minute, few, '{n} minuti').
 sd_unit('mt', minute, many, '{n}-il minuta').
 sd_unit('mt', minute, other, '{n} minuta').
 sd_unit('mt', hour, one, '{n} siegħa').
-sd_unit('mt', hour, two, '{n} sigħat').
+sd_unit('mt', hour, two, 'sagħtejn').
 sd_unit('mt', hour, few, '{n} sigħat').
 sd_unit('mt', hour, many, '{n}-il siegħa').
 sd_unit('mt', hour, other, '{n} siegħa').

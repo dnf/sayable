@@ -22,7 +22,7 @@ var GN = sdate.DateLocale{
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",
 	DatePatternWithYear: "{day} {month} {year}",
-	Today:     "ko'ágã",
+	Today:     "ko árape",
 	Tomorrow:  "ko'ẽrõ",
 	Yesterday: "kuehe",
 	DayAfterTomorrow:  strPtr("ko'ẽrõ rire"),

@@ -26,7 +26,7 @@ var QU = sdate.DateLocale{
 	Tomorrow:  "paqarin",
 	Yesterday: "qayna",
 	DayAfterTomorrow:  strPtr("minchha"),
-	DayBeforeYesterday: strPtr("qayna p'unchaw"),
+	DayBeforeYesterday: strPtr("qayninpa"),
 	ThisWeekday:       strPtr("kay {weekday}"),
 	NextWeekday:       strPtr("hamuq {weekday}"),
 	LastWeekday:       strPtr("qayna {weekday}"),

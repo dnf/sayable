@@ -18,8 +18,8 @@ tn
 	locale code: 'tn'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. 'motsotswana {n}'. #other. 'dimetsotswana {n}' }).
-		'minute'. (Dictionary newFromPairs: { #one. 'metsotso {n}'. #other. 'dimetsotso {n}' }).
+		'second'. (Dictionary newFromPairs: { #one. 'motsotswana {n}'. #other. 'metsotswana {n}' }).
+		'minute'. (Dictionary newFromPairs: { #one. 'motsotso {n}'. #other. 'metsotso {n}' }).
 		'hour'. (Dictionary newFromPairs: { #one. 'ura {n}'. #other. 'diura {n}' }).
 		'day'. (Dictionary newFromPairs: { #one. 'letsatsi {n}'. #other. 'malatsi {n}' }).
 		'week'. (Dictionary newFromPairs: { #one. 'beke {n}'. #other. 'dibeke {n}' }).
@@ -33,8 +33,8 @@ tn
 	locale inFuture: 'ka {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. (Dictionary newFromPairs: { #one. 'motsotswana {n}'. #other. 'dimetsotswana {n}' }).
-			'minute'. (Dictionary newFromPairs: { #one. 'metsotso {n}'. #other. 'dimetsotso {n}' }).
+			'second'. (Dictionary newFromPairs: { #one. 'motsotswana {n}'. #other. 'metsotswana {n}' }).
+			'minute'. (Dictionary newFromPairs: { #one. 'motsotso {n}'. #other. 'metsotso {n}' }).
 			'hour'. (Dictionary newFromPairs: { #one. 'ura {n}'. #other. 'diura {n}' }).
 			'day'. (Dictionary newFromPairs: { #one. 'letsatsi {n}'. #other. 'malatsi {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'beke {n}'. #other. 'dibeke {n}' }).

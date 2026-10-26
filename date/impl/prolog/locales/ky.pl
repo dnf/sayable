@@ -11,12 +11,12 @@
 
 % Kyrgyz locale.
 
-sd_months('ky', ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']).
-sd_weekdays('ky', ['Жекшемби', 'Дүйшөмбү', 'Шейшемби', 'Шаршемби', 'Бейшемби', 'Жума', 'Ишемби']).
-sd_day_format('ky', '{n}').
+sd_months('ky', ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']).
+sd_weekdays('ky', ['жекшемби', 'дүйшөмбү', 'шейшемби', 'шаршемби', 'бейшемби', 'жума', 'ишемби']).
+sd_day_format('ky', '{n}-').
 
-sd_date_pattern('ky', '{day} {month}').
-sd_date_pattern_with_year('ky', '{day} {month} {year}').
+sd_date_pattern('ky', '{day}{month}').
+sd_date_pattern_with_year('ky', '{year}-ж., {day}{month}').
 
 sd_today('ky', 'бүгүн').
 sd_tomorrow('ky', 'эртең').
@@ -27,8 +27,8 @@ sd_this_weekday('ky', 'бул {weekday}').
 sd_next_weekday('ky', 'кийинки {weekday}').
 sd_last_weekday('ky', 'өткөн {weekday}').
 
-short_sd_months('ky', ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']).
-short_sd_weekdays('ky', ['Жек', 'Дүй', 'Шей', 'Шар', 'Бей', 'Жум', 'Ише']).
+short_sd_months('ky', ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']).
+short_sd_weekdays('ky', ['жек', 'дүй', 'шей', 'шар', 'бей', 'жум', 'ише']).
 short_sd_day_format('ky', '{n}').
 short_sd_clear_exceptions('ky').
 short_sd_date_pattern('ky', '{day} {month}').

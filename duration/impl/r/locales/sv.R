@@ -24,7 +24,7 @@ locale_sv <- list(
   half = "{n}½",
   delimiter = ", ",
   just_now = "just nu",
-  ago = "{0} sedan",
+  ago = "för {0} sedan",
   in_future = "om {0}",
   short = list(
     units = list(
@@ -36,7 +36,7 @@ locale_sv <- list(
       month = "{n} mån",
       year = "{n} år"
     ),
-    ago = "{0} sedan",
+    ago = "för {0} sedan",
     in_future = "om {0}"
   ),
   compact = list(
@@ -50,7 +50,7 @@ locale_sv <- list(
       year = "{n}å"
     ),
     delimiter = "",
-    ago = "{0} sedan",
+    ago = "för {0} sedan",
     in_future = "om {0}"
   )
 )

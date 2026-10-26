@@ -22,7 +22,7 @@
    :yesterday "ཁ་ཙ"
    :day-after-tomorrow "གནངས་ཚེ"
    :day-before-yesterday "ཁ་ཉིམ"
-   :this-weekday "འདི་ {weekday}"
+   :this-weekday "{weekday} འདི"
    :next-weekday "{weekday} ཤུལ་མ"
    :last-weekday "{weekday} ཧེ་མ"
    :short {:months @["ཟླ་༡" "ཟླ་༢" "ཟླ་༣" "ཟླ་༤" "ཟླ་༥" "ཟླ་༦" "ཟླ་༧" "ཟླ་༨" "ཟླ་༩" "ཟླ་༡༠" "ཟླ་༡༡" "ཟླ་༡༢"] :weekdays @["ཉི" "ཟླ" "མིག" "ལྷག" "ཕུར" "སངས" "སྤེན"] :day-format "{n}" :date-pattern "{month} {day}" :date-pattern-with-year "{year} {month} {day}"}

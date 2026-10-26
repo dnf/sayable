@@ -25,11 +25,11 @@ proc locale_duration_ki {} {
         month [dict create one "mwerĩ {n}" other "mĩerĩ {n}"] \
         year [dict create one "mwaka {n}" other "mĩaka {n}"] \
     ]
-    set half "{0} na nusu"
+    set half "{0} na nuthu"
     set delimiter {, }
-    set just_now {ũmũthĩ}
+    set just_now {rĩu}
     set ago "{0} ĩhĩtũkĩte"
-    set in_future "{0} ĩyothe"
+    set in_future "thutha wa {0}"
     set short [dict create \
         units [dict create \
             second "sek. {n}" \
@@ -41,7 +41,7 @@ proc locale_duration_ki {} {
             year [dict create one "mwaka {n}" other "mĩaka {n}"] \
         ] \
         ago "{0} ĩhĩtũkĩte" \
-        in_future "{0} ĩyothe" \
+        in_future "thutha wa {0}" \
     ]
     set compact [dict create \
         units [dict create \
@@ -55,7 +55,7 @@ proc locale_duration_ki {} {
         ] \
         delimiter {} \
         ago "{0} ĩhĩtũkĩte" \
-        in_future "{0} ĩyothe" \
+        in_future "thutha wa {0}" \
     ]
     return [dict create \
         code $code \

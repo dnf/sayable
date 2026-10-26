@@ -18,7 +18,7 @@
    :week {:type :pluralized :forms {:one "{n} semana" :other "{n} semanas"}}
    :month {:type :pluralized :forms {:one "{n} mes" :other "{n} meses"}}
    :year {:type :pluralized :forms {:one "{n} año" :other "{n} años"}}
-   :half "{n} y medio"
+   :half "{0} y medio"
    :delimiter ", "
    :just-born "Recién nacido"
    :stages {:newborn {:type :gendered :m "Recién nacido" :f "Recién nacida"} :infant {:type :neutral :label "Bebé"} :toddler {:type :gendered :m "Niño pequeño" :f "Niña pequeña"} :child {:type :gendered :m "Niño" :f "Niña"} :teenager {:type :neutral :label "Adolescente"} :adult {:type :gendered :m "Adulto" :f "Adulta"}}

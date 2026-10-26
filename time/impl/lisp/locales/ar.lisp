@@ -20,7 +20,7 @@
     :hours (list "الثانية عشرة" "الواحدة" "الثانية" "الثالثة" "الرابعة" "الخامسة" "السادسة" "السابعة" "الثامنة" "التاسعة" "العاشرة" "الحادية عشرة")
     :midnight "منتصف الليل"
     :noon "الظهر"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "الساعة {h}") (cons 5 "{h} وخمس دقائق") (cons 10 "{h} وعشر دقائق") (cons 15 "{h} والربع") (cons 20 "{h} والثلث") (cons 25 "{h} والنصف إلا خمس دقائق") (cons 30 "{h} والنصف") (cons 35 "{h} والنصف وخمس دقائق") (cons 40 "{next_h} إلا ثلثًا") (cons 45 "{next_h} إلا ربعًا") (cons 50 "{next_h} إلا عشر دقائق") (cons 55 "{next_h} إلا خمس دقائق")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -30,7 +30,7 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Vǐ".to_string()),
             toddler: StageLabel::Neutral("Vǐ".to_string()),
             child: StageLabel::Neutral("Vǐ".to_string()),
-            teenager: StageLabel::Neutral("Nyɔ̌nu".to_string()),
+            teenager: StageLabel::Gendered { m: "Dɔnkpɛvu".to_string(), f: "Ɖyɔ̌vǐ".to_string() },
             adult: StageLabel::Neutral("Mɛ̌xo".to_string()),
         },
         short: Some(CompactnessOverride {

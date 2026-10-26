@@ -13,14 +13,14 @@
 
 (def locale
   {:code "kl"
-   :plural (fn [_] :other)
-   :day {:type :simple :form "ullut {n}"}
-   :week {:type :simple :form "sapaatit {n}"}
-   :month {:type :simple :form "qaammatit {n}"}
-   :year {:type :simple :form "ukiut {n}"}
+   :plural (fn [n] (if (== n 1) :one :other))
+   :day {:type :pluralized :forms {:one "ulloq {n}" :other "ullut {n}"}}
+   :week {:type :pluralized :forms {:one "sapaatip akunnera {n}" :other "sapaatip akunneri {n}"}}
+   :month {:type :pluralized :forms {:one "qaammat {n}" :other "qaammatit {n}"}}
+   :year {:type :pluralized :forms {:one "ukioq {n}" :other "ukiut {n}"}}
    :half "{0} affaa"
    :delimiter ", "
    :just-born "Inuuneq nutaaq"
    :stages {:newborn {:type :neutral :label "Inuuneq nutaaq"} :infant {:type :neutral :label "Naalunngiaatitaq"} :toddler {:type :neutral :label "Meeraq"} :child {:type :neutral :label "Meeraq"} :teenager {:type :neutral :label "Inuusuttuaq"} :adult {:type :neutral :label "Inuk"}}
-   :short {:day {:type :simple :form "ull. {n}"} :week {:type :simple :form "sap. {n}"} :month {:type :simple :form "qaam. {n}"} :year {:type :simple :form "uk. {n}"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :short {:day {:type :simple :form "ull. {n}"} :week {:type :simple :form "sap. ak. {n}"} :month {:type :simple :form "qaam. {n}"} :year {:type :simple :form "uk. {n}"} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

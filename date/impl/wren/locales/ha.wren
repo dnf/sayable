@@ -30,7 +30,7 @@ class HALocale {
   static dayBeforeYesterday { "shekaranjiya" }
   static thisWeekday { "wannan {weekday}" }
   static nextWeekday { "{weekday} mai zuwa" }
-  static lastWeekday { "{weekday} da ya wuce" }
+  static lastWeekday { "{weekday} da ta wuce" }
   static monthsInDate { null }
   static short {
     return {

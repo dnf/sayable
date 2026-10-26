@@ -25,7 +25,7 @@ sd_half('dyu', '{0} ni tilancɛ').
 sd_delimiter('dyu', ', ').
 sd_just_now('dyu', 'sisan').
 sd_ago('dyu', '{0} tɛmɛnen').
-sd_in_future('dyu', 'ka {0}').
+sd_in_future('dyu', '{0} kɔnɔ').
 
 short_sd_unit('dyu', second, _, 'sɛk. {n}').
 short_sd_unit('dyu', minute, _, 'min. {n}').
@@ -35,7 +35,7 @@ short_sd_unit('dyu', week, _, 'dɔgɔk. {n}').
 short_sd_unit('dyu', month, _, 'kalo {n}').
 short_sd_unit('dyu', year, _, 'san {n}').
 short_sd_ago('dyu', '{0} tɛmɛnen').
-short_sd_in_future('dyu', 'ka {0}').
+short_sd_in_future('dyu', '{0} kɔnɔ').
 
 compact_sd_unit('dyu', second, _, '{n}s').
 compact_sd_unit('dyu', minute, _, '{n}m').
@@ -47,4 +47,4 @@ compact_sd_unit('dyu', year, _, '{n}y').
 compact_sd_half('dyu', '{n}½').
 compact_sd_delimiter('dyu', '').
 compact_sd_ago('dyu', '{0} tɛmɛnen').
-compact_sd_in_future('dyu', 'ka {0}').
+compact_sd_in_future('dyu', '{0} kɔnɔ').

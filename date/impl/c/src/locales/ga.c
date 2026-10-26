@@ -32,7 +32,7 @@ const SdDateLocale sd_locale_ga = {
     "inné",
     "arú amárach",
     "arú inné",
-    "an {weekday} seo",
+    "{weekday} seo",
     "{weekday} seo chugainn",
     "{weekday} seo caite",
     (const char **)0,

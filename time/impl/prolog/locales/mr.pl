@@ -15,18 +15,18 @@ st_hours('mr', ['बारा', 'एक', 'दोन', 'तीन', 'चार',
 st_midnight('mr', 'मध्यरात्र').
 st_noon('mr', 'दुपार').
 
-st_pattern('mr', 0, '{h}:00').
-st_pattern('mr', 5, '{h}:05').
-st_pattern('mr', 10, '{h}:10').
-st_pattern('mr', 15, '{h}:15').
-st_pattern('mr', 20, '{h}:20').
-st_pattern('mr', 25, '{h}:25').
-st_pattern('mr', 30, '{h}:30').
-st_pattern('mr', 35, '{h}:35').
-st_pattern('mr', 40, '{h}:40').
-st_pattern('mr', 45, '{h}:45').
-st_pattern('mr', 50, '{h}:50').
-st_pattern('mr', 55, '{h}:55').
+st_pattern('mr', 0, '{h} वाजता').
+st_pattern('mr', 5, '{h} वाजून पाच मिनिटे').
+st_pattern('mr', 10, '{h} वाजून दहा मिनिटे').
+st_pattern('mr', 15, 'सव्वा {h}').
+st_pattern('mr', 20, '{h} वाजून वीस मिनिटे').
+st_pattern('mr', 25, '{h} वाजून पंचवीस मिनिटे').
+st_pattern('mr', 30, '{h} वाजून तीस मिनिटे').
+st_pattern('mr', 35, '{next_h} वाजायला पंचवीस मिनिटे').
+st_pattern('mr', 40, '{next_h} वाजायला वीस मिनिटे').
+st_pattern('mr', 45, 'पावणे {next_h}').
+st_pattern('mr', 50, '{next_h} वाजायला दहा मिनिटे').
+st_pattern('mr', 55, '{next_h} वाजायला पाच मिनिटे').
 
 short_st_use24h('mr', false).
 short_st_format('mr', '{h}:{mm} {ampm}').

@@ -21,7 +21,7 @@ proc locale_kri {} {
         month "{n} mont" \
         year "{n} ia" \
     ]
-    set half "{n} na af"
+    set half "{0} ɛn af"
     set delimiter {, }
     set just_born {Nyubon bebi}
     set stages [dict create \
@@ -47,6 +47,7 @@ proc locale_kri {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

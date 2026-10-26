@@ -28,7 +28,7 @@ locale() ->
         delimiter = ", ",
         just_now = "ឥឡូវនេះ",
         ago = "{0}មុន",
-        in_future = "ក្នុង{0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} វិនាទី"}}, minute = {just, {simple, "{n} នាទី"}}, hour = {just, {simple, "{n} ម៉ោង"}}, day = {just, {simple, "{n} ថ្ងៃ"}}, week = {just, {simple, "{n} សប្ដាហ៍"}}, month = {just, {simple, "{n} ខែ"}}, year = {just, {simple, "{n} ឆ្នាំ"}}, half = nothing, delimiter = nothing, ago = {just, "{0}មុន"}, in_future = {just, "ក្នុង{0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n} វិនាទី"}}, minute = {just, {simple, "{n} នាទី"}}, hour = {just, {simple, "{n} ម៉ោង"}}, day = {just, {simple, "{n} ថ្ងៃ"}}, week = {just, {simple, "{n} សប្ដាហ៍"}}, month = {just, {simple, "{n} ខែ"}}, year = {just, {simple, "{n} ឆ្នាំ"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0}មុន"}, in_future = {just, "ក្នុង{0}"}}}
+        in_future = "{0}ទៀត",
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} វិនាទី"}}, minute = {just, {simple, "{n} នាទី"}}, hour = {just, {simple, "{n} ម៉ោង"}}, day = {just, {simple, "{n} ថ្ងៃ"}}, week = {just, {simple, "{n} សប្ដាហ៍"}}, month = {just, {simple, "{n} ខែ"}}, year = {just, {simple, "{n} ឆ្នាំ"}}, half = nothing, delimiter = nothing, ago = {just, "{0}មុន"}, in_future = {just, "{0}ទៀត"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n} វិនាទី"}}, minute = {just, {simple, "{n} នាទី"}}, hour = {just, {simple, "{n} ម៉ោង"}}, day = {just, {simple, "{n} ថ្ងៃ"}}, week = {just, {simple, "{n} សប្ដាហ៍"}}, month = {just, {simple, "{n} ខែ"}}, year = {just, {simple, "{n} ឆ្នាំ"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0}មុន"}, in_future = {just, "{0}ទៀត"}}}
     }.

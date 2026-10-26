@@ -20,7 +20,7 @@ const TE = AgeLocale(
         "month" => Dict("one" => "{n} నెల", "other" => "{n} నెలలు"),
         "year" => Dict("one" => "{n} సంవత్సరం", "other" => "{n} సంవత్సరాలు"),
     ),
-    half = "{0}న్నర",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "నవజాత శిశువు",
     stages = Dict(

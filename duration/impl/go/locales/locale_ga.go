@@ -34,7 +34,7 @@ var GA = sd.DurationLocale{
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} soicind", sd.Two: "{n} shoicind", sd.Few: "{n} shoicind", sd.Many: "{n} soicind", sd.Other: "{n} soicind"}),
 		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} nóiméad", sd.Two: "{n} nóiméad", sd.Few: "{n} nóiméad", sd.Many: "{n} nóiméad", sd.Other: "{n} nóiméad"}),
-		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} uair", sd.Two: "{n} uair", sd.Few: "{n} huaire", sd.Many: "{n} n-uaire", sd.Other: "{n} uair"}),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} uair an chloig", sd.Two: "{n} uair an chloig", sd.Few: "{n} huaire an chloig", sd.Many: "{n} n-uaire an chloig", sd.Other: "{n} uair an chloig"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} lá", sd.Two: "{n} lá", sd.Few: "{n} lá", sd.Many: "{n} lá", sd.Other: "{n} lá"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} seachtain", sd.Two: "{n} sheachtain", sd.Few: "{n} seachtaine", sd.Many: "{n} seachtaine", sd.Other: "{n} seachtain"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} mhí", sd.Two: "{n} mhí", sd.Few: "{n} mhí", sd.Many: "{n} mí", sd.Other: "{n} mí"}),

@@ -10,21 +10,21 @@
 # Source: locales/sg.json
 
 _sayabletime_locale_sg() {
-    _clock_hours=('bâlè-ûse' 'ôko' 'ûse' 'otâ' 'usïö' 'okü' 'ömënë' 'mbïrïmbïrï' 'mënâmbârâ' 'gonambâlâ' 'bâlè' 'bâlè na ôko')
+    _clock_hours=('balë-ôko na ûse' 'ôko' 'ûse' 'otâ' 'usïö' 'okü' 'omanä' 'mbâsâmbârâ' 'miombe' 'gümbâyä' 'balë-ôko' 'balë-ôko na ôko')
     _clock_midnight='gï na lögö'
     _clock_noon='lâ nzönï'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='ngbonga {h}'
+    _clock_pattern_5='ngbonga {h} na minüti okü'
+    _clock_pattern_10='ngbonga {h} na minüti balë-ôko'
+    _clock_pattern_15='ngbonga {h} na minüti balë-ôko na okü'
+    _clock_pattern_20='ngbonga {h} na minüti balë-ûse'
+    _clock_pattern_25='ngbonga {h} na minüti balë-ûse na okü'
+    _clock_pattern_30='ngbonga {h} na ndâmbo'
+    _clock_pattern_35='ngbonga {h} na minüti balë-otâ na okü'
+    _clock_pattern_40='ngbonga {h} na minüti balë-usïö'
+    _clock_pattern_45='ngbonga {h} na minüti balë-usïö na okü'
+    _clock_pattern_50='ngbonga {h} na minüti balë-okü'
+    _clock_pattern_55='ngbonga {h} na minüti balë-okü na okü'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

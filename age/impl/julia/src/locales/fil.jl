@@ -29,7 +29,7 @@ const FIL = AgeLocale(
         "toddler" => StageLabel("Batang paslit"),
         "child" => StageLabel("Bata"),
         "teenager" => StageLabel("Tinedyer"),
-        "adult" => StageLabel("Matanda"),
+        "adult" => StageLabel("Adulto"),
     ),
     short_override = CompactnessOverride(
         units = Dict(

@@ -42,5 +42,5 @@
          "teenager" (stage-label #f "مراهق" "مراهقة")
          "adult" (stage-label #f "بالغ" "بالغة"))
    (compactness-override (hash "type" "pluralized" "forms" (hash "zero" "{n} يوم" "one" "يوم" "two" "يومان" "few" "{n} أيام" "many" "{n} يومًا" "other" "{n} يوم")) (hash "type" "pluralized" "forms" (hash "zero" "{n} أسبوع" "one" "أسبوع" "two" "أسبوعان" "few" "{n} أسابيع" "many" "{n} أسبوعًا" "other" "{n} أسبوع")) (hash "type" "pluralized" "forms" (hash "zero" "{n} شهر" "one" "شهر" "two" "شهران" "few" "{n} أشهر" "many" "{n} شهرًا" "other" "{n} شهر")) (hash "type" "pluralized" "forms" (hash "zero" "{n} سنة" "one" "سنة واحدة" "two" "سنتان" "few" "{n} سنوات" "many" "{n} سنة" "other" "{n} سنة")) #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n} ي") (hash "type" "simple" "form" "{n} أ") (hash "type" "pluralized" "forms" (hash "zero" "{n} شهر" "one" "شهر" "two" "شهران" "few" "{n} أشهر" "many" "{n} شهرًا" "other" "{n} شهر")) (hash "type" "simple" "form" "{n} سنة") "{n}½" "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n} ي") (hash "type" "simple" "form" "{n} أ") (hash "type" "simple" "form" "{n} شهر") (hash "type" "simple" "form" "{n} سنة") "{n}½" "" #f)
   ))

@@ -32,18 +32,18 @@ module SayableAge
       just_born: "Iɣ d illul",
       stages: {
         "newborn" => StageLabel.new("Iɣ d illul"),
-        "infant" => StageLabel.new("Agellid"),
+        "infant" => StageLabel.new("Llufan"),
         "toddler" => StageLabel.new(m: "Aḥenjir", f: "Taḥenjirt"),
-        "child" => StageLabel.new(m: "Afrux", f: "Tafruxṭ"),
+        "child" => StageLabel.new(m: "Afrux", f: "Tafruxt"),
         "teenager" => StageLabel.new(m: "Aɛrim", f: "Taɛrimt"),
         "adult" => StageLabel.new(m: "Argaz", f: "Tamṭṭuṭ"),
       },
       short: CompactnessOverride.new(
         units: {
-          "day" => UnitForms.new("{n} d"),
-          "week" => UnitForms.new("{n} wk"),
-          "month" => UnitForms.new("{n} mo"),
-          "year" => UnitForms.new("{n} yr"),
+          "day" => UnitForms.new(one: "{n} ass", few: "{n} ussan", other: "{n} ass"),
+          "week" => UnitForms.new(one: "{n} imalass", few: "{n} imalassn", other: "{n} imalass"),
+          "month" => UnitForms.new(one: "{n} ayyur", few: "{n} ayyurn", other: "{n} ayyur"),
+          "year" => UnitForms.new(one: "{n} aseggas", few: "{n} iseggasen", other: "{n} aseggas"),
         },
       ),
       compact: CompactnessOverride.new(

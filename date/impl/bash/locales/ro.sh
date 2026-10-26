@@ -11,7 +11,7 @@
 
 _sayabledate_locale_ro() {
     _months=('ianuarie' 'februarie' 'martie' 'aprilie' 'mai' 'iunie' 'iulie' 'august' 'septembrie' 'octombrie' 'noiembrie' 'decembrie')
-    _weekdays=('duminică' 'luni' 'marți' 'miercuri' 'joi' 'vineri' 'sâmbătă')
+    _weekdays=('duminica' 'lunea' 'marțea' 'miercurea' 'joia' 'vinerea' 'sâmbăta')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
@@ -20,7 +20,7 @@ _sayabledate_locale_ro() {
     _yesterday='ieri'
     _day_after_tomorrow='poimâine'
     _day_before_yesterday='alaltăieri'
-    _this_weekday='această {weekday}'
+    _this_weekday='{weekday} aceasta'
     _next_weekday='{weekday} viitoare'
     _last_weekday='{weekday} trecută'
     _months_in_date=('ianuarie' 'februarie' 'martie' 'aprilie' 'mai' 'iunie' 'iulie' 'august' 'septembrie' 'octombrie' 'noiembrie' 'decembrie')

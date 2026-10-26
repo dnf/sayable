@@ -26,7 +26,7 @@ lg
 	locale tomorrow: 'enkya'.
 	locale yesterday: 'jjo'.
 	locale dayAfterTomorrow: 'enkya ogwa'.
-	locale dayBeforeYesterday: 'jjo edda'.
+	locale dayBeforeYesterday: 'jjuuzi'.
 	locale thisWeekday: '{weekday} eno'.
 	locale nextWeekday: '{weekday} eddirira'.
 	locale lastWeekday: '{weekday} eggudde'.

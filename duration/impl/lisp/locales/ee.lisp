@@ -17,26 +17,26 @@
   (make-duration-locale
    :code "ee"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second '((:one . "sekend {n}") (:other . "sekendwo {n}")))
-               (cons :minute '((:one . "aɖabaƒoƒo {n}") (:other . "aɖabaƒoƒowo {n}")))
-               (cons :hour '((:one . "gaƒoƒo {n}") (:other . "gaƒoƒowo {n}")))
-               (cons :day '((:one . "ŋkeke {n}") (:other . "ŋkekewo {n}")))
-               (cons :week '((:one . "kɔsiɖa {n}") (:other . "kɔsiɖawo {n}")))
-               (cons :month '((:one . "ɣleti {n}") (:other . "ɣletiwo {n}")))
-               (cons :year '((:one . "ƒe {n}") (:other . "ƒewo {n}"))))
+   :units (list (cons :second "sekend {n}")
+               (cons :minute "aɖabaƒoƒo {n}")
+               (cons :hour "gaƒoƒo {n}")
+               (cons :day "ŋkeke {n}")
+               (cons :week "kɔsiɖa {n}")
+               (cons :month "ɣleti {n}")
+               (cons :year "ƒe {n}"))
    :half "{0} kple afã"
    :delimiter ", "
    :just-now "fifia"
-   :ago "ɖe {0} me"
+   :ago "{0} si va yi"
    :in-future "le {0} me"
    :short-units (list (cons :second "sek. {n}")
                        (cons :minute "aɖaba. {n}")
                        (cons :hour "gaƒ. {n}")
-                       (cons :day "ŋkekewo {n}")
-                       (cons :week '((:one . "kɔsiɖa {n}") (:other . "kɔsiɖawo {n}")))
-                       (cons :month '((:one . "ɣleti {n}") (:other . "ɣletiwo {n}")))
-                       (cons :year '((:one . "ƒe {n}") (:other . "ƒewo {n}"))))
-   :short-ago "ɖe {0} me"
+                       (cons :day "ŋkeke {n}")
+                       (cons :week "kɔsiɖa {n}")
+                       (cons :month "ɣleti {n}")
+                       (cons :year "ƒe {n}"))
+   :short-ago "{0} si va yi"
    :short-in-future "le {0} me"
    :compact-units (list (cons :second "{n}s")
                        (cons :minute "{n}m")
@@ -47,6 +47,6 @@
                        (cons :year "{n}y"))
    :compact-half "{n}½"
    :compact-delimiter ""
-   :compact-ago "ɖe {0} me"
+   :compact-ago "{0} si va yi"
    :compact-in-future "le {0} me"
 ))

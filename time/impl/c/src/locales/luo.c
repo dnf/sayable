@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_luo = {
     "luo",
     {
-        { "apar gi ariyo", "achiel", "ariyo", "adek", "ang'wen", "abich", "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gi achiel" },
+        { "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gachiel", "apar gariyo", "achiel", "ariyo", "adek", "ang'wen", "abich" },
         "dier otieno",
         "odiechieng' tir",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "saa {h}", "saa {h} gi dakika abich", "saa {h} gi dakika apar", "saa {h} gi dakika apar gabich", "saa {h} gi dakika piero ariyo", "saa {h} gi dakika piero ariyo gabich", "saa {h} gi nus", "saa {h} gi dakika piero adek gabich", "saa {h} gi dakika piero ang'wen", "saa {h} gi dakika piero ang'wen gabich", "saa {h} gi dakika piero abich", "saa {h} gi dakika piero abich gabich" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

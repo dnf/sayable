@@ -17,14 +17,14 @@
    :second {:type :simple :form "{n} hēkona"}
    :minute {:type :simple :form "{n} meneti"}
    :hour {:type :simple :form "{n} hāora"}
-   :day {:type :simple :form "rā {n}"}
-   :week {:type :simple :form "wiki {n}"}
-   :month {:type :simple :form "marama {n}"}
-   :year {:type :simple :form "tau {n}"}
-   :half "{0}½"
+   :day {:type :simple :form "{n} rā"}
+   :week {:type :simple :form "{n} wiki"}
+   :month {:type :simple :form "{n} marama"}
+   :year {:type :simple :form "{n} tau"}
+   :half "{n}½"
    :delimiter ", "
    :just-now "ināianei"
    :ago "{0} i mua"
    :in-future "ā te {0}"
-   :short {:second {:type :simple :form "{n} hēk"} :minute {:type :simple :form "{n} men"} :hour {:type :simple :form "{n} hāo"} :day {:type :simple :form "rā {n}"} :week {:type :simple :form "w {n}"} :month {:type :simple :form "m {n}"} :year {:type :simple :form "t {n}"} :half nil :delimiter nil :ago "{0} i mua" :in-future "ā te {0}"}
+   :short {:second {:type :simple :form "{n} hēk"} :minute {:type :simple :form "{n} men"} :hour {:type :simple :form "{n} hāo"} :day {:type :simple :form "{n} rā"} :week {:type :simple :form "{n} w"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} t"} :half nil :delimiter nil :ago "{0} i mua" :in-future "ā te {0}"}
    :compact {:second {:type :simple :form "{n}hēk"} :minute {:type :simple :form "{n}men"} :hour {:type :simple :form "{n}hāo"} :day {:type :simple :form "{n}r"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}t"} :half "{n}½" :delimiter "" :ago "{0} i mua" :in-future "ā te {0}"}})

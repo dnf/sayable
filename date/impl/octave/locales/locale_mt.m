@@ -12,7 +12,7 @@
 function loc = locale_mt()
   loc.code = 'mt';
   loc.months = {'Jannar', 'Frar', 'Marzu', 'April', 'Mejju', 'Ġunju', 'Lulju', 'Awwissu', 'Settembru', 'Ottubru', 'Novembru', 'Diċembru'};
-  loc.weekdays = {'Il-Ħadd', 'It-Tnejn', 'It-Tlieta', 'L-Erbgħa', 'Il-Ħamis', 'Il-Ġimgħa', 'Is-Sibt'};
+  loc.weekdays = {'il-Ħadd', 'it-Tnejn', 'it-Tlieta', 'l-Erbgħa', 'il-Ħamis', 'il-Ġimgħa', 'is-Sibt'};
   loc.day_format = '{n}';
   loc.day_format_exceptions = struct();
   loc.date_pattern = '{day} {month}';

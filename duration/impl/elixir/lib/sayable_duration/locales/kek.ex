@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.KEK do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} qakab'",
         in_future: "chi {0}"

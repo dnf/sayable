@@ -23,15 +23,17 @@ from ..locale import (
 fn build_kl() -> DurationLocale:
     """Build the Kalaallisut locale."""
     fn plural(n: Int) -> String:
+        if n == 1:
+            return "one"
         return "other"
 
-    var second = simple_unit("sekundit {n}")
-    var minute = simple_unit("minutsit {n}")
-    var hour = simple_unit("nalunaaqutap akunnera {n}")
-    var day = simple_unit("ullut {n}")
-    var week = simple_unit("sapaatit {n}")
-    var month = simple_unit("qaammatit {n}")
-    var year = simple_unit("ukiut {n}")
+    var second = plural_unit(one="sekundi {n}", other="sekundit {n}")
+    var minute = plural_unit(one="minutsi {n}", other="minutsit {n}")
+    var hour = plural_unit(one="nalunaaquttap akunnera {n}", other="nalunaaquttap akunneri {n}")
+    var day = plural_unit(one="ulloq {n}", other="ullut {n}")
+    var week = plural_unit(one="sapaatip akunnera {n}", other="sapaatip akunneri {n}")
+    var month = plural_unit(one="qaammat {n}", other="qaammatit {n}")
+    var year = plural_unit(one="ukioq {n}", other="ukiut {n}")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("sek. {n}")
@@ -42,7 +44,7 @@ fn build_kl() -> DurationLocale:
     short_ovr.has_hour = True
     short_ovr.day = simple_unit("ull. {n}")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("sap. {n}")
+    short_ovr.week = simple_unit("sap. ak. {n}")
     short_ovr.has_week = True
     short_ovr.month = simple_unit("qaam. {n}")
     short_ovr.has_month = True
@@ -68,6 +70,8 @@ fn build_kl() -> DurationLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
     compact_ovr.ago = "{0} matuma siorna"

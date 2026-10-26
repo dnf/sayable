@@ -36,7 +36,7 @@ locale =
       [ ( One, "වසර {n}" )
       , ( Other, "වසර {n}" )
       ]
-    , half = "{0}යි භාගයයි"
+    , half = "{n}½"
     , delimiter = ", "
     , justBorn = "අලුත උපන්"
     , stages =

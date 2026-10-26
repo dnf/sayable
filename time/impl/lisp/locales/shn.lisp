@@ -20,7 +20,7 @@
     :hours (list "သိပ်းသွင်" "ၼိုင်ႈ" "သွင်" "သၢမ်" "သီႇ" "ႁႃႈ" "ႁူၵ်း" "ၸဵတ်း" "ပႅတ်ႇ" "ၵဝ်ႈ" "သိပ်း" "သိပ်းဢဵတ်း")
     :midnight "ၵၢင်ၶိုၼ်း"
     :noon "ၵၢင်ဝၼ်း"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}မူင်း") (cons 5 "{h}မူင်း ႁႃႈမိၼိတ်ႉ") (cons 10 "{h}မူင်း သိပ်းမိၼိတ်ႉ") (cons 15 "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ") (cons 20 "{h}မူင်း သၢဝ်းမိၼိတ်ႉ") (cons 25 "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ") (cons 30 "{h}မူင်းၶိုင်ႈ") (cons 35 "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ") (cons 40 "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ") (cons 45 "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ") (cons 50 "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ") (cons 55 "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

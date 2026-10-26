@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var SO = st.TimeLocale{
 	Code: "so",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"laba iyo toban", "kow", "laba", "saddex", "afar", "shan", "lix", "toddoba", "siddeed", "sagaal", "toban", "kow iyo toban"},
+		Hours:    [12]string{"laba iyo tobanka", "kowda", "labada", "saddexda", "afarta", "shanta", "lixda", "toddobada", "siddeedda", "sagaasha", "tobanka", "kow iyo tobanka"},
 		Midnight: "saqda dhexe",
 		Noon:     "duhur",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "{h}", 5: "{h} iyo shan", 10: "{h} iyo toban", 15: "{h} iyo rubuc", 20: "{h} iyo labaatan", 25: "{h} iyo shan iyo labaatan", 30: "{h} iyo bar", 35: "{next_h} shan iyo labaatan la'", 40: "{next_h} labaatan la'", 45: "{next_h} rubuc la'", 50: "{next_h} toban la'", 55: "{next_h} shan la'"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

@@ -27,13 +27,13 @@ fn plural_uk(n int) PluralCategory {
 pub const locale_uk = DurationLocale{
 	code: 'uk'
 	plural: plural_uk
-	second: plural_unit({PluralCategory.one: '{n} секунда', PluralCategory.few: '{n} секунди', PluralCategory.many: '{n} секунд', PluralCategory.other: '{n} секунд'})
-	minute: plural_unit({PluralCategory.one: '{n} хвилина', PluralCategory.few: '{n} хвилини', PluralCategory.many: '{n} хвилин', PluralCategory.other: '{n} хвилин'})
-	hour: plural_unit({PluralCategory.one: '{n} година', PluralCategory.few: '{n} години', PluralCategory.many: '{n} годин', PluralCategory.other: '{n} годин'})
-	day: plural_unit({PluralCategory.one: '{n} день', PluralCategory.few: '{n} дні', PluralCategory.many: '{n} днів', PluralCategory.other: '{n} днів'})
-	week: plural_unit({PluralCategory.one: '{n} тиждень', PluralCategory.few: '{n} тижні', PluralCategory.many: '{n} тижнів', PluralCategory.other: '{n} тижнів'})
-	month: plural_unit({PluralCategory.one: '{n} місяць', PluralCategory.few: '{n} місяці', PluralCategory.many: '{n} місяців', PluralCategory.other: '{n} місяців'})
-	year: plural_unit({PluralCategory.one: '{n} рік', PluralCategory.few: '{n} роки', PluralCategory.many: '{n} років', PluralCategory.other: '{n} років'})
+	second: plural_unit({PluralCategory.one: '{n} секунда', PluralCategory.few: '{n} секунди', PluralCategory.many: '{n} секунд', PluralCategory.other: '{n} секунди'})
+	minute: plural_unit({PluralCategory.one: '{n} хвилина', PluralCategory.few: '{n} хвилини', PluralCategory.many: '{n} хвилин', PluralCategory.other: '{n} хвилини'})
+	hour: plural_unit({PluralCategory.one: '{n} година', PluralCategory.few: '{n} години', PluralCategory.many: '{n} годин', PluralCategory.other: '{n} години'})
+	day: plural_unit({PluralCategory.one: '{n} день', PluralCategory.few: '{n} дні', PluralCategory.many: '{n} днів', PluralCategory.other: '{n} дня'})
+	week: plural_unit({PluralCategory.one: '{n} тиждень', PluralCategory.few: '{n} тижні', PluralCategory.many: '{n} тижнів', PluralCategory.other: '{n} тижня'})
+	month: plural_unit({PluralCategory.one: '{n} місяць', PluralCategory.few: '{n} місяці', PluralCategory.many: '{n} місяців', PluralCategory.other: '{n} місяця'})
+	year: plural_unit({PluralCategory.one: '{n} рік', PluralCategory.few: '{n} роки', PluralCategory.many: '{n} років', PluralCategory.other: '{n} року'})
 	half: '{n} з половиною'
 	delimiter: ', '
 	just_now: 'щойно'

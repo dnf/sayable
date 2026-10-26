@@ -15,18 +15,18 @@ st_hours('tig', ['ʿasərte wəkəlte', 'ḥante', 'kəlʾe', 'səleste', 'arba�
 st_midnight('tig', 'nəs-leyla').
 st_noon('tig', 'qayḥ').
 
-st_pattern('tig', 0, '{h}:00').
-st_pattern('tig', 5, '{h}:05').
-st_pattern('tig', 10, '{h}:10').
-st_pattern('tig', 15, '{h}:15').
-st_pattern('tig', 20, '{h}:20').
-st_pattern('tig', 25, '{h}:25').
-st_pattern('tig', 30, '{h}:30').
-st_pattern('tig', 35, '{h}:35').
-st_pattern('tig', 40, '{h}:40').
-st_pattern('tig', 45, '{h}:45').
-st_pattern('tig', 50, '{h}:50').
-st_pattern('tig', 55, '{h}:55').
+st_pattern('tig', 0, 'saʿa {h}').
+st_pattern('tig', 5, 'saʿa {h} we ḥamməste').
+st_pattern('tig', 10, 'saʿa {h} we ʿasərte').
+st_pattern('tig', 15, 'saʿa {h} we ʿasərte we ḥamməste').
+st_pattern('tig', 20, 'saʿa {h} we ʿəsra').
+st_pattern('tig', 25, 'saʿa {h} we ʿəsra we ḥamməste').
+st_pattern('tig', 30, 'saʿa {h} we nəs').
+st_pattern('tig', 35, 'saʿa {h} we salasa we ḥamməste').
+st_pattern('tig', 40, 'saʿa {h} we arbaʿa').
+st_pattern('tig', 45, 'saʿa {h} we arbaʿa we ḥamməste').
+st_pattern('tig', 50, 'saʿa {h} we ḥamsa').
+st_pattern('tig', 55, 'saʿa {h} we ḥamsa we ḥamməste').
 
 short_st_use24h('tig', false).
 short_st_format('tig', '{h}:{mm} {ampm}').

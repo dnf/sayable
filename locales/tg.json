@@ -9,7 +9,7 @@
       "month": "{n} моҳ",
       "year": "{n} сол"
     },
-    "half": "{0} ним",
+    "half": "{0}у ним",
     "delimiter": ", ",
     "justBorn": "Навзод",
     "stages": {
@@ -72,8 +72,8 @@
     "dayAfterTomorrow": "пасфардо",
     "dayBeforeYesterday": "парирӯз",
     "thisWeekday": "ин {weekday}",
-    "nextWeekday": "{weekday}-и оянда",
-    "lastWeekday": "{weekday}-и гузашта",
+    "nextWeekday": "{weekday}и оянда",
+    "lastWeekday": "{weekday}и гузашта",
     "short": {
       "months": [
         "Янв",
@@ -117,7 +117,7 @@
       "month": "{n} моҳ",
       "year": "{n} сол"
     },
-    "half": "{0} ним",
+    "half": "{0}у ним",
     "delimiter": ", ",
     "justNow": "ҳамин ҳоло",
     "ago": "{0} пеш",
@@ -210,18 +210,18 @@
       "midnight": "нимишаб",
       "noon": "нимирӯз",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "соати {h}",
+        "5": "соати {h} ва панҷ дақиқа",
+        "10": "соати {h} ва даҳ дақиқа",
+        "15": "соати {h} ва понздаҳ дақиқа",
+        "20": "соати {h} ва бист дақиқа",
+        "25": "соати {h} ва бисту панҷ дақиқа",
+        "30": "соати {h} ва ним",
+        "35": "соати {h} ва сию панҷ дақиқа",
+        "40": "соати {h} ва чил дақиқа",
+        "45": "соати {h} ва чилу панҷ дақиқа",
+        "50": "соати {h} ва панҷоҳ дақиқа",
+        "55": "соати {h} ва панҷоҳу панҷ дақиқа"
       }
     },
     "short": {
@@ -236,5 +236,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Formal additive spoken form with izofat: 'соати ду' (2:00), 'соати ду ва понздаҳ дақиқа' (2:15), 'соати ду ва ним' (2:30), 'соати ду ва чилу панҷ дақиқа' (2:45); compound minutes with -у ('бисту панҷ', 'сию панҷ', 'чилу панҷ', 'панҷоҳу панҷ'). Doubts: colloquial Tajik prefers 'дую ним' (hour + -ю + ним) over 'ду ва ним', but the -у/-ю spelling depends on whether the hour ends in a vowel, so it cannot be a single template; a subtractive 'понздаҳ дақиқа кам се' (2:45) may exist colloquially but I am not confident enough to use it. 'соати' vs bare 'соат' both occur; izofat form chosen as the grammatical standard."
+    }
+  ]
 }

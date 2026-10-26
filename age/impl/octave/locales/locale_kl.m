@@ -11,11 +11,11 @@
 
 function loc = locale_kl()
   loc.code = 'kl';
-  loc.plural = @(n) "other";
-  loc.units.day = 'ullut {n}';
-  loc.units.week = 'sapaatit {n}';
-  loc.units.month = 'qaammatit {n}';
-  loc.units.year = 'ukiut {n}';
+  loc.plural = @(n) ifelse(n == 1, "one", "other");
+  loc.units.day = struct("one", 'ulloq {n}', "other", 'ullut {n}');
+  loc.units.week = struct("one", 'sapaatip akunnera {n}', "other", 'sapaatip akunneri {n}');
+  loc.units.month = struct("one", 'qaammat {n}', "other", 'qaammatit {n}');
+  loc.units.year = struct("one", 'ukioq {n}', "other", 'ukiut {n}');
   loc.half = '{0} affaa';
   loc.delimiter = ', ';
   loc.just_born = 'Inuuneq nutaaq';
@@ -26,12 +26,13 @@ function loc = locale_kl()
   loc.stages.teenager = 'Inuusuttuaq';
   loc.stages.adult = 'Inuk';
   loc.short.units.day = 'ull. {n}';
-  loc.short.units.week = 'sap. {n}';
+  loc.short.units.week = 'sap. ak. {n}';
   loc.short.units.month = 'qaam. {n}';
   loc.short.units.year = 'uk. {n}';
   loc.compact.units.day = '{n}d';
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
 endfunction

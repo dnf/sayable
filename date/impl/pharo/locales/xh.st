@@ -26,7 +26,7 @@ xh
 	locale tomorrow: 'ngomso'.
 	locale yesterday: 'izolo'.
 	locale dayAfterTomorrow: 'ngomhlomunye'.
-	locale dayBeforeYesterday: 'kutshanje'.
+	locale dayBeforeYesterday: 'izolo elinye'.
 	locale thisWeekday: 'le {weekday}'.
 	locale nextWeekday: '{weekday} ezayo'.
 	locale lastWeekday: '{weekday} edlulileyo'.

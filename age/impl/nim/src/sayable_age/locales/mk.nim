@@ -37,7 +37,7 @@ let MK* = AgeLocale(
     "toddler": stageNeutral("Мало дете"),
     "child": stageNeutral("Дете"),
     "teenager": stageNeutral("Тинејџер"),
-    "adult": stageNeutral("Возрасен"),
+    "adult": stageGendered("Возрасен", "Возрасна"),
   }.toOrderedTable,
   short: some(CompactnessOverride(
     units: some({

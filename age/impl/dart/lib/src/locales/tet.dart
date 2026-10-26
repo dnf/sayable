@@ -42,5 +42,6 @@ final tet = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

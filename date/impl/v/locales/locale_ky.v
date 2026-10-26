@@ -14,11 +14,11 @@ module locales
 
 pub const locale_ky = DateLocale{
 	code: 'ky'
-	months: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']!
-	weekdays: ['Жекшемби', 'Дүйшөмбү', 'Шейшемби', 'Шаршемби', 'Бейшемби', 'Жума', 'Ишемби']!
-	day_format: '{n}'
-	date_pattern: '{day} {month}'
-	date_pattern_with_year: '{day} {month} {year}'
+	months: ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']!
+	weekdays: ['жекшемби', 'дүйшөмбү', 'шейшемби', 'шаршемби', 'бейшемби', 'жума', 'ишемби']!
+	day_format: '{n}-'
+	date_pattern: '{day}{month}'
+	date_pattern_with_year: '{year}-ж., {day}{month}'
 	today: 'бүгүн'
 	tomorrow: 'эртең'
 	yesterday: 'кечээ'
@@ -34,9 +34,9 @@ pub const locale_ky = DateLocale{
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{
-		months: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек']!
+		months: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек']!
 		has_months: true
-		weekdays: ['Жек', 'Дүй', 'Шей', 'Шар', 'Бей', 'Жум', 'Ише']!
+		weekdays: ['жек', 'дүй', 'шей', 'шар', 'бей', 'жум', 'ише']!
 		has_weekdays: true
 		day_format: '{n}'
 		has_day_format: true

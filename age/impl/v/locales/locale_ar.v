@@ -65,7 +65,7 @@ pub const locale_ar = AgeLocale{
 		has_day: true
 		week: simple_unit('{n} أ')
 		has_week: true
-		month: plural_unit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'})
+		month: simple_unit('{n} شهر')
 		has_month: true
 		year: simple_unit('{n} سنة')
 		has_year: true

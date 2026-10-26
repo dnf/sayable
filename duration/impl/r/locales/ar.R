@@ -23,9 +23,9 @@ locale_ar <- list(
   code = "ar",
   plural = plural,
   units = list(
-    second = list(zero = "{n} ثانية", one = "ثانية واحدة", two = "ثانيتان", few = "{n} ثوانٍ", many = "{n} ثانية", other = "{n} ثانية"),
-    minute = list(zero = "{n} دقيقة", one = "دقيقة واحدة", two = "دقيقتان", few = "{n} دقائق", many = "{n} دقيقة", other = "{n} دقيقة"),
-    hour = list(zero = "{n} ساعة", one = "ساعة واحدة", two = "ساعتان", few = "{n} ساعات", many = "{n} ساعة", other = "{n} ساعة"),
+    second = list(zero = "{n} ثانية", one = "ثانية", two = "ثانيتان", few = "{n} ثوانٍ", many = "{n} ثانية", other = "{n} ثانية"),
+    minute = list(zero = "{n} دقيقة", one = "دقيقة", two = "دقيقتان", few = "{n} دقائق", many = "{n} دقيقة", other = "{n} دقيقة"),
+    hour = list(zero = "{n} ساعة", one = "ساعة", two = "ساعتان", few = "{n} ساعات", many = "{n} ساعة", other = "{n} ساعة"),
     day = list(zero = "{n} يوم", one = "يوم", two = "يومان", few = "{n} أيام", many = "{n} يومًا", other = "{n} يوم"),
     week = list(zero = "{n} أسبوع", one = "أسبوع", two = "أسبوعان", few = "{n} أسابيع", many = "{n} أسبوعًا", other = "{n} أسبوع"),
     month = list(zero = "{n} شهر", one = "شهر", two = "شهران", few = "{n} أشهر", many = "{n} شهرًا", other = "{n} شهر"),
@@ -56,7 +56,7 @@ locale_ar <- list(
       hour = "{n} س",
       day = "{n} ي",
       week = "{n} أ",
-      month = list(zero = "{n} شهر", one = "شهر", two = "شهران", few = "{n} أشهر", many = "{n} شهرًا", other = "{n} شهر"),
+      month = "{n} شهر",
       year = "{n} سنة"
     ),
     half = "{n}½",

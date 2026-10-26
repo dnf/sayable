@@ -10,22 +10,22 @@
 # Source: locales/sar.json
 
 function locale_sar {
-    $hours = @('mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'kɨ̀ndá', 'ɗìi', 'mùtá', 'sɔ̀', 'mɨ̀ndɨ̀', 'mɨ̀ndɨ̀ kɨ̀ndá', 'mɨ̀sá', 'mɨ̀ndɨ̀ mùtá', 'mɨ̀ndɨ̀ sɔ̀', 'mɔ̀ɔ́', 'mɔ̀ɔ́ kɨ̀ndá')
+    $hours = @('lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'lɛɛr kɨ̀ndá', 'lɛɛr ɗìi', 'lɛɛr mùtá', 'lɛɛr sɔ̀', 'lɛɛr mɨ̀ndɨ̀', 'lɛɛr mɨ̀ndɨ̀ kɨ̀ndá', 'lɛɛr mɨ̀sá', 'lɛɛr mɨ̀ndɨ̀ mùtá', 'lɛɛr mɨ̀ndɨ̀ sɔ̀', 'lɛɛr mɔ̀ɔ́', 'lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá')
     $midnight = 'badɔ'
     $noon = 'mbɔr ndɔ'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} kɨ̀ minít mɨ̀ndɨ̀'
+    $patterns[10] = '{h} kɨ̀ minít mɔ̀ɔ́'
+    $patterns[15] = '{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    $patterns[20] = '{h} kɨ̀ minít mɔ̀ɔ́ ɗìi'
+    $patterns[25] = '{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    $patterns[30] = '{h} kɩ̀ ndá̰ŋ'
+    $patterns[35] = '{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    $patterns[40] = '{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀'
+    $patterns[45] = '{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
+    $patterns[50] = '{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀'
+    $patterns[55] = '{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀'
     $clock = @{
         hours = $hours
         midnight = $midnight

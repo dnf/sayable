@@ -10,7 +10,7 @@
 # Source: locales/yue.json
 
 _sayabledate_locale_yue() {
-    _months=('一月' '二月' '三月' '四月' '五月' '六月' '七月' '八月' '九月' '十月' '十一月' '十二月')
+    _months=('1月' '2月' '3月' '4月' '5月' '6月' '7月' '8月' '9月' '10月' '11月' '12月')
     _weekdays=('星期日' '星期一' '星期二' '星期三' '星期四' '星期五' '星期六')
     _day_format='{n}日'
     _date_pattern='{month}{day}'
@@ -23,7 +23,7 @@ _sayabledate_locale_yue() {
     _this_weekday='呢個{weekday}'
     _next_weekday='下個{weekday}'
     _last_weekday='上個{weekday}'
-    _short_months=('一月' '二月' '三月' '四月' '五月' '六月' '七月' '八月' '九月' '十月' '十一月' '十二月')
+    _short_months=('1月' '2月' '3月' '4月' '5月' '6月' '7月' '8月' '9月' '10月' '11月' '12月')
     _short_weekdays=('日' '一' '二' '三' '四' '五' '六')
     _short_day_format='{n}日'
     _short_date_pattern='{month}{day}'

@@ -28,7 +28,7 @@ module SayableAge
         "toddler" => StageLabel.new("Batang paslit"),
         "child" => StageLabel.new("Bata"),
         "teenager" => StageLabel.new("Tinedyer"),
-        "adult" => StageLabel.new("Matanda"),
+        "adult" => StageLabel.new("Adulto"),
       },
       short: CompactnessOverride.new(
         units: {

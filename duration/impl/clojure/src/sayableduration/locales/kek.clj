@@ -27,4 +27,4 @@
    :ago "{0} qakab'"
    :in-future "chi {0}"
    :short {:second {:type :simple :form "{n} seg."} :minute {:type :simple :form "{n} min."} :hour {:type :simple :form "{n} hora"} :day {:type :simple :form "{n} q'e"} :week {:type :simple :form "{n} sem."} :month {:type :simple :form "{n} po"} :year {:type :simple :form "{n} chih."} :half nil :delimiter nil :ago "{0} qakab'" :in-future "chi {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} qakab'" :in-future "chi {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} qakab'" :in-future "chi {0}"}})

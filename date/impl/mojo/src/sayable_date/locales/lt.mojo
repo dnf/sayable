@@ -42,10 +42,10 @@ fn build_lt() -> DateLocale:
     var weekday4 = "ketvirtadienis"
     var weekday5 = "penktadienis"
     var weekday6 = "šeštadienis"
-    var day_format = "{n}."
+    var day_format = "{n} d."
     var num_exceptions = 0
-    var date_pattern = "{day} {month}"
-    var date_pattern_with_year = "{day} {month} {year}"
+    var date_pattern = "{month} {day}"
+    var date_pattern_with_year = "{year} m. {month} {day}"
     var today = "šiandien"
     var tomorrow = "rytoj"
     var yesterday = "vakar"
@@ -90,11 +90,11 @@ fn build_lt() -> DateLocale:
     short_ovr.weekday5 = "pn"
     short_ovr.weekday6 = "št"
     short_ovr.has_weekdays = True
-    short_ovr.day_format = "{n}."
+    short_ovr.day_format = "{n} d."
     short_ovr.has_day_format = True
-    short_ovr.date_pattern = "{day} {month}"
+    short_ovr.date_pattern = "{month} {day}"
     short_ovr.has_date_pattern = True
-    short_ovr.date_pattern_with_year = "{day} {month} {year}"
+    short_ovr.date_pattern_with_year = "{year} m. {month} {day}"
     short_ovr.has_date_pattern_with_year = True
 
     var compact_ovr = build_compactness_override()

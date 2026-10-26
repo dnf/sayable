@@ -11,7 +11,7 @@
 
 function loc = locale_bm()
   loc.code = 'bm';
-  loc.months = {'Zanwuye', 'Fewuriye', 'Marisi', 'Awirili', 'Mɛ', 'Zuwɛn', 'Zuluye', 'Uti', 'Sɛtanburu', 'ɔkutɔburu', 'Nowanbudu', 'Desanburu'};
+  loc.months = {'Zanwuye', 'Feburuye', 'Marisi', 'Awirili', 'Mɛ', 'Zuwɛn', 'Zuluye', 'Uti', 'Sɛtanburu', 'Ɔkutɔburu', 'Nowanburu', 'Desanburu'};
   loc.weekdays = {'Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri'};
   loc.day_format = '{n}';
   loc.day_format_exceptions = struct();
@@ -26,7 +26,7 @@ function loc = locale_bm()
   loc.next_weekday = '{weekday} nata';
   loc.last_weekday = '{weekday} tɛmɛnen';
   loc.months_in_date = {};
-  loc.short.months = {'Zan', 'Few', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'ɔku', 'Now', 'Des'};
+  loc.short.months = {'Zan', 'Feb', 'Mar', 'Awi', 'Mɛ', 'Zuw', 'Zul', 'Uti', 'Sɛt', 'Ɔku', 'Now', 'Des'};
   loc.short.weekdays = {'Kar', 'Ntɛ', 'Tar', 'Ara', 'Ala', 'Jum', 'Sib'};
   loc.short.day_format = '{n}';
   loc.short.date_pattern = '{day} {month}';

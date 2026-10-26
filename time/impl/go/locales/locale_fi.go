@@ -20,7 +20,7 @@ var FI = st.TimeLocale{
 		Hours:    [12]string{"kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista"},
 		Midnight: "keskiyö",
 		Noon:     "keskipäivä",
-		Patterns: map[int]string{0: "{h}", 5: "viisi yli {h}", 10: "kymmenen yli {h}", 15: "vartti yli {h}", 20: "kaksikymmentä yli {h}", 25: "kaksikymmentäviisi yli {h}", 30: "puoli yli {h}", 35: "kaksikymmentäviisi vaille {next_h}", 40: "kaksikymmentä vaille {next_h}", 45: "vartti vaille {next_h}", 50: "kymmenen vaille {next_h}", 55: "viisi vaille {next_h}"},
+		Patterns: map[int]string{0: "kello {h}", 5: "viisi yli {h}", 10: "kymmenen yli {h}", 15: "vartti yli {h}", 20: "kaksikymmentä yli {h}", 25: "kaksikymmentäviisi yli {h}", 30: "puoli {next_h}", 35: "kaksikymmentäviisi vaille {next_h}", 40: "kaksikymmentä vaille {next_h}", 45: "vartti vaille {next_h}", 50: "kymmenen vaille {next_h}", 55: "viisi vaille {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}.{mm}"},

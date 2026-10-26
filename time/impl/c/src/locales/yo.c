@@ -15,9 +15,9 @@ const StTimeLocale st_locale_yo = {
     "yo",
     {
         { "méjìlá", "kan", "méjì", "mẹ́ta", "mẹ́rin", "márùn-ún", "mẹ́fà", "méje", "mẹ́jọ", "mẹ́sàn-án", "mẹ́wàá", "mọ́kànlá" },
-        "àárọ̀ òru",
-        "ọ̀sán",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        "ọ̀gànjọ́ òru",
+        "ọ̀sán gangan",
+        { "aago {h}", "aago {h} kọjá ìṣẹ́jú márùn-ún", "aago {h} kọjá ìṣẹ́jú mẹ́wàá", "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún", "aago {h} kọjá ogún ìṣẹ́jú", "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n", "aago {h} àbọ̀", "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n", "aago {next_h} kù ogún ìṣẹ́jú", "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún", "aago {next_h} kù ìṣẹ́jú mẹ́wàá", "aago {next_h} kù ìṣẹ́jú márùn-ún" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

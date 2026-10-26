@@ -22,7 +22,7 @@ pub const locale_sn = DateLocale{
 	today: 'nhasi'
 	tomorrow: 'mangwana'
 	yesterday: 'nezuro'
-	day_after_tomorrow: 'mangwanani'
+	day_after_tomorrow: 'kuswera mangwana'
 	has_day_after_tomorrow: true
 	day_before_yesterday: 'nezuro rakapera'
 	has_day_before_yesterday: true

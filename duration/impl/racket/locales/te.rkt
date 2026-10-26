@@ -21,14 +21,14 @@
   (duration-locale
    "te"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "simple" "form" "{n} సెకను")
-         "minute" (hash "type" "simple" "form" "{n} నిమిషం")
-         "hour" (hash "type" "simple" "form" "{n} గంట")
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} సెకను" "other" "{n} సెకన్లు"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} నిమిషం" "other" "{n} నిమిషాలు"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} గంట" "other" "{n} గంటలు"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "{n} రోజు" "other" "{n} రోజులు"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} వారం" "other" "{n} వారాలు"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} నెల" "other" "{n} నెలలు"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} సంవత్సరం" "other" "{n} సంవత్సరాలు")))
-   "{0}న్నర"
+   "{n}½"
    ", "
    "ఇప్పుడే"
    "{0} క్రితం"

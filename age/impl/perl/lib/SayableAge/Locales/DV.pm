@@ -23,7 +23,7 @@ sub locale {{
     month => '{n} މަސް',
     year => '{n} އަހަރު',
   },
-  half => '{0} ބައި',
+  half => '{n}½',
   delimiter => '، ',
   just_born => 'އަލަށް އުފަންވި',
   stages => {

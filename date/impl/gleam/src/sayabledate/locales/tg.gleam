@@ -26,8 +26,8 @@ pub fn locale() -> types.DateLocale {
     day_after_tomorrow: Ok("пасфардо"),
     day_before_yesterday: Ok("парирӯз"),
     this_weekday: Ok("ин {weekday}"),
-    next_weekday: Ok("{weekday}-и оянда"),
-    last_weekday: Ok("{weekday}-и гузашта"),
+    next_weekday: Ok("{weekday}и оянда"),
+    last_weekday: Ok("{weekday}и гузашта"),
     months_in_date: Error(Nil),
     short: Ok(types.CompactnessOverride(
       months: Ok(["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]),

@@ -24,7 +24,7 @@
                (cons :week "{n} ka semana")
                (cons :month "{n} ka bulan")
                (cons :year "{n} ka tuig"))
-   :half "{n}½"
+   :half "{0} ug tunga"
    :delimiter ", "
    :just-now "karon lang"
    :ago "{0} ang milabay"

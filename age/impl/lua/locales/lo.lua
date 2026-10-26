@@ -20,7 +20,7 @@ M.units = {
     year = "{n} ປີ",
 }
 M.half = "{0}ເຄິ່ງ"
-M.delimiter = ""
+M.delimiter = " "
 M.just_born = "ເກີດໃໝ່"
 M.stages = {
     newborn = "ເດັກເກີດໃໝ່",
@@ -45,6 +45,7 @@ M.compact = {
         month = "{n}m",
         year = "{n}y",
     },
+    half = "{n}½",
 }
 
 return M

@@ -13,13 +13,13 @@
 
 sd_plural('ay', _, other).
 
-sd_unit('ay', second, _, 'sikundu {n}').
-sd_unit('ay', minute, _, 'minutu {n}').
-sd_unit('ay', hour, _, 'ura {n}').
-sd_unit('ay', day, _, 'uru {n}').
-sd_unit('ay', week, _, 'simana {n}').
-sd_unit('ay', month, _, 'phaxsi {n}').
-sd_unit('ay', year, _, 'mara {n}').
+sd_unit('ay', second, _, '{n} sikundu').
+sd_unit('ay', minute, _, '{n} minutu').
+sd_unit('ay', hour, _, '{n} ura').
+sd_unit('ay', day, _, '{n} uru').
+sd_unit('ay', week, _, '{n} simana').
+sd_unit('ay', month, _, '{n} phaxsi').
+sd_unit('ay', year, _, '{n} mara').
 
 sd_half('ay', '{0} chika').
 sd_delimiter('ay', ', ').
@@ -27,9 +27,9 @@ sd_just_now('ay', 'jichha').
 sd_ago('ay', '{0} nayraqata').
 sd_in_future('ay', '{0} jutirïn').
 
-short_sd_unit('ay', second, _, 'sik. {n}').
-short_sd_unit('ay', minute, _, 'min. {n}').
-short_sd_unit('ay', hour, _, 'ur. {n}').
+short_sd_unit('ay', second, _, '{n} sik.').
+short_sd_unit('ay', minute, _, '{n} min.').
+short_sd_unit('ay', hour, _, '{n} ura').
 short_sd_unit('ay', day, _, '{n} ur.').
 short_sd_unit('ay', week, _, '{n} sim.').
 short_sd_unit('ay', month, _, '{n} phx.').
@@ -44,6 +44,7 @@ compact_sd_unit('ay', day, _, '{n}d').
 compact_sd_unit('ay', week, _, '{n}w').
 compact_sd_unit('ay', month, _, '{n}m').
 compact_sd_unit('ay', year, _, '{n}y').
+compact_sd_half('ay', '{n}½').
 compact_sd_delimiter('ay', '').
 compact_sd_ago('ay', '{0} nayraqata').
 compact_sd_in_future('ay', '{0} jutirïn').

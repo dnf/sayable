@@ -17,8 +17,8 @@ let ST* = DurationLocale(
   code: "st",
   plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
-    "second": pluralUnit(@[(pcOne, "motsotswana {n}"), (pcOther, "dimetsotswana {n}")]),
-    "minute": pluralUnit(@[(pcOne, "metsotso {n}"), (pcOther, "dimetsotso {n}")]),
+    "second": pluralUnit(@[(pcOne, "motsotswana {n}"), (pcOther, "metsotswana {n}")]),
+    "minute": pluralUnit(@[(pcOne, "motsotso {n}"), (pcOther, "metsotso {n}")]),
     "hour": pluralUnit(@[(pcOne, "hora {n}"), (pcOther, "dihora {n}")]),
     "day": pluralUnit(@[(pcOne, "letsatsi {n}"), (pcOther, "matsatsi {n}")]),
     "week": pluralUnit(@[(pcOne, "beke {n}"), (pcOther, "dibeke {n}")]),
@@ -32,8 +32,8 @@ let ST* = DurationLocale(
   inFuture: "ka {0}",
   short: some(CompactnessOverride(
     units: some({
-      "second": pluralUnit(@[(pcOne, "motsotswana {n}"), (pcOther, "dimetsotswana {n}")]),
-      "minute": pluralUnit(@[(pcOne, "metsotso {n}"), (pcOther, "dimetsotso {n}")]),
+      "second": pluralUnit(@[(pcOne, "motsotswana {n}"), (pcOther, "metsotswana {n}")]),
+      "minute": pluralUnit(@[(pcOne, "motsotso {n}"), (pcOther, "metsotso {n}")]),
       "hour": pluralUnit(@[(pcOne, "hora {n}"), (pcOther, "dihora {n}")]),
       "day": pluralUnit(@[(pcOne, "letsatsi {n}"), (pcOther, "matsatsi {n}")]),
       "week": pluralUnit(@[(pcOne, "beke {n}"), (pcOther, "dibeke {n}")]),

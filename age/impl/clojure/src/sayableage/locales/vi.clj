@@ -21,6 +21,6 @@
    :half "{0} rưỡi"
    :delimiter ", "
    :just-born "Sơ sinh"
-   :stages {:newborn {:type :neutral :label "Sơ sinh"} :infant {:type :neutral :label "Trẻ sơ sinh"} :toddler {:type :neutral :label "Trẻ mới biết đi"} :child {:type :neutral :label "Trẻ em"} :teenager {:type :neutral :label "Thiếu niên"} :adult {:type :neutral :label "Người lớn"}}
+   :stages {:newborn {:type :neutral :label "Sơ sinh"} :infant {:type :neutral :label "Trẻ nhũ nhi"} :toddler {:type :neutral :label "Trẻ mới biết đi"} :child {:type :neutral :label "Trẻ em"} :teenager {:type :neutral :label "Thiếu niên"} :adult {:type :neutral :label "Người lớn"}}
    :short {:day {:type :simple :form "{n} ngày"} :week {:type :simple :form "{n} tuần"} :month {:type :simple :form "{n} tháng"} :year {:type :simple :form "{n} năm"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n} ngày"} :week {:type :simple :form "{n} tuần"} :month {:type :simple :form "{n} tháng"} :year {:type :simple :form "{n} năm"} :half "{n}½" :delimiter "" :just-born nil}})

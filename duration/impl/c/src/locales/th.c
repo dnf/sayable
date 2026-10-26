@@ -30,7 +30,7 @@ const SduDurationLocale sdu_locale_th = {
     },
     "{0}ครึ่ง", " ",
     "เมื่อกี้",
-    "{0}ที่แล้ว", "ใน{0}",
-    true, { true, { "{n} วิ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} นาที", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ชม.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} วัน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} สัปดาห์", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} เดือน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ปี", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0}ที่แล้ว", true, "ใน{0}" },
-    true, { true, { "{n}วิ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}นาที", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}ชม.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}วัน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}สัปดาห์", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}เดือน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}ปี", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0}ที่แล้ว", true, "ใน{0}" }
+    "{0}ที่แล้ว", "ในอีก {0}",
+    true, { true, { "{n} วิ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} นาที", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ชม.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} วัน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} สัปดาห์", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} เดือน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ปี", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0}ที่แล้ว", true, "ในอีก {0}" },
+    true, { true, { "{n}วิ", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}นาที", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}ชม.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}วัน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}สัปดาห์", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}เดือน", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}ปี", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0}ที่แล้ว", true, "ในอีก {0}" }
 };

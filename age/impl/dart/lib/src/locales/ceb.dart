@@ -22,7 +22,7 @@ final ceb = AgeLocale(
   week: simpleUnit('{n} ka semana'),
   month: simpleUnit('{n} ka bulan'),
   year: simpleUnit('{n} ka tuig'),
-  half: '{n}½',
+  half: '{0} ug tunga',
   delimiter: ', ',
   justBorn: 'Bag-ong natawo',
   newborn: stageNeutral('Bag-ong natawo'),

@@ -44,6 +44,7 @@ compact_sd_unit('cak', day, _, '{n}d').
 compact_sd_unit('cak', week, _, '{n}w').
 compact_sd_unit('cak', month, _, '{n}mo').
 compact_sd_unit('cak', year, _, '{n}y').
+compact_sd_half('cak', '{n}½').
 compact_sd_delimiter('cak', '').
 compact_sd_ago('cak', '{0} k\'o chi').
 compact_sd_in_future('cak', 'pa {0}').

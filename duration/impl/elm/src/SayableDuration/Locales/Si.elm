@@ -23,9 +23,9 @@ locale =
     , plural = \n -> if n == 0 || n == 1 then One else Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "{n} තත්පරය" )
-            , ( "minute", Simple "{n} මිනිත්තුව" )
-            , ( "hour", Simple "{n} පැය" )
+            [ ( "second", Simple "තත්පර {n}" )
+            , ( "minute", Simple "මිනිත්තු {n}" )
+            , ( "hour", Simple "පැය {n}" )
             , ( "day", Pluralized
               [ ( One, "දින {n}" )
               , ( Other, "දින {n}" )
@@ -43,7 +43,7 @@ locale =
               , ( Other, "වසර {n}" )
               ] )
             ]
-    , half = "{0}යි භාගයයි"
+    , half = "{n}½"
     , delimiter = ", "
     , justNow = "දැන්"
     , ago = "{0}ට පෙර"

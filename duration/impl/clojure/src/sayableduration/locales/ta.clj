@@ -20,8 +20,8 @@
    :day {:type :pluralized :forms {:one "{n} நாள்" :other "{n} நாட்கள்"}}
    :week {:type :pluralized :forms {:one "{n} வாரம்" :other "{n} வாரங்கள்"}}
    :month {:type :pluralized :forms {:one "{n} மாதம்" :other "{n} மாதங்கள்"}}
-   :year {:type :pluralized :forms {:one "{n} வயது" :other "{n} வயது"}}
-   :half "{0}ரை"
+   :year {:type :pluralized :forms {:one "{n} ஆண்டு" :other "{n} ஆண்டுகள்"}}
+   :half "{n}½"
    :delimiter ", "
    :just-now "இப்போதுதான்"
    :ago "{0} முன்"

@@ -30,7 +30,7 @@ var SU = sd.DurationLocale{
 	},
 	Half:      "{0} satengah",
 	Delimiter: ", ",
-	JustNow:   "ayeuna",
+	JustNow:   "nembé",
 	Ago:       "{0} kapengker",
 	InFuture:  "dina {0}",
 	Short: &sd.CompactnessOverride{

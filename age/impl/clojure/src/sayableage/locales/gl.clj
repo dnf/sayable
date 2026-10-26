@@ -21,6 +21,6 @@
    :half "{0} e medio"
    :delimiter ", "
    :just-born "Recén nacido"
-   :stages {:newborn {:type :gendered :m "Recén nacido" :f "Recén nacida"} :infant {:type :neutral :label "Bebé"} :toddler {:type :neutral :label "Neno"} :child {:type :gendered :m "Neno" :f "Nena"} :teenager {:type :neutral :label "Adolescente"} :adult {:type :gendered :m "Adulto" :f "Adulta"}}
+   :stages {:newborn {:type :gendered :m "Recén nacido" :f "Recén nacida"} :infant {:type :neutral :label "Bebé"} :toddler {:type :gendered :m "Neno pequeno" :f "Nena pequena"} :child {:type :gendered :m "Neno" :f "Nena"} :teenager {:type :neutral :label "Adolescente"} :adult {:type :gendered :m "Adulto" :f "Adulta"}}
    :short {:day {:type :simple :form "{n} d."} :week {:type :simple :form "{n} sem."} :month {:type :simple :form "{n} mes."} :year {:type :simple :form "{n} a."} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} s"} :month {:type :simple :form "{n} m"} :year {:type :simple :form "{n} a"} :half "{n}½" :delimiter "" :just-born nil}})

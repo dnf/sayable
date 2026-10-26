@@ -16,7 +16,7 @@ module SayableDuration
       units: {
         "second" => UnitForms.new(one: "isekondi {n}", other: "amasekondi {n}"),
         "minute" => UnitForms.new(one: "iminiti {n}", other: "amaminiti {n}"),
-        "hour" => UnitForms.new(one: "insa {n}", other: "amanso {n}"),
+        "hour" => UnitForms.new(one: "insa {n}", other: "insa {n}"),
         "day" => UnitForms.new(one: "ubushiku {n}", other: "inshiku {n}"),
         "week" => UnitForms.new(one: "umulungu {n}", other: "imilungu {n}"),
         "month" => UnitForms.new(one: "umweshi {n}", other: "imyeshi {n}"),

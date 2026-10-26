@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var SN = st.TimeLocale{
 	Code: "sn",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"gumi nembiri", "imwe", "mbiri", "nhatu", "ina", "shanu", "nhanhatu", "nomwe", "sere", "pfumbamwe", "gumi", "gumi neimwe"},
-		Midnight: "usiku hwepakati",
+		Hours:    [12]string{"dzava gumi nembiri", "yava imwe", "dzava mbiri", "dzava nhatu", "dzava ina", "dzava shanu", "dzava nhanhatu", "dzava nomwe", "dzava sere", "dzava pfumbamwe", "dzava gumi", "dzava gumi neimwe"},
+		Midnight: "pakati peusiku",
 		Noon:     "masikati",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "{h}", 5: "{h} nemaminitsi mashanu", 10: "{h} nemaminitsi gumi", 15: "{h} nemaminitsi gumi nemashanu", 20: "{h} nemaminitsi makumi maviri", 25: "{h} nemaminitsi makumi maviri nemashanu", 30: "{h} nehafu", 35: "{h} nemaminitsi makumi matatu nemashanu", 40: "{h} nemaminitsi makumi mana", 45: "{h} nemaminitsi makumi mana nemashanu", 50: "{h} nemaminitsi makumi mashanu", 55: "{h} nemaminitsi makumi mashanu nemashanu"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

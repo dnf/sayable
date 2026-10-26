@@ -10,24 +10,24 @@
 # Source: locales/shi.json
 
 function locale_shi {
-    $months = @('ⵉⵏⵏⴰⵢⵔ', 'ⴱⵕⴰⵢⵕ', 'ⵎⴰⵕⵚ', 'ⵉⴱⵔⵉⵔ', 'ⵎⴰⵢⵢⵓ', 'ⵢⵓⵏⵢⵓ', 'ⵢⵓⵍⵢⵓⵣ', 'ⵖⵓⵛⵜ', 'ⵛⵓⵜⴰⵏⴱⵉⵔ', 'ⴽⵜⵓⴱⵔ', 'ⵏⵓⵡⴰⵏⴱⵉⵔ', 'ⴷⵓⵊⴰⵏⴱⵉⵔ')
-    $weekdays = @('ⴰⵙⴰⵎⴰⵙ', 'ⴰⵢⵏⴰⵙ', 'ⴰⵙⵉⵏⴰⵙ', 'ⴰⴽⵕⴰⵙ', 'ⴰⴽⵡⴰⵙ', 'ⴰⵙⵉⵎⵡⴰⵙ', 'ⴰⵙⵉⴹⵢⴰⵙ')
+    $months = @('innayr', 'bṛayṛ', 'maṛṣ', 'ibrir', 'mayyu', 'yunyu', 'yulyuz', 'ɣuct', 'cutanbir', 'ktubr', 'nuwanbir', 'dujanbir')
+    $weekdays = @('asamas', 'aynas', 'asinas', 'akṛas', 'akwas', 'asimwas', 'asiḍyas')
     $dayFormat = '{n}'
     $dayFormatExceptions = @{}
     $datePattern = '{day} {month}'
     $datePatternWithYear = '{day} {month} {year}'
-    $today = 'ⴰⵙⵙⴰ'
-    $tomorrow = 'ⴰⵙⴽⴽⴰ'
-    $yesterday = 'ⵉⴹⵍⵍⵉ'
+    $today = 'assa'
+    $tomorrow = 'askka'
+    $yesterday = 'iḍlli'
     $dayAfterTomorrow = $null
     $dayBeforeYesterday = $null
-    $thisWeekday = '{weekday} ⴰⴷ'
-    $nextWeekday = '{weekday} ⴷ ⵉⴷⴷⴰⵏ'
-    $lastWeekday = '{weekday} ⵉⵣⵔⵉⵏ'
+    $thisWeekday = '{weekday} ad'
+    $nextWeekday = '{weekday} d iddan'
+    $lastWeekday = '{weekday} izrin'
     $monthsInDate = $null
     $short = @{
-        months = @('ⵉⵏⵏ', 'ⴱⵕⴰ', 'ⵎⴰⵕ', 'ⵉⴱⵔ', 'ⵎⴰⵢ', 'ⵢⵓⵏ', 'ⵢⵓⵍ', 'ⵖⵓⵛ', 'ⵛⵓⵜ', 'ⴽⵜⵓ', 'ⵏⵓⵡ', 'ⴷⵓⵊ')
-        weekdays = @('ⴰⵙⴰ', 'ⴰⵢⵏ', 'ⴰⵙⵉ', 'ⴰⴽⵕ', 'ⴰⴽⵡ', 'ⴰⵙⵉⵎ', 'ⴰⵙⵉⴹ')
+        months = @('inn', 'bṛa', 'maṛ', 'ibr', 'may', 'yun', 'yul', 'ɣuc', 'cut', 'ktu', 'nuw', 'duj')
+        weekdays = @('asa', 'ayn', 'asi', 'akṛ', 'akw', 'asim', 'asiḍ')
         dayFormat = '{n}'
         datePattern = '{day} {month}'
         datePatternWithYear = '{day} {month} {year}'

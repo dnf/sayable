@@ -22,7 +22,7 @@ final sn = DateLocale(
   today: 'nhasi',
   tomorrow: 'mangwana',
   yesterday: 'nezuro',
-  dayAfterTomorrow: 'mangwanani',
+  dayAfterTomorrow: 'kuswera mangwana',
   dayBeforeYesterday: 'nezuro rakapera',
   thisWeekday: '{weekday} ino',
   nextWeekday: '{weekday} inotevera',

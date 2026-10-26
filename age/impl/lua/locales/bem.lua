@@ -28,7 +28,7 @@ M.stages = {
     toddler = "Umwana",
     child = "Umwana",
     teenager = "Umunyamata",
-    adult = "Umulumendo",
+    adult = "Umukalamba",
 }
 M.short = {
     units = {

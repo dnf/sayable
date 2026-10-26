@@ -50,7 +50,7 @@ locale = DurationLocale
     , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustNow = "lige nu"
-    , localeAgo = "{0} siden"
+    , localeAgo = "for {0} siden"
     , localeInFuture = "om {0}"
     , localeShort = Just $
         CompactnessOverride

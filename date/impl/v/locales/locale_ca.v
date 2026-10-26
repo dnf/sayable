@@ -17,8 +17,8 @@ pub const locale_ca = DateLocale{
 	months: ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 'agost', 'setembre', 'octubre', 'novembre', 'desembre']!
 	weekdays: ['diumenge', 'dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte']!
 	day_format: '{n}'
-	date_pattern: '{day} de {month}'
-	date_pattern_with_year: '{day} de {month} de {year}'
+	date_pattern: '{day} {month}'
+	date_pattern_with_year: '{day} {month} de {year}'
 	today: 'avui'
 	tomorrow: 'demà'
 	yesterday: 'ahir'
@@ -32,6 +32,8 @@ pub const locale_ca = DateLocale{
 	has_next_weekday: true
 	last_weekday: '{weekday} passat'
 	has_last_weekday: true
+	months_in_date: ['de gener', 'de febrer', 'de març', 'd\'abril', 'de maig', 'de juny', 'de juliol', 'd\'agost', 'de setembre', 'd\'octubre', 'de novembre', 'de desembre']!
+	has_months_in_date: true
 	has_short: true
 	short_override: DateCompactnessOverride{
 		months: ['gen', 'feb', 'març', 'abr', 'maig', 'juny', 'jul', 'ag', 'set', 'oct', 'nov', 'des']!
@@ -42,7 +44,7 @@ pub const locale_ca = DateLocale{
 		has_day_format: true
 		date_pattern: '{day} {month}'
 		has_date_pattern: true
-		date_pattern_with_year: '{day} {month} {year}'
+		date_pattern_with_year: '{day} {month} de {year}'
 		has_date_pattern_with_year: true
 	}
 	has_compact: true

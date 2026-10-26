@@ -18,9 +18,9 @@ locale = DurationLocale
     { localeCode = "sw"
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "{n} sekunde"
-        , unitMinute = Simple "{n} dakika"
-        , unitHour = Simple "{n} saa"
+        { unitSecond = Simple "sekunde {n}"
+        , unitMinute = Simple "dakika {n}"
+        , unitHour = Simple "saa {n}"
         , unitDay = Pluralized
           [ (One, "siku {n}")
           , (Other, "siku {n}")

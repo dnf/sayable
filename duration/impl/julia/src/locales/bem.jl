@@ -17,7 +17,7 @@ const BEM = DurationLocale(
     units = Dict(
         "second" => Dict("one" => "isekondi {n}", "other" => "amasekondi {n}"),
         "minute" => Dict("one" => "iminiti {n}", "other" => "amaminiti {n}"),
-        "hour" => Dict("one" => "insa {n}", "other" => "amanso {n}"),
+        "hour" => Dict("one" => "insa {n}", "other" => "insa {n}"),
         "day" => Dict("one" => "ubushiku {n}", "other" => "inshiku {n}"),
         "week" => Dict("one" => "umulungu {n}", "other" => "imilungu {n}"),
         "month" => Dict("one" => "umweshi {n}", "other" => "imyeshi {n}"),

@@ -18,7 +18,7 @@
    :week {:type :pluralized :forms {:one "සති {n}" :other "සති {n}"}}
    :month {:type :pluralized :forms {:one "මාස {n}" :other "මාස {n}"}}
    :year {:type :pluralized :forms {:one "වසර {n}" :other "වසර {n}"}}
-   :half "{0}යි භාගයයි"
+   :half "{n}½"
    :delimiter ", "
    :just-born "අලුත උපන්"
    :stages {:newborn {:type :neutral :label "අලුත උපන්"} :infant {:type :neutral :label "බිළිඳා"} :toddler {:type :neutral :label "ගමන් යන දරුවා"} :child {:type :neutral :label "ළමයා"} :teenager {:type :neutral :label "නව යොවුන්"} :adult {:type :neutral :label "වැඩිහිටි"}}

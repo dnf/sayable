@@ -45,7 +45,7 @@ fn build_kl() -> DateLocale:
     var day_format = "{n}."
     var num_exceptions = 0
     var date_pattern = "{month} {day}"
-    var date_pattern_with_year = "{day} {month} {year}"
+    var date_pattern_with_year = "{month} {day} {year}"
     var today = "ullumi"
     var tomorrow = "aqagu"
     var yesterday = "ippassaq"
@@ -82,7 +82,7 @@ fn build_kl() -> DateLocale:
     short_ovr.has_day_format = True
     short_ovr.date_pattern = "{month} {day}"
     short_ovr.has_date_pattern = True
-    short_ovr.date_pattern_with_year = "{day} {month} {year}"
+    short_ovr.date_pattern_with_year = "{month} {day} {year}"
     short_ovr.has_date_pattern_with_year = True
 
     var compact_ovr = build_compactness_override()

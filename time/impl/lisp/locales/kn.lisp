@@ -19,8 +19,8 @@
    :clock (make-clock-config
     :hours (list "ಹನ್ನೆರಡು" "ಒಂದು" "ಎರಡು" "ಮೂರು" "ನಾಲ್ಕು" "ಐದು" "ಆರು" "ಏಳು" "ಎಂಟು" "ಒಂಬತ್ತು" "ಹತ್ತು" "ಹನ್ನೊಂದು")
     :midnight "ಮಧ್ಯರಾತ್ರಿ"
-    :noon "ಮಧ್ಯಾಹ್ನ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :noon "ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ"
+    :patterns (list (cons 0 "{h} ಗಂಟೆ") (cons 5 "{h} ಗಂಟೆ ಐದು ನಿಮಿಷ") (cons 10 "{h} ಗಂಟೆ ಹತ್ತು ನಿಮಿಷ") (cons 15 "{h} ಗಂಟೆ ಹದಿನೈದು ನಿಮಿಷ") (cons 20 "{h} ಗಂಟೆ ಇಪ್ಪತ್ತು ನಿಮಿಷ") (cons 25 "{h} ಗಂಟೆ ಇಪ್ಪತ್ತೈದು ನಿಮಿಷ") (cons 30 "{h} ಗಂಟೆ ಮೂವತ್ತು ನಿಮಿಷ") (cons 35 "{h} ಗಂಟೆ ಮೂವತ್ತೈದು ನಿಮಿಷ") (cons 40 "{h} ಗಂಟೆ ನಲವತ್ತು ನಿಮಿಷ") (cons 45 "{h} ಗಂಟೆ ನಲವತ್ತೈದು ನಿಮಿಷ") (cons 50 "{h} ಗಂಟೆ ಐವತ್ತು ನಿಮಿಷ") (cons 55 "{h} ಗಂಟೆ ಐವತ್ತೈದು ನಿಮಿಷ")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

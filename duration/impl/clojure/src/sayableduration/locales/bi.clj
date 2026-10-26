@@ -21,10 +21,10 @@
    :week {:type :simple :form "{n} wik"}
    :month {:type :simple :form "{n} manis"}
    :year {:type :simple :form "{n} yia"}
-   :half "{n} mo haf"
+   :half "{0} mo haf"
    :delimiter ", "
    :just-now "jas nao"
    :ago "{0} bifo"
    :in-future "long {0}"
    :short {:second {:type :simple :form "{n} sek"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} aoa"} :day {:type :simple :form "{n} dei"} :week {:type :simple :form "{n} wik"} :month {:type :simple :form "{n} man"} :year {:type :simple :form "{n} yia"} :half nil :delimiter nil :ago "{0} bifo" :in-future "long {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} bifo" :in-future "long {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} bifo" :in-future "long {0}"}})

@@ -39,17 +39,33 @@ let locale : locale =
   ; just_born = "Iɣ d illul"
   ; stages =
     { newborn = Neutral "Iɣ d illul"
-    ; infant = Neutral "Agellid"
+    ; infant = Neutral "Llufan"
     ; toddler = Gendered ("Aḥenjir", "Taḥenjirt")
-    ; child = Gendered ("Afrux", "Tafruxṭ")
+    ; child = Gendered ("Afrux", "Tafruxt")
     ; teenager = Gendered ("Aɛrim", "Taɛrimt")
     ; adult = Gendered ("Argaz", "Tamṭṭuṭ")
     }
   ; short = Some
-      { ovr_day = Some (Simple "{n} d")
-      ; ovr_week = Some (Simple "{n} wk")
-      ; ovr_month = Some (Simple "{n} mo")
-      ; ovr_year = Some (Simple "{n} yr")
+      { ovr_day = Some (Pluralized
+          [ (One, "{n} ass")
+          ; (Few, "{n} ussan")
+          ; (Other, "{n} ass")
+          ])
+      ; ovr_week = Some (Pluralized
+          [ (One, "{n} imalass")
+          ; (Few, "{n} imalassn")
+          ; (Other, "{n} imalass")
+          ])
+      ; ovr_month = Some (Pluralized
+          [ (One, "{n} ayyur")
+          ; (Few, "{n} ayyurn")
+          ; (Other, "{n} ayyur")
+          ])
+      ; ovr_year = Some (Pluralized
+          [ (One, "{n} aseggas")
+          ; (Few, "{n} iseggasen")
+          ; (Other, "{n} aseggas")
+          ])
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_just_born = None

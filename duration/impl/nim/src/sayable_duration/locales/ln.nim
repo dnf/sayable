@@ -17,9 +17,9 @@ let LN* = DurationLocale(
   code: "ln",
   plural: proc(n: int): PluralCategory = (if n in {0, 1}: pcOne else: pcOther),
   units: {
-    "second": simpleUnit("{n} segɔnde"),
-    "minute": simpleUnit("{n} moniti"),
-    "hour": simpleUnit("{n} ngonga"),
+    "second": simpleUnit("segɔnde {n}"),
+    "minute": simpleUnit("miniti {n}"),
+    "hour": simpleUnit("ngonga {n}"),
     "day": pluralUnit(@[(pcOne, "mokolo {n}"), (pcOther, "mikolo {n}")]),
     "week": pluralUnit(@[(pcOne, "poso {n}"), (pcOther, "baposo {n}")]),
     "month": pluralUnit(@[(pcOne, "sanza {n}"), (pcOther, "basanza {n}")]),

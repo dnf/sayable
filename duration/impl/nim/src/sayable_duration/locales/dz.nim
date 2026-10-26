@@ -25,7 +25,7 @@ let DZ* = DurationLocale(
     "month": simpleUnit("ཟླ་ {n}"),
     "year": simpleUnit("ལོ་ {n}"),
   }.toOrderedTable,
-  half: "{0} ཕྱེད",
+  half: "{0} དང་ཕྱེད",
   delimiter: " ",
   justNow: "ད་ལྟ",
   ago: "{0} ཧེ་མ",

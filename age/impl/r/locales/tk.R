@@ -18,7 +18,7 @@ locale_tk <- list(
     month = "{n} aý",
     year = "{n} ýaş"
   ),
-  half = "{0}½",
+  half = "{n} ýarym",
   delimiter = ", ",
   just_born = "Täze doglan",
   stages = list(
@@ -27,7 +27,7 @@ locale_tk <- list(
     toddler = "Kiçijik",
     child = "Çaga",
     teenager = "Ýetginjek",
-    adult = "Ulular"
+    adult = "Uly adam"
   ),
   short = list(
     units = list(

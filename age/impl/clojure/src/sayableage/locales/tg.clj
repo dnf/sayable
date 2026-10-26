@@ -18,7 +18,7 @@
    :week {:type :simple :form "{n} ҳафта"}
    :month {:type :simple :form "{n} моҳ"}
    :year {:type :simple :form "{n} сол"}
-   :half "{0} ним"
+   :half "{0}у ним"
    :delimiter ", "
    :just-born "Навзод"
    :stages {:newborn {:type :neutral :label "Навзод"} :infant {:type :neutral :label "Тифл"} :toddler {:type :neutral :label "Кӯдак"} :child {:type :neutral :label "Кӯдак"} :teenager {:type :neutral :label "Наврас"} :adult {:type :neutral :label "Калонсол"}}

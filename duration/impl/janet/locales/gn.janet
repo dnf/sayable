@@ -12,9 +12,9 @@
 (def locale
   {:code "gn"
    :plural (fn [n] (if (= n 1) :one :other))
-   :units {:second "{n} aravo'i"
-          :minute "{n} aravo"
-          :hour "{n} aravo guasu"
+   :units {:second "{n} aravo'ive"
+          :minute "{n} aravo'i"
+          :hour "{n} aravo"
           :day "{n} ára"
           :week "{n} arapokõindy"
           :month "{n} jasy"
@@ -24,6 +24,6 @@
    :just-now "ko'ágã"
    :ago "{0} ohasava'ekue"
    :in-future "{0} rire"
-   :short {:units {:second "{n} ara'i" :minute "{n} ara" :hour "{n} ara g" :day "{n} ára" :week "{n} ara" :month "{n} jas" :year "{n} ary"} :ago "{0} ohasava'ekue" :in-future "{0} rire"}
+   :short {:units {:second "{n} aravo'ive" :minute "{n} aravo'i" :hour "{n} aravo" :day "{n} ára" :week "{n} ara" :month "{n} jas" :year "{n} ary"} :ago "{0} ohasava'ekue" :in-future "{0} rire"}
    :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ohasava'ekue" :in-future "{0} rire"}
 })

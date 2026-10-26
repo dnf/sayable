@@ -28,7 +28,7 @@ locale =
             if n == 0 then Zero else if n == 1 then One else if mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82 then Two else if mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83 then Few else if n /= 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81) then Many else Other
     , day = Pluralized
       [ ( Zero, "{n} dydh" )
-      , ( One, "dydh" )
+      , ( One, "{n} dydh" )
       , ( Two, "{n} dhydh" )
       , ( Few, "{n} dydh" )
       , ( Many, "{n} dydh" )
@@ -36,7 +36,7 @@ locale =
       ]
     , week = Pluralized
       [ ( Zero, "{n} seythun" )
-      , ( One, "seythun" )
+      , ( One, "{n} seythun" )
       , ( Two, "{n} seythun" )
       , ( Few, "{n} seythun" )
       , ( Many, "{n} seythun" )
@@ -44,7 +44,7 @@ locale =
       ]
     , month = Pluralized
       [ ( Zero, "{n} mis" )
-      , ( One, "mis" )
+      , ( One, "{n} mis" )
       , ( Two, "{n} vis" )
       , ( Few, "{n} mis" )
       , ( Many, "{n} mis" )
@@ -52,7 +52,7 @@ locale =
       ]
     , year = Pluralized
       [ ( Zero, "{n} blydhen" )
-      , ( One, "blydhen" )
+      , ( One, "{n} blydhen" )
       , ( Two, "{n} vlydhen" )
       , ( Few, "{n} blydhen" )
       , ( Many, "{n} blydhen" )

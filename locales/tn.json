@@ -29,7 +29,7 @@
       "infant": "Lesea",
       "toddler": "Ngwana yo monnye",
       "child": "Ngwana",
-      "teenager": "Lekgarebe",
+      "teenager": "Mosha",
       "adult": "Motho yo mogolo"
     },
     "short": {
@@ -135,11 +135,11 @@
     "units": {
       "second": {
         "one": "motsotswana {n}",
-        "other": "dimetsotswana {n}"
+        "other": "metsotswana {n}"
       },
       "minute": {
-        "one": "metsotso {n}",
-        "other": "dimetsotso {n}"
+        "one": "motsotso {n}",
+        "other": "metsotso {n}"
       },
       "hour": {
         "one": "ura {n}",
@@ -171,11 +171,11 @@
       "units": {
         "second": {
           "one": "motsotswana {n}",
-          "other": "dimetsotswana {n}"
+          "other": "metsotswana {n}"
         },
         "minute": {
-          "one": "metsotso {n}",
-          "other": "dimetsotso {n}"
+          "one": "motsotso {n}",
+          "other": "metsotso {n}"
         },
         "hour": {
           "one": "ura {n}",
@@ -236,34 +236,34 @@
   "time": {
     "clock": {
       "hours": [
-        "lesome le bobedi",
-        "nngwe",
-        "pedi",
-        "tharo",
-        "nne",
-        "tlhano",
-        "thataro",
-        "supa",
-        "robedi",
-        "robongwe",
-        "lesome",
-        "lesome le bongwe"
+        "ya lesome le bobedi",
+        "ya ntlha",
+        "ya bobedi",
+        "ya boraro",
+        "ya bone",
+        "ya botlhano",
+        "ya borataro",
+        "ya bosupa",
+        "ya borobedi",
+        "ya borobongwe",
+        "ya lesome",
+        "ya lesome le bongwe"
       ],
       "midnight": "bosigo jwa magareng",
       "noon": "motshegare",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "ura {h}",
+        "5": "ura {h} le metsotso e metlhano",
+        "10": "ura {h} le metsotso e le lesome",
+        "15": "ura {h} le kotara",
+        "20": "ura {h} le metsotso e le masome a mabedi",
+        "25": "ura {h} le metsotso e le masome a mabedi le botlhano",
+        "30": "ura {h} le halofo",
+        "35": "ura {h} le metsotso e le masome a mararo le botlhano",
+        "40": "ura {h} le metsotso e le masome a mane",
+        "45": "ura {h} le metsotso e le masome a mane le botlhano",
+        "50": "ura {h} le metsotso e le masome a matlhano",
+        "55": "ura {h} le metsotso e le masome a matlhano le botlhano"
       }
     },
     "short": {
@@ -286,5 +286,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Setswana tells time with ordinal hours: hours are now 'ya ntlha', 'ya bobedi' … 'ya lesome le bobedi' and pattern 0 is 'ura {h}' ('ura ya bone' = four o'clock). 'le halofo' (half past) and 'le kotara' (quarter past) are standard; other minutes are additive 'le metsotso e le <n>' (class-4 concord: 'e metlhano' for five). No 'to' phrases: I am not sure of the idiom, additive is always understood. Doubt: 'ya ntlha' vs informal 'ya bongwe' for one o'clock."
+    }
+  ]
 }

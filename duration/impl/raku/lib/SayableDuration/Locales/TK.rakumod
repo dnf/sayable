@@ -25,7 +25,7 @@ our sub locale() {
             month => '{n} aý',
             year => '{n} ýyl',
         },
-        half => '{0}½',
+        half => '{n} ýarym',
         delimiter => ', ',
         just-now => 'häzir',
         ago => '{0} öň',

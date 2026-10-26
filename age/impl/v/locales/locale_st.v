@@ -31,7 +31,7 @@ pub const locale_st = AgeLocale{
 	just_born: 'O sa tswa hlaha'
 	newborn: stage_neutral('Lesea le sa tswa hlaha')
 	infant: stage_neutral('Lesea')
-	toddler: stage_neutral('Ngwanana')
+	toddler: stage_neutral('Ngwana e monyane')
 	child: stage_neutral('Ngwana')
 	teenager: stage_neutral('Mosha')
 	adult: stage_neutral('Motho e moholo')

@@ -28,8 +28,8 @@ locale() ->
         day_after_tomorrow = {just, "пасфардо"},
         day_before_yesterday = {just, "парирӯз"},
         this_weekday = {just, "ин {weekday}"},
-        next_weekday = {just, "{weekday}-и оянда"},
-        last_weekday = {just, "{weekday}-и гузашта"},
+        next_weekday = {just, "{weekday}и оянда"},
+        last_weekday = {just, "{weekday}и гузашта"},
         months_in_date = nothing,
         short = {just, #date_compactness_override{months = {just, ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]}, months_in_date = nothing, weekdays = {just, ["Яш", "Дш", "Сш", "Чш", "Пш", "Ҷм", "Шб"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}

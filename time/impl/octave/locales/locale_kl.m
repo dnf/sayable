@@ -11,10 +11,10 @@
 
 function loc = locale_kl()
   loc.code = 'kl';
-  loc.clock.hours = {'akunneq marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'akunneq ataaseq'};
+  loc.clock.hours = {'aqqaneq-marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'aqqaneq-ataaseq'};
   loc.clock.midnight = 'unnuap qeqqa';
   loc.clock.noon = 'ulloqeqqap qeqqa';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'nalunaaqutaq {h}', "p5", '{h} qaangiullugu minutsit tallimat', "p10", '{h} qaangiullugu minutsit qulit', "p15", '{h} qaangiullugu minutsit aqqaneq-tallimat', "p20", '{h} qaangiullugu minutsit marlunnik qulillit', "p25", '{h} qaangiullugu minutsit marlunnik qulillit tallimallu', "p30", '{h} affarlu', "p35", '{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu', "p40", '{next_h} sioqqullugu minutsit marlunnik qulillit', "p45", '{next_h} sioqqullugu minutsit aqqaneq-tallimat', "p50", '{next_h} sioqqullugu minutsit qulit', "p55", '{next_h} sioqqullugu minutsit tallimat');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}.{mm}';
   loc.short.clock.am_pm = {};

@@ -10,22 +10,22 @@
 # Source: locales/mfe.json
 
 function locale_mfe {
-    $hours = @('douz', 'enn', 'de', 'trwa', 'kat', 'senk', 'sis', 'set', 'wit', 'nef', 'dis', 'onz')
+    $hours = @('douzer', 'enn er', 'dezer', 'trwazer', 'katrer', 'senker', 'sizer', 'seter', 'witer', 'never', 'dizer', 'onzer')
     $midnight = 'minwi'
     $noon = 'midi'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} senk'
+    $patterns[10] = '{h} dis'
+    $patterns[15] = '{h} ekar'
+    $patterns[20] = '{h} vin'
+    $patterns[25] = '{h} vennsenk'
+    $patterns[30] = '{h} edmi'
+    $patterns[35] = '{next_h} mwin vennsenk'
+    $patterns[40] = '{next_h} mwin vin'
+    $patterns[45] = '{next_h} mwin kar'
+    $patterns[50] = '{next_h} mwin dis'
+    $patterns[55] = '{next_h} mwin senk'
     $clock = @{
         hours = $hours
         midnight = $midnight

@@ -17,7 +17,7 @@ const StTimeLocale st_locale_tum = {
         { "khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza" },
         "pakati pa usiku",
         "muhanya",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} koloko", "{h} koloko na maminiti vinkhondi", "{h} koloko na maminiti khumi", "{h} koloko na maminiti khumi na vinkhondi", "{h} koloko na maminiti makhumi ghaŵiri", "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi", "{h} koloko na hafu", "{h} koloko na maminiti makhumi ghatatu na vinkhondi", "{h} koloko na maminiti makhumi ghanayi", "{h} koloko na maminiti makhumi ghanayi na vinkhondi", "{h} koloko na maminiti makhumi ghankhondi", "{h} koloko na maminiti makhumi ghankhondi na vinkhondi" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

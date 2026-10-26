@@ -17,11 +17,11 @@ it
 	locale := SayableTimeLocale new.
 	locale code: 'it'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'dodici'. 'una'. 'due'. 'tre'. 'quattro'. 'cinque'. 'sei'. 'sette'. 'otto'. 'nove'. 'dieci'. 'undici' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'le dodici'. 'l''una'. 'le due'. 'le tre'. 'le quattro'. 'le cinque'. 'le sei'. 'le sette'. 'le otto'. 'le nove'. 'le dieci'. 'le undici' }).
 	clock at: #midnight put: 'mezzanotte'.
 	clock at: #noon put: 'mezzogiorno'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. 'le {h}'.
+		0. '{h}'.
 		5. '{h} e cinque'.
 		10. '{h} e dieci'.
 		15. '{h} e un quarto'.

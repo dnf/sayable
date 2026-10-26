@@ -68,6 +68,8 @@ pub const locale_cak = DurationLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 		ago: '{0} k\'o chi'

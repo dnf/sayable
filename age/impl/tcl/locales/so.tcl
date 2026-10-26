@@ -17,10 +17,10 @@ proc plural_so {n} {
 proc locale_so {} {
     set code {so}
     set units [dict create \
-        day [dict create one "maalin {n}" other "maalmood {n}"] \
-        week [dict create one "toddobaad {n}" other "toddobaadyo {n}"] \
-        month [dict create one "bil {n}" other "bilood {n}"] \
-        year [dict create one "sano {n}" other "sanooyin {n}"] \
+        day [dict create one "{n} maalin" other "{n} maalmood"] \
+        week "{n} toddobaad" \
+        month [dict create one "{n} bil" other "{n} bilood"] \
+        year "{n} sano" \
     ]
     set half "{n}½"
     set delimiter {, }

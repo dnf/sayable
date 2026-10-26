@@ -19,11 +19,11 @@
           :week {:one "kiumia {n}" :other "kiumia {n}"}
           :month {:one "mwerĩ {n}" :other "mĩerĩ {n}"}
           :year {:one "mwaka {n}" :other "mĩaka {n}"}}
-   :half "{0} na nusu"
+   :half "{0} na nuthu"
    :delimiter ", "
-   :just-now "ũmũthĩ"
+   :just-now "rĩu"
    :ago "{0} ĩhĩtũkĩte"
-   :in-future "{0} ĩyothe"
-   :short {:units {:second "sek. {n}" :minute "ndag. {n}" :hour {:one "ithaa {n}" :other "mathaa {n}"} :day {:one "mũth. {n}" :other "mĩth. {n}"} :week "kiu. {n}" :month {:one "mwerĩ {n}" :other "mĩerĩ {n}"} :year {:one "mwaka {n}" :other "mĩaka {n}"}} :ago "{0} ĩhĩtũkĩte" :in-future "{0} ĩyothe"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter "" :ago "{0} ĩhĩtũkĩte" :in-future "{0} ĩyothe"}
+   :in-future "thutha wa {0}"
+   :short {:units {:second "sek. {n}" :minute "ndag. {n}" :hour {:one "ithaa {n}" :other "mathaa {n}"} :day {:one "mũth. {n}" :other "mĩth. {n}"} :week "kiu. {n}" :month {:one "mwerĩ {n}" :other "mĩerĩ {n}"} :year {:one "mwaka {n}" :other "mĩaka {n}"}} :ago "{0} ĩhĩtũkĩte" :in-future "thutha wa {0}"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter "" :ago "{0} ĩhĩtũkĩte" :in-future "thutha wa {0}"}
 })

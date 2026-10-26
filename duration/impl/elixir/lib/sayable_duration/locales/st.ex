@@ -17,8 +17,8 @@ defmodule SayableDuration.Locales.ST do
       code: "st",
       plural: (fn 1 -> :one; _ -> :other end),
       units: %{
-        second: %{one: "motsotswana {n}", other: "dimetsotswana {n}"},
-        minute: %{one: "metsotso {n}", other: "dimetsotso {n}"},
+        second: %{one: "motsotswana {n}", other: "metsotswana {n}"},
+        minute: %{one: "motsotso {n}", other: "metsotso {n}"},
         hour: %{one: "hora {n}", other: "dihora {n}"},
         day: %{one: "letsatsi {n}", other: "matsatsi {n}"},
         week: %{one: "beke {n}", other: "dibeke {n}"},
@@ -32,8 +32,8 @@ defmodule SayableDuration.Locales.ST do
       in_future: "ka {0}",
       short: %{
         units: %{
-          second: %{one: "motsotswana {n}", other: "dimetsotswana {n}"},
-          minute: %{one: "metsotso {n}", other: "dimetsotso {n}"},
+          second: %{one: "motsotswana {n}", other: "metsotswana {n}"},
+          minute: %{one: "motsotso {n}", other: "metsotso {n}"},
           hour: %{one: "hora {n}", other: "dihora {n}"},
           day: %{one: "letsatsi {n}", other: "matsatsi {n}"},
           week: %{one: "beke {n}", other: "dibeke {n}"},

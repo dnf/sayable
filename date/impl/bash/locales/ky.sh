@@ -10,11 +10,11 @@
 # Source: locales/ky.json
 
 _sayabledate_locale_ky() {
-    _months=('Январь' 'Февраль' 'Март' 'Апрель' 'Май' 'Июнь' 'Июль' 'Август' 'Сентябрь' 'Октябрь' 'Ноябрь' 'Декабрь')
-    _weekdays=('Жекшемби' 'Дүйшөмбү' 'Шейшемби' 'Шаршемби' 'Бейшемби' 'Жума' 'Ишемби')
-    _day_format='{n}'
-    _date_pattern='{day} {month}'
-    _date_pattern_with_year='{day} {month} {year}'
+    _months=('январь' 'февраль' 'март' 'апрель' 'май' 'июнь' 'июль' 'август' 'сентябрь' 'октябрь' 'ноябрь' 'декабрь')
+    _weekdays=('жекшемби' 'дүйшөмбү' 'шейшемби' 'шаршемби' 'бейшемби' 'жума' 'ишемби')
+    _day_format='{n}-'
+    _date_pattern='{day}{month}'
+    _date_pattern_with_year='{year}-ж., {day}{month}'
     _today='бүгүн'
     _tomorrow='эртең'
     _yesterday='кечээ'
@@ -23,8 +23,8 @@ _sayabledate_locale_ky() {
     _this_weekday='бул {weekday}'
     _next_weekday='кийинки {weekday}'
     _last_weekday='өткөн {weekday}'
-    _short_months=('Янв' 'Фев' 'Мар' 'Апр' 'Май' 'Июн' 'Июл' 'Авг' 'Сен' 'Окт' 'Ноя' 'Дек')
-    _short_weekdays=('Жек' 'Дүй' 'Шей' 'Шар' 'Бей' 'Жум' 'Ише')
+    _short_months=('янв' 'фев' 'мар' 'апр' 'май' 'июн' 'июл' 'авг' 'сен' 'окт' 'ноя' 'дек')
+    _short_weekdays=('жек' 'дүй' 'шей' 'шар' 'бей' 'жум' 'ише')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
     _short_date_pattern_with_year='{day} {month} {year}'

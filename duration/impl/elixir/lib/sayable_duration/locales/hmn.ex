@@ -53,6 +53,7 @@ defmodule SayableDuration.Locales.HMN do
           month: "{n}mo",
           year: "{n}y"
         },
+        half: "{n}½",
         delimiter: "",
         ago: "{0} dhau los",
         in_future: "hauv {0}"

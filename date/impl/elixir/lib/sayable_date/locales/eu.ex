@@ -38,10 +38,13 @@ defmodule SayableDate.Locales.EU do
         "ostirala",
         "larunbata"
       ],
-      day_format: "{n}",
-      day_format_exceptions: %{},
-      date_pattern: "{month}ren {day}",
-      date_pattern_with_year: "{year}ko {month}ren {day}",
+      day_format: "{n}a",
+      day_format_exceptions: %{
+        "11" => "{n}",
+        "31" => "{n}"
+      },
+      date_pattern: "{month} {day}",
+      date_pattern_with_year: "{year}ko {month} {day}",
       today: "gaur",
       tomorrow: "bihar",
       yesterday: "atzo",
@@ -50,7 +53,20 @@ defmodule SayableDate.Locales.EU do
       this_weekday: "{weekday} hau",
       next_weekday: "hurrengo {weekday}",
       last_weekday: "aurreko {weekday}",
-      months_in_date: nil,
+      months_in_date: [
+        "urtarrilaren",
+        "otsailaren",
+        "martxoaren",
+        "apirilaren",
+        "maiatzaren",
+        "ekainaren",
+        "uztailaren",
+        "abuztuaren",
+        "irailaren",
+        "urriaren",
+        "azaroaren",
+        "abenduaren"
+      ],
       short: %{
         months: [
           "urt",

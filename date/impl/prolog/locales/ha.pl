@@ -25,7 +25,7 @@ sd_day_after_tomorrow('ha', 'jibi').
 sd_day_before_yesterday('ha', 'shekaranjiya').
 sd_this_weekday('ha', 'wannan {weekday}').
 sd_next_weekday('ha', '{weekday} mai zuwa').
-sd_last_weekday('ha', '{weekday} da ya wuce').
+sd_last_weekday('ha', '{weekday} da ta wuce').
 
 short_sd_months('ha', ['Jan', 'Fab', 'Mar', 'Afr', 'May', 'Yun', 'Yul', 'Agu', 'Sat', 'Okt', 'Nuw', 'Dis']).
 short_sd_weekdays('ha', ['Lah', 'Lit', 'Tal', 'Lar', 'Alh', 'Jum', 'Asa']).

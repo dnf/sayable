@@ -26,7 +26,7 @@
    :day-before-yesterday "shekaranjiya"
    :this-weekday "wannan {weekday}"
    :next-weekday "{weekday} mai zuwa"
-   :last-weekday "{weekday} da ya wuce"
+   :last-weekday "{weekday} da ta wuce"
    :months-in-date nil
    :short {:months ["Jan" "Fab" "Mar" "Afr" "May" "Yun" "Yul" "Agu" "Sat" "Okt" "Nuw" "Dis"] :months-in-date nil :weekdays ["Lah" "Lit" "Tal" "Lar" "Alh" "Jum" "Asa"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

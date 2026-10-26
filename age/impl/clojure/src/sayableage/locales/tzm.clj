@@ -21,6 +21,6 @@
    :half "{0} d uzgen"
    :delimiter ", "
    :just-born "Iɣ d illul"
-   :stages {:newborn {:type :neutral :label "Iɣ d illul"} :infant {:type :neutral :label "Agellid"} :toddler {:type :gendered :m "Aḥenjir" :f "Taḥenjirt"} :child {:type :gendered :m "Afrux" :f "Tafruxṭ"} :teenager {:type :gendered :m "Aɛrim" :f "Taɛrimt"} :adult {:type :gendered :m "Argaz" :f "Tamṭṭuṭ"}}
-   :short {:day {:type :simple :form "{n} d"} :week {:type :simple :form "{n} wk"} :month {:type :simple :form "{n} mo"} :year {:type :simple :form "{n} yr"} :half nil :delimiter nil :just-born nil}
+   :stages {:newborn {:type :neutral :label "Iɣ d illul"} :infant {:type :neutral :label "Llufan"} :toddler {:type :gendered :m "Aḥenjir" :f "Taḥenjirt"} :child {:type :gendered :m "Afrux" :f "Tafruxt"} :teenager {:type :gendered :m "Aɛrim" :f "Taɛrimt"} :adult {:type :gendered :m "Argaz" :f "Tamṭṭuṭ"}}
+   :short {:day {:type :pluralized :forms {:one "{n} ass" :other "{n} ussan"}} :week {:type :pluralized :forms {:one "{n} imalass" :other "{n} imalassn"}} :month {:type :pluralized :forms {:one "{n} ayyur" :other "{n} ayyurn"}} :year {:type :pluralized :forms {:one "{n} aseggas" :other "{n} iseggasen"}} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

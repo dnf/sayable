@@ -11,22 +11,22 @@
 
 % Kalaallisut locale.
 
-st_hours('kl', ['akunneq marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'akunneq ataaseq']).
+st_hours('kl', ['aqqaneq-marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'aqqaneq-ataaseq']).
 st_midnight('kl', 'unnuap qeqqa').
 st_noon('kl', 'ulloqeqqap qeqqa').
 
-st_pattern('kl', 0, '{h}:00').
-st_pattern('kl', 5, '{h}:05').
-st_pattern('kl', 10, '{h}:10').
-st_pattern('kl', 15, '{h}:15').
-st_pattern('kl', 20, '{h}:20').
-st_pattern('kl', 25, '{h}:25').
-st_pattern('kl', 30, '{h}:30').
-st_pattern('kl', 35, '{h}:35').
-st_pattern('kl', 40, '{h}:40').
-st_pattern('kl', 45, '{h}:45').
-st_pattern('kl', 50, '{h}:50').
-st_pattern('kl', 55, '{h}:55').
+st_pattern('kl', 0, 'nalunaaqutaq {h}').
+st_pattern('kl', 5, '{h} qaangiullugu minutsit tallimat').
+st_pattern('kl', 10, '{h} qaangiullugu minutsit qulit').
+st_pattern('kl', 15, '{h} qaangiullugu minutsit aqqaneq-tallimat').
+st_pattern('kl', 20, '{h} qaangiullugu minutsit marlunnik qulillit').
+st_pattern('kl', 25, '{h} qaangiullugu minutsit marlunnik qulillit tallimallu').
+st_pattern('kl', 30, '{h} affarlu').
+st_pattern('kl', 35, '{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu').
+st_pattern('kl', 40, '{next_h} sioqqullugu minutsit marlunnik qulillit').
+st_pattern('kl', 45, '{next_h} sioqqullugu minutsit aqqaneq-tallimat').
+st_pattern('kl', 50, '{next_h} sioqqullugu minutsit qulit').
+st_pattern('kl', 55, '{next_h} sioqqullugu minutsit tallimat').
 
 short_st_use24h('kl', true).
 short_st_format('kl', '{h}.{mm}').

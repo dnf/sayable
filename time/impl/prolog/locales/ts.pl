@@ -11,22 +11,22 @@
 
 % Tsonga locale.
 
-st_hours('ts', ['khume mbiri', 'yin\'we', 'mbirhi', 'nharhu', 'mune', 'ntlhanu', 'tsevu', 'nkombo', 'nhungu', 'kaye', 'khume', 'khume yin\'we']).
+st_hours('ts', ['ya khume mbirhi', 'yo sungula', 'ya vumbirhi', 'ya vunharhu', 'ya vumune', 'ya vuntlhanu', 'ya vutsevu', 'ya vunkombo', 'ya vunhungu', 'ya vukaye', 'ya khume', 'ya khume n\'we']).
 st_midnight('ts', 'vusiku exikarhi').
 st_noon('ts', 'nhlekanhi').
 
-st_pattern('ts', 0, '{h}:00').
-st_pattern('ts', 5, '{h}:05').
-st_pattern('ts', 10, '{h}:10').
-st_pattern('ts', 15, '{h}:15').
-st_pattern('ts', 20, '{h}:20').
-st_pattern('ts', 25, '{h}:25').
-st_pattern('ts', 30, '{h}:30').
-st_pattern('ts', 35, '{h}:35').
-st_pattern('ts', 40, '{h}:40').
-st_pattern('ts', 45, '{h}:45').
-st_pattern('ts', 50, '{h}:50').
-st_pattern('ts', 55, '{h}:55').
+st_pattern('ts', 0, 'awara {h}').
+st_pattern('ts', 5, 'awara {h} na timinete ta ntlhanu').
+st_pattern('ts', 10, 'awara {h} na timinete ta khume').
+st_pattern('ts', 15, 'awara {h} na kotara').
+st_pattern('ts', 20, 'awara {h} na timinete ta makume mambirhi').
+st_pattern('ts', 25, 'awara {h} na timinete ta makume mambirhi na ntlhanu').
+st_pattern('ts', 30, 'awara {h} na hafu').
+st_pattern('ts', 35, 'awara {h} na timinete ta makume manharhu na ntlhanu').
+st_pattern('ts', 40, 'awara {h} na timinete ta makume mune').
+st_pattern('ts', 45, 'awara {h} na timinete ta makume mune na ntlhanu').
+st_pattern('ts', 50, 'awara {h} na timinete ta makume ntlhanu').
+st_pattern('ts', 55, 'awara {h} na timinete ta makume ntlhanu na ntlhanu').
 
 short_st_use24h('ts', false).
 short_st_format('ts', '{h}:{mm} {ampm}').

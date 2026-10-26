@@ -15,18 +15,18 @@ st_hours('fan', ['awom mebú', 'fóg', 'abúi', 'aláa', 'anyin', 'atán', 'asam
 st_midnight('fan', 'akiri alúk').
 st_noon('fan', 'ewaŋ').
 
-st_pattern('fan', 0, '{h}:00').
-st_pattern('fan', 5, '{h}:05').
-st_pattern('fan', 10, '{h}:10').
-st_pattern('fan', 15, '{h}:15').
-st_pattern('fan', 20, '{h}:20').
-st_pattern('fan', 25, '{h}:25').
-st_pattern('fan', 30, '{h}:30').
-st_pattern('fan', 35, '{h}:35').
-st_pattern('fan', 40, '{h}:40').
-st_pattern('fan', 45, '{h}:45').
-st_pattern('fan', 50, '{h}:50').
-st_pattern('fan', 55, '{h}:55').
+st_pattern('fan', 0, 'awola {h}').
+st_pattern('fan', 5, 'awola {h} ai minit tán').
+st_pattern('fan', 10, 'awola {h} ai minit awom').
+st_pattern('fan', 15, 'awola {h} ai minit awom ai tán').
+st_pattern('fan', 20, 'awola {h} ai minit mewom mebú').
+st_pattern('fan', 25, 'awola {h} ai minit mewom mebú ai tán').
+st_pattern('fan', 30, 'awola {h} ai minit mewom melaa').
+st_pattern('fan', 35, 'awola {h} ai minit mewom melaa ai tán').
+st_pattern('fan', 40, 'awola {h} ai minit mewom menyin').
+st_pattern('fan', 45, 'awola {h} ai minit mewom menyin ai tán').
+st_pattern('fan', 50, 'awola {h} ai minit mewom metán').
+st_pattern('fan', 55, 'awola {h} ai minit mewom metán ai tán').
 
 short_st_use24h('fan', false).
 short_st_format('fan', '{h}:{mm} {ampm}').

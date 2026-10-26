@@ -32,7 +32,7 @@ var MNK = sd.DurationLocale{
 	Delimiter: ", ",
 	JustNow:   "sisan",
 	Ago:       "{0} taata",
-	InFuture:  "ka {0}",
+	InFuture:  "{0} kɔnɔ",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "sɛk. {n}"},
 		Minute:   &sd.UnitForms{Simple: "min. {n}"},
@@ -42,7 +42,7 @@ var MNK = sd.DurationLocale{
 		Month:    &sd.UnitForms{Simple: "kalo {n}"},
 		Year:     &sd.UnitForms{Simple: "sanj. {n}"},
 		Ago:      strPtr("{0} taata"),
-		InFuture: strPtr("ka {0}"),
+		InFuture: strPtr("{0} kɔnɔ"),
 	},
 	Compact: &sd.CompactnessOverride{
 		Second:    &sd.UnitForms{Simple: "sɛk {n}"},
@@ -55,6 +55,6 @@ var MNK = sd.DurationLocale{
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0} taata"),
-		InFuture:  strPtr("ka {0}"),
+		InFuture:  strPtr("{0} kɔnɔ"),
 	},
 }

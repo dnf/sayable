@@ -11,10 +11,10 @@
 
 function loc = locale_eu()
   loc.code = 'eu';
-  loc.clock.hours = {'hamabi', 'bat', 'bi', 'hiru', 'lau', 'bost', 'sei', 'zazpi', 'zortzi', 'bederatzi', 'hamar', 'hamaika'};
+  loc.clock.hours = {'hamabiak', 'ordu bata', 'ordu biak', 'hirurak', 'laurak', 'bostak', 'seiak', 'zazpiak', 'zortziak', 'bederatziak', 'hamarrak', 'hamaikak'};
   loc.clock.midnight = 'gauerdia';
   loc.clock.noon = 'eguerdia';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} eta bost', "p10", '{h} eta hamar', "p15", '{h} eta laurden', "p20", '{h} eta hogei', "p25", '{h} eta hogeita bost', "p30", '{h} eta erdiak', "p35", '{next_h} hogeita bost gutxi', "p40", '{next_h} hogei gutxi', "p45", '{next_h} laurden gutxi', "p50", '{next_h} hamar gutxi', "p55", '{next_h} bost gutxi');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

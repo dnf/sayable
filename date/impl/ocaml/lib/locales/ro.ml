@@ -28,13 +28,13 @@ let locale : date_locale =
     ; "decembrie"
     ]
   ; weekdays =
-    [ "duminică"
-    ; "luni"
-    ; "marți"
-    ; "miercuri"
-    ; "joi"
-    ; "vineri"
-    ; "sâmbătă"
+    [ "duminica"
+    ; "lunea"
+    ; "marțea"
+    ; "miercurea"
+    ; "joia"
+    ; "vinerea"
+    ; "sâmbăta"
     ]
   ; day_format = "{n}"
   ; day_format_exceptions =
@@ -46,7 +46,7 @@ let locale : date_locale =
   ; yesterday = "ieri"
   ; day_after_tomorrow = Some "poimâine"
   ; day_before_yesterday = Some "alaltăieri"
-  ; this_weekday = Some "această {weekday}"
+  ; this_weekday = Some "{weekday} aceasta"
   ; next_weekday = Some "{weekday} viitoare"
   ; last_weekday = Some "{weekday} trecută"
   ; months_in_date = Some

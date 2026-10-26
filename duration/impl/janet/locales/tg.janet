@@ -19,7 +19,7 @@
           :week "{n} ҳафта"
           :month "{n} моҳ"
           :year "{n} сол"}
-   :half "{0} ним"
+   :half "{0}у ним"
    :delimiter ", "
    :just-now "ҳамин ҳоло"
    :ago "{0} пеш"

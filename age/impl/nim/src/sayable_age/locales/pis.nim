@@ -22,7 +22,7 @@ let PIS* = AgeLocale(
     "month": simpleUnit("{n} manis"),
     "year": simpleUnit("{n} yia"),
   }.toOrderedTable,
-  half: "{n} en haf",
+  half: "{0} en haf",
   delimiter: ", ",
   justBorn: "Niufala bebi",
   stages: {
@@ -51,7 +51,7 @@ let PIS* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     justBorn: none(string),
   )),

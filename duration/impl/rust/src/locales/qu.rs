@@ -17,8 +17,8 @@ pub fn locale() -> DurationLocale {
         code: "qu".to_string(),
         plural: |_n| PluralCategory::Other,
         units: Units {
-            second: UnitForms::simple("{n} ñiqin"),
-            minute: UnitForms::simple("{n} chiniku"),
+            second: UnitForms::simple("{n} sikundu"),
+            minute: UnitForms::simple("{n} minutu"),
             hour: UnitForms::simple("{n} ura"),
             day: UnitForms::simple("{n} p'unchaw"),
             week: UnitForms::simple("{n} simana"),
@@ -31,8 +31,8 @@ pub fn locale() -> DurationLocale {
         ago: "{0} ñawpaqta".to_string(),
         in_future: "{0} qhipata".to_string(),
         short: Some(CompactnessOverride {
-            second: Some(UnitForms::simple("{n} ñiq")),
-            minute: Some(UnitForms::simple("{n} chi")),
+            second: Some(UnitForms::simple("{n} sik")),
+            minute: Some(UnitForms::simple("{n} min")),
             hour: Some(UnitForms::simple("{n} ura")),
             day: Some(UnitForms::simple("{n} p'un")),
             week: Some(UnitForms::simple("{n} sim")),

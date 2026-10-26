@@ -31,9 +31,9 @@ module SayableDuration
         end
       },
       units: {
-        "second" => UnitForms.new(zero: "{n} ثانية", one: "ثانية واحدة", two: "ثانيتان", few: "{n} ثوانٍ", many: "{n} ثانية", other: "{n} ثانية"),
-        "minute" => UnitForms.new(zero: "{n} دقيقة", one: "دقيقة واحدة", two: "دقيقتان", few: "{n} دقائق", many: "{n} دقيقة", other: "{n} دقيقة"),
-        "hour" => UnitForms.new(zero: "{n} ساعة", one: "ساعة واحدة", two: "ساعتان", few: "{n} ساعات", many: "{n} ساعة", other: "{n} ساعة"),
+        "second" => UnitForms.new(zero: "{n} ثانية", one: "ثانية", two: "ثانيتان", few: "{n} ثوانٍ", many: "{n} ثانية", other: "{n} ثانية"),
+        "minute" => UnitForms.new(zero: "{n} دقيقة", one: "دقيقة", two: "دقيقتان", few: "{n} دقائق", many: "{n} دقيقة", other: "{n} دقيقة"),
+        "hour" => UnitForms.new(zero: "{n} ساعة", one: "ساعة", two: "ساعتان", few: "{n} ساعات", many: "{n} ساعة", other: "{n} ساعة"),
         "day" => UnitForms.new(zero: "{n} يوم", one: "يوم", two: "يومان", few: "{n} أيام", many: "{n} يومًا", other: "{n} يوم"),
         "week" => UnitForms.new(zero: "{n} أسبوع", one: "أسبوع", two: "أسبوعان", few: "{n} أسابيع", many: "{n} أسبوعًا", other: "{n} أسبوع"),
         "month" => UnitForms.new(zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"),
@@ -64,7 +64,7 @@ module SayableDuration
           "hour" => UnitForms.new("{n} س"),
           "day" => UnitForms.new("{n} ي"),
           "week" => UnitForms.new("{n} أ"),
-          "month" => UnitForms.new(zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"),
+          "month" => UnitForms.new("{n} شهر"),
           "year" => UnitForms.new("{n} سنة"),
         },
         delimiter: "",

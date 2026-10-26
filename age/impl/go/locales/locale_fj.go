@@ -25,7 +25,7 @@ var FJ = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} na vula"),
 		Year:  sa.SimpleUnit("{n} na yabaki"),
 	},
-	Half:      "{n} kei na levu ni wasei",
+	Half:      "{0} kei na veimama",
 	Delimiter: ", ",
 	JustBorn:  "Gone vou",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
@@ -48,5 +48,6 @@ var FJ = sa.AgeLocale{
 		Month:     &sa.UnitForms{Simple: "{n}m"},
 		Year:      &sa.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 	},
 }

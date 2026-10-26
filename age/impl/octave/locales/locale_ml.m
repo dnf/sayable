@@ -11,12 +11,12 @@
 
 function loc = locale_ml()
   loc.code = 'ml';
-  loc.plural = @(n) ifelse(n == 0 || n == 1, "one", "other");
+  loc.plural = @(n) ifelse(n == 1, "one", "other");
   loc.units.day = struct("one", '{n} ദിവസം', "other", '{n} ദിവസങ്ങൾ');
   loc.units.week = struct("one", '{n} ആഴ്ച', "other", '{n} ആഴ്ചകൾ');
   loc.units.month = struct("one", '{n} മാസം', "other", '{n} മാസങ്ങൾ');
   loc.units.year = struct("one", '{n} വയസ്സ്', "other", '{n} വയസ്സ്');
-  loc.half = '{0} ര';
+  loc.half = '{n}½';
   loc.delimiter = ', ';
   loc.just_born = 'നവജാതശിശു';
   loc.stages.newborn = 'നവജാതശിശു';

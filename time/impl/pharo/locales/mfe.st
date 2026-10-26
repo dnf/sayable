@@ -17,22 +17,22 @@ mfe
 	locale := SayableTimeLocale new.
 	locale code: 'mfe'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'douz'. 'enn'. 'de'. 'trwa'. 'kat'. 'senk'. 'sis'. 'set'. 'wit'. 'nef'. 'dis'. 'onz' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'douzer'. 'enn er'. 'dezer'. 'trwazer'. 'katrer'. 'senker'. 'sizer'. 'seter'. 'witer'. 'never'. 'dizer'. 'onzer' }).
 	clock at: #midnight put: 'minwi'.
 	clock at: #noon put: 'midi'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h}'.
+		5. '{h} senk'.
+		10. '{h} dis'.
+		15. '{h} ekar'.
+		20. '{h} vin'.
+		25. '{h} vennsenk'.
+		30. '{h} edmi'.
+		35. '{next_h} mwin vennsenk'.
+		40. '{next_h} mwin vin'.
+		45. '{next_h} mwin kar'.
+		50. '{next_h} mwin dis'.
+		55. '{next_h} mwin senk'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

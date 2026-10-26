@@ -816,7 +816,7 @@ fn test_sayable_age_spanish() {
                 (PluralCategory::Other, "{n} a\u{00F1}os"),
             ]),
         },
-        half: "{n} y medio".to_string(),
+        half: "{0} y medio".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Reci\u{00E9}n nacido".to_string(),
         stages: Stages {
@@ -883,7 +883,7 @@ fn test_sayable_age_spanish() {
     assert_age(
         "half marker",
         pt.format_age("2022-06-15", Some("2025-12-15")),
-        "3 y medio años",
+        "3 años y medio",
     ); // 25.10
     assert_age(
         "integer years",
@@ -1632,13 +1632,13 @@ fn test_locale_hebrew() {
     let pt = SayableAge::new(&locales::HE, Compactness::Normal);
 
     assert_age("he justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "רק נולד");
-    assert_age("he 1 day one", pt.format_age("2025-06-14", Some("2025-06-15")), "יום 1");
+    assert_age("he 1 day one", pt.format_age("2025-06-14", Some("2025-06-15")), "יום");
     assert_age("he 3 days other", pt.format_age("2025-06-12", Some("2025-06-15")), "3 ימים");
     assert_age("he 2 weeks dual", pt.format_age("2025-06-01", Some("2025-06-15")), "שבועיים");
     assert_age("he 3 weeks other", pt.format_age("2025-05-25", Some("2025-06-15")), "3 שבועות");
     assert_age("he 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 חודשים");
     assert_age("he 3 months", pt.format_age("2025-03-15", Some("2025-06-15")), "3 חודשים");
-    assert_age("he 2y dual 1m one", pt.format_age("2023-06-15", Some("2025-07-15")), "שנתיים, חודש 1");
+    assert_age("he 2y dual 1m one", pt.format_age("2023-06-15", Some("2025-07-15")), "שנתיים, חודש");
     assert_age("he 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 שנים וחצי");
     assert_age("he 7y other", pt.format_age("2018-06-15", Some("2025-06-15")), "7 שנים");
     assert_age("he stage m newborn", pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)), "רק נולד");
@@ -1680,7 +1680,7 @@ fn test_locale_indonesian() {
     assert_age("id 1 day", pt.format_age("2025-06-14", Some("2025-06-15")), "1 hari");
     assert_age("id 3 days", pt.format_age("2025-06-12", Some("2025-06-15")), "3 hari");
     assert_age("id 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 bulan");
-    assert_age("id 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 tahun setengah");
+    assert_age("id 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 setengah tahun");
     assert_age("id 7y", pt.format_age("2018-06-15", Some("2025-06-15")), "7 tahun");
 }
 

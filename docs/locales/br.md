@@ -6,6 +6,14 @@
 
 Plural rule: `br` (categories: one, two, few, many, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [br.json](../../locales/br.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Replaced digit placeholders with Breton: feminine numerals before 'eur' (un/div/teir/peder eur ... daouzek eur), 'ha pemp/ha dek/ha kard/hag ugent/ha pemp warn-ugent', 'hanter' for the half, and 'nemet ...' counting down to the next hour from :35. Used 'ha kard'/'nemet kard' (the 'hag ur c'hard' variant also exists).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ar Lun-mañ     | 17/3       |
 | Day before yesterday | Yaou paseet    | 13/3       |
 | This Thursday (+5)   | ar Yaou-mañ    | 20/3       |
-| Last Monday (-4)     | Meurzh paseet  | 11/3       |
-| Next Wednesday (+12) | Yaou a zeu     | 27/3       |
-| Same month (+20)     | 4 Ebrel        | 4/4        |
+| Last Tuesday (-4)    | Meurzh paseet  | 11/3       |
+| Next Thursday (+12)  | Yaou a zeu     | 27/3       |
+| Same year (+20)      | 4 Ebrel        | 4/4        |
 | Different year       | 10 Genver 2026 | 10/1/26    |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal    | Short | Compact |
-| --------------- | --------- | ----- | ------- |
-| Midnight        | hanternoz | 0:00  | 0:00    |
-| 1:00 AM         | 1:00      | 1:00  | 1:00    |
-| 5 past 9        | 9:05      | 9:05  | 9:05    |
-| Quarter past 10 | 10:15     | 10:15 | 10:15   |
-| Half past 11    | 11:30     | 11:30 | 11:30   |
-| Noon            | kreisteiz | 12:00 | 12:00   |
-| Quarter to 3    | 2:45      | 14:45 | 14:45   |
-| 5 to 6          | 5:55      | 17:55 | 17:55   |
-| 8 o'clock PM    | 8:00      | 20:00 | 20:00   |
-| 10:30 PM        | 10:30     | 22:30 | 22:30   |
-| 11:58 PM        | hanternoz | 23:58 | 23:58   |
+| Time            | Normal                  | Short | Compact |
+| --------------- | ----------------------- | ----- | ------- |
+| Midnight        | hanternoz               | 0:00  | 0:00    |
+| 1:00 AM         | un eur                  | 1:00  | 1:00    |
+| 5 past 9        | nav eur ha pemp         | 9:05  | 9:05    |
+| Quarter past 10 | dek eur ha kard         | 10:15 | 10:15   |
+| Half past 11    | unnek eur hanter        | 11:30 | 11:30   |
+| Noon            | kreisteiz               | 12:00 | 12:00   |
+| Quarter to 3    | teir eur nemet kard     | 14:45 | 14:45   |
+| 5 to 6          | c'hwec'h eur nemet pemp | 17:55 | 17:55   |
+| 8 o'clock PM    | eizh eur                | 20:00 | 20:00   |
+| 10:30 PM        | dek eur hanter          | 22:30 | 22:30   |
+| 11:58 PM        | hanternoz               | 23:58 | 23:58   |

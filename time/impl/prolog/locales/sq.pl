@@ -15,18 +15,18 @@ st_hours('sq', ['dymbëdhjetë', 'një', 'dy', 'tre', 'katër', 'pesë', 'gjasht
 st_midnight('sq', 'mesnata').
 st_noon('sq', 'mesdita').
 
-st_pattern('sq', 0, '{h} o\'clock').
-st_pattern('sq', 5, 'pesë past {h}').
-st_pattern('sq', 10, 'dhjetë past {h}').
-st_pattern('sq', 15, 'një çerek past {h}').
-st_pattern('sq', 20, 'njëzet past {h}').
-st_pattern('sq', 25, 'njëzet e pesë past {h}').
-st_pattern('sq', 30, 'gjysma past {h}').
-st_pattern('sq', 35, 'njëzet e pesë to {next_h}').
-st_pattern('sq', 40, 'njëzet to {next_h}').
-st_pattern('sq', 45, 'një çerek to {next_h}').
-st_pattern('sq', 50, 'dhjetë to {next_h}').
-st_pattern('sq', 55, 'pesë to {next_h}').
+st_pattern('sq', 0, 'ora {h}').
+st_pattern('sq', 5, '{h} e pesë').
+st_pattern('sq', 10, '{h} e dhjetë').
+st_pattern('sq', 15, '{h} e një çerek').
+st_pattern('sq', 20, '{h} e njëzet').
+st_pattern('sq', 25, '{h} e njëzet e pesë').
+st_pattern('sq', 30, '{h} e gjysmë').
+st_pattern('sq', 35, '{next_h} pa njëzet e pesë').
+st_pattern('sq', 40, '{next_h} pa njëzet').
+st_pattern('sq', 45, '{next_h} pa një çerek').
+st_pattern('sq', 50, '{next_h} pa dhjetë').
+st_pattern('sq', 55, '{next_h} pa pesë').
 
 short_st_use24h('sq', true).
 short_st_format('sq', '{h}:{mm}').

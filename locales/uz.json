@@ -75,14 +75,14 @@
       "juma",
       "shanba"
     ],
-    "dayFormat": "{n}",
-    "datePattern": "{day} {month}",
-    "datePatternWithYear": "{day} {month} {year}",
+    "dayFormat": "{n}-",
+    "datePattern": "{day}{month}",
+    "datePatternWithYear": "{day}{month}, {year}",
     "today": "bugun",
     "tomorrow": "ertaga",
     "yesterday": "kecha",
     "dayAfterTomorrow": "indinga",
-    "dayBeforeYesterday": "kechagina",
+    "dayBeforeYesterday": "o'tgan kuni",
     "thisWeekday": "bu {weekday}",
     "nextWeekday": "keyingi {weekday}",
     "lastWeekday": "o'tgan {weekday}",
@@ -110,9 +110,9 @@
         "jum",
         "shan"
       ],
-      "dayFormat": "{n}",
-      "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}"
+      "dayFormat": "{n}-",
+      "datePattern": "{day}{month}",
+      "datePatternWithYear": "{day}{month}, {year}"
     },
     "compact": {
       "datePattern": "{d}/{m}",
@@ -210,18 +210,18 @@
       "midnight": "yarim tun",
       "noon": "tush",
       "patterns": {
-        "0": "{h} o'clock",
-        "5": "besh past {h}",
-        "10": "o'n past {h}",
-        "15": "o'n besh past {h}",
-        "20": "yigirma past {h}",
-        "25": "yigirma besh past {h}",
-        "30": "o'ttiz past {h}",
-        "35": "yigirma besh to {next_h}",
-        "40": "yigirma to {next_h}",
-        "45": "o'n besh to {next_h}",
-        "50": "o'n to {next_h}",
-        "55": "besh to {next_h}"
+        "0": "soat {h}",
+        "5": "soat {h} nol besh",
+        "10": "soat {h} o'n",
+        "15": "soat {h} o'n besh",
+        "20": "soat {h} yigirma",
+        "25": "soat {h} yigirma besh",
+        "30": "soat {h} yarim",
+        "35": "soat {h} o'ttiz besh",
+        "40": "soat {h} qirq",
+        "45": "soat {h} qirq besh",
+        "50": "soat {h} ellik",
+        "55": "soat {h} ellik besh"
       }
     },
     "short": {
@@ -236,5 +236,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Beyond the dataFixes list: the clock patterns contained English ('bir o'clock', 'besh past ikki', 'o'n besh to uch'), which Job B says to remove, so I applied the audit's within-schema wording 'soat {h}' / 'soat {h} yarim' and words-only additive forms for the rest ('soat ikki o'n besh', 'soat ikki qirq besh', 'soat ikki nol besh'). Idiomatic 'ikkidan o'n besh daqiqa o'tdi' / 'uchga o'n besh daqiqa qoldi' need ablative/dative lists (schemaLimits). Doubt: 'soat ikki yarim' vs bare 'ikki yarim' (both heard)."
+    }
+  ]
 }

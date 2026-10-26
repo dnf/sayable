@@ -23,12 +23,12 @@ he
 					ifTrue: [ #two ]
 					ifFalse: [ #other ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. 'שנייה {n}'. #two. 'שתי שניות'. #other. '{n} שניות' }).
-		'minute'. (Dictionary newFromPairs: { #one. 'דקה {n}'. #two. 'שתי דקות'. #other. '{n} דקות' }).
-		'hour'. (Dictionary newFromPairs: { #one. 'שעה {n}'. #two. 'שעתיים'. #other. '{n} שעות' }).
-		'day'. (Dictionary newFromPairs: { #one. 'יום {n}'. #two. 'יומיים'. #other. '{n} ימים' }).
-		'week'. (Dictionary newFromPairs: { #one. 'שבוע {n}'. #two. 'שבועיים'. #other. '{n} שבועות' }).
-		'month'. (Dictionary newFromPairs: { #one. 'חודש {n}'. #two. 'חודשיים'. #other. '{n} חודשים' }).
+		'second'. (Dictionary newFromPairs: { #one. 'שנייה'. #two. 'שתי שניות'. #other. '{n} שניות' }).
+		'minute'. (Dictionary newFromPairs: { #one. 'דקה'. #two. 'שתי דקות'. #other. '{n} דקות' }).
+		'hour'. (Dictionary newFromPairs: { #one. 'שעה'. #two. 'שעתיים'. #other. '{n} שעות' }).
+		'day'. (Dictionary newFromPairs: { #one. 'יום'. #two. 'יומיים'. #other. '{n} ימים' }).
+		'week'. (Dictionary newFromPairs: { #one. 'שבוע'. #two. 'שבועיים'. #other. '{n} שבועות' }).
+		'month'. (Dictionary newFromPairs: { #one. 'חודש'. #two. 'חודשיים'. #other. '{n} חודשים' }).
 		'year'. (Dictionary newFromPairs: { #one. 'שנה'. #two. 'שנתיים'. #other. '{n} שנים' }).
 	}).
 	locale half: '{0} וחצי'.

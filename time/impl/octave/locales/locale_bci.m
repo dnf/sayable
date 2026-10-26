@@ -11,10 +11,10 @@
 
 function loc = locale_bci()
   loc.code = 'bci';
-  loc.clock.hours = {'blu-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-kun'};
+  loc.clock.hours = {'blu-nin-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-nin-kun'};
   loc.clock.midnight = 'kɔnguɛ afiɛn';
   loc.clock.noon = 'nnɔsua';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'dɔ {h}', "p5", 'dɔ {h} nin miniti nnun', "p10", 'dɔ {h} nin miniti blu', "p15", 'dɔ {h} nin miniti blu-nin-nnun', "p20", 'dɔ {h} nin miniti ablaɔn', "p25", 'dɔ {h} nin miniti ablaɔn-nin-nnun', "p30", 'dɔ {h} nin miniti ablasan', "p35", 'dɔ {h} nin miniti ablasan-nin-nnun', "p40", 'dɔ {h} nin miniti ablanan', "p45", 'dɔ {h} nin miniti ablanan-nin-nnun', "p50", 'dɔ {h} nin miniti ablenun', "p55", 'dɔ {h} nin miniti ablenun-nin-nnun');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

@@ -418,7 +418,7 @@
   ;; 25.9
   (check-equal "25.9" (format-age (make-formatter (get-locale "es") :normal) "2023-06-15" "2025-12-15") "2 años, 6 meses")
   ;; 25.10
-  (check-equal "25.10" (format-age (make-formatter (get-locale "es") :normal) "2022-06-15" "2025-12-15") "3 y medio años")
+  (check-equal "25.10" (format-age (make-formatter (get-locale "es") :normal) "2022-06-15" "2025-12-15") "3 años y medio")
   ;; 25.11
   (check-equal "25.11" (format-age (make-formatter (get-locale "es") :normal) "2022-06-15" "2025-06-15") "3 años")
   ;; 25.12
@@ -488,7 +488,7 @@
   ;; 29.1
   (check-equal "29.1" (format-age (make-formatter (get-locale "he") :normal) "2025-06-15" "2025-06-15") "רק נולד")
   ;; 29.2
-  (check-equal "29.2" (format-age (make-formatter (get-locale "he") :normal) "2025-06-14" "2025-06-15") "יום 1")
+  (check-equal "29.2" (format-age (make-formatter (get-locale "he") :normal) "2025-06-14" "2025-06-15") "יום")
   ;; 29.3
   (check-equal "29.3" (format-age (make-formatter (get-locale "he") :normal) "2025-06-12" "2025-06-15") "3 ימים")
   ;; 29.4
@@ -500,7 +500,7 @@
   ;; 29.7
   (check-equal "29.7" (format-age (make-formatter (get-locale "he") :normal) "2025-03-15" "2025-06-15") "3 חודשים")
   ;; 29.8
-  (check-equal "29.8" (format-age (make-formatter (get-locale "he") :normal) "2023-06-15" "2025-07-15") "שנתיים, חודש 1")
+  (check-equal "29.8" (format-age (make-formatter (get-locale "he") :normal) "2023-06-15" "2025-07-15") "שנתיים, חודש")
   ;; 29.9
   (check-equal "29.9" (format-age (make-formatter (get-locale "he") :normal) "2022-06-15" "2025-12-15") "3 שנים וחצי")
   ;; 29.10
@@ -548,7 +548,7 @@
   ;; 29.31
   (check-equal "29.31" (format-age (make-formatter (get-locale "id") :normal) "2025-01-15" "2025-07-15") "6 bulan")
   ;; 29.32
-  (check-equal "29.32" (format-age (make-formatter (get-locale "id") :normal) "2022-06-15" "2025-12-15") "3 tahun setengah")
+  (check-equal "29.32" (format-age (make-formatter (get-locale "id") :normal) "2022-06-15" "2025-12-15") "3 setengah tahun")
   ;; 29.33
   (check-equal "29.33" (format-age (make-formatter (get-locale "id") :normal) "2018-06-15" "2025-06-15") "7 tahun")
   ;; 29.34

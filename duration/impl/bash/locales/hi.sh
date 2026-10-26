@@ -18,7 +18,8 @@ _sayableduration_plural_hi() {
 _sayableduration_locale_hi() {
     _unit_second='{n} सेकंड'
     _unit_minute='{n} मिनट'
-    _unit_hour='{n} घंटा'
+    _unit_hour_one='{n} घंटा'
+    _unit_hour_other='{n} घंटे'
     _unit_day_one='{n} दिन'
     _unit_day_other='{n} दिन'
     _unit_week_one='{n} सप्ताह'

@@ -13,7 +13,7 @@ locale_gn <- list(
   code = "gn",
   clock = list(
     hours = c("pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"),
-    midnight = "pyhareve",
+    midnight = "pyharepyte",
     noon = "asaje",
     patterns = list(
       "0" = "{h}",
@@ -23,11 +23,11 @@ locale_gn <- list(
       "20" = "{h} ha mokõi pa",
       "25" = "{h} ha mokõi pa po",
       "30" = "{h} ha mbohapy pa",
-      "35" = "{next_h} mba'e mokõi pa po",
-      "40" = "{next_h} mba'e mokõi pa",
-      "45" = "{next_h} mba'e pa po",
-      "50" = "{next_h} mba'e pa",
-      "55" = "{next_h} mba'e po"
+      "35" = "{h} ha mbohapy pa po",
+      "40" = "{h} ha irundy pa",
+      "45" = "{h} ha irundy pa po",
+      "50" = "{h} ha po pa",
+      "55" = "{h} ha po pa po"
     )
   ),
   short = list(

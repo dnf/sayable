@@ -24,7 +24,7 @@
                (cons :week "{n} minggu")
                (cons :month "{n} bulan")
                (cons :year "{n} tahun"))
-   :half "{0} setengah"
+   :half "{n} setengah"
    :delimiter ", "
    :just-now "baru saja"
    :ago "{0} yang lalu"

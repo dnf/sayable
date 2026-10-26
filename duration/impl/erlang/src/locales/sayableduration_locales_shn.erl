@@ -30,5 +30,5 @@ locale() ->
         ago = "{0} ပူၼ်ႉမႃး",
         in_future = "ထႅင်ႈ {0}",
         short = {just, #duration_compactness_override{second = {just, {simple, "{n} ဝိၼႃး"}}, minute = {just, {simple, "{n} မိၼိတ်ႉ"}}, hour = {just, {simple, "{n} ၸူဝ်ႈ"}}, day = {just, {simple, "{n} ဝၼ်း"}}, week = {just, {simple, "{n} ဝူင်ႈ"}}, month = {just, {simple, "{n} လိူၼ်"}}, year = {just, {simple, "{n} ပီ"}}, half = nothing, delimiter = nothing, ago = {just, "{0} ပူၼ်ႉမႃး"}, in_future = {just, "ထႅင်ႈ {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} ပူၼ်ႉမႃး"}, in_future = {just, "ထႅင်ႈ {0}"}}}
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} ပူၼ်ႉမႃး"}, in_future = {just, "ထႅင်ႈ {0}"}}}
     }.

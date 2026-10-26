@@ -17,7 +17,7 @@ locale_mam <- list(
     minute = "{n} minuto",
     hour = "{n} hora",
     day = "{n} q'ij",
-    week = "{n} xjaw",
+    week = "{n} seman",
     month = "{n} xjaw",
     year = "{n} ab'q'ii"
   ),
@@ -32,7 +32,7 @@ locale_mam <- list(
       minute = "{n} min.",
       hour = "{n} hora",
       day = "{n} q'ij",
-      week = "{n} xjaw",
+      week = "{n} seman",
       month = "{n} xjaw",
       year = "{n} ab'."
     ),
@@ -49,6 +49,7 @@ locale_mam <- list(
       month = "{n}mo",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} chi'j",
     in_future = "tu'n {0}"

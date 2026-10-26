@@ -23,7 +23,7 @@ class PISLocale {
       "year": "{n} yia",
     }
   }
-  static half { "{n} en haf" }
+  static half { "{0} en haf" }
   static delimiter { ", " }
   static justNow { "nomoa nao" }
   static ago { "{0} bifoa" }
@@ -54,6 +54,7 @@ class PISLocale {
         "month": "{n}mo",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
       "ago": "{0} bifoa",
       "inFuture": "long {0}",

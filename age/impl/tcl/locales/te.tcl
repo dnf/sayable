@@ -22,7 +22,7 @@ proc locale_te {} {
         month [dict create one "{n} నెల" other "{n} నెలలు"] \
         year [dict create one "{n} సంవత్సరం" other "{n} సంవత్సరాలు"] \
     ]
-    set half "{0}న్నర"
+    set half "{n}½"
     set delimiter {, }
     set just_born {నవజాత శిశువు}
     set stages [dict create \

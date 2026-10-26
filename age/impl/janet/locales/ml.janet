@@ -11,12 +11,12 @@
 
 (def locale
   {:code "ml"
-   :plural (fn [n] (if (or (= n 0) (= n 1)) :one :other))
+   :plural (fn [n] (if (= n 1) :one :other))
    :units {:day {:one "{n} ദിവസം" :other "{n} ദിവസങ്ങൾ"}
           :week {:one "{n} ആഴ്ച" :other "{n} ആഴ്ചകൾ"}
           :month {:one "{n} മാസം" :other "{n} മാസങ്ങൾ"}
           :year {:one "{n} വയസ്സ്" :other "{n} വയസ്സ്"}}
-   :half "{0} ര"
+   :half "{n}½"
    :delimiter ", "
    :just-born "നവജാതശിശു"
    :stages {:newborn "നവജാതശിശു"

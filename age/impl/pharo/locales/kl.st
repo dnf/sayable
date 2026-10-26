@@ -16,12 +16,12 @@ kl
 	| locale |
 	locale := SayableAgeLocale new.
 	locale code: 'kl'.
-	locale plural: [ :n | #other ].
+	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. 'ullut {n}'.
-		'week'. 'sapaatit {n}'.
-		'month'. 'qaammatit {n}'.
-		'year'. 'ukiut {n}'.
+		'day'. (Dictionary newFromPairs: { #one. 'ulloq {n}'. #other. 'ullut {n}' }).
+		'week'. (Dictionary newFromPairs: { #one. 'sapaatip akunnera {n}'. #other. 'sapaatip akunneri {n}' }).
+		'month'. (Dictionary newFromPairs: { #one. 'qaammat {n}'. #other. 'qaammatit {n}' }).
+		'year'. (Dictionary newFromPairs: { #one. 'ukioq {n}'. #other. 'ukiut {n}' }).
 	}).
 	locale half: '{0} affaa'.
 	locale delimiter: ', '.
@@ -37,7 +37,7 @@ kl
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
 			'day'. 'ull. {n}'.
-			'week'. 'sap. {n}'.
+			'week'. 'sap. ak. {n}'.
 			'month'. 'qaam. {n}'.
 			'year'. 'uk. {n}'.
 		}).
@@ -49,6 +49,7 @@ kl
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 	}).
 	^ locale

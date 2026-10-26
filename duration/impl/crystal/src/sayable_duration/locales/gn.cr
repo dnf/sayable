@@ -14,9 +14,9 @@ module SayableDuration
       code: "gn",
       plural: ->(n : Int32) { n == 1 ? PluralCategory::One : PluralCategory::Other },
       units: {
-        "second" => UnitForms.new("{n} aravo'i"),
-        "minute" => UnitForms.new("{n} aravo"),
-        "hour" => UnitForms.new("{n} aravo guasu"),
+        "second" => UnitForms.new("{n} aravo'ive"),
+        "minute" => UnitForms.new("{n} aravo'i"),
+        "hour" => UnitForms.new("{n} aravo"),
         "day" => UnitForms.new("{n} ára"),
         "week" => UnitForms.new("{n} arapokõindy"),
         "month" => UnitForms.new("{n} jasy"),
@@ -29,9 +29,9 @@ module SayableDuration
       in_future: "{0} rire",
       short: CompactnessOverride.new(
         units: {
-          "second" => UnitForms.new("{n} ara'i"),
-          "minute" => UnitForms.new("{n} ara"),
-          "hour" => UnitForms.new("{n} ara g"),
+          "second" => UnitForms.new("{n} aravo'ive"),
+          "minute" => UnitForms.new("{n} aravo'i"),
+          "hour" => UnitForms.new("{n} aravo"),
           "day" => UnitForms.new("{n} ára"),
           "week" => UnitForms.new("{n} ara"),
           "month" => UnitForms.new("{n} jas"),

@@ -25,7 +25,7 @@
    "{n}."
    (hash)
    "{month} {day}"
-   "{day} {month} {year}"
+   "{month} {day} {year}"
    "ullumi"
    "aqagu"
    "ippassaq"
@@ -35,6 +35,6 @@
    "{weekday} tulleq"
    "{weekday} kingulleq"
    #f
-   (date-compactness-override (list "jan" "febr" "mar" "apr" "maj" "jun" "jul" "aug" "sept" "okt" "nov" "dec") #f (list "sap" "ata" "mar" "pin" "sis" "tal" "arf") "{n}." #f "{month} {day}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "jan" "febr" "mar" "apr" "maj" "jun" "jul" "aug" "sept" "okt" "nov" "dec") #f (list "sap" "ata" "mar" "pin" "sis" "tal" "arf") "{n}." #f "{month} {day}" "{month} {day} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{m}-{d}" "{year}-{m}-{d}" #f #f #f)
   ))

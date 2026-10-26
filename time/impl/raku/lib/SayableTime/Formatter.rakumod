@@ -4,6 +4,31 @@ unit class SayableTime::Formatter;
 
 our $VERSION = '0.5.0';
 
+# Placeholders are matched on code points, not graphemes. Raku strings are
+# graphemes, and a placeholder followed by a combining mark (Tamil "{h}" then
+# U+0BC1) is the single grapheme "}" + U+0BC1, which .subst and .contains never
+# match. Every occurrence is replaced, as in the other implementations.
+my sub replace-placeholder(Str $template, Str $placeholder, Str $value --> Str) {
+    my @text = $template.ords;
+    my @hole = $placeholder.ords;
+    my @out;
+    my $i = 0;
+    while $i < @text.elems {
+        if $i + @hole.elems <= @text.elems && @text[$i ..^ $i + @hole.elems] eqv @hole.List {
+            @out.append: $value.ords;
+            $i += @hole.elems;
+        }
+        else {
+            @out.push: @text[$i++];
+        }
+    }
+    @out.chrs
+}
+
+my sub has-placeholder(Str $template, Str $placeholder --> Bool) {
+    (',' ~ $template.ords.join(',') ~ ',').contains(',' ~ $placeholder.ords.join(',') ~ ',')
+}
+
 has %.locale;
 has $.compactness;
 has $.short-clock;
@@ -54,20 +79,20 @@ method !format-natural(Int $hour, Int $minute --> Str) {
     my $h-name = %clock<hours>[$h12];
     my $next-h-name = %clock<hours>[$next-h12];
     my $pattern = %clock<patterns>{$rounded} // %clock<patterns>{0} // '{h}';
-    return $pattern.subst('{h}', $h-name).subst('{next_h}', $next-h-name);
+    return replace-placeholder(replace-placeholder($pattern, '{h}', $h-name), '{next_h}', $next-h-name);
 }
 
 method !format-digital(Int $hour, Int $minute --> Str) {
     my %sc = $.short-clock;
     my $fmt = %sc<format>;
     if %sc<use24h> eq 'True' || %sc<use24h> === True {
-        return $fmt.subst('{h}', ~$hour).subst('{mm}', $minute.fmt('%02d'));
+        return replace-placeholder(replace-placeholder($fmt, '{h}', ~$hour), '{mm}', $minute.fmt('%02d'));
     }
     my $h12 = $hour mod 12;
     $h12 = 12 if $h12 == 0;
     my @am-pm = %sc<am-pm>.defined ?? %sc<am-pm>.list !! ('AM', 'PM');
     my $ampm-str = $hour < 12 ?? @am-pm[0] !! @am-pm[1];
-    return $fmt.subst('{h}', ~$h12).subst('{mm}', $minute.fmt('%02d')).subst('{ampm}', $ampm-str);
+    return replace-placeholder(replace-placeholder(replace-placeholder($fmt, '{h}', ~$h12), '{mm}', $minute.fmt('%02d')), '{ampm}', $ampm-str);
 }
 
 #| A clock time (H:MM or HH:MM, optional :SS and fraction, optional zone

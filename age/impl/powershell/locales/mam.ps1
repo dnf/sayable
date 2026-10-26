@@ -16,7 +16,7 @@ function plural_mam([int]$n) {
 function locale_mam {
     $units = @{
         day = '{n} q''ij'
-        week = '{n} xjaw'
+        week = '{n} seman'
         month = '{n} xjaw'
         year = '{n} ab''q''ii'
     }
@@ -34,7 +34,7 @@ function locale_mam {
     $short = @{
         units = @{
             day = '{n} q''ij'
-            week = '{n} xjaw'
+            week = '{n} seman'
             month = '{n} xjaw'
             year = '{n} ab''.'
         }
@@ -46,6 +46,7 @@ function locale_mam {
             month = '{n}m'
             year = '{n}y'
         }
+        half = '{n}½'
         delimiter = ''
     }
     return @{

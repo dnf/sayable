@@ -11,22 +11,22 @@
 
 % Catalan locale.
 
-st_hours('ca', ['dotze', 'una', 'dues', 'tres', 'quatre', 'cinc', 'sis', 'set', 'vuit', 'nou', 'deu', 'onze']).
+st_hours('ca', ['les dotze', 'la una', 'les dues', 'les tres', 'les quatre', 'les cinc', 'les sis', 'les set', 'les vuit', 'les nou', 'les deu', 'les onze']).
 st_midnight('ca', 'mitjanit').
 st_noon('ca', 'migdia').
 
-st_pattern('ca', 0, '{h} o\'clock').
-st_pattern('ca', 5, 'cinc past {h}').
-st_pattern('ca', 10, 'deu past {h}').
-st_pattern('ca', 15, 'un quart past {h}').
-st_pattern('ca', 20, 'vint past {h}').
-st_pattern('ca', 25, 'vint-i-cinc past {h}').
-st_pattern('ca', 30, 'mitja past {h}').
-st_pattern('ca', 35, 'vint-i-cinc to {next_h}').
-st_pattern('ca', 40, 'vint to {next_h}').
-st_pattern('ca', 45, 'un quart to {next_h}').
-st_pattern('ca', 50, 'deu to {next_h}').
-st_pattern('ca', 55, 'cinc to {next_h}').
+st_pattern('ca', 0, '{h} en punt').
+st_pattern('ca', 5, '{h} i cinc').
+st_pattern('ca', 10, '{h} i deu').
+st_pattern('ca', 15, '{h} i quart').
+st_pattern('ca', 20, '{h} i vint').
+st_pattern('ca', 25, '{h} i vint-i-cinc').
+st_pattern('ca', 30, '{h} i mitja').
+st_pattern('ca', 35, '{next_h} menys vint-i-cinc').
+st_pattern('ca', 40, '{next_h} menys vint').
+st_pattern('ca', 45, '{next_h} menys quart').
+st_pattern('ca', 50, '{next_h} menys deu').
+st_pattern('ca', 55, '{next_h} menys cinc').
 
 short_st_use24h('ca', true).
 short_st_format('ca', '{h}:{mm}').

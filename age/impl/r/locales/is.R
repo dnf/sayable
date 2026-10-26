@@ -25,7 +25,7 @@ locale_is <- list(
     month = list(one = "{n} mánuður", other = "{n} mánuðir"),
     year = list(one = "{n} ár", other = "{n} ár")
   ),
-  half = "{0} og hálft",
+  half = "{n} og hálft",
   delimiter = ", ",
   just_born = "Nýfætt",
   stages = list(

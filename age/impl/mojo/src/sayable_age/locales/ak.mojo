@@ -39,11 +39,11 @@ fn build_ak() -> AgeLocale:
     var infant = stage_neutral("Akwadaa")
     var toddler = stage_neutral("Abofra")
     var child = stage_neutral("Abofra")
-    var teenager = stage_neutral("Abarimaa")
+    var teenager = stage_gendered("Abarimaa", "Abaayewa")
     var adult = stage_neutral("Ɔpanyin")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("nna {n}")
+    short_ovr.day = plural_unit(one="da {n}", other="nna {n}")
     short_ovr.has_day = True
     short_ovr.week = plural_unit(one="dapɛn {n}", other="nnapɛn {n}")
     short_ovr.has_week = True
@@ -53,7 +53,7 @@ fn build_ak() -> AgeLocale:
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()
-    compact_ovr.day = simple_unit("nna {n}")
+    compact_ovr.day = plural_unit(one="da {n}", other="nna {n}")
     compact_ovr.has_day = True
     compact_ovr.week = plural_unit(one="dapɛn {n}", other="nnapɛn {n}")
     compact_ovr.has_week = True

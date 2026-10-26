@@ -21,7 +21,7 @@
                (cons :week '((:one . "{n} setmana") (:other . "{n} setmanes")))
                (cons :month '((:one . "{n} mes") (:other . "{n} mesos")))
                (cons :year '((:one . "{n} any") (:other . "{n} anys"))))
-   :half "{n} i mig"
+   :half "{0} i mig"
    :delimiter ", "
    :just-born "Nounat"
    :stages (list (cons :newborn '((:m . "Nounat") (:f . "Nounada")))

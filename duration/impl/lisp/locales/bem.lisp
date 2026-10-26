@@ -19,7 +19,7 @@
    :plural (lambda (n) (if (= n 1) :one :other))
    :units (list (cons :second '((:one . "isekondi {n}") (:other . "amasekondi {n}")))
                (cons :minute '((:one . "iminiti {n}") (:other . "amaminiti {n}")))
-               (cons :hour '((:one . "insa {n}") (:other . "amanso {n}")))
+               (cons :hour '((:one . "insa {n}") (:other . "insa {n}")))
                (cons :day '((:one . "ubushiku {n}") (:other . "inshiku {n}")))
                (cons :week '((:one . "umulungu {n}") (:other . "imilungu {n}")))
                (cons :month '((:one . "umweshi {n}") (:other . "imyeshi {n}")))

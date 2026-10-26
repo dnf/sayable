@@ -27,13 +27,13 @@
           [(and (= mod10 1) (not (= mod100 11))) "one"]
           [(and (>= mod10 2) (<= mod10 4) (or (< mod100 12) (> mod100 14))) "few"]
           [else "many"])))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} секунда" "few" "{n} секунды" "many" "{n} секунд" "other" "{n} секунд"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} минута" "few" "{n} минуты" "many" "{n} минут" "other" "{n} минут"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} час" "few" "{n} часа" "many" "{n} часов" "other" "{n} часов"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} день" "few" "{n} дня" "many" "{n} дней" "other" "{n} дней"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} неделя" "few" "{n} недели" "many" "{n} недель" "other" "{n} недель"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} месяц" "few" "{n} месяца" "many" "{n} месяцев" "other" "{n} месяцев"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} год" "few" "{n} года" "many" "{n} лет" "other" "{n} лет")))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} секунда" "few" "{n} секунды" "many" "{n} секунд" "other" "{n} секунды"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} минута" "few" "{n} минуты" "many" "{n} минут" "other" "{n} минуты"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} час" "few" "{n} часа" "many" "{n} часов" "other" "{n} часа"))
+         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} день" "few" "{n} дня" "many" "{n} дней" "other" "{n} дня"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} неделя" "few" "{n} недели" "many" "{n} недель" "other" "{n} недели"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} месяц" "few" "{n} месяца" "many" "{n} месяцев" "other" "{n} месяца"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} год" "few" "{n} года" "many" "{n} лет" "other" "{n} года")))
    "{n} с половиной"
    ", "
    "только что"

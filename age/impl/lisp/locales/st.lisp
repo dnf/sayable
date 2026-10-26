@@ -26,7 +26,7 @@
    :just-born "O sa tswa hlaha"
    :stages (list (cons :newborn "Lesea le sa tswa hlaha")
                  (cons :infant "Lesea")
-                 (cons :toddler "Ngwanana")
+                 (cons :toddler "Ngwana e monyane")
                  (cons :child "Ngwana")
                  (cons :teenager "Mosha")
                  (cons :adult "Motho e moholo"))

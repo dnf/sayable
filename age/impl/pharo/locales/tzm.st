@@ -31,18 +31,18 @@ tzm
 	locale justBorn: 'Iɣ d illul'.
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. 'Iɣ d illul'.
-		#infant. 'Agellid'.
+		#infant. 'Llufan'.
 		#toddler. (Dictionary newFromPairs: { #m. 'Aḥenjir'. #f. 'Taḥenjirt' }).
-		#child. (Dictionary newFromPairs: { #m. 'Afrux'. #f. 'Tafruxṭ' }).
+		#child. (Dictionary newFromPairs: { #m. 'Afrux'. #f. 'Tafruxt' }).
 		#teenager. (Dictionary newFromPairs: { #m. 'Aɛrim'. #f. 'Taɛrimt' }).
 		#adult. (Dictionary newFromPairs: { #m. 'Argaz'. #f. 'Tamṭṭuṭ' }).
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. '{n} d'.
-			'week'. '{n} wk'.
-			'month'. '{n} mo'.
-			'year'. '{n} yr'.
+			'day'. (Dictionary newFromPairs: { #one. '{n} ass'. #other. '{n} ussan' }).
+			'week'. (Dictionary newFromPairs: { #one. '{n} imalass'. #other. '{n} imalassn' }).
+			'month'. (Dictionary newFromPairs: { #one. '{n} ayyur'. #other. '{n} ayyurn' }).
+			'year'. (Dictionary newFromPairs: { #one. '{n} aseggas'. #other. '{n} iseggasen' }).
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {

@@ -22,9 +22,9 @@ locale() ->
         month = {simple, "{n} ເດືອນ"},
         year = {simple, "{n} ປີ"},
         half = "{0}ເຄິ່ງ",
-        delimiter = "",
+        delimiter = " ",
         just_born = "ເກີດໃໝ່",
         stages = #stages{newborn = {neutral, "ເດັກເກີດໃໝ່"}, infant = {neutral, "ເດັກນ້ອຍ"}, toddler = {neutral, "ເດັກນ້ອຍ"}, child = {neutral, "ເດັກ"}, teenager = {neutral, "ໄວລຸ້ນ"}, adult = {neutral, "ຜູ້ໃຫຍ່"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} ມ."}}, week = {just, {simple, "{n} ອທ."}}, month = {just, {simple, "{n} ດ."}}, year = {just, {simple, "{n} ປ."}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = nothing, just_born = nothing}}
+        compact = {just, #compactness_override{day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = nothing, just_born = nothing}}
     }.

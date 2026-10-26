@@ -55,7 +55,7 @@ let TET* = DurationLocale(
       "month": simpleUnit("{n}mo"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0} liu ba"),
     inFuture: some("iha {0}"),

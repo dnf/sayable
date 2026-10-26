@@ -17,7 +17,7 @@ const StTimeLocale st_locale_kbp = {
         { "hiu nɛ naalɛ", "kʊɖʊm", "naalɛ", "naadozo", "naanaza", "kagbanzɩ", "loɖo", "lʊbɛ", "lɛɛtɛ", "nakʊ", "hiu", "hiu nɛ kʊɖʊm" },
         "ɖoo hɛkʊ",
         "wɩsɩ taa",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ñɩɣyʊʊ {h}", "ñɩɣyʊʊ {h} nɛ miniti kagbanzɩ", "ñɩɣyʊʊ {h} nɛ miniti hiu", "ñɩɣyʊʊ {h} nɛ miniti hiu nɛ kagbanzɩ", "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ", "ñɩɣyʊʊ {h} nɛ miniti nɩɩlɛ nɛ kagbanzɩ", "ñɩɣyʊʊ {h} nɛ hɔɔlʊʊ", "ñɩɣyʊʊ {h} nɛ miniti niidozo nɛ kagbanzɩ", "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza", "ñɩɣyʊʊ {h} nɛ miniti nɩɩnaza nɛ kagbanzɩ", "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa", "ñɩɣyʊʊ {h} nɛ miniti nɩɩnʊwa nɛ kagbanzɩ" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

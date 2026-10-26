@@ -33,7 +33,7 @@ proc locale_mk {} {
         toddler {Мало дете} \
         child {Дете} \
         teenager {Тинејџер} \
-        adult {Возрасен} \
+        adult [dict create m {Возрасен} f {Возрасна}] \
     ]
     set short [dict create \
         units [dict create \

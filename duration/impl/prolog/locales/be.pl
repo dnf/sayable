@@ -18,31 +18,31 @@ sd_plural('be', _, many).
 sd_unit('be', second, one, '{n} секунда').
 sd_unit('be', second, few, '{n} секунды').
 sd_unit('be', second, many, '{n} секунд').
-sd_unit('be', second, other, '{n} секунд').
+sd_unit('be', second, other, '{n} секунды').
 sd_unit('be', minute, one, '{n} хвіліна').
 sd_unit('be', minute, few, '{n} хвіліны').
 sd_unit('be', minute, many, '{n} хвілін').
-sd_unit('be', minute, other, '{n} хвілін').
+sd_unit('be', minute, other, '{n} хвіліны').
 sd_unit('be', hour, one, '{n} гадзіна').
 sd_unit('be', hour, few, '{n} гадзіны').
 sd_unit('be', hour, many, '{n} гадзін').
-sd_unit('be', hour, other, '{n} гадзін').
+sd_unit('be', hour, other, '{n} гадзіны').
 sd_unit('be', day, one, '{n} дзень').
 sd_unit('be', day, few, '{n} дні').
 sd_unit('be', day, many, '{n} дзён').
-sd_unit('be', day, other, '{n} дзён').
+sd_unit('be', day, other, '{n} дня').
 sd_unit('be', week, one, '{n} тыдзень').
 sd_unit('be', week, few, '{n} тыдні').
 sd_unit('be', week, many, '{n} тыдняў').
-sd_unit('be', week, other, '{n} тыдняў').
+sd_unit('be', week, other, '{n} тыдня').
 sd_unit('be', month, one, '{n} месяц').
 sd_unit('be', month, few, '{n} месяцы').
 sd_unit('be', month, many, '{n} месяцаў').
-sd_unit('be', month, other, '{n} месяцаў').
+sd_unit('be', month, other, '{n} месяца').
 sd_unit('be', year, one, '{n} год').
 sd_unit('be', year, few, '{n} гады').
 sd_unit('be', year, many, '{n} гадоў').
-sd_unit('be', year, other, '{n} гадоў').
+sd_unit('be', year, other, '{n} года').
 
 sd_half('be', '{n} з паловай').
 sd_delimiter('be', ', ').

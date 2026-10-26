@@ -31,7 +31,7 @@ const SdDateLocale sd_locale_qu = {
     "paqarin",
     "qayna",
     "minchha",
-    "qayna p'unchaw",
+    "qayninpa",
     "kay {weekday}",
     "hamuq {weekday}",
     "qayna {weekday}",

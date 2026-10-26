@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_fil = {
     "fil",
     {
-        { "dose", "una", "dos", "tres", "kwatro", "singko", "seis", "syete", "otso", "nuwebe", "diyes", "onse" },
+        { "alas-dose", "ala-una", "alas-dos", "alas-tres", "alas-kuwatro", "alas-singko", "alas-sais", "alas-siyete", "alas-otso", "alas-nuwebe", "alas-diyes", "alas-onse" },
         "hatinggabi",
         "tanghali",
-        { "{h} o'clock", "lima dan {h}", "sampu dan {h}", "labinlima dan {h}", "dalawampu dan {h}", "dalawampu't lima dan {h}", "tatlumpu dan {h}", "dalawampu't lima bago mag {next_h}", "dalawampu bago mag {next_h}", "labinlima bago mag {next_h}", "sampu bago mag {next_h}", "lima bago mag {next_h}" }
+        { "{h}", "{h} y singko", "{h} y diyes", "{h} y kinse", "{h} y beynte", "{h} y beynte singko", "{h} y medya", "menos beynte singko para {next_h}", "menos beynte para {next_h}", "menos kinse para {next_h}", "menos diyes para {next_h}", "menos singko para {next_h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

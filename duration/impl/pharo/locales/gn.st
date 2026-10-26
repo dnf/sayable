@@ -18,9 +18,9 @@ gn
 	locale code: 'gn'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. '{n} aravo''i'.
-		'minute'. '{n} aravo'.
-		'hour'. '{n} aravo guasu'.
+		'second'. '{n} aravo''ive'.
+		'minute'. '{n} aravo''i'.
+		'hour'. '{n} aravo'.
 		'day'. '{n} ára'.
 		'week'. '{n} arapokõindy'.
 		'month'. '{n} jasy'.
@@ -33,9 +33,9 @@ gn
 	locale inFuture: '{0} rire'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. '{n} ara''i'.
-			'minute'. '{n} ara'.
-			'hour'. '{n} ara g'.
+			'second'. '{n} aravo''ive'.
+			'minute'. '{n} aravo''i'.
+			'hour'. '{n} aravo'.
 			'day'. '{n} ára'.
 			'week'. '{n} ara'.
 			'month'. '{n} jas'.

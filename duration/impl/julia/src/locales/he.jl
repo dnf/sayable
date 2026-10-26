@@ -19,12 +19,12 @@ const HE = DurationLocale(
         return "other"
     end,
     units = Dict(
-        "second" => Dict("one" => "שנייה {n}", "two" => "שתי שניות", "other" => "{n} שניות"),
-        "minute" => Dict("one" => "דקה {n}", "two" => "שתי דקות", "other" => "{n} דקות"),
-        "hour" => Dict("one" => "שעה {n}", "two" => "שעתיים", "other" => "{n} שעות"),
-        "day" => Dict("one" => "יום {n}", "two" => "יומיים", "other" => "{n} ימים"),
-        "week" => Dict("one" => "שבוע {n}", "two" => "שבועיים", "other" => "{n} שבועות"),
-        "month" => Dict("one" => "חודש {n}", "two" => "חודשיים", "other" => "{n} חודשים"),
+        "second" => Dict("one" => "שנייה", "two" => "שתי שניות", "other" => "{n} שניות"),
+        "minute" => Dict("one" => "דקה", "two" => "שתי דקות", "other" => "{n} דקות"),
+        "hour" => Dict("one" => "שעה", "two" => "שעתיים", "other" => "{n} שעות"),
+        "day" => Dict("one" => "יום", "two" => "יומיים", "other" => "{n} ימים"),
+        "week" => Dict("one" => "שבוע", "two" => "שבועיים", "other" => "{n} שבועות"),
+        "month" => Dict("one" => "חודש", "two" => "חודשיים", "other" => "{n} חודשים"),
         "year" => Dict("one" => "שנה", "two" => "שנתיים", "other" => "{n} שנים"),
     ),
     half = "{0} וחצי",

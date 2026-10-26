@@ -25,7 +25,7 @@ let XH* = DateLocale(
   tomorrow: "ngomso",
   yesterday: "izolo",
   dayAfterTomorrow: some("ngomhlomunye"),
-  dayBeforeYesterday: some("kutshanje"),
+  dayBeforeYesterday: some("izolo elinye"),
   thisWeekday: some("le {weekday}"),
   nextWeekday: some("{weekday} ezayo"),
   lastWeekday: some("{weekday} edlulileyo"),

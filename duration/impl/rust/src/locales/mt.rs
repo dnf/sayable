@@ -33,14 +33,14 @@ pub fn locale() -> DurationLocale {
             ]),
             minute: UnitForms::plural(&[
                 (PluralCategory::One, "{n} minuta"),
-                (PluralCategory::Two, "{n} minuti"),
+                (PluralCategory::Two, "minutejn"),
                 (PluralCategory::Few, "{n} minuti"),
                 (PluralCategory::Many, "{n}-il minuta"),
                 (PluralCategory::Other, "{n} minuta"),
             ]),
             hour: UnitForms::plural(&[
                 (PluralCategory::One, "{n} siegħa"),
-                (PluralCategory::Two, "{n} sigħat"),
+                (PluralCategory::Two, "sagħtejn"),
                 (PluralCategory::Few, "{n} sigħat"),
                 (PluralCategory::Many, "{n}-il siegħa"),
                 (PluralCategory::Other, "{n} siegħa"),

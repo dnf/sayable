@@ -18,9 +18,9 @@
    :week {:type :simple :form "{n} wik"}
    :month {:type :simple :form "{n} mun"}
    :year {:type :simple :form "{n} yia"}
-   :half "{n} na hap"
+   :half "{0} na hap"
    :delimiter ", "
    :just-born "Nupela pikinini"
    :stages {:newborn {:type :neutral :label "Nupela pikinini"} :infant {:type :neutral :label "Pikinini"} :toddler {:type :neutral :label "Liklik pikinini"} :child {:type :neutral :label "Pikinini"} :teenager {:type :neutral :label "Yangpela"} :adult {:type :neutral :label "Bikpela man"}}
    :short {:day {:type :simple :form "{n} de"} :week {:type :simple :form "{n} wik"} :month {:type :simple :form "{n} mun"} :year {:type :simple :form "{n} yia"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

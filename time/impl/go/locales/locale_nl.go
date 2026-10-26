@@ -19,8 +19,8 @@ var NL = st.TimeLocale{
 	Clock: st.ClockConfig{
 		Hours:    [12]string{"twaalf", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen", "tien", "elf"},
 		Midnight: "middernacht",
-		Noon:     "middag",
-		Patterns: map[int]string{0: "{h} uur", 5: "vijf over {h}", 10: "tien over {h}", 15: "kwart over {h}", 20: "twintig over {h}", 25: "vijf voor half {next_h}", 30: "half {next_h}", 35: "vijf over half {next_h}", 40: "twintig voor {next_h}", 45: "kwart voor {next_h}", 50: "tien voor {next_h}", 55: "vijf voor {next_h}"},
+		Noon:     "twaalf uur 's middags",
+		Patterns: map[int]string{0: "{h} uur", 5: "vijf over {h}", 10: "tien over {h}", 15: "kwart over {h}", 20: "tien voor half {next_h}", 25: "vijf voor half {next_h}", 30: "half {next_h}", 35: "vijf over half {next_h}", 40: "tien over half {next_h}", 45: "kwart voor {next_h}", 50: "tien voor {next_h}", 55: "vijf voor {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

@@ -27,12 +27,12 @@
          "day" (hash "type" "simple" "form" "{n} ngày")
          "week" (hash "type" "simple" "form" "{n} tuần")
          "month" (hash "type" "simple" "form" "{n} tháng")
-         "year" (hash "type" "simple" "form" "{n} tuổi"))
+         "year" (hash "type" "simple" "form" "{n} năm"))
    "{0} rưỡi"
    ", "
    "vừa xong"
    "{0} trước"
-   "trong {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} giây") (hash "type" "simple" "form" "{n} phút") (hash "type" "simple" "form" "{n} giờ") (hash "type" "simple" "form" "{n} ngày") (hash "type" "simple" "form" "{n} tuần") (hash "type" "simple" "form" "{n} tháng") (hash "type" "simple" "form" "{n} năm") #f #f "{0} trước" "trong {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n} giây") (hash "type" "simple" "form" "{n} phút") (hash "type" "simple" "form" "{n} giờ") (hash "type" "simple" "form" "{n} ngày") (hash "type" "simple" "form" "{n} tuần") (hash "type" "simple" "form" "{n} tháng") (hash "type" "simple" "form" "{n} năm") "{n}½" "" "{0} trước" "trong {0}")
+   "{0} nữa"
+   (duration-compactness-override (hash "type" "simple" "form" "{n} giây") (hash "type" "simple" "form" "{n} phút") (hash "type" "simple" "form" "{n} giờ") (hash "type" "simple" "form" "{n} ngày") (hash "type" "simple" "form" "{n} tuần") (hash "type" "simple" "form" "{n} tháng") (hash "type" "simple" "form" "{n} năm") #f #f "{0} trước" "{0} nữa")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} giây") (hash "type" "simple" "form" "{n} phút") (hash "type" "simple" "form" "{n} giờ") (hash "type" "simple" "form" "{n} ngày") (hash "type" "simple" "form" "{n} tuần") (hash "type" "simple" "form" "{n} tháng") (hash "type" "simple" "form" "{n} năm") "{n}½" "" "{0} trước" "{0} nữa")
   ))

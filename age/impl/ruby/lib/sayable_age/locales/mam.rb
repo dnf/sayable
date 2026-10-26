@@ -17,7 +17,7 @@ module SayableAge
       plural: ->(n) { :other },
       units: {
         'day' => '{n} q\'ij',
-        'week' => '{n} xjaw',
+        'week' => '{n} seman',
         'month' => '{n} xjaw',
         'year' => '{n} ab\'q\'ii',
       },
@@ -35,7 +35,7 @@ module SayableAge
       short: CompactnessOverride.new(
         units: {
           'day' => '{n} q\'ij',
-          'week' => '{n} xjaw',
+          'week' => '{n} seman',
           'month' => '{n} xjaw',
           'year' => '{n} ab\'.',
         },
@@ -48,6 +48,7 @@ module SayableAge
           'year' => '{n}y',
         },
         delimiter: '',
+        half: '{n}½',
       ),
     )
   end

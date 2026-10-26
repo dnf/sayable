@@ -44,6 +44,7 @@ compact_sd_unit('kek', day, _, '{n}d').
 compact_sd_unit('kek', week, _, '{n}w').
 compact_sd_unit('kek', month, _, '{n}mo').
 compact_sd_unit('kek', year, _, '{n}y').
+compact_sd_half('kek', '{n}½').
 compact_sd_delimiter('kek', '').
 compact_sd_ago('kek', '{0} qakab\'').
 compact_sd_in_future('kek', 'chi {0}').

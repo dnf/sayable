@@ -15,13 +15,13 @@ proc locale_time_fi {} {
     set midnight {keskiyö}
     set noon {keskipäivä}
     set patterns [dict create \
-        0 "{h}" \
+        0 "kello {h}" \
         5 "viisi yli {h}" \
         10 "kymmenen yli {h}" \
         15 "vartti yli {h}" \
         20 "kaksikymmentä yli {h}" \
         25 "kaksikymmentäviisi yli {h}" \
-        30 "puoli yli {h}" \
+        30 "puoli {next_h}" \
         35 "kaksikymmentäviisi vaille {next_h}" \
         40 "kaksikymmentä vaille {next_h}" \
         45 "vartti vaille {next_h}" \

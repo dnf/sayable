@@ -31,7 +31,9 @@ sa_stage('gl', newborn, m, 'Recén nacido').
 sa_stage('gl', newborn, f, 'Recén nacida').
 sa_stage('gl', newborn, _, 'Recén nacido').
 sa_stage('gl', infant, _, 'Bebé').
-sa_stage('gl', toddler, _, 'Neno').
+sa_stage('gl', toddler, m, 'Neno pequeno').
+sa_stage('gl', toddler, f, 'Nena pequena').
+sa_stage('gl', toddler, _, 'Neno pequeno').
 sa_stage('gl', child, m, 'Neno').
 sa_stage('gl', child, f, 'Nena').
 sa_stage('gl', child, _, 'Neno').

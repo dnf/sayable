@@ -15,18 +15,18 @@ st_hours('ar', ['الثانية عشرة', 'الواحدة', 'الثانية', '
 st_midnight('ar', 'منتصف الليل').
 st_noon('ar', 'الظهر').
 
-st_pattern('ar', 0, '{h}:00').
-st_pattern('ar', 5, '{h}:05').
-st_pattern('ar', 10, '{h}:10').
-st_pattern('ar', 15, '{h}:15').
-st_pattern('ar', 20, '{h}:20').
-st_pattern('ar', 25, '{h}:25').
-st_pattern('ar', 30, '{h}:30').
-st_pattern('ar', 35, '{h}:35').
-st_pattern('ar', 40, '{h}:40').
-st_pattern('ar', 45, '{h}:45').
-st_pattern('ar', 50, '{h}:50').
-st_pattern('ar', 55, '{h}:55').
+st_pattern('ar', 0, 'الساعة {h}').
+st_pattern('ar', 5, '{h} وخمس دقائق').
+st_pattern('ar', 10, '{h} وعشر دقائق').
+st_pattern('ar', 15, '{h} والربع').
+st_pattern('ar', 20, '{h} والثلث').
+st_pattern('ar', 25, '{h} والنصف إلا خمس دقائق').
+st_pattern('ar', 30, '{h} والنصف').
+st_pattern('ar', 35, '{h} والنصف وخمس دقائق').
+st_pattern('ar', 40, '{next_h} إلا ثلثًا').
+st_pattern('ar', 45, '{next_h} إلا ربعًا').
+st_pattern('ar', 50, '{next_h} إلا عشر دقائق').
+st_pattern('ar', 55, '{next_h} إلا خمس دقائق').
 
 short_st_use24h('ar', false).
 short_st_format('ar', '{h}:{mm} {ampm}').

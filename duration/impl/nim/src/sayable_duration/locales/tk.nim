@@ -25,7 +25,7 @@ let TK* = DurationLocale(
     "month": simpleUnit("{n} aý"),
     "year": simpleUnit("{n} ýyl"),
   }.toOrderedTable,
-  half: "{0}½",
+  half: "{n} ýarym",
   delimiter: ", ",
   justNow: "häzir",
   ago: "{0} öň",

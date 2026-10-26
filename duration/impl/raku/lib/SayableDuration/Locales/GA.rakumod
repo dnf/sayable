@@ -25,7 +25,7 @@ our sub locale() {
         units => {
             second => { one => '{n} soicind', two => '{n} shoicind', few => '{n} shoicind', many => '{n} soicind', other => '{n} soicind' },
             minute => { one => '{n} nóiméad', two => '{n} nóiméad', few => '{n} nóiméad', many => '{n} nóiméad', other => '{n} nóiméad' },
-            hour => { one => '{n} uair', two => '{n} uair', few => '{n} huaire', many => '{n} n-uaire', other => '{n} uair' },
+            hour => { one => '{n} uair an chloig', two => '{n} uair an chloig', few => '{n} huaire an chloig', many => '{n} n-uaire an chloig', other => '{n} uair an chloig' },
             day => { one => '{n} lá', two => '{n} lá', few => '{n} lá', many => '{n} lá', other => '{n} lá' },
             week => { one => '{n} seachtain', two => '{n} sheachtain', few => '{n} seachtaine', many => '{n} seachtaine', other => '{n} seachtain' },
             month => { one => '{n} mhí', two => '{n} mhí', few => '{n} mhí', many => '{n} mí', other => '{n} mí' },

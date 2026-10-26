@@ -21,7 +21,7 @@ proc locale_date_zu {} {
     set tomorrow {kusasa}
     set yesterday {izolo}
     set day_after_tomorrow {ngomhlomunye}
-    set day_before_yesterday {usuku olwedlule izolo}
+    set day_before_yesterday {kuthangi}
     set this_weekday "leli {weekday}"
     set next_weekday "{weekday} elizayo"
     set last_weekday "{weekday} eledlule"

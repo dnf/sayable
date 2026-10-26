@@ -26,7 +26,7 @@ static const char *sd_short_weekdays_ro[7] = {
 const SdDateLocale sd_locale_ro = {
     "ro",
     { "ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie" },
-    { "duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă" },
+    { "duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",
@@ -36,7 +36,7 @@ const SdDateLocale sd_locale_ro = {
     "ieri",
     "poimâine",
     "alaltăieri",
-    "această {weekday}",
+    "{weekday} aceasta",
     "{weekday} viitoare",
     "{weekday} trecută",
     sd_months_in_date_ro,

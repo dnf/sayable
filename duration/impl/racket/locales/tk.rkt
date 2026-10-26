@@ -28,7 +28,7 @@
          "week" (hash "type" "simple" "form" "{n} hepde")
          "month" (hash "type" "simple" "form" "{n} aý")
          "year" (hash "type" "simple" "form" "{n} ýyl"))
-   "{0}½"
+   "{n} ýarym"
    ", "
    "häzir"
    "{0} öň"

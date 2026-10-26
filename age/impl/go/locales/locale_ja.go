@@ -47,5 +47,6 @@ var JA = sa.AgeLocale{
 		Week:  &sa.UnitForms{Simple: "{n}w"},
 		Month: &sa.UnitForms{Simple: "{n}m"},
 		Year:  &sa.UnitForms{Simple: "{n}y"},
+		Half:  strPtr("{n}½"),
 	},
 }

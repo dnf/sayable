@@ -11,21 +11,21 @@
 
 function locale_yo {
     $hours = @('méjìlá', 'kan', 'méjì', 'mẹ́ta', 'mẹ́rin', 'márùn-ún', 'mẹ́fà', 'méje', 'mẹ́jọ', 'mẹ́sàn-án', 'mẹ́wàá', 'mọ́kànlá')
-    $midnight = 'àárọ̀ òru'
-    $noon = 'ọ̀sán'
+    $midnight = 'ọ̀gànjọ́ òru'
+    $noon = 'ọ̀sán gangan'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'aago {h}'
+    $patterns[5] = 'aago {h} kọjá ìṣẹ́jú márùn-ún'
+    $patterns[10] = 'aago {h} kọjá ìṣẹ́jú mẹ́wàá'
+    $patterns[15] = 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún'
+    $patterns[20] = 'aago {h} kọjá ogún ìṣẹ́jú'
+    $patterns[25] = 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n'
+    $patterns[30] = 'aago {h} àbọ̀'
+    $patterns[35] = 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n'
+    $patterns[40] = 'aago {next_h} kù ogún ìṣẹ́jú'
+    $patterns[45] = 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún'
+    $patterns[50] = 'aago {next_h} kù ìṣẹ́jú mẹ́wàá'
+    $patterns[55] = 'aago {next_h} kù ìṣẹ́jú márùn-ún'
     $clock = @{
         hours = $hours
         midnight = $midnight

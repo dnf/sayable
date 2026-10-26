@@ -24,7 +24,7 @@ pub const locale_lo = AgeLocale{
 	month: simple_unit('{n} ເດືອນ')
 	year: simple_unit('{n} ປີ')
 	half: '{0}ເຄິ່ງ'
-	delimiter: ''
+	delimiter: ' '
 	just_born: 'ເກີດໃໝ່'
 	newborn: stage_neutral('ເດັກເກີດໃໝ່')
 	infant: stage_neutral('ເດັກນ້ອຍ')
@@ -53,5 +53,7 @@ pub const locale_lo = AgeLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 	}
 }

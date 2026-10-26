@@ -25,7 +25,7 @@ _sayableduration_locale_th() {
     _delimiter=' '
     _just_now='เมื่อกี้'
     _ago='{0}ที่แล้ว'
-    _in_future='ใน{0}'
+    _in_future='ในอีก {0}'
     _short_unit_second='{n} วิ'
     _short_unit_minute='{n} นาที'
     _short_unit_hour='{n} ชม.'
@@ -34,7 +34,7 @@ _sayableduration_locale_th() {
     _short_unit_month='{n} เดือน'
     _short_unit_year='{n} ปี'
     _short_ago='{0}ที่แล้ว'
-    _short_in_future='ใน{0}'
+    _short_in_future='ในอีก {0}'
     _compact_unit_second='{n}วิ'
     _compact_unit_minute='{n}นาที'
     _compact_unit_hour='{n}ชม.'
@@ -45,6 +45,6 @@ _sayableduration_locale_th() {
     _compact_half='{n}½'
     _compact_delimiter=''
     _compact_ago='{0}ที่แล้ว'
-    _compact_in_future='ใน{0}'
+    _compact_in_future='ในอีก {0}'
     _plural_func=_sayableduration_plural_th
 }

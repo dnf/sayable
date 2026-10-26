@@ -11,22 +11,22 @@
 
 % Comorian locale.
 
-st_hours('zdj', ['kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja']).
+st_hours('zdj', ['kumi na mbili', 'moja', 'mbili', 'ndraru', 'nne', 'ntsanu', 'sita', 'saba', 'nane', 'shenda', 'kumi', 'kumi na moja']).
 st_midnight('zdj', 'usiku wa manane').
 st_noon('zdj', 'adhuhuri').
 
-st_pattern('zdj', 0, '{h}:00').
-st_pattern('zdj', 5, '{h}:05').
-st_pattern('zdj', 10, '{h}:10').
-st_pattern('zdj', 15, '{h}:15').
-st_pattern('zdj', 20, '{h}:20').
-st_pattern('zdj', 25, '{h}:25').
-st_pattern('zdj', 30, '{h}:30').
-st_pattern('zdj', 35, '{h}:35').
-st_pattern('zdj', 40, '{h}:40').
-st_pattern('zdj', 45, '{h}:45').
-st_pattern('zdj', 50, '{h}:50').
-st_pattern('zdj', 55, '{h}:55').
+st_pattern('zdj', 0, 'saa {h}').
+st_pattern('zdj', 5, 'saa {h} na ntsanu').
+st_pattern('zdj', 10, 'saa {h} na kumi').
+st_pattern('zdj', 15, 'saa {h} na kumi na ntsanu').
+st_pattern('zdj', 20, 'saa {h} na shirini').
+st_pattern('zdj', 25, 'saa {h} na shirini na ntsanu').
+st_pattern('zdj', 30, 'saa {h} na nusu').
+st_pattern('zdj', 35, 'saa {h} na thalathini na ntsanu').
+st_pattern('zdj', 40, 'saa {h} na arubaini').
+st_pattern('zdj', 45, 'saa {h} na arubaini na ntsanu').
+st_pattern('zdj', 50, 'saa {h} na hamsini').
+st_pattern('zdj', 55, 'saa {h} na hamsini na ntsanu').
 
 short_st_use24h('zdj', false).
 short_st_format('zdj', '{h}:{mm} {ampm}').

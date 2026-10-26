@@ -30,7 +30,7 @@ sub locale {{
   delimiter => ' ',
   just_now => 'เมื่อกี้',
   ago => '{0}ที่แล้ว',
-  in_future => 'ใน{0}',
+  in_future => 'ในอีก {0}',
   short => {
     units => {
       second => '{n} วิ',
@@ -42,7 +42,7 @@ sub locale {{
       year => '{n} ปี',
     },
     ago => '{0}ที่แล้ว',
-    in_future => 'ใน{0}',
+    in_future => 'ในอีก {0}',
   },
   compact => {
     units => {
@@ -57,7 +57,7 @@ sub locale {{
     delimiter => '',
     half => '{n}½',
     ago => '{0}ที่แล้ว',
-    in_future => 'ใน{0}',
+    in_future => 'ในอีก {0}',
   },
 }}
 

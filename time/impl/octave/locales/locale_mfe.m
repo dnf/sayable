@@ -11,10 +11,10 @@
 
 function loc = locale_mfe()
   loc.code = 'mfe';
-  loc.clock.hours = {'douz', 'enn', 'de', 'trwa', 'kat', 'senk', 'sis', 'set', 'wit', 'nef', 'dis', 'onz'};
+  loc.clock.hours = {'douzer', 'enn er', 'dezer', 'trwazer', 'katrer', 'senker', 'sizer', 'seter', 'witer', 'never', 'dizer', 'onzer'};
   loc.clock.midnight = 'minwi';
   loc.clock.noon = 'midi';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} senk', "p10", '{h} dis', "p15", '{h} ekar', "p20", '{h} vin', "p25", '{h} vennsenk', "p30", '{h} edmi', "p35", '{next_h} mwin vennsenk', "p40", '{next_h} mwin vin', "p45", '{next_h} mwin kar', "p50", '{next_h} mwin dis', "p55", '{next_h} mwin senk');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

@@ -12,18 +12,18 @@
 (def locale
   {:code "wo"
    :plural (fn [_n] :other)
-   :units {:second "saa-yépp {n}"
-          :minute "simili {n}"
-          :hour "waxtu {n}"
-          :day "bés {n}"
-          :week "ayubés {n}"
-          :month "weer {n}"
-          :year "at {n}"}
+   :units {:second "{n} saa"
+          :minute "{n} simili"
+          :hour "{n} waxtu"
+          :day "{n} fan"
+          :week "{n} ayubés"
+          :month "{n} weer"
+          :year "{n} at"}
    :half "{0} ak genn-wàll"
    :delimiter ", "
    :just-now "léegi"
    :ago "{0} ci ginaaw"
-   :in-future "ci {0}"
-   :short {:units {:second "saa-y. {n}" :minute "sim. {n}" :hour "wax. {n}" :day "bés {n}" :week "ayub. {n}" :month "weer {n}" :year "at {n}"} :ago "{0} ci ginaaw" :in-future "ci {0}"}
-   :compact {:units {:second "saa {n}" :minute "sim {n}" :hour "wax {n}" :day "bés {n}" :week "ayub {n}" :month "weer {n}" :year "at {n}"} :half "{n}½" :delimiter "" :ago "{0} ci gin." :in-future "ci {0}"}
+   :in-future "fileek {0}"
+   :short {:units {:second "{n} saa" :minute "{n} sim." :hour "{n} wax." :day "{n} fan" :week "{n} ayub." :month "{n} weer" :year "{n} at"} :ago "{0} ci ginaaw" :in-future "fileek {0}"}
+   :compact {:units {:second "{n} saa" :minute "{n} sim" :hour "{n} wax" :day "{n} fan" :week "{n} ayub" :month "{n} weer" :year "{n} at"} :half "{n}½" :delimiter "" :ago "{0} ci gin." :in-future "fileek {0}"}
 })

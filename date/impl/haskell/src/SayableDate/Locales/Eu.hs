@@ -39,10 +39,13 @@ locale = DateLocale
         , "ostirala"
         , "larunbata"
         ]
-    , localeDayFormat = "{n}"
-    , localeDayFormatExceptions = []
-    , localeDatePattern = "{month}ren {day}"
-    , localeDatePatternWithYear = "{year}ko {month}ren {day}"
+    , localeDayFormat = "{n}a"
+    , localeDayFormatExceptions =
+        [ ("11", "{n}")
+        , ("31", "{n}")
+        ]
+    , localeDatePattern = "{month} {day}"
+    , localeDatePatternWithYear = "{year}ko {month} {day}"
     , localeToday = "gaur"
     , localeTomorrow = "bihar"
     , localeYesterday = "atzo"
@@ -51,7 +54,20 @@ locale = DateLocale
     , localeThisWeekday = Just "{weekday} hau"
     , localeNextWeekday = Just "hurrengo {weekday}"
     , localeLastWeekday = Just "aurreko {weekday}"
-    , localeMonthsInDate = Nothing
+    , localeMonthsInDate = Just $
+        [ "urtarrilaren"
+        , "otsailaren"
+        , "martxoaren"
+        , "apirilaren"
+        , "maiatzaren"
+        , "ekainaren"
+        , "uztailaren"
+        , "abuztuaren"
+        , "irailaren"
+        , "urriaren"
+        , "azaroaren"
+        , "abenduaren"
+        ]
     , localeShort = Just $
         CompactnessOverride
             { ovrMonths = Just $

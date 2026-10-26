@@ -22,7 +22,7 @@ let KRI* = AgeLocale(
     "month": simpleUnit("{n} mont"),
     "year": simpleUnit("{n} ia"),
   }.toOrderedTable,
-  half: "{n} na af",
+  half: "{0} ɛn af",
   delimiter: ", ",
   justBorn: "Nyubon bebi",
   stages: {
@@ -51,7 +51,7 @@ let KRI* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     justBorn: none(string),
   )),

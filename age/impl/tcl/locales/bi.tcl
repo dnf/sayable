@@ -21,7 +21,7 @@ proc locale_bi {} {
         month "{n} manis" \
         year "{n} yia" \
     ]
-    set half "{n} mo haf"
+    set half "{0} mo haf"
     set delimiter {, }
     set just_born {Niufala bebe}
     set stages [dict create \
@@ -47,6 +47,7 @@ proc locale_bi {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

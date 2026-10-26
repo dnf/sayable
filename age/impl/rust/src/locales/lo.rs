@@ -23,7 +23,7 @@ pub fn locale() -> AgeLocale {
             year: UnitForms::simple("{n} ປີ"),
         },
         half: "{0}ເຄິ່ງ".to_string(),
-        delimiter: "".to_string(),
+        delimiter: " ".to_string(),
         just_born: "ເກີດໃໝ່".to_string(),
         stages: Stages {
             newborn: StageLabel::Neutral("ເດັກເກີດໃໝ່".to_string()),
@@ -47,7 +47,7 @@ pub fn locale() -> AgeLocale {
             week: Some(UnitForms::simple("{n}w")),
             month: Some(UnitForms::simple("{n}m")),
             year: Some(UnitForms::simple("{n}y")),
-            half: None,
+            half: Some("{n}½".to_string()),
             delimiter: None,
             just_born: None,
         }),

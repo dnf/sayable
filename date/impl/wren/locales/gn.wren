@@ -23,7 +23,7 @@ class GNLocale {
   }
   static datePattern { "{day} {month}" }
   static datePatternWithYear { "{day} {month} {year}" }
-  static today { "ko'ágã" }
+  static today { "ko árape" }
   static tomorrow { "ko'ẽrõ" }
   static yesterday { "kuehe" }
   static dayAfterTomorrow { "ko'ẽrõ rire" }

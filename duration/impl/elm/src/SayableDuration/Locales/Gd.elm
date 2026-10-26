@@ -36,10 +36,10 @@ locale =
               , ( Other, "{n} mionaid" )
               ] )
             , ( "hour", Pluralized
-              [ ( One, "{n} uair" )
-              , ( Two, "{n} uair" )
-              , ( Few, "{n} uairean" )
-              , ( Other, "{n} uair" )
+              [ ( One, "{n} uair a thìde" )
+              , ( Two, "{n} uair a thìde" )
+              , ( Few, "{n} uairean a thìde" )
+              , ( Other, "{n} uair a thìde" )
               ] )
             , ( "day", Pluralized
               [ ( One, "{n} latha" )

@@ -28,7 +28,7 @@ proc locale_duration_km {} {
     set delimiter {, }
     set just_now {ឥឡូវនេះ}
     set ago "{0}មុន"
-    set in_future "ក្នុង{0}"
+    set in_future "{0}ទៀត"
     set short [dict create \
         units [dict create \
             second "{n} វិនាទី" \
@@ -40,7 +40,7 @@ proc locale_duration_km {} {
             year "{n} ឆ្នាំ" \
         ] \
         ago "{0}មុន" \
-        in_future "ក្នុង{0}" \
+        in_future "{0}ទៀត" \
     ]
     set compact [dict create \
         units [dict create \
@@ -55,7 +55,7 @@ proc locale_duration_km {} {
         half "{n}½" \
         delimiter {} \
         ago "{0}មុន" \
-        in_future "ក្នុង{0}" \
+        in_future "{0}ទៀត" \
     ]
     return [dict create \
         code $code \

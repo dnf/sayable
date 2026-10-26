@@ -25,7 +25,7 @@ locale() ->
         today = "nhasi",
         tomorrow = "mangwana",
         yesterday = "nezuro",
-        day_after_tomorrow = {just, "mangwanani"},
+        day_after_tomorrow = {just, "kuswera mangwana"},
         day_before_yesterday = {just, "nezuro rakapera"},
         this_weekday = {just, "{weekday} ino"},
         next_weekday = {just, "{weekday} inotevera"},

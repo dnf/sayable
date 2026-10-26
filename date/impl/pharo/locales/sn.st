@@ -25,7 +25,7 @@ sn
 	locale today: 'nhasi'.
 	locale tomorrow: 'mangwana'.
 	locale yesterday: 'nezuro'.
-	locale dayAfterTomorrow: 'mangwanani'.
+	locale dayAfterTomorrow: 'kuswera mangwana'.
 	locale dayBeforeYesterday: 'nezuro rakapera'.
 	locale thisWeekday: '{weekday} ino'.
 	locale nextWeekday: '{weekday} inotevera'.

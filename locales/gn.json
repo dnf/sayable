@@ -66,7 +66,7 @@
     "dayFormat": "{n}",
     "datePattern": "{day} {month}",
     "datePatternWithYear": "{day} {month} {year}",
-    "today": "ko'ágã",
+    "today": "ko árape",
     "tomorrow": "ko'ẽrõ",
     "yesterday": "kuehe",
     "dayAfterTomorrow": "ko'ẽrõ rire",
@@ -109,9 +109,9 @@
   },
   "duration": {
     "units": {
-      "second": "{n} aravo'i",
-      "minute": "{n} aravo",
-      "hour": "{n} aravo guasu",
+      "second": "{n} aravo'ive",
+      "minute": "{n} aravo'i",
+      "hour": "{n} aravo",
       "day": "{n} ára",
       "week": "{n} arapokõindy",
       "month": "{n} jasy",
@@ -124,9 +124,9 @@
     "inFuture": "{0} rire",
     "short": {
       "units": {
-        "second": "{n} ara'i",
-        "minute": "{n} ara",
-        "hour": "{n} ara g",
+        "second": "{n} aravo'ive",
+        "minute": "{n} aravo'i",
+        "hour": "{n} aravo",
         "day": "{n} ára",
         "week": "{n} ara",
         "month": "{n} jas",
@@ -183,7 +183,7 @@
         "pa",
         "pa peteĩ"
       ],
-      "midnight": "pyhareve",
+      "midnight": "pyharepyte",
       "noon": "asaje",
       "patterns": {
         "0": "{h}",
@@ -193,11 +193,11 @@
         "20": "{h} ha mokõi pa",
         "25": "{h} ha mokõi pa po",
         "30": "{h} ha mbohapy pa",
-        "35": "{next_h} mba'e mokõi pa po",
-        "40": "{next_h} mba'e mokõi pa",
-        "45": "{next_h} mba'e pa po",
-        "50": "{next_h} mba'e pa",
-        "55": "{next_h} mba'e po"
+        "35": "{h} ha mbohapy pa po",
+        "40": "{h} ha irundy pa",
+        "45": "{h} ha irundy pa po",
+        "50": "{h} ha po pa",
+        "55": "{h} ha po pa po"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Not a placeholder locale. Replaced only the dubious subtractive 35-55 patterns ('{next_h} mba'e ...', 'thing' as a minus word) with additive '{h} ha <minutes>' matching the existing 5-30 style. Left 0-30 as is, including '30': '{h} ha mbohapy pa' (literal thirty) rather than the audit's 'ha mbyte', which I could not confirm as the established form."
+    }
+  ]
 }

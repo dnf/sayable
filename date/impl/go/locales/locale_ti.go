@@ -27,7 +27,7 @@ var TI = sdate.DateLocale{
 	Yesterday: "ትማሊ",
 	DayAfterTomorrow:  strPtr("ድሕሪ ጽባሕ"),
 	DayBeforeYesterday: strPtr("ቅድሚ ትማሊ"),
-	ThisWeekday:       strPtr("እዛ {weekday}"),
+	ThisWeekday:       strPtr("እዚ {weekday}"),
 	NextWeekday:       strPtr("ዝመጽእ {weekday}"),
 	LastWeekday:       strPtr("ዝሓለፈ {weekday}"),
 	MonthsInDate: nil,

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [lg.json](../../locales/lg.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Swahili-style reckoning (Uganda: 9:00 = 'essaawa ssatu'), hours rotated by 6 and 11/12 written with elision (kkumi n'emu, kkumi n'ebbiri). Additive 'essaawa {h} n'eddakiika <minutes in words>' with 'n'ekitundu' for half. Tens abiri/asatu/ana/ataano with 'mu' for compounds (abiri mu ttaano). No 'to' construction used.
+
 ## Age
 
 ### Age formatting
@@ -71,11 +79,11 @@ Relative to Saturday, March 15, 2025.
 | Tomorrow             | enkya             | enkya   |
 | Yesterday            | jjo               | jjo     |
 | Day after tomorrow   | enkya ogwa        | 17/3    |
-| Day before yesterday | jjo edda          | 13/3    |
+| Day before yesterday | jjuuzi            | 13/3    |
 | This Thursday (+5)   | Lwakuna eno       | 20/3    |
-| Last Monday (-4)     | Lwakubiri eggudde | 11/3    |
-| Next Wednesday (+12) | Lwakuna eddirira  | 27/3    |
-| Same month (+20)     | 4 Apuli           | 4/4     |
+| Last Tuesday (-4)    | Lwakubiri eggudde | 11/3    |
+| Next Thursday (+12)  | Lwakuna eddirira  | 27/3    |
+| Same year (+20)      | 4 Apuli           | 4/4     |
 | Different year       | 10 Janwali 2026   | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal               | Short    | Compact |
-| --------------- | -------------------- | -------- | ------- |
-| Midnight        | ekiro eky'omu ttumbi | 12:00 AM | 12:00a  |
-| 1:00 AM         | emu:00               | 1:00 AM  | 1:00a   |
-| 5 past 9        | mwenda:05            | 9:05 AM  | 9:05a   |
-| Quarter past 10 | kkumi:15             | 10:15 AM | 10:15a  |
-| Half past 11    | kkumi na emu:30      | 11:30 AM | 11:30a  |
-| Noon            | ettuntu              | 12:00 PM | 12:00p  |
-| Quarter to 3    | bbiri:45             | 2:45 PM  | 2:45p   |
-| 5 to 6          | ttaano:55            | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | munaana:00           | 8:00 PM  | 8:00p   |
-| 10:30 PM        | kkumi:30             | 10:30 PM | 10:30p  |
-| 11:58 PM        | ekiro eky'omu ttumbi | 11:58 PM | 11:58p  |
+| Time            | Normal                                           | Short    | Compact |
+| --------------- | ------------------------------------------------ | -------- | ------- |
+| Midnight        | ekiro eky'omu ttumbi                             | 12:00 AM | 12:00a  |
+| 1:00 AM         | essaawa musanvu                                  | 1:00 AM  | 1:00a   |
+| 5 past 9        | essaawa ssatu n'eddakiika ttaano                 | 9:05 AM  | 9:05a   |
+| Quarter past 10 | essaawa nnya n'eddakiika kkumi na ttaano         | 10:15 AM | 10:15a  |
+| Half past 11    | essaawa ttaano n'ekitundu                        | 11:30 AM | 11:30a  |
+| Noon            | ettuntu                                          | 12:00 PM | 12:00p  |
+| Quarter to 3    | essaawa munaana n'eddakiika ana mu ttaano        | 2:45 PM  | 2:45p   |
+| 5 to 6          | essaawa kkumi n'emu n'eddakiika ataano mu ttaano | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | essaawa bbiri                                    | 8:00 PM  | 8:00p   |
+| 10:30 PM        | essaawa nnya n'ekitundu                          | 10:30 PM | 10:30p  |
+| 11:58 PM        | ekiro eky'omu ttumbi                             | 11:58 PM | 11:58p  |

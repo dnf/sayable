@@ -10,22 +10,22 @@
 # Source: locales/eu.json
 
 function locale_eu {
-    $hours = @('hamabi', 'bat', 'bi', 'hiru', 'lau', 'bost', 'sei', 'zazpi', 'zortzi', 'bederatzi', 'hamar', 'hamaika')
+    $hours = @('hamabiak', 'ordu bata', 'ordu biak', 'hirurak', 'laurak', 'bostak', 'seiak', 'zazpiak', 'zortziak', 'bederatziak', 'hamarrak', 'hamaikak')
     $midnight = 'gauerdia'
     $noon = 'eguerdia'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} eta bost'
+    $patterns[10] = '{h} eta hamar'
+    $patterns[15] = '{h} eta laurden'
+    $patterns[20] = '{h} eta hogei'
+    $patterns[25] = '{h} eta hogeita bost'
+    $patterns[30] = '{h} eta erdiak'
+    $patterns[35] = '{next_h} hogeita bost gutxi'
+    $patterns[40] = '{next_h} hogei gutxi'
+    $patterns[45] = '{next_h} laurden gutxi'
+    $patterns[50] = '{next_h} hamar gutxi'
+    $patterns[55] = '{next_h} bost gutxi'
     $clock = @{
         hours = $hours
         midnight = $midnight

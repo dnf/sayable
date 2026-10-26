@@ -11,7 +11,7 @@
 
 proc locale_date_bm {} {
     set code {bm}
-    set months [list {Zanwuye} {Fewuriye} {Marisi} {Awirili} {Mɛ} {Zuwɛn} {Zuluye} {Uti} {Sɛtanburu} {ɔkutɔburu} {Nowanbudu} {Desanburu}]
+    set months [list {Zanwuye} {Feburuye} {Marisi} {Awirili} {Mɛ} {Zuwɛn} {Zuluye} {Uti} {Sɛtanburu} {Ɔkutɔburu} {Nowanburu} {Desanburu}]
     set weekdays [list {Kari} {Ntɛnɛn} {Tarata} {Araba} {Alamisa} {Juma} {Sibiri}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
@@ -27,7 +27,7 @@ proc locale_date_bm {} {
     set last_weekday "{weekday} tɛmɛnen"
     set months_in_date ""
     set short [dict create \
-        months [list {Zan} {Few} {Mar} {Awi} {Mɛ} {Zuw} {Zul} {Uti} {Sɛt} {ɔku} {Now} {Des}] \
+        months [list {Zan} {Feb} {Mar} {Awi} {Mɛ} {Zuw} {Zul} {Uti} {Sɛt} {Ɔku} {Now} {Des}] \
         weekdays [list {Kar} {Ntɛ} {Tar} {Ara} {Ala} {Jum} {Sib}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \

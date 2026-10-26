@@ -52,9 +52,9 @@ locale =
     , yesterday = "dzulo"
     , dayAfterTomorrow = Just "mkucha"
     , dayBeforeYesterday = Just "dzana"
-    , thisWeekday = Just "{weekday} ino"
-    , nextWeekday = Just "{weekday} yotsatira"
-    , lastWeekday = Just "{weekday} yatha"
+    , thisWeekday = Just "{weekday} lino"
+    , nextWeekday = Just "{weekday} lotsatira"
+    , lastWeekday = Just "{weekday} latha"
     , monthsInDate = Nothing
     , short =
         Just

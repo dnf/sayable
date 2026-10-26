@@ -21,10 +21,10 @@
    :week {:type :pluralized :forms {:one "kiumia {n}" :other "kiumia {n}"}}
    :month {:type :pluralized :forms {:one "mwerĩ {n}" :other "mĩerĩ {n}"}}
    :year {:type :pluralized :forms {:one "mwaka {n}" :other "mĩaka {n}"}}
-   :half "{0} na nusu"
+   :half "{0} na nuthu"
    :delimiter ", "
-   :just-now "ũmũthĩ"
+   :just-now "rĩu"
    :ago "{0} ĩhĩtũkĩte"
-   :in-future "{0} ĩyothe"
-   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "ndag. {n}"} :hour {:type :pluralized :forms {:one "ithaa {n}" :other "mathaa {n}"}} :day {:type :pluralized :forms {:one "mũth. {n}" :other "mĩth. {n}"}} :week {:type :simple :form "kiu. {n}"} :month {:type :pluralized :forms {:one "mwerĩ {n}" :other "mĩerĩ {n}"}} :year {:type :pluralized :forms {:one "mwaka {n}" :other "mĩaka {n}"}} :half nil :delimiter nil :ago "{0} ĩhĩtũkĩte" :in-future "{0} ĩyothe"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} ĩhĩtũkĩte" :in-future "{0} ĩyothe"}})
+   :in-future "thutha wa {0}"
+   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "ndag. {n}"} :hour {:type :pluralized :forms {:one "ithaa {n}" :other "mathaa {n}"}} :day {:type :pluralized :forms {:one "mũth. {n}" :other "mĩth. {n}"}} :week {:type :simple :form "kiu. {n}"} :month {:type :pluralized :forms {:one "mwerĩ {n}" :other "mĩerĩ {n}"}} :year {:type :pluralized :forms {:one "mwaka {n}" :other "mĩaka {n}"}} :half nil :delimiter nil :ago "{0} ĩhĩtũkĩte" :in-future "thutha wa {0}"}
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} ĩhĩtũkĩte" :in-future "thutha wa {0}"}})

@@ -35,13 +35,13 @@ locale =
         , "decembrie"
         ]
     , weekdays =
-        [ "duminică"
-        , "luni"
-        , "marți"
-        , "miercuri"
-        , "joi"
-        , "vineri"
-        , "sâmbătă"
+        [ "duminica"
+        , "lunea"
+        , "marțea"
+        , "miercurea"
+        , "joia"
+        , "vinerea"
+        , "sâmbăta"
         ]
     , dayFormat = "{n}"
     , dayFormatExceptions = Dict.empty
@@ -52,7 +52,7 @@ locale =
     , yesterday = "ieri"
     , dayAfterTomorrow = Just "poimâine"
     , dayBeforeYesterday = Just "alaltăieri"
-    , thisWeekday = Just "această {weekday}"
+    , thisWeekday = Just "{weekday} aceasta"
     , nextWeekday = Just "{weekday} viitoare"
     , lastWeekday = Just "{weekday} trecută"
     , monthsInDate =

@@ -18,13 +18,13 @@ ha
 	locale code: 'ha'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. (Dictionary newFromPairs: { #one. '{n} daƙiƙa'. #other. '{n} daƙiƙoƙi' }).
-		'minute'. (Dictionary newFromPairs: { #one. '{n} minti'. #other. '{n} mintoci' }).
-		'hour'. (Dictionary newFromPairs: { #one. '{n} awa'. #other. '{n} awanni' }).
-		'day'. (Dictionary newFromPairs: { #one. '{n} kwana'. #other. '{n} kwanaki' }).
-		'week'. (Dictionary newFromPairs: { #one. '{n} mako'. #other. '{n} makonni' }).
-		'month'. (Dictionary newFromPairs: { #one. '{n} wata'. #other. '{n} watanni' }).
-		'year'. (Dictionary newFromPairs: { #one. '{n} shekara'. #other. '{n} shekaru' }).
+		'second'. (Dictionary newFromPairs: { #one. 'daƙiƙa {n}'. #other. 'daƙiƙoƙi {n}' }).
+		'minute'. (Dictionary newFromPairs: { #one. 'minti {n}'. #other. 'mintoci {n}' }).
+		'hour'. (Dictionary newFromPairs: { #one. 'awa {n}'. #other. 'awanni {n}' }).
+		'day'. (Dictionary newFromPairs: { #one. 'kwana {n}'. #other. 'kwanaki {n}' }).
+		'week'. (Dictionary newFromPairs: { #one. 'mako {n}'. #other. 'makonni {n}' }).
+		'month'. (Dictionary newFromPairs: { #one. 'wata {n}'. #other. 'watanni {n}' }).
+		'year'. (Dictionary newFromPairs: { #one. 'shekara {n}'. #other. 'shekaru {n}' }).
 	}).
 	locale half: '{n}½'.
 	locale delimiter: ', '.
@@ -33,13 +33,13 @@ ha
 	locale inFuture: 'cikin {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. '{n} daƙ.'.
-			'minute'. '{n} mnt.'.
-			'hour'. '{n} awa'.
-			'day'. '{n} kw.'.
-			'week'. '{n} mk.'.
-			'month'. '{n} wt.'.
-			'year'. '{n} shk.'.
+			'second'. 'daƙ. {n}'.
+			'minute'. 'mnt. {n}'.
+			'hour'. 'awa {n}'.
+			'day'. 'kw. {n}'.
+			'week'. 'mk. {n}'.
+			'month'. 'wt. {n}'.
+			'year'. 'shk. {n}'.
 		}).
 		#ago. '{0} da suka wuce'.
 		#inFuture. 'cikin {0}'.

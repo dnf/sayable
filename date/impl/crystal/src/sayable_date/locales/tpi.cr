@@ -22,7 +22,7 @@ module SayableDate
       tomorrow: "tumora",
       yesterday: "asde",
       day_after_tomorrow: "haptumora",
-      day_before_yesterday: "asde bipo",
+      day_before_yesterday: "hapasde",
       this_weekday: "dispela {weekday}",
       next_weekday: "{weekday} bihain",
       last_weekday: "{weekday} bipo",

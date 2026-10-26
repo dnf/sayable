@@ -25,11 +25,11 @@ sa_unit('sq', year, other, '{n} vjet').
 
 sa_half('sq', '{0} e gjysmë').
 sa_delimiter('sq', ', ').
-sa_just_born('sq', 'Sapolindur').
+sa_just_born('sq', 'I sapolindur').
 
-sa_stage('sq', newborn, m, 'Sapolindur').
-sa_stage('sq', newborn, f, 'Sapolindure').
-sa_stage('sq', newborn, _, 'Sapolindur').
+sa_stage('sq', newborn, m, 'I sapolindur').
+sa_stage('sq', newborn, f, 'E sapolindur').
+sa_stage('sq', newborn, _, 'I sapolindur').
 sa_stage('sq', infant, _, 'Foshnjë').
 sa_stage('sq', toddler, m, 'Fëmijë i vogël').
 sa_stage('sq', toddler, f, 'Fëmijë e vogël').

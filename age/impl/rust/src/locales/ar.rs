@@ -109,14 +109,7 @@ pub fn locale() -> AgeLocale {
         compact: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} ي")),
             week: Some(UnitForms::simple("{n} أ")),
-            month: Some(UnitForms::plural(&[
-                (PluralCategory::Zero, "{n} شهر"),
-                (PluralCategory::One, "شهر"),
-                (PluralCategory::Two, "شهران"),
-                (PluralCategory::Few, "{n} أشهر"),
-                (PluralCategory::Many, "{n} شهرًا"),
-                (PluralCategory::Other, "{n} شهر"),
-            ])),
+            month: Some(UnitForms::simple("{n} شهر")),
             year: Some(UnitForms::simple("{n} سنة")),
             half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),

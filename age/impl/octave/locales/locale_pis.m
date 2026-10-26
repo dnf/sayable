@@ -16,7 +16,7 @@ function loc = locale_pis()
   loc.units.week = '{n} wik';
   loc.units.month = '{n} manis';
   loc.units.year = '{n} yia';
-  loc.half = '{n} en haf';
+  loc.half = '{0} en haf';
   loc.delimiter = ', ';
   loc.just_born = 'Niufala bebi';
   loc.stages.newborn = 'Niufala bebi';
@@ -33,5 +33,6 @@ function loc = locale_pis()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
 endfunction

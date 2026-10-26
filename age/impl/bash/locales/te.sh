@@ -24,7 +24,7 @@ _sayableage_locale_te() {
     _unit_month_other='{n} నెలలు'
     _unit_year_one='{n} సంవత్సరం'
     _unit_year_other='{n} సంవత్సరాలు'
-    _half='{0}న్నర'
+    _half='{n}½'
     _delimiter=', '
     _just_born='నవజాత శిశువు'
     _stage_newborn='నవజాత శిశువు'

@@ -11,24 +11,24 @@
 
 % Ewe locale.
 
-sd_months('ee', ['Dzove', 'Dzodze', 'Tedoxe', 'Afɔfĩe', 'Damɛ', 'Masa', 'Siamlɔm', 'Dasiamime', 'Anyɔnyɔ', 'Kele', 'Adeɛmekpɔxe', 'Dzome']).
-sd_weekdays('ee', ['Kɔsiɖa', 'Dzoɖa', 'Braɖa', 'Kuɖa', 'Yawoɖa', 'Fiɖa', 'Memleɖa']).
+sd_months('ee', ['Dzove', 'Dzodze', 'Tedoxe', 'Afɔfĩe', 'Dama', 'Masa', 'Siamlɔm', 'Deasiamime', 'Anyɔnyɔ', 'Kele', 'Adeɛmekpɔxe', 'Dzome']).
+sd_weekdays('ee', ['Kɔsiɖa', 'Dzoɖa', 'Blaɖa', 'Kuɖa', 'Yawoɖa', 'Fiɖa', 'Memleɖa']).
 sd_day_format('ee', '{n}').
 
 sd_date_pattern('ee', '{day} {month}').
 sd_date_pattern_with_year('ee', '{day} {month} {year}').
 
 sd_today('ee', 'egbe').
-sd_tomorrow('ee', 'etsɔ').
-sd_yesterday('ee', 'etso').
-sd_day_after_tomorrow('ee', 'etsɔ megbe').
-sd_day_before_yesterday('ee', 'etso nyitsɔ').
+sd_tomorrow('ee', 'etsɔ si gbɔna').
+sd_yesterday('ee', 'etsɔ si va yi').
+sd_day_after_tomorrow('ee', 'nyitsɔ si gbɔna').
+sd_day_before_yesterday('ee', 'nyitsɔ si va yi').
 sd_this_weekday('ee', '{weekday} sia').
 sd_next_weekday('ee', '{weekday} si gbɔna').
 sd_last_weekday('ee', '{weekday} si va yi').
 
-short_sd_months('ee', ['Dzv', 'Dzd', 'Ted', 'Afɔ', 'Dam', 'Mas', 'Sia', 'Das', 'Any', 'Kel', 'Ade', 'Dzm']).
-short_sd_weekdays('ee', ['Kɔs', 'Dzo', 'Bra', 'Kuɖ', 'Yaw', 'Fiɖ', 'Mem']).
+short_sd_months('ee', ['Dzv', 'Dzd', 'Ted', 'Afɔ', 'Dam', 'Mas', 'Sia', 'Dea', 'Any', 'Kel', 'Ade', 'Dzm']).
+short_sd_weekdays('ee', ['Kɔs', 'Dzo', 'Bla', 'Kuɖ', 'Yaw', 'Fiɖ', 'Mem']).
 short_sd_day_format('ee', '{n}').
 short_sd_clear_exceptions('ee').
 short_sd_date_pattern('ee', '{day} {month}').

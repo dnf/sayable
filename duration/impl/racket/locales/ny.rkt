@@ -21,9 +21,9 @@
   (duration-locale
    "ny"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "simple" "form" "{n} sekondi")
-         "minute" (hash "type" "simple" "form" "{n} mphindi")
-         "hour" (hash "type" "simple" "form" "{n} ola")
+   (hash "second" (hash "type" "simple" "form" "sekondi {n}")
+         "minute" (hash "type" "simple" "form" "mphindi {n}")
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "ola {n}" "other" "maola {n}"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "tsiku {n}" "other" "masiku {n}"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "sabata {n}" "other" "masabata {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "mwezi {n}" "other" "miyezi {n}"))
@@ -33,6 +33,6 @@
    "tsopano"
    "{0} zapitazo"
    "mu {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "sek {n}") (hash "type" "simple" "form" "mph {n}") (hash "type" "simple" "form" "ola {n}") (hash "type" "pluralized" "forms" (hash "one" "tsiku {n}" "other" "mas {n}")) (hash "type" "pluralized" "forms" (hash "one" "sabata {n}" "other" "masab {n}")) (hash "type" "pluralized" "forms" (hash "one" "mwezi {n}" "other" "miyezi {n}")) (hash "type" "pluralized" "forms" (hash "one" "chaka {n}" "other" "zaka {n}")) #f #f "{0} zapitazo" "mu {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "sek {n}") (hash "type" "simple" "form" "mph {n}") (hash "type" "pluralized" "forms" (hash "one" "ola {n}" "other" "maola {n}")) (hash "type" "pluralized" "forms" (hash "one" "tsiku {n}" "other" "mas {n}")) (hash "type" "pluralized" "forms" (hash "one" "sabata {n}" "other" "masab {n}")) (hash "type" "pluralized" "forms" (hash "one" "mwezi {n}" "other" "miyezi {n}")) (hash "type" "pluralized" "forms" (hash "one" "chaka {n}" "other" "zaka {n}")) #f #f "{0} zapitazo" "mu {0}")
    (duration-compactness-override (hash "type" "simple" "form" "s {n}") (hash "type" "simple" "form" "m {n}") (hash "type" "simple" "form" "o {n}") (hash "type" "pluralized" "forms" (hash "one" "ts {n}" "other" "mas {n}")) (hash "type" "pluralized" "forms" (hash "one" "sab {n}" "other" "msb {n}")) (hash "type" "pluralized" "forms" (hash "one" "mw {n}" "other" "miy {n}")) (hash "type" "pluralized" "forms" (hash "one" "ch {n}" "other" "z {n}")) "{n}½" "" "{0} zapitazo" "mu {0}")
   ))

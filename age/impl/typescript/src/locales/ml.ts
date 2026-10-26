@@ -13,14 +13,14 @@ import type { AgeLocale } from '../locale.js';
 
 export const ml: AgeLocale = {
   code: 'ml',
-  plural: (n) => (n === 0 || n === 1 ? 'one' : 'other'),
+  plural: (n) => (n === 1 ? 'one' : 'other'),
   units: {
     day:   { one: '{n} ദിവസം', other: '{n} ദിവസങ്ങൾ' },
     week:  { one: '{n} ആഴ്ച', other: '{n} ആഴ്ചകൾ' },
     month: { one: '{n} മാസം', other: '{n} മാസങ്ങൾ' },
     year:  { one: '{n} വയസ്സ്', other: '{n} വയസ്സ്' },
   },
-  half: '{0} ര',
+  half: '{n}½',
   delimiter: ', ',
   justBorn: 'നവജാതശിശു',
   stages: {

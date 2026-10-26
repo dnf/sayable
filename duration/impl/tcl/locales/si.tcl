@@ -17,15 +17,15 @@ proc plural_si {n} {
 proc locale_duration_si {} {
     set code {si}
     set units [dict create \
-        second "{n} තත්පරය" \
-        minute "{n} මිනිත්තුව" \
-        hour "{n} පැය" \
+        second "තත්පර {n}" \
+        minute "මිනිත්තු {n}" \
+        hour "පැය {n}" \
         day [dict create one "දින {n}" other "දින {n}"] \
         week [dict create one "සති {n}" other "සති {n}"] \
         month [dict create one "මාස {n}" other "මාස {n}"] \
         year [dict create one "වසර {n}" other "වසර {n}"] \
     ]
-    set half "{0}යි භාගයයි"
+    set half "{n}½"
     set delimiter {, }
     set just_now {දැන්}
     set ago "{0}ට පෙර"

@@ -18,7 +18,7 @@ let locale : locale =
   ; week = Simple "{n} na macawa"
   ; month = Simple "{n} na vula"
   ; year = Simple "{n} na yabaki"
-  ; half = "{n} kei na levu ni wasei"
+  ; half = "{0} kei na veimama"
   ; delimiter = ", "
   ; just_born = "Gone vou"
   ; stages =
@@ -43,7 +43,7 @@ let locale : locale =
       ; ovr_week = Some (Simple "{n}w")
       ; ovr_month = Some (Simple "{n}m")
       ; ovr_year = Some (Simple "{n}y")
-      ; ovr_half = None
+      ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_just_born = None
       }

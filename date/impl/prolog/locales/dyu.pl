@@ -11,7 +11,7 @@
 
 % Dyula locale.
 
-sd_months('dyu', ['Zanwuyekalo', 'Feburuyekalo', 'Marisikalo', 'Awirilikalo', 'Mɛkalo', 'Zuwɛnkalo', 'Zuluyekalo', 'Utikalo', 'Sɛtanburukalo', 'Ɔkutɔburukalo', 'Nowanburdukalo', 'Desanburukalo']).
+sd_months('dyu', ['Zanwuyekalo', 'Feburuyekalo', 'Marisikalo', 'Awirilikalo', 'Mɛkalo', 'Zuwɛnkalo', 'Zuluyekalo', 'Utikalo', 'Sɛtanburukalo', 'Ɔkutɔburukalo', 'Nowanburukalo', 'Desanburukalo']).
 sd_weekdays('dyu', ['Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri']).
 sd_day_format('dyu', '{n}').
 

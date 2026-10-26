@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ny.json](../../locales/ny.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): 'ola <class-5 ordinal>' ('ola lachiwiri' = 2 o'clock; ordinals match the weekday names Lachiwiri/Lachitatu/...; 1 = loyamba, 6-9 = lachisanu ndi chimodzi/chiwiri/chitatu/chinayi, 10-12 = lakhumi, lakhumi ndi chimodzi, lakhumi ndi chiwiri). Minutes additive 'ndi mphindi zisanu/khumi/makumi awiri ...', :30 = 'ndi theka'. Colloquial Malawian speech often uses English loans ('hafu pasiti 2', '2 koloko'); the written form is the native construction.
+
 ## Age
 
 ### Age formatting
@@ -72,10 +80,10 @@ Relative to Saturday, March 15, 2025.
 | Yesterday            | dzulo               | dzulo   |
 | Day after tomorrow   | mkucha              | 17/3    |
 | Day before yesterday | dzana               | 13/3    |
-| This Thursday (+5)   | Lachinayi ino       | 20/3    |
-| Last Monday (-4)     | Lachiwiri yatha     | 11/3    |
-| Next Wednesday (+12) | Lachinayi yotsatira | 27/3    |
-| Same month (+20)     | 4 Epulo             | 4/4     |
+| This Thursday (+5)   | Lachinayi lino      | 20/3    |
+| Last Tuesday (-4)    | Lachiwiri latha     | 11/3    |
+| Next Thursday (+12)  | Lachinayi lotsatira | 27/3    |
+| Same year (+20)      | 4 Epulo             | 4/4     |
 | Different year       | 10 Januwale 2026    | 10/1/26 |
 
 ## Duration
@@ -85,16 +93,16 @@ Relative to Saturday, March 15, 2025.
 | Duration              | Normal                | Short            | Compact    |
 | --------------------- | --------------------- | ---------------- | ---------- |
 | 0 seconds             | tsopano               | tsopano          | tsopano    |
-| 1 second              | 1 sekondi             | sek 1            | s 1        |
-| 30 seconds            | 30 sekondi            | sek 30           | s 30       |
-| 1 minute              | 1 mphindi             | mph 1            | m 1        |
-| 2 minutes, 15 seconds | 2 mphindi, 15 sekondi | mph 2, sek 15    | m 2s 15    |
-| 5 minutes             | 5 mphindi             | mph 5            | m 5        |
-| 45 minutes            | 45 mphindi            | mph 45           | m 45       |
-| 1 hour                | 1 ola                 | ola 1            | o 1        |
-| 1½ hours              | 1½ ola                | ola 1½           | o 1½       |
-| 3 hours               | 3 ola                 | ola 3            | o 3        |
-| 6 hours               | 6 ola                 | ola 6            | o 6        |
+| 1 second              | sekondi 1             | sek 1            | s 1        |
+| 30 seconds            | sekondi 30            | sek 30           | s 30       |
+| 1 minute              | mphindi 1             | mph 1            | m 1        |
+| 2 minutes, 15 seconds | mphindi 2, sekondi 15 | mph 2, sek 15    | m 2s 15    |
+| 5 minutes             | mphindi 5             | mph 5            | m 5        |
+| 45 minutes            | mphindi 45            | mph 45           | m 45       |
+| 1 hour                | ola 1                 | ola 1            | o 1        |
+| 1½ hours              | maola 1½              | maola 1½         | o 1½       |
+| 3 hours               | maola 3               | maola 3          | o 3        |
+| 6 hours               | maola 6               | maola 6          | o 6        |
 | 1 day                 | tsiku 1               | tsiku 1          | ts 1       |
 | 1½ days               | masiku 1½             | mas 1½           | mas 1½     |
 | 3 days                | masiku 3              | mas 3            | mas 3      |
@@ -109,25 +117,25 @@ Relative to Saturday, March 15, 2025.
 
 | Offset        | Normal             | Compact      |
 | ------------- | ------------------ | ------------ |
-| 5 minutes ago | 5 mphindi zapitazo | m 5 zapitazo |
-| 2 hours ago   | 2 ola zapitazo     | o 2 zapitazo |
-| in 30 minutes | mu 30 mphindi      | mu m 30      |
-| in 3 hours    | mu 3 ola           | mu o 3       |
+| 5 minutes ago | mphindi 5 zapitazo | m 5 zapitazo |
+| 2 hours ago   | maola 2 zapitazo   | o 2 zapitazo |
+| in 30 minutes | mu mphindi 30      | mu m 30      |
+| in 3 hours    | mu maola 3         | mu o 3       |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal                | Short    | Compact |
-| --------------- | --------------------- | -------- | ------- |
-| Midnight        | pakati pausiku        | 12:00 AM | 12:00a  |
-| 1:00 AM         | imodzi:00             | 1:00 AM  | 1:00a   |
-| 5 past 9        | zisanu ndi zinayi:05  | 9:05 AM  | 9:05a   |
-| Quarter past 10 | khumi:15              | 10:15 AM | 10:15a  |
-| Half past 11    | khumi ndi chimodzi:30 | 11:30 AM | 11:30a  |
-| Noon            | usana                 | 12:00 PM | 12:00p  |
-| Quarter to 3    | ziwiri:45             | 2:45 PM  | 2:45p   |
-| 5 to 6          | zisanu:55             | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | zisanu ndi zitatu:00  | 8:00 PM  | 8:00p   |
-| 10:30 PM        | khumi:30              | 10:30 PM | 10:30p  |
-| 11:58 PM        | pakati pausiku        | 11:58 PM | 11:58p  |
+| Time            | Normal                                            | Short    | Compact |
+| --------------- | ------------------------------------------------- | -------- | ------- |
+| Midnight        | pakati pausiku                                    | 12:00 AM | 12:00a  |
+| 1:00 AM         | ola loyamba                                       | 1:00 AM  | 1:00a   |
+| 5 past 9        | ola lachisanu ndi chinayi ndi mphindi zisanu      | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ola lakhumi ndi mphindi khumi ndi zisanu          | 10:15 AM | 10:15a  |
+| Half past 11    | ola lakhumi ndi chimodzi ndi theka                | 11:30 AM | 11:30a  |
+| Noon            | usana                                             | 12:00 PM | 12:00p  |
+| Quarter to 3    | ola lachiwiri ndi mphindi makumi anayi ndi zisanu | 2:45 PM  | 2:45p   |
+| 5 to 6          | ola lachisanu ndi mphindi makumi asanu ndi zisanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ola lachisanu ndi chitatu                         | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ola lakhumi ndi theka                             | 10:30 PM | 10:30p  |
+| 11:58 PM        | pakati pausiku                                    | 11:58 PM | 11:58p  |

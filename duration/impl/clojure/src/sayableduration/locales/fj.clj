@@ -21,10 +21,10 @@
    :week {:type :simple :form "{n} na macawa"}
    :month {:type :simple :form "{n} na vula"}
    :year {:type :simple :form "{n} na yabaki"}
-   :half "{n} kei na levu ni wasei"
+   :half "{0} kei na veimama"
    :delimiter ", "
    :just-now "edaidai ga"
    :ago "{0} sa oti"
    :in-future "ena {0}"
    :short {:second {:type :simple :form "{n} sek"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} aua"} :day {:type :simple :form "{n} siga"} :week {:type :simple :form "{n} mac"} :month {:type :simple :form "{n} vul"} :year {:type :simple :form "{n} yab"} :half nil :delimiter nil :ago "{0} sa oti" :in-future "ena {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} sa oti" :in-future "ena {0}"}})
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} sa oti" :in-future "ena {0}"}})

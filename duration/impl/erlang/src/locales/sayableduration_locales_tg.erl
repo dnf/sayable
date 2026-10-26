@@ -24,7 +24,7 @@ locale() ->
         week = {simple, "{n} ҳафта"},
         month = {simple, "{n} моҳ"},
         year = {simple, "{n} сол"},
-        half = "{0} ним",
+        half = "{0}у ним",
         delimiter = ", ",
         just_now = "ҳамин ҳоло",
         ago = "{0} пеш",

@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [sar.json](../../locales/sar.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort, very low confidence: 'lɛɛr ɗìi' (2:00), 'lɛɛr ɗìi kɨ̀ minít mɔ̀ɔ́' (2:10), 'lɛɛr ɗìi kɩ̀ ndá̰ŋ' (2:30). lɛɛr/minít/'kɩ̀ ndá̰ŋ' are the locale's own hour/minute/half words; existing numerals kept, 11 made consistent with 12 ('mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá'). Doubts: the Sara variety these numerals belong to is unclear to me (Sar/Mbay use kára, jōó, mɨ̀tá...); 'kɨ̀' as the hour-minute connector, 'gɨ́dɛ̀ ɓà' as 'plus' (taken from the existing 12) and tens formed as 'mɔ̀ɔ́ ɗìi' (ten-two = 20) are guesses; needs a speaker.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | gɨ́nā gɨ́nā     | 17/3    |
 | Day before yesterday | ɗáà ɗáà         | 13/3    |
 | This Thursday (+5)   | Alkamisa nè     | 20/3    |
-| Last Monday (-4)     | Talata ɓòo kɔ   | 11/3    |
-| Next Wednesday (+12) | Alkamisa ga     | 27/3    |
-| Same month (+20)     | 4 Avriil        | 4/4     |
+| Last Tuesday (-4)    | Talata ɓòo kɔ   | 11/3    |
+| Next Thursday (+12)  | Alkamisa ga     | 27/3    |
+| Same year (+20)      | 4 Avriil        | 4/4     |
 | Different year       | 10 Zanviye 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | badɔ            | 12:00 AM | 12:00a  |
-| 1:00 AM         | kɨ̀ndá:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | mɨ̀ndɨ̀ sɔ̀:05  | 9:05 AM  | 9:05a   |
-| Quarter past 10 | mɔ̀ɔ́:15        | 10:15 AM | 10:15a  |
-| Half past 11    | mɔ̀ɔ́ kɨ̀ndá:30 | 11:30 AM | 11:30a  |
-| Noon            | mbɔr ndɔ        | 12:00 PM | 12:00p  |
-| Quarter to 3    | ɗìi:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | mɨ̀ndɨ̀:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | mɨ̀ndɨ̀ mùtá:00 | 8:00 PM  | 8:00p   |
-| 10:30 PM        | mɔ̀ɔ́:30        | 10:30 PM | 10:30p  |
-| 11:58 PM        | badɔ            | 11:58 PM | 11:58p  |
+| Time            | Normal                                                 | Short    | Compact |
+| --------------- | ------------------------------------------------------ | -------- | ------- |
+| Midnight        | badɔ                                                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | lɛɛr kɨ̀ndá                                            | 1:00 AM  | 1:00a   |
+| 5 past 9        | lɛɛr mɨ̀ndɨ̀ sɔ̀ kɨ̀ minít mɨ̀ndɨ̀                     | 9:05 AM  | 9:05a   |
+| Quarter past 10 | lɛɛr mɔ̀ɔ́ kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀           | 10:15 AM | 10:15a  |
+| Half past 11    | lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá kɩ̀ ndá̰ŋ                  | 11:30 AM | 11:30a  |
+| Noon            | mbɔr ndɔ                                               | 12:00 PM | 12:00p  |
+| Quarter to 3    | lɛɛr ɗìi kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀         | 2:45 PM  | 2:45p   |
+| 5 to 6          | lɛɛr mɨ̀ndɨ̀ kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀ | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | lɛɛr mɨ̀ndɨ̀ mùtá                                      | 8:00 PM  | 8:00p   |
+| 10:30 PM        | lɛɛr mɔ̀ɔ́ kɩ̀ ndá̰ŋ                                   | 10:30 PM | 10:30p  |
+| 11:58 PM        | badɔ                                                   | 11:58 PM | 11:58p  |

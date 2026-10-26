@@ -29,9 +29,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 tahun, 1 bulan | 2 thn, 1 bln   | 2 thn1 bln |
 | 2 years, 6 months | 2 tahun, 6 bulan | 2 thn, 6 bln   | 2 thn6 bln |
 | 3 years           | 3 tahun          | 3 thn          | 3 thn      |
-| 3½ years          | 3 tahun setengah | 3 thn setengah | 3½ thn     |
+| 3½ years          | 3 setengah tahun | 3 setengah thn | 3½ thn     |
 | 5 years           | 5 tahun          | 5 thn          | 5 thn      |
-| 5½ years          | 5 tahun setengah | 5 thn setengah | 5½ thn     |
+| 5½ years          | 5 setengah tahun | 5 setengah thn | 5½ thn     |
 | 7 years           | 7 tahun          | 7 thn          | 7 thn      |
 | 10 years          | 10 tahun         | 10 thn         | 10 thn     |
 | 18 years          | 18 tahun         | 18 thn         | 18 thn     |
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | lusa            | 17/3     |
 | Day before yesterday | kemarin lusa    | 13/3     |
 | This Thursday (+5)   | Kamis ini       | 20/3     |
-| Last Monday (-4)     | Selasa lalu     | 11/3     |
-| Next Wednesday (+12) | Kamis depan     | 27/3     |
-| Same month (+20)     | 4 April         | 4/4      |
+| Last Tuesday (-4)    | Selasa lalu     | 11/3     |
+| Next Thursday (+12)  | Kamis depan     | 27/3     |
+| Same year (+20)      | 4 April         | 4/4      |
 | Different year       | 10 Januari 2026 | 10/1/26  |
 
 ## Duration
@@ -92,11 +92,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 menit           | 5 mnt         | 5 mnt       |
 | 45 minutes            | 45 menit          | 45 mnt        | 45 mnt      |
 | 1 hour                | 1 jam             | 1 j           | 1 j         |
-| 1½ hours              | 1 jam setengah    | 1 j setengah  | 1½ j        |
+| 1½ hours              | 1 setengah jam    | 1 setengah j  | 1½ j        |
 | 3 hours               | 3 jam             | 3 j           | 3 j         |
 | 6 hours               | 6 jam             | 6 j           | 6 j         |
 | 1 day                 | 1 hari            | 1 hr          | 1 hr        |
-| 1½ days               | 1 hari setengah   | 1 hr setengah | 1½ hr       |
+| 1½ days               | 1 setengah hari   | 1 setengah hr | 1½ hr       |
 | 3 days                | 3 hari            | 3 hr          | 3 hr        |
 | 1 week                | 1 minggu          | 1 mgg         | 1 mgg       |
 | 2 weeks, 3 days       | 2 minggu, 3 hari  | 2 mgg, 3 hr   | 2 mgg3 hr   |
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal                    | Short | Compact |
-| --------------- | ------------------------- | ----- | ------- |
-| Midnight        | tengah malam              | 0.00  | 0.00    |
-| 1:00 AM         | pukul satu                | 1.00  | 1.00    |
-| 5 past 9        | lima lewat sembilan       | 9.05  | 9.05    |
-| Quarter past 10 | seperempat lewat sepuluh  | 10.15 | 10.15   |
-| Half past 11    | setengah lewat sebelas    | 11.30 | 11.30   |
-| Noon            | tengah hari               | 12.00 | 12.00   |
-| Quarter to 3    | seperempat menjelang tiga | 14.45 | 14.45   |
-| 5 to 6          | lima menjelang enam       | 17.55 | 17.55   |
-| 8 o'clock PM    | pukul delapan             | 20.00 | 20.00   |
-| 10:30 PM        | setengah lewat sepuluh    | 22.30 | 22.30   |
-| 11:58 PM        | tengah malam              | 23.58 | 23.58   |
+| Time            | Normal                         | Short | Compact |
+| --------------- | ------------------------------ | ----- | ------- |
+| Midnight        | tengah malam                   | 0.00  | 0.00    |
+| 1:00 AM         | pukul satu                     | 1.00  | 1.00    |
+| 5 past 9        | pukul sembilan lewat lima      | 9.05  | 9.05    |
+| Quarter past 10 | pukul sepuluh lewat seperempat | 10.15 | 10.15   |
+| Half past 11    | pukul setengah dua belas       | 11.30 | 11.30   |
+| Noon            | tengah hari                    | 12.00 | 12.00   |
+| Quarter to 3    | pukul tiga kurang seperempat   | 14.45 | 14.45   |
+| 5 to 6          | pukul enam kurang lima         | 17.55 | 17.55   |
+| 8 o'clock PM    | pukul delapan                  | 20.00 | 20.00   |
+| 10:30 PM        | pukul setengah sebelas         | 22.30 | 22.30   |
+| 11:58 PM        | tengah malam                   | 23.58 | 23.58   |

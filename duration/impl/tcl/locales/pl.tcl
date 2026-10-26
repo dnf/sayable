@@ -20,13 +20,13 @@ proc plural_pl {n} {
 proc locale_duration_pl {} {
     set code {pl}
     set units [dict create \
-        second [dict create one "{n} sekunda" few "{n} sekundy" many "{n} sekund" other "{n} sekund"] \
-        minute [dict create one "{n} minuta" few "{n} minuty" many "{n} minut" other "{n} minut"] \
-        hour [dict create one "{n} godzina" few "{n} godziny" many "{n} godzin" other "{n} godzin"] \
-        day [dict create one "{n} dzień" few "{n} dni" many "{n} dni" other "{n} dni"] \
-        week [dict create one "{n} tydzień" few "{n} tygodnie" many "{n} tygodni" other "{n} tygodni"] \
-        month [dict create one "{n} miesiąc" few "{n} miesiące" many "{n} miesięcy" other "{n} miesięcy"] \
-        year [dict create one "{n} rok" few "{n} lata" many "{n} lat" other "{n} lat"] \
+        second [dict create one "{n} sekunda" few "{n} sekundy" many "{n} sekund" other "{n} sekundy"] \
+        minute [dict create one "{n} minuta" few "{n} minuty" many "{n} minut" other "{n} minuty"] \
+        hour [dict create one "{n} godzina" few "{n} godziny" many "{n} godzin" other "{n} godziny"] \
+        day [dict create one "{n} dzień" few "{n} dni" many "{n} dni" other "{n} dnia"] \
+        week [dict create one "{n} tydzień" few "{n} tygodnie" many "{n} tygodni" other "{n} tygodnia"] \
+        month [dict create one "{n} miesiąc" few "{n} miesiące" many "{n} miesięcy" other "{n} miesiąca"] \
+        year [dict create one "{n} rok" few "{n} lata" many "{n} lat" other "{n} roku"] \
     ]
     set half "{n} i pół"
     set delimiter {, }

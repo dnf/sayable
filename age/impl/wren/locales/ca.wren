@@ -20,7 +20,7 @@ class CALocale {
       "year": {"one": "{n} any", "other": "{n} anys"},
     }
   }
-  static half { "{n} i mig" }
+  static half { "{0} i mig" }
   static delimiter { ", " }
   static justBorn { "Nounat" }
   static stages {

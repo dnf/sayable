@@ -28,12 +28,12 @@ sa_delimiter('tzm', ', ').
 sa_just_born('tzm', 'Iɣ d illul').
 
 sa_stage('tzm', newborn, _, 'Iɣ d illul').
-sa_stage('tzm', infant, _, 'Agellid').
+sa_stage('tzm', infant, _, 'Llufan').
 sa_stage('tzm', toddler, m, 'Aḥenjir').
 sa_stage('tzm', toddler, f, 'Taḥenjirt').
 sa_stage('tzm', toddler, _, 'Aḥenjir').
 sa_stage('tzm', child, m, 'Afrux').
-sa_stage('tzm', child, f, 'Tafruxṭ').
+sa_stage('tzm', child, f, 'Tafruxt').
 sa_stage('tzm', child, _, 'Afrux').
 sa_stage('tzm', teenager, m, 'Aɛrim').
 sa_stage('tzm', teenager, f, 'Taɛrimt').
@@ -42,10 +42,14 @@ sa_stage('tzm', adult, m, 'Argaz').
 sa_stage('tzm', adult, f, 'Tamṭṭuṭ').
 sa_stage('tzm', adult, _, 'Argaz').
 
-short_sa_unit('tzm', day, _, '{n} d').
-short_sa_unit('tzm', week, _, '{n} wk').
-short_sa_unit('tzm', month, _, '{n} mo').
-short_sa_unit('tzm', year, _, '{n} yr').
+short_sa_unit('tzm', day, one, '{n} ass').
+short_sa_unit('tzm', day, other, '{n} ussan').
+short_sa_unit('tzm', week, one, '{n} imalass').
+short_sa_unit('tzm', week, other, '{n} imalassn').
+short_sa_unit('tzm', month, one, '{n} ayyur').
+short_sa_unit('tzm', month, other, '{n} ayyurn').
+short_sa_unit('tzm', year, one, '{n} aseggas').
+short_sa_unit('tzm', year, other, '{n} iseggasen').
 
 compact_sa_unit('tzm', day, _, '{n}d').
 compact_sa_unit('tzm', week, _, '{n}w').

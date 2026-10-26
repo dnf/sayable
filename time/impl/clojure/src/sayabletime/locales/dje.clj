@@ -13,9 +13,9 @@
 
 (def locale
   {:code "dje"
-   :clock {:hours ["way cindi" "afoo" "ihinka" "ihinza" "itaaci" "igu" "iddu" "iyye" "isahkay" "iyegga" "iwoy" "iwoy cindi"]
+   :clock {:hours ["iway cindi hinka" "fo" "hinka" "hinza" "taaci" "gu" "iddu" "iyye" "ahakku" "yagga" "iway" "iway cindi fo"]
            :midnight "cin beri"
            :noon "zaari gaaham"
-           :patterns {0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"}}
+           :patterns {0 "guuru {h}" 5 "guuru {h} nda miniti gu" 10 "guuru {h} nda miniti iway" 15 "guuru {h} nda miniti iway cindi gu" 20 "guuru {h} nda miniti waranka" 25 "guuru {h} nda miniti waranka cindi gu" 30 "guuru {h} nda jare" 35 "guuru {h} nda miniti waranza cindi gu" 40 "guuru {h} nda miniti waytaaci" 45 "guuru {h} nda miniti waytaaci cindi gu" 50 "guuru {h} nda miniti waygu" 55 "guuru {h} nda miniti waygu cindi gu"}}
    :short {:clock {:use-24h false :am-pm ["AM" "PM"] :format "{h}:{mm} {ampm}"}}
    :compact {:clock {:use-24h false :am-pm ["a" "p"] :format "{h}:{mm}{ampm}"}}})

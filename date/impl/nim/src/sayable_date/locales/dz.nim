@@ -26,7 +26,7 @@ let DZ* = DateLocale(
   yesterday: "ཁ་ཙ",
   dayAfterTomorrow: some("གནངས་ཚེ"),
   dayBeforeYesterday: some("ཁ་ཉིམ"),
-  thisWeekday: some("འདི་ {weekday}"),
+  thisWeekday: some("{weekday} འདི"),
   nextWeekday: some("{weekday} ཤུལ་མ"),
   lastWeekday: some("{weekday} ཧེ་མ"),
   monthsInDate: none(seq[string]),

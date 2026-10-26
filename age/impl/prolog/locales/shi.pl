@@ -33,12 +33,12 @@ sa_delimiter('shi', ', ').
 sa_just_born('shi', 'Iɣ d illul').
 
 sa_stage('shi', newborn, _, 'Iɣ d illul').
-sa_stage('shi', infant, _, 'Agellid').
+sa_stage('shi', infant, _, 'Llufan').
 sa_stage('shi', toddler, m, 'Aḥenjir').
 sa_stage('shi', toddler, f, 'Taḥenjirt').
 sa_stage('shi', toddler, _, 'Aḥenjir').
 sa_stage('shi', child, m, 'Afrux').
-sa_stage('shi', child, f, 'Tafruxṭ').
+sa_stage('shi', child, f, 'Tafruxt').
 sa_stage('shi', child, _, 'Afrux').
 sa_stage('shi', teenager, m, 'Aɛrim').
 sa_stage('shi', teenager, f, 'Taɛrimt').
@@ -47,10 +47,18 @@ sa_stage('shi', adult, m, 'Argaz').
 sa_stage('shi', adult, f, 'Tamṭṭuṭ').
 sa_stage('shi', adult, _, 'Argaz').
 
-short_sa_unit('shi', day, _, '{n} d').
-short_sa_unit('shi', week, _, '{n} wk').
-short_sa_unit('shi', month, _, '{n} mo').
-short_sa_unit('shi', year, _, '{n} yr').
+short_sa_unit('shi', day, one, '{n} ass').
+short_sa_unit('shi', day, few, '{n} ussan').
+short_sa_unit('shi', day, other, '{n} ass').
+short_sa_unit('shi', week, one, '{n} imalass').
+short_sa_unit('shi', week, few, '{n} imalassn').
+short_sa_unit('shi', week, other, '{n} imalass').
+short_sa_unit('shi', month, one, '{n} ayyur').
+short_sa_unit('shi', month, few, '{n} ayyurn').
+short_sa_unit('shi', month, other, '{n} ayyur').
+short_sa_unit('shi', year, one, '{n} aseggas').
+short_sa_unit('shi', year, few, '{n} iseggasen').
+short_sa_unit('shi', year, other, '{n} aseggas').
 
 compact_sa_unit('shi', day, _, '{n}d').
 compact_sa_unit('shi', week, _, '{n}w').

@@ -17,7 +17,7 @@ const StTimeLocale st_locale_tig = {
         { "ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante" },
         "nəs-leyla",
         "qayḥ",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "saʿa {h}", "saʿa {h} we ḥamməste", "saʿa {h} we ʿasərte", "saʿa {h} we ʿasərte we ḥamməste", "saʿa {h} we ʿəsra", "saʿa {h} we ʿəsra we ḥamməste", "saʿa {h} we nəs", "saʿa {h} we salasa we ḥamməste", "saʿa {h} we arbaʿa", "saʿa {h} we arbaʿa we ḥamməste", "saʿa {h} we ḥamsa", "saʿa {h} we ḥamsa we ḥamməste" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

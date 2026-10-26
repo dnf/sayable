@@ -17,7 +17,7 @@ const StTimeLocale st_locale_su = {
         { "dua welas", "hiji", "dua", "tilu", "opat", "lima", "genep", "tujuh", "dalapan", "salapan", "sapuluh", "sabelas" },
         "tengah peuting",
         "beurang",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "jam {h}", "jam {h} leuwih lima menit", "jam {h} leuwih sapuluh menit", "jam {h} leuwih saparapat", "jam {h} leuwih dua puluh menit", "jam {h} leuwih dua puluh lima menit", "satengah {next_h}", "jam {next_h} kurang dua puluh lima menit", "jam {next_h} kurang dua puluh menit", "jam {next_h} kurang saparapat", "jam {next_h} kurang sapuluh menit", "jam {next_h} kurang lima menit" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

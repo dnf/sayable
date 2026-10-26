@@ -27,10 +27,10 @@ sub locale {{
     year => '{n} ປີ',
   },
   half => '{0}ເຄິ່ງ',
-  delimiter => '',
+  delimiter => ' ',
   just_now => 'ຫາກໍ',
   ago => '{0} ກ່ອນ',
-  in_future => 'ໃນ {0}',
+  in_future => 'ໃນອີກ {0}',
   short => {
     units => {
       second => '{n} ວິ.',
@@ -42,7 +42,7 @@ sub locale {{
       year => '{n} ປ.',
     },
     ago => '{0} ກ່ອນ',
-    in_future => 'ໃນ {0}',
+    in_future => 'ໃນອີກ {0}',
   },
   compact => {
     units => {
@@ -51,13 +51,13 @@ sub locale {{
       hour => '{n}h',
       day => '{n}d',
       week => '{n}w',
-      month => '{n}m',
+      month => '{n}mo',
       year => '{n}y',
     },
     delimiter => '',
     half => '{n}½',
     ago => '{0} ກ່ອນ',
-    in_future => 'ໃນ {0}',
+    in_future => 'ໃນອີກ {0}',
   },
 }}
 

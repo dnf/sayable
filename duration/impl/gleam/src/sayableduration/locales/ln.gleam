@@ -16,9 +16,9 @@ pub fn locale() -> types.DurationLocale {
     code: "ln",
     plural: fn(n) { case n { 0 | 1 -> types.One _ -> types.Other } },
     units: [
-      #("second", types.SimpleUnit("{n} segɔnde")),
-      #("minute", types.SimpleUnit("{n} moniti")),
-      #("hour", types.SimpleUnit("{n} ngonga")),
+      #("second", types.SimpleUnit("segɔnde {n}")),
+      #("minute", types.SimpleUnit("miniti {n}")),
+      #("hour", types.SimpleUnit("ngonga {n}")),
       #("day", types.PluralUnit([#(types.One, "mokolo {n}"), #(types.Other, "mikolo {n}")])),
       #("week", types.PluralUnit([#(types.One, "poso {n}"), #(types.Other, "baposo {n}")])),
       #("month", types.PluralUnit([#(types.One, "sanza {n}"), #(types.Other, "basanza {n}")])),

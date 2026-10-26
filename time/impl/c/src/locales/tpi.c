@@ -17,7 +17,7 @@ const StTimeLocale st_locale_tpi = {
         { "twelp", "wan", "tu", "tri", "foa", "faiv", "sikis", "seven", "et", "nain", "ten", "eleven" },
         "biknait",
         "belo",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} kilok", "faiv minit pas {h}", "ten minit pas {h}", "kwata pas {h}", "twenti minit pas {h}", "twenti faiv minit pas {h}", "hap pas {h}", "teti faiv minit pas {h}", "foti minit pas {h}", "foti faiv minit pas {h}", "fifti minit pas {h}", "fifti faiv minit pas {h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

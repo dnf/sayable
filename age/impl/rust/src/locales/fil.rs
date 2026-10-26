@@ -31,7 +31,7 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Batang paslit".to_string()),
             child: StageLabel::Neutral("Bata".to_string()),
             teenager: StageLabel::Neutral("Tinedyer".to_string()),
-            adult: StageLabel::Neutral("Matanda".to_string()),
+            adult: StageLabel::Neutral("Adulto".to_string()),
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} araw")),

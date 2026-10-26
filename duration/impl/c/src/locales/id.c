@@ -28,7 +28,7 @@ const SduDurationLocale sdu_locale_id = {
         { "{n} bulan", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} tahun", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{0} setengah", ", ",
+    "{n} setengah", ", ",
     "baru saja",
     "{0} yang lalu", "dalam {0}",
     true, { true, { "{n} dtk", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mnt", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} j", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} hr", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mgg", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} bln", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} thn", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} yang lalu", true, "dalam {0}" },

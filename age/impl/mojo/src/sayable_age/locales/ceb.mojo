@@ -73,7 +73,7 @@ fn build_ceb() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{n}½",
+        half="{0} ug tunga",
         delimiter=", ",
         just_born="Bag-ong natawo",
         newborn=newborn,

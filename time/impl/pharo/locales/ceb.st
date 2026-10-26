@@ -17,22 +17,22 @@ ceb
 	locale := SayableTimeLocale new.
 	locale code: 'ceb'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'dose'. 'uno'. 'dos'. 'tres'. 'kwatro'. 'singko'. 'sais'. 'siyete'. 'otso'. 'nuwebe'. 'diyes'. 'onse' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'alas dose'. 'ala una'. 'alas dos'. 'alas tres'. 'alas kwatro'. 'alas singko'. 'alas sais'. 'alas siyete'. 'alas otso'. 'alas nuwebe'. 'alas diyes'. 'alas onse' }).
 	clock at: #midnight put: 'tungang gabii'.
 	clock at: #noon put: 'udtong tutok'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h}'.
+		5. '{h} y singko'.
+		10. '{h} y diyes'.
+		15. '{h} y kinse'.
+		20. '{h} y beynte'.
+		25. '{h} y beynte singko'.
+		30. '{h} y medya'.
+		35. 'menos beynte singko para {next_h}'.
+		40. 'menos beynte para {next_h}'.
+		45. 'menos kinse para {next_h}'.
+		50. 'menos diyes para {next_h}'.
+		55. 'menos singko para {next_h}'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [bem.json](../../locales/bem.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Western time (Zambia). Hours restored as number words with class-10 concord for insa (imo, shibili, shitatu, shine, shisano; 7 'cine lubali', 8 'cine konse konse', 9 'pabula'); additive 'insa {h} na maminiti <class-6 numeral>' (yasano, ikumi, amakumi yabili/yatatu/yane/yasano), 'na hafu' for half. CHECK: whether speakers say 'insa shitatu' or use English 'koloko'; the ama- > 'na maminiti' elision; whether 'kota' (quarter) is used; any 'to' idiom (e.g. kwashala maminiti ...) that would be preferred for :40-:55.
+
 ## Age
 
 ### Age formatting
@@ -46,7 +54,7 @@ Plural rule: `one_other` (categories: one, other)
 | Toddler  | Umwana               |
 | Child    | Umwana               |
 | Teenager | Umunyamata           |
-| Adult    | Umulumendo           |
+| Adult    | Umukalamba           |
 
 ## Date
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | mailo kabili      | 17/3     |
 | Day before yesterday | icungulo kabili   | 13/3     |
 | This Thursday (+5)   | Pa Bune ubu       | 20/3     |
-| Last Monday (-4)     | Pa Bibili ukupita | 11/3     |
-| Next Wednesday (+12) | Pa Bune ukwisa    | 27/3     |
-| Same month (+20)     | 4 Epreli          | 4/4      |
+| Last Tuesday (-4)    | Pa Bibili ukupita | 11/3     |
+| Next Thursday (+12)  | Pa Bune ukwisa    | 27/3     |
+| Same year (+20)      | 4 Epreli          | 4/4      |
 | Different year       | 10 Januari 2026   | 10/1/26  |
 
 ## Duration
@@ -92,9 +100,9 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | amaminiti 5                | min. 5                | 5m              |
 | 45 minutes            | amaminiti 45               | min. 45               | 45m             |
 | 1 hour                | insa 1                     | insa 1                | 1h              |
-| 1½ hours              | amanso 1 na hafu           | insa 1 na hafu        | 1½h             |
-| 3 hours               | amanso 3                   | insa 3                | 3h              |
-| 6 hours               | amanso 6                   | insa 6                | 6h              |
+| 1½ hours              | insa 1 na hafu             | insa 1 na hafu        | 1½h             |
+| 3 hours               | insa 3                     | insa 3                | 3h              |
+| 6 hours               | insa 6                     | insa 6                | 6h              |
 | 1 day                 | ubushiku 1                 | ubushiku 1            | 1d              |
 | 1½ days               | inshiku 1 na hafu          | inshiku 1 na hafu     | 1½d             |
 | 3 days                | inshiku 3                  | inshiku 3             | 3d              |
@@ -110,24 +118,24 @@ Relative to Saturday, March 15, 2025.
 | Offset        | Normal              | Compact    |
 | ------------- | ------------------- | ---------- |
 | 5 minutes ago | amaminiti 5 iyapita | 5m iyapita |
-| 2 hours ago   | amanso 2 iyapita    | 2h iyapita |
+| 2 hours ago   | insa 2 iyapita      | 2h iyapita |
 | in 30 minutes | mu amaminiti 30     | mu 30m     |
-| in 3 hours    | mu amanso 3         | mu 3h      |
+| in 3 hours    | mu insa 3           | mu 3h      |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal              | Short    | Compact |
-| --------------- | ------------------- | -------- | ------- |
-| Midnight        | pakati ka bushiku   | 12:00 AM | 12:00a  |
-| 1:00 AM         | cimo:00             | 1:00 AM  | 1:00a   |
-| 5 past 9        | pabula:05           | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ikumi:15            | 10:15 AM | 10:15a  |
-| Half past 11    | ikumi na cimo:30    | 11:30 AM | 11:30a  |
-| Noon            | akasuba             | 12:00 PM | 12:00p  |
-| Quarter to 3    | fibili:45           | 2:45 PM  | 2:45p   |
-| 5 to 6          | fisano:55           | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | cine konse konse:00 | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ikumi:30            | 10:30 PM | 10:30p  |
-| 11:58 PM        | pakati ka bushiku   | 11:58 PM | 11:58p  |
+| Time            | Normal                                            | Short    | Compact |
+| --------------- | ------------------------------------------------- | -------- | ------- |
+| Midnight        | pakati ka bushiku                                 | 12:00 AM | 12:00a  |
+| 1:00 AM         | insa imo                                          | 1:00 AM  | 1:00a   |
+| 5 past 9        | insa pabula na maminiti yasano                    | 9:05 AM  | 9:05a   |
+| Quarter past 10 | insa ikumi na maminiti ikumi na yasano            | 10:15 AM | 10:15a  |
+| Half past 11    | insa ikumi na imo na hafu                         | 11:30 AM | 11:30a  |
+| Noon            | akasuba                                           | 12:00 PM | 12:00p  |
+| Quarter to 3    | insa shibili na maminiti amakumi yane na yasano   | 2:45 PM  | 2:45p   |
+| 5 to 6          | insa shisano na maminiti amakumi yasano na yasano | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | insa cine konse konse                             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | insa ikumi na hafu                                | 10:30 PM | 10:30p  |
+| 11:58 PM        | pakati ka bushiku                                 | 11:58 PM | 11:58p  |

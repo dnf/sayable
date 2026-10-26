@@ -33,7 +33,7 @@ _sayableduration_locale_nb() {
     _half='{n}½'
     _delimiter=', '
     _just_now='akkurat nå'
-    _ago='{0} siden'
+    _ago='for {0} siden'
     _in_future='om {0}'
     _short_unit_second='{n} sek'
     _short_unit_minute='{n} min'
@@ -42,7 +42,7 @@ _sayableduration_locale_nb() {
     _short_unit_week='{n} u'
     _short_unit_month='{n} md.'
     _short_unit_year='{n} år'
-    _short_ago='{0} siden'
+    _short_ago='for {0} siden'
     _short_in_future='om {0}'
     _compact_unit_second='{n}s'
     _compact_unit_minute='{n}m'
@@ -52,7 +52,7 @@ _sayableduration_locale_nb() {
     _compact_unit_month='{n} m'
     _compact_unit_year='{n}å'
     _compact_delimiter=''
-    _compact_ago='{0} siden'
+    _compact_ago='for {0} siden'
     _compact_in_future='om {0}'
     _plural_func=_sayableduration_plural_nb
 }

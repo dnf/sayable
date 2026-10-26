@@ -27,7 +27,7 @@ var GA = sdate.DateLocale{
 	Yesterday: "inné",
 	DayAfterTomorrow:  strPtr("arú amárach"),
 	DayBeforeYesterday: strPtr("arú inné"),
-	ThisWeekday:       strPtr("an {weekday} seo"),
+	ThisWeekday:       strPtr("{weekday} seo"),
 	NextWeekday:       strPtr("{weekday} seo chugainn"),
 	LastWeekday:       strPtr("{weekday} seo caite"),
 	MonthsInDate: nil,

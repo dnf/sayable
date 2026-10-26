@@ -11,10 +11,10 @@
 
 function loc = locale_xh()
   loc.code = 'xh';
-  loc.clock.hours = {'ishumi elinambini', 'inye', 'ezimbini', 'ezintathu', 'ezine', 'ezintlanu', 'ezintandathu', 'ezisixhenxe', 'ezisibhozo', 'ethoba', 'ishumi', 'ishumi elinanye'};
+  loc.clock.hours = {'yeshumi elinesibini', 'yokuqala', 'yesibini', 'yesithathu', 'yesine', 'yesihlanu', 'yesithandathu', 'yesixhenxe', 'yesibhozo', 'yethoba', 'yeshumi', 'yeshumi elinanye'};
   loc.clock.midnight = 'ezinzulwini zobusuku';
   loc.clock.noon = 'emini';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'intsimbi {h}', "p5", 'imizuzu emihlanu emva kwentsimbi {h}', "p10", 'imizuzu elishumi emva kwentsimbi {h}', "p15", 'ikota emva kwentsimbi {h}', "p20", 'imizuzu engamashumi amabini emva kwentsimbi {h}', "p25", 'imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}', "p30", 'isiqingatha emva kwentsimbi {h}', "p35", 'imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}', "p40", 'imizuzu engamashumi amabini ukuya kwintsimbi {next_h}', "p45", 'ikota ukuya kwintsimbi {next_h}', "p50", 'imizuzu elishumi ukuya kwintsimbi {next_h}', "p55", 'imizuzu emihlanu ukuya kwintsimbi {next_h}');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

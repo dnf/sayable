@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [bci.json](../../locales/bci.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Additive 'dɔ {h}' (dɔ = hour/time) and 'dɔ {h} nin miniti N' with Baoulé numerals (nnun, blu, blu-nin-nnun, ablaɔn, ablasan, ablanan, ablenun); :30 given as 'nin miniti ablasan' rather than a half-word I could not confirm. Hours 11/12 corrected to 'blu-nin-kun' / 'blu-nin-nɲɔn' (ten-and-one / ten-and-two). I am not a confident Baoulé speaker: 'dɔ' as the clock-hour word and the loan 'miniti' need native confirmation. Noon/midnight left as they were.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ainman sin     | 17/3    |
 | Day before yesterday | nglɛmun sin    | 13/3    |
 | This Thursday (+5)   | Juedi nga      | 20/3    |
-| Last Monday (-4)     | Madi ng'ɔ sín  | 11/3    |
-| Next Wednesday (+12) | Juedi ng'ɔ ba  | 27/3    |
-| Same month (+20)     | 4 Avrili       | 4/4     |
+| Last Tuesday (-4)    | Madi ng'ɔ sín  | 11/3    |
+| Next Thursday (+12)  | Juedi ng'ɔ ba  | 27/3    |
+| Same year (+20)      | 4 Avrili       | 4/4     |
 | Different year       | 10 Zanvie 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal       | Short    | Compact |
-| --------------- | ------------ | -------- | ------- |
-| Midnight        | kɔnguɛ afiɛn | 12:00 AM | 12:00a  |
-| 1:00 AM         | kun:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | ngwlan:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | blu:15       | 10:15 AM | 10:15a  |
-| Half past 11    | blu-kun:30   | 11:30 AM | 11:30a  |
-| Noon            | nnɔsua       | 12:00 PM | 12:00p  |
-| Quarter to 3    | nɲɔn:45      | 2:45 PM  | 2:45p   |
-| 5 to 6          | nnun:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | mɔcuɛ:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | blu:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | kɔnguɛ afiɛn | 11:58 PM | 11:58p  |
+| Time            | Normal                              | Short    | Compact |
+| --------------- | ----------------------------------- | -------- | ------- |
+| Midnight        | kɔnguɛ afiɛn                        | 12:00 AM | 12:00a  |
+| 1:00 AM         | dɔ kun                              | 1:00 AM  | 1:00a   |
+| 5 past 9        | dɔ ngwlan nin miniti nnun           | 9:05 AM  | 9:05a   |
+| Quarter past 10 | dɔ blu nin miniti blu-nin-nnun      | 10:15 AM | 10:15a  |
+| Half past 11    | dɔ blu-nin-kun nin miniti ablasan   | 11:30 AM | 11:30a  |
+| Noon            | nnɔsua                              | 12:00 PM | 12:00p  |
+| Quarter to 3    | dɔ nɲɔn nin miniti ablanan-nin-nnun | 2:45 PM  | 2:45p   |
+| 5 to 6          | dɔ nnun nin miniti ablenun-nin-nnun | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | dɔ mɔcuɛ                            | 8:00 PM  | 8:00p   |
+| 10:30 PM        | dɔ blu nin miniti ablasan           | 10:30 PM | 10:30p  |
+| 11:58 PM        | kɔnguɛ afiɛn                        | 11:58 PM | 11:58p  |

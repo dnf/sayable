@@ -17,12 +17,12 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "zh".to_string(),
         clock: ClockConfig {
-            hours: ["十二".to_string(), "一".to_string(), "二".to_string(), "三".to_string(), "四".to_string(), "五".to_string(), "六".to_string(), "七".to_string(), "八".to_string(), "九".to_string(), "十".to_string(), "十一".to_string()],
+            hours: ["十二".to_string(), "一".to_string(), "两".to_string(), "三".to_string(), "四".to_string(), "五".to_string(), "六".to_string(), "七".to_string(), "八".to_string(), "九".to_string(), "十".to_string(), "十一".to_string()],
             midnight: "午夜".to_string(),
             noon: "正午".to_string(),
             patterns: HashMap::from([
             (0, "{h}点整".to_string()),
-            (5, "{h}点五分".to_string()),
+            (5, "{h}点零五分".to_string()),
             (10, "{h}点十分".to_string()),
             (15, "{h}点十五分".to_string()),
             (20, "{h}点二十分".to_string()),

@@ -11,7 +11,7 @@
 
 % Cantonese locale.
 
-sd_months('yue', ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']).
+sd_months('yue', ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']).
 sd_weekdays('yue', ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']).
 sd_day_format('yue', '{n}日').
 
@@ -27,7 +27,7 @@ sd_this_weekday('yue', '呢個{weekday}').
 sd_next_weekday('yue', '下個{weekday}').
 sd_last_weekday('yue', '上個{weekday}').
 
-short_sd_months('yue', ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']).
+short_sd_months('yue', ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']).
 short_sd_weekdays('yue', ['日', '一', '二', '三', '四', '五', '六']).
 short_sd_day_format('yue', '{n}日').
 short_sd_clear_exceptions('yue').

@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ts"
    :clock (make-clock-config
-    :hours (list "khume mbiri" "yin'we" "mbirhi" "nharhu" "mune" "ntlhanu" "tsevu" "nkombo" "nhungu" "kaye" "khume" "khume yin'we")
+    :hours (list "ya khume mbirhi" "yo sungula" "ya vumbirhi" "ya vunharhu" "ya vumune" "ya vuntlhanu" "ya vutsevu" "ya vunkombo" "ya vunhungu" "ya vukaye" "ya khume" "ya khume n'we")
     :midnight "vusiku exikarhi"
     :noon "nhlekanhi"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "awara {h}") (cons 5 "awara {h} na timinete ta ntlhanu") (cons 10 "awara {h} na timinete ta khume") (cons 15 "awara {h} na kotara") (cons 20 "awara {h} na timinete ta makume mambirhi") (cons 25 "awara {h} na timinete ta makume mambirhi na ntlhanu") (cons 30 "awara {h} na hafu") (cons 35 "awara {h} na timinete ta makume manharhu na ntlhanu") (cons 40 "awara {h} na timinete ta makume mune") (cons 45 "awara {h} na timinete ta makume mune na ntlhanu") (cons 50 "awara {h} na timinete ta makume ntlhanu") (cons 55 "awara {h} na timinete ta makume ntlhanu na ntlhanu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

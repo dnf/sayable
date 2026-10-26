@@ -13,10 +13,10 @@ locale_so <- list(
   code = "so",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    day = list(one = "maalin {n}", other = "maalmood {n}"),
-    week = list(one = "toddobaad {n}", other = "toddobaadyo {n}"),
-    month = list(one = "bil {n}", other = "bilood {n}"),
-    year = list(one = "sano {n}", other = "sanooyin {n}")
+    day = list(one = "{n} maalin", other = "{n} maalmood"),
+    week = "{n} toddobaad",
+    month = list(one = "{n} bil", other = "{n} bilood"),
+    year = "{n} sano"
   ),
   half = "{n}½",
   delimiter = ", ",

@@ -14,9 +14,9 @@ module SayableDuration
       code: "ln",
       plural: ->(n : Int32) { (n == 0 || n == 1) ? PluralCategory::One : PluralCategory::Other },
       units: {
-        "second" => UnitForms.new("{n} segɔnde"),
-        "minute" => UnitForms.new("{n} moniti"),
-        "hour" => UnitForms.new("{n} ngonga"),
+        "second" => UnitForms.new("segɔnde {n}"),
+        "minute" => UnitForms.new("miniti {n}"),
+        "hour" => UnitForms.new("ngonga {n}"),
         "day" => UnitForms.new(one: "mokolo {n}", other: "mikolo {n}"),
         "week" => UnitForms.new(one: "poso {n}", other: "baposo {n}"),
         "month" => UnitForms.new(one: "sanza {n}", other: "basanza {n}"),

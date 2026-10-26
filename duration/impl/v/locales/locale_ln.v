@@ -22,9 +22,9 @@ fn plural_ln(n int) PluralCategory {
 pub const locale_ln = DurationLocale{
 	code: 'ln'
 	plural: plural_ln
-	second: simple_unit('{n} segɔnde')
-	minute: simple_unit('{n} moniti')
-	hour: simple_unit('{n} ngonga')
+	second: simple_unit('segɔnde {n}')
+	minute: simple_unit('miniti {n}')
+	hour: simple_unit('ngonga {n}')
 	day: plural_unit({PluralCategory.one: 'mokolo {n}', PluralCategory.other: 'mikolo {n}'})
 	week: plural_unit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'baposo {n}'})
 	month: plural_unit({PluralCategory.one: 'sanza {n}', PluralCategory.other: 'basanza {n}'})

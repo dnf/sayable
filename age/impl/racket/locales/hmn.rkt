@@ -35,5 +35,5 @@
          "teenager" (stage-label "Tub ntxhais hluas" #f #f)
          "adult" (stage-label "Neeg laus" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} hnub") (hash "type" "simple" "form" "{n} lim tiam") (hash "type" "simple" "form" "{n} hlis") (hash "type" "simple" "form" "{n} xyoo") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

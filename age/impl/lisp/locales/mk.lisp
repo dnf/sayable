@@ -38,7 +38,7 @@
                  (cons :toddler "Мало дете")
                  (cons :child "Дете")
                  (cons :teenager "Тинејџер")
-                 (cons :adult "Возрасен"))
+                 (cons :adult '((:m . "Возрасен") (:f . "Возрасна"))))
    :short-units (list (cons :day '((:one . "{n} ден") (:other . "{n} дена")))
                        (cons :week "{n} сед.")
                        (cons :month "{n} мес.")

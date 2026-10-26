@@ -31,7 +31,7 @@ fn _plural(n: Int) -> String:
 fn build_shi() -> DurationLocale:
     """Build the Tachelhit locale."""
 
-    var second = plural_unit(one="{n} tasint", few="{n} tasinin", other="{n} tasinin")
+    var second = plural_unit(one="{n} tasint", few="{n} tisinin", other="{n} tisinin")
     var minute = plural_unit(one="{n} tusdiqt", few="{n} tusdiqin", other="{n} tusdiqin")
     var hour = plural_unit(one="{n} tasragt", few="{n} tisragin", other="{n} tisragin")
     var day = plural_unit(one="{n} ass", few="{n} ussan", other="{n} ass")
@@ -40,19 +40,19 @@ fn build_shi() -> DurationLocale:
     var year = plural_unit(one="{n} aseggas", few="{n} iseggasen", other="{n} aseggas")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("{n}s")
+    short_ovr.second = plural_unit(one="{n} tasint", few="{n} tasinin", other="{n} tasinin")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("{n}m")
+    short_ovr.minute = plural_unit(one="{n} tusdiqt", few="{n} tusdiqin", other="{n} tusdiqin")
     short_ovr.has_minute = True
-    short_ovr.hour = simple_unit("{n}h")
+    short_ovr.hour = plural_unit(one="{n} tasragt", few="{n} tisragin", other="{n} tisragin")
     short_ovr.has_hour = True
-    short_ovr.day = simple_unit("{n}d")
+    short_ovr.day = plural_unit(one="{n} ass", few="{n} ussan", other="{n} ass")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n}w")
+    short_ovr.week = plural_unit(one="{n} imalass", few="{n} imalassn", other="{n} imalass")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("{n}mo")
+    short_ovr.month = plural_unit(one="{n} ayyur", few="{n} ayyurn", other="{n} ayyur")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("{n}y")
+    short_ovr.year = plural_unit(one="{n} aseggas", few="{n} iseggasen", other="{n} aseggas")
     short_ovr.has_year = True
     short_ovr.ago = "ɣ {0} zzrin"
     short_ovr.has_ago = True

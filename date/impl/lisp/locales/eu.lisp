@@ -18,10 +18,10 @@
    :code "eu"
    :months (list "urtarril" "otsail" "martxo" "apiril" "maiatz" "ekain" "uztail" "abuztu" "irail" "urri" "azaro" "abendu")
    :weekdays (list "igandea" "astelehena" "asteartea" "asteazkena" "osteguna" "ostirala" "larunbata")
-   :day-format "{n}"
-   :day-format-exceptions nil
-   :date-pattern "{month}ren {day}"
-   :date-pattern-with-year "{year}ko {month}ren {day}"
+   :day-format "{n}a"
+   :day-format-exceptions (list (cons "11" "{n}") (cons "31" "{n}"))
+   :date-pattern "{month} {day}"
+   :date-pattern-with-year "{year}ko {month} {day}"
    :today "gaur"
    :tomorrow "bihar"
    :yesterday "atzo"
@@ -30,6 +30,7 @@
    :this-weekday "{weekday} hau"
    :next-weekday "hurrengo {weekday}"
    :last-weekday "aurreko {weekday}"
+   :months-in-date (list "urtarrilaren" "otsailaren" "martxoaren" "apirilaren" "maiatzaren" "ekainaren" "uztailaren" "abuztuaren" "irailaren" "urriaren" "azaroaren" "abenduaren")
    :short-months (list "urt" "ots" "mar" "api" "mai" "eka" "uzt" "abu" "ira" "urr" "aza" "abe")
    :short-weekdays (list "ig" "al" "ar" "az" "og" "or" "lr")
    :short-day-format "{n}"

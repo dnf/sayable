@@ -24,7 +24,7 @@ locale =
     , week = Simple "{n} na macawa"
     , month = Simple "{n} na vula"
     , year = Simple "{n} na yabaki"
-    , half = "{n} kei na levu ni wasei"
+    , half = "{0} kei na veimama"
     , delimiter = ", "
     , justBorn = "Gone vou"
     , stages =
@@ -51,7 +51,7 @@ locale =
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

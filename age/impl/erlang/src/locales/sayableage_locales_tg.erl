@@ -21,7 +21,7 @@ locale() ->
         week = {simple, "{n} ҳафта"},
         month = {simple, "{n} моҳ"},
         year = {simple, "{n} сол"},
-        half = "{0} ним",
+        half = "{0}у ним",
         delimiter = ", ",
         just_born = "Навзод",
         stages = #stages{newborn = {neutral, "Навзод"}, infant = {neutral, "Тифл"}, toddler = {neutral, "Кӯдак"}, child = {neutral, "Кӯдак"}, teenager = {neutral, "Наврас"}, adult = {neutral, "Калонсол"}},

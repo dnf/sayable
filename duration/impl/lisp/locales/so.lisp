@@ -17,13 +17,13 @@
   (make-duration-locale
    :code "so"
    :plural (lambda (n) (if (= n 1) :one :other))
-   :units (list (cons :second '((:one . "ilbiriqsi {n}") (:other . "ilbiriqsiyaal {n}")))
-               (cons :minute '((:one . "daqiiqad {n}") (:other . "daqiiqadood {n}")))
-               (cons :hour '((:one . "saacad {n}") (:other . "saacadood {n}")))
-               (cons :day '((:one . "maalin {n}") (:other . "maalmood {n}")))
-               (cons :week '((:one . "toddobaad {n}") (:other . "toddobaadyo {n}")))
-               (cons :month '((:one . "bil {n}") (:other . "bilood {n}")))
-               (cons :year '((:one . "sano {n}") (:other . "sanooyin {n}"))))
+   :units (list (cons :second "{n} ilbiriqsi")
+               (cons :minute '((:one . "{n} daqiiqad") (:other . "{n} daqiiqo")))
+               (cons :hour '((:one . "{n} saacad") (:other . "{n} saacadood")))
+               (cons :day '((:one . "{n} maalin") (:other . "{n} maalmood")))
+               (cons :week "{n} toddobaad")
+               (cons :month '((:one . "{n} bil") (:other . "{n} bilood")))
+               (cons :year "{n} sano"))
    :half "{n}½"
    :delimiter ", "
    :just-now "hadda"

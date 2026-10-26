@@ -11,6 +11,10 @@
 /* Source: locales/ca.json */
 #include "sayabledate/sayabledate.h"
 
+static const char *sd_months_in_date_ca[12] = {
+    "de gener", "de febrer", "de març", "d'abril", "de maig", "de juny", "de juliol", "d'agost", "de setembre", "d'octubre", "de novembre", "de desembre"
+};
+
 static const char *sd_short_months_ca[12] = {
     "gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des"
 };
@@ -25,8 +29,8 @@ const SdDateLocale sd_locale_ca = {
     { "diumenge", "dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte" },
     "{n}",
     (const SdDayFormatException *)0, 0,
-    "{day} de {month}",
-    "{day} de {month} de {year}",
+    "{day} {month}",
+    "{day} {month} de {year}",
     "avui",
     "demà",
     "ahir",
@@ -35,7 +39,7 @@ const SdDateLocale sd_locale_ca = {
     "aquest {weekday}",
     "{weekday} que ve",
     "{weekday} passat",
-    (const char **)0,
-    true, { sd_short_months_ca, (const char **)0, sd_short_weekdays_ca, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
+    sd_months_in_date_ca,
+    true, { sd_short_months_ca, (const char **)0, sd_short_weekdays_ca, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} de {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }
 };

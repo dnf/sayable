@@ -20,7 +20,7 @@ pa
 	locale units: (Dictionary newFromPairs: {
 		'second'. '{n} ਸਕਿੰਟ'.
 		'minute'. '{n} ਮਿੰਟ'.
-		'hour'. '{n} ਘੰਟਾ'.
+		'hour'. (Dictionary newFromPairs: { #one. '{n} ਘੰਟਾ'. #other. '{n} ਘੰਟੇ' }).
 		'day'. (Dictionary newFromPairs: { #one. '{n} ਦਿਨ'. #other. '{n} ਦਿਨ' }).
 		'week'. (Dictionary newFromPairs: { #one. '{n} ਹਫ਼ਤਾ'. #other. '{n} ਹਫ਼ਤੇ' }).
 		'month'. (Dictionary newFromPairs: { #one. '{n} ਮਹੀਨਾ'. #other. '{n} ਮਹੀਨੇ' }).

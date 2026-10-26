@@ -33,13 +33,13 @@ locale_tzm <- list(
   in_future = "ɣ {0}",
   short = list(
     units = list(
-      second = "{n}s",
-      minute = "{n}m",
-      hour = "{n}h",
-      day = "{n}d",
-      week = "{n}w",
-      month = "{n}mo",
-      year = "{n}y"
+      second = list(one = "{n} tasint", other = "{n} tisinin"),
+      minute = list(one = "{n} tusdiqt", other = "{n} tusdiqin"),
+      hour = list(one = "{n} tasragt", other = "{n} tisragin"),
+      day = list(one = "{n} ass", other = "{n} ussan"),
+      week = list(one = "{n} imalass", other = "{n} imalassn"),
+      month = list(one = "{n} ayyur", other = "{n} ayyurn"),
+      year = list(one = "{n} aseggas", other = "{n} iseggasen")
     ),
     ago = "ɣ {0} zzrin",
     in_future = "ɣ {0}"

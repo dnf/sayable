@@ -20,10 +20,10 @@ locale : Locale
 locale =
     { code = "ay"
     , plural = \n -> Other
-    , day = Simple "uru {n}"
-    , week = Simple "simana {n}"
-    , month = Simple "phaxsi {n}"
-    , year = Simple "mara {n}"
+    , day = Simple "{n} uru"
+    , week = Simple "{n} simana"
+    , month = Simple "{n} phaxsi"
+    , year = Simple "{n} mara"
     , half = "{0} chika"
     , delimiter = ", "
     , justBorn = "Wawa machaqa"
@@ -51,7 +51,7 @@ locale =
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

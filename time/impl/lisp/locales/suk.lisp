@@ -17,10 +17,10 @@
   (make-time-locale
    :code "suk"
    :clock (make-clock-config
-    :hours (list "kumi na mbili" "moja" "mbili" "tatu" "nne" "tano" "sita" "saba" "nane" "tisa" "kumi" "kumi na moja")
+    :hours (list "sita" "saba" "nane" "tisa" "kumi" "kumi na moja" "kumi na mbili" "moja" "mbili" "tatu" "nne" "tano")
     :midnight "usiku gati"
     :noon "adhuhuri"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "saa {h}") (cons 5 "saa {h} na dakika tano") (cons 10 "saa {h} na dakika kumi") (cons 15 "saa {h} na robo") (cons 20 "saa {h} na dakika ishirini") (cons 25 "saa {h} na dakika ishirini na tano") (cons 30 "saa {h} na nusu") (cons 35 "saa {next_h} kasoro dakika ishirini na tano") (cons 40 "saa {next_h} kasoro dakika ishirini") (cons 45 "saa {next_h} kasoro robo") (cons 50 "saa {next_h} kasoro dakika kumi") (cons 55 "saa {next_h} kasoro dakika tano")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

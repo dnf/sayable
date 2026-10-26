@@ -22,7 +22,7 @@ const SduDurationLocale sdu_locale_hi = {
     {
         { "{n} सेकंड", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} मिनट", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n} घंटा", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { NULL, { NULL, "{n} घंटा", NULL, NULL, NULL, "{n} घंटे" } },
         { NULL, { NULL, "{n} दिन", NULL, NULL, NULL, "{n} दिन" } },
         { NULL, { NULL, "{n} सप्ताह", NULL, NULL, NULL, "{n} सप्ताह" } },
         { NULL, { NULL, "{n} महीना", NULL, NULL, NULL, "{n} महीने" } },

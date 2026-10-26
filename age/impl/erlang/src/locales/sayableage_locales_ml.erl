@@ -16,12 +16,12 @@
 locale() ->
     #locale{
         code = "ml",
-        plural = fun(N) when N =:= 0; N =:= 1 -> one; (_) -> other end,
+        plural = fun(1) -> one; (_) -> other end,
         day = {pluralized, [{one, "{n} ദിവസം"}, {other, "{n} ദിവസങ്ങൾ"}]},
         week = {pluralized, [{one, "{n} ആഴ്ച"}, {other, "{n} ആഴ്ചകൾ"}]},
         month = {pluralized, [{one, "{n} മാസം"}, {other, "{n} മാസങ്ങൾ"}]},
         year = {pluralized, [{one, "{n} വയസ്സ്"}, {other, "{n} വയസ്സ്"}]},
-        half = "{0} ര",
+        half = "{n}½",
         delimiter = ", ",
         just_born = "നവജാതശിശു",
         stages = #stages{newborn = {neutral, "നവജാതശിശു"}, infant = {neutral, "ശിശു"}, toddler = {neutral, "കുഞ്ഞ്"}, child = {neutral, "കുട്ടി"}, teenager = {neutral, "കൗമാരക്കാരൻ"}, adult = {neutral, "മുതിർന്നയാൾ"}},

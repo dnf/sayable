@@ -579,7 +579,7 @@ check('25.8 singular month', sa_es.format_age('2023-06-15', '2025-07-15'), '2 a�
 check('25.9 years months', sa_es.format_age('2023-06-15', '2025-12-15'), '2 años, 6 meses');
 
 % 25.10
-check('25.10 half marker', sa_es.format_age('2022-06-15', '2025-12-15'), '3 y medio años');
+check('25.10 half marker', sa_es.format_age('2022-06-15', '2025-12-15'), '3 años y medio');
 
 % 25.11
 check('25.11 integer years', sa_es.format_age('2022-06-15', '2025-06-15'), '3 años');
@@ -674,13 +674,13 @@ he = locale_he();
 sa_he = sayable_age_new(he);
 
 check('29.1 he just born', sa_he.format_age('2025-06-15', '2025-06-15'), 'רק נולד');
-check('29.2 he one day', sa_he.format_age('2025-06-14', '2025-06-15'), 'יום 1');
+check('29.2 he one day', sa_he.format_age('2025-06-14', '2025-06-15'), 'יום');
 check('29.3 he three days', sa_he.format_age('2025-06-12', '2025-06-15'), '3 ימים');
 check('29.4 he two weeks dual', sa_he.format_age('2025-06-01', '2025-06-15'), 'שבועיים');
 check('29.5 he three weeks', sa_he.format_age('2025-05-25', '2025-06-15'), '3 שבועות');
 check('29.6 he six months', sa_he.format_age('2025-01-15', '2025-07-15'), '6 חודשים');
 check('29.7 he three months', sa_he.format_age('2025-03-15', '2025-06-15'), '3 חודשים');
-check('29.8 he 2y 1m', sa_he.format_age('2023-06-15', '2025-07-15'), 'שנתיים, חודש 1');
+check('29.8 he 2y 1m', sa_he.format_age('2023-06-15', '2025-07-15'), 'שנתיים, חודש');
 check('29.9 he half years', sa_he.format_age('2022-06-15', '2025-12-15'), '3 שנים וחצי');
 check('29.10 he seven years', sa_he.format_age('2018-06-15', '2025-06-15'), '7 שנים');
 check('29.11 he stage m newborn', sa_he.format_stage('2025-06-15', '2025-06-15', 'm'), 'רק נולד');
@@ -719,7 +719,7 @@ check('29.28 id just born', sa_id.format_age('2025-06-15', '2025-06-15'), 'Baru 
 check('29.29 id one day', sa_id.format_age('2025-06-14', '2025-06-15'), '1 hari');
 check('29.30 id three days', sa_id.format_age('2025-06-12', '2025-06-15'), '3 hari');
 check('29.31 id six months', sa_id.format_age('2025-01-15', '2025-07-15'), '6 bulan');
-check('29.32 id half years', sa_id.format_age('2022-06-15', '2025-12-15'), '3 tahun setengah');
+check('29.32 id half years', sa_id.format_age('2022-06-15', '2025-12-15'), '3 setengah tahun');
 check('29.33 id seven years', sa_id.format_age('2018-06-15', '2025-06-15'), '7 tahun');
 
 % 29.34-29.39 — Amharic

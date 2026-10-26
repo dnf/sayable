@@ -48,8 +48,8 @@ defmodule SayableDate.Locales.TG do
       day_after_tomorrow: "пасфардо",
       day_before_yesterday: "парирӯз",
       this_weekday: "ин {weekday}",
-      next_weekday: "{weekday}-и оянда",
-      last_weekday: "{weekday}-и гузашта",
+      next_weekday: "{weekday}и оянда",
+      last_weekday: "{weekday}и гузашта",
       months_in_date: nil,
       short: %{
         months: [

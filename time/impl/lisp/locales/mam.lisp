@@ -17,10 +17,10 @@
   (make-time-locale
    :code "mam"
    :clock (make-clock-config
-    :hours (list "kab'laj" "jun" "kab'" "oxe" "kyaje" "jwe'" "qaq" "wuq" "wajxaq" "b'alaj" "laj" "junlaj")
+    :hours (list "kab'laj" "jun" "kab'" "oxe" "kyaje" "jwe'" "qaq" "wuq" "wajxaq" "b'elaj" "laj" "junlaj")
     :midnight "nik' aq'b'il"
     :noon "nik' q'ij"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} or") (cons 5 "{h} or tuk' jwe' minut") (cons 10 "{h} or tuk' laj minut") (cons 15 "{h} or tuk' o'laj minut") (cons 20 "{h} or tuk' winqan minut") (cons 25 "{h} or tuk' jwe' toj ka'wnaq minut") (cons 30 "{h} or tuk' nik'") (cons 35 "{h} or tuk' o'laj toj ka'wnaq minut") (cons 40 "{h} or tuk' ka'wnaq minut") (cons 45 "{h} or tuk' jwe' toj oxk'al minut") (cons 50 "{h} or tuk' laj toj oxk'al minut") (cons 55 "{h} or tuk' o'laj toj oxk'al minut")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

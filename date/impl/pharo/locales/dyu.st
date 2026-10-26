@@ -16,7 +16,7 @@ dyu
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'dyu'.
-	locale months: (OrderedCollection withAll: { 'Zanwuyekalo'. 'Feburuyekalo'. 'Marisikalo'. 'Awirilikalo'. 'Mɛkalo'. 'Zuwɛnkalo'. 'Zuluyekalo'. 'Utikalo'. 'Sɛtanburukalo'. 'Ɔkutɔburukalo'. 'Nowanburdukalo'. 'Desanburukalo' }).
+	locale months: (OrderedCollection withAll: { 'Zanwuyekalo'. 'Feburuyekalo'. 'Marisikalo'. 'Awirilikalo'. 'Mɛkalo'. 'Zuwɛnkalo'. 'Zuluyekalo'. 'Utikalo'. 'Sɛtanburukalo'. 'Ɔkutɔburukalo'. 'Nowanburukalo'. 'Desanburukalo' }).
 	locale weekdays: (OrderedCollection withAll: { 'Kari'. 'Ntɛnɛn'. 'Tarata'. 'Araba'. 'Alamisa'. 'Juma'. 'Sibiri' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.

@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_ceb = {
     "ceb",
     {
-        { "dose", "uno", "dos", "tres", "kwatro", "singko", "sais", "siyete", "otso", "nuwebe", "diyes", "onse" },
+        { "alas dose", "ala una", "alas dos", "alas tres", "alas kwatro", "alas singko", "alas sais", "alas siyete", "alas otso", "alas nuwebe", "alas diyes", "alas onse" },
         "tungang gabii",
         "udtong tutok",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "{h} y singko", "{h} y diyes", "{h} y kinse", "{h} y beynte", "{h} y beynte singko", "{h} y medya", "menos beynte singko para {next_h}", "menos beynte para {next_h}", "menos kinse para {next_h}", "menos diyes para {next_h}", "menos singko para {next_h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -11,10 +11,10 @@
 
 function loc = locale_ve()
   loc.code = 've';
-  loc.clock.hours = {'fumimbili', 'thihi', 'mbili', 'raru', 'ina', 'thanu', 'rathi', 'sumbe', 'malo', 'tahe', 'fumi', 'fuminthihi'};
+  loc.clock.hours = {'ya fumi na mbili', 'ya u thoma', 'ya vhuvhili', 'ya vhuraru', 'ya vhuṋa', 'ya vhuṱanu', 'ya vhurathi', 'ya vhusumbe', 'ya vhumalo', 'ya vhuṱahe', 'ya fumi', 'ya fumi na nthihi'};
   loc.clock.midnight = 'vhukati ha vhusiku';
   loc.clock.noon = 'vhukati ha masiari';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'awara {h}', "p5", 'awara {h} na ṱhanu', "p10", 'awara {h} na fumi', "p15", 'awara {h} na kotara', "p20", 'awara {h} na mahumi mavhili', "p25", 'awara {h} na mahumi mavhili na ṱhanu', "p30", 'awara {h} na hafu', "p35", 'awara {h} na mahumi mararu na ṱhanu', "p40", 'awara {h} na mahumi maṋa', "p45", 'awara {h} na mahumi maṋa na ṱhanu', "p50", 'awara {h} na mahumi maṱanu', "p55", 'awara {h} na mahumi maṱanu na ṱhanu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

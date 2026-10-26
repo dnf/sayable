@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_umb = {
     "umb",
     {
-        { "olohola likumi na yivali", "yimosi", "yivali", "yitathu", "yinyali", "yitanu", "yitathu-va-yivali", "yisemba", "yinyali-va-yivali", "yitanu-va-yivali", "likumi", "likumi na yimosi" },
+        { "ekwi la vali", "mosi", "vali", "tatu", "kwãla", "tãlo", "epandu", "epanduvali", "ecelãla", "ecea", "ekwi", "ekwi la mosi" },
         "ocitapi",
         "ocivali",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ohola {h}", "ohola {h} la tãlo", "ohola {h} la ekwi", "ohola {h} la ekwi la tãlo", "ohola {h} la akũi avali", "ohola {h} la akũi avali la tãlo", "ohola {h} la oñali", "ohola {h} la akũi atatu la tãlo", "ohola {h} la akũi akwãla", "ohola {h} la akũi akwãla la tãlo", "ohola {h} la akũi atãlo", "ohola {h} la akũi atãlo la tãlo" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

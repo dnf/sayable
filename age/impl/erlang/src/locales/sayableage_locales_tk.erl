@@ -21,10 +21,10 @@ locale() ->
         week = {simple, "{n} hepde"},
         month = {simple, "{n} aý"},
         year = {simple, "{n} ýaş"},
-        half = "{0}½",
+        half = "{n} ýarym",
         delimiter = ", ",
         just_born = "Täze doglan",
-        stages = #stages{newborn = {neutral, "Täze doglan"}, infant = {neutral, "Bäbek"}, toddler = {neutral, "Kiçijik"}, child = {neutral, "Çaga"}, teenager = {neutral, "Ýetginjek"}, adult = {neutral, "Ulular"}},
+        stages = #stages{newborn = {neutral, "Täze doglan"}, infant = {neutral, "Bäbek"}, toddler = {neutral, "Kiçijik"}, child = {neutral, "Çaga"}, teenager = {neutral, "Ýetginjek"}, adult = {neutral, "Uly adam"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} g"}}, week = {just, {simple, "{n} h"}}, month = {just, {simple, "{n} a"}}, year = {just, {simple, "{n} ý"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}g"}}, week = {just, {simple, "{n}h"}}, month = {just, {simple, "{n}a"}}, year = {just, {simple, "{n}ý"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

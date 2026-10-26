@@ -35,10 +35,10 @@ pub fn locale() -> DurationLocale {
                 (PluralCategory::Other, "{n} mionaid"),
             ]),
             hour: UnitForms::plural(&[
-                (PluralCategory::One, "{n} uair"),
-                (PluralCategory::Two, "{n} uair"),
-                (PluralCategory::Few, "{n} uairean"),
-                (PluralCategory::Other, "{n} uair"),
+                (PluralCategory::One, "{n} uair a thìde"),
+                (PluralCategory::Two, "{n} uair a thìde"),
+                (PluralCategory::Few, "{n} uairean a thìde"),
+                (PluralCategory::Other, "{n} uair a thìde"),
             ]),
             day: UnitForms::plural(&[
                 (PluralCategory::One, "{n} latha"),

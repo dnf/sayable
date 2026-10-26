@@ -10,21 +10,21 @@
 # Source: locales/bem.json
 
 _sayabletime_locale_bem() {
-    _clock_hours=('ikumi na ibili' 'cimo' 'fibili' 'fitatu' 'fine' 'fisano' 'mutanda' 'cine lubali' 'cine konse konse' 'pabula' 'ikumi' 'ikumi na cimo')
+    _clock_hours=('ikumi na shibili' 'imo' 'shibili' 'shitatu' 'shine' 'shisano' 'mutanda' 'cine lubali' 'cine konse konse' 'pabula' 'ikumi' 'ikumi na imo')
     _clock_midnight='pakati ka bushiku'
     _clock_noon='akasuba'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='insa {h}'
+    _clock_pattern_5='insa {h} na maminiti yasano'
+    _clock_pattern_10='insa {h} na maminiti ikumi'
+    _clock_pattern_15='insa {h} na maminiti ikumi na yasano'
+    _clock_pattern_20='insa {h} na maminiti amakumi yabili'
+    _clock_pattern_25='insa {h} na maminiti amakumi yabili na yasano'
+    _clock_pattern_30='insa {h} na hafu'
+    _clock_pattern_35='insa {h} na maminiti amakumi yatatu na yasano'
+    _clock_pattern_40='insa {h} na maminiti amakumi yane'
+    _clock_pattern_45='insa {h} na maminiti amakumi yane na yasano'
+    _clock_pattern_50='insa {h} na maminiti amakumi yasano'
+    _clock_pattern_55='insa {h} na maminiti amakumi yasano na yasano'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

@@ -19,7 +19,7 @@ const SHI = DurationLocale(
         return "other"
     end,
     units = Dict(
-        "second" => Dict("one" => "{n} tasint", "few" => "{n} tasinin", "other" => "{n} tasinin"),
+        "second" => Dict("one" => "{n} tasint", "few" => "{n} tisinin", "other" => "{n} tisinin"),
         "minute" => Dict("one" => "{n} tusdiqt", "few" => "{n} tusdiqin", "other" => "{n} tusdiqin"),
         "hour" => Dict("one" => "{n} tasragt", "few" => "{n} tisragin", "other" => "{n} tisragin"),
         "day" => Dict("one" => "{n} ass", "few" => "{n} ussan", "other" => "{n} ass"),
@@ -34,13 +34,13 @@ const SHI = DurationLocale(
     in_future = "ɣ {0}",
     short_override = DurationCompactnessOverride(
         units = Dict(
-            "second" => "{n}s",
-            "minute" => "{n}m",
-            "hour" => "{n}h",
-            "day" => "{n}d",
-            "week" => "{n}w",
-            "month" => "{n}mo",
-            "year" => "{n}y",
+            "second" => Dict("one" => "{n} tasint", "few" => "{n} tasinin", "other" => "{n} tasinin"),
+            "minute" => Dict("one" => "{n} tusdiqt", "few" => "{n} tusdiqin", "other" => "{n} tusdiqin"),
+            "hour" => Dict("one" => "{n} tasragt", "few" => "{n} tisragin", "other" => "{n} tisragin"),
+            "day" => Dict("one" => "{n} ass", "few" => "{n} ussan", "other" => "{n} ass"),
+            "week" => Dict("one" => "{n} imalass", "few" => "{n} imalassn", "other" => "{n} imalass"),
+            "month" => Dict("one" => "{n} ayyur", "few" => "{n} ayyurn", "other" => "{n} ayyur"),
+            "year" => Dict("one" => "{n} aseggas", "few" => "{n} iseggasen", "other" => "{n} aseggas"),
         ),
         ago = "ɣ {0} zzrin",
         in_future = "ɣ {0}",

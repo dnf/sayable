@@ -17,7 +17,7 @@ const StTimeLocale st_locale_cak = {
         { "kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj" },
         "nik'aj aq'a'",
         "nik'aj q'ij",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} ramaj", "{h} ramaj rik'in wo'o'", "{h} ramaj rik'in lajuj", "{h} ramaj rik'in wolajuj", "{h} ramaj rik'in juk'al", "{h} ramaj rik'in juk'al wo'o'", "{h} ramaj rik'in nik'aj", "{h} ramaj rik'in juk'al wolajuj", "{h} ramaj rik'in kak'al", "{h} ramaj rik'in kak'al wo'o'", "{h} ramaj rik'in kak'al lajuj", "{h} ramaj rik'in kak'al wolajuj" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -10,21 +10,21 @@
 # Source: locales/tn.json
 
 _sayabletime_locale_tn() {
-    _clock_hours=('lesome le bobedi' 'nngwe' 'pedi' 'tharo' 'nne' 'tlhano' 'thataro' 'supa' 'robedi' 'robongwe' 'lesome' 'lesome le bongwe')
+    _clock_hours=('ya lesome le bobedi' 'ya ntlha' 'ya bobedi' 'ya boraro' 'ya bone' 'ya botlhano' 'ya borataro' 'ya bosupa' 'ya borobedi' 'ya borobongwe' 'ya lesome' 'ya lesome le bongwe')
     _clock_midnight='bosigo jwa magareng'
     _clock_noon='motshegare'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='ura {h}'
+    _clock_pattern_5='ura {h} le metsotso e metlhano'
+    _clock_pattern_10='ura {h} le metsotso e le lesome'
+    _clock_pattern_15='ura {h} le kotara'
+    _clock_pattern_20='ura {h} le metsotso e le masome a mabedi'
+    _clock_pattern_25='ura {h} le metsotso e le masome a mabedi le botlhano'
+    _clock_pattern_30='ura {h} le halofo'
+    _clock_pattern_35='ura {h} le metsotso e le masome a mararo le botlhano'
+    _clock_pattern_40='ura {h} le metsotso e le masome a mane'
+    _clock_pattern_45='ura {h} le metsotso e le masome a mane le botlhano'
+    _clock_pattern_50='ura {h} le metsotso e le masome a matlhano'
+    _clock_pattern_55='ura {h} le metsotso e le masome a matlhano le botlhano'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

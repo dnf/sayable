@@ -15,7 +15,7 @@ class MAMLocale {
   static units {
     return {
       "day": "{n} q'ij",
-      "week": "{n} xjaw",
+      "week": "{n} seman",
       "month": "{n} xjaw",
       "year": "{n} ab'q'ii",
     }
@@ -37,7 +37,7 @@ class MAMLocale {
     return {
       "units": {
         "day": "{n} q'ij",
-        "week": "{n} xjaw",
+        "week": "{n} seman",
         "month": "{n} xjaw",
         "year": "{n} ab'.",
       },
@@ -51,6 +51,7 @@ class MAMLocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

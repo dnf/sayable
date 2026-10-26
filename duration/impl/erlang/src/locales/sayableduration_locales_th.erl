@@ -28,7 +28,7 @@ locale() ->
         delimiter = " ",
         just_now = "เมื่อกี้",
         ago = "{0}ที่แล้ว",
-        in_future = "ใน{0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} วิ"}}, minute = {just, {simple, "{n} นาที"}}, hour = {just, {simple, "{n} ชม."}}, day = {just, {simple, "{n} วัน"}}, week = {just, {simple, "{n} สัปดาห์"}}, month = {just, {simple, "{n} เดือน"}}, year = {just, {simple, "{n} ปี"}}, half = nothing, delimiter = nothing, ago = {just, "{0}ที่แล้ว"}, in_future = {just, "ใน{0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}วิ"}}, minute = {just, {simple, "{n}นาที"}}, hour = {just, {simple, "{n}ชม."}}, day = {just, {simple, "{n}วัน"}}, week = {just, {simple, "{n}สัปดาห์"}}, month = {just, {simple, "{n}เดือน"}}, year = {just, {simple, "{n}ปี"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0}ที่แล้ว"}, in_future = {just, "ใน{0}"}}}
+        in_future = "ในอีก {0}",
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} วิ"}}, minute = {just, {simple, "{n} นาที"}}, hour = {just, {simple, "{n} ชม."}}, day = {just, {simple, "{n} วัน"}}, week = {just, {simple, "{n} สัปดาห์"}}, month = {just, {simple, "{n} เดือน"}}, year = {just, {simple, "{n} ปี"}}, half = nothing, delimiter = nothing, ago = {just, "{0}ที่แล้ว"}, in_future = {just, "ในอีก {0}"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}วิ"}}, minute = {just, {simple, "{n}นาที"}}, hour = {just, {simple, "{n}ชม."}}, day = {just, {simple, "{n}วัน"}}, week = {just, {simple, "{n}สัปดาห์"}}, month = {just, {simple, "{n}เดือน"}}, year = {just, {simple, "{n}ปี"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0}ที่แล้ว"}, in_future = {just, "ในอีก {0}"}}}
     }.

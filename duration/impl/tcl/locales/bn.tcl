@@ -19,7 +19,7 @@ proc locale_duration_bn {} {
     set units [dict create \
         second "{n} সেকেন্ড" \
         minute "{n} মিনিট" \
-        hour "{n} ঘন্টা" \
+        hour "{n} ঘণ্টা" \
         day [dict create one "{n} দিন" other "{n} দিন"] \
         week [dict create one "{n} সপ্তাহ" other "{n} সপ্তাহ"] \
         month [dict create one "{n} মাস" other "{n} মাস"] \

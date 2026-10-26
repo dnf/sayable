@@ -11,6 +11,10 @@
 /* Source: locales/mn.json */
 #include "sayabledate/sayabledate.h"
 
+static const char *sd_months_in_date_mn[12] = {
+    "нэгдүгээр сарын", "хоёрдугаар сарын", "гуравдугаар сарын", "дөрөвдүгээр сарын", "тавдугаар сарын", "зургаадугаар сарын", "долоодугаар сарын", "наймдугаар сарын", "есдүгээр сарын", "аравдугаар сарын", "арван нэгдүгээр сарын", "арван хоёрдугаар сарын"
+};
+
 static const char *sd_short_months_mn[12] = {
     "1-р сар", "2-р сар", "3-р сар", "4-р сар", "5-р сар", "6-р сар", "7-р сар", "8-р сар", "9-р сар", "10-р сар", "11-р сар", "12-р сар"
 };
@@ -22,7 +26,7 @@ static const char *sd_short_weekdays_mn[7] = {
 const SdDateLocale sd_locale_mn = {
     "mn",
     { "Нэгдүгээр сар", "Хоёрдугаар сар", "Гуравдугаар сар", "Дөрөвдүгээр сар", "Тавдугаар сар", "Зургаадугаар сар", "Долоодугаар сар", "Наймдугаар сар", "Есдүгээр сар", "Аравдугаар сар", "Арван нэгдүгээр сар", "Арван хоёрдугаар сар" },
-    { "Ням", "Даваа", "Мягмар", "Лхагва", "Пүрэв", "Баасан", "Бямба" },
+    { "ням", "даваа", "мягмар", "лхагва", "пүрэв", "баасан", "бямба" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{month} {day}",
@@ -35,7 +39,7 @@ const SdDateLocale sd_locale_mn = {
     "энэ {weekday}",
     "ирэх {weekday}",
     "өнгөрсөн {weekday}",
-    (const char **)0,
+    sd_months_in_date_mn,
     true, { sd_short_months_mn, (const char **)0, sd_short_weekdays_mn, "{n}", (const SdDayFormatException *)0, 0, true, "{month} {day}", "{year} оны {month} {day}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{yy}/{m}/{d}", "{yy}/{m}/{d}", NULL, NULL, NULL }
 };

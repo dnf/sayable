@@ -26,7 +26,7 @@ our sub locale() {
         yesterday => 'ཁ་ཙ',
         day-after-tomorrow => 'གནངས་ཚེ',
         day-before-yesterday => 'ཁ་ཉིམ',
-        this-weekday => 'འདི་ {weekday}',
+        this-weekday => '{weekday} འདི',
         next-weekday => '{weekday} ཤུལ་མ',
         last-weekday => '{weekday} ཧེ་མ',
         short => {

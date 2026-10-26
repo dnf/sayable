@@ -18,7 +18,7 @@ pub const locale_lv = DateLocale{
 	weekdays: ['svētdiena', 'pirmdiena', 'otrdiena', 'trešdiena', 'ceturtdiena', 'piektdiena', 'sestdiena']!
 	day_format: '{n}.'
 	date_pattern: '{day} {month}'
-	date_pattern_with_year: '{day} {month} {year}'
+	date_pattern_with_year: '{year}. gada {day} {month}'
 	today: 'šodien'
 	tomorrow: 'rīt'
 	yesterday: 'vakar'
@@ -42,7 +42,7 @@ pub const locale_lv = DateLocale{
 		has_day_format: true
 		date_pattern: '{day} {month}'
 		has_date_pattern: true
-		date_pattern_with_year: '{day} {month} {year}'
+		date_pattern_with_year: '{year}. gada {day} {month}'
 		has_date_pattern_with_year: true
 	}
 	has_compact: true

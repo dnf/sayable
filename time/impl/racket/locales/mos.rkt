@@ -21,10 +21,10 @@
   (time-locale
    "mos"
    (clock-config
-    (list "piig la a yiibu" "a yembre" "a yiibu" "a tãabo" "a naase" "a nu" "a yoobe" "a yopoe" "a niini" "a wae" "piiga" "piig la a yembre")
+    (list "lɛɛr piig la a yiibu" "lɛɛr a yembre" "lɛɛr a yiibu" "lɛɛr a tãabo" "lɛɛr a naase" "lɛɛr a nu" "lɛɛr a yoobe" "lɛɛr a yopoe" "lɛɛr a nii" "lɛɛr a wae" "lɛɛr piiga" "lɛɛr piig la a yembre")
     "yʋng-vɩɩse"
     "wĩntoog zabre"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (hash 0 "{h}" 5 "{h} la minit a nu" 10 "{h} la minit piiga" 15 "{h} la minit piig la a nu" 20 "{h} la minit pisi" 25 "{h} la minit pisi la a nu" 30 "{h} la pʋɩ-sʋka" 35 "{h} la minit pis-tã la a nu" 40 "{h} la minit pis-naase" 45 "{h} la minit pis-naase la a nu" 50 "{h} la minit pis-nu" 55 "{h} la minit pis-nu la a nu"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

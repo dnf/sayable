@@ -17,30 +17,30 @@ defmodule SayableDuration.Locales.EE do
       code: "ee",
       plural: (fn 1 -> :one; _ -> :other end),
       units: %{
-        second: %{one: "sekend {n}", other: "sekendwo {n}"},
-        minute: %{one: "aɖabaƒoƒo {n}", other: "aɖabaƒoƒowo {n}"},
-        hour: %{one: "gaƒoƒo {n}", other: "gaƒoƒowo {n}"},
-        day: %{one: "ŋkeke {n}", other: "ŋkekewo {n}"},
-        week: %{one: "kɔsiɖa {n}", other: "kɔsiɖawo {n}"},
-        month: %{one: "ɣleti {n}", other: "ɣletiwo {n}"},
-        year: %{one: "ƒe {n}", other: "ƒewo {n}"}
+        second: "sekend {n}",
+        minute: "aɖabaƒoƒo {n}",
+        hour: "gaƒoƒo {n}",
+        day: "ŋkeke {n}",
+        week: "kɔsiɖa {n}",
+        month: "ɣleti {n}",
+        year: "ƒe {n}"
       },
       half: "{0} kple afã",
       delimiter: ", ",
       just_now: "fifia",
-      ago: "ɖe {0} me",
+      ago: "{0} si va yi",
       in_future: "le {0} me",
       short: %{
         units: %{
           second: "sek. {n}",
           minute: "aɖaba. {n}",
           hour: "gaƒ. {n}",
-          day: "ŋkekewo {n}",
-          week: %{one: "kɔsiɖa {n}", other: "kɔsiɖawo {n}"},
-          month: %{one: "ɣleti {n}", other: "ɣletiwo {n}"},
-          year: %{one: "ƒe {n}", other: "ƒewo {n}"}
+          day: "ŋkeke {n}",
+          week: "kɔsiɖa {n}",
+          month: "ɣleti {n}",
+          year: "ƒe {n}"
         },
-        ago: "ɖe {0} me",
+        ago: "{0} si va yi",
         in_future: "le {0} me"
       },
       compact: %{
@@ -55,7 +55,7 @@ defmodule SayableDuration.Locales.EE do
         },
         half: "{n}½",
         delimiter: "",
-        ago: "ɖe {0} me",
+        ago: "{0} si va yi",
         in_future: "le {0} me"
       }
     }

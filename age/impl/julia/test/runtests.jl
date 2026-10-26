@@ -244,7 +244,7 @@ end
     @test format_age(SayableAgeFormatter(get_locale("es")), "2025-01-15", "2025-07-15") == "6 meses"  # 25.7
     @test format_age(SayableAgeFormatter(get_locale("es")), "2023-06-15", "2025-07-15") == "2 años, 1 mes"  # 25.8
     @test format_age(SayableAgeFormatter(get_locale("es")), "2023-06-15", "2025-12-15") == "2 años, 6 meses"  # 25.9
-    @test format_age(SayableAgeFormatter(get_locale("es")), "2022-06-15", "2025-12-15") == "3 y medio años"  # 25.10
+    @test format_age(SayableAgeFormatter(get_locale("es")), "2022-06-15", "2025-12-15") == "3 años y medio"  # 25.10
     @test format_age(SayableAgeFormatter(get_locale("es")), "2022-06-15", "2025-06-15") == "3 años"  # 25.11
     @test format_age(SayableAgeFormatter(get_locale("es")), "2018-06-15", "2025-06-15") == "7 años"  # 25.12
     @test format_stage(SayableAgeFormatter(get_locale("es")), "2025-06-15", "2025-06-15", "") == "Recién nacido"  # 25.13
@@ -285,13 +285,13 @@ end
 # Section 29: Locale-specific edge cases — plural rules
 @testset "Locale-specific edge cases — plural rules" begin
     @test format_age(SayableAgeFormatter(get_locale("he")), "2025-06-15", "2025-06-15") == "רק נולד"  # 29.1
-    @test format_age(SayableAgeFormatter(get_locale("he")), "2025-06-14", "2025-06-15") == "יום 1"  # 29.2
+    @test format_age(SayableAgeFormatter(get_locale("he")), "2025-06-14", "2025-06-15") == "יום"  # 29.2
     @test format_age(SayableAgeFormatter(get_locale("he")), "2025-06-12", "2025-06-15") == "3 ימים"  # 29.3
     @test format_age(SayableAgeFormatter(get_locale("he")), "2025-06-01", "2025-06-15") == "שבועיים"  # 29.4
     @test format_age(SayableAgeFormatter(get_locale("he")), "2025-05-25", "2025-06-15") == "3 שבועות"  # 29.5
     @test format_age(SayableAgeFormatter(get_locale("he")), "2025-01-15", "2025-07-15") == "6 חודשים"  # 29.6
     @test format_age(SayableAgeFormatter(get_locale("he")), "2025-03-15", "2025-06-15") == "3 חודשים"  # 29.7
-    @test format_age(SayableAgeFormatter(get_locale("he")), "2023-06-15", "2025-07-15") == "שנתיים, חודש 1"  # 29.8
+    @test format_age(SayableAgeFormatter(get_locale("he")), "2023-06-15", "2025-07-15") == "שנתיים, חודש"  # 29.8
     @test format_age(SayableAgeFormatter(get_locale("he")), "2022-06-15", "2025-12-15") == "3 שנים וחצי"  # 29.9
     @test format_age(SayableAgeFormatter(get_locale("he")), "2018-06-15", "2025-06-15") == "7 שנים"  # 29.10
     @test format_stage(SayableAgeFormatter(get_locale("he")), "2025-06-15", "2025-06-15", "m") == "רק נולד"  # 29.11
@@ -315,7 +315,7 @@ end
     @test format_age(SayableAgeFormatter(get_locale("id")), "2025-06-14", "2025-06-15") == "1 hari"  # 29.29
     @test format_age(SayableAgeFormatter(get_locale("id")), "2025-06-12", "2025-06-15") == "3 hari"  # 29.30
     @test format_age(SayableAgeFormatter(get_locale("id")), "2025-01-15", "2025-07-15") == "6 bulan"  # 29.31
-    @test format_age(SayableAgeFormatter(get_locale("id")), "2022-06-15", "2025-12-15") == "3 tahun setengah"  # 29.32
+    @test format_age(SayableAgeFormatter(get_locale("id")), "2022-06-15", "2025-12-15") == "3 setengah tahun"  # 29.32
     @test format_age(SayableAgeFormatter(get_locale("id")), "2018-06-15", "2025-06-15") == "7 tahun"  # 29.33
     @test format_age(SayableAgeFormatter(get_locale("am")), "2025-06-15", "2025-06-15") == "አዲስ የተወለደ"  # 29.34
     @test format_age(SayableAgeFormatter(get_locale("am")), "2025-06-14", "2025-06-15") == "1 ቀን"  # 29.35

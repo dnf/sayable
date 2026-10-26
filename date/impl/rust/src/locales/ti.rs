@@ -28,7 +28,7 @@ pub fn locale() -> DateLocale {
         yesterday: "ትማሊ".to_string(),
         day_after_tomorrow: Some("ድሕሪ ጽባሕ".to_string()),
         day_before_yesterday: Some("ቅድሚ ትማሊ".to_string()),
-        this_weekday: Some("እዛ {weekday}".to_string()),
+        this_weekday: Some("እዚ {weekday}".to_string()),
         next_weekday: Some("ዝመጽእ {weekday}".to_string()),
         last_weekday: Some("ዝሓለፈ {weekday}".to_string()),
         months_in_date: None,

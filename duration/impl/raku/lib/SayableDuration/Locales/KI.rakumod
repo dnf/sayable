@@ -25,11 +25,11 @@ our sub locale() {
             month => { one => 'mwerĩ {n}', other => 'mĩerĩ {n}' },
             year => { one => 'mwaka {n}', other => 'mĩaka {n}' },
         },
-        half => '{0} na nusu',
+        half => '{0} na nuthu',
         delimiter => ', ',
-        just-now => 'ũmũthĩ',
+        just-now => 'rĩu',
         ago => '{0} ĩhĩtũkĩte',
-        in-future => '{0} ĩyothe',
+        in-future => 'thutha wa {0}',
         short => {
             units => {
                 second => 'sek. {n}',
@@ -41,7 +41,7 @@ our sub locale() {
                 year => { one => 'mwaka {n}', other => 'mĩaka {n}' },
             },
             ago => '{0} ĩhĩtũkĩte',
-            in-future => '{0} ĩyothe',
+            in-future => 'thutha wa {0}',
         },
         compact => {
             units => {
@@ -55,7 +55,7 @@ our sub locale() {
             },
             delimiter => '',
             ago => '{0} ĩhĩtũkĩte',
-            in-future => '{0} ĩyothe',
+            in-future => 'thutha wa {0}',
         },
     }
 }

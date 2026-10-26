@@ -11,22 +11,22 @@
 
 % Luganda locale.
 
-st_hours('lg', ['kkumi na bbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano', 'mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi na emu']).
+st_hours('lg', ['mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi n\'emu', 'kkumi n\'ebbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano']).
 st_midnight('lg', 'ekiro eky\'omu ttumbi').
 st_noon('lg', 'ettuntu').
 
-st_pattern('lg', 0, '{h}:00').
-st_pattern('lg', 5, '{h}:05').
-st_pattern('lg', 10, '{h}:10').
-st_pattern('lg', 15, '{h}:15').
-st_pattern('lg', 20, '{h}:20').
-st_pattern('lg', 25, '{h}:25').
-st_pattern('lg', 30, '{h}:30').
-st_pattern('lg', 35, '{h}:35').
-st_pattern('lg', 40, '{h}:40').
-st_pattern('lg', 45, '{h}:45').
-st_pattern('lg', 50, '{h}:50').
-st_pattern('lg', 55, '{h}:55').
+st_pattern('lg', 0, 'essaawa {h}').
+st_pattern('lg', 5, 'essaawa {h} n\'eddakiika ttaano').
+st_pattern('lg', 10, 'essaawa {h} n\'eddakiika kkumi').
+st_pattern('lg', 15, 'essaawa {h} n\'eddakiika kkumi na ttaano').
+st_pattern('lg', 20, 'essaawa {h} n\'eddakiika abiri').
+st_pattern('lg', 25, 'essaawa {h} n\'eddakiika abiri mu ttaano').
+st_pattern('lg', 30, 'essaawa {h} n\'ekitundu').
+st_pattern('lg', 35, 'essaawa {h} n\'eddakiika asatu mu ttaano').
+st_pattern('lg', 40, 'essaawa {h} n\'eddakiika ana').
+st_pattern('lg', 45, 'essaawa {h} n\'eddakiika ana mu ttaano').
+st_pattern('lg', 50, 'essaawa {h} n\'eddakiika ataano').
+st_pattern('lg', 55, 'essaawa {h} n\'eddakiika ataano mu ttaano').
 
 short_st_use24h('lg', false).
 short_st_format('lg', '{h}:{mm} {ampm}').

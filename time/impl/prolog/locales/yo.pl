@@ -12,21 +12,21 @@
 % Yoruba locale.
 
 st_hours('yo', ['méjìlá', 'kan', 'méjì', 'mẹ́ta', 'mẹ́rin', 'márùn-ún', 'mẹ́fà', 'méje', 'mẹ́jọ', 'mẹ́sàn-án', 'mẹ́wàá', 'mọ́kànlá']).
-st_midnight('yo', 'àárọ̀ òru').
-st_noon('yo', 'ọ̀sán').
+st_midnight('yo', 'ọ̀gànjọ́ òru').
+st_noon('yo', 'ọ̀sán gangan').
 
-st_pattern('yo', 0, '{h}:00').
-st_pattern('yo', 5, '{h}:05').
-st_pattern('yo', 10, '{h}:10').
-st_pattern('yo', 15, '{h}:15').
-st_pattern('yo', 20, '{h}:20').
-st_pattern('yo', 25, '{h}:25').
-st_pattern('yo', 30, '{h}:30').
-st_pattern('yo', 35, '{h}:35').
-st_pattern('yo', 40, '{h}:40').
-st_pattern('yo', 45, '{h}:45').
-st_pattern('yo', 50, '{h}:50').
-st_pattern('yo', 55, '{h}:55').
+st_pattern('yo', 0, 'aago {h}').
+st_pattern('yo', 5, 'aago {h} kọjá ìṣẹ́jú márùn-ún').
+st_pattern('yo', 10, 'aago {h} kọjá ìṣẹ́jú mẹ́wàá').
+st_pattern('yo', 15, 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún').
+st_pattern('yo', 20, 'aago {h} kọjá ogún ìṣẹ́jú').
+st_pattern('yo', 25, 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n').
+st_pattern('yo', 30, 'aago {h} àbọ̀').
+st_pattern('yo', 35, 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n').
+st_pattern('yo', 40, 'aago {next_h} kù ogún ìṣẹ́jú').
+st_pattern('yo', 45, 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún').
+st_pattern('yo', 50, 'aago {next_h} kù ìṣẹ́jú mẹ́wàá').
+st_pattern('yo', 55, 'aago {next_h} kù ìṣẹ́jú márùn-ún').
 
 short_st_use24h('yo', false).
 short_st_format('yo', '{h}:{mm} {ampm}').

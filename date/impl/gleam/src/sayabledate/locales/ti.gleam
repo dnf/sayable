@@ -25,7 +25,7 @@ pub fn locale() -> types.DateLocale {
     yesterday: "ትማሊ",
     day_after_tomorrow: Ok("ድሕሪ ጽባሕ"),
     day_before_yesterday: Ok("ቅድሚ ትማሊ"),
-    this_weekday: Ok("እዛ {weekday}"),
+    this_weekday: Ok("እዚ {weekday}"),
     next_weekday: Ok("ዝመጽእ {weekday}"),
     last_weekday: Ok("ዝሓለፈ {weekday}"),
     months_in_date: Error(Nil),

@@ -16,7 +16,7 @@
    :day-format "{n}."
    :day-format-exceptions {}
    :date-pattern "{month} {day}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern-with-year "{month} {day} {year}"
    :today "ullumi"
    :tomorrow "aqagu"
    :yesterday "ippassaq"
@@ -25,6 +25,6 @@
    :this-weekday "{weekday} manna"
    :next-weekday "{weekday} tulleq"
    :last-weekday "{weekday} kingulleq"
-   :short {:months @["jan" "febr" "mar" "apr" "maj" "jun" "jul" "aug" "sept" "okt" "nov" "dec"] :weekdays @["sap" "ata" "mar" "pin" "sis" "tal" "arf"] :day-format "{n}." :date-pattern "{month} {day}" :date-pattern-with-year "{day} {month} {year}"}
+   :short {:months @["jan" "febr" "mar" "apr" "maj" "jun" "jul" "aug" "sept" "okt" "nov" "dec"] :weekdays @["sap" "ata" "mar" "pin" "sis" "tal" "arf"] :day-format "{n}." :date-pattern "{month} {day}" :date-pattern-with-year "{month} {day} {year}"}
    :compact {:date-pattern "{m}-{d}" :date-pattern-with-year "{year}-{m}-{d}"}
 })

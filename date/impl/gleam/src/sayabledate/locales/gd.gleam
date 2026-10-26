@@ -16,7 +16,7 @@ pub fn locale() -> types.DateLocale {
     code: "gd",
     months: ["Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd"],
     weekdays: ["DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"],
-    day_format: "{n}",
+    day_format: "{n}mh",
     day_format_exceptions: [],
     date_pattern: "{day} {month}",
     date_pattern_with_year: "{day} {month} {year}",
@@ -28,7 +28,7 @@ pub fn locale() -> types.DateLocale {
     this_weekday: Ok("{weekday} seo"),
     next_weekday: Ok("{weekday} sa tighinn"),
     last_weekday: Ok("{weekday} seo chaidh"),
-    months_in_date: Error(Nil),
+    months_in_date: Ok(["dhen Fhaoilleach", "dhen Ghearran", "dhen Mhàrt", "dhen Ghiblean", "dhen Chèitean", "dhen Ògmhios", "dhen Iuchar", "dhen Lùnastal", "dhen t-Sultain", "dhen Dàmhair", "dhen t-Samhain", "dhen Dùbhlachd"]),
     short: Ok(types.CompactnessOverride(
       months: Ok(["Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"]),
       months_in_date: Error(Nil),

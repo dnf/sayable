@@ -20,7 +20,7 @@ var KTU = st.TimeLocale{
 		Hours:    [12]string{"zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"},
 		Midnight: "midi ya butu",
 		Noon:     "midi",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "ngunga {h}", 5: "ngunga {h} na miniti tanu", 10: "ngunga {h} na miniti zomi", 15: "ngunga {h} na miniti zomi na tanu", 20: "ngunga {h} na miniti makumi zole", 25: "ngunga {h} na miniti makumi zole na tanu", 30: "ngunga {h} na ndambu", 35: "ngunga {h} na miniti makumi tatu na tanu", 40: "ngunga {h} na miniti makumi ya", 45: "ngunga {h} na miniti makumi ya na tanu", 50: "ngunga {h} na miniti makumi tanu", 55: "ngunga {h} na miniti makumi tanu na tanu"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

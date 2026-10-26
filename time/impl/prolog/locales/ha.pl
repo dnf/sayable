@@ -11,22 +11,22 @@
 
 % Hausa locale.
 
-st_hours('ha', ['sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'goma sha ɗaya']).
+st_hours('ha', ['sha biyu', 'ɗaya', 'biyu', 'uku', 'huɗu', 'biyar', 'shida', 'bakwai', 'takwas', 'tara', 'goma', 'sha ɗaya']).
 st_midnight('ha', 'tsakar dare').
 st_noon('ha', 'tsakar rana').
 
-st_pattern('ha', 0, '{h}:00').
-st_pattern('ha', 5, '{h}:05').
-st_pattern('ha', 10, '{h}:10').
-st_pattern('ha', 15, '{h}:15').
-st_pattern('ha', 20, '{h}:20').
-st_pattern('ha', 25, '{h}:25').
-st_pattern('ha', 30, '{h}:30').
-st_pattern('ha', 35, '{h}:35').
-st_pattern('ha', 40, '{h}:40').
-st_pattern('ha', 45, '{h}:45').
-st_pattern('ha', 50, '{h}:50').
-st_pattern('ha', 55, '{h}:55').
+st_pattern('ha', 0, 'ƙarfe {h}').
+st_pattern('ha', 5, 'ƙarfe {h} da minti biyar').
+st_pattern('ha', 10, 'ƙarfe {h} da minti goma').
+st_pattern('ha', 15, 'ƙarfe {h} da kwata').
+st_pattern('ha', 20, 'ƙarfe {h} da minti ashirin').
+st_pattern('ha', 25, 'ƙarfe {h} da minti ashirin da biyar').
+st_pattern('ha', 30, 'ƙarfe {h} da rabi').
+st_pattern('ha', 35, 'ƙarfe {next_h} saura minti ashirin da biyar').
+st_pattern('ha', 40, 'ƙarfe {next_h} saura minti ashirin').
+st_pattern('ha', 45, 'ƙarfe {next_h} saura kwata').
+st_pattern('ha', 50, 'ƙarfe {next_h} saura minti goma').
+st_pattern('ha', 55, 'ƙarfe {next_h} saura minti biyar').
 
 short_st_use24h('ha', false).
 short_st_format('ha', '{h}:{mm} {ampm}').

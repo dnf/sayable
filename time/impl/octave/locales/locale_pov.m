@@ -11,10 +11,10 @@
 
 function loc = locale_pov()
   loc.code = 'pov';
-  loc.clock.hours = {'dozi', 'un', 'dos', 'tres', 'kuatru', 'sinku', 'seis', 'seti', 'oitu', 'novi', 'des', 'onzi'};
+  loc.clock.hours = {'dozi ora', 'un ora', 'dos ora', 'tres ora', 'kuatru ora', 'sinku ora', 'seis ora', 'seti ora', 'oitu ora', 'novi ora', 'des ora', 'onzi ora'};
   loc.clock.midnight = 'meia noti';
   loc.clock.noon = 'meiu dia';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} i sinku', "p10", '{h} i des', "p15", '{h} i kinzi', "p20", '{h} i vinti', "p25", '{h} i vinti i sinku', "p30", '{h} i meiu', "p35", '{h} i trinta i sinku', "p40", '{h} i kuarenta', "p45", '{h} i kuarenta i sinku', "p50", '{h} i sinkuenta', "p55", '{h} i sinkuenta i sinku');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

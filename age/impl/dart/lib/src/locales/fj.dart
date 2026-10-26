@@ -21,7 +21,7 @@ final fj = AgeLocale(
   week: simpleUnit('{n} na macawa'),
   month: simpleUnit('{n} na vula'),
   year: simpleUnit('{n} na yabaki'),
-  half: '{n} kei na levu ni wasei',
+  half: '{0} kei na veimama',
   delimiter: ', ',
   justBorn: 'Gone vou',
   newborn: stageNeutral('Gone vou'),
@@ -42,5 +42,6 @@ final fj = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

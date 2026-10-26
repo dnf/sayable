@@ -28,7 +28,7 @@ let MG* = DurationLocale(
   half: "{0} sy sasany",
   delimiter: ", ",
   justNow: "vao haingana",
-  ago: "{0} lasa",
+  ago: "{0} lasa izay",
   inFuture: "ao anatin'ny {0}",
   short: some(CompactnessOverride(
     units: some({
@@ -42,7 +42,7 @@ let MG* = DurationLocale(
     }.toOrderedTable),
     half: none(string),
     delimiter: none(string),
-    ago: some("{0} lasa"),
+    ago: some("{0} lasa izay"),
     inFuture: some("ao anatin'ny {0}"),
   )),
   compact: some(CompactnessOverride(

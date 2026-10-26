@@ -20,7 +20,7 @@ const CA = AgeLocale(
         "month" => Dict("one" => "{n} mes", "other" => "{n} mesos"),
         "year" => Dict("one" => "{n} any", "other" => "{n} anys"),
     ),
-    half = "{n} i mig",
+    half = "{0} i mig",
     delimiter = ", ",
     just_born = "Nounat",
     stages = Dict(

@@ -12,7 +12,7 @@
 #include "sayableduration/sayableduration.h"
 
 static SduPluralCategory plural_kl(int n) {
-    (void)n;
+    if (n == 1) return SDU_ONE;
     return SDU_OTHER;
 }
 
@@ -20,17 +20,17 @@ const SduDurationLocale sdu_locale_kl = {
     "kl",
     plural_kl,
     {
-        { "sekundit {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "minutsit {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "nalunaaqutap akunnera {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "ullut {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "sapaatit {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "qaammatit {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "ukiut {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { NULL, { NULL, "sekundi {n}", NULL, NULL, NULL, "sekundit {n}" } },
+        { NULL, { NULL, "minutsi {n}", NULL, NULL, NULL, "minutsit {n}" } },
+        { NULL, { NULL, "nalunaaquttap akunnera {n}", NULL, NULL, NULL, "nalunaaquttap akunneri {n}" } },
+        { NULL, { NULL, "ulloq {n}", NULL, NULL, NULL, "ullut {n}" } },
+        { NULL, { NULL, "sapaatip akunnera {n}", NULL, NULL, NULL, "sapaatip akunneri {n}" } },
+        { NULL, { NULL, "qaammat {n}", NULL, NULL, NULL, "qaammatit {n}" } },
+        { NULL, { NULL, "ukioq {n}", NULL, NULL, NULL, "ukiut {n}" } }
     },
     "{0} affaa", ", ",
     "maanna",
     "{0} matuma siorna", "{0} siunissami",
-    true, { true, { "sek. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "min. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "nal. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ull. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sap. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "qaam. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "uk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} matuma siorna", true, "{0} siunissami" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} matuma siorna", true, "{0} siunissami" }
+    true, { true, { "sek. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "min. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "nal. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ull. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sap. ak. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "qaam. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "uk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} matuma siorna", true, "{0} siunissami" },
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} matuma siorna", true, "{0} siunissami" }
 };

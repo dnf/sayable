@@ -15,9 +15,9 @@ const SW = DurationLocale(
     code = "sw",
     plural = n -> n == 1 ? "one" : "other",
     units = Dict(
-        "second" => "{n} sekunde",
-        "minute" => "{n} dakika",
-        "hour" => "{n} saa",
+        "second" => "sekunde {n}",
+        "minute" => "dakika {n}",
+        "hour" => "saa {n}",
         "day" => Dict("one" => "siku {n}", "other" => "siku {n}"),
         "week" => Dict("one" => "wiki {n}", "other" => "wiki {n}"),
         "month" => Dict("one" => "mwezi {n}", "other" => "miezi {n}"),

@@ -1,5 +1,4 @@
 /// Formats dates the way people talk -- "today", "next Thursday", "March 15th".
-
 import sayabledate/formatter
 import sayabledate/locales/locales
 import sayabledate/types.{type Compactness, type DateLocale}

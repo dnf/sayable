@@ -17,7 +17,8 @@ sd_plural('pa', _, other).
 
 sd_unit('pa', second, _, '{n} ਸਕਿੰਟ').
 sd_unit('pa', minute, _, '{n} ਮਿੰਟ').
-sd_unit('pa', hour, _, '{n} ਘੰਟਾ').
+sd_unit('pa', hour, one, '{n} ਘੰਟਾ').
+sd_unit('pa', hour, other, '{n} ਘੰਟੇ').
 sd_unit('pa', day, one, '{n} ਦਿਨ').
 sd_unit('pa', day, other, '{n} ਦਿਨ').
 sd_unit('pa', week, one, '{n} ਹਫ਼ਤਾ').

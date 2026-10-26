@@ -35,7 +35,7 @@ locale =
     , delimiter = " "
     , justNow = "เมื่อกี้"
     , ago = "{0}ที่แล้ว"
-    , inFuture = "ใน{0}"
+    , inFuture = "ในอีก {0}"
     , short =
         Just
             { ovrUnits =
@@ -53,7 +53,7 @@ locale =
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0}ที่แล้ว"
-            , ovrInFuture = Just "ใน{0}"
+            , ovrInFuture = Just "ในอีก {0}"
             }
     , compact =
         Just
@@ -72,6 +72,6 @@ locale =
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0}ที่แล้ว"
-            , ovrInFuture = Just "ใน{0}"
+            , ovrInFuture = Just "ในอีก {0}"
             }
     }

@@ -26,10 +26,10 @@ let LO* = DurationLocale(
     "year": simpleUnit("{n} ປີ"),
   }.toOrderedTable,
   half: "{0}ເຄິ່ງ",
-  delimiter: "",
+  delimiter: " ",
   justNow: "ຫາກໍ",
   ago: "{0} ກ່ອນ",
-  inFuture: "ໃນ {0}",
+  inFuture: "ໃນອີກ {0}",
   short: some(CompactnessOverride(
     units: some({
       "second": simpleUnit("{n} ວິ."),
@@ -43,7 +43,7 @@ let LO* = DurationLocale(
     half: none(string),
     delimiter: none(string),
     ago: some("{0} ກ່ອນ"),
-    inFuture: some("ໃນ {0}"),
+    inFuture: some("ໃນອີກ {0}"),
   )),
   compact: some(CompactnessOverride(
     units: some({
@@ -52,12 +52,12 @@ let LO* = DurationLocale(
       "hour": simpleUnit("{n}h"),
       "day": simpleUnit("{n}d"),
       "week": simpleUnit("{n}w"),
-      "month": simpleUnit("{n}m"),
+      "month": simpleUnit("{n}mo"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
     half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0} ກ່ອນ"),
-    inFuture: some("ໃນ {0}"),
+    inFuture: some("ໃນອີກ {0}"),
   )),
 )

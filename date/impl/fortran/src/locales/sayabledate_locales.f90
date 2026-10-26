@@ -1238,7 +1238,7 @@ contains
     locale_bm%code = 'bm'
 
     locale_bm%months(1) = 'Zanwuye'
-    locale_bm%months(2) = 'Fewuriye'
+    locale_bm%months(2) = 'Feburuye'
     locale_bm%months(3) = 'Marisi'
     locale_bm%months(4) = 'Awirili'
     locale_bm%months(5) = 'Mɛ'
@@ -1246,8 +1246,8 @@ contains
     locale_bm%months(7) = 'Zuluye'
     locale_bm%months(8) = 'Uti'
     locale_bm%months(9) = 'Sɛtanburu'
-    locale_bm%months(10) = 'ɔkutɔburu'
-    locale_bm%months(11) = 'Nowanbudu'
+    locale_bm%months(10) = 'Ɔkutɔburu'
+    locale_bm%months(11) = 'Nowanburu'
     locale_bm%months(12) = 'Desanburu'
 
     locale_bm%weekdays(1) = 'Kari'
@@ -1280,7 +1280,7 @@ contains
     locale_bm%has_short = .true.
     locale_bm%short_override%has_months = .true.
     locale_bm%short_override%months(1) = 'Zan'
-    locale_bm%short_override%months(2) = 'Few'
+    locale_bm%short_override%months(2) = 'Feb'
     locale_bm%short_override%months(3) = 'Mar'
     locale_bm%short_override%months(4) = 'Awi'
     locale_bm%short_override%months(5) = 'Mɛ'
@@ -1288,7 +1288,7 @@ contains
     locale_bm%short_override%months(7) = 'Zul'
     locale_bm%short_override%months(8) = 'Uti'
     locale_bm%short_override%months(9) = 'Sɛt'
-    locale_bm%short_override%months(10) = 'ɔku'
+    locale_bm%short_override%months(10) = 'Ɔku'
     locale_bm%short_override%months(11) = 'Now'
     locale_bm%short_override%months(12) = 'Des'
     locale_bm%short_override%has_months_in_date = .false.
@@ -1638,8 +1638,8 @@ contains
 
     locale_ca%num_exceptions = 0
 
-    locale_ca%date_pattern = '{day} de {month}'
-    locale_ca%date_pattern_with_year = '{day} de {month} de {year}'
+    locale_ca%date_pattern = '{day} {month}'
+    locale_ca%date_pattern_with_year = '{day} {month} de {year}'
 
     locale_ca%today = 'avui'
     locale_ca%tomorrow = 'demà'
@@ -1651,7 +1651,19 @@ contains
     locale_ca%next_weekday = '{weekday} que ve'
     locale_ca%last_weekday = '{weekday} passat'
 
-    locale_ca%has_months_in_date = .false.
+    locale_ca%has_months_in_date = .true.
+    locale_ca%months_in_date(1) = 'de gener'
+    locale_ca%months_in_date(2) = 'de febrer'
+    locale_ca%months_in_date(3) = 'de març'
+    locale_ca%months_in_date(4) = 'd''abril'
+    locale_ca%months_in_date(5) = 'de maig'
+    locale_ca%months_in_date(6) = 'de juny'
+    locale_ca%months_in_date(7) = 'de juliol'
+    locale_ca%months_in_date(8) = 'd''agost'
+    locale_ca%months_in_date(9) = 'de setembre'
+    locale_ca%months_in_date(10) = 'd''octubre'
+    locale_ca%months_in_date(11) = 'de novembre'
+    locale_ca%months_in_date(12) = 'de desembre'
 
     locale_ca%has_short = .true.
     locale_ca%short_override%has_months = .true.
@@ -1682,7 +1694,7 @@ contains
     locale_ca%short_override%has_date_pattern = .true.
     locale_ca%short_override%date_pattern = '{day} {month}'
     locale_ca%short_override%has_date_pattern_with_year = .true.
-    locale_ca%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_ca%short_override%date_pattern_with_year = '{day} {month} de {year}'
     locale_ca%short_override%has_today = .false.
     locale_ca%short_override%has_tomorrow = .false.
     locale_ca%short_override%has_yesterday = .false.
@@ -2575,7 +2587,7 @@ contains
     locale_dyu%months(8) = 'Utikalo'
     locale_dyu%months(9) = 'Sɛtanburukalo'
     locale_dyu%months(10) = 'Ɔkutɔburukalo'
-    locale_dyu%months(11) = 'Nowanburdukalo'
+    locale_dyu%months(11) = 'Nowanburukalo'
     locale_dyu%months(12) = 'Desanburukalo'
 
     locale_dyu%weekdays(1) = 'Kari'
@@ -2693,7 +2705,7 @@ contains
 
     locale_dz%day_after_tomorrow = 'གནངས་ཚེ'
     locale_dz%day_before_yesterday = 'ཁ་ཉིམ'
-    locale_dz%this_weekday = 'འདི་ {weekday}'
+    locale_dz%this_weekday = '{weekday} འདི'
     locale_dz%next_weekday = '{weekday} ཤུལ་མ'
     locale_dz%last_weekday = '{weekday} ཧེ་མ'
 
@@ -2757,10 +2769,10 @@ contains
     locale_ee%months(2) = 'Dzodze'
     locale_ee%months(3) = 'Tedoxe'
     locale_ee%months(4) = 'Afɔfĩe'
-    locale_ee%months(5) = 'Damɛ'
+    locale_ee%months(5) = 'Dama'
     locale_ee%months(6) = 'Masa'
     locale_ee%months(7) = 'Siamlɔm'
-    locale_ee%months(8) = 'Dasiamime'
+    locale_ee%months(8) = 'Deasiamime'
     locale_ee%months(9) = 'Anyɔnyɔ'
     locale_ee%months(10) = 'Kele'
     locale_ee%months(11) = 'Adeɛmekpɔxe'
@@ -2768,7 +2780,7 @@ contains
 
     locale_ee%weekdays(1) = 'Kɔsiɖa'
     locale_ee%weekdays(2) = 'Dzoɖa'
-    locale_ee%weekdays(3) = 'Braɖa'
+    locale_ee%weekdays(3) = 'Blaɖa'
     locale_ee%weekdays(4) = 'Kuɖa'
     locale_ee%weekdays(5) = 'Yawoɖa'
     locale_ee%weekdays(6) = 'Fiɖa'
@@ -2782,11 +2794,11 @@ contains
     locale_ee%date_pattern_with_year = '{day} {month} {year}'
 
     locale_ee%today = 'egbe'
-    locale_ee%tomorrow = 'etsɔ'
-    locale_ee%yesterday = 'etso'
+    locale_ee%tomorrow = 'etsɔ si gbɔna'
+    locale_ee%yesterday = 'etsɔ si va yi'
 
-    locale_ee%day_after_tomorrow = 'etsɔ megbe'
-    locale_ee%day_before_yesterday = 'etso nyitsɔ'
+    locale_ee%day_after_tomorrow = 'nyitsɔ si gbɔna'
+    locale_ee%day_before_yesterday = 'nyitsɔ si va yi'
     locale_ee%this_weekday = '{weekday} sia'
     locale_ee%next_weekday = '{weekday} si gbɔna'
     locale_ee%last_weekday = '{weekday} si va yi'
@@ -2802,7 +2814,7 @@ contains
     locale_ee%short_override%months(5) = 'Dam'
     locale_ee%short_override%months(6) = 'Mas'
     locale_ee%short_override%months(7) = 'Sia'
-    locale_ee%short_override%months(8) = 'Das'
+    locale_ee%short_override%months(8) = 'Dea'
     locale_ee%short_override%months(9) = 'Any'
     locale_ee%short_override%months(10) = 'Kel'
     locale_ee%short_override%months(11) = 'Ade'
@@ -2811,7 +2823,7 @@ contains
     locale_ee%short_override%has_weekdays = .true.
     locale_ee%short_override%weekdays(1) = 'Kɔs'
     locale_ee%short_override%weekdays(2) = 'Dzo'
-    locale_ee%short_override%weekdays(3) = 'Bra'
+    locale_ee%short_override%weekdays(3) = 'Bla'
     locale_ee%short_override%weekdays(4) = 'Kuɖ'
     locale_ee%short_override%weekdays(5) = 'Yaw'
     locale_ee%short_override%weekdays(6) = 'Fiɖ'
@@ -3270,12 +3282,16 @@ contains
     locale_eu%weekdays(6) = 'ostirala'
     locale_eu%weekdays(7) = 'larunbata'
 
-    locale_eu%day_format = '{n}'
+    locale_eu%day_format = '{n}a'
 
-    locale_eu%num_exceptions = 0
+    locale_eu%num_exceptions = 2
+    locale_eu%exception_keys(1) = '11'
+    locale_eu%exception_vals(1) = '{n}'
+    locale_eu%exception_keys(2) = '31'
+    locale_eu%exception_vals(2) = '{n}'
 
-    locale_eu%date_pattern = '{month}ren {day}'
-    locale_eu%date_pattern_with_year = '{year}ko {month}ren {day}'
+    locale_eu%date_pattern = '{month} {day}'
+    locale_eu%date_pattern_with_year = '{year}ko {month} {day}'
 
     locale_eu%today = 'gaur'
     locale_eu%tomorrow = 'bihar'
@@ -3287,7 +3303,19 @@ contains
     locale_eu%next_weekday = 'hurrengo {weekday}'
     locale_eu%last_weekday = 'aurreko {weekday}'
 
-    locale_eu%has_months_in_date = .false.
+    locale_eu%has_months_in_date = .true.
+    locale_eu%months_in_date(1) = 'urtarrilaren'
+    locale_eu%months_in_date(2) = 'otsailaren'
+    locale_eu%months_in_date(3) = 'martxoaren'
+    locale_eu%months_in_date(4) = 'apirilaren'
+    locale_eu%months_in_date(5) = 'maiatzaren'
+    locale_eu%months_in_date(6) = 'ekainaren'
+    locale_eu%months_in_date(7) = 'uztailaren'
+    locale_eu%months_in_date(8) = 'abuztuaren'
+    locale_eu%months_in_date(9) = 'irailaren'
+    locale_eu%months_in_date(10) = 'urriaren'
+    locale_eu%months_in_date(11) = 'azaroaren'
+    locale_eu%months_in_date(12) = 'abenduaren'
 
     locale_eu%has_short = .true.
     locale_eu%short_override%has_months = .true.
@@ -3932,13 +3960,13 @@ contains
     locale_fon%months(11) = 'Abɔxwísún'
     locale_fon%months(12) = 'Adɔxwísún'
 
-    locale_fon%weekdays(1) = 'Sidégbe'
+    locale_fon%weekdays(1) = 'Aklunɔzángbe'
     locale_fon%weekdays(2) = 'Tɛnígbe'
     locale_fon%weekdays(3) = 'Talɛtagbe'
     locale_fon%weekdays(4) = 'Azǎngagbe'
     locale_fon%weekdays(5) = 'Nyɔnúgbe'
     locale_fon%weekdays(6) = 'Axɔ́sùgbe'
-    locale_fon%weekdays(7) = 'Abámɛ́ta'
+    locale_fon%weekdays(7) = 'Sibigbe'
 
     locale_fon%day_format = '{n}'
 
@@ -3975,13 +4003,13 @@ contains
     locale_fon%short_override%months(12) = 'Adɔ'
     locale_fon%short_override%has_months_in_date = .false.
     locale_fon%short_override%has_weekdays = .true.
-    locale_fon%short_override%weekdays(1) = 'Sid'
+    locale_fon%short_override%weekdays(1) = 'Akl'
     locale_fon%short_override%weekdays(2) = 'Tɛn'
     locale_fon%short_override%weekdays(3) = 'Tal'
     locale_fon%short_override%weekdays(4) = 'Azǎ'
     locale_fon%short_override%weekdays(5) = 'Nyɔ'
     locale_fon%short_override%weekdays(6) = 'Axɔ'
-    locale_fon%short_override%weekdays(7) = 'Abá'
+    locale_fon%short_override%weekdays(7) = 'Sib'
     locale_fon%short_override%has_day_format = .true.
     locale_fon%short_override%day_format = '{n}'
     locale_fon%short_override%has_day_format_exceptions = .false.
@@ -4143,7 +4171,7 @@ contains
 
     locale_ga%day_after_tomorrow = 'arú amárach'
     locale_ga%day_before_yesterday = 'arú inné'
-    locale_ga%this_weekday = 'an {weekday} seo'
+    locale_ga%this_weekday = '{weekday} seo'
     locale_ga%next_weekday = '{weekday} seo chugainn'
     locale_ga%last_weekday = '{weekday} seo caite'
 
@@ -4224,7 +4252,7 @@ contains
     locale_gd%weekdays(6) = 'DihAoine'
     locale_gd%weekdays(7) = 'DiSathairne'
 
-    locale_gd%day_format = '{n}'
+    locale_gd%day_format = '{n}mh'
 
     locale_gd%num_exceptions = 0
 
@@ -4241,7 +4269,19 @@ contains
     locale_gd%next_weekday = '{weekday} sa tighinn'
     locale_gd%last_weekday = '{weekday} seo chaidh'
 
-    locale_gd%has_months_in_date = .false.
+    locale_gd%has_months_in_date = .true.
+    locale_gd%months_in_date(1) = 'dhen Fhaoilleach'
+    locale_gd%months_in_date(2) = 'dhen Ghearran'
+    locale_gd%months_in_date(3) = 'dhen Mhàrt'
+    locale_gd%months_in_date(4) = 'dhen Ghiblean'
+    locale_gd%months_in_date(5) = 'dhen Chèitean'
+    locale_gd%months_in_date(6) = 'dhen Ògmhios'
+    locale_gd%months_in_date(7) = 'dhen Iuchar'
+    locale_gd%months_in_date(8) = 'dhen Lùnastal'
+    locale_gd%months_in_date(9) = 'dhen t-Sultain'
+    locale_gd%months_in_date(10) = 'dhen Dàmhair'
+    locale_gd%months_in_date(11) = 'dhen t-Samhain'
+    locale_gd%months_in_date(12) = 'dhen Dùbhlachd'
 
     locale_gd%has_short = .true.
     locale_gd%short_override%has_months = .true.
@@ -4419,7 +4459,7 @@ contains
     locale_gn%date_pattern = '{day} {month}'
     locale_gn%date_pattern_with_year = '{day} {month} {year}'
 
-    locale_gn%today = 'ko''ágã'
+    locale_gn%today = 'ko árape'
     locale_gn%tomorrow = 'ko''ẽrõ'
     locale_gn%yesterday = 'kuehe'
 
@@ -4709,7 +4749,7 @@ contains
     locale_ha%day_before_yesterday = 'shekaranjiya'
     locale_ha%this_weekday = 'wannan {weekday}'
     locale_ha%next_weekday = '{weekday} mai zuwa'
-    locale_ha%last_weekday = '{weekday} da ya wuce'
+    locale_ha%last_weekday = '{weekday} da ta wuce'
 
     locale_ha%has_months_in_date = .false.
 
@@ -5343,26 +5383,26 @@ contains
   subroutine init_hy()
     locale_hy%code = 'hy'
 
-    locale_hy%months(1) = 'Հունվար'
-    locale_hy%months(2) = 'Փետրվար'
-    locale_hy%months(3) = 'Մարտ'
-    locale_hy%months(4) = 'Ապրիլ'
-    locale_hy%months(5) = 'Մայիս'
-    locale_hy%months(6) = 'Հունիս'
-    locale_hy%months(7) = 'Հուլիս'
-    locale_hy%months(8) = 'Օգոստոս'
-    locale_hy%months(9) = 'Սեպտեմբեր'
-    locale_hy%months(10) = 'Հոկտեմբեր'
-    locale_hy%months(11) = 'Նոյեմբեր'
-    locale_hy%months(12) = 'Դեկտեմբեր'
+    locale_hy%months(1) = 'հունվար'
+    locale_hy%months(2) = 'փետրվար'
+    locale_hy%months(3) = 'մարտ'
+    locale_hy%months(4) = 'ապրիլ'
+    locale_hy%months(5) = 'մայիս'
+    locale_hy%months(6) = 'հունիս'
+    locale_hy%months(7) = 'հուլիս'
+    locale_hy%months(8) = 'օգոստոս'
+    locale_hy%months(9) = 'սեպտեմբեր'
+    locale_hy%months(10) = 'հոկտեմբեր'
+    locale_hy%months(11) = 'նոյեմբեր'
+    locale_hy%months(12) = 'դեկտեմբեր'
 
-    locale_hy%weekdays(1) = 'Կիրակի'
-    locale_hy%weekdays(2) = 'Երկուշաբթի'
-    locale_hy%weekdays(3) = 'Երեքշաբթի'
-    locale_hy%weekdays(4) = 'Չորեքշաբթի'
-    locale_hy%weekdays(5) = 'Հինգշաբթի'
-    locale_hy%weekdays(6) = 'Ուրբաթ'
-    locale_hy%weekdays(7) = 'Շաբաթ'
+    locale_hy%weekdays(1) = 'կիրակի'
+    locale_hy%weekdays(2) = 'երկուշաբթի'
+    locale_hy%weekdays(3) = 'երեքշաբթի'
+    locale_hy%weekdays(4) = 'չորեքշաբթի'
+    locale_hy%weekdays(5) = 'հինգշաբթի'
+    locale_hy%weekdays(6) = 'ուրբաթ'
+    locale_hy%weekdays(7) = 'շաբաթ'
 
     locale_hy%day_format = '{n}'
 
@@ -5375,37 +5415,49 @@ contains
     locale_hy%tomorrow = 'վաղը'
     locale_hy%yesterday = 'երեկ'
 
-    locale_hy%day_after_tomorrow = 'վաղը մյուս օրը'
-    locale_hy%day_before_yesterday = 'երեկ մյուս օրը'
+    locale_hy%day_after_tomorrow = 'վաղը չէ մյուս օրը'
+    locale_hy%day_before_yesterday = 'երեկ չէ առաջի օրը'
     locale_hy%this_weekday = 'այս {weekday}'
     locale_hy%next_weekday = 'հաջորդ {weekday}'
     locale_hy%last_weekday = 'անցած {weekday}'
 
-    locale_hy%has_months_in_date = .false.
+    locale_hy%has_months_in_date = .true.
+    locale_hy%months_in_date(1) = 'հունվարի'
+    locale_hy%months_in_date(2) = 'փետրվարի'
+    locale_hy%months_in_date(3) = 'մարտի'
+    locale_hy%months_in_date(4) = 'ապրիլի'
+    locale_hy%months_in_date(5) = 'մայիսի'
+    locale_hy%months_in_date(6) = 'հունիսի'
+    locale_hy%months_in_date(7) = 'հուլիսի'
+    locale_hy%months_in_date(8) = 'օգոստոսի'
+    locale_hy%months_in_date(9) = 'սեպտեմբերի'
+    locale_hy%months_in_date(10) = 'հոկտեմբերի'
+    locale_hy%months_in_date(11) = 'նոյեմբերի'
+    locale_hy%months_in_date(12) = 'դեկտեմբերի'
 
     locale_hy%has_short = .true.
     locale_hy%short_override%has_months = .true.
-    locale_hy%short_override%months(1) = 'Հնվ'
-    locale_hy%short_override%months(2) = 'Փտր'
-    locale_hy%short_override%months(3) = 'Մրտ'
-    locale_hy%short_override%months(4) = 'Ապր'
-    locale_hy%short_override%months(5) = 'Մյս'
-    locale_hy%short_override%months(6) = 'Հնս'
-    locale_hy%short_override%months(7) = 'Հլս'
-    locale_hy%short_override%months(8) = 'Օգս'
-    locale_hy%short_override%months(9) = 'Սեպ'
-    locale_hy%short_override%months(10) = 'Հկտ'
-    locale_hy%short_override%months(11) = 'Նոյ'
-    locale_hy%short_override%months(12) = 'Դեկ'
+    locale_hy%short_override%months(1) = 'հնվ'
+    locale_hy%short_override%months(2) = 'փտր'
+    locale_hy%short_override%months(3) = 'մրտ'
+    locale_hy%short_override%months(4) = 'ապր'
+    locale_hy%short_override%months(5) = 'մյս'
+    locale_hy%short_override%months(6) = 'հնս'
+    locale_hy%short_override%months(7) = 'հլս'
+    locale_hy%short_override%months(8) = 'օգս'
+    locale_hy%short_override%months(9) = 'սեպ'
+    locale_hy%short_override%months(10) = 'հկտ'
+    locale_hy%short_override%months(11) = 'նոյ'
+    locale_hy%short_override%months(12) = 'դեկ'
     locale_hy%short_override%has_months_in_date = .false.
     locale_hy%short_override%has_weekdays = .true.
-    locale_hy%short_override%weekdays(1) = 'Կիր'
-    locale_hy%short_override%weekdays(2) = 'Երկ'
-    locale_hy%short_override%weekdays(3) = 'Երք'
-    locale_hy%short_override%weekdays(4) = 'Չրք'
-    locale_hy%short_override%weekdays(5) = 'Հնգ'
-    locale_hy%short_override%weekdays(6) = 'Ուր'
-    locale_hy%short_override%weekdays(7) = 'Շբթ'
+    locale_hy%short_override%weekdays(1) = 'կիր'
+    locale_hy%short_override%weekdays(2) = 'երկ'
+    locale_hy%short_override%weekdays(3) = 'երք'
+    locale_hy%short_override%weekdays(4) = 'չրք'
+    locale_hy%short_override%weekdays(5) = 'հնգ'
+    locale_hy%short_override%weekdays(6) = 'ուր'
+    locale_hy%short_override%weekdays(7) = 'շբթ'
     locale_hy%short_override%has_day_format = .true.
     locale_hy%short_override%day_format = '{n}'
     locale_hy%short_override%has_day_format_exceptions = .false.
@@ -5940,7 +5992,7 @@ contains
     locale_jv%yesterday = 'wingi'
 
     locale_jv%day_after_tomorrow = 'embèn'
-    locale_jv%day_before_yesterday = 'dhèk wingi'
+    locale_jv%day_before_yesterday = 'wingenané'
     locale_jv%this_weekday = '{weekday} iki'
     locale_jv%next_weekday = '{weekday} ngarep'
     locale_jv%last_weekday = '{weekday} wingi'
@@ -6014,13 +6066,13 @@ contains
     locale_ka%months(11) = 'ნოემბერი'
     locale_ka%months(12) = 'დეკემბერი'
 
-    locale_ka%weekdays(1) = 'კვირა'
-    locale_ka%weekdays(2) = 'ორშაბათი'
-    locale_ka%weekdays(3) = 'სამშაბათი'
-    locale_ka%weekdays(4) = 'ოთხშაბათი'
-    locale_ka%weekdays(5) = 'ხუთშაბათი'
-    locale_ka%weekdays(6) = 'პარასკევი'
-    locale_ka%weekdays(7) = 'შაბათი'
+    locale_ka%weekdays(1) = 'კვირას'
+    locale_ka%weekdays(2) = 'ორშაბათს'
+    locale_ka%weekdays(3) = 'სამშაბათს'
+    locale_ka%weekdays(4) = 'ოთხშაბათს'
+    locale_ka%weekdays(5) = 'ხუთშაბათს'
+    locale_ka%weekdays(6) = 'პარასკევს'
+    locale_ka%weekdays(7) = 'შაბათს'
 
     locale_ka%day_format = '{n}'
 
@@ -6497,7 +6549,7 @@ contains
     locale_kl%num_exceptions = 0
 
     locale_kl%date_pattern = '{month} {day}'
-    locale_kl%date_pattern_with_year = '{day} {month} {year}'
+    locale_kl%date_pattern_with_year = '{month} {day} {year}'
 
     locale_kl%today = 'ullumi'
     locale_kl%tomorrow = 'aqagu'
@@ -6540,7 +6592,7 @@ contains
     locale_kl%short_override%has_date_pattern = .true.
     locale_kl%short_override%date_pattern = '{month} {day}'
     locale_kl%short_override%has_date_pattern_with_year = .true.
-    locale_kl%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_kl%short_override%date_pattern_with_year = '{month} {day} {year}'
     locale_kl%short_override%has_today = .false.
     locale_kl%short_override%has_tomorrow = .false.
     locale_kl%short_override%has_yesterday = .false.
@@ -7317,33 +7369,33 @@ contains
   subroutine init_ky()
     locale_ky%code = 'ky'
 
-    locale_ky%months(1) = 'Январь'
-    locale_ky%months(2) = 'Февраль'
-    locale_ky%months(3) = 'Март'
-    locale_ky%months(4) = 'Апрель'
-    locale_ky%months(5) = 'Май'
-    locale_ky%months(6) = 'Июнь'
-    locale_ky%months(7) = 'Июль'
-    locale_ky%months(8) = 'Август'
-    locale_ky%months(9) = 'Сентябрь'
-    locale_ky%months(10) = 'Октябрь'
-    locale_ky%months(11) = 'Ноябрь'
-    locale_ky%months(12) = 'Декабрь'
+    locale_ky%months(1) = 'январь'
+    locale_ky%months(2) = 'февраль'
+    locale_ky%months(3) = 'март'
+    locale_ky%months(4) = 'апрель'
+    locale_ky%months(5) = 'май'
+    locale_ky%months(6) = 'июнь'
+    locale_ky%months(7) = 'июль'
+    locale_ky%months(8) = 'август'
+    locale_ky%months(9) = 'сентябрь'
+    locale_ky%months(10) = 'октябрь'
+    locale_ky%months(11) = 'ноябрь'
+    locale_ky%months(12) = 'декабрь'
 
-    locale_ky%weekdays(1) = 'Жекшемби'
-    locale_ky%weekdays(2) = 'Дүйшөмбү'
-    locale_ky%weekdays(3) = 'Шейшемби'
-    locale_ky%weekdays(4) = 'Шаршемби'
-    locale_ky%weekdays(5) = 'Бейшемби'
-    locale_ky%weekdays(6) = 'Жума'
-    locale_ky%weekdays(7) = 'Ишемби'
+    locale_ky%weekdays(1) = 'жекшемби'
+    locale_ky%weekdays(2) = 'дүйшөмбү'
+    locale_ky%weekdays(3) = 'шейшемби'
+    locale_ky%weekdays(4) = 'шаршемби'
+    locale_ky%weekdays(5) = 'бейшемби'
+    locale_ky%weekdays(6) = 'жума'
+    locale_ky%weekdays(7) = 'ишемби'
 
-    locale_ky%day_format = '{n}'
+    locale_ky%day_format = '{n}-'
 
     locale_ky%num_exceptions = 0
 
-    locale_ky%date_pattern = '{day} {month}'
-    locale_ky%date_pattern_with_year = '{day} {month} {year}'
+    locale_ky%date_pattern = '{day}{month}'
+    locale_ky%date_pattern_with_year = '{year}-ж., {day}{month}'
 
     locale_ky%today = 'бүгүн'
     locale_ky%tomorrow = 'эртең'
@@ -7359,27 +7411,27 @@ contains
 
     locale_ky%has_short = .true.
     locale_ky%short_override%has_months = .true.
-    locale_ky%short_override%months(1) = 'Янв'
-    locale_ky%short_override%months(2) = 'Фев'
-    locale_ky%short_override%months(3) = 'Мар'
-    locale_ky%short_override%months(4) = 'Апр'
-    locale_ky%short_override%months(5) = 'Май'
-    locale_ky%short_override%months(6) = 'Июн'
-    locale_ky%short_override%months(7) = 'Июл'
-    locale_ky%short_override%months(8) = 'Авг'
-    locale_ky%short_override%months(9) = 'Сен'
-    locale_ky%short_override%months(10) = 'Окт'
-    locale_ky%short_override%months(11) = 'Ноя'
-    locale_ky%short_override%months(12) = 'Дек'
+    locale_ky%short_override%months(1) = 'янв'
+    locale_ky%short_override%months(2) = 'фев'
+    locale_ky%short_override%months(3) = 'мар'
+    locale_ky%short_override%months(4) = 'апр'
+    locale_ky%short_override%months(5) = 'май'
+    locale_ky%short_override%months(6) = 'июн'
+    locale_ky%short_override%months(7) = 'июл'
+    locale_ky%short_override%months(8) = 'авг'
+    locale_ky%short_override%months(9) = 'сен'
+    locale_ky%short_override%months(10) = 'окт'
+    locale_ky%short_override%months(11) = 'ноя'
+    locale_ky%short_override%months(12) = 'дек'
     locale_ky%short_override%has_months_in_date = .false.
     locale_ky%short_override%has_weekdays = .true.
-    locale_ky%short_override%weekdays(1) = 'Жек'
-    locale_ky%short_override%weekdays(2) = 'Дүй'
-    locale_ky%short_override%weekdays(3) = 'Шей'
-    locale_ky%short_override%weekdays(4) = 'Шар'
-    locale_ky%short_override%weekdays(5) = 'Бей'
-    locale_ky%short_override%weekdays(6) = 'Жум'
-    locale_ky%short_override%weekdays(7) = 'Ише'
+    locale_ky%short_override%weekdays(1) = 'жек'
+    locale_ky%short_override%weekdays(2) = 'дүй'
+    locale_ky%short_override%weekdays(3) = 'шей'
+    locale_ky%short_override%weekdays(4) = 'шар'
+    locale_ky%short_override%weekdays(5) = 'бей'
+    locale_ky%short_override%weekdays(6) = 'жум'
+    locale_ky%short_override%weekdays(7) = 'ише'
     locale_ky%short_override%has_day_format = .true.
     locale_ky%short_override%day_format = '{n}'
     locale_ky%short_override%has_day_format_exceptions = .false.
@@ -7538,7 +7590,7 @@ contains
     locale_lg%yesterday = 'jjo'
 
     locale_lg%day_after_tomorrow = 'enkya ogwa'
-    locale_lg%day_before_yesterday = 'jjo edda'
+    locale_lg%day_before_yesterday = 'jjuuzi'
     locale_lg%this_weekday = '{weekday} eno'
     locale_lg%next_weekday = '{weekday} eddirira'
     locale_lg%last_weekday = '{weekday} eggudde'
@@ -7726,10 +7778,10 @@ contains
     locale_lo%yesterday = 'ມື້ວານ'
 
     locale_lo%day_after_tomorrow = 'ມື້ຮື'
-    locale_lo%day_before_yesterday = 'ມື້ກ່ອນ'
+    locale_lo%day_before_yesterday = 'ມື້ຊືນ'
     locale_lo%this_weekday = '{weekday}ນີ້'
     locale_lo%next_weekday = '{weekday}ໜ້າ'
-    locale_lo%last_weekday = '{weekday}ແລ້ວ'
+    locale_lo%last_weekday = '{weekday}ທີ່ແລ້ວ'
 
     locale_lo%has_months_in_date = .false.
 
@@ -7808,12 +7860,12 @@ contains
     locale_lt%weekdays(6) = 'penktadienis'
     locale_lt%weekdays(7) = 'šeštadienis'
 
-    locale_lt%day_format = '{n}.'
+    locale_lt%day_format = '{n} d.'
 
     locale_lt%num_exceptions = 0
 
-    locale_lt%date_pattern = '{day} {month}'
-    locale_lt%date_pattern_with_year = '{day} {month} {year}'
+    locale_lt%date_pattern = '{month} {day}'
+    locale_lt%date_pattern_with_year = '{year} m. {month} {day}'
 
     locale_lt%today = 'šiandien'
     locale_lt%tomorrow = 'rytoj'
@@ -7863,12 +7915,12 @@ contains
     locale_lt%short_override%weekdays(6) = 'pn'
     locale_lt%short_override%weekdays(7) = 'št'
     locale_lt%short_override%has_day_format = .true.
-    locale_lt%short_override%day_format = '{n}.'
+    locale_lt%short_override%day_format = '{n} d.'
     locale_lt%short_override%has_day_format_exceptions = .false.
     locale_lt%short_override%has_date_pattern = .true.
-    locale_lt%short_override%date_pattern = '{day} {month}'
+    locale_lt%short_override%date_pattern = '{month} {day}'
     locale_lt%short_override%has_date_pattern_with_year = .true.
-    locale_lt%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_lt%short_override%date_pattern_with_year = '{year} m. {month} {day}'
     locale_lt%short_override%has_today = .false.
     locale_lt%short_override%has_tomorrow = .false.
     locale_lt%short_override%has_yesterday = .false.
@@ -8013,7 +8065,7 @@ contains
     locale_lv%num_exceptions = 0
 
     locale_lv%date_pattern = '{day} {month}'
-    locale_lv%date_pattern_with_year = '{day} {month} {year}'
+    locale_lv%date_pattern_with_year = '{year}. gada {day} {month}'
 
     locale_lv%today = 'šodien'
     locale_lv%tomorrow = 'rīt'
@@ -8056,7 +8108,7 @@ contains
     locale_lv%short_override%has_date_pattern = .true.
     locale_lv%short_override%date_pattern = '{day} {month}'
     locale_lv%short_override%has_date_pattern_with_year = .true.
-    locale_lv%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_lv%short_override%date_pattern_with_year = '{year}. gada {day} {month}'
     locale_lv%short_override%has_today = .false.
     locale_lv%short_override%has_tomorrow = .false.
     locale_lv%short_override%has_yesterday = .false.
@@ -8489,8 +8541,8 @@ contains
     locale_mi%tomorrow = 'āpōpō'
     locale_mi%yesterday = 'inanahi'
 
-    locale_mi%day_after_tomorrow = 'tērā āpōpō'
-    locale_mi%day_before_yesterday = 'tērā inanahi'
+    locale_mi%day_after_tomorrow = 'ātahirā'
+    locale_mi%day_before_yesterday = 'inātahirā'
     locale_mi%this_weekday = 'tēnei {weekday}'
     locale_mi%next_weekday = '{weekday} e heke mai nei'
     locale_mi%last_weekday = '{weekday} kua hori'
@@ -8752,13 +8804,13 @@ contains
     locale_mn%months(11) = 'Арван нэгдүгээр сар'
     locale_mn%months(12) = 'Арван хоёрдугаар сар'
 
-    locale_mn%weekdays(1) = 'Ням'
-    locale_mn%weekdays(2) = 'Даваа'
-    locale_mn%weekdays(3) = 'Мягмар'
-    locale_mn%weekdays(4) = 'Лхагва'
-    locale_mn%weekdays(5) = 'Пүрэв'
-    locale_mn%weekdays(6) = 'Баасан'
-    locale_mn%weekdays(7) = 'Бямба'
+    locale_mn%weekdays(1) = 'ням'
+    locale_mn%weekdays(2) = 'даваа'
+    locale_mn%weekdays(3) = 'мягмар'
+    locale_mn%weekdays(4) = 'лхагва'
+    locale_mn%weekdays(5) = 'пүрэв'
+    locale_mn%weekdays(6) = 'баасан'
+    locale_mn%weekdays(7) = 'бямба'
 
     locale_mn%day_format = '{n}'
 
@@ -8777,7 +8829,19 @@ contains
     locale_mn%next_weekday = 'ирэх {weekday}'
     locale_mn%last_weekday = 'өнгөрсөн {weekday}'
 
-    locale_mn%has_months_in_date = .false.
+    locale_mn%has_months_in_date = .true.
+    locale_mn%months_in_date(1) = 'нэгдүгээр сарын'
+    locale_mn%months_in_date(2) = 'хоёрдугаар сарын'
+    locale_mn%months_in_date(3) = 'гуравдугаар сарын'
+    locale_mn%months_in_date(4) = 'дөрөвдүгээр сарын'
+    locale_mn%months_in_date(5) = 'тавдугаар сарын'
+    locale_mn%months_in_date(6) = 'зургаадугаар сарын'
+    locale_mn%months_in_date(7) = 'долоодугаар сарын'
+    locale_mn%months_in_date(8) = 'наймдугаар сарын'
+    locale_mn%months_in_date(9) = 'есдүгээр сарын'
+    locale_mn%months_in_date(10) = 'аравдугаар сарын'
+    locale_mn%months_in_date(11) = 'арван нэгдүгээр сарын'
+    locale_mn%months_in_date(12) = 'арван хоёрдугаар сарын'
 
     locale_mn%has_short = .true.
     locale_mn%short_override%has_months = .true.
@@ -9222,13 +9286,13 @@ contains
     locale_mt%months(11) = 'Novembru'
     locale_mt%months(12) = 'Diċembru'
 
-    locale_mt%weekdays(1) = 'Il-Ħadd'
-    locale_mt%weekdays(2) = 'It-Tnejn'
-    locale_mt%weekdays(3) = 'It-Tlieta'
-    locale_mt%weekdays(4) = 'L-Erbgħa'
-    locale_mt%weekdays(5) = 'Il-Ħamis'
-    locale_mt%weekdays(6) = 'Il-Ġimgħa'
-    locale_mt%weekdays(7) = 'Is-Sibt'
+    locale_mt%weekdays(1) = 'il-Ħadd'
+    locale_mt%weekdays(2) = 'it-Tnejn'
+    locale_mt%weekdays(3) = 'it-Tlieta'
+    locale_mt%weekdays(4) = 'l-Erbgħa'
+    locale_mt%weekdays(5) = 'il-Ħamis'
+    locale_mt%weekdays(6) = 'il-Ġimgħa'
+    locale_mt%weekdays(7) = 'is-Sibt'
 
     locale_mt%day_format = '{n}'
 
@@ -10183,9 +10247,9 @@ contains
 
     locale_ny%day_after_tomorrow = 'mkucha'
     locale_ny%day_before_yesterday = 'dzana'
-    locale_ny%this_weekday = '{weekday} ino'
-    locale_ny%next_weekday = '{weekday} yotsatira'
-    locale_ny%last_weekday = '{weekday} yatha'
+    locale_ny%this_weekday = '{weekday} lino'
+    locale_ny%next_weekday = '{weekday} lotsatira'
+    locale_ny%last_weekday = '{weekday} latha'
 
     locale_ny%has_months_in_date = .false.
 
@@ -11040,7 +11104,7 @@ contains
     locale_qu%yesterday = 'qayna'
 
     locale_qu%day_after_tomorrow = 'minchha'
-    locale_qu%day_before_yesterday = 'qayna p''unchaw'
+    locale_qu%day_before_yesterday = 'qayninpa'
     locale_qu%this_weekday = 'kay {weekday}'
     locale_qu%next_weekday = 'hamuq {weekday}'
     locale_qu%last_weekday = 'qayna {weekday}'
@@ -11208,13 +11272,13 @@ contains
     locale_ro%months(11) = 'noiembrie'
     locale_ro%months(12) = 'decembrie'
 
-    locale_ro%weekdays(1) = 'duminică'
-    locale_ro%weekdays(2) = 'luni'
-    locale_ro%weekdays(3) = 'marți'
-    locale_ro%weekdays(4) = 'miercuri'
-    locale_ro%weekdays(5) = 'joi'
-    locale_ro%weekdays(6) = 'vineri'
-    locale_ro%weekdays(7) = 'sâmbătă'
+    locale_ro%weekdays(1) = 'duminica'
+    locale_ro%weekdays(2) = 'lunea'
+    locale_ro%weekdays(3) = 'marțea'
+    locale_ro%weekdays(4) = 'miercurea'
+    locale_ro%weekdays(5) = 'joia'
+    locale_ro%weekdays(6) = 'vinerea'
+    locale_ro%weekdays(7) = 'sâmbăta'
 
     locale_ro%day_format = '{n}'
 
@@ -11229,7 +11293,7 @@ contains
 
     locale_ro%day_after_tomorrow = 'poimâine'
     locale_ro%day_before_yesterday = 'alaltăieri'
-    locale_ro%this_weekday = 'această {weekday}'
+    locale_ro%this_weekday = '{weekday} aceasta'
     locale_ro%next_weekday = '{weekday} viitoare'
     locale_ro%last_weekday = '{weekday} trecută'
 
@@ -11783,26 +11847,26 @@ contains
   subroutine init_shi()
     locale_shi%code = 'shi'
 
-    locale_shi%months(1) = 'ⵉⵏⵏⴰⵢⵔ'
-    locale_shi%months(2) = 'ⴱⵕⴰⵢⵕ'
-    locale_shi%months(3) = 'ⵎⴰⵕⵚ'
-    locale_shi%months(4) = 'ⵉⴱⵔⵉⵔ'
-    locale_shi%months(5) = 'ⵎⴰⵢⵢⵓ'
-    locale_shi%months(6) = 'ⵢⵓⵏⵢⵓ'
-    locale_shi%months(7) = 'ⵢⵓⵍⵢⵓⵣ'
-    locale_shi%months(8) = 'ⵖⵓⵛⵜ'
-    locale_shi%months(9) = 'ⵛⵓⵜⴰⵏⴱⵉⵔ'
-    locale_shi%months(10) = 'ⴽⵜⵓⴱⵔ'
-    locale_shi%months(11) = 'ⵏⵓⵡⴰⵏⴱⵉⵔ'
-    locale_shi%months(12) = 'ⴷⵓⵊⴰⵏⴱⵉⵔ'
+    locale_shi%months(1) = 'innayr'
+    locale_shi%months(2) = 'bṛayṛ'
+    locale_shi%months(3) = 'maṛṣ'
+    locale_shi%months(4) = 'ibrir'
+    locale_shi%months(5) = 'mayyu'
+    locale_shi%months(6) = 'yunyu'
+    locale_shi%months(7) = 'yulyuz'
+    locale_shi%months(8) = 'ɣuct'
+    locale_shi%months(9) = 'cutanbir'
+    locale_shi%months(10) = 'ktubr'
+    locale_shi%months(11) = 'nuwanbir'
+    locale_shi%months(12) = 'dujanbir'
 
-    locale_shi%weekdays(1) = 'ⴰⵙⴰⵎⴰⵙ'
-    locale_shi%weekdays(2) = 'ⴰⵢⵏⴰⵙ'
-    locale_shi%weekdays(3) = 'ⴰⵙⵉⵏⴰⵙ'
-    locale_shi%weekdays(4) = 'ⴰⴽⵕⴰⵙ'
-    locale_shi%weekdays(5) = 'ⴰⴽⵡⴰⵙ'
-    locale_shi%weekdays(6) = 'ⴰⵙⵉⵎⵡⴰⵙ'
-    locale_shi%weekdays(7) = 'ⴰⵙⵉⴹⵢⴰⵙ'
+    locale_shi%weekdays(1) = 'asamas'
+    locale_shi%weekdays(2) = 'aynas'
+    locale_shi%weekdays(3) = 'asinas'
+    locale_shi%weekdays(4) = 'akṛas'
+    locale_shi%weekdays(5) = 'akwas'
+    locale_shi%weekdays(6) = 'asimwas'
+    locale_shi%weekdays(7) = 'asiḍyas'
 
     locale_shi%day_format = '{n}'
 
@@ -11811,41 +11875,41 @@ contains
     locale_shi%date_pattern = '{day} {month}'
     locale_shi%date_pattern_with_year = '{day} {month} {year}'
 
-    locale_shi%today = 'ⴰⵙⵙⴰ'
-    locale_shi%tomorrow = 'ⴰⵙⴽⴽⴰ'
-    locale_shi%yesterday = 'ⵉⴹⵍⵍⵉ'
+    locale_shi%today = 'assa'
+    locale_shi%tomorrow = 'askka'
+    locale_shi%yesterday = 'iḍlli'
 
     locale_shi%day_after_tomorrow = ''
     locale_shi%day_before_yesterday = ''
-    locale_shi%this_weekday = '{weekday} ⴰⴷ'
-    locale_shi%next_weekday = '{weekday} ⴷ ⵉⴷⴷⴰⵏ'
-    locale_shi%last_weekday = '{weekday} ⵉⵣⵔⵉⵏ'
+    locale_shi%this_weekday = '{weekday} ad'
+    locale_shi%next_weekday = '{weekday} d iddan'
+    locale_shi%last_weekday = '{weekday} izrin'
 
     locale_shi%has_months_in_date = .false.
 
     locale_shi%has_short = .true.
     locale_shi%short_override%has_months = .true.
-    locale_shi%short_override%months(1) = 'ⵉⵏⵏ'
-    locale_shi%short_override%months(2) = 'ⴱⵕⴰ'
-    locale_shi%short_override%months(3) = 'ⵎⴰⵕ'
-    locale_shi%short_override%months(4) = 'ⵉⴱⵔ'
-    locale_shi%short_override%months(5) = 'ⵎⴰⵢ'
-    locale_shi%short_override%months(6) = 'ⵢⵓⵏ'
-    locale_shi%short_override%months(7) = 'ⵢⵓⵍ'
-    locale_shi%short_override%months(8) = 'ⵖⵓⵛ'
-    locale_shi%short_override%months(9) = 'ⵛⵓⵜ'
-    locale_shi%short_override%months(10) = 'ⴽⵜⵓ'
-    locale_shi%short_override%months(11) = 'ⵏⵓⵡ'
-    locale_shi%short_override%months(12) = 'ⴷⵓⵊ'
+    locale_shi%short_override%months(1) = 'inn'
+    locale_shi%short_override%months(2) = 'bṛa'
+    locale_shi%short_override%months(3) = 'maṛ'
+    locale_shi%short_override%months(4) = 'ibr'
+    locale_shi%short_override%months(5) = 'may'
+    locale_shi%short_override%months(6) = 'yun'
+    locale_shi%short_override%months(7) = 'yul'
+    locale_shi%short_override%months(8) = 'ɣuc'
+    locale_shi%short_override%months(9) = 'cut'
+    locale_shi%short_override%months(10) = 'ktu'
+    locale_shi%short_override%months(11) = 'nuw'
+    locale_shi%short_override%months(12) = 'duj'
     locale_shi%short_override%has_months_in_date = .false.
     locale_shi%short_override%has_weekdays = .true.
-    locale_shi%short_override%weekdays(1) = 'ⴰⵙⴰ'
-    locale_shi%short_override%weekdays(2) = 'ⴰⵢⵏ'
-    locale_shi%short_override%weekdays(3) = 'ⴰⵙⵉ'
-    locale_shi%short_override%weekdays(4) = 'ⴰⴽⵕ'
-    locale_shi%short_override%weekdays(5) = 'ⴰⴽⵡ'
-    locale_shi%short_override%weekdays(6) = 'ⴰⵙⵉⵎ'
-    locale_shi%short_override%weekdays(7) = 'ⴰⵙⵉⴹ'
+    locale_shi%short_override%weekdays(1) = 'asa'
+    locale_shi%short_override%weekdays(2) = 'ayn'
+    locale_shi%short_override%weekdays(3) = 'asi'
+    locale_shi%short_override%weekdays(4) = 'akṛ'
+    locale_shi%short_override%weekdays(5) = 'akw'
+    locale_shi%short_override%weekdays(6) = 'asim'
+    locale_shi%short_override%weekdays(7) = 'asiḍ'
     locale_shi%short_override%has_day_format = .true.
     locale_shi%short_override%day_format = '{n}'
     locale_shi%short_override%has_day_format_exceptions = .false.
@@ -12309,7 +12373,7 @@ contains
     locale_sn%tomorrow = 'mangwana'
     locale_sn%yesterday = 'nezuro'
 
-    locale_sn%day_after_tomorrow = 'mangwanani'
+    locale_sn%day_after_tomorrow = 'kuswera mangwana'
     locale_sn%day_before_yesterday = 'nezuro rakapera'
     locale_sn%this_weekday = '{weekday} ino'
     locale_sn%next_weekday = '{weekday} inotevera'
@@ -12572,13 +12636,13 @@ contains
     locale_sq%months(11) = 'nëntor'
     locale_sq%months(12) = 'dhjetor'
 
-    locale_sq%weekdays(1) = 'e diel'
-    locale_sq%weekdays(2) = 'e hënë'
-    locale_sq%weekdays(3) = 'e martë'
-    locale_sq%weekdays(4) = 'e mërkurë'
-    locale_sq%weekdays(5) = 'e enjte'
-    locale_sq%weekdays(6) = 'e premte'
-    locale_sq%weekdays(7) = 'e shtunë'
+    locale_sq%weekdays(1) = 'të dielën'
+    locale_sq%weekdays(2) = 'të hënën'
+    locale_sq%weekdays(3) = 'të martën'
+    locale_sq%weekdays(4) = 'të mërkurën'
+    locale_sq%weekdays(5) = 'të enjten'
+    locale_sq%weekdays(6) = 'të premten'
+    locale_sq%weekdays(7) = 'të shtunën'
 
     locale_sq%day_format = '{n}'
 
@@ -12593,8 +12657,8 @@ contains
 
     locale_sq%day_after_tomorrow = 'pasnesër'
     locale_sq%day_before_yesterday = 'pardje'
-    locale_sq%this_weekday = 'këtë {weekday}'
-    locale_sq%next_weekday = '{weekday} tjetër'
+    locale_sq%this_weekday = '{weekday}'
+    locale_sq%next_weekday = '{weekday} e ardhshme'
     locale_sq%last_weekday = '{weekday} e kaluar'
 
     locale_sq%has_months_in_date = .false.
@@ -13722,8 +13786,8 @@ contains
     locale_tg%day_after_tomorrow = 'пасфардо'
     locale_tg%day_before_yesterday = 'парирӯз'
     locale_tg%this_weekday = 'ин {weekday}'
-    locale_tg%next_weekday = '{weekday}-и оянда'
-    locale_tg%last_weekday = '{weekday}-и гузашта'
+    locale_tg%next_weekday = '{weekday}и оянда'
+    locale_tg%last_weekday = '{weekday}и гузашта'
 
     locale_tg%has_months_in_date = .false.
 
@@ -13909,7 +13973,7 @@ contains
 
     locale_ti%day_after_tomorrow = 'ድሕሪ ጽባሕ'
     locale_ti%day_before_yesterday = 'ቅድሚ ትማሊ'
-    locale_ti%this_weekday = 'እዛ {weekday}'
+    locale_ti%this_weekday = 'እዚ {weekday}'
     locale_ti%next_weekday = 'ዝመጽእ {weekday}'
     locale_ti%last_weekday = 'ዝሓለፈ {weekday}'
 
@@ -14063,26 +14127,26 @@ contains
   subroutine init_tk()
     locale_tk%code = 'tk'
 
-    locale_tk%months(1) = 'Ýanwar'
-    locale_tk%months(2) = 'Fewral'
-    locale_tk%months(3) = 'Mart'
-    locale_tk%months(4) = 'Aprel'
-    locale_tk%months(5) = 'Maý'
-    locale_tk%months(6) = 'Iýun'
-    locale_tk%months(7) = 'Iýul'
-    locale_tk%months(8) = 'Awgust'
-    locale_tk%months(9) = 'Sentýabr'
-    locale_tk%months(10) = 'Oktýabr'
-    locale_tk%months(11) = 'Noýabr'
-    locale_tk%months(12) = 'Dekabr'
+    locale_tk%months(1) = 'ýanwar'
+    locale_tk%months(2) = 'fewral'
+    locale_tk%months(3) = 'mart'
+    locale_tk%months(4) = 'aprel'
+    locale_tk%months(5) = 'maý'
+    locale_tk%months(6) = 'iýun'
+    locale_tk%months(7) = 'iýul'
+    locale_tk%months(8) = 'awgust'
+    locale_tk%months(9) = 'sentýabr'
+    locale_tk%months(10) = 'oktýabr'
+    locale_tk%months(11) = 'noýabr'
+    locale_tk%months(12) = 'dekabr'
 
-    locale_tk%weekdays(1) = 'Ýekşenbe'
-    locale_tk%weekdays(2) = 'Duşenbe'
-    locale_tk%weekdays(3) = 'Sişenbe'
-    locale_tk%weekdays(4) = 'Çarşenbe'
-    locale_tk%weekdays(5) = 'Penşenbe'
-    locale_tk%weekdays(6) = 'Anna'
-    locale_tk%weekdays(7) = 'Şenbe'
+    locale_tk%weekdays(1) = 'ýekşenbe'
+    locale_tk%weekdays(2) = 'duşenbe'
+    locale_tk%weekdays(3) = 'sişenbe'
+    locale_tk%weekdays(4) = 'çarşenbe'
+    locale_tk%weekdays(5) = 'penşenbe'
+    locale_tk%weekdays(6) = 'anna'
+    locale_tk%weekdays(7) = 'şenbe'
 
     locale_tk%day_format = '{n}'
 
@@ -14105,27 +14169,27 @@ contains
 
     locale_tk%has_short = .true.
     locale_tk%short_override%has_months = .true.
-    locale_tk%short_override%months(1) = 'Ýan'
-    locale_tk%short_override%months(2) = 'Few'
-    locale_tk%short_override%months(3) = 'Mar'
-    locale_tk%short_override%months(4) = 'Apr'
-    locale_tk%short_override%months(5) = 'Maý'
-    locale_tk%short_override%months(6) = 'Iýn'
-    locale_tk%short_override%months(7) = 'Iýl'
-    locale_tk%short_override%months(8) = 'Awg'
-    locale_tk%short_override%months(9) = 'Sen'
-    locale_tk%short_override%months(10) = 'Okt'
-    locale_tk%short_override%months(11) = 'Noý'
-    locale_tk%short_override%months(12) = 'Dek'
+    locale_tk%short_override%months(1) = 'ýan'
+    locale_tk%short_override%months(2) = 'few'
+    locale_tk%short_override%months(3) = 'mar'
+    locale_tk%short_override%months(4) = 'apr'
+    locale_tk%short_override%months(5) = 'maý'
+    locale_tk%short_override%months(6) = 'iýn'
+    locale_tk%short_override%months(7) = 'iýl'
+    locale_tk%short_override%months(8) = 'awg'
+    locale_tk%short_override%months(9) = 'sen'
+    locale_tk%short_override%months(10) = 'okt'
+    locale_tk%short_override%months(11) = 'noý'
+    locale_tk%short_override%months(12) = 'dek'
     locale_tk%short_override%has_months_in_date = .false.
     locale_tk%short_override%has_weekdays = .true.
-    locale_tk%short_override%weekdays(1) = 'Ýek'
-    locale_tk%short_override%weekdays(2) = 'Duş'
-    locale_tk%short_override%weekdays(3) = 'Siş'
-    locale_tk%short_override%weekdays(4) = 'Çar'
-    locale_tk%short_override%weekdays(5) = 'Pen'
-    locale_tk%short_override%weekdays(6) = 'Ann'
-    locale_tk%short_override%weekdays(7) = 'Şen'
+    locale_tk%short_override%weekdays(1) = 'ýek'
+    locale_tk%short_override%weekdays(2) = 'duş'
+    locale_tk%short_override%weekdays(3) = 'siş'
+    locale_tk%short_override%weekdays(4) = 'çar'
+    locale_tk%short_override%weekdays(5) = 'pen'
+    locale_tk%short_override%weekdays(6) = 'ann'
+    locale_tk%short_override%weekdays(7) = 'şen'
     locale_tk%short_override%has_day_format = .true.
     locale_tk%short_override%day_format = '{n}'
     locale_tk%short_override%has_day_format_exceptions = .false.
@@ -14284,7 +14348,7 @@ contains
     locale_tpi%yesterday = 'asde'
 
     locale_tpi%day_after_tomorrow = 'haptumora'
-    locale_tpi%day_before_yesterday = 'asde bipo'
+    locale_tpi%day_before_yesterday = 'hapasde'
     locale_tpi%this_weekday = 'dispela {weekday}'
     locale_tpi%next_weekday = '{weekday} bihain'
     locale_tpi%last_weekday = '{weekday} bipo'
@@ -14627,26 +14691,26 @@ contains
   subroutine init_tzm()
     locale_tzm%code = 'tzm'
 
-    locale_tzm%months(1) = 'ⵉⵏⵏⴰⵢⵔ'
-    locale_tzm%months(2) = 'ⴱⵕⴰⵢⵕ'
-    locale_tzm%months(3) = 'ⵎⴰⵕⵚ'
-    locale_tzm%months(4) = 'ⵉⴱⵔⵉⵔ'
-    locale_tzm%months(5) = 'ⵎⴰⵢⵢⵓ'
-    locale_tzm%months(6) = 'ⵢⵓⵏⵢⵓ'
-    locale_tzm%months(7) = 'ⵢⵓⵍⵢⵓⵣ'
-    locale_tzm%months(8) = 'ⵖⵓⵛⵜ'
-    locale_tzm%months(9) = 'ⵛⵓⵜⴰⵏⴱⵉⵔ'
-    locale_tzm%months(10) = 'ⴽⵜⵓⴱⵔ'
-    locale_tzm%months(11) = 'ⵏⵓⵡⴰⵏⴱⵉⵔ'
-    locale_tzm%months(12) = 'ⴷⵓⵊⴰⵏⴱⵉⵔ'
+    locale_tzm%months(1) = 'Yennayer'
+    locale_tzm%months(2) = 'Yebrayer'
+    locale_tzm%months(3) = 'Mars'
+    locale_tzm%months(4) = 'Ibrir'
+    locale_tzm%months(5) = 'Mayyu'
+    locale_tzm%months(6) = 'Yunyu'
+    locale_tzm%months(7) = 'Yulyuz'
+    locale_tzm%months(8) = 'Ɣuct'
+    locale_tzm%months(9) = 'Cutanbir'
+    locale_tzm%months(10) = 'Kṭuber'
+    locale_tzm%months(11) = 'Nwanbir'
+    locale_tzm%months(12) = 'Dujanbir'
 
-    locale_tzm%weekdays(1) = 'ⴰⵙⴰⵎⴰⵙ'
-    locale_tzm%weekdays(2) = 'ⴰⵢⵏⴰⵙ'
-    locale_tzm%weekdays(3) = 'ⴰⵙⵉⵏⴰⵙ'
-    locale_tzm%weekdays(4) = 'ⴰⴽⵕⴰⵙ'
-    locale_tzm%weekdays(5) = 'ⴰⴽⵡⴰⵙ'
-    locale_tzm%weekdays(6) = 'ⴰⵙⵉⵎⵡⴰⵙ'
-    locale_tzm%weekdays(7) = 'ⴰⵙⵉⴹⵢⴰⵙ'
+    locale_tzm%weekdays(1) = 'Asamas'
+    locale_tzm%weekdays(2) = 'Aynas'
+    locale_tzm%weekdays(3) = 'Asinas'
+    locale_tzm%weekdays(4) = 'Akras'
+    locale_tzm%weekdays(5) = 'Akwas'
+    locale_tzm%weekdays(6) = 'Asimwas'
+    locale_tzm%weekdays(7) = 'Asiḍyas'
 
     locale_tzm%day_format = '{n}'
 
@@ -14655,41 +14719,41 @@ contains
     locale_tzm%date_pattern = '{day} {month}'
     locale_tzm%date_pattern_with_year = '{day} {month} {year}'
 
-    locale_tzm%today = 'ⴰⵙⵙⴰ'
-    locale_tzm%tomorrow = 'ⴰⵙⴽⴽⴰ'
-    locale_tzm%yesterday = 'ⵉⴹⵍⵍⵉ'
+    locale_tzm%today = 'Assa'
+    locale_tzm%tomorrow = 'Asekka'
+    locale_tzm%yesterday = 'Assenaṭ'
 
     locale_tzm%day_after_tomorrow = ''
     locale_tzm%day_before_yesterday = ''
-    locale_tzm%this_weekday = '{weekday} ⴰⴷ'
-    locale_tzm%next_weekday = '{weekday} ⴷ ⵉⴷⴷⴰⵏ'
-    locale_tzm%last_weekday = '{weekday} ⵉⵣⵔⵉⵏ'
+    locale_tzm%this_weekday = '{weekday} ad'
+    locale_tzm%next_weekday = '{weekday} d iddan'
+    locale_tzm%last_weekday = '{weekday} izrin'
 
     locale_tzm%has_months_in_date = .false.
 
     locale_tzm%has_short = .true.
     locale_tzm%short_override%has_months = .true.
-    locale_tzm%short_override%months(1) = 'ⵉⵏⵏ'
-    locale_tzm%short_override%months(2) = 'ⴱⵕⴰ'
-    locale_tzm%short_override%months(3) = 'ⵎⴰⵕ'
-    locale_tzm%short_override%months(4) = 'ⵉⴱⵔ'
-    locale_tzm%short_override%months(5) = 'ⵎⴰⵢ'
-    locale_tzm%short_override%months(6) = 'ⵢⵓⵏ'
-    locale_tzm%short_override%months(7) = 'ⵢⵓⵍ'
-    locale_tzm%short_override%months(8) = 'ⵖⵓⵛ'
-    locale_tzm%short_override%months(9) = 'ⵛⵓⵜ'
-    locale_tzm%short_override%months(10) = 'ⴽⵜⵓ'
-    locale_tzm%short_override%months(11) = 'ⵏⵓⵡ'
-    locale_tzm%short_override%months(12) = 'ⴷⵓⵊ'
+    locale_tzm%short_override%months(1) = 'Yen'
+    locale_tzm%short_override%months(2) = 'Yeb'
+    locale_tzm%short_override%months(3) = 'Mar'
+    locale_tzm%short_override%months(4) = 'Ibr'
+    locale_tzm%short_override%months(5) = 'May'
+    locale_tzm%short_override%months(6) = 'Yun'
+    locale_tzm%short_override%months(7) = 'Yul'
+    locale_tzm%short_override%months(8) = 'Ɣuc'
+    locale_tzm%short_override%months(9) = 'Cut'
+    locale_tzm%short_override%months(10) = 'Kṭu'
+    locale_tzm%short_override%months(11) = 'Nwa'
+    locale_tzm%short_override%months(12) = 'Duj'
     locale_tzm%short_override%has_months_in_date = .false.
     locale_tzm%short_override%has_weekdays = .true.
-    locale_tzm%short_override%weekdays(1) = 'ⴰⵙⴰ'
-    locale_tzm%short_override%weekdays(2) = 'ⴰⵢⵏ'
-    locale_tzm%short_override%weekdays(3) = 'ⴰⵙⵉ'
-    locale_tzm%short_override%weekdays(4) = 'ⴰⴽⵕ'
-    locale_tzm%short_override%weekdays(5) = 'ⴰⴽⵡ'
-    locale_tzm%short_override%weekdays(6) = 'ⴰⵙⵉⵎ'
-    locale_tzm%short_override%weekdays(7) = 'ⴰⵙⵉⴹ'
+    locale_tzm%short_override%weekdays(1) = 'Asa'
+    locale_tzm%short_override%weekdays(2) = 'Ayn'
+    locale_tzm%short_override%weekdays(3) = 'Asn'
+    locale_tzm%short_override%weekdays(4) = 'Akr'
+    locale_tzm%short_override%weekdays(5) = 'Akw'
+    locale_tzm%short_override%weekdays(6) = 'Asm'
+    locale_tzm%short_override%weekdays(7) = 'Asḍ'
     locale_tzm%short_override%has_day_format = .true.
     locale_tzm%short_override%day_format = '{n}'
     locale_tzm%short_override%has_day_format_exceptions = .false.
@@ -15036,19 +15100,19 @@ contains
     locale_uz%weekdays(6) = 'juma'
     locale_uz%weekdays(7) = 'shanba'
 
-    locale_uz%day_format = '{n}'
+    locale_uz%day_format = '{n}-'
 
     locale_uz%num_exceptions = 0
 
-    locale_uz%date_pattern = '{day} {month}'
-    locale_uz%date_pattern_with_year = '{day} {month} {year}'
+    locale_uz%date_pattern = '{day}{month}'
+    locale_uz%date_pattern_with_year = '{day}{month}, {year}'
 
     locale_uz%today = 'bugun'
     locale_uz%tomorrow = 'ertaga'
     locale_uz%yesterday = 'kecha'
 
     locale_uz%day_after_tomorrow = 'indinga'
-    locale_uz%day_before_yesterday = 'kechagina'
+    locale_uz%day_before_yesterday = 'o''tgan kuni'
     locale_uz%this_weekday = 'bu {weekday}'
     locale_uz%next_weekday = 'keyingi {weekday}'
     locale_uz%last_weekday = 'o''tgan {weekday}'
@@ -15079,12 +15143,12 @@ contains
     locale_uz%short_override%weekdays(6) = 'jum'
     locale_uz%short_override%weekdays(7) = 'shan'
     locale_uz%short_override%has_day_format = .true.
-    locale_uz%short_override%day_format = '{n}'
+    locale_uz%short_override%day_format = '{n}-'
     locale_uz%short_override%has_day_format_exceptions = .false.
     locale_uz%short_override%has_date_pattern = .true.
-    locale_uz%short_override%date_pattern = '{day} {month}'
+    locale_uz%short_override%date_pattern = '{day}{month}'
     locale_uz%short_override%has_date_pattern_with_year = .true.
-    locale_uz%short_override%date_pattern_with_year = '{day} {month} {year}'
+    locale_uz%short_override%date_pattern_with_year = '{day}{month}, {year}'
     locale_uz%short_override%has_today = .false.
     locale_uz%short_override%has_tomorrow = .false.
     locale_uz%short_override%has_yesterday = .false.
@@ -15423,11 +15487,11 @@ contains
     locale_wo%tomorrow = 'suba'
     locale_wo%yesterday = 'démb'
 
-    locale_wo%day_after_tomorrow = 'suba-suba'
-    locale_wo%day_before_yesterday = 'démb-démb'
-    locale_wo%this_weekday = '{weekday} bi'
-    locale_wo%next_weekday = '{weekday} bi ñëw'
-    locale_wo%last_weekday = '{weekday} bi weex'
+    locale_wo%day_after_tomorrow = 'gannaaw-suba'
+    locale_wo%day_before_yesterday = 'bërki-démb'
+    locale_wo%this_weekday = '{weekday} jii'
+    locale_wo%next_weekday = '{weekday} jiy ñëw'
+    locale_wo%last_weekday = '{weekday} ji weesu'
 
     locale_wo%has_months_in_date = .false.
 
@@ -15518,7 +15582,7 @@ contains
     locale_xh%yesterday = 'izolo'
 
     locale_xh%day_after_tomorrow = 'ngomhlomunye'
-    locale_xh%day_before_yesterday = 'kutshanje'
+    locale_xh%day_before_yesterday = 'izolo elinye'
     locale_xh%this_weekday = 'le {weekday}'
     locale_xh%next_weekday = '{weekday} ezayo'
     locale_xh%last_weekday = '{weekday} edlulileyo'
@@ -15705,8 +15769,8 @@ contains
     locale_yo%tomorrow = 'ọ̀la'
     locale_yo%yesterday = 'àná'
 
-    locale_yo%day_after_tomorrow = 'ọ̀tún ọ̀la'
-    locale_yo%day_before_yesterday = 'ọ̀tún àná'
+    locale_yo%day_after_tomorrow = 'ọ̀túnla'
+    locale_yo%day_before_yesterday = 'íjẹta'
     locale_yo%this_weekday = '{weekday} yìí'
     locale_yo%next_weekday = '{weekday} tó ń bọ̀'
     locale_yo%last_weekday = '{weekday} tó kọjá'
@@ -15767,18 +15831,18 @@ contains
   subroutine init_yue()
     locale_yue%code = 'yue'
 
-    locale_yue%months(1) = '一月'
-    locale_yue%months(2) = '二月'
-    locale_yue%months(3) = '三月'
-    locale_yue%months(4) = '四月'
-    locale_yue%months(5) = '五月'
-    locale_yue%months(6) = '六月'
-    locale_yue%months(7) = '七月'
-    locale_yue%months(8) = '八月'
-    locale_yue%months(9) = '九月'
-    locale_yue%months(10) = '十月'
-    locale_yue%months(11) = '十一月'
-    locale_yue%months(12) = '十二月'
+    locale_yue%months(1) = '1月'
+    locale_yue%months(2) = '2月'
+    locale_yue%months(3) = '3月'
+    locale_yue%months(4) = '4月'
+    locale_yue%months(5) = '5月'
+    locale_yue%months(6) = '6月'
+    locale_yue%months(7) = '7月'
+    locale_yue%months(8) = '8月'
+    locale_yue%months(9) = '9月'
+    locale_yue%months(10) = '10月'
+    locale_yue%months(11) = '11月'
+    locale_yue%months(12) = '12月'
 
     locale_yue%weekdays(1) = '星期日'
     locale_yue%weekdays(2) = '星期一'
@@ -15809,18 +15873,18 @@ contains
 
     locale_yue%has_short = .true.
     locale_yue%short_override%has_months = .true.
-    locale_yue%short_override%months(1) = '一月'
-    locale_yue%short_override%months(2) = '二月'
-    locale_yue%short_override%months(3) = '三月'
-    locale_yue%short_override%months(4) = '四月'
-    locale_yue%short_override%months(5) = '五月'
-    locale_yue%short_override%months(6) = '六月'
-    locale_yue%short_override%months(7) = '七月'
-    locale_yue%short_override%months(8) = '八月'
-    locale_yue%short_override%months(9) = '九月'
-    locale_yue%short_override%months(10) = '十月'
-    locale_yue%short_override%months(11) = '十一月'
-    locale_yue%short_override%months(12) = '十二月'
+    locale_yue%short_override%months(1) = '1月'
+    locale_yue%short_override%months(2) = '2月'
+    locale_yue%short_override%months(3) = '3月'
+    locale_yue%short_override%months(4) = '4月'
+    locale_yue%short_override%months(5) = '5月'
+    locale_yue%short_override%months(6) = '6月'
+    locale_yue%short_override%months(7) = '7月'
+    locale_yue%short_override%months(8) = '8月'
+    locale_yue%short_override%months(9) = '9月'
+    locale_yue%short_override%months(10) = '10月'
+    locale_yue%short_override%months(11) = '11月'
+    locale_yue%short_override%months(12) = '12月'
     locale_yue%short_override%has_months_in_date = .false.
     locale_yue%short_override%has_weekdays = .true.
     locale_yue%short_override%weekdays(1) = '日'
@@ -16082,7 +16146,7 @@ contains
     locale_zu%yesterday = 'izolo'
 
     locale_zu%day_after_tomorrow = 'ngomhlomunye'
-    locale_zu%day_before_yesterday = 'usuku olwedlule izolo'
+    locale_zu%day_before_yesterday = 'kuthangi'
     locale_zu%this_weekday = 'leli {weekday}'
     locale_zu%next_weekday = '{weekday} elizayo'
     locale_zu%last_weekday = '{weekday} eledlule'

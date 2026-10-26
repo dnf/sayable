@@ -14,17 +14,17 @@
 (def locale
   {:code "ig"
    :plural (fn [_] :other)
-   :second {:type :simple :form "{n} sekọnd"}
-   :minute {:type :simple :form "{n} nkeji"}
-   :hour {:type :simple :form "{n} awa"}
-   :day {:type :simple :form "{n} ụbọchị"}
-   :week {:type :simple :form "{n} izu"}
-   :month {:type :simple :form "{n} ọnwa"}
-   :year {:type :simple :form "{n} afọ"}
+   :second {:type :simple :form "sekọnd {n}"}
+   :minute {:type :simple :form "nkeji {n}"}
+   :hour {:type :simple :form "awa {n}"}
+   :day {:type :simple :form "ụbọchị {n}"}
+   :week {:type :simple :form "izu {n}"}
+   :month {:type :simple :form "ọnwa {n}"}
+   :year {:type :simple :form "afọ {n}"}
    :half "{0} na ọkara"
    :delimiter ", "
    :just-now "ugbu a"
    :ago "{0} gara aga"
    :in-future "na {0}"
-   :short {:second {:type :simple :form "{n} sek."} :minute {:type :simple :form "{n} nkeji"} :hour {:type :simple :form "{n} awa"} :day {:type :simple :form "{n} ụbọchị"} :week {:type :simple :form "{n} izu"} :month {:type :simple :form "{n} ọnwa"} :year {:type :simple :form "{n} afọ"} :half nil :delimiter nil :ago "{0} gara aga" :in-future "na {0}"}
+   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "nkeji {n}"} :hour {:type :simple :form "awa {n}"} :day {:type :simple :form "ụbọchị {n}"} :week {:type :simple :form "izu {n}"} :month {:type :simple :form "ọnwa {n}"} :year {:type :simple :form "afọ {n}"} :half nil :delimiter nil :ago "{0} gara aga" :in-future "na {0}"}
    :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} gara aga" :in-future "na {0}"}})

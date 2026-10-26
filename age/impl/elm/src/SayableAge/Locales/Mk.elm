@@ -53,7 +53,7 @@ locale =
         , toddler = Neutral "Мало дете"
         , child = Neutral "Дете"
         , teenager = Neutral "Тинејџер"
-        , adult = Neutral "Возрасен"
+        , adult = Gendered "Возрасен" "Возрасна"
         }
     , short =
         Just

@@ -17,11 +17,11 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "it".to_string(),
         clock: ClockConfig {
-            hours: ["dodici".to_string(), "una".to_string(), "due".to_string(), "tre".to_string(), "quattro".to_string(), "cinque".to_string(), "sei".to_string(), "sette".to_string(), "otto".to_string(), "nove".to_string(), "dieci".to_string(), "undici".to_string()],
+            hours: ["le dodici".to_string(), "l'una".to_string(), "le due".to_string(), "le tre".to_string(), "le quattro".to_string(), "le cinque".to_string(), "le sei".to_string(), "le sette".to_string(), "le otto".to_string(), "le nove".to_string(), "le dieci".to_string(), "le undici".to_string()],
             midnight: "mezzanotte".to_string(),
             noon: "mezzogiorno".to_string(),
             patterns: HashMap::from([
-            (0, "le {h}".to_string()),
+            (0, "{h}".to_string()),
             (5, "{h} e cinque".to_string()),
             (10, "{h} e dieci".to_string()),
             (15, "{h} e un quarto".to_string()),

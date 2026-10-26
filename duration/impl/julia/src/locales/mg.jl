@@ -26,7 +26,7 @@ const MG = DurationLocale(
     half = "{0} sy sasany",
     delimiter = ", ",
     just_now = "vao haingana",
-    ago = "{0} lasa",
+    ago = "{0} lasa izay",
     in_future = "ao anatin'ny {0}",
     short_override = DurationCompactnessOverride(
         units = Dict(
@@ -38,7 +38,7 @@ const MG = DurationLocale(
             "month" => "{n} vol",
             "year" => "{n} tna",
         ),
-        ago = "{0} lasa",
+        ago = "{0} lasa izay",
         in_future = "ao anatin'ny {0}",
     ),
     compact_override = DurationCompactnessOverride(

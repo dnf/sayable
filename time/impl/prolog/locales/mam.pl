@@ -11,22 +11,22 @@
 
 % Mam locale.
 
-st_hours('mam', ['kab\'laj', 'jun', 'kab\'', 'oxe', 'kyaje', 'jwe\'', 'qaq', 'wuq', 'wajxaq', 'b\'alaj', 'laj', 'junlaj']).
+st_hours('mam', ['kab\'laj', 'jun', 'kab\'', 'oxe', 'kyaje', 'jwe\'', 'qaq', 'wuq', 'wajxaq', 'b\'elaj', 'laj', 'junlaj']).
 st_midnight('mam', 'nik\' aq\'b\'il').
 st_noon('mam', 'nik\' q\'ij').
 
-st_pattern('mam', 0, '{h}:00').
-st_pattern('mam', 5, '{h}:05').
-st_pattern('mam', 10, '{h}:10').
-st_pattern('mam', 15, '{h}:15').
-st_pattern('mam', 20, '{h}:20').
-st_pattern('mam', 25, '{h}:25').
-st_pattern('mam', 30, '{h}:30').
-st_pattern('mam', 35, '{h}:35').
-st_pattern('mam', 40, '{h}:40').
-st_pattern('mam', 45, '{h}:45').
-st_pattern('mam', 50, '{h}:50').
-st_pattern('mam', 55, '{h}:55').
+st_pattern('mam', 0, '{h} or').
+st_pattern('mam', 5, '{h} or tuk\' jwe\' minut').
+st_pattern('mam', 10, '{h} or tuk\' laj minut').
+st_pattern('mam', 15, '{h} or tuk\' o\'laj minut').
+st_pattern('mam', 20, '{h} or tuk\' winqan minut').
+st_pattern('mam', 25, '{h} or tuk\' jwe\' toj ka\'wnaq minut').
+st_pattern('mam', 30, '{h} or tuk\' nik\'').
+st_pattern('mam', 35, '{h} or tuk\' o\'laj toj ka\'wnaq minut').
+st_pattern('mam', 40, '{h} or tuk\' ka\'wnaq minut').
+st_pattern('mam', 45, '{h} or tuk\' jwe\' toj oxk\'al minut').
+st_pattern('mam', 50, '{h} or tuk\' laj toj oxk\'al minut').
+st_pattern('mam', 55, '{h} or tuk\' o\'laj toj oxk\'al minut').
 
 short_st_use24h('mam', false).
 short_st_format('mam', '{h}:{mm} {ampm}').

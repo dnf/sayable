@@ -15,7 +15,7 @@ M.code = "mam"
 M.plural = function(_n) return "other" end
 M.units = {
     day = "{n} q'ij",
-    week = "{n} xjaw",
+    week = "{n} seman",
     month = "{n} xjaw",
     year = "{n} ab'q'ii",
 }
@@ -33,7 +33,7 @@ M.stages = {
 M.short = {
     units = {
         day = "{n} q'ij",
-        week = "{n} xjaw",
+        week = "{n} seman",
         month = "{n} xjaw",
         year = "{n} ab'.",
     },
@@ -45,6 +45,7 @@ M.compact = {
         month = "{n}m",
         year = "{n}y",
     },
+    half = "{n}½",
     delimiter = "",
 }
 

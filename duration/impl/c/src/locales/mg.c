@@ -30,7 +30,7 @@ const SduDurationLocale sdu_locale_mg = {
     },
     "{0} sy sasany", ", ",
     "vao haingana",
-    "{0} lasa", "ao anatin'ny {0}",
-    true, { true, { "{n} seg", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ora", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} and", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} her", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} vol", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tna", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} lasa", true, "ao anatin'ny {0}" },
+    "{0} lasa izay", "ao anatin'ny {0}",
+    true, { true, { "{n} seg", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ora", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} and", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} her", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} vol", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} tna", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} lasa izay", true, "ao anatin'ny {0}" },
     true, { true, { "{n} s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} o", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} a", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} v", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} t", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} lasa", true, "ao anatin'ny {0}" }
 };

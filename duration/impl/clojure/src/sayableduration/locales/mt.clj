@@ -15,8 +15,8 @@
   {:code "mt"
    :plural (fn [n] (cond (== n 1) :one (== n 2) :two (or (== n 0) (<= 3 (mod n 100) 10)) :few (<= 11 (mod n 100) 19) :many :else :other))
    :second {:type :pluralized :forms {:one "{n} sekonda" :two "{n} sekondi" :few "{n} sekondi" :many "{n}-il sekonda" :other "{n} sekonda"}}
-   :minute {:type :pluralized :forms {:one "{n} minuta" :two "{n} minuti" :few "{n} minuti" :many "{n}-il minuta" :other "{n} minuta"}}
-   :hour {:type :pluralized :forms {:one "{n} siegħa" :two "{n} sigħat" :few "{n} sigħat" :many "{n}-il siegħa" :other "{n} siegħa"}}
+   :minute {:type :pluralized :forms {:one "{n} minuta" :two "minutejn" :few "{n} minuti" :many "{n}-il minuta" :other "{n} minuta"}}
+   :hour {:type :pluralized :forms {:one "{n} siegħa" :two "sagħtejn" :few "{n} sigħat" :many "{n}-il siegħa" :other "{n} siegħa"}}
    :day {:type :pluralized :forms {:one "ġurnata" :two "jumejn" :few "{n} ijiem" :many "{n}-il jum" :other "{n} jum"}}
    :week {:type :pluralized :forms {:one "ġimgħa" :two "ġimgħatejn" :few "{n} ġimgħat" :many "{n}-il ġimgħa" :other "{n} ġimgħa"}}
    :month {:type :pluralized :forms {:one "xahar" :two "xahrejn" :few "{n} xhur" :many "{n}-il xahar" :other "{n} xahar"}}

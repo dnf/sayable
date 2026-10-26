@@ -23,7 +23,7 @@
    :delimiter " "
    :just-now "เมื่อกี้"
    :ago "{0}ที่แล้ว"
-   :in-future "ใน{0}"
-   :short {:units {:second "{n} วิ" :minute "{n} นาที" :hour "{n} ชม." :day "{n} วัน" :week "{n} สัปดาห์" :month "{n} เดือน" :year "{n} ปี"} :ago "{0}ที่แล้ว" :in-future "ใน{0}"}
-   :compact {:units {:second "{n}วิ" :minute "{n}นาที" :hour "{n}ชม." :day "{n}วัน" :week "{n}สัปดาห์" :month "{n}เดือน" :year "{n}ปี"} :half "{n}½" :delimiter "" :ago "{0}ที่แล้ว" :in-future "ใน{0}"}
+   :in-future "ในอีก {0}"
+   :short {:units {:second "{n} วิ" :minute "{n} นาที" :hour "{n} ชม." :day "{n} วัน" :week "{n} สัปดาห์" :month "{n} เดือน" :year "{n} ปี"} :ago "{0}ที่แล้ว" :in-future "ในอีก {0}"}
+   :compact {:units {:second "{n}วิ" :minute "{n}นาที" :hour "{n}ชม." :day "{n}วัน" :week "{n}สัปดาห์" :month "{n}เดือน" :year "{n}ปี"} :half "{n}½" :delimiter "" :ago "{0}ที่แล้ว" :in-future "ในอีก {0}"}
 })

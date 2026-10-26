@@ -18,7 +18,7 @@ sa_unit('dz', week, _, 'བདུན་ཕྲག་ {n}').
 sa_unit('dz', month, _, 'ཟླ་ {n}').
 sa_unit('dz', year, _, 'ལོ་ {n}').
 
-sa_half('dz', '{0} ཕྱེད').
+sa_half('dz', '{0} དང་ཕྱེད').
 sa_delimiter('dz', ' ').
 sa_just_born('dz', 'གསར་སྐྱེས').
 

@@ -18,10 +18,10 @@ final ee = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'ŋkeke {n}', PluralCategory.other: 'ŋkekewo {n}'}),
-  week: pluralUnit({PluralCategory.one: 'kɔsiɖa {n}', PluralCategory.other: 'kɔsiɖawo {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ɣleti {n}', PluralCategory.other: 'ɣletiwo {n}'}),
-  year: pluralUnit({PluralCategory.one: 'ƒe {n}', PluralCategory.other: 'ƒewo {n}'}),
+  day: simpleUnit('ŋkeke {n}'),
+  week: simpleUnit('kɔsiɖa {n}'),
+  month: simpleUnit('ɣleti {n}'),
+  year: simpleUnit('ƒe {n}'),
   half: '{0} kple afã',
   delimiter: ', ',
   justBorn: 'Evi yeye',
@@ -29,13 +29,13 @@ final ee = AgeLocale(
   infant: stageNeutral('Ɖevi'),
   toddler: stageNeutral('Ɖevi sue'),
   child: stageNeutral('Ɖevi'),
-  teenager: stageNeutral('Ŋutsuviwo'),
+  teenager: stageGendered('Ɖekakpui', 'Ɖetugbi'),
   adult: stageNeutral('Ame tsitsi'),
   short: CompactnessOverride(
-    day: simpleUnit('ŋkekewo {n}'),
-    week: pluralUnit({PluralCategory.one: 'kɔsiɖa {n}', PluralCategory.other: 'kɔsiɖawo {n}'}),
-    month: pluralUnit({PluralCategory.one: 'ɣleti {n}', PluralCategory.other: 'ɣletiwo {n}'}),
-    year: pluralUnit({PluralCategory.one: 'ƒe {n}', PluralCategory.other: 'ƒewo {n}'}),
+    day: simpleUnit('ŋkeke {n}'),
+    week: simpleUnit('kɔsiɖa {n}'),
+    month: simpleUnit('ɣleti {n}'),
+    year: simpleUnit('ƒe {n}'),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

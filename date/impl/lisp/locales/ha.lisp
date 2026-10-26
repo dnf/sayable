@@ -29,7 +29,7 @@
    :day-before-yesterday "shekaranjiya"
    :this-weekday "wannan {weekday}"
    :next-weekday "{weekday} mai zuwa"
-   :last-weekday "{weekday} da ya wuce"
+   :last-weekday "{weekday} da ta wuce"
    :short-months (list "Jan" "Fab" "Mar" "Afr" "May" "Yun" "Yul" "Agu" "Sat" "Okt" "Nuw" "Dis")
    :short-weekdays (list "Lah" "Lit" "Tal" "Lar" "Alh" "Jum" "Asa")
    :short-day-format "{n}"

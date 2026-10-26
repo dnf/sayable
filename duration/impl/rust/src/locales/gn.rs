@@ -23,9 +23,9 @@ pub fn locale() -> DurationLocale {
             }
         },
         units: Units {
-            second: UnitForms::simple("{n} aravo'i"),
-            minute: UnitForms::simple("{n} aravo"),
-            hour: UnitForms::simple("{n} aravo guasu"),
+            second: UnitForms::simple("{n} aravo'ive"),
+            minute: UnitForms::simple("{n} aravo'i"),
+            hour: UnitForms::simple("{n} aravo"),
             day: UnitForms::simple("{n} ára"),
             week: UnitForms::simple("{n} arapokõindy"),
             month: UnitForms::simple("{n} jasy"),
@@ -37,9 +37,9 @@ pub fn locale() -> DurationLocale {
         ago: "{0} ohasava'ekue".to_string(),
         in_future: "{0} rire".to_string(),
         short: Some(CompactnessOverride {
-            second: Some(UnitForms::simple("{n} ara'i")),
-            minute: Some(UnitForms::simple("{n} ara")),
-            hour: Some(UnitForms::simple("{n} ara g")),
+            second: Some(UnitForms::simple("{n} aravo'ive")),
+            minute: Some(UnitForms::simple("{n} aravo'i")),
+            hour: Some(UnitForms::simple("{n} aravo")),
             day: Some(UnitForms::simple("{n} ára")),
             week: Some(UnitForms::simple("{n} ara")),
             month: Some(UnitForms::simple("{n} jas")),

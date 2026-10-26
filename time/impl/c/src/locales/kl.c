@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_kl = {
     "kl",
     {
-        { "akunneq marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "akunneq ataaseq" },
+        { "aqqaneq-marluk", "ataaseq", "marluk", "pingasut", "sisamat", "tallimat", "arfinillit", "arfineq-marluk", "arfineq-pingasut", "qulingiluat", "qulit", "aqqaneq-ataaseq" },
         "unnuap qeqqa",
         "ulloqeqqap qeqqa",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "nalunaaqutaq {h}", "{h} qaangiullugu minutsit tallimat", "{h} qaangiullugu minutsit qulit", "{h} qaangiullugu minutsit aqqaneq-tallimat", "{h} qaangiullugu minutsit marlunnik qulillit", "{h} qaangiullugu minutsit marlunnik qulillit tallimallu", "{h} affarlu", "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu", "{next_h} sioqqullugu minutsit marlunnik qulillit", "{next_h} sioqqullugu minutsit aqqaneq-tallimat", "{next_h} sioqqullugu minutsit qulit", "{next_h} sioqqullugu minutsit tallimat" }
     },
     true, { true, { NULL, NULL }, "{h}.{mm}" },
     true, { true, { NULL, NULL }, "{h}.{mm}" }

@@ -20,8 +20,8 @@ var QU = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.SimpleUnit("{n} ñiqin"),
-		Minute: sd.SimpleUnit("{n} chiniku"),
+		Second: sd.SimpleUnit("{n} sikundu"),
+		Minute: sd.SimpleUnit("{n} minutu"),
 		Hour:   sd.SimpleUnit("{n} ura"),
 		Day:    sd.SimpleUnit("{n} p'unchaw"),
 		Week:   sd.SimpleUnit("{n} simana"),
@@ -34,8 +34,8 @@ var QU = sd.DurationLocale{
 	Ago:       "{0} ñawpaqta",
 	InFuture:  "{0} qhipata",
 	Short: &sd.CompactnessOverride{
-		Second:   &sd.UnitForms{Simple: "{n} ñiq"},
-		Minute:   &sd.UnitForms{Simple: "{n} chi"},
+		Second:   &sd.UnitForms{Simple: "{n} sik"},
+		Minute:   &sd.UnitForms{Simple: "{n} min"},
 		Hour:     &sd.UnitForms{Simple: "{n} ura"},
 		Day:      &sd.UnitForms{Simple: "{n} p'un"},
 		Week:     &sd.UnitForms{Simple: "{n} sim"},

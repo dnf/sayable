@@ -21,7 +21,7 @@ locale() ->
         minute = {simple, "{n} minuto"},
         hour = {simple, "{n} hora"},
         day = {simple, "{n} q'ij"},
-        week = {simple, "{n} xjaw"},
+        week = {simple, "{n} seman"},
         month = {simple, "{n} xjaw"},
         year = {simple, "{n} ab'q'ii"},
         half = "{0} nik'",
@@ -29,6 +29,6 @@ locale() ->
         just_now = "iky'x",
         ago = "{0} chi'j",
         in_future = "tu'n {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} seg."}}, minute = {just, {simple, "{n} min."}}, hour = {just, {simple, "{n} hora"}}, day = {just, {simple, "{n} q'ij"}}, week = {just, {simple, "{n} xjaw"}}, month = {just, {simple, "{n} xjaw"}}, year = {just, {simple, "{n} ab'."}}, half = nothing, delimiter = nothing, ago = {just, "{0} chi'j"}, in_future = {just, "tu'n {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} chi'j"}, in_future = {just, "tu'n {0}"}}}
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} seg."}}, minute = {just, {simple, "{n} min."}}, hour = {just, {simple, "{n} hora"}}, day = {just, {simple, "{n} q'ij"}}, week = {just, {simple, "{n} seman"}}, month = {just, {simple, "{n} xjaw"}}, year = {just, {simple, "{n} ab'."}}, half = nothing, delimiter = nothing, ago = {just, "{0} chi'j"}, in_future = {just, "tu'n {0}"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} chi'j"}, in_future = {just, "tu'n {0}"}}}
     }.

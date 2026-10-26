@@ -38,7 +38,7 @@ mk
 		#toddler. 'Мало дете'.
 		#child. 'Дете'.
 		#teenager. 'Тинејџер'.
-		#adult. 'Возрасен'.
+		#adult. (Dictionary newFromPairs: { #m. 'Возрасен'. #f. 'Возрасна' }).
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {

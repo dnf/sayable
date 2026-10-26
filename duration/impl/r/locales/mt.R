@@ -23,8 +23,8 @@ locale_mt <- list(
   plural = plural,
   units = list(
     second = list(one = "{n} sekonda", two = "{n} sekondi", few = "{n} sekondi", many = "{n}-il sekonda", other = "{n} sekonda"),
-    minute = list(one = "{n} minuta", two = "{n} minuti", few = "{n} minuti", many = "{n}-il minuta", other = "{n} minuta"),
-    hour = list(one = "{n} siegħa", two = "{n} sigħat", few = "{n} sigħat", many = "{n}-il siegħa", other = "{n} siegħa"),
+    minute = list(one = "{n} minuta", two = "minutejn", few = "{n} minuti", many = "{n}-il minuta", other = "{n} minuta"),
+    hour = list(one = "{n} siegħa", two = "sagħtejn", few = "{n} sigħat", many = "{n}-il siegħa", other = "{n} siegħa"),
     day = list(one = "ġurnata", two = "jumejn", few = "{n} ijiem", many = "{n}-il jum", other = "{n} jum"),
     week = list(one = "ġimgħa", two = "ġimgħatejn", few = "{n} ġimgħat", many = "{n}-il ġimgħa", other = "{n} ġimgħa"),
     month = list(one = "xahar", two = "xahrejn", few = "{n} xhur", many = "{n}-il xahar", other = "{n} xahar"),

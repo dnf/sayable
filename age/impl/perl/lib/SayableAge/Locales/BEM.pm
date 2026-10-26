@@ -32,7 +32,7 @@ sub locale {{
     toddler => 'Umwana',
     child => 'Umwana',
     teenager => 'Umunyamata',
-    adult => 'Umulumendo',
+    adult => 'Umukalamba',
   },
   short => {
     units => {

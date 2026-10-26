@@ -18,61 +18,31 @@ locale = DurationLocale
     { localeCode = "ee"
     , localePlural = \n -> if n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Pluralized
-          [ (One, "sekend {n}")
-          , (Other, "sekendwo {n}")
-          ]
-        , unitMinute = Pluralized
-          [ (One, "aɖabaƒoƒo {n}")
-          , (Other, "aɖabaƒoƒowo {n}")
-          ]
-        , unitHour = Pluralized
-          [ (One, "gaƒoƒo {n}")
-          , (Other, "gaƒoƒowo {n}")
-          ]
-        , unitDay = Pluralized
-          [ (One, "ŋkeke {n}")
-          , (Other, "ŋkekewo {n}")
-          ]
-        , unitWeek = Pluralized
-          [ (One, "kɔsiɖa {n}")
-          , (Other, "kɔsiɖawo {n}")
-          ]
-        , unitMonth = Pluralized
-          [ (One, "ɣleti {n}")
-          , (Other, "ɣletiwo {n}")
-          ]
-        , unitYear = Pluralized
-          [ (One, "ƒe {n}")
-          , (Other, "ƒewo {n}")
-          ]
+        { unitSecond = Simple "sekend {n}"
+        , unitMinute = Simple "aɖabaƒoƒo {n}"
+        , unitHour = Simple "gaƒoƒo {n}"
+        , unitDay = Simple "ŋkeke {n}"
+        , unitWeek = Simple "kɔsiɖa {n}"
+        , unitMonth = Simple "ɣleti {n}"
+        , unitYear = Simple "ƒe {n}"
         }
     , localeHalf = "{0} kple afã"
     , localeDelimiter = ", "
     , localeJustNow = "fifia"
-    , localeAgo = "ɖe {0} me"
+    , localeAgo = "{0} si va yi"
     , localeInFuture = "le {0} me"
     , localeShort = Just $
         CompactnessOverride
             { ovrSecond = Just (Simple "sek. {n}")
             , ovrMinute = Just (Simple "aɖaba. {n}")
             , ovrHour = Just (Simple "gaƒ. {n}")
-            , ovrDay = Just (Simple "ŋkekewo {n}")
-            , ovrWeek = Just (Pluralized
-              [ (One, "kɔsiɖa {n}")
-              , (Other, "kɔsiɖawo {n}")
-              ])
-            , ovrMonth = Just (Pluralized
-              [ (One, "ɣleti {n}")
-              , (Other, "ɣletiwo {n}")
-              ])
-            , ovrYear = Just (Pluralized
-              [ (One, "ƒe {n}")
-              , (Other, "ƒewo {n}")
-              ])
+            , ovrDay = Just (Simple "ŋkeke {n}")
+            , ovrWeek = Just (Simple "kɔsiɖa {n}")
+            , ovrMonth = Just (Simple "ɣleti {n}")
+            , ovrYear = Just (Simple "ƒe {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "ɖe {0} me"
+            , ovrAgo = Just "{0} si va yi"
             , ovrInFuture = Just "le {0} me"
             }
     , localeCompact = Just $
@@ -86,7 +56,7 @@ locale = DurationLocale
             , ovrYear = Just (Simple "{n}y")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
-            , ovrAgo = Just "ɖe {0} me"
+            , ovrAgo = Just "{0} si va yi"
             , ovrInFuture = Just "le {0} me"
             }
     }

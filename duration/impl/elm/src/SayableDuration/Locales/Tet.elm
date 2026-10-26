@@ -69,7 +69,7 @@ locale =
                         , ( "year", Simple "{n}y" )
                         ]
                     )
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} liu ba"
             , ovrInFuture = Just "iha {0}"

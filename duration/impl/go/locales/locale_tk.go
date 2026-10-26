@@ -31,7 +31,7 @@ var TK = sd.DurationLocale{
 		Month:  sd.SimpleUnit("{n} aý"),
 		Year:   sd.SimpleUnit("{n} ýyl"),
 	},
-	Half:      "{0}½",
+	Half:      "{n} ýarym",
 	Delimiter: ", ",
 	JustNow:   "häzir",
 	Ago:       "{0} öň",

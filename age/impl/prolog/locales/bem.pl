@@ -32,7 +32,7 @@ sa_stage('bem', infant, _, 'Akamwana').
 sa_stage('bem', toddler, _, 'Umwana').
 sa_stage('bem', child, _, 'Umwana').
 sa_stage('bem', teenager, _, 'Umunyamata').
-sa_stage('bem', adult, _, 'Umulumendo').
+sa_stage('bem', adult, _, 'Umukalamba').
 
 short_sa_unit('bem', day, one, 'ubushiku {n}').
 short_sa_unit('bem', day, other, 'inshiku {n}').

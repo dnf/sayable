@@ -29,7 +29,7 @@ locale = Locale
         , stageInfant = Neutral "Vǐ"
         , stageToddler = Neutral "Vǐ"
         , stageChild = Neutral "Vǐ"
-        , stageTeenager = Neutral "Nyɔ̌nu"
+        , stageTeenager = Gendered "Dɔnkpɛvu" "Ɖyɔ̌vǐ"
         , stageAdult = Neutral "Mɛ̌xo"
         }
     , localeShort = Just $

@@ -89,7 +89,7 @@ fn build_su() -> DurationLocale:
         year=year,
         half="{0} satengah",
         delimiter=", ",
-        just_now="ayeuna",
+        just_now="nembé",
         ago="{0} kapengker",
         in_future="dina {0}",
         short_override=short_ovr,

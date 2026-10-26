@@ -37,10 +37,10 @@ pub const locale_cy = DurationLocale{
 	second: plural_unit({PluralCategory.zero: '{n} eiliad', PluralCategory.one: '{n} eiliad', PluralCategory.two: '{n} eiliad', PluralCategory.few: '{n} eiliad', PluralCategory.many: '{n} eiliad', PluralCategory.other: '{n} eiliad'})
 	minute: plural_unit({PluralCategory.zero: '{n} munud', PluralCategory.one: '{n} munud', PluralCategory.two: '{n} funud', PluralCategory.few: '{n} munud', PluralCategory.many: '{n} munud', PluralCategory.other: '{n} munud'})
 	hour: plural_unit({PluralCategory.zero: '{n} awr', PluralCategory.one: '{n} awr', PluralCategory.two: '{n} awr', PluralCategory.few: '{n} awr', PluralCategory.many: '{n} awr', PluralCategory.other: '{n} awr'})
-	day: plural_unit({PluralCategory.zero: '{n} diwrnod', PluralCategory.one: '{n} diwrnod', PluralCategory.two: '{n} ddiwrnod', PluralCategory.few: '{n} diwrnod', PluralCategory.many: '{n} niwrnod', PluralCategory.other: '{n} diwrnod'})
+	day: plural_unit({PluralCategory.zero: '{n} diwrnod', PluralCategory.one: '{n} diwrnod', PluralCategory.two: '{n} ddiwrnod', PluralCategory.few: '{n} diwrnod', PluralCategory.many: '{n} diwrnod', PluralCategory.other: '{n} diwrnod'})
 	week: plural_unit({PluralCategory.zero: '{n} wythnos', PluralCategory.one: '{n} wythnos', PluralCategory.two: '{n} wythnos', PluralCategory.few: '{n} wythnos', PluralCategory.many: '{n} wythnos', PluralCategory.other: '{n} wythnos'})
 	month: plural_unit({PluralCategory.zero: '{n} mis', PluralCategory.one: '{n} mis', PluralCategory.two: '{n} fis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'})
-	year: plural_unit({PluralCategory.zero: '{n} blwyddyn', PluralCategory.one: '{n} blwyddyn', PluralCategory.two: '{n} flynedd', PluralCategory.few: '{n} blynedd', PluralCategory.many: '{n} blynedd', PluralCategory.other: '{n} blynedd'})
+	year: plural_unit({PluralCategory.zero: '{n} blwyddyn', PluralCategory.one: '{n} flwyddyn', PluralCategory.two: '{n} flynedd', PluralCategory.few: '{n} blynedd', PluralCategory.many: '{n} blynedd', PluralCategory.other: '{n} blynedd'})
 	half: '{0} a hanner'
 	delimiter: ', '
 	just_now: 'nawr'

@@ -11,10 +11,10 @@
 
 function loc = locale_lg()
   loc.code = 'lg';
-  loc.clock.hours = {'kkumi na bbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano', 'mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi na emu'};
+  loc.clock.hours = {'mukaaga', 'musanvu', 'munaana', 'mwenda', 'kkumi', 'kkumi n''emu', 'kkumi n''ebbiri', 'emu', 'bbiri', 'ssatu', 'nnya', 'ttaano'};
   loc.clock.midnight = 'ekiro eky''omu ttumbi';
   loc.clock.noon = 'ettuntu';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'essaawa {h}', "p5", 'essaawa {h} n''eddakiika ttaano', "p10", 'essaawa {h} n''eddakiika kkumi', "p15", 'essaawa {h} n''eddakiika kkumi na ttaano', "p20", 'essaawa {h} n''eddakiika abiri', "p25", 'essaawa {h} n''eddakiika abiri mu ttaano', "p30", 'essaawa {h} n''ekitundu', "p35", 'essaawa {h} n''eddakiika asatu mu ttaano', "p40", 'essaawa {h} n''eddakiika ana', "p45", 'essaawa {h} n''eddakiika ana mu ttaano', "p50", 'essaawa {h} n''eddakiika ataano', "p55", 'essaawa {h} n''eddakiika ataano mu ttaano');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

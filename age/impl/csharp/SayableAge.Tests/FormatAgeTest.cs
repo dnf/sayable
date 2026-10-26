@@ -630,7 +630,7 @@ public class FormatAgeTest : IDisposable
                 UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} mes" }, { PluralCategory.Other, "{n} meses" } }),
                 UnitForms.Plural(new Dictionary<PluralCategory, string> { { PluralCategory.One, "{n} a\u00F1o" }, { PluralCategory.Other, "{n} a\u00F1os" } })
             ),
-            "{n} y medio",
+            "{0} y medio",
             ", ",
             "Reci\u00E9n nacido",
             new Stages(
@@ -654,7 +654,7 @@ public class FormatAgeTest : IDisposable
         Assert.Equal("6 meses", pt.FormatAge("2025-01-15", "2025-07-15")); // 25.7
         Assert.Equal("2 a\u00F1os, 1 mes", pt.FormatAge("2023-06-15", "2025-07-15")); // 25.8
         Assert.Equal("2 a\u00F1os, 6 meses", pt.FormatAge("2023-06-15", "2025-12-15")); // 25.9
-        Assert.Equal("3 y medio a\u00F1os", pt.FormatAge("2022-06-15", "2025-12-15")); // 25.10
+        Assert.Equal("3 a\u00F1os y medio", pt.FormatAge("2022-06-15", "2025-12-15")); // 25.10
         Assert.Equal("3 a\u00F1os", pt.FormatAge("2022-06-15", "2025-06-15")); // 25.11
         Assert.Equal("7 a\u00F1os", pt.FormatAge("2018-06-15", "2025-06-15")); // 25.12
 
@@ -874,13 +874,13 @@ public class FormatAgeTest : IDisposable
     {
         var pt = new SayableAgeFormatter(Locales.HE);
         Assert.Equal("\u05E8\u05E7 \u05E0\u05D5\u05DC\u05D3", pt.FormatAge("2025-06-15", "2025-06-15")); // 29.1
-        Assert.Equal("\u05D9\u05D5\u05DD 1", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.2
+        Assert.Equal("\u05D9\u05D5\u05DD", pt.FormatAge("2025-06-14", "2025-06-15")); // 29.2
         Assert.Equal("3 \u05D9\u05DE\u05D9\u05DD", pt.FormatAge("2025-06-12", "2025-06-15")); // 29.3
         Assert.Equal("\u05E9\u05D1\u05D5\u05E2\u05D9\u05D9\u05DD", pt.FormatAge("2025-06-01", "2025-06-15")); // 29.4
         Assert.Equal("3 \u05E9\u05D1\u05D5\u05E2\u05D5\u05EA", pt.FormatAge("2025-05-25", "2025-06-15")); // 29.5
         Assert.Equal("6 \u05D7\u05D5\u05D3\u05E9\u05D9\u05DD", pt.FormatAge("2025-01-15", "2025-07-15")); // 29.6
         Assert.Equal("3 \u05D7\u05D5\u05D3\u05E9\u05D9\u05DD", pt.FormatAge("2025-03-15", "2025-06-15")); // 29.7
-        Assert.Equal("\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9 1", pt.FormatAge("2023-06-15", "2025-07-15")); // 29.8
+        Assert.Equal("\u05E9\u05E0\u05EA\u05D9\u05D9\u05DD, \u05D7\u05D5\u05D3\u05E9", pt.FormatAge("2023-06-15", "2025-07-15")); // 29.8
         Assert.Equal("3 \u05E9\u05E0\u05D9\u05DD \u05D5\u05D7\u05E6\u05D9", pt.FormatAge("2022-06-15", "2025-12-15")); // 29.9
         Assert.Equal("7 \u05E9\u05E0\u05D9\u05DD", pt.FormatAge("2018-06-15", "2025-06-15")); // 29.10
         Assert.Equal("\u05E8\u05E7 \u05E0\u05D5\u05DC\u05D3", pt.FormatStage("2025-06-15", "2025-06-15", "m")); // 29.11
@@ -919,7 +919,7 @@ public class FormatAgeTest : IDisposable
         Assert.Equal("1 hari", pt.FormatAge("2025-06-14", "2025-06-15"));
         Assert.Equal("3 hari", pt.FormatAge("2025-06-12", "2025-06-15"));
         Assert.Equal("6 bulan", pt.FormatAge("2025-01-15", "2025-07-15"));
-        Assert.Equal("3 tahun setengah", pt.FormatAge("2022-06-15", "2025-12-15"));
+        Assert.Equal("3 setengah tahun", pt.FormatAge("2022-06-15", "2025-12-15"));
         Assert.Equal("7 tahun", pt.FormatAge("2018-06-15", "2025-06-15"));
     }
 

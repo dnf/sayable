@@ -21,7 +21,7 @@ lv
 	locale dayFormat: '{n}.'.
 	locale dayFormatExceptions: Dictionary new.
 	locale datePattern: '{day} {month}'.
-	locale datePatternWithYear: '{day} {month} {year}'.
+	locale datePatternWithYear: '{year}. gada {day} {month}'.
 	locale today: 'šodien'.
 	locale tomorrow: 'rīt'.
 	locale yesterday: 'vakar'.
@@ -36,7 +36,7 @@ lv
 		#weekdays. (OrderedCollection withAll: { 'sv'. 'pr'. 'ot'. 'tr'. 'ce'. 'pk'. 'se' }).
 		#dayFormat. '{n}.'.
 		#datePattern. '{day} {month}'.
-		#datePatternWithYear. '{day} {month} {year}'.
+		#datePatternWithYear. '{year}. gada {day} {month}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#datePattern. '{d}.{m}.'.

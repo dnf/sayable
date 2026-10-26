@@ -17,10 +17,10 @@
   (make-time-locale
    :code "kek"
    :clock (make-clock-config
-    :hours (list "kab'laju" "jun" "kab'" "oxib'" "kab'ib'" "o'ib'" "waqib'" "uqub'" "wajxaqib'" "b'elejeb'" "lajeb'" "junlaju")
+    :hours (list "kab'laju" "jun" "kiib'" "oxib'" "kaahib'" "oob'" "waqib'" "wuqub'" "waqxaqib'" "b'eleeb'" "lajeeb'" "junlaju")
     :midnight "chaq' xkab'"
     :noon "chaq' chaab'il"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} hoonal") (cons 5 "{h} hoonal rik'in oob' minuut") (cons 10 "{h} hoonal rik'in lajeeb' minuut") (cons 15 "{h} hoonal rik'in o'laju minuut") (cons 20 "{h} hoonal rik'in junmay minuut") (cons 25 "{h} hoonal rik'in oob' xkak'aal minuut") (cons 30 "{h} hoonal rik'in yijach") (cons 35 "{h} hoonal rik'in o'laju xkak'aal minuut") (cons 40 "{h} hoonal rik'in kaak'aal minuut") (cons 45 "{h} hoonal rik'in oob' roxk'aal minuut") (cons 50 "{h} hoonal rik'in lajeeb' roxk'aal minuut") (cons 55 "{h} hoonal rik'in o'laju roxk'aal minuut")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -21,7 +21,7 @@
    :week {:type :simple :form "{n} hepde"}
    :month {:type :simple :form "{n} aý"}
    :year {:type :simple :form "{n} ýyl"}
-   :half "{0}½"
+   :half "{n} ýarym"
    :delimiter ", "
    :just-now "häzir"
    :ago "{0} öň"

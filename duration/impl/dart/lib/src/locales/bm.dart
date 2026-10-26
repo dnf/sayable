@@ -30,7 +30,7 @@ final bm = DurationLocale(
   delimiter: ', ',
   justNow: 'sisan',
   ago: '{0} bɔlen',
-  inFuture: 'ka {0}',
+  inFuture: '{0} kɔnɔ',
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('sek. {n}'),
@@ -42,7 +42,7 @@ final bm = DurationLocale(
       'year': simpleUnit('san {n}'),
     },
     ago: '{0} bɔlen',
-    inFuture: 'ka {0}',
+    inFuture: '{0} kɔnɔ',
   ),
   compact: CompactnessOverride(
     units: {
@@ -57,6 +57,6 @@ final bm = DurationLocale(
     half: '{n}½',
     delimiter: '',
     ago: '{0} bɔlen',
-    inFuture: 'ka {0}',
+    inFuture: '{0} kɔnɔ',
   ),
 );

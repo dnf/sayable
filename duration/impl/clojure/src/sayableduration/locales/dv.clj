@@ -21,7 +21,7 @@
    :week {:type :simple :form "{n} ހަފްތާ"}
    :month {:type :simple :form "{n} މަސް"}
    :year {:type :simple :form "{n} އަހަރު"}
-   :half "{0} ބައި"
+   :half "{n}½"
    :delimiter "، "
    :just-now "މިހާރު"
    :ago "މީގެ {0} ކުރިން"

@@ -9,7 +9,7 @@
       "month": "{n} na vula",
       "year": "{n} na yabaki"
     },
-    "half": "{n} kei na levu ni wasei",
+    "half": "{0} kei na veimama",
     "delimiter": ", ",
     "justBorn": "Gone vou",
     "stages": {
@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -116,7 +117,7 @@
       "month": "{n} na vula",
       "year": "{n} na yabaki"
     },
-    "half": "{n} kei na levu ni wasei",
+    "half": "{0} kei na veimama",
     "delimiter": ", ",
     "justNow": "edaidai ga",
     "ago": "{0} sa oti",
@@ -146,7 +147,8 @@
       },
       "delimiter": "",
       "ago": "{0} sa oti",
-      "inFuture": "ena {0}"
+      "inFuture": "ena {0}",
+      "half": "{n}½"
     }
   },
   "time": {
@@ -168,18 +170,18 @@
       "midnight": "bogi levu",
       "noon": "sigalevu",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} na kaloko",
+        "5": "{h} na kaloko ka lima na miniti",
+        "10": "{h} na kaloko ka tini na miniti",
+        "15": "{h} na kaloko ka tini ka lima na miniti",
+        "20": "{h} na kaloko ka ruasagavulu na miniti",
+        "25": "{h} na kaloko ka ruasagavulu ka lima na miniti",
+        "30": "{h} na kaloko ka tolusagavulu na miniti",
+        "35": "{h} na kaloko ka tolusagavulu ka lima na miniti",
+        "40": "{h} na kaloko ka vāsagavulu na miniti",
+        "45": "{h} na kaloko ka vāsagavulu ka lima na miniti",
+        "50": "{h} na kaloko ka limasagavulu na miniti",
+        "55": "{h} na kaloko ka limasagavulu ka lima na miniti"
       }
     },
     "short": {
@@ -202,5 +204,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Used '{h} na kaloko' for the hour and an additive '... ka <minutes> na miniti' for minutes (ka = and, miniti = minute), with Fijian numerals (tini ka lima 15, ruasagavulu 20, tolusagavulu 30, vāsagavulu 40, limasagavulu 50). I did not use a 'past/to' construction or 'veimama' for :30 because I could not confirm the idiomatic syntax; the result is long and reads like a careful literal statement rather than casual speech. Native review advised. Specific doubts: (1) Fijian likely has a real 'past/to' idiom (something like 'sivia' = past, 'vo' = remaining) that I could not pin down, so the additive form may sound stilted; (2) ':30' should probably use 'veimama' (half) rather than 'tolusagavulu na miniti'; (3) whether 'ka' is the right conjunction between the hour and the minutes."
+    }
+  ]
 }

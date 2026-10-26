@@ -16,7 +16,7 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 // BM is the Bambara locale.
 var BM = sdate.DateLocale{
 	Code: "bm",
-	Months:   [12]string{"Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"},
+	Months:   [12]string{"Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu"},
 	Weekdays: [7]string{"Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"},
 	DayFormat: "{n}",
 	DayFormatExceptions: map[string]string{},
@@ -32,7 +32,7 @@ var BM = sdate.DateLocale{
 	LastWeekday:       strPtr("{weekday} tɛmɛnen"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{
-		Months:   &[12]string{"Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"},
+		Months:   &[12]string{"Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"},
 		Weekdays: &[7]string{"Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"},
 		DayFormat:            strPtr("{n}"),
 		DatePattern:          strPtr("{day} {month}"),

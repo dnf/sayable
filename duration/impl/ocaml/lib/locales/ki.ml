@@ -42,11 +42,11 @@ let locale : duration_locale =
       [ (One, "mwaka {n}")
       ; (Other, "mĩaka {n}")
       ]
-  ; half = "{0} na nusu"
+  ; half = "{0} na nuthu"
   ; delimiter = ", "
-  ; just_now = "ũmũthĩ"
+  ; just_now = "rĩu"
   ; ago = "{0} ĩhĩtũkĩte"
-  ; in_future = "{0} ĩyothe"
+  ; in_future = "thutha wa {0}"
   ; short = Some
       { ovr_second = Some (Simple "sek. {n}")
       ; ovr_minute = Some (Simple "ndag. {n}")
@@ -70,7 +70,7 @@ let locale : duration_locale =
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "{0} ĩhĩtũkĩte"
-      ; ovr_in_future = Some "{0} ĩyothe"
+      ; ovr_in_future = Some "thutha wa {0}"
       }
   ; compact = Some
       { ovr_second = Some (Simple "{n}s")
@@ -83,6 +83,6 @@ let locale : duration_locale =
       ; ovr_half = None
       ; ovr_delimiter = Some ""
       ; ovr_ago = Some "{0} ĩhĩtũkĩte"
-      ; ovr_in_future = Some "{0} ĩyothe"
+      ; ovr_in_future = Some "thutha wa {0}"
       }
   }

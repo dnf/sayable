@@ -28,10 +28,10 @@ fn build_ay() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var day = simple_unit("uru {n}")
-    var week = simple_unit("simana {n}")
-    var month = simple_unit("phaxsi {n}")
-    var year = simple_unit("mara {n}")
+    var day = simple_unit("{n} uru")
+    var week = simple_unit("{n} simana")
+    var month = simple_unit("{n} phaxsi")
+    var year = simple_unit("{n} mara")
 
     var newborn = stage_neutral("Wawa machaqa")
     var infant = stage_neutral("Wawa")
@@ -59,6 +59,8 @@ fn build_ay() -> AgeLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 

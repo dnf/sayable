@@ -27,11 +27,11 @@ final ki = DurationLocale(
     'month': pluralUnit({PluralCategory.one: 'mwerĩ {n}', PluralCategory.other: 'mĩerĩ {n}'}),
     'year': pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'mĩaka {n}'}),
   },
-  half: '{0} na nusu',
+  half: '{0} na nuthu',
   delimiter: ', ',
-  justNow: 'ũmũthĩ',
+  justNow: 'rĩu',
   ago: '{0} ĩhĩtũkĩte',
-  inFuture: '{0} ĩyothe',
+  inFuture: 'thutha wa {0}',
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('sek. {n}'),
@@ -43,7 +43,7 @@ final ki = DurationLocale(
       'year': pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'mĩaka {n}'}),
     },
     ago: '{0} ĩhĩtũkĩte',
-    inFuture: '{0} ĩyothe',
+    inFuture: 'thutha wa {0}',
   ),
   compact: CompactnessOverride(
     units: {
@@ -57,6 +57,6 @@ final ki = DurationLocale(
     },
     delimiter: '',
     ago: '{0} ĩhĩtũkĩte',
-    inFuture: '{0} ĩyothe',
+    inFuture: 'thutha wa {0}',
   ),
 );

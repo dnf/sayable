@@ -26,7 +26,7 @@
    :tomorrow "tumora"
    :yesterday "asde"
    :day-after-tomorrow "haptumora"
-   :day-before-yesterday "asde bipo"
+   :day-before-yesterday "hapasde"
    :this-weekday "dispela {weekday}"
    :next-weekday "{weekday} bihain"
    :last-weekday "{weekday} bipo"

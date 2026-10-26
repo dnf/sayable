@@ -10,22 +10,22 @@
 # Source: locales/ca.json
 
 function locale_ca {
-    $hours = @('dotze', 'una', 'dues', 'tres', 'quatre', 'cinc', 'sis', 'set', 'vuit', 'nou', 'deu', 'onze')
+    $hours = @('les dotze', 'la una', 'les dues', 'les tres', 'les quatre', 'les cinc', 'les sis', 'les set', 'les vuit', 'les nou', 'les deu', 'les onze')
     $midnight = 'mitjanit'
     $noon = 'migdia'
     $patterns = @{}
-    $patterns[0] = '{h} o''clock'
-    $patterns[5] = 'cinc past {h}'
-    $patterns[10] = 'deu past {h}'
-    $patterns[15] = 'un quart past {h}'
-    $patterns[20] = 'vint past {h}'
-    $patterns[25] = 'vint-i-cinc past {h}'
-    $patterns[30] = 'mitja past {h}'
-    $patterns[35] = 'vint-i-cinc to {next_h}'
-    $patterns[40] = 'vint to {next_h}'
-    $patterns[45] = 'un quart to {next_h}'
-    $patterns[50] = 'deu to {next_h}'
-    $patterns[55] = 'cinc to {next_h}'
+    $patterns[0] = '{h} en punt'
+    $patterns[5] = '{h} i cinc'
+    $patterns[10] = '{h} i deu'
+    $patterns[15] = '{h} i quart'
+    $patterns[20] = '{h} i vint'
+    $patterns[25] = '{h} i vint-i-cinc'
+    $patterns[30] = '{h} i mitja'
+    $patterns[35] = '{next_h} menys vint-i-cinc'
+    $patterns[40] = '{next_h} menys vint'
+    $patterns[45] = '{next_h} menys quart'
+    $patterns[50] = '{next_h} menys deu'
+    $patterns[55] = '{next_h} menys cinc'
     $clock = @{
         hours = $hours
         midnight = $midnight

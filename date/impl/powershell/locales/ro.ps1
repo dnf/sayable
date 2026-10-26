@@ -11,7 +11,7 @@
 
 function locale_ro {
     $months = @('ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie')
-    $weekdays = @('duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbătă')
+    $weekdays = @('duminica', 'lunea', 'marțea', 'miercurea', 'joia', 'vinerea', 'sâmbăta')
     $dayFormat = '{n}'
     $dayFormatExceptions = @{}
     $datePattern = '{day} {month}'
@@ -21,7 +21,7 @@ function locale_ro {
     $yesterday = 'ieri'
     $dayAfterTomorrow = 'poimâine'
     $dayBeforeYesterday = 'alaltăieri'
-    $thisWeekday = 'această {weekday}'
+    $thisWeekday = '{weekday} aceasta'
     $nextWeekday = '{weekday} viitoare'
     $lastWeekday = '{weekday} trecută'
     $monthsInDate = @('ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie')

@@ -17,10 +17,10 @@
   (make-time-locale
    :code "pov"
    :clock (make-clock-config
-    :hours (list "dozi" "un" "dos" "tres" "kuatru" "sinku" "seis" "seti" "oitu" "novi" "des" "onzi")
+    :hours (list "dozi ora" "un ora" "dos ora" "tres ora" "kuatru ora" "sinku ora" "seis ora" "seti ora" "oitu ora" "novi ora" "des ora" "onzi ora")
     :midnight "meia noti"
     :noon "meiu dia"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} i sinku") (cons 10 "{h} i des") (cons 15 "{h} i kinzi") (cons 20 "{h} i vinti") (cons 25 "{h} i vinti i sinku") (cons 30 "{h} i meiu") (cons 35 "{h} i trinta i sinku") (cons 40 "{h} i kuarenta") (cons 45 "{h} i kuarenta i sinku") (cons 50 "{h} i sinkuenta") (cons 55 "{h} i sinkuenta i sinku")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

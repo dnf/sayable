@@ -11,10 +11,10 @@
 
 function loc = locale_bem()
   loc.code = 'bem';
-  loc.clock.hours = {'ikumi na ibili', 'cimo', 'fibili', 'fitatu', 'fine', 'fisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na cimo'};
+  loc.clock.hours = {'ikumi na shibili', 'imo', 'shibili', 'shitatu', 'shine', 'shisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na imo'};
   loc.clock.midnight = 'pakati ka bushiku';
   loc.clock.noon = 'akasuba';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'insa {h}', "p5", 'insa {h} na maminiti yasano', "p10", 'insa {h} na maminiti ikumi', "p15", 'insa {h} na maminiti ikumi na yasano', "p20", 'insa {h} na maminiti amakumi yabili', "p25", 'insa {h} na maminiti amakumi yabili na yasano', "p30", 'insa {h} na hafu', "p35", 'insa {h} na maminiti amakumi yatatu na yasano', "p40", 'insa {h} na maminiti amakumi yane', "p45", 'insa {h} na maminiti amakumi yane na yasano', "p50", 'insa {h} na maminiti amakumi yasano', "p55", 'insa {h} na maminiti amakumi yasano na yasano');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

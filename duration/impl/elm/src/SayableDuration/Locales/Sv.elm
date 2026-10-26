@@ -55,7 +55,7 @@ locale =
     , half = "{n}½"
     , delimiter = ", "
     , justNow = "just nu"
-    , ago = "{0} sedan"
+    , ago = "för {0} sedan"
     , inFuture = "om {0}"
     , short =
         Just
@@ -73,7 +73,7 @@ locale =
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
-            , ovrAgo = Just "{0} sedan"
+            , ovrAgo = Just "för {0} sedan"
             , ovrInFuture = Just "om {0}"
             }
     , compact =
@@ -92,7 +92,7 @@ locale =
                     )
             , ovrHalf = Nothing
             , ovrDelimiter = Just ""
-            , ovrAgo = Just "{0} sedan"
+            , ovrAgo = Just "för {0} sedan"
             , ovrInFuture = Just "om {0}"
             }
     }

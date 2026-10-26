@@ -26,10 +26,10 @@
    :tomorrow "ມື້ອື່ນ"
    :yesterday "ມື້ວານ"
    :day-after-tomorrow "ມື້ຮື"
-   :day-before-yesterday "ມື້ກ່ອນ"
+   :day-before-yesterday "ມື້ຊືນ"
    :this-weekday "{weekday}ນີ້"
    :next-weekday "{weekday}ໜ້າ"
-   :last-weekday "{weekday}ແລ້ວ"
+   :last-weekday "{weekday}ທີ່ແລ້ວ"
    :short-months (list "ມ.ກ." "ກ.ພ." "ມ.ນ." "ມ.ສ." "ພ.ພ." "ມ.ຖ." "ກ.ລ." "ສ.ຫ." "ກ.ຍ." "ຕ.ລ." "ພ.ຈ." "ທ.ວ.")
    :short-weekdays (list "ອາທິດ" "ຈັນ" "ອັງຄານ" "ພຸດ" "ພະຫັດ" "ສຸກ" "ເສົາ")
    :short-day-format "{n}"

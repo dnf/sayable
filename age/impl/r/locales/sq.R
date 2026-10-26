@@ -20,9 +20,9 @@ locale_sq <- list(
   ),
   half = "{0} e gjysmë",
   delimiter = ", ",
-  just_born = "Sapolindur",
+  just_born = "I sapolindur",
   stages = list(
-    newborn = list(m = "Sapolindur", f = "Sapolindure"),
+    newborn = list(m = "I sapolindur", f = "E sapolindur"),
     infant = "Foshnjë",
     toddler = list(m = "Fëmijë i vogël", f = "Fëmijë e vogël"),
     child = "Fëmijë",

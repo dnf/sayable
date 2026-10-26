@@ -16,7 +16,7 @@ our sub locale() {
     {
         code => 'sq',
         months => ('janar', 'shkurt', 'mars', 'prill', 'maj', 'qershor', 'korrik', 'gusht', 'shtator', 'tetor', 'nëntor', 'dhjetor'),
-        weekdays => ('e diel', 'e hënë', 'e martë', 'e mërkurë', 'e enjte', 'e premte', 'e shtunë'),
+        weekdays => ('të dielën', 'të hënën', 'të martën', 'të mërkurën', 'të enjten', 'të premten', 'të shtunën'),
         day-format => '{n}',
         day-format-exceptions => {},
         date-pattern => '{day} {month}',
@@ -26,8 +26,8 @@ our sub locale() {
         yesterday => 'dje',
         day-after-tomorrow => 'pasnesër',
         day-before-yesterday => 'pardje',
-        this-weekday => 'këtë {weekday}',
-        next-weekday => '{weekday} tjetër',
+        this-weekday => '{weekday}',
+        next-weekday => '{weekday} e ardhshme',
         last-weekday => '{weekday} e kaluar',
         short => {
             months => ('jan', 'shk', 'mar', 'pri', 'maj', 'qer', 'kor', 'gush', 'sht', 'tet', 'nën', 'dhj'),

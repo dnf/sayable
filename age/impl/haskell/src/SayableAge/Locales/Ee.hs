@@ -17,22 +17,10 @@ locale :: Locale
 locale = Locale
     { localeCode = "ee"
     , localePlural = \n -> if n == 1 then One else Other
-    , localeDay = Pluralized
-      [ (One, "ŋkeke {n}")
-      , (Other, "ŋkekewo {n}")
-      ]
-    , localeWeek = Pluralized
-      [ (One, "kɔsiɖa {n}")
-      , (Other, "kɔsiɖawo {n}")
-      ]
-    , localeMonth = Pluralized
-      [ (One, "ɣleti {n}")
-      , (Other, "ɣletiwo {n}")
-      ]
-    , localeYear = Pluralized
-      [ (One, "ƒe {n}")
-      , (Other, "ƒewo {n}")
-      ]
+    , localeDay = Simple "ŋkeke {n}"
+    , localeWeek = Simple "kɔsiɖa {n}"
+    , localeMonth = Simple "ɣleti {n}"
+    , localeYear = Simple "ƒe {n}"
     , localeHalf = "{0} kple afã"
     , localeDelimiter = ", "
     , localeJustBorn = "Evi yeye"
@@ -41,24 +29,15 @@ locale = Locale
         , stageInfant = Neutral "Ɖevi"
         , stageToddler = Neutral "Ɖevi sue"
         , stageChild = Neutral "Ɖevi"
-        , stageTeenager = Neutral "Ŋutsuviwo"
+        , stageTeenager = Gendered "Ɖekakpui" "Ɖetugbi"
         , stageAdult = Neutral "Ame tsitsi"
         }
     , localeShort = Just $
         CompactnessOverride
-            { ovrDay = Just (Simple "ŋkekewo {n}")
-            , ovrWeek = Just (Pluralized
-              [ (One, "kɔsiɖa {n}")
-              , (Other, "kɔsiɖawo {n}")
-              ])
-            , ovrMonth = Just (Pluralized
-              [ (One, "ɣleti {n}")
-              , (Other, "ɣletiwo {n}")
-              ])
-            , ovrYear = Just (Pluralized
-              [ (One, "ƒe {n}")
-              , (Other, "ƒewo {n}")
-              ])
+            { ovrDay = Just (Simple "ŋkeke {n}")
+            , ovrWeek = Just (Simple "kɔsiɖa {n}")
+            , ovrMonth = Just (Simple "ɣleti {n}")
+            , ovrYear = Just (Simple "ƒe {n}")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

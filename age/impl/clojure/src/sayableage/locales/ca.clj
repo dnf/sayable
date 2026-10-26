@@ -18,7 +18,7 @@
    :week {:type :pluralized :forms {:one "{n} setmana" :other "{n} setmanes"}}
    :month {:type :pluralized :forms {:one "{n} mes" :other "{n} mesos"}}
    :year {:type :pluralized :forms {:one "{n} any" :other "{n} anys"}}
-   :half "{n} i mig"
+   :half "{0} i mig"
    :delimiter ", "
    :just-born "Nounat"
    :stages {:newborn {:type :gendered :m "Nounat" :f "Nounada"} :infant {:type :neutral :label "Nadó"} :toddler {:type :neutral :label "Infant"} :child {:type :neutral :label "Criatura"} :teenager {:type :neutral :label "Adolescent"} :adult {:type :gendered :m "Adult" :f "Adulta"}}

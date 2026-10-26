@@ -27,7 +27,7 @@ function locale_mg {
     $half = '{0} sy sasany'
     $delimiter = ', '
     $justNow = 'vao haingana'
-    $ago = '{0} lasa'
+    $ago = '{0} lasa izay'
     $inFuture = 'ao anatin''ny {0}'
     $short = @{
         units = @{
@@ -39,7 +39,7 @@ function locale_mg {
             month = '{n} vol'
             year = '{n} tna'
         }
-        ago = '{0} lasa'
+        ago = '{0} lasa izay'
         inFuture = 'ao anatin''ny {0}'
     }
     $compact = @{

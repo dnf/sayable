@@ -10,21 +10,21 @@
 # Source: locales/mos.json
 
 _sayabletime_locale_mos() {
-    _clock_hours=('piig la a yiibu' 'a yembre' 'a yiibu' 'a tãabo' 'a naase' 'a nu' 'a yoobe' 'a yopoe' 'a niini' 'a wae' 'piiga' 'piig la a yembre')
+    _clock_hours=('lɛɛr piig la a yiibu' 'lɛɛr a yembre' 'lɛɛr a yiibu' 'lɛɛr a tãabo' 'lɛɛr a naase' 'lɛɛr a nu' 'lɛɛr a yoobe' 'lɛɛr a yopoe' 'lɛɛr a nii' 'lɛɛr a wae' 'lɛɛr piiga' 'lɛɛr piig la a yembre')
     _clock_midnight='yʋng-vɩɩse'
     _clock_noon='wĩntoog zabre'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} la minit a nu'
+    _clock_pattern_10='{h} la minit piiga'
+    _clock_pattern_15='{h} la minit piig la a nu'
+    _clock_pattern_20='{h} la minit pisi'
+    _clock_pattern_25='{h} la minit pisi la a nu'
+    _clock_pattern_30='{h} la pʋɩ-sʋka'
+    _clock_pattern_35='{h} la minit pis-tã la a nu'
+    _clock_pattern_40='{h} la minit pis-naase'
+    _clock_pattern_45='{h} la minit pis-naase la a nu'
+    _clock_pattern_50='{h} la minit pis-nu'
+    _clock_pattern_55='{h} la minit pis-nu la a nu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

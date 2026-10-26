@@ -23,4 +23,4 @@
    :just-born "新生児"
    :stages {:newborn {:type :neutral :label "新生児"} :infant {:type :neutral :label "乳児"} :toddler {:type :neutral :label "幼児"} :child {:type :neutral :label "児童"} :teenager {:type :neutral :label "青少年"} :adult {:type :neutral :label "成人"}}
    :short {:day {:type :simple :form "{n} 日"} :week {:type :simple :form "{n} 週間"} :month {:type :simple :form "{n} か月"} :year {:type :simple :form "{n} 年"} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter nil :just-born nil}})
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter nil :just-born nil}})

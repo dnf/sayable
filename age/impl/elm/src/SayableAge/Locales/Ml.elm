@@ -19,7 +19,7 @@ import SayableAge.Types exposing (..)
 locale : Locale
 locale =
     { code = "ml"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural = \n -> if n == 1 then One else Other
     , day = Pluralized
       [ ( One, "{n} ദിവസം" )
       , ( Other, "{n} ദിവസങ്ങൾ" )
@@ -36,7 +36,7 @@ locale =
       [ ( One, "{n} വയസ്സ്" )
       , ( Other, "{n} വയസ്സ്" )
       ]
-    , half = "{0} ര"
+    , half = "{n}½"
     , delimiter = ", "
     , justBorn = "നവജാതശിശു"
     , stages =

@@ -29,10 +29,10 @@
          "month" (hash "type" "simple" "form" "{n} ເດືອນ")
          "year" (hash "type" "simple" "form" "{n} ປີ"))
    "{0}ເຄິ່ງ"
-   ""
+   " "
    "ຫາກໍ"
    "{0} ກ່ອນ"
-   "ໃນ {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} ວິ.") (hash "type" "simple" "form" "{n} ນທ.") (hash "type" "simple" "form" "{n} ຊມ.") (hash "type" "simple" "form" "{n} ມ.") (hash "type" "simple" "form" "{n} ອທ.") (hash "type" "simple" "form" "{n} ດ.") (hash "type" "simple" "form" "{n} ປ.") #f #f "{0} ກ່ອນ" "ໃນ {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} ກ່ອນ" "ໃນ {0}")
+   "ໃນອີກ {0}"
+   (duration-compactness-override (hash "type" "simple" "form" "{n} ວິ.") (hash "type" "simple" "form" "{n} ນທ.") (hash "type" "simple" "form" "{n} ຊມ.") (hash "type" "simple" "form" "{n} ມ.") (hash "type" "simple" "form" "{n} ອທ.") (hash "type" "simple" "form" "{n} ດ.") (hash "type" "simple" "form" "{n} ປ.") #f #f "{0} ກ່ອນ" "ໃນອີກ {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} ກ່ອນ" "ໃນອີກ {0}")
   ))

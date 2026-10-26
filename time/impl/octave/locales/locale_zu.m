@@ -11,10 +11,10 @@
 
 function loc = locale_zu()
   loc.code = 'zu';
-  loc.clock.hours = {'ishumi nambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isishiyagalombili', 'isishiyagalolunye', 'ishumi', 'ishumi nanye'};
+  loc.clock.hours = {'leshumi nambili', 'lokuqala', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithupha', 'lesikhombisa', 'lesishiyagalombili', 'lesishiyagalolunye', 'leshumi', 'leshumi nanye'};
   loc.clock.midnight = 'phakathi kwamabili';
   loc.clock.noon = 'emini';
-  loc.clock.patterns = struct("p0", '{h} o''clock', "p5", 'emva kwemizuzu emihlanu ngo-{h}', "p10", 'emva kwemizuzu eyishumi ngo-{h}', "p15", 'ikota edlule ngo-{h}', "p20", 'emva kwemizuzu engamashumi amabili ngo-{h}', "p25", 'emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}', "p30", 'uhhafu edlule ngo-{h}', "p35", 'imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}', "p40", 'imizuzu engamashumi amabili ngaphambi kuka-{next_h}', "p45", 'ikota ngaphambi kuka-{next_h}', "p50", 'imizuzu eyishumi ngaphambi kuka-{next_h}', "p55", 'imizuzu emihlanu ngaphambi kuka-{next_h}');
+  loc.clock.patterns = struct("p0", 'ihora {h}', "p5", 'imizuzu emihlanu emva kwehora {h}', "p10", 'imizuzu eyishumi emva kwehora {h}', "p15", 'ikota emva kwehora {h}', "p20", 'imizuzu engamashumi amabili emva kwehora {h}', "p25", 'imizuzu engamashumi amabili nanhlanu emva kwehora {h}', "p30", 'uhhafu emva kwehora {h}', "p35", 'imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}', "p40", 'imizuzu engamashumi amabili ngaphambi kwehora {next_h}', "p45", 'ikota ngaphambi kwehora {next_h}', "p50", 'imizuzu eyishumi ngaphambi kwehora {next_h}', "p55", 'imizuzu emihlanu ngaphambi kwehora {next_h}');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

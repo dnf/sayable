@@ -11,22 +11,22 @@
 
 % Chichewa locale.
 
-st_hours('ny', ['khumi ndi ziwiri', 'imodzi', 'ziwiri', 'zitatu', 'zinayi', 'zisanu', 'zisanu ndi chimodzi', 'zisanu ndi ziwiri', 'zisanu ndi zitatu', 'zisanu ndi zinayi', 'khumi', 'khumi ndi chimodzi']).
+st_hours('ny', ['lakhumi ndi chiwiri', 'loyamba', 'lachiwiri', 'lachitatu', 'lachinayi', 'lachisanu', 'lachisanu ndi chimodzi', 'lachisanu ndi chiwiri', 'lachisanu ndi chitatu', 'lachisanu ndi chinayi', 'lakhumi', 'lakhumi ndi chimodzi']).
 st_midnight('ny', 'pakati pausiku').
 st_noon('ny', 'usana').
 
-st_pattern('ny', 0, '{h}:00').
-st_pattern('ny', 5, '{h}:05').
-st_pattern('ny', 10, '{h}:10').
-st_pattern('ny', 15, '{h}:15').
-st_pattern('ny', 20, '{h}:20').
-st_pattern('ny', 25, '{h}:25').
-st_pattern('ny', 30, '{h}:30').
-st_pattern('ny', 35, '{h}:35').
-st_pattern('ny', 40, '{h}:40').
-st_pattern('ny', 45, '{h}:45').
-st_pattern('ny', 50, '{h}:50').
-st_pattern('ny', 55, '{h}:55').
+st_pattern('ny', 0, 'ola {h}').
+st_pattern('ny', 5, 'ola {h} ndi mphindi zisanu').
+st_pattern('ny', 10, 'ola {h} ndi mphindi khumi').
+st_pattern('ny', 15, 'ola {h} ndi mphindi khumi ndi zisanu').
+st_pattern('ny', 20, 'ola {h} ndi mphindi makumi awiri').
+st_pattern('ny', 25, 'ola {h} ndi mphindi makumi awiri ndi zisanu').
+st_pattern('ny', 30, 'ola {h} ndi theka').
+st_pattern('ny', 35, 'ola {h} ndi mphindi makumi atatu ndi zisanu').
+st_pattern('ny', 40, 'ola {h} ndi mphindi makumi anayi').
+st_pattern('ny', 45, 'ola {h} ndi mphindi makumi anayi ndi zisanu').
+st_pattern('ny', 50, 'ola {h} ndi mphindi makumi asanu').
+st_pattern('ny', 55, 'ola {h} ndi mphindi makumi asanu ndi zisanu').
 
 short_st_use24h('ny', false).
 short_st_format('ny', '{h}:{mm} {ampm}').

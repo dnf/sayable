@@ -17,7 +17,7 @@ const StTimeLocale st_locale_vmw = {
         { "khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa" },
         "usiku wopakhala",
         "muttana",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "hora {h}", "hora {h} na thanu", "hora {h} na khumi", "hora {h} na khumi na thanu", "hora {h} na makhumi mapili", "hora {h} na makhumi mapili na thanu", "hora {h} na mettenhe", "hora {h} na makhumi mararu na thanu", "hora {h} na makhumi mancheche", "hora {h} na makhumi mancheche na thanu", "hora {h} na makhumi mathanu", "hora {h} na makhumi mathanu na thanu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

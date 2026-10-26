@@ -25,7 +25,7 @@
         [(or (= n 0) (= n 1)) "one"]
         [(and (>= n 2) (<= n 10)) "few"]
         [else "other"]))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} tasint" "few" "{n} tasinin" "other" "{n} tasinin"))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} tasint" "few" "{n} tisinin" "other" "{n} tisinin"))
          "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} tusdiqt" "few" "{n} tusdiqin" "other" "{n} tusdiqin"))
          "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} tasragt" "few" "{n} tisragin" "other" "{n} tisragin"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "{n} ass" "few" "{n} ussan" "other" "{n} ass"))
@@ -37,6 +37,6 @@
    "ɣilad"
    "ɣ {0} zzrin"
    "ɣ {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f #f "ɣ {0} zzrin" "ɣ {0}")
+   (duration-compactness-override (hash "type" "pluralized" "forms" (hash "one" "{n} tasint" "few" "{n} tasinin" "other" "{n} tasinin")) (hash "type" "pluralized" "forms" (hash "one" "{n} tusdiqt" "few" "{n} tusdiqin" "other" "{n} tusdiqin")) (hash "type" "pluralized" "forms" (hash "one" "{n} tasragt" "few" "{n} tisragin" "other" "{n} tisragin")) (hash "type" "pluralized" "forms" (hash "one" "{n} ass" "few" "{n} ussan" "other" "{n} ass")) (hash "type" "pluralized" "forms" (hash "one" "{n} imalass" "few" "{n} imalassn" "other" "{n} imalass")) (hash "type" "pluralized" "forms" (hash "one" "{n} ayyur" "few" "{n} ayyurn" "other" "{n} ayyur")) (hash "type" "pluralized" "forms" (hash "one" "{n} aseggas" "few" "{n} iseggasen" "other" "{n} aseggas")) #f #f "ɣ {0} zzrin" "ɣ {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "ɣ {0} zzrin" "ɣ {0}")
   ))

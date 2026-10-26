@@ -22,7 +22,7 @@
                (cons :month "{n} ເດືອນ")
                (cons :year "{n} ປີ"))
    :half "{0}ເຄິ່ງ"
-   :delimiter ""
+   :delimiter " "
    :just-born "ເກີດໃໝ່"
    :stages (list (cons :newborn "ເດັກເກີດໃໝ່")
                  (cons :infant "ເດັກນ້ອຍ")
@@ -38,4 +38,5 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
 ))

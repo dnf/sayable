@@ -24,7 +24,7 @@
    :yesterday "inné"
    :day-after-tomorrow "arú amárach"
    :day-before-yesterday "arú inné"
-   :this-weekday "an {weekday} seo"
+   :this-weekday "{weekday} seo"
    :next-weekday "{weekday} seo chugainn"
    :last-weekday "{weekday} seo caite"
    :months-in-date nil

@@ -38,20 +38,20 @@ fn build_tzm() -> AgeLocale:
     var year = plural_unit(one="{n} aseggas", other="{n} iseggasen")
 
     var newborn = stage_neutral("Iɣ d illul")
-    var infant = stage_neutral("Agellid")
+    var infant = stage_neutral("Llufan")
     var toddler = stage_gendered("Aḥenjir", "Taḥenjirt")
-    var child = stage_gendered("Afrux", "Tafruxṭ")
+    var child = stage_gendered("Afrux", "Tafruxt")
     var teenager = stage_gendered("Aɛrim", "Taɛrimt")
     var adult = stage_gendered("Argaz", "Tamṭṭuṭ")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("{n} d")
+    short_ovr.day = plural_unit(one="{n} ass", other="{n} ussan")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n} wk")
+    short_ovr.week = plural_unit(one="{n} imalass", other="{n} imalassn")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("{n} mo")
+    short_ovr.month = plural_unit(one="{n} ayyur", other="{n} ayyurn")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("{n} yr")
+    short_ovr.year = plural_unit(one="{n} aseggas", other="{n} iseggasen")
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()

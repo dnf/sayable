@@ -14,9 +14,9 @@
 (def locale
   {:code "gn"
    :plural (fn [n] (if (== n 1) :one :other))
-   :second {:type :simple :form "{n} aravo'i"}
-   :minute {:type :simple :form "{n} aravo"}
-   :hour {:type :simple :form "{n} aravo guasu"}
+   :second {:type :simple :form "{n} aravo'ive"}
+   :minute {:type :simple :form "{n} aravo'i"}
+   :hour {:type :simple :form "{n} aravo"}
    :day {:type :simple :form "{n} ára"}
    :week {:type :simple :form "{n} arapokõindy"}
    :month {:type :simple :form "{n} jasy"}
@@ -26,5 +26,5 @@
    :just-now "ko'ágã"
    :ago "{0} ohasava'ekue"
    :in-future "{0} rire"
-   :short {:second {:type :simple :form "{n} ara'i"} :minute {:type :simple :form "{n} ara"} :hour {:type :simple :form "{n} ara g"} :day {:type :simple :form "{n} ára"} :week {:type :simple :form "{n} ara"} :month {:type :simple :form "{n} jas"} :year {:type :simple :form "{n} ary"} :half nil :delimiter nil :ago "{0} ohasava'ekue" :in-future "{0} rire"}
+   :short {:second {:type :simple :form "{n} aravo'ive"} :minute {:type :simple :form "{n} aravo'i"} :hour {:type :simple :form "{n} aravo"} :day {:type :simple :form "{n} ára"} :week {:type :simple :form "{n} ara"} :month {:type :simple :form "{n} jas"} :year {:type :simple :form "{n} ary"} :half nil :delimiter nil :ago "{0} ohasava'ekue" :in-future "{0} rire"}
    :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ohasava'ekue" :in-future "{0} rire"}})

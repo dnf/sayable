@@ -591,7 +591,7 @@ assert_eq [::sayableage::format_age $es "2023-06-15" "2025-07-15"] "2 años, 1 m
 assert_eq [::sayableage::format_age $es "2023-06-15" "2025-12-15"] "2 años, 6 meses" "25.9"
 
 # 25.10
-assert_eq [::sayableage::format_age $es "2022-06-15" "2025-12-15"] "3 y medio años" "25.10"
+assert_eq [::sayableage::format_age $es "2022-06-15" "2025-12-15"] "3 años y medio" "25.10"
 
 # 25.11
 assert_eq [::sayableage::format_age $es "2022-06-15" "2025-06-15"] "3 años" "25.11"
@@ -701,7 +701,7 @@ set he [::sayableage::new $he_locale]
 assert_eq [::sayableage::format_age $he "2025-06-15" "2025-06-15"] "רק נולד" "29.1"
 
 # 29.2
-assert_eq [::sayableage::format_age $he "2025-06-14" "2025-06-15"] "יום 1" "29.2"
+assert_eq [::sayableage::format_age $he "2025-06-14" "2025-06-15"] "יום" "29.2"
 
 # 29.3
 assert_eq [::sayableage::format_age $he "2025-06-12" "2025-06-15"] "3 ימים" "29.3"
@@ -719,7 +719,7 @@ assert_eq [::sayableage::format_age $he "2025-01-15" "2025-07-15"] "6 חודשי
 assert_eq [::sayableage::format_age $he "2025-03-15" "2025-06-15"] "3 חודשים" "29.7"
 
 # 29.8
-assert_eq [::sayableage::format_age $he "2023-06-15" "2025-07-15"] "שנתיים, חודש 1" "29.8"
+assert_eq [::sayableage::format_age $he "2023-06-15" "2025-07-15"] "שנתיים, חודש" "29.8"
 
 # 29.9
 assert_eq [::sayableage::format_age $he "2022-06-15" "2025-12-15"] "3 שנים וחצי" "29.9"
@@ -803,7 +803,7 @@ assert_eq [::sayableage::format_age $id_fmt "2025-06-12" "2025-06-15"] "3 hari" 
 assert_eq [::sayableage::format_age $id_fmt "2025-01-15" "2025-07-15"] "6 bulan" "29.31"
 
 # 29.32
-assert_eq [::sayableage::format_age $id_fmt "2022-06-15" "2025-12-15"] "3 tahun setengah" "29.32"
+assert_eq [::sayableage::format_age $id_fmt "2022-06-15" "2025-12-15"] "3 setengah tahun" "29.32"
 
 # 29.33
 assert_eq [::sayableage::format_age $id_fmt "2018-06-15" "2025-06-15"] "7 tahun" "29.33"

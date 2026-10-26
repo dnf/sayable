@@ -10,21 +10,21 @@
 # Source: locales/rw.json
 
 _sayabletime_locale_rw() {
-    _clock_hours=('cumi n'\''ebyiri' 'rimwe' 'ebyiri' 'eshatu' 'enye' 'eshanu' 'esheshatu' 'indwi' 'umunani' 'icyenda' 'icumi' 'cumi n'\''imwe')
-    _clock_midnight='igicuku'
-    _clock_noon='saa sita'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_hours=('sita' 'saba' 'munani' 'cyenda' 'kumi' 'kumi n'\''imwe' 'kumi n'\''ebyiri' 'moya' 'mbiri' 'tatu' 'ine' 'tanu')
+    _clock_midnight='saa sita z'\''ijoro'
+    _clock_noon='saa sita z'\''amanywa'
+    _clock_pattern_0='saa {h}'
+    _clock_pattern_5='saa {h} n'\''iminota itanu'
+    _clock_pattern_10='saa {h} n'\''iminota icumi'
+    _clock_pattern_15='saa {h} n'\''iminota cumi n'\''itanu'
+    _clock_pattern_20='saa {h} n'\''iminota makumyabiri'
+    _clock_pattern_25='saa {h} n'\''iminota makumyabiri n'\''itanu'
+    _clock_pattern_30='saa {h} n'\''igice'
+    _clock_pattern_35='saa {h} n'\''iminota mirongo itatu n'\''itanu'
+    _clock_pattern_40='saa {h} n'\''iminota mirongo ine'
+    _clock_pattern_45='saa {h} n'\''iminota mirongo ine n'\''itanu'
+    _clock_pattern_50='saa {h} n'\''iminota mirongo itanu'
+    _clock_pattern_55='saa {h} n'\''iminota mirongo itanu n'\''itanu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

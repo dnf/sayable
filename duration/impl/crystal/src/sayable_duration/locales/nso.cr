@@ -14,8 +14,8 @@ module SayableDuration
       code: "nso",
       plural: ->(n : Int32) { n == 1 ? PluralCategory::One : PluralCategory::Other },
       units: {
-        "second" => UnitForms.new(one: "motsotswana {n}", other: "dimetsotswana {n}"),
-        "minute" => UnitForms.new(one: "metsotso {n}", other: "dimetsotso {n}"),
+        "second" => UnitForms.new(one: "motsotswana {n}", other: "metsotswana {n}"),
+        "minute" => UnitForms.new(one: "motsotso {n}", other: "metsotso {n}"),
         "hour" => UnitForms.new(one: "iri {n}", other: "diiri {n}"),
         "day" => UnitForms.new(one: "letšatši {n}", other: "matšatši {n}"),
         "week" => UnitForms.new(one: "beke {n}", other: "dibeke {n}"),
@@ -29,8 +29,8 @@ module SayableDuration
       in_future: "ka {0}",
       short: CompactnessOverride.new(
         units: {
-          "second" => UnitForms.new(one: "mots. {n}", other: "dimets. {n}"),
-          "minute" => UnitForms.new(one: "mets. {n}", other: "dimets. {n}"),
+          "second" => UnitForms.new(one: "motsotsw. {n}", other: "metsotsw. {n}"),
+          "minute" => UnitForms.new(one: "mots. {n}", other: "mets. {n}"),
           "hour" => UnitForms.new(one: "iri {n}", other: "diiri {n}"),
           "day" => UnitForms.new(one: "letšatši {n}", other: "matšatši {n}"),
           "week" => UnitForms.new(one: "beke {n}", other: "dibeke {n}"),

@@ -13,9 +13,9 @@
 
 (def locale
   {:code "pov"
-   :clock {:hours ["dozi" "un" "dos" "tres" "kuatru" "sinku" "seis" "seti" "oitu" "novi" "des" "onzi"]
+   :clock {:hours ["dozi ora" "un ora" "dos ora" "tres ora" "kuatru ora" "sinku ora" "seis ora" "seti ora" "oitu ora" "novi ora" "des ora" "onzi ora"]
            :midnight "meia noti"
            :noon "meiu dia"
-           :patterns {0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"}}
+           :patterns {0 "{h}" 5 "{h} i sinku" 10 "{h} i des" 15 "{h} i kinzi" 20 "{h} i vinti" 25 "{h} i vinti i sinku" 30 "{h} i meiu" 35 "{h} i trinta i sinku" 40 "{h} i kuarenta" 45 "{h} i kuarenta i sinku" 50 "{h} i sinkuenta" 55 "{h} i sinkuenta i sinku"}}
    :short {:clock {:use-24h false :am-pm ["AM" "PM"] :format "{h}:{mm} {ampm}"}}
    :compact {:clock {:use-24h false :am-pm ["a" "p"] :format "{h}:{mm}{ampm}"}}})

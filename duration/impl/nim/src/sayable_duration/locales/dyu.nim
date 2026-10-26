@@ -29,7 +29,7 @@ let DYU* = DurationLocale(
   delimiter: ", ",
   justNow: "sisan",
   ago: "{0} tɛmɛnen",
-  inFuture: "ka {0}",
+  inFuture: "{0} kɔnɔ",
   short: some(CompactnessOverride(
     units: some({
       "second": simpleUnit("sɛk. {n}"),
@@ -43,7 +43,7 @@ let DYU* = DurationLocale(
     half: none(string),
     delimiter: none(string),
     ago: some("{0} tɛmɛnen"),
-    inFuture: some("ka {0}"),
+    inFuture: some("{0} kɔnɔ"),
   )),
   compact: some(CompactnessOverride(
     units: some({
@@ -58,6 +58,6 @@ let DYU* = DurationLocale(
     half: some("{n}½"),
     delimiter: some(""),
     ago: some("{0} tɛmɛnen"),
-    inFuture: some("ka {0}"),
+    inFuture: some("{0} kɔnɔ"),
   )),
 )

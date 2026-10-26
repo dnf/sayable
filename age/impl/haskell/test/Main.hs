@@ -393,7 +393,7 @@ main = hspec $ do
         it "25.9 years+months" $
             ageS es "2023-06-15" "2025-12-15" `shouldBe` Just "2 a\241os, 6 meses"
         it "25.10 half marker" $
-            ageS es "2022-06-15" "2025-12-15" `shouldBe` Just "3 y medio a\241os"
+            ageS es "2022-06-15" "2025-12-15" `shouldBe` Just "3 a\241os y medio"
         it "25.11 no half" $
             ageS es "2022-06-15" "2025-06-15" `shouldBe` Just "3 a\241os"
         it "25.12 7+ years" $
@@ -461,7 +461,7 @@ main = hspec $ do
         it "29.1 justBorn" $
             ageS he "2025-06-15" "2025-06-15" `shouldBe` Just "\1512\1511 \1504\1493\1500\1491"
         it "29.2 1 day" $
-            ageS he "2025-06-14" "2025-06-15" `shouldBe` Just "\1497\1493\1501 1"
+            ageS he "2025-06-14" "2025-06-15" `shouldBe` Just "\1497\1493\1501"
         it "29.3 3 days" $
             ageS he "2025-06-12" "2025-06-15" `shouldBe` Just "3 \1497\1502\1497\1501"
         it "29.4 2 weeks dual" $
@@ -473,7 +473,7 @@ main = hspec $ do
         it "29.7 3 months" $
             ageS he "2025-03-15" "2025-06-15" `shouldBe` Just "3 \1495\1493\1491\1513\1497\1501"
         it "29.8 2y dual + 1m" $
-            ageS he "2023-06-15" "2025-07-15" `shouldBe` Just "\1513\1504\1514\1497\1497\1501, \1495\1493\1491\1513 1"
+            ageS he "2023-06-15" "2025-07-15" `shouldBe` Just "\1513\1504\1514\1497\1497\1501, \1495\1493\1491\1513"
         it "29.9 3.5 years" $
             ageS he "2022-06-15" "2025-12-15" `shouldBe` Just "3 \1513\1504\1497\1501 \1493\1495\1510\1497"
         it "29.10 7 years" $
@@ -533,7 +533,7 @@ main = hspec $ do
         it "29.31 6 months" $
             ageS id' "2025-01-15" "2025-07-15" `shouldBe` Just "6 bulan"
         it "29.32 3.5 years" $
-            ageS id' "2022-06-15" "2025-12-15" `shouldBe` Just "3 tahun setengah"
+            ageS id' "2022-06-15" "2025-12-15" `shouldBe` Just "3 setengah tahun"
         it "29.33 7 years" $
             ageS id' "2018-06-15" "2025-06-15" `shouldBe` Just "7 tahun"
 

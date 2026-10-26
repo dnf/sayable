@@ -46,7 +46,7 @@ fn build_gn() -> DateLocale:
     var num_exceptions = 0
     var date_pattern = "{day} {month}"
     var date_pattern_with_year = "{day} {month} {year}"
-    var today = "ko'ágã"
+    var today = "ko árape"
     var tomorrow = "ko'ẽrõ"
     var yesterday = "kuehe"
     var day_after_tomorrow = "ko'ẽrõ rire"

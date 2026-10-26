@@ -17,7 +17,7 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 var SQ = sdate.DateLocale{
 	Code: "sq",
 	Months:   [12]string{"janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"},
-	Weekdays: [7]string{"e diel", "e hënë", "e martë", "e mërkurë", "e enjte", "e premte", "e shtunë"},
+	Weekdays: [7]string{"të dielën", "të hënën", "të martën", "të mërkurën", "të enjten", "të premten", "të shtunën"},
 	DayFormat: "{n}",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",
@@ -27,8 +27,8 @@ var SQ = sdate.DateLocale{
 	Yesterday: "dje",
 	DayAfterTomorrow:  strPtr("pasnesër"),
 	DayBeforeYesterday: strPtr("pardje"),
-	ThisWeekday:       strPtr("këtë {weekday}"),
-	NextWeekday:       strPtr("{weekday} tjetër"),
+	ThisWeekday:       strPtr("{weekday}"),
+	NextWeekday:       strPtr("{weekday} e ardhshme"),
 	LastWeekday:       strPtr("{weekday} e kaluar"),
 	MonthsInDate: nil,
 	Short: &sdate.CompactnessOverride{

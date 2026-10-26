@@ -15,18 +15,18 @@ st_hours('pis', ['twelf', 'wan', 'tu', 'tri', 'foa', 'faev', 'sikis', 'seven', '
 st_midnight('pis', 'midonaet').
 st_noon('pis', 'midei').
 
-st_pattern('pis', 0, '{h}:00').
-st_pattern('pis', 5, '{h}:05').
-st_pattern('pis', 10, '{h}:10').
-st_pattern('pis', 15, '{h}:15').
-st_pattern('pis', 20, '{h}:20').
-st_pattern('pis', 25, '{h}:25').
-st_pattern('pis', 30, '{h}:30').
-st_pattern('pis', 35, '{h}:35').
-st_pattern('pis', 40, '{h}:40').
-st_pattern('pis', 45, '{h}:45').
-st_pattern('pis', 50, '{h}:50').
-st_pattern('pis', 55, '{h}:55').
+st_pattern('pis', 0, '{h} kilok').
+st_pattern('pis', 5, 'faev minit pas {h}').
+st_pattern('pis', 10, 'ten minit pas {h}').
+st_pattern('pis', 15, 'kwata pas {h}').
+st_pattern('pis', 20, 'twenti minit pas {h}').
+st_pattern('pis', 25, 'twenti faev minit pas {h}').
+st_pattern('pis', 30, 'haf pas {h}').
+st_pattern('pis', 35, 'twenti faev minit tu {next_h}').
+st_pattern('pis', 40, 'twenti minit tu {next_h}').
+st_pattern('pis', 45, 'kwata tu {next_h}').
+st_pattern('pis', 50, 'ten minit tu {next_h}').
+st_pattern('pis', 55, 'faev minit tu {next_h}').
 
 short_st_use24h('pis', false).
 short_st_format('pis', '{h}:{mm} {ampm}').

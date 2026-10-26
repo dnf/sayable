@@ -17,10 +17,10 @@
   (make-time-locale
    :code "sn"
    :clock (make-clock-config
-    :hours (list "gumi nembiri" "imwe" "mbiri" "nhatu" "ina" "shanu" "nhanhatu" "nomwe" "sere" "pfumbamwe" "gumi" "gumi neimwe")
-    :midnight "usiku hwepakati"
+    :hours (list "dzava gumi nembiri" "yava imwe" "dzava mbiri" "dzava nhatu" "dzava ina" "dzava shanu" "dzava nhanhatu" "dzava nomwe" "dzava sere" "dzava pfumbamwe" "dzava gumi" "dzava gumi neimwe")
+    :midnight "pakati peusiku"
     :noon "masikati"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} nemaminitsi mashanu") (cons 10 "{h} nemaminitsi gumi") (cons 15 "{h} nemaminitsi gumi nemashanu") (cons 20 "{h} nemaminitsi makumi maviri") (cons 25 "{h} nemaminitsi makumi maviri nemashanu") (cons 30 "{h} nehafu") (cons 35 "{h} nemaminitsi makumi matatu nemashanu") (cons 40 "{h} nemaminitsi makumi mana") (cons 45 "{h} nemaminitsi makumi mana nemashanu") (cons 50 "{h} nemaminitsi makumi mashanu") (cons 55 "{h} nemaminitsi makumi mashanu nemashanu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

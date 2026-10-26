@@ -23,9 +23,9 @@ he
 					ifTrue: [ #two ]
 					ifFalse: [ #other ] ] ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. (Dictionary newFromPairs: { #one. 'יום {n}'. #two. 'יומיים'. #other. '{n} ימים' }).
-		'week'. (Dictionary newFromPairs: { #one. 'שבוע {n}'. #two. 'שבועיים'. #other. '{n} שבועות' }).
-		'month'. (Dictionary newFromPairs: { #one. 'חודש {n}'. #two. 'חודשיים'. #other. '{n} חודשים' }).
+		'day'. (Dictionary newFromPairs: { #one. 'יום'. #two. 'יומיים'. #other. '{n} ימים' }).
+		'week'. (Dictionary newFromPairs: { #one. 'שבוע'. #two. 'שבועיים'. #other. '{n} שבועות' }).
+		'month'. (Dictionary newFromPairs: { #one. 'חודש'. #two. 'חודשיים'. #other. '{n} חודשים' }).
 		'year'. (Dictionary newFromPairs: { #one. 'שנה'. #two. 'שנתיים'. #other. '{n} שנים' }).
 	}).
 	locale half: '{0} וחצי'.
@@ -33,8 +33,8 @@ he
 	locale justBorn: 'רק נולד'.
 	locale stages: (Dictionary newFromPairs: {
 		#newborn. (Dictionary newFromPairs: { #m. 'רק נולד'. #f. 'רק נולדה' }).
-		#infant. 'תינוק'.
-		#toddler. 'פעוט'.
+		#infant. (Dictionary newFromPairs: { #m. 'תינוק'. #f. 'תינוקת' }).
+		#toddler. (Dictionary newFromPairs: { #m. 'פעוט'. #f. 'פעוטה' }).
 		#child. (Dictionary newFromPairs: { #m. 'ילד'. #f. 'ילדה' }).
 		#teenager. (Dictionary newFromPairs: { #m. 'נער'. #f. 'נערה' }).
 		#adult. (Dictionary newFromPairs: { #m. 'מבוגר'. #f. 'מבוגרת' }).

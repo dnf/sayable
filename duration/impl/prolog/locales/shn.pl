@@ -44,6 +44,7 @@ compact_sd_unit('shn', day, _, '{n}d').
 compact_sd_unit('shn', week, _, '{n}w').
 compact_sd_unit('shn', month, _, '{n}mo').
 compact_sd_unit('shn', year, _, '{n}y').
+compact_sd_half('shn', '{n}½').
 compact_sd_delimiter('shn', '').
 compact_sd_ago('shn', '{0} ပူၼ်ႉမႃး').
 compact_sd_in_future('shn', 'ထႅင်ႈ {0}').

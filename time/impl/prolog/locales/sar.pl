@@ -11,22 +11,22 @@
 
 % Sara locale.
 
-st_hours('sar', ['mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'kɨ̀ndá', 'ɗìi', 'mùtá', 'sɔ̀', 'mɨ̀ndɨ̀', 'mɨ̀ndɨ̀ kɨ̀ndá', 'mɨ̀sá', 'mɨ̀ndɨ̀ mùtá', 'mɨ̀ndɨ̀ sɔ̀', 'mɔ̀ɔ́', 'mɔ̀ɔ́ kɨ̀ndá']).
+st_hours('sar', ['lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi', 'lɛɛr kɨ̀ndá', 'lɛɛr ɗìi', 'lɛɛr mùtá', 'lɛɛr sɔ̀', 'lɛɛr mɨ̀ndɨ̀', 'lɛɛr mɨ̀ndɨ̀ kɨ̀ndá', 'lɛɛr mɨ̀sá', 'lɛɛr mɨ̀ndɨ̀ mùtá', 'lɛɛr mɨ̀ndɨ̀ sɔ̀', 'lɛɛr mɔ̀ɔ́', 'lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá']).
 st_midnight('sar', 'badɔ').
 st_noon('sar', 'mbɔr ndɔ').
 
-st_pattern('sar', 0, '{h}:00').
-st_pattern('sar', 5, '{h}:05').
-st_pattern('sar', 10, '{h}:10').
-st_pattern('sar', 15, '{h}:15').
-st_pattern('sar', 20, '{h}:20').
-st_pattern('sar', 25, '{h}:25').
-st_pattern('sar', 30, '{h}:30').
-st_pattern('sar', 35, '{h}:35').
-st_pattern('sar', 40, '{h}:40').
-st_pattern('sar', 45, '{h}:45').
-st_pattern('sar', 50, '{h}:50').
-st_pattern('sar', 55, '{h}:55').
+st_pattern('sar', 0, '{h}').
+st_pattern('sar', 5, '{h} kɨ̀ minít mɨ̀ndɨ̀').
+st_pattern('sar', 10, '{h} kɨ̀ minít mɔ̀ɔ́').
+st_pattern('sar', 15, '{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀').
+st_pattern('sar', 20, '{h} kɨ̀ minít mɔ̀ɔ́ ɗìi').
+st_pattern('sar', 25, '{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀').
+st_pattern('sar', 30, '{h} kɩ̀ ndá̰ŋ').
+st_pattern('sar', 35, '{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀').
+st_pattern('sar', 40, '{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀').
+st_pattern('sar', 45, '{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀').
+st_pattern('sar', 50, '{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀').
+st_pattern('sar', 55, '{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀').
 
 short_st_use24h('sar', false).
 short_st_format('sar', '{h}:{mm} {ampm}').

@@ -15,13 +15,13 @@ st_hours('hr', ['dvanaest', 'jedan', 'dva', 'tri', 'četiri', 'pet', 'šest', 's
 st_midnight('hr', 'ponoć').
 st_noon('hr', 'podne').
 
-st_pattern('hr', 0, '{h} sati').
-st_pattern('hr', 5, 'pet po {h}').
-st_pattern('hr', 10, 'deset po {h}').
-st_pattern('hr', 15, 'petnaest po {h}').
-st_pattern('hr', 20, 'dvadeset po {h}').
-st_pattern('hr', 25, 'dvadeset pet po {h}').
-st_pattern('hr', 30, 'trideset po {h}').
+st_pattern('hr', 0, '{h}').
+st_pattern('hr', 5, '{h} i pet').
+st_pattern('hr', 10, '{h} i deset').
+st_pattern('hr', 15, '{h} i petnaest').
+st_pattern('hr', 20, '{h} i dvadeset').
+st_pattern('hr', 25, '{h} i dvadeset pet').
+st_pattern('hr', 30, 'pola {next_h}').
 st_pattern('hr', 35, 'dvadeset pet do {next_h}').
 st_pattern('hr', 40, 'dvadeset do {next_h}').
 st_pattern('hr', 45, 'petnaest do {next_h}').

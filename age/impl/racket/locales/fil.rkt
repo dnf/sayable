@@ -33,7 +33,7 @@
          "toddler" (stage-label "Batang paslit" #f #f)
          "child" (stage-label "Bata" #f #f)
          "teenager" (stage-label "Tinedyer" #f #f)
-         "adult" (stage-label "Matanda" #f #f))
+         "adult" (stage-label "Adulto" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} araw") (hash "type" "pluralized" "forms" (hash "one" "{n} linggo" "other" "{n} na linggo")) (hash "type" "simple" "form" "{n} buwan") (hash "type" "simple" "form" "{n} taon") #f #f #f)
    (compactness-override (hash "type" "pluralized" "forms" (hash "one" "{n} araw" "other" "{n} na araw")) (hash "type" "simple" "form" "{n}linggo") (hash "type" "pluralized" "forms" (hash "one" "{n}buwan" "other" "{n} buwan")) (hash "type" "simple" "form" "{n}taon") "{n}½" "" #f)
   ))

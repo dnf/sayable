@@ -15,8 +15,8 @@ proc locale_date_ca {} {
     set weekdays [list {diumenge} {dilluns} {dimarts} {dimecres} {dijous} {divendres} {dissabte}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
-    set date_pattern "{day} de {month}"
-    set date_pattern_with_year "{day} de {month} de {year}"
+    set date_pattern "{day} {month}"
+    set date_pattern_with_year "{day} {month} de {year}"
     set today {avui}
     set tomorrow {demà}
     set yesterday {ahir}
@@ -25,13 +25,13 @@ proc locale_date_ca {} {
     set this_weekday "aquest {weekday}"
     set next_weekday "{weekday} que ve"
     set last_weekday "{weekday} passat"
-    set months_in_date ""
+    set months_in_date [list {de gener} {de febrer} {de març} {d'abril} {de maig} {de juny} {de juliol} {d'agost} {de setembre} {d'octubre} {de novembre} {de desembre}]
     set short [dict create \
         months [list {gen} {feb} {març} {abr} {maig} {juny} {jul} {ag} {set} {oct} {nov} {des}] \
         weekdays [list {dg} {dl} {dt} {dc} {dj} {dv} {ds}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \
-        date_pattern_with_year "{day} {month} {year}" \
+        date_pattern_with_year "{day} {month} de {year}" \
     ]
     set compact [dict create \
         date_pattern "{d}/{m}" \

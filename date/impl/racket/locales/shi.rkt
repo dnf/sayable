@@ -20,21 +20,21 @@
 (define shi
   (date-locale
    "shi"
-   (list "ⵉⵏⵏⴰⵢⵔ" "ⴱⵕⴰⵢⵕ" "ⵎⴰⵕⵚ" "ⵉⴱⵔⵉⵔ" "ⵎⴰⵢⵢⵓ" "ⵢⵓⵏⵢⵓ" "ⵢⵓⵍⵢⵓⵣ" "ⵖⵓⵛⵜ" "ⵛⵓⵜⴰⵏⴱⵉⵔ" "ⴽⵜⵓⴱⵔ" "ⵏⵓⵡⴰⵏⴱⵉⵔ" "ⴷⵓⵊⴰⵏⴱⵉⵔ")
-   (list "ⴰⵙⴰⵎⴰⵙ" "ⴰⵢⵏⴰⵙ" "ⴰⵙⵉⵏⴰⵙ" "ⴰⴽⵕⴰⵙ" "ⴰⴽⵡⴰⵙ" "ⴰⵙⵉⵎⵡⴰⵙ" "ⴰⵙⵉⴹⵢⴰⵙ")
+   (list "innayr" "bṛayṛ" "maṛṣ" "ibrir" "mayyu" "yunyu" "yulyuz" "ɣuct" "cutanbir" "ktubr" "nuwanbir" "dujanbir")
+   (list "asamas" "aynas" "asinas" "akṛas" "akwas" "asimwas" "asiḍyas")
    "{n}"
    (hash)
    "{day} {month}"
    "{day} {month} {year}"
-   "ⴰⵙⵙⴰ"
-   "ⴰⵙⴽⴽⴰ"
-   "ⵉⴹⵍⵍⵉ"
+   "assa"
+   "askka"
+   "iḍlli"
    #f
    #f
-   "{weekday} ⴰⴷ"
-   "{weekday} ⴷ ⵉⴷⴷⴰⵏ"
-   "{weekday} ⵉⵣⵔⵉⵏ"
+   "{weekday} ad"
+   "{weekday} d iddan"
+   "{weekday} izrin"
    #f
-   (date-compactness-override (list "ⵉⵏⵏ" "ⴱⵕⴰ" "ⵎⴰⵕ" "ⵉⴱⵔ" "ⵎⴰⵢ" "ⵢⵓⵏ" "ⵢⵓⵍ" "ⵖⵓⵛ" "ⵛⵓⵜ" "ⴽⵜⵓ" "ⵏⵓⵡ" "ⴷⵓⵊ") #f (list "ⴰⵙⴰ" "ⴰⵢⵏ" "ⴰⵙⵉ" "ⴰⴽⵕ" "ⴰⴽⵡ" "ⴰⵙⵉⵎ" "ⴰⵙⵉⴹ") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "inn" "bṛa" "maṛ" "ibr" "may" "yun" "yul" "ɣuc" "cut" "ktu" "nuw" "duj") #f (list "asa" "ayn" "asi" "akṛ" "akw" "asim" "asiḍ") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

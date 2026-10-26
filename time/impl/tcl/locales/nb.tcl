@@ -11,7 +11,7 @@
 
 proc locale_time_nb {} {
     set code {nb}
-    set hours [list {tolv} {en} {to} {tre} {fire} {fem} {seks} {sju} {åtte} {ni} {ti} {elleve}]
+    set hours [list {tolv} {ett} {to} {tre} {fire} {fem} {seks} {sju} {åtte} {ni} {ti} {elleve}]
     set midnight {midnatt}
     set noon {middag}
     set patterns [dict create \

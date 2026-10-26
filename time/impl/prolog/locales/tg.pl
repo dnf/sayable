@@ -15,18 +15,18 @@ st_hours('tg', ['дувоздаҳ', 'як', 'ду', 'се', 'чор', 'панҷ'
 st_midnight('tg', 'нимишаб').
 st_noon('tg', 'нимирӯз').
 
-st_pattern('tg', 0, '{h}:00').
-st_pattern('tg', 5, '{h}:05').
-st_pattern('tg', 10, '{h}:10').
-st_pattern('tg', 15, '{h}:15').
-st_pattern('tg', 20, '{h}:20').
-st_pattern('tg', 25, '{h}:25').
-st_pattern('tg', 30, '{h}:30').
-st_pattern('tg', 35, '{h}:35').
-st_pattern('tg', 40, '{h}:40').
-st_pattern('tg', 45, '{h}:45').
-st_pattern('tg', 50, '{h}:50').
-st_pattern('tg', 55, '{h}:55').
+st_pattern('tg', 0, 'соати {h}').
+st_pattern('tg', 5, 'соати {h} ва панҷ дақиқа').
+st_pattern('tg', 10, 'соати {h} ва даҳ дақиқа').
+st_pattern('tg', 15, 'соати {h} ва понздаҳ дақиқа').
+st_pattern('tg', 20, 'соати {h} ва бист дақиқа').
+st_pattern('tg', 25, 'соати {h} ва бисту панҷ дақиқа').
+st_pattern('tg', 30, 'соати {h} ва ним').
+st_pattern('tg', 35, 'соати {h} ва сию панҷ дақиқа').
+st_pattern('tg', 40, 'соати {h} ва чил дақиқа').
+st_pattern('tg', 45, 'соати {h} ва чилу панҷ дақиқа').
+st_pattern('tg', 50, 'соати {h} ва панҷоҳ дақиқа').
+st_pattern('tg', 55, 'соати {h} ва панҷоҳу панҷ дақиқа').
 
 short_st_use24h('tg', true).
 short_st_format('tg', '{h}:{mm}').

@@ -31,12 +31,12 @@ ff
 		#infant. 'Ɓinngel'.
 		#toddler. 'Cukalel'.
 		#child. 'Suka'.
-		#teenager. 'Suka debbo'.
+		#teenager. (Dictionary newFromPairs: { #m. 'Suka gorko'. #f. 'Suka debbo' }).
 		#adult. 'Mawɗo'.
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. 'ñalɗe {n}'.
+			'day'. (Dictionary newFromPairs: { #one. 'ñalawma {n}'. #other. 'ñalɗe {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'yontere {n}'. #other. 'yontereeji {n}' }).
 			'month'. (Dictionary newFromPairs: { #one. 'lewru {n}'. #other. 'lebbi {n}' }).
 			'year'. (Dictionary newFromPairs: { #one. 'hitaande {n}'. #other. 'duuɓi {n}' }).
@@ -44,7 +44,7 @@ ff
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. 'ñalɗe {n}'.
+			'day'. (Dictionary newFromPairs: { #one. 'ñalawma {n}'. #other. 'ñalɗe {n}' }).
 			'week'. (Dictionary newFromPairs: { #one. 'yont {n}'. #other. 'yontji {n}' }).
 			'month'. (Dictionary newFromPairs: { #one. 'lew {n}'. #other. 'leb {n}' }).
 			'year'. (Dictionary newFromPairs: { #one. 'hit {n}'. #other. 'duuɓi {n}' }).

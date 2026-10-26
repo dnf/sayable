@@ -27,7 +27,7 @@ pub fn locale() -> DurationLocale {
         },
         half: "{0} satengah".to_string(),
         delimiter: ", ".to_string(),
-        just_now: "ayeuna".to_string(),
+        just_now: "nembé".to_string(),
         ago: "{0} kapengker".to_string(),
         in_future: "dina {0}".to_string(),
         short: Some(CompactnessOverride {

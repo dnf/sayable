@@ -10,7 +10,7 @@
 # Source: locales/nb.json
 
 _sayabletime_locale_nb() {
-    _clock_hours=('tolv' 'en' 'to' 'tre' 'fire' 'fem' 'seks' 'sju' 'åtte' 'ni' 'ti' 'elleve')
+    _clock_hours=('tolv' 'ett' 'to' 'tre' 'fire' 'fem' 'seks' 'sju' 'åtte' 'ni' 'ti' 'elleve')
     _clock_midnight='midnatt'
     _clock_noon='middag'
     _clock_pattern_0='klokka {h}'

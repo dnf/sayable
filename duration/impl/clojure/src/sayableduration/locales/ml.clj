@@ -13,7 +13,7 @@
 
 (def locale
   {:code "ml"
-   :plural (fn [n] (if (or (== n 0) (== n 1)) :one :other))
+   :plural (fn [n] (if (== n 1) :one :other))
    :second {:type :pluralized :forms {:one "{n} സെക്കൻഡ്" :other "{n} സെക്കൻഡുകൾ"}}
    :minute {:type :pluralized :forms {:one "{n} മിനിറ്റ്" :other "{n} മിനിറ്റുകൾ"}}
    :hour {:type :pluralized :forms {:one "{n} മണിക്കൂർ" :other "{n} മണിക്കൂറുകൾ"}}
@@ -21,7 +21,7 @@
    :week {:type :pluralized :forms {:one "{n} ആഴ്ച" :other "{n} ആഴ്ചകൾ"}}
    :month {:type :pluralized :forms {:one "{n} മാസം" :other "{n} മാസങ്ങൾ"}}
    :year {:type :pluralized :forms {:one "{n} വർഷം" :other "{n} വർഷങ്ങൾ"}}
-   :half "{0} ര"
+   :half "{n}½"
    :delimiter ", "
    :just-now "ഇപ്പോൾ"
    :ago "{0} മുമ്പ്"

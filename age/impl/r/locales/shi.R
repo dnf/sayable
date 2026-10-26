@@ -29,18 +29,18 @@ locale_shi <- list(
   just_born = "Iɣ d illul",
   stages = list(
     newborn = "Iɣ d illul",
-    infant = "Agellid",
+    infant = "Llufan",
     toddler = list(m = "Aḥenjir", f = "Taḥenjirt"),
-    child = list(m = "Afrux", f = "Tafruxṭ"),
+    child = list(m = "Afrux", f = "Tafruxt"),
     teenager = list(m = "Aɛrim", f = "Taɛrimt"),
     adult = list(m = "Argaz", f = "Tamṭṭuṭ")
   ),
   short = list(
     units = list(
-      day = "{n} d",
-      week = "{n} wk",
-      month = "{n} mo",
-      year = "{n} yr"
+      day = list(one = "{n} ass", few = "{n} ussan", other = "{n} ass"),
+      week = list(one = "{n} imalass", few = "{n} imalassn", other = "{n} imalass"),
+      month = list(one = "{n} ayyur", few = "{n} ayyurn", other = "{n} ayyur"),
+      year = list(one = "{n} aseggas", few = "{n} iseggasen", other = "{n} aseggas")
     )
   ),
   compact = list(

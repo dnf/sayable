@@ -34,5 +34,5 @@
    "{0} liu ba"
    "iha {0}"
    (duration-compactness-override (hash "type" "simple" "form" "seg. {n}") (hash "type" "simple" "form" "min. {n}") (hash "type" "simple" "form" "oras {n}") (hash "type" "simple" "form" "loron {n}") (hash "type" "simple" "form" "sem. {n}") (hash "type" "simple" "form" "fulan {n}") (hash "type" "simple" "form" "tinan {n}") #f #f "{0} liu ba" "iha {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} liu ba" "iha {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} liu ba" "iha {0}")
   ))

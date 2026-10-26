@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_zu = {
     "zu",
     {
-        { "ishumi nambili", "kunye", "kubili", "kuthathu", "kune", "kuhlanu", "isithupha", "isikhombisa", "isishiyagalombili", "isishiyagalolunye", "ishumi", "ishumi nanye" },
+        { "leshumi nambili", "lokuqala", "lesibili", "lesithathu", "lesine", "lesihlanu", "lesithupha", "lesikhombisa", "lesishiyagalombili", "lesishiyagalolunye", "leshumi", "leshumi nanye" },
         "phakathi kwamabili",
         "emini",
-        { "{h} o'clock", "emva kwemizuzu emihlanu ngo-{h}", "emva kwemizuzu eyishumi ngo-{h}", "ikota edlule ngo-{h}", "emva kwemizuzu engamashumi amabili ngo-{h}", "emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}", "uhhafu edlule ngo-{h}", "imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}", "imizuzu engamashumi amabili ngaphambi kuka-{next_h}", "ikota ngaphambi kuka-{next_h}", "imizuzu eyishumi ngaphambi kuka-{next_h}", "imizuzu emihlanu ngaphambi kuka-{next_h}" }
+        { "ihora {h}", "imizuzu emihlanu emva kwehora {h}", "imizuzu eyishumi emva kwehora {h}", "ikota emva kwehora {h}", "imizuzu engamashumi amabili emva kwehora {h}", "imizuzu engamashumi amabili nanhlanu emva kwehora {h}", "uhhafu emva kwehora {h}", "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}", "imizuzu engamashumi amabili ngaphambi kwehora {next_h}", "ikota ngaphambi kwehora {next_h}", "imizuzu eyishumi ngaphambi kwehora {next_h}", "imizuzu emihlanu ngaphambi kwehora {next_h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -20,7 +20,7 @@ module SayableDuration
         "day" => UnitForms.new("{n}天"),
         "week" => UnitForms.new("{n}周"),
         "month" => UnitForms.new("{n}个月"),
-        "year" => UnitForms.new("{n}岁"),
+        "year" => UnitForms.new("{n}年"),
       },
       half: "{0}半",
       delimiter: "",

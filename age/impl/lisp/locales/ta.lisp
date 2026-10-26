@@ -21,7 +21,7 @@
                (cons :week '((:one . "{n} வாரம்") (:other . "{n} வாரங்கள்")))
                (cons :month '((:one . "{n} மாதம்") (:other . "{n} மாதங்கள்")))
                (cons :year '((:one . "{n} வயது") (:other . "{n} வயது"))))
-   :half "{0}ரை"
+   :half "{n}½"
    :delimiter ", "
    :just-born "பிறந்த குழந்தை"
    :stages (list (cons :newborn "பிறந்த குழந்தை")

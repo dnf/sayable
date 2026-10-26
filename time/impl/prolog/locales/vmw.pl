@@ -15,18 +15,18 @@ st_hours('vmw', ['khumi na pili', 'mosa', 'pili', 'ttatthu', 'ncheche', 'thanu',
 st_midnight('vmw', 'usiku wopakhala').
 st_noon('vmw', 'muttana').
 
-st_pattern('vmw', 0, '{h}:00').
-st_pattern('vmw', 5, '{h}:05').
-st_pattern('vmw', 10, '{h}:10').
-st_pattern('vmw', 15, '{h}:15').
-st_pattern('vmw', 20, '{h}:20').
-st_pattern('vmw', 25, '{h}:25').
-st_pattern('vmw', 30, '{h}:30').
-st_pattern('vmw', 35, '{h}:35').
-st_pattern('vmw', 40, '{h}:40').
-st_pattern('vmw', 45, '{h}:45').
-st_pattern('vmw', 50, '{h}:50').
-st_pattern('vmw', 55, '{h}:55').
+st_pattern('vmw', 0, 'hora {h}').
+st_pattern('vmw', 5, 'hora {h} na thanu').
+st_pattern('vmw', 10, 'hora {h} na khumi').
+st_pattern('vmw', 15, 'hora {h} na khumi na thanu').
+st_pattern('vmw', 20, 'hora {h} na makhumi mapili').
+st_pattern('vmw', 25, 'hora {h} na makhumi mapili na thanu').
+st_pattern('vmw', 30, 'hora {h} na mettenhe').
+st_pattern('vmw', 35, 'hora {h} na makhumi mararu na thanu').
+st_pattern('vmw', 40, 'hora {h} na makhumi mancheche').
+st_pattern('vmw', 45, 'hora {h} na makhumi mancheche na thanu').
+st_pattern('vmw', 50, 'hora {h} na makhumi mathanu').
+st_pattern('vmw', 55, 'hora {h} na makhumi mathanu na thanu').
 
 short_st_use24h('vmw', false).
 short_st_format('vmw', '{h}:{mm} {ampm}').

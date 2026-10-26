@@ -223,11 +223,11 @@ locale_ak : Age_Locale = {
         infant = Stage_Label{label = "Akwadaa", f = ""},
         toddler = Stage_Label{label = "Abofra", f = ""},
         child = Stage_Label{label = "Abofra", f = ""},
-        teenager = Stage_Label{label = "Abarimaa", f = ""},
+        teenager = Stage_Label{label = "Abarimaa", f = "Abaayewa"},
         adult = Stage_Label{label = "Ɔpanyin", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "nna {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "dapɛn {n}", two = nil, few = nil, many = nil, other = "nnapɛn {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "bosome {n}", two = nil, few = nil, many = nil, other = "abosome {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "afe {n}", two = nil, few = nil, many = nil, other = "mfe {n}"}}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "nna {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "dapɛn {n}", two = nil, few = nil, many = nil, other = "nnapɛn {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "bos {n}", two = nil, few = nil, many = nil, other = "abos {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "afe {n}", two = nil, few = nil, many = nil, other = "mfe {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "da {n}", two = nil, few = nil, many = nil, other = "nna {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "dapɛn {n}", two = nil, few = nil, many = nil, other = "nnapɛn {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "bosome {n}", two = nil, few = nil, many = nil, other = "abosome {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "afe {n}", two = nil, few = nil, many = nil, other = "mfe {n}"}}, half = nil, delimiter = nil, just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "da {n}", two = nil, few = nil, many = nil, other = "nna {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "dapɛn {n}", two = nil, few = nil, many = nil, other = "nnapɛn {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "bos {n}", two = nil, few = nil, many = nil, other = "abos {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "afe {n}", two = nil, few = nil, many = nil, other = "mfe {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/am.json
@@ -277,7 +277,7 @@ locale_ar : Age_Locale = {
         adult = Stage_Label{label = "بالغ", f = "بالغة"},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} يوم", one = "يوم", two = "يومان", few = "{n} أيام", many = "{n} يومًا", other = "{n} يوم"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} أسبوع", one = "أسبوع", two = "أسبوعان", few = "{n} أسابيع", many = "{n} أسبوعًا", other = "{n} أسبوع"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} شهر", one = "شهر", two = "شهران", few = "{n} أشهر", many = "{n} شهرًا", other = "{n} شهر"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} سنة", one = "سنة واحدة", two = "سنتان", few = "{n} سنوات", many = "{n} سنة", other = "{n} سنة"}}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ي", forms = nil}, week = Unit_Forms{simple = "{n} أ", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} شهر", one = "شهر", two = "شهران", few = "{n} أشهر", many = "{n} شهرًا", other = "{n} شهر"}}, year = Unit_Forms{simple = "{n} سنة", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} ي", forms = nil}, week = Unit_Forms{simple = "{n} أ", forms = nil}, month = Unit_Forms{simple = "{n} شهر", forms = nil}, year = Unit_Forms{simple = "{n} سنة", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/ay.json
@@ -285,10 +285,10 @@ locale_ay : Age_Locale = {
     code = "ay",
     plural = plural_other_only,
     units = {
-        day = Unit_Forms{simple = "uru {n}", forms = nil},
-        week = Unit_Forms{simple = "simana {n}", forms = nil},
-        month = Unit_Forms{simple = "phaxsi {n}", forms = nil},
-        year = Unit_Forms{simple = "mara {n}", forms = nil},
+        day = Unit_Forms{simple = "{n} uru", forms = nil},
+        week = Unit_Forms{simple = "{n} simana", forms = nil},
+        month = Unit_Forms{simple = "{n} phaxsi", forms = nil},
+        year = Unit_Forms{simple = "{n} mara", forms = nil},
     },
     half = "{0} chika",
     delimiter = ", ",
@@ -302,7 +302,7 @@ locale_ay : Age_Locale = {
         adult = Stage_Label{label = "Jaqi", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} ur.", forms = nil}, week = Unit_Forms{simple = "{n} sim.", forms = nil}, month = Unit_Forms{simple = "{n} phx.", forms = nil}, year = Unit_Forms{simple = "{n} mr.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/az.json
@@ -399,7 +399,7 @@ locale_bem : Age_Locale = {
         toddler = Stage_Label{label = "Umwana", f = ""},
         child = Stage_Label{label = "Umwana", f = ""},
         teenager = Stage_Label{label = "Umunyamata", f = ""},
-        adult = Stage_Label{label = "Umulumendo", f = ""},
+        adult = Stage_Label{label = "Umukalamba", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ubushiku {n}", two = nil, few = nil, many = nil, other = "inshiku {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "umulungu {n}", two = nil, few = nil, many = nil, other = "imilungu {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "umweshi {n}", two = nil, few = nil, many = nil, other = "imyeshi {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "umwaka {n}", two = nil, few = nil, many = nil, other = "imyaka {n}"}}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
@@ -440,7 +440,7 @@ locale_bi : Age_Locale = {
         month = Unit_Forms{simple = "{n} manis", forms = nil},
         year = Unit_Forms{simple = "{n} yia", forms = nil},
     },
-    half = "{n} mo haf",
+    half = "{0} mo haf",
     delimiter = ", ",
     just_born = "Niufala bebe",
     stages = {
@@ -452,7 +452,7 @@ locale_bi : Age_Locale = {
         adult = Stage_Label{label = "Bigfala", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} dei", forms = nil}, week = Unit_Forms{simple = "{n} wik", forms = nil}, month = Unit_Forms{simple = "{n} man", forms = nil}, year = Unit_Forms{simple = "{n} yia", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/bm.json
@@ -565,7 +565,7 @@ locale_ca : Age_Locale = {
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} mes", two = nil, few = nil, many = nil, other = "{n} mesos"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} any", two = nil, few = nil, many = nil, other = "{n} anys"}},
     },
-    half = "{n} i mig",
+    half = "{0} i mig",
     delimiter = ", ",
     just_born = "Nounat",
     stages = {
@@ -602,7 +602,7 @@ locale_cak : Age_Locale = {
         adult = Stage_Label{label = "Achi", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} q'ij", forms = nil}, week = Unit_Forms{simple = "{n} wuqq'ij", forms = nil}, month = Unit_Forms{simple = "{n} ik'", forms = nil}, year = Unit_Forms{simple = "{n} jun.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/ceb.json
@@ -615,7 +615,7 @@ locale_ceb : Age_Locale = {
         month = Unit_Forms{simple = "{n} ka bulan", forms = nil},
         year = Unit_Forms{simple = "{n} ka tuig", forms = nil},
     },
-    half = "{n}½",
+    half = "{0} ug tunga",
     delimiter = ", ",
     just_born = "Bag-ong natawo",
     stages = {
@@ -660,10 +660,10 @@ locale_cy : Age_Locale = {
     code = "cy",
     plural = plural_cy,
     units = {
-        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} diwrnod", one = "{n} diwrnod", two = "{n} ddiwrnod", few = "{n} diwrnod", many = "{n} niwrnod", other = "{n} diwrnod"}},
+        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} diwrnod", one = "{n} diwrnod", two = "{n} ddiwrnod", few = "{n} diwrnod", many = "{n} diwrnod", other = "{n} diwrnod"}},
         week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} wythnos", one = "{n} wythnos", two = "{n} wythnos", few = "{n} wythnos", many = "{n} wythnos", other = "{n} wythnos"}},
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} mis", one = "{n} mis", two = "{n} fis", few = "{n} mis", many = "{n} mis", other = "{n} mis"}},
-        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} blwyddyn", one = "{n} blwyddyn", two = "{n} flynedd", few = "{n} blynedd", many = "{n} blynedd", other = "{n} blynedd"}},
+        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} blwyddyn", one = "{n} flwyddyn", two = "{n} flynedd", few = "{n} blynedd", many = "{n} blynedd", other = "{n} blynedd"}},
     },
     half = "{0} a hanner",
     delimiter = ", ",
@@ -790,7 +790,7 @@ locale_dv : Age_Locale = {
         month = Unit_Forms{simple = "{n} މަސް", forms = nil},
         year = Unit_Forms{simple = "{n} އަހަރު", forms = nil},
     },
-    half = "{0} ބައި",
+    half = "{n}½",
     delimiter = "، ",
     just_born = "އަލަށް އުފަންވި",
     stages = {
@@ -840,7 +840,7 @@ locale_dz : Age_Locale = {
         month = Unit_Forms{simple = "ཟླ་ {n}", forms = nil},
         year = Unit_Forms{simple = "ལོ་ {n}", forms = nil},
     },
-    half = "{0} ཕྱེད",
+    half = "{0} དང་ཕྱེད",
     delimiter = " ",
     just_born = "གསར་སྐྱེས",
     stages = {
@@ -860,10 +860,10 @@ locale_ee : Age_Locale = {
     code = "ee",
     plural = plural_one_other,
     units = {
-        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ŋkeke {n}", two = nil, few = nil, many = nil, other = "ŋkekewo {n}"}},
-        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "kɔsiɖa {n}", two = nil, few = nil, many = nil, other = "kɔsiɖawo {n}"}},
-        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ɣleti {n}", two = nil, few = nil, many = nil, other = "ɣletiwo {n}"}},
-        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ƒe {n}", two = nil, few = nil, many = nil, other = "ƒewo {n}"}},
+        day = Unit_Forms{simple = "ŋkeke {n}", forms = nil},
+        week = Unit_Forms{simple = "kɔsiɖa {n}", forms = nil},
+        month = Unit_Forms{simple = "ɣleti {n}", forms = nil},
+        year = Unit_Forms{simple = "ƒe {n}", forms = nil},
     },
     half = "{0} kple afã",
     delimiter = ", ",
@@ -873,10 +873,10 @@ locale_ee : Age_Locale = {
         infant = Stage_Label{label = "Ɖevi", f = ""},
         toddler = Stage_Label{label = "Ɖevi sue", f = ""},
         child = Stage_Label{label = "Ɖevi", f = ""},
-        teenager = Stage_Label{label = "Ŋutsuviwo", f = ""},
+        teenager = Stage_Label{label = "Ɖekakpui", f = "Ɖetugbi"},
         adult = Stage_Label{label = "Ame tsitsi", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "ŋkekewo {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "kɔsiɖa {n}", two = nil, few = nil, many = nil, other = "kɔsiɖawo {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ɣleti {n}", two = nil, few = nil, many = nil, other = "ɣletiwo {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ƒe {n}", two = nil, few = nil, many = nil, other = "ƒewo {n}"}}, half = nil, delimiter = nil, just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = "ŋkeke {n}", forms = nil}, week = Unit_Forms{simple = "kɔsiɖa {n}", forms = nil}, month = Unit_Forms{simple = "ɣleti {n}", forms = nil}, year = Unit_Forms{simple = "ƒe {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
@@ -940,7 +940,7 @@ locale_es : Age_Locale = {
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} mes", two = nil, few = nil, many = nil, other = "{n} meses"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} año", two = nil, few = nil, many = nil, other = "{n} años"}},
     },
-    half = "{n} y medio",
+    half = "{0} y medio",
     delimiter = ", ",
     just_born = "Recién nacido",
     stages = {
@@ -1073,11 +1073,11 @@ locale_ff : Age_Locale = {
         infant = Stage_Label{label = "Ɓinngel", f = ""},
         toddler = Stage_Label{label = "Cukalel", f = ""},
         child = Stage_Label{label = "Suka", f = ""},
-        teenager = Stage_Label{label = "Suka debbo", f = ""},
+        teenager = Stage_Label{label = "Suka gorko", f = "Suka debbo"},
         adult = Stage_Label{label = "Mawɗo", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "ñalɗe {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "yontere {n}", two = nil, few = nil, many = nil, other = "yontereeji {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "lewru {n}", two = nil, few = nil, many = nil, other = "lebbi {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "hitaande {n}", two = nil, few = nil, many = nil, other = "duuɓi {n}"}}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "ñalɗe {n}", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "yont {n}", two = nil, few = nil, many = nil, other = "yontji {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "lew {n}", two = nil, few = nil, many = nil, other = "leb {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "hit {n}", two = nil, few = nil, many = nil, other = "duuɓi {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ñalawma {n}", two = nil, few = nil, many = nil, other = "ñalɗe {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "yontere {n}", two = nil, few = nil, many = nil, other = "yontereeji {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "lewru {n}", two = nil, few = nil, many = nil, other = "lebbi {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "hitaande {n}", two = nil, few = nil, many = nil, other = "duuɓi {n}"}}, half = nil, delimiter = nil, just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ñalawma {n}", two = nil, few = nil, many = nil, other = "ñalɗe {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "yont {n}", two = nil, few = nil, many = nil, other = "yontji {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "lew {n}", two = nil, few = nil, many = nil, other = "leb {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "hit {n}", two = nil, few = nil, many = nil, other = "duuɓi {n}"}}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/fi.json
@@ -1124,7 +1124,7 @@ locale_fil : Age_Locale = {
         toddler = Stage_Label{label = "Batang paslit", f = ""},
         child = Stage_Label{label = "Bata", f = ""},
         teenager = Stage_Label{label = "Tinedyer", f = ""},
-        adult = Stage_Label{label = "Matanda", f = ""},
+        adult = Stage_Label{label = "Adulto", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} araw", forms = nil}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} linggo", two = nil, few = nil, many = nil, other = "{n} na linggo"}}, month = Unit_Forms{simple = "{n} buwan", forms = nil}, year = Unit_Forms{simple = "{n} taon", forms = nil}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} araw", two = nil, few = nil, many = nil, other = "{n} na araw"}}, week = Unit_Forms{simple = "{n}linggo", forms = nil}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n}buwan", two = nil, few = nil, many = nil, other = "{n} buwan"}}, year = Unit_Forms{simple = "{n}taon", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
@@ -1140,7 +1140,7 @@ locale_fj : Age_Locale = {
         month = Unit_Forms{simple = "{n} na vula", forms = nil},
         year = Unit_Forms{simple = "{n} na yabaki", forms = nil},
     },
-    half = "{n} kei na levu ni wasei",
+    half = "{0} kei na veimama",
     delimiter = ", ",
     just_born = "Gone vou",
     stages = {
@@ -1152,7 +1152,7 @@ locale_fj : Age_Locale = {
         adult = Stage_Label{label = "Tamata qase", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} siga", forms = nil}, week = Unit_Forms{simple = "{n} mac.", forms = nil}, month = Unit_Forms{simple = "{n} vula", forms = nil}, year = Unit_Forms{simple = "{n} yab.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/fon.json
@@ -1173,7 +1173,7 @@ locale_fon : Age_Locale = {
         infant = Stage_Label{label = "Vǐ", f = ""},
         toddler = Stage_Label{label = "Vǐ", f = ""},
         child = Stage_Label{label = "Vǐ", f = ""},
-        teenager = Stage_Label{label = "Nyɔ̌nu", f = ""},
+        teenager = Stage_Label{label = "Dɔnkpɛvu", f = "Ɖyɔ̌vǐ"},
         adult = Stage_Label{label = "Mɛ̌xo", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "azǎn {n}", forms = nil}, week = Unit_Forms{simple = "aklunɔ̌zán {n}", forms = nil}, month = Unit_Forms{simple = "sun {n}", forms = nil}, year = Unit_Forms{simple = "xwè {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
@@ -1271,7 +1271,7 @@ locale_gl : Age_Locale = {
     stages = {
         newborn = Stage_Label{label = "Recén nacido", f = "Recén nacida"},
         infant = Stage_Label{label = "Bebé", f = ""},
-        toddler = Stage_Label{label = "Neno", f = ""},
+        toddler = Stage_Label{label = "Neno pequeno", f = "Nena pequena"},
         child = Stage_Label{label = "Neno", f = "Nena"},
         teenager = Stage_Label{label = "Adolescente", f = ""},
         adult = Stage_Label{label = "Adulto", f = "Adulta"},
@@ -1360,10 +1360,10 @@ locale_ha : Age_Locale = {
     code = "ha",
     plural = plural_one_other,
     units = {
-        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} kwana", two = nil, few = nil, many = nil, other = "{n} kwanaki"}},
-        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} mako", two = nil, few = nil, many = nil, other = "{n} makonni"}},
-        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} wata", two = nil, few = nil, many = nil, other = "{n} watanni"}},
-        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} shekara", two = nil, few = nil, many = nil, other = "{n} shekaru"}},
+        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "kwana {n}", two = nil, few = nil, many = nil, other = "kwanaki {n}"}},
+        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "mako {n}", two = nil, few = nil, many = nil, other = "makonni {n}"}},
+        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "wata {n}", two = nil, few = nil, many = nil, other = "watanni {n}"}},
+        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "shekara {n}", two = nil, few = nil, many = nil, other = "shekaru {n}"}},
     },
     half = "{n}½",
     delimiter = ", ",
@@ -1371,12 +1371,12 @@ locale_ha : Age_Locale = {
     stages = {
         newborn = Stage_Label{label = "Jariri", f = ""},
         infant = Stage_Label{label = "Jariri", f = ""},
-        toddler = Stage_Label{label = "Ƙaramin yaro", f = ""},
-        child = Stage_Label{label = "Yaro", f = ""},
-        teenager = Stage_Label{label = "Saurayi", f = ""},
+        toddler = Stage_Label{label = "Ƙaramin yaro", f = "Ƙaramar yarinya"},
+        child = Stage_Label{label = "Yaro", f = "Yarinya"},
+        teenager = Stage_Label{label = "Saurayi", f = "Budurwa"},
         adult = Stage_Label{label = "Babba", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} kw.", forms = nil}, week = Unit_Forms{simple = "{n} mk.", forms = nil}, month = Unit_Forms{simple = "{n} wt.", forms = nil}, year = Unit_Forms{simple = "{n} shk.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = "kw. {n}", forms = nil}, week = Unit_Forms{simple = "mk. {n}", forms = nil}, month = Unit_Forms{simple = "wt. {n}", forms = nil}, year = Unit_Forms{simple = "shk. {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
 }
 
@@ -1385,9 +1385,9 @@ locale_he : Age_Locale = {
     code = "he",
     plural = plural_he,
     units = {
-        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "יום {n}", two = "יומיים", few = nil, many = nil, other = "{n} ימים"}},
-        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "שבוע {n}", two = "שבועיים", few = nil, many = nil, other = "{n} שבועות"}},
-        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "חודש {n}", two = "חודשיים", few = nil, many = nil, other = "{n} חודשים"}},
+        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "יום", two = "יומיים", few = nil, many = nil, other = "{n} ימים"}},
+        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "שבוע", two = "שבועיים", few = nil, many = nil, other = "{n} שבועות"}},
+        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "חודש", two = "חודשיים", few = nil, many = nil, other = "{n} חודשים"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "שנה", two = "שנתיים", few = nil, many = nil, other = "{n} שנים"}},
     },
     half = "{0} וחצי",
@@ -1395,8 +1395,8 @@ locale_he : Age_Locale = {
     just_born = "רק נולד",
     stages = {
         newborn = Stage_Label{label = "רק נולד", f = "רק נולדה"},
-        infant = Stage_Label{label = "תינוק", f = ""},
-        toddler = Stage_Label{label = "פעוט", f = ""},
+        infant = Stage_Label{label = "תינוק", f = "תינוקת"},
+        toddler = Stage_Label{label = "פעוט", f = "פעוטה"},
         child = Stage_Label{label = "ילד", f = "ילדה"},
         teenager = Stage_Label{label = "נער", f = "נערה"},
         adult = Stage_Label{label = "מבוגר", f = "מבוגרת"},
@@ -1452,7 +1452,7 @@ locale_hmn : Age_Locale = {
         adult = Stage_Label{label = "Neeg laus", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} hnub", forms = nil}, week = Unit_Forms{simple = "{n} lim tiam", forms = nil}, month = Unit_Forms{simple = "{n} hlis", forms = nil}, year = Unit_Forms{simple = "{n} xyoo", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/hr.json
@@ -1565,7 +1565,7 @@ locale_id : Age_Locale = {
         month = Unit_Forms{simple = "{n} bulan", forms = nil},
         year = Unit_Forms{simple = "{n} tahun", forms = nil},
     },
-    half = "{0} setengah",
+    half = "{n} setengah",
     delimiter = ", ",
     just_born = "Baru lahir",
     stages = {
@@ -1585,10 +1585,10 @@ locale_ig : Age_Locale = {
     code = "ig",
     plural = plural_other_only,
     units = {
-        day = Unit_Forms{simple = "{n} ụbọchị", forms = nil},
-        week = Unit_Forms{simple = "{n} izu", forms = nil},
-        month = Unit_Forms{simple = "{n} ọnwa", forms = nil},
-        year = Unit_Forms{simple = "{n} afọ", forms = nil},
+        day = Unit_Forms{simple = "ụbọchị {n}", forms = nil},
+        week = Unit_Forms{simple = "izu {n}", forms = nil},
+        month = Unit_Forms{simple = "ọnwa {n}", forms = nil},
+        year = Unit_Forms{simple = "afọ {n}", forms = nil},
     },
     half = "{0} na ọkara",
     delimiter = ", ",
@@ -1598,10 +1598,10 @@ locale_ig : Age_Locale = {
         infant = Stage_Label{label = "Nwa ọhụrụ", f = ""},
         toddler = Stage_Label{label = "Nwa nta", f = ""},
         child = Stage_Label{label = "Nwa", f = ""},
-        teenager = Stage_Label{label = "Nwokorobịa", f = ""},
+        teenager = Stage_Label{label = "Nwokorobịa", f = "Agbọghọbịa"},
         adult = Stage_Label{label = "Okenye", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} ụbọchị", forms = nil}, week = Unit_Forms{simple = "{n} izu", forms = nil}, month = Unit_Forms{simple = "{n} ọnwa", forms = nil}, year = Unit_Forms{simple = "{n} afọ", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = "ụbọchị {n}", forms = nil}, week = Unit_Forms{simple = "izu {n}", forms = nil}, month = Unit_Forms{simple = "ọnwa {n}", forms = nil}, year = Unit_Forms{simple = "afọ {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
@@ -1615,7 +1615,7 @@ locale_is : Age_Locale = {
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} mánuður", two = nil, few = nil, many = nil, other = "{n} mánuðir"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ár", two = nil, few = nil, many = nil, other = "{n} ár"}},
     },
-    half = "{0} og hálft",
+    half = "{n} og hálft",
     delimiter = ", ",
     just_born = "Nýfætt",
     stages = {
@@ -1677,7 +1677,7 @@ locale_ja : Age_Locale = {
         adult = Stage_Label{label = "成人", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} 日", forms = nil}, week = Unit_Forms{simple = "{n} 週間", forms = nil}, month = Unit_Forms{simple = "{n} か月", forms = nil}, year = Unit_Forms{simple = "{n} 年", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = nil, just_born = nil},
 }
 
 // Source: locales/jv.json
@@ -1777,7 +1777,7 @@ locale_kek : Age_Locale = {
         adult = Stage_Label{label = "Winq", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} q'e", forms = nil}, week = Unit_Forms{simple = "{n} sem.", forms = nil}, month = Unit_Forms{simple = "{n} po", forms = nil}, year = Unit_Forms{simple = "{n} chih.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/ki.json
@@ -1833,12 +1833,12 @@ locale_kk : Age_Locale = {
 // Source: locales/kl.json
 locale_kl : Age_Locale = {
     code = "kl",
-    plural = plural_other_only,
+    plural = plural_one_other,
     units = {
-        day = Unit_Forms{simple = "ullut {n}", forms = nil},
-        week = Unit_Forms{simple = "sapaatit {n}", forms = nil},
-        month = Unit_Forms{simple = "qaammatit {n}", forms = nil},
-        year = Unit_Forms{simple = "ukiut {n}", forms = nil},
+        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ulloq {n}", two = nil, few = nil, many = nil, other = "ullut {n}"}},
+        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "sapaatip akunnera {n}", two = nil, few = nil, many = nil, other = "sapaatip akunneri {n}"}},
+        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "qaammat {n}", two = nil, few = nil, many = nil, other = "qaammatit {n}"}},
+        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ukioq {n}", two = nil, few = nil, many = nil, other = "ukiut {n}"}},
     },
     half = "{0} affaa",
     delimiter = ", ",
@@ -1851,8 +1851,8 @@ locale_kl : Age_Locale = {
         teenager = Stage_Label{label = "Inuusuttuaq", f = ""},
         adult = Stage_Label{label = "Inuk", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "ull. {n}", forms = nil}, week = Unit_Forms{simple = "sap. {n}", forms = nil}, month = Unit_Forms{simple = "qaam. {n}", forms = nil}, year = Unit_Forms{simple = "uk. {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = "ull. {n}", forms = nil}, week = Unit_Forms{simple = "sap. ak. {n}", forms = nil}, month = Unit_Forms{simple = "qaam. {n}", forms = nil}, year = Unit_Forms{simple = "uk. {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/km.json
@@ -1890,7 +1890,7 @@ locale_kn : Age_Locale = {
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ತಿಂಗಳು", two = nil, few = nil, many = nil, other = "{n} ತಿಂಗಳುಗಳು"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ವರ್ಷ", two = nil, few = nil, many = nil, other = "{n} ವರ್ಷಗಳು"}},
     },
-    half = "{0}ವರೆ",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "ನವಜಾತ ಶಿಶು",
     stages = {
@@ -1965,7 +1965,7 @@ locale_kri : Age_Locale = {
         month = Unit_Forms{simple = "{n} mont", forms = nil},
         year = Unit_Forms{simple = "{n} ia", forms = nil},
     },
-    half = "{n} na af",
+    half = "{0} ɛn af",
     delimiter = ", ",
     just_born = "Nyubon bebi",
     stages = {
@@ -1977,7 +1977,7 @@ locale_kri : Age_Locale = {
         adult = Stage_Label{label = "Big posin", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} de", forms = nil}, week = Unit_Forms{simple = "{n} wik", forms = nil}, month = Unit_Forms{simple = "{n} mont", forms = nil}, year = Unit_Forms{simple = "{n} ia", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/ktu.json
@@ -2035,10 +2035,10 @@ locale_kw : Age_Locale = {
     code = "kw",
     plural = plural_kw,
     units = {
-        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} dydh", one = "dydh", two = "{n} dhydh", few = "{n} dydh", many = "{n} dydh", other = "{n} dydh"}},
-        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} seythun", one = "seythun", two = "{n} seythun", few = "{n} seythun", many = "{n} seythun", other = "{n} seythun"}},
-        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} mis", one = "mis", two = "{n} vis", few = "{n} mis", many = "{n} mis", other = "{n} mis"}},
-        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} blydhen", one = "blydhen", two = "{n} vlydhen", few = "{n} blydhen", many = "{n} blydhen", other = "{n} blydhen"}},
+        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} dydh", one = "{n} dydh", two = "{n} dhydh", few = "{n} dydh", many = "{n} dydh", other = "{n} dydh"}},
+        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} seythun", one = "{n} seythun", two = "{n} seythun", few = "{n} seythun", many = "{n} seythun", other = "{n} seythun"}},
+        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} mis", one = "{n} mis", two = "{n} vis", few = "{n} mis", many = "{n} mis", other = "{n} mis"}},
+        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = "{n} blydhen", one = "{n} blydhen", two = "{n} vlydhen", few = "{n} blydhen", many = "{n} blydhen", other = "{n} blydhen"}},
     },
     half = "{0} hag hanter",
     delimiter = ", ",
@@ -2166,7 +2166,7 @@ locale_lo : Age_Locale = {
         year = Unit_Forms{simple = "{n} ປີ", forms = nil},
     },
     half = "{0}ເຄິ່ງ",
-    delimiter = "",
+    delimiter = " ",
     just_born = "ເກີດໃໝ່",
     stages = {
         newborn = Stage_Label{label = "ເດັກເກີດໃໝ່", f = ""},
@@ -2177,7 +2177,7 @@ locale_lo : Age_Locale = {
         adult = Stage_Label{label = "ຜູ້ໃຫຍ່", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} ມ.", forms = nil}, week = Unit_Forms{simple = "{n} ອທ.", forms = nil}, month = Unit_Forms{simple = "{n} ດ.", forms = nil}, year = Unit_Forms{simple = "{n} ປ.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = nil, just_born = nil},
 }
 
 // Source: locales/lt.json
@@ -2261,7 +2261,7 @@ locale_mam : Age_Locale = {
     plural = plural_other_only,
     units = {
         day = Unit_Forms{simple = "{n} q'ij", forms = nil},
-        week = Unit_Forms{simple = "{n} xjaw", forms = nil},
+        week = Unit_Forms{simple = "{n} seman", forms = nil},
         month = Unit_Forms{simple = "{n} xjaw", forms = nil},
         year = Unit_Forms{simple = "{n} ab'q'ii", forms = nil},
     },
@@ -2276,8 +2276,8 @@ locale_mam : Age_Locale = {
         teenager = Stage_Label{label = "Q'a", f = ""},
         adult = Stage_Label{label = "Xjal", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} q'ij", forms = nil}, week = Unit_Forms{simple = "{n} xjaw", forms = nil}, month = Unit_Forms{simple = "{n} xjaw", forms = nil}, year = Unit_Forms{simple = "{n} ab'.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} q'ij", forms = nil}, week = Unit_Forms{simple = "{n} seman", forms = nil}, month = Unit_Forms{simple = "{n} xjaw", forms = nil}, year = Unit_Forms{simple = "{n} ab'.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/men.json
@@ -2360,12 +2360,12 @@ locale_mi : Age_Locale = {
     code = "mi",
     plural = plural_one_other,
     units = {
-        day = Unit_Forms{simple = "rā {n}", forms = nil},
-        week = Unit_Forms{simple = "wiki {n}", forms = nil},
-        month = Unit_Forms{simple = "marama {n}", forms = nil},
-        year = Unit_Forms{simple = "tau {n}", forms = nil},
+        day = Unit_Forms{simple = "{n} rā", forms = nil},
+        week = Unit_Forms{simple = "{n} wiki", forms = nil},
+        month = Unit_Forms{simple = "{n} marama", forms = nil},
+        year = Unit_Forms{simple = "{n} tau", forms = nil},
     },
-    half = "{0}½",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "Pēpi hou",
     stages = {
@@ -2376,7 +2376,7 @@ locale_mi : Age_Locale = {
         teenager = Stage_Label{label = "Rangatahi", f = ""},
         adult = Stage_Label{label = "Pakeke", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "rā {n}", forms = nil}, week = Unit_Forms{simple = "w {n}", forms = nil}, month = Unit_Forms{simple = "m {n}", forms = nil}, year = Unit_Forms{simple = "t {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} rā", forms = nil}, week = Unit_Forms{simple = "{n} w", forms = nil}, month = Unit_Forms{simple = "{n} m", forms = nil}, year = Unit_Forms{simple = "{n} t", forms = nil}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}r", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}t", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
@@ -2399,7 +2399,7 @@ locale_mk : Age_Locale = {
         toddler = Stage_Label{label = "Мало дете", f = ""},
         child = Stage_Label{label = "Дете", f = ""},
         teenager = Stage_Label{label = "Тинејџер", f = ""},
-        adult = Stage_Label{label = "Возрасен", f = ""},
+        adult = Stage_Label{label = "Возрасен", f = "Возрасна"},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ден", two = nil, few = nil, many = nil, other = "{n} дена"}}, week = Unit_Forms{simple = "{n} сед.", forms = nil}, month = Unit_Forms{simple = "{n} мес.", forms = nil}, year = Unit_Forms{simple = "{n} год.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} д.", forms = nil}, week = Unit_Forms{simple = "{n} с.", forms = nil}, month = Unit_Forms{simple = "{n} м.", forms = nil}, year = Unit_Forms{simple = "{n} г.", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
@@ -2408,14 +2408,14 @@ locale_mk : Age_Locale = {
 // Source: locales/ml.json
 locale_ml : Age_Locale = {
     code = "ml",
-    plural = plural_one_other_zero_one,
+    plural = plural_one_other,
     units = {
         day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ദിവസം", two = nil, few = nil, many = nil, other = "{n} ദിവസങ്ങൾ"}},
         week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ആഴ്ച", two = nil, few = nil, many = nil, other = "{n} ആഴ്ചകൾ"}},
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} മാസം", two = nil, few = nil, many = nil, other = "{n} മാസങ്ങൾ"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} വയസ്സ്", two = nil, few = nil, many = nil, other = "{n} വയസ്സ്"}},
     },
-    half = "{0} ര",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "നവജാതശിശു",
     stages = {
@@ -2671,7 +2671,7 @@ locale_ne : Age_Locale = {
     stages = {
         newborn = Stage_Label{label = "नवजात शिशु", f = ""},
         infant = Stage_Label{label = "शिशु", f = ""},
-        toddler = Stage_Label{label = "बाल्यकाल", f = ""},
+        toddler = Stage_Label{label = "सानो बच्चा", f = ""},
         child = Stage_Label{label = "बालक", f = ""},
         teenager = Stage_Label{label = "किशोर", f = ""},
         adult = Stage_Label{label = "वयस्क", f = ""},
@@ -2915,7 +2915,7 @@ locale_pis : Age_Locale = {
         month = Unit_Forms{simple = "{n} manis", forms = nil},
         year = Unit_Forms{simple = "{n} yia", forms = nil},
     },
-    half = "{n} en haf",
+    half = "{0} en haf",
     delimiter = ", ",
     just_born = "Niufala bebi",
     stages = {
@@ -2927,7 +2927,7 @@ locale_pis : Age_Locale = {
         adult = Stage_Label{label = "Bigfala", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} dei", forms = nil}, week = Unit_Forms{simple = "{n} wik", forms = nil}, month = Unit_Forms{simple = "{n} man", forms = nil}, year = Unit_Forms{simple = "{n} yia", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/pl.json
@@ -3077,7 +3077,7 @@ locale_quc : Age_Locale = {
         adult = Stage_Label{label = "Achi", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} q'ij", forms = nil}, week = Unit_Forms{simple = "{n} wuqq'ij", forms = nil}, month = Unit_Forms{simple = "{n} ik'", forms = nil}, year = Unit_Forms{simple = "{n} jun.", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/ro.json
@@ -3245,13 +3245,13 @@ locale_shi : Age_Locale = {
     just_born = "Iɣ d illul",
     stages = {
         newborn = Stage_Label{label = "Iɣ d illul", f = ""},
-        infant = Stage_Label{label = "Agellid", f = ""},
+        infant = Stage_Label{label = "Llufan", f = ""},
         toddler = Stage_Label{label = "Aḥenjir", f = "Taḥenjirt"},
-        child = Stage_Label{label = "Afrux", f = "Tafruxṭ"},
+        child = Stage_Label{label = "Afrux", f = "Tafruxt"},
         teenager = Stage_Label{label = "Aɛrim", f = "Taɛrimt"},
         adult = Stage_Label{label = "Argaz", f = "Tamṭṭuṭ"},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} wk", forms = nil}, month = Unit_Forms{simple = "{n} mo", forms = nil}, year = Unit_Forms{simple = "{n} yr", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ass", two = nil, few = "{n} ussan", many = nil, other = "{n} ass"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} imalass", two = nil, few = "{n} imalassn", many = nil, other = "{n} imalass"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ayyur", two = nil, few = "{n} ayyurn", many = nil, other = "{n} ayyur"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} aseggas", two = nil, few = "{n} iseggasen", many = nil, other = "{n} aseggas"}}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
@@ -3277,7 +3277,7 @@ locale_shn : Age_Locale = {
         adult = Stage_Label{label = "ၵူၼ်းလူင်", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} ဝၼ်း", forms = nil}, week = Unit_Forms{simple = "{n} ဝူင်ႈ", forms = nil}, month = Unit_Forms{simple = "{n} လိူၼ်", forms = nil}, year = Unit_Forms{simple = "{n} ပီ", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/si.json
@@ -3290,7 +3290,7 @@ locale_si : Age_Locale = {
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "මාස {n}", two = nil, few = nil, many = nil, other = "මාස {n}"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "වසර {n}", two = nil, few = nil, many = nil, other = "වසර {n}"}},
     },
-    half = "{0}යි භාගයයි",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "අලුත උපන්",
     stages = {
@@ -3410,10 +3410,10 @@ locale_so : Age_Locale = {
     code = "so",
     plural = plural_one_other,
     units = {
-        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "maalin {n}", two = nil, few = nil, many = nil, other = "maalmood {n}"}},
-        week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "toddobaad {n}", two = nil, few = nil, many = nil, other = "toddobaadyo {n}"}},
-        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "bil {n}", two = nil, few = nil, many = nil, other = "bilood {n}"}},
-        year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "sano {n}", two = nil, few = nil, many = nil, other = "sanooyin {n}"}},
+        day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} maalin", two = nil, few = nil, many = nil, other = "{n} maalmood"}},
+        week = Unit_Forms{simple = "{n} toddobaad", forms = nil},
+        month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} bil", two = nil, few = nil, many = nil, other = "{n} bilood"}},
+        year = Unit_Forms{simple = "{n} sano", forms = nil},
     },
     half = "{n}½",
     delimiter = ", ",
@@ -3442,9 +3442,9 @@ locale_sq : Age_Locale = {
     },
     half = "{0} e gjysmë",
     delimiter = ", ",
-    just_born = "Sapolindur",
+    just_born = "I sapolindur",
     stages = {
-        newborn = Stage_Label{label = "Sapolindur", f = "Sapolindure"},
+        newborn = Stage_Label{label = "I sapolindur", f = "E sapolindur"},
         infant = Stage_Label{label = "Foshnjë", f = ""},
         toddler = Stage_Label{label = "Fëmijë i vogël", f = "Fëmijë e vogël"},
         child = Stage_Label{label = "Fëmijë", f = ""},
@@ -3521,7 +3521,7 @@ locale_st : Age_Locale = {
     stages = {
         newborn = Stage_Label{label = "Lesea le sa tswa hlaha", f = ""},
         infant = Stage_Label{label = "Lesea", f = ""},
-        toddler = Stage_Label{label = "Ngwanana", f = ""},
+        toddler = Stage_Label{label = "Ngwana e monyane", f = ""},
         child = Stage_Label{label = "Ngwana", f = ""},
         teenager = Stage_Label{label = "Mosha", f = ""},
         adult = Stage_Label{label = "Motho e moholo", f = ""},
@@ -3640,7 +3640,7 @@ locale_ta : Age_Locale = {
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} மாதம்", two = nil, few = nil, many = nil, other = "{n} மாதங்கள்"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} வயது", two = nil, few = nil, many = nil, other = "{n} வயது"}},
     },
-    half = "{0}ரை",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "பிறந்த குழந்தை",
     stages = {
@@ -3665,7 +3665,7 @@ locale_te : Age_Locale = {
         month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} నెల", two = nil, few = nil, many = nil, other = "{n} నెలలు"}},
         year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} సంవత్సరం", two = nil, few = nil, many = nil, other = "{n} సంవత్సరాలు"}},
     },
-    half = "{0}న్నర",
+    half = "{n}½",
     delimiter = ", ",
     just_born = "నవజాత శిశువు",
     stages = {
@@ -3727,7 +3727,7 @@ locale_tet : Age_Locale = {
         adult = Stage_Label{label = "Ema boot", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "loron {n}", forms = nil}, week = Unit_Forms{simple = "sem. {n}", forms = nil}, month = Unit_Forms{simple = "fulan {n}", forms = nil}, year = Unit_Forms{simple = "tinan {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/tg.json
@@ -3740,7 +3740,7 @@ locale_tg : Age_Locale = {
         month = Unit_Forms{simple = "{n} моҳ", forms = nil},
         year = Unit_Forms{simple = "{n} сол", forms = nil},
     },
-    half = "{0} ним",
+    half = "{0}у ним",
     delimiter = ", ",
     just_born = "Навзод",
     stages = {
@@ -3840,7 +3840,7 @@ locale_tk : Age_Locale = {
         month = Unit_Forms{simple = "{n} aý", forms = nil},
         year = Unit_Forms{simple = "{n} ýaş", forms = nil},
     },
-    half = "{0}½",
+    half = "{n} ýarym",
     delimiter = ", ",
     just_born = "Täze doglan",
     stages = {
@@ -3849,7 +3849,7 @@ locale_tk : Age_Locale = {
         toddler = Stage_Label{label = "Kiçijik", f = ""},
         child = Stage_Label{label = "Çaga", f = ""},
         teenager = Stage_Label{label = "Ýetginjek", f = ""},
-        adult = Stage_Label{label = "Ulular", f = ""},
+        adult = Stage_Label{label = "Uly adam", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} g", forms = nil}, week = Unit_Forms{simple = "{n} h", forms = nil}, month = Unit_Forms{simple = "{n} a", forms = nil}, year = Unit_Forms{simple = "{n} ý", forms = nil}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}g", forms = nil}, week = Unit_Forms{simple = "{n}h", forms = nil}, month = Unit_Forms{simple = "{n}a", forms = nil}, year = Unit_Forms{simple = "{n}ý", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
@@ -3873,7 +3873,7 @@ locale_tn : Age_Locale = {
         infant = Stage_Label{label = "Lesea", f = ""},
         toddler = Stage_Label{label = "Ngwana yo monnye", f = ""},
         child = Stage_Label{label = "Ngwana", f = ""},
-        teenager = Stage_Label{label = "Lekgarebe", f = ""},
+        teenager = Stage_Label{label = "Mosha", f = ""},
         adult = Stage_Label{label = "Motho yo mogolo", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "letsatsi {n}", two = nil, few = nil, many = nil, other = "malatsi {n}"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "beke {n}", two = nil, few = nil, many = nil, other = "dibeke {n}"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "kgw. {n}", two = nil, few = nil, many = nil, other = "dikgw. {n}"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "ngw. {n}", two = nil, few = nil, many = nil, other = "dingw. {n}"}}, half = nil, delimiter = nil, just_born = nil},
@@ -3890,7 +3890,7 @@ locale_tpi : Age_Locale = {
         month = Unit_Forms{simple = "{n} mun", forms = nil},
         year = Unit_Forms{simple = "{n} yia", forms = nil},
     },
-    half = "{n} na hap",
+    half = "{0} na hap",
     delimiter = ", ",
     just_born = "Nupela pikinini",
     stages = {
@@ -3902,7 +3902,7 @@ locale_tpi : Age_Locale = {
         adult = Stage_Label{label = "Bikpela man", f = ""},
     },
     short_override = Compactness_Override{day = Unit_Forms{simple = "{n} de", forms = nil}, week = Unit_Forms{simple = "{n} wik", forms = nil}, month = Unit_Forms{simple = "{n} mun", forms = nil}, year = Unit_Forms{simple = "{n} yia", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = nil, delimiter = "", just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/tr.json
@@ -3995,13 +3995,13 @@ locale_tzm : Age_Locale = {
     just_born = "Iɣ d illul",
     stages = {
         newborn = Stage_Label{label = "Iɣ d illul", f = ""},
-        infant = Stage_Label{label = "Agellid", f = ""},
+        infant = Stage_Label{label = "Llufan", f = ""},
         toddler = Stage_Label{label = "Aḥenjir", f = "Taḥenjirt"},
-        child = Stage_Label{label = "Afrux", f = "Tafruxṭ"},
+        child = Stage_Label{label = "Afrux", f = "Tafruxt"},
         teenager = Stage_Label{label = "Aɛrim", f = "Taɛrimt"},
         adult = Stage_Label{label = "Argaz", f = "Tamṭṭuṭ"},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} d", forms = nil}, week = Unit_Forms{simple = "{n} wk", forms = nil}, month = Unit_Forms{simple = "{n} mo", forms = nil}, year = Unit_Forms{simple = "{n} yr", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ass", two = nil, few = nil, many = nil, other = "{n} ussan"}}, week = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} imalass", two = nil, few = nil, many = nil, other = "{n} imalassn"}}, month = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} ayyur", two = nil, few = nil, many = nil, other = "{n} ayyurn"}}, year = Unit_Forms{simple = nil, forms = Plural_Forms{zero = nil, one = "{n} aseggas", two = nil, few = nil, many = nil, other = "{n} iseggasen"}}, half = nil, delimiter = nil, just_born = nil},
     compact_override = Compactness_Override{day = Unit_Forms{simple = "{n}d", forms = nil}, week = Unit_Forms{simple = "{n}w", forms = nil}, month = Unit_Forms{simple = "{n}m", forms = nil}, year = Unit_Forms{simple = "{n}y", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
@@ -4145,7 +4145,7 @@ locale_vi : Age_Locale = {
     just_born = "Sơ sinh",
     stages = {
         newborn = Stage_Label{label = "Sơ sinh", f = ""},
-        infant = Stage_Label{label = "Trẻ sơ sinh", f = ""},
+        infant = Stage_Label{label = "Trẻ nhũ nhi", f = ""},
         toddler = Stage_Label{label = "Trẻ mới biết đi", f = ""},
         child = Stage_Label{label = "Trẻ em", f = ""},
         teenager = Stage_Label{label = "Thiếu niên", f = ""},
@@ -4185,24 +4185,24 @@ locale_wo : Age_Locale = {
     code = "wo",
     plural = plural_other_only,
     units = {
-        day = Unit_Forms{simple = "bés {n}", forms = nil},
-        week = Unit_Forms{simple = "ayubés {n}", forms = nil},
-        month = Unit_Forms{simple = "weer {n}", forms = nil},
-        year = Unit_Forms{simple = "at {n}", forms = nil},
+        day = Unit_Forms{simple = "{n} fan", forms = nil},
+        week = Unit_Forms{simple = "{n} ayubés", forms = nil},
+        month = Unit_Forms{simple = "{n} weer", forms = nil},
+        year = Unit_Forms{simple = "{n} at", forms = nil},
     },
     half = "{0} ak genn-wàll",
     delimiter = ", ",
     just_born = "Dees ko sax juddu",
     stages = {
         newborn = Stage_Label{label = "Dees ko sax juddu", f = ""},
-        infant = Stage_Label{label = "Njàmbaar bu ndaw", f = ""},
+        infant = Stage_Label{label = "Liir", f = ""},
         toddler = Stage_Label{label = "Xale bu ndaw", f = ""},
         child = Stage_Label{label = "Xale", f = ""},
         teenager = Stage_Label{label = "Ndaw-ndaw", f = ""},
         adult = Stage_Label{label = "Mag", f = ""},
     },
-    short_override = Compactness_Override{day = Unit_Forms{simple = "bés {n}", forms = nil}, week = Unit_Forms{simple = "ayub. {n}", forms = nil}, month = Unit_Forms{simple = "weer {n}", forms = nil}, year = Unit_Forms{simple = "at {n}", forms = nil}, half = nil, delimiter = nil, just_born = nil},
-    compact_override = Compactness_Override{day = Unit_Forms{simple = "bés {n}", forms = nil}, week = Unit_Forms{simple = "ayub {n}", forms = nil}, month = Unit_Forms{simple = "weer {n}", forms = nil}, year = Unit_Forms{simple = "at {n}", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
+    short_override = Compactness_Override{day = Unit_Forms{simple = "{n} fan", forms = nil}, week = Unit_Forms{simple = "{n} ayub.", forms = nil}, month = Unit_Forms{simple = "{n} weer", forms = nil}, year = Unit_Forms{simple = "{n} at", forms = nil}, half = nil, delimiter = nil, just_born = nil},
+    compact_override = Compactness_Override{day = Unit_Forms{simple = "{n} fan", forms = nil}, week = Unit_Forms{simple = "{n} ayub", forms = nil}, month = Unit_Forms{simple = "{n} weer", forms = nil}, year = Unit_Forms{simple = "{n} at", forms = nil}, half = "{n}½", delimiter = "", just_born = nil},
 }
 
 // Source: locales/xh.json

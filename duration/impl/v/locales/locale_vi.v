@@ -25,12 +25,12 @@ pub const locale_vi = DurationLocale{
 	day: simple_unit('{n} ngày')
 	week: simple_unit('{n} tuần')
 	month: simple_unit('{n} tháng')
-	year: simple_unit('{n} tuổi')
+	year: simple_unit('{n} năm')
 	half: '{0} rưỡi'
 	delimiter: ', '
 	just_now: 'vừa xong'
 	ago: '{0} trước'
-	in_future: 'trong {0}'
+	in_future: '{0} nữa'
 	has_short: true
 	short_override: DurationCompactnessOverride{
 		second: simple_unit('{n} giây')
@@ -49,7 +49,7 @@ pub const locale_vi = DurationLocale{
 		has_year: true
 		ago: '{0} trước'
 		has_ago: true
-		in_future: 'trong {0}'
+		in_future: '{0} nữa'
 		has_in_future: true
 	}
 	has_compact: true
@@ -74,7 +74,7 @@ pub const locale_vi = DurationLocale{
 		has_delimiter: true
 		ago: '{0} trước'
 		has_ago: true
-		in_future: 'trong {0}'
+		in_future: '{0} nữa'
 		has_in_future: true
 	}
 }

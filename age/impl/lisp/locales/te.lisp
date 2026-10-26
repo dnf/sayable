@@ -21,7 +21,7 @@
                (cons :week '((:one . "{n} వారం") (:other . "{n} వారాలు")))
                (cons :month '((:one . "{n} నెల") (:other . "{n} నెలలు")))
                (cons :year '((:one . "{n} సంవత్సరం") (:other . "{n} సంవత్సరాలు"))))
-   :half "{0}న్నర"
+   :half "{n}½"
    :delimiter ", "
    :just-born "నవజాత శిశువు"
    :stages (list (cons :newborn "నవజాత శిశువు")

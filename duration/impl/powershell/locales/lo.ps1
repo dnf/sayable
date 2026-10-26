@@ -24,10 +24,10 @@ function locale_lo {
         year = '{n} ປີ'
     }
     $half = '{0}ເຄິ່ງ'
-    $delimiter = ''
+    $delimiter = ' '
     $justNow = 'ຫາກໍ'
     $ago = '{0} ກ່ອນ'
-    $inFuture = 'ໃນ {0}'
+    $inFuture = 'ໃນອີກ {0}'
     $short = @{
         units = @{
             second = '{n} ວິ.'
@@ -39,7 +39,7 @@ function locale_lo {
             year = '{n} ປ.'
         }
         ago = '{0} ກ່ອນ'
-        inFuture = 'ໃນ {0}'
+        inFuture = 'ໃນອີກ {0}'
     }
     $compact = @{
         units = @{
@@ -48,13 +48,13 @@ function locale_lo {
             hour = '{n}h'
             day = '{n}d'
             week = '{n}w'
-            month = '{n}m'
+            month = '{n}mo'
             year = '{n}y'
         }
         half = '{n}½'
         delimiter = ''
         ago = '{0} ກ່ອນ'
-        inFuture = 'ໃນ {0}'
+        inFuture = 'ໃນອີກ {0}'
     }
     return @{
         code = 'lo'

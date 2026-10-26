@@ -21,7 +21,7 @@ _sayableduration_locale_dz() {
     _unit_week='བདུན་ཕྲག་ {n}'
     _unit_month='ཟླ་ {n}'
     _unit_year='ལོ་ {n}'
-    _half='{0} ཕྱེད'
+    _half='{0} དང་ཕྱེད'
     _delimiter=' '
     _just_now='ད་ལྟ'
     _ago='{0} ཧེ་མ'

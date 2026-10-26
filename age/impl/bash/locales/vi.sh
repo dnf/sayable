@@ -22,7 +22,7 @@ _sayableage_locale_vi() {
     _delimiter=', '
     _just_born='Sơ sinh'
     _stage_newborn='Sơ sinh'
-    _stage_infant='Trẻ sơ sinh'
+    _stage_infant='Trẻ nhũ nhi'
     _stage_toddler='Trẻ mới biết đi'
     _stage_child='Trẻ em'
     _stage_teenager='Thiếu niên'

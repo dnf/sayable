@@ -35,13 +35,20 @@ sd_just_now('tzm', 'ɣilad').
 sd_ago('tzm', 'ɣ {0} zzrin').
 sd_in_future('tzm', 'ɣ {0}').
 
-short_sd_unit('tzm', second, _, '{n}s').
-short_sd_unit('tzm', minute, _, '{n}m').
-short_sd_unit('tzm', hour, _, '{n}h').
-short_sd_unit('tzm', day, _, '{n}d').
-short_sd_unit('tzm', week, _, '{n}w').
-short_sd_unit('tzm', month, _, '{n}mo').
-short_sd_unit('tzm', year, _, '{n}y').
+short_sd_unit('tzm', second, one, '{n} tasint').
+short_sd_unit('tzm', second, other, '{n} tisinin').
+short_sd_unit('tzm', minute, one, '{n} tusdiqt').
+short_sd_unit('tzm', minute, other, '{n} tusdiqin').
+short_sd_unit('tzm', hour, one, '{n} tasragt').
+short_sd_unit('tzm', hour, other, '{n} tisragin').
+short_sd_unit('tzm', day, one, '{n} ass').
+short_sd_unit('tzm', day, other, '{n} ussan').
+short_sd_unit('tzm', week, one, '{n} imalass').
+short_sd_unit('tzm', week, other, '{n} imalassn').
+short_sd_unit('tzm', month, one, '{n} ayyur').
+short_sd_unit('tzm', month, other, '{n} ayyurn').
+short_sd_unit('tzm', year, one, '{n} aseggas').
+short_sd_unit('tzm', year, other, '{n} iseggasen').
 short_sd_ago('tzm', 'ɣ {0} zzrin').
 short_sd_in_future('tzm', 'ɣ {0}').
 

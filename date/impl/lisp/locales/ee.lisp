@@ -16,22 +16,22 @@
 (defparameter *locale-ee*
   (make-date-locale
    :code "ee"
-   :months (list "Dzove" "Dzodze" "Tedoxe" "Afɔfĩe" "Damɛ" "Masa" "Siamlɔm" "Dasiamime" "Anyɔnyɔ" "Kele" "Adeɛmekpɔxe" "Dzome")
-   :weekdays (list "Kɔsiɖa" "Dzoɖa" "Braɖa" "Kuɖa" "Yawoɖa" "Fiɖa" "Memleɖa")
+   :months (list "Dzove" "Dzodze" "Tedoxe" "Afɔfĩe" "Dama" "Masa" "Siamlɔm" "Deasiamime" "Anyɔnyɔ" "Kele" "Adeɛmekpɔxe" "Dzome")
+   :weekdays (list "Kɔsiɖa" "Dzoɖa" "Blaɖa" "Kuɖa" "Yawoɖa" "Fiɖa" "Memleɖa")
    :day-format "{n}"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
    :date-pattern-with-year "{day} {month} {year}"
    :today "egbe"
-   :tomorrow "etsɔ"
-   :yesterday "etso"
-   :day-after-tomorrow "etsɔ megbe"
-   :day-before-yesterday "etso nyitsɔ"
+   :tomorrow "etsɔ si gbɔna"
+   :yesterday "etsɔ si va yi"
+   :day-after-tomorrow "nyitsɔ si gbɔna"
+   :day-before-yesterday "nyitsɔ si va yi"
    :this-weekday "{weekday} sia"
    :next-weekday "{weekday} si gbɔna"
    :last-weekday "{weekday} si va yi"
-   :short-months (list "Dzv" "Dzd" "Ted" "Afɔ" "Dam" "Mas" "Sia" "Das" "Any" "Kel" "Ade" "Dzm")
-   :short-weekdays (list "Kɔs" "Dzo" "Bra" "Kuɖ" "Yaw" "Fiɖ" "Mem")
+   :short-months (list "Dzv" "Dzd" "Ted" "Afɔ" "Dam" "Mas" "Sia" "Dea" "Any" "Kel" "Ade" "Dzm")
+   :short-weekdays (list "Kɔs" "Dzo" "Bla" "Kuɖ" "Yaw" "Fiɖ" "Mem")
    :short-day-format "{n}"
    :short-date-pattern "{day} {month}"
    :short-date-pattern-with-year "{day} {month} {year}"

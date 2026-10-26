@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_dje = {
     "dje",
     {
-        { "way cindi", "afoo", "ihinka", "ihinza", "itaaci", "igu", "iddu", "iyye", "isahkay", "iyegga", "iwoy", "iwoy cindi" },
+        { "iway cindi hinka", "fo", "hinka", "hinza", "taaci", "gu", "iddu", "iyye", "ahakku", "yagga", "iway", "iway cindi fo" },
         "cin beri",
         "zaari gaaham",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "guuru {h}", "guuru {h} nda miniti gu", "guuru {h} nda miniti iway", "guuru {h} nda miniti iway cindi gu", "guuru {h} nda miniti waranka", "guuru {h} nda miniti waranka cindi gu", "guuru {h} nda jare", "guuru {h} nda miniti waranza cindi gu", "guuru {h} nda miniti waytaaci", "guuru {h} nda miniti waytaaci cindi gu", "guuru {h} nda miniti waygu", "guuru {h} nda miniti waygu cindi gu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

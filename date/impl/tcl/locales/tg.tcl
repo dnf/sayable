@@ -23,8 +23,8 @@ proc locale_date_tg {} {
     set day_after_tomorrow {пасфардо}
     set day_before_yesterday {парирӯз}
     set this_weekday "ин {weekday}"
-    set next_weekday "{weekday}-и оянда"
-    set last_weekday "{weekday}-и гузашта"
+    set next_weekday "{weekday}и оянда"
+    set last_weekday "{weekday}и гузашта"
     set months_in_date ""
     set short [dict create \
         months [list {Янв} {Фев} {Мар} {Апр} {Май} {Июн} {Июл} {Авг} {Сен} {Окт} {Ноя} {Дек}] \

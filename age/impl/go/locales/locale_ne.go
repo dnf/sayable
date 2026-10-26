@@ -34,7 +34,7 @@ var NE = sa.AgeLocale{
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{
 		Newborn:  sa.S("नवजात शिशु"),
 		Infant:   sa.S("शिशु"),
-		Toddler:  sa.S("बाल्यकाल"),
+		Toddler:  sa.S("सानो बच्चा"),
 		Child:    sa.S("बालक"),
 		Teenager: sa.S("किशोर"),
 		Adult:    sa.S("वयस्क"),

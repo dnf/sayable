@@ -16,7 +16,7 @@ bm
 	| locale |
 	locale := SayableDateLocale new.
 	locale code: 'bm'.
-	locale months: (OrderedCollection withAll: { 'Zanwuye'. 'Fewuriye'. 'Marisi'. 'Awirili'. 'Mɛ'. 'Zuwɛn'. 'Zuluye'. 'Uti'. 'Sɛtanburu'. 'ɔkutɔburu'. 'Nowanbudu'. 'Desanburu' }).
+	locale months: (OrderedCollection withAll: { 'Zanwuye'. 'Feburuye'. 'Marisi'. 'Awirili'. 'Mɛ'. 'Zuwɛn'. 'Zuluye'. 'Uti'. 'Sɛtanburu'. 'Ɔkutɔburu'. 'Nowanburu'. 'Desanburu' }).
 	locale weekdays: (OrderedCollection withAll: { 'Kari'. 'Ntɛnɛn'. 'Tarata'. 'Araba'. 'Alamisa'. 'Juma'. 'Sibiri' }).
 	locale dayFormat: '{n}'.
 	locale dayFormatExceptions: Dictionary new.
@@ -32,7 +32,7 @@ bm
 	locale lastWeekday: '{weekday} tɛmɛnen'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
-		#months. (OrderedCollection withAll: { 'Zan'. 'Few'. 'Mar'. 'Awi'. 'Mɛ'. 'Zuw'. 'Zul'. 'Uti'. 'Sɛt'. 'ɔku'. 'Now'. 'Des' }).
+		#months. (OrderedCollection withAll: { 'Zan'. 'Feb'. 'Mar'. 'Awi'. 'Mɛ'. 'Zuw'. 'Zul'. 'Uti'. 'Sɛt'. 'Ɔku'. 'Now'. 'Des' }).
 		#weekdays. (OrderedCollection withAll: { 'Kar'. 'Ntɛ'. 'Tar'. 'Ara'. 'Ala'. 'Jum'. 'Sib' }).
 		#dayFormat. '{n}'.
 		#datePattern. '{day} {month}'.

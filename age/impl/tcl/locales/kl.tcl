@@ -10,16 +10,17 @@
 # Source: locales/kl.json
 
 proc plural_kl {n} {
+    if {$n == 1} { return "one" }
     return "other"
 }
 
 proc locale_kl {} {
     set code {kl}
     set units [dict create \
-        day "ullut {n}" \
-        week "sapaatit {n}" \
-        month "qaammatit {n}" \
-        year "ukiut {n}" \
+        day [dict create one "ulloq {n}" other "ullut {n}"] \
+        week [dict create one "sapaatip akunnera {n}" other "sapaatip akunneri {n}"] \
+        month [dict create one "qaammat {n}" other "qaammatit {n}"] \
+        year [dict create one "ukioq {n}" other "ukiut {n}"] \
     ]
     set half "{0} affaa"
     set delimiter {, }
@@ -35,7 +36,7 @@ proc locale_kl {} {
     set short [dict create \
         units [dict create \
             day "ull. {n}" \
-            week "sap. {n}" \
+            week "sap. ak. {n}" \
             month "qaam. {n}" \
             year "uk. {n}" \
         ] \
@@ -47,6 +48,7 @@ proc locale_kl {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
         delimiter {} \
     ]
     return [dict create \

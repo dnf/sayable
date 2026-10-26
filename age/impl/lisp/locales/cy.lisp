@@ -28,10 +28,10 @@
   (make-age-locale
    :code "cy"
    :plural #'plural-cy
-   :units (list (cons :day '((:zero . "{n} diwrnod") (:one . "{n} diwrnod") (:two . "{n} ddiwrnod") (:few . "{n} diwrnod") (:many . "{n} niwrnod") (:other . "{n} diwrnod")))
+   :units (list (cons :day '((:zero . "{n} diwrnod") (:one . "{n} diwrnod") (:two . "{n} ddiwrnod") (:few . "{n} diwrnod") (:many . "{n} diwrnod") (:other . "{n} diwrnod")))
                (cons :week '((:zero . "{n} wythnos") (:one . "{n} wythnos") (:two . "{n} wythnos") (:few . "{n} wythnos") (:many . "{n} wythnos") (:other . "{n} wythnos")))
                (cons :month '((:zero . "{n} mis") (:one . "{n} mis") (:two . "{n} fis") (:few . "{n} mis") (:many . "{n} mis") (:other . "{n} mis")))
-               (cons :year '((:zero . "{n} blwyddyn") (:one . "{n} blwyddyn") (:two . "{n} flynedd") (:few . "{n} blynedd") (:many . "{n} blynedd") (:other . "{n} blynedd"))))
+               (cons :year '((:zero . "{n} blwyddyn") (:one . "{n} flwyddyn") (:two . "{n} flynedd") (:few . "{n} blynedd") (:many . "{n} blynedd") (:other . "{n} blynedd"))))
    :half "{0} a hanner"
    :delimiter ", "
    :just-born "Newydd-anedig"

@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var LUO = st.TimeLocale{
 	Code: "luo",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"apar gi ariyo", "achiel", "ariyo", "adek", "ang'wen", "abich", "auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gi achiel"},
+		Hours:    [12]string{"auchiel", "abiriyo", "aboro", "ochiko", "apar", "apar gachiel", "apar gariyo", "achiel", "ariyo", "adek", "ang'wen", "abich"},
 		Midnight: "dier otieno",
 		Noon:     "odiechieng' tir",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "saa {h}", 5: "saa {h} gi dakika abich", 10: "saa {h} gi dakika apar", 15: "saa {h} gi dakika apar gabich", 20: "saa {h} gi dakika piero ariyo", 25: "saa {h} gi dakika piero ariyo gabich", 30: "saa {h} gi nus", 35: "saa {h} gi dakika piero adek gabich", 40: "saa {h} gi dakika piero ang'wen", 45: "saa {h} gi dakika piero ang'wen gabich", 50: "saa {h} gi dakika piero abich", 55: "saa {h} gi dakika piero abich gabich"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

@@ -23,7 +23,7 @@ class TKLocale {
       "year": "{n} ýyl",
     }
   }
-  static half { "{0}½" }
+  static half { "{n} ýarym" }
   static delimiter { ", " }
   static justNow { "häzir" }
   static ago { "{0} öň" }

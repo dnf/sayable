@@ -23,7 +23,7 @@ class DVLocale {
       "year": "{n} އަހަރު",
     }
   }
-  static half { "{0} ބައި" }
+  static half { "{n}½" }
   static delimiter { "، " }
   static justNow { "މިހާރު" }
   static ago { "މީގެ {0} ކުރިން" }

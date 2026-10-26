@@ -23,7 +23,7 @@ pub const locale_tpi = AgeLocale{
 	week: simple_unit('{n} wik')
 	month: simple_unit('{n} mun')
 	year: simple_unit('{n} yia')
-	half: '{n} na hap'
+	half: '{0} na hap'
 	delimiter: ', '
 	just_born: 'Nupela pikinini'
 	newborn: stage_neutral('Nupela pikinini')
@@ -53,6 +53,8 @@ pub const locale_tpi = AgeLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 	}

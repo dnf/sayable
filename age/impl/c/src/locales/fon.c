@@ -31,7 +31,7 @@ const SaLocale sa_locale_fon = {
         { "Vǐ", "" },
         { "Vǐ", "" },
         { "Vǐ", "" },
-        { "Nyɔ̌nu", "" },
+        { "Dɔnkpɛvu", "Ɖyɔ̌vǐ" },
         { "Mɛ̌xo", "" }
     },
     true, { true, { "azǎn {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "aklunɔ̌zán {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sun {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "xwè {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },

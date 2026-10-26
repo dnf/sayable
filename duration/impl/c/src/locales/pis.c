@@ -28,9 +28,9 @@ const SduDurationLocale sdu_locale_pis = {
         { "{n} manis", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} yia", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n} en haf", ", ",
+    "{0} en haf", ", ",
     "nomoa nao",
     "{0} bifoa", "long {0}",
     true, { true, { "{n} sek", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} min", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} aoa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} dei", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wik", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} man", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yia", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} bifoa", true, "long {0}" },
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", true, "{0} bifoa", true, "long {0}" }
+    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} bifoa", true, "long {0}" }
 };

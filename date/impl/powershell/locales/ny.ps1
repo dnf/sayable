@@ -21,9 +21,9 @@ function locale_ny {
     $yesterday = 'dzulo'
     $dayAfterTomorrow = 'mkucha'
     $dayBeforeYesterday = 'dzana'
-    $thisWeekday = '{weekday} ino'
-    $nextWeekday = '{weekday} yotsatira'
-    $lastWeekday = '{weekday} yatha'
+    $thisWeekday = '{weekday} lino'
+    $nextWeekday = '{weekday} lotsatira'
+    $lastWeekday = '{weekday} latha'
     $monthsInDate = $null
     $short = @{
         months = @('Jan', 'Feb', 'Mat', 'Epu', 'Mey', 'Jun', 'Jul', 'Oga', 'Sep', 'Okt', 'Nov', 'Dis')

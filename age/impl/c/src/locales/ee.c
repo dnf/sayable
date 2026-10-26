@@ -20,10 +20,10 @@ const SaLocale sa_locale_ee = {
     "ee",
     plural_ee,
     {
-        { NULL, { NULL, "ŋkeke {n}", NULL, NULL, NULL, "ŋkekewo {n}" } },
-        { NULL, { NULL, "kɔsiɖa {n}", NULL, NULL, NULL, "kɔsiɖawo {n}" } },
-        { NULL, { NULL, "ɣleti {n}", NULL, NULL, NULL, "ɣletiwo {n}" } },
-        { NULL, { NULL, "ƒe {n}", NULL, NULL, NULL, "ƒewo {n}" } }
+        { "ŋkeke {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "kɔsiɖa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "ɣleti {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "ƒe {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} kple afã", ", ", "Evi yeye",
     {
@@ -31,9 +31,9 @@ const SaLocale sa_locale_ee = {
         { "Ɖevi", "" },
         { "Ɖevi sue", "" },
         { "Ɖevi", "" },
-        { "Ŋutsuviwo", "" },
+        { "Ɖekakpui", "Ɖetugbi" },
         { "Ame tsitsi", "" }
     },
-    true, { true, { "ŋkekewo {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { NULL, { NULL, "kɔsiɖa {n}", NULL, NULL, NULL, "kɔsiɖawo {n}" } }, true, { NULL, { NULL, "ɣleti {n}", NULL, NULL, NULL, "ɣletiwo {n}" } }, true, { NULL, { NULL, "ƒe {n}", NULL, NULL, NULL, "ƒewo {n}" } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "ŋkeke {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "kɔsiɖa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ɣleti {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ƒe {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
     true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

@@ -21,10 +21,10 @@
   (time-locale
    "so"
    (clock-config
-    (list "laba iyo toban" "kow" "laba" "saddex" "afar" "shan" "lix" "toddoba" "siddeed" "sagaal" "toban" "kow iyo toban")
+    (list "laba iyo tobanka" "kowda" "labada" "saddexda" "afarta" "shanta" "lixda" "toddobada" "siddeedda" "sagaasha" "tobanka" "kow iyo tobanka")
     "saqda dhexe"
     "duhur"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (hash 0 "{h}" 5 "{h} iyo shan" 10 "{h} iyo toban" 15 "{h} iyo rubuc" 20 "{h} iyo labaatan" 25 "{h} iyo shan iyo labaatan" 30 "{h} iyo bar" 35 "{next_h} shan iyo labaatan la'" 40 "{next_h} labaatan la'" 45 "{next_h} rubuc la'" 50 "{next_h} toban la'" 55 "{next_h} shan la'"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

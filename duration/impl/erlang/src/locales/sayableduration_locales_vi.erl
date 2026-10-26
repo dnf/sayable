@@ -23,12 +23,12 @@ locale() ->
         day = {simple, "{n} ngày"},
         week = {simple, "{n} tuần"},
         month = {simple, "{n} tháng"},
-        year = {simple, "{n} tuổi"},
+        year = {simple, "{n} năm"},
         half = "{0} rưỡi",
         delimiter = ", ",
         just_now = "vừa xong",
         ago = "{0} trước",
-        in_future = "trong {0}",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} giây"}}, minute = {just, {simple, "{n} phút"}}, hour = {just, {simple, "{n} giờ"}}, day = {just, {simple, "{n} ngày"}}, week = {just, {simple, "{n} tuần"}}, month = {just, {simple, "{n} tháng"}}, year = {just, {simple, "{n} năm"}}, half = nothing, delimiter = nothing, ago = {just, "{0} trước"}, in_future = {just, "trong {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n} giây"}}, minute = {just, {simple, "{n} phút"}}, hour = {just, {simple, "{n} giờ"}}, day = {just, {simple, "{n} ngày"}}, week = {just, {simple, "{n} tuần"}}, month = {just, {simple, "{n} tháng"}}, year = {just, {simple, "{n} năm"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} trước"}, in_future = {just, "trong {0}"}}}
+        in_future = "{0} nữa",
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} giây"}}, minute = {just, {simple, "{n} phút"}}, hour = {just, {simple, "{n} giờ"}}, day = {just, {simple, "{n} ngày"}}, week = {just, {simple, "{n} tuần"}}, month = {just, {simple, "{n} tháng"}}, year = {just, {simple, "{n} năm"}}, half = nothing, delimiter = nothing, ago = {just, "{0} trước"}, in_future = {just, "{0} nữa"}}},
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n} giây"}}, minute = {just, {simple, "{n} phút"}}, hour = {just, {simple, "{n} giờ"}}, day = {just, {simple, "{n} ngày"}}, week = {just, {simple, "{n} tuần"}}, month = {just, {simple, "{n} tháng"}}, year = {just, {simple, "{n} năm"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} trước"}, in_future = {just, "{0} nữa"}}}
     }.

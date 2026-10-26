@@ -10,22 +10,22 @@
 # Source: locales/gd.json
 
 function locale_gd {
-    $hours = @('dà-dheug', 'aon', 'dà', 'trì', 'ceithir', 'còig', 'sia', 'seachd', 'ochd', 'naoi', 'deich', 'aon-deug')
+    $hours = @('dà uair dheug', 'uair', 'dà uair', 'trì uairean', 'ceithir uairean', 'còig uairean', 'sia uairean', 'seachd uairean', 'ochd uairean', 'naoi uairean', 'deich uairean', 'aon uair deug')
     $midnight = 'meadhan-oidhche'
     $noon = 'meadhan-latha'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = 'còig mionaidean an dèidh {h}'
+    $patterns[10] = 'deich mionaidean an dèidh {h}'
+    $patterns[15] = 'cairteal an dèidh {h}'
+    $patterns[20] = 'fichead mionaid an dèidh {h}'
+    $patterns[25] = 'còig mionaidean fichead an dèidh {h}'
+    $patterns[30] = 'leth-uair an dèidh {h}'
+    $patterns[35] = 'còig mionaidean fichead gu {next_h}'
+    $patterns[40] = 'fichead mionaid gu {next_h}'
+    $patterns[45] = 'cairteal gu {next_h}'
+    $patterns[50] = 'deich mionaidean gu {next_h}'
+    $patterns[55] = 'còig mionaidean gu {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

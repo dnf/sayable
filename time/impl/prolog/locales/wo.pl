@@ -11,22 +11,22 @@
 
 % Wolof locale.
 
-st_hours('wo', ['fukki ñaar', 'benn', 'ñaar', 'ñett', 'ñeent', 'juróom', 'juróom-benn', 'juróom-ñaar', 'juróom-ñett', 'juróom-ñeent', 'fukk', 'fukki benn']).
-st_midnight('wo', 'bu guddi').
-st_noon('wo', 'ci àttaya').
+st_hours('wo', ['fukk ak ñaari waxtu', 'benn waxtu', 'ñaari waxtu', 'ñetti waxtu', 'ñeenti waxtu', 'juróomi waxtu', 'juróom-benni waxtu', 'juróom-ñaari waxtu', 'juróom-ñetti waxtu', 'juróom-ñeenti waxtu', 'fukki waxtu', 'fukk ak benn waxtu']).
+st_midnight('wo', 'digg-guddi').
+st_noon('wo', 'digg-bëccëg').
 
-st_pattern('wo', 0, '{h}:00').
-st_pattern('wo', 5, '{h}:05').
-st_pattern('wo', 10, '{h}:10').
-st_pattern('wo', 15, '{h}:15').
-st_pattern('wo', 20, '{h}:20').
-st_pattern('wo', 25, '{h}:25').
-st_pattern('wo', 30, '{h}:30').
-st_pattern('wo', 35, '{h}:35').
-st_pattern('wo', 40, '{h}:40').
-st_pattern('wo', 45, '{h}:45').
-st_pattern('wo', 50, '{h}:50').
-st_pattern('wo', 55, '{h}:55').
+st_pattern('wo', 0, '{h}').
+st_pattern('wo', 5, '{h} ak juróomi simili').
+st_pattern('wo', 10, '{h} ak fukki simili').
+st_pattern('wo', 15, '{h} ak fukk ak juróomi simili').
+st_pattern('wo', 20, '{h} ak ñaar-fukki simili').
+st_pattern('wo', 25, '{h} ak ñaar-fukk ak juróomi simili').
+st_pattern('wo', 30, '{h} ak genn-wàll').
+st_pattern('wo', 35, '{next_h} des na ñaar-fukk ak juróomi simili').
+st_pattern('wo', 40, '{next_h} des na ñaar-fukki simili').
+st_pattern('wo', 45, '{next_h} des na fukk ak juróomi simili').
+st_pattern('wo', 50, '{next_h} des na fukki simili').
+st_pattern('wo', 55, '{next_h} des na juróomi simili').
 
 short_st_use24h('wo', false).
 short_st_format('wo', '{h}:{mm} {ampm}').

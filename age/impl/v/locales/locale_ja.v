@@ -53,5 +53,7 @@ pub const locale_ja = AgeLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 	}
 }

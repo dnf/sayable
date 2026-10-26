@@ -16,6 +16,6 @@
    :clock {:hours ["dvanásť" "jedna" "dve" "tri" "štyri" "päť" "šesť" "sedem" "osem" "deväť" "desať" "jedenásť"]
            :midnight "polnoc"
            :noon "poludnie"
-           :patterns {0 "{h} hodín" 5 "päť po {h}" 10 "desať po {h}" 15 "štvrť po {h}" 20 "dvadsať po {h}" 25 "dvadsať päť po {h}" 30 "pol po {h}" 35 "dvadsať päť do {next_h}" 40 "dvadsať do {next_h}" 45 "štvrť do {next_h}" 50 "desať do {next_h}" 55 "päť do {next_h}"}}
+           :patterns {0 "{h}" 5 "{h} nula päť" 10 "{h} desať" 15 "{h} pätnásť" 20 "{h} dvadsať" 25 "{h} dvadsaťpäť" 30 "{h} tridsať" 35 "o dvadsaťpäť minút {next_h}" 40 "o dvadsať minút {next_h}" 45 "o pätnásť minút {next_h}" 50 "o desať minút {next_h}" 55 "o päť minút {next_h}"}}
    :short {:clock {:use-24h true :am-pm nil :format "{h}:{mm}"}}
    :compact {:clock {:use-24h true :am-pm nil :format "{h}:{mm}"}}})

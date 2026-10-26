@@ -20,7 +20,7 @@
     :hours (list "tizenkettő" "egy" "kettő" "három" "négy" "öt" "hat" "hét" "nyolc" "kilenc" "tíz" "tizenegy")
     :midnight "éjfél"
     :noon "dél"
-    :patterns (list (cons 0 "{h} óra") (cons 5 "öt múlt {h}") (cons 10 "tíz múlt {h}") (cons 15 "negyed múlt {h}") (cons 20 "húsz múlt {h}") (cons 25 "huszonöt múlt {h}") (cons 30 "fél múlt {h}") (cons 35 "huszonöt múlva {next_h}") (cons 40 "húsz múlva {next_h}") (cons 45 "negyed múlva {next_h}") (cons 50 "tíz múlva {next_h}") (cons 55 "öt múlva {next_h}")))
+    :patterns (list (cons 0 "{h} óra") (cons 5 "öt perccel múlt {h}") (cons 10 "tíz perccel múlt {h}") (cons 15 "negyed {next_h}") (cons 20 "húsz perccel múlt {h}") (cons 25 "öt perc múlva fél {next_h}") (cons 30 "fél {next_h}") (cons 35 "öt perccel múlt fél {next_h}") (cons 40 "húsz perc múlva {next_h}") (cons 45 "háromnegyed {next_h}") (cons 50 "tíz perc múlva {next_h}") (cons 55 "öt perc múlva {next_h}")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

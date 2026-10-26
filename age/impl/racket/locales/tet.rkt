@@ -35,5 +35,5 @@
          "teenager" (stage-label "Joven" #f #f)
          "adult" (stage-label "Ema boot" #f #f))
    (compactness-override (hash "type" "simple" "form" "loron {n}") (hash "type" "simple" "form" "sem. {n}") (hash "type" "simple" "form" "fulan {n}") (hash "type" "simple" "form" "tinan {n}") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

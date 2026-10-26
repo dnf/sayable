@@ -24,11 +24,11 @@ pub fn locale() -> types.DurationLocale {
       #("month", types.PluralUnit([#(types.One, "mwerĩ {n}"), #(types.Other, "mĩerĩ {n}")])),
       #("year", types.PluralUnit([#(types.One, "mwaka {n}"), #(types.Other, "mĩaka {n}")])),
     ],
-    half: "{0} na nusu",
+    half: "{0} na nuthu",
     delimiter: ", ",
-    just_now: "ũmũthĩ",
+    just_now: "rĩu",
     ago: "{0} ĩhĩtũkĩte",
-    in_future: "{0} ĩyothe",
+    in_future: "thutha wa {0}",
     short: Ok(types.CompactnessOverride(
       units: Ok([
         #("second", types.SimpleUnit("sek. {n}")),
@@ -42,7 +42,7 @@ pub fn locale() -> types.DurationLocale {
       half: Error(Nil),
       delimiter: Error(Nil),
       ago: Ok("{0} ĩhĩtũkĩte"),
-      in_future: Ok("{0} ĩyothe"),
+      in_future: Ok("thutha wa {0}"),
     )),
     compact: Ok(types.CompactnessOverride(
       units: Ok([
@@ -57,7 +57,7 @@ pub fn locale() -> types.DurationLocale {
       half: Error(Nil),
       delimiter: Ok(""),
       ago: Ok("{0} ĩhĩtũkĩte"),
-      in_future: Ok("{0} ĩyothe"),
+      in_future: Ok("thutha wa {0}"),
     )),
   )
 }

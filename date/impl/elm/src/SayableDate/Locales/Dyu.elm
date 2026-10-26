@@ -31,7 +31,7 @@ locale =
         , "Utikalo"
         , "Sɛtanburukalo"
         , "Ɔkutɔburukalo"
-        , "Nowanburdukalo"
+        , "Nowanburukalo"
         , "Desanburukalo"
         ]
     , weekdays =

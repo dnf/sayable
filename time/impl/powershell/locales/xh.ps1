@@ -10,22 +10,22 @@
 # Source: locales/xh.json
 
 function locale_xh {
-    $hours = @('ishumi elinambini', 'inye', 'ezimbini', 'ezintathu', 'ezine', 'ezintlanu', 'ezintandathu', 'ezisixhenxe', 'ezisibhozo', 'ethoba', 'ishumi', 'ishumi elinanye')
+    $hours = @('yeshumi elinesibini', 'yokuqala', 'yesibini', 'yesithathu', 'yesine', 'yesihlanu', 'yesithandathu', 'yesixhenxe', 'yesibhozo', 'yethoba', 'yeshumi', 'yeshumi elinanye')
     $midnight = 'ezinzulwini zobusuku'
     $noon = 'emini'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'intsimbi {h}'
+    $patterns[5] = 'imizuzu emihlanu emva kwentsimbi {h}'
+    $patterns[10] = 'imizuzu elishumi emva kwentsimbi {h}'
+    $patterns[15] = 'ikota emva kwentsimbi {h}'
+    $patterns[20] = 'imizuzu engamashumi amabini emva kwentsimbi {h}'
+    $patterns[25] = 'imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}'
+    $patterns[30] = 'isiqingatha emva kwentsimbi {h}'
+    $patterns[35] = 'imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}'
+    $patterns[40] = 'imizuzu engamashumi amabini ukuya kwintsimbi {next_h}'
+    $patterns[45] = 'ikota ukuya kwintsimbi {next_h}'
+    $patterns[50] = 'imizuzu elishumi ukuya kwintsimbi {next_h}'
+    $patterns[55] = 'imizuzu emihlanu ukuya kwintsimbi {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

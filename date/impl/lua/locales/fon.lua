@@ -13,7 +13,7 @@ local M = {}
 
 M.code = "fon"
 M.months = { "Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún" }
-M.weekdays = { "Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta" }
+M.weekdays = { "Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe" }
 M.day_format = "{n}"
 M.day_format_exceptions = {}
 M.date_pattern = "{day} {month}"
@@ -28,7 +28,7 @@ M.next_weekday = "{weekday} e ja"
 M.last_weekday = "{weekday} e wá yí"
 M.short = {
     months = { "Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ" },
-    weekdays = { "Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá" },
+    weekdays = { "Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib" },
     day_format = "{n}",
     date_pattern = "{day} {month}",
     date_pattern_with_year = "{day} {month} {year}",

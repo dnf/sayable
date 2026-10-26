@@ -13,8 +13,8 @@ locale_nso <- list(
   code = "nso",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = list(one = "motsotswana {n}", other = "dimetsotswana {n}"),
-    minute = list(one = "metsotso {n}", other = "dimetsotso {n}"),
+    second = list(one = "motsotswana {n}", other = "metsotswana {n}"),
+    minute = list(one = "motsotso {n}", other = "metsotso {n}"),
     hour = list(one = "iri {n}", other = "diiri {n}"),
     day = list(one = "letšatši {n}", other = "matšatši {n}"),
     week = list(one = "beke {n}", other = "dibeke {n}"),
@@ -28,8 +28,8 @@ locale_nso <- list(
   in_future = "ka {0}",
   short = list(
     units = list(
-      second = list(one = "mots. {n}", other = "dimets. {n}"),
-      minute = list(one = "mets. {n}", other = "dimets. {n}"),
+      second = list(one = "motsotsw. {n}", other = "metsotsw. {n}"),
+      minute = list(one = "mots. {n}", other = "mets. {n}"),
       hour = list(one = "iri {n}", other = "diiri {n}"),
       day = list(one = "letšatši {n}", other = "matšatši {n}"),
       week = list(one = "beke {n}", other = "dibeke {n}"),

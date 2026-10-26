@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}mo")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} liu ba"
    :compact-in-future "iha {0}"

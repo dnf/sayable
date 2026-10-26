@@ -21,18 +21,18 @@
   (duration-locale
    "wo"
    (lambda (n) "other")
-   (hash "second" (hash "type" "simple" "form" "saa-yépp {n}")
-         "minute" (hash "type" "simple" "form" "simili {n}")
-         "hour" (hash "type" "simple" "form" "waxtu {n}")
-         "day" (hash "type" "simple" "form" "bés {n}")
-         "week" (hash "type" "simple" "form" "ayubés {n}")
-         "month" (hash "type" "simple" "form" "weer {n}")
-         "year" (hash "type" "simple" "form" "at {n}"))
+   (hash "second" (hash "type" "simple" "form" "{n} saa")
+         "minute" (hash "type" "simple" "form" "{n} simili")
+         "hour" (hash "type" "simple" "form" "{n} waxtu")
+         "day" (hash "type" "simple" "form" "{n} fan")
+         "week" (hash "type" "simple" "form" "{n} ayubés")
+         "month" (hash "type" "simple" "form" "{n} weer")
+         "year" (hash "type" "simple" "form" "{n} at"))
    "{0} ak genn-wàll"
    ", "
    "léegi"
    "{0} ci ginaaw"
-   "ci {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "saa-y. {n}") (hash "type" "simple" "form" "sim. {n}") (hash "type" "simple" "form" "wax. {n}") (hash "type" "simple" "form" "bés {n}") (hash "type" "simple" "form" "ayub. {n}") (hash "type" "simple" "form" "weer {n}") (hash "type" "simple" "form" "at {n}") #f #f "{0} ci ginaaw" "ci {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "saa {n}") (hash "type" "simple" "form" "sim {n}") (hash "type" "simple" "form" "wax {n}") (hash "type" "simple" "form" "bés {n}") (hash "type" "simple" "form" "ayub {n}") (hash "type" "simple" "form" "weer {n}") (hash "type" "simple" "form" "at {n}") "{n}½" "" "{0} ci gin." "ci {0}")
+   "fileek {0}"
+   (duration-compactness-override (hash "type" "simple" "form" "{n} saa") (hash "type" "simple" "form" "{n} sim.") (hash "type" "simple" "form" "{n} wax.") (hash "type" "simple" "form" "{n} fan") (hash "type" "simple" "form" "{n} ayub.") (hash "type" "simple" "form" "{n} weer") (hash "type" "simple" "form" "{n} at") #f #f "{0} ci ginaaw" "fileek {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} saa") (hash "type" "simple" "form" "{n} sim") (hash "type" "simple" "form" "{n} wax") (hash "type" "simple" "form" "{n} fan") (hash "type" "simple" "form" "{n} ayub") (hash "type" "simple" "form" "{n} weer") (hash "type" "simple" "form" "{n} at") "{n}½" "" "{0} ci gin." "fileek {0}")
   ))

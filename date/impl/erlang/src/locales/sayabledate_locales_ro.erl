@@ -17,7 +17,7 @@ locale() ->
     #date_locale{
         code = "ro",
         months = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"],
-        weekdays = ["duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"],
+        weekdays = ["duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta"],
         day_format = "{n}",
         day_format_exceptions = [],
         date_pattern = "{day} {month}",
@@ -27,7 +27,7 @@ locale() ->
         yesterday = "ieri",
         day_after_tomorrow = {just, "poimâine"},
         day_before_yesterday = {just, "alaltăieri"},
-        this_weekday = {just, "această {weekday}"},
+        this_weekday = {just, "{weekday} aceasta"},
         next_weekday = {just, "{weekday} viitoare"},
         last_weekday = {just, "{weekday} trecută"},
         months_in_date = {just, ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"]},

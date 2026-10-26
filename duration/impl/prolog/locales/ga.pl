@@ -27,11 +27,11 @@ sd_unit('ga', minute, two, '{n} nóiméad').
 sd_unit('ga', minute, few, '{n} nóiméad').
 sd_unit('ga', minute, many, '{n} nóiméad').
 sd_unit('ga', minute, other, '{n} nóiméad').
-sd_unit('ga', hour, one, '{n} uair').
-sd_unit('ga', hour, two, '{n} uair').
-sd_unit('ga', hour, few, '{n} huaire').
-sd_unit('ga', hour, many, '{n} n-uaire').
-sd_unit('ga', hour, other, '{n} uair').
+sd_unit('ga', hour, one, '{n} uair an chloig').
+sd_unit('ga', hour, two, '{n} uair an chloig').
+sd_unit('ga', hour, few, '{n} huaire an chloig').
+sd_unit('ga', hour, many, '{n} n-uaire an chloig').
+sd_unit('ga', hour, other, '{n} uair an chloig').
 sd_unit('ga', day, one, '{n} lá').
 sd_unit('ga', day, two, '{n} lá').
 sd_unit('ga', day, few, '{n} lá').

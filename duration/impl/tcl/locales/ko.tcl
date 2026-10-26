@@ -22,7 +22,7 @@ proc locale_duration_ko {} {
         day "{n}일" \
         week "{n}주" \
         month "{n}개월" \
-        year "{n}살" \
+        year "{n}년" \
     ]
     set half "{0} 반"
     set delimiter { }

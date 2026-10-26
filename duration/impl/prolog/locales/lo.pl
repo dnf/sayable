@@ -22,10 +22,10 @@ sd_unit('lo', month, _, '{n} ເດືອນ').
 sd_unit('lo', year, _, '{n} ປີ').
 
 sd_half('lo', '{0}ເຄິ່ງ').
-sd_delimiter('lo', '').
+sd_delimiter('lo', ' ').
 sd_just_now('lo', 'ຫາກໍ').
 sd_ago('lo', '{0} ກ່ອນ').
-sd_in_future('lo', 'ໃນ {0}').
+sd_in_future('lo', 'ໃນອີກ {0}').
 
 short_sd_unit('lo', second, _, '{n} ວິ.').
 short_sd_unit('lo', minute, _, '{n} ນທ.').
@@ -35,16 +35,16 @@ short_sd_unit('lo', week, _, '{n} ອທ.').
 short_sd_unit('lo', month, _, '{n} ດ.').
 short_sd_unit('lo', year, _, '{n} ປ.').
 short_sd_ago('lo', '{0} ກ່ອນ').
-short_sd_in_future('lo', 'ໃນ {0}').
+short_sd_in_future('lo', 'ໃນອີກ {0}').
 
 compact_sd_unit('lo', second, _, '{n}s').
 compact_sd_unit('lo', minute, _, '{n}m').
 compact_sd_unit('lo', hour, _, '{n}h').
 compact_sd_unit('lo', day, _, '{n}d').
 compact_sd_unit('lo', week, _, '{n}w').
-compact_sd_unit('lo', month, _, '{n}m').
+compact_sd_unit('lo', month, _, '{n}mo').
 compact_sd_unit('lo', year, _, '{n}y').
 compact_sd_half('lo', '{n}½').
 compact_sd_delimiter('lo', '').
 compact_sd_ago('lo', '{0} ກ່ອນ').
-compact_sd_in_future('lo', 'ໃນ {0}').
+compact_sd_in_future('lo', 'ໃນອີກ {0}').

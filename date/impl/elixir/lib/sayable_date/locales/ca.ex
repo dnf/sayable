@@ -40,8 +40,8 @@ defmodule SayableDate.Locales.CA do
       ],
       day_format: "{n}",
       day_format_exceptions: %{},
-      date_pattern: "{day} de {month}",
-      date_pattern_with_year: "{day} de {month} de {year}",
+      date_pattern: "{day} {month}",
+      date_pattern_with_year: "{day} {month} de {year}",
       today: "avui",
       tomorrow: "demà",
       yesterday: "ahir",
@@ -50,7 +50,20 @@ defmodule SayableDate.Locales.CA do
       this_weekday: "aquest {weekday}",
       next_weekday: "{weekday} que ve",
       last_weekday: "{weekday} passat",
-      months_in_date: nil,
+      months_in_date: [
+        "de gener",
+        "de febrer",
+        "de març",
+        "d'abril",
+        "de maig",
+        "de juny",
+        "de juliol",
+        "d'agost",
+        "de setembre",
+        "d'octubre",
+        "de novembre",
+        "de desembre"
+      ],
       short: %{
         months: [
           "gen",
@@ -77,7 +90,7 @@ defmodule SayableDate.Locales.CA do
         ],
         day_format: "{n}",
         date_pattern: "{day} {month}",
-        date_pattern_with_year: "{day} {month} {year}"
+        date_pattern_with_year: "{day} {month} de {year}"
       },
       compact: %{
         date_pattern: "{d}/{m}",

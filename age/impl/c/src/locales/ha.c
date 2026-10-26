@@ -20,20 +20,20 @@ const SaLocale sa_locale_ha = {
     "ha",
     plural_ha,
     {
-        { NULL, { NULL, "{n} kwana", NULL, NULL, NULL, "{n} kwanaki" } },
-        { NULL, { NULL, "{n} mako", NULL, NULL, NULL, "{n} makonni" } },
-        { NULL, { NULL, "{n} wata", NULL, NULL, NULL, "{n} watanni" } },
-        { NULL, { NULL, "{n} shekara", NULL, NULL, NULL, "{n} shekaru" } }
+        { NULL, { NULL, "kwana {n}", NULL, NULL, NULL, "kwanaki {n}" } },
+        { NULL, { NULL, "mako {n}", NULL, NULL, NULL, "makonni {n}" } },
+        { NULL, { NULL, "wata {n}", NULL, NULL, NULL, "watanni {n}" } },
+        { NULL, { NULL, "shekara {n}", NULL, NULL, NULL, "shekaru {n}" } }
     },
     "{n}½", ", ", "Sabon haihuwa",
     {
         { "Jariri", "" },
         { "Jariri", "" },
-        { "Ƙaramin yaro", "" },
-        { "Yaro", "" },
-        { "Saurayi", "" },
+        { "Ƙaramin yaro", "Ƙaramar yarinya" },
+        { "Yaro", "Yarinya" },
+        { "Saurayi", "Budurwa" },
         { "Babba", "" }
     },
-    true, { true, { "{n} kw.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mk.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wt.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} shk.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "kw. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "mk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "wt. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "shk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
     true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
 };

@@ -262,18 +262,18 @@
       "midnight": "polnoč",
       "noon": "poldne",
       "patterns": {
-        "0": "{h} ura",
-        "5": "pet po {h}",
-        "10": "deset po {h}",
-        "15": "petnajst po {h}",
-        "20": "dvajset po {h}",
-        "25": "dvajset pet po {h}",
-        "30": "trideset po {h}",
-        "35": "dvajset pet do {next_h}",
-        "40": "dvajset do {next_h}",
-        "45": "petnajst do {next_h}",
-        "50": "deset do {next_h}",
-        "55": "pet do {next_h}"
+        "0": "{h}",
+        "5": "pet čez {h}",
+        "10": "deset čez {h}",
+        "15": "petnajst čez {h}",
+        "20": "dvajset čez {h}",
+        "25": "petindvajset čez {h}",
+        "30": "{h} trideset",
+        "35": "{h} petintrideset",
+        "40": "{h} štirideset",
+        "45": "{h} petinštirideset",
+        "50": "{h} petdeset",
+        "55": "{h} petinpetdeset"
       }
     },
     "short": {
@@ -288,5 +288,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": ":00 bare hour ('dve', 'ena'); :05-:25 'X čez <hour>' ('pet čez dve'), which is the normal Slovene past-the-hour phrase; :30-:55 use the spoken digital reading ('dve trideset', 'dve petinštirideset') because 'pol treh' and 'deset do treh' need a genitive next-hour list. I deliberately did NOT use the audit's '{h} in trideset': spoken 'dve in trideset' is indistinguishable from the numeral 32 (dvaintrideset). 25 written as one word 'petindvajset'."
+    }
+  ]
 }

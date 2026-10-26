@@ -12,7 +12,7 @@
 % Albanian locale.
 
 sd_months('sq', ['janar', 'shkurt', 'mars', 'prill', 'maj', 'qershor', 'korrik', 'gusht', 'shtator', 'tetor', 'nëntor', 'dhjetor']).
-sd_weekdays('sq', ['e diel', 'e hënë', 'e martë', 'e mërkurë', 'e enjte', 'e premte', 'e shtunë']).
+sd_weekdays('sq', ['të dielën', 'të hënën', 'të martën', 'të mërkurën', 'të enjten', 'të premten', 'të shtunën']).
 sd_day_format('sq', '{n}').
 
 sd_date_pattern('sq', '{day} {month}').
@@ -23,8 +23,8 @@ sd_tomorrow('sq', 'nesër').
 sd_yesterday('sq', 'dje').
 sd_day_after_tomorrow('sq', 'pasnesër').
 sd_day_before_yesterday('sq', 'pardje').
-sd_this_weekday('sq', 'këtë {weekday}').
-sd_next_weekday('sq', '{weekday} tjetër').
+sd_this_weekday('sq', '{weekday}').
+sd_next_weekday('sq', '{weekday} e ardhshme').
 sd_last_weekday('sq', '{weekday} e kaluar').
 
 short_sd_months('sq', ['jan', 'shk', 'mar', 'pri', 'maj', 'qer', 'kor', 'gush', 'sht', 'tet', 'nën', 'dhj']).

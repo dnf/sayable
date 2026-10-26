@@ -24,7 +24,7 @@ let SN* = DateLocale(
   today: "nhasi",
   tomorrow: "mangwana",
   yesterday: "nezuro",
-  dayAfterTomorrow: some("mangwanani"),
+  dayAfterTomorrow: some("kuswera mangwana"),
   dayBeforeYesterday: some("nezuro rakapera"),
   thisWeekday: some("{weekday} ino"),
   nextWeekday: some("{weekday} inotevera"),

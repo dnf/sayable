@@ -28,18 +28,18 @@ proc locale_shi {} {
     set just_born {Iɣ d illul}
     set stages [dict create \
         newborn {Iɣ d illul} \
-        infant {Agellid} \
+        infant {Llufan} \
         toddler [dict create m {Aḥenjir} f {Taḥenjirt}] \
-        child [dict create m {Afrux} f {Tafruxṭ}] \
+        child [dict create m {Afrux} f {Tafruxt}] \
         teenager [dict create m {Aɛrim} f {Taɛrimt}] \
         adult [dict create m {Argaz} f {Tamṭṭuṭ}] \
     ]
     set short [dict create \
         units [dict create \
-            day "{n} d" \
-            week "{n} wk" \
-            month "{n} mo" \
-            year "{n} yr" \
+            day [dict create one "{n} ass" few "{n} ussan" other "{n} ass"] \
+            week [dict create one "{n} imalass" few "{n} imalassn" other "{n} imalass"] \
+            month [dict create one "{n} ayyur" few "{n} ayyurn" other "{n} ayyur"] \
+            year [dict create one "{n} aseggas" few "{n} iseggasen" other "{n} aseggas"] \
         ] \
     ]
     set compact [dict create \

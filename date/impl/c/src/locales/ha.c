@@ -34,7 +34,7 @@ const SdDateLocale sd_locale_ha = {
     "shekaranjiya",
     "wannan {weekday}",
     "{weekday} mai zuwa",
-    "{weekday} da ya wuce",
+    "{weekday} da ta wuce",
     (const char **)0,
     true, { sd_short_months_ha, (const char **)0, sd_short_weekdays_ha, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }

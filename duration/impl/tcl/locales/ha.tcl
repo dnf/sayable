@@ -17,13 +17,13 @@ proc plural_ha {n} {
 proc locale_duration_ha {} {
     set code {ha}
     set units [dict create \
-        second [dict create one "{n} daƙiƙa" other "{n} daƙiƙoƙi"] \
-        minute [dict create one "{n} minti" other "{n} mintoci"] \
-        hour [dict create one "{n} awa" other "{n} awanni"] \
-        day [dict create one "{n} kwana" other "{n} kwanaki"] \
-        week [dict create one "{n} mako" other "{n} makonni"] \
-        month [dict create one "{n} wata" other "{n} watanni"] \
-        year [dict create one "{n} shekara" other "{n} shekaru"] \
+        second [dict create one "daƙiƙa {n}" other "daƙiƙoƙi {n}"] \
+        minute [dict create one "minti {n}" other "mintoci {n}"] \
+        hour [dict create one "awa {n}" other "awanni {n}"] \
+        day [dict create one "kwana {n}" other "kwanaki {n}"] \
+        week [dict create one "mako {n}" other "makonni {n}"] \
+        month [dict create one "wata {n}" other "watanni {n}"] \
+        year [dict create one "shekara {n}" other "shekaru {n}"] \
     ]
     set half "{n}½"
     set delimiter {, }
@@ -32,13 +32,13 @@ proc locale_duration_ha {} {
     set in_future "cikin {0}"
     set short [dict create \
         units [dict create \
-            second "{n} daƙ." \
-            minute "{n} mnt." \
-            hour "{n} awa" \
-            day "{n} kw." \
-            week "{n} mk." \
-            month "{n} wt." \
-            year "{n} shk." \
+            second "daƙ. {n}" \
+            minute "mnt. {n}" \
+            hour "awa {n}" \
+            day "kw. {n}" \
+            week "mk. {n}" \
+            month "wt. {n}" \
+            year "shk. {n}" \
         ] \
         ago "{0} da suka wuce" \
         in_future "cikin {0}" \

@@ -22,7 +22,7 @@ let ES* = AgeLocale(
     "month": pluralUnit(@[(pcOne, "{n} mes"), (pcOther, "{n} meses")]),
     "year": pluralUnit(@[(pcOne, "{n} año"), (pcOther, "{n} años")]),
   }.toOrderedTable,
-  half: "{n} y medio",
+  half: "{0} y medio",
   delimiter: ", ",
   justBorn: "Recién nacido",
   stages: {

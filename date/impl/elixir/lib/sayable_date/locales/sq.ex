@@ -30,13 +30,13 @@ defmodule SayableDate.Locales.SQ do
         "dhjetor"
       ],
       weekdays: [
-        "e diel",
-        "e hënë",
-        "e martë",
-        "e mërkurë",
-        "e enjte",
-        "e premte",
-        "e shtunë"
+        "të dielën",
+        "të hënën",
+        "të martën",
+        "të mërkurën",
+        "të enjten",
+        "të premten",
+        "të shtunën"
       ],
       day_format: "{n}",
       day_format_exceptions: %{},
@@ -47,8 +47,8 @@ defmodule SayableDate.Locales.SQ do
       yesterday: "dje",
       day_after_tomorrow: "pasnesër",
       day_before_yesterday: "pardje",
-      this_weekday: "këtë {weekday}",
-      next_weekday: "{weekday} tjetër",
+      this_weekday: "{weekday}",
+      next_weekday: "{weekday} e ardhshme",
       last_weekday: "{weekday} e kaluar",
       months_in_date: nil,
       short: %{

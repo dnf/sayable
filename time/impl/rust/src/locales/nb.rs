@@ -17,7 +17,7 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "nb".to_string(),
         clock: ClockConfig {
-            hours: ["tolv".to_string(), "en".to_string(), "to".to_string(), "tre".to_string(), "fire".to_string(), "fem".to_string(), "seks".to_string(), "sju".to_string(), "åtte".to_string(), "ni".to_string(), "ti".to_string(), "elleve".to_string()],
+            hours: ["tolv".to_string(), "ett".to_string(), "to".to_string(), "tre".to_string(), "fire".to_string(), "fem".to_string(), "seks".to_string(), "sju".to_string(), "åtte".to_string(), "ni".to_string(), "ti".to_string(), "elleve".to_string()],
             midnight: "midnatt".to_string(),
             noon: "middag".to_string(),
             patterns: HashMap::from([

@@ -18,7 +18,7 @@
    :week {:type :simple :form "{n} minggu"}
    :month {:type :simple :form "{n} bulan"}
    :year {:type :simple :form "{n} tahun"}
-   :half "{0} setengah"
+   :half "{n} setengah"
    :delimiter ", "
    :just-born "Baru lahir"
    :stages {:newborn {:type :neutral :label "Baru lahir"} :infant {:type :neutral :label "Bayi"} :toddler {:type :neutral :label "Balita"} :child {:type :neutral :label "Anak-anak"} :teenager {:type :neutral :label "Remaja"} :adult {:type :neutral :label "Dewasa"}}

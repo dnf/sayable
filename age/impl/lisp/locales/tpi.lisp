@@ -21,7 +21,7 @@
                (cons :week "{n} wik")
                (cons :month "{n} mun")
                (cons :year "{n} yia"))
-   :half "{n} na hap"
+   :half "{0} na hap"
    :delimiter ", "
    :just-born "Nupela pikinini"
    :stages (list (cons :newborn "Nupela pikinini")
@@ -38,5 +38,6 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
 ))

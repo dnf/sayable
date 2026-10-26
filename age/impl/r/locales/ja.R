@@ -43,6 +43,7 @@ locale_ja <- list(
       week = "{n}w",
       month = "{n}m",
       year = "{n}y"
-    )
+    ),
+    half = "{n}½"
   )
 )

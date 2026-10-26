@@ -26,7 +26,7 @@ qu
 	locale tomorrow: 'paqarin'.
 	locale yesterday: 'qayna'.
 	locale dayAfterTomorrow: 'minchha'.
-	locale dayBeforeYesterday: 'qayna p''unchaw'.
+	locale dayBeforeYesterday: 'qayninpa'.
 	locale thisWeekday: 'kay {weekday}'.
 	locale nextWeekday: 'hamuq {weekday}'.
 	locale lastWeekday: 'qayna {weekday}'.

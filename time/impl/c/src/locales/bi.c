@@ -17,7 +17,7 @@ const StTimeLocale st_locale_bi = {
         { "twelf", "wan", "tu", "tri", "fo", "faef", "sikis", "seven", "eit", "naen", "ten", "eleven" },
         "mednaet",
         "medeldei",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h} klok", "faef pas {h}", "ten pas {h}", "kwota pas {h}", "twenti pas {h}", "twenti faef pas {h}", "haf pas {h}", "twenti faef tu {next_h}", "twenti tu {next_h}", "kwota tu {next_h}", "ten tu {next_h}", "faef tu {next_h}" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

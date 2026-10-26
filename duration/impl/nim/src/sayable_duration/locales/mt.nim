@@ -27,8 +27,8 @@ let MT* = DurationLocale(
   plural: plural,
   units: {
     "second": pluralUnit(@[(pcOne, "{n} sekonda"), (pcTwo, "{n} sekondi"), (pcFew, "{n} sekondi"), (pcMany, "{n}-il sekonda"), (pcOther, "{n} sekonda")]),
-    "minute": pluralUnit(@[(pcOne, "{n} minuta"), (pcTwo, "{n} minuti"), (pcFew, "{n} minuti"), (pcMany, "{n}-il minuta"), (pcOther, "{n} minuta")]),
-    "hour": pluralUnit(@[(pcOne, "{n} siegħa"), (pcTwo, "{n} sigħat"), (pcFew, "{n} sigħat"), (pcMany, "{n}-il siegħa"), (pcOther, "{n} siegħa")]),
+    "minute": pluralUnit(@[(pcOne, "{n} minuta"), (pcTwo, "minutejn"), (pcFew, "{n} minuti"), (pcMany, "{n}-il minuta"), (pcOther, "{n} minuta")]),
+    "hour": pluralUnit(@[(pcOne, "{n} siegħa"), (pcTwo, "sagħtejn"), (pcFew, "{n} sigħat"), (pcMany, "{n}-il siegħa"), (pcOther, "{n} siegħa")]),
     "day": pluralUnit(@[(pcOne, "ġurnata"), (pcTwo, "jumejn"), (pcFew, "{n} ijiem"), (pcMany, "{n}-il jum"), (pcOther, "{n} jum")]),
     "week": pluralUnit(@[(pcOne, "ġimgħa"), (pcTwo, "ġimgħatejn"), (pcFew, "{n} ġimgħat"), (pcMany, "{n}-il ġimgħa"), (pcOther, "{n} ġimgħa")]),
     "month": pluralUnit(@[(pcOne, "xahar"), (pcTwo, "xahrejn"), (pcFew, "{n} xhur"), (pcMany, "{n}-il xahar"), (pcOther, "{n} xahar")]),

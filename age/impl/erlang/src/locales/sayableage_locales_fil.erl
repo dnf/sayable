@@ -24,7 +24,7 @@ locale() ->
         half = "{0} at kalahati",
         delimiter = ", ",
         just_born = "Bagong silang",
-        stages = #stages{newborn = {neutral, "Bagong silang"}, infant = {neutral, "Sanggol"}, toddler = {neutral, "Batang paslit"}, child = {neutral, "Bata"}, teenager = {neutral, "Tinedyer"}, adult = {neutral, "Matanda"}},
+        stages = #stages{newborn = {neutral, "Bagong silang"}, infant = {neutral, "Sanggol"}, toddler = {neutral, "Batang paslit"}, child = {neutral, "Bata"}, teenager = {neutral, "Tinedyer"}, adult = {neutral, "Adulto"}},
         short = {just, #compactness_override{day = {just, {simple, "{n} araw"}}, week = {just, {pluralized, [{one, "{n} linggo"}, {other, "{n} na linggo"}]}}, month = {just, {simple, "{n} buwan"}}, year = {just, {simple, "{n} taon"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {pluralized, [{one, "{n} araw"}, {other, "{n} na araw"}]}}, week = {just, {simple, "{n}linggo"}}, month = {just, {pluralized, [{one, "{n}buwan"}, {other, "{n} buwan"}]}}, year = {just, {simple, "{n}taon"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

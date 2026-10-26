@@ -44,12 +44,15 @@ locale =
         , infant = Neutral "Akwadaa"
         , toddler = Neutral "Abofra"
         , child = Neutral "Abofra"
-        , teenager = Neutral "Abarimaa"
+        , teenager = Gendered "Abarimaa" "Abaayewa"
         , adult = Neutral "Ɔpanyin"
         }
     , short =
         Just
-            { ovrDay = Just (Simple "nna {n}")
+            { ovrDay = Just (Pluralized
+                  [ ( One, "da {n}" )
+                  , ( Other, "nna {n}" )
+                  ])
             , ovrWeek = Just (Pluralized
                   [ ( One, "dapɛn {n}" )
                   , ( Other, "nnapɛn {n}" )
@@ -68,7 +71,10 @@ locale =
             }
     , compact =
         Just
-            { ovrDay = Just (Simple "nna {n}")
+            { ovrDay = Just (Pluralized
+                  [ ( One, "da {n}" )
+                  , ( Other, "nna {n}" )
+                  ])
             , ovrWeek = Just (Pluralized
                   [ ( One, "dapɛn {n}" )
                   , ( Other, "nnapɛn {n}" )

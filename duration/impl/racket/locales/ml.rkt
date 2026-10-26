@@ -20,7 +20,7 @@
 (define ml
   (duration-locale
    "ml"
-   (lambda (n) (if (or (= n 0) (= n 1)) "one" "other"))
+   (lambda (n) (if (= n 1) "one" "other"))
    (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} സെക്കൻഡ്" "other" "{n} സെക്കൻഡുകൾ"))
          "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} മിനിറ്റ്" "other" "{n} മിനിറ്റുകൾ"))
          "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} മണിക്കൂർ" "other" "{n} മണിക്കൂറുകൾ"))
@@ -28,7 +28,7 @@
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} ആഴ്ച" "other" "{n} ആഴ്ചകൾ"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} മാസം" "other" "{n} മാസങ്ങൾ"))
          "year" (hash "type" "pluralized" "forms" (hash "one" "{n} വർഷം" "other" "{n} വർഷങ്ങൾ")))
-   "{0} ര"
+   "{n}½"
    ", "
    "ഇപ്പോൾ"
    "{0} മുമ്പ്"

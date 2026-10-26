@@ -12,9 +12,9 @@
 function loc = locale_gn()
   loc.code = 'gn';
   loc.plural = @(n) ifelse(n == 1, "one", "other");
-  loc.units.second = '{n} aravo''i';
-  loc.units.minute = '{n} aravo';
-  loc.units.hour = '{n} aravo guasu';
+  loc.units.second = '{n} aravo''ive';
+  loc.units.minute = '{n} aravo''i';
+  loc.units.hour = '{n} aravo';
   loc.units.day = '{n} ára';
   loc.units.week = '{n} arapokõindy';
   loc.units.month = '{n} jasy';
@@ -24,9 +24,9 @@ function loc = locale_gn()
   loc.just_now = 'ko''ágã';
   loc.ago = '{0} ohasava''ekue';
   loc.in_future = '{0} rire';
-  loc.short.units.second = '{n} ara''i';
-  loc.short.units.minute = '{n} ara';
-  loc.short.units.hour = '{n} ara g';
+  loc.short.units.second = '{n} aravo''ive';
+  loc.short.units.minute = '{n} aravo''i';
+  loc.short.units.hour = '{n} aravo';
   loc.short.units.day = '{n} ára';
   loc.short.units.week = '{n} ara';
   loc.short.units.month = '{n} jas';

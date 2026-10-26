@@ -24,7 +24,7 @@ locale =
     , week = Simple "{n} wik"
     , month = Simple "{n} manis"
     , year = Simple "{n} yia"
-    , half = "{n} mo haf"
+    , half = "{0} mo haf"
     , delimiter = ", "
     , justBorn = "Niufala bebe"
     , stages =
@@ -51,7 +51,7 @@ locale =
             , ovrWeek = Just (Simple "{n}w")
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}y")
-            , ovrHalf = Nothing
+            , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing
             }

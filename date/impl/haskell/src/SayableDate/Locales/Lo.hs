@@ -47,10 +47,10 @@ locale = DateLocale
     , localeTomorrow = "ມື້ອື່ນ"
     , localeYesterday = "ມື້ວານ"
     , localeDayAfterTomorrow = Just "ມື້ຮື"
-    , localeDayBeforeYesterday = Just "ມື້ກ່ອນ"
+    , localeDayBeforeYesterday = Just "ມື້ຊືນ"
     , localeThisWeekday = Just "{weekday}ນີ້"
     , localeNextWeekday = Just "{weekday}ໜ້າ"
-    , localeLastWeekday = Just "{weekday}ແລ້ວ"
+    , localeLastWeekday = Just "{weekday}ທີ່ແລ້ວ"
     , localeMonthsInDate = Nothing
     , localeShort = Just $
         CompactnessOverride

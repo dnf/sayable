@@ -14,8 +14,8 @@ import '../types.dart';
 /// Turkmen locale.
 final tk = DateLocale(
   code: 'tk',
-  months: ['Ýanwar', 'Fewral', 'Mart', 'Aprel', 'Maý', 'Iýun', 'Iýul', 'Awgust', 'Sentýabr', 'Oktýabr', 'Noýabr', 'Dekabr'],
-  weekdays: ['Ýekşenbe', 'Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe'],
+  months: ['ýanwar', 'fewral', 'mart', 'aprel', 'maý', 'iýun', 'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr'],
+  weekdays: ['ýekşenbe', 'duşenbe', 'sişenbe', 'çarşenbe', 'penşenbe', 'anna', 'şenbe'],
   dayFormat: '{n}',
   datePattern: '{day} {month}',
   datePatternWithYear: '{day} {month} {year}',
@@ -28,8 +28,8 @@ final tk = DateLocale(
   nextWeekday: 'indiki {weekday}',
   lastWeekday: 'geçen {weekday}',
   short: CompactnessOverride(
-    months: ['Ýan', 'Few', 'Mar', 'Apr', 'Maý', 'Iýn', 'Iýl', 'Awg', 'Sen', 'Okt', 'Noý', 'Dek'],
-    weekdays: ['Ýek', 'Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen'],
+    months: ['ýan', 'few', 'mar', 'apr', 'maý', 'iýn', 'iýl', 'awg', 'sen', 'okt', 'noý', 'dek'],
+    weekdays: ['ýek', 'duş', 'siş', 'çar', 'pen', 'ann', 'şen'],
     dayFormat: '{n}',
     datePattern: '{day} {month}',
     datePatternWithYear: '{day} {month} {year}',

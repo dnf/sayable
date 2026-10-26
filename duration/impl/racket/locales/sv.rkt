@@ -31,8 +31,8 @@
    "{n}½"
    ", "
    "just nu"
-   "{0} sedan"
+   "för {0} sedan"
    "om {0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} s") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} tim") (hash "type" "simple" "form" "{n} d") (hash "type" "simple" "form" "{n} v") (hash "type" "simple" "form" "{n} mån") (hash "type" "simple" "form" "{n} år") #f #f "{0} sedan" "om {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}v") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}å") #f "" "{0} sedan" "om {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n} s") (hash "type" "simple" "form" "{n} min") (hash "type" "simple" "form" "{n} tim") (hash "type" "simple" "form" "{n} d") (hash "type" "simple" "form" "{n} v") (hash "type" "simple" "form" "{n} mån") (hash "type" "simple" "form" "{n} år") #f #f "för {0} sedan" "om {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}v") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}å") #f "" "för {0} sedan" "om {0}")
   ))

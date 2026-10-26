@@ -12,10 +12,10 @@
 function locale_eu {
     $months = @('urtarril', 'otsail', 'martxo', 'apiril', 'maiatz', 'ekain', 'uztail', 'abuztu', 'irail', 'urri', 'azaro', 'abendu')
     $weekdays = @('igandea', 'astelehena', 'asteartea', 'asteazkena', 'osteguna', 'ostirala', 'larunbata')
-    $dayFormat = '{n}'
-    $dayFormatExceptions = @{}
-    $datePattern = '{month}ren {day}'
-    $datePatternWithYear = '{year}ko {month}ren {day}'
+    $dayFormat = '{n}a'
+    $dayFormatExceptions = @{ 11 = '{n}'; 31 = '{n}' }
+    $datePattern = '{month} {day}'
+    $datePatternWithYear = '{year}ko {month} {day}'
     $today = 'gaur'
     $tomorrow = 'bihar'
     $yesterday = 'atzo'
@@ -24,7 +24,7 @@ function locale_eu {
     $thisWeekday = '{weekday} hau'
     $nextWeekday = 'hurrengo {weekday}'
     $lastWeekday = 'aurreko {weekday}'
-    $monthsInDate = $null
+    $monthsInDate = @('urtarrilaren', 'otsailaren', 'martxoaren', 'apirilaren', 'maiatzaren', 'ekainaren', 'uztailaren', 'abuztuaren', 'irailaren', 'urriaren', 'azaroaren', 'abenduaren')
     $short = @{
         months = @('urt', 'ots', 'mar', 'api', 'mai', 'eka', 'uzt', 'abu', 'ira', 'urr', 'aza', 'abe')
         weekdays = @('ig', 'al', 'ar', 'az', 'og', 'or', 'lr')

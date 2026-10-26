@@ -17,21 +17,21 @@
   (make-duration-locale
    :code "ay"
    :plural (lambda (n) (declare (ignore n)) :other)
-   :units (list (cons :second "sikundu {n}")
-               (cons :minute "minutu {n}")
-               (cons :hour "ura {n}")
-               (cons :day "uru {n}")
-               (cons :week "simana {n}")
-               (cons :month "phaxsi {n}")
-               (cons :year "mara {n}"))
+   :units (list (cons :second "{n} sikundu")
+               (cons :minute "{n} minutu")
+               (cons :hour "{n} ura")
+               (cons :day "{n} uru")
+               (cons :week "{n} simana")
+               (cons :month "{n} phaxsi")
+               (cons :year "{n} mara"))
    :half "{0} chika"
    :delimiter ", "
    :just-now "jichha"
    :ago "{0} nayraqata"
    :in-future "{0} jutirïn"
-   :short-units (list (cons :second "sik. {n}")
-                       (cons :minute "min. {n}")
-                       (cons :hour "ur. {n}")
+   :short-units (list (cons :second "{n} sik.")
+                       (cons :minute "{n} min.")
+                       (cons :hour "{n} ura")
                        (cons :day "{n} ur.")
                        (cons :week "{n} sim.")
                        (cons :month "{n} phx.")
@@ -45,6 +45,7 @@
                        (cons :week "{n}w")
                        (cons :month "{n}m")
                        (cons :year "{n}y"))
+   :compact-half "{n}½"
    :compact-delimiter ""
    :compact-ago "{0} nayraqata"
    :compact-in-future "{0} jutirïn"

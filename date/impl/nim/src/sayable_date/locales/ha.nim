@@ -28,7 +28,7 @@ let HA* = DateLocale(
   dayBeforeYesterday: some("shekaranjiya"),
   thisWeekday: some("wannan {weekday}"),
   nextWeekday: some("{weekday} mai zuwa"),
-  lastWeekday: some("{weekday} da ya wuce"),
+  lastWeekday: some("{weekday} da ta wuce"),
   monthsInDate: none(seq[string]),
   short: some(CompactnessOverride(
     months: some(@["Jan", "Fab", "Mar", "Afr", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis"]),

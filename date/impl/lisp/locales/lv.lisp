@@ -21,7 +21,7 @@
    :day-format "{n}."
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern-with-year "{year}. gada {day} {month}"
    :today "šodien"
    :tomorrow "rīt"
    :yesterday "vakar"
@@ -34,7 +34,7 @@
    :short-weekdays (list "sv" "pr" "ot" "tr" "ce" "pk" "se")
    :short-day-format "{n}."
    :short-date-pattern "{day} {month}"
-   :short-date-pattern-with-year "{day} {month} {year}"
+   :short-date-pattern-with-year "{year}. gada {day} {month}"
    :compact-date-pattern "{d}.{m}."
    :compact-date-pattern-with-year "{d}.{m}.{yy}"
 ))

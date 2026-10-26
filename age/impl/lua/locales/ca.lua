@@ -19,7 +19,7 @@ M.units = {
     month = { one = "{n} mes", other = "{n} mesos" },
     year = { one = "{n} any", other = "{n} anys" },
 }
-M.half = "{n} i mig"
+M.half = "{0} i mig"
 M.delimiter = ", "
 M.just_born = "Nounat"
 M.stages = {

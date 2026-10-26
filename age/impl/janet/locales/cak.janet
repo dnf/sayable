@@ -27,5 +27,5 @@
             :adult "Achi"
 }
    :short {:units {:day "{n} q'ij" :week "{n} wuqq'ij" :month "{n} ik'" :year "{n} jun."}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

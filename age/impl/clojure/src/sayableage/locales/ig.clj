@@ -14,13 +14,13 @@
 (def locale
   {:code "ig"
    :plural (fn [_] :other)
-   :day {:type :simple :form "{n} ụbọchị"}
-   :week {:type :simple :form "{n} izu"}
-   :month {:type :simple :form "{n} ọnwa"}
-   :year {:type :simple :form "{n} afọ"}
+   :day {:type :simple :form "ụbọchị {n}"}
+   :week {:type :simple :form "izu {n}"}
+   :month {:type :simple :form "ọnwa {n}"}
+   :year {:type :simple :form "afọ {n}"}
    :half "{0} na ọkara"
    :delimiter ", "
    :just-born "Nwa ọhụrụ"
-   :stages {:newborn {:type :neutral :label "Nwa ọhụrụ"} :infant {:type :neutral :label "Nwa ọhụrụ"} :toddler {:type :neutral :label "Nwa nta"} :child {:type :neutral :label "Nwa"} :teenager {:type :neutral :label "Nwokorobịa"} :adult {:type :neutral :label "Okenye"}}
-   :short {:day {:type :simple :form "{n} ụbọchị"} :week {:type :simple :form "{n} izu"} :month {:type :simple :form "{n} ọnwa"} :year {:type :simple :form "{n} afọ"} :half nil :delimiter nil :just-born nil}
+   :stages {:newborn {:type :neutral :label "Nwa ọhụrụ"} :infant {:type :neutral :label "Nwa ọhụrụ"} :toddler {:type :neutral :label "Nwa nta"} :child {:type :neutral :label "Nwa"} :teenager {:type :gendered :m "Nwokorobịa" :f "Agbọghọbịa"} :adult {:type :neutral :label "Okenye"}}
+   :short {:day {:type :simple :form "ụbọchị {n}"} :week {:type :simple :form "izu {n}"} :month {:type :simple :form "ọnwa {n}"} :year {:type :simple :form "afọ {n}"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

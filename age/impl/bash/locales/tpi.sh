@@ -18,7 +18,7 @@ _sayableage_locale_tpi() {
     _unit_week='{n} wik'
     _unit_month='{n} mun'
     _unit_year='{n} yia'
-    _half='{n} na hap'
+    _half='{0} na hap'
     _delimiter=', '
     _just_born='Nupela pikinini'
     _stage_newborn='Nupela pikinini'
@@ -35,6 +35,7 @@ _sayableage_locale_tpi() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_tpi
 }

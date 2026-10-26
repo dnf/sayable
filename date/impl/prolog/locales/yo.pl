@@ -21,8 +21,8 @@ sd_date_pattern_with_year('yo', '{day} {month} {year}').
 sd_today('yo', 'lónìí').
 sd_tomorrow('yo', 'ọ̀la').
 sd_yesterday('yo', 'àná').
-sd_day_after_tomorrow('yo', 'ọ̀tún ọ̀la').
-sd_day_before_yesterday('yo', 'ọ̀tún àná').
+sd_day_after_tomorrow('yo', 'ọ̀túnla').
+sd_day_before_yesterday('yo', 'íjẹta').
 sd_this_weekday('yo', '{weekday} yìí').
 sd_next_weekday('yo', '{weekday} tó ń bọ̀').
 sd_last_weekday('yo', '{weekday} tó kọjá').

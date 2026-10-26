@@ -33,13 +33,13 @@ fn _plural(n: Int) -> String:
 fn build_be() -> DurationLocale:
     """Build the Belarusian locale."""
 
-    var second = plural_unit(one="{n} секунда", few="{n} секунды", many="{n} секунд", other="{n} секунд")
-    var minute = plural_unit(one="{n} хвіліна", few="{n} хвіліны", many="{n} хвілін", other="{n} хвілін")
-    var hour = plural_unit(one="{n} гадзіна", few="{n} гадзіны", many="{n} гадзін", other="{n} гадзін")
-    var day = plural_unit(one="{n} дзень", few="{n} дні", many="{n} дзён", other="{n} дзён")
-    var week = plural_unit(one="{n} тыдзень", few="{n} тыдні", many="{n} тыдняў", other="{n} тыдняў")
-    var month = plural_unit(one="{n} месяц", few="{n} месяцы", many="{n} месяцаў", other="{n} месяцаў")
-    var year = plural_unit(one="{n} год", few="{n} гады", many="{n} гадоў", other="{n} гадоў")
+    var second = plural_unit(one="{n} секунда", few="{n} секунды", many="{n} секунд", other="{n} секунды")
+    var minute = plural_unit(one="{n} хвіліна", few="{n} хвіліны", many="{n} хвілін", other="{n} хвіліны")
+    var hour = plural_unit(one="{n} гадзіна", few="{n} гадзіны", many="{n} гадзін", other="{n} гадзіны")
+    var day = plural_unit(one="{n} дзень", few="{n} дні", many="{n} дзён", other="{n} дня")
+    var week = plural_unit(one="{n} тыдзень", few="{n} тыдні", many="{n} тыдняў", other="{n} тыдня")
+    var month = plural_unit(one="{n} месяц", few="{n} месяцы", many="{n} месяцаў", other="{n} месяца")
+    var year = plural_unit(one="{n} год", few="{n} гады", many="{n} гадоў", other="{n} года")
 
     var short_ovr = CompactnessOverride()
     short_ovr.second = simple_unit("{n} с")

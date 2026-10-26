@@ -21,7 +21,7 @@ pub fn locale() -> TimeLocale {
             midnight: "meia-noite".to_string(),
             noon: "meio-dia".to_string(),
             patterns: HashMap::from([
-            (0, "{h} horas".to_string()),
+            (0, "{h} em ponto".to_string()),
             (5, "{h} e cinco".to_string()),
             (10, "{h} e dez".to_string()),
             (15, "{h} e um quarto".to_string()),

@@ -11,22 +11,22 @@
 
 % Filipino locale.
 
-st_hours('fil', ['dose', 'una', 'dos', 'tres', 'kwatro', 'singko', 'seis', 'syete', 'otso', 'nuwebe', 'diyes', 'onse']).
+st_hours('fil', ['alas-dose', 'ala-una', 'alas-dos', 'alas-tres', 'alas-kuwatro', 'alas-singko', 'alas-sais', 'alas-siyete', 'alas-otso', 'alas-nuwebe', 'alas-diyes', 'alas-onse']).
 st_midnight('fil', 'hatinggabi').
 st_noon('fil', 'tanghali').
 
-st_pattern('fil', 0, '{h} o\'clock').
-st_pattern('fil', 5, 'lima dan {h}').
-st_pattern('fil', 10, 'sampu dan {h}').
-st_pattern('fil', 15, 'labinlima dan {h}').
-st_pattern('fil', 20, 'dalawampu dan {h}').
-st_pattern('fil', 25, 'dalawampu\'t lima dan {h}').
-st_pattern('fil', 30, 'tatlumpu dan {h}').
-st_pattern('fil', 35, 'dalawampu\'t lima bago mag {next_h}').
-st_pattern('fil', 40, 'dalawampu bago mag {next_h}').
-st_pattern('fil', 45, 'labinlima bago mag {next_h}').
-st_pattern('fil', 50, 'sampu bago mag {next_h}').
-st_pattern('fil', 55, 'lima bago mag {next_h}').
+st_pattern('fil', 0, '{h}').
+st_pattern('fil', 5, '{h} y singko').
+st_pattern('fil', 10, '{h} y diyes').
+st_pattern('fil', 15, '{h} y kinse').
+st_pattern('fil', 20, '{h} y beynte').
+st_pattern('fil', 25, '{h} y beynte singko').
+st_pattern('fil', 30, '{h} y medya').
+st_pattern('fil', 35, 'menos beynte singko para {next_h}').
+st_pattern('fil', 40, 'menos beynte para {next_h}').
+st_pattern('fil', 45, 'menos kinse para {next_h}').
+st_pattern('fil', 50, 'menos diyes para {next_h}').
+st_pattern('fil', 55, 'menos singko para {next_h}').
 
 short_st_use24h('fil', false).
 short_st_format('fil', '{h}:{mm} {ampm}').

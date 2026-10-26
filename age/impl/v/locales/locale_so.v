@@ -22,10 +22,10 @@ fn plural_so(n int) PluralCategory {
 pub const locale_so = AgeLocale{
 	code: 'so'
 	plural: plural_so
-	day: plural_unit({PluralCategory.one: 'maalin {n}', PluralCategory.other: 'maalmood {n}'})
-	week: plural_unit({PluralCategory.one: 'toddobaad {n}', PluralCategory.other: 'toddobaadyo {n}'})
-	month: plural_unit({PluralCategory.one: 'bil {n}', PluralCategory.other: 'bilood {n}'})
-	year: plural_unit({PluralCategory.one: 'sano {n}', PluralCategory.other: 'sanooyin {n}'})
+	day: plural_unit({PluralCategory.one: '{n} maalin', PluralCategory.other: '{n} maalmood'})
+	week: simple_unit('{n} toddobaad')
+	month: plural_unit({PluralCategory.one: '{n} bil', PluralCategory.other: '{n} bilood'})
+	year: simple_unit('{n} sano')
 	half: '{n}½'
 	delimiter: ', '
 	just_born: 'Dhashay cusub'

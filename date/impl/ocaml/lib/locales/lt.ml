@@ -36,11 +36,11 @@ let locale : date_locale =
     ; "penktadienis"
     ; "šeštadienis"
     ]
-  ; day_format = "{n}."
+  ; day_format = "{n} d."
   ; day_format_exceptions =
     []
-  ; date_pattern = "{day} {month}"
-  ; date_pattern_with_year = "{day} {month} {year}"
+  ; date_pattern = "{month} {day}"
+  ; date_pattern_with_year = "{year} m. {month} {day}"
   ; today = "šiandien"
   ; tomorrow = "rytoj"
   ; yesterday = "vakar"
@@ -88,10 +88,10 @@ let locale : date_locale =
         ; "pn"
         ; "št"
         ]
-      ; ovr_day_format = Some "{n}."
+      ; ovr_day_format = Some "{n} d."
       ; ovr_day_format_exceptions = Some []
-      ; ovr_date_pattern = Some "{day} {month}"
-      ; ovr_date_pattern_with_year = Some "{day} {month} {year}"
+      ; ovr_date_pattern = Some "{month} {day}"
+      ; ovr_date_pattern_with_year = Some "{year} m. {month} {day}"
       ; ovr_today = None
       ; ovr_tomorrow = None
       ; ovr_yesterday = None

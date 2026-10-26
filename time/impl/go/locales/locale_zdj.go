@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var ZDJ = st.TimeLocale{
 	Code: "zdj",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja"},
+		Hours:    [12]string{"kumi na mbili", "moja", "mbili", "ndraru", "nne", "ntsanu", "sita", "saba", "nane", "shenda", "kumi", "kumi na moja"},
 		Midnight: "usiku wa manane",
 		Noon:     "adhuhuri",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Patterns: map[int]string{0: "saa {h}", 5: "saa {h} na ntsanu", 10: "saa {h} na kumi", 15: "saa {h} na kumi na ntsanu", 20: "saa {h} na shirini", 25: "saa {h} na shirini na ntsanu", 30: "saa {h} na nusu", 35: "saa {h} na thalathini na ntsanu", 40: "saa {h} na arubaini", 45: "saa {h} na arubaini na ntsanu", 50: "saa {h} na hamsini", 55: "saa {h} na hamsini na ntsanu"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

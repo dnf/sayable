@@ -20,7 +20,7 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ml"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural = \n -> if n == 1 then One else Other
     , units =
         Dict.fromList
             [ ( "second", Pluralized
@@ -52,7 +52,7 @@ locale =
               , ( Other, "{n} വർഷങ്ങൾ" )
               ] )
             ]
-    , half = "{0} ര"
+    , half = "{n}½"
     , delimiter = ", "
     , justNow = "ഇപ്പോൾ"
     , ago = "{0} മുമ്പ്"

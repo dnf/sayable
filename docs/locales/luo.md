@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [luo.json](../../locales/luo.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Swahili-style reckoning (Kenya: 9:00 = 'saa adek'), hours rotated by 6; 11/12 written with the usual contraction (apar gachiel, apar gariyo). Additive 'saa {h} gi dakika <words>' (abich, apar, apar gabich, piero ariyo/adek/ang'wen/abich), 'gi nus' for half.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | orucha                 | 17/3    |
 | Day before yesterday | Tich Ang'wen mokalo    | 13/3    |
 | This Thursday (+5)   | Tich Ang'wen ma        | 20/3    |
-| Last Monday (-4)     | Tich Ariyo mokalo      | 11/3    |
-| Next Wednesday (+12) | Tich Ang'wen mabiro    | 27/3    |
-| Same month (+20)     | 4 Dwe mar Ang'wen      | 4/4     |
+| Last Tuesday (-4)    | Tich Ariyo mokalo      | 11/3    |
+| Next Thursday (+12)  | Tich Ang'wen mabiro    | 27/3    |
+| Same year (+20)      | 4 Dwe mar Ang'wen      | 4/4     |
 | Different year       | 10 Dwe mar Achiel 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal            | Short    | Compact |
-| --------------- | ----------------- | -------- | ------- |
-| Midnight        | dier otieno       | 12:00 AM | 12:00a  |
-| 1:00 AM         | achiel:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | ochiko:05         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | apar:15           | 10:15 AM | 10:15a  |
-| Half past 11    | apar gi achiel:30 | 11:30 AM | 11:30a  |
-| Noon            | odiechieng' tir   | 12:00 PM | 12:00p  |
-| Quarter to 3    | ariyo:45          | 2:45 PM  | 2:45p   |
-| 5 to 6          | abich:55          | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | aboro:00          | 8:00 PM  | 8:00p   |
-| 10:30 PM        | apar:30           | 10:30 PM | 10:30p  |
-| 11:58 PM        | dier otieno       | 11:58 PM | 11:58p  |
+| Time            | Normal                                        | Short    | Compact |
+| --------------- | --------------------------------------------- | -------- | ------- |
+| Midnight        | dier otieno                                   | 12:00 AM | 12:00a  |
+| 1:00 AM         | saa abiriyo                                   | 1:00 AM  | 1:00a   |
+| 5 past 9        | saa adek gi dakika abich                      | 9:05 AM  | 9:05a   |
+| Quarter past 10 | saa ang'wen gi dakika apar gabich             | 10:15 AM | 10:15a  |
+| Half past 11    | saa abich gi nus                              | 11:30 AM | 11:30a  |
+| Noon            | odiechieng' tir                               | 12:00 PM | 12:00p  |
+| Quarter to 3    | saa aboro gi dakika piero ang'wen gabich      | 2:45 PM  | 2:45p   |
+| 5 to 6          | saa apar gachiel gi dakika piero abich gabich | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | saa ariyo                                     | 8:00 PM  | 8:00p   |
+| 10:30 PM        | saa ang'wen gi nus                            | 10:30 PM | 10:30p  |
+| 11:58 PM        | dier otieno                                   | 11:58 PM | 11:58p  |

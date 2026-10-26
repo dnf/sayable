@@ -37,7 +37,7 @@ var BEM = sa.AgeLocale{
 		Toddler:  sa.S("Umwana"),
 		Child:    sa.S("Umwana"),
 		Teenager: sa.S("Umunyamata"),
-		Adult:    sa.S("Umulumendo"),
+		Adult:    sa.S("Umukalamba"),
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   unitFormsPtr(map[sa.PluralCategory]string{sa.One: "ubushiku {n}", sa.Other: "inshiku {n}"}),

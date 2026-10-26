@@ -28,7 +28,7 @@ var DZ = sd.DurationLocale{
 		Month:  sd.SimpleUnit("ཟླ་ {n}"),
 		Year:   sd.SimpleUnit("ལོ་ {n}"),
 	},
-	Half:      "{0} ཕྱེད",
+	Half:      "{0} དང་ཕྱེད",
 	Delimiter: " ",
 	JustNow:   "ད་ལྟ",
 	Ago:       "{0} ཧེ་མ",

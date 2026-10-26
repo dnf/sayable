@@ -25,8 +25,8 @@ yo
 	locale today: 'lónìí'.
 	locale tomorrow: 'ọ̀la'.
 	locale yesterday: 'àná'.
-	locale dayAfterTomorrow: 'ọ̀tún ọ̀la'.
-	locale dayBeforeYesterday: 'ọ̀tún àná'.
+	locale dayAfterTomorrow: 'ọ̀túnla'.
+	locale dayBeforeYesterday: 'íjẹta'.
 	locale thisWeekday: '{weekday} yìí'.
 	locale nextWeekday: '{weekday} tó ń bọ̀'.
 	locale lastWeekday: '{weekday} tó kọjá'.

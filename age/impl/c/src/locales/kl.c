@@ -12,7 +12,7 @@
 #include "sayableage/sayableage.h"
 
 static SaPluralCategory plural_kl(int n) {
-    (void)n;
+    if (n == 1) return SA_ONE;
     return SA_OTHER;
 }
 
@@ -20,10 +20,10 @@ const SaLocale sa_locale_kl = {
     "kl",
     plural_kl,
     {
-        { "ullut {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "sapaatit {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "qaammatit {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "ukiut {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { NULL, { NULL, "ulloq {n}", NULL, NULL, NULL, "ullut {n}" } },
+        { NULL, { NULL, "sapaatip akunnera {n}", NULL, NULL, NULL, "sapaatip akunneri {n}" } },
+        { NULL, { NULL, "qaammat {n}", NULL, NULL, NULL, "qaammatit {n}" } },
+        { NULL, { NULL, "ukioq {n}", NULL, NULL, NULL, "ukiut {n}" } }
     },
     "{0} affaa", ", ", "Inuuneq nutaaq",
     {
@@ -34,6 +34,6 @@ const SaLocale sa_locale_kl = {
         { "Inuusuttuaq", "" },
         { "Inuk", "" }
     },
-    true, { true, { "ull. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sap. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "qaam. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "uk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "ull. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sap. ak. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "qaam. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "uk. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

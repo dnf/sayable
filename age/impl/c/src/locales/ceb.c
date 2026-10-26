@@ -25,7 +25,7 @@ const SaLocale sa_locale_ceb = {
         { "{n} ka bulan", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ka tuig", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n}½", ", ", "Bag-ong natawo",
+    "{0} ug tunga", ", ", "Bag-ong natawo",
     {
         { "Bag-ong natawo", "" },
         { "Masuso", "" },

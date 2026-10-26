@@ -16,9 +16,12 @@ _sayableduration_plural_sn() {
 }
 
 _sayableduration_locale_sn() {
-    _unit_second='{n} sekondi'
-    _unit_minute='{n} miniti'
-    _unit_hour='{n} awa'
+    _unit_second_one='sekondi {n}'
+    _unit_second_other='masekondi {n}'
+    _unit_minute_one='miniti {n}'
+    _unit_minute_other='maminitsi {n}'
+    _unit_hour_one='awa {n}'
+    _unit_hour_other='maawa {n}'
     _unit_day_one='zuva {n}'
     _unit_day_other='mazuva {n}'
     _unit_week_one='vhiki {n}'

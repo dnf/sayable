@@ -17,10 +17,10 @@
   (make-time-locale
    :code "bem"
    :clock (make-clock-config
-    :hours (list "ikumi na ibili" "cimo" "fibili" "fitatu" "fine" "fisano" "mutanda" "cine lubali" "cine konse konse" "pabula" "ikumi" "ikumi na cimo")
+    :hours (list "ikumi na shibili" "imo" "shibili" "shitatu" "shine" "shisano" "mutanda" "cine lubali" "cine konse konse" "pabula" "ikumi" "ikumi na imo")
     :midnight "pakati ka bushiku"
     :noon "akasuba"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "insa {h}") (cons 5 "insa {h} na maminiti yasano") (cons 10 "insa {h} na maminiti ikumi") (cons 15 "insa {h} na maminiti ikumi na yasano") (cons 20 "insa {h} na maminiti amakumi yabili") (cons 25 "insa {h} na maminiti amakumi yabili na yasano") (cons 30 "insa {h} na hafu") (cons 35 "insa {h} na maminiti amakumi yatatu na yasano") (cons 40 "insa {h} na maminiti amakumi yane") (cons 45 "insa {h} na maminiti amakumi yane na yasano") (cons 50 "insa {h} na maminiti amakumi yasano") (cons 55 "insa {h} na maminiti amakumi yasano na yasano")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

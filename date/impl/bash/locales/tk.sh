@@ -10,8 +10,8 @@
 # Source: locales/tk.json
 
 _sayabledate_locale_tk() {
-    _months=('Ýanwar' 'Fewral' 'Mart' 'Aprel' 'Maý' 'Iýun' 'Iýul' 'Awgust' 'Sentýabr' 'Oktýabr' 'Noýabr' 'Dekabr')
-    _weekdays=('Ýekşenbe' 'Duşenbe' 'Sişenbe' 'Çarşenbe' 'Penşenbe' 'Anna' 'Şenbe')
+    _months=('ýanwar' 'fewral' 'mart' 'aprel' 'maý' 'iýun' 'iýul' 'awgust' 'sentýabr' 'oktýabr' 'noýabr' 'dekabr')
+    _weekdays=('ýekşenbe' 'duşenbe' 'sişenbe' 'çarşenbe' 'penşenbe' 'anna' 'şenbe')
     _day_format='{n}'
     _date_pattern='{day} {month}'
     _date_pattern_with_year='{day} {month} {year}'
@@ -23,8 +23,8 @@ _sayabledate_locale_tk() {
     _this_weekday='şu {weekday}'
     _next_weekday='indiki {weekday}'
     _last_weekday='geçen {weekday}'
-    _short_months=('Ýan' 'Few' 'Mar' 'Apr' 'Maý' 'Iýn' 'Iýl' 'Awg' 'Sen' 'Okt' 'Noý' 'Dek')
-    _short_weekdays=('Ýek' 'Duş' 'Siş' 'Çar' 'Pen' 'Ann' 'Şen')
+    _short_months=('ýan' 'few' 'mar' 'apr' 'maý' 'iýn' 'iýl' 'awg' 'sen' 'okt' 'noý' 'dek')
+    _short_weekdays=('ýek' 'duş' 'siş' 'çar' 'pen' 'ann' 'şen')
     _short_day_format='{n}'
     _short_date_pattern='{day} {month}'
     _short_date_pattern_with_year='{day} {month} {year}'

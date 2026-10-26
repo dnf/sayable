@@ -26,7 +26,7 @@ pub const locale_ca = AgeLocale{
 	week: plural_unit({PluralCategory.one: '{n} setmana', PluralCategory.other: '{n} setmanes'})
 	month: plural_unit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} mesos'})
 	year: plural_unit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'})
-	half: '{n} i mig'
+	half: '{0} i mig'
 	delimiter: ', '
 	just_born: 'Nounat'
 	newborn: stage_gendered('Nounat', 'Nounada')

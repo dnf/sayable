@@ -22,7 +22,7 @@ proc locale_lo {} {
         year "{n} ປີ" \
     ]
     set half "{0}ເຄິ່ງ"
-    set delimiter {}
+    set delimiter { }
     set just_born {ເກີດໃໝ່}
     set stages [dict create \
         newborn {ເດັກເກີດໃໝ່} \
@@ -47,6 +47,7 @@ proc locale_lo {} {
             month "{n}m" \
             year "{n}y" \
         ] \
+        half "{n}½" \
     ]
     return [dict create \
         code $code \

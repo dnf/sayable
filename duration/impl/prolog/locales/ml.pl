@@ -11,7 +11,6 @@
 
 % Malayalam locale.
 
-sd_plural('ml', 0, one) :- !.
 sd_plural('ml', 1, one) :- !.
 sd_plural('ml', _, other).
 
@@ -30,7 +29,7 @@ sd_unit('ml', month, other, '{n} മാസങ്ങൾ').
 sd_unit('ml', year, one, '{n} വർഷം').
 sd_unit('ml', year, other, '{n} വർഷങ്ങൾ').
 
-sd_half('ml', '{0} ര').
+sd_half('ml', '{n}½').
 sd_delimiter('ml', ', ').
 sd_just_now('ml', 'ഇപ്പോൾ').
 sd_ago('ml', '{0} മുമ്പ്').

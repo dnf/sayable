@@ -29,7 +29,7 @@ ha
 	locale dayBeforeYesterday: 'shekaranjiya'.
 	locale thisWeekday: 'wannan {weekday}'.
 	locale nextWeekday: '{weekday} mai zuwa'.
-	locale lastWeekday: '{weekday} da ya wuce'.
+	locale lastWeekday: '{weekday} da ta wuce'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'Jan'. 'Fab'. 'Mar'. 'Afr'. 'May'. 'Yun'. 'Yul'. 'Agu'. 'Sat'. 'Okt'. 'Nuw'. 'Dis' }).

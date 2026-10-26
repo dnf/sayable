@@ -16,12 +16,12 @@ function plural_mi([int]$n) {
 
 function locale_mi {
     $units = @{
-        day = 'rā {n}'
-        week = 'wiki {n}'
-        month = 'marama {n}'
-        year = 'tau {n}'
+        day = '{n} rā'
+        week = '{n} wiki'
+        month = '{n} marama'
+        year = '{n} tau'
     }
-    $half = '{0}½'
+    $half = '{n}½'
     $delimiter = ', '
     $justBorn = 'Pēpi hou'
     $stages = @{
@@ -34,10 +34,10 @@ function locale_mi {
     }
     $short = @{
         units = @{
-            day = 'rā {n}'
-            week = 'w {n}'
-            month = 'm {n}'
-            year = 't {n}'
+            day = '{n} rā'
+            week = '{n} w'
+            month = '{n} m'
+            year = '{n} t'
         }
     }
     $compact = @{

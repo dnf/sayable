@@ -22,10 +22,10 @@ final cy = AgeLocale(
     if (n == 6) return PluralCategory.many;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.zero: '{n} diwrnod', PluralCategory.one: '{n} diwrnod', PluralCategory.two: '{n} ddiwrnod', PluralCategory.few: '{n} diwrnod', PluralCategory.many: '{n} niwrnod', PluralCategory.other: '{n} diwrnod'}),
+  day: pluralUnit({PluralCategory.zero: '{n} diwrnod', PluralCategory.one: '{n} diwrnod', PluralCategory.two: '{n} ddiwrnod', PluralCategory.few: '{n} diwrnod', PluralCategory.many: '{n} diwrnod', PluralCategory.other: '{n} diwrnod'}),
   week: pluralUnit({PluralCategory.zero: '{n} wythnos', PluralCategory.one: '{n} wythnos', PluralCategory.two: '{n} wythnos', PluralCategory.few: '{n} wythnos', PluralCategory.many: '{n} wythnos', PluralCategory.other: '{n} wythnos'}),
   month: pluralUnit({PluralCategory.zero: '{n} mis', PluralCategory.one: '{n} mis', PluralCategory.two: '{n} fis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'}),
-  year: pluralUnit({PluralCategory.zero: '{n} blwyddyn', PluralCategory.one: '{n} blwyddyn', PluralCategory.two: '{n} flynedd', PluralCategory.few: '{n} blynedd', PluralCategory.many: '{n} blynedd', PluralCategory.other: '{n} blynedd'}),
+  year: pluralUnit({PluralCategory.zero: '{n} blwyddyn', PluralCategory.one: '{n} flwyddyn', PluralCategory.two: '{n} flynedd', PluralCategory.few: '{n} blynedd', PluralCategory.many: '{n} blynedd', PluralCategory.other: '{n} blynedd'}),
   half: '{0} a hanner',
   delimiter: ', ',
   justBorn: 'Newydd-anedig',

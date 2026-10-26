@@ -21,9 +21,9 @@ module SayableAge
       },
       half: "{0} e gjysmë",
       delimiter: ", ",
-      just_born: "Sapolindur",
+      just_born: "I sapolindur",
       stages: {
-        "newborn" => StageLabel.new(m: "Sapolindur", f: "Sapolindure"),
+        "newborn" => StageLabel.new(m: "I sapolindur", f: "E sapolindur"),
         "infant" => StageLabel.new("Foshnjë"),
         "toddler" => StageLabel.new(m: "Fëmijë i vogël", f: "Fëmijë e vogël"),
         "child" => StageLabel.new("Fëmijë"),

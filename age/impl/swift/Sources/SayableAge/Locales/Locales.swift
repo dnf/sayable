@@ -219,11 +219,11 @@ public enum Locales {
             infant: .neutral("Akwadaa"),
             toddler: .neutral("Abofra"),
             child: .neutral("Abofra"),
-            teenager: .neutral("Abarimaa"),
+            teenager: .gendered(m: "Abarimaa", f: "Abaayewa"),
             adult: .neutral("Ɔpanyin")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("nna {n}"),
+            day: .plural([.one: "da {n}", .other: "nna {n}"]),
             week: .plural([.one: "dapɛn {n}", .other: "nnapɛn {n}"]),
             month: .plural([.one: "bosome {n}", .other: "abosome {n}"]),
             year: .plural([.one: "afe {n}", .other: "mfe {n}"]),
@@ -232,7 +232,7 @@ public enum Locales {
             justBorn: nil
         ),
         compactOverride: CompactnessOverride(
-            day: .simple("nna {n}"),
+            day: .plural([.one: "da {n}", .other: "nna {n}"]),
             week: .plural([.one: "dapɛn {n}", .other: "nnapɛn {n}"]),
             month: .plural([.one: "bos {n}", .other: "abos {n}"]),
             year: .plural([.one: "afe {n}", .other: "mfe {n}"]),
@@ -322,7 +322,7 @@ public enum Locales {
         compactOverride: CompactnessOverride(
             day: .simple("{n} ي"),
             week: .simple("{n} أ"),
-            month: .plural([.zero: "{n} شهر", .one: "شهر", .two: "شهران", .few: "{n} أشهر", .many: "{n} شهرًا", .other: "{n} شهر"]),
+            month: .simple("{n} شهر"),
             year: .simple("{n} سنة"),
             half: "{n}½",
             delimiter: "",
@@ -338,10 +338,10 @@ public enum Locales {
         code: "ay",
         plural: { _ in .other },
         units: Units(
-            day: .simple("uru {n}"),
-            week: .simple("simana {n}"),
-            month: .simple("phaxsi {n}"),
-            year: .simple("mara {n}")
+            day: .simple("{n} uru"),
+            week: .simple("{n} simana"),
+            month: .simple("{n} phaxsi"),
+            year: .simple("{n} mara")
         ),
         half: "{0} chika",
         delimiter: ", ",
@@ -368,7 +368,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -528,7 +528,7 @@ public enum Locales {
             toddler: .neutral("Umwana"),
             child: .neutral("Umwana"),
             teenager: .neutral("Umunyamata"),
-            adult: .neutral("Umulumendo")
+            adult: .neutral("Umukalamba")
         ),
         shortOverride: CompactnessOverride(
             day: .plural([.one: "ubushiku {n}", .other: "inshiku {n}"]),
@@ -607,7 +607,7 @@ public enum Locales {
             month: .simple("{n} manis"),
             year: .simple("{n} yia")
         ),
-        half: "{n} mo haf",
+        half: "{0} mo haf",
         delimiter: ", ",
         justBorn: "Niufala bebe",
         stages: Stages(
@@ -632,7 +632,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -827,7 +827,7 @@ public enum Locales {
             month: .plural([.one: "{n} mes", .other: "{n} mesos"]),
             year: .plural([.one: "{n} any", .other: "{n} anys"])
         ),
-        half: "{n} i mig",
+        half: "{0} i mig",
         delimiter: ", ",
         justBorn: "Nounat",
         stages: Stages(
@@ -896,7 +896,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -915,7 +915,7 @@ public enum Locales {
             month: .simple("{n} ka bulan"),
             year: .simple("{n} ka tuig")
         ),
-        half: "{n}½",
+        half: "{0} ug tunga",
         delimiter: ", ",
         justBorn: "Bag-ong natawo",
         stages: Stages(
@@ -998,10 +998,10 @@ public enum Locales {
         code: "cy",
         plural: { pluralCy($0) },
         units: Units(
-            day: .plural([.zero: "{n} diwrnod", .one: "{n} diwrnod", .two: "{n} ddiwrnod", .few: "{n} diwrnod", .many: "{n} niwrnod", .other: "{n} diwrnod"]),
+            day: .plural([.zero: "{n} diwrnod", .one: "{n} diwrnod", .two: "{n} ddiwrnod", .few: "{n} diwrnod", .many: "{n} diwrnod", .other: "{n} diwrnod"]),
             week: .plural([.zero: "{n} wythnos", .one: "{n} wythnos", .two: "{n} wythnos", .few: "{n} wythnos", .many: "{n} wythnos", .other: "{n} wythnos"]),
             month: .plural([.zero: "{n} mis", .one: "{n} mis", .two: "{n} fis", .few: "{n} mis", .many: "{n} mis", .other: "{n} mis"]),
-            year: .plural([.zero: "{n} blwyddyn", .one: "{n} blwyddyn", .two: "{n} flynedd", .few: "{n} blynedd", .many: "{n} blynedd", .other: "{n} blynedd"])
+            year: .plural([.zero: "{n} blwyddyn", .one: "{n} flwyddyn", .two: "{n} flynedd", .few: "{n} blynedd", .many: "{n} blynedd", .other: "{n} blynedd"])
         ),
         half: "{0} a hanner",
         delimiter: ", ",
@@ -1223,7 +1223,7 @@ public enum Locales {
             month: .simple("{n} މަސް"),
             year: .simple("{n} އަހަރު")
         ),
-        half: "{0} ބައި",
+        half: "{n}½",
         delimiter: "، ",
         justBorn: "އަލަށް އުފަންވި",
         stages: Stages(
@@ -1311,7 +1311,7 @@ public enum Locales {
             month: .simple("ཟླ་ {n}"),
             year: .simple("ལོ་ {n}")
         ),
-        half: "{0} ཕྱེད",
+        half: "{0} དང་ཕྱེད",
         delimiter: " ",
         justBorn: "གསར་སྐྱེས",
         stages: Stages(
@@ -1350,10 +1350,10 @@ public enum Locales {
         code: "ee",
         plural: { $0 == 1 ? .one : .other },
         units: Units(
-            day: .plural([.one: "ŋkeke {n}", .other: "ŋkekewo {n}"]),
-            week: .plural([.one: "kɔsiɖa {n}", .other: "kɔsiɖawo {n}"]),
-            month: .plural([.one: "ɣleti {n}", .other: "ɣletiwo {n}"]),
-            year: .plural([.one: "ƒe {n}", .other: "ƒewo {n}"])
+            day: .simple("ŋkeke {n}"),
+            week: .simple("kɔsiɖa {n}"),
+            month: .simple("ɣleti {n}"),
+            year: .simple("ƒe {n}")
         ),
         half: "{0} kple afã",
         delimiter: ", ",
@@ -1363,14 +1363,14 @@ public enum Locales {
             infant: .neutral("Ɖevi"),
             toddler: .neutral("Ɖevi sue"),
             child: .neutral("Ɖevi"),
-            teenager: .neutral("Ŋutsuviwo"),
+            teenager: .gendered(m: "Ɖekakpui", f: "Ɖetugbi"),
             adult: .neutral("Ame tsitsi")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("ŋkekewo {n}"),
-            week: .plural([.one: "kɔsiɖa {n}", .other: "kɔsiɖawo {n}"]),
-            month: .plural([.one: "ɣleti {n}", .other: "ɣletiwo {n}"]),
-            year: .plural([.one: "ƒe {n}", .other: "ƒewo {n}"]),
+            day: .simple("ŋkeke {n}"),
+            week: .simple("kɔsiɖa {n}"),
+            month: .simple("ɣleti {n}"),
+            year: .simple("ƒe {n}"),
             half: nil,
             delimiter: nil,
             justBorn: nil
@@ -1487,7 +1487,7 @@ public enum Locales {
             month: .plural([.one: "{n} mes", .other: "{n} meses"]),
             year: .plural([.one: "{n} año", .other: "{n} años"])
         ),
-        half: "{n} y medio",
+        half: "{0} y medio",
         delimiter: ", ",
         justBorn: "Recién nacido",
         stages: Stages(
@@ -1715,11 +1715,11 @@ public enum Locales {
             infant: .neutral("Ɓinngel"),
             toddler: .neutral("Cukalel"),
             child: .neutral("Suka"),
-            teenager: .neutral("Suka debbo"),
+            teenager: .gendered(m: "Suka gorko", f: "Suka debbo"),
             adult: .neutral("Mawɗo")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("ñalɗe {n}"),
+            day: .plural([.one: "ñalawma {n}", .other: "ñalɗe {n}"]),
             week: .plural([.one: "yontere {n}", .other: "yontereeji {n}"]),
             month: .plural([.one: "lewru {n}", .other: "lebbi {n}"]),
             year: .plural([.one: "hitaande {n}", .other: "duuɓi {n}"]),
@@ -1728,7 +1728,7 @@ public enum Locales {
             justBorn: nil
         ),
         compactOverride: CompactnessOverride(
-            day: .simple("ñalɗe {n}"),
+            day: .plural([.one: "ñalawma {n}", .other: "ñalɗe {n}"]),
             week: .plural([.one: "yont {n}", .other: "yontji {n}"]),
             month: .plural([.one: "lew {n}", .other: "leb {n}"]),
             year: .plural([.one: "hit {n}", .other: "duuɓi {n}"]),
@@ -1804,7 +1804,7 @@ public enum Locales {
             toddler: .neutral("Batang paslit"),
             child: .neutral("Bata"),
             teenager: .neutral("Tinedyer"),
-            adult: .neutral("Matanda")
+            adult: .neutral("Adulto")
         ),
         shortOverride: CompactnessOverride(
             day: .simple("{n} araw"),
@@ -1839,7 +1839,7 @@ public enum Locales {
             month: .simple("{n} na vula"),
             year: .simple("{n} na yabaki")
         ),
-        half: "{n} kei na levu ni wasei",
+        half: "{0} kei na veimama",
         delimiter: ", ",
         justBorn: "Gone vou",
         stages: Stages(
@@ -1864,7 +1864,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -1891,7 +1891,7 @@ public enum Locales {
             infant: .neutral("Vǐ"),
             toddler: .neutral("Vǐ"),
             child: .neutral("Vǐ"),
-            teenager: .neutral("Nyɔ̌nu"),
+            teenager: .gendered(m: "Dɔnkpɛvu", f: "Ɖyɔ̌vǐ"),
             adult: .neutral("Mɛ̌xo")
         ),
         shortOverride: CompactnessOverride(
@@ -2065,7 +2065,7 @@ public enum Locales {
         stages: Stages(
             newborn: .gendered(m: "Recén nacido", f: "Recén nacida"),
             infant: .neutral("Bebé"),
-            toddler: .neutral("Neno"),
+            toddler: .gendered(m: "Neno pequeno", f: "Nena pequena"),
             child: .gendered(m: "Neno", f: "Nena"),
             teenager: .neutral("Adolescente"),
             adult: .gendered(m: "Adulto", f: "Adulta")
@@ -2230,10 +2230,10 @@ public enum Locales {
         code: "ha",
         plural: { $0 == 1 ? .one : .other },
         units: Units(
-            day: .plural([.one: "{n} kwana", .other: "{n} kwanaki"]),
-            week: .plural([.one: "{n} mako", .other: "{n} makonni"]),
-            month: .plural([.one: "{n} wata", .other: "{n} watanni"]),
-            year: .plural([.one: "{n} shekara", .other: "{n} shekaru"])
+            day: .plural([.one: "kwana {n}", .other: "kwanaki {n}"]),
+            week: .plural([.one: "mako {n}", .other: "makonni {n}"]),
+            month: .plural([.one: "wata {n}", .other: "watanni {n}"]),
+            year: .plural([.one: "shekara {n}", .other: "shekaru {n}"])
         ),
         half: "{n}½",
         delimiter: ", ",
@@ -2241,16 +2241,16 @@ public enum Locales {
         stages: Stages(
             newborn: .neutral("Jariri"),
             infant: .neutral("Jariri"),
-            toddler: .neutral("Ƙaramin yaro"),
-            child: .neutral("Yaro"),
-            teenager: .neutral("Saurayi"),
+            toddler: .gendered(m: "Ƙaramin yaro", f: "Ƙaramar yarinya"),
+            child: .gendered(m: "Yaro", f: "Yarinya"),
+            teenager: .gendered(m: "Saurayi", f: "Budurwa"),
             adult: .neutral("Babba")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("{n} kw."),
-            week: .simple("{n} mk."),
-            month: .simple("{n} wt."),
-            year: .simple("{n} shk."),
+            day: .simple("kw. {n}"),
+            week: .simple("mk. {n}"),
+            month: .simple("wt. {n}"),
+            year: .simple("shk. {n}"),
             half: nil,
             delimiter: nil,
             justBorn: nil
@@ -2274,9 +2274,9 @@ public enum Locales {
         code: "he",
         plural: { $0 == 1 ? .one : $0 == 2 ? .two : .other },
         units: Units(
-            day: .plural([.one: "יום {n}", .two: "יומיים", .other: "{n} ימים"]),
-            week: .plural([.one: "שבוע {n}", .two: "שבועיים", .other: "{n} שבועות"]),
-            month: .plural([.one: "חודש {n}", .two: "חודשיים", .other: "{n} חודשים"]),
+            day: .plural([.one: "יום", .two: "יומיים", .other: "{n} ימים"]),
+            week: .plural([.one: "שבוע", .two: "שבועיים", .other: "{n} שבועות"]),
+            month: .plural([.one: "חודש", .two: "חודשיים", .other: "{n} חודשים"]),
             year: .plural([.one: "שנה", .two: "שנתיים", .other: "{n} שנים"])
         ),
         half: "{0} וחצי",
@@ -2284,8 +2284,8 @@ public enum Locales {
         justBorn: "רק נולד",
         stages: Stages(
             newborn: .gendered(m: "רק נולד", f: "רק נולדה"),
-            infant: .neutral("תינוק"),
-            toddler: .neutral("פעוט"),
+            infant: .gendered(m: "תינוק", f: "תינוקת"),
+            toddler: .gendered(m: "פעוט", f: "פעוטה"),
             child: .gendered(m: "ילד", f: "ילדה"),
             teenager: .gendered(m: "נער", f: "נערה"),
             adult: .gendered(m: "מבוגר", f: "מבוגרת")
@@ -2392,7 +2392,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -2587,7 +2587,7 @@ public enum Locales {
             month: .simple("{n} bulan"),
             year: .simple("{n} tahun")
         ),
-        half: "{0} setengah",
+        half: "{n} setengah",
         delimiter: ", ",
         justBorn: "Baru lahir",
         stages: Stages(
@@ -2626,10 +2626,10 @@ public enum Locales {
         code: "ig",
         plural: { _ in .other },
         units: Units(
-            day: .simple("{n} ụbọchị"),
-            week: .simple("{n} izu"),
-            month: .simple("{n} ọnwa"),
-            year: .simple("{n} afọ")
+            day: .simple("ụbọchị {n}"),
+            week: .simple("izu {n}"),
+            month: .simple("ọnwa {n}"),
+            year: .simple("afọ {n}")
         ),
         half: "{0} na ọkara",
         delimiter: ", ",
@@ -2639,14 +2639,14 @@ public enum Locales {
             infant: .neutral("Nwa ọhụrụ"),
             toddler: .neutral("Nwa nta"),
             child: .neutral("Nwa"),
-            teenager: .neutral("Nwokorobịa"),
+            teenager: .gendered(m: "Nwokorobịa", f: "Agbọghọbịa"),
             adult: .neutral("Okenye")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("{n} ụbọchị"),
-            week: .simple("{n} izu"),
-            month: .simple("{n} ọnwa"),
-            year: .simple("{n} afọ"),
+            day: .simple("ụbọchị {n}"),
+            week: .simple("izu {n}"),
+            month: .simple("ọnwa {n}"),
+            year: .simple("afọ {n}"),
             half: nil,
             delimiter: nil,
             justBorn: nil
@@ -2675,7 +2675,7 @@ public enum Locales {
             month: .plural([.one: "{n} mánuður", .other: "{n} mánuðir"]),
             year: .plural([.one: "{n} ár", .other: "{n} ár"])
         ),
-        half: "{0} og hálft",
+        half: "{n} og hálft",
         delimiter: ", ",
         justBorn: "Nýfætt",
         stages: Stages(
@@ -2788,7 +2788,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: nil,
             justBorn: nil
         )
@@ -2964,7 +2964,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -3064,12 +3064,12 @@ public enum Locales {
     // ================================================================
     public static let KL = AgeLocale(
         code: "kl",
-        plural: { _ in .other },
+        plural: { $0 == 1 ? .one : .other },
         units: Units(
-            day: .simple("ullut {n}"),
-            week: .simple("sapaatit {n}"),
-            month: .simple("qaammatit {n}"),
-            year: .simple("ukiut {n}")
+            day: .plural([.one: "ulloq {n}", .other: "ullut {n}"]),
+            week: .plural([.one: "sapaatip akunnera {n}", .other: "sapaatip akunneri {n}"]),
+            month: .plural([.one: "qaammat {n}", .other: "qaammatit {n}"]),
+            year: .plural([.one: "ukioq {n}", .other: "ukiut {n}"])
         ),
         half: "{0} affaa",
         delimiter: ", ",
@@ -3084,7 +3084,7 @@ public enum Locales {
         ),
         shortOverride: CompactnessOverride(
             day: .simple("ull. {n}"),
-            week: .simple("sap. {n}"),
+            week: .simple("sap. ak. {n}"),
             month: .simple("qaam. {n}"),
             year: .simple("uk. {n}"),
             half: nil,
@@ -3096,7 +3096,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -3159,7 +3159,7 @@ public enum Locales {
             month: .plural([.one: "{n} ತಿಂಗಳು", .other: "{n} ತಿಂಗಳುಗಳು"]),
             year: .plural([.one: "{n} ವರ್ಷ", .other: "{n} ವರ್ಷಗಳು"])
         ),
-        half: "{0}ವರೆ",
+        half: "{n}½",
         delimiter: ", ",
         justBorn: "ನವಜಾತ ಶಿಶು",
         stages: Stages(
@@ -3291,7 +3291,7 @@ public enum Locales {
             month: .simple("{n} mont"),
             year: .simple("{n} ia")
         ),
-        half: "{n} na af",
+        half: "{0} ɛn af",
         delimiter: ", ",
         justBorn: "Nyubon bebi",
         stages: Stages(
@@ -3316,7 +3316,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -3418,10 +3418,10 @@ public enum Locales {
         code: "kw",
         plural: { pluralKw($0) },
         units: Units(
-            day: .plural([.zero: "{n} dydh", .one: "dydh", .two: "{n} dhydh", .few: "{n} dydh", .many: "{n} dydh", .other: "{n} dydh"]),
-            week: .plural([.zero: "{n} seythun", .one: "seythun", .two: "{n} seythun", .few: "{n} seythun", .many: "{n} seythun", .other: "{n} seythun"]),
-            month: .plural([.zero: "{n} mis", .one: "mis", .two: "{n} vis", .few: "{n} mis", .many: "{n} mis", .other: "{n} mis"]),
-            year: .plural([.zero: "{n} blydhen", .one: "blydhen", .two: "{n} vlydhen", .few: "{n} blydhen", .many: "{n} blydhen", .other: "{n} blydhen"])
+            day: .plural([.zero: "{n} dydh", .one: "{n} dydh", .two: "{n} dhydh", .few: "{n} dydh", .many: "{n} dydh", .other: "{n} dydh"]),
+            week: .plural([.zero: "{n} seythun", .one: "{n} seythun", .two: "{n} seythun", .few: "{n} seythun", .many: "{n} seythun", .other: "{n} seythun"]),
+            month: .plural([.zero: "{n} mis", .one: "{n} mis", .two: "{n} vis", .few: "{n} mis", .many: "{n} mis", .other: "{n} mis"]),
+            year: .plural([.zero: "{n} blydhen", .one: "{n} blydhen", .two: "{n} vlydhen", .few: "{n} blydhen", .many: "{n} blydhen", .other: "{n} blydhen"])
         ),
         half: "{0} hag hanter",
         delimiter: ", ",
@@ -3644,7 +3644,7 @@ public enum Locales {
             year: .simple("{n} ປີ")
         ),
         half: "{0}ເຄິ່ງ",
-        delimiter: "",
+        delimiter: " ",
         justBorn: "ເກີດໃໝ່",
         stages: Stages(
             newborn: .neutral("ເດັກເກີດໃໝ່"),
@@ -3668,7 +3668,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: nil,
             justBorn: nil
         )
@@ -3815,7 +3815,7 @@ public enum Locales {
         plural: { _ in .other },
         units: Units(
             day: .simple("{n} q'ij"),
-            week: .simple("{n} xjaw"),
+            week: .simple("{n} seman"),
             month: .simple("{n} xjaw"),
             year: .simple("{n} ab'q'ii")
         ),
@@ -3832,7 +3832,7 @@ public enum Locales {
         ),
         shortOverride: CompactnessOverride(
             day: .simple("{n} q'ij"),
-            week: .simple("{n} xjaw"),
+            week: .simple("{n} seman"),
             month: .simple("{n} xjaw"),
             year: .simple("{n} ab'."),
             half: nil,
@@ -3844,7 +3844,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -3990,12 +3990,12 @@ public enum Locales {
         code: "mi",
         plural: { $0 == 1 ? .one : .other },
         units: Units(
-            day: .simple("rā {n}"),
-            week: .simple("wiki {n}"),
-            month: .simple("marama {n}"),
-            year: .simple("tau {n}")
+            day: .simple("{n} rā"),
+            week: .simple("{n} wiki"),
+            month: .simple("{n} marama"),
+            year: .simple("{n} tau")
         ),
-        half: "{0}½",
+        half: "{n}½",
         delimiter: ", ",
         justBorn: "Pēpi hou",
         stages: Stages(
@@ -4007,10 +4007,10 @@ public enum Locales {
             adult: .neutral("Pakeke")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("rā {n}"),
-            week: .simple("w {n}"),
-            month: .simple("m {n}"),
-            year: .simple("t {n}"),
+            day: .simple("{n} rā"),
+            week: .simple("{n} w"),
+            month: .simple("{n} m"),
+            year: .simple("{n} t"),
             half: nil,
             delimiter: nil,
             justBorn: nil
@@ -4048,7 +4048,7 @@ public enum Locales {
             toddler: .neutral("Мало дете"),
             child: .neutral("Дете"),
             teenager: .neutral("Тинејџер"),
-            adult: .neutral("Возрасен")
+            adult: .gendered(m: "Возрасен", f: "Возрасна")
         ),
         shortOverride: CompactnessOverride(
             day: .plural([.one: "{n} ден", .other: "{n} дена"]),
@@ -4076,14 +4076,14 @@ public enum Locales {
     // ================================================================
     public static let ML = AgeLocale(
         code: "ml",
-        plural: { ($0 == 0 || $0 == 1) ? .one : .other },
+        plural: { $0 == 1 ? .one : .other },
         units: Units(
             day: .plural([.one: "{n} ദിവസം", .other: "{n} ദിവസങ്ങൾ"]),
             week: .plural([.one: "{n} ആഴ്ച", .other: "{n} ആഴ്ചകൾ"]),
             month: .plural([.one: "{n} മാസം", .other: "{n} മാസങ്ങൾ"]),
             year: .plural([.one: "{n} വയസ്സ്", .other: "{n} വയസ്സ്"])
         ),
-        half: "{0} ര",
+        half: "{n}½",
         delimiter: ", ",
         justBorn: "നവജാതശിശു",
         stages: Stages(
@@ -4529,7 +4529,7 @@ public enum Locales {
         stages: Stages(
             newborn: .neutral("नवजात शिशु"),
             infant: .neutral("शिशु"),
-            toddler: .neutral("बाल्यकाल"),
+            toddler: .neutral("सानो बच्चा"),
             child: .neutral("बालक"),
             teenager: .neutral("किशोर"),
             adult: .neutral("वयस्क")
@@ -4963,7 +4963,7 @@ public enum Locales {
             month: .simple("{n} manis"),
             year: .simple("{n} yia")
         ),
-        half: "{n} en haf",
+        half: "{0} en haf",
         delimiter: ", ",
         justBorn: "Niufala bebi",
         stages: Stages(
@@ -4988,7 +4988,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -5252,7 +5252,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -5540,17 +5540,17 @@ public enum Locales {
         justBorn: "Iɣ d illul",
         stages: Stages(
             newborn: .neutral("Iɣ d illul"),
-            infant: .neutral("Agellid"),
+            infant: .neutral("Llufan"),
             toddler: .gendered(m: "Aḥenjir", f: "Taḥenjirt"),
-            child: .gendered(m: "Afrux", f: "Tafruxṭ"),
+            child: .gendered(m: "Afrux", f: "Tafruxt"),
             teenager: .gendered(m: "Aɛrim", f: "Taɛrimt"),
             adult: .gendered(m: "Argaz", f: "Tamṭṭuṭ")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("{n} d"),
-            week: .simple("{n} wk"),
-            month: .simple("{n} mo"),
-            year: .simple("{n} yr"),
+            day: .plural([.one: "{n} ass", .few: "{n} ussan", .other: "{n} ass"]),
+            week: .plural([.one: "{n} imalass", .few: "{n} imalassn", .other: "{n} imalass"]),
+            month: .plural([.one: "{n} ayyur", .few: "{n} ayyurn", .other: "{n} ayyur"]),
+            year: .plural([.one: "{n} aseggas", .few: "{n} iseggasen", .other: "{n} aseggas"]),
             half: nil,
             delimiter: nil,
             justBorn: nil
@@ -5604,7 +5604,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -5623,7 +5623,7 @@ public enum Locales {
             month: .plural([.one: "මාස {n}", .other: "මාස {n}"]),
             year: .plural([.one: "වසර {n}", .other: "වසර {n}"])
         ),
-        half: "{0}යි භාගයයි",
+        half: "{n}½",
         delimiter: ", ",
         justBorn: "අලුත උපන්",
         stages: Stages(
@@ -5838,10 +5838,10 @@ public enum Locales {
         code: "so",
         plural: { $0 == 1 ? .one : .other },
         units: Units(
-            day: .plural([.one: "maalin {n}", .other: "maalmood {n}"]),
-            week: .plural([.one: "toddobaad {n}", .other: "toddobaadyo {n}"]),
-            month: .plural([.one: "bil {n}", .other: "bilood {n}"]),
-            year: .plural([.one: "sano {n}", .other: "sanooyin {n}"])
+            day: .plural([.one: "{n} maalin", .other: "{n} maalmood"]),
+            week: .simple("{n} toddobaad"),
+            month: .plural([.one: "{n} bil", .other: "{n} bilood"]),
+            year: .simple("{n} sano")
         ),
         half: "{n}½",
         delimiter: ", ",
@@ -5889,9 +5889,9 @@ public enum Locales {
         ),
         half: "{0} e gjysmë",
         delimiter: ", ",
-        justBorn: "Sapolindur",
+        justBorn: "I sapolindur",
         stages: Stages(
-            newborn: .gendered(m: "Sapolindur", f: "Sapolindure"),
+            newborn: .gendered(m: "I sapolindur", f: "E sapolindur"),
             infant: .neutral("Foshnjë"),
             toddler: .gendered(m: "Fëmijë i vogël", f: "Fëmijë e vogël"),
             child: .neutral("Fëmijë"),
@@ -6025,7 +6025,7 @@ public enum Locales {
         stages: Stages(
             newborn: .neutral("Lesea le sa tswa hlaha"),
             infant: .neutral("Lesea"),
-            toddler: .neutral("Ngwanana"),
+            toddler: .neutral("Ngwana e monyane"),
             child: .neutral("Ngwana"),
             teenager: .neutral("Mosha"),
             adult: .neutral("Motho e moholo")
@@ -6239,7 +6239,7 @@ public enum Locales {
             month: .plural([.one: "{n} மாதம்", .other: "{n} மாதங்கள்"]),
             year: .plural([.one: "{n} வயது", .other: "{n} வயது"])
         ),
-        half: "{0}ரை",
+        half: "{n}½",
         delimiter: ", ",
         justBorn: "பிறந்த குழந்தை",
         stages: Stages(
@@ -6283,7 +6283,7 @@ public enum Locales {
             month: .plural([.one: "{n} నెల", .other: "{n} నెలలు"]),
             year: .plural([.one: "{n} సంవత్సరం", .other: "{n} సంవత్సరాలు"])
         ),
-        half: "{0}న్నర",
+        half: "{n}½",
         delimiter: ", ",
         justBorn: "నవజాత శిశువు",
         stages: Stages(
@@ -6396,7 +6396,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -6415,7 +6415,7 @@ public enum Locales {
             month: .simple("{n} моҳ"),
             year: .simple("{n} сол")
         ),
-        half: "{0} ним",
+        half: "{0}у ним",
         delimiter: ", ",
         justBorn: "Навзод",
         stages: Stages(
@@ -6591,7 +6591,7 @@ public enum Locales {
             month: .simple("{n} aý"),
             year: .simple("{n} ýaş")
         ),
-        half: "{0}½",
+        half: "{n} ýarym",
         delimiter: ", ",
         justBorn: "Täze doglan",
         stages: Stages(
@@ -6600,7 +6600,7 @@ public enum Locales {
             toddler: .neutral("Kiçijik"),
             child: .neutral("Çaga"),
             teenager: .neutral("Ýetginjek"),
-            adult: .neutral("Ulular")
+            adult: .neutral("Uly adam")
         ),
         shortOverride: CompactnessOverride(
             day: .simple("{n} g"),
@@ -6643,7 +6643,7 @@ public enum Locales {
             infant: .neutral("Lesea"),
             toddler: .neutral("Ngwana yo monnye"),
             child: .neutral("Ngwana"),
-            teenager: .neutral("Lekgarebe"),
+            teenager: .neutral("Mosha"),
             adult: .neutral("Motho yo mogolo")
         ),
         shortOverride: CompactnessOverride(
@@ -6679,7 +6679,7 @@ public enum Locales {
             month: .simple("{n} mun"),
             year: .simple("{n} yia")
         ),
-        half: "{n} na hap",
+        half: "{0} na hap",
         delimiter: ", ",
         justBorn: "Nupela pikinini",
         stages: Stages(
@@ -6704,7 +6704,7 @@ public enum Locales {
             week: .simple("{n}w"),
             month: .simple("{n}m"),
             year: .simple("{n}y"),
-            half: nil,
+            half: "{n}½",
             delimiter: "",
             justBorn: nil
         )
@@ -6860,17 +6860,17 @@ public enum Locales {
         justBorn: "Iɣ d illul",
         stages: Stages(
             newborn: .neutral("Iɣ d illul"),
-            infant: .neutral("Agellid"),
+            infant: .neutral("Llufan"),
             toddler: .gendered(m: "Aḥenjir", f: "Taḥenjirt"),
-            child: .gendered(m: "Afrux", f: "Tafruxṭ"),
+            child: .gendered(m: "Afrux", f: "Tafruxt"),
             teenager: .gendered(m: "Aɛrim", f: "Taɛrimt"),
             adult: .gendered(m: "Argaz", f: "Tamṭṭuṭ")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("{n} d"),
-            week: .simple("{n} wk"),
-            month: .simple("{n} mo"),
-            year: .simple("{n} yr"),
+            day: .plural([.one: "{n} ass", .other: "{n} ussan"]),
+            week: .plural([.one: "{n} imalass", .other: "{n} imalassn"]),
+            month: .plural([.one: "{n} ayyur", .other: "{n} ayyurn"]),
+            year: .plural([.one: "{n} aseggas", .other: "{n} iseggasen"]),
             half: nil,
             delimiter: nil,
             justBorn: nil
@@ -7124,7 +7124,7 @@ public enum Locales {
         justBorn: "Sơ sinh",
         stages: Stages(
             newborn: .neutral("Sơ sinh"),
-            infant: .neutral("Trẻ sơ sinh"),
+            infant: .neutral("Trẻ nhũ nhi"),
             toddler: .neutral("Trẻ mới biết đi"),
             child: .neutral("Trẻ em"),
             teenager: .neutral("Thiếu niên"),
@@ -7202,36 +7202,36 @@ public enum Locales {
         code: "wo",
         plural: { _ in .other },
         units: Units(
-            day: .simple("bés {n}"),
-            week: .simple("ayubés {n}"),
-            month: .simple("weer {n}"),
-            year: .simple("at {n}")
+            day: .simple("{n} fan"),
+            week: .simple("{n} ayubés"),
+            month: .simple("{n} weer"),
+            year: .simple("{n} at")
         ),
         half: "{0} ak genn-wàll",
         delimiter: ", ",
         justBorn: "Dees ko sax juddu",
         stages: Stages(
             newborn: .neutral("Dees ko sax juddu"),
-            infant: .neutral("Njàmbaar bu ndaw"),
+            infant: .neutral("Liir"),
             toddler: .neutral("Xale bu ndaw"),
             child: .neutral("Xale"),
             teenager: .neutral("Ndaw-ndaw"),
             adult: .neutral("Mag")
         ),
         shortOverride: CompactnessOverride(
-            day: .simple("bés {n}"),
-            week: .simple("ayub. {n}"),
-            month: .simple("weer {n}"),
-            year: .simple("at {n}"),
+            day: .simple("{n} fan"),
+            week: .simple("{n} ayub."),
+            month: .simple("{n} weer"),
+            year: .simple("{n} at"),
             half: nil,
             delimiter: nil,
             justBorn: nil
         ),
         compactOverride: CompactnessOverride(
-            day: .simple("bés {n}"),
-            week: .simple("ayub {n}"),
-            month: .simple("weer {n}"),
-            year: .simple("at {n}"),
+            day: .simple("{n} fan"),
+            week: .simple("{n} ayub"),
+            month: .simple("{n} weer"),
+            year: .simple("{n} at"),
             half: "{n}½",
             delimiter: "",
             justBorn: nil

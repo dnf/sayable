@@ -21,21 +21,15 @@ locale =
     { code = "so"
     , plural = \n -> if n == 1 then One else Other
     , day = Pluralized
-      [ ( One, "maalin {n}" )
-      , ( Other, "maalmood {n}" )
+      [ ( One, "{n} maalin" )
+      , ( Other, "{n} maalmood" )
       ]
-    , week = Pluralized
-      [ ( One, "toddobaad {n}" )
-      , ( Other, "toddobaadyo {n}" )
-      ]
+    , week = Simple "{n} toddobaad"
     , month = Pluralized
-      [ ( One, "bil {n}" )
-      , ( Other, "bilood {n}" )
+      [ ( One, "{n} bil" )
+      , ( Other, "{n} bilood" )
       ]
-    , year = Pluralized
-      [ ( One, "sano {n}" )
-      , ( Other, "sanooyin {n}" )
-      ]
+    , year = Simple "{n} sano"
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Dhashay cusub"

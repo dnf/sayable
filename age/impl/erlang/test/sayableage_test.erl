@@ -249,7 +249,7 @@ i18n_spanish_test_() ->
      ?_assertEqual({ok, "6 meses"}, age_locale(Es, "2025-01-15", "2025-07-15")),                       %% 25.7
      ?_assertEqual({ok, "2 años, 1 mes"}, age_locale(Es, "2023-06-15", "2025-07-15")),                %% 25.8
      ?_assertEqual({ok, "2 años, 6 meses"}, age_locale(Es, "2023-06-15", "2025-12-15")),              %% 25.9
-     ?_assertEqual({ok, "3 y medio años"}, age_locale(Es, "2022-06-15", "2025-12-15")),               %% 25.10
+     ?_assertEqual({ok, "3 años y medio"}, age_locale(Es, "2022-06-15", "2025-12-15")),               %% 25.10
      ?_assertEqual({ok, "3 años"}, age_locale(Es, "2022-06-15", "2025-06-15")),                        %% 25.11
      ?_assertEqual({ok, "7 años"}, age_locale(Es, "2018-06-15", "2025-06-15")),                        %% 25.12
      ?_assertEqual({ok, "Recién nacido"}, stage_locale(Es, "2025-06-15", "2025-06-15", undefined)),   %% 25.13
@@ -293,13 +293,13 @@ compactness_compact_test_() ->
 hebrew_test_() ->
     He = sayableage_locales_he:locale(),
     [?_assertEqual({ok, "רק נולד"}, age_locale(He, "2025-06-15", "2025-06-15")),                    %% 29.1
-     ?_assertEqual({ok, "יום 1"}, age_locale(He, "2025-06-14", "2025-06-15")),                       %% 29.2
+     ?_assertEqual({ok, "יום"}, age_locale(He, "2025-06-14", "2025-06-15")),                       %% 29.2
      ?_assertEqual({ok, "3 ימים"}, age_locale(He, "2025-06-12", "2025-06-15")),                     %% 29.3
      ?_assertEqual({ok, "שבועיים"}, age_locale(He, "2025-06-01", "2025-06-15")),                    %% 29.4
      ?_assertEqual({ok, "3 שבועות"}, age_locale(He, "2025-05-25", "2025-06-15")),                   %% 29.5
      ?_assertEqual({ok, "6 חודשים"}, age_locale(He, "2025-01-15", "2025-07-15")),                   %% 29.6
      ?_assertEqual({ok, "3 חודשים"}, age_locale(He, "2025-03-15", "2025-06-15")),                   %% 29.7
-     ?_assertEqual({ok, "שנתיים, חודש 1"}, age_locale(He, "2023-06-15", "2025-07-15")),            %% 29.8
+     ?_assertEqual({ok, "שנתיים, חודש"}, age_locale(He, "2023-06-15", "2025-07-15")),            %% 29.8
      ?_assertEqual({ok, "3 שנים וחצי"}, age_locale(He, "2022-06-15", "2025-12-15")),               %% 29.9
      ?_assertEqual({ok, "7 שנים"}, age_locale(He, "2018-06-15", "2025-06-15")),                     %% 29.10
      ?_assertEqual({ok, "רק נולד"}, stage_locale(He, "2025-06-15", "2025-06-15", male)),            %% 29.11
@@ -338,7 +338,7 @@ indonesian_test_() ->
      ?_assertEqual({ok, "1 hari"}, age_locale(Id, "2025-06-14", "2025-06-15")),                       %% 29.29
      ?_assertEqual({ok, "3 hari"}, age_locale(Id, "2025-06-12", "2025-06-15")),                       %% 29.30
      ?_assertEqual({ok, "6 bulan"}, age_locale(Id, "2025-01-15", "2025-07-15")),                      %% 29.31
-     ?_assertEqual({ok, "3 tahun setengah"}, age_locale(Id, "2022-06-15", "2025-12-15")),             %% 29.32
+     ?_assertEqual({ok, "3 setengah tahun"}, age_locale(Id, "2022-06-15", "2025-12-15")),             %% 29.32
      ?_assertEqual({ok, "7 tahun"}, age_locale(Id, "2018-06-15", "2025-06-15"))                       %% 29.33
     ].
 

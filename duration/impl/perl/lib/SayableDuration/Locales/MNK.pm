@@ -30,7 +30,7 @@ sub locale {{
   delimiter => ', ',
   just_now => 'sisan',
   ago => '{0} taata',
-  in_future => 'ka {0}',
+  in_future => '{0} kɔnɔ',
   short => {
     units => {
       second => 'sɛk. {n}',
@@ -42,7 +42,7 @@ sub locale {{
       year => 'sanj. {n}',
     },
     ago => '{0} taata',
-    in_future => 'ka {0}',
+    in_future => '{0} kɔnɔ',
   },
   compact => {
     units => {
@@ -57,7 +57,7 @@ sub locale {{
     delimiter => '',
     half => '{n}½',
     ago => '{0} taata',
-    in_future => 'ka {0}',
+    in_future => '{0} kɔnɔ',
   },
 }}
 

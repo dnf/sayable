@@ -10,21 +10,21 @@
 # Source: locales/gd.json
 
 _sayabletime_locale_gd() {
-    _clock_hours=('dà-dheug' 'aon' 'dà' 'trì' 'ceithir' 'còig' 'sia' 'seachd' 'ochd' 'naoi' 'deich' 'aon-deug')
+    _clock_hours=('dà uair dheug' 'uair' 'dà uair' 'trì uairean' 'ceithir uairean' 'còig uairean' 'sia uairean' 'seachd uairean' 'ochd uairean' 'naoi uairean' 'deich uairean' 'aon uair deug')
     _clock_midnight='meadhan-oidhche'
     _clock_noon='meadhan-latha'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='còig mionaidean an dèidh {h}'
+    _clock_pattern_10='deich mionaidean an dèidh {h}'
+    _clock_pattern_15='cairteal an dèidh {h}'
+    _clock_pattern_20='fichead mionaid an dèidh {h}'
+    _clock_pattern_25='còig mionaidean fichead an dèidh {h}'
+    _clock_pattern_30='leth-uair an dèidh {h}'
+    _clock_pattern_35='còig mionaidean fichead gu {next_h}'
+    _clock_pattern_40='fichead mionaid gu {next_h}'
+    _clock_pattern_45='cairteal gu {next_h}'
+    _clock_pattern_50='deich mionaidean gu {next_h}'
+    _clock_pattern_55='còig mionaidean gu {next_h}'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

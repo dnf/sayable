@@ -24,7 +24,7 @@ pub const locale_tpi = DateLocale{
 	yesterday: 'asde'
 	day_after_tomorrow: 'haptumora'
 	has_day_after_tomorrow: true
-	day_before_yesterday: 'asde bipo'
+	day_before_yesterday: 'hapasde'
 	has_day_before_yesterday: true
 	this_weekday: 'dispela {weekday}'
 	has_this_weekday: true

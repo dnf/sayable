@@ -18,7 +18,7 @@ _sayableage_locale_kri() {
     _unit_week='{n} wik'
     _unit_month='{n} mont'
     _unit_year='{n} ia'
-    _half='{n} na af'
+    _half='{0} ɛn af'
     _delimiter=', '
     _just_born='Nyubon bebi'
     _stage_newborn='Nyubon bebi'
@@ -35,6 +35,7 @@ _sayableage_locale_kri() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_kri
 }

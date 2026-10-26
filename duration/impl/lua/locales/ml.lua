@@ -12,7 +12,7 @@
 local M = {}
 
 M.code = "ml"
-M.plural = function(n) return (n == 0 or n == 1) and "one" or "other" end
+M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
     second = { one = "{n} സെക്കൻഡ്", other = "{n} സെക്കൻഡുകൾ" },
     minute = { one = "{n} മിനിറ്റ്", other = "{n} മിനിറ്റുകൾ" },
@@ -22,7 +22,7 @@ M.units = {
     month = { one = "{n} മാസം", other = "{n} മാസങ്ങൾ" },
     year = { one = "{n} വർഷം", other = "{n} വർഷങ്ങൾ" },
 }
-M.half = "{0} ര"
+M.half = "{n}½"
 M.delimiter = ", "
 M.just_now = "ഇപ്പോൾ"
 M.ago = "{0} മുമ്പ്"

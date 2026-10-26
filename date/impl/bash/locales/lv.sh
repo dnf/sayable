@@ -14,7 +14,7 @@ _sayabledate_locale_lv() {
     _weekdays=('svētdiena' 'pirmdiena' 'otrdiena' 'trešdiena' 'ceturtdiena' 'piektdiena' 'sestdiena')
     _day_format='{n}.'
     _date_pattern='{day} {month}'
-    _date_pattern_with_year='{day} {month} {year}'
+    _date_pattern_with_year='{year}. gada {day} {month}'
     _today='šodien'
     _tomorrow='rīt'
     _yesterday='vakar'
@@ -27,7 +27,7 @@ _sayabledate_locale_lv() {
     _short_weekdays=('sv' 'pr' 'ot' 'tr' 'ce' 'pk' 'se')
     _short_day_format='{n}.'
     _short_date_pattern='{day} {month}'
-    _short_date_pattern_with_year='{day} {month} {year}'
+    _short_date_pattern_with_year='{year}. gada {day} {month}'
     _compact_date_pattern='{d}.{m}.'
     _compact_date_pattern_with_year='{d}.{m}.{yy}'
 }

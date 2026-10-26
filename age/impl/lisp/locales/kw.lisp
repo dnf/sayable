@@ -29,10 +29,10 @@
   (make-age-locale
    :code "kw"
    :plural #'plural-kw
-   :units (list (cons :day '((:zero . "{n} dydh") (:one . "dydh") (:two . "{n} dhydh") (:few . "{n} dydh") (:many . "{n} dydh") (:other . "{n} dydh")))
-               (cons :week '((:zero . "{n} seythun") (:one . "seythun") (:two . "{n} seythun") (:few . "{n} seythun") (:many . "{n} seythun") (:other . "{n} seythun")))
-               (cons :month '((:zero . "{n} mis") (:one . "mis") (:two . "{n} vis") (:few . "{n} mis") (:many . "{n} mis") (:other . "{n} mis")))
-               (cons :year '((:zero . "{n} blydhen") (:one . "blydhen") (:two . "{n} vlydhen") (:few . "{n} blydhen") (:many . "{n} blydhen") (:other . "{n} blydhen"))))
+   :units (list (cons :day '((:zero . "{n} dydh") (:one . "{n} dydh") (:two . "{n} dhydh") (:few . "{n} dydh") (:many . "{n} dydh") (:other . "{n} dydh")))
+               (cons :week '((:zero . "{n} seythun") (:one . "{n} seythun") (:two . "{n} seythun") (:few . "{n} seythun") (:many . "{n} seythun") (:other . "{n} seythun")))
+               (cons :month '((:zero . "{n} mis") (:one . "{n} mis") (:two . "{n} vis") (:few . "{n} mis") (:many . "{n} mis") (:other . "{n} mis")))
+               (cons :year '((:zero . "{n} blydhen") (:one . "{n} blydhen") (:two . "{n} vlydhen") (:few . "{n} blydhen") (:many . "{n} blydhen") (:other . "{n} blydhen"))))
    :half "{0} hag hanter"
    :delimiter ", "
    :just-born "Nowyth genys"

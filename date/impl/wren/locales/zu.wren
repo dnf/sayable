@@ -27,7 +27,7 @@ class ZULocale {
   static tomorrow { "kusasa" }
   static yesterday { "izolo" }
   static dayAfterTomorrow { "ngomhlomunye" }
-  static dayBeforeYesterday { "usuku olwedlule izolo" }
+  static dayBeforeYesterday { "kuthangi" }
   static thisWeekday { "leli {weekday}" }
   static nextWeekday { "{weekday} elizayo" }
   static lastWeekday { "{weekday} eledlule" }

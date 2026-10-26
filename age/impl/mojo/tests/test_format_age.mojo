@@ -737,7 +737,7 @@ fn _build_mock_es() -> AgeLocale:
         week=week,
         month=month,
         year=year,
-        half="{n} y medio",
+        half="{0} y medio",
         delimiter=", ",
         just_born="Reci\xc3\xa9n nacido",
         newborn=newborn,
@@ -806,7 +806,7 @@ fn test_es_years_months_compound() raises:
 # 25.10
 fn test_es_half_marker() raises:
     var sa = SayableAge(_build_mock_es())
-    assert_equal(sa.format_age("2022-06-15", "2025-12-15"), "3 y medio a\xc3\xb1os")
+    assert_equal(sa.format_age("2022-06-15", "2025-12-15"), "3 a\xc3\xb1os y medio")
 
 
 # 25.11
@@ -981,7 +981,7 @@ fn test_29_1_he_just_born() raises:
 # 29.2
 fn test_29_2_he_one_day() raises:
     var sa = SayableAge(build_he())
-    assert_equal(sa.format_age("2025-06-14", "2025-06-15"), "\xd7\x99\xd7\x95\xd7\x9d 1")
+    assert_equal(sa.format_age("2025-06-14", "2025-06-15"), "\xd7\x99\xd7\x95\xd7\x9d")
 
 
 # 29.3
@@ -1019,7 +1019,7 @@ fn test_29_8_he_two_years_dual_one_month() raises:
     var sa = SayableAge(build_he())
     assert_equal(
         sa.format_age("2023-06-15", "2025-07-15"),
-        "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9 1",
+        "\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9",
     )
 
 

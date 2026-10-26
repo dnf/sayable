@@ -18,7 +18,7 @@ final kl = DateLocale(
   weekdays: ['sapaat', 'ataasinngorneq', 'marlunngorneq', 'pingasunngorneq', 'sisamanngorneq', 'tallimanngorneq', 'arfininngorneq'],
   dayFormat: '{n}.',
   datePattern: '{month} {day}',
-  datePatternWithYear: '{day} {month} {year}',
+  datePatternWithYear: '{month} {day} {year}',
   today: 'ullumi',
   tomorrow: 'aqagu',
   yesterday: 'ippassaq',
@@ -32,7 +32,7 @@ final kl = DateLocale(
     weekdays: ['sap', 'ata', 'mar', 'pin', 'sis', 'tal', 'arf'],
     dayFormat: '{n}.',
     datePattern: '{month} {day}',
-    datePatternWithYear: '{day} {month} {year}',
+    datePatternWithYear: '{month} {day} {year}',
   ),
   compact: CompactnessOverride(
     datePattern: '{m}-{d}',

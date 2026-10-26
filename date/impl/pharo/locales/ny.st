@@ -27,9 +27,9 @@ ny
 	locale yesterday: 'dzulo'.
 	locale dayAfterTomorrow: 'mkucha'.
 	locale dayBeforeYesterday: 'dzana'.
-	locale thisWeekday: '{weekday} ino'.
-	locale nextWeekday: '{weekday} yotsatira'.
-	locale lastWeekday: '{weekday} yatha'.
+	locale thisWeekday: '{weekday} lino'.
+	locale nextWeekday: '{weekday} lotsatira'.
+	locale lastWeekday: '{weekday} latha'.
 	locale monthsInDate: nil.
 	locale short: (Dictionary newFromPairs: {
 		#months. (OrderedCollection withAll: { 'Jan'. 'Feb'. 'Mat'. 'Epu'. 'Mey'. 'Jun'. 'Jul'. 'Oga'. 'Sep'. 'Okt'. 'Nov'. 'Dis' }).

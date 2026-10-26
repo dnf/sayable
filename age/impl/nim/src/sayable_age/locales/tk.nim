@@ -22,7 +22,7 @@ let TK* = AgeLocale(
     "month": simpleUnit("{n} aý"),
     "year": simpleUnit("{n} ýaş"),
   }.toOrderedTable,
-  half: "{0}½",
+  half: "{n} ýarym",
   delimiter: ", ",
   justBorn: "Täze doglan",
   stages: {
@@ -31,7 +31,7 @@ let TK* = AgeLocale(
     "toddler": stageNeutral("Kiçijik"),
     "child": stageNeutral("Çaga"),
     "teenager": stageNeutral("Ýetginjek"),
-    "adult": stageNeutral("Ulular"),
+    "adult": stageNeutral("Uly adam"),
   }.toOrderedTable,
   short: some(CompactnessOverride(
     units: some({

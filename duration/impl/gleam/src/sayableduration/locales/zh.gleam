@@ -22,7 +22,7 @@ pub fn locale() -> types.DurationLocale {
       #("day", types.SimpleUnit("{n}天")),
       #("week", types.SimpleUnit("{n}周")),
       #("month", types.SimpleUnit("{n}个月")),
-      #("year", types.SimpleUnit("{n}岁")),
+      #("year", types.SimpleUnit("{n}年")),
     ],
     half: "{0}半",
     delimiter: "",

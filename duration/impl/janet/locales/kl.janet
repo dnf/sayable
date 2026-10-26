@@ -11,19 +11,19 @@
 
 (def locale
   {:code "kl"
-   :plural (fn [_n] :other)
-   :units {:second "sekundit {n}"
-          :minute "minutsit {n}"
-          :hour "nalunaaqutap akunnera {n}"
-          :day "ullut {n}"
-          :week "sapaatit {n}"
-          :month "qaammatit {n}"
-          :year "ukiut {n}"}
+   :plural (fn [n] (if (= n 1) :one :other))
+   :units {:second {:one "sekundi {n}" :other "sekundit {n}"}
+          :minute {:one "minutsi {n}" :other "minutsit {n}"}
+          :hour {:one "nalunaaquttap akunnera {n}" :other "nalunaaquttap akunneri {n}"}
+          :day {:one "ulloq {n}" :other "ullut {n}"}
+          :week {:one "sapaatip akunnera {n}" :other "sapaatip akunneri {n}"}
+          :month {:one "qaammat {n}" :other "qaammatit {n}"}
+          :year {:one "ukioq {n}" :other "ukiut {n}"}}
    :half "{0} affaa"
    :delimiter ", "
    :just-now "maanna"
    :ago "{0} matuma siorna"
    :in-future "{0} siunissami"
-   :short {:units {:second "sek. {n}" :minute "min. {n}" :hour "nal. {n}" :day "ull. {n}" :week "sap. {n}" :month "qaam. {n}" :year "uk. {n}"} :ago "{0} matuma siorna" :in-future "{0} siunissami"}
-   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :delimiter "" :ago "{0} matuma siorna" :in-future "{0} siunissami"}
+   :short {:units {:second "sek. {n}" :minute "min. {n}" :hour "nal. {n}" :day "ull. {n}" :week "sap. ak. {n}" :month "qaam. {n}" :year "uk. {n}"} :ago "{0} matuma siorna" :in-future "{0} siunissami"}
+   :compact {:units {:second "{n}s" :minute "{n}m" :hour "{n}h" :day "{n}d" :week "{n}w" :month "{n}mo" :year "{n}y"} :half "{n}½" :delimiter "" :ago "{0} matuma siorna" :in-future "{0} siunissami"}
 })

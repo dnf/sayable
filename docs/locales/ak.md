@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ak.json](../../locales/ak.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Twi 'nnɔn {h}' (o'clock), additive 'nnɔn {h} ne sima N' for :05-:25, 'nnɔn {h} ne fa' (half), and the subtractive idiom 'aka sima N na abɔ nnɔn {next_h}' (N minutes remain before it strikes next hour) for :35-:55. Hour 12 fixed from truncated 'dumien' to 'dumienu'. Standard 12-hour count (Ghana does not use a 6 a.m.-based count). Minutes word 'sima' (variant 'simma'); 'ne' (and) chosen over the idiom 'apa ho' because it is unambiguous either way.
+
 ## Age
 
 ### Age formatting
@@ -13,11 +21,11 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 | Age               | Normal           | Short            | Compact       |
 | ----------------- | ---------------- | ---------------- | ------------- |
 | Born today        | Abofra foforo    | Abofra foforo    | Abofra foforo |
-| 1 day             | da 1             | nna 1            | nna 1         |
+| 1 day             | da 1             | da 1             | da 1          |
 | 3 days            | nna 3            | nna 3            | nna 3         |
 | 6 days            | nna 6            | nna 6            | nna 6         |
 | 1 week            | dapɛn 1          | dapɛn 1          | dapɛn 1       |
-| 1 week, 1 day     | dapɛn 1, da 1    | dapɛn 1, nna 1   | dapɛn 1nna 1  |
+| 1 week, 1 day     | dapɛn 1, da 1    | dapɛn 1, da 1    | dapɛn 1da 1   |
 | 2 weeks           | nnapɛn 2         | nnapɛn 2         | nnapɛn 2      |
 | 2 weeks, 3 days   | nnapɛn 2, nna 3  | nnapɛn 2, nna 3  | nnapɛn 2nna 3 |
 | 3 months          | abosome 3        | abosome 3        | abos 3        |
@@ -39,14 +47,14 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 
 ### Stages
 
-| Stage    | Label         |
-| -------- | ------------- |
-| Newborn  | Abofra foforo |
-| Infant   | Akwadaa       |
-| Toddler  | Abofra        |
-| Child    | Abofra        |
-| Teenager | Abarimaa      |
-| Adult    | Ɔpanyin       |
+| Stage    | Label               |
+| -------- | ------------------- |
+| Newborn  | Abofra foforo       |
+| Infant   | Akwadaa             |
+| Toddler  | Abofra              |
+| Child    | Abofra              |
+| Teenager | Abarimaa / Abaayewa |
+| Adult    | Ɔpanyin             |
 
 ## Date
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ɛkyena           | 17/3    |
 | Day before yesterday | nnansa           | 13/3    |
 | This Thursday (+5)   | Yawoada yi       | 20/3    |
-| Last Monday (-4)     | Ɛbenada a etwaam | 11/3    |
-| Next Wednesday (+12) | Yawoada a ɛba    | 27/3    |
-| Same month (+20)     | 4 Oforisuo       | 4/4     |
+| Last Tuesday (-4)    | Ɛbenada a etwaam | 11/3    |
+| Next Thursday (+12)  | Yawoada a ɛba    | 27/3    |
+| Same year (+20)      | 4 Oforisuo       | 4/4     |
 | Different year       | 10 Ɔpɛpɔn 2026   | 10/1/26 |
 
 ## Duration
@@ -95,7 +103,7 @@ Relative to Saturday, March 15, 2025.
 | 1½ hours              | dɔnhwere 1½       | dɔnhwere 1½       | dɔn 1½        |
 | 3 hours               | dɔnhwere 3        | dɔnhwere 3        | dɔn 3         |
 | 6 hours               | dɔnhwere 6        | dɔnhwere 6        | dɔn 6         |
-| 1 day                 | da 1              | nna 1             | nna 1         |
+| 1 day                 | da 1              | da 1              | da 1          |
 | 1½ days               | nna 1½            | nna 1½            | nna 1½        |
 | 3 days                | nna 3             | nna 3             | nna 3         |
 | 1 week                | dapɛn 1           | dapɛn 1           | dapɛn 1       |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal     | Short    | Compact |
-| --------------- | ---------- | -------- | ------- |
-| Midnight        | anadwo     | 12:00 AM | 12:00a  |
-| 1:00 AM         | baako:00   | 1:00 AM  | 1:00a   |
-| 5 past 9        | nkron:05   | 9:05 AM  | 9:05a   |
-| Quarter past 10 | edu:15     | 10:15 AM | 10:15a  |
-| Half past 11    | dubaako:30 | 11:30 AM | 11:30a  |
-| Noon            | awia       | 12:00 PM | 12:00p  |
-| Quarter to 3    | mmienu:45  | 2:45 PM  | 2:45p   |
-| 5 to 6          | anum:55    | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | nwɔtwe:00  | 8:00 PM  | 8:00p   |
-| 10:30 PM        | edu:30     | 10:30 PM | 10:30p  |
-| 11:58 PM        | anadwo     | 11:58 PM | 11:58p  |
+| Time            | Normal                             | Short    | Compact |
+| --------------- | ---------------------------------- | -------- | ------- |
+| Midnight        | ɔdasuom                            | 12:00 AM | 12:00a  |
+| 1:00 AM         | nnɔn baako                         | 1:00 AM  | 1:00a   |
+| 5 past 9        | nnɔn nkron ne sima anum            | 9:05 AM  | 9:05a   |
+| Quarter past 10 | nnɔn edu ne sima dunum             | 10:15 AM | 10:15a  |
+| Half past 11    | nnɔn dubaako ne fa                 | 11:30 AM | 11:30a  |
+| Noon            | owigyinae                          | 12:00 PM | 12:00p  |
+| Quarter to 3    | aka sima dunum na abɔ nnɔn mmiensa | 2:45 PM  | 2:45p   |
+| 5 to 6          | aka sima anum na abɔ nnɔn nsia     | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | nnɔn nwɔtwe                        | 8:00 PM  | 8:00p   |
+| 10:30 PM        | nnɔn edu ne fa                     | 10:30 PM | 10:30p  |
+| 11:58 PM        | ɔdasuom                            | 11:58 PM | 11:58p  |

@@ -27,9 +27,9 @@ locale() ->
         yesterday = "dzulo",
         day_after_tomorrow = {just, "mkucha"},
         day_before_yesterday = {just, "dzana"},
-        this_weekday = {just, "{weekday} ino"},
-        next_weekday = {just, "{weekday} yotsatira"},
-        last_weekday = {just, "{weekday} yatha"},
+        this_weekday = {just, "{weekday} lino"},
+        next_weekday = {just, "{weekday} lotsatira"},
+        last_weekday = {just, "{weekday} latha"},
         months_in_date = nothing,
         short = {just, #date_compactness_override{months = {just, ["Jan", "Feb", "Mat", "Epu", "Mey", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"]}, months_in_date = nothing, weekdays = {just, ["Lam", "Lol", "Lch", "Lct", "Lcn", "Lcs", "Low"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}

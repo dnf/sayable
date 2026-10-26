@@ -15,7 +15,7 @@ module SayableDuration
       plural: ->(n : Int32) { n == 1 ? PluralCategory::One : PluralCategory::Other },
       units: {
         "second" => UnitForms.new("{n} सेकंद"),
-        "minute" => UnitForms.new("{n} मिनिट"),
+        "minute" => UnitForms.new(one: "{n} मिनिट", other: "{n} मिनिटे"),
         "hour" => UnitForms.new("{n} तास"),
         "day" => UnitForms.new(one: "{n} दिवस", other: "{n} दिवस"),
         "week" => UnitForms.new(one: "{n} आठवडा", other: "{n} आठवडे"),

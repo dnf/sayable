@@ -50,7 +50,7 @@ fn build_tpi() -> DateLocale:
     var tomorrow = "tumora"
     var yesterday = "asde"
     var day_after_tomorrow = "haptumora"
-    var day_before_yesterday = "asde bipo"
+    var day_before_yesterday = "hapasde"
     var this_weekday = "dispela {weekday}"
     var next_weekday = "{weekday} bihain"
     var last_weekday = "{weekday} bipo"

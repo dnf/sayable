@@ -22,7 +22,7 @@ M.units = {
     month = "{n} bulan",
     year = "{n} tahun",
 }
-M.half = "{0} setengah"
+M.half = "{n} setengah"
 M.delimiter = ", "
 M.just_now = "baru saja"
 M.ago = "{0} yang lalu"

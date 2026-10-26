@@ -29,7 +29,7 @@ sa_just_born('ne', 'नवजात शिशु').
 
 sa_stage('ne', newborn, _, 'नवजात शिशु').
 sa_stage('ne', infant, _, 'शिशु').
-sa_stage('ne', toddler, _, 'बाल्यकाल').
+sa_stage('ne', toddler, _, 'सानो बच्चा').
 sa_stage('ne', child, _, 'बालक').
 sa_stage('ne', teenager, _, 'किशोर').
 sa_stage('ne', adult, _, 'वयस्क').

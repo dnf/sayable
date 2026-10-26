@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [dyu.json](../../locales/dyu.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Dyula 'lɛrɛ {h}' (lɛrɛ = hour, from French, the everyday Dyula word and already used by this locale), additive 'lɛrɛ {h} ni miniti N' and 'lɛrɛ {h} ni tilancɛ'. Same numerals as Bambara, consistent with the existing hours list (duuru rather than Jula 'looru'). Standard 12-hour count.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | sini kɔfɛ           | 17/3    |
 | Day before yesterday | kunu kɔfɛ           | 13/3    |
 | This Thursday (+5)   | Alamisa nin         | 20/3    |
-| Last Monday (-4)     | Tarata tɛmɛnen      | 11/3    |
-| Next Wednesday (+12) | Alamisa nata        | 27/3    |
-| Same month (+20)     | 4 Awirilikalo       | 4/4     |
+| Last Tuesday (-4)    | Tarata tɛmɛnen      | 11/3    |
+| Next Thursday (+12)  | Alamisa nata        | 27/3    |
+| Same year (+20)      | 4 Awirilikalo       | 4/4     |
 | Different year       | 10 Zanwuyekalo 2026 | 10/1/26 |
 
 ## Duration
@@ -111,23 +119,23 @@ Relative to Saturday, March 15, 2025.
 | ------------- | ---------------- | ---------- |
 | 5 minutes ago | miniti 5 tɛmɛnen | 5m tɛmɛnen |
 | 2 hours ago   | lɛrɛ 2 tɛmɛnen   | 2h tɛmɛnen |
-| in 30 minutes | ka miniti 30     | ka 30m     |
-| in 3 hours    | ka lɛrɛ 3        | ka 3h      |
+| in 30 minutes | miniti 30 kɔnɔ   | 30m kɔnɔ   |
+| in 3 hours    | lɛrɛ 3 kɔnɔ      | 3h kɔnɔ    |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | dugutilama      | 12:00 AM | 12:00a  |
-| 1:00 AM         | kelen:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | kɔnɔntɔn:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | tan:15          | 10:15 AM | 10:15a  |
-| Half past 11    | tan ni kelen:30 | 11:30 AM | 11:30a  |
-| Noon            | tilgari         | 12:00 PM | 12:00p  |
-| Quarter to 3    | fila:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | duuru:55        | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | segin:00        | 8:00 PM  | 8:00p   |
-| 10:30 PM        | tan:30          | 10:30 PM | 10:30p  |
-| 11:58 PM        | dugutilama      | 11:58 PM | 11:58p  |
+| Time            | Normal                                 | Short    | Compact |
+| --------------- | -------------------------------------- | -------- | ------- |
+| Midnight        | dugutilama                             | 12:00 AM | 12:00a  |
+| 1:00 AM         | lɛrɛ kelen                             | 1:00 AM  | 1:00a   |
+| 5 past 9        | lɛrɛ kɔnɔntɔn ni miniti duuru          | 9:05 AM  | 9:05a   |
+| Quarter past 10 | lɛrɛ tan ni miniti tan ni duuru        | 10:15 AM | 10:15a  |
+| Half past 11    | lɛrɛ tan ni kelen ni tilancɛ           | 11:30 AM | 11:30a  |
+| Noon            | tilgari                                | 12:00 PM | 12:00p  |
+| Quarter to 3    | lɛrɛ fila ni miniti bi naani ni duuru  | 2:45 PM  | 2:45p   |
+| 5 to 6          | lɛrɛ duuru ni miniti bi duuru ni duuru | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | lɛrɛ segin                             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | lɛrɛ tan ni tilancɛ                    | 10:30 PM | 10:30p  |
+| 11:58 PM        | dugutilama                             | 11:58 PM | 11:58p  |

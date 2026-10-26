@@ -6,6 +6,14 @@
 
 Plural rule: `kw` (categories: zero, one, two, few, many, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [kw.json](../../locales/kw.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Replaced digit placeholders with the standard learner-course Cornish (SWF): feminine hour numerals agreeing with 'eur' (unn, diw, teyr, peder, pymp, hwegh, seyth, eth, naw, deg, unnek, dewdhek); '{h} eur' on the hour; 'X mynysen wosa {h}' / 'kwarter wosa' / 'hanter wosa' for past; 'X mynysen dhe {next_h}' / 'kwarter dhe' for to; 25 minutes as 'pymp mynysen warn ugens'. Compromise: 'dhe' triggers soft mutation of the following numeral (dhe dhiw, dhe deyr, dhe beder, dhe bymp, dhe dheg, dhe dhewdhek), which the single hours list cannot express, so the to-phrases use unmutated numerals. Not checked against a native source, so a Cornish reviewer should confirm.
+
 ## Age
 
 ### Age formatting
@@ -13,11 +21,11 @@ Plural rule: `kw` (categories: zero, one, two, few, many, other)
 | Age               | Normal               | Short           | Compact      |
 | ----------------- | -------------------- | --------------- | ------------ |
 | Born today        | Nowyth genys         | Nowyth genys    | Nowyth genys |
-| 1 day             | dydh                 | 1 d             | 1d           |
+| 1 day             | 1 dydh               | 1 d             | 1d           |
 | 3 days            | 3 dydh               | 3 d             | 3d           |
 | 6 days            | 6 dydh               | 6 d             | 6d           |
-| 1 week            | seythun              | 1 wk            | 1w           |
-| 1 week, 1 day     | seythun, dydh        | 1 wk, 1 d       | 1w1d         |
+| 1 week            | 1 seythun            | 1 wk            | 1w           |
+| 1 week, 1 day     | 1 seythun, 1 dydh    | 1 wk, 1 d       | 1w1d         |
 | 2 weeks           | 2 seythun            | 2 wk            | 2w           |
 | 2 weeks, 3 days   | 2 seythun, 3 dydh    | 2 wk, 3 d       | 2w3d         |
 | 3 months          | 3 mis                | 3 mo            | 3m           |
@@ -26,7 +34,7 @@ Plural rule: `kw` (categories: zero, one, two, few, many, other)
 | 12 months         | 12 mis               | 12 mo           | 12m          |
 | 23 months         | 23 mis               | 23 mo           | 23m          |
 | 2 years           | 2 vlydhen            | 2 yr            | 2y           |
-| 2 years, 1 month  | 2 vlydhen, mis       | 2 yr, 1 mo      | 2y1m         |
+| 2 years, 1 month  | 2 vlydhen, 1 mis     | 2 yr, 1 mo      | 2y1m         |
 | 2 years, 6 months | 2 vlydhen, 6 mis     | 2 yr, 6 mo      | 2y6m         |
 | 3 years           | 3 blydhen            | 3 yr            | 3y           |
 | 3½ years          | 3 blydhen hag hanter | 3 yr hag hanter | 3½y          |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | an De Lun ma         | 17/3    |
 | Day before yesterday | De Yow eus passyes   | 13/3    |
 | This Thursday (+5)   | an De Yow ma         | 20/3    |
-| Last Monday (-4)     | De Merth eus passyes | 11/3    |
-| Next Wednesday (+12) | De Yow a dheu        | 27/3    |
-| Same month (+20)     | 4 Ebrel              | 4/4     |
+| Last Tuesday (-4)    | De Merth eus passyes | 11/3    |
+| Next Thursday (+12)  | De Yow a dheu        | 27/3    |
+| Same year (+20)      | 4 Ebrel              | 4/4     |
 | Different year       | 10 Genver 2026       | 10/1/26 |
 
 ## Duration
@@ -95,14 +103,14 @@ Relative to Saturday, March 15, 2025.
 | 1½ hours              | 1 our hag hanter       | 1h hag hanter | 1½h     |
 | 3 hours               | 3 our                  | 3h            | 3h      |
 | 6 hours               | 6 our                  | 6h            | 6h      |
-| 1 day                 | dydh                   | 1d            | 1d      |
+| 1 day                 | 1 dydh                 | 1d            | 1d      |
 | 1½ days               | 1 dydh hag hanter      | 1d hag hanter | 1½d     |
 | 3 days                | 3 dydh                 | 3d            | 3d      |
-| 1 week                | seythun                | 1w            | 1w      |
+| 1 week                | 1 seythun              | 1w            | 1w      |
 | 2 weeks, 3 days       | 2 seythun, 3 dydh      | 2w, 3d        | 2w3d    |
-| 1 month               | mis                    | 1mo           | 1mo     |
+| 1 month               | 1 mis                  | 1mo           | 1mo     |
 | 6 months              | 6 mis                  | 6mo           | 6mo     |
-| 1 year                | blydhen                | 1y            | 1y      |
+| 1 year                | 1 blydhen              | 1y            | 1y      |
 | 2 years, 3 months     | 2 vlydhen, 3 mis       | 2y, 3mo       | 2y3mo   |
 
 ### Relative time
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal      | Short | Compact |
-| --------------- | ----------- | ----- | ------- |
-| Midnight        | hanter nos  | 0:00  | 0:00    |
-| 1:00 AM         | 1:00        | 1:00  | 1:00    |
-| 5 past 9        | 9:05        | 9:05  | 9:05    |
-| Quarter past 10 | 10:15       | 10:15 | 10:15   |
-| Half past 11    | 11:30       | 11:30 | 11:30   |
-| Noon            | hanter dydh | 12:00 | 12:00   |
-| Quarter to 3    | 2:45        | 14:45 | 14:45   |
-| 5 to 6          | 5:55        | 17:55 | 17:55   |
-| 8 o'clock PM    | 8:00        | 20:00 | 20:00   |
-| 10:30 PM        | 10:30       | 22:30 | 22:30   |
-| 11:58 PM        | hanter nos  | 23:58 | 23:58   |
+| Time            | Normal                 | Short | Compact |
+| --------------- | ---------------------- | ----- | ------- |
+| Midnight        | hanter nos             | 0:00  | 0:00    |
+| 1:00 AM         | unn eur                | 1:00  | 1:00    |
+| 5 past 9        | pymp mynysen wosa naw  | 9:05  | 9:05    |
+| Quarter past 10 | kwarter wosa deg       | 10:15 | 10:15   |
+| Half past 11    | hanter wosa unnek      | 11:30 | 11:30   |
+| Noon            | hanter dydh            | 12:00 | 12:00   |
+| Quarter to 3    | kwarter dhe teyr       | 14:45 | 14:45   |
+| 5 to 6          | pymp mynysen dhe hwegh | 17:55 | 17:55   |
+| 8 o'clock PM    | eth eur                | 20:00 | 20:00   |
+| 10:30 PM        | hanter wosa deg        | 22:30 | 22:30   |
+| 11:58 PM        | hanter nos             | 23:58 | 23:58   |

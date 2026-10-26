@@ -550,7 +550,7 @@ void main() {
       week: pluralUnit({PluralCategory.one: '{n} semana', PluralCategory.other: '{n} semanas'}),
       month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} meses'}),
       year: pluralUnit({PluralCategory.one: '{n} año', PluralCategory.other: '{n} años'}),
-      half: '{n} y medio',
+      half: '{0} y medio',
       delimiter: ', ',
       justBorn: 'Recién nacido',
       newborn: stageGendered('Recién nacido', 'Recién nacida'),
@@ -591,7 +591,7 @@ void main() {
       expect(pt.formatAge('2023-06-15', '2025-12-15'), '2 años, 6 meses'); // 25.9
     });
     test('half marker', () {
-      expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 y medio años'); // 25.10
+      expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 años y medio'); // 25.10
     });
     test('integer years', () {
       expect(pt.formatAge('2022-06-15', '2025-06-15'), '3 años'); // 25.11
@@ -879,7 +879,7 @@ void main() {
       expect(pt.formatAge('2025-06-15', '2025-06-15'), 'רק נולד'); // 29.1
     });
     test('he 1 day one', () {
-      expect(pt.formatAge('2025-06-14', '2025-06-15'), 'יום 1'); // 29.2
+      expect(pt.formatAge('2025-06-14', '2025-06-15'), 'יום'); // 29.2
     });
     test('he 3 days other', () {
       expect(pt.formatAge('2025-06-12', '2025-06-15'), '3 ימים'); // 29.3
@@ -897,7 +897,7 @@ void main() {
       expect(pt.formatAge('2025-03-15', '2025-06-15'), '3 חודשים'); // 29.7
     });
     test('he 2y dual 1m one', () {
-      expect(pt.formatAge('2023-06-15', '2025-07-15'), 'שנתיים, חודש 1'); // 29.8
+      expect(pt.formatAge('2023-06-15', '2025-07-15'), 'שנתיים, חודש'); // 29.8
     });
     test('he 3.5y half', () {
       expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 שנים וחצי'); // 29.9
@@ -984,7 +984,7 @@ void main() {
       expect(pt.formatAge('2025-01-15', '2025-07-15'), '6 bulan'); // 29.31
     });
     test('id 3.5y half', () {
-      expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 tahun setengah'); // 29.32
+      expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 setengah tahun'); // 29.32
     });
     test('id 7y', () {
       expect(pt.formatAge('2018-06-15', '2025-06-15'), '7 tahun'); // 29.33

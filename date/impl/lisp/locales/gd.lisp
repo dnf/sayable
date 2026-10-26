@@ -18,7 +18,7 @@
    :code "gd"
    :months (list "Am Faoilleach" "An Gearran" "Am Màrt" "An Giblean" "An Cèitean" "An t-Ògmhios" "An t-Iuchar" "An Lùnastal" "An t-Sultain" "An Dàmhair" "An t-Samhain" "An Dùbhlachd")
    :weekdays (list "DiDòmhnaich" "DiLuain" "DiMàirt" "DiCiadain" "DiarDaoin" "DihAoine" "DiSathairne")
-   :day-format "{n}"
+   :day-format "{n}mh"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
    :date-pattern-with-year "{day} {month} {year}"
@@ -30,6 +30,7 @@
    :this-weekday "{weekday} seo"
    :next-weekday "{weekday} sa tighinn"
    :last-weekday "{weekday} seo chaidh"
+   :months-in-date (list "dhen Fhaoilleach" "dhen Ghearran" "dhen Mhàrt" "dhen Ghiblean" "dhen Chèitean" "dhen Ògmhios" "dhen Iuchar" "dhen Lùnastal" "dhen t-Sultain" "dhen Dàmhair" "dhen t-Samhain" "dhen Dùbhlachd")
    :short-months (list "Faoi" "Gearr" "Màrt" "Gibl" "Cèit" "Ògmh" "Iuch" "Lùna" "Sult" "Dàmh" "Samh" "Dùbh")
    :short-weekdays (list "DiD" "DiL" "DiM" "DiC" "Dia" "Dih" "DiS")
    :short-day-format "{n}"

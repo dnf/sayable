@@ -24,7 +24,7 @@ pub const locale_bem = DurationLocale{
 	plural: plural_bem
 	second: plural_unit({PluralCategory.one: 'isekondi {n}', PluralCategory.other: 'amasekondi {n}'})
 	minute: plural_unit({PluralCategory.one: 'iminiti {n}', PluralCategory.other: 'amaminiti {n}'})
-	hour: plural_unit({PluralCategory.one: 'insa {n}', PluralCategory.other: 'amanso {n}'})
+	hour: plural_unit({PluralCategory.one: 'insa {n}', PluralCategory.other: 'insa {n}'})
 	day: plural_unit({PluralCategory.one: 'ubushiku {n}', PluralCategory.other: 'inshiku {n}'})
 	week: plural_unit({PluralCategory.one: 'umulungu {n}', PluralCategory.other: 'imilungu {n}'})
 	month: plural_unit({PluralCategory.one: 'umweshi {n}', PluralCategory.other: 'imyeshi {n}'})

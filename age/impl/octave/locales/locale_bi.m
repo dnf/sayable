@@ -16,7 +16,7 @@ function loc = locale_bi()
   loc.units.week = '{n} wik';
   loc.units.month = '{n} manis';
   loc.units.year = '{n} yia';
-  loc.half = '{n} mo haf';
+  loc.half = '{0} mo haf';
   loc.delimiter = ', ';
   loc.just_born = 'Niufala bebe';
   loc.stages.newborn = 'Niufala bebe';
@@ -33,5 +33,6 @@ function loc = locale_bi()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
 endfunction

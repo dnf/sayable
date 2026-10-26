@@ -28,7 +28,7 @@ M.stages = {
     toddler = "Batang paslit",
     child = "Bata",
     teenager = "Tinedyer",
-    adult = "Matanda",
+    adult = "Adulto",
 }
 M.short = {
     units = {

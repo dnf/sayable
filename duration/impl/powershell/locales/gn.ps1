@@ -16,9 +16,9 @@ function plural_gn([int]$n) {
 
 function locale_gn {
     $units = @{
-        second = '{n} aravo''i'
-        minute = '{n} aravo'
-        hour = '{n} aravo guasu'
+        second = '{n} aravo''ive'
+        minute = '{n} aravo''i'
+        hour = '{n} aravo'
         day = '{n} ára'
         week = '{n} arapokõindy'
         month = '{n} jasy'
@@ -31,9 +31,9 @@ function locale_gn {
     $inFuture = '{0} rire'
     $short = @{
         units = @{
-            second = '{n} ara''i'
-            minute = '{n} ara'
-            hour = '{n} ara g'
+            second = '{n} aravo''ive'
+            minute = '{n} aravo''i'
+            hour = '{n} aravo'
             day = '{n} ára'
             week = '{n} ara'
             month = '{n} jas'

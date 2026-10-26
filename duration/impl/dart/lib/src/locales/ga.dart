@@ -24,7 +24,7 @@ final ga = DurationLocale(
   units: {
     'second': pluralUnit({PluralCategory.one: '{n} soicind', PluralCategory.two: '{n} shoicind', PluralCategory.few: '{n} shoicind', PluralCategory.many: '{n} soicind', PluralCategory.other: '{n} soicind'}),
     'minute': pluralUnit({PluralCategory.one: '{n} nóiméad', PluralCategory.two: '{n} nóiméad', PluralCategory.few: '{n} nóiméad', PluralCategory.many: '{n} nóiméad', PluralCategory.other: '{n} nóiméad'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} uair', PluralCategory.two: '{n} uair', PluralCategory.few: '{n} huaire', PluralCategory.many: '{n} n-uaire', PluralCategory.other: '{n} uair'}),
+    'hour': pluralUnit({PluralCategory.one: '{n} uair an chloig', PluralCategory.two: '{n} uair an chloig', PluralCategory.few: '{n} huaire an chloig', PluralCategory.many: '{n} n-uaire an chloig', PluralCategory.other: '{n} uair an chloig'}),
     'day': pluralUnit({PluralCategory.one: '{n} lá', PluralCategory.two: '{n} lá', PluralCategory.few: '{n} lá', PluralCategory.many: '{n} lá', PluralCategory.other: '{n} lá'}),
     'week': pluralUnit({PluralCategory.one: '{n} seachtain', PluralCategory.two: '{n} sheachtain', PluralCategory.few: '{n} seachtaine', PluralCategory.many: '{n} seachtaine', PluralCategory.other: '{n} seachtain'}),
     'month': pluralUnit({PluralCategory.one: '{n} mhí', PluralCategory.two: '{n} mhí', PluralCategory.few: '{n} mhí', PluralCategory.many: '{n} mí', PluralCategory.other: '{n} mí'}),

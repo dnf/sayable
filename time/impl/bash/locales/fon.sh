@@ -10,21 +10,21 @@
 # Source: locales/fon.json
 
 _sayabletime_locale_fon() {
-    _clock_hours=('wěwè' 'ɖokpo' 'wè' 'atɔn' 'ɛnɛ' 'atɔ́ɔ́n' 'ayizɛ̀n' 'tɛnwè' 'tantɔn' 'tɛnɛnɛ' 'wǒ' 'ɖokpo-wǒ')
+    _clock_hours=('wěwè' 'ɖokpo' 'wè' 'atɔn' 'ɛnɛ' 'atɔ́ɔ́n' 'ayizɛ̀n' 'tɛnwè' 'tantɔn' 'tɛnɛnɛ' 'wǒ' 'wěɖokpo')
     _clock_midnight='zǎnmɛ'
     _clock_noon='hwemɛnu'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='gan {h}'
+    _clock_pattern_5='gan {h} kpo cɛju atɔ́ɔ́n kpo'
+    _clock_pattern_10='gan {h} kpo cɛju wǒ kpo'
+    _clock_pattern_15='gan {h} kpo cɛju afɔtɔ́n kpo'
+    _clock_pattern_20='gan {h} kpo cɛju ko kpo'
+    _clock_pattern_25='gan {h} kpo cɛju koatɔ́ɔ́n kpo'
+    _clock_pattern_30='gan {h} kpo cɛju gban kpo'
+    _clock_pattern_35='gan {h} kpo cɛju gbanatɔ́ɔ́n kpo'
+    _clock_pattern_40='gan {h} kpo cɛju kanɖé kpo'
+    _clock_pattern_45='gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo'
+    _clock_pattern_50='gan {h} kpo cɛju kanɖéwǒ kpo'
+    _clock_pattern_55='gan {h} kpo cɛju kanɖéafɔtɔ́n kpo'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

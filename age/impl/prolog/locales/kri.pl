@@ -18,7 +18,7 @@ sa_unit('kri', week, _, '{n} wik').
 sa_unit('kri', month, _, '{n} mont').
 sa_unit('kri', year, _, '{n} ia').
 
-sa_half('kri', '{n} na af').
+sa_half('kri', '{0} ɛn af').
 sa_delimiter('kri', ', ').
 sa_just_born('kri', 'Nyubon bebi').
 
@@ -38,4 +38,5 @@ compact_sa_unit('kri', day, _, '{n}d').
 compact_sa_unit('kri', week, _, '{n}w').
 compact_sa_unit('kri', month, _, '{n}m').
 compact_sa_unit('kri', year, _, '{n}y').
+compact_sa_half('kri', '{n}½').
 compact_sa_delimiter('kri', '').

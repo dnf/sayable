@@ -24,9 +24,9 @@ export const ny: DateLocale = {
   yesterday: 'dzulo',
   dayAfterTomorrow: 'mkucha',
   dayBeforeYesterday: 'dzana',
-  thisWeekday: '{weekday} ino',
-  nextWeekday: '{weekday} yotsatira',
-  lastWeekday: '{weekday} yatha',
+  thisWeekday: '{weekday} lino',
+  nextWeekday: '{weekday} lotsatira',
+  lastWeekday: '{weekday} latha',
   short: {
     months: ['Jan', 'Feb', 'Mat', 'Epu', 'Mey', 'Jun', 'Jul', 'Oga', 'Sep', 'Okt', 'Nov', 'Dis'],
     weekdays: ['Lam', 'Lol', 'Lch', 'Lct', 'Lcn', 'Lcs', 'Low'],

@@ -13,10 +13,10 @@ locale_lt <- list(
   code = "lt",
   months = c("sausis", "vasaris", "kovas", "balandis", "gegužė", "birželis", "liepa", "rugpjūtis", "rugsėjis", "spalis", "lapkritis", "gruodis"),
   weekdays = c("sekmadienis", "pirmadienis", "antradienis", "trečiadienis", "ketvirtadienis", "penktadienis", "šeštadienis"),
-  day_format = "{n}.",
+  day_format = "{n} d.",
   day_format_exceptions = list(),
-  date_pattern = "{day} {month}",
-  date_pattern_with_year = "{day} {month} {year}",
+  date_pattern = "{month} {day}",
+  date_pattern_with_year = "{year} m. {month} {day}",
   today = "šiandien",
   tomorrow = "rytoj",
   yesterday = "vakar",
@@ -29,9 +29,9 @@ locale_lt <- list(
   short = list(
     months = c("saus", "vas", "kov", "bal", "geg", "birž", "liep", "rugp", "rugs", "spal", "lapkr", "gruod"),
     weekdays = c("sk", "pr", "an", "tr", "kt", "pn", "št"),
-    day_format = "{n}.",
-    date_pattern = "{day} {month}",
-    date_pattern_with_year = "{day} {month} {year}"
+    day_format = "{n} d.",
+    date_pattern = "{month} {day}",
+    date_pattern_with_year = "{year} m. {month} {day}"
   ),
   compact = list(
     date_pattern = "{m}-{d}",

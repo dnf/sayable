@@ -29,7 +29,7 @@ TH = DurationLocale(
     delimiter=" ",
     just_now="เมื่อกี้",
     ago="{0}ที่แล้ว",
-    in_future="ใน{0}",
+    in_future="ในอีก {0}",
     short=CompactnessOverride(
         units={
             "second": "{n} วิ",
@@ -41,7 +41,7 @@ TH = DurationLocale(
             "year": "{n} ปี",
         },
         ago="{0}ที่แล้ว",
-        in_future="ใน{0}",
+        in_future="ในอีก {0}",
     ),
     compact=CompactnessOverride(
         units={
@@ -56,6 +56,6 @@ TH = DurationLocale(
         half="{n}½",
         delimiter="",
         ago="{0}ที่แล้ว",
-        in_future="ใน{0}",
+        in_future="ในอีก {0}",
     ),
 )

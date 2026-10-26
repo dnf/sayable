@@ -10,22 +10,22 @@
 # Source: locales/fon.json
 
 function locale_fon {
-    $hours = @('wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'ɖokpo-wǒ')
+    $hours = @('wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'wěɖokpo')
     $midnight = 'zǎnmɛ'
     $noon = 'hwemɛnu'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'gan {h}'
+    $patterns[5] = 'gan {h} kpo cɛju atɔ́ɔ́n kpo'
+    $patterns[10] = 'gan {h} kpo cɛju wǒ kpo'
+    $patterns[15] = 'gan {h} kpo cɛju afɔtɔ́n kpo'
+    $patterns[20] = 'gan {h} kpo cɛju ko kpo'
+    $patterns[25] = 'gan {h} kpo cɛju koatɔ́ɔ́n kpo'
+    $patterns[30] = 'gan {h} kpo cɛju gban kpo'
+    $patterns[35] = 'gan {h} kpo cɛju gbanatɔ́ɔ́n kpo'
+    $patterns[40] = 'gan {h} kpo cɛju kanɖé kpo'
+    $patterns[45] = 'gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo'
+    $patterns[50] = 'gan {h} kpo cɛju kanɖéwǒ kpo'
+    $patterns[55] = 'gan {h} kpo cɛju kanɖéafɔtɔ́n kpo'
     $clock = @{
         hours = $hours
         midnight = $midnight

@@ -28,10 +28,10 @@ const SduDurationLocale sdu_locale_kw = {
         { NULL, { "{n} sekond", "{n} sekond", "{n} sekond", "{n} sekond", "{n} sekond", "{n} sekondow" } },
         { NULL, { "{n} mynysen", "{n} mynysen", "{n} vynysen", "{n} mynysen", "{n} mynysen", "{n} mynysen" } },
         { NULL, { "{n} our", "{n} our", "{n} our", "{n} our", "{n} our", "{n} our" } },
-        { NULL, { "{n} dydh", "dydh", "{n} dhydh", "{n} dydh", "{n} dydh", "{n} dydh" } },
-        { NULL, { "{n} seythun", "seythun", "{n} seythun", "{n} seythun", "{n} seythun", "{n} seythun" } },
-        { NULL, { "{n} mis", "mis", "{n} vis", "{n} mis", "{n} mis", "{n} mis" } },
-        { NULL, { "{n} blydhen", "blydhen", "{n} vlydhen", "{n} blydhen", "{n} blydhen", "{n} blydhen" } }
+        { NULL, { "{n} dydh", "{n} dydh", "{n} dhydh", "{n} dydh", "{n} dydh", "{n} dydh" } },
+        { NULL, { "{n} seythun", "{n} seythun", "{n} seythun", "{n} seythun", "{n} seythun", "{n} seythun" } },
+        { NULL, { "{n} mis", "{n} mis", "{n} vis", "{n} mis", "{n} mis", "{n} mis" } },
+        { NULL, { "{n} blydhen", "{n} blydhen", "{n} vlydhen", "{n} blydhen", "{n} blydhen", "{n} blydhen" } }
     },
     "{0} hag hanter", ", ",
     "lemmyn",

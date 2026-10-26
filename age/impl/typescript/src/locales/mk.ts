@@ -36,7 +36,7 @@ export const mk: AgeLocale = {
     toddler: 'Мало дете',
     child: 'Дете',
     teenager: 'Тинејџер',
-    adult: 'Возрасен',
+    adult: { m: 'Возрасен', f: 'Возрасна' },
   },
   short: {
     units: {

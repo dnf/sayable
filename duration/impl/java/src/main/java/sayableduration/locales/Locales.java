@@ -241,7 +241,7 @@ public final class Locales {
             UnitForms.simpleUnit("sɛkɛnd {n}"),
             UnitForms.simpleUnit("sema {n}"),
             UnitForms.simpleUnit("dɔnhwere {n}"),
-            UnitForms.simpleUnit("nna {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "da {n}", PluralCategory.OTHER, "nna {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dapɛn {n}", PluralCategory.OTHER, "nnapɛn {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bosome {n}", PluralCategory.OTHER, "abosome {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "afe {n}", PluralCategory.OTHER, "mfe {n}")),
@@ -254,7 +254,7 @@ public final class Locales {
             UnitForms.simpleUnit("sɛk {n}"),
             UnitForms.simpleUnit("sem {n}"),
             UnitForms.simpleUnit("dɔn {n}"),
-            UnitForms.simpleUnit("nna {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "da {n}", PluralCategory.OTHER, "nna {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "dapɛn {n}", PluralCategory.OTHER, "nnapɛn {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bos {n}", PluralCategory.OTHER, "abos {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "afe {n}", PluralCategory.OTHER, "mfe {n}")),
@@ -326,9 +326,9 @@ public final class Locales {
         "ar",
         Locales::pluralAr,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} ثانية", PluralCategory.ONE, "ثانية واحدة", PluralCategory.TWO, "ثانيتان", PluralCategory.FEW, "{n} ثوانٍ", PluralCategory.MANY, "{n} ثانية", PluralCategory.OTHER, "{n} ثانية")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} دقيقة", PluralCategory.ONE, "دقيقة واحدة", PluralCategory.TWO, "دقيقتان", PluralCategory.FEW, "{n} دقائق", PluralCategory.MANY, "{n} دقيقة", PluralCategory.OTHER, "{n} دقيقة")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} ساعة", PluralCategory.ONE, "ساعة واحدة", PluralCategory.TWO, "ساعتان", PluralCategory.FEW, "{n} ساعات", PluralCategory.MANY, "{n} ساعة", PluralCategory.OTHER, "{n} ساعة")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} ثانية", PluralCategory.ONE, "ثانية", PluralCategory.TWO, "ثانيتان", PluralCategory.FEW, "{n} ثوانٍ", PluralCategory.MANY, "{n} ثانية", PluralCategory.OTHER, "{n} ثانية")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} دقيقة", PluralCategory.ONE, "دقيقة", PluralCategory.TWO, "دقيقتان", PluralCategory.FEW, "{n} دقائق", PluralCategory.MANY, "{n} دقيقة", PluralCategory.OTHER, "{n} دقيقة")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} ساعة", PluralCategory.ONE, "ساعة", PluralCategory.TWO, "ساعتان", PluralCategory.FEW, "{n} ساعات", PluralCategory.MANY, "{n} ساعة", PluralCategory.OTHER, "{n} ساعة")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} يوم", PluralCategory.ONE, "يوم", PluralCategory.TWO, "يومان", PluralCategory.FEW, "{n} أيام", PluralCategory.MANY, "{n} يومًا", PluralCategory.OTHER, "{n} يوم")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} أسبوع", PluralCategory.ONE, "أسبوع", PluralCategory.TWO, "أسبوعان", PluralCategory.FEW, "{n} أسابيع", PluralCategory.MANY, "{n} أسبوعًا", PluralCategory.OTHER, "{n} أسبوع")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} شهر", PluralCategory.ONE, "شهر", PluralCategory.TWO, "شهران", PluralCategory.FEW, "{n} أشهر", PluralCategory.MANY, "{n} شهرًا", PluralCategory.OTHER, "{n} شهر")),
@@ -358,7 +358,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} س"),
             UnitForms.simpleUnit("{n} ي"),
             UnitForms.simpleUnit("{n} أ"),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} شهر", PluralCategory.ONE, "شهر", PluralCategory.TWO, "شهران", PluralCategory.FEW, "{n} أشهر", PluralCategory.MANY, "{n} شهرًا", PluralCategory.OTHER, "{n} شهر")),
+            UnitForms.simpleUnit("{n} شهر"),
             UnitForms.simpleUnit("{n} سنة"),
             "{n}½",
             "",
@@ -377,13 +377,13 @@ public final class Locales {
         "ay",
         n -> PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("sikundu {n}"),
-            UnitForms.simpleUnit("minutu {n}"),
-            UnitForms.simpleUnit("ura {n}"),
-            UnitForms.simpleUnit("uru {n}"),
-            UnitForms.simpleUnit("simana {n}"),
-            UnitForms.simpleUnit("phaxsi {n}"),
-            UnitForms.simpleUnit("mara {n}")
+            UnitForms.simpleUnit("{n} sikundu"),
+            UnitForms.simpleUnit("{n} minutu"),
+            UnitForms.simpleUnit("{n} ura"),
+            UnitForms.simpleUnit("{n} uru"),
+            UnitForms.simpleUnit("{n} simana"),
+            UnitForms.simpleUnit("{n} phaxsi"),
+            UnitForms.simpleUnit("{n} mara")
         ),
         "{0} chika",
         ", ",
@@ -391,9 +391,9 @@ public final class Locales {
         "{0} nayraqata",
         "{0} jutirïn",
         new CompactnessOverride(
-            UnitForms.simpleUnit("sik. {n}"),
-            UnitForms.simpleUnit("min. {n}"),
-            UnitForms.simpleUnit("ur. {n}"),
+            UnitForms.simpleUnit("{n} sik."),
+            UnitForms.simpleUnit("{n} min."),
+            UnitForms.simpleUnit("{n} ura"),
             UnitForms.simpleUnit("{n} ur."),
             UnitForms.simpleUnit("{n} sim."),
             UnitForms.simpleUnit("{n} phx."),
@@ -411,7 +411,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} nayraqata",
             "{0} jutirïn"
@@ -530,13 +530,13 @@ public final class Locales {
         "be",
         Locales::pluralRuUk,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} секунда", PluralCategory.FEW, "{n} секунды", PluralCategory.MANY, "{n} секунд", PluralCategory.OTHER, "{n} секунд")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} хвіліна", PluralCategory.FEW, "{n} хвіліны", PluralCategory.MANY, "{n} хвілін", PluralCategory.OTHER, "{n} хвілін")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} гадзіна", PluralCategory.FEW, "{n} гадзіны", PluralCategory.MANY, "{n} гадзін", PluralCategory.OTHER, "{n} гадзін")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} дзень", PluralCategory.FEW, "{n} дні", PluralCategory.MANY, "{n} дзён", PluralCategory.OTHER, "{n} дзён")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} тыдзень", PluralCategory.FEW, "{n} тыдні", PluralCategory.MANY, "{n} тыдняў", PluralCategory.OTHER, "{n} тыдняў")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} месяц", PluralCategory.FEW, "{n} месяцы", PluralCategory.MANY, "{n} месяцаў", PluralCategory.OTHER, "{n} месяцаў")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} год", PluralCategory.FEW, "{n} гады", PluralCategory.MANY, "{n} гадоў", PluralCategory.OTHER, "{n} гадоў"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} секунда", PluralCategory.FEW, "{n} секунды", PluralCategory.MANY, "{n} секунд", PluralCategory.OTHER, "{n} секунды")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} хвіліна", PluralCategory.FEW, "{n} хвіліны", PluralCategory.MANY, "{n} хвілін", PluralCategory.OTHER, "{n} хвіліны")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} гадзіна", PluralCategory.FEW, "{n} гадзіны", PluralCategory.MANY, "{n} гадзін", PluralCategory.OTHER, "{n} гадзіны")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} дзень", PluralCategory.FEW, "{n} дні", PluralCategory.MANY, "{n} дзён", PluralCategory.OTHER, "{n} дня")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} тыдзень", PluralCategory.FEW, "{n} тыдні", PluralCategory.MANY, "{n} тыдняў", PluralCategory.OTHER, "{n} тыдня")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} месяц", PluralCategory.FEW, "{n} месяцы", PluralCategory.MANY, "{n} месяцаў", PluralCategory.OTHER, "{n} месяца")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} год", PluralCategory.FEW, "{n} гады", PluralCategory.MANY, "{n} гадоў", PluralCategory.OTHER, "{n} года"))
         ),
         "{n} з паловай",
         ", ",
@@ -583,7 +583,7 @@ public final class Locales {
         new Units(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "isekondi {n}", PluralCategory.OTHER, "amasekondi {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iminiti {n}", PluralCategory.OTHER, "amaminiti {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "insa {n}", PluralCategory.OTHER, "amanso {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "insa {n}", PluralCategory.OTHER, "insa {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ubushiku {n}", PluralCategory.OTHER, "inshiku {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umulungu {n}", PluralCategory.OTHER, "imilungu {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "umweshi {n}", PluralCategory.OTHER, "imyeshi {n}")),
@@ -691,7 +691,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} manis"),
             UnitForms.simpleUnit("{n} yia")
         ),
-        "{n} mo haf",
+        "{0} mo haf",
         ", ",
         "jas nao",
         "{0} bifo",
@@ -717,7 +717,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} bifo",
             "long {0}"
@@ -746,7 +746,7 @@ public final class Locales {
         ", ",
         "sisan",
         "{0} bɔlen",
-        "ka {0}",
+        "{0} kɔnɔ",
         new CompactnessOverride(
             UnitForms.simpleUnit("sek. {n}"),
             UnitForms.simpleUnit("min. {n}"),
@@ -758,7 +758,7 @@ public final class Locales {
             null,
             null,
             "{0} bɔlen",
-            "ka {0}"
+            "{0} kɔnɔ"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("sek {n}"),
@@ -771,7 +771,7 @@ public final class Locales {
             "{n}½",
             "",
             "{0} bɔlen",
-            "ka {0}"
+            "{0} kɔnɔ"
         ),
         null,
         null
@@ -787,7 +787,7 @@ public final class Locales {
         new Units(
             UnitForms.simpleUnit("{n} সেকেন্ড"),
             UnitForms.simpleUnit("{n} মিনিট"),
-            UnitForms.simpleUnit("{n} ঘন্টা"),
+            UnitForms.simpleUnit("{n} ঘণ্টা"),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} দিন", PluralCategory.OTHER, "{n} দিন")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} সপ্তাহ", PluralCategory.OTHER, "{n} সপ্তাহ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} মাস", PluralCategory.OTHER, "{n} মাস")),
@@ -1023,7 +1023,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} k'o chi",
             "pa {0}"
@@ -1048,7 +1048,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} ka bulan"),
             UnitForms.simpleUnit("{n} ka tuig")
         ),
-        "{n}½",
+        "{0} ug tunga",
         ", ",
         "karon lang",
         "{0} ang milabay",
@@ -1145,10 +1145,10 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} eiliad", PluralCategory.ONE, "{n} eiliad", PluralCategory.TWO, "{n} eiliad", PluralCategory.FEW, "{n} eiliad", PluralCategory.MANY, "{n} eiliad", PluralCategory.OTHER, "{n} eiliad")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} munud", PluralCategory.ONE, "{n} munud", PluralCategory.TWO, "{n} funud", PluralCategory.FEW, "{n} munud", PluralCategory.MANY, "{n} munud", PluralCategory.OTHER, "{n} munud")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} awr", PluralCategory.ONE, "{n} awr", PluralCategory.TWO, "{n} awr", PluralCategory.FEW, "{n} awr", PluralCategory.MANY, "{n} awr", PluralCategory.OTHER, "{n} awr")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} diwrnod", PluralCategory.ONE, "{n} diwrnod", PluralCategory.TWO, "{n} ddiwrnod", PluralCategory.FEW, "{n} diwrnod", PluralCategory.MANY, "{n} niwrnod", PluralCategory.OTHER, "{n} diwrnod")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} diwrnod", PluralCategory.ONE, "{n} diwrnod", PluralCategory.TWO, "{n} ddiwrnod", PluralCategory.FEW, "{n} diwrnod", PluralCategory.MANY, "{n} diwrnod", PluralCategory.OTHER, "{n} diwrnod")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} wythnos", PluralCategory.ONE, "{n} wythnos", PluralCategory.TWO, "{n} wythnos", PluralCategory.FEW, "{n} wythnos", PluralCategory.MANY, "{n} wythnos", PluralCategory.OTHER, "{n} wythnos")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} mis", PluralCategory.ONE, "{n} mis", PluralCategory.TWO, "{n} fis", PluralCategory.FEW, "{n} mis", PluralCategory.MANY, "{n} mis", PluralCategory.OTHER, "{n} mis")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blwyddyn", PluralCategory.ONE, "{n} blwyddyn", PluralCategory.TWO, "{n} flynedd", PluralCategory.FEW, "{n} blynedd", PluralCategory.MANY, "{n} blynedd", PluralCategory.OTHER, "{n} blynedd"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blwyddyn", PluralCategory.ONE, "{n} flwyddyn", PluralCategory.TWO, "{n} flynedd", PluralCategory.FEW, "{n} blynedd", PluralCategory.MANY, "{n} blynedd", PluralCategory.OTHER, "{n} blynedd"))
         ),
         "{0} a hanner",
         ", ",
@@ -1204,7 +1204,7 @@ public final class Locales {
         "{n}½",
         ", ",
         "lige nu",
-        "{0} siden",
+        "for {0} siden",
         "om {0}",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} sek."),
@@ -1405,7 +1405,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} މަސް"),
             UnitForms.simpleUnit("{n} އަހަރު")
         ),
-        "{0} ބައި",
+        "{n}½",
         "، ",
         "މިހާރު",
         "މީގެ {0} ކުރިން",
@@ -1460,7 +1460,7 @@ public final class Locales {
         ", ",
         "sisan",
         "{0} tɛmɛnen",
-        "ka {0}",
+        "{0} kɔnɔ",
         new CompactnessOverride(
             UnitForms.simpleUnit("sɛk. {n}"),
             UnitForms.simpleUnit("min. {n}"),
@@ -1472,7 +1472,7 @@ public final class Locales {
             null,
             null,
             "{0} tɛmɛnen",
-            "ka {0}"
+            "{0} kɔnɔ"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n}s"),
@@ -1485,7 +1485,7 @@ public final class Locales {
             "{n}½",
             "",
             "{0} tɛmɛnen",
-            "ka {0}"
+            "{0} kɔnɔ"
         ),
         null,
         null
@@ -1507,7 +1507,7 @@ public final class Locales {
             UnitForms.simpleUnit("ཟླ་ {n}"),
             UnitForms.simpleUnit("ལོ་ {n}")
         ),
-        "{0} ཕྱེད",
+        "{0} དང་ཕྱེད",
         " ",
         "ད་ལྟ",
         "{0} ཧེ་མ",
@@ -1550,30 +1550,30 @@ public final class Locales {
         "ee",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sekend {n}", PluralCategory.OTHER, "sekendwo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "aɖabaƒoƒo {n}", PluralCategory.OTHER, "aɖabaƒoƒowo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "gaƒoƒo {n}", PluralCategory.OTHER, "gaƒoƒowo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ŋkeke {n}", PluralCategory.OTHER, "ŋkekewo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "kɔsiɖa {n}", PluralCategory.OTHER, "kɔsiɖawo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ɣleti {n}", PluralCategory.OTHER, "ɣletiwo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ƒe {n}", PluralCategory.OTHER, "ƒewo {n}"))
+            UnitForms.simpleUnit("sekend {n}"),
+            UnitForms.simpleUnit("aɖabaƒoƒo {n}"),
+            UnitForms.simpleUnit("gaƒoƒo {n}"),
+            UnitForms.simpleUnit("ŋkeke {n}"),
+            UnitForms.simpleUnit("kɔsiɖa {n}"),
+            UnitForms.simpleUnit("ɣleti {n}"),
+            UnitForms.simpleUnit("ƒe {n}")
         ),
         "{0} kple afã",
         ", ",
         "fifia",
-        "ɖe {0} me",
+        "{0} si va yi",
         "le {0} me",
         new CompactnessOverride(
             UnitForms.simpleUnit("sek. {n}"),
             UnitForms.simpleUnit("aɖaba. {n}"),
             UnitForms.simpleUnit("gaƒ. {n}"),
-            UnitForms.simpleUnit("ŋkekewo {n}"),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "kɔsiɖa {n}", PluralCategory.OTHER, "kɔsiɖawo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ɣleti {n}", PluralCategory.OTHER, "ɣletiwo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ƒe {n}", PluralCategory.OTHER, "ƒewo {n}")),
+            UnitForms.simpleUnit("ŋkeke {n}"),
+            UnitForms.simpleUnit("kɔsiɖa {n}"),
+            UnitForms.simpleUnit("ɣleti {n}"),
+            UnitForms.simpleUnit("ƒe {n}"),
             null,
             null,
-            "ɖe {0} me",
+            "{0} si va yi",
             "le {0} me"
         ),
         new CompactnessOverride(
@@ -1586,7 +1586,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}y"),
             "{n}½",
             "",
-            "ɖe {0} me",
+            "{0} si va yi",
             "le {0} me"
         ),
         null,
@@ -1975,7 +1975,7 @@ public final class Locales {
             UnitForms.simpleUnit("majaango {n}"),
             UnitForms.simpleUnit("hojomaaje {n}"),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "waktu {n}", PluralCategory.OTHER, "waktuuji {n}")),
-            UnitForms.simpleUnit("ñalɗe {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ñalawma {n}", PluralCategory.OTHER, "ñalɗe {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "yontere {n}", PluralCategory.OTHER, "yontereeji {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lewru {n}", PluralCategory.OTHER, "lebbi {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hitaande {n}", PluralCategory.OTHER, "duuɓi {n}")),
@@ -1988,7 +1988,7 @@ public final class Locales {
             UnitForms.simpleUnit("maj {n}"),
             UnitForms.simpleUnit("hoj {n}"),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "wak {n}", PluralCategory.OTHER, "wakji {n}")),
-            UnitForms.simpleUnit("ñalɗe {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ñalawma {n}", PluralCategory.OTHER, "ñalɗe {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "yont {n}", PluralCategory.OTHER, "yontji {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "lew {n}", PluralCategory.OTHER, "leb {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hit {n}", PluralCategory.OTHER, "duuɓi {n}")),
@@ -2119,7 +2119,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} na vula"),
             UnitForms.simpleUnit("{n} na yabaki")
         ),
-        "{n} kei na levu ni wasei",
+        "{0} kei na veimama",
         ", ",
         "edaidai ga",
         "{0} sa oti",
@@ -2145,7 +2145,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} sa oti",
             "ena {0}"
@@ -2266,7 +2266,7 @@ public final class Locales {
         new Units(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} soicind", PluralCategory.TWO, "{n} shoicind", PluralCategory.FEW, "{n} shoicind", PluralCategory.MANY, "{n} soicind", PluralCategory.OTHER, "{n} soicind")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} nóiméad", PluralCategory.TWO, "{n} nóiméad", PluralCategory.FEW, "{n} nóiméad", PluralCategory.MANY, "{n} nóiméad", PluralCategory.OTHER, "{n} nóiméad")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} uair", PluralCategory.TWO, "{n} uair", PluralCategory.FEW, "{n} huaire", PluralCategory.MANY, "{n} n-uaire", PluralCategory.OTHER, "{n} uair")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} uair an chloig", PluralCategory.TWO, "{n} uair an chloig", PluralCategory.FEW, "{n} huaire an chloig", PluralCategory.MANY, "{n} n-uaire an chloig", PluralCategory.OTHER, "{n} uair an chloig")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} lá", PluralCategory.TWO, "{n} lá", PluralCategory.FEW, "{n} lá", PluralCategory.MANY, "{n} lá", PluralCategory.OTHER, "{n} lá")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} seachtain", PluralCategory.TWO, "{n} sheachtain", PluralCategory.FEW, "{n} seachtaine", PluralCategory.MANY, "{n} seachtaine", PluralCategory.OTHER, "{n} seachtain")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mhí", PluralCategory.TWO, "{n} mhí", PluralCategory.FEW, "{n} mhí", PluralCategory.MANY, "{n} mí", PluralCategory.OTHER, "{n} mí")),
@@ -2317,7 +2317,7 @@ public final class Locales {
         new Units(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} diog", PluralCategory.TWO, "{n} dhiog", PluralCategory.FEW, "{n} diogan", PluralCategory.OTHER, "{n} diog")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mhionaid", PluralCategory.TWO, "{n} mhionaid", PluralCategory.FEW, "{n} mionaidean", PluralCategory.OTHER, "{n} mionaid")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} uair", PluralCategory.TWO, "{n} uair", PluralCategory.FEW, "{n} uairean", PluralCategory.OTHER, "{n} uair")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} uair a thìde", PluralCategory.TWO, "{n} uair a thìde", PluralCategory.FEW, "{n} uairean a thìde", PluralCategory.OTHER, "{n} uair a thìde")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} latha", PluralCategory.TWO, "{n} latha", PluralCategory.FEW, "{n} làithean", PluralCategory.OTHER, "{n} latha")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} sheachdain", PluralCategory.TWO, "{n} sheachdain", PluralCategory.FEW, "{n} seachdainean", PluralCategory.OTHER, "{n} seachdain")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mhìos", PluralCategory.TWO, "{n} mhìos", PluralCategory.FEW, "{n} mìosan", PluralCategory.OTHER, "{n} mìos")),
@@ -2417,9 +2417,9 @@ public final class Locales {
         "gn",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
+            UnitForms.simpleUnit("{n} aravo'ive"),
             UnitForms.simpleUnit("{n} aravo'i"),
             UnitForms.simpleUnit("{n} aravo"),
-            UnitForms.simpleUnit("{n} aravo guasu"),
             UnitForms.simpleUnit("{n} ára"),
             UnitForms.simpleUnit("{n} arapokõindy"),
             UnitForms.simpleUnit("{n} jasy"),
@@ -2431,9 +2431,9 @@ public final class Locales {
         "{0} ohasava'ekue",
         "{0} rire",
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} ara'i"),
-            UnitForms.simpleUnit("{n} ara"),
-            UnitForms.simpleUnit("{n} ara g"),
+            UnitForms.simpleUnit("{n} aravo'ive"),
+            UnitForms.simpleUnit("{n} aravo'i"),
+            UnitForms.simpleUnit("{n} aravo"),
             UnitForms.simpleUnit("{n} ára"),
             UnitForms.simpleUnit("{n} ara"),
             UnitForms.simpleUnit("{n} jas"),
@@ -2570,13 +2570,13 @@ public final class Locales {
         "ha",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} daƙiƙa", PluralCategory.OTHER, "{n} daƙiƙoƙi")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minti", PluralCategory.OTHER, "{n} mintoci")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} awa", PluralCategory.OTHER, "{n} awanni")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} kwana", PluralCategory.OTHER, "{n} kwanaki")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} mako", PluralCategory.OTHER, "{n} makonni")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} wata", PluralCategory.OTHER, "{n} watanni")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} shekara", PluralCategory.OTHER, "{n} shekaru"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "daƙiƙa {n}", PluralCategory.OTHER, "daƙiƙoƙi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "minti {n}", PluralCategory.OTHER, "mintoci {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "awa {n}", PluralCategory.OTHER, "awanni {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "kwana {n}", PluralCategory.OTHER, "kwanaki {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mako {n}", PluralCategory.OTHER, "makonni {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "wata {n}", PluralCategory.OTHER, "watanni {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "shekara {n}", PluralCategory.OTHER, "shekaru {n}"))
         ),
         "{n}½",
         ", ",
@@ -2584,13 +2584,13 @@ public final class Locales {
         "{0} da suka wuce",
         "cikin {0}",
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} daƙ."),
-            UnitForms.simpleUnit("{n} mnt."),
-            UnitForms.simpleUnit("{n} awa"),
-            UnitForms.simpleUnit("{n} kw."),
-            UnitForms.simpleUnit("{n} mk."),
-            UnitForms.simpleUnit("{n} wt."),
-            UnitForms.simpleUnit("{n} shk."),
+            UnitForms.simpleUnit("daƙ. {n}"),
+            UnitForms.simpleUnit("mnt. {n}"),
+            UnitForms.simpleUnit("awa {n}"),
+            UnitForms.simpleUnit("kw. {n}"),
+            UnitForms.simpleUnit("mk. {n}"),
+            UnitForms.simpleUnit("wt. {n}"),
+            UnitForms.simpleUnit("shk. {n}"),
             null,
             null,
             "{0} da suka wuce",
@@ -2621,12 +2621,12 @@ public final class Locales {
         "he",
         n -> n == 1 ? PluralCategory.ONE : n == 2 ? PluralCategory.TWO : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שנייה {n}", PluralCategory.TWO, "שתי שניות", PluralCategory.OTHER, "{n} שניות")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "דקה {n}", PluralCategory.TWO, "שתי דקות", PluralCategory.OTHER, "{n} דקות")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שעה {n}", PluralCategory.TWO, "שעתיים", PluralCategory.OTHER, "{n} שעות")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "יום {n}", PluralCategory.TWO, "יומיים", PluralCategory.OTHER, "{n} ימים")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שבוע {n}", PluralCategory.TWO, "שבועיים", PluralCategory.OTHER, "{n} שבועות")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "חודש {n}", PluralCategory.TWO, "חודשיים", PluralCategory.OTHER, "{n} חודשים")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שנייה", PluralCategory.TWO, "שתי שניות", PluralCategory.OTHER, "{n} שניות")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "דקה", PluralCategory.TWO, "שתי דקות", PluralCategory.OTHER, "{n} דקות")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שעה", PluralCategory.TWO, "שעתיים", PluralCategory.OTHER, "{n} שעות")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "יום", PluralCategory.TWO, "יומיים", PluralCategory.OTHER, "{n} ימים")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שבוע", PluralCategory.TWO, "שבועיים", PluralCategory.OTHER, "{n} שבועות")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "חודש", PluralCategory.TWO, "חודשיים", PluralCategory.OTHER, "{n} חודשים")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "שנה", PluralCategory.TWO, "שנתיים", PluralCategory.OTHER, "{n} שנים"))
         ),
         "{0} וחצי",
@@ -2674,7 +2674,7 @@ public final class Locales {
         new Units(
             UnitForms.simpleUnit("{n} सेकंड"),
             UnitForms.simpleUnit("{n} मिनट"),
-            UnitForms.simpleUnit("{n} घंटा"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} घंटा", PluralCategory.OTHER, "{n} घंटे")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} दिन", PluralCategory.OTHER, "{n} दिन")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} सप्ताह", PluralCategory.OTHER, "{n} सप्ताह")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} महीना", PluralCategory.OTHER, "{n} महीने")),
@@ -2757,7 +2757,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} dhau los",
             "hauv {0}"
@@ -2986,7 +2986,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} bulan"),
             UnitForms.simpleUnit("{n} tahun")
         ),
-        "{0} setengah",
+        "{n} setengah",
         ", ",
         "baru saja",
         "{0} yang lalu",
@@ -3029,13 +3029,13 @@ public final class Locales {
         "ig",
         n -> PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} sekọnd"),
-            UnitForms.simpleUnit("{n} nkeji"),
-            UnitForms.simpleUnit("{n} awa"),
-            UnitForms.simpleUnit("{n} ụbọchị"),
-            UnitForms.simpleUnit("{n} izu"),
-            UnitForms.simpleUnit("{n} ọnwa"),
-            UnitForms.simpleUnit("{n} afọ")
+            UnitForms.simpleUnit("sekọnd {n}"),
+            UnitForms.simpleUnit("nkeji {n}"),
+            UnitForms.simpleUnit("awa {n}"),
+            UnitForms.simpleUnit("ụbọchị {n}"),
+            UnitForms.simpleUnit("izu {n}"),
+            UnitForms.simpleUnit("ọnwa {n}"),
+            UnitForms.simpleUnit("afọ {n}")
         ),
         "{0} na ọkara",
         ", ",
@@ -3043,13 +3043,13 @@ public final class Locales {
         "{0} gara aga",
         "na {0}",
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} sek."),
-            UnitForms.simpleUnit("{n} nkeji"),
-            UnitForms.simpleUnit("{n} awa"),
-            UnitForms.simpleUnit("{n} ụbọchị"),
-            UnitForms.simpleUnit("{n} izu"),
-            UnitForms.simpleUnit("{n} ọnwa"),
-            UnitForms.simpleUnit("{n} afọ"),
+            UnitForms.simpleUnit("sek. {n}"),
+            UnitForms.simpleUnit("nkeji {n}"),
+            UnitForms.simpleUnit("awa {n}"),
+            UnitForms.simpleUnit("ụbọchị {n}"),
+            UnitForms.simpleUnit("izu {n}"),
+            UnitForms.simpleUnit("ọnwa {n}"),
+            UnitForms.simpleUnit("afọ {n}"),
             null,
             null,
             "{0} gara aga",
@@ -3188,7 +3188,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}日"),
             UnitForms.simpleUnit("{n}週"),
             UnitForms.simpleUnit("{n}ヶ月"),
-            UnitForms.simpleUnit("{n}歳")
+            UnitForms.simpleUnit("{n}年")
         ),
         "{0}半",
         "",
@@ -3216,7 +3216,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0}前",
             "{0}後"
@@ -3243,7 +3243,7 @@ public final class Locales {
         ),
         "{0} setengah",
         ", ",
-        "saiki",
+        "lagi waé",
         "{0} kepungkur",
         "ing {0}",
         new CompactnessOverride(
@@ -3420,7 +3420,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} qakab'",
             "chi {0}"
@@ -3445,11 +3445,11 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwerĩ {n}", PluralCategory.OTHER, "mĩerĩ {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwaka {n}", PluralCategory.OTHER, "mĩaka {n}"))
         ),
-        "{0} na nusu",
+        "{0} na nuthu",
         ", ",
-        "ũmũthĩ",
+        "rĩu",
         "{0} ĩhĩtũkĩte",
-        "{0} ĩyothe",
+        "thutha wa {0}",
         new CompactnessOverride(
             UnitForms.simpleUnit("sek. {n}"),
             UnitForms.simpleUnit("ndag. {n}"),
@@ -3461,7 +3461,7 @@ public final class Locales {
             null,
             null,
             "{0} ĩhĩtũkĩte",
-            "{0} ĩyothe"
+            "thutha wa {0}"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n}s"),
@@ -3474,7 +3474,7 @@ public final class Locales {
             null,
             "",
             "{0} ĩhĩtũkĩte",
-            "{0} ĩyothe"
+            "thutha wa {0}"
         ),
         null,
         null
@@ -3537,15 +3537,15 @@ public final class Locales {
     // ================================================================
     public static final DurationLocale KL = new DurationLocale(
         "kl",
-        n -> PluralCategory.OTHER,
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("sekundit {n}"),
-            UnitForms.simpleUnit("minutsit {n}"),
-            UnitForms.simpleUnit("nalunaaqutap akunnera {n}"),
-            UnitForms.simpleUnit("ullut {n}"),
-            UnitForms.simpleUnit("sapaatit {n}"),
-            UnitForms.simpleUnit("qaammatit {n}"),
-            UnitForms.simpleUnit("ukiut {n}")
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sekundi {n}", PluralCategory.OTHER, "sekundit {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "minutsi {n}", PluralCategory.OTHER, "minutsit {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "nalunaaquttap akunnera {n}", PluralCategory.OTHER, "nalunaaquttap akunneri {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ulloq {n}", PluralCategory.OTHER, "ullut {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sapaatip akunnera {n}", PluralCategory.OTHER, "sapaatip akunneri {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "qaammat {n}", PluralCategory.OTHER, "qaammatit {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ukioq {n}", PluralCategory.OTHER, "ukiut {n}"))
         ),
         "{0} affaa",
         ", ",
@@ -3557,7 +3557,7 @@ public final class Locales {
             UnitForms.simpleUnit("min. {n}"),
             UnitForms.simpleUnit("nal. {n}"),
             UnitForms.simpleUnit("ull. {n}"),
-            UnitForms.simpleUnit("sap. {n}"),
+            UnitForms.simpleUnit("sap. ak. {n}"),
             UnitForms.simpleUnit("qaam. {n}"),
             UnitForms.simpleUnit("uk. {n}"),
             null,
@@ -3573,7 +3573,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} matuma siorna",
             "{0} siunissami"
@@ -3602,7 +3602,7 @@ public final class Locales {
         ", ",
         "ឥឡូវនេះ",
         "{0}មុន",
-        "ក្នុង{0}",
+        "{0}ទៀត",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} វិនាទី"),
             UnitForms.simpleUnit("{n} នាទី"),
@@ -3614,7 +3614,7 @@ public final class Locales {
             null,
             null,
             "{0}មុន",
-            "ក្នុង{0}"
+            "{0}ទៀត"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} វិនាទី"),
@@ -3627,7 +3627,7 @@ public final class Locales {
             "{n}½",
             "",
             "{0}មុន",
-            "ក្នុង{0}"
+            "{0}ទៀត"
         ),
         null,
         null
@@ -3649,7 +3649,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ತಿಂಗಳು", PluralCategory.OTHER, "{n} ತಿಂಗಳುಗಳು")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ವರ್ಷ", PluralCategory.OTHER, "{n} ವರ್ಷಗಳು"))
         ),
-        "{0}ವರೆ",
+        "{n}½",
         ", ",
         "ಈಗಷ್ಟೇ",
         "{0} ಹಿಂದೆ",
@@ -3698,7 +3698,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}일"),
             UnitForms.simpleUnit("{n}주"),
             UnitForms.simpleUnit("{n}개월"),
-            UnitForms.simpleUnit("{n}살")
+            UnitForms.simpleUnit("{n}년")
         ),
         "{0} 반",
         " ",
@@ -3802,7 +3802,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} mont"),
             UnitForms.simpleUnit("{n} ia")
         ),
-        "{n} na af",
+        "{0} ɛn af",
         ", ",
         "jos naw",
         "{0} bak",
@@ -3828,7 +3828,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}m"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} bak",
             "na {0}"
@@ -3950,10 +3950,10 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} sekond", PluralCategory.ONE, "{n} sekond", PluralCategory.TWO, "{n} sekond", PluralCategory.FEW, "{n} sekond", PluralCategory.MANY, "{n} sekond", PluralCategory.OTHER, "{n} sekondow")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} mynysen", PluralCategory.ONE, "{n} mynysen", PluralCategory.TWO, "{n} vynysen", PluralCategory.FEW, "{n} mynysen", PluralCategory.MANY, "{n} mynysen", PluralCategory.OTHER, "{n} mynysen")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} our", PluralCategory.ONE, "{n} our", PluralCategory.TWO, "{n} our", PluralCategory.FEW, "{n} our", PluralCategory.MANY, "{n} our", PluralCategory.OTHER, "{n} our")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} dydh", PluralCategory.ONE, "dydh", PluralCategory.TWO, "{n} dhydh", PluralCategory.FEW, "{n} dydh", PluralCategory.MANY, "{n} dydh", PluralCategory.OTHER, "{n} dydh")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} seythun", PluralCategory.ONE, "seythun", PluralCategory.TWO, "{n} seythun", PluralCategory.FEW, "{n} seythun", PluralCategory.MANY, "{n} seythun", PluralCategory.OTHER, "{n} seythun")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} mis", PluralCategory.ONE, "mis", PluralCategory.TWO, "{n} vis", PluralCategory.FEW, "{n} mis", PluralCategory.MANY, "{n} mis", PluralCategory.OTHER, "{n} mis")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blydhen", PluralCategory.ONE, "blydhen", PluralCategory.TWO, "{n} vlydhen", PluralCategory.FEW, "{n} blydhen", PluralCategory.MANY, "{n} blydhen", PluralCategory.OTHER, "{n} blydhen"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} dydh", PluralCategory.ONE, "{n} dydh", PluralCategory.TWO, "{n} dhydh", PluralCategory.FEW, "{n} dydh", PluralCategory.MANY, "{n} dydh", PluralCategory.OTHER, "{n} dydh")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} seythun", PluralCategory.ONE, "{n} seythun", PluralCategory.TWO, "{n} seythun", PluralCategory.FEW, "{n} seythun", PluralCategory.MANY, "{n} seythun", PluralCategory.OTHER, "{n} seythun")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} mis", PluralCategory.ONE, "{n} mis", PluralCategory.TWO, "{n} vis", PluralCategory.FEW, "{n} mis", PluralCategory.MANY, "{n} mis", PluralCategory.OTHER, "{n} mis")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ZERO, "{n} blydhen", PluralCategory.ONE, "{n} blydhen", PluralCategory.TWO, "{n} vlydhen", PluralCategory.FEW, "{n} blydhen", PluralCategory.MANY, "{n} blydhen", PluralCategory.OTHER, "{n} blydhen"))
         ),
         "{0} hag hanter",
         ", ",
@@ -4151,9 +4151,9 @@ public final class Locales {
         "ln",
         n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} segɔnde"),
-            UnitForms.simpleUnit("{n} moniti"),
-            UnitForms.simpleUnit("{n} ngonga"),
+            UnitForms.simpleUnit("segɔnde {n}"),
+            UnitForms.simpleUnit("miniti {n}"),
+            UnitForms.simpleUnit("ngonga {n}"),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mokolo {n}", PluralCategory.OTHER, "mikolo {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "poso {n}", PluralCategory.OTHER, "baposo {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sanza {n}", PluralCategory.OTHER, "basanza {n}")),
@@ -4211,10 +4211,10 @@ public final class Locales {
             UnitForms.simpleUnit("{n} ປີ")
         ),
         "{0}ເຄິ່ງ",
-        "",
+        " ",
         "ຫາກໍ",
         "{0} ກ່ອນ",
-        "ໃນ {0}",
+        "ໃນອີກ {0}",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} ວິ."),
             UnitForms.simpleUnit("{n} ນທ."),
@@ -4226,7 +4226,7 @@ public final class Locales {
             null,
             null,
             "{0} ກ່ອນ",
-            "ໃນ {0}"
+            "ໃນອີກ {0}"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n}s"),
@@ -4234,12 +4234,12 @@ public final class Locales {
             UnitForms.simpleUnit("{n}h"),
             UnitForms.simpleUnit("{n}d"),
             UnitForms.simpleUnit("{n}w"),
-            UnitForms.simpleUnit("{n}m"),
+            UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
             "{n}½",
             "",
             "{0} ກ່ອນ",
-            "ໃນ {0}"
+            "ໃນອີກ {0}"
         ),
         null,
         null
@@ -4410,7 +4410,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} minuto"),
             UnitForms.simpleUnit("{n} hora"),
             UnitForms.simpleUnit("{n} q'ij"),
-            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} seman"),
             UnitForms.simpleUnit("{n} xjaw"),
             UnitForms.simpleUnit("{n} ab'q'ii")
         ),
@@ -4424,7 +4424,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} min."),
             UnitForms.simpleUnit("{n} hora"),
             UnitForms.simpleUnit("{n} q'ij"),
-            UnitForms.simpleUnit("{n} xjaw"),
+            UnitForms.simpleUnit("{n} seman"),
             UnitForms.simpleUnit("{n} xjaw"),
             UnitForms.simpleUnit("{n} ab'."),
             null,
@@ -4440,7 +4440,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} chi'j",
             "tu'n {0}"
@@ -4570,7 +4570,7 @@ public final class Locales {
         "{0} sy sasany",
         ", ",
         "vao haingana",
-        "{0} lasa",
+        "{0} lasa izay",
         "ao anatin'ny {0}",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} seg"),
@@ -4582,7 +4582,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} tna"),
             null,
             null,
-            "{0} lasa",
+            "{0} lasa izay",
             "ao anatin'ny {0}"
         ),
         new CompactnessOverride(
@@ -4613,12 +4613,12 @@ public final class Locales {
             UnitForms.simpleUnit("{n} hēkona"),
             UnitForms.simpleUnit("{n} meneti"),
             UnitForms.simpleUnit("{n} hāora"),
-            UnitForms.simpleUnit("rā {n}"),
-            UnitForms.simpleUnit("wiki {n}"),
-            UnitForms.simpleUnit("marama {n}"),
-            UnitForms.simpleUnit("tau {n}")
+            UnitForms.simpleUnit("{n} rā"),
+            UnitForms.simpleUnit("{n} wiki"),
+            UnitForms.simpleUnit("{n} marama"),
+            UnitForms.simpleUnit("{n} tau")
         ),
-        "{0}½",
+        "{n}½",
         ", ",
         "ināianei",
         "{0} i mua",
@@ -4627,10 +4627,10 @@ public final class Locales {
             UnitForms.simpleUnit("{n} hēk"),
             UnitForms.simpleUnit("{n} men"),
             UnitForms.simpleUnit("{n} hāo"),
-            UnitForms.simpleUnit("rā {n}"),
-            UnitForms.simpleUnit("w {n}"),
-            UnitForms.simpleUnit("m {n}"),
-            UnitForms.simpleUnit("t {n}"),
+            UnitForms.simpleUnit("{n} rā"),
+            UnitForms.simpleUnit("{n} w"),
+            UnitForms.simpleUnit("{n} m"),
+            UnitForms.simpleUnit("{n} t"),
             null,
             null,
             "{0} i mua",
@@ -4710,7 +4710,7 @@ public final class Locales {
     // ================================================================
     public static final DurationLocale ML = new DurationLocale(
         "ml",
-        n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
+        n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} സെക്കൻഡ്", PluralCategory.OTHER, "{n} സെക്കൻഡുകൾ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} മിനിറ്റ്", PluralCategory.OTHER, "{n} മിനിറ്റുകൾ")),
@@ -4720,7 +4720,7 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} മാസം", PluralCategory.OTHER, "{n} മാസങ്ങൾ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} വർഷം", PluralCategory.OTHER, "{n} വർഷങ്ങൾ"))
         ),
-        "{0} ര",
+        "{n}½",
         ", ",
         "ഇപ്പോൾ",
         "{0} മുമ്പ്",
@@ -4826,7 +4826,7 @@ public final class Locales {
         ", ",
         "sisan",
         "{0} taata",
-        "ka {0}",
+        "{0} kɔnɔ",
         new CompactnessOverride(
             UnitForms.simpleUnit("sɛk. {n}"),
             UnitForms.simpleUnit("min. {n}"),
@@ -4838,7 +4838,7 @@ public final class Locales {
             null,
             null,
             "{0} taata",
-            "ka {0}"
+            "{0} kɔnɔ"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("sɛk {n}"),
@@ -4851,7 +4851,7 @@ public final class Locales {
             "{n}½",
             "",
             "{0} taata",
-            "ka {0}"
+            "{0} kɔnɔ"
         ),
         null,
         null
@@ -4917,7 +4917,7 @@ public final class Locales {
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
             UnitForms.simpleUnit("{n} सेकंद"),
-            UnitForms.simpleUnit("{n} मिनिट"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} मिनिट", PluralCategory.OTHER, "{n} मिनिटे")),
             UnitForms.simpleUnit("{n} तास"),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} दिवस", PluralCategory.OTHER, "{n} दिवस")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} आठवडा", PluralCategory.OTHER, "{n} आठवडे")),
@@ -5019,8 +5019,8 @@ public final class Locales {
         Locales::pluralMt,
         new Units(
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} sekonda", PluralCategory.TWO, "{n} sekondi", PluralCategory.FEW, "{n} sekondi", PluralCategory.MANY, "{n}-il sekonda", PluralCategory.OTHER, "{n} sekonda")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minuta", PluralCategory.TWO, "{n} minuti", PluralCategory.FEW, "{n} minuti", PluralCategory.MANY, "{n}-il minuta", PluralCategory.OTHER, "{n} minuta")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} siegħa", PluralCategory.TWO, "{n} sigħat", PluralCategory.FEW, "{n} sigħat", PluralCategory.MANY, "{n}-il siegħa", PluralCategory.OTHER, "{n} siegħa")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minuta", PluralCategory.TWO, "minutejn", PluralCategory.FEW, "{n} minuti", PluralCategory.MANY, "{n}-il minuta", PluralCategory.OTHER, "{n} minuta")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} siegħa", PluralCategory.TWO, "sagħtejn", PluralCategory.FEW, "{n} sigħat", PluralCategory.MANY, "{n}-il siegħa", PluralCategory.OTHER, "{n} siegħa")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ġurnata", PluralCategory.TWO, "jumejn", PluralCategory.FEW, "{n} ijiem", PluralCategory.MANY, "{n}-il jum", PluralCategory.OTHER, "{n} jum")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ġimgħa", PluralCategory.TWO, "ġimgħatejn", PluralCategory.FEW, "{n} ġimgħat", PluralCategory.MANY, "{n}-il ġimgħa", PluralCategory.OTHER, "{n} ġimgħa")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "xahar", PluralCategory.TWO, "xahrejn", PluralCategory.FEW, "{n} xhur", PluralCategory.MANY, "{n}-il xahar", PluralCategory.OTHER, "{n} xahar")),
@@ -5131,7 +5131,7 @@ public final class Locales {
         "{n}½",
         ", ",
         "akkurat nå",
-        "{0} siden",
+        "for {0} siden",
         "om {0}",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} sek"),
@@ -5143,7 +5143,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} år"),
             null,
             null,
-            "{0} siden",
+            "for {0} siden",
             "om {0}"
         ),
         new CompactnessOverride(
@@ -5156,7 +5156,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}å"),
             null,
             "",
-            "{0} siden",
+            "for {0} siden",
             "om {0}"
         ),
         null,
@@ -5426,8 +5426,8 @@ public final class Locales {
         "nso",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "dimetsotswana {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "metsotso {n}", PluralCategory.OTHER, "dimetsotso {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "metsotswana {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotso {n}", PluralCategory.OTHER, "metsotso {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iri {n}", PluralCategory.OTHER, "diiri {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "letšatši {n}", PluralCategory.OTHER, "matšatši {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "beke {n}", PluralCategory.OTHER, "dibeke {n}")),
@@ -5440,8 +5440,8 @@ public final class Locales {
         "{0} ye e fetilego",
         "ka {0}",
         new CompactnessOverride(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mots. {n}", PluralCategory.OTHER, "dimets. {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mets. {n}", PluralCategory.OTHER, "dimets. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotsw. {n}", PluralCategory.OTHER, "metsotsw. {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mots. {n}", PluralCategory.OTHER, "mets. {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "iri {n}", PluralCategory.OTHER, "diiri {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "letšatši {n}", PluralCategory.OTHER, "matšatši {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "beke {n}", PluralCategory.OTHER, "dibeke {n}")),
@@ -5528,9 +5528,9 @@ public final class Locales {
         "ny",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} sekondi"),
-            UnitForms.simpleUnit("{n} mphindi"),
-            UnitForms.simpleUnit("{n} ola"),
+            UnitForms.simpleUnit("sekondi {n}"),
+            UnitForms.simpleUnit("mphindi {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ola {n}", PluralCategory.OTHER, "maola {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "tsiku {n}", PluralCategory.OTHER, "masiku {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sabata {n}", PluralCategory.OTHER, "masabata {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "miyezi {n}")),
@@ -5544,7 +5544,7 @@ public final class Locales {
         new CompactnessOverride(
             UnitForms.simpleUnit("sek {n}"),
             UnitForms.simpleUnit("mph {n}"),
-            UnitForms.simpleUnit("ola {n}"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ola {n}", PluralCategory.OTHER, "maola {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "tsiku {n}", PluralCategory.OTHER, "mas {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sabata {n}", PluralCategory.OTHER, "masab {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "miyezi {n}")),
@@ -5683,7 +5683,7 @@ public final class Locales {
         new Units(
             UnitForms.simpleUnit("{n} ਸਕਿੰਟ"),
             UnitForms.simpleUnit("{n} ਮਿੰਟ"),
-            UnitForms.simpleUnit("{n} ਘੰਟਾ"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ਘੰਟਾ", PluralCategory.OTHER, "{n} ਘੰਟੇ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ਦਿਨ", PluralCategory.OTHER, "{n} ਦਿਨ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ਹਫ਼ਤਾ", PluralCategory.OTHER, "{n} ਹਫ਼ਤੇ")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ਮਹੀਨਾ", PluralCategory.OTHER, "{n} ਮਹੀਨੇ")),
@@ -5740,7 +5740,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} manis"),
             UnitForms.simpleUnit("{n} yia")
         ),
-        "{n} en haf",
+        "{0} en haf",
         ", ",
         "nomoa nao",
         "{0} bifoa",
@@ -5766,7 +5766,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} bifoa",
             "long {0}"
@@ -5783,13 +5783,13 @@ public final class Locales {
         "pl",
         Locales::pluralPl,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} sekunda", PluralCategory.FEW, "{n} sekundy", PluralCategory.MANY, "{n} sekund", PluralCategory.OTHER, "{n} sekund")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minuta", PluralCategory.FEW, "{n} minuty", PluralCategory.MANY, "{n} minut", PluralCategory.OTHER, "{n} minut")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} godzina", PluralCategory.FEW, "{n} godziny", PluralCategory.MANY, "{n} godzin", PluralCategory.OTHER, "{n} godzin")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} dzień", PluralCategory.FEW, "{n} dni", PluralCategory.MANY, "{n} dni", PluralCategory.OTHER, "{n} dni")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tydzień", PluralCategory.FEW, "{n} tygodnie", PluralCategory.MANY, "{n} tygodni", PluralCategory.OTHER, "{n} tygodni")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} miesiąc", PluralCategory.FEW, "{n} miesiące", PluralCategory.MANY, "{n} miesięcy", PluralCategory.OTHER, "{n} miesięcy")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} rok", PluralCategory.FEW, "{n} lata", PluralCategory.MANY, "{n} lat", PluralCategory.OTHER, "{n} lat"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} sekunda", PluralCategory.FEW, "{n} sekundy", PluralCategory.MANY, "{n} sekund", PluralCategory.OTHER, "{n} sekundy")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} minuta", PluralCategory.FEW, "{n} minuty", PluralCategory.MANY, "{n} minut", PluralCategory.OTHER, "{n} minuty")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} godzina", PluralCategory.FEW, "{n} godziny", PluralCategory.MANY, "{n} godzin", PluralCategory.OTHER, "{n} godziny")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} dzień", PluralCategory.FEW, "{n} dni", PluralCategory.MANY, "{n} dni", PluralCategory.OTHER, "{n} dnia")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tydzień", PluralCategory.FEW, "{n} tygodnie", PluralCategory.MANY, "{n} tygodni", PluralCategory.OTHER, "{n} tygodnia")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} miesiąc", PluralCategory.FEW, "{n} miesiące", PluralCategory.MANY, "{n} miesięcy", PluralCategory.OTHER, "{n} miesiąca")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} rok", PluralCategory.FEW, "{n} lata", PluralCategory.MANY, "{n} lat", PluralCategory.OTHER, "{n} roku"))
         ),
         "{n} i pół",
         ", ",
@@ -5987,8 +5987,8 @@ public final class Locales {
         "qu",
         n -> PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} ñiqin"),
-            UnitForms.simpleUnit("{n} chiniku"),
+            UnitForms.simpleUnit("{n} sikundu"),
+            UnitForms.simpleUnit("{n} minutu"),
             UnitForms.simpleUnit("{n} ura"),
             UnitForms.simpleUnit("{n} p'unchaw"),
             UnitForms.simpleUnit("{n} simana"),
@@ -6001,8 +6001,8 @@ public final class Locales {
         "{0} ñawpaqta",
         "{0} qhipata",
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n} ñiq"),
-            UnitForms.simpleUnit("{n} chi"),
+            UnitForms.simpleUnit("{n} sik"),
+            UnitForms.simpleUnit("{n} min"),
             UnitForms.simpleUnit("{n} ura"),
             UnitForms.simpleUnit("{n} p'un"),
             UnitForms.simpleUnit("{n} sim"),
@@ -6072,7 +6072,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} k'o chi",
             "pa {0}"
@@ -6140,13 +6140,13 @@ public final class Locales {
         "ru",
         Locales::pluralRuUk,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} секунда", PluralCategory.FEW, "{n} секунды", PluralCategory.MANY, "{n} секунд", PluralCategory.OTHER, "{n} секунд")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} минута", PluralCategory.FEW, "{n} минуты", PluralCategory.MANY, "{n} минут", PluralCategory.OTHER, "{n} минут")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} час", PluralCategory.FEW, "{n} часа", PluralCategory.MANY, "{n} часов", PluralCategory.OTHER, "{n} часов")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} день", PluralCategory.FEW, "{n} дня", PluralCategory.MANY, "{n} дней", PluralCategory.OTHER, "{n} дней")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} неделя", PluralCategory.FEW, "{n} недели", PluralCategory.MANY, "{n} недель", PluralCategory.OTHER, "{n} недель")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} месяц", PluralCategory.FEW, "{n} месяца", PluralCategory.MANY, "{n} месяцев", PluralCategory.OTHER, "{n} месяцев")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} год", PluralCategory.FEW, "{n} года", PluralCategory.MANY, "{n} лет", PluralCategory.OTHER, "{n} лет"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} секунда", PluralCategory.FEW, "{n} секунды", PluralCategory.MANY, "{n} секунд", PluralCategory.OTHER, "{n} секунды")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} минута", PluralCategory.FEW, "{n} минуты", PluralCategory.MANY, "{n} минут", PluralCategory.OTHER, "{n} минуты")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} час", PluralCategory.FEW, "{n} часа", PluralCategory.MANY, "{n} часов", PluralCategory.OTHER, "{n} часа")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} день", PluralCategory.FEW, "{n} дня", PluralCategory.MANY, "{n} дней", PluralCategory.OTHER, "{n} дня")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} неделя", PluralCategory.FEW, "{n} недели", PluralCategory.MANY, "{n} недель", PluralCategory.OTHER, "{n} недели")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} месяц", PluralCategory.FEW, "{n} месяца", PluralCategory.MANY, "{n} месяцев", PluralCategory.OTHER, "{n} месяца")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} год", PluralCategory.FEW, "{n} года", PluralCategory.MANY, "{n} лет", PluralCategory.OTHER, "{n} года"))
         ),
         "{n} с половиной",
         ", ",
@@ -6395,7 +6395,7 @@ public final class Locales {
         "shi",
         Locales::pluralShi,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tasint", PluralCategory.FEW, "{n} tasinin", PluralCategory.OTHER, "{n} tasinin")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tasint", PluralCategory.FEW, "{n} tisinin", PluralCategory.OTHER, "{n} tisinin")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tusdiqt", PluralCategory.FEW, "{n} tusdiqin", PluralCategory.OTHER, "{n} tusdiqin")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tasragt", PluralCategory.FEW, "{n} tisragin", PluralCategory.OTHER, "{n} tisragin")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ass", PluralCategory.FEW, "{n} ussan", PluralCategory.OTHER, "{n} ass")),
@@ -6409,13 +6409,13 @@ public final class Locales {
         "ɣ {0} zzrin",
         "ɣ {0}",
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n}s"),
-            UnitForms.simpleUnit("{n}m"),
-            UnitForms.simpleUnit("{n}h"),
-            UnitForms.simpleUnit("{n}d"),
-            UnitForms.simpleUnit("{n}w"),
-            UnitForms.simpleUnit("{n}mo"),
-            UnitForms.simpleUnit("{n}y"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tasint", PluralCategory.FEW, "{n} tasinin", PluralCategory.OTHER, "{n} tasinin")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tusdiqt", PluralCategory.FEW, "{n} tusdiqin", PluralCategory.OTHER, "{n} tusdiqin")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tasragt", PluralCategory.FEW, "{n} tisragin", PluralCategory.OTHER, "{n} tisragin")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ass", PluralCategory.FEW, "{n} ussan", PluralCategory.OTHER, "{n} ass")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} imalass", PluralCategory.FEW, "{n} imalassn", PluralCategory.OTHER, "{n} imalass")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ayyur", PluralCategory.FEW, "{n} ayyurn", PluralCategory.OTHER, "{n} ayyur")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} aseggas", PluralCategory.FEW, "{n} iseggasen", PluralCategory.OTHER, "{n} aseggas")),
             null,
             null,
             "ɣ {0} zzrin",
@@ -6480,7 +6480,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} ပူၼ်ႉမႃး",
             "ထႅင်ႈ {0}"
@@ -6497,15 +6497,15 @@ public final class Locales {
         "si",
         n -> (n == 0 || n == 1) ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} තත්පරය"),
-            UnitForms.simpleUnit("{n} මිනිත්තුව"),
-            UnitForms.simpleUnit("{n} පැය"),
+            UnitForms.simpleUnit("තත්පර {n}"),
+            UnitForms.simpleUnit("මිනිත්තු {n}"),
+            UnitForms.simpleUnit("පැය {n}"),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "දින {n}", PluralCategory.OTHER, "දින {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "සති {n}", PluralCategory.OTHER, "සති {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "මාස {n}", PluralCategory.OTHER, "මාස {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "වසර {n}", PluralCategory.OTHER, "වසර {n}"))
         ),
-        "{0}යි භාගයයි",
+        "{n}½",
         ", ",
         "දැන්",
         "{0}ට පෙර",
@@ -6650,9 +6650,9 @@ public final class Locales {
         "sn",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} sekondi"),
-            UnitForms.simpleUnit("{n} miniti"),
-            UnitForms.simpleUnit("{n} awa"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sekondi {n}", PluralCategory.OTHER, "masekondi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "miniti {n}", PluralCategory.OTHER, "maminitsi {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "awa {n}", PluralCategory.OTHER, "maawa {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "zuva {n}", PluralCategory.OTHER, "mazuva {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "vhiki {n}", PluralCategory.OTHER, "mavhiki {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwedzi {n}", PluralCategory.OTHER, "mwedzi {n}")),
@@ -6752,13 +6752,13 @@ public final class Locales {
         "so",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ilbiriqsi {n}", PluralCategory.OTHER, "ilbiriqsiyaal {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "daqiiqad {n}", PluralCategory.OTHER, "daqiiqadood {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "saacad {n}", PluralCategory.OTHER, "saacadood {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "maalin {n}", PluralCategory.OTHER, "maalmood {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "toddobaad {n}", PluralCategory.OTHER, "toddobaadyo {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "bil {n}", PluralCategory.OTHER, "bilood {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "sano {n}", PluralCategory.OTHER, "sanooyin {n}"))
+            UnitForms.simpleUnit("{n} ilbiriqsi"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} daqiiqad", PluralCategory.OTHER, "{n} daqiiqo")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} saacad", PluralCategory.OTHER, "{n} saacadood")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} maalin", PluralCategory.OTHER, "{n} maalmood")),
+            UnitForms.simpleUnit("{n} toddobaad"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} bil", PluralCategory.OTHER, "{n} bilood")),
+            UnitForms.simpleUnit("{n} sano")
         ),
         "{n}½",
         ", ",
@@ -6956,8 +6956,8 @@ public final class Locales {
         "st",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "dimetsotswana {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "metsotso {n}", PluralCategory.OTHER, "dimetsotso {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "metsotswana {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotso {n}", PluralCategory.OTHER, "metsotso {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hora {n}", PluralCategory.OTHER, "dihora {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "letsatsi {n}", PluralCategory.OTHER, "matsatsi {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "beke {n}", PluralCategory.OTHER, "dibeke {n}")),
@@ -6970,8 +6970,8 @@ public final class Locales {
         "{0} e fetileng",
         "ka {0}",
         new CompactnessOverride(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "dimetsotswana {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "metsotso {n}", PluralCategory.OTHER, "dimetsotso {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "metsotswana {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotso {n}", PluralCategory.OTHER, "metsotso {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "hora {n}", PluralCategory.OTHER, "dihora {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "letsatsi {n}", PluralCategory.OTHER, "matsatsi {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "beke {n}", PluralCategory.OTHER, "dibeke {n}")),
@@ -7017,7 +7017,7 @@ public final class Locales {
         ),
         "{0} satengah",
         ", ",
-        "ayeuna",
+        "nembé",
         "{0} kapengker",
         "dina {0}",
         new CompactnessOverride(
@@ -7120,7 +7120,7 @@ public final class Locales {
         "{n}½",
         ", ",
         "just nu",
-        "{0} sedan",
+        "för {0} sedan",
         "om {0}",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} s"),
@@ -7132,7 +7132,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} år"),
             null,
             null,
-            "{0} sedan",
+            "för {0} sedan",
             "om {0}"
         ),
         new CompactnessOverride(
@@ -7145,7 +7145,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}å"),
             null,
             "",
-            "{0} sedan",
+            "för {0} sedan",
             "om {0}"
         ),
         null,
@@ -7160,9 +7160,9 @@ public final class Locales {
         "sw",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} sekunde"),
-            UnitForms.simpleUnit("{n} dakika"),
-            UnitForms.simpleUnit("{n} saa"),
+            UnitForms.simpleUnit("sekunde {n}"),
+            UnitForms.simpleUnit("dakika {n}"),
+            UnitForms.simpleUnit("saa {n}"),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "siku {n}", PluralCategory.OTHER, "siku {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "wiki {n}", PluralCategory.OTHER, "wiki {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "mwezi {n}", PluralCategory.OTHER, "miezi {n}")),
@@ -7217,9 +7217,9 @@ public final class Locales {
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} நாள்", PluralCategory.OTHER, "{n} நாட்கள்")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} வாரம்", PluralCategory.OTHER, "{n} வாரங்கள்")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} மாதம்", PluralCategory.OTHER, "{n} மாதங்கள்")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} வயது", PluralCategory.OTHER, "{n} வயது"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ஆண்டு", PluralCategory.OTHER, "{n} ஆண்டுகள்"))
         ),
-        "{0}ரை",
+        "{n}½",
         ", ",
         "இப்போதுதான்",
         "{0} முன்",
@@ -7262,15 +7262,15 @@ public final class Locales {
         "te",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("{n} సెకను"),
-            UnitForms.simpleUnit("{n} నిమిషం"),
-            UnitForms.simpleUnit("{n} గంట"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} సెకను", PluralCategory.OTHER, "{n} సెకన్లు")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} నిమిషం", PluralCategory.OTHER, "{n} నిమిషాలు")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} గంట", PluralCategory.OTHER, "{n} గంటలు")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} రోజు", PluralCategory.OTHER, "{n} రోజులు")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} వారం", PluralCategory.OTHER, "{n} వారాలు")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} నెల", PluralCategory.OTHER, "{n} నెలలు")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} సంవత్సరం", PluralCategory.OTHER, "{n} సంవత్సరాలు"))
         ),
-        "{0}న్నర",
+        "{n}½",
         ", ",
         "ఇప్పుడే",
         "{0} క్రితం",
@@ -7398,7 +7398,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} liu ba",
             "iha {0}"
@@ -7423,7 +7423,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} моҳ"),
             UnitForms.simpleUnit("{n} сол")
         ),
-        "{0} ним",
+        "{0}у ним",
         ", ",
         "ҳамин ҳоло",
         "{0} пеш",
@@ -7478,7 +7478,7 @@ public final class Locales {
         " ",
         "เมื่อกี้",
         "{0}ที่แล้ว",
-        "ใน{0}",
+        "ในอีก {0}",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} วิ"),
             UnitForms.simpleUnit("{n} นาที"),
@@ -7490,7 +7490,7 @@ public final class Locales {
             null,
             null,
             "{0}ที่แล้ว",
-            "ใน{0}"
+            "ในอีก {0}"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n}วิ"),
@@ -7503,7 +7503,7 @@ public final class Locales {
             "{n}½",
             "",
             "{0}ที่แล้ว",
-            "ใน{0}"
+            "ในอีก {0}"
         ),
         null,
         null
@@ -7627,7 +7627,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} aý"),
             UnitForms.simpleUnit("{n} ýyl")
         ),
-        "{0}½",
+        "{n} ýarym",
         ", ",
         "häzir",
         "{0} öň",
@@ -7670,8 +7670,8 @@ public final class Locales {
         "tn",
         n -> n == 1 ? PluralCategory.ONE : PluralCategory.OTHER,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "dimetsotswana {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "metsotso {n}", PluralCategory.OTHER, "dimetsotso {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "metsotswana {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotso {n}", PluralCategory.OTHER, "metsotso {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ura {n}", PluralCategory.OTHER, "diura {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "letsatsi {n}", PluralCategory.OTHER, "malatsi {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "beke {n}", PluralCategory.OTHER, "dibeke {n}")),
@@ -7684,8 +7684,8 @@ public final class Locales {
         "{0} e e fetileng",
         "ka {0}",
         new CompactnessOverride(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "dimetsotswana {n}")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "metsotso {n}", PluralCategory.OTHER, "dimetsotso {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotswana {n}", PluralCategory.OTHER, "metsotswana {n}")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "motsotso {n}", PluralCategory.OTHER, "metsotso {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "ura {n}", PluralCategory.OTHER, "diura {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "letsatsi {n}", PluralCategory.OTHER, "malatsi {n}")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "beke {n}", PluralCategory.OTHER, "dibeke {n}")),
@@ -7729,7 +7729,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n} mun"),
             UnitForms.simpleUnit("{n} yia")
         ),
-        "{n} na hap",
+        "{0} na hap",
         ", ",
         "nau tasol",
         "{0} i go pinis",
@@ -7755,7 +7755,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}w"),
             UnitForms.simpleUnit("{n}mo"),
             UnitForms.simpleUnit("{n}y"),
-            null,
+            "{n}½",
             "",
             "{0} i go pinis",
             "long {0}"
@@ -7939,13 +7939,13 @@ public final class Locales {
         "ɣ {0} zzrin",
         "ɣ {0}",
         new CompactnessOverride(
-            UnitForms.simpleUnit("{n}s"),
-            UnitForms.simpleUnit("{n}m"),
-            UnitForms.simpleUnit("{n}h"),
-            UnitForms.simpleUnit("{n}d"),
-            UnitForms.simpleUnit("{n}w"),
-            UnitForms.simpleUnit("{n}mo"),
-            UnitForms.simpleUnit("{n}y"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tasint", PluralCategory.OTHER, "{n} tisinin")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tusdiqt", PluralCategory.OTHER, "{n} tusdiqin")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} tasragt", PluralCategory.OTHER, "{n} tisragin")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ass", PluralCategory.OTHER, "{n} ussan")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} imalass", PluralCategory.OTHER, "{n} imalassn")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ayyur", PluralCategory.OTHER, "{n} ayyurn")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} aseggas", PluralCategory.OTHER, "{n} iseggasen")),
             null,
             null,
             "ɣ {0} zzrin",
@@ -7976,13 +7976,13 @@ public final class Locales {
         "uk",
         Locales::pluralRuUk,
         new Units(
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} секунда", PluralCategory.FEW, "{n} секунди", PluralCategory.MANY, "{n} секунд", PluralCategory.OTHER, "{n} секунд")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} хвилина", PluralCategory.FEW, "{n} хвилини", PluralCategory.MANY, "{n} хвилин", PluralCategory.OTHER, "{n} хвилин")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} година", PluralCategory.FEW, "{n} години", PluralCategory.MANY, "{n} годин", PluralCategory.OTHER, "{n} годин")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} день", PluralCategory.FEW, "{n} дні", PluralCategory.MANY, "{n} днів", PluralCategory.OTHER, "{n} днів")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} тиждень", PluralCategory.FEW, "{n} тижні", PluralCategory.MANY, "{n} тижнів", PluralCategory.OTHER, "{n} тижнів")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} місяць", PluralCategory.FEW, "{n} місяці", PluralCategory.MANY, "{n} місяців", PluralCategory.OTHER, "{n} місяців")),
-            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} рік", PluralCategory.FEW, "{n} роки", PluralCategory.MANY, "{n} років", PluralCategory.OTHER, "{n} років"))
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} секунда", PluralCategory.FEW, "{n} секунди", PluralCategory.MANY, "{n} секунд", PluralCategory.OTHER, "{n} секунди")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} хвилина", PluralCategory.FEW, "{n} хвилини", PluralCategory.MANY, "{n} хвилин", PluralCategory.OTHER, "{n} хвилини")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} година", PluralCategory.FEW, "{n} години", PluralCategory.MANY, "{n} годин", PluralCategory.OTHER, "{n} години")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} день", PluralCategory.FEW, "{n} дні", PluralCategory.MANY, "{n} днів", PluralCategory.OTHER, "{n} дня")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} тиждень", PluralCategory.FEW, "{n} тижні", PluralCategory.MANY, "{n} тижнів", PluralCategory.OTHER, "{n} тижня")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} місяць", PluralCategory.FEW, "{n} місяці", PluralCategory.MANY, "{n} місяців", PluralCategory.OTHER, "{n} місяця")),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} рік", PluralCategory.FEW, "{n} роки", PluralCategory.MANY, "{n} років", PluralCategory.OTHER, "{n} року"))
         ),
         "{n} з половиною",
         ", ",
@@ -8080,7 +8080,7 @@ public final class Locales {
         new Units(
             UnitForms.simpleUnit("{n} سیکنڈ"),
             UnitForms.simpleUnit("{n} منٹ"),
-            UnitForms.simpleUnit("{n} گھنٹہ"),
+            UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} گھنٹہ", PluralCategory.OTHER, "{n} گھنٹے")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} دن", PluralCategory.OTHER, "{n} دن")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} ہفتہ", PluralCategory.OTHER, "{n} ہفتے")),
             UnitForms.pluralUnit(Map.of(PluralCategory.ONE, "{n} مہینہ", PluralCategory.OTHER, "{n} مہینے")),
@@ -8237,13 +8237,13 @@ public final class Locales {
             UnitForms.simpleUnit("{n} ngày"),
             UnitForms.simpleUnit("{n} tuần"),
             UnitForms.simpleUnit("{n} tháng"),
-            UnitForms.simpleUnit("{n} tuổi")
+            UnitForms.simpleUnit("{n} năm")
         ),
         "{0} rưỡi",
         ", ",
         "vừa xong",
         "{0} trước",
-        "trong {0}",
+        "{0} nữa",
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} giây"),
             UnitForms.simpleUnit("{n} phút"),
@@ -8255,7 +8255,7 @@ public final class Locales {
             null,
             null,
             "{0} trước",
-            "trong {0}"
+            "{0} nữa"
         ),
         new CompactnessOverride(
             UnitForms.simpleUnit("{n} giây"),
@@ -8268,7 +8268,7 @@ public final class Locales {
             "{n}½",
             "",
             "{0} trước",
-            "trong {0}"
+            "{0} nữa"
         ),
         null,
         null
@@ -8333,44 +8333,44 @@ public final class Locales {
         "wo",
         n -> PluralCategory.OTHER,
         new Units(
-            UnitForms.simpleUnit("saa-yépp {n}"),
-            UnitForms.simpleUnit("simili {n}"),
-            UnitForms.simpleUnit("waxtu {n}"),
-            UnitForms.simpleUnit("bés {n}"),
-            UnitForms.simpleUnit("ayubés {n}"),
-            UnitForms.simpleUnit("weer {n}"),
-            UnitForms.simpleUnit("at {n}")
+            UnitForms.simpleUnit("{n} saa"),
+            UnitForms.simpleUnit("{n} simili"),
+            UnitForms.simpleUnit("{n} waxtu"),
+            UnitForms.simpleUnit("{n} fan"),
+            UnitForms.simpleUnit("{n} ayubés"),
+            UnitForms.simpleUnit("{n} weer"),
+            UnitForms.simpleUnit("{n} at")
         ),
         "{0} ak genn-wàll",
         ", ",
         "léegi",
         "{0} ci ginaaw",
-        "ci {0}",
+        "fileek {0}",
         new CompactnessOverride(
-            UnitForms.simpleUnit("saa-y. {n}"),
-            UnitForms.simpleUnit("sim. {n}"),
-            UnitForms.simpleUnit("wax. {n}"),
-            UnitForms.simpleUnit("bés {n}"),
-            UnitForms.simpleUnit("ayub. {n}"),
-            UnitForms.simpleUnit("weer {n}"),
-            UnitForms.simpleUnit("at {n}"),
+            UnitForms.simpleUnit("{n} saa"),
+            UnitForms.simpleUnit("{n} sim."),
+            UnitForms.simpleUnit("{n} wax."),
+            UnitForms.simpleUnit("{n} fan"),
+            UnitForms.simpleUnit("{n} ayub."),
+            UnitForms.simpleUnit("{n} weer"),
+            UnitForms.simpleUnit("{n} at"),
             null,
             null,
             "{0} ci ginaaw",
-            "ci {0}"
+            "fileek {0}"
         ),
         new CompactnessOverride(
-            UnitForms.simpleUnit("saa {n}"),
-            UnitForms.simpleUnit("sim {n}"),
-            UnitForms.simpleUnit("wax {n}"),
-            UnitForms.simpleUnit("bés {n}"),
-            UnitForms.simpleUnit("ayub {n}"),
-            UnitForms.simpleUnit("weer {n}"),
-            UnitForms.simpleUnit("at {n}"),
+            UnitForms.simpleUnit("{n} saa"),
+            UnitForms.simpleUnit("{n} sim"),
+            UnitForms.simpleUnit("{n} wax"),
+            UnitForms.simpleUnit("{n} fan"),
+            UnitForms.simpleUnit("{n} ayub"),
+            UnitForms.simpleUnit("{n} weer"),
+            UnitForms.simpleUnit("{n} at"),
             "{n}½",
             "",
             "{0} ci gin.",
-            "ci {0}"
+            "fileek {0}"
         ),
         null,
         null
@@ -8645,7 +8645,7 @@ public final class Locales {
             UnitForms.simpleUnit("{n}天"),
             UnitForms.simpleUnit("{n}周"),
             UnitForms.simpleUnit("{n}个月"),
-            UnitForms.simpleUnit("{n}岁")
+            UnitForms.simpleUnit("{n}年")
         ),
         "{0}半",
         "",

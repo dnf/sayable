@@ -22,7 +22,7 @@ sa_unit('cy', day, zero, '{n} diwrnod').
 sa_unit('cy', day, one, '{n} diwrnod').
 sa_unit('cy', day, two, '{n} ddiwrnod').
 sa_unit('cy', day, few, '{n} diwrnod').
-sa_unit('cy', day, many, '{n} niwrnod').
+sa_unit('cy', day, many, '{n} diwrnod').
 sa_unit('cy', day, other, '{n} diwrnod').
 sa_unit('cy', week, zero, '{n} wythnos').
 sa_unit('cy', week, one, '{n} wythnos').
@@ -37,7 +37,7 @@ sa_unit('cy', month, few, '{n} mis').
 sa_unit('cy', month, many, '{n} mis').
 sa_unit('cy', month, other, '{n} mis').
 sa_unit('cy', year, zero, '{n} blwyddyn').
-sa_unit('cy', year, one, '{n} blwyddyn').
+sa_unit('cy', year, one, '{n} flwyddyn').
 sa_unit('cy', year, two, '{n} flynedd').
 sa_unit('cy', year, few, '{n} blynedd').
 sa_unit('cy', year, many, '{n} blynedd').

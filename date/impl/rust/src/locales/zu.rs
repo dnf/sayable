@@ -27,7 +27,7 @@ pub fn locale() -> DateLocale {
         tomorrow: "kusasa".to_string(),
         yesterday: "izolo".to_string(),
         day_after_tomorrow: Some("ngomhlomunye".to_string()),
-        day_before_yesterday: Some("usuku olwedlule izolo".to_string()),
+        day_before_yesterday: Some("kuthangi".to_string()),
         this_weekday: Some("leli {weekday}".to_string()),
         next_weekday: Some("{weekday} elizayo".to_string()),
         last_weekday: Some("{weekday} eledlule".to_string()),

@@ -27,7 +27,7 @@ const SaLocale sa_locale_is = {
         { NULL, { NULL, "{n} mánuður", NULL, NULL, NULL, "{n} mánuðir" } },
         { NULL, { NULL, "{n} ár", NULL, NULL, NULL, "{n} ár" } }
     },
-    "{0} og hálft", ", ", "Nýfætt",
+    "{n} og hálft", ", ", "Nýfætt",
     {
         { "Nýfæðingur", "" },
         { "Ungbarn", "" },

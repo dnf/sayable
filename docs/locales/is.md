@@ -29,9 +29,9 @@ Plural rule: `mk` (categories: one, other)
 | 2 years, 1 month  | 2 ár, 1 mánuður  | 2 ár, 1 mán.  | 2á1m    |
 | 2 years, 6 months | 2 ár, 6 mánuðir  | 2 ár, 6 mán.  | 2á6m    |
 | 3 years           | 3 ár             | 3 ár          | 3á      |
-| 3½ years          | 3 ár og hálft    | 3 ár og hálft | 3½á     |
+| 3½ years          | 3 og hálft ár    | 3 og hálft ár | 3½á     |
 | 5 years           | 5 ár             | 5 ár          | 5á      |
-| 5½ years          | 5 ár og hálft    | 5 ár og hálft | 5½á     |
+| 5½ years          | 5 og hálft ár    | 5 og hálft ár | 5½á     |
 | 7 years           | 7 ár             | 7 ár          | 7á      |
 | 10 years          | 10 ár            | 10 ár         | 10á     |
 | 18 years          | 18 ár            | 18 ár         | 18á     |
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | á yfirmorgun        | 17.3.    |
 | Day before yesterday | í fyrradag          | 13.3.    |
 | This Thursday (+5)   | fimmtudagur         | 20.3.    |
-| Last Monday (-4)     | síðasta þriðjudagur | 11.3.    |
-| Next Wednesday (+12) | næsta fimmtudagur   | 27.3.    |
-| Same month (+20)     | 4. apríl            | 4.4.     |
+| Last Tuesday (-4)    | síðasta þriðjudagur | 11.3.    |
+| Next Thursday (+12)  | næsta fimmtudagur   | 27.3.    |
+| Same year (+20)      | 4. apríl            | 4.4.     |
 | Different year       | 10. janúar 2026     | 10.1.26  |
 
 ## Duration

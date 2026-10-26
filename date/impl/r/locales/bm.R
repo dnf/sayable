@@ -11,7 +11,7 @@
 
 locale_bm <- list(
   code = "bm",
-  months = c("Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"),
+  months = c("Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu"),
   weekdays = c("Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"),
   day_format = "{n}",
   day_format_exceptions = list(),
@@ -26,7 +26,7 @@ locale_bm <- list(
   next_weekday = "{weekday} nata",
   last_weekday = "{weekday} tɛmɛnen",
   short = list(
-    months = c("Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"),
+    months = c("Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"),
     weekdays = c("Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"),
     day_format = "{n}",
     date_pattern = "{day} {month}",

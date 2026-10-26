@@ -16,9 +16,9 @@ pub const locale_lt = DateLocale{
 	code: 'lt'
 	months: ['sausis', 'vasaris', 'kovas', 'balandis', 'gegužė', 'birželis', 'liepa', 'rugpjūtis', 'rugsėjis', 'spalis', 'lapkritis', 'gruodis']!
 	weekdays: ['sekmadienis', 'pirmadienis', 'antradienis', 'trečiadienis', 'ketvirtadienis', 'penktadienis', 'šeštadienis']!
-	day_format: '{n}.'
-	date_pattern: '{day} {month}'
-	date_pattern_with_year: '{day} {month} {year}'
+	day_format: '{n} d.'
+	date_pattern: '{month} {day}'
+	date_pattern_with_year: '{year} m. {month} {day}'
 	today: 'šiandien'
 	tomorrow: 'rytoj'
 	yesterday: 'vakar'
@@ -40,11 +40,11 @@ pub const locale_lt = DateLocale{
 		has_months: true
 		weekdays: ['sk', 'pr', 'an', 'tr', 'kt', 'pn', 'št']!
 		has_weekdays: true
-		day_format: '{n}.'
+		day_format: '{n} d.'
 		has_day_format: true
-		date_pattern: '{day} {month}'
+		date_pattern: '{month} {day}'
 		has_date_pattern: true
-		date_pattern_with_year: '{day} {month} {year}'
+		date_pattern_with_year: '{year} m. {month} {day}'
 		has_date_pattern_with_year: true
 	}
 	has_compact: true

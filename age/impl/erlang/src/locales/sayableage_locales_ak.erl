@@ -24,7 +24,7 @@ locale() ->
         half = "{n}½",
         delimiter = ", ",
         just_born = "Abofra foforo",
-        stages = #stages{newborn = {neutral, "Abofra foforo"}, infant = {neutral, "Akwadaa"}, toddler = {neutral, "Abofra"}, child = {neutral, "Abofra"}, teenager = {neutral, "Abarimaa"}, adult = {neutral, "Ɔpanyin"}},
-        short = {just, #compactness_override{day = {just, {simple, "nna {n}"}}, week = {just, {pluralized, [{one, "dapɛn {n}"}, {other, "nnapɛn {n}"}]}}, month = {just, {pluralized, [{one, "bosome {n}"}, {other, "abosome {n}"}]}}, year = {just, {pluralized, [{one, "afe {n}"}, {other, "mfe {n}"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
-        compact = {just, #compactness_override{day = {just, {simple, "nna {n}"}}, week = {just, {pluralized, [{one, "dapɛn {n}"}, {other, "nnapɛn {n}"}]}}, month = {just, {pluralized, [{one, "bos {n}"}, {other, "abos {n}"}]}}, year = {just, {pluralized, [{one, "afe {n}"}, {other, "mfe {n}"}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
+        stages = #stages{newborn = {neutral, "Abofra foforo"}, infant = {neutral, "Akwadaa"}, toddler = {neutral, "Abofra"}, child = {neutral, "Abofra"}, teenager = {gendered, "Abarimaa", "Abaayewa"}, adult = {neutral, "Ɔpanyin"}},
+        short = {just, #compactness_override{day = {just, {pluralized, [{one, "da {n}"}, {other, "nna {n}"}]}}, week = {just, {pluralized, [{one, "dapɛn {n}"}, {other, "nnapɛn {n}"}]}}, month = {just, {pluralized, [{one, "bosome {n}"}, {other, "abosome {n}"}]}}, year = {just, {pluralized, [{one, "afe {n}"}, {other, "mfe {n}"}]}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        compact = {just, #compactness_override{day = {just, {pluralized, [{one, "da {n}"}, {other, "nna {n}"}]}}, week = {just, {pluralized, [{one, "dapɛn {n}"}, {other, "nnapɛn {n}"}]}}, month = {just, {pluralized, [{one, "bos {n}"}, {other, "abos {n}"}]}}, year = {just, {pluralized, [{one, "afe {n}"}, {other, "mfe {n}"}]}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

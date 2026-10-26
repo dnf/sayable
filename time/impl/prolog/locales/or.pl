@@ -15,18 +15,18 @@ st_hours('or', ['ବାରଟା', 'ଗୋଟିଏ', 'ଦୁଇଟା', 'ତି
 st_midnight('or', 'ମଧ୍ୟରାତ୍ରି').
 st_noon('or', 'ମଧ୍ୟାହ୍ନ').
 
-st_pattern('or', 0, '{h}:00').
-st_pattern('or', 5, '{h}:05').
-st_pattern('or', 10, '{h}:10').
-st_pattern('or', 15, '{h}:15').
-st_pattern('or', 20, '{h}:20').
-st_pattern('or', 25, '{h}:25').
-st_pattern('or', 30, '{h}:30').
-st_pattern('or', 35, '{h}:35').
-st_pattern('or', 40, '{h}:40').
-st_pattern('or', 45, '{h}:45').
-st_pattern('or', 50, '{h}:50').
-st_pattern('or', 55, '{h}:55').
+st_pattern('or', 0, '{h}').
+st_pattern('or', 5, '{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍').
+st_pattern('or', 10, '{h} ବାଜି ଦଶ ମିନିଟ୍').
+st_pattern('or', 15, '{h} ବାଜି ପନ୍ଦର ମିନିଟ୍').
+st_pattern('or', 20, '{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍').
+st_pattern('or', 25, '{h} ବାଜି ପଚିଶ ମିନିଟ୍').
+st_pattern('or', 30, '{h} ବାଜି ତିରିଶ ମିନିଟ୍').
+st_pattern('or', 35, '{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍').
+st_pattern('or', 40, '{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍').
+st_pattern('or', 45, 'ପାଉଣେ {next_h}').
+st_pattern('or', 50, '{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍').
+st_pattern('or', 55, '{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍').
 
 short_st_use24h('or', false).
 short_st_format('or', '{h}:{mm} {ampm}').

@@ -21,11 +21,11 @@ sd_date_pattern_with_year('wo', '{day} {month} {year}').
 sd_today('wo', 'tey').
 sd_tomorrow('wo', 'suba').
 sd_yesterday('wo', 'démb').
-sd_day_after_tomorrow('wo', 'suba-suba').
-sd_day_before_yesterday('wo', 'démb-démb').
-sd_this_weekday('wo', '{weekday} bi').
-sd_next_weekday('wo', '{weekday} bi ñëw').
-sd_last_weekday('wo', '{weekday} bi weex').
+sd_day_after_tomorrow('wo', 'gannaaw-suba').
+sd_day_before_yesterday('wo', 'bërki-démb').
+sd_this_weekday('wo', '{weekday} jii').
+sd_next_weekday('wo', '{weekday} jiy ñëw').
+sd_last_weekday('wo', '{weekday} ji weesu').
 
 short_sd_months('wo', ['Sam', 'Few', 'Maa', 'Awr', 'Mee', 'Suw', 'Sul', 'Ut', 'Sep', 'Okt', 'Now', 'Des']).
 short_sd_weekdays('wo', ['Dib', 'Alt', 'Tal', 'Àll', 'Alx', 'Àjj', 'Gaa']).

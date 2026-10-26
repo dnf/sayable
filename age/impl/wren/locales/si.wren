@@ -20,7 +20,7 @@ class SILocale {
       "year": {"one": "වසර {n}", "other": "වසර {n}"},
     }
   }
-  static half { "{0}යි භාගයයි" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justBorn { "අලුත උපන්" }
   static stages {

@@ -13,10 +13,10 @@ locale_ha <- list(
   code = "ha",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    day = list(one = "{n} kwana", other = "{n} kwanaki"),
-    week = list(one = "{n} mako", other = "{n} makonni"),
-    month = list(one = "{n} wata", other = "{n} watanni"),
-    year = list(one = "{n} shekara", other = "{n} shekaru")
+    day = list(one = "kwana {n}", other = "kwanaki {n}"),
+    week = list(one = "mako {n}", other = "makonni {n}"),
+    month = list(one = "wata {n}", other = "watanni {n}"),
+    year = list(one = "shekara {n}", other = "shekaru {n}")
   ),
   half = "{n}½",
   delimiter = ", ",
@@ -24,17 +24,17 @@ locale_ha <- list(
   stages = list(
     newborn = "Jariri",
     infant = "Jariri",
-    toddler = "Ƙaramin yaro",
-    child = "Yaro",
-    teenager = "Saurayi",
+    toddler = list(m = "Ƙaramin yaro", f = "Ƙaramar yarinya"),
+    child = list(m = "Yaro", f = "Yarinya"),
+    teenager = list(m = "Saurayi", f = "Budurwa"),
     adult = "Babba"
   ),
   short = list(
     units = list(
-      day = "{n} kw.",
-      week = "{n} mk.",
-      month = "{n} wt.",
-      year = "{n} shk."
+      day = "kw. {n}",
+      week = "mk. {n}",
+      month = "wt. {n}",
+      year = "shk. {n}"
     )
   ),
   compact = list(

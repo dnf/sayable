@@ -19,8 +19,8 @@
    :clock (make-clock-config
     :hours (list "rolas" "siji" "loro" "telu" "papat" "lima" "enem" "pitu" "wolu" "sanga" "sepuluh" "sewelas")
     :midnight "tengah wengi"
-    :noon "awan"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :noon "tengah awan"
+    :patterns (list (cons 0 "jam {h}") (cons 5 "jam {h} luwih limang menit") (cons 10 "jam {h} luwih sepuluh menit") (cons 15 "jam {h} luwih seprapat") (cons 20 "jam {h} luwih rong puluh menit") (cons 25 "jam {h} luwih selawé menit") (cons 30 "jam setengah {next_h}") (cons 35 "jam {next_h} kurang selawé menit") (cons 40 "jam {next_h} kurang rong puluh menit") (cons 45 "jam {next_h} kurang seprapat") (cons 50 "jam {next_h} kurang sepuluh menit") (cons 55 "jam {next_h} kurang limang menit")))
    :short-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}:{mm}")
 ))

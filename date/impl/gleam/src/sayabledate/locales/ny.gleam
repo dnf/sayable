@@ -25,9 +25,9 @@ pub fn locale() -> types.DateLocale {
     yesterday: "dzulo",
     day_after_tomorrow: Ok("mkucha"),
     day_before_yesterday: Ok("dzana"),
-    this_weekday: Ok("{weekday} ino"),
-    next_weekday: Ok("{weekday} yotsatira"),
-    last_weekday: Ok("{weekday} yatha"),
+    this_weekday: Ok("{weekday} lino"),
+    next_weekday: Ok("{weekday} lotsatira"),
+    last_weekday: Ok("{weekday} latha"),
     months_in_date: Error(Nil),
     short: Ok(types.CompactnessOverride(
       months: Ok(["Jan", "Feb", "Mat", "Epu", "Mey", "Jun", "Jul", "Oga", "Sep", "Okt", "Nov", "Dis"]),

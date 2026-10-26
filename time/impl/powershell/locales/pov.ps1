@@ -10,22 +10,22 @@
 # Source: locales/pov.json
 
 function locale_pov {
-    $hours = @('dozi', 'un', 'dos', 'tres', 'kuatru', 'sinku', 'seis', 'seti', 'oitu', 'novi', 'des', 'onzi')
+    $hours = @('dozi ora', 'un ora', 'dos ora', 'tres ora', 'kuatru ora', 'sinku ora', 'seis ora', 'seti ora', 'oitu ora', 'novi ora', 'des ora', 'onzi ora')
     $midnight = 'meia noti'
     $noon = 'meiu dia'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} i sinku'
+    $patterns[10] = '{h} i des'
+    $patterns[15] = '{h} i kinzi'
+    $patterns[20] = '{h} i vinti'
+    $patterns[25] = '{h} i vinti i sinku'
+    $patterns[30] = '{h} i meiu'
+    $patterns[35] = '{h} i trinta i sinku'
+    $patterns[40] = '{h} i kuarenta'
+    $patterns[45] = '{h} i kuarenta i sinku'
+    $patterns[50] = '{h} i sinkuenta'
+    $patterns[55] = '{h} i sinkuenta i sinku'
     $clock = @{
         hours = $hours
         midnight = $midnight

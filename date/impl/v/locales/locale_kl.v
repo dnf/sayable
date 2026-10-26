@@ -18,7 +18,7 @@ pub const locale_kl = DateLocale{
 	weekdays: ['sapaat', 'ataasinngorneq', 'marlunngorneq', 'pingasunngorneq', 'sisamanngorneq', 'tallimanngorneq', 'arfininngorneq']!
 	day_format: '{n}.'
 	date_pattern: '{month} {day}'
-	date_pattern_with_year: '{day} {month} {year}'
+	date_pattern_with_year: '{month} {day} {year}'
 	today: 'ullumi'
 	tomorrow: 'aqagu'
 	yesterday: 'ippassaq'
@@ -42,7 +42,7 @@ pub const locale_kl = DateLocale{
 		has_day_format: true
 		date_pattern: '{month} {day}'
 		has_date_pattern: true
-		date_pattern_with_year: '{day} {month} {year}'
+		date_pattern_with_year: '{month} {day} {year}'
 		has_date_pattern_with_year: true
 	}
 	has_compact: true

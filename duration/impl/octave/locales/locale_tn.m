@@ -12,8 +12,8 @@
 function loc = locale_tn()
   loc.code = 'tn';
   loc.plural = @(n) ifelse(n == 1, "one", "other");
-  loc.units.second = struct("one", 'motsotswana {n}', "other", 'dimetsotswana {n}');
-  loc.units.minute = struct("one", 'metsotso {n}', "other", 'dimetsotso {n}');
+  loc.units.second = struct("one", 'motsotswana {n}', "other", 'metsotswana {n}');
+  loc.units.minute = struct("one", 'motsotso {n}', "other", 'metsotso {n}');
   loc.units.hour = struct("one", 'ura {n}', "other", 'diura {n}');
   loc.units.day = struct("one", 'letsatsi {n}', "other", 'malatsi {n}');
   loc.units.week = struct("one", 'beke {n}', "other", 'dibeke {n}');
@@ -24,8 +24,8 @@ function loc = locale_tn()
   loc.just_now = 'jaanong fela';
   loc.ago = '{0} e e fetileng';
   loc.in_future = 'ka {0}';
-  loc.short.units.second = struct("one", 'motsotswana {n}', "other", 'dimetsotswana {n}');
-  loc.short.units.minute = struct("one", 'metsotso {n}', "other", 'dimetsotso {n}');
+  loc.short.units.second = struct("one", 'motsotswana {n}', "other", 'metsotswana {n}');
+  loc.short.units.minute = struct("one", 'motsotso {n}', "other", 'metsotso {n}');
   loc.short.units.hour = struct("one", 'ura {n}', "other", 'diura {n}');
   loc.short.units.day = struct("one", 'letsatsi {n}', "other", 'malatsi {n}');
   loc.short.units.week = struct("one", 'beke {n}', "other", 'dibeke {n}');

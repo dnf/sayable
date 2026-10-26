@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "ky",
-        clock = #clock_config{hours = ["он эки", "бир", "эки", "үч", "төрт", "беш", "алты", "жети", "сегиз", "тогуз", "он", "он бир"], midnight = "түн ортосу", noon = "түш", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["он эки", "бир", "эки", "үч", "төрт", "беш", "алты", "жети", "сегиз", "тогуз", "он", "он бир"], midnight = "түн ортосу", noon = "түш", patterns = [{0, "саат {h}"}, {5, "{h} нөл беш"}, {10, "{h} он"}, {15, "{h} он беш"}, {20, "{h} жыйырма"}, {25, "{h} жыйырма беш"}, {30, "{h} жарым"}, {35, "{h} отуз беш"}, {40, "{h} кырк"}, {45, "{h} кырк беш"}, {50, "{h} элүү"}, {55, "{h} элүү беш"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
     }.

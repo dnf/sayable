@@ -626,7 +626,7 @@ class TestSayableAgeSpanish:
             "month": {"one": "{n} mes", "other": "{n} meses"},
             "year": {"one": "{n} año", "other": "{n} años"},
         },
-        half="{n} y medio",
+        half="{0} y medio",
         delimiter=", ",
         just_born="Recién nacido",
         stages={
@@ -680,7 +680,7 @@ class TestSayableAgeSpanish:
 
     # 25.10
     def test_half_marker(self) -> None:
-        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 y medio años"
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 años y medio"
 
     # 25.11
     def test_integer_years(self) -> None:
@@ -946,7 +946,7 @@ class TestLocaleHebrew:
 
     # 29.2
     def test_29_2_one_day(self) -> None:
-        assert self.pt.format_age("2025-06-14", "2025-06-15") == "יום 1"
+        assert self.pt.format_age("2025-06-14", "2025-06-15") == "יום"
 
     # 29.3
     def test_29_3_three_days(self) -> None:
@@ -970,7 +970,7 @@ class TestLocaleHebrew:
 
     # 29.8
     def test_29_8_two_years_dual_one_month(self) -> None:
-        assert self.pt.format_age("2023-06-15", "2025-07-15") == "שנתיים, חודש 1"
+        assert self.pt.format_age("2023-06-15", "2025-07-15") == "שנתיים, חודש"
 
     # 29.9
     def test_29_9_half_years(self) -> None:
@@ -1087,7 +1087,7 @@ class TestLocaleIndonesian:
 
     # 29.32
     def test_29_32_half_years(self) -> None:
-        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 tahun setengah"
+        assert self.pt.format_age("2022-06-15", "2025-12-15") == "3 setengah tahun"
 
     # 29.33
     def test_29_33_seven_years(self) -> None:

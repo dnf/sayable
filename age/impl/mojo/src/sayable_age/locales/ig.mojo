@@ -28,26 +28,26 @@ fn build_ig() -> AgeLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var day = simple_unit("{n} ụbọchị")
-    var week = simple_unit("{n} izu")
-    var month = simple_unit("{n} ọnwa")
-    var year = simple_unit("{n} afọ")
+    var day = simple_unit("ụbọchị {n}")
+    var week = simple_unit("izu {n}")
+    var month = simple_unit("ọnwa {n}")
+    var year = simple_unit("afọ {n}")
 
     var newborn = stage_neutral("Nwa ọhụrụ")
     var infant = stage_neutral("Nwa ọhụrụ")
     var toddler = stage_neutral("Nwa nta")
     var child = stage_neutral("Nwa")
-    var teenager = stage_neutral("Nwokorobịa")
+    var teenager = stage_gendered("Nwokorobịa", "Agbọghọbịa")
     var adult = stage_neutral("Okenye")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.day = simple_unit("{n} ụbọchị")
+    short_ovr.day = simple_unit("ụbọchị {n}")
     short_ovr.has_day = True
-    short_ovr.week = simple_unit("{n} izu")
+    short_ovr.week = simple_unit("izu {n}")
     short_ovr.has_week = True
-    short_ovr.month = simple_unit("{n} ọnwa")
+    short_ovr.month = simple_unit("ọnwa {n}")
     short_ovr.has_month = True
-    short_ovr.year = simple_unit("{n} afọ")
+    short_ovr.year = simple_unit("afọ {n}")
     short_ovr.has_year = True
 
     var compact_ovr = CompactnessOverride()

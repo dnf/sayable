@@ -20,13 +20,13 @@ M.units = {
     day = "{n} ngày",
     week = "{n} tuần",
     month = "{n} tháng",
-    year = "{n} tuổi",
+    year = "{n} năm",
 }
 M.half = "{0} rưỡi"
 M.delimiter = ", "
 M.just_now = "vừa xong"
 M.ago = "{0} trước"
-M.in_future = "trong {0}"
+M.in_future = "{0} nữa"
 M.short = {
     units = {
         second = "{n} giây",
@@ -38,7 +38,7 @@ M.short = {
         year = "{n} năm",
     },
     ago = "{0} trước",
-    in_future = "trong {0}",
+    in_future = "{0} nữa",
 }
 M.compact = {
     units = {
@@ -53,7 +53,7 @@ M.compact = {
     half = "{n}½",
     delimiter = "",
     ago = "{0} trước",
-    in_future = "trong {0}",
+    in_future = "{0} nữa",
 }
 
 return M

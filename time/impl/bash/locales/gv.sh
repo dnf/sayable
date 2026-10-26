@@ -10,21 +10,21 @@
 # Source: locales/gv.json
 
 _sayabletime_locale_gv() {
-    _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
+    _clock_hours=('daa-yeig' 'nane' 'jees' 'tree' 'kiare' 'queig' 'shey' 'shiaght' 'hoght' 'nuy' 'jeih' 'nane-jeig')
     _clock_midnight='mean oie'
     _clock_noon='munlaa'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h} er y chlag'
+    _clock_pattern_5='queig minnidyn lurg {h}'
+    _clock_pattern_10='jeih minnidyn lurg {h}'
+    _clock_pattern_15='kerroo lurg {h}'
+    _clock_pattern_20='feed minnid lurg {h}'
+    _clock_pattern_25='queig minnidyn as feed lurg {h}'
+    _clock_pattern_30='lieh-oor lurg {h}'
+    _clock_pattern_35='queig minnidyn as feed gys {next_h}'
+    _clock_pattern_40='feed minnid gys {next_h}'
+    _clock_pattern_45='kerroo gys {next_h}'
+    _clock_pattern_50='jeih minnidyn gys {next_h}'
+    _clock_pattern_55='queig minnidyn gys {next_h}'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

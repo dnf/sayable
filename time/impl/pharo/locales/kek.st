@@ -17,22 +17,22 @@ kek
 	locale := SayableTimeLocale new.
 	locale code: 'kek'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'kab''laju'. 'jun'. 'kab'''. 'oxib'''. 'kab''ib'''. 'o''ib'''. 'waqib'''. 'uqub'''. 'wajxaqib'''. 'b''elejeb'''. 'lajeb'''. 'junlaju' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'kab''laju'. 'jun'. 'kiib'''. 'oxib'''. 'kaahib'''. 'oob'''. 'waqib'''. 'wuqub'''. 'waqxaqib'''. 'b''eleeb'''. 'lajeeb'''. 'junlaju' }).
 	clock at: #midnight put: 'chaq'' xkab'''.
 	clock at: #noon put: 'chaq'' chaab''il'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h} hoonal'.
+		5. '{h} hoonal rik''in oob'' minuut'.
+		10. '{h} hoonal rik''in lajeeb'' minuut'.
+		15. '{h} hoonal rik''in o''laju minuut'.
+		20. '{h} hoonal rik''in junmay minuut'.
+		25. '{h} hoonal rik''in oob'' xkak''aal minuut'.
+		30. '{h} hoonal rik''in yijach'.
+		35. '{h} hoonal rik''in o''laju xkak''aal minuut'.
+		40. '{h} hoonal rik''in kaak''aal minuut'.
+		45. '{h} hoonal rik''in oob'' roxk''aal minuut'.
+		50. '{h} hoonal rik''in lajeeb'' roxk''aal minuut'.
+		55. '{h} hoonal rik''in o''laju roxk''aal minuut'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

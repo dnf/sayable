@@ -27,7 +27,7 @@ class KMLocale {
   static delimiter { ", " }
   static justNow { "ឥឡូវនេះ" }
   static ago { "{0}មុន" }
-  static inFuture { "ក្នុង{0}" }
+  static inFuture { "{0}ទៀត" }
   static short {
     return {
       "units": {
@@ -40,7 +40,7 @@ class KMLocale {
         "year": "{n} ឆ្នាំ",
       },
       "ago": "{0}មុន",
-      "inFuture": "ក្នុង{0}",
+      "inFuture": "{0}ទៀត",
     }
   }
   static compact {
@@ -57,7 +57,7 @@ class KMLocale {
       "half": "{n}½",
       "delimiter": "",
       "ago": "{0}មុន",
-      "inFuture": "ក្នុង{0}",
+      "inFuture": "{0}ទៀត",
     }
   }
 }

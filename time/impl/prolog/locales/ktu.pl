@@ -15,18 +15,18 @@ st_hours('ktu', ['zomi na zole', 'mosi', 'zole', 'tatu', 'ya', 'tanu', 'sambanu'
 st_midnight('ktu', 'midi ya butu').
 st_noon('ktu', 'midi').
 
-st_pattern('ktu', 0, '{h}:00').
-st_pattern('ktu', 5, '{h}:05').
-st_pattern('ktu', 10, '{h}:10').
-st_pattern('ktu', 15, '{h}:15').
-st_pattern('ktu', 20, '{h}:20').
-st_pattern('ktu', 25, '{h}:25').
-st_pattern('ktu', 30, '{h}:30').
-st_pattern('ktu', 35, '{h}:35').
-st_pattern('ktu', 40, '{h}:40').
-st_pattern('ktu', 45, '{h}:45').
-st_pattern('ktu', 50, '{h}:50').
-st_pattern('ktu', 55, '{h}:55').
+st_pattern('ktu', 0, 'ngunga {h}').
+st_pattern('ktu', 5, 'ngunga {h} na miniti tanu').
+st_pattern('ktu', 10, 'ngunga {h} na miniti zomi').
+st_pattern('ktu', 15, 'ngunga {h} na miniti zomi na tanu').
+st_pattern('ktu', 20, 'ngunga {h} na miniti makumi zole').
+st_pattern('ktu', 25, 'ngunga {h} na miniti makumi zole na tanu').
+st_pattern('ktu', 30, 'ngunga {h} na ndambu').
+st_pattern('ktu', 35, 'ngunga {h} na miniti makumi tatu na tanu').
+st_pattern('ktu', 40, 'ngunga {h} na miniti makumi ya').
+st_pattern('ktu', 45, 'ngunga {h} na miniti makumi ya na tanu').
+st_pattern('ktu', 50, 'ngunga {h} na miniti makumi tanu').
+st_pattern('ktu', 55, 'ngunga {h} na miniti makumi tanu na tanu').
 
 short_st_use24h('ktu', false).
 short_st_format('ktu', '{h}:{mm} {ampm}').

@@ -12,10 +12,10 @@
 class TKLocale {
   static code { "tk" }
   static months {
-    return ["Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"]
+    return ["ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"]
   }
   static weekdays {
-    return ["Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"]
+    return ["ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {
@@ -34,8 +34,8 @@ class TKLocale {
   static monthsInDate { null }
   static short {
     return {
-      "months": ["Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"],
-      "weekdays": ["Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"],
+      "months": ["ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek"],
+      "weekdays": ["ýek", "duş", "siş", "çar", "pen", "ann", "şen"],
       "dayFormat": "{n}",
       "datePattern": "{day} {month}",
       "datePatternWithYear": "{day} {month} {year}",

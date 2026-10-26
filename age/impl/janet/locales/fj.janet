@@ -16,7 +16,7 @@
           :week "{n} na macawa"
           :month "{n} na vula"
           :year "{n} na yabaki"}
-   :half "{n} kei na levu ni wasei"
+   :half "{0} kei na veimama"
    :delimiter ", "
    :just-born "Gone vou"
    :stages {:newborn "Gone vou"
@@ -27,5 +27,5 @@
             :adult "Tamata qase"
 }
    :short {:units {:day "{n} siga" :week "{n} mac." :month "{n} vula" :year "{n} yab."}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

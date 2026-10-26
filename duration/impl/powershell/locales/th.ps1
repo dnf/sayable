@@ -27,7 +27,7 @@ function locale_th {
     $delimiter = ' '
     $justNow = 'เมื่อกี้'
     $ago = '{0}ที่แล้ว'
-    $inFuture = 'ใน{0}'
+    $inFuture = 'ในอีก {0}'
     $short = @{
         units = @{
             second = '{n} วิ'
@@ -39,7 +39,7 @@ function locale_th {
             year = '{n} ปี'
         }
         ago = '{0}ที่แล้ว'
-        inFuture = 'ใน{0}'
+        inFuture = 'ในอีก {0}'
     }
     $compact = @{
         units = @{
@@ -54,7 +54,7 @@ function locale_th {
         half = '{n}½'
         delimiter = ''
         ago = '{0}ที่แล้ว'
-        inFuture = 'ใน{0}'
+        inFuture = 'ในอีก {0}'
     }
     return @{
         code = 'th'

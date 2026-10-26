@@ -31,7 +31,7 @@ sa_stage('tn', newborn, _, 'Lesea le sa tswa tsalwa').
 sa_stage('tn', infant, _, 'Lesea').
 sa_stage('tn', toddler, _, 'Ngwana yo monnye').
 sa_stage('tn', child, _, 'Ngwana').
-sa_stage('tn', teenager, _, 'Lekgarebe').
+sa_stage('tn', teenager, _, 'Mosha').
 sa_stage('tn', adult, _, 'Motho yo mogolo').
 
 short_sa_unit('tn', day, one, 'letsatsi {n}').

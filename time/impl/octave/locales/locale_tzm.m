@@ -11,10 +11,10 @@
 
 function loc = locale_tzm()
   loc.code = 'tzm';
-  loc.clock.hours = {'12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11'};
-  loc.clock.midnight = 'ⵏⵚ ⵏ ⵉⴹ';
-  loc.clock.noon = 'ⵜⵉⵣⵡⴰⵔⵏⵉⵏ';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.hours = {'tis snat d mrawt', 'tis yat', 'tis snat', 'tis kṛaṭṭ', 'tis kkuẕt', 'tis smmust', 'tis sḍist', 'tis sat', 'tis tamt', 'tis tẕat', 'tis mrawt', 'tis yat d mrawt'};
+  loc.clock.midnight = 'nṣ n iḍ';
+  loc.clock.noon = 'tizwarnin';
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} d smmus tusdiqin', "p10", '{h} d mraw tusdiqin', "p15", '{h} d rrbɛ', "p20", '{h} d ɛcrin n tusdiqt', "p25", '{h} d xmsa u ɛcrin n tusdiqt', "p30", '{h} d uzgen', "p35", '{h} d xmsa u tlatin n tusdiqt', "p40", '{h} d ṛbɛin n tusdiqt', "p45", '{h} d xmsa u ṛbɛin n tusdiqt', "p50", '{h} d xmsin n tusdiqt', "p55", '{h} d xmsa u xmsin n tusdiqt');
   loc.short.clock.use24h = true;
   loc.short.clock.format = '{h}:{mm}';
   loc.short.clock.am_pm = {};

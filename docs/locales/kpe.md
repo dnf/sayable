@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [kpe.json](../../locales/kpe.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort per orchestrator instruction: 'awa {h}' (awa = hour, as the file's duration unit) + additive 'da miniti N' (da = and, as in the file's own numerals 'mɛi da tɔŋ'); 30 written as 'miniti puu sawa' rather than a half word because the file's 'da kɔlɛ' (half) could not be verified. Tens built as puu + multiplier (puu feere 20, puu sawa 30, puu naŋ 40, puu lɔɔlu 50) and 15 as 'puu da lɔɔlu'. Doubts: the hour noun ('awa' is a loan; Kpelle may use a native word), the 'da' linker for minutes, and the file's numeral spellings (standard Kpelle: tɔnɔ, feerɛ, saaɓa, náaŋ, 'puu kau tɔnɔ' for 11). Needs a Kpelle speaker.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | sila pɔlɔ        | 17/3    |
 | Day before yesterday | ɓii pɔlɔ         | 13/3    |
 | This Thursday (+5)   | Aimisa yi        | 20/3    |
-| Last Monday (-4)     | Talata kɛ pɔlɔ   | 11/3    |
-| Next Wednesday (+12) | Aimisa ya kɛ     | 27/3    |
-| Same month (+20)     | 4 Eepɛli         | 4/4     |
+| Last Tuesday (-4)    | Talata kɛ pɔlɔ   | 11/3    |
+| Next Thursday (+12)  | Aimisa ya kɛ     | 27/3    |
+| Same year (+20)      | 4 Eepɛli         | 4/4     |
 | Different year       | 10 Yanuwali 2026 | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal         | Short    | Compact |
-| --------------- | -------------- | -------- | ------- |
-| Midnight        | kpindi kɔlɛ    | 12:00 AM | 12:00a  |
-| 1:00 AM         | tɔŋ:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | mɛi da naŋ:05  | 9:05 AM  | 9:05a   |
-| Quarter past 10 | puu:15         | 10:15 AM | 10:15a  |
-| Half past 11    | puu da tɔŋ:30  | 11:30 AM | 11:30a  |
-| Noon            | tili-ma        | 12:00 PM | 12:00p  |
-| Quarter to 3    | feere:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | lɔɔlu:55       | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | mɛi da sawa:00 | 8:00 PM  | 8:00p   |
-| 10:30 PM        | puu:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | kpindi kɔlɛ    | 11:58 PM | 11:58p  |
+| Time            | Normal                                 | Short    | Compact |
+| --------------- | -------------------------------------- | -------- | ------- |
+| Midnight        | kpindi kɔlɛ                            | 12:00 AM | 12:00a  |
+| 1:00 AM         | awa tɔŋ                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | awa mɛi da naŋ da miniti lɔɔlu         | 9:05 AM  | 9:05a   |
+| Quarter past 10 | awa puu da miniti puu da lɔɔlu         | 10:15 AM | 10:15a  |
+| Half past 11    | awa puu da tɔŋ da miniti puu sawa      | 11:30 AM | 11:30a  |
+| Noon            | tili-ma                                | 12:00 PM | 12:00p  |
+| Quarter to 3    | awa feere da miniti puu naŋ da lɔɔlu   | 2:45 PM  | 2:45p   |
+| 5 to 6          | awa lɔɔlu da miniti puu lɔɔlu da lɔɔlu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | awa mɛi da sawa                        | 8:00 PM  | 8:00p   |
+| 10:30 PM        | awa puu da miniti puu sawa             | 10:30 PM | 10:30p  |
+| 11:58 PM        | kpindi kɔlɛ                            | 11:58 PM | 11:58p  |

@@ -11,10 +11,10 @@
 
 function loc = locale_mam()
   loc.code = 'mam';
-  loc.clock.hours = {'kab''laj', 'jun', 'kab''', 'oxe', 'kyaje', 'jwe''', 'qaq', 'wuq', 'wajxaq', 'b''alaj', 'laj', 'junlaj'};
+  loc.clock.hours = {'kab''laj', 'jun', 'kab''', 'oxe', 'kyaje', 'jwe''', 'qaq', 'wuq', 'wajxaq', 'b''elaj', 'laj', 'junlaj'};
   loc.clock.midnight = 'nik'' aq''b''il';
   loc.clock.noon = 'nik'' q''ij';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", '{h} or', "p5", '{h} or tuk'' jwe'' minut', "p10", '{h} or tuk'' laj minut', "p15", '{h} or tuk'' o''laj minut', "p20", '{h} or tuk'' winqan minut', "p25", '{h} or tuk'' jwe'' toj ka''wnaq minut', "p30", '{h} or tuk'' nik''', "p35", '{h} or tuk'' o''laj toj ka''wnaq minut', "p40", '{h} or tuk'' ka''wnaq minut', "p45", '{h} or tuk'' jwe'' toj oxk''al minut', "p50", '{h} or tuk'' laj toj oxk''al minut', "p55", '{h} or tuk'' o''laj toj oxk''al minut');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

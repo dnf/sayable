@@ -25,8 +25,8 @@ fn build_qu() -> DurationLocale:
     fn plural(n: Int) -> String:
         return "other"
 
-    var second = simple_unit("{n} ñiqin")
-    var minute = simple_unit("{n} chiniku")
+    var second = simple_unit("{n} sikundu")
+    var minute = simple_unit("{n} minutu")
     var hour = simple_unit("{n} ura")
     var day = simple_unit("{n} p'unchaw")
     var week = simple_unit("{n} simana")
@@ -34,9 +34,9 @@ fn build_qu() -> DurationLocale:
     var year = simple_unit("{n} wata")
 
     var short_ovr = CompactnessOverride()
-    short_ovr.second = simple_unit("{n} ñiq")
+    short_ovr.second = simple_unit("{n} sik")
     short_ovr.has_second = True
-    short_ovr.minute = simple_unit("{n} chi")
+    short_ovr.minute = simple_unit("{n} min")
     short_ovr.has_minute = True
     short_ovr.hour = simple_unit("{n} ura")
     short_ovr.has_hour = True

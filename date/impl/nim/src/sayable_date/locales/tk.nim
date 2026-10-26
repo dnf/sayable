@@ -15,8 +15,8 @@ import ../locale
 
 let TK* = DateLocale(
   code: "tk",
-  months: @["Ýanwar", "Fewral", "Mart", "Aprel", "Maý", "Iýun", "Iýul", "Awgust", "Sentýabr", "Oktýabr", "Noýabr", "Dekabr"],
-  weekdays: @["Ýekşenbe", "Duşenbe", "Sişenbe", "Çarşenbe", "Penşenbe", "Anna", "Şenbe"],
+  months: @["ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"],
+  weekdays: @["ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"],
   dayFormat: "{n}",
   dayFormatExceptions: initOrderedTable[string, string](),
   datePattern: "{day} {month}",
@@ -31,9 +31,9 @@ let TK* = DateLocale(
   lastWeekday: some("geçen {weekday}"),
   monthsInDate: none(seq[string]),
   short: some(CompactnessOverride(
-    months: some(@["Ýan", "Few", "Mar", "Apr", "Maý", "Iýn", "Iýl", "Awg", "Sen", "Okt", "Noý", "Dek"]),
+    months: some(@["ýan", "few", "mar", "apr", "maý", "iýn", "iýl", "awg", "sen", "okt", "noý", "dek"]),
     monthsInDate: none(seq[string]),
-    weekdays: some(@["Ýek", "Duş", "Siş", "Çar", "Pen", "Ann", "Şen"]),
+    weekdays: some(@["ýek", "duş", "siş", "çar", "pen", "ann", "şen"]),
     dayFormat: some("{n}"),
     datePattern: some("{day} {month}"),
     datePatternWithYear: some("{day} {month} {year}"),

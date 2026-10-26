@@ -12,9 +12,9 @@
 function loc = locale_yo()
   loc.code = 'yo';
   loc.clock.hours = {'méjìlá', 'kan', 'méjì', 'mẹ́ta', 'mẹ́rin', 'márùn-ún', 'mẹ́fà', 'méje', 'mẹ́jọ', 'mẹ́sàn-án', 'mẹ́wàá', 'mọ́kànlá'};
-  loc.clock.midnight = 'àárọ̀ òru';
-  loc.clock.noon = 'ọ̀sán';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.midnight = 'ọ̀gànjọ́ òru';
+  loc.clock.noon = 'ọ̀sán gangan';
+  loc.clock.patterns = struct("p0", 'aago {h}', "p5", 'aago {h} kọjá ìṣẹ́jú márùn-ún', "p10", 'aago {h} kọjá ìṣẹ́jú mẹ́wàá', "p15", 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún', "p20", 'aago {h} kọjá ogún ìṣẹ́jú', "p25", 'aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n', "p30", 'aago {h} àbọ̀', "p35", 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n', "p40", 'aago {next_h} kù ogún ìṣẹ́jú', "p45", 'aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún', "p50", 'aago {next_h} kù ìṣẹ́jú mẹ́wàá', "p55", 'aago {next_h} kù ìṣẹ́jú márùn-ún');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

@@ -17,10 +17,10 @@
   (make-time-locale
    :code "snk"
    :clock (make-clock-config
-    :hours (list "tanmu fillo" "baane" "fillo" "sikko" "naaxato" "karago" "tunmu" "ñerru" "segu" "kaburu" "tanmu" "tanmu baane")
+    :hours (list "waxati tanmu do fillo" "waxati baane" "waxati fillo" "waxati sikko" "waxati naaxato" "waxati karago" "waxati tunmu" "waxati ñerru" "waxati segu" "waxati kaburu" "waxati tanmu" "waxati tanmu do baane")
     :midnight "sulen noxo"
     :noon "tili seren"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} do miniti karago") (cons 10 "{h} do miniti tanmu") (cons 15 "{h} do miniti tanmu do karago") (cons 20 "{h} do miniti tanpille") (cons 25 "{h} do miniti tanpille do karago") (cons 30 "{h} do faabe") (cons 35 "{h} do miniti tanjikke do karago") (cons 40 "{h} do miniti tannaxate") (cons 45 "{h} do miniti tannaxate do karago") (cons 50 "{h} do miniti tankarage") (cons 55 "{h} do miniti tankarage do karago")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

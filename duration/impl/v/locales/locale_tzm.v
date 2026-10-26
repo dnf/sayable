@@ -36,19 +36,19 @@ pub const locale_tzm = DurationLocale{
 	in_future: 'ɣ {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('{n}s')
+		second: plural_unit({PluralCategory.one: '{n} tasint', PluralCategory.other: '{n} tisinin'})
 		has_second: true
-		minute: simple_unit('{n}m')
+		minute: plural_unit({PluralCategory.one: '{n} tusdiqt', PluralCategory.other: '{n} tusdiqin'})
 		has_minute: true
-		hour: simple_unit('{n}h')
+		hour: plural_unit({PluralCategory.one: '{n} tasragt', PluralCategory.other: '{n} tisragin'})
 		has_hour: true
-		day: simple_unit('{n}d')
+		day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.other: '{n} ussan'})
 		has_day: true
-		week: simple_unit('{n}w')
+		week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.other: '{n} imalassn'})
 		has_week: true
-		month: simple_unit('{n}mo')
+		month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.other: '{n} ayyurn'})
 		has_month: true
-		year: simple_unit('{n}y')
+		year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.other: '{n} iseggasen'})
 		has_year: true
 		ago: 'ɣ {0} zzrin'
 		has_ago: true

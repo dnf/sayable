@@ -15,18 +15,18 @@ st_hours('sr', ['дванаест', 'један', 'два', 'три', 'чети�
 st_midnight('sr', 'поноћ').
 st_noon('sr', 'подне').
 
-st_pattern('sr', 0, '{h} часа').
-st_pattern('sr', 5, 'пет po {h}').
-st_pattern('sr', 10, 'десет po {h}').
-st_pattern('sr', 15, 'петнаест po {h}').
-st_pattern('sr', 20, 'двадесет po {h}').
-st_pattern('sr', 25, 'двадесет пет po {h}').
-st_pattern('sr', 30, 'тридесет po {h}').
-st_pattern('sr', 35, 'двадесет пет do {next_h}').
-st_pattern('sr', 40, 'двадесет do {next_h}').
-st_pattern('sr', 45, 'петнаест do {next_h}').
-st_pattern('sr', 50, 'десет do {next_h}').
-st_pattern('sr', 55, 'пет do {next_h}').
+st_pattern('sr', 0, '{h}').
+st_pattern('sr', 5, '{h} и пет').
+st_pattern('sr', 10, '{h} и десет').
+st_pattern('sr', 15, '{h} и петнаест').
+st_pattern('sr', 20, '{h} и двадесет').
+st_pattern('sr', 25, '{h} и двадесет пет').
+st_pattern('sr', 30, 'пола {next_h}').
+st_pattern('sr', 35, 'двадесет пет до {next_h}').
+st_pattern('sr', 40, 'двадесет до {next_h}').
+st_pattern('sr', 45, 'петнаест до {next_h}').
+st_pattern('sr', 50, 'десет до {next_h}').
+st_pattern('sr', 55, 'пет до {next_h}').
 
 short_st_use24h('sr', true).
 short_st_format('sr', '{h}:{mm}').

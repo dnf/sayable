@@ -14,20 +14,17 @@
 sd_plural('so', 1, one) :- !.
 sd_plural('so', _, other).
 
-sd_unit('so', second, one, 'ilbiriqsi {n}').
-sd_unit('so', second, other, 'ilbiriqsiyaal {n}').
-sd_unit('so', minute, one, 'daqiiqad {n}').
-sd_unit('so', minute, other, 'daqiiqadood {n}').
-sd_unit('so', hour, one, 'saacad {n}').
-sd_unit('so', hour, other, 'saacadood {n}').
-sd_unit('so', day, one, 'maalin {n}').
-sd_unit('so', day, other, 'maalmood {n}').
-sd_unit('so', week, one, 'toddobaad {n}').
-sd_unit('so', week, other, 'toddobaadyo {n}').
-sd_unit('so', month, one, 'bil {n}').
-sd_unit('so', month, other, 'bilood {n}').
-sd_unit('so', year, one, 'sano {n}').
-sd_unit('so', year, other, 'sanooyin {n}').
+sd_unit('so', second, _, '{n} ilbiriqsi').
+sd_unit('so', minute, one, '{n} daqiiqad').
+sd_unit('so', minute, other, '{n} daqiiqo').
+sd_unit('so', hour, one, '{n} saacad').
+sd_unit('so', hour, other, '{n} saacadood').
+sd_unit('so', day, one, '{n} maalin').
+sd_unit('so', day, other, '{n} maalmood').
+sd_unit('so', week, _, '{n} toddobaad').
+sd_unit('so', month, one, '{n} bil').
+sd_unit('so', month, other, '{n} bilood').
+sd_unit('so', year, _, '{n} sano').
 
 sd_half('so', '{n}½').
 sd_delimiter('so', ', ').

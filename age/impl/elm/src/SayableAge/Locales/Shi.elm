@@ -45,18 +45,34 @@ locale =
     , justBorn = "Iɣ d illul"
     , stages =
         { newborn = Neutral "Iɣ d illul"
-        , infant = Neutral "Agellid"
+        , infant = Neutral "Llufan"
         , toddler = Gendered "Aḥenjir" "Taḥenjirt"
-        , child = Gendered "Afrux" "Tafruxṭ"
+        , child = Gendered "Afrux" "Tafruxt"
         , teenager = Gendered "Aɛrim" "Taɛrimt"
         , adult = Gendered "Argaz" "Tamṭṭuṭ"
         }
     , short =
         Just
-            { ovrDay = Just (Simple "{n} d")
-            , ovrWeek = Just (Simple "{n} wk")
-            , ovrMonth = Just (Simple "{n} mo")
-            , ovrYear = Just (Simple "{n} yr")
+            { ovrDay = Just (Pluralized
+                  [ ( One, "{n} ass" )
+                  , ( Few, "{n} ussan" )
+                  , ( Other, "{n} ass" )
+                  ])
+            , ovrWeek = Just (Pluralized
+                  [ ( One, "{n} imalass" )
+                  , ( Few, "{n} imalassn" )
+                  , ( Other, "{n} imalass" )
+                  ])
+            , ovrMonth = Just (Pluralized
+                  [ ( One, "{n} ayyur" )
+                  , ( Few, "{n} ayyurn" )
+                  , ( Other, "{n} ayyur" )
+                  ])
+            , ovrYear = Just (Pluralized
+                  [ ( One, "{n} aseggas" )
+                  , ( Few, "{n} iseggasen" )
+                  , ( Other, "{n} aseggas" )
+                  ])
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

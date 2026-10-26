@@ -19,7 +19,7 @@ M.units = {
     month = "{n} na vula",
     year = "{n} na yabaki",
 }
-M.half = "{n} kei na levu ni wasei"
+M.half = "{0} kei na veimama"
 M.delimiter = ", "
 M.just_born = "Gone vou"
 M.stages = {
@@ -45,6 +45,7 @@ M.compact = {
         month = "{n}m",
         year = "{n}y",
     },
+    half = "{n}½",
     delimiter = "",
 }
 

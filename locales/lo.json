@@ -10,7 +10,7 @@
       "year": "{n} ປີ"
     },
     "half": "{0}ເຄິ່ງ",
-    "delimiter": "",
+    "delimiter": " ",
     "justBorn": "ເກີດໃໝ່",
     "stages": {
       "newborn": "ເດັກເກີດໃໝ່",
@@ -34,7 +34,8 @@
         "week": "{n}w",
         "month": "{n}m",
         "year": "{n}y"
-      }
+      },
+      "half": "{n}½"
     }
   },
   "date": {
@@ -68,10 +69,10 @@
     "tomorrow": "ມື້ອື່ນ",
     "yesterday": "ມື້ວານ",
     "dayAfterTomorrow": "ມື້ຮື",
-    "dayBeforeYesterday": "ມື້ກ່ອນ",
+    "dayBeforeYesterday": "ມື້ຊືນ",
     "thisWeekday": "{weekday}ນີ້",
     "nextWeekday": "{weekday}ໜ້າ",
-    "lastWeekday": "{weekday}ແລ້ວ",
+    "lastWeekday": "{weekday}ທີ່ແລ້ວ",
     "short": {
       "months": [
         "ມ.ກ.",
@@ -116,10 +117,10 @@
       "year": "{n} ປີ"
     },
     "half": "{0}ເຄິ່ງ",
-    "delimiter": "",
+    "delimiter": " ",
     "justNow": "ຫາກໍ",
     "ago": "{0} ກ່ອນ",
-    "inFuture": "ໃນ {0}",
+    "inFuture": "ໃນອີກ {0}",
     "short": {
       "units": {
         "second": "{n} ວິ.",
@@ -131,7 +132,7 @@
         "year": "{n} ປ."
       },
       "ago": "{0} ກ່ອນ",
-      "inFuture": "ໃນ {0}",
+      "inFuture": "ໃນອີກ {0}",
       "clock": {
         "use24h": true,
         "format": "{h}:{mm}"
@@ -144,13 +145,13 @@
         "hour": "{n}h",
         "day": "{n}d",
         "week": "{n}w",
-        "month": "{n}m",
+        "month": "{n}mo",
         "year": "{n}y"
       },
       "delimiter": "",
       "half": "{n}½",
       "ago": "{0} ກ່ອນ",
-      "inFuture": "ໃນ {0}",
+      "inFuture": "ໃນອີກ {0}",
       "clock": {
         "use24h": true,
         "format": "{h}:{mm}"
@@ -176,18 +177,18 @@
       "midnight": "ທ່ຽງຄືນ",
       "noon": "ທ່ຽງ",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}ໂມງ",
+        "5": "{h}ໂມງ ຫ້ານາທີ",
+        "10": "{h}ໂມງ ສິບນາທີ",
+        "15": "{h}ໂມງ ສິບຫ້ານາທີ",
+        "20": "{h}ໂມງ ຊາວນາທີ",
+        "25": "{h}ໂມງ ຊາວຫ້ານາທີ",
+        "30": "{h}ໂມງເຄິ່ງ",
+        "35": "{h}ໂມງ ສາມສິບຫ້ານາທີ",
+        "40": "{h}ໂມງ ສີ່ສິບນາທີ",
+        "45": "{h}ໂມງ ສີ່ສິບຫ້ານາທີ",
+        "50": "{h}ໂມງ ຫ້າສິບນາທີ",
+        "55": "{h}ໂມງ ຫ້າສິບຫ້ານາທີ"
       }
     },
     "short": {
@@ -202,5 +203,12 @@
         "format": "{h}:{mm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "{h}ໂມງ + minutes with ນາທີ; {h}ໂມງເຄິ່ງ for half. Compromise: Lao normally adds a day-period word (ບ່າຍສອງໂມງ = 2 pm) and 1–5 am often use ຕີ; the schema has no day periods, so '1:00' renders as 'ໜຶ່ງໂມງ', which is understandable but less idiomatic."
+    }
+  ]
 }

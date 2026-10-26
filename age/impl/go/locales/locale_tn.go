@@ -36,7 +36,7 @@ var TN = sa.AgeLocale{
 		Infant:   sa.S("Lesea"),
 		Toddler:  sa.S("Ngwana yo monnye"),
 		Child:    sa.S("Ngwana"),
-		Teenager: sa.S("Lekgarebe"),
+		Teenager: sa.S("Mosha"),
 		Adult:    sa.S("Motho yo mogolo"),
 	},
 	Short: &sa.CompactnessOverride{

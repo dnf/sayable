@@ -13,7 +13,7 @@ locale_gd <- list(
   code = "gd",
   months = c("Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd"),
   weekdays = c("DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"),
-  day_format = "{n}",
+  day_format = "{n}mh",
   day_format_exceptions = list(),
   date_pattern = "{day} {month}",
   date_pattern_with_year = "{day} {month} {year}",
@@ -25,6 +25,7 @@ locale_gd <- list(
   this_weekday = "{weekday} seo",
   next_weekday = "{weekday} sa tighinn",
   last_weekday = "{weekday} seo chaidh",
+  months_in_date = c("dhen Fhaoilleach", "dhen Ghearran", "dhen Mhàrt", "dhen Ghiblean", "dhen Chèitean", "dhen Ògmhios", "dhen Iuchar", "dhen Lùnastal", "dhen t-Sultain", "dhen Dàmhair", "dhen t-Samhain", "dhen Dùbhlachd"),
   short = list(
     months = c("Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"),
     weekdays = c("DiD", "DiL", "DiM", "DiC", "Dia", "Dih", "DiS"),

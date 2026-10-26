@@ -17,9 +17,9 @@
   (make-duration-locale
    :code "ln"
    :plural (lambda (n) (if (<= n 1) :one :other))
-   :units (list (cons :second "{n} segɔnde")
-               (cons :minute "{n} moniti")
-               (cons :hour "{n} ngonga")
+   :units (list (cons :second "segɔnde {n}")
+               (cons :minute "miniti {n}")
+               (cons :hour "ngonga {n}")
                (cons :day '((:one . "mokolo {n}") (:other . "mikolo {n}")))
                (cons :week '((:one . "poso {n}") (:other . "baposo {n}")))
                (cons :month '((:one . "sanza {n}") (:other . "basanza {n}")))

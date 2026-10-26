@@ -16,7 +16,7 @@ ml
 	| locale |
 	locale := SayableDurationLocale new.
 	locale code: 'ml'.
-	locale plural: [ :n | (n = 0 or: [ n = 1 ]) ifTrue: [ #one ] ifFalse: [ #other ] ].
+	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
 		'second'. (Dictionary newFromPairs: { #one. '{n} സെക്കൻഡ്'. #other. '{n} സെക്കൻഡുകൾ' }).
 		'minute'. (Dictionary newFromPairs: { #one. '{n} മിനിറ്റ്'. #other. '{n} മിനിറ്റുകൾ' }).
@@ -26,7 +26,7 @@ ml
 		'month'. (Dictionary newFromPairs: { #one. '{n} മാസം'. #other. '{n} മാസങ്ങൾ' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} വർഷം'. #other. '{n} വർഷങ്ങൾ' }).
 	}).
-	locale half: '{0} ര'.
+	locale half: '{n}½'.
 	locale delimiter: ', '.
 	locale justNow: 'ഇപ്പോൾ'.
 	locale ago: '{0} മുമ്പ്'.

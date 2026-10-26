@@ -14,13 +14,13 @@
 (def locale
   {:code "he"
    :plural (fn [n] (cond (== n 1) :one (== n 2) :two :else :other))
-   :day {:type :pluralized :forms {:one "יום {n}" :two "יומיים" :other "{n} ימים"}}
-   :week {:type :pluralized :forms {:one "שבוע {n}" :two "שבועיים" :other "{n} שבועות"}}
-   :month {:type :pluralized :forms {:one "חודש {n}" :two "חודשיים" :other "{n} חודשים"}}
+   :day {:type :pluralized :forms {:one "יום" :two "יומיים" :other "{n} ימים"}}
+   :week {:type :pluralized :forms {:one "שבוע" :two "שבועיים" :other "{n} שבועות"}}
+   :month {:type :pluralized :forms {:one "חודש" :two "חודשיים" :other "{n} חודשים"}}
    :year {:type :pluralized :forms {:one "שנה" :two "שנתיים" :other "{n} שנים"}}
    :half "{0} וחצי"
    :delimiter ", "
    :just-born "רק נולד"
-   :stages {:newborn {:type :gendered :m "רק נולד" :f "רק נולדה"} :infant {:type :neutral :label "תינוק"} :toddler {:type :neutral :label "פעוט"} :child {:type :gendered :m "ילד" :f "ילדה"} :teenager {:type :gendered :m "נער" :f "נערה"} :adult {:type :gendered :m "מבוגר" :f "מבוגרת"}}
+   :stages {:newborn {:type :gendered :m "רק נולד" :f "רק נולדה"} :infant {:type :gendered :m "תינוק" :f "תינוקת"} :toddler {:type :gendered :m "פעוט" :f "פעוטה"} :child {:type :gendered :m "ילד" :f "ילדה"} :teenager {:type :gendered :m "נער" :f "נערה"} :adult {:type :gendered :m "מבוגר" :f "מבוגרת"}}
    :short {:day {:type :pluralized :forms {:one "{n} יום" :two "יומיים" :other "{n} ימ׳"}} :week {:type :pluralized :forms {:one "{n} שבוע" :two "שבועיים" :other "{n} שבועות"}} :month {:type :simple :form "{n} ח׳"} :year {:type :pluralized :forms {:one "{n} שנה" :two "{n} שנים" :other "{n} שנים"}} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n} י׳"} :week {:type :simple :form "{n} ש′"} :month {:type :simple :form "{n} ח׳"} :year {:type :simple :form "{n} ש′"} :half "{n}½" :delimiter "" :just-born nil}})

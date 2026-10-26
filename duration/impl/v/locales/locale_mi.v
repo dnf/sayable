@@ -25,11 +25,11 @@ pub const locale_mi = DurationLocale{
 	second: simple_unit('{n} hēkona')
 	minute: simple_unit('{n} meneti')
 	hour: simple_unit('{n} hāora')
-	day: simple_unit('rā {n}')
-	week: simple_unit('wiki {n}')
-	month: simple_unit('marama {n}')
-	year: simple_unit('tau {n}')
-	half: '{0}½'
+	day: simple_unit('{n} rā')
+	week: simple_unit('{n} wiki')
+	month: simple_unit('{n} marama')
+	year: simple_unit('{n} tau')
+	half: '{n}½'
 	delimiter: ', '
 	just_now: 'ināianei'
 	ago: '{0} i mua'
@@ -42,13 +42,13 @@ pub const locale_mi = DurationLocale{
 		has_minute: true
 		hour: simple_unit('{n} hāo')
 		has_hour: true
-		day: simple_unit('rā {n}')
+		day: simple_unit('{n} rā')
 		has_day: true
-		week: simple_unit('w {n}')
+		week: simple_unit('{n} w')
 		has_week: true
-		month: simple_unit('m {n}')
+		month: simple_unit('{n} m')
 		has_month: true
-		year: simple_unit('t {n}')
+		year: simple_unit('{n} t')
 		has_year: true
 		ago: '{0} i mua'
 		has_ago: true

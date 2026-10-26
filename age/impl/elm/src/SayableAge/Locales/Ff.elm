@@ -44,12 +44,15 @@ locale =
         , infant = Neutral "Ɓinngel"
         , toddler = Neutral "Cukalel"
         , child = Neutral "Suka"
-        , teenager = Neutral "Suka debbo"
+        , teenager = Gendered "Suka gorko" "Suka debbo"
         , adult = Neutral "Mawɗo"
         }
     , short =
         Just
-            { ovrDay = Just (Simple "ñalɗe {n}")
+            { ovrDay = Just (Pluralized
+                  [ ( One, "ñalawma {n}" )
+                  , ( Other, "ñalɗe {n}" )
+                  ])
             , ovrWeek = Just (Pluralized
                   [ ( One, "yontere {n}" )
                   , ( Other, "yontereeji {n}" )
@@ -68,7 +71,10 @@ locale =
             }
     , compact =
         Just
-            { ovrDay = Just (Simple "ñalɗe {n}")
+            { ovrDay = Just (Pluralized
+                  [ ( One, "ñalawma {n}" )
+                  , ( Other, "ñalɗe {n}" )
+                  ])
             , ovrWeek = Just (Pluralized
                   [ ( One, "yont {n}" )
                   , ( Other, "yontji {n}" )

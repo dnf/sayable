@@ -17,10 +17,10 @@
   (make-time-locale
    :code "fil"
    :clock (make-clock-config
-    :hours (list "dose" "una" "dos" "tres" "kwatro" "singko" "seis" "syete" "otso" "nuwebe" "diyes" "onse")
+    :hours (list "alas-dose" "ala-una" "alas-dos" "alas-tres" "alas-kuwatro" "alas-singko" "alas-sais" "alas-siyete" "alas-otso" "alas-nuwebe" "alas-diyes" "alas-onse")
     :midnight "hatinggabi"
     :noon "tanghali"
-    :patterns (list (cons 0 "{h} o'clock") (cons 5 "lima dan {h}") (cons 10 "sampu dan {h}") (cons 15 "labinlima dan {h}") (cons 20 "dalawampu dan {h}") (cons 25 "dalawampu't lima dan {h}") (cons 30 "tatlumpu dan {h}") (cons 35 "dalawampu't lima bago mag {next_h}") (cons 40 "dalawampu bago mag {next_h}") (cons 45 "labinlima bago mag {next_h}") (cons 50 "sampu bago mag {next_h}") (cons 55 "lima bago mag {next_h}")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} y singko") (cons 10 "{h} y diyes") (cons 15 "{h} y kinse") (cons 20 "{h} y beynte") (cons 25 "{h} y beynte singko") (cons 30 "{h} y medya") (cons 35 "menos beynte singko para {next_h}") (cons 40 "menos beynte para {next_h}") (cons 45 "menos kinse para {next_h}") (cons 50 "menos diyes para {next_h}") (cons 55 "menos singko para {next_h}")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

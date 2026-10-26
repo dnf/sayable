@@ -10,22 +10,22 @@
 # Source: locales/bem.json
 
 function locale_bem {
-    $hours = @('ikumi na ibili', 'cimo', 'fibili', 'fitatu', 'fine', 'fisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na cimo')
+    $hours = @('ikumi na shibili', 'imo', 'shibili', 'shitatu', 'shine', 'shisano', 'mutanda', 'cine lubali', 'cine konse konse', 'pabula', 'ikumi', 'ikumi na imo')
     $midnight = 'pakati ka bushiku'
     $noon = 'akasuba'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'insa {h}'
+    $patterns[5] = 'insa {h} na maminiti yasano'
+    $patterns[10] = 'insa {h} na maminiti ikumi'
+    $patterns[15] = 'insa {h} na maminiti ikumi na yasano'
+    $patterns[20] = 'insa {h} na maminiti amakumi yabili'
+    $patterns[25] = 'insa {h} na maminiti amakumi yabili na yasano'
+    $patterns[30] = 'insa {h} na hafu'
+    $patterns[35] = 'insa {h} na maminiti amakumi yatatu na yasano'
+    $patterns[40] = 'insa {h} na maminiti amakumi yane'
+    $patterns[45] = 'insa {h} na maminiti amakumi yane na yasano'
+    $patterns[50] = 'insa {h} na maminiti amakumi yasano'
+    $patterns[55] = 'insa {h} na maminiti amakumi yasano na yasano'
     $clock = @{
         hours = $hours
         midnight = $midnight

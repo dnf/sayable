@@ -17,14 +17,14 @@ locale() ->
     #locale{
         code = "mi",
         plural = fun(1) -> one; (_) -> other end,
-        day = {simple, "rā {n}"},
-        week = {simple, "wiki {n}"},
-        month = {simple, "marama {n}"},
-        year = {simple, "tau {n}"},
-        half = "{0}½",
+        day = {simple, "{n} rā"},
+        week = {simple, "{n} wiki"},
+        month = {simple, "{n} marama"},
+        year = {simple, "{n} tau"},
+        half = "{n}½",
         delimiter = ", ",
         just_born = "Pēpi hou",
         stages = #stages{newborn = {neutral, "Pēpi hou"}, infant = {neutral, "Pēpi"}, toddler = {neutral, "Kōhungahunga"}, child = {neutral, "Tamariki"}, teenager = {neutral, "Rangatahi"}, adult = {neutral, "Pakeke"}},
-        short = {just, #compactness_override{day = {just, {simple, "rā {n}"}}, week = {just, {simple, "w {n}"}}, month = {just, {simple, "m {n}"}}, year = {just, {simple, "t {n}"}}, half = nothing, delimiter = nothing, just_born = nothing}},
+        short = {just, #compactness_override{day = {just, {simple, "{n} rā"}}, week = {just, {simple, "{n} w"}}, month = {just, {simple, "{n} m"}}, year = {just, {simple, "{n} t"}}, half = nothing, delimiter = nothing, just_born = nothing}},
         compact = {just, #compactness_override{day = {just, {simple, "{n}r"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}t"}}, half = {just, "{n}½"}, delimiter = {just, ""}, just_born = nothing}}
     }.

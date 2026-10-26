@@ -24,7 +24,7 @@ proc locale_duration_tg {} {
         month "{n} моҳ" \
         year "{n} сол" \
     ]
-    set half "{0} ним"
+    set half "{0}у ним"
     set delimiter {, }
     set just_now {ҳамин ҳоло}
     set ago "{0} пеш"

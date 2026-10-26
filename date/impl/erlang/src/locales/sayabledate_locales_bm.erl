@@ -16,7 +16,7 @@
 locale() ->
     #date_locale{
         code = "bm",
-        months = ["Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"],
+        months = ["Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu"],
         weekdays = ["Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"],
         day_format = "{n}",
         day_format_exceptions = [],
@@ -31,6 +31,6 @@ locale() ->
         next_weekday = {just, "{weekday} nata"},
         last_weekday = {just, "{weekday} tɛmɛnen"},
         months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"]}, months_in_date = nothing, weekdays = {just, ["Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        short = {just, #date_compactness_override{months = {just, ["Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"]}, months_in_date = nothing, weekdays = {just, ["Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

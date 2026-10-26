@@ -59,6 +59,8 @@ fn build_lo() -> AgeLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
 
     return AgeLocale(
         code="lo",
@@ -68,7 +70,7 @@ fn build_lo() -> AgeLocale:
         month=month,
         year=year,
         half="{0}ເຄິ່ງ",
-        delimiter="",
+        delimiter=" ",
         just_born="ເກີດໃໝ່",
         newborn=newborn,
         infant=infant,

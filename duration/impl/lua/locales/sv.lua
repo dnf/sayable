@@ -25,7 +25,7 @@ M.units = {
 M.half = "{n}½"
 M.delimiter = ", "
 M.just_now = "just nu"
-M.ago = "{0} sedan"
+M.ago = "för {0} sedan"
 M.in_future = "om {0}"
 M.short = {
     units = {
@@ -37,7 +37,7 @@ M.short = {
         month = "{n} mån",
         year = "{n} år",
     },
-    ago = "{0} sedan",
+    ago = "för {0} sedan",
     in_future = "om {0}",
 }
 M.compact = {
@@ -51,7 +51,7 @@ M.compact = {
         year = "{n}å",
     },
     delimiter = "",
-    ago = "{0} sedan",
+    ago = "för {0} sedan",
     in_future = "om {0}",
 }
 

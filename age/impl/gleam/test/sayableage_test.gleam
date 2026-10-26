@@ -836,7 +836,7 @@ pub fn spanish_2_years_6_months_test() {
 pub fn spanish_3_half_years_test() {
   let es = locale_es.locale()
   age_locale(es, "2022-06-15", "2025-12-15")
-  |> should.equal(Ok("3 y medio años"))
+  |> should.equal(Ok("3 años y medio"))
 }
 
 // 25.11
@@ -1007,7 +1007,7 @@ pub fn hebrew_newborn_test() {
 // 29.2
 pub fn hebrew_1_day_test() {
   let he = locale_he.locale()
-  age_locale(he, "2025-06-14", "2025-06-15") |> should.equal(Ok("יום 1"))
+  age_locale(he, "2025-06-14", "2025-06-15") |> should.equal(Ok("יום"))
 }
 
 // 29.3
@@ -1044,7 +1044,7 @@ pub fn hebrew_3_months_test() {
 pub fn hebrew_2_years_1_month_test() {
   let he = locale_he.locale()
   age_locale(he, "2023-06-15", "2025-07-15")
-  |> should.equal(Ok("שנתיים, חודש 1"))
+  |> should.equal(Ok("שנתיים, חודש"))
 }
 
 // 29.9
@@ -1217,7 +1217,7 @@ pub fn indonesian_6_months_test() {
 pub fn indonesian_3_half_years_test() {
   let id_locale = locale_id.locale()
   age_locale(id_locale, "2022-06-15", "2025-12-15")
-  |> should.equal(Ok("3 tahun setengah"))
+  |> should.equal(Ok("3 setengah tahun"))
 }
 
 // 29.33

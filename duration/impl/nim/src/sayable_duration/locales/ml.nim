@@ -15,7 +15,7 @@ import ../locale
 
 let ML* = DurationLocale(
   code: "ml",
-  plural: proc(n: int): PluralCategory = (if n in {0, 1}: pcOne else: pcOther),
+  plural: proc(n: int): PluralCategory = (if n == 1: pcOne else: pcOther),
   units: {
     "second": pluralUnit(@[(pcOne, "{n} സെക്കൻഡ്"), (pcOther, "{n} സെക്കൻഡുകൾ")]),
     "minute": pluralUnit(@[(pcOne, "{n} മിനിറ്റ്"), (pcOther, "{n} മിനിറ്റുകൾ")]),
@@ -25,7 +25,7 @@ let ML* = DurationLocale(
     "month": pluralUnit(@[(pcOne, "{n} മാസം"), (pcOther, "{n} മാസങ്ങൾ")]),
     "year": pluralUnit(@[(pcOne, "{n} വർഷം"), (pcOther, "{n} വർഷങ്ങൾ")]),
   }.toOrderedTable,
-  half: "{0} ര",
+  half: "{n}½",
   delimiter: ", ",
   justNow: "ഇപ്പോൾ",
   ago: "{0} മുമ്പ്",

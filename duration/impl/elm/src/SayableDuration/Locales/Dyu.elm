@@ -35,7 +35,7 @@ locale =
     , delimiter = ", "
     , justNow = "sisan"
     , ago = "{0} tɛmɛnen"
-    , inFuture = "ka {0}"
+    , inFuture = "{0} kɔnɔ"
     , short =
         Just
             { ovrUnits =
@@ -53,7 +53,7 @@ locale =
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0} tɛmɛnen"
-            , ovrInFuture = Just "ka {0}"
+            , ovrInFuture = Just "{0} kɔnɔ"
             }
     , compact =
         Just
@@ -72,6 +72,6 @@ locale =
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0} tɛmɛnen"
-            , ovrInFuture = Just "ka {0}"
+            , ovrInFuture = Just "{0} kɔnɔ"
             }
     }

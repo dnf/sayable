@@ -59,6 +59,8 @@ fn build_kek() -> AgeLocale:
     compact_ovr.has_month = True
     compact_ovr.year = simple_unit("{n}y")
     compact_ovr.has_year = True
+    compact_ovr.half = "{n}½"
+    compact_ovr.has_half = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
 

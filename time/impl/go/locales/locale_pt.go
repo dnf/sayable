@@ -20,7 +20,7 @@ var PT = st.TimeLocale{
 		Hours:    [12]string{"doze", "uma", "duas", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze"},
 		Midnight: "meia-noite",
 		Noon:     "meio-dia",
-		Patterns: map[int]string{0: "{h} horas", 5: "{h} e cinco", 10: "{h} e dez", 15: "{h} e um quarto", 20: "{h} e vinte", 25: "{h} e vinte e cinco", 30: "{h} e meia", 35: "vinte e cinco para as {next_h}", 40: "vinte para as {next_h}", 45: "um quarto para as {next_h}", 50: "dez para as {next_h}", 55: "cinco para as {next_h}"},
+		Patterns: map[int]string{0: "{h} em ponto", 5: "{h} e cinco", 10: "{h} e dez", 15: "{h} e um quarto", 20: "{h} e vinte", 25: "{h} e vinte e cinco", 30: "{h} e meia", 35: "vinte e cinco para as {next_h}", 40: "vinte para as {next_h}", 45: "um quarto para as {next_h}", 50: "dez para as {next_h}", 55: "cinco para as {next_h}"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

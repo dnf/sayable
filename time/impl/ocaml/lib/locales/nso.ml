@@ -15,34 +15,34 @@ let locale : time_locale =
   { code = "nso"
   ; clock =
     { hours =
-      [ "lesome pedi"
-      ; "tee"
-      ; "pedi"
-      ; "tharo"
-      ; "nne"
-      ; "hlano"
-      ; "tshela"
-      ; "šupa"
+      [ "lesomepedi"
+      ; "pele"
+      ; "bobedi"
+      ; "boraro"
+      ; "bone"
+      ; "bohlano"
+      ; "botshela"
+      ; "bošupa"
       ; "seswai"
       ; "senyane"
       ; "lesome"
-      ; "lesome tee"
+      ; "lesometee"
       ]
     ; midnight = "bošego gare"
     ; noon = "mosegare"
     ; patterns =
-      [ (0, "{h}:00")
-      ; (5, "{h}:05")
-      ; (10, "{h}:10")
-      ; (15, "{h}:15")
-      ; (20, "{h}:20")
-      ; (25, "{h}:25")
-      ; (30, "{h}:30")
-      ; (35, "{h}:35")
-      ; (40, "{h}:40")
-      ; (45, "{h}:45")
-      ; (50, "{h}:50")
-      ; (55, "{h}:55")
+      [ (0, "iri ya {h}")
+      ; (5, "iri ya {h} le metsotso ye mehlano")
+      ; (10, "iri ya {h} le metsotso ye lesome")
+      ; (15, "iri ya {h} le kotara")
+      ; (20, "iri ya {h} le metsotso ye masomepedi")
+      ; (25, "iri ya {h} le metsotso ye masomepedi-hlano")
+      ; (30, "iri ya {h} le seripagare")
+      ; (35, "iri ya {h} le metsotso ye masometharo-hlano")
+      ; (40, "iri ya {h} le metsotso ye masomenne")
+      ; (45, "iri ya {h} le metsotso ye masomenne-hlano")
+      ; (50, "iri ya {h} le metsotso ye masomehlano")
+      ; (55, "iri ya {h} le metsotso ye masomehlano-hlano")
       ]
     }
   ; short = Some

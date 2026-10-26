@@ -10,14 +10,20 @@
 # Source: locales/kl.json
 
 _sayableage_plural_kl() {
+    local n=$1
+    if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
 _sayableage_locale_kl() {
-    _unit_day='ullut {n}'
-    _unit_week='sapaatit {n}'
-    _unit_month='qaammatit {n}'
-    _unit_year='ukiut {n}'
+    _unit_day_one='ulloq {n}'
+    _unit_day_other='ullut {n}'
+    _unit_week_one='sapaatip akunnera {n}'
+    _unit_week_other='sapaatip akunneri {n}'
+    _unit_month_one='qaammat {n}'
+    _unit_month_other='qaammatit {n}'
+    _unit_year_one='ukioq {n}'
+    _unit_year_other='ukiut {n}'
     _half='{0} affaa'
     _delimiter=', '
     _just_born='Inuuneq nutaaq'
@@ -28,13 +34,14 @@ _sayableage_locale_kl() {
     _stage_teenager='Inuusuttuaq'
     _stage_adult='Inuk'
     _short_unit_day='ull. {n}'
-    _short_unit_week='sap. {n}'
+    _short_unit_week='sap. ak. {n}'
     _short_unit_month='qaam. {n}'
     _short_unit_year='uk. {n}'
     _compact_unit_day='{n}d'
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_kl
 }

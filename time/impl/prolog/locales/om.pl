@@ -11,22 +11,22 @@
 
 % Oromo locale.
 
-st_hours('om', ['kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan', 'jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko']).
+st_hours('om', ['jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko', 'kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan']).
 st_midnight('om', 'walakkii halkan').
 st_noon('om', 'guyyaa walakkaa').
 
-st_pattern('om', 0, '{h}:00').
-st_pattern('om', 5, '{h}:05').
-st_pattern('om', 10, '{h}:10').
-st_pattern('om', 15, '{h}:15').
-st_pattern('om', 20, '{h}:20').
-st_pattern('om', 25, '{h}:25').
-st_pattern('om', 30, '{h}:30').
-st_pattern('om', 35, '{h}:35').
-st_pattern('om', 40, '{h}:40').
-st_pattern('om', 45, '{h}:45').
-st_pattern('om', 50, '{h}:50').
-st_pattern('om', 55, '{h}:55').
+st_pattern('om', 0, 'sa\'aatii {h}').
+st_pattern('om', 5, 'sa\'aatii {h} fi daqiiqaa shan').
+st_pattern('om', 10, 'sa\'aatii {h} fi daqiiqaa kudhan').
+st_pattern('om', 15, 'sa\'aatii {h} fi daqiiqaa kudha shan').
+st_pattern('om', 20, 'sa\'aatii {h} fi daqiiqaa digdama').
+st_pattern('om', 25, 'sa\'aatii {h} fi daqiiqaa digdamii shan').
+st_pattern('om', 30, 'sa\'aatii {h} fi walakkaa').
+st_pattern('om', 35, 'sa\'aatii {h} fi daqiiqaa soddomii shan').
+st_pattern('om', 40, 'sa\'aatii {h} fi daqiiqaa afurtama').
+st_pattern('om', 45, 'sa\'aatii {h} fi daqiiqaa afurtamii shan').
+st_pattern('om', 50, 'sa\'aatii {h} fi daqiiqaa shantama').
+st_pattern('om', 55, 'sa\'aatii {h} fi daqiiqaa shantamii shan').
 
 short_st_use24h('om', false).
 short_st_format('om', '{h}:{mm} {ampm}').

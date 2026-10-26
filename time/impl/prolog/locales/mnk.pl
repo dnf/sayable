@@ -11,22 +11,22 @@
 
 % Mandinka locale.
 
-st_hours('mnk', ['tan ning fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ ning kiliŋ']).
+st_hours('mnk', ['taŋ niŋ fula', 'kiliŋ', 'fula', 'saba', 'naani', 'luulu', 'wɔɔrɔ', 'wolonfila', 'sey', 'kɔnɔntɔ', 'taŋ', 'taŋ niŋ kiliŋ']).
 st_midnight('mnk', 'sutu-tili-laŋ').
 st_noon('mnk', 'tili-konto').
 
-st_pattern('mnk', 0, '{h}:00').
-st_pattern('mnk', 5, '{h}:05').
-st_pattern('mnk', 10, '{h}:10').
-st_pattern('mnk', 15, '{h}:15').
-st_pattern('mnk', 20, '{h}:20').
-st_pattern('mnk', 25, '{h}:25').
-st_pattern('mnk', 30, '{h}:30').
-st_pattern('mnk', 35, '{h}:35').
-st_pattern('mnk', 40, '{h}:40').
-st_pattern('mnk', 45, '{h}:45').
-st_pattern('mnk', 50, '{h}:50').
-st_pattern('mnk', 55, '{h}:55').
+st_pattern('mnk', 0, 'talaŋ {h}').
+st_pattern('mnk', 5, 'talaŋ {h} aniŋ miniti luulu').
+st_pattern('mnk', 10, 'talaŋ {h} aniŋ miniti taŋ').
+st_pattern('mnk', 15, 'talaŋ {h} aniŋ miniti taŋ niŋ luulu').
+st_pattern('mnk', 20, 'talaŋ {h} aniŋ miniti muwaŋ').
+st_pattern('mnk', 25, 'talaŋ {h} aniŋ miniti muwaŋ niŋ luulu').
+st_pattern('mnk', 30, 'talaŋ {h} aniŋ talantee').
+st_pattern('mnk', 35, 'talaŋ {h} aniŋ miniti taŋ saba niŋ luulu').
+st_pattern('mnk', 40, 'talaŋ {h} aniŋ miniti taŋ naani').
+st_pattern('mnk', 45, 'talaŋ {h} aniŋ miniti taŋ naani niŋ luulu').
+st_pattern('mnk', 50, 'talaŋ {h} aniŋ miniti taŋ luulu').
+st_pattern('mnk', 55, 'talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu').
 
 short_st_use24h('mnk', false).
 short_st_format('mnk', '{h}:{mm} {ampm}').

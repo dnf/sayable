@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_zdj = {
     "zdj",
     {
-        { "kumi na mbili", "moja", "mbili", "tatu", "nne", "tano", "sita", "saba", "nane", "tisa", "kumi", "kumi na moja" },
+        { "kumi na mbili", "moja", "mbili", "ndraru", "nne", "ntsanu", "sita", "saba", "nane", "shenda", "kumi", "kumi na moja" },
         "usiku wa manane",
         "adhuhuri",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "saa {h}", "saa {h} na ntsanu", "saa {h} na kumi", "saa {h} na kumi na ntsanu", "saa {h} na shirini", "saa {h} na shirini na ntsanu", "saa {h} na nusu", "saa {h} na thalathini na ntsanu", "saa {h} na arubaini", "saa {h} na arubaini na ntsanu", "saa {h} na hamsini", "saa {h} na hamsini na ntsanu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

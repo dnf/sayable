@@ -24,11 +24,11 @@ function locale_ki {
         month = @{ one = 'mwerĩ {n}'; other = 'mĩerĩ {n}' }
         year = @{ one = 'mwaka {n}'; other = 'mĩaka {n}' }
     }
-    $half = '{0} na nusu'
+    $half = '{0} na nuthu'
     $delimiter = ', '
-    $justNow = 'ũmũthĩ'
+    $justNow = 'rĩu'
     $ago = '{0} ĩhĩtũkĩte'
-    $inFuture = '{0} ĩyothe'
+    $inFuture = 'thutha wa {0}'
     $short = @{
         units = @{
             second = 'sek. {n}'
@@ -40,7 +40,7 @@ function locale_ki {
             year = @{ one = 'mwaka {n}'; other = 'mĩaka {n}' }
         }
         ago = '{0} ĩhĩtũkĩte'
-        inFuture = '{0} ĩyothe'
+        inFuture = 'thutha wa {0}'
     }
     $compact = @{
         units = @{
@@ -54,7 +54,7 @@ function locale_ki {
         }
         delimiter = ''
         ago = '{0} ĩhĩtũkĩte'
-        inFuture = '{0} ĩyothe'
+        inFuture = 'thutha wa {0}'
     }
     return @{
         code = 'ki'

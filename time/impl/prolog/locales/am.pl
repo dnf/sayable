@@ -11,22 +11,22 @@
 
 % Amharic locale.
 
-st_hours('am', ['አሥራ ሁለት', 'አንድ', 'ሁለት', 'ሦስት', 'አራት', 'አምስት', 'ስድስት', 'ሰባት', 'ስምንት', 'ዘጠኝ', 'አሥር', 'አሥራ አንድ']).
+st_hours('am', ['ስድስት', 'ሰባት', 'ስምንት', 'ዘጠኝ', 'አሥር', 'አሥራ አንድ', 'አሥራ ሁለት', 'አንድ', 'ሁለት', 'ሦስት', 'አራት', 'አምስት']).
 st_midnight('am', 'እኩለ ሌሊት').
 st_noon('am', 'እኩለ ቀን').
 
-st_pattern('am', 0, '{h}:00').
-st_pattern('am', 5, '{h}:05').
-st_pattern('am', 10, '{h}:10').
-st_pattern('am', 15, '{h}:15').
-st_pattern('am', 20, '{h}:20').
-st_pattern('am', 25, '{h}:25').
-st_pattern('am', 30, '{h}:30').
-st_pattern('am', 35, '{h}:35').
-st_pattern('am', 40, '{h}:40').
-st_pattern('am', 45, '{h}:45').
-st_pattern('am', 50, '{h}:50').
-st_pattern('am', 55, '{h}:55').
+st_pattern('am', 0, '{h} ሰዓት').
+st_pattern('am', 5, '{h} ሰዓት ከአምስት ደቂቃ').
+st_pattern('am', 10, '{h} ሰዓት ከአሥር ደቂቃ').
+st_pattern('am', 15, '{h} ሰዓት ከሩብ').
+st_pattern('am', 20, '{h} ሰዓት ከሃያ ደቂቃ').
+st_pattern('am', 25, '{h} ሰዓት ከሃያ አምስት ደቂቃ').
+st_pattern('am', 30, '{h} ሰዓት ተኩል').
+st_pattern('am', 35, 'ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ').
+st_pattern('am', 40, 'ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ').
+st_pattern('am', 45, 'ለ{next_h} ሰዓት ሩብ ጉዳይ').
+st_pattern('am', 50, 'ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ').
+st_pattern('am', 55, 'ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ').
 
 short_st_use24h('am', true).
 short_st_format('am', '{h}:{mm}').

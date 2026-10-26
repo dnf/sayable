@@ -29,7 +29,7 @@ pub fn locale() -> DurationLocale {
         delimiter: ", ".to_string(),
         just_now: "sisan".to_string(),
         ago: "{0} bɔlen".to_string(),
-        in_future: "ka {0}".to_string(),
+        in_future: "{0} kɔnɔ".to_string(),
         short: Some(CompactnessOverride {
             second: Some(UnitForms::simple("sek. {n}")),
             minute: Some(UnitForms::simple("min. {n}")),
@@ -41,7 +41,7 @@ pub fn locale() -> DurationLocale {
             half: None,
             delimiter: None,
             ago: Some("{0} bɔlen".to_string()),
-            in_future: Some("ka {0}".to_string()),
+            in_future: Some("{0} kɔnɔ".to_string()),
         }),
         compact: Some(CompactnessOverride {
             second: Some(UnitForms::simple("sek {n}")),
@@ -54,7 +54,7 @@ pub fn locale() -> DurationLocale {
             half: Some("{n}½".to_string()),
             delimiter: Some(String::new()),
             ago: Some("{0} bɔlen".to_string()),
-            in_future: Some("ka {0}".to_string()),
+            in_future: Some("{0} kɔnɔ".to_string()),
         }),
         format_number: None,
         format_unit: None,

@@ -10,22 +10,22 @@
 # Source: locales/bn.json
 
 function locale_bn {
-    $hours = @('বারো', 'এক', 'দুই', 'তিন', 'চার', 'পাঁচ', 'ছয়', 'সাত', 'আট', 'নয়', 'দশ', 'এগারো')
+    $hours = @('বারোটা', 'একটা', 'দুটো', 'তিনটে', 'চারটে', 'পাঁচটা', 'ছটা', 'সাতটা', 'আটটা', 'নটা', 'দশটা', 'এগারোটা')
     $midnight = 'মধ্যরাত'
-    $noon = 'দুপুর'
+    $noon = 'দুপুর বারোটা'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} বেজে পাঁচ মিনিট'
+    $patterns[10] = '{h} বেজে দশ মিনিট'
+    $patterns[15] = 'সোয়া {h}'
+    $patterns[20] = '{h} বেজে বিশ মিনিট'
+    $patterns[25] = '{h} বেজে পঁচিশ মিনিট'
+    $patterns[30] = '{h} বেজে ত্রিশ মিনিট'
+    $patterns[35] = '{next_h} বাজতে পঁচিশ মিনিট বাকি'
+    $patterns[40] = '{next_h} বাজতে বিশ মিনিট বাকি'
+    $patterns[45] = 'পৌনে {next_h}'
+    $patterns[50] = '{next_h} বাজতে দশ মিনিট বাকি'
+    $patterns[55] = '{next_h} বাজতে পাঁচ মিনিট বাকি'
     $clock = @{
         hours = $hours
         midnight = $midnight

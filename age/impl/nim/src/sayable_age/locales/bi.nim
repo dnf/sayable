@@ -22,7 +22,7 @@ let BI* = AgeLocale(
     "month": simpleUnit("{n} manis"),
     "year": simpleUnit("{n} yia"),
   }.toOrderedTable,
-  half: "{n} mo haf",
+  half: "{0} mo haf",
   delimiter: ", ",
   justBorn: "Niufala bebe",
   stages: {
@@ -51,7 +51,7 @@ let BI* = AgeLocale(
       "month": simpleUnit("{n}m"),
       "year": simpleUnit("{n}y"),
     }.toOrderedTable),
-    half: none(string),
+    half: some("{n}½"),
     delimiter: some(""),
     justBorn: none(string),
   )),

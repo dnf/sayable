@@ -23,7 +23,7 @@ fj
 		'month'. '{n} na vula'.
 		'year'. '{n} na yabaki'.
 	}).
-	locale half: '{n} kei na levu ni wasei'.
+	locale half: '{0} kei na veimama'.
 	locale delimiter: ', '.
 	locale justBorn: 'Gone vou'.
 	locale stages: (Dictionary newFromPairs: {
@@ -49,6 +49,7 @@ fj
 			'month'. '{n}m'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 	}).
 	^ locale

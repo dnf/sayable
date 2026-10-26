@@ -21,7 +21,7 @@
                (cons :week '((:one . "{n} ವಾರ") (:other . "{n} ವಾರಗಳು")))
                (cons :month '((:one . "{n} ತಿಂಗಳು") (:other . "{n} ತಿಂಗಳುಗಳು")))
                (cons :year '((:one . "{n} ವರ್ಷ") (:other . "{n} ವರ್ಷಗಳು"))))
-   :half "{0}ವರೆ"
+   :half "{n}½"
    :delimiter ", "
    :just-born "ನವಜಾತ ಶಿಶು"
    :stages (list (cons :newborn "ನವಜಾತ ಶಿಶು")

@@ -36,9 +36,9 @@ var AR = sd.DurationLocale{
 		return sd.Other
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
-		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} ثانية", sd.One: "ثانية واحدة", sd.Two: "ثانيتان", sd.Few: "{n} ثوانٍ", sd.Many: "{n} ثانية", sd.Other: "{n} ثانية"}),
-		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} دقيقة", sd.One: "دقيقة واحدة", sd.Two: "دقيقتان", sd.Few: "{n} دقائق", sd.Many: "{n} دقيقة", sd.Other: "{n} دقيقة"}),
-		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} ساعة", sd.One: "ساعة واحدة", sd.Two: "ساعتان", sd.Few: "{n} ساعات", sd.Many: "{n} ساعة", sd.Other: "{n} ساعة"}),
+		Second: sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} ثانية", sd.One: "ثانية", sd.Two: "ثانيتان", sd.Few: "{n} ثوانٍ", sd.Many: "{n} ثانية", sd.Other: "{n} ثانية"}),
+		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} دقيقة", sd.One: "دقيقة", sd.Two: "دقيقتان", sd.Few: "{n} دقائق", sd.Many: "{n} دقيقة", sd.Other: "{n} دقيقة"}),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} ساعة", sd.One: "ساعة", sd.Two: "ساعتان", sd.Few: "{n} ساعات", sd.Many: "{n} ساعة", sd.Other: "{n} ساعة"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} يوم", sd.One: "يوم", sd.Two: "يومان", sd.Few: "{n} أيام", sd.Many: "{n} يومًا", sd.Other: "{n} يوم"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} أسبوع", sd.One: "أسبوع", sd.Two: "أسبوعان", sd.Few: "{n} أسابيع", sd.Many: "{n} أسبوعًا", sd.Other: "{n} أسبوع"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} شهر", sd.One: "شهر", sd.Two: "شهران", sd.Few: "{n} أشهر", sd.Many: "{n} شهرًا", sd.Other: "{n} شهر"}),
@@ -66,7 +66,7 @@ var AR = sd.DurationLocale{
 		Hour:      &sd.UnitForms{Simple: "{n} س"},
 		Day:       &sd.UnitForms{Simple: "{n} ي"},
 		Week:      &sd.UnitForms{Simple: "{n} أ"},
-		Month:     unitPtr(sd.PluralUnit(map[sd.PluralCategory]string{sd.Zero: "{n} شهر", sd.One: "شهر", sd.Two: "شهران", sd.Few: "{n} أشهر", sd.Many: "{n} شهرًا", sd.Other: "{n} شهر"})),
+		Month:     &sd.UnitForms{Simple: "{n} شهر"},
 		Year:      &sd.UnitForms{Simple: "{n} سنة"},
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),

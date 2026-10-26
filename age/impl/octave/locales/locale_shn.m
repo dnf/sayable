@@ -33,5 +33,6 @@ function loc = locale_shn()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}m';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
 endfunction

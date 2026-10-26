@@ -23,34 +23,25 @@ pub fn locale() -> DurationLocale {
             }
         },
         units: Units {
-            second: UnitForms::plural(&[
-                (PluralCategory::One, "ilbiriqsi {n}"),
-                (PluralCategory::Other, "ilbiriqsiyaal {n}"),
-            ]),
+            second: UnitForms::simple("{n} ilbiriqsi"),
             minute: UnitForms::plural(&[
-                (PluralCategory::One, "daqiiqad {n}"),
-                (PluralCategory::Other, "daqiiqadood {n}"),
+                (PluralCategory::One, "{n} daqiiqad"),
+                (PluralCategory::Other, "{n} daqiiqo"),
             ]),
             hour: UnitForms::plural(&[
-                (PluralCategory::One, "saacad {n}"),
-                (PluralCategory::Other, "saacadood {n}"),
+                (PluralCategory::One, "{n} saacad"),
+                (PluralCategory::Other, "{n} saacadood"),
             ]),
             day: UnitForms::plural(&[
-                (PluralCategory::One, "maalin {n}"),
-                (PluralCategory::Other, "maalmood {n}"),
+                (PluralCategory::One, "{n} maalin"),
+                (PluralCategory::Other, "{n} maalmood"),
             ]),
-            week: UnitForms::plural(&[
-                (PluralCategory::One, "toddobaad {n}"),
-                (PluralCategory::Other, "toddobaadyo {n}"),
-            ]),
+            week: UnitForms::simple("{n} toddobaad"),
             month: UnitForms::plural(&[
-                (PluralCategory::One, "bil {n}"),
-                (PluralCategory::Other, "bilood {n}"),
+                (PluralCategory::One, "{n} bil"),
+                (PluralCategory::Other, "{n} bilood"),
             ]),
-            year: UnitForms::plural(&[
-                (PluralCategory::One, "sano {n}"),
-                (PluralCategory::Other, "sanooyin {n}"),
-            ]),
+            year: UnitForms::simple("{n} sano"),
         },
         half: "{n}½".to_string(),
         delimiter: ", ".to_string(),

@@ -27,7 +27,7 @@
    :half "{n}½"
    :delimiter ", "
    :just-now "lige nu"
-   :ago "{0} siden"
+   :ago "for {0} siden"
    :in-future "om {0}"
    :short-units (list (cons :second "{n} sek.")
                        (cons :minute "{n} min.")

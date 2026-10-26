@@ -14,10 +14,10 @@ class WOLocale {
   static plural { Fn.new {|n| "other" } }
   static units {
     return {
-      "day": "bés {n}",
-      "week": "ayubés {n}",
-      "month": "weer {n}",
-      "year": "at {n}",
+      "day": "{n} fan",
+      "week": "{n} ayubés",
+      "month": "{n} weer",
+      "year": "{n} at",
     }
   }
   static half { "{0} ak genn-wàll" }
@@ -26,7 +26,7 @@ class WOLocale {
   static stages {
     return {
       "newborn": "Dees ko sax juddu",
-      "infant": "Njàmbaar bu ndaw",
+      "infant": "Liir",
       "toddler": "Xale bu ndaw",
       "child": "Xale",
       "teenager": "Ndaw-ndaw",
@@ -36,20 +36,20 @@ class WOLocale {
   static short {
     return {
       "units": {
-        "day": "bés {n}",
-        "week": "ayub. {n}",
-        "month": "weer {n}",
-        "year": "at {n}",
+        "day": "{n} fan",
+        "week": "{n} ayub.",
+        "month": "{n} weer",
+        "year": "{n} at",
       },
     }
   }
   static compact {
     return {
       "units": {
-        "day": "bés {n}",
-        "week": "ayub {n}",
-        "month": "weer {n}",
-        "year": "at {n}",
+        "day": "{n} fan",
+        "week": "{n} ayub",
+        "month": "{n} weer",
+        "year": "{n} at",
       },
       "half": "{n}½",
       "delimiter": "",

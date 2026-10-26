@@ -17,10 +17,10 @@
   (make-time-locale
    :code "zdj"
    :clock (make-clock-config
-    :hours (list "kumi na mbili" "moja" "mbili" "tatu" "nne" "tano" "sita" "saba" "nane" "tisa" "kumi" "kumi na moja")
+    :hours (list "kumi na mbili" "moja" "mbili" "ndraru" "nne" "ntsanu" "sita" "saba" "nane" "shenda" "kumi" "kumi na moja")
     :midnight "usiku wa manane"
     :noon "adhuhuri"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "saa {h}") (cons 5 "saa {h} na ntsanu") (cons 10 "saa {h} na kumi") (cons 15 "saa {h} na kumi na ntsanu") (cons 20 "saa {h} na shirini") (cons 25 "saa {h} na shirini na ntsanu") (cons 30 "saa {h} na nusu") (cons 35 "saa {h} na thalathini na ntsanu") (cons 40 "saa {h} na arubaini") (cons 45 "saa {h} na arubaini na ntsanu") (cons 50 "saa {h} na hamsini") (cons 55 "saa {h} na hamsini na ntsanu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

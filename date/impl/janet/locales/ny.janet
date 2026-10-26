@@ -22,9 +22,9 @@
    :yesterday "dzulo"
    :day-after-tomorrow "mkucha"
    :day-before-yesterday "dzana"
-   :this-weekday "{weekday} ino"
-   :next-weekday "{weekday} yotsatira"
-   :last-weekday "{weekday} yatha"
+   :this-weekday "{weekday} lino"
+   :next-weekday "{weekday} lotsatira"
+   :last-weekday "{weekday} latha"
    :short {:months @["Jan" "Feb" "Mat" "Epu" "Mey" "Jun" "Jul" "Oga" "Sep" "Okt" "Nov" "Dis"] :weekdays @["Lam" "Lol" "Lch" "Lct" "Lcn" "Lcs" "Low"] :day-format "{n}" :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}"}
    :compact {:date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}"}
 })

@@ -25,7 +25,7 @@ var DV = sa.AgeLocale{
 		Month: sa.SimpleUnit("{n} މަސް"),
 		Year:  sa.SimpleUnit("{n} އަހަރު"),
 	},
-	Half:      "{0} ބައި",
+	Half:      "{n}½",
 	Delimiter: "، ",
 	JustBorn:  "އަލަށް އުފަންވި",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

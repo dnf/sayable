@@ -10,22 +10,22 @@
 # Source: locales/ceb.json
 
 function locale_ceb {
-    $hours = @('dose', 'uno', 'dos', 'tres', 'kwatro', 'singko', 'sais', 'siyete', 'otso', 'nuwebe', 'diyes', 'onse')
+    $hours = @('alas dose', 'ala una', 'alas dos', 'alas tres', 'alas kwatro', 'alas singko', 'alas sais', 'alas siyete', 'alas otso', 'alas nuwebe', 'alas diyes', 'alas onse')
     $midnight = 'tungang gabii'
     $noon = 'udtong tutok'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h}'
+    $patterns[5] = '{h} y singko'
+    $patterns[10] = '{h} y diyes'
+    $patterns[15] = '{h} y kinse'
+    $patterns[20] = '{h} y beynte'
+    $patterns[25] = '{h} y beynte singko'
+    $patterns[30] = '{h} y medya'
+    $patterns[35] = 'menos beynte singko para {next_h}'
+    $patterns[40] = 'menos beynte para {next_h}'
+    $patterns[45] = 'menos kinse para {next_h}'
+    $patterns[50] = 'menos diyes para {next_h}'
+    $patterns[55] = 'menos singko para {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

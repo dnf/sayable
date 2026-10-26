@@ -18,7 +18,7 @@ pub fn locale() -> types.DurationLocale {
     units: [
       #("second", types.PluralUnit([#(types.One, "isekondi {n}"), #(types.Other, "amasekondi {n}")])),
       #("minute", types.PluralUnit([#(types.One, "iminiti {n}"), #(types.Other, "amaminiti {n}")])),
-      #("hour", types.PluralUnit([#(types.One, "insa {n}"), #(types.Other, "amanso {n}")])),
+      #("hour", types.PluralUnit([#(types.One, "insa {n}"), #(types.Other, "insa {n}")])),
       #("day", types.PluralUnit([#(types.One, "ubushiku {n}"), #(types.Other, "inshiku {n}")])),
       #("week", types.PluralUnit([#(types.One, "umulungu {n}"), #(types.Other, "imilungu {n}")])),
       #("month", types.PluralUnit([#(types.One, "umweshi {n}"), #(types.Other, "imyeshi {n}")])),

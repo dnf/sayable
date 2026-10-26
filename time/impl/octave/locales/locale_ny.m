@@ -11,10 +11,10 @@
 
 function loc = locale_ny()
   loc.code = 'ny';
-  loc.clock.hours = {'khumi ndi ziwiri', 'imodzi', 'ziwiri', 'zitatu', 'zinayi', 'zisanu', 'zisanu ndi chimodzi', 'zisanu ndi ziwiri', 'zisanu ndi zitatu', 'zisanu ndi zinayi', 'khumi', 'khumi ndi chimodzi'};
+  loc.clock.hours = {'lakhumi ndi chiwiri', 'loyamba', 'lachiwiri', 'lachitatu', 'lachinayi', 'lachisanu', 'lachisanu ndi chimodzi', 'lachisanu ndi chiwiri', 'lachisanu ndi chitatu', 'lachisanu ndi chinayi', 'lakhumi', 'lakhumi ndi chimodzi'};
   loc.clock.midnight = 'pakati pausiku';
   loc.clock.noon = 'usana';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'ola {h}', "p5", 'ola {h} ndi mphindi zisanu', "p10", 'ola {h} ndi mphindi khumi', "p15", 'ola {h} ndi mphindi khumi ndi zisanu', "p20", 'ola {h} ndi mphindi makumi awiri', "p25", 'ola {h} ndi mphindi makumi awiri ndi zisanu', "p30", 'ola {h} ndi theka', "p35", 'ola {h} ndi mphindi makumi atatu ndi zisanu', "p40", 'ola {h} ndi mphindi makumi anayi', "p45", 'ola {h} ndi mphindi makumi anayi ndi zisanu', "p50", 'ola {h} ndi mphindi makumi asanu', "p55", 'ola {h} ndi mphindi makumi asanu ndi zisanu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

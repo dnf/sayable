@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "tet",
-        clock = #clock_config{hours = ["sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"], midnight = "meiu-kalan", noon = "meiu-loron", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"], midnight = "meiu-kalan", noon = "meiu-loron", patterns = [{0, "tuku {h}"}, {5, "tuku {h} ho minutu lima"}, {10, "tuku {h} ho minutu sanulu"}, {15, "tuku {h} ho minutu sanulu-resin-lima"}, {20, "tuku {h} ho minutu ruanulu"}, {25, "tuku {h} ho minutu ruanulu-resin-lima"}, {30, "tuku {h} ho balun"}, {35, "tuku {h} ho minutu tolunulu-resin-lima"}, {40, "tuku {h} ho minutu haatnulu"}, {45, "tuku {h} ho minutu haatnulu-resin-lima"}, {50, "tuku {h} ho minutu limanulu"}, {55, "tuku {h} ho minutu limanulu-resin-lima"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

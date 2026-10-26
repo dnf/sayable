@@ -26,8 +26,8 @@ class YOLocale {
   static today { "lónìí" }
   static tomorrow { "ọ̀la" }
   static yesterday { "àná" }
-  static dayAfterTomorrow { "ọ̀tún ọ̀la" }
-  static dayBeforeYesterday { "ọ̀tún àná" }
+  static dayAfterTomorrow { "ọ̀túnla" }
+  static dayBeforeYesterday { "íjẹta" }
   static thisWeekday { "{weekday} yìí" }
   static nextWeekday { "{weekday} tó ń bọ̀" }
   static lastWeekday { "{weekday} tó kọjá" }

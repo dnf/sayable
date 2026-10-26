@@ -25,7 +25,7 @@ module SayableDuration
       half: "{n}½",
       delimiter: ", ",
       just_now: "akkurat nå",
-      ago: "{0} siden",
+      ago: "for {0} siden",
       in_future: "om {0}",
       short: CompactnessOverride.new(
         units: {
@@ -37,7 +37,7 @@ module SayableDuration
           "month" => UnitForms.new("{n} md."),
           "year" => UnitForms.new("{n} år"),
         },
-        ago: "{0} siden",
+        ago: "for {0} siden",
         in_future: "om {0}",
       ),
       compact: CompactnessOverride.new(
@@ -51,7 +51,7 @@ module SayableDuration
           "year" => UnitForms.new("{n}å"),
         },
         delimiter: "",
-        ago: "{0} siden",
+        ago: "for {0} siden",
         in_future: "om {0}",
       ),
     )

@@ -25,7 +25,7 @@ sd_half('th', '{0}ครึ่ง').
 sd_delimiter('th', ' ').
 sd_just_now('th', 'เมื่อกี้').
 sd_ago('th', '{0}ที่แล้ว').
-sd_in_future('th', 'ใน{0}').
+sd_in_future('th', 'ในอีก {0}').
 
 short_sd_unit('th', second, _, '{n} วิ').
 short_sd_unit('th', minute, _, '{n} นาที').
@@ -35,7 +35,7 @@ short_sd_unit('th', week, _, '{n} สัปดาห์').
 short_sd_unit('th', month, _, '{n} เดือน').
 short_sd_unit('th', year, _, '{n} ปี').
 short_sd_ago('th', '{0}ที่แล้ว').
-short_sd_in_future('th', 'ใน{0}').
+short_sd_in_future('th', 'ในอีก {0}').
 
 compact_sd_unit('th', second, _, '{n}วิ').
 compact_sd_unit('th', minute, _, '{n}นาที').
@@ -47,4 +47,4 @@ compact_sd_unit('th', year, _, '{n}ปี').
 compact_sd_half('th', '{n}½').
 compact_sd_delimiter('th', '').
 compact_sd_ago('th', '{0}ที่แล้ว').
-compact_sd_in_future('th', 'ใน{0}').
+compact_sd_in_future('th', 'ในอีก {0}').

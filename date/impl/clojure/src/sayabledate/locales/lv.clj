@@ -18,7 +18,7 @@
    :day-format "{n}."
    :day-format-exceptions {}
    :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern-with-year "{year}. gada {day} {month}"
    :today "šodien"
    :tomorrow "rīt"
    :yesterday "vakar"
@@ -28,5 +28,5 @@
    :next-weekday "nākamā {weekday}"
    :last-weekday "pagājusī {weekday}"
    :months-in-date nil
-   :short {:months ["janv" "febr" "marts" "apr" "maijs" "jūn" "jūl" "aug" "sept" "okt" "nov" "dec"] :months-in-date nil :weekdays ["sv" "pr" "ot" "tr" "ce" "pk" "se"] :day-format "{n}." :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["janv" "febr" "marts" "apr" "maijs" "jūn" "jūl" "aug" "sept" "okt" "nov" "dec"] :months-in-date nil :weekdays ["sv" "pr" "ot" "tr" "ce" "pk" "se"] :day-format "{n}." :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{year}. gada {day} {month}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}.{m}." :date-pattern-with-year "{d}.{m}.{yy}" :today nil :tomorrow nil :yesterday nil}})

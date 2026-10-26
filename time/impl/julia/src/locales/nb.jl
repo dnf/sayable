@@ -14,7 +14,7 @@
 const NB = TimeLocale(
     code = "nb",
     clock = ClockConfig(
-        hours = ["tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"],
+        hours = ["tolv", "ett", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"],
         midnight = "midnatt",
         noon = "middag",
         patterns = Dict{Int, String}(

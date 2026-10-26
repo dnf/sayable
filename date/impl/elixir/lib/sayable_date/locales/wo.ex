@@ -45,11 +45,11 @@ defmodule SayableDate.Locales.WO do
       today: "tey",
       tomorrow: "suba",
       yesterday: "démb",
-      day_after_tomorrow: "suba-suba",
-      day_before_yesterday: "démb-démb",
-      this_weekday: "{weekday} bi",
-      next_weekday: "{weekday} bi ñëw",
-      last_weekday: "{weekday} bi weex",
+      day_after_tomorrow: "gannaaw-suba",
+      day_before_yesterday: "bërki-démb",
+      this_weekday: "{weekday} jii",
+      next_weekday: "{weekday} jiy ñëw",
+      last_weekday: "{weekday} ji weesu",
       months_in_date: nil,
       short: %{
         months: [

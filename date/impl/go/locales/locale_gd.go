@@ -18,7 +18,7 @@ var GD = sdate.DateLocale{
 	Code: "gd",
 	Months:   [12]string{"Am Faoilleach", "An Gearran", "Am Màrt", "An Giblean", "An Cèitean", "An t-Ògmhios", "An t-Iuchar", "An Lùnastal", "An t-Sultain", "An Dàmhair", "An t-Samhain", "An Dùbhlachd"},
 	Weekdays: [7]string{"DiDòmhnaich", "DiLuain", "DiMàirt", "DiCiadain", "DiarDaoin", "DihAoine", "DiSathairne"},
-	DayFormat: "{n}",
+	DayFormat: "{n}mh",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",
 	DatePatternWithYear: "{day} {month} {year}",
@@ -30,7 +30,7 @@ var GD = sdate.DateLocale{
 	ThisWeekday:       strPtr("{weekday} seo"),
 	NextWeekday:       strPtr("{weekday} sa tighinn"),
 	LastWeekday:       strPtr("{weekday} seo chaidh"),
-	MonthsInDate: nil,
+	MonthsInDate: &[12]string{"dhen Fhaoilleach", "dhen Ghearran", "dhen Mhàrt", "dhen Ghiblean", "dhen Chèitean", "dhen Ògmhios", "dhen Iuchar", "dhen Lùnastal", "dhen t-Sultain", "dhen Dàmhair", "dhen t-Samhain", "dhen Dùbhlachd"},
 	Short: &sdate.CompactnessOverride{
 		Months:   &[12]string{"Faoi", "Gearr", "Màrt", "Gibl", "Cèit", "Ògmh", "Iuch", "Lùna", "Sult", "Dàmh", "Samh", "Dùbh"},
 		Weekdays: &[7]string{"DiD", "DiL", "DiM", "DiC", "Dia", "Dih", "DiS"},

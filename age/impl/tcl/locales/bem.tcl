@@ -31,7 +31,7 @@ proc locale_bem {} {
         toddler {Umwana} \
         child {Umwana} \
         teenager {Umunyamata} \
-        adult {Umulumendo} \
+        adult {Umukalamba} \
     ]
     set short [dict create \
         units [dict create \

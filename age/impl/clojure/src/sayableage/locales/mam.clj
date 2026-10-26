@@ -15,12 +15,12 @@
   {:code "mam"
    :plural (fn [_] :other)
    :day {:type :simple :form "{n} q'ij"}
-   :week {:type :simple :form "{n} xjaw"}
+   :week {:type :simple :form "{n} seman"}
    :month {:type :simple :form "{n} xjaw"}
    :year {:type :simple :form "{n} ab'q'ii"}
    :half "{0} nik'"
    :delimiter ", "
    :just-born "Yal xjal"
    :stages {:newborn {:type :neutral :label "Yal xjal"} :infant {:type :neutral :label "Xkub'"} :toddler {:type :neutral :label "K'wal"} :child {:type :neutral :label "K'wal"} :teenager {:type :neutral :label "Q'a"} :adult {:type :neutral :label "Xjal"}}
-   :short {:day {:type :simple :form "{n} q'ij"} :week {:type :simple :form "{n} xjaw"} :month {:type :simple :form "{n} xjaw"} :year {:type :simple :form "{n} ab'."} :half nil :delimiter nil :just-born nil}
-   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :just-born nil}})
+   :short {:day {:type :simple :form "{n} q'ij"} :week {:type :simple :form "{n} seman"} :month {:type :simple :form "{n} xjaw"} :year {:type :simple :form "{n} ab'."} :half nil :delimiter nil :just-born nil}
+   :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

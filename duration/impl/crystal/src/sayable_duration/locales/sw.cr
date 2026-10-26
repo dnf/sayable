@@ -14,9 +14,9 @@ module SayableDuration
       code: "sw",
       plural: ->(n : Int32) { n == 1 ? PluralCategory::One : PluralCategory::Other },
       units: {
-        "second" => UnitForms.new("{n} sekunde"),
-        "minute" => UnitForms.new("{n} dakika"),
-        "hour" => UnitForms.new("{n} saa"),
+        "second" => UnitForms.new("sekunde {n}"),
+        "minute" => UnitForms.new("dakika {n}"),
+        "hour" => UnitForms.new("saa {n}"),
         "day" => UnitForms.new(one: "siku {n}", other: "siku {n}"),
         "week" => UnitForms.new(one: "wiki {n}", other: "wiki {n}"),
         "month" => UnitForms.new(one: "mwezi {n}", other: "miezi {n}"),

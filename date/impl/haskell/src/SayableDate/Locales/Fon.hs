@@ -31,13 +31,13 @@ locale = DateLocale
         , "Adɔxwísún"
         ]
     , localeWeekdays =
-        [ "Sidégbe"
+        [ "Aklunɔzángbe"
         , "Tɛnígbe"
         , "Talɛtagbe"
         , "Azǎngagbe"
         , "Nyɔnúgbe"
         , "Axɔ́sùgbe"
-        , "Abámɛ́ta"
+        , "Sibigbe"
         ]
     , localeDayFormat = "{n}"
     , localeDayFormatExceptions = []
@@ -70,13 +70,13 @@ locale = DateLocale
                 ]
             , ovrMonthsInDate = Nothing
             , ovrWeekdays = Just $
-                [ "Sid"
+                [ "Akl"
                 , "Tɛn"
                 , "Tal"
                 , "Azǎ"
                 , "Nyɔ"
                 , "Axɔ"
-                , "Abá"
+                , "Sib"
                 ]
             , ovrDayFormat = Just "{n}"
             , ovrDayFormatExceptions = Nothing

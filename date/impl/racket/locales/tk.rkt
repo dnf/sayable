@@ -20,8 +20,8 @@
 (define tk
   (date-locale
    "tk"
-   (list "Ýanwar" "Fewral" "Mart" "Aprel" "Maý" "Iýun" "Iýul" "Awgust" "Sentýabr" "Oktýabr" "Noýabr" "Dekabr")
-   (list "Ýekşenbe" "Duşenbe" "Sişenbe" "Çarşenbe" "Penşenbe" "Anna" "Şenbe")
+   (list "ýanwar" "fewral" "mart" "aprel" "maý" "iýun" "iýul" "awgust" "sentýabr" "oktýabr" "noýabr" "dekabr")
+   (list "ýekşenbe" "duşenbe" "sişenbe" "çarşenbe" "penşenbe" "anna" "şenbe")
    "{n}"
    (hash)
    "{day} {month}"
@@ -35,6 +35,6 @@
    "indiki {weekday}"
    "geçen {weekday}"
    #f
-   (date-compactness-override (list "Ýan" "Few" "Mar" "Apr" "Maý" "Iýn" "Iýl" "Awg" "Sen" "Okt" "Noý" "Dek") #f (list "Ýek" "Duş" "Siş" "Çar" "Pen" "Ann" "Şen") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
+   (date-compactness-override (list "ýan" "few" "mar" "apr" "maý" "iýn" "iýl" "awg" "sen" "okt" "noý" "dek") #f (list "ýek" "duş" "siş" "çar" "pen" "ann" "şen") "{n}" #f "{day} {month}" "{day} {month} {year}" #f #f #f)
    (date-compactness-override #f #f #f #f #f "{d}/{m}" "{d}/{m}/{yy}" #f #f #f)
   ))

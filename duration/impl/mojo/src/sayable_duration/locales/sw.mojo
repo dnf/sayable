@@ -27,9 +27,9 @@ fn build_sw() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = simple_unit("{n} sekunde")
-    var minute = simple_unit("{n} dakika")
-    var hour = simple_unit("{n} saa")
+    var second = simple_unit("sekunde {n}")
+    var minute = simple_unit("dakika {n}")
+    var hour = simple_unit("saa {n}")
     var day = plural_unit(one="siku {n}", other="siku {n}")
     var week = plural_unit(one="wiki {n}", other="wiki {n}")
     var month = plural_unit(one="mwezi {n}", other="miezi {n}")

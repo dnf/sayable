@@ -26,7 +26,7 @@ let GA* = DurationLocale(
   units: {
     "second": pluralUnit(@[(pcOne, "{n} soicind"), (pcTwo, "{n} shoicind"), (pcFew, "{n} shoicind"), (pcMany, "{n} soicind"), (pcOther, "{n} soicind")]),
     "minute": pluralUnit(@[(pcOne, "{n} nóiméad"), (pcTwo, "{n} nóiméad"), (pcFew, "{n} nóiméad"), (pcMany, "{n} nóiméad"), (pcOther, "{n} nóiméad")]),
-    "hour": pluralUnit(@[(pcOne, "{n} uair"), (pcTwo, "{n} uair"), (pcFew, "{n} huaire"), (pcMany, "{n} n-uaire"), (pcOther, "{n} uair")]),
+    "hour": pluralUnit(@[(pcOne, "{n} uair an chloig"), (pcTwo, "{n} uair an chloig"), (pcFew, "{n} huaire an chloig"), (pcMany, "{n} n-uaire an chloig"), (pcOther, "{n} uair an chloig")]),
     "day": pluralUnit(@[(pcOne, "{n} lá"), (pcTwo, "{n} lá"), (pcFew, "{n} lá"), (pcMany, "{n} lá"), (pcOther, "{n} lá")]),
     "week": pluralUnit(@[(pcOne, "{n} seachtain"), (pcTwo, "{n} sheachtain"), (pcFew, "{n} seachtaine"), (pcMany, "{n} seachtaine"), (pcOther, "{n} seachtain")]),
     "month": pluralUnit(@[(pcOne, "{n} mhí"), (pcTwo, "{n} mhí"), (pcFew, "{n} mhí"), (pcMany, "{n} mí"), (pcOther, "{n} mí")]),

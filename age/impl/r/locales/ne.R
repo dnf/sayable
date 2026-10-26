@@ -24,7 +24,7 @@ locale_ne <- list(
   stages = list(
     newborn = "नवजात शिशु",
     infant = "शिशु",
-    toddler = "बाल्यकाल",
+    toddler = "सानो बच्चा",
     child = "बालक",
     teenager = "किशोर",
     adult = "वयस्क"

@@ -20,20 +20,20 @@ const SaLocale sa_locale_wo = {
     "wo",
     plural_wo,
     {
-        { "bés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "ayubés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "weer {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "at {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n} fan", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} ayubés", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} weer", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} at", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} ak genn-wàll", ", ", "Dees ko sax juddu",
     {
         { "Dees ko sax juddu", "" },
-        { "Njàmbaar bu ndaw", "" },
+        { "Liir", "" },
         { "Xale bu ndaw", "" },
         { "Xale", "" },
         { "Ndaw-ndaw", "" },
         { "Mag", "" }
     },
-    true, { true, { "bés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ayub. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "weer {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "at {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "bés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ayub {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "weer {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "at {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
+    true, { true, { "{n} fan", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ayub.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} weer", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} at", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
+    true, { true, { "{n} fan", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ayub", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} weer", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} at", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

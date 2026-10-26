@@ -27,9 +27,9 @@ fn build_te() -> DurationLocale:
             return "one"
         return "other"
 
-    var second = simple_unit("{n} సెకను")
-    var minute = simple_unit("{n} నిమిషం")
-    var hour = simple_unit("{n} గంట")
+    var second = plural_unit(one="{n} సెకను", other="{n} సెకన్లు")
+    var minute = plural_unit(one="{n} నిమిషం", other="{n} నిమిషాలు")
+    var hour = plural_unit(one="{n} గంట", other="{n} గంటలు")
     var day = plural_unit(one="{n} రోజు", other="{n} రోజులు")
     var week = plural_unit(one="{n} వారం", other="{n} వారాలు")
     var month = plural_unit(one="{n} నెల", other="{n} నెలలు")
@@ -89,7 +89,7 @@ fn build_te() -> DurationLocale:
         week=week,
         month=month,
         year=year,
-        half="{0}న్నర",
+        half="{n}½",
         delimiter=", ",
         just_now="ఇప్పుడే",
         ago="{0} క్రితం",

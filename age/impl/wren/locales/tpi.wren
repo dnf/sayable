@@ -20,7 +20,7 @@ class TPILocale {
       "year": "{n} yia",
     }
   }
-  static half { "{n} na hap" }
+  static half { "{0} na hap" }
   static delimiter { ", " }
   static justBorn { "Nupela pikinini" }
   static stages {
@@ -51,6 +51,7 @@ class TPILocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

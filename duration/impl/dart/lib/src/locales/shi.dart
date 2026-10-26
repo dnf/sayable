@@ -20,7 +20,7 @@ final shi = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tasinin', PluralCategory.other: '{n} tasinin'}),
+    'second': pluralUnit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tisinin', PluralCategory.other: '{n} tisinin'}),
     'minute': pluralUnit({PluralCategory.one: '{n} tusdiqt', PluralCategory.few: '{n} tusdiqin', PluralCategory.other: '{n} tusdiqin'}),
     'hour': pluralUnit({PluralCategory.one: '{n} tasragt', PluralCategory.few: '{n} tisragin', PluralCategory.other: '{n} tisragin'}),
     'day': pluralUnit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'}),
@@ -35,13 +35,13 @@ final shi = DurationLocale(
   inFuture: 'ɣ {0}',
   short: CompactnessOverride(
     units: {
-      'second': simpleUnit('{n}s'),
-      'minute': simpleUnit('{n}m'),
-      'hour': simpleUnit('{n}h'),
-      'day': simpleUnit('{n}d'),
-      'week': simpleUnit('{n}w'),
-      'month': simpleUnit('{n}mo'),
-      'year': simpleUnit('{n}y'),
+      'second': pluralUnit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tasinin', PluralCategory.other: '{n} tasinin'}),
+      'minute': pluralUnit({PluralCategory.one: '{n} tusdiqt', PluralCategory.few: '{n} tusdiqin', PluralCategory.other: '{n} tusdiqin'}),
+      'hour': pluralUnit({PluralCategory.one: '{n} tasragt', PluralCategory.few: '{n} tisragin', PluralCategory.other: '{n} tisragin'}),
+      'day': pluralUnit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'}),
+      'week': pluralUnit({PluralCategory.one: '{n} imalass', PluralCategory.few: '{n} imalassn', PluralCategory.other: '{n} imalass'}),
+      'month': pluralUnit({PluralCategory.one: '{n} ayyur', PluralCategory.few: '{n} ayyurn', PluralCategory.other: '{n} ayyur'}),
+      'year': pluralUnit({PluralCategory.one: '{n} aseggas', PluralCategory.few: '{n} iseggasen', PluralCategory.other: '{n} aseggas'}),
     },
     ago: 'ɣ {0} zzrin',
     inFuture: 'ɣ {0}',

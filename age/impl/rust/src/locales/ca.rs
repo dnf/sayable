@@ -40,7 +40,7 @@ pub fn locale() -> AgeLocale {
                 (PluralCategory::Other, "{n} anys"),
             ]),
         },
-        half: "{n} i mig".to_string(),
+        half: "{0} i mig".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Nounat".to_string(),
         stages: Stages {

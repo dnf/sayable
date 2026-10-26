@@ -21,7 +21,7 @@
   (date-locale
    "ro"
    (list "ianuarie" "februarie" "martie" "aprilie" "mai" "iunie" "iulie" "august" "septembrie" "octombrie" "noiembrie" "decembrie")
-   (list "duminică" "luni" "marți" "miercuri" "joi" "vineri" "sâmbătă")
+   (list "duminica" "lunea" "marțea" "miercurea" "joia" "vinerea" "sâmbăta")
    "{n}"
    (hash)
    "{day} {month}"
@@ -31,7 +31,7 @@
    "ieri"
    "poimâine"
    "alaltăieri"
-   "această {weekday}"
+   "{weekday} aceasta"
    "{weekday} viitoare"
    "{weekday} trecută"
    (list "ianuarie" "februarie" "martie" "aprilie" "mai" "iunie" "iulie" "august" "septembrie" "octombrie" "noiembrie" "decembrie")

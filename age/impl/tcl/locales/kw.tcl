@@ -22,10 +22,10 @@ proc plural_kw {n} {
 proc locale_kw {} {
     set code {kw}
     set units [dict create \
-        day [dict create zero "{n} dydh" one {dydh} two "{n} dhydh" few "{n} dydh" many "{n} dydh" other "{n} dydh"] \
-        week [dict create zero "{n} seythun" one {seythun} two "{n} seythun" few "{n} seythun" many "{n} seythun" other "{n} seythun"] \
-        month [dict create zero "{n} mis" one {mis} two "{n} vis" few "{n} mis" many "{n} mis" other "{n} mis"] \
-        year [dict create zero "{n} blydhen" one {blydhen} two "{n} vlydhen" few "{n} blydhen" many "{n} blydhen" other "{n} blydhen"] \
+        day [dict create zero "{n} dydh" one "{n} dydh" two "{n} dhydh" few "{n} dydh" many "{n} dydh" other "{n} dydh"] \
+        week [dict create zero "{n} seythun" one "{n} seythun" two "{n} seythun" few "{n} seythun" many "{n} seythun" other "{n} seythun"] \
+        month [dict create zero "{n} mis" one "{n} mis" two "{n} vis" few "{n} mis" many "{n} mis" other "{n} mis"] \
+        year [dict create zero "{n} blydhen" one "{n} blydhen" two "{n} vlydhen" few "{n} blydhen" many "{n} blydhen" other "{n} blydhen"] \
     ]
     set half "{0} hag hanter"
     set delimiter {, }

@@ -23,7 +23,7 @@ export const xh: DateLocale = {
   tomorrow: 'ngomso',
   yesterday: 'izolo',
   dayAfterTomorrow: 'ngomhlomunye',
-  dayBeforeYesterday: 'kutshanje',
+  dayBeforeYesterday: 'izolo elinye',
   thisWeekday: 'le {weekday}',
   nextWeekday: '{weekday} ezayo',
   lastWeekday: '{weekday} edlulileyo',

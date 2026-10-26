@@ -27,5 +27,5 @@
             :adult "Neeg laus"
 }
    :short {:units {:day "{n} hnub" :week "{n} lim tiam" :month "{n} hlis" :year "{n} xyoo"}}
-   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :delimiter ""}
+   :compact {:units {:day "{n}d" :week "{n}w" :month "{n}m" :year "{n}y"} :half "{n}½" :delimiter ""}
 })

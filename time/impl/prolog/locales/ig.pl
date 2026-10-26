@@ -13,20 +13,20 @@
 
 st_hours('ig', ['iri na abụọ', 'otu', 'abụọ', 'atọ', 'anọ', 'ise', 'isii', 'asaa', 'asatọ', 'itoolu', 'iri', 'iri na otu']).
 st_midnight('ig', 'etiti abalị').
-st_noon('ig', 'ehihie').
+st_noon('ig', 'etiti ehihie').
 
-st_pattern('ig', 0, '{h}:00').
-st_pattern('ig', 5, '{h}:05').
-st_pattern('ig', 10, '{h}:10').
-st_pattern('ig', 15, '{h}:15').
-st_pattern('ig', 20, '{h}:20').
-st_pattern('ig', 25, '{h}:25').
-st_pattern('ig', 30, '{h}:30').
-st_pattern('ig', 35, '{h}:35').
-st_pattern('ig', 40, '{h}:40').
-st_pattern('ig', 45, '{h}:45').
-st_pattern('ig', 50, '{h}:50').
-st_pattern('ig', 55, '{h}:55').
+st_pattern('ig', 0, 'elekere {h}').
+st_pattern('ig', 5, 'elekere {h} na nkeji ise').
+st_pattern('ig', 10, 'elekere {h} na nkeji iri').
+st_pattern('ig', 15, 'elekere {h} na nkeji iri na ise').
+st_pattern('ig', 20, 'elekere {h} na nkeji iri abụọ').
+st_pattern('ig', 25, 'elekere {h} na nkeji iri abụọ na ise').
+st_pattern('ig', 30, 'elekere {h} na ọkara').
+st_pattern('ig', 35, 'elekere {h} na nkeji iri atọ na ise').
+st_pattern('ig', 40, 'elekere {h} na nkeji iri anọ').
+st_pattern('ig', 45, 'elekere {h} na nkeji iri anọ na ise').
+st_pattern('ig', 50, 'elekere {h} na nkeji iri ise').
+st_pattern('ig', 55, 'elekere {h} na nkeji iri ise na ise').
 
 short_st_use24h('ig', false).
 short_st_format('ig', '{h}:{mm} {ampm}').

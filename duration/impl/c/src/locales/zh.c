@@ -26,7 +26,7 @@ const SduDurationLocale sdu_locale_zh = {
         { "{n}天", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n}周", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n}个月", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "{n}岁", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n}年", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0}半", "",
     "刚刚",

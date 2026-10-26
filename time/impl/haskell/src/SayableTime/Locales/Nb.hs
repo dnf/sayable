@@ -18,7 +18,7 @@ locale = TimeLocale
     { localeCode = "nb"
     , localeClock =
         ClockConfig
-            { clockHours = ["tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"]
+            { clockHours = ["tolv", "ett", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve"]
             , clockMidnight = "midnatt"
             , clockNoon = "middag"
             , clockPatterns =

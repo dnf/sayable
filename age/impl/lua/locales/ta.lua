@@ -19,7 +19,7 @@ M.units = {
     month = { one = "{n} மாதம்", other = "{n} மாதங்கள்" },
     year = { one = "{n} வயது", other = "{n} வயது" },
 }
-M.half = "{0}ரை"
+M.half = "{n}½"
 M.delimiter = ", "
 M.just_born = "பிறந்த குழந்தை"
 M.stages = {

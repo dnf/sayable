@@ -24,10 +24,10 @@ pub fn locale() -> types.DateLocale {
     tomorrow: "ມື້ອື່ນ",
     yesterday: "ມື້ວານ",
     day_after_tomorrow: Ok("ມື້ຮື"),
-    day_before_yesterday: Ok("ມື້ກ່ອນ"),
+    day_before_yesterday: Ok("ມື້ຊືນ"),
     this_weekday: Ok("{weekday}ນີ້"),
     next_weekday: Ok("{weekday}ໜ້າ"),
-    last_weekday: Ok("{weekday}ແລ້ວ"),
+    last_weekday: Ok("{weekday}ທີ່ແລ້ວ"),
     months_in_date: Error(Nil),
     short: Ok(types.CompactnessOverride(
       months: Ok(["ມ.ກ.", "ກ.ພ.", "ມ.ນ.", "ມ.ສ.", "ພ.ພ.", "ມ.ຖ.", "ກ.ລ.", "ສ.ຫ.", "ກ.ຍ.", "ຕ.ລ.", "ພ.ຈ.", "ທ.ວ."]),

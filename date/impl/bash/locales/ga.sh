@@ -20,7 +20,7 @@ _sayabledate_locale_ga() {
     _yesterday='inné'
     _day_after_tomorrow='arú amárach'
     _day_before_yesterday='arú inné'
-    _this_weekday='an {weekday} seo'
+    _this_weekday='{weekday} seo'
     _next_weekday='{weekday} seo chugainn'
     _last_weekday='{weekday} seo caite'
     _short_months=('Ean' 'Feabh' 'Már' 'Aib' 'Beal' 'Meith' 'Iúil' 'Lún' 'MFómh' 'DFómh' 'Samh' 'Noll')

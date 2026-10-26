@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ylihuomenna         | 17.3.    |
 | Day before yesterday | toissapäivänä       | 13.3.    |
 | This Thursday (+5)   | tämä torstai        | 20.3.    |
-| Last Monday (-4)     | viime tiistai       | 11.3.    |
-| Next Wednesday (+12) | ensi torstai        | 27.3.    |
-| Same month (+20)     | 4. huhtikuuta       | 4.4.     |
+| Last Tuesday (-4)    | viime tiistai       | 11.3.    |
+| Next Thursday (+12)  | ensi torstai        | 27.3.    |
+| Same year (+20)      | 4. huhtikuuta       | 4.4.     |
 | Different year       | 10. tammikuuta 2026 | 10.1.26  |
 
 ## Duration
@@ -118,16 +118,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal               | Short | Compact |
-| --------------- | -------------------- | ----- | ------- |
-| Midnight        | keskiyö              | 0.00  | 0.00    |
-| 1:00 AM         | yksi                 | 1.00  | 1.00    |
-| 5 past 9        | viisi yli yhdeksän   | 9.05  | 9.05    |
-| Quarter past 10 | vartti yli kymmenen  | 10.15 | 10.15   |
-| Half past 11    | puoli yli yksitoista | 11.30 | 11.30   |
-| Noon            | keskipäivä           | 12.00 | 12.00   |
-| Quarter to 3    | vartti vaille kolme  | 14.45 | 14.45   |
-| 5 to 6          | viisi vaille kuusi   | 17.55 | 17.55   |
-| 8 o'clock PM    | kahdeksan            | 20.00 | 20.00   |
-| 10:30 PM        | puoli yli kymmenen   | 22.30 | 22.30   |
-| 11:58 PM        | keskiyö              | 23.58 | 23.58   |
+| Time            | Normal              | Short | Compact |
+| --------------- | ------------------- | ----- | ------- |
+| Midnight        | keskiyö             | 0.00  | 0.00    |
+| 1:00 AM         | kello yksi          | 1.00  | 1.00    |
+| 5 past 9        | viisi yli yhdeksän  | 9.05  | 9.05    |
+| Quarter past 10 | vartti yli kymmenen | 10.15 | 10.15   |
+| Half past 11    | puoli kaksitoista   | 11.30 | 11.30   |
+| Noon            | keskipäivä          | 12.00 | 12.00   |
+| Quarter to 3    | vartti vaille kolme | 14.45 | 14.45   |
+| 5 to 6          | viisi vaille kuusi  | 17.55 | 17.55   |
+| 8 o'clock PM    | kello kahdeksan     | 20.00 | 20.00   |
+| 10:30 PM        | puoli yksitoista    | 22.30 | 22.30   |
+| 11:58 PM        | keskiyö             | 23.58 | 23.58   |

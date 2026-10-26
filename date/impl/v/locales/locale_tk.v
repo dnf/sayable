@@ -14,8 +14,8 @@ module locales
 
 pub const locale_tk = DateLocale{
 	code: 'tk'
-	months: ['Ýanwar', 'Fewral', 'Mart', 'Aprel', 'Maý', 'Iýun', 'Iýul', 'Awgust', 'Sentýabr', 'Oktýabr', 'Noýabr', 'Dekabr']!
-	weekdays: ['Ýekşenbe', 'Duşenbe', 'Sişenbe', 'Çarşenbe', 'Penşenbe', 'Anna', 'Şenbe']!
+	months: ['ýanwar', 'fewral', 'mart', 'aprel', 'maý', 'iýun', 'iýul', 'awgust', 'sentýabr', 'oktýabr', 'noýabr', 'dekabr']!
+	weekdays: ['ýekşenbe', 'duşenbe', 'sişenbe', 'çarşenbe', 'penşenbe', 'anna', 'şenbe']!
 	day_format: '{n}'
 	date_pattern: '{day} {month}'
 	date_pattern_with_year: '{day} {month} {year}'
@@ -34,9 +34,9 @@ pub const locale_tk = DateLocale{
 	has_last_weekday: true
 	has_short: true
 	short_override: DateCompactnessOverride{
-		months: ['Ýan', 'Few', 'Mar', 'Apr', 'Maý', 'Iýn', 'Iýl', 'Awg', 'Sen', 'Okt', 'Noý', 'Dek']!
+		months: ['ýan', 'few', 'mar', 'apr', 'maý', 'iýn', 'iýl', 'awg', 'sen', 'okt', 'noý', 'dek']!
 		has_months: true
-		weekdays: ['Ýek', 'Duş', 'Siş', 'Çar', 'Pen', 'Ann', 'Şen']!
+		weekdays: ['ýek', 'duş', 'siş', 'çar', 'pen', 'ann', 'şen']!
 		has_weekdays: true
 		day_format: '{n}'
 		has_day_format: true

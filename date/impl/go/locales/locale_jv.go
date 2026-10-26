@@ -26,7 +26,7 @@ var JV = sdate.DateLocale{
 	Tomorrow:  "sesuk",
 	Yesterday: "wingi",
 	DayAfterTomorrow:  strPtr("embèn"),
-	DayBeforeYesterday: strPtr("dhèk wingi"),
+	DayBeforeYesterday: strPtr("wingenané"),
 	ThisWeekday:       strPtr("{weekday} iki"),
 	NextWeekday:       strPtr("{weekday} ngarep"),
 	LastWeekday:       strPtr("{weekday} wingi"),

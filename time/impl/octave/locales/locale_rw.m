@@ -11,10 +11,10 @@
 
 function loc = locale_rw()
   loc.code = 'rw';
-  loc.clock.hours = {'cumi n''ebyiri', 'rimwe', 'ebyiri', 'eshatu', 'enye', 'eshanu', 'esheshatu', 'indwi', 'umunani', 'icyenda', 'icumi', 'cumi n''imwe'};
-  loc.clock.midnight = 'igicuku';
-  loc.clock.noon = 'saa sita';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.hours = {'sita', 'saba', 'munani', 'cyenda', 'kumi', 'kumi n''imwe', 'kumi n''ebyiri', 'moya', 'mbiri', 'tatu', 'ine', 'tanu'};
+  loc.clock.midnight = 'saa sita z''ijoro';
+  loc.clock.noon = 'saa sita z''amanywa';
+  loc.clock.patterns = struct("p0", 'saa {h}', "p5", 'saa {h} n''iminota itanu', "p10", 'saa {h} n''iminota icumi', "p15", 'saa {h} n''iminota cumi n''itanu', "p20", 'saa {h} n''iminota makumyabiri', "p25", 'saa {h} n''iminota makumyabiri n''itanu', "p30", 'saa {h} n''igice', "p35", 'saa {h} n''iminota mirongo itatu n''itanu', "p40", 'saa {h} n''iminota mirongo ine', "p45", 'saa {h} n''iminota mirongo ine n''itanu', "p50", 'saa {h} n''iminota mirongo itanu', "p55", 'saa {h} n''iminota mirongo itanu n''itanu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

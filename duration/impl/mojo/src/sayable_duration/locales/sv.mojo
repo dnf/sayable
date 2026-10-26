@@ -50,7 +50,7 @@ fn build_sv() -> DurationLocale:
     short_ovr.has_month = True
     short_ovr.year = simple_unit("{n} år")
     short_ovr.has_year = True
-    short_ovr.ago = "{0} sedan"
+    short_ovr.ago = "för {0} sedan"
     short_ovr.has_ago = True
     short_ovr.in_future = "om {0}"
     short_ovr.has_in_future = True
@@ -72,7 +72,7 @@ fn build_sv() -> DurationLocale:
     compact_ovr.has_year = True
     compact_ovr.delimiter = ""
     compact_ovr.has_delimiter = True
-    compact_ovr.ago = "{0} sedan"
+    compact_ovr.ago = "för {0} sedan"
     compact_ovr.has_ago = True
     compact_ovr.in_future = "om {0}"
     compact_ovr.has_in_future = True
@@ -90,7 +90,7 @@ fn build_sv() -> DurationLocale:
         half="{n}½",
         delimiter=", ",
         just_now="just nu",
-        ago="{0} sedan",
+        ago="för {0} sedan",
         in_future="om {0}",
         short_override=short_ovr,
         has_short=True,

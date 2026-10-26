@@ -26,7 +26,7 @@ locale = DurationLocale
         , unitMonth = Simple "{n} ka bulan"
         , unitYear = Simple "{n} ka tuig"
         }
-    , localeHalf = "{n}½"
+    , localeHalf = "{0} ug tunga"
     , localeDelimiter = ", "
     , localeJustNow = "karon lang"
     , localeAgo = "{0} ang milabay"

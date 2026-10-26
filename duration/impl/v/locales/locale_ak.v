@@ -42,7 +42,7 @@ pub const locale_ak = DurationLocale{
 		has_minute: true
 		hour: simple_unit('dɔnhwere {n}')
 		has_hour: true
-		day: simple_unit('nna {n}')
+		day: plural_unit({PluralCategory.one: 'da {n}', PluralCategory.other: 'nna {n}'})
 		has_day: true
 		week: plural_unit({PluralCategory.one: 'dapɛn {n}', PluralCategory.other: 'nnapɛn {n}'})
 		has_week: true
@@ -63,7 +63,7 @@ pub const locale_ak = DurationLocale{
 		has_minute: true
 		hour: simple_unit('dɔn {n}')
 		has_hour: true
-		day: simple_unit('nna {n}')
+		day: plural_unit({PluralCategory.one: 'da {n}', PluralCategory.other: 'nna {n}'})
 		has_day: true
 		week: plural_unit({PluralCategory.one: 'dapɛn {n}', PluralCategory.other: 'nnapɛn {n}'})
 		has_week: true

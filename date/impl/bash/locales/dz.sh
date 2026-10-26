@@ -20,7 +20,7 @@ _sayabledate_locale_dz() {
     _yesterday='ཁ་ཙ'
     _day_after_tomorrow='གནངས་ཚེ'
     _day_before_yesterday='ཁ་ཉིམ'
-    _this_weekday='འདི་ {weekday}'
+    _this_weekday='{weekday} འདི'
     _next_weekday='{weekday} ཤུལ་མ'
     _last_weekday='{weekday} ཧེ་མ'
     _short_months=('ཟླ་༡' 'ཟླ་༢' 'ཟླ་༣' 'ཟླ་༤' 'ཟླ་༥' 'ཟླ་༦' 'ཟླ་༧' 'ཟླ་༨' 'ཟླ་༩' 'ཟླ་༡༠' 'ཟླ་༡༡' 'ཟླ་༡༢')

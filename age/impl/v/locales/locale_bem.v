@@ -34,7 +34,7 @@ pub const locale_bem = AgeLocale{
 	toddler: stage_neutral('Umwana')
 	child: stage_neutral('Umwana')
 	teenager: stage_neutral('Umunyamata')
-	adult: stage_neutral('Umulumendo')
+	adult: stage_neutral('Umukalamba')
 	has_short: true
 	short_override: CompactnessOverride{
 		day: plural_unit({PluralCategory.one: 'ubushiku {n}', PluralCategory.other: 'inshiku {n}'})

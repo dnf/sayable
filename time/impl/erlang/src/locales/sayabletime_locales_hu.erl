@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "hu",
-        clock = #clock_config{hours = ["tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy"], midnight = "éjfél", noon = "dél", patterns = [{0, "{h} óra"}, {5, "öt múlt {h}"}, {10, "tíz múlt {h}"}, {15, "negyed múlt {h}"}, {20, "húsz múlt {h}"}, {25, "huszonöt múlt {h}"}, {30, "fél múlt {h}"}, {35, "huszonöt múlva {next_h}"}, {40, "húsz múlva {next_h}"}, {45, "negyed múlva {next_h}"}, {50, "tíz múlva {next_h}"}, {55, "öt múlva {next_h}"}]},
+        clock = #clock_config{hours = ["tizenkettő", "egy", "kettő", "három", "négy", "öt", "hat", "hét", "nyolc", "kilenc", "tíz", "tizenegy"], midnight = "éjfél", noon = "dél", patterns = [{0, "{h} óra"}, {5, "öt perccel múlt {h}"}, {10, "tíz perccel múlt {h}"}, {15, "negyed {next_h}"}, {20, "húsz perccel múlt {h}"}, {25, "öt perc múlva fél {next_h}"}, {30, "fél {next_h}"}, {35, "öt perccel múlt fél {next_h}"}, {40, "húsz perc múlva {next_h}"}, {45, "háromnegyed {next_h}"}, {50, "tíz perc múlva {next_h}"}, {55, "öt perc múlva {next_h}"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
     }.

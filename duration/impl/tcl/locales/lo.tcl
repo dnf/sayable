@@ -25,10 +25,10 @@ proc locale_duration_lo {} {
         year "{n} ປີ" \
     ]
     set half "{0}ເຄິ່ງ"
-    set delimiter {}
+    set delimiter { }
     set just_now {ຫາກໍ}
     set ago "{0} ກ່ອນ"
-    set in_future "ໃນ {0}"
+    set in_future "ໃນອີກ {0}"
     set short [dict create \
         units [dict create \
             second "{n} ວິ." \
@@ -40,7 +40,7 @@ proc locale_duration_lo {} {
             year "{n} ປ." \
         ] \
         ago "{0} ກ່ອນ" \
-        in_future "ໃນ {0}" \
+        in_future "ໃນອີກ {0}" \
     ]
     set compact [dict create \
         units [dict create \
@@ -49,13 +49,13 @@ proc locale_duration_lo {} {
             hour "{n}h" \
             day "{n}d" \
             week "{n}w" \
-            month "{n}m" \
+            month "{n}mo" \
             year "{n}y" \
         ] \
         half "{n}½" \
         delimiter {} \
         ago "{0} ກ່ອນ" \
-        in_future "ໃນ {0}" \
+        in_future "ໃນອີກ {0}" \
     ]
     return [dict create \
         code $code \

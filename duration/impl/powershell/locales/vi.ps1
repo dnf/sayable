@@ -21,13 +21,13 @@ function locale_vi {
         day = '{n} ngày'
         week = '{n} tuần'
         month = '{n} tháng'
-        year = '{n} tuổi'
+        year = '{n} năm'
     }
     $half = '{0} rưỡi'
     $delimiter = ', '
     $justNow = 'vừa xong'
     $ago = '{0} trước'
-    $inFuture = 'trong {0}'
+    $inFuture = '{0} nữa'
     $short = @{
         units = @{
             second = '{n} giây'
@@ -39,7 +39,7 @@ function locale_vi {
             year = '{n} năm'
         }
         ago = '{0} trước'
-        inFuture = 'trong {0}'
+        inFuture = '{0} nữa'
     }
     $compact = @{
         units = @{
@@ -54,7 +54,7 @@ function locale_vi {
         half = '{n}½'
         delimiter = ''
         ago = '{0} trước'
-        inFuture = 'trong {0}'
+        inFuture = '{0} nữa'
     }
     return @{
         code = 'vi'

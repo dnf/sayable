@@ -6,45 +6,53 @@
 
 Plural rule: `tzm` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tzm.json](../../locales/tzm.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort: hours as the feminine ordinal 'tis' + numeral ('tis snat' 2:00, 'tis yat' 1:00, 'tis snat d mrawt' 12:xx), 'tis snat d uzgen' (2:30), 'tis snat d rrbɛ' (2:15), 'tis snat d mraw tusdiqin' (2:10), 20+ minutes with the everyday Arabic-loan numerals and 'n' + singular ('d ɛcrin n tusdiqt', 'd xmsa u ṛbɛin n tusdiqt'). Doubts: whether 'tis yat' is used for one o'clock (vs 'tamzwarut'); whether speakers prefer a subtractive 'quarter to' form (not attempted); the locale's minute word 'tusdiqt' (IRCAM uses tusdidt); in practice many Moroccan Amazigh speakers tell time in Darija. For tzm the same phrases were used; Central Atlas forms may differ. noon/midnight transliterated to Latin ('tizwarnin' is the Tashelhit midday-prayer word carried over from shi).
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal                | Short        | Compact    |
-| ----------------- | --------------------- | ------------ | ---------- |
-| Born today        | Iɣ d illul            | Iɣ d illul   | Iɣ d illul |
-| 1 day             | 1 ass                 | 1 d          | 1d         |
-| 3 days            | 3 ussan               | 3 d          | 3d         |
-| 6 days            | 6 ussan               | 6 d          | 6d         |
-| 1 week            | 1 imalass             | 1 wk         | 1w         |
-| 1 week, 1 day     | 1 imalass, 1 ass      | 1 wk, 1 d    | 1w1d       |
-| 2 weeks           | 2 imalassn            | 2 wk         | 2w         |
-| 2 weeks, 3 days   | 2 imalassn, 3 ussan   | 2 wk, 3 d    | 2w3d       |
-| 3 months          | 3 ayyurn              | 3 mo         | 3m         |
-| 6 months          | 6 ayyurn              | 6 mo         | 6m         |
-| 11 months         | 11 ayyur              | 11 mo        | 11m        |
-| 12 months         | 12 ayyur              | 12 mo        | 12m        |
-| 23 months         | 23 ayyur              | 23 mo        | 23m        |
-| 2 years           | 2 iseggasen           | 2 yr         | 2y         |
-| 2 years, 1 month  | 2 iseggasen, 1 ayyur  | 2 yr, 1 mo   | 2y1m       |
-| 2 years, 6 months | 2 iseggasen, 6 ayyurn | 2 yr, 6 mo   | 2y6m       |
-| 3 years           | 3 iseggasen           | 3 yr         | 3y         |
-| 3½ years          | 3 iseggasen d uzgen   | 3 yr d uzgen | 3½y        |
-| 5 years           | 5 iseggasen           | 5 yr         | 5y         |
-| 5½ years          | 5 iseggasen d uzgen   | 5 yr d uzgen | 5½y        |
-| 7 years           | 7 iseggasen           | 7 yr         | 7y         |
-| 10 years          | 10 iseggasen          | 10 yr        | 10y        |
-| 18 years          | 18 aseggas            | 18 yr        | 18y        |
-| 45 years          | 45 aseggas            | 45 yr        | 45y        |
+| Age               | Normal                | Short                 | Compact    |
+| ----------------- | --------------------- | --------------------- | ---------- |
+| Born today        | Iɣ d illul            | Iɣ d illul            | Iɣ d illul |
+| 1 day             | 1 ass                 | 1 ass                 | 1d         |
+| 3 days            | 3 ussan               | 3 ussan               | 3d         |
+| 6 days            | 6 ussan               | 6 ussan               | 6d         |
+| 1 week            | 1 imalass             | 1 imalass             | 1w         |
+| 1 week, 1 day     | 1 imalass, 1 ass      | 1 imalass, 1 ass      | 1w1d       |
+| 2 weeks           | 2 imalassn            | 2 imalassn            | 2w         |
+| 2 weeks, 3 days   | 2 imalassn, 3 ussan   | 2 imalassn, 3 ussan   | 2w3d       |
+| 3 months          | 3 ayyurn              | 3 ayyurn              | 3m         |
+| 6 months          | 6 ayyurn              | 6 ayyurn              | 6m         |
+| 11 months         | 11 ayyur              | 11 ayyur              | 11m        |
+| 12 months         | 12 ayyur              | 12 ayyur              | 12m        |
+| 23 months         | 23 ayyur              | 23 ayyur              | 23m        |
+| 2 years           | 2 iseggasen           | 2 iseggasen           | 2y         |
+| 2 years, 1 month  | 2 iseggasen, 1 ayyur  | 2 iseggasen, 1 ayyur  | 2y1m       |
+| 2 years, 6 months | 2 iseggasen, 6 ayyurn | 2 iseggasen, 6 ayyurn | 2y6m       |
+| 3 years           | 3 iseggasen           | 3 iseggasen           | 3y         |
+| 3½ years          | 3 iseggasen d uzgen   | 3 iseggasen d uzgen   | 3½y        |
+| 5 years           | 5 iseggasen           | 5 iseggasen           | 5y         |
+| 5½ years          | 5 iseggasen d uzgen   | 5 iseggasen d uzgen   | 5½y        |
+| 7 years           | 7 iseggasen           | 7 iseggasen           | 7y         |
+| 10 years          | 10 iseggasen          | 10 iseggasen          | 10y        |
+| 18 years          | 18 aseggas            | 18 aseggas            | 18y        |
+| 45 years          | 45 aseggas            | 45 aseggas            | 45y        |
 
 ### Stages
 
 | Stage    | Label               |
 | -------- | ------------------- |
 | Newborn  | Iɣ d illul          |
-| Infant   | Agellid             |
+| Infant   | Llufan              |
 | Toddler  | Aḥenjir / Taḥenjirt |
-| Child    | Afrux / Tafruxṭ     |
+| Child    | Afrux / Tafruxt     |
 | Teenager | Aɛrim / Taɛrimt     |
 | Adult    | Argaz / Tamṭṭuṭ     |
 
@@ -54,56 +62,56 @@ Plural rule: `tzm` (categories: one, other)
 
 | Date        | Normal      | Short  | Compact |
 | ----------- | ----------- | ------ | ------- |
-| January 1   | 1 ⵉⵏⵏⴰⵢⵔ    | 1 ⵉⵏⵏ  | 1/1     |
-| February 14 | 14 ⴱⵕⴰⵢⵕ    | 14 ⴱⵕⴰ | 14/2    |
-| March 15    | 15 ⵎⴰⵕⵚ     | 15 ⵎⴰⵕ | 15/3    |
-| July 4      | 4 ⵢⵓⵍⵢⵓⵣ    | 4 ⵢⵓⵍ  | 4/7     |
-| October 31  | 31 ⴽⵜⵓⴱⵔ    | 31 ⴽⵜⵓ | 31/10   |
-| December 25 | 25 ⴷⵓⵊⴰⵏⴱⵉⵔ | 25 ⴷⵓⵊ | 25/12   |
+| January 1   | 1 Yennayer  | 1 Yen  | 1/1     |
+| February 14 | 14 Yebrayer | 14 Yeb | 14/2    |
+| March 15    | 15 Mars     | 15 Mar | 15/3    |
+| July 4      | 4 Yulyuz    | 4 Yul  | 4/7     |
+| October 31  | 31 Kṭuber   | 31 Kṭu | 31/10   |
+| December 25 | 25 Dujanbir | 25 Duj | 25/12   |
 
 ### Relative dates
 
 Relative to Saturday, March 15, 2025.
 
-| Offset               | Normal         | Compact |
-| -------------------- | -------------- | ------- |
-| Today                | ⴰⵙⵙⴰ           | ⴰⵙⵙⴰ    |
-| Tomorrow             | ⴰⵙⴽⴽⴰ          | ⴰⵙⴽⴽⴰ   |
-| Yesterday            | ⵉⴹⵍⵍⵉ          | ⵉⴹⵍⵍⵉ   |
-| Day after tomorrow   | ⴰⵢⵏⴰⵙ ⴰⴷ       | 17/3    |
-| Day before yesterday | ⴰⴽⵡⴰⵙ ⵉⵣⵔⵉⵏ    | 13/3    |
-| This Thursday (+5)   | ⴰⴽⵡⴰⵙ ⴰⴷ       | 20/3    |
-| Last Monday (-4)     | ⴰⵙⵉⵏⴰⵙ ⵉⵣⵔⵉⵏ   | 11/3    |
-| Next Wednesday (+12) | ⴰⴽⵡⴰⵙ ⴷ ⵉⴷⴷⴰⵏ  | 27/3    |
-| Same month (+20)     | 4 ⵉⴱⵔⵉⵔ        | 4/4     |
-| Different year       | 10 ⵉⵏⵏⴰⵢⵔ 2026 | 10/1/26 |
+| Offset               | Normal           | Compact |
+| -------------------- | ---------------- | ------- |
+| Today                | Assa             | Assa    |
+| Tomorrow             | Asekka           | Asekka  |
+| Yesterday            | Assenaṭ          | Assenaṭ |
+| Day after tomorrow   | Aynas ad         | 17/3    |
+| Day before yesterday | Akwas izrin      | 13/3    |
+| This Thursday (+5)   | Akwas ad         | 20/3    |
+| Last Tuesday (-4)    | Asinas izrin     | 11/3    |
+| Next Thursday (+12)  | Akwas d iddan    | 27/3    |
+| Same year (+20)      | 4 Ibrir          | 4/4     |
+| Different year       | 10 Yennayer 2026 | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                | Short      | Compact |
-| --------------------- | --------------------- | ---------- | ------- |
-| 0 seconds             | ɣilad                 | ɣilad      | ɣilad   |
-| 1 second              | 1 tasint              | 1s         | 1s      |
-| 30 seconds            | 30 tasint             | 30s        | 30s     |
-| 1 minute              | 1 tusdiqt             | 1m         | 1m      |
-| 2 minutes, 15 seconds | 2 tusdiqin, 15 tasint | 2m, 15s    | 2m15s   |
-| 5 minutes             | 5 tusdiqin            | 5m         | 5m      |
-| 45 minutes            | 45 tusdiqt            | 45m        | 45m     |
-| 1 hour                | 1 tasragt             | 1h         | 1h      |
-| 1½ hours              | 1 tisragin d uzgen    | 1h d uzgen | 1½h     |
-| 3 hours               | 3 tisragin            | 3h         | 3h      |
-| 6 hours               | 6 tisragin            | 6h         | 6h      |
-| 1 day                 | 1 ass                 | 1d         | 1d      |
-| 1½ days               | 1 ussan d uzgen       | 1d d uzgen | 1½d     |
-| 3 days                | 3 ussan               | 3d         | 3d      |
-| 1 week                | 1 imalass             | 1w         | 1w      |
-| 2 weeks, 3 days       | 2 imalassn, 3 ussan   | 2w, 3d     | 2w3d    |
-| 1 month               | 1 ayyur               | 1mo        | 1mo     |
-| 6 months              | 6 ayyurn              | 6mo        | 6mo     |
-| 1 year                | 1 aseggas             | 1y         | 1y      |
-| 2 years, 3 months     | 2 iseggasen, 3 ayyurn | 2y, 3mo    | 2y3mo   |
+| Duration              | Normal                | Short                 | Compact |
+| --------------------- | --------------------- | --------------------- | ------- |
+| 0 seconds             | ɣilad                 | ɣilad                 | ɣilad   |
+| 1 second              | 1 tasint              | 1 tasint              | 1s      |
+| 30 seconds            | 30 tasint             | 30 tasint             | 30s     |
+| 1 minute              | 1 tusdiqt             | 1 tusdiqt             | 1m      |
+| 2 minutes, 15 seconds | 2 tusdiqin, 15 tasint | 2 tusdiqin, 15 tasint | 2m15s   |
+| 5 minutes             | 5 tusdiqin            | 5 tusdiqin            | 5m      |
+| 45 minutes            | 45 tusdiqt            | 45 tusdiqt            | 45m     |
+| 1 hour                | 1 tasragt             | 1 tasragt             | 1h      |
+| 1½ hours              | 1 tisragin d uzgen    | 1 tisragin d uzgen    | 1½h     |
+| 3 hours               | 3 tisragin            | 3 tisragin            | 3h      |
+| 6 hours               | 6 tisragin            | 6 tisragin            | 6h      |
+| 1 day                 | 1 ass                 | 1 ass                 | 1d      |
+| 1½ days               | 1 ussan d uzgen       | 1 ussan d uzgen       | 1½d     |
+| 3 days                | 3 ussan               | 3 ussan               | 3d      |
+| 1 week                | 1 imalass             | 1 imalass             | 1w      |
+| 2 weeks, 3 days       | 2 imalassn, 3 ussan   | 2 imalassn, 3 ussan   | 2w3d    |
+| 1 month               | 1 ayyur               | 1 ayyur               | 1mo     |
+| 6 months              | 6 ayyurn              | 6 ayyurn              | 6mo     |
+| 1 year                | 1 aseggas             | 1 aseggas             | 1y      |
+| 2 years, 3 months     | 2 iseggasen, 3 ayyurn | 2 iseggasen, 3 ayyurn | 2y3mo   |
 
 ### Relative time
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal    | Short | Compact |
-| --------------- | --------- | ----- | ------- |
-| Midnight        | ⵏⵚ ⵏ ⵉⴹ   | 0:00  | 0:00    |
-| 1:00 AM         | 1:00      | 1:00  | 1:00    |
-| 5 past 9        | 9:05      | 9:05  | 9:05    |
-| Quarter past 10 | 10:15     | 10:15 | 10:15   |
-| Half past 11    | 11:30     | 11:30 | 11:30   |
-| Noon            | ⵜⵉⵣⵡⴰⵔⵏⵉⵏ | 12:00 | 12:00   |
-| Quarter to 3    | 2:45      | 14:45 | 14:45   |
-| 5 to 6          | 5:55      | 17:55 | 17:55   |
-| 8 o'clock PM    | 8:00      | 20:00 | 20:00   |
-| 10:30 PM        | 10:30     | 22:30 | 22:30   |
-| 11:58 PM        | ⵏⵚ ⵏ ⵉⴹ   | 23:58 | 23:58   |
+| Time            | Normal                              | Short | Compact |
+| --------------- | ----------------------------------- | ----- | ------- |
+| Midnight        | nṣ n iḍ                             | 0:00  | 0:00    |
+| 1:00 AM         | tis yat                             | 1:00  | 1:00    |
+| 5 past 9        | tis tẕat d smmus tusdiqin           | 9:05  | 9:05    |
+| Quarter past 10 | tis mrawt d rrbɛ                    | 10:15 | 10:15   |
+| Half past 11    | tis yat d mrawt d uzgen             | 11:30 | 11:30   |
+| Noon            | tizwarnin                           | 12:00 | 12:00   |
+| Quarter to 3    | tis snat d xmsa u ṛbɛin n tusdiqt   | 14:45 | 14:45   |
+| 5 to 6          | tis smmust d xmsa u xmsin n tusdiqt | 17:55 | 17:55   |
+| 8 o'clock PM    | tis tamt                            | 20:00 | 20:00   |
+| 10:30 PM        | tis mrawt d uzgen                   | 22:30 | 22:30   |
+| 11:58 PM        | nṣ n iḍ                             | 23:58 | 23:58   |

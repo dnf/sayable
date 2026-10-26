@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [rw.json](../../locales/rw.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Kinyarwanda tells time with the East African (Swahili-loan) system: saa moya = 7:00, saa sita = 12:00, saa kumi n'ebyiri = 18:00 (the file already had noon 'saa sita'). Encoded by rotating hours: ['sita','saba','munani','cyenda','kumi',"kumi n'imwe","kumi n'ebyiri",'moya','mbiri','tatu','ine','tanu']. Patterns are additive: 'saa {h}', 'saa {h} n'igice' (half), 'saa {h} n'iminota <N>' with class-4 minute numerals (itanu, icumi, cumi n'itanu, makumyabiri, mirongo itatu n'itanu, mirongo ine ...). Noon/midnight distinguished as 'saa sita z'amanywa' / 'saa sita z'ijoro'. Doubts: 'ine' vs the also-common 'yine' for 10 o'clock; Rwandans also use a subtractive '... ibura iminota ...' form that I did not use because I am unsure of the concord; 'na robo' for quarter not used for the same reason.
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ejobundi           | 17/3        |
 | Day before yesterday | juzi               | 13/3        |
 | This Thursday (+5)   | iyi Kuwa kane      | 20/3        |
-| Last Monday (-4)     | Kuwa kabiri ishize | 11/3        |
-| Next Wednesday (+12) | Kuwa kane ntaha    | 27/3        |
-| Same month (+20)     | 4 Mata             | 4/4         |
+| Last Tuesday (-4)    | Kuwa kabiri ishize | 11/3        |
+| Next Thursday (+12)  | Kuwa kane ntaha    | 27/3        |
+| Same year (+20)      | 4 Mata             | 4/4         |
 | Different year       | 10 Mutarama 2026   | 10/1/26     |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal         | Short    | Compact |
-| --------------- | -------------- | -------- | ------- |
-| Midnight        | igicuku        | 12:00 AM | 12:00a  |
-| 1:00 AM         | rimwe:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | icyenda:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | icumi:15       | 10:15 AM | 10:15a  |
-| Half past 11    | cumi n'imwe:30 | 11:30 AM | 11:30a  |
-| Noon            | saa sita       | 12:00 PM | 12:00p  |
-| Quarter to 3    | ebyiri:45      | 2:45 PM  | 2:45p   |
-| 5 to 6          | eshanu:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | umunani:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | icumi:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | igicuku        | 11:58 PM | 11:58p  |
+| Time            | Normal                                          | Short    | Compact |
+| --------------- | ----------------------------------------------- | -------- | ------- |
+| Midnight        | saa sita z'ijoro                                | 12:00 AM | 12:00a  |
+| 1:00 AM         | saa saba                                        | 1:00 AM  | 1:00a   |
+| 5 past 9        | saa tatu n'iminota itanu                        | 9:05 AM  | 9:05a   |
+| Quarter past 10 | saa ine n'iminota cumi n'itanu                  | 10:15 AM | 10:15a  |
+| Half past 11    | saa tanu n'igice                                | 11:30 AM | 11:30a  |
+| Noon            | saa sita z'amanywa                              | 12:00 PM | 12:00p  |
+| Quarter to 3    | saa munani n'iminota mirongo ine n'itanu        | 2:45 PM  | 2:45p   |
+| 5 to 6          | saa kumi n'imwe n'iminota mirongo itanu n'itanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | saa mbiri                                       | 8:00 PM  | 8:00p   |
+| 10:30 PM        | saa ine n'igice                                 | 10:30 PM | 10:30p  |
+| 11:58 PM        | saa sita z'ijoro                                | 11:58 PM | 11:58p  |

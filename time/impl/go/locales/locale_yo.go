@@ -18,9 +18,9 @@ var YO = st.TimeLocale{
 	Code: "yo",
 	Clock: st.ClockConfig{
 		Hours:    [12]string{"méjìlá", "kan", "méjì", "mẹ́ta", "mẹ́rin", "márùn-ún", "mẹ́fà", "méje", "mẹ́jọ", "mẹ́sàn-án", "mẹ́wàá", "mọ́kànlá"},
-		Midnight: "àárọ̀ òru",
-		Noon:     "ọ̀sán",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Midnight: "ọ̀gànjọ́ òru",
+		Noon:     "ọ̀sán gangan",
+		Patterns: map[int]string{0: "aago {h}", 5: "aago {h} kọjá ìṣẹ́jú márùn-ún", 10: "aago {h} kọjá ìṣẹ́jú mẹ́wàá", 15: "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dógún", 20: "aago {h} kọjá ogún ìṣẹ́jú", 25: "aago {h} kọjá ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n", 30: "aago {h} àbọ̀", 35: "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dọ́gbọ̀n", 40: "aago {next_h} kù ogún ìṣẹ́jú", 45: "aago {next_h} kù ìṣẹ́jú mẹ́ẹ̀ẹ́dógún", 50: "aago {next_h} kù ìṣẹ́jú mẹ́wàá", 55: "aago {next_h} kù ìṣẹ́jú márùn-ún"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: false, AmPm: &[2]string{"AM", "PM"}, Format: "{h}:{mm} {ampm}"},

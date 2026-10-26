@@ -11,7 +11,7 @@
 
 function locale_gn {
     $hours = @('pa mokõi', 'peteĩ', 'mokõi', 'mbohapy', 'irundy', 'po', 'poteĩ', 'pokõi', 'poapy', 'porundy', 'pa', 'pa peteĩ')
-    $midnight = 'pyhareve'
+    $midnight = 'pyharepyte'
     $noon = 'asaje'
     $patterns = @{}
     $patterns[0] = '{h}'
@@ -21,11 +21,11 @@ function locale_gn {
     $patterns[20] = '{h} ha mokõi pa'
     $patterns[25] = '{h} ha mokõi pa po'
     $patterns[30] = '{h} ha mbohapy pa'
-    $patterns[35] = '{next_h} mba''e mokõi pa po'
-    $patterns[40] = '{next_h} mba''e mokõi pa'
-    $patterns[45] = '{next_h} mba''e pa po'
-    $patterns[50] = '{next_h} mba''e pa'
-    $patterns[55] = '{next_h} mba''e po'
+    $patterns[35] = '{h} ha mbohapy pa po'
+    $patterns[40] = '{h} ha irundy pa'
+    $patterns[45] = '{h} ha irundy pa po'
+    $patterns[50] = '{h} ha po pa'
+    $patterns[55] = '{h} ha po pa po'
     $clock = @{
         hours = $hours
         midnight = $midnight

@@ -19,7 +19,7 @@ let BN* = DurationLocale(
   units: {
     "second": simpleUnit("{n} সেকেন্ড"),
     "minute": simpleUnit("{n} মিনিট"),
-    "hour": simpleUnit("{n} ঘন্টা"),
+    "hour": simpleUnit("{n} ঘণ্টা"),
     "day": pluralUnit(@[(pcOne, "{n} দিন"), (pcOther, "{n} দিন")]),
     "week": pluralUnit(@[(pcOne, "{n} সপ্তাহ"), (pcOther, "{n} সপ্তাহ")]),
     "month": pluralUnit(@[(pcOne, "{n} মাস"), (pcOther, "{n} মাস")]),

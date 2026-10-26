@@ -20,8 +20,8 @@ locale() ->
         weekdays = ["diumenge", "dilluns", "dimarts", "dimecres", "dijous", "divendres", "dissabte"],
         day_format = "{n}",
         day_format_exceptions = [],
-        date_pattern = "{day} de {month}",
-        date_pattern_with_year = "{day} de {month} de {year}",
+        date_pattern = "{day} {month}",
+        date_pattern_with_year = "{day} {month} de {year}",
         today = "avui",
         tomorrow = "demà",
         yesterday = "ahir",
@@ -30,7 +30,7 @@ locale() ->
         this_weekday = {just, "aquest {weekday}"},
         next_weekday = {just, "{weekday} que ve"},
         last_weekday = {just, "{weekday} passat"},
-        months_in_date = nothing,
-        short = {just, #date_compactness_override{months = {just, ["gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des"]}, months_in_date = nothing, weekdays = {just, ["dg", "dl", "dt", "dc", "dj", "dv", "ds"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
+        months_in_date = {just, ["de gener", "de febrer", "de març", "d'abril", "de maig", "de juny", "de juliol", "d'agost", "de setembre", "d'octubre", "de novembre", "de desembre"]},
+        short = {just, #date_compactness_override{months = {just, ["gen", "feb", "març", "abr", "maig", "juny", "jul", "ag", "set", "oct", "nov", "des"]}, months_in_date = nothing, weekdays = {just, ["dg", "dl", "dt", "dc", "dj", "dv", "ds"]}, day_format = {just, "{n}"}, day_format_exceptions = nothing, date_pattern = {just, "{day} {month}"}, date_pattern_with_year = {just, "{day} {month} de {year}"}, today = nothing, tomorrow = nothing, yesterday = nothing}},
         compact = {just, #date_compactness_override{months = nothing, months_in_date = nothing, weekdays = nothing, day_format = nothing, day_format_exceptions = nothing, date_pattern = {just, "{d}/{m}"}, date_pattern_with_year = {just, "{d}/{m}/{yy}"}, today = nothing, tomorrow = nothing, yesterday = nothing}}
     }.

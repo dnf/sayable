@@ -16,7 +16,7 @@
           :week "{n} ҳафта"
           :month "{n} моҳ"
           :year "{n} сол"}
-   :half "{0} ним"
+   :half "{0}у ним"
    :delimiter ", "
    :just-born "Навзод"
    :stages {:newborn "Навзод"

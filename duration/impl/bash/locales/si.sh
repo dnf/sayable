@@ -16,9 +16,9 @@ _sayableduration_plural_si() {
 }
 
 _sayableduration_locale_si() {
-    _unit_second='{n} තත්පරය'
-    _unit_minute='{n} මිනිත්තුව'
-    _unit_hour='{n} පැය'
+    _unit_second='තත්පර {n}'
+    _unit_minute='මිනිත්තු {n}'
+    _unit_hour='පැය {n}'
     _unit_day_one='දින {n}'
     _unit_day_other='දින {n}'
     _unit_week_one='සති {n}'
@@ -27,7 +27,7 @@ _sayableduration_locale_si() {
     _unit_month_other='මාස {n}'
     _unit_year_one='වසර {n}'
     _unit_year_other='වසර {n}'
-    _half='{0}යි භාගයයි'
+    _half='{n}½'
     _delimiter=', '
     _just_now='දැන්'
     _ago='{0}ට පෙර'

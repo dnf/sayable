@@ -10,22 +10,22 @@
 # Source: locales/quc.json
 
 function locale_quc {
-    $hours = @('kab''lajuj', 'jun', 'ka''i''', 'oxi''', 'kaji''', 'jo''', 'waqi''', 'wuqu''', 'wajxaqi''', 'b''eleji''', 'lajuj', 'julajuj')
+    $hours = @('kab''lajuj', 'jun', 'keb''', 'oxib''', 'kajib''', 'job''', 'waqib''', 'wuqub''', 'wajxaqib''', 'b''elejeb''', 'lajuj', 'julajuj')
     $midnight = 'nik''aj aq''ab'''
     $noon = 'nik''aj q''ij'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = '{h} ramaj'
+    $patterns[5] = '{h} ramaj job'''
+    $patterns[10] = '{h} ramaj lajuj'
+    $patterns[15] = '{h} ramaj olajuj'
+    $patterns[20] = '{h} ramaj juwinaq'
+    $patterns[25] = '{h} ramaj juwinaq job'''
+    $patterns[30] = '{h} ramaj juwinaq lajuj'
+    $patterns[35] = '{h} ramaj juwinaq olajuj'
+    $patterns[40] = '{h} ramaj kawinaq'
+    $patterns[45] = '{h} ramaj kawinaq job'''
+    $patterns[50] = '{h} ramaj kawinaq lajuj'
+    $patterns[55] = '{h} ramaj kawinaq olajuj'
     $clock = @{
         hours = $hours
         midnight = $midnight

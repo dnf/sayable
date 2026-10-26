@@ -20,7 +20,7 @@ class TKLocale {
       "year": "{n} ýaş",
     }
   }
-  static half { "{0}½" }
+  static half { "{n} ýarym" }
   static delimiter { ", " }
   static justBorn { "Täze doglan" }
   static stages {
@@ -30,7 +30,7 @@ class TKLocale {
       "toddler": "Kiçijik",
       "child": "Çaga",
       "teenager": "Ýetginjek",
-      "adult": "Ulular",
+      "adult": "Uly adam",
     }
   }
   static short {

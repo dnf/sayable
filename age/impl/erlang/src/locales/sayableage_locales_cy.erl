@@ -17,10 +17,10 @@ locale() ->
     #locale{
         code = "cy",
         plural = fun(0) -> zero; (1) -> one; (2) -> two; (3) -> few; (6) -> many; (_) -> other end,
-        day = {pluralized, [{zero, "{n} diwrnod"}, {one, "{n} diwrnod"}, {two, "{n} ddiwrnod"}, {few, "{n} diwrnod"}, {many, "{n} niwrnod"}, {other, "{n} diwrnod"}]},
+        day = {pluralized, [{zero, "{n} diwrnod"}, {one, "{n} diwrnod"}, {two, "{n} ddiwrnod"}, {few, "{n} diwrnod"}, {many, "{n} diwrnod"}, {other, "{n} diwrnod"}]},
         week = {pluralized, [{zero, "{n} wythnos"}, {one, "{n} wythnos"}, {two, "{n} wythnos"}, {few, "{n} wythnos"}, {many, "{n} wythnos"}, {other, "{n} wythnos"}]},
         month = {pluralized, [{zero, "{n} mis"}, {one, "{n} mis"}, {two, "{n} fis"}, {few, "{n} mis"}, {many, "{n} mis"}, {other, "{n} mis"}]},
-        year = {pluralized, [{zero, "{n} blwyddyn"}, {one, "{n} blwyddyn"}, {two, "{n} flynedd"}, {few, "{n} blynedd"}, {many, "{n} blynedd"}, {other, "{n} blynedd"}]},
+        year = {pluralized, [{zero, "{n} blwyddyn"}, {one, "{n} flwyddyn"}, {two, "{n} flynedd"}, {few, "{n} blynedd"}, {many, "{n} blynedd"}, {other, "{n} blynedd"}]},
         half = "{0} a hanner",
         delimiter = ", ",
         just_born = "Newydd-anedig",

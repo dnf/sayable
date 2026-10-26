@@ -22,7 +22,7 @@ let CA* = AgeLocale(
     "month": pluralUnit(@[(pcOne, "{n} mes"), (pcOther, "{n} mesos")]),
     "year": pluralUnit(@[(pcOne, "{n} any"), (pcOther, "{n} anys")]),
   }.toOrderedTable,
-  half: "{n} i mig",
+  half: "{0} i mig",
   delimiter: ", ",
   justBorn: "Nounat",
   stages: {

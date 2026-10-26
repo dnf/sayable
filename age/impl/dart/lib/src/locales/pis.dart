@@ -21,7 +21,7 @@ final pis = AgeLocale(
   week: simpleUnit('{n} wik'),
   month: simpleUnit('{n} manis'),
   year: simpleUnit('{n} yia'),
-  half: '{n} en haf',
+  half: '{0} en haf',
   delimiter: ', ',
   justBorn: 'Niufala bebi',
   newborn: stageNeutral('Niufala bebi'),
@@ -42,5 +42,6 @@ final pis = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

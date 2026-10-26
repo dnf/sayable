@@ -22,7 +22,7 @@ locale_dz <- list(
   yesterday = "ཁ་ཙ",
   day_after_tomorrow = "གནངས་ཚེ",
   day_before_yesterday = "ཁ་ཉིམ",
-  this_weekday = "འདི་ {weekday}",
+  this_weekday = "{weekday} འདི",
   next_weekday = "{weekday} ཤུལ་མ",
   last_weekday = "{weekday} ཧེ་མ",
   short = list(

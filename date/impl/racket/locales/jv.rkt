@@ -30,7 +30,7 @@
    "sesuk"
    "wingi"
    "embèn"
-   "dhèk wingi"
+   "wingenané"
    "{weekday} iki"
    "{weekday} ngarep"
    "{weekday} wingi"

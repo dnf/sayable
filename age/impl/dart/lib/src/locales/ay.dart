@@ -17,10 +17,10 @@ final ay = AgeLocale(
   plural: (int n) {
     return PluralCategory.other;
   },
-  day: simpleUnit('uru {n}'),
-  week: simpleUnit('simana {n}'),
-  month: simpleUnit('phaxsi {n}'),
-  year: simpleUnit('mara {n}'),
+  day: simpleUnit('{n} uru'),
+  week: simpleUnit('{n} simana'),
+  month: simpleUnit('{n} phaxsi'),
+  year: simpleUnit('{n} mara'),
   half: '{0} chika',
   delimiter: ', ',
   justBorn: 'Wawa machaqa',
@@ -42,5 +42,6 @@ final ay = AgeLocale(
     month: simpleUnit('{n}m'),
     year: simpleUnit('{n}y'),
     delimiter: '',
+    half: '{n}½',
   ),
 );

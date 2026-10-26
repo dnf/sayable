@@ -16,12 +16,12 @@
 (defparameter *locale-ml*
   (make-age-locale
    :code "ml"
-   :plural (lambda (n) (if (<= n 1) :one :other))
+   :plural (lambda (n) (if (= n 1) :one :other))
    :units (list (cons :day '((:one . "{n} ദിവസം") (:other . "{n} ദിവസങ്ങൾ")))
                (cons :week '((:one . "{n} ആഴ്ച") (:other . "{n} ആഴ്ചകൾ")))
                (cons :month '((:one . "{n} മാസം") (:other . "{n} മാസങ്ങൾ")))
                (cons :year '((:one . "{n} വയസ്സ്") (:other . "{n} വയസ്സ്"))))
-   :half "{0} ര"
+   :half "{n}½"
    :delimiter ", "
    :just-born "നവജാതശിശു"
    :stages (list (cons :newborn "നവജാതശിശു")

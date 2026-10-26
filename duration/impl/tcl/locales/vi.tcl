@@ -22,13 +22,13 @@ proc locale_duration_vi {} {
         day "{n} ngày" \
         week "{n} tuần" \
         month "{n} tháng" \
-        year "{n} tuổi" \
+        year "{n} năm" \
     ]
     set half "{0} rưỡi"
     set delimiter {, }
     set just_now {vừa xong}
     set ago "{0} trước"
-    set in_future "trong {0}"
+    set in_future "{0} nữa"
     set short [dict create \
         units [dict create \
             second "{n} giây" \
@@ -40,7 +40,7 @@ proc locale_duration_vi {} {
             year "{n} năm" \
         ] \
         ago "{0} trước" \
-        in_future "trong {0}" \
+        in_future "{0} nữa" \
     ]
     set compact [dict create \
         units [dict create \
@@ -55,7 +55,7 @@ proc locale_duration_vi {} {
         half "{n}½" \
         delimiter {} \
         ago "{0} trước" \
-        in_future "trong {0}" \
+        in_future "{0} nữa" \
     ]
     return [dict create \
         code $code \

@@ -22,10 +22,10 @@ locale_lo <- list(
     year = "{n} ປີ"
   ),
   half = "{0}ເຄິ່ງ",
-  delimiter = "",
+  delimiter = " ",
   just_now = "ຫາກໍ",
   ago = "{0} ກ່ອນ",
-  in_future = "ໃນ {0}",
+  in_future = "ໃນອີກ {0}",
   short = list(
     units = list(
       second = "{n} ວິ.",
@@ -37,7 +37,7 @@ locale_lo <- list(
       year = "{n} ປ."
     ),
     ago = "{0} ກ່ອນ",
-    in_future = "ໃນ {0}"
+    in_future = "ໃນອີກ {0}"
   ),
   compact = list(
     units = list(
@@ -46,12 +46,12 @@ locale_lo <- list(
       hour = "{n}h",
       day = "{n}d",
       week = "{n}w",
-      month = "{n}m",
+      month = "{n}mo",
       year = "{n}y"
     ),
     half = "{n}½",
     delimiter = "",
     ago = "{0} ກ່ອນ",
-    in_future = "ໃນ {0}"
+    in_future = "ໃນອີກ {0}"
   )
 )

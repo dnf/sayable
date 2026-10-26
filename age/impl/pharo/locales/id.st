@@ -23,7 +23,7 @@ id
 		'month'. '{n} bulan'.
 		'year'. '{n} tahun'.
 	}).
-	locale half: '{0} setengah'.
+	locale half: '{n} setengah'.
 	locale delimiter: ', '.
 	locale justBorn: 'Baru lahir'.
 	locale stages: (Dictionary newFromPairs: {

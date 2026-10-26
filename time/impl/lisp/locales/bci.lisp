@@ -17,10 +17,10 @@
   (make-time-locale
    :code "bci"
    :clock (make-clock-config
-    :hours (list "blu-nɲɔn" "kun" "nɲɔn" "nsan" "nan" "nnun" "nsiɛn" "nso" "mɔcuɛ" "ngwlan" "blu" "blu-kun")
+    :hours (list "blu-nin-nɲɔn" "kun" "nɲɔn" "nsan" "nan" "nnun" "nsiɛn" "nso" "mɔcuɛ" "ngwlan" "blu" "blu-nin-kun")
     :midnight "kɔnguɛ afiɛn"
     :noon "nnɔsua"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "dɔ {h}") (cons 5 "dɔ {h} nin miniti nnun") (cons 10 "dɔ {h} nin miniti blu") (cons 15 "dɔ {h} nin miniti blu-nin-nnun") (cons 20 "dɔ {h} nin miniti ablaɔn") (cons 25 "dɔ {h} nin miniti ablaɔn-nin-nnun") (cons 30 "dɔ {h} nin miniti ablasan") (cons 35 "dɔ {h} nin miniti ablasan-nin-nnun") (cons 40 "dɔ {h} nin miniti ablanan") (cons 45 "dɔ {h} nin miniti ablanan-nin-nnun") (cons 50 "dɔ {h} nin miniti ablenun") (cons 55 "dɔ {h} nin miniti ablenun-nin-nnun")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -28,7 +28,7 @@ var TG = sd.DurationLocale{
 		Month:  sd.SimpleUnit("{n} моҳ"),
 		Year:   sd.SimpleUnit("{n} сол"),
 	},
-	Half:      "{0} ним",
+	Half:      "{0}у ним",
 	Delimiter: ", ",
 	JustNow:   "ҳамин ҳоло",
 	Ago:       "{0} пеш",

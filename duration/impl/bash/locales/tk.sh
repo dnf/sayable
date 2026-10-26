@@ -23,7 +23,7 @@ _sayableduration_locale_tk() {
     _unit_week='{n} hepde'
     _unit_month='{n} aý'
     _unit_year='{n} ýyl'
-    _half='{0}½'
+    _half='{n} ýarym'
     _delimiter=', '
     _just_now='häzir'
     _ago='{0} öň'

@@ -28,7 +28,7 @@ final fon = AgeLocale(
   infant: stageNeutral('Vǐ'),
   toddler: stageNeutral('Vǐ'),
   child: stageNeutral('Vǐ'),
-  teenager: stageNeutral('Nyɔ̌nu'),
+  teenager: stageGendered('Dɔnkpɛvu', 'Ɖyɔ̌vǐ'),
   adult: stageNeutral('Mɛ̌xo'),
   short: CompactnessOverride(
     day: simpleUnit('azǎn {n}'),

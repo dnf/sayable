@@ -15,7 +15,7 @@ class ROLocale {
     return ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"]
   }
   static weekdays {
-    return ["duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"]
+    return ["duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta"]
   }
   static dayFormat { "{n}" }
   static dayFormatExceptions {
@@ -28,7 +28,7 @@ class ROLocale {
   static yesterday { "ieri" }
   static dayAfterTomorrow { "poimâine" }
   static dayBeforeYesterday { "alaltăieri" }
-  static thisWeekday { "această {weekday}" }
+  static thisWeekday { "{weekday} aceasta" }
   static nextWeekday { "{weekday} viitoare" }
   static lastWeekday { "{weekday} trecută" }
   static monthsInDate {

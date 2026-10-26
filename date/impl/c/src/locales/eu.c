@@ -11,6 +11,15 @@
 /* Source: locales/eu.json */
 #include "sayabledate/sayabledate.h"
 
+static const SdDayFormatException sd_exc_eu[] = {
+    { "11", "{n}" },
+    { "31", "{n}" },
+};
+
+static const char *sd_months_in_date_eu[12] = {
+    "urtarrilaren", "otsailaren", "martxoaren", "apirilaren", "maiatzaren", "ekainaren", "uztailaren", "abuztuaren", "irailaren", "urriaren", "azaroaren", "abenduaren"
+};
+
 static const char *sd_short_months_eu[12] = {
     "urt", "ots", "mar", "api", "mai", "eka", "uzt", "abu", "ira", "urr", "aza", "abe"
 };
@@ -23,10 +32,10 @@ const SdDateLocale sd_locale_eu = {
     "eu",
     { "urtarril", "otsail", "martxo", "apiril", "maiatz", "ekain", "uztail", "abuztu", "irail", "urri", "azaro", "abendu" },
     { "igandea", "astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata" },
-    "{n}",
-    (const SdDayFormatException *)0, 0,
-    "{month}ren {day}",
-    "{year}ko {month}ren {day}",
+    "{n}a",
+    sd_exc_eu, 2,
+    "{month} {day}",
+    "{year}ko {month} {day}",
     "gaur",
     "bihar",
     "atzo",
@@ -35,7 +44,7 @@ const SdDateLocale sd_locale_eu = {
     "{weekday} hau",
     "hurrengo {weekday}",
     "aurreko {weekday}",
-    (const char **)0,
+    sd_months_in_date_eu,
     true, { sd_short_months_eu, (const char **)0, sd_short_weekdays_eu, "{n}", (const SdDayFormatException *)0, 0, true, "{month} {day}", "{year} {month} {day}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }
 };

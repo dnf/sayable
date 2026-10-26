@@ -19,13 +19,13 @@ fn plural_ay(n int) PluralCategory {
 pub const locale_ay = DurationLocale{
 	code: 'ay'
 	plural: plural_ay
-	second: simple_unit('sikundu {n}')
-	minute: simple_unit('minutu {n}')
-	hour: simple_unit('ura {n}')
-	day: simple_unit('uru {n}')
-	week: simple_unit('simana {n}')
-	month: simple_unit('phaxsi {n}')
-	year: simple_unit('mara {n}')
+	second: simple_unit('{n} sikundu')
+	minute: simple_unit('{n} minutu')
+	hour: simple_unit('{n} ura')
+	day: simple_unit('{n} uru')
+	week: simple_unit('{n} simana')
+	month: simple_unit('{n} phaxsi')
+	year: simple_unit('{n} mara')
 	half: '{0} chika'
 	delimiter: ', '
 	just_now: 'jichha'
@@ -33,11 +33,11 @@ pub const locale_ay = DurationLocale{
 	in_future: '{0} jutirïn'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('sik. {n}')
+		second: simple_unit('{n} sik.')
 		has_second: true
-		minute: simple_unit('min. {n}')
+		minute: simple_unit('{n} min.')
 		has_minute: true
-		hour: simple_unit('ur. {n}')
+		hour: simple_unit('{n} ura')
 		has_hour: true
 		day: simple_unit('{n} ur.')
 		has_day: true
@@ -68,6 +68,8 @@ pub const locale_ay = DurationLocale{
 		has_month: true
 		year: simple_unit('{n}y')
 		has_year: true
+		half: '{n}½'
+		has_half: true
 		delimiter: ''
 		has_delimiter: true
 		ago: '{0} nayraqata'

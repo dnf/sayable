@@ -35,7 +35,7 @@ fn build_gd() -> DurationLocale:
 
     var second = plural_unit(one="{n} diog", two="{n} dhiog", few="{n} diogan", other="{n} diog")
     var minute = plural_unit(one="{n} mhionaid", two="{n} mhionaid", few="{n} mionaidean", other="{n} mionaid")
-    var hour = plural_unit(one="{n} uair", two="{n} uair", few="{n} uairean", other="{n} uair")
+    var hour = plural_unit(one="{n} uair a thìde", two="{n} uair a thìde", few="{n} uairean a thìde", other="{n} uair a thìde")
     var day = plural_unit(one="{n} latha", two="{n} latha", few="{n} làithean", other="{n} latha")
     var week = plural_unit(one="{n} sheachdain", two="{n} sheachdain", few="{n} seachdainean", other="{n} seachdain")
     var month = plural_unit(one="{n} mhìos", two="{n} mhìos", few="{n} mìosan", other="{n} mìos")

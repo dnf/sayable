@@ -18,7 +18,7 @@ locale_es <- list(
     month = list(one = "{n} mes", other = "{n} meses"),
     year = list(one = "{n} año", other = "{n} años")
   ),
-  half = "{n} y medio",
+  half = "{0} y medio",
   delimiter = ", ",
   just_born = "Recién nacido",
   stages = list(

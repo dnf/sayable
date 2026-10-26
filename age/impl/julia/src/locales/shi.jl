@@ -29,18 +29,18 @@ const SHI = AgeLocale(
     just_born = "Iɣ d illul",
     stages = Dict(
         "newborn" => StageLabel("Iɣ d illul"),
-        "infant" => StageLabel("Agellid"),
+        "infant" => StageLabel("Llufan"),
         "toddler" => GenderedStage("Aḥenjir", "Taḥenjirt"),
-        "child" => GenderedStage("Afrux", "Tafruxṭ"),
+        "child" => GenderedStage("Afrux", "Tafruxt"),
         "teenager" => GenderedStage("Aɛrim", "Taɛrimt"),
         "adult" => GenderedStage("Argaz", "Tamṭṭuṭ"),
     ),
     short_override = CompactnessOverride(
         units = Dict(
-            "day" => "{n} d",
-            "week" => "{n} wk",
-            "month" => "{n} mo",
-            "year" => "{n} yr",
+            "day" => Dict("one" => "{n} ass", "few" => "{n} ussan", "other" => "{n} ass"),
+            "week" => Dict("one" => "{n} imalass", "few" => "{n} imalassn", "other" => "{n} imalass"),
+            "month" => Dict("one" => "{n} ayyur", "few" => "{n} ayyurn", "other" => "{n} ayyur"),
+            "year" => Dict("one" => "{n} aseggas", "few" => "{n} iseggasen", "other" => "{n} aseggas"),
         ),
     ),
     compact_override = CompactnessOverride(

@@ -24,7 +24,7 @@ module SayableDate
       tomorrow: 'enkya',
       yesterday: 'jjo',
       day_after_tomorrow: 'enkya ogwa',
-      day_before_yesterday: 'jjo edda',
+      day_before_yesterday: 'jjuuzi',
       this_weekday: '{weekday} eno',
       next_weekday: '{weekday} eddirira',
       last_weekday: '{weekday} eggudde',

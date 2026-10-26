@@ -31,7 +31,7 @@ fon
 		#infant. 'Vǐ'.
 		#toddler. 'Vǐ'.
 		#child. 'Vǐ'.
-		#teenager. 'Nyɔ̌nu'.
+		#teenager. (Dictionary newFromPairs: { #m. 'Dɔnkpɛvu'. #f. 'Ɖyɔ̌vǐ' }).
 		#adult. 'Mɛ̌xo'.
 	}).
 	locale short: (Dictionary newFromPairs: {

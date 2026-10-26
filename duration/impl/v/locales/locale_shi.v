@@ -25,7 +25,7 @@ fn plural_shi(n int) PluralCategory {
 pub const locale_shi = DurationLocale{
 	code: 'shi'
 	plural: plural_shi
-	second: plural_unit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tasinin', PluralCategory.other: '{n} tasinin'})
+	second: plural_unit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tisinin', PluralCategory.other: '{n} tisinin'})
 	minute: plural_unit({PluralCategory.one: '{n} tusdiqt', PluralCategory.few: '{n} tusdiqin', PluralCategory.other: '{n} tusdiqin'})
 	hour: plural_unit({PluralCategory.one: '{n} tasragt', PluralCategory.few: '{n} tisragin', PluralCategory.other: '{n} tisragin'})
 	day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'})
@@ -39,19 +39,19 @@ pub const locale_shi = DurationLocale{
 	in_future: 'ɣ {0}'
 	has_short: true
 	short_override: DurationCompactnessOverride{
-		second: simple_unit('{n}s')
+		second: plural_unit({PluralCategory.one: '{n} tasint', PluralCategory.few: '{n} tasinin', PluralCategory.other: '{n} tasinin'})
 		has_second: true
-		minute: simple_unit('{n}m')
+		minute: plural_unit({PluralCategory.one: '{n} tusdiqt', PluralCategory.few: '{n} tusdiqin', PluralCategory.other: '{n} tusdiqin'})
 		has_minute: true
-		hour: simple_unit('{n}h')
+		hour: plural_unit({PluralCategory.one: '{n} tasragt', PluralCategory.few: '{n} tisragin', PluralCategory.other: '{n} tisragin'})
 		has_hour: true
-		day: simple_unit('{n}d')
+		day: plural_unit({PluralCategory.one: '{n} ass', PluralCategory.few: '{n} ussan', PluralCategory.other: '{n} ass'})
 		has_day: true
-		week: simple_unit('{n}w')
+		week: plural_unit({PluralCategory.one: '{n} imalass', PluralCategory.few: '{n} imalassn', PluralCategory.other: '{n} imalass'})
 		has_week: true
-		month: simple_unit('{n}mo')
+		month: plural_unit({PluralCategory.one: '{n} ayyur', PluralCategory.few: '{n} ayyurn', PluralCategory.other: '{n} ayyur'})
 		has_month: true
-		year: simple_unit('{n}y')
+		year: plural_unit({PluralCategory.one: '{n} aseggas', PluralCategory.few: '{n} iseggasen', PluralCategory.other: '{n} aseggas'})
 		has_year: true
 		ago: 'ɣ {0} zzrin'
 		has_ago: true

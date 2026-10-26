@@ -30,7 +30,7 @@
    "kusasa"
    "izolo"
    "ngomhlomunye"
-   "usuku olwedlule izolo"
+   "kuthangi"
    "leli {weekday}"
    "{weekday} elizayo"
    "{weekday} eledlule"

@@ -14,12 +14,12 @@ local M = {}
 M.code = "mi"
 M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
-    day = "rā {n}",
-    week = "wiki {n}",
-    month = "marama {n}",
-    year = "tau {n}",
+    day = "{n} rā",
+    week = "{n} wiki",
+    month = "{n} marama",
+    year = "{n} tau",
 }
-M.half = "{0}½"
+M.half = "{n}½"
 M.delimiter = ", "
 M.just_born = "Pēpi hou"
 M.stages = {
@@ -32,10 +32,10 @@ M.stages = {
 }
 M.short = {
     units = {
-        day = "rā {n}",
-        week = "w {n}",
-        month = "m {n}",
-        year = "t {n}",
+        day = "{n} rā",
+        week = "{n} w",
+        month = "{n} m",
+        year = "{n} t",
     },
 }
 M.compact = {

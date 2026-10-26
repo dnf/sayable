@@ -25,7 +25,7 @@ locale_dyu <- list(
   delimiter = ", ",
   just_now = "sisan",
   ago = "{0} tɛmɛnen",
-  in_future = "ka {0}",
+  in_future = "{0} kɔnɔ",
   short = list(
     units = list(
       second = "sɛk. {n}",
@@ -37,7 +37,7 @@ locale_dyu <- list(
       year = "san {n}"
     ),
     ago = "{0} tɛmɛnen",
-    in_future = "ka {0}"
+    in_future = "{0} kɔnɔ"
   ),
   compact = list(
     units = list(
@@ -52,6 +52,6 @@ locale_dyu <- list(
     half = "{n}½",
     delimiter = "",
     ago = "{0} tɛmɛnen",
-    in_future = "ka {0}"
+    in_future = "{0} kɔnɔ"
   )
 )

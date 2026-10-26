@@ -18,7 +18,7 @@ pub fn locale() -> TimeLocale {
         code: "gn".to_string(),
         clock: ClockConfig {
             hours: ["pa mokõi".to_string(), "peteĩ".to_string(), "mokõi".to_string(), "mbohapy".to_string(), "irundy".to_string(), "po".to_string(), "poteĩ".to_string(), "pokõi".to_string(), "poapy".to_string(), "porundy".to_string(), "pa".to_string(), "pa peteĩ".to_string()],
-            midnight: "pyhareve".to_string(),
+            midnight: "pyharepyte".to_string(),
             noon: "asaje".to_string(),
             patterns: HashMap::from([
             (0, "{h}".to_string()),
@@ -28,11 +28,11 @@ pub fn locale() -> TimeLocale {
             (20, "{h} ha mokõi pa".to_string()),
             (25, "{h} ha mokõi pa po".to_string()),
             (30, "{h} ha mbohapy pa".to_string()),
-            (35, "{next_h} mba'e mokõi pa po".to_string()),
-            (40, "{next_h} mba'e mokõi pa".to_string()),
-            (45, "{next_h} mba'e pa po".to_string()),
-            (50, "{next_h} mba'e pa".to_string()),
-            (55, "{next_h} mba'e po".to_string()),
+            (35, "{h} ha mbohapy pa po".to_string()),
+            (40, "{h} ha irundy pa".to_string()),
+            (45, "{h} ha irundy pa po".to_string()),
+            (50, "{h} ha po pa".to_string()),
+            (55, "{h} ha po pa po".to_string()),
         ]),
         },
         short: Some(CompactnessOverride {

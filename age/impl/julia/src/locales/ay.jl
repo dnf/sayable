@@ -15,10 +15,10 @@ const AY = AgeLocale(
     code = "ay",
     plural = _ -> "other",
     units = Dict(
-        "day" => "uru {n}",
-        "week" => "simana {n}",
-        "month" => "phaxsi {n}",
-        "year" => "mara {n}",
+        "day" => "{n} uru",
+        "week" => "{n} simana",
+        "month" => "{n} phaxsi",
+        "year" => "{n} mara",
     ),
     half = "{0} chika",
     delimiter = ", ",
@@ -46,6 +46,7 @@ const AY = AgeLocale(
             "month" => "{n}m",
             "year" => "{n}y",
         ),
+        half = "{n}½",
         delimiter = "",
     ),
 )

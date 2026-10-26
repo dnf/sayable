@@ -16,12 +16,12 @@
 (defparameter *locale-ky*
   (make-date-locale
    :code "ky"
-   :months (list "Январь" "Февраль" "Март" "Апрель" "Май" "Июнь" "Июль" "Август" "Сентябрь" "Октябрь" "Ноябрь" "Декабрь")
-   :weekdays (list "Жекшемби" "Дүйшөмбү" "Шейшемби" "Шаршемби" "Бейшемби" "Жума" "Ишемби")
-   :day-format "{n}"
+   :months (list "январь" "февраль" "март" "апрель" "май" "июнь" "июль" "август" "сентябрь" "октябрь" "ноябрь" "декабрь")
+   :weekdays (list "жекшемби" "дүйшөмбү" "шейшемби" "шаршемби" "бейшемби" "жума" "ишемби")
+   :day-format "{n}-"
    :day-format-exceptions nil
-   :date-pattern "{day} {month}"
-   :date-pattern-with-year "{day} {month} {year}"
+   :date-pattern "{day}{month}"
+   :date-pattern-with-year "{year}-ж., {day}{month}"
    :today "бүгүн"
    :tomorrow "эртең"
    :yesterday "кечээ"
@@ -30,8 +30,8 @@
    :this-weekday "бул {weekday}"
    :next-weekday "кийинки {weekday}"
    :last-weekday "өткөн {weekday}"
-   :short-months (list "Янв" "Фев" "Мар" "Апр" "Май" "Июн" "Июл" "Авг" "Сен" "Окт" "Ноя" "Дек")
-   :short-weekdays (list "Жек" "Дүй" "Шей" "Шар" "Бей" "Жум" "Ише")
+   :short-months (list "янв" "фев" "мар" "апр" "май" "июн" "июл" "авг" "сен" "окт" "ноя" "дек")
+   :short-weekdays (list "жек" "дүй" "шей" "шар" "бей" "жум" "ише")
    :short-day-format "{n}"
    :short-date-pattern "{day} {month}"
    :short-date-pattern-with-year "{day} {month} {year}"

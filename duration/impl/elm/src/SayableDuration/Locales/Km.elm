@@ -35,7 +35,7 @@ locale =
     , delimiter = ", "
     , justNow = "ឥឡូវនេះ"
     , ago = "{0}មុន"
-    , inFuture = "ក្នុង{0}"
+    , inFuture = "{0}ទៀត"
     , short =
         Just
             { ovrUnits =
@@ -53,7 +53,7 @@ locale =
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrAgo = Just "{0}មុន"
-            , ovrInFuture = Just "ក្នុង{0}"
+            , ovrInFuture = Just "{0}ទៀត"
             }
     , compact =
         Just
@@ -72,6 +72,6 @@ locale =
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrAgo = Just "{0}មុន"
-            , ovrInFuture = Just "ក្នុង{0}"
+            , ovrInFuture = Just "{0}ទៀត"
             }
     }

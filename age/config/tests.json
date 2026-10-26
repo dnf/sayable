@@ -1565,7 +1565,7 @@
             "dateOfBirth": "2022-06-15",
             "asOf": "2025-12-15"
           },
-          "expected": "3 y medio años",
+          "expected": "3 años y medio",
           "notes": "Half marker"
         },
         {
@@ -1887,7 +1887,7 @@
             "dateOfBirth": "2025-06-14",
             "asOf": "2025-06-15"
           },
-          "expected": "יום 1",
+          "expected": "יום",
           "notes": "1 day — one form"
         },
         {
@@ -1947,7 +1947,7 @@
             "dateOfBirth": "2023-06-15",
             "asOf": "2025-07-15"
           },
-          "expected": "שנתיים, חודש 1",
+          "expected": "שנתיים, חודש",
           "notes": "2y dual + 1m one"
         },
         {
@@ -2195,7 +2195,7 @@
             "dateOfBirth": "2022-06-15",
             "asOf": "2025-12-15"
           },
-          "expected": "3 tahun setengah",
+          "expected": "3 setengah tahun",
           "notes": "3½ years — half marker"
         },
         {

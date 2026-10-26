@@ -17,10 +17,10 @@
   (make-time-locale
    :code "men"
    :clock (make-clock-config
-    :hours (list "pu wɛlɛ" "yila" "fele" "sawa" "nani" "lɔlu" "wɛita" "wɔfela" "wayakpa" "taawu" "pu" "pu mahu yila")
+    :hours (list "pu mahu fele" "yila" "fele" "sawa" "nani" "lɔlu" "wɛita" "wɔfela" "wayakpa" "taawu" "pu" "pu mahu yila")
     :midnight "kpindi gbɔyɔŋ"
     :noon "ndɔlei-ma"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "awa {h}") (cons 5 "awa {h} kɛ miniti lɔɔlu") (cons 10 "awa {h} kɛ miniti pu") (cons 15 "awa {h} kɛ miniti pu mahu lɔɔlu") (cons 20 "awa {h} kɛ miniti nuu yila gboyongo") (cons 25 "awa {h} kɛ miniti nuu yila gboyongo mahu lɔɔlu") (cons 30 "awa {h} kɛ miniti nuu yila gboyongo mahu pu") (cons 35 "awa {h} kɛ miniti nuu yila gboyongo mahu pu mahu lɔɔlu") (cons 40 "awa {h} kɛ miniti nuu fele gboyongo") (cons 45 "awa {h} kɛ miniti nuu fele gboyongo mahu lɔɔlu") (cons 50 "awa {h} kɛ miniti nuu fele gboyongo mahu pu") (cons 55 "awa {h} kɛ miniti nuu fele gboyongo mahu pu mahu lɔɔlu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

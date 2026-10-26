@@ -40,17 +40,17 @@ locale =
         , patterns =
             Dict.fromList
                 [ ( 0, "saat {h}" )
-                , ( 5, "{h}'i beş geçiyor" )
-                , ( 10, "{h}'i on geçiyor" )
-                , ( 15, "{h}'i çeyrek geçiyor" )
-                , ( 20, "{h}'i yirmi geçiyor" )
-                , ( 25, "{h}'i yirmi beş geçiyor" )
-                , ( 30, "{h} buçuk" )
-                , ( 35, "{next_h}'e yirmi beş var" )
-                , ( 40, "{next_h}'e yirmi var" )
-                , ( 45, "{next_h}'e çeyrek var" )
-                , ( 50, "{next_h}'e on var" )
-                , ( 55, "{next_h}'e beş var" )
+                , ( 5, "saat {h} sıfır beş" )
+                , ( 10, "saat {h} on" )
+                , ( 15, "saat {h} on beş" )
+                , ( 20, "saat {h} yirmi" )
+                , ( 25, "saat {h} yirmi beş" )
+                , ( 30, "saat {h} buçuk" )
+                , ( 35, "saat {h} otuz beş" )
+                , ( 40, "saat {h} kırk" )
+                , ( 45, "saat {h} kırk beş" )
+                , ( 50, "saat {h} elli" )
+                , ( 55, "saat {h} elli beş" )
                 ]
         }
     , short =

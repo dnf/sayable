@@ -27,7 +27,7 @@ locale() ->
         yesterday = "inné",
         day_after_tomorrow = {just, "arú amárach"},
         day_before_yesterday = {just, "arú inné"},
-        this_weekday = {just, "an {weekday} seo"},
+        this_weekday = {just, "{weekday} seo"},
         next_weekday = {just, "{weekday} seo chugainn"},
         last_weekday = {just, "{weekday} seo caite"},
         months_in_date = nothing,

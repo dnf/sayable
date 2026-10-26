@@ -1,15 +1,21 @@
 /// Core formatting logic for sayable-age.
-
 import gleam/bit_array
 import gleam/int
 import gleam/list
 import gleam/result
-import gleam/string
 import sayableage/types.{
   type AgeLocale, type Compactness, type CompactnessOverride, type Gender,
   type PluralCategory, type StageLabel, type UnitForms, Compact, Female,
   GenderedStage, NeutralStage, Normal, PluralUnit, Short, SimpleUnit,
 }
+
+/// Replace every occurrence of a placeholder, matching code points rather
+/// than graphemes (see sayableage_ffi.erl).
+@external(erlang, "sayableage_ffi", "replace_all")
+fn replace_placeholder(in: String, pattern: String, with: String) -> String
+
+@external(erlang, "sayableage_ffi", "contains")
+fn contains_placeholder(in: String, pattern: String) -> Bool
 
 pub const version = "0.5.0"
 
@@ -30,7 +36,15 @@ pub fn format_age(
       let #(day, week, month, year, half, delim, just_born) =
         resolve_locale(locale, compactness)
       Ok(format_tier(
-        locale, day, week, month, year, half, delim, just_born, months,
+        locale,
+        day,
+        week,
+        month,
+        year,
+        half,
+        delim,
+        just_born,
+        months,
         diff_days,
       ))
     }
@@ -95,7 +109,10 @@ fn apply_override(
   }
 }
 
-fn result_unwrap_unit(r: Result(UnitForms, Nil), default: UnitForms) -> UnitForms {
+fn result_unwrap_unit(
+  r: Result(UnitForms, Nil),
+  default: UnitForms,
+) -> UnitForms {
   case r {
     Ok(v) -> v
     Error(Nil) -> default
@@ -170,17 +187,17 @@ fn resolve_unit(
   half: String,
 ) -> String {
   let base_n = int.to_string(count)
-  let n = case half != "" && string.contains(half, "{n}") {
-    True -> string.replace(half, "{n}", base_n)
+  let n = case half != "" && contains_placeholder(half, "{n}") {
+    True -> replace_placeholder(half, "{n}", base_n)
     False -> base_n
   }
   let template = case unit_forms {
     SimpleUnit(t) -> t
     PluralUnit(forms) -> lookup_form(plural_fn(count), forms)
   }
-  let result = string.replace(template, "{n}", n)
-  case half != "" && string.contains(half, "{0}") {
-    True -> string.replace(half, "{0}", result)
+  let result = replace_placeholder(template, "{n}", n)
+  case half != "" && contains_placeholder(half, "{0}") {
+    True -> replace_placeholder(half, "{0}", result)
     False -> result
   }
 }

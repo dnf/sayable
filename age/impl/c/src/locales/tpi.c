@@ -25,7 +25,7 @@ const SaLocale sa_locale_tpi = {
         { "{n} mun", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} yia", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n} na hap", ", ", "Nupela pikinini",
+    "{0} na hap", ", ", "Nupela pikinini",
     {
         { "Nupela pikinini", "" },
         { "Pikinini", "" },
@@ -35,5 +35,5 @@ const SaLocale sa_locale_tpi = {
         { "Bikpela man", "" }
     },
     true, { true, { "{n} de", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wik", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mun", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yia", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

@@ -12,7 +12,7 @@
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_bm[12] = {
-    "Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"
+    "Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"
 };
 
 static const char *sd_short_weekdays_bm[7] = {
@@ -21,7 +21,7 @@ static const char *sd_short_weekdays_bm[7] = {
 
 const SdDateLocale sd_locale_bm = {
     "bm",
-    { "Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu" },
+    { "Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu" },
     { "Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri" },
     "{n}",
     (const SdDayFormatException *)0, 0,

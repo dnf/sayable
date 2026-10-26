@@ -21,10 +21,10 @@
   (time-locale
    "ak"
    (clock-config
-    (list "dumien" "baako" "mmienu" "mmiensa" "anan" "anum" "nsia" "nson" "nwɔtwe" "nkron" "edu" "dubaako")
-    "anadwo"
-    "awia"
-    (hash 0 "{h}:00" 5 "{h}:05" 10 "{h}:10" 15 "{h}:15" 20 "{h}:20" 25 "{h}:25" 30 "{h}:30" 35 "{h}:35" 40 "{h}:40" 45 "{h}:45" 50 "{h}:50" 55 "{h}:55"))
+    (list "dumienu" "baako" "mmienu" "mmiensa" "anan" "anum" "nsia" "nson" "nwɔtwe" "nkron" "edu" "dubaako")
+    "ɔdasuom"
+    "owigyinae"
+    (hash 0 "nnɔn {h}" 5 "nnɔn {h} ne sima anum" 10 "nnɔn {h} ne sima edu" 15 "nnɔn {h} ne sima dunum" 20 "nnɔn {h} ne sima aduonu" 25 "nnɔn {h} ne sima aduonu num" 30 "nnɔn {h} ne fa" 35 "aka sima aduonu num na abɔ nnɔn {next_h}" 40 "aka sima aduonu na abɔ nnɔn {next_h}" 45 "aka sima dunum na abɔ nnɔn {next_h}" 50 "aka sima edu na abɔ nnɔn {next_h}" 55 "aka sima anum na abɔ nnɔn {next_h}"))
    (time-compactness-override (short-clock-config #f "{h}:{mm} {ampm}" (cons "AM" "PM")))
    (time-compactness-override (short-clock-config #f "{h}:{mm}{ampm}" (cons "a" "p")))
   ))

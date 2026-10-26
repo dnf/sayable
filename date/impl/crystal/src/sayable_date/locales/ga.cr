@@ -23,7 +23,7 @@ module SayableDate
       yesterday: "inné",
       day_after_tomorrow: "arú amárach",
       day_before_yesterday: "arú inné",
-      this_weekday: "an {weekday} seo",
+      this_weekday: "{weekday} seo",
       next_weekday: "{weekday} seo chugainn",
       last_weekday: "{weekday} seo caite",
       short: CompactnessOverride.new(

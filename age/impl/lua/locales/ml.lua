@@ -12,14 +12,14 @@
 local M = {}
 
 M.code = "ml"
-M.plural = function(n) return (n == 0 or n == 1) and "one" or "other" end
+M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
     day = { one = "{n} ദിവസം", other = "{n} ദിവസങ്ങൾ" },
     week = { one = "{n} ആഴ്ച", other = "{n} ആഴ്ചകൾ" },
     month = { one = "{n} മാസം", other = "{n} മാസങ്ങൾ" },
     year = { one = "{n} വയസ്സ്", other = "{n} വയസ്സ്" },
 }
-M.half = "{0} ര"
+M.half = "{n}½"
 M.delimiter = ", "
 M.just_born = "നവജാതശിശു"
 M.stages = {

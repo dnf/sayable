@@ -29,8 +29,8 @@ class TGLocale {
   static dayAfterTomorrow { "пасфардо" }
   static dayBeforeYesterday { "парирӯз" }
   static thisWeekday { "ин {weekday}" }
-  static nextWeekday { "{weekday}-и оянда" }
-  static lastWeekday { "{weekday}-и гузашта" }
+  static nextWeekday { "{weekday}и оянда" }
+  static lastWeekday { "{weekday}и гузашта" }
   static monthsInDate { null }
   static short {
     return {

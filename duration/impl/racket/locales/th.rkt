@@ -32,7 +32,7 @@
    " "
    "เมื่อกี้"
    "{0}ที่แล้ว"
-   "ใน{0}"
-   (duration-compactness-override (hash "type" "simple" "form" "{n} วิ") (hash "type" "simple" "form" "{n} นาที") (hash "type" "simple" "form" "{n} ชม.") (hash "type" "simple" "form" "{n} วัน") (hash "type" "simple" "form" "{n} สัปดาห์") (hash "type" "simple" "form" "{n} เดือน") (hash "type" "simple" "form" "{n} ปี") #f #f "{0}ที่แล้ว" "ใน{0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}วิ") (hash "type" "simple" "form" "{n}นาที") (hash "type" "simple" "form" "{n}ชม.") (hash "type" "simple" "form" "{n}วัน") (hash "type" "simple" "form" "{n}สัปดาห์") (hash "type" "simple" "form" "{n}เดือน") (hash "type" "simple" "form" "{n}ปี") "{n}½" "" "{0}ที่แล้ว" "ใน{0}")
+   "ในอีก {0}"
+   (duration-compactness-override (hash "type" "simple" "form" "{n} วิ") (hash "type" "simple" "form" "{n} นาที") (hash "type" "simple" "form" "{n} ชม.") (hash "type" "simple" "form" "{n} วัน") (hash "type" "simple" "form" "{n} สัปดาห์") (hash "type" "simple" "form" "{n} เดือน") (hash "type" "simple" "form" "{n} ปี") #f #f "{0}ที่แล้ว" "ในอีก {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}วิ") (hash "type" "simple" "form" "{n}นาที") (hash "type" "simple" "form" "{n}ชม.") (hash "type" "simple" "form" "{n}วัน") (hash "type" "simple" "form" "{n}สัปดาห์") (hash "type" "simple" "form" "{n}เดือน") (hash "type" "simple" "form" "{n}ปี") "{n}½" "" "{0}ที่แล้ว" "ในอีก {0}")
   ))

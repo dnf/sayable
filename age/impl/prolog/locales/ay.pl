@@ -13,10 +13,10 @@
 
 sa_plural('ay', _, other).
 
-sa_unit('ay', day, _, 'uru {n}').
-sa_unit('ay', week, _, 'simana {n}').
-sa_unit('ay', month, _, 'phaxsi {n}').
-sa_unit('ay', year, _, 'mara {n}').
+sa_unit('ay', day, _, '{n} uru').
+sa_unit('ay', week, _, '{n} simana').
+sa_unit('ay', month, _, '{n} phaxsi').
+sa_unit('ay', year, _, '{n} mara').
 
 sa_half('ay', '{0} chika').
 sa_delimiter('ay', ', ').
@@ -38,4 +38,5 @@ compact_sa_unit('ay', day, _, '{n}d').
 compact_sa_unit('ay', week, _, '{n}w').
 compact_sa_unit('ay', month, _, '{n}m').
 compact_sa_unit('ay', year, _, '{n}y').
+compact_sa_half('ay', '{n}½').
 compact_sa_delimiter('ay', '').

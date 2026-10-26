@@ -16,7 +16,7 @@ function loc = locale_kl()
   loc.day_format = '{n}.';
   loc.day_format_exceptions = struct();
   loc.date_pattern = '{month} {day}';
-  loc.date_pattern_with_year = '{day} {month} {year}';
+  loc.date_pattern_with_year = '{month} {day} {year}';
   loc.today = 'ullumi';
   loc.tomorrow = 'aqagu';
   loc.yesterday = 'ippassaq';
@@ -30,7 +30,7 @@ function loc = locale_kl()
   loc.short.weekdays = {'sap', 'ata', 'mar', 'pin', 'sis', 'tal', 'arf'};
   loc.short.day_format = '{n}.';
   loc.short.date_pattern = '{month} {day}';
-  loc.short.date_pattern_with_year = '{day} {month} {year}';
+  loc.short.date_pattern_with_year = '{month} {day} {year}';
   loc.compact.date_pattern = '{m}-{d}';
   loc.compact.date_pattern_with_year = '{year}-{m}-{d}';
 endfunction

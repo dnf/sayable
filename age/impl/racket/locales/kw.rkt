@@ -29,10 +29,10 @@
           [(member mod100 '(3 23 43 63 83)) "few"]
           [(and (not (= n 1)) (member mod100 '(1 21 41 61 81))) "many"]
           [else "other"])))
-   (hash "day" (hash "type" "pluralized" "forms" (hash "zero" "{n} dydh" "one" "dydh" "two" "{n} dhydh" "few" "{n} dydh" "many" "{n} dydh" "other" "{n} dydh"))
-         "week" (hash "type" "pluralized" "forms" (hash "zero" "{n} seythun" "one" "seythun" "two" "{n} seythun" "few" "{n} seythun" "many" "{n} seythun" "other" "{n} seythun"))
-         "month" (hash "type" "pluralized" "forms" (hash "zero" "{n} mis" "one" "mis" "two" "{n} vis" "few" "{n} mis" "many" "{n} mis" "other" "{n} mis"))
-         "year" (hash "type" "pluralized" "forms" (hash "zero" "{n} blydhen" "one" "blydhen" "two" "{n} vlydhen" "few" "{n} blydhen" "many" "{n} blydhen" "other" "{n} blydhen")))
+   (hash "day" (hash "type" "pluralized" "forms" (hash "zero" "{n} dydh" "one" "{n} dydh" "two" "{n} dhydh" "few" "{n} dydh" "many" "{n} dydh" "other" "{n} dydh"))
+         "week" (hash "type" "pluralized" "forms" (hash "zero" "{n} seythun" "one" "{n} seythun" "two" "{n} seythun" "few" "{n} seythun" "many" "{n} seythun" "other" "{n} seythun"))
+         "month" (hash "type" "pluralized" "forms" (hash "zero" "{n} mis" "one" "{n} mis" "two" "{n} vis" "few" "{n} mis" "many" "{n} mis" "other" "{n} mis"))
+         "year" (hash "type" "pluralized" "forms" (hash "zero" "{n} blydhen" "one" "{n} blydhen" "two" "{n} vlydhen" "few" "{n} blydhen" "many" "{n} blydhen" "other" "{n} blydhen")))
    "{0} hag hanter"
    ", "
    "Nowyth genys"

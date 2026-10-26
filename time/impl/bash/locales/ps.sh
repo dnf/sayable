@@ -10,21 +10,21 @@
 # Source: locales/ps.json
 
 _sayabletime_locale_ps() {
-    _clock_hours=('دولس' 'یو' 'دوه' 'درې' 'څلور' 'پنځه' 'شپږ' 'اووه' 'اته' 'نهه' 'لس' 'یوولس')
+    _clock_hours=('دولس بجې' 'یوه بجه' 'دوه بجې' 'درې بجې' 'څلور بجې' 'پنځه بجې' 'شپږ بجې' 'اووه بجې' 'اته بجې' 'نهه بجې' 'لس بجې' 'یوولس بجې')
     _clock_midnight='نیمه شپه'
     _clock_noon='غرمه'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} او پنځه دقیقې'
+    _clock_pattern_10='{h} او لس دقیقې'
+    _clock_pattern_15='{h} او پنځلس دقیقې'
+    _clock_pattern_20='{h} او شل دقیقې'
+    _clock_pattern_25='{h} او پنځه ویشت دقیقې'
+    _clock_pattern_30='{h} او دېرش دقیقې'
+    _clock_pattern_35='{h} او پنځه دېرش دقیقې'
+    _clock_pattern_40='{h} او څلوېښت دقیقې'
+    _clock_pattern_45='{h} او پنځه څلوېښت دقیقې'
+    _clock_pattern_50='{h} او پنځوس دقیقې'
+    _clock_pattern_55='{h} او پنځه پنځوس دقیقې'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

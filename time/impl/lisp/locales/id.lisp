@@ -20,7 +20,7 @@
     :hours (list "dua belas" "satu" "dua" "tiga" "empat" "lima" "enam" "tujuh" "delapan" "sembilan" "sepuluh" "sebelas")
     :midnight "tengah malam"
     :noon "tengah hari"
-    :patterns (list (cons 0 "pukul {h}") (cons 5 "lima lewat {h}") (cons 10 "sepuluh lewat {h}") (cons 15 "seperempat lewat {h}") (cons 20 "dua puluh lewat {h}") (cons 25 "dua puluh lima lewat {h}") (cons 30 "setengah lewat {h}") (cons 35 "dua puluh lima menjelang {next_h}") (cons 40 "dua puluh menjelang {next_h}") (cons 45 "seperempat menjelang {next_h}") (cons 50 "sepuluh menjelang {next_h}") (cons 55 "lima menjelang {next_h}")))
+    :patterns (list (cons 0 "pukul {h}") (cons 5 "pukul {h} lewat lima") (cons 10 "pukul {h} lewat sepuluh") (cons 15 "pukul {h} lewat seperempat") (cons 20 "pukul {h} lewat dua puluh") (cons 25 "pukul {h} lewat dua puluh lima") (cons 30 "pukul setengah {next_h}") (cons 35 "pukul {next_h} kurang dua puluh lima") (cons 40 "pukul {next_h} kurang dua puluh") (cons 45 "pukul {next_h} kurang seperempat") (cons 50 "pukul {next_h} kurang sepuluh") (cons 55 "pukul {next_h} kurang lima")))
    :short-clock (make-short-clock-config :use24h t :format "{h}.{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}.{mm}")
 ))

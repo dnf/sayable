@@ -16,7 +16,7 @@ package SayableDate::Locales::DYU;
 
 sub locale {{
   code => 'dyu',
-  months => ['Zanwuyekalo', 'Feburuyekalo', 'Marisikalo', 'Awirilikalo', 'Mɛkalo', 'Zuwɛnkalo', 'Zuluyekalo', 'Utikalo', 'Sɛtanburukalo', 'Ɔkutɔburukalo', 'Nowanburdukalo', 'Desanburukalo'],
+  months => ['Zanwuyekalo', 'Feburuyekalo', 'Marisikalo', 'Awirilikalo', 'Mɛkalo', 'Zuwɛnkalo', 'Zuluyekalo', 'Utikalo', 'Sɛtanburukalo', 'Ɔkutɔburukalo', 'Nowanburukalo', 'Desanburukalo'],
   weekdays => ['Kari', 'Ntɛnɛn', 'Tarata', 'Araba', 'Alamisa', 'Juma', 'Sibiri'],
   day_format => '{n}',
   day_format_exceptions => {},

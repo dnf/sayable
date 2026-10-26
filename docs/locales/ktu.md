@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ktu.json](../../locales/ktu.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Western (French-style) time. 'ngunga {h} na miniti <numeral>' additive, 'na ndambu' for half, tens makumi zole/tatu/ya/tanu. I used 'ngunga' (Kituba/Kikongo hour, bell) while the duration section uses 'ngonga'. CHECK: ngunga vs ngonga; whether 'ngunga tatu' or 'ngunga ya tatu' is the clock form; 'zomi' vs 'kumi' and 'ya' vs 'iya' for 10 and 4 (kept the file's spellings).
+
 ## Age
 
 ### Age formatting
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | mbazi ya mbazi  | 17/3    |
 | Day before yesterday | zono ya zono    | 13/3    |
 | This Thursday (+5)   | Kinya yayi      | 20/3    |
-| Last Monday (-4)     | Kizole ya vioka | 11/3    |
-| Next Wednesday (+12) | Kinya ya kwiza  | 27/3    |
-| Same month (+20)     | 4 Avrili        | 4/4     |
+| Last Tuesday (-4)    | Kizole ya vioka | 11/3    |
+| Next Thursday (+12)  | Kinya ya kwiza  | 27/3    |
+| Same year (+20)      | 4 Avrili        | 4/4     |
 | Different year       | 10 Yanvye 2026  | 10/1/26 |
 
 ## Duration
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal          | Short    | Compact |
-| --------------- | --------------- | -------- | ------- |
-| Midnight        | midi ya butu    | 12:00 AM | 12:00a  |
-| 1:00 AM         | mosi:00         | 1:00 AM  | 1:00a   |
-| 5 past 9        | vwa:05          | 9:05 AM  | 9:05a   |
-| Quarter past 10 | zomi:15         | 10:15 AM | 10:15a  |
-| Half past 11    | zomi na mosi:30 | 11:30 AM | 11:30a  |
-| Noon            | midi            | 12:00 PM | 12:00p  |
-| Quarter to 3    | zole:45         | 2:45 PM  | 2:45p   |
-| 5 to 6          | tanu:55         | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | nana:00         | 8:00 PM  | 8:00p   |
-| 10:30 PM        | zomi:30         | 10:30 PM | 10:30p  |
-| 11:58 PM        | midi ya butu    | 11:58 PM | 11:58p  |
+| Time            | Normal                                    | Short    | Compact |
+| --------------- | ----------------------------------------- | -------- | ------- |
+| Midnight        | midi ya butu                              | 12:00 AM | 12:00a  |
+| 1:00 AM         | ngunga mosi                               | 1:00 AM  | 1:00a   |
+| 5 past 9        | ngunga vwa na miniti tanu                 | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ngunga zomi na miniti zomi na tanu        | 10:15 AM | 10:15a  |
+| Half past 11    | ngunga zomi na mosi na ndambu             | 11:30 AM | 11:30a  |
+| Noon            | midi                                      | 12:00 PM | 12:00p  |
+| Quarter to 3    | ngunga zole na miniti makumi ya na tanu   | 2:45 PM  | 2:45p   |
+| 5 to 6          | ngunga tanu na miniti makumi tanu na tanu | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ngunga nana                               | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ngunga zomi na ndambu                     | 10:30 PM | 10:30p  |
+| 11:58 PM        | midi ya butu                              | 11:58 PM | 11:58p  |

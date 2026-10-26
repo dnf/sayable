@@ -35,5 +35,5 @@ const SaLocale sa_locale_tet = {
         { "Ema boot", "" }
     },
     true, { true, { "loron {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sem. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "fulan {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "tinan {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

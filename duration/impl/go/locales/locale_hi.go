@@ -25,7 +25,7 @@ var HI = sd.DurationLocale{
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.SimpleUnit("{n} सेकंड"),
 		Minute: sd.SimpleUnit("{n} मिनट"),
-		Hour:   sd.SimpleUnit("{n} घंटा"),
+		Hour:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} घंटा", sd.Other: "{n} घंटे"}),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} दिन", sd.Other: "{n} दिन"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} सप्ताह", sd.Other: "{n} सप्ताह"}),
 		Month:  sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} महीना", sd.Other: "{n} महीने"}),

@@ -14,7 +14,7 @@
    :plural (fn [n] (if (or (= n 0) (= n 1)) :one :other))
    :units {:second "{n} সেকেন্ড"
           :minute "{n} মিনিট"
-          :hour "{n} ঘন্টা"
+          :hour "{n} ঘণ্টা"
           :day {:one "{n} দিন" :other "{n} দিন"}
           :week {:one "{n} সপ্তাহ" :other "{n} সপ্তাহ"}
           :month {:one "{n} মাস" :other "{n} মাস"}

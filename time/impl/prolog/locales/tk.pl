@@ -15,18 +15,18 @@ st_hours('tk', ['on iki', 'bir', 'iki', 'üç', 'dört', 'bäş', 'alty', 'ýedi
 st_midnight('tk', 'ýary gije').
 st_noon('tk', 'günorta').
 
-st_pattern('tk', 0, '{h}:00').
-st_pattern('tk', 5, '{h}:05').
-st_pattern('tk', 10, '{h}:10').
-st_pattern('tk', 15, '{h}:15').
-st_pattern('tk', 20, '{h}:20').
-st_pattern('tk', 25, '{h}:25').
-st_pattern('tk', 30, '{h}:30').
-st_pattern('tk', 35, '{h}:35').
-st_pattern('tk', 40, '{h}:40').
-st_pattern('tk', 45, '{h}:45').
-st_pattern('tk', 50, '{h}:50').
-st_pattern('tk', 55, '{h}:55').
+st_pattern('tk', 0, 'sagat {h}').
+st_pattern('tk', 5, 'sagat {h} bäş minut').
+st_pattern('tk', 10, 'sagat {h} on minut').
+st_pattern('tk', 15, 'sagat {h} on bäş minut').
+st_pattern('tk', 20, 'sagat {h} ýigrimi minut').
+st_pattern('tk', 25, 'sagat {h} ýigrimi bäş minut').
+st_pattern('tk', 30, 'sagat {h} ýarym').
+st_pattern('tk', 35, 'sagat {h} otuz bäş minut').
+st_pattern('tk', 40, 'sagat {h} kyrk minut').
+st_pattern('tk', 45, 'sagat {h} kyrk bäş minut').
+st_pattern('tk', 50, 'sagat {h} elli minut').
+st_pattern('tk', 55, 'sagat {h} elli bäş minut').
 
 short_st_use24h('tk', true).
 short_st_format('tk', '{h}:{mm}').

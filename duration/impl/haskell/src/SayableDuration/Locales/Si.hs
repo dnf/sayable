@@ -18,9 +18,9 @@ locale = DurationLocale
     { localeCode = "si"
     , localePlural = \n -> if n == 0 || n == 1 then One else Other
     , localeUnits = Units
-        { unitSecond = Simple "{n} තත්පරය"
-        , unitMinute = Simple "{n} මිනිත්තුව"
-        , unitHour = Simple "{n} පැය"
+        { unitSecond = Simple "තත්පර {n}"
+        , unitMinute = Simple "මිනිත්තු {n}"
+        , unitHour = Simple "පැය {n}"
         , unitDay = Pluralized
           [ (One, "දින {n}")
           , (Other, "දින {n}")
@@ -38,7 +38,7 @@ locale = DurationLocale
           , (Other, "වසර {n}")
           ]
         }
-    , localeHalf = "{0}යි භාගයයි"
+    , localeHalf = "{n}½"
     , localeDelimiter = ", "
     , localeJustNow = "දැන්"
     , localeAgo = "{0}ට පෙර"

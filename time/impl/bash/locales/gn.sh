@@ -11,7 +11,7 @@
 
 _sayabletime_locale_gn() {
     _clock_hours=('pa mokõi' 'peteĩ' 'mokõi' 'mbohapy' 'irundy' 'po' 'poteĩ' 'pokõi' 'poapy' 'porundy' 'pa' 'pa peteĩ')
-    _clock_midnight='pyhareve'
+    _clock_midnight='pyharepyte'
     _clock_noon='asaje'
     _clock_pattern_0='{h}'
     _clock_pattern_5='{h} ha po'
@@ -20,11 +20,11 @@ _sayabletime_locale_gn() {
     _clock_pattern_20='{h} ha mokõi pa'
     _clock_pattern_25='{h} ha mokõi pa po'
     _clock_pattern_30='{h} ha mbohapy pa'
-    _clock_pattern_35='{next_h} mba'\''e mokõi pa po'
-    _clock_pattern_40='{next_h} mba'\''e mokõi pa'
-    _clock_pattern_45='{next_h} mba'\''e pa po'
-    _clock_pattern_50='{next_h} mba'\''e pa'
-    _clock_pattern_55='{next_h} mba'\''e po'
+    _clock_pattern_35='{h} ha mbohapy pa po'
+    _clock_pattern_40='{h} ha irundy pa'
+    _clock_pattern_45='{h} ha irundy pa po'
+    _clock_pattern_50='{h} ha po pa'
+    _clock_pattern_55='{h} ha po pa po'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

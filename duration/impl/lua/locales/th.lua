@@ -26,7 +26,7 @@ M.half = "{0}ครึ่ง"
 M.delimiter = " "
 M.just_now = "เมื่อกี้"
 M.ago = "{0}ที่แล้ว"
-M.in_future = "ใน{0}"
+M.in_future = "ในอีก {0}"
 M.short = {
     units = {
         second = "{n} วิ",
@@ -38,7 +38,7 @@ M.short = {
         year = "{n} ปี",
     },
     ago = "{0}ที่แล้ว",
-    in_future = "ใน{0}",
+    in_future = "ในอีก {0}",
 }
 M.compact = {
     units = {
@@ -53,7 +53,7 @@ M.compact = {
     half = "{n}½",
     delimiter = "",
     ago = "{0}ที่แล้ว",
-    in_future = "ใน{0}",
+    in_future = "ในอีก {0}",
 }
 
 return M

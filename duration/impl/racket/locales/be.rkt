@@ -27,13 +27,13 @@
           [(and (= mod10 1) (not (= mod100 11))) "one"]
           [(and (>= mod10 2) (<= mod10 4) (or (< mod100 12) (> mod100 14))) "few"]
           [else "many"])))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} секунда" "few" "{n} секунды" "many" "{n} секунд" "other" "{n} секунд"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} хвіліна" "few" "{n} хвіліны" "many" "{n} хвілін" "other" "{n} хвілін"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} гадзіна" "few" "{n} гадзіны" "many" "{n} гадзін" "other" "{n} гадзін"))
-         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} дзень" "few" "{n} дні" "many" "{n} дзён" "other" "{n} дзён"))
-         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} тыдзень" "few" "{n} тыдні" "many" "{n} тыдняў" "other" "{n} тыдняў"))
-         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} месяц" "few" "{n} месяцы" "many" "{n} месяцаў" "other" "{n} месяцаў"))
-         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} год" "few" "{n} гады" "many" "{n} гадоў" "other" "{n} гадоў")))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} секунда" "few" "{n} секунды" "many" "{n} секунд" "other" "{n} секунды"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} хвіліна" "few" "{n} хвіліны" "many" "{n} хвілін" "other" "{n} хвіліны"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} гадзіна" "few" "{n} гадзіны" "many" "{n} гадзін" "other" "{n} гадзіны"))
+         "day" (hash "type" "pluralized" "forms" (hash "one" "{n} дзень" "few" "{n} дні" "many" "{n} дзён" "other" "{n} дня"))
+         "week" (hash "type" "pluralized" "forms" (hash "one" "{n} тыдзень" "few" "{n} тыдні" "many" "{n} тыдняў" "other" "{n} тыдня"))
+         "month" (hash "type" "pluralized" "forms" (hash "one" "{n} месяц" "few" "{n} месяцы" "many" "{n} месяцаў" "other" "{n} месяца"))
+         "year" (hash "type" "pluralized" "forms" (hash "one" "{n} год" "few" "{n} гады" "many" "{n} гадоў" "other" "{n} года")))
    "{n} з паловай"
    ", "
    "толькі што"

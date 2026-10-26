@@ -11,24 +11,24 @@
 
 proc locale_date_ee {} {
     set code {ee}
-    set months [list {Dzove} {Dzodze} {Tedoxe} {Afɔfĩe} {Damɛ} {Masa} {Siamlɔm} {Dasiamime} {Anyɔnyɔ} {Kele} {Adeɛmekpɔxe} {Dzome}]
-    set weekdays [list {Kɔsiɖa} {Dzoɖa} {Braɖa} {Kuɖa} {Yawoɖa} {Fiɖa} {Memleɖa}]
+    set months [list {Dzove} {Dzodze} {Tedoxe} {Afɔfĩe} {Dama} {Masa} {Siamlɔm} {Deasiamime} {Anyɔnyɔ} {Kele} {Adeɛmekpɔxe} {Dzome}]
+    set weekdays [list {Kɔsiɖa} {Dzoɖa} {Blaɖa} {Kuɖa} {Yawoɖa} {Fiɖa} {Memleɖa}]
     set day_format "{n}"
     set day_format_exceptions [dict create]
     set date_pattern "{day} {month}"
     set date_pattern_with_year "{day} {month} {year}"
     set today {egbe}
-    set tomorrow {etsɔ}
-    set yesterday {etso}
-    set day_after_tomorrow {etsɔ megbe}
-    set day_before_yesterday {etso nyitsɔ}
+    set tomorrow {etsɔ si gbɔna}
+    set yesterday {etsɔ si va yi}
+    set day_after_tomorrow {nyitsɔ si gbɔna}
+    set day_before_yesterday {nyitsɔ si va yi}
     set this_weekday "{weekday} sia"
     set next_weekday "{weekday} si gbɔna"
     set last_weekday "{weekday} si va yi"
     set months_in_date ""
     set short [dict create \
-        months [list {Dzv} {Dzd} {Ted} {Afɔ} {Dam} {Mas} {Sia} {Das} {Any} {Kel} {Ade} {Dzm}] \
-        weekdays [list {Kɔs} {Dzo} {Bra} {Kuɖ} {Yaw} {Fiɖ} {Mem}] \
+        months [list {Dzv} {Dzd} {Ted} {Afɔ} {Dam} {Mas} {Sia} {Dea} {Any} {Kel} {Ade} {Dzm}] \
+        weekdays [list {Kɔs} {Dzo} {Bla} {Kuɖ} {Yaw} {Fiɖ} {Mem}] \
         day_format "{n}" \
         date_pattern "{day} {month}" \
         date_pattern_with_year "{day} {month} {year}" \

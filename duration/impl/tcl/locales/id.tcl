@@ -24,7 +24,7 @@ proc locale_duration_id {} {
         month "{n} bulan" \
         year "{n} tahun" \
     ]
-    set half "{0} setengah"
+    set half "{n} setengah"
     set delimiter {, }
     set just_now {baru saja}
     set ago "{0} yang lalu"

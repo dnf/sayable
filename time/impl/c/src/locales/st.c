@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_st = {
     "st",
     {
-        { "leshome le metso e mmedi", "e nngwe", "tse pedi", "tse tharo", "tse nne", "tse hlano", "tse tshelela", "tse supileng", "tse robedi", "tse robong", "leshome", "leshome le motso o le mong" },
+        { "leshome le metso e mmedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshelela", "bosupa", "borobedi", "borobong", "leshome", "leshome le motso o le mong" },
         "hara bosiu",
         "motsheare",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "hora ya {h}", "hora ya {h} le metsotso e mehlano", "hora ya {h} le metsotso e leshome", "hora ya {h} le kotara", "hora ya {h} le metsotso e mashome a mabedi", "hora ya {h} le metsotso e mashome a mabedi a metso e mehlano", "hora ya {h} le halofo", "hora ya {h} le metsotso e mashome a mararo a metso e mehlano", "hora ya {h} le metsotso e mashome a mane", "hora ya {h} le metsotso e mashome a mane a metso e mehlano", "hora ya {h} le metsotso e mashome a mahlano", "hora ya {h} le metsotso e mashome a mahlano a metso e mehlano" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -12,21 +12,21 @@
 % Lingala locale.
 
 st_hours('ln', ['zómi na míbalé', 'mɔ̌kɔ́', 'míbalé', 'mísáto', 'mínéi', 'mítáno', 'motóba', 'nsambo', 'mwambe', 'libwá', 'zómi', 'zómi na mɔ̌kɔ́']).
-st_midnight('ln', 'mpɔ́kwa').
-st_noon('ln', 'ntɔ́ngɔ́').
+st_midnight('ln', 'midí ya butú').
+st_noon('ln', 'midí').
 
-st_pattern('ln', 0, '{h}:00').
-st_pattern('ln', 5, '{h}:05').
-st_pattern('ln', 10, '{h}:10').
-st_pattern('ln', 15, '{h}:15').
-st_pattern('ln', 20, '{h}:20').
-st_pattern('ln', 25, '{h}:25').
-st_pattern('ln', 30, '{h}:30').
-st_pattern('ln', 35, '{h}:35').
-st_pattern('ln', 40, '{h}:40').
-st_pattern('ln', 45, '{h}:45').
-st_pattern('ln', 50, '{h}:50').
-st_pattern('ln', 55, '{h}:55').
+st_pattern('ln', 0, 'ngonga ya {h}').
+st_pattern('ln', 5, 'ngonga ya {h} na miniti mítáno').
+st_pattern('ln', 10, 'ngonga ya {h} na miniti zómi').
+st_pattern('ln', 15, 'ngonga ya {h} na miniti zómi na mítáno').
+st_pattern('ln', 20, 'ngonga ya {h} na miniti ntúkú míbalé').
+st_pattern('ln', 25, 'ngonga ya {h} na miniti ntúkú míbalé na mítáno').
+st_pattern('ln', 30, 'ngonga ya {h} na ndámbo').
+st_pattern('ln', 35, 'ngonga ya {h} na miniti ntúkú mísáto na mítáno').
+st_pattern('ln', 40, 'ngonga ya {h} na miniti ntúkú mínéi').
+st_pattern('ln', 45, 'ngonga ya {h} na miniti ntúkú mínéi na mítáno').
+st_pattern('ln', 50, 'ngonga ya {h} na miniti ntúkú mítáno').
+st_pattern('ln', 55, 'ngonga ya {h} na miniti ntúkú mítáno na mítáno').
 
 short_st_use24h('ln', false).
 short_st_format('ln', '{h}:{mm} {ampm}').

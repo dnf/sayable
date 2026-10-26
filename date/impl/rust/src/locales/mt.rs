@@ -18,7 +18,7 @@ pub fn locale() -> DateLocale {
     DateLocale {
         code: "mt".to_string(),
         months: ["Jannar".to_string(), "Frar".to_string(), "Marzu".to_string(), "April".to_string(), "Mejju".to_string(), "Ġunju".to_string(), "Lulju".to_string(), "Awwissu".to_string(), "Settembru".to_string(), "Ottubru".to_string(), "Novembru".to_string(), "Diċembru".to_string()],
-        weekdays: ["Il-Ħadd".to_string(), "It-Tnejn".to_string(), "It-Tlieta".to_string(), "L-Erbgħa".to_string(), "Il-Ħamis".to_string(), "Il-Ġimgħa".to_string(), "Is-Sibt".to_string()],
+        weekdays: ["il-Ħadd".to_string(), "it-Tnejn".to_string(), "it-Tlieta".to_string(), "l-Erbgħa".to_string(), "il-Ħamis".to_string(), "il-Ġimgħa".to_string(), "is-Sibt".to_string()],
         day_format: "{n}".to_string(),
         day_format_exceptions: HashMap::new(),
         date_pattern: "{day} {month}".to_string(),

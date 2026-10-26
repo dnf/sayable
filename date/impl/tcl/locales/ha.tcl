@@ -24,7 +24,7 @@ proc locale_date_ha {} {
     set day_before_yesterday {shekaranjiya}
     set this_weekday "wannan {weekday}"
     set next_weekday "{weekday} mai zuwa"
-    set last_weekday "{weekday} da ya wuce"
+    set last_weekday "{weekday} da ta wuce"
     set months_in_date ""
     set short [dict create \
         months [list {Jan} {Fab} {Mar} {Afr} {May} {Yun} {Yul} {Agu} {Sat} {Okt} {Nuw} {Dis}] \

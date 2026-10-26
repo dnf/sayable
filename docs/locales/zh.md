@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | 后天         | 3/17    |
 | Day before yesterday | 前天         | 3/13    |
 | This Thursday (+5)   | 这个星期四      | 3/20    |
-| Last Monday (-4)     | 上星期二       | 3/11    |
-| Next Wednesday (+12) | 下星期四       | 3/27    |
-| Same month (+20)     | 4月4日       | 4/4     |
+| Last Tuesday (-4)    | 上星期二       | 3/11    |
+| Next Thursday (+12)  | 下星期四       | 3/27    |
+| Same year (+20)      | 4月4日       | 4/4     |
 | Different year       | 2026年1月10日 | 26/1/10 |
 
 ## Duration
@@ -102,8 +102,8 @@ Relative to Saturday, March 15, 2025.
 | 2 weeks, 3 days       | 2周3天   | 2周3天   | 2周3天    |
 | 1 month               | 1个月    | 1个月    | 1个月     |
 | 6 months              | 6个月    | 6个月    | 6个月     |
-| 1 year                | 1岁     | 1年     | 1年      |
-| 2 years, 3 months     | 2岁3个月  | 2年3个月  | 2年3个月   |
+| 1 year                | 1年     | 1年     | 1年      |
+| 2 years, 3 months     | 2年3个月  | 2年3个月  | 2年3个月   |
 
 ### Relative time
 
@@ -122,11 +122,11 @@ Relative to Saturday, March 15, 2025.
 | --------------- | ------ | ----- | ------- |
 | Midnight        | 午夜     | 0:00  | 0:00    |
 | 1:00 AM         | 一点整    | 1:00  | 1:00    |
-| 5 past 9        | 九点五分   | 9:05  | 9:05    |
+| 5 past 9        | 九点零五分  | 9:05  | 9:05    |
 | Quarter past 10 | 十点十五分  | 10:15 | 10:15   |
 | Half past 11    | 十一点半   | 11:30 | 11:30   |
 | Noon            | 正午     | 12:00 | 12:00   |
-| Quarter to 3    | 二点四十五分 | 14:45 | 14:45   |
+| Quarter to 3    | 两点四十五分 | 14:45 | 14:45   |
 | 5 to 6          | 五点五十五分 | 17:55 | 17:55   |
 | 8 o'clock PM    | 八点整    | 20:00 | 20:00   |
 | 10:30 PM        | 十点半    | 22:30 | 22:30   |

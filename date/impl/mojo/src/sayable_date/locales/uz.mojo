@@ -42,15 +42,15 @@ fn build_uz() -> DateLocale:
     var weekday4 = "payshanba"
     var weekday5 = "juma"
     var weekday6 = "shanba"
-    var day_format = "{n}"
+    var day_format = "{n}-"
     var num_exceptions = 0
-    var date_pattern = "{day} {month}"
-    var date_pattern_with_year = "{day} {month} {year}"
+    var date_pattern = "{day}{month}"
+    var date_pattern_with_year = "{day}{month}, {year}"
     var today = "bugun"
     var tomorrow = "ertaga"
     var yesterday = "kecha"
     var day_after_tomorrow = "indinga"
-    var day_before_yesterday = "kechagina"
+    var day_before_yesterday = "o'tgan kuni"
     var this_weekday = "bu {weekday}"
     var next_weekday = "keyingi {weekday}"
     var last_weekday = "o'tgan {weekday}"
@@ -78,11 +78,11 @@ fn build_uz() -> DateLocale:
     short_ovr.weekday5 = "jum"
     short_ovr.weekday6 = "shan"
     short_ovr.has_weekdays = True
-    short_ovr.day_format = "{n}"
+    short_ovr.day_format = "{n}-"
     short_ovr.has_day_format = True
-    short_ovr.date_pattern = "{day} {month}"
+    short_ovr.date_pattern = "{day}{month}"
     short_ovr.has_date_pattern = True
-    short_ovr.date_pattern_with_year = "{day} {month} {year}"
+    short_ovr.date_pattern_with_year = "{day}{month}, {year}"
     short_ovr.has_date_pattern_with_year = True
 
     var compact_ovr = build_compactness_override()

@@ -20,7 +20,7 @@
 (define dyu
   (date-locale
    "dyu"
-   (list "Zanwuyekalo" "Feburuyekalo" "Marisikalo" "Awirilikalo" "Mɛkalo" "Zuwɛnkalo" "Zuluyekalo" "Utikalo" "Sɛtanburukalo" "Ɔkutɔburukalo" "Nowanburdukalo" "Desanburukalo")
+   (list "Zanwuyekalo" "Feburuyekalo" "Marisikalo" "Awirilikalo" "Mɛkalo" "Zuwɛnkalo" "Zuluyekalo" "Utikalo" "Sɛtanburukalo" "Ɔkutɔburukalo" "Nowanburukalo" "Desanburukalo")
    (list "Kari" "Ntɛnɛn" "Tarata" "Araba" "Alamisa" "Juma" "Sibiri")
    "{n}"
    (hash)

@@ -10,21 +10,21 @@
 # Source: locales/mt.json
 
 _sayabletime_locale_mt() {
-    _clock_hours=('tnax' 'waħda' 'tnejn' 'tlieta' 'erbgħa' 'ħamsa' 'sitta' 'sebgħa' 'tmienja' 'disgħa' 'għaxra' 'ħdax')
-    _clock_midnight='nofsinhar'
+    _clock_hours=('it-tnax' 'is-siegħa' 'is-sagħtejn' 'it-tlieta' 'l-erbgħa' 'il-ħamsa' 'is-sitta' 'is-sebgħa' 'it-tmienja' 'id-disgħa' 'l-għaxra' 'il-ħdax')
+    _clock_midnight='nofsillejl'
     _clock_noon='nofsinhar'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h}'
+    _clock_pattern_5='{h} u ħamsa'
+    _clock_pattern_10='{h} u għaxra'
+    _clock_pattern_15='{h} u kwart'
+    _clock_pattern_20='{h} u għoxrin'
+    _clock_pattern_25='{h} u ħamsa u għoxrin'
+    _clock_pattern_30='{h} u nofs'
+    _clock_pattern_35='{next_h} neqsin ħamsa u għoxrin'
+    _clock_pattern_40='{next_h} neqsin għoxrin'
+    _clock_pattern_45='{next_h} neqsin kwart'
+    _clock_pattern_50='{next_h} neqsin għaxra'
+    _clock_pattern_55='{next_h} neqsin ħamsa'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

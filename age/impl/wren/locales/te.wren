@@ -20,7 +20,7 @@ class TELocale {
       "year": {"one": "{n} సంవత్సరం", "other": "{n} సంవత్సరాలు"},
     }
   }
-  static half { "{0}న్నర" }
+  static half { "{n}½" }
   static delimiter { ", " }
   static justBorn { "నవజాత శిశువు" }
   static stages {

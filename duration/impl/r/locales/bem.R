@@ -15,7 +15,7 @@ locale_bem <- list(
   units = list(
     second = list(one = "isekondi {n}", other = "amasekondi {n}"),
     minute = list(one = "iminiti {n}", other = "amaminiti {n}"),
-    hour = list(one = "insa {n}", other = "amanso {n}"),
+    hour = list(one = "insa {n}", other = "insa {n}"),
     day = list(one = "ubushiku {n}", other = "inshiku {n}"),
     week = list(one = "umulungu {n}", other = "imilungu {n}"),
     month = list(one = "umweshi {n}", other = "imyeshi {n}"),

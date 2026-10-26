@@ -23,13 +23,13 @@ locale =
     , plural = \n -> Other
     , units =
         Dict.fromList
-            [ ( "second", Simple "{n} sekọnd" )
-            , ( "minute", Simple "{n} nkeji" )
-            , ( "hour", Simple "{n} awa" )
-            , ( "day", Simple "{n} ụbọchị" )
-            , ( "week", Simple "{n} izu" )
-            , ( "month", Simple "{n} ọnwa" )
-            , ( "year", Simple "{n} afọ" )
+            [ ( "second", Simple "sekọnd {n}" )
+            , ( "minute", Simple "nkeji {n}" )
+            , ( "hour", Simple "awa {n}" )
+            , ( "day", Simple "ụbọchị {n}" )
+            , ( "week", Simple "izu {n}" )
+            , ( "month", Simple "ọnwa {n}" )
+            , ( "year", Simple "afọ {n}" )
             ]
     , half = "{0} na ọkara"
     , delimiter = ", "
@@ -41,13 +41,13 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n} sek." )
-                        , ( "minute", Simple "{n} nkeji" )
-                        , ( "hour", Simple "{n} awa" )
-                        , ( "day", Simple "{n} ụbọchị" )
-                        , ( "week", Simple "{n} izu" )
-                        , ( "month", Simple "{n} ọnwa" )
-                        , ( "year", Simple "{n} afọ" )
+                        [ ( "second", Simple "sek. {n}" )
+                        , ( "minute", Simple "nkeji {n}" )
+                        , ( "hour", Simple "awa {n}" )
+                        , ( "day", Simple "ụbọchị {n}" )
+                        , ( "week", Simple "izu {n}" )
+                        , ( "month", Simple "ọnwa {n}" )
+                        , ( "year", Simple "afọ {n}" )
                         ]
                     )
             , ovrHalf = Nothing

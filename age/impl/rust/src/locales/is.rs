@@ -39,7 +39,7 @@ pub fn locale() -> AgeLocale {
                 (PluralCategory::Other, "{n} ár"),
             ]),
         },
-        half: "{0} og hálft".to_string(),
+        half: "{n} og hálft".to_string(),
         delimiter: ", ".to_string(),
         just_born: "Nýfætt".to_string(),
         stages: Stages {

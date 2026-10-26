@@ -10,21 +10,21 @@
 # Source: locales/ay.json
 
 _sayabletime_locale_ay() {
-    _clock_hours=('tunka payani' 'maya' 'paya' 'kimsa' 'pusi' 'phisqa' 'suxta' 'paqallqu' 'kimsaqallqu' 'llantunka' 'tunka' 'tunka mayani')
+    _clock_hours=('tunka payani' 'maya' 'paya' 'kimsa' 'pusi' 'phisqa' 'suxta' 'paqallqu' 'kimsaqallqu' 'llätunka' 'tunka' 'tunka mayani')
     _clock_midnight='aruma chika'
     _clock_noon='chika uru'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h} ura'
+    _clock_pattern_5='{h} ura phisqa minutuni'
+    _clock_pattern_10='{h} ura tunka minutuni'
+    _clock_pattern_15='{h} ura tunka phisqani minutuni'
+    _clock_pattern_20='{h} ura pä tunka minutuni'
+    _clock_pattern_25='{h} ura pä tunka phisqani minutuni'
+    _clock_pattern_30='{h} ura chikani'
+    _clock_pattern_35='{h} ura kimsa tunka phisqani minutuni'
+    _clock_pattern_40='{h} ura pusi tunka minutuni'
+    _clock_pattern_45='{h} ura pusi tunka phisqani minutuni'
+    _clock_pattern_50='{h} ura phisqa tunka minutuni'
+    _clock_pattern_55='{h} ura phisqa tunka phisqani minutuni'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

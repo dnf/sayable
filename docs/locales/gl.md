@@ -43,7 +43,7 @@ Plural rule: `one_other` (categories: one, other)
 | -------- | --------------------------- |
 | Newborn  | Recén nacido / Recén nacida |
 | Infant   | Bebé                        |
-| Toddler  | Neno                        |
+| Toddler  | Neno pequeno / Nena pequena |
 | Child    | Neno / Nena                 |
 | Teenager | Adolescente                 |
 | Adult    | Adulto / Adulta             |
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | pasadomañá            | 17/3    |
 | Day before yesterday | antonte               | 13/3    |
 | This Thursday (+5)   | este xoves            | 20/3    |
-| Last Monday (-4)     | o pasado martes       | 11/3    |
-| Next Wednesday (+12) | o próximo xoves       | 27/3    |
-| Same month (+20)     | 4 de abril            | 4/4     |
+| Last Tuesday (-4)    | o pasado martes       | 11/3    |
+| Next Thursday (+12)  | o próximo xoves       | 27/3    |
+| Same year (+20)      | 4 de abril            | 4/4     |
 | Different year       | 10 de xaneiro de 2026 | 10/1/26 |
 
 ## Duration

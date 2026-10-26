@@ -30,5 +30,5 @@ locale() ->
         ago = "{0} qakab'",
         in_future = "chi {0}",
         short = {just, #duration_compactness_override{second = {just, {simple, "{n} seg."}}, minute = {just, {simple, "{n} min."}}, hour = {just, {simple, "{n} hora"}}, day = {just, {simple, "{n} q'e"}}, week = {just, {simple, "{n} sem."}}, month = {just, {simple, "{n} po"}}, year = {just, {simple, "{n} chih."}}, half = nothing, delimiter = nothing, ago = {just, "{0} qakab'"}, in_future = {just, "chi {0}"}}},
-        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = nothing, delimiter = {just, ""}, ago = {just, "{0} qakab'"}, in_future = {just, "chi {0}"}}}
+        compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}mo"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} qakab'"}, in_future = {just, "chi {0}"}}}
     }.

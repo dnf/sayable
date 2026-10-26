@@ -22,9 +22,9 @@
    :month {:type :simple :form "{n} ເດືອນ"}
    :year {:type :simple :form "{n} ປີ"}
    :half "{0}ເຄິ່ງ"
-   :delimiter ""
+   :delimiter " "
    :just-now "ຫາກໍ"
    :ago "{0} ກ່ອນ"
-   :in-future "ໃນ {0}"
-   :short {:second {:type :simple :form "{n} ວິ."} :minute {:type :simple :form "{n} ນທ."} :hour {:type :simple :form "{n} ຊມ."} :day {:type :simple :form "{n} ມ."} :week {:type :simple :form "{n} ອທ."} :month {:type :simple :form "{n} ດ."} :year {:type :simple :form "{n} ປ."} :half nil :delimiter nil :ago "{0} ກ່ອນ" :in-future "ໃນ {0}"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ກ່ອນ" :in-future "ໃນ {0}"}})
+   :in-future "ໃນອີກ {0}"
+   :short {:second {:type :simple :form "{n} ວິ."} :minute {:type :simple :form "{n} ນທ."} :hour {:type :simple :form "{n} ຊມ."} :day {:type :simple :form "{n} ມ."} :week {:type :simple :form "{n} ອທ."} :month {:type :simple :form "{n} ດ."} :year {:type :simple :form "{n} ປ."} :half nil :delimiter nil :ago "{0} ກ່ອນ" :in-future "ໃນອີກ {0}"}
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} ກ່ອນ" :in-future "ໃນອີກ {0}"}})

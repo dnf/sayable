@@ -13,17 +13,17 @@
 
 st_hours('nl', ['twaalf', 'een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf']).
 st_midnight('nl', 'middernacht').
-st_noon('nl', 'middag').
+st_noon('nl', 'twaalf uur \'s middags').
 
 st_pattern('nl', 0, '{h} uur').
 st_pattern('nl', 5, 'vijf over {h}').
 st_pattern('nl', 10, 'tien over {h}').
 st_pattern('nl', 15, 'kwart over {h}').
-st_pattern('nl', 20, 'twintig over {h}').
+st_pattern('nl', 20, 'tien voor half {next_h}').
 st_pattern('nl', 25, 'vijf voor half {next_h}').
 st_pattern('nl', 30, 'half {next_h}').
 st_pattern('nl', 35, 'vijf over half {next_h}').
-st_pattern('nl', 40, 'twintig voor {next_h}').
+st_pattern('nl', 40, 'tien over half {next_h}').
 st_pattern('nl', 45, 'kwart voor {next_h}').
 st_pattern('nl', 50, 'tien voor {next_h}').
 st_pattern('nl', 55, 'vijf voor {next_h}').

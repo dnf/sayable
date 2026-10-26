@@ -256,11 +256,11 @@ fn locale_ak() -> Locale {
             infant: StageLabel { label: "Akwadaa" },
             toddler: StageLabel { label: "Abofra" },
             child: StageLabel { label: "Abofra" },
-            teenager: StageLabel { label: "Abarimaa" },
+            teenager: StageLabel { label: "Abarimaa", f: "Abaayewa" },
             adult: StageLabel { label: "Ɔpanyin" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "nna {n}" }, has_week: true, week: UnitForms { one: "dapɛn {n}", other: "nnapɛn {n}" }, has_month: true, month: UnitForms { one: "bosome {n}", other: "abosome {n}" }, has_year: true, year: UnitForms { one: "afe {n}", other: "mfe {n}" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "nna {n}" }, has_week: true, week: UnitForms { one: "dapɛn {n}", other: "nnapɛn {n}" }, has_month: true, month: UnitForms { one: "bos {n}", other: "abos {n}" }, has_year: true, year: UnitForms { one: "afe {n}", other: "mfe {n}" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { one: "da {n}", other: "nna {n}" }, has_week: true, week: UnitForms { one: "dapɛn {n}", other: "nnapɛn {n}" }, has_month: true, month: UnitForms { one: "bosome {n}", other: "abosome {n}" }, has_year: true, year: UnitForms { one: "afe {n}", other: "mfe {n}" }, .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { one: "da {n}", other: "nna {n}" }, has_week: true, week: UnitForms { one: "dapɛn {n}", other: "nnapɛn {n}" }, has_month: true, month: UnitForms { one: "bos {n}", other: "abos {n}" }, has_year: true, year: UnitForms { one: "afe {n}", other: "mfe {n}" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -314,7 +314,7 @@ fn locale_ar() -> Locale {
             adult: StageLabel { label: "بالغ", f: "بالغة" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { zero: "{n} يوم", one: "يوم", two: "يومان", few: "{n} أيام", many: "{n} يومًا", other: "{n} يوم" }, has_week: true, week: UnitForms { zero: "{n} أسبوع", one: "أسبوع", two: "أسبوعان", few: "{n} أسابيع", many: "{n} أسبوعًا", other: "{n} أسبوع" }, has_month: true, month: UnitForms { zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر" }, has_year: true, year: UnitForms { zero: "{n} سنة", one: "سنة واحدة", two: "سنتان", few: "{n} سنوات", many: "{n} سنة", other: "{n} سنة" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} ي" }, has_week: true, week: UnitForms { simple: true, other: "{n} أ" }, has_month: true, month: UnitForms { zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر" }, has_year: true, year: UnitForms { simple: true, other: "{n} سنة" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} ي" }, has_week: true, week: UnitForms { simple: true, other: "{n} أ" }, has_month: true, month: UnitForms { simple: true, other: "{n} شهر" }, has_year: true, year: UnitForms { simple: true, other: "{n} سنة" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -324,10 +324,10 @@ fn locale_ay() -> Locale {
         code: "ay",
         plural: PluralRule.OtherOnly,
         units: UnitSet {
-            day: UnitForms { simple: true, other: "uru {n}" },
-            week: UnitForms { simple: true, other: "simana {n}" },
-            month: UnitForms { simple: true, other: "phaxsi {n}" },
-            year: UnitForms { simple: true, other: "mara {n}" },
+            day: UnitForms { simple: true, other: "{n} uru" },
+            week: UnitForms { simple: true, other: "{n} simana" },
+            month: UnitForms { simple: true, other: "{n} phaxsi" },
+            year: UnitForms { simple: true, other: "{n} mara" },
         },
         half: "{0} chika",
         delimiter: ", ",
@@ -341,7 +341,7 @@ fn locale_ay() -> Locale {
             adult: StageLabel { label: "Jaqi" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} ur." }, has_week: true, week: UnitForms { simple: true, other: "{n} sim." }, has_month: true, month: UnitForms { simple: true, other: "{n} phx." }, has_year: true, year: UnitForms { simple: true, other: "{n} mr." }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -446,7 +446,7 @@ fn locale_bem() -> Locale {
             toddler: StageLabel { label: "Umwana" },
             child: StageLabel { label: "Umwana" },
             teenager: StageLabel { label: "Umunyamata" },
-            adult: StageLabel { label: "Umulumendo" },
+            adult: StageLabel { label: "Umukalamba" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { one: "ubushiku {n}", other: "inshiku {n}" }, has_week: true, week: UnitForms { one: "umulungu {n}", other: "imilungu {n}" }, has_month: true, month: UnitForms { one: "umweshi {n}", other: "imyeshi {n}" }, has_year: true, year: UnitForms { one: "umwaka {n}", other: "imyaka {n}" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
@@ -491,7 +491,7 @@ fn locale_bi() -> Locale {
             month: UnitForms { simple: true, other: "{n} manis" },
             year: UnitForms { simple: true, other: "{n} yia" },
         },
-        half: "{n} mo haf",
+        half: "{0} mo haf",
         delimiter: ", ",
         just_born: "Niufala bebe",
         stages: Stages {
@@ -503,7 +503,7 @@ fn locale_bi() -> Locale {
             adult: StageLabel { label: "Bigfala" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} dei" }, has_week: true, week: UnitForms { simple: true, other: "{n} wik" }, has_month: true, month: UnitForms { simple: true, other: "{n} man" }, has_year: true, year: UnitForms { simple: true, other: "{n} yia" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -626,7 +626,7 @@ fn locale_ca() -> Locale {
             month: UnitForms { one: "{n} mes", other: "{n} mesos" },
             year: UnitForms { one: "{n} any", other: "{n} anys" },
         },
-        half: "{n} i mig",
+        half: "{0} i mig",
         delimiter: ", ",
         just_born: "Nounat",
         stages: Stages {
@@ -665,7 +665,7 @@ fn locale_cak() -> Locale {
             adult: StageLabel { label: "Achi" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} q'ij" }, has_week: true, week: UnitForms { simple: true, other: "{n} wuqq'ij" }, has_month: true, month: UnitForms { simple: true, other: "{n} ik'" }, has_year: true, year: UnitForms { simple: true, other: "{n} jun." }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -680,7 +680,7 @@ fn locale_ceb() -> Locale {
             month: UnitForms { simple: true, other: "{n} ka bulan" },
             year: UnitForms { simple: true, other: "{n} ka tuig" },
         },
-        half: "{n}½",
+        half: "{0} ug tunga",
         delimiter: ", ",
         just_born: "Bag-ong natawo",
         stages: Stages {
@@ -729,10 +729,10 @@ fn locale_cy() -> Locale {
         code: "cy",
         plural: PluralRule.Cy,
         units: UnitSet {
-            day: UnitForms { zero: "{n} diwrnod", one: "{n} diwrnod", two: "{n} ddiwrnod", few: "{n} diwrnod", many: "{n} niwrnod", other: "{n} diwrnod" },
+            day: UnitForms { zero: "{n} diwrnod", one: "{n} diwrnod", two: "{n} ddiwrnod", few: "{n} diwrnod", many: "{n} diwrnod", other: "{n} diwrnod" },
             week: UnitForms { zero: "{n} wythnos", one: "{n} wythnos", two: "{n} wythnos", few: "{n} wythnos", many: "{n} wythnos", other: "{n} wythnos" },
             month: UnitForms { zero: "{n} mis", one: "{n} mis", two: "{n} fis", few: "{n} mis", many: "{n} mis", other: "{n} mis" },
-            year: UnitForms { zero: "{n} blwyddyn", one: "{n} blwyddyn", two: "{n} flynedd", few: "{n} blynedd", many: "{n} blynedd", other: "{n} blynedd" },
+            year: UnitForms { zero: "{n} blwyddyn", one: "{n} flwyddyn", two: "{n} flynedd", few: "{n} blynedd", many: "{n} blynedd", other: "{n} blynedd" },
         },
         half: "{0} a hanner",
         delimiter: ", ",
@@ -869,7 +869,7 @@ fn locale_dv() -> Locale {
             month: UnitForms { simple: true, other: "{n} މަސް" },
             year: UnitForms { simple: true, other: "{n} އަހަރު" },
         },
-        half: "{0} ބައި",
+        half: "{n}½",
         delimiter: "، ",
         just_born: "އަލަށް އުފަންވި",
         stages: Stages {
@@ -923,7 +923,7 @@ fn locale_dz() -> Locale {
             month: UnitForms { simple: true, other: "ཟླ་ {n}" },
             year: UnitForms { simple: true, other: "ལོ་ {n}" },
         },
-        half: "{0} ཕྱེད",
+        half: "{0} དང་ཕྱེད",
         delimiter: " ",
         just_born: "གསར་སྐྱེས",
         stages: Stages {
@@ -945,10 +945,10 @@ fn locale_ee() -> Locale {
         code: "ee",
         plural: PluralRule.OneOther,
         units: UnitSet {
-            day: UnitForms { one: "ŋkeke {n}", other: "ŋkekewo {n}" },
-            week: UnitForms { one: "kɔsiɖa {n}", other: "kɔsiɖawo {n}" },
-            month: UnitForms { one: "ɣleti {n}", other: "ɣletiwo {n}" },
-            year: UnitForms { one: "ƒe {n}", other: "ƒewo {n}" },
+            day: UnitForms { simple: true, other: "ŋkeke {n}" },
+            week: UnitForms { simple: true, other: "kɔsiɖa {n}" },
+            month: UnitForms { simple: true, other: "ɣleti {n}" },
+            year: UnitForms { simple: true, other: "ƒe {n}" },
         },
         half: "{0} kple afã",
         delimiter: ", ",
@@ -958,10 +958,10 @@ fn locale_ee() -> Locale {
             infant: StageLabel { label: "Ɖevi" },
             toddler: StageLabel { label: "Ɖevi sue" },
             child: StageLabel { label: "Ɖevi" },
-            teenager: StageLabel { label: "Ŋutsuviwo" },
+            teenager: StageLabel { label: "Ɖekakpui", f: "Ɖetugbi" },
             adult: StageLabel { label: "Ame tsitsi" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "ŋkekewo {n}" }, has_week: true, week: UnitForms { one: "kɔsiɖa {n}", other: "kɔsiɖawo {n}" }, has_month: true, month: UnitForms { one: "ɣleti {n}", other: "ɣletiwo {n}" }, has_year: true, year: UnitForms { one: "ƒe {n}", other: "ƒewo {n}" }, .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "ŋkeke {n}" }, has_week: true, week: UnitForms { simple: true, other: "kɔsiɖa {n}" }, has_month: true, month: UnitForms { simple: true, other: "ɣleti {n}" }, has_year: true, year: UnitForms { simple: true, other: "ƒe {n}" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
@@ -1031,7 +1031,7 @@ fn locale_es() -> Locale {
             month: UnitForms { one: "{n} mes", other: "{n} meses" },
             year: UnitForms { one: "{n} año", other: "{n} años" },
         },
-        half: "{n} y medio",
+        half: "{0} y medio",
         delimiter: ", ",
         just_born: "Recién nacido",
         stages: Stages {
@@ -1174,11 +1174,11 @@ fn locale_ff() -> Locale {
             infant: StageLabel { label: "Ɓinngel" },
             toddler: StageLabel { label: "Cukalel" },
             child: StageLabel { label: "Suka" },
-            teenager: StageLabel { label: "Suka debbo" },
+            teenager: StageLabel { label: "Suka gorko", f: "Suka debbo" },
             adult: StageLabel { label: "Mawɗo" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "ñalɗe {n}" }, has_week: true, week: UnitForms { one: "yontere {n}", other: "yontereeji {n}" }, has_month: true, month: UnitForms { one: "lewru {n}", other: "lebbi {n}" }, has_year: true, year: UnitForms { one: "hitaande {n}", other: "duuɓi {n}" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "ñalɗe {n}" }, has_week: true, week: UnitForms { one: "yont {n}", other: "yontji {n}" }, has_month: true, month: UnitForms { one: "lew {n}", other: "leb {n}" }, has_year: true, year: UnitForms { one: "hit {n}", other: "duuɓi {n}" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { one: "ñalawma {n}", other: "ñalɗe {n}" }, has_week: true, week: UnitForms { one: "yontere {n}", other: "yontereeji {n}" }, has_month: true, month: UnitForms { one: "lewru {n}", other: "lebbi {n}" }, has_year: true, year: UnitForms { one: "hitaande {n}", other: "duuɓi {n}" }, .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { one: "ñalawma {n}", other: "ñalɗe {n}" }, has_week: true, week: UnitForms { one: "yont {n}", other: "yontji {n}" }, has_month: true, month: UnitForms { one: "lew {n}", other: "leb {n}" }, has_year: true, year: UnitForms { one: "hit {n}", other: "duuɓi {n}" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -1229,7 +1229,7 @@ fn locale_fil() -> Locale {
             toddler: StageLabel { label: "Batang paslit" },
             child: StageLabel { label: "Bata" },
             teenager: StageLabel { label: "Tinedyer" },
-            adult: StageLabel { label: "Matanda" },
+            adult: StageLabel { label: "Adulto" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} araw" }, has_week: true, week: UnitForms { one: "{n} linggo", other: "{n} na linggo" }, has_month: true, month: UnitForms { simple: true, other: "{n} buwan" }, has_year: true, year: UnitForms { simple: true, other: "{n} taon" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { one: "{n} araw", other: "{n} na araw" }, has_week: true, week: UnitForms { simple: true, other: "{n}linggo" }, has_month: true, month: UnitForms { one: "{n}buwan", other: "{n} buwan" }, has_year: true, year: UnitForms { simple: true, other: "{n}taon" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
@@ -1247,7 +1247,7 @@ fn locale_fj() -> Locale {
             month: UnitForms { simple: true, other: "{n} na vula" },
             year: UnitForms { simple: true, other: "{n} na yabaki" },
         },
-        half: "{n} kei na levu ni wasei",
+        half: "{0} kei na veimama",
         delimiter: ", ",
         just_born: "Gone vou",
         stages: Stages {
@@ -1259,7 +1259,7 @@ fn locale_fj() -> Locale {
             adult: StageLabel { label: "Tamata qase" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} siga" }, has_week: true, week: UnitForms { simple: true, other: "{n} mac." }, has_month: true, month: UnitForms { simple: true, other: "{n} vula" }, has_year: true, year: UnitForms { simple: true, other: "{n} yab." }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -1282,7 +1282,7 @@ fn locale_fon() -> Locale {
             infant: StageLabel { label: "Vǐ" },
             toddler: StageLabel { label: "Vǐ" },
             child: StageLabel { label: "Vǐ" },
-            teenager: StageLabel { label: "Nyɔ̌nu" },
+            teenager: StageLabel { label: "Dɔnkpɛvu", f: "Ɖyɔ̌vǐ" },
             adult: StageLabel { label: "Mɛ̌xo" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "azǎn {n}" }, has_week: true, week: UnitForms { simple: true, other: "aklunɔ̌zán {n}" }, has_month: true, month: UnitForms { simple: true, other: "sun {n}" }, has_year: true, year: UnitForms { simple: true, other: "xwè {n}" }, .. },
@@ -1388,7 +1388,7 @@ fn locale_gl() -> Locale {
         stages: Stages {
             newborn: StageLabel { label: "Recén nacido", f: "Recén nacida" },
             infant: StageLabel { label: "Bebé" },
-            toddler: StageLabel { label: "Neno" },
+            toddler: StageLabel { label: "Neno pequeno", f: "Nena pequena" },
             child: StageLabel { label: "Neno", f: "Nena" },
             teenager: StageLabel { label: "Adolescente" },
             adult: StageLabel { label: "Adulto", f: "Adulta" },
@@ -1485,10 +1485,10 @@ fn locale_ha() -> Locale {
         code: "ha",
         plural: PluralRule.OneOther,
         units: UnitSet {
-            day: UnitForms { one: "{n} kwana", other: "{n} kwanaki" },
-            week: UnitForms { one: "{n} mako", other: "{n} makonni" },
-            month: UnitForms { one: "{n} wata", other: "{n} watanni" },
-            year: UnitForms { one: "{n} shekara", other: "{n} shekaru" },
+            day: UnitForms { one: "kwana {n}", other: "kwanaki {n}" },
+            week: UnitForms { one: "mako {n}", other: "makonni {n}" },
+            month: UnitForms { one: "wata {n}", other: "watanni {n}" },
+            year: UnitForms { one: "shekara {n}", other: "shekaru {n}" },
         },
         half: "{n}½",
         delimiter: ", ",
@@ -1496,12 +1496,12 @@ fn locale_ha() -> Locale {
         stages: Stages {
             newborn: StageLabel { label: "Jariri" },
             infant: StageLabel { label: "Jariri" },
-            toddler: StageLabel { label: "Ƙaramin yaro" },
-            child: StageLabel { label: "Yaro" },
-            teenager: StageLabel { label: "Saurayi" },
+            toddler: StageLabel { label: "Ƙaramin yaro", f: "Ƙaramar yarinya" },
+            child: StageLabel { label: "Yaro", f: "Yarinya" },
+            teenager: StageLabel { label: "Saurayi", f: "Budurwa" },
             adult: StageLabel { label: "Babba" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} kw." }, has_week: true, week: UnitForms { simple: true, other: "{n} mk." }, has_month: true, month: UnitForms { simple: true, other: "{n} wt." }, has_year: true, year: UnitForms { simple: true, other: "{n} shk." }, .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "kw. {n}" }, has_week: true, week: UnitForms { simple: true, other: "mk. {n}" }, has_month: true, month: UnitForms { simple: true, other: "wt. {n}" }, has_year: true, year: UnitForms { simple: true, other: "shk. {n}" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
     }
 }
@@ -1512,9 +1512,9 @@ fn locale_he() -> Locale {
         code: "he",
         plural: PluralRule.He,
         units: UnitSet {
-            day: UnitForms { one: "יום {n}", two: "יומיים", other: "{n} ימים" },
-            week: UnitForms { one: "שבוע {n}", two: "שבועיים", other: "{n} שבועות" },
-            month: UnitForms { one: "חודש {n}", two: "חודשיים", other: "{n} חודשים" },
+            day: UnitForms { one: "יום", two: "יומיים", other: "{n} ימים" },
+            week: UnitForms { one: "שבוע", two: "שבועיים", other: "{n} שבועות" },
+            month: UnitForms { one: "חודש", two: "חודשיים", other: "{n} חודשים" },
             year: UnitForms { one: "שנה", two: "שנתיים", other: "{n} שנים" },
         },
         half: "{0} וחצי",
@@ -1522,8 +1522,8 @@ fn locale_he() -> Locale {
         just_born: "רק נולד",
         stages: Stages {
             newborn: StageLabel { label: "רק נולד", f: "רק נולדה" },
-            infant: StageLabel { label: "תינוק" },
-            toddler: StageLabel { label: "פעוט" },
+            infant: StageLabel { label: "תינוק", f: "תינוקת" },
+            toddler: StageLabel { label: "פעוט", f: "פעוטה" },
             child: StageLabel { label: "ילד", f: "ילדה" },
             teenager: StageLabel { label: "נער", f: "נערה" },
             adult: StageLabel { label: "מבוגר", f: "מבוגרת" },
@@ -1583,7 +1583,7 @@ fn locale_hmn() -> Locale {
             adult: StageLabel { label: "Neeg laus" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} hnub" }, has_week: true, week: UnitForms { simple: true, other: "{n} lim tiam" }, has_month: true, month: UnitForms { simple: true, other: "{n} hlis" }, has_year: true, year: UnitForms { simple: true, other: "{n} xyoo" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -1706,7 +1706,7 @@ fn locale_id() -> Locale {
             month: UnitForms { simple: true, other: "{n} bulan" },
             year: UnitForms { simple: true, other: "{n} tahun" },
         },
-        half: "{0} setengah",
+        half: "{n} setengah",
         delimiter: ", ",
         just_born: "Baru lahir",
         stages: Stages {
@@ -1728,10 +1728,10 @@ fn locale_ig() -> Locale {
         code: "ig",
         plural: PluralRule.OtherOnly,
         units: UnitSet {
-            day: UnitForms { simple: true, other: "{n} ụbọchị" },
-            week: UnitForms { simple: true, other: "{n} izu" },
-            month: UnitForms { simple: true, other: "{n} ọnwa" },
-            year: UnitForms { simple: true, other: "{n} afọ" },
+            day: UnitForms { simple: true, other: "ụbọchị {n}" },
+            week: UnitForms { simple: true, other: "izu {n}" },
+            month: UnitForms { simple: true, other: "ọnwa {n}" },
+            year: UnitForms { simple: true, other: "afọ {n}" },
         },
         half: "{0} na ọkara",
         delimiter: ", ",
@@ -1741,10 +1741,10 @@ fn locale_ig() -> Locale {
             infant: StageLabel { label: "Nwa ọhụrụ" },
             toddler: StageLabel { label: "Nwa nta" },
             child: StageLabel { label: "Nwa" },
-            teenager: StageLabel { label: "Nwokorobịa" },
+            teenager: StageLabel { label: "Nwokorobịa", f: "Agbọghọbịa" },
             adult: StageLabel { label: "Okenye" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} ụbọchị" }, has_week: true, week: UnitForms { simple: true, other: "{n} izu" }, has_month: true, month: UnitForms { simple: true, other: "{n} ọnwa" }, has_year: true, year: UnitForms { simple: true, other: "{n} afọ" }, .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "ụbọchị {n}" }, has_week: true, week: UnitForms { simple: true, other: "izu {n}" }, has_month: true, month: UnitForms { simple: true, other: "ọnwa {n}" }, has_year: true, year: UnitForms { simple: true, other: "afọ {n}" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
@@ -1760,7 +1760,7 @@ fn locale_is() -> Locale {
             month: UnitForms { one: "{n} mánuður", other: "{n} mánuðir" },
             year: UnitForms { one: "{n} ár", other: "{n} ár" },
         },
-        half: "{0} og hálft",
+        half: "{n} og hálft",
         delimiter: ", ",
         just_born: "Nýfætt",
         stages: Stages {
@@ -1826,7 +1826,7 @@ fn locale_ja() -> Locale {
             adult: StageLabel { label: "成人" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} 日" }, has_week: true, week: UnitForms { simple: true, other: "{n} 週間" }, has_month: true, month: UnitForms { simple: true, other: "{n} か月" }, has_year: true, year: UnitForms { simple: true, other: "{n} 年" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", .. },
     }
 }
 
@@ -1934,7 +1934,7 @@ fn locale_kek() -> Locale {
             adult: StageLabel { label: "Winq" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} q'e" }, has_week: true, week: UnitForms { simple: true, other: "{n} sem." }, has_month: true, month: UnitForms { simple: true, other: "{n} po" }, has_year: true, year: UnitForms { simple: true, other: "{n} chih." }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -1996,12 +1996,12 @@ fn locale_kk() -> Locale {
 fn locale_kl() -> Locale {
     Locale {
         code: "kl",
-        plural: PluralRule.OtherOnly,
+        plural: PluralRule.OneOther,
         units: UnitSet {
-            day: UnitForms { simple: true, other: "ullut {n}" },
-            week: UnitForms { simple: true, other: "sapaatit {n}" },
-            month: UnitForms { simple: true, other: "qaammatit {n}" },
-            year: UnitForms { simple: true, other: "ukiut {n}" },
+            day: UnitForms { one: "ulloq {n}", other: "ullut {n}" },
+            week: UnitForms { one: "sapaatip akunnera {n}", other: "sapaatip akunneri {n}" },
+            month: UnitForms { one: "qaammat {n}", other: "qaammatit {n}" },
+            year: UnitForms { one: "ukioq {n}", other: "ukiut {n}" },
         },
         half: "{0} affaa",
         delimiter: ", ",
@@ -2014,8 +2014,8 @@ fn locale_kl() -> Locale {
             teenager: StageLabel { label: "Inuusuttuaq" },
             adult: StageLabel { label: "Inuk" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "ull. {n}" }, has_week: true, week: UnitForms { simple: true, other: "sap. {n}" }, has_month: true, month: UnitForms { simple: true, other: "qaam. {n}" }, has_year: true, year: UnitForms { simple: true, other: "uk. {n}" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "ull. {n}" }, has_week: true, week: UnitForms { simple: true, other: "sap. ak. {n}" }, has_month: true, month: UnitForms { simple: true, other: "qaam. {n}" }, has_year: true, year: UnitForms { simple: true, other: "uk. {n}" }, .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -2057,7 +2057,7 @@ fn locale_kn() -> Locale {
             month: UnitForms { one: "{n} ತಿಂಗಳು", other: "{n} ತಿಂಗಳುಗಳು" },
             year: UnitForms { one: "{n} ವರ್ಷ", other: "{n} ವರ್ಷಗಳು" },
         },
-        half: "{0}ವರೆ",
+        half: "{n}½",
         delimiter: ", ",
         just_born: "ನವಜಾತ ಶಿಶು",
         stages: Stages {
@@ -2138,7 +2138,7 @@ fn locale_kri() -> Locale {
             month: UnitForms { simple: true, other: "{n} mont" },
             year: UnitForms { simple: true, other: "{n} ia" },
         },
-        half: "{n} na af",
+        half: "{0} ɛn af",
         delimiter: ", ",
         just_born: "Nyubon bebi",
         stages: Stages {
@@ -2150,7 +2150,7 @@ fn locale_kri() -> Locale {
             adult: StageLabel { label: "Big posin" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} de" }, has_week: true, week: UnitForms { simple: true, other: "{n} wik" }, has_month: true, month: UnitForms { simple: true, other: "{n} mont" }, has_year: true, year: UnitForms { simple: true, other: "{n} ia" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -2214,10 +2214,10 @@ fn locale_kw() -> Locale {
         code: "kw",
         plural: PluralRule.Kw,
         units: UnitSet {
-            day: UnitForms { zero: "{n} dydh", one: "dydh", two: "{n} dhydh", few: "{n} dydh", many: "{n} dydh", other: "{n} dydh" },
-            week: UnitForms { zero: "{n} seythun", one: "seythun", two: "{n} seythun", few: "{n} seythun", many: "{n} seythun", other: "{n} seythun" },
-            month: UnitForms { zero: "{n} mis", one: "mis", two: "{n} vis", few: "{n} mis", many: "{n} mis", other: "{n} mis" },
-            year: UnitForms { zero: "{n} blydhen", one: "blydhen", two: "{n} vlydhen", few: "{n} blydhen", many: "{n} blydhen", other: "{n} blydhen" },
+            day: UnitForms { zero: "{n} dydh", one: "{n} dydh", two: "{n} dhydh", few: "{n} dydh", many: "{n} dydh", other: "{n} dydh" },
+            week: UnitForms { zero: "{n} seythun", one: "{n} seythun", two: "{n} seythun", few: "{n} seythun", many: "{n} seythun", other: "{n} seythun" },
+            month: UnitForms { zero: "{n} mis", one: "{n} mis", two: "{n} vis", few: "{n} mis", many: "{n} mis", other: "{n} mis" },
+            year: UnitForms { zero: "{n} blydhen", one: "{n} blydhen", two: "{n} vlydhen", few: "{n} blydhen", many: "{n} blydhen", other: "{n} blydhen" },
         },
         half: "{0} hag hanter",
         delimiter: ", ",
@@ -2355,7 +2355,7 @@ fn locale_lo() -> Locale {
             year: UnitForms { simple: true, other: "{n} ປີ" },
         },
         half: "{0}ເຄິ່ງ",
-        delimiter: "",
+        delimiter: " ",
         just_born: "ເກີດໃໝ່",
         stages: Stages {
             newborn: StageLabel { label: "ເດັກເກີດໃໝ່" },
@@ -2366,7 +2366,7 @@ fn locale_lo() -> Locale {
             adult: StageLabel { label: "ຜູ້ໃຫຍ່" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} ມ." }, has_week: true, week: UnitForms { simple: true, other: "{n} ອທ." }, has_month: true, month: UnitForms { simple: true, other: "{n} ດ." }, has_year: true, year: UnitForms { simple: true, other: "{n} ປ." }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", .. },
     }
 }
 
@@ -2458,7 +2458,7 @@ fn locale_mam() -> Locale {
         plural: PluralRule.OtherOnly,
         units: UnitSet {
             day: UnitForms { simple: true, other: "{n} q'ij" },
-            week: UnitForms { simple: true, other: "{n} xjaw" },
+            week: UnitForms { simple: true, other: "{n} seman" },
             month: UnitForms { simple: true, other: "{n} xjaw" },
             year: UnitForms { simple: true, other: "{n} ab'q'ii" },
         },
@@ -2473,8 +2473,8 @@ fn locale_mam() -> Locale {
             teenager: StageLabel { label: "Q'a" },
             adult: StageLabel { label: "Xjal" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} q'ij" }, has_week: true, week: UnitForms { simple: true, other: "{n} xjaw" }, has_month: true, month: UnitForms { simple: true, other: "{n} xjaw" }, has_year: true, year: UnitForms { simple: true, other: "{n} ab'." }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} q'ij" }, has_week: true, week: UnitForms { simple: true, other: "{n} seman" }, has_month: true, month: UnitForms { simple: true, other: "{n} xjaw" }, has_year: true, year: UnitForms { simple: true, other: "{n} ab'." }, .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -2565,12 +2565,12 @@ fn locale_mi() -> Locale {
         code: "mi",
         plural: PluralRule.OneOther,
         units: UnitSet {
-            day: UnitForms { simple: true, other: "rā {n}" },
-            week: UnitForms { simple: true, other: "wiki {n}" },
-            month: UnitForms { simple: true, other: "marama {n}" },
-            year: UnitForms { simple: true, other: "tau {n}" },
+            day: UnitForms { simple: true, other: "{n} rā" },
+            week: UnitForms { simple: true, other: "{n} wiki" },
+            month: UnitForms { simple: true, other: "{n} marama" },
+            year: UnitForms { simple: true, other: "{n} tau" },
         },
-        half: "{0}½",
+        half: "{n}½",
         delimiter: ", ",
         just_born: "Pēpi hou",
         stages: Stages {
@@ -2581,7 +2581,7 @@ fn locale_mi() -> Locale {
             teenager: StageLabel { label: "Rangatahi" },
             adult: StageLabel { label: "Pakeke" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "rā {n}" }, has_week: true, week: UnitForms { simple: true, other: "w {n}" }, has_month: true, month: UnitForms { simple: true, other: "m {n}" }, has_year: true, year: UnitForms { simple: true, other: "t {n}" }, .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} rā" }, has_week: true, week: UnitForms { simple: true, other: "{n} w" }, has_month: true, month: UnitForms { simple: true, other: "{n} m" }, has_year: true, year: UnitForms { simple: true, other: "{n} t" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}r" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}t" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
@@ -2606,7 +2606,7 @@ fn locale_mk() -> Locale {
             toddler: StageLabel { label: "Мало дете" },
             child: StageLabel { label: "Дете" },
             teenager: StageLabel { label: "Тинејџер" },
-            adult: StageLabel { label: "Возрасен" },
+            adult: StageLabel { label: "Возрасен", f: "Возрасна" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { one: "{n} ден", other: "{n} дена" }, has_week: true, week: UnitForms { simple: true, other: "{n} сед." }, has_month: true, month: UnitForms { simple: true, other: "{n} мес." }, has_year: true, year: UnitForms { simple: true, other: "{n} год." }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} д." }, has_week: true, week: UnitForms { simple: true, other: "{n} с." }, has_month: true, month: UnitForms { simple: true, other: "{n} м." }, has_year: true, year: UnitForms { simple: true, other: "{n} г." }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
@@ -2617,14 +2617,14 @@ fn locale_mk() -> Locale {
 fn locale_ml() -> Locale {
     Locale {
         code: "ml",
-        plural: PluralRule.OneOtherZeroOne,
+        plural: PluralRule.OneOther,
         units: UnitSet {
             day: UnitForms { one: "{n} ദിവസം", other: "{n} ദിവസങ്ങൾ" },
             week: UnitForms { one: "{n} ആഴ്ച", other: "{n} ആഴ്ചകൾ" },
             month: UnitForms { one: "{n} മാസം", other: "{n} മാസങ്ങൾ" },
             year: UnitForms { one: "{n} വയസ്സ്", other: "{n} വയസ്സ്" },
         },
-        half: "{0} ര",
+        half: "{n}½",
         delimiter: ", ",
         just_born: "നവജാതശിശു",
         stages: Stages {
@@ -2900,7 +2900,7 @@ fn locale_ne() -> Locale {
         stages: Stages {
             newborn: StageLabel { label: "नवजात शिशु" },
             infant: StageLabel { label: "शिशु" },
-            toddler: StageLabel { label: "बाल्यकाल" },
+            toddler: StageLabel { label: "सानो बच्चा" },
             child: StageLabel { label: "बालक" },
             teenager: StageLabel { label: "किशोर" },
             adult: StageLabel { label: "वयस्क" },
@@ -3164,7 +3164,7 @@ fn locale_pis() -> Locale {
             month: UnitForms { simple: true, other: "{n} manis" },
             year: UnitForms { simple: true, other: "{n} yia" },
         },
-        half: "{n} en haf",
+        half: "{0} en haf",
         delimiter: ", ",
         just_born: "Niufala bebi",
         stages: Stages {
@@ -3176,7 +3176,7 @@ fn locale_pis() -> Locale {
             adult: StageLabel { label: "Bigfala" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} dei" }, has_week: true, week: UnitForms { simple: true, other: "{n} wik" }, has_month: true, month: UnitForms { simple: true, other: "{n} man" }, has_year: true, year: UnitForms { simple: true, other: "{n} yia" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -3338,7 +3338,7 @@ fn locale_quc() -> Locale {
             adult: StageLabel { label: "Achi" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} q'ij" }, has_week: true, week: UnitForms { simple: true, other: "{n} wuqq'ij" }, has_month: true, month: UnitForms { simple: true, other: "{n} ik'" }, has_year: true, year: UnitForms { simple: true, other: "{n} jun." }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -3520,13 +3520,13 @@ fn locale_shi() -> Locale {
         just_born: "Iɣ d illul",
         stages: Stages {
             newborn: StageLabel { label: "Iɣ d illul" },
-            infant: StageLabel { label: "Agellid" },
+            infant: StageLabel { label: "Llufan" },
             toddler: StageLabel { label: "Aḥenjir", f: "Taḥenjirt" },
-            child: StageLabel { label: "Afrux", f: "Tafruxṭ" },
+            child: StageLabel { label: "Afrux", f: "Tafruxt" },
             teenager: StageLabel { label: "Aɛrim", f: "Taɛrimt" },
             adult: StageLabel { label: "Argaz", f: "Tamṭṭuṭ" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} d" }, has_week: true, week: UnitForms { simple: true, other: "{n} wk" }, has_month: true, month: UnitForms { simple: true, other: "{n} mo" }, has_year: true, year: UnitForms { simple: true, other: "{n} yr" }, .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { one: "{n} ass", few: "{n} ussan", other: "{n} ass" }, has_week: true, week: UnitForms { one: "{n} imalass", few: "{n} imalassn", other: "{n} imalass" }, has_month: true, month: UnitForms { one: "{n} ayyur", few: "{n} ayyurn", other: "{n} ayyur" }, has_year: true, year: UnitForms { one: "{n} aseggas", few: "{n} iseggasen", other: "{n} aseggas" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
@@ -3554,7 +3554,7 @@ fn locale_shn() -> Locale {
             adult: StageLabel { label: "ၵူၼ်းလူင်" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} ဝၼ်း" }, has_week: true, week: UnitForms { simple: true, other: "{n} ဝူင်ႈ" }, has_month: true, month: UnitForms { simple: true, other: "{n} လိူၼ်" }, has_year: true, year: UnitForms { simple: true, other: "{n} ပီ" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -3569,7 +3569,7 @@ fn locale_si() -> Locale {
             month: UnitForms { one: "මාස {n}", other: "මාස {n}" },
             year: UnitForms { one: "වසර {n}", other: "වසර {n}" },
         },
-        half: "{0}යි භාගයයි",
+        half: "{n}½",
         delimiter: ", ",
         just_born: "අලුත උපන්",
         stages: Stages {
@@ -3699,10 +3699,10 @@ fn locale_so() -> Locale {
         code: "so",
         plural: PluralRule.OneOther,
         units: UnitSet {
-            day: UnitForms { one: "maalin {n}", other: "maalmood {n}" },
-            week: UnitForms { one: "toddobaad {n}", other: "toddobaadyo {n}" },
-            month: UnitForms { one: "bil {n}", other: "bilood {n}" },
-            year: UnitForms { one: "sano {n}", other: "sanooyin {n}" },
+            day: UnitForms { one: "{n} maalin", other: "{n} maalmood" },
+            week: UnitForms { simple: true, other: "{n} toddobaad" },
+            month: UnitForms { one: "{n} bil", other: "{n} bilood" },
+            year: UnitForms { simple: true, other: "{n} sano" },
         },
         half: "{n}½",
         delimiter: ", ",
@@ -3733,9 +3733,9 @@ fn locale_sq() -> Locale {
         },
         half: "{0} e gjysmë",
         delimiter: ", ",
-        just_born: "Sapolindur",
+        just_born: "I sapolindur",
         stages: Stages {
-            newborn: StageLabel { label: "Sapolindur", f: "Sapolindure" },
+            newborn: StageLabel { label: "I sapolindur", f: "E sapolindur" },
             infant: StageLabel { label: "Foshnjë" },
             toddler: StageLabel { label: "Fëmijë i vogël", f: "Fëmijë e vogël" },
             child: StageLabel { label: "Fëmijë" },
@@ -3818,7 +3818,7 @@ fn locale_st() -> Locale {
         stages: Stages {
             newborn: StageLabel { label: "Lesea le sa tswa hlaha" },
             infant: StageLabel { label: "Lesea" },
-            toddler: StageLabel { label: "Ngwanana" },
+            toddler: StageLabel { label: "Ngwana e monyane" },
             child: StageLabel { label: "Ngwana" },
             teenager: StageLabel { label: "Mosha" },
             adult: StageLabel { label: "Motho e moholo" },
@@ -3947,7 +3947,7 @@ fn locale_ta() -> Locale {
             month: UnitForms { one: "{n} மாதம்", other: "{n} மாதங்கள்" },
             year: UnitForms { one: "{n} வயது", other: "{n} வயது" },
         },
-        half: "{0}ரை",
+        half: "{n}½",
         delimiter: ", ",
         just_born: "பிறந்த குழந்தை",
         stages: Stages {
@@ -3974,7 +3974,7 @@ fn locale_te() -> Locale {
             month: UnitForms { one: "{n} నెల", other: "{n} నెలలు" },
             year: UnitForms { one: "{n} సంవత్సరం", other: "{n} సంవత్సరాలు" },
         },
-        half: "{0}న్నర",
+        half: "{n}½",
         delimiter: ", ",
         just_born: "నవజాత శిశువు",
         stages: Stages {
@@ -4040,7 +4040,7 @@ fn locale_tet() -> Locale {
             adult: StageLabel { label: "Ema boot" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "loron {n}" }, has_week: true, week: UnitForms { simple: true, other: "sem. {n}" }, has_month: true, month: UnitForms { simple: true, other: "fulan {n}" }, has_year: true, year: UnitForms { simple: true, other: "tinan {n}" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -4055,7 +4055,7 @@ fn locale_tg() -> Locale {
             month: UnitForms { simple: true, other: "{n} моҳ" },
             year: UnitForms { simple: true, other: "{n} сол" },
         },
-        half: "{0} ним",
+        half: "{0}у ним",
         delimiter: ", ",
         just_born: "Навзод",
         stages: Stages {
@@ -4163,7 +4163,7 @@ fn locale_tk() -> Locale {
             month: UnitForms { simple: true, other: "{n} aý" },
             year: UnitForms { simple: true, other: "{n} ýaş" },
         },
-        half: "{0}½",
+        half: "{n} ýarym",
         delimiter: ", ",
         just_born: "Täze doglan",
         stages: Stages {
@@ -4172,7 +4172,7 @@ fn locale_tk() -> Locale {
             toddler: StageLabel { label: "Kiçijik" },
             child: StageLabel { label: "Çaga" },
             teenager: StageLabel { label: "Ýetginjek" },
-            adult: StageLabel { label: "Ulular" },
+            adult: StageLabel { label: "Uly adam" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} g" }, has_week: true, week: UnitForms { simple: true, other: "{n} h" }, has_month: true, month: UnitForms { simple: true, other: "{n} a" }, has_year: true, year: UnitForms { simple: true, other: "{n} ý" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}g" }, has_week: true, week: UnitForms { simple: true, other: "{n}h" }, has_month: true, month: UnitForms { simple: true, other: "{n}a" }, has_year: true, year: UnitForms { simple: true, other: "{n}ý" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
@@ -4198,7 +4198,7 @@ fn locale_tn() -> Locale {
             infant: StageLabel { label: "Lesea" },
             toddler: StageLabel { label: "Ngwana yo monnye" },
             child: StageLabel { label: "Ngwana" },
-            teenager: StageLabel { label: "Lekgarebe" },
+            teenager: StageLabel { label: "Mosha" },
             adult: StageLabel { label: "Motho yo mogolo" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { one: "letsatsi {n}", other: "malatsi {n}" }, has_week: true, week: UnitForms { one: "beke {n}", other: "dibeke {n}" }, has_month: true, month: UnitForms { one: "kgw. {n}", other: "dikgw. {n}" }, has_year: true, year: UnitForms { one: "ngw. {n}", other: "dingw. {n}" }, .. },
@@ -4217,7 +4217,7 @@ fn locale_tpi() -> Locale {
             month: UnitForms { simple: true, other: "{n} mun" },
             year: UnitForms { simple: true, other: "{n} yia" },
         },
-        half: "{n} na hap",
+        half: "{0} na hap",
         delimiter: ", ",
         just_born: "Nupela pikinini",
         stages: Stages {
@@ -4229,7 +4229,7 @@ fn locale_tpi() -> Locale {
             adult: StageLabel { label: "Bikpela man" },
         },
         short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} de" }, has_week: true, week: UnitForms { simple: true, other: "{n} wik" }, has_month: true, month: UnitForms { simple: true, other: "{n} mun" }, has_year: true, year: UnitForms { simple: true, other: "{n} yia" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_delimiter: true, delimiter: "", .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 
@@ -4330,13 +4330,13 @@ fn locale_tzm() -> Locale {
         just_born: "Iɣ d illul",
         stages: Stages {
             newborn: StageLabel { label: "Iɣ d illul" },
-            infant: StageLabel { label: "Agellid" },
+            infant: StageLabel { label: "Llufan" },
             toddler: StageLabel { label: "Aḥenjir", f: "Taḥenjirt" },
-            child: StageLabel { label: "Afrux", f: "Tafruxṭ" },
+            child: StageLabel { label: "Afrux", f: "Tafruxt" },
             teenager: StageLabel { label: "Aɛrim", f: "Taɛrimt" },
             adult: StageLabel { label: "Argaz", f: "Tamṭṭuṭ" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} d" }, has_week: true, week: UnitForms { simple: true, other: "{n} wk" }, has_month: true, month: UnitForms { simple: true, other: "{n} mo" }, has_year: true, year: UnitForms { simple: true, other: "{n} yr" }, .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { one: "{n} ass", other: "{n} ussan" }, has_week: true, week: UnitForms { one: "{n} imalass", other: "{n} imalassn" }, has_month: true, month: UnitForms { one: "{n} ayyur", other: "{n} ayyurn" }, has_year: true, year: UnitForms { one: "{n} aseggas", other: "{n} iseggasen" }, .. },
         compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n}d" }, has_week: true, week: UnitForms { simple: true, other: "{n}w" }, has_month: true, month: UnitForms { simple: true, other: "{n}m" }, has_year: true, year: UnitForms { simple: true, other: "{n}y" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
@@ -4492,7 +4492,7 @@ fn locale_vi() -> Locale {
         just_born: "Sơ sinh",
         stages: Stages {
             newborn: StageLabel { label: "Sơ sinh" },
-            infant: StageLabel { label: "Trẻ sơ sinh" },
+            infant: StageLabel { label: "Trẻ nhũ nhi" },
             toddler: StageLabel { label: "Trẻ mới biết đi" },
             child: StageLabel { label: "Trẻ em" },
             teenager: StageLabel { label: "Thiếu niên" },
@@ -4536,24 +4536,24 @@ fn locale_wo() -> Locale {
         code: "wo",
         plural: PluralRule.OtherOnly,
         units: UnitSet {
-            day: UnitForms { simple: true, other: "bés {n}" },
-            week: UnitForms { simple: true, other: "ayubés {n}" },
-            month: UnitForms { simple: true, other: "weer {n}" },
-            year: UnitForms { simple: true, other: "at {n}" },
+            day: UnitForms { simple: true, other: "{n} fan" },
+            week: UnitForms { simple: true, other: "{n} ayubés" },
+            month: UnitForms { simple: true, other: "{n} weer" },
+            year: UnitForms { simple: true, other: "{n} at" },
         },
         half: "{0} ak genn-wàll",
         delimiter: ", ",
         just_born: "Dees ko sax juddu",
         stages: Stages {
             newborn: StageLabel { label: "Dees ko sax juddu" },
-            infant: StageLabel { label: "Njàmbaar bu ndaw" },
+            infant: StageLabel { label: "Liir" },
             toddler: StageLabel { label: "Xale bu ndaw" },
             child: StageLabel { label: "Xale" },
             teenager: StageLabel { label: "Ndaw-ndaw" },
             adult: StageLabel { label: "Mag" },
         },
-        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "bés {n}" }, has_week: true, week: UnitForms { simple: true, other: "ayub. {n}" }, has_month: true, month: UnitForms { simple: true, other: "weer {n}" }, has_year: true, year: UnitForms { simple: true, other: "at {n}" }, .. },
-        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "bés {n}" }, has_week: true, week: UnitForms { simple: true, other: "ayub {n}" }, has_month: true, month: UnitForms { simple: true, other: "weer {n}" }, has_year: true, year: UnitForms { simple: true, other: "at {n}" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
+        short_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} fan" }, has_week: true, week: UnitForms { simple: true, other: "{n} ayub." }, has_month: true, month: UnitForms { simple: true, other: "{n} weer" }, has_year: true, year: UnitForms { simple: true, other: "{n} at" }, .. },
+        compact_override: CompactnessOverride { has_day: true, day: UnitForms { simple: true, other: "{n} fan" }, has_week: true, week: UnitForms { simple: true, other: "{n} ayub" }, has_month: true, month: UnitForms { simple: true, other: "{n} weer" }, has_year: true, year: UnitForms { simple: true, other: "{n} at" }, has_half: true, half: "{n}½", has_delimiter: true, delimiter: "", .. },
     }
 }
 

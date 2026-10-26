@@ -25,7 +25,7 @@ sd_half('bm', '{0} ni tilancɛ').
 sd_delimiter('bm', ', ').
 sd_just_now('bm', 'sisan').
 sd_ago('bm', '{0} bɔlen').
-sd_in_future('bm', 'ka {0}').
+sd_in_future('bm', '{0} kɔnɔ').
 
 short_sd_unit('bm', second, _, 'sek. {n}').
 short_sd_unit('bm', minute, _, 'min. {n}').
@@ -35,7 +35,7 @@ short_sd_unit('bm', week, _, 'dɔgɔk. {n}').
 short_sd_unit('bm', month, _, 'kalo {n}').
 short_sd_unit('bm', year, _, 'san {n}').
 short_sd_ago('bm', '{0} bɔlen').
-short_sd_in_future('bm', 'ka {0}').
+short_sd_in_future('bm', '{0} kɔnɔ').
 
 compact_sd_unit('bm', second, _, 'sek {n}').
 compact_sd_unit('bm', minute, _, 'min {n}').
@@ -47,4 +47,4 @@ compact_sd_unit('bm', year, _, 'san {n}').
 compact_sd_half('bm', '{n}½').
 compact_sd_delimiter('bm', '').
 compact_sd_ago('bm', '{0} bɔlen').
-compact_sd_in_future('bm', 'ka {0}').
+compact_sd_in_future('bm', '{0} kɔnɔ').

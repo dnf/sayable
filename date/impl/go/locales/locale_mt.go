@@ -17,7 +17,7 @@ import sdate "github.com/dnf/sayable/date/impl/go"
 var MT = sdate.DateLocale{
 	Code: "mt",
 	Months:   [12]string{"Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru"},
-	Weekdays: [7]string{"Il-Ħadd", "It-Tnejn", "It-Tlieta", "L-Erbgħa", "Il-Ħamis", "Il-Ġimgħa", "Is-Sibt"},
+	Weekdays: [7]string{"il-Ħadd", "it-Tnejn", "it-Tlieta", "l-Erbgħa", "il-Ħamis", "il-Ġimgħa", "is-Sibt"},
 	DayFormat: "{n}",
 	DayFormatExceptions: map[string]string{},
 	DatePattern:         "{day} {month}",

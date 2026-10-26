@@ -10,21 +10,21 @@
 # Source: locales/ak.json
 
 _sayabletime_locale_ak() {
-    _clock_hours=('dumien' 'baako' 'mmienu' 'mmiensa' 'anan' 'anum' 'nsia' 'nson' 'nwɔtwe' 'nkron' 'edu' 'dubaako')
-    _clock_midnight='anadwo'
-    _clock_noon='awia'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_hours=('dumienu' 'baako' 'mmienu' 'mmiensa' 'anan' 'anum' 'nsia' 'nson' 'nwɔtwe' 'nkron' 'edu' 'dubaako')
+    _clock_midnight='ɔdasuom'
+    _clock_noon='owigyinae'
+    _clock_pattern_0='nnɔn {h}'
+    _clock_pattern_5='nnɔn {h} ne sima anum'
+    _clock_pattern_10='nnɔn {h} ne sima edu'
+    _clock_pattern_15='nnɔn {h} ne sima dunum'
+    _clock_pattern_20='nnɔn {h} ne sima aduonu'
+    _clock_pattern_25='nnɔn {h} ne sima aduonu num'
+    _clock_pattern_30='nnɔn {h} ne fa'
+    _clock_pattern_35='aka sima aduonu num na abɔ nnɔn {next_h}'
+    _clock_pattern_40='aka sima aduonu na abɔ nnɔn {next_h}'
+    _clock_pattern_45='aka sima dunum na abɔ nnɔn {next_h}'
+    _clock_pattern_50='aka sima edu na abɔ nnɔn {next_h}'
+    _clock_pattern_55='aka sima anum na abɔ nnɔn {next_h}'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

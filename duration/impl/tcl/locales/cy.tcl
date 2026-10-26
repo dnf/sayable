@@ -24,10 +24,10 @@ proc locale_duration_cy {} {
         second [dict create zero "{n} eiliad" one "{n} eiliad" two "{n} eiliad" few "{n} eiliad" many "{n} eiliad" other "{n} eiliad"] \
         minute [dict create zero "{n} munud" one "{n} munud" two "{n} funud" few "{n} munud" many "{n} munud" other "{n} munud"] \
         hour [dict create zero "{n} awr" one "{n} awr" two "{n} awr" few "{n} awr" many "{n} awr" other "{n} awr"] \
-        day [dict create zero "{n} diwrnod" one "{n} diwrnod" two "{n} ddiwrnod" few "{n} diwrnod" many "{n} niwrnod" other "{n} diwrnod"] \
+        day [dict create zero "{n} diwrnod" one "{n} diwrnod" two "{n} ddiwrnod" few "{n} diwrnod" many "{n} diwrnod" other "{n} diwrnod"] \
         week [dict create zero "{n} wythnos" one "{n} wythnos" two "{n} wythnos" few "{n} wythnos" many "{n} wythnos" other "{n} wythnos"] \
         month [dict create zero "{n} mis" one "{n} mis" two "{n} fis" few "{n} mis" many "{n} mis" other "{n} mis"] \
-        year [dict create zero "{n} blwyddyn" one "{n} blwyddyn" two "{n} flynedd" few "{n} blynedd" many "{n} blynedd" other "{n} blynedd"] \
+        year [dict create zero "{n} blwyddyn" one "{n} flwyddyn" two "{n} flynedd" few "{n} blynedd" many "{n} blynedd" other "{n} blynedd"] \
     ]
     set half "{0} a hanner"
     set delimiter {, }

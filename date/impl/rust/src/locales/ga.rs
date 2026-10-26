@@ -28,7 +28,7 @@ pub fn locale() -> DateLocale {
         yesterday: "inné".to_string(),
         day_after_tomorrow: Some("arú amárach".to_string()),
         day_before_yesterday: Some("arú inné".to_string()),
-        this_weekday: Some("an {weekday} seo".to_string()),
+        this_weekday: Some("{weekday} seo".to_string()),
         next_weekday: Some("{weekday} seo chugainn".to_string()),
         last_weekday: Some("{weekday} seo caite".to_string()),
         months_in_date: None,

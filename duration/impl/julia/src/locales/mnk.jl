@@ -27,7 +27,7 @@ const MNK = DurationLocale(
     delimiter = ", ",
     just_now = "sisan",
     ago = "{0} taata",
-    in_future = "ka {0}",
+    in_future = "{0} kɔnɔ",
     short_override = DurationCompactnessOverride(
         units = Dict(
             "second" => "sɛk. {n}",
@@ -39,7 +39,7 @@ const MNK = DurationLocale(
             "year" => "sanj. {n}",
         ),
         ago = "{0} taata",
-        in_future = "ka {0}",
+        in_future = "{0} kɔnɔ",
     ),
     compact_override = DurationCompactnessOverride(
         units = Dict(
@@ -54,6 +54,6 @@ const MNK = DurationLocale(
         half = "{n}½",
         delimiter = "",
         ago = "{0} taata",
-        in_future = "ka {0}",
+        in_future = "{0} kɔnɔ",
     ),
 )

@@ -23,10 +23,10 @@ sd_unit('ta', week, one, '{n} வாரம்').
 sd_unit('ta', week, other, '{n} வாரங்கள்').
 sd_unit('ta', month, one, '{n} மாதம்').
 sd_unit('ta', month, other, '{n} மாதங்கள்').
-sd_unit('ta', year, one, '{n} வயது').
-sd_unit('ta', year, other, '{n} வயது').
+sd_unit('ta', year, one, '{n} ஆண்டு').
+sd_unit('ta', year, other, '{n} ஆண்டுகள்').
 
-sd_half('ta', '{0}ரை').
+sd_half('ta', '{n}½').
 sd_delimiter('ta', ', ').
 sd_just_now('ta', 'இப்போதுதான்').
 sd_ago('ta', '{0} முன்').

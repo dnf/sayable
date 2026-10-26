@@ -17,10 +17,10 @@
   (make-time-locale
    :code "fon"
    :clock (make-clock-config
-    :hours (list "wěwè" "ɖokpo" "wè" "atɔn" "ɛnɛ" "atɔ́ɔ́n" "ayizɛ̀n" "tɛnwè" "tantɔn" "tɛnɛnɛ" "wǒ" "ɖokpo-wǒ")
+    :hours (list "wěwè" "ɖokpo" "wè" "atɔn" "ɛnɛ" "atɔ́ɔ́n" "ayizɛ̀n" "tɛnwè" "tantɔn" "tɛnɛnɛ" "wǒ" "wěɖokpo")
     :midnight "zǎnmɛ"
     :noon "hwemɛnu"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "gan {h}") (cons 5 "gan {h} kpo cɛju atɔ́ɔ́n kpo") (cons 10 "gan {h} kpo cɛju wǒ kpo") (cons 15 "gan {h} kpo cɛju afɔtɔ́n kpo") (cons 20 "gan {h} kpo cɛju ko kpo") (cons 25 "gan {h} kpo cɛju koatɔ́ɔ́n kpo") (cons 30 "gan {h} kpo cɛju gban kpo") (cons 35 "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo") (cons 40 "gan {h} kpo cɛju kanɖé kpo") (cons 45 "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo") (cons 50 "gan {h} kpo cɛju kanɖéwǒ kpo") (cons 55 "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

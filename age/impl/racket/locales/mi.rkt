@@ -21,11 +21,11 @@
   (age-locale
    "mi"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "day" (hash "type" "simple" "form" "rā {n}")
-         "week" (hash "type" "simple" "form" "wiki {n}")
-         "month" (hash "type" "simple" "form" "marama {n}")
-         "year" (hash "type" "simple" "form" "tau {n}"))
-   "{0}½"
+   (hash "day" (hash "type" "simple" "form" "{n} rā")
+         "week" (hash "type" "simple" "form" "{n} wiki")
+         "month" (hash "type" "simple" "form" "{n} marama")
+         "year" (hash "type" "simple" "form" "{n} tau"))
+   "{n}½"
    ", "
    "Pēpi hou"
    (hash "newborn" (stage-label "Pēpi hou" #f #f)
@@ -34,6 +34,6 @@
          "child" (stage-label "Tamariki" #f #f)
          "teenager" (stage-label "Rangatahi" #f #f)
          "adult" (stage-label "Pakeke" #f #f))
-   (compactness-override (hash "type" "simple" "form" "rā {n}") (hash "type" "simple" "form" "w {n}") (hash "type" "simple" "form" "m {n}") (hash "type" "simple" "form" "t {n}") #f #f #f)
+   (compactness-override (hash "type" "simple" "form" "{n} rā") (hash "type" "simple" "form" "{n} w") (hash "type" "simple" "form" "{n} m") (hash "type" "simple" "form" "{n} t") #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}r") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}t") "{n}½" "" #f)
   ))

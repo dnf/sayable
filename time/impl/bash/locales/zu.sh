@@ -10,21 +10,21 @@
 # Source: locales/zu.json
 
 _sayabletime_locale_zu() {
-    _clock_hours=('ishumi nambili' 'kunye' 'kubili' 'kuthathu' 'kune' 'kuhlanu' 'isithupha' 'isikhombisa' 'isishiyagalombili' 'isishiyagalolunye' 'ishumi' 'ishumi nanye')
+    _clock_hours=('leshumi nambili' 'lokuqala' 'lesibili' 'lesithathu' 'lesine' 'lesihlanu' 'lesithupha' 'lesikhombisa' 'lesishiyagalombili' 'lesishiyagalolunye' 'leshumi' 'leshumi nanye')
     _clock_midnight='phakathi kwamabili'
     _clock_noon='emini'
-    _clock_pattern_0='{h} o'\''clock'
-    _clock_pattern_5='emva kwemizuzu emihlanu ngo-{h}'
-    _clock_pattern_10='emva kwemizuzu eyishumi ngo-{h}'
-    _clock_pattern_15='ikota edlule ngo-{h}'
-    _clock_pattern_20='emva kwemizuzu engamashumi amabili ngo-{h}'
-    _clock_pattern_25='emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}'
-    _clock_pattern_30='uhhafu edlule ngo-{h}'
-    _clock_pattern_35='imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}'
-    _clock_pattern_40='imizuzu engamashumi amabili ngaphambi kuka-{next_h}'
-    _clock_pattern_45='ikota ngaphambi kuka-{next_h}'
-    _clock_pattern_50='imizuzu eyishumi ngaphambi kuka-{next_h}'
-    _clock_pattern_55='imizuzu emihlanu ngaphambi kuka-{next_h}'
+    _clock_pattern_0='ihora {h}'
+    _clock_pattern_5='imizuzu emihlanu emva kwehora {h}'
+    _clock_pattern_10='imizuzu eyishumi emva kwehora {h}'
+    _clock_pattern_15='ikota emva kwehora {h}'
+    _clock_pattern_20='imizuzu engamashumi amabili emva kwehora {h}'
+    _clock_pattern_25='imizuzu engamashumi amabili nanhlanu emva kwehora {h}'
+    _clock_pattern_30='uhhafu emva kwehora {h}'
+    _clock_pattern_35='imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}'
+    _clock_pattern_40='imizuzu engamashumi amabili ngaphambi kwehora {next_h}'
+    _clock_pattern_45='ikota ngaphambi kwehora {next_h}'
+    _clock_pattern_50='imizuzu eyishumi ngaphambi kwehora {next_h}'
+    _clock_pattern_55='imizuzu emihlanu ngaphambi kwehora {next_h}'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

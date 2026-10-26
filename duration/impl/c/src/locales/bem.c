@@ -22,7 +22,7 @@ const SduDurationLocale sdu_locale_bem = {
     {
         { NULL, { NULL, "isekondi {n}", NULL, NULL, NULL, "amasekondi {n}" } },
         { NULL, { NULL, "iminiti {n}", NULL, NULL, NULL, "amaminiti {n}" } },
-        { NULL, { NULL, "insa {n}", NULL, NULL, NULL, "amanso {n}" } },
+        { NULL, { NULL, "insa {n}", NULL, NULL, NULL, "insa {n}" } },
         { NULL, { NULL, "ubushiku {n}", NULL, NULL, NULL, "inshiku {n}" } },
         { NULL, { NULL, "umulungu {n}", NULL, NULL, NULL, "imilungu {n}" } },
         { NULL, { NULL, "umweshi {n}", NULL, NULL, NULL, "imyeshi {n}" } },

@@ -10,22 +10,22 @@
 # Source: locales/ak.json
 
 function locale_ak {
-    $hours = @('dumien', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako')
-    $midnight = 'anadwo'
-    $noon = 'awia'
+    $hours = @('dumienu', 'baako', 'mmienu', 'mmiensa', 'anan', 'anum', 'nsia', 'nson', 'nwɔtwe', 'nkron', 'edu', 'dubaako')
+    $midnight = 'ɔdasuom'
+    $noon = 'owigyinae'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'nnɔn {h}'
+    $patterns[5] = 'nnɔn {h} ne sima anum'
+    $patterns[10] = 'nnɔn {h} ne sima edu'
+    $patterns[15] = 'nnɔn {h} ne sima dunum'
+    $patterns[20] = 'nnɔn {h} ne sima aduonu'
+    $patterns[25] = 'nnɔn {h} ne sima aduonu num'
+    $patterns[30] = 'nnɔn {h} ne fa'
+    $patterns[35] = 'aka sima aduonu num na abɔ nnɔn {next_h}'
+    $patterns[40] = 'aka sima aduonu na abɔ nnɔn {next_h}'
+    $patterns[45] = 'aka sima dunum na abɔ nnɔn {next_h}'
+    $patterns[50] = 'aka sima edu na abɔ nnɔn {next_h}'
+    $patterns[55] = 'aka sima anum na abɔ nnɔn {next_h}'
     $clock = @{
         hours = $hours
         midnight = $midnight

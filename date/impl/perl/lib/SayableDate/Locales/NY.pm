@@ -27,9 +27,9 @@ sub locale {{
   yesterday => 'dzulo',
   day_after_tomorrow => 'mkucha',
   day_before_yesterday => 'dzana',
-  this_weekday => '{weekday} ino',
-  next_weekday => '{weekday} yotsatira',
-  last_weekday => '{weekday} yatha',
+  this_weekday => '{weekday} lino',
+  next_weekday => '{weekday} lotsatira',
+  last_weekday => '{weekday} latha',
   short => {
     months => ['Jan', 'Feb', 'Mat', 'Epu', 'Mey', 'Jun', 'Jul', 'Oga', 'Sep', 'Okt', 'Nov', 'Dis'],
     weekdays => ['Lam', 'Lol', 'Lch', 'Lct', 'Lcn', 'Lcs', 'Low'],

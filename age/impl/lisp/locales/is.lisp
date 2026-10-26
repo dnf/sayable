@@ -30,7 +30,7 @@
                (cons :week '((:one . "{n} vika") (:other . "{n} vikur")))
                (cons :month '((:one . "{n} mánuður") (:other . "{n} mánuðir")))
                (cons :year '((:one . "{n} ár") (:other . "{n} ár"))))
-   :half "{0} og hálft"
+   :half "{n} og hálft"
    :delimiter ", "
    :just-born "Nýfætt"
    :stages (list (cons :newborn "Nýfæðingur")

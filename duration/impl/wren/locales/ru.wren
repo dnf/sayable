@@ -24,13 +24,13 @@ class RULocale {
   static plural { Fn.new {|n| Plural.call(n) } }
   static units {
     return {
-      "second": {"one": "{n} секунда", "few": "{n} секунды", "many": "{n} секунд", "other": "{n} секунд"},
-      "minute": {"one": "{n} минута", "few": "{n} минуты", "many": "{n} минут", "other": "{n} минут"},
-      "hour": {"one": "{n} час", "few": "{n} часа", "many": "{n} часов", "other": "{n} часов"},
-      "day": {"one": "{n} день", "few": "{n} дня", "many": "{n} дней", "other": "{n} дней"},
-      "week": {"one": "{n} неделя", "few": "{n} недели", "many": "{n} недель", "other": "{n} недель"},
-      "month": {"one": "{n} месяц", "few": "{n} месяца", "many": "{n} месяцев", "other": "{n} месяцев"},
-      "year": {"one": "{n} год", "few": "{n} года", "many": "{n} лет", "other": "{n} лет"},
+      "second": {"one": "{n} секунда", "few": "{n} секунды", "many": "{n} секунд", "other": "{n} секунды"},
+      "minute": {"one": "{n} минута", "few": "{n} минуты", "many": "{n} минут", "other": "{n} минуты"},
+      "hour": {"one": "{n} час", "few": "{n} часа", "many": "{n} часов", "other": "{n} часа"},
+      "day": {"one": "{n} день", "few": "{n} дня", "many": "{n} дней", "other": "{n} дня"},
+      "week": {"one": "{n} неделя", "few": "{n} недели", "many": "{n} недель", "other": "{n} недели"},
+      "month": {"one": "{n} месяц", "few": "{n} месяца", "many": "{n} месяцев", "other": "{n} месяца"},
+      "year": {"one": "{n} год", "few": "{n} года", "many": "{n} лет", "other": "{n} года"},
     }
   }
   static half { "{n} с половиной" }

@@ -25,12 +25,12 @@ fn plural_he(n int) PluralCategory {
 pub const locale_he = DurationLocale{
 	code: 'he'
 	plural: plural_he
-	second: plural_unit({PluralCategory.one: 'שנייה {n}', PluralCategory.two: 'שתי שניות', PluralCategory.other: '{n} שניות'})
-	minute: plural_unit({PluralCategory.one: 'דקה {n}', PluralCategory.two: 'שתי דקות', PluralCategory.other: '{n} דקות'})
-	hour: plural_unit({PluralCategory.one: 'שעה {n}', PluralCategory.two: 'שעתיים', PluralCategory.other: '{n} שעות'})
-	day: plural_unit({PluralCategory.one: 'יום {n}', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'})
-	week: plural_unit({PluralCategory.one: 'שבוע {n}', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'})
-	month: plural_unit({PluralCategory.one: 'חודש {n}', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'})
+	second: plural_unit({PluralCategory.one: 'שנייה', PluralCategory.two: 'שתי שניות', PluralCategory.other: '{n} שניות'})
+	minute: plural_unit({PluralCategory.one: 'דקה', PluralCategory.two: 'שתי דקות', PluralCategory.other: '{n} דקות'})
+	hour: plural_unit({PluralCategory.one: 'שעה', PluralCategory.two: 'שעתיים', PluralCategory.other: '{n} שעות'})
+	day: plural_unit({PluralCategory.one: 'יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'})
+	week: plural_unit({PluralCategory.one: 'שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'})
+	month: plural_unit({PluralCategory.one: 'חודש', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'})
 	year: plural_unit({PluralCategory.one: 'שנה', PluralCategory.two: 'שנתיים', PluralCategory.other: '{n} שנים'})
 	half: '{0} וחצי'
 	delimiter: ', '

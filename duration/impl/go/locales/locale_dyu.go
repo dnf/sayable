@@ -32,7 +32,7 @@ var DYU = sd.DurationLocale{
 	Delimiter: ", ",
 	JustNow:   "sisan",
 	Ago:       "{0} tɛmɛnen",
-	InFuture:  "ka {0}",
+	InFuture:  "{0} kɔnɔ",
 	Short: &sd.CompactnessOverride{
 		Second:   &sd.UnitForms{Simple: "sɛk. {n}"},
 		Minute:   &sd.UnitForms{Simple: "min. {n}"},
@@ -42,7 +42,7 @@ var DYU = sd.DurationLocale{
 		Month:    &sd.UnitForms{Simple: "kalo {n}"},
 		Year:     &sd.UnitForms{Simple: "san {n}"},
 		Ago:      strPtr("{0} tɛmɛnen"),
-		InFuture: strPtr("ka {0}"),
+		InFuture: strPtr("{0} kɔnɔ"),
 	},
 	Compact: &sd.CompactnessOverride{
 		Second:    &sd.UnitForms{Simple: "{n}s"},
@@ -55,6 +55,6 @@ var DYU = sd.DurationLocale{
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),
 		Ago:       strPtr("{0} tɛmɛnen"),
-		InFuture:  strPtr("ka {0}"),
+		InFuture:  strPtr("{0} kɔnɔ"),
 	},
 }

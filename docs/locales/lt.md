@@ -6,6 +6,14 @@
 
 Plural rule: `lt` (categories: one, few, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [lt.json](../../locales/lt.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Existing clock phrases ('penkios minuta dvi', 'penkiolika iki trys') are poor Lithuanian, but the audit lists that under schemaLimits (needs genitive hour forms), so left alone.
+
 ## Age
 
 ### Age formatting
@@ -52,14 +60,14 @@ Plural rule: `lt` (categories: one, few, other)
 
 ### Date formatting
 
-| Date        | Normal       | Short        | Compact |
-| ----------- | ------------ | ------------ | ------- |
-| January 1   | 1. sausio    | 1. sausio    | 1-1     |
-| February 14 | 14. vasario  | 14. vasario  | 2-14    |
-| March 15    | 15. kovo     | 15. kovo     | 3-15    |
-| July 4      | 4. liepos    | 4. liepos    | 7-4     |
-| October 31  | 31. spalio   | 31. spalio   | 10-31   |
-| December 25 | 25. gruodžio | 25. gruodžio | 12-25   |
+| Date        | Normal         | Short          | Compact |
+| ----------- | -------------- | -------------- | ------- |
+| January 1   | sausio 1 d.    | sausio 1 d.    | 1-1     |
+| February 14 | vasario 14 d.  | vasario 14 d.  | 2-14    |
+| March 15    | kovo 15 d.     | kovo 15 d.     | 3-15    |
+| July 4      | liepos 4 d.    | liepos 4 d.    | 7-4     |
+| October 31  | spalio 31 d.   | spalio 31 d.   | 10-31   |
+| December 25 | gruodžio 25 d. | gruodžio 25 d. | 12-25   |
 
 ### Relative dates
 
@@ -73,10 +81,10 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | poryt                | 3-17     |
 | Day before yesterday | užvakar              | 3-13     |
 | This Thursday (+5)   | šį ketvirtadienis    | 3-20     |
-| Last Monday (-4)     | praėjusį antradienis | 3-11     |
-| Next Wednesday (+12) | kitą ketvirtadienis  | 3-27     |
-| Same month (+20)     | 4. balandžio         | 4-4      |
-| Different year       | 10. sausio 2026      | 26-1-10  |
+| Last Tuesday (-4)    | praėjusį antradienis | 3-11     |
+| Next Thursday (+12)  | kitą ketvirtadienis  | 3-27     |
+| Same year (+20)      | balandžio 4 d.       | 4-4      |
+| Different year       | 2026 m. sausio 10 d. | 26-1-10  |
 
 ## Duration
 

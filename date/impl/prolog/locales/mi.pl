@@ -21,8 +21,8 @@ sd_date_pattern_with_year('mi', '{day} {month} {year}').
 sd_today('mi', 'i tēnei rā').
 sd_tomorrow('mi', 'āpōpō').
 sd_yesterday('mi', 'inanahi').
-sd_day_after_tomorrow('mi', 'tērā āpōpō').
-sd_day_before_yesterday('mi', 'tērā inanahi').
+sd_day_after_tomorrow('mi', 'ātahirā').
+sd_day_before_yesterday('mi', 'inātahirā').
 sd_this_weekday('mi', 'tēnei {weekday}').
 sd_next_weekday('mi', '{weekday} e heke mai nei').
 sd_last_weekday('mi', '{weekday} kua hori').

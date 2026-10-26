@@ -31,7 +31,7 @@ defmodule SayableAge.Locales.MK do
         toddler: "Мало дете",
         child: "Дете",
         teenager: "Тинејџер",
-        adult: "Возрасен"
+        adult: %{m: "Возрасен", f: "Возрасна"}
       },
       short: %{
         units: %{

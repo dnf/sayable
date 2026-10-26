@@ -24,7 +24,7 @@ sa_unit('kn', month, other, '{n} ತಿಂಗಳುಗಳು').
 sa_unit('kn', year, one, '{n} ವರ್ಷ').
 sa_unit('kn', year, other, '{n} ವರ್ಷಗಳು').
 
-sa_half('kn', '{0}ವರೆ').
+sa_half('kn', '{n}½').
 sa_delimiter('kn', ', ').
 sa_just_born('kn', 'ನವಜಾತ ಶಿಶು').
 

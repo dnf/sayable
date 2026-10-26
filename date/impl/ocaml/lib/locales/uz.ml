@@ -36,16 +36,16 @@ let locale : date_locale =
     ; "juma"
     ; "shanba"
     ]
-  ; day_format = "{n}"
+  ; day_format = "{n}-"
   ; day_format_exceptions =
     []
-  ; date_pattern = "{day} {month}"
-  ; date_pattern_with_year = "{day} {month} {year}"
+  ; date_pattern = "{day}{month}"
+  ; date_pattern_with_year = "{day}{month}, {year}"
   ; today = "bugun"
   ; tomorrow = "ertaga"
   ; yesterday = "kecha"
   ; day_after_tomorrow = Some "indinga"
-  ; day_before_yesterday = Some "kechagina"
+  ; day_before_yesterday = Some "o'tgan kuni"
   ; this_weekday = Some "bu {weekday}"
   ; next_weekday = Some "keyingi {weekday}"
   ; last_weekday = Some "o'tgan {weekday}"
@@ -75,10 +75,10 @@ let locale : date_locale =
         ; "jum"
         ; "shan"
         ]
-      ; ovr_day_format = Some "{n}"
+      ; ovr_day_format = Some "{n}-"
       ; ovr_day_format_exceptions = Some []
-      ; ovr_date_pattern = Some "{day} {month}"
-      ; ovr_date_pattern_with_year = Some "{day} {month} {year}"
+      ; ovr_date_pattern = Some "{day}{month}"
+      ; ovr_date_pattern_with_year = Some "{day}{month}, {year}"
       ; ovr_today = None
       ; ovr_tomorrow = None
       ; ovr_yesterday = None

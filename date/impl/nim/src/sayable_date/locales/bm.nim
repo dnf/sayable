@@ -15,7 +15,7 @@ import ../locale
 
 let BM* = DateLocale(
   code: "bm",
-  months: @["Zanwuye", "Fewuriye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "ɔkutɔburu", "Nowanbudu", "Desanburu"],
+  months: @["Zanwuye", "Feburuye", "Marisi", "Awirili", "Mɛ", "Zuwɛn", "Zuluye", "Uti", "Sɛtanburu", "Ɔkutɔburu", "Nowanburu", "Desanburu"],
   weekdays: @["Kari", "Ntɛnɛn", "Tarata", "Araba", "Alamisa", "Juma", "Sibiri"],
   dayFormat: "{n}",
   dayFormatExceptions: initOrderedTable[string, string](),
@@ -31,7 +31,7 @@ let BM* = DateLocale(
   lastWeekday: some("{weekday} tɛmɛnen"),
   monthsInDate: none(seq[string]),
   short: some(CompactnessOverride(
-    months: some(@["Zan", "Few", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "ɔku", "Now", "Des"]),
+    months: some(@["Zan", "Feb", "Mar", "Awi", "Mɛ", "Zuw", "Zul", "Uti", "Sɛt", "Ɔku", "Now", "Des"]),
     monthsInDate: none(seq[string]),
     weekdays: some(@["Kar", "Ntɛ", "Tar", "Ara", "Ala", "Jum", "Sib"]),
     dayFormat: some("{n}"),

@@ -33,7 +33,7 @@ const MK = AgeLocale(
         "toddler" => StageLabel("Мало дете"),
         "child" => StageLabel("Дете"),
         "teenager" => StageLabel("Тинејџер"),
-        "adult" => StageLabel("Возрасен"),
+        "adult" => GenderedStage("Возрасен", "Возрасна"),
     ),
     short_override = CompactnessOverride(
         units = Dict(

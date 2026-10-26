@@ -13,7 +13,7 @@
 
 (def locale
   {:code "yue"
-   :months ["一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月"]
+   :months ["1月" "2月" "3月" "4月" "5月" "6月" "7月" "8月" "9月" "10月" "11月" "12月"]
    :weekdays ["星期日" "星期一" "星期二" "星期三" "星期四" "星期五" "星期六"]
    :day-format "{n}日"
    :day-format-exceptions {}
@@ -28,5 +28,5 @@
    :next-weekday "下個{weekday}"
    :last-weekday "上個{weekday}"
    :months-in-date nil
-   :short {:months ["一月" "二月" "三月" "四月" "五月" "六月" "七月" "八月" "九月" "十月" "十一月" "十二月"] :months-in-date nil :weekdays ["日" "一" "二" "三" "四" "五" "六"] :day-format "{n}日" :day-format-exceptions nil :date-pattern "{month}{day}" :date-pattern-with-year "{year}年{month}{day}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["1月" "2月" "3月" "4月" "5月" "6月" "7月" "8月" "9月" "10月" "11月" "12月"] :months-in-date nil :weekdays ["日" "一" "二" "三" "四" "五" "六"] :day-format "{n}日" :day-format-exceptions nil :date-pattern "{month}{day}" :date-pattern-with-year "{year}年{month}{day}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{m}/{d}" :date-pattern-with-year "{yy}/{m}/{d}" :today nil :tomorrow nil :yesterday nil}})

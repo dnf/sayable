@@ -20,7 +20,7 @@
     :hours (list "likumi na iwili" "cimo" "iwili" "itatu" "ncece" "nsano" "nsano nacimo" "nsano nawili" "nsano naitatu" "nsano nancece" "likumi" "likumi nacimo")
     :midnight "pakati pa usiku"
     :noon "pakati pa lisiku"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "saa {h}") (cons 5 "saa {h} na nsano") (cons 10 "saa {h} na likumi") (cons 15 "saa {h} na likumi na nsano") (cons 20 "saa {h} na makumi gaŵili") (cons 25 "saa {h} na makumi gaŵili na nsano") (cons 30 "saa {h} na nusu") (cons 35 "saa {h} na makumi gatatu na nsano") (cons 40 "saa {h} na makumi ncece") (cons 45 "saa {h} na makumi ncece na nsano") (cons 50 "saa {h} na makumi nsano") (cons 55 "saa {h} na makumi nsano na nsano")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

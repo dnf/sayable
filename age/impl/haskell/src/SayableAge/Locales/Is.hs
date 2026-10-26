@@ -33,7 +33,7 @@ locale = Locale
       [ (One, "{n} ár")
       , (Other, "{n} ár")
       ]
-    , localeHalf = "{0} og hálft"
+    , localeHalf = "{n} og hálft"
     , localeDelimiter = ", "
     , localeJustBorn = "Nýfætt"
     , localeStages = Stages

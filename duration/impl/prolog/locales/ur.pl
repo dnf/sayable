@@ -16,7 +16,8 @@ sd_plural('ur', _, other).
 
 sd_unit('ur', second, _, '{n} سیکنڈ').
 sd_unit('ur', minute, _, '{n} منٹ').
-sd_unit('ur', hour, _, '{n} گھنٹہ').
+sd_unit('ur', hour, one, '{n} گھنٹہ').
+sd_unit('ur', hour, other, '{n} گھنٹے').
 sd_unit('ur', day, one, '{n} دن').
 sd_unit('ur', day, other, '{n} دن').
 sd_unit('ur', week, one, '{n} ہفتہ').

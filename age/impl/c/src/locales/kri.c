@@ -25,7 +25,7 @@ const SaLocale sa_locale_kri = {
         { "{n} mont", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} ia", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n} na af", ", ", "Nyubon bebi",
+    "{0} ɛn af", ", ", "Nyubon bebi",
     {
         { "Nyubon bebi", "" },
         { "Smol pikin", "" },
@@ -35,5 +35,5 @@ const SaLocale sa_locale_kri = {
         { "Big posin", "" }
     },
     true, { true, { "{n} de", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wik", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mont", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ia", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

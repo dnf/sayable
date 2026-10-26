@@ -26,7 +26,7 @@ proc locale_duration_su {} {
     ]
     set half "{0} satengah"
     set delimiter {, }
-    set just_now {ayeuna}
+    set just_now {nembé}
     set ago "{0} kapengker"
     set in_future "dina {0}"
     set short [dict create \

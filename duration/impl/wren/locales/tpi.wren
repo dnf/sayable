@@ -23,7 +23,7 @@ class TPILocale {
       "year": "{n} yia",
     }
   }
-  static half { "{n} na hap" }
+  static half { "{0} na hap" }
   static delimiter { ", " }
   static justNow { "nau tasol" }
   static ago { "{0} i go pinis" }
@@ -54,6 +54,7 @@ class TPILocale {
         "month": "{n}mo",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
       "ago": "{0} i go pinis",
       "inFuture": "long {0}",

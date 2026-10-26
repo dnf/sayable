@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_gd = {
     "gd",
     {
-        { "dà-dheug", "aon", "dà", "trì", "ceithir", "còig", "sia", "seachd", "ochd", "naoi", "deich", "aon-deug" },
+        { "dà uair dheug", "uair", "dà uair", "trì uairean", "ceithir uairean", "còig uairean", "sia uairean", "seachd uairean", "ochd uairean", "naoi uairean", "deich uairean", "aon uair deug" },
         "meadhan-oidhche",
         "meadhan-latha",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "{h}", "còig mionaidean an dèidh {h}", "deich mionaidean an dèidh {h}", "cairteal an dèidh {h}", "fichead mionaid an dèidh {h}", "còig mionaidean fichead an dèidh {h}", "leth-uair an dèidh {h}", "còig mionaidean fichead gu {next_h}", "fichead mionaid gu {next_h}", "cairteal gu {next_h}", "deich mionaidean gu {next_h}", "còig mionaidean gu {next_h}" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

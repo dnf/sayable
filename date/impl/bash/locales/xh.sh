@@ -19,7 +19,7 @@ _sayabledate_locale_xh() {
     _tomorrow='ngomso'
     _yesterday='izolo'
     _day_after_tomorrow='ngomhlomunye'
-    _day_before_yesterday='kutshanje'
+    _day_before_yesterday='izolo elinye'
     _this_weekday='le {weekday}'
     _next_weekday='{weekday} ezayo'
     _last_weekday='{weekday} edlulileyo'

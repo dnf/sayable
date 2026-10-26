@@ -27,7 +27,7 @@ pub fn locale() -> types.DurationLocale {
     half: "{0} sy sasany",
     delimiter: ", ",
     just_now: "vao haingana",
-    ago: "{0} lasa",
+    ago: "{0} lasa izay",
     in_future: "ao anatin'ny {0}",
     short: Ok(types.CompactnessOverride(
       units: Ok([
@@ -41,7 +41,7 @@ pub fn locale() -> types.DurationLocale {
       ]),
       half: Error(Nil),
       delimiter: Error(Nil),
-      ago: Ok("{0} lasa"),
+      ago: Ok("{0} lasa izay"),
       in_future: Ok("ao anatin'ny {0}"),
     )),
     compact: Ok(types.CompactnessOverride(

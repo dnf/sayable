@@ -19,7 +19,7 @@ let BEM* = DurationLocale(
   units: {
     "second": pluralUnit(@[(pcOne, "isekondi {n}"), (pcOther, "amasekondi {n}")]),
     "minute": pluralUnit(@[(pcOne, "iminiti {n}"), (pcOther, "amaminiti {n}")]),
-    "hour": pluralUnit(@[(pcOne, "insa {n}"), (pcOther, "amanso {n}")]),
+    "hour": pluralUnit(@[(pcOne, "insa {n}"), (pcOther, "insa {n}")]),
     "day": pluralUnit(@[(pcOne, "ubushiku {n}"), (pcOther, "inshiku {n}")]),
     "week": pluralUnit(@[(pcOne, "umulungu {n}"), (pcOther, "imilungu {n}")]),
     "month": pluralUnit(@[(pcOne, "umweshi {n}"), (pcOther, "imyeshi {n}")]),

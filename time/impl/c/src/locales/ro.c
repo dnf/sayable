@@ -17,7 +17,7 @@ const StTimeLocale st_locale_ro = {
         { "douăsprezece", "unu", "două", "trei", "patru", "cinci", "șase", "șapte", "opt", "nouă", "zece", "unsprezece" },
         "miezul nopții",
         "amiază",
-        { "{h} ore", "cinci peste {h}", "zece peste {h}", "un sfert peste {h}", "douăzeci peste {h}", "douăzeci și cinci peste {h}", "jumătate peste {h}", "douăzeci și cinci înainte de {next_h}", "douăzeci înainte de {next_h}", "un sfert înainte de {next_h}", "zece înainte de {next_h}", "cinci înainte de {next_h}" }
+        { "ora {h}", "{h} și cinci", "{h} și zece", "{h} și un sfert", "{h} și douăzeci", "{h} și douăzeci și cinci", "{h} și jumătate", "{next_h} fără douăzeci și cinci", "{next_h} fără douăzeci", "{next_h} fără un sfert", "{next_h} fără zece", "{next_h} fără cinci" }
     },
     true, { true, { NULL, NULL }, "{h}:{mm}" },
     true, { true, { NULL, NULL }, "{h}:{mm}" }

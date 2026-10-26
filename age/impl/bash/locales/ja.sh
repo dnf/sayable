@@ -35,5 +35,6 @@ _sayableage_locale_ja() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _plural_func=_sayableage_plural_ja
 }

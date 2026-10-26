@@ -30,7 +30,7 @@ let locale : locale =
       [ (One, "{n} año")
       ; (Other, "{n} años")
       ]
-  ; half = "{n} y medio"
+  ; half = "{0} y medio"
   ; delimiter = ", "
   ; just_born = "Recién nacido"
   ; stages =

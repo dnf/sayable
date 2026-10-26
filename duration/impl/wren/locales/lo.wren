@@ -24,10 +24,10 @@ class LOLocale {
     }
   }
   static half { "{0}ເຄິ່ງ" }
-  static delimiter { "" }
+  static delimiter { " " }
   static justNow { "ຫາກໍ" }
   static ago { "{0} ກ່ອນ" }
-  static inFuture { "ໃນ {0}" }
+  static inFuture { "ໃນອີກ {0}" }
   static short {
     return {
       "units": {
@@ -40,7 +40,7 @@ class LOLocale {
         "year": "{n} ປ.",
       },
       "ago": "{0} ກ່ອນ",
-      "inFuture": "ໃນ {0}",
+      "inFuture": "ໃນອີກ {0}",
     }
   }
   static compact {
@@ -51,13 +51,13 @@ class LOLocale {
         "hour": "{n}h",
         "day": "{n}d",
         "week": "{n}w",
-        "month": "{n}m",
+        "month": "{n}mo",
         "year": "{n}y",
       },
       "half": "{n}½",
       "delimiter": "",
       "ago": "{0} ກ່ອນ",
-      "inFuture": "ໃນ {0}",
+      "inFuture": "ໃນອີກ {0}",
     }
   }
 }

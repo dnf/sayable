@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tn.json](../../locales/tn.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Setswana tells time with ordinal hours: hours are now 'ya ntlha', 'ya bobedi' … 'ya lesome le bobedi' and pattern 0 is 'ura {h}' ('ura ya bone' = four o'clock). 'le halofo' (half past) and 'le kotara' (quarter past) are standard; other minutes are additive 'le metsotso e le <n>' (class-4 concord: 'e metlhano' for five). No 'to' phrases: I am not sure of the idiom, additive is always understood. Doubt: 'ya ntlha' vs informal 'ya bongwe' for one o'clock.
+
 ## Age
 
 ### Age formatting
@@ -45,7 +53,7 @@ Plural rule: `one_other` (categories: one, other)
 | Infant   | Lesea                   |
 | Toddler  | Ngwana yo monnye        |
 | Child    | Ngwana                  |
-| Teenager | Lekgarebe               |
+| Teenager | Mosha                   |
 | Adult    | Motho yo mogolo         |
 
 ## Date
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | morago ga kamoso      | 17/3     |
 | Day before yesterday | maabanyane            | 13/3     |
 | This Thursday (+5)   | Labone e              | 20/3     |
-| Last Monday (-4)     | Labobedi e e fetileng | 11/3     |
-| Next Wednesday (+12) | Labone e e tlang      | 27/3     |
-| Same month (+20)     | 4 Moranang            | 4/4      |
+| Last Tuesday (-4)    | Labobedi e e fetileng | 11/3     |
+| Next Thursday (+12)  | Labone e e tlang      | 27/3     |
+| Same year (+20)      | 4 Moranang            | 4/4      |
 | Different year       | 10 Ferikgong 2026     | 10/1/26  |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                         | Short                          | Compact      |
-| --------------------- | ------------------------------ | ------------------------------ | ------------ |
-| 0 seconds             | jaanong fela                   | jaanong fela                   | jaanong fela |
-| 1 second              | motsotswana 1                  | motsotswana 1                  | 1s           |
-| 30 seconds            | dimetsotswana 30               | dimetsotswana 30               | 30s          |
-| 1 minute              | metsotso 1                     | metsotso 1                     | 1m           |
-| 2 minutes, 15 seconds | dimetsotso 2, dimetsotswana 15 | dimetsotso 2, dimetsotswana 15 | 2m15s        |
-| 5 minutes             | dimetsotso 5                   | dimetsotso 5                   | 5m           |
-| 45 minutes            | dimetsotso 45                  | dimetsotso 45                  | 45m          |
-| 1 hour                | ura 1                          | ura 1                          | 1h           |
-| 1½ hours              | diura 1 le halofo              | diura 1 le halofo              | 1½h          |
-| 3 hours               | diura 3                        | diura 3                        | 3h           |
-| 6 hours               | diura 6                        | diura 6                        | 6h           |
-| 1 day                 | letsatsi 1                     | letsatsi 1                     | 1d           |
-| 1½ days               | malatsi 1 le halofo            | malatsi 1 le halofo            | 1½d          |
-| 3 days                | malatsi 3                      | malatsi 3                      | 3d           |
-| 1 week                | beke 1                         | beke 1                         | 1w           |
-| 2 weeks, 3 days       | dibeke 2, malatsi 3            | dibeke 2, malatsi 3            | 2w3d         |
-| 1 month               | kgwedi 1                       | kgw. 1                         | 1m           |
-| 6 months              | dikgwedi 6                     | dikgw. 6                       | 6m           |
-| 1 year                | ngwaga 1                       | ngw. 1                         | 1y           |
-| 2 years, 3 months     | dingwaga 2, dikgwedi 3         | dingw. 2, dikgw. 3             | 2y3m         |
+| Duration              | Normal                     | Short                      | Compact      |
+| --------------------- | -------------------------- | -------------------------- | ------------ |
+| 0 seconds             | jaanong fela               | jaanong fela               | jaanong fela |
+| 1 second              | motsotswana 1              | motsotswana 1              | 1s           |
+| 30 seconds            | metsotswana 30             | metsotswana 30             | 30s          |
+| 1 minute              | motsotso 1                 | motsotso 1                 | 1m           |
+| 2 minutes, 15 seconds | metsotso 2, metsotswana 15 | metsotso 2, metsotswana 15 | 2m15s        |
+| 5 minutes             | metsotso 5                 | metsotso 5                 | 5m           |
+| 45 minutes            | metsotso 45                | metsotso 45                | 45m          |
+| 1 hour                | ura 1                      | ura 1                      | 1h           |
+| 1½ hours              | diura 1 le halofo          | diura 1 le halofo          | 1½h          |
+| 3 hours               | diura 3                    | diura 3                    | 3h           |
+| 6 hours               | diura 6                    | diura 6                    | 6h           |
+| 1 day                 | letsatsi 1                 | letsatsi 1                 | 1d           |
+| 1½ days               | malatsi 1 le halofo        | malatsi 1 le halofo        | 1½d          |
+| 3 days                | malatsi 3                  | malatsi 3                  | 3d           |
+| 1 week                | beke 1                     | beke 1                     | 1w           |
+| 2 weeks, 3 days       | dibeke 2, malatsi 3        | dibeke 2, malatsi 3        | 2w3d         |
+| 1 month               | kgwedi 1                   | kgw. 1                     | 1m           |
+| 6 months              | dikgwedi 6                 | dikgw. 6                   | 6m           |
+| 1 year                | ngwaga 1                   | ngw. 1                     | 1y           |
+| 2 years, 3 months     | dingwaga 2, dikgwedi 3     | dingw. 2, dikgw. 3         | 2y3m         |
 
 ### Relative time
 
-| Offset        | Normal                    | Compact         |
-| ------------- | ------------------------- | --------------- |
-| 5 minutes ago | dimetsotso 5 e e fetileng | 5m e e fetileng |
-| 2 hours ago   | diura 2 e e fetileng      | 2h e e fetileng |
-| in 30 minutes | ka dimetsotso 30          | ka 30m          |
-| in 3 hours    | ka diura 3                | ka 3h           |
+| Offset        | Normal                  | Compact         |
+| ------------- | ----------------------- | --------------- |
+| 5 minutes ago | metsotso 5 e e fetileng | 5m e e fetileng |
+| 2 hours ago   | diura 2 e e fetileng    | 2h e e fetileng |
+| in 30 minutes | ka metsotso 30          | ka 30m          |
+| in 3 hours    | ka diura 3              | ka 3h           |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal              | Short    | Compact |
-| --------------- | ------------------- | -------- | ------- |
-| Midnight        | bosigo jwa magareng | 12:00 AM | 12:00a  |
-| 1:00 AM         | nngwe:00            | 1:00 AM  | 1:00a   |
-| 5 past 9        | robongwe:05         | 9:05 AM  | 9:05a   |
-| Quarter past 10 | lesome:15           | 10:15 AM | 10:15a  |
-| Half past 11    | lesome le bongwe:30 | 11:30 AM | 11:30a  |
-| Noon            | motshegare          | 12:00 PM | 12:00p  |
-| Quarter to 3    | pedi:45             | 2:45 PM  | 2:45p   |
-| 5 to 6          | tlhano:55           | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | robedi:00           | 8:00 PM  | 8:00p   |
-| 10:30 PM        | lesome:30           | 10:30 PM | 10:30p  |
-| 11:58 PM        | bosigo jwa magareng | 11:58 PM | 11:58p  |
+| Time            | Normal                                                         | Short    | Compact |
+| --------------- | -------------------------------------------------------------- | -------- | ------- |
+| Midnight        | bosigo jwa magareng                                            | 12:00 AM | 12:00a  |
+| 1:00 AM         | ura ya ntlha                                                   | 1:00 AM  | 1:00a   |
+| 5 past 9        | ura ya borobongwe le metsotso e metlhano                       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ura ya lesome le kotara                                        | 10:15 AM | 10:15a  |
+| Half past 11    | ura ya lesome le bongwe le halofo                              | 11:30 AM | 11:30a  |
+| Noon            | motshegare                                                     | 12:00 PM | 12:00p  |
+| Quarter to 3    | ura ya bobedi le metsotso e le masome a mane le botlhano       | 2:45 PM  | 2:45p   |
+| 5 to 6          | ura ya botlhano le metsotso e le masome a matlhano le botlhano | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ura ya borobedi                                                | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ura ya lesome le halofo                                        | 10:30 PM | 10:30p  |
+| 11:58 PM        | bosigo jwa magareng                                            | 11:58 PM | 11:58p  |

@@ -1,5 +1,4 @@
 /// Formats durations the way people talk -- "just now", "3 minutes", "2½ hours".
-
 import sayableduration/formatter
 import sayableduration/locales/locales
 import sayableduration/types.{type Compactness, type DurationLocale}

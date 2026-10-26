@@ -15,7 +15,7 @@ pub fn locale() -> types.DateLocale {
   types.DateLocale(
     code: "fon",
     months: ["Alɔfí", "Alɔnyɔ", "Ataɖaxɔ", "Tlɛsún", "Axɔsún", "Ayɛsún", "Nùxwásún", "Ayidosún", "Kɛnísún", "Kanyásún", "Abɔxwísún", "Adɔxwísún"],
-    weekdays: ["Sidégbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Abámɛ́ta"],
+    weekdays: ["Aklunɔzángbe", "Tɛnígbe", "Talɛtagbe", "Azǎngagbe", "Nyɔnúgbe", "Axɔ́sùgbe", "Sibigbe"],
     day_format: "{n}",
     day_format_exceptions: [],
     date_pattern: "{day} {month}",
@@ -32,7 +32,7 @@ pub fn locale() -> types.DateLocale {
     short: Ok(types.CompactnessOverride(
       months: Ok(["Alɔ", "Any", "Ata", "Tlɛ", "Axɔ", "Ayɛ", "Nùx", "Ayi", "Kɛn", "Kan", "Abɔ", "Adɔ"]),
       months_in_date: Error(Nil),
-      weekdays: Ok(["Sid", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Abá"]),
+      weekdays: Ok(["Akl", "Tɛn", "Tal", "Azǎ", "Nyɔ", "Axɔ", "Sib"]),
       day_format: Ok("{n}"),
       date_pattern: Ok("{day} {month}"),
       date_pattern_with_year: Ok("{day} {month} {year}"),

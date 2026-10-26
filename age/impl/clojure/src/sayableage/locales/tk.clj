@@ -18,9 +18,9 @@
    :week {:type :simple :form "{n} hepde"}
    :month {:type :simple :form "{n} aý"}
    :year {:type :simple :form "{n} ýaş"}
-   :half "{0}½"
+   :half "{n} ýarym"
    :delimiter ", "
    :just-born "Täze doglan"
-   :stages {:newborn {:type :neutral :label "Täze doglan"} :infant {:type :neutral :label "Bäbek"} :toddler {:type :neutral :label "Kiçijik"} :child {:type :neutral :label "Çaga"} :teenager {:type :neutral :label "Ýetginjek"} :adult {:type :neutral :label "Ulular"}}
+   :stages {:newborn {:type :neutral :label "Täze doglan"} :infant {:type :neutral :label "Bäbek"} :toddler {:type :neutral :label "Kiçijik"} :child {:type :neutral :label "Çaga"} :teenager {:type :neutral :label "Ýetginjek"} :adult {:type :neutral :label "Uly adam"}}
    :short {:day {:type :simple :form "{n} g"} :week {:type :simple :form "{n} h"} :month {:type :simple :form "{n} a"} :year {:type :simple :form "{n} ý"} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}g"} :week {:type :simple :form "{n}h"} :month {:type :simple :form "{n}a"} :year {:type :simple :form "{n}ý"} :half "{n}½" :delimiter "" :just-born nil}})

@@ -18,7 +18,7 @@ locale_si <- list(
     month = list(one = "මාස {n}", other = "මාස {n}"),
     year = list(one = "වසර {n}", other = "වසර {n}")
   ),
-  half = "{0}යි භාගයයි",
+  half = "{n}½",
   delimiter = ", ",
   just_born = "අලුත උපන්",
   stages = list(

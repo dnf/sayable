@@ -14,11 +14,11 @@
 const IT = TimeLocale(
     code = "it",
     clock = ClockConfig(
-        hours = ["dodici", "una", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci", "undici"],
+        hours = ["le dodici", "l'una", "le due", "le tre", "le quattro", "le cinque", "le sei", "le sette", "le otto", "le nove", "le dieci", "le undici"],
         midnight = "mezzanotte",
         noon = "mezzogiorno",
         patterns = Dict{Int, String}(
-            0 => "le {h}",
+            0 => "{h}",
             5 => "{h} e cinque",
             10 => "{h} e dieci",
             15 => "{h} e un quarto",

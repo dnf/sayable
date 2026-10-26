@@ -20,7 +20,7 @@
     :hours (list "ବାରଟା" "ଗୋଟିଏ" "ଦୁଇଟା" "ତିନିଟା" "ଚାରିଟା" "ପାଞ୍ଚଟା" "ଛଅଟା" "ସାତଟା" "ଆଠଟା" "ନଅଟା" "ଦଶଟା" "ଏଗାରଟା")
     :midnight "ମଧ୍ୟରାତ୍ରି"
     :noon "ମଧ୍ୟାହ୍ନ"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h}") (cons 5 "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍") (cons 10 "{h} ବାଜି ଦଶ ମିନିଟ୍") (cons 15 "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍") (cons 20 "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍") (cons 25 "{h} ବାଜି ପଚିଶ ମିନିଟ୍") (cons 30 "{h} ବାଜି ତିରିଶ ମିନିଟ୍") (cons 35 "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍") (cons 40 "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍") (cons 45 "ପାଉଣେ {next_h}") (cons 50 "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍") (cons 55 "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

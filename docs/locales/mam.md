@@ -6,36 +6,44 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [mam.json](../../locales/mam.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): No past/to idiom known to me, so used '<hour> or tuk' <minutes> minut' (or = hour, from Spanish hora; tuk' = with; minut = minute loan), '{h} or tuk' nik'' for half (reusing the locale's existing half word). Minutes use Mam vigesimal numerals (o'laj 15, winqan 20, jwe' toj ka'wnaq 25, laj toj ka'wnaq 30 unused, o'laj toj ka'wnaq 35, ka'wnaq 40, jwe' toj oxk'al 45, laj toj oxk'al 50, o'laj toj oxk'al 55). Doubts: the hour word 'or', the connective 'tuk'', whether 'nik'' really means half (vs 'nikyjin'/'mij'), and whether speakers use these numerals rather than Spanish ones. Needs a native check.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal            | Short          | Compact  |
-| ----------------- | ----------------- | -------------- | -------- |
-| Born today        | Yal xjal          | Yal xjal       | Yal xjal |
-| 1 day             | 1 q'ij            | 1 q'ij         | 1d       |
-| 3 days            | 3 q'ij            | 3 q'ij         | 3d       |
-| 6 days            | 6 q'ij            | 6 q'ij         | 6d       |
-| 1 week            | 1 xjaw            | 1 xjaw         | 1w       |
-| 1 week, 1 day     | 1 xjaw, 1 q'ij    | 1 xjaw, 1 q'ij | 1w1d     |
-| 2 weeks           | 2 xjaw            | 2 xjaw         | 2w       |
-| 2 weeks, 3 days   | 2 xjaw, 3 q'ij    | 2 xjaw, 3 q'ij | 2w3d     |
-| 3 months          | 3 xjaw            | 3 xjaw         | 3m       |
-| 6 months          | 6 xjaw            | 6 xjaw         | 6m       |
-| 11 months         | 11 xjaw           | 11 xjaw        | 11m      |
-| 12 months         | 12 xjaw           | 12 xjaw        | 12m      |
-| 23 months         | 23 xjaw           | 23 xjaw        | 23m      |
-| 2 years           | 2 ab'q'ii         | 2 ab'.         | 2y       |
-| 2 years, 1 month  | 2 ab'q'ii, 1 xjaw | 2 ab'., 1 xjaw | 2y1m     |
-| 2 years, 6 months | 2 ab'q'ii, 6 xjaw | 2 ab'., 6 xjaw | 2y6m     |
-| 3 years           | 3 ab'q'ii         | 3 ab'.         | 3y       |
-| 3½ years          | 3 ab'q'ii nik'    | 3 ab'. nik'    | 3y nik'  |
-| 5 years           | 5 ab'q'ii         | 5 ab'.         | 5y       |
-| 5½ years          | 5 ab'q'ii nik'    | 5 ab'. nik'    | 5y nik'  |
-| 7 years           | 7 ab'q'ii         | 7 ab'.         | 7y       |
-| 10 years          | 10 ab'q'ii        | 10 ab'.        | 10y      |
-| 18 years          | 18 ab'q'ii        | 18 ab'.        | 18y      |
-| 45 years          | 45 ab'q'ii        | 45 ab'.        | 45y      |
+| Age               | Normal            | Short           | Compact  |
+| ----------------- | ----------------- | --------------- | -------- |
+| Born today        | Yal xjal          | Yal xjal        | Yal xjal |
+| 1 day             | 1 q'ij            | 1 q'ij          | 1d       |
+| 3 days            | 3 q'ij            | 3 q'ij          | 3d       |
+| 6 days            | 6 q'ij            | 6 q'ij          | 6d       |
+| 1 week            | 1 seman           | 1 seman         | 1w       |
+| 1 week, 1 day     | 1 seman, 1 q'ij   | 1 seman, 1 q'ij | 1w1d     |
+| 2 weeks           | 2 seman           | 2 seman         | 2w       |
+| 2 weeks, 3 days   | 2 seman, 3 q'ij   | 2 seman, 3 q'ij | 2w3d     |
+| 3 months          | 3 xjaw            | 3 xjaw          | 3m       |
+| 6 months          | 6 xjaw            | 6 xjaw          | 6m       |
+| 11 months         | 11 xjaw           | 11 xjaw         | 11m      |
+| 12 months         | 12 xjaw           | 12 xjaw         | 12m      |
+| 23 months         | 23 xjaw           | 23 xjaw         | 23m      |
+| 2 years           | 2 ab'q'ii         | 2 ab'.          | 2y       |
+| 2 years, 1 month  | 2 ab'q'ii, 1 xjaw | 2 ab'., 1 xjaw  | 2y1m     |
+| 2 years, 6 months | 2 ab'q'ii, 6 xjaw | 2 ab'., 6 xjaw  | 2y6m     |
+| 3 years           | 3 ab'q'ii         | 3 ab'.          | 3y       |
+| 3½ years          | 3 ab'q'ii nik'    | 3 ab'. nik'     | 3½y      |
+| 5 years           | 5 ab'q'ii         | 5 ab'.          | 5y       |
+| 5½ years          | 5 ab'q'ii nik'    | 5 ab'. nik'     | 5½y      |
+| 7 years           | 7 ab'q'ii         | 7 ab'.          | 7y       |
+| 10 years          | 10 ab'q'ii        | 10 ab'.         | 10y      |
+| 18 years          | 18 ab'q'ii        | 18 ab'.         | 18y      |
+| 45 years          | 45 ab'q'ii        | 45 ab'.         | 45y      |
 
 ### Stages
 
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | tu'n Lunes    | 17/3    |
 | Day before yesterday | Jueves nchi'j | 13/3    |
 | This Thursday (+5)   | tu'n Jueves   | 20/3    |
-| Last Monday (-4)     | Martes nchi'j | 11/3    |
-| Next Wednesday (+12) | Jueves tul    | 27/3    |
-| Same month (+20)     | 4 Abril       | 4/4     |
+| Last Tuesday (-4)    | Martes nchi'j | 11/3    |
+| Next Thursday (+12)  | Jueves tul    | 27/3    |
+| Same year (+20)      | 4 Abril       | 4/4     |
 | Different year       | 10 Enero 2026 | 10/1/26 |
 
 ## Duration
@@ -92,14 +100,14 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 minuto             | 5 min.          | 5m      |
 | 45 minutes            | 45 minuto            | 45 min.         | 45m     |
 | 1 hour                | 1 hora               | 1 hora          | 1h      |
-| 1½ hours              | 1 hora nik'          | 1 hora nik'     | 1h nik' |
+| 1½ hours              | 1 hora nik'          | 1 hora nik'     | 1½h     |
 | 3 hours               | 3 hora               | 3 hora          | 3h      |
 | 6 hours               | 6 hora               | 6 hora          | 6h      |
 | 1 day                 | 1 q'ij               | 1 q'ij          | 1d      |
-| 1½ days               | 1 q'ij nik'          | 1 q'ij nik'     | 1d nik' |
+| 1½ days               | 1 q'ij nik'          | 1 q'ij nik'     | 1½d     |
 | 3 days                | 3 q'ij               | 3 q'ij          | 3d      |
-| 1 week                | 1 xjaw               | 1 xjaw          | 1w      |
-| 2 weeks, 3 days       | 2 xjaw, 3 q'ij       | 2 xjaw, 3 q'ij  | 2w3d    |
+| 1 week                | 1 seman              | 1 seman         | 1w      |
+| 2 weeks, 3 days       | 2 seman, 3 q'ij      | 2 seman, 3 q'ij | 2w3d    |
 | 1 month               | 1 xjaw               | 1 xjaw          | 1mo     |
 | 6 months              | 6 xjaw               | 6 xjaw          | 6mo     |
 | 1 year                | 1 ab'q'ii            | 1 ab'.          | 1y      |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal       | Short    | Compact |
-| --------------- | ------------ | -------- | ------- |
-| Midnight        | nik' aq'b'il | 12:00 AM | 12:00a  |
-| 1:00 AM         | jun:00       | 1:00 AM  | 1:00a   |
-| 5 past 9        | b'alaj:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | laj:15       | 10:15 AM | 10:15a  |
-| Half past 11    | junlaj:30    | 11:30 AM | 11:30a  |
-| Noon            | nik' q'ij    | 12:00 PM | 12:00p  |
-| Quarter to 3    | kab':45      | 2:45 PM  | 2:45p   |
-| 5 to 6          | jwe':55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | wajxaq:00    | 8:00 PM  | 8:00p   |
-| 10:30 PM        | laj:30       | 10:30 PM | 10:30p  |
-| 11:58 PM        | nik' aq'b'il | 11:58 PM | 11:58p  |
+| Time            | Normal                              | Short    | Compact |
+| --------------- | ----------------------------------- | -------- | ------- |
+| Midnight        | nik' aq'b'il                        | 12:00 AM | 12:00a  |
+| 1:00 AM         | jun or                              | 1:00 AM  | 1:00a   |
+| 5 past 9        | b'elaj or tuk' jwe' minut           | 9:05 AM  | 9:05a   |
+| Quarter past 10 | laj or tuk' o'laj minut             | 10:15 AM | 10:15a  |
+| Half past 11    | junlaj or tuk' nik'                 | 11:30 AM | 11:30a  |
+| Noon            | nik' q'ij                           | 12:00 PM | 12:00p  |
+| Quarter to 3    | kab' or tuk' jwe' toj oxk'al minut  | 2:45 PM  | 2:45p   |
+| 5 to 6          | jwe' or tuk' o'laj toj oxk'al minut | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | wajxaq or                           | 8:00 PM  | 8:00p   |
+| 10:30 PM        | laj or tuk' nik'                    | 10:30 PM | 10:30p  |
+| 11:58 PM        | nik' aq'b'il                        | 11:58 PM | 11:58p  |

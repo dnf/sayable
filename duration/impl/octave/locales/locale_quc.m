@@ -40,6 +40,7 @@ function loc = locale_quc()
   loc.compact.units.week = '{n}w';
   loc.compact.units.month = '{n}mo';
   loc.compact.units.year = '{n}y';
+  loc.compact.half = '{n}½';
   loc.compact.delimiter = '';
   loc.compact.ago = '{0} k''o chi';
   loc.compact.in_future = 'pa {0}';

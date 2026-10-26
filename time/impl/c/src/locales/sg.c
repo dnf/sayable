@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_sg = {
     "sg",
     {
-        { "bâlè-ûse", "ôko", "ûse", "otâ", "usïö", "okü", "ömënë", "mbïrïmbïrï", "mënâmbârâ", "gonambâlâ", "bâlè", "bâlè na ôko" },
+        { "balë-ôko na ûse", "ôko", "ûse", "otâ", "usïö", "okü", "omanä", "mbâsâmbârâ", "miombe", "gümbâyä", "balë-ôko", "balë-ôko na ôko" },
         "gï na lögö",
         "lâ nzönï",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "ngbonga {h}", "ngbonga {h} na minüti okü", "ngbonga {h} na minüti balë-ôko", "ngbonga {h} na minüti balë-ôko na okü", "ngbonga {h} na minüti balë-ûse", "ngbonga {h} na minüti balë-ûse na okü", "ngbonga {h} na ndâmbo", "ngbonga {h} na minüti balë-otâ na okü", "ngbonga {h} na minüti balë-usïö", "ngbonga {h} na minüti balë-usïö na okü", "ngbonga {h} na minüti balë-okü", "ngbonga {h} na minüti balë-okü na okü" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

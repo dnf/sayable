@@ -34,5 +34,5 @@
    "{0} dhau los"
    "hauv {0}"
    (duration-compactness-override (hash "type" "simple" "form" "{n} chib") (hash "type" "simple" "form" "{n} feeb") (hash "type" "simple" "form" "{n} teev") (hash "type" "simple" "form" "{n} hnub") (hash "type" "simple" "form" "{n} lim tiam") (hash "type" "simple" "form" "{n} hlis") (hash "type" "simple" "form" "{n} xyoo") #f #f "{0} dhau los" "hauv {0}")
-   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") #f "" "{0} dhau los" "hauv {0}")
+   (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}mo") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} dhau los" "hauv {0}")
   ))

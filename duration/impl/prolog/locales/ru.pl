@@ -18,31 +18,31 @@ sd_plural('ru', _, many).
 sd_unit('ru', second, one, '{n} секунда').
 sd_unit('ru', second, few, '{n} секунды').
 sd_unit('ru', second, many, '{n} секунд').
-sd_unit('ru', second, other, '{n} секунд').
+sd_unit('ru', second, other, '{n} секунды').
 sd_unit('ru', minute, one, '{n} минута').
 sd_unit('ru', minute, few, '{n} минуты').
 sd_unit('ru', minute, many, '{n} минут').
-sd_unit('ru', minute, other, '{n} минут').
+sd_unit('ru', minute, other, '{n} минуты').
 sd_unit('ru', hour, one, '{n} час').
 sd_unit('ru', hour, few, '{n} часа').
 sd_unit('ru', hour, many, '{n} часов').
-sd_unit('ru', hour, other, '{n} часов').
+sd_unit('ru', hour, other, '{n} часа').
 sd_unit('ru', day, one, '{n} день').
 sd_unit('ru', day, few, '{n} дня').
 sd_unit('ru', day, many, '{n} дней').
-sd_unit('ru', day, other, '{n} дней').
+sd_unit('ru', day, other, '{n} дня').
 sd_unit('ru', week, one, '{n} неделя').
 sd_unit('ru', week, few, '{n} недели').
 sd_unit('ru', week, many, '{n} недель').
-sd_unit('ru', week, other, '{n} недель').
+sd_unit('ru', week, other, '{n} недели').
 sd_unit('ru', month, one, '{n} месяц').
 sd_unit('ru', month, few, '{n} месяца').
 sd_unit('ru', month, many, '{n} месяцев').
-sd_unit('ru', month, other, '{n} месяцев').
+sd_unit('ru', month, other, '{n} месяца').
 sd_unit('ru', year, one, '{n} год').
 sd_unit('ru', year, few, '{n} года').
 sd_unit('ru', year, many, '{n} лет').
-sd_unit('ru', year, other, '{n} лет').
+sd_unit('ru', year, other, '{n} года').
 
 sd_half('ru', '{n} с половиной').
 sd_delimiter('ru', ', ').

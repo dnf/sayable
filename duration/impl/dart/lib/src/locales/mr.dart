@@ -20,7 +20,7 @@ final mr = DurationLocale(
   },
   units: {
     'second': simpleUnit('{n} सेकंद'),
-    'minute': simpleUnit('{n} मिनिट'),
+    'minute': pluralUnit({PluralCategory.one: '{n} मिनिट', PluralCategory.other: '{n} मिनिटे'}),
     'hour': simpleUnit('{n} तास'),
     'day': pluralUnit({PluralCategory.one: '{n} दिवस', PluralCategory.other: '{n} दिवस'}),
     'week': pluralUnit({PluralCategory.one: '{n} आठवडा', PluralCategory.other: '{n} आठवडे'}),

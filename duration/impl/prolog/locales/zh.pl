@@ -19,7 +19,7 @@ sd_unit('zh', hour, _, '{n}小时').
 sd_unit('zh', day, _, '{n}天').
 sd_unit('zh', week, _, '{n}周').
 sd_unit('zh', month, _, '{n}个月').
-sd_unit('zh', year, _, '{n}岁').
+sd_unit('zh', year, _, '{n}年').
 
 sd_half('zh', '{0}半').
 sd_delimiter('zh', '').

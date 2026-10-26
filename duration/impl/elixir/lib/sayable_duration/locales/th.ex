@@ -29,7 +29,7 @@ defmodule SayableDuration.Locales.TH do
       delimiter: " ",
       just_now: "เมื่อกี้",
       ago: "{0}ที่แล้ว",
-      in_future: "ใน{0}",
+      in_future: "ในอีก {0}",
       short: %{
         units: %{
           second: "{n} วิ",
@@ -41,7 +41,7 @@ defmodule SayableDuration.Locales.TH do
           year: "{n} ปี"
         },
         ago: "{0}ที่แล้ว",
-        in_future: "ใน{0}"
+        in_future: "ในอีก {0}"
       },
       compact: %{
         units: %{
@@ -56,7 +56,7 @@ defmodule SayableDuration.Locales.TH do
         half: "{n}½",
         delimiter: "",
         ago: "{0}ที่แล้ว",
-        in_future: "ใน{0}"
+        in_future: "ในอีก {0}"
       }
     }
   end

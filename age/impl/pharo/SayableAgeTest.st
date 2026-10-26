@@ -663,7 +663,7 @@ testSpanishLocale
 		'month'. (Dictionary newFromPairs: { #one. '{n} mes'. #other. '{n} meses' }).
 		'year'. (Dictionary newFromPairs: { #one. '{n} año'. #other. '{n} años' }).
 	}).
-	es half: '{n} y medio'.
+	es half: '{0} y medio'.
 	es delimiter: ', '.
 	es justBorn: 'Recién nacido'.
 	es stages: (Dictionary newFromPairs: {
@@ -682,7 +682,7 @@ testSpanishLocale
 	self assert: (pt formatAge: '2025-01-15' asOf: '2025-07-15') equals: '6 meses'.
 	self assert: (pt formatAge: '2023-06-15' asOf: '2025-07-15') equals: '2 años, 1 mes'.
 	self assert: (pt formatAge: '2023-06-15' asOf: '2025-12-15') equals: '2 años, 6 meses'.
-	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 y medio años'.
+	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 años y medio'.
 	self assert: (pt formatAge: '2022-06-15' asOf: '2025-06-15') equals: '3 años'.
 	self assert: (pt formatAge: '2018-06-15' asOf: '2025-06-15') equals: '7 años'.
 	self assert: (pt formatStage: '2025-06-15' asOf: '2025-06-15') equals: 'Recién nacido'.
@@ -812,7 +812,7 @@ test29_1HeJustBorn
 test29_2HeOneDay
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'he').
-	self assert: (pt formatAge: '2025-06-14' asOf: '2025-06-15') equals: 'יום 1'
+	self assert: (pt formatAge: '2025-06-14' asOf: '2025-06-15') equals: 'יום'
 !
 
 "29.3"
@@ -854,7 +854,7 @@ test29_7HeThreeMonths
 test29_8HeTwoYearsDualOneMonth
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'he').
-	self assert: (pt formatAge: '2023-06-15' asOf: '2025-07-15') equals: 'שנתיים, חודש 1'
+	self assert: (pt formatAge: '2023-06-15' asOf: '2025-07-15') equals: 'שנתיים, חודש'
 !
 
 "29.9"
@@ -1022,7 +1022,7 @@ test29_31IdSixMonths
 test29_32IdHalfYears
 	| pt |
 	pt := SayableAge withLocale: (SayableAgeLocales get: 'id').
-	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 tahun setengah'
+	self assert: (pt formatAge: '2022-06-15' asOf: '2025-12-15') equals: '3 setengah tahun'
 !
 
 "29.33"

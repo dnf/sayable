@@ -22,7 +22,7 @@
    :today "nhasi"
    :tomorrow "mangwana"
    :yesterday "nezuro"
-   :day-after-tomorrow "mangwanani"
+   :day-after-tomorrow "kuswera mangwana"
    :day-before-yesterday "nezuro rakapera"
    :this-weekday "{weekday} ino"
    :next-weekday "{weekday} inotevera"

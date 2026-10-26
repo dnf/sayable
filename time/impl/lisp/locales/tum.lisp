@@ -20,7 +20,7 @@
     :hours (list "khumi na yibili" "chimoza" "vibili" "vitatu" "vinayi" "vikhondi" "vikhondi na kamoza" "vikhondi na tubili" "vikhondi na tutatu" "vikhondi na tunayi" "khumi" "khumi na kamoza")
     :midnight "pakati pa usiku"
     :noon "muhanya"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} koloko") (cons 5 "{h} koloko na maminiti vinkhondi") (cons 10 "{h} koloko na maminiti khumi") (cons 15 "{h} koloko na maminiti khumi na vinkhondi") (cons 20 "{h} koloko na maminiti makhumi ghaŵiri") (cons 25 "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi") (cons 30 "{h} koloko na hafu") (cons 35 "{h} koloko na maminiti makhumi ghatatu na vinkhondi") (cons 40 "{h} koloko na maminiti makhumi ghanayi") (cons 45 "{h} koloko na maminiti makhumi ghanayi na vinkhondi") (cons 50 "{h} koloko na maminiti makhumi ghankhondi") (cons 55 "{h} koloko na maminiti makhumi ghankhondi na vinkhondi")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -31,13 +31,13 @@ locale = DateLocale
         , "Diċembru"
         ]
     , localeWeekdays =
-        [ "Il-Ħadd"
-        , "It-Tnejn"
-        , "It-Tlieta"
-        , "L-Erbgħa"
-        , "Il-Ħamis"
-        , "Il-Ġimgħa"
-        , "Is-Sibt"
+        [ "il-Ħadd"
+        , "it-Tnejn"
+        , "it-Tlieta"
+        , "l-Erbgħa"
+        , "il-Ħamis"
+        , "il-Ġimgħa"
+        , "is-Sibt"
         ]
     , localeDayFormat = "{n}"
     , localeDayFormatExceptions = []

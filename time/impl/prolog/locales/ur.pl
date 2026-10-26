@@ -15,18 +15,18 @@ st_hours('ur', ['بارہ', 'ایک', 'دو', 'تین', 'چار', 'پانچ', '�
 st_midnight('ur', 'آدھی رات').
 st_noon('ur', 'دوپہر').
 
-st_pattern('ur', 0, '{h}:00').
-st_pattern('ur', 5, '{h}:05').
-st_pattern('ur', 10, '{h}:10').
-st_pattern('ur', 15, '{h}:15').
-st_pattern('ur', 20, '{h}:20').
-st_pattern('ur', 25, '{h}:25').
-st_pattern('ur', 30, '{h}:30').
-st_pattern('ur', 35, '{h}:35').
-st_pattern('ur', 40, '{h}:40').
-st_pattern('ur', 45, '{h}:45').
-st_pattern('ur', 50, '{h}:50').
-st_pattern('ur', 55, '{h}:55').
+st_pattern('ur', 0, '{h} بجے').
+st_pattern('ur', 5, '{h} بج کر پانچ منٹ').
+st_pattern('ur', 10, '{h} بج کر دس منٹ').
+st_pattern('ur', 15, 'سوا {h} بجے').
+st_pattern('ur', 20, '{h} بج کر بیس منٹ').
+st_pattern('ur', 25, '{h} بج کر پچیس منٹ').
+st_pattern('ur', 30, '{h} بج کر تیس منٹ').
+st_pattern('ur', 35, '{h} بج کر پینتیس منٹ').
+st_pattern('ur', 40, '{next_h} بجنے میں بیس منٹ').
+st_pattern('ur', 45, 'پونے {next_h} بجے').
+st_pattern('ur', 50, '{next_h} بجنے میں دس منٹ').
+st_pattern('ur', 55, '{next_h} بجنے میں پانچ منٹ').
 
 short_st_use24h('ur', false).
 short_st_format('ur', '{h}:{mm} {ampm}').

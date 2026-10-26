@@ -21,7 +21,7 @@
         "other": "{n} సంవత్సరాలు"
       }
     },
-    "half": "{0}న్నర",
+    "half": "{n}½",
     "delimiter": ", ",
     "justBorn": "నవజాత శిశువు",
     "stages": {
@@ -124,9 +124,18 @@
   },
   "duration": {
     "units": {
-      "second": "{n} సెకను",
-      "minute": "{n} నిమిషం",
-      "hour": "{n} గంట",
+      "second": {
+        "one": "{n} సెకను",
+        "other": "{n} సెకన్లు"
+      },
+      "minute": {
+        "one": "{n} నిమిషం",
+        "other": "{n} నిమిషాలు"
+      },
+      "hour": {
+        "one": "{n} గంట",
+        "other": "{n} గంటలు"
+      },
       "day": {
         "one": "{n} రోజు",
         "other": "{n} రోజులు"
@@ -144,7 +153,7 @@
         "other": "{n} సంవత్సరాలు"
       }
     },
-    "half": "{0}న్నర",
+    "half": "{n}½",
     "delimiter": ", ",
     "justNow": "ఇప్పుడే",
     "ago": "{0} క్రితం",
@@ -219,18 +228,18 @@
       "midnight": "అర్ధరాత్రి",
       "noon": "మధ్యాహ్నం",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} అయింది",
+        "5": "{h} దాటి ఐదు నిమిషాలు",
+        "10": "{h} దాటి పది నిమిషాలు",
+        "15": "{h}ంపావు",
+        "20": "{h} దాటి ఇరవై నిమిషాలు",
+        "25": "{h} దాటి ఇరవై ఐదు నిమిషాలు",
+        "30": "{h}న్నర",
+        "35": "{h} దాటి ముప్పై ఐదు నిమిషాలు",
+        "40": "{next_h} కావడానికి ఇరవై నిమిషాలు",
+        "45": "పావు తక్కువ {next_h}",
+        "50": "{next_h} కావడానికి పది నిమిషాలు",
+        "55": "{next_h} కావడానికి ఐదు నిమిషాలు"
       }
     },
     "short": {
@@ -253,5 +262,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Telugu, written so that every hour is grammatical: '{h} అయింది' (మూడు అయింది = it is three; avoids '{h} గంటలు', which is wrong for one o'clock where Telugu says 'ఒంటి గంట'), '{h} దాటి <minutes> నిమిషాలు' (మూడు దాటి ఐదు నిమిషాలు = five past three; avoids the plural-oblique 'గంటల' that is also wrong after one), fused '{h}ంపావు' for quarter past (మూడుంపావు, ఒకటింపావు, ఎనిమిదింపావు; the anusvara attaches correctly to both -u and -i final hours), fused '{h}న్నర' for half past (మూడున్నర, ఒకటిన్నర), 'పావు తక్కువ {next_h}' for quarter to, '{next_h} కావడానికి <minutes> నిమిషాలు' for 40/50/55 (నాలుగు కావడానికి పది నిమిషాలు = ten to four) and additive 'దాటి' at 35. hours[1] stays 'ఒకటి'. Schema follow-up (per-hour override): the idiomatic o'clock forms '{h} గంటలు' / 'ఒంటి గంట' and minute forms 'మూడు గంటల ఐదు నిమిషాలు' / 'ఒంటి గంట ఐదు నిమిషాలు' need the one-o'clock exception. Doubts: 'మూడు అయింది' is the answer to 'what time is it' (with a verb) rather than a bare noun phrase, and the fused spelling 'మూడైంది' is more usual than the spaced one a template can produce."
+    }
+  ]
 }

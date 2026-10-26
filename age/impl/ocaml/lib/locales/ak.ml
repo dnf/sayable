@@ -38,11 +38,14 @@ let locale : locale =
     ; infant = Neutral "Akwadaa"
     ; toddler = Neutral "Abofra"
     ; child = Neutral "Abofra"
-    ; teenager = Neutral "Abarimaa"
+    ; teenager = Gendered ("Abarimaa", "Abaayewa")
     ; adult = Neutral "Ɔpanyin"
     }
   ; short = Some
-      { ovr_day = Some (Simple "nna {n}")
+      { ovr_day = Some (Pluralized
+          [ (One, "da {n}")
+          ; (Other, "nna {n}")
+          ])
       ; ovr_week = Some (Pluralized
           [ (One, "dapɛn {n}")
           ; (Other, "nnapɛn {n}")
@@ -60,7 +63,10 @@ let locale : locale =
       ; ovr_just_born = None
       }
   ; compact = Some
-      { ovr_day = Some (Simple "nna {n}")
+      { ovr_day = Some (Pluralized
+          [ (One, "da {n}")
+          ; (Other, "nna {n}")
+          ])
       ; ovr_week = Some (Pluralized
           [ (One, "dapɛn {n}")
           ; (Other, "nnapɛn {n}")

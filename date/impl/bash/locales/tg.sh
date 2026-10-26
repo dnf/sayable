@@ -21,8 +21,8 @@ _sayabledate_locale_tg() {
     _day_after_tomorrow='пасфардо'
     _day_before_yesterday='парирӯз'
     _this_weekday='ин {weekday}'
-    _next_weekday='{weekday}-и оянда'
-    _last_weekday='{weekday}-и гузашта'
+    _next_weekday='{weekday}и оянда'
+    _last_weekday='{weekday}и гузашта'
     _short_months=('Янв' 'Фев' 'Мар' 'Апр' 'Май' 'Июн' 'Июл' 'Авг' 'Сен' 'Окт' 'Ноя' 'Дек')
     _short_weekdays=('Яш' 'Дш' 'Сш' 'Чш' 'Пш' 'Ҷм' 'Шб')
     _short_day_format='{n}'

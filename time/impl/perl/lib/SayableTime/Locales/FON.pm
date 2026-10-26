@@ -17,10 +17,10 @@ package SayableTime::Locales::FON;
 sub locale {{
   code => 'fon',
   clock => {
-    hours => ['wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'ɖokpo-wǒ'],
+    hours => ['wěwè', 'ɖokpo', 'wè', 'atɔn', 'ɛnɛ', 'atɔ́ɔ́n', 'ayizɛ̀n', 'tɛnwè', 'tantɔn', 'tɛnɛnɛ', 'wǒ', 'wěɖokpo'],
     midnight => 'zǎnmɛ',
     noon => 'hwemɛnu',
-    patterns => { 0 => '{h}:00', 5 => '{h}:05', 10 => '{h}:10', 15 => '{h}:15', 20 => '{h}:20', 25 => '{h}:25', 30 => '{h}:30', 35 => '{h}:35', 40 => '{h}:40', 45 => '{h}:45', 50 => '{h}:50', 55 => '{h}:55' },
+    patterns => { 0 => 'gan {h}', 5 => 'gan {h} kpo cɛju atɔ́ɔ́n kpo', 10 => 'gan {h} kpo cɛju wǒ kpo', 15 => 'gan {h} kpo cɛju afɔtɔ́n kpo', 20 => 'gan {h} kpo cɛju ko kpo', 25 => 'gan {h} kpo cɛju koatɔ́ɔ́n kpo', 30 => 'gan {h} kpo cɛju gban kpo', 35 => 'gan {h} kpo cɛju gbanatɔ́ɔ́n kpo', 40 => 'gan {h} kpo cɛju kanɖé kpo', 45 => 'gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo', 50 => 'gan {h} kpo cɛju kanɖéwǒ kpo', 55 => 'gan {h} kpo cɛju kanɖéafɔtɔ́n kpo' },
   },
   short => {
     clock => {

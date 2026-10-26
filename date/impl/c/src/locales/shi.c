@@ -12,29 +12,29 @@
 #include "sayabledate/sayabledate.h"
 
 static const char *sd_short_months_shi[12] = {
-    "ⵉⵏⵏ", "ⴱⵕⴰ", "ⵎⴰⵕ", "ⵉⴱⵔ", "ⵎⴰⵢ", "ⵢⵓⵏ", "ⵢⵓⵍ", "ⵖⵓⵛ", "ⵛⵓⵜ", "ⴽⵜⵓ", "ⵏⵓⵡ", "ⴷⵓⵊ"
+    "inn", "bṛa", "maṛ", "ibr", "may", "yun", "yul", "ɣuc", "cut", "ktu", "nuw", "duj"
 };
 
 static const char *sd_short_weekdays_shi[7] = {
-    "ⴰⵙⴰ", "ⴰⵢⵏ", "ⴰⵙⵉ", "ⴰⴽⵕ", "ⴰⴽⵡ", "ⴰⵙⵉⵎ", "ⴰⵙⵉⴹ"
+    "asa", "ayn", "asi", "akṛ", "akw", "asim", "asiḍ"
 };
 
 const SdDateLocale sd_locale_shi = {
     "shi",
-    { "ⵉⵏⵏⴰⵢⵔ", "ⴱⵕⴰⵢⵕ", "ⵎⴰⵕⵚ", "ⵉⴱⵔⵉⵔ", "ⵎⴰⵢⵢⵓ", "ⵢⵓⵏⵢⵓ", "ⵢⵓⵍⵢⵓⵣ", "ⵖⵓⵛⵜ", "ⵛⵓⵜⴰⵏⴱⵉⵔ", "ⴽⵜⵓⴱⵔ", "ⵏⵓⵡⴰⵏⴱⵉⵔ", "ⴷⵓⵊⴰⵏⴱⵉⵔ" },
-    { "ⴰⵙⴰⵎⴰⵙ", "ⴰⵢⵏⴰⵙ", "ⴰⵙⵉⵏⴰⵙ", "ⴰⴽⵕⴰⵙ", "ⴰⴽⵡⴰⵙ", "ⴰⵙⵉⵎⵡⴰⵙ", "ⴰⵙⵉⴹⵢⴰⵙ" },
+    { "innayr", "bṛayṛ", "maṛṣ", "ibrir", "mayyu", "yunyu", "yulyuz", "ɣuct", "cutanbir", "ktubr", "nuwanbir", "dujanbir" },
+    { "asamas", "aynas", "asinas", "akṛas", "akwas", "asimwas", "asiḍyas" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",
     "{day} {month} {year}",
-    "ⴰⵙⵙⴰ",
-    "ⴰⵙⴽⴽⴰ",
-    "ⵉⴹⵍⵍⵉ",
+    "assa",
+    "askka",
+    "iḍlli",
     NULL,
     NULL,
-    "{weekday} ⴰⴷ",
-    "{weekday} ⴷ ⵉⴷⴷⴰⵏ",
-    "{weekday} ⵉⵣⵔⵉⵏ",
+    "{weekday} ad",
+    "{weekday} d iddan",
+    "{weekday} izrin",
     (const char **)0,
     true, { sd_short_months_shi, (const char **)0, sd_short_weekdays_shi, "{n}", (const SdDayFormatException *)0, 0, true, "{day} {month}", "{day} {month} {year}", NULL, NULL, NULL },
     true, { (const char **)0, (const char **)0, (const char **)0, NULL, (const SdDayFormatException *)0, 0, false, "{d}/{m}", "{d}/{m}/{yy}", NULL, NULL, NULL }

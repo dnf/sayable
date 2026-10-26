@@ -11,15 +11,15 @@
 
 locale_kl <- list(
   code = "kl",
-  plural = function(n) "other",
+  plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = "sekundit {n}",
-    minute = "minutsit {n}",
-    hour = "nalunaaqutap akunnera {n}",
-    day = "ullut {n}",
-    week = "sapaatit {n}",
-    month = "qaammatit {n}",
-    year = "ukiut {n}"
+    second = list(one = "sekundi {n}", other = "sekundit {n}"),
+    minute = list(one = "minutsi {n}", other = "minutsit {n}"),
+    hour = list(one = "nalunaaquttap akunnera {n}", other = "nalunaaquttap akunneri {n}"),
+    day = list(one = "ulloq {n}", other = "ullut {n}"),
+    week = list(one = "sapaatip akunnera {n}", other = "sapaatip akunneri {n}"),
+    month = list(one = "qaammat {n}", other = "qaammatit {n}"),
+    year = list(one = "ukioq {n}", other = "ukiut {n}")
   ),
   half = "{0} affaa",
   delimiter = ", ",
@@ -32,7 +32,7 @@ locale_kl <- list(
       minute = "min. {n}",
       hour = "nal. {n}",
       day = "ull. {n}",
-      week = "sap. {n}",
+      week = "sap. ak. {n}",
       month = "qaam. {n}",
       year = "uk. {n}"
     ),
@@ -49,6 +49,7 @@ locale_kl <- list(
       month = "{n}mo",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} matuma siorna",
     in_future = "{0} siunissami"

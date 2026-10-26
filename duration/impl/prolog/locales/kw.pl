@@ -37,25 +37,25 @@ sd_unit('kw', hour, few, '{n} our').
 sd_unit('kw', hour, many, '{n} our').
 sd_unit('kw', hour, other, '{n} our').
 sd_unit('kw', day, zero, '{n} dydh').
-sd_unit('kw', day, one, 'dydh').
+sd_unit('kw', day, one, '{n} dydh').
 sd_unit('kw', day, two, '{n} dhydh').
 sd_unit('kw', day, few, '{n} dydh').
 sd_unit('kw', day, many, '{n} dydh').
 sd_unit('kw', day, other, '{n} dydh').
 sd_unit('kw', week, zero, '{n} seythun').
-sd_unit('kw', week, one, 'seythun').
+sd_unit('kw', week, one, '{n} seythun').
 sd_unit('kw', week, two, '{n} seythun').
 sd_unit('kw', week, few, '{n} seythun').
 sd_unit('kw', week, many, '{n} seythun').
 sd_unit('kw', week, other, '{n} seythun').
 sd_unit('kw', month, zero, '{n} mis').
-sd_unit('kw', month, one, 'mis').
+sd_unit('kw', month, one, '{n} mis').
 sd_unit('kw', month, two, '{n} vis').
 sd_unit('kw', month, few, '{n} mis').
 sd_unit('kw', month, many, '{n} mis').
 sd_unit('kw', month, other, '{n} mis').
 sd_unit('kw', year, zero, '{n} blydhen').
-sd_unit('kw', year, one, 'blydhen').
+sd_unit('kw', year, one, '{n} blydhen').
 sd_unit('kw', year, two, '{n} vlydhen').
 sd_unit('kw', year, few, '{n} blydhen').
 sd_unit('kw', year, many, '{n} blydhen').

@@ -15,7 +15,7 @@ pub fn locale() -> types.DateLocale {
   types.DateLocale(
     code: "mt",
     months: ["Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru"],
-    weekdays: ["Il-Ħadd", "It-Tnejn", "It-Tlieta", "L-Erbgħa", "Il-Ħamis", "Il-Ġimgħa", "Is-Sibt"],
+    weekdays: ["il-Ħadd", "it-Tnejn", "it-Tlieta", "l-Erbgħa", "il-Ħamis", "il-Ġimgħa", "is-Sibt"],
     day_format: "{n}",
     day_format_exceptions: [],
     date_pattern: "{day} {month}",

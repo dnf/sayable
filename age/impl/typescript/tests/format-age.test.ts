@@ -853,7 +853,7 @@ describe('SayableAge', () => {
         month: { one: '{n} mes',    other: '{n} meses' },
         year:  { one: '{n} año',    other: '{n} años' },
       },
-      half: '{n} y medio',
+      half: '{0} y medio',
       delimiter: ', ',
       justBorn: 'Recién nacido',
       stages: {
@@ -915,7 +915,7 @@ describe('SayableAge', () => {
 
     // 25.10
     it('half marker', () => {
-      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 y medio años');
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 años y medio');
     });
 
     // 25.11
@@ -1054,7 +1054,7 @@ describe('SayableAge', () => {
 
     // 29.2
     it('1 day — one form', () => {
-      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('יום 1');
+      expect(pt.formatAge('2025-06-14', '2025-06-15')).toBe('יום');
     });
 
     // 29.3
@@ -1084,7 +1084,7 @@ describe('SayableAge', () => {
 
     // 29.8
     it('2y dual + 1m one', () => {
-      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('שנתיים, חודש 1');
+      expect(pt.formatAge('2023-06-15', '2025-07-15')).toBe('שנתיים, חודש');
     });
 
     // 29.9
@@ -1216,7 +1216,7 @@ describe('SayableAge', () => {
 
     // 29.32
     it('3½ years — half marker', () => {
-      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 tahun setengah');
+      expect(pt.formatAge('2022-06-15', '2025-12-15')).toBe('3 setengah tahun');
     });
 
     // 29.33

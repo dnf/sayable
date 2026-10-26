@@ -42,6 +42,7 @@ _sayableduration_locale_shn() {
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}mo'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _compact_ago='{0} ပူၼ်ႉမႃး'
     _compact_in_future='ထႅင်ႈ {0}'

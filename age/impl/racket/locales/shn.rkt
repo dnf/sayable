@@ -35,5 +35,5 @@
          "teenager" (stage-label "ၵူၼ်းၼုမ်ႇ" #f #f)
          "adult" (stage-label "ၵူၼ်းလူင်" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} ဝၼ်း") (hash "type" "simple" "form" "{n} ဝူင်ႈ") (hash "type" "simple" "form" "{n} လိူၼ်") (hash "type" "simple" "form" "{n} ပီ") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

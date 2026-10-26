@@ -12,9 +12,9 @@
 (def locale
   {:code "ny"
    :plural (fn [n] (if (= n 1) :one :other))
-   :units {:second "{n} sekondi"
-          :minute "{n} mphindi"
-          :hour "{n} ola"
+   :units {:second "sekondi {n}"
+          :minute "mphindi {n}"
+          :hour {:one "ola {n}" :other "maola {n}"}
           :day {:one "tsiku {n}" :other "masiku {n}"}
           :week {:one "sabata {n}" :other "masabata {n}"}
           :month {:one "mwezi {n}" :other "miyezi {n}"}
@@ -24,6 +24,6 @@
    :just-now "tsopano"
    :ago "{0} zapitazo"
    :in-future "mu {0}"
-   :short {:units {:second "sek {n}" :minute "mph {n}" :hour "ola {n}" :day {:one "tsiku {n}" :other "mas {n}"} :week {:one "sabata {n}" :other "masab {n}"} :month {:one "mwezi {n}" :other "miyezi {n}"} :year {:one "chaka {n}" :other "zaka {n}"}} :ago "{0} zapitazo" :in-future "mu {0}"}
+   :short {:units {:second "sek {n}" :minute "mph {n}" :hour {:one "ola {n}" :other "maola {n}"} :day {:one "tsiku {n}" :other "mas {n}"} :week {:one "sabata {n}" :other "masab {n}"} :month {:one "mwezi {n}" :other "miyezi {n}"} :year {:one "chaka {n}" :other "zaka {n}"}} :ago "{0} zapitazo" :in-future "mu {0}"}
    :compact {:units {:second "s {n}" :minute "m {n}" :hour "o {n}" :day {:one "ts {n}" :other "mas {n}"} :week {:one "sab {n}" :other "msb {n}"} :month {:one "mw {n}" :other "miy {n}"} :year {:one "ch {n}" :other "z {n}"}} :half "{n}½" :delimiter "" :ago "{0} zapitazo" :in-future "mu {0}"}
 })

@@ -14,9 +14,9 @@
 (def locale
   {:code "ar"
    :plural (fn [n] (cond (== n 0) :zero (== n 1) :one (== n 2) :two (<= 3 (mod n 100) 10) :few (<= 11 (mod n 100) 99) :many :else :other))
-   :second {:type :pluralized :forms {:zero "{n} ثانية" :one "ثانية واحدة" :two "ثانيتان" :few "{n} ثوانٍ" :many "{n} ثانية" :other "{n} ثانية"}}
-   :minute {:type :pluralized :forms {:zero "{n} دقيقة" :one "دقيقة واحدة" :two "دقيقتان" :few "{n} دقائق" :many "{n} دقيقة" :other "{n} دقيقة"}}
-   :hour {:type :pluralized :forms {:zero "{n} ساعة" :one "ساعة واحدة" :two "ساعتان" :few "{n} ساعات" :many "{n} ساعة" :other "{n} ساعة"}}
+   :second {:type :pluralized :forms {:zero "{n} ثانية" :one "ثانية" :two "ثانيتان" :few "{n} ثوانٍ" :many "{n} ثانية" :other "{n} ثانية"}}
+   :minute {:type :pluralized :forms {:zero "{n} دقيقة" :one "دقيقة" :two "دقيقتان" :few "{n} دقائق" :many "{n} دقيقة" :other "{n} دقيقة"}}
+   :hour {:type :pluralized :forms {:zero "{n} ساعة" :one "ساعة" :two "ساعتان" :few "{n} ساعات" :many "{n} ساعة" :other "{n} ساعة"}}
    :day {:type :pluralized :forms {:zero "{n} يوم" :one "يوم" :two "يومان" :few "{n} أيام" :many "{n} يومًا" :other "{n} يوم"}}
    :week {:type :pluralized :forms {:zero "{n} أسبوع" :one "أسبوع" :two "أسبوعان" :few "{n} أسابيع" :many "{n} أسبوعًا" :other "{n} أسبوع"}}
    :month {:type :pluralized :forms {:zero "{n} شهر" :one "شهر" :two "شهران" :few "{n} أشهر" :many "{n} شهرًا" :other "{n} شهر"}}
@@ -27,4 +27,4 @@
    :ago "منذ {0}"
    :in-future "بعد {0}"
    :short {:second {:type :simple :form "{n} ث"} :minute {:type :simple :form "{n} د"} :hour {:type :simple :form "{n} س"} :day {:type :pluralized :forms {:zero "{n} يوم" :one "يوم" :two "يومان" :few "{n} أيام" :many "{n} يومًا" :other "{n} يوم"}} :week {:type :pluralized :forms {:zero "{n} أسبوع" :one "أسبوع" :two "أسبوعان" :few "{n} أسابيع" :many "{n} أسبوعًا" :other "{n} أسبوع"}} :month {:type :pluralized :forms {:zero "{n} شهر" :one "شهر" :two "شهران" :few "{n} أشهر" :many "{n} شهرًا" :other "{n} شهر"}} :year {:type :pluralized :forms {:zero "{n} سنة" :one "سنة واحدة" :two "سنتان" :few "{n} سنوات" :many "{n} سنة" :other "{n} سنة"}} :half nil :delimiter nil :ago "منذ {0}" :in-future "بعد {0}"}
-   :compact {:second {:type :simple :form "{n} ث"} :minute {:type :simple :form "{n} د"} :hour {:type :simple :form "{n} س"} :day {:type :simple :form "{n} ي"} :week {:type :simple :form "{n} أ"} :month {:type :pluralized :forms {:zero "{n} شهر" :one "شهر" :two "شهران" :few "{n} أشهر" :many "{n} شهرًا" :other "{n} شهر"}} :year {:type :simple :form "{n} سنة"} :half "{n}½" :delimiter "" :ago "منذ {0}" :in-future "بعد {0}"}})
+   :compact {:second {:type :simple :form "{n} ث"} :minute {:type :simple :form "{n} د"} :hour {:type :simple :form "{n} س"} :day {:type :simple :form "{n} ي"} :week {:type :simple :form "{n} أ"} :month {:type :simple :form "{n} شهر"} :year {:type :simple :form "{n} سنة"} :half "{n}½" :delimiter "" :ago "منذ {0}" :in-future "بعد {0}"}})

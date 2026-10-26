@@ -39,8 +39,8 @@ let locale : date_locale =
   ; day_format = "{n}"
   ; day_format_exceptions =
     []
-  ; date_pattern = "{day} de {month}"
-  ; date_pattern_with_year = "{day} de {month} de {year}"
+  ; date_pattern = "{day} {month}"
+  ; date_pattern_with_year = "{day} {month} de {year}"
   ; today = "avui"
   ; tomorrow = "demà"
   ; yesterday = "ahir"
@@ -49,7 +49,20 @@ let locale : date_locale =
   ; this_weekday = Some "aquest {weekday}"
   ; next_weekday = Some "{weekday} que ve"
   ; last_weekday = Some "{weekday} passat"
-  ; months_in_date = None
+  ; months_in_date = Some
+    [ "de gener"
+    ; "de febrer"
+    ; "de març"
+    ; "d'abril"
+    ; "de maig"
+    ; "de juny"
+    ; "de juliol"
+    ; "d'agost"
+    ; "de setembre"
+    ; "d'octubre"
+    ; "de novembre"
+    ; "de desembre"
+    ]
   ; short = Some
       { ovr_months = Some
         [ "gen"
@@ -78,7 +91,7 @@ let locale : date_locale =
       ; ovr_day_format = Some "{n}"
       ; ovr_day_format_exceptions = Some []
       ; ovr_date_pattern = Some "{day} {month}"
-      ; ovr_date_pattern_with_year = Some "{day} {month} {year}"
+      ; ovr_date_pattern_with_year = Some "{day} {month} de {year}"
       ; ovr_today = None
       ; ovr_tomorrow = None
       ; ovr_yesterday = None

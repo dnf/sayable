@@ -13,8 +13,8 @@
 
 (def locale
   {:code "tk"
-   :months ["Ýanwar" "Fewral" "Mart" "Aprel" "Maý" "Iýun" "Iýul" "Awgust" "Sentýabr" "Oktýabr" "Noýabr" "Dekabr"]
-   :weekdays ["Ýekşenbe" "Duşenbe" "Sişenbe" "Çarşenbe" "Penşenbe" "Anna" "Şenbe"]
+   :months ["ýanwar" "fewral" "mart" "aprel" "maý" "iýun" "iýul" "awgust" "sentýabr" "oktýabr" "noýabr" "dekabr"]
+   :weekdays ["ýekşenbe" "duşenbe" "sişenbe" "çarşenbe" "penşenbe" "anna" "şenbe"]
    :day-format "{n}"
    :day-format-exceptions {}
    :date-pattern "{day} {month}"
@@ -28,5 +28,5 @@
    :next-weekday "indiki {weekday}"
    :last-weekday "geçen {weekday}"
    :months-in-date nil
-   :short {:months ["Ýan" "Few" "Mar" "Apr" "Maý" "Iýn" "Iýl" "Awg" "Sen" "Okt" "Noý" "Dek"] :months-in-date nil :weekdays ["Ýek" "Duş" "Siş" "Çar" "Pen" "Ann" "Şen"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
+   :short {:months ["ýan" "few" "mar" "apr" "maý" "iýn" "iýl" "awg" "sen" "okt" "noý" "dek"] :months-in-date nil :weekdays ["ýek" "duş" "siş" "çar" "pen" "ann" "şen"] :day-format "{n}" :day-format-exceptions nil :date-pattern "{day} {month}" :date-pattern-with-year "{day} {month} {year}" :today nil :tomorrow nil :yesterday nil}
    :compact {:months nil :months-in-date nil :weekdays nil :day-format nil :day-format-exceptions nil :date-pattern "{d}/{m}" :date-pattern-with-year "{d}/{m}/{yy}" :today nil :tomorrow nil :yesterday nil}})

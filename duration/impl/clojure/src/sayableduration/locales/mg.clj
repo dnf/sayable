@@ -24,7 +24,7 @@
    :half "{0} sy sasany"
    :delimiter ", "
    :just-now "vao haingana"
-   :ago "{0} lasa"
+   :ago "{0} lasa izay"
    :in-future "ao anatin'ny {0}"
-   :short {:second {:type :simple :form "{n} seg"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} ora"} :day {:type :simple :form "{n} and"} :week {:type :simple :form "{n} her"} :month {:type :simple :form "{n} vol"} :year {:type :simple :form "{n} tna"} :half nil :delimiter nil :ago "{0} lasa" :in-future "ao anatin'ny {0}"}
+   :short {:second {:type :simple :form "{n} seg"} :minute {:type :simple :form "{n} min"} :hour {:type :simple :form "{n} ora"} :day {:type :simple :form "{n} and"} :week {:type :simple :form "{n} her"} :month {:type :simple :form "{n} vol"} :year {:type :simple :form "{n} tna"} :half nil :delimiter nil :ago "{0} lasa izay" :in-future "ao anatin'ny {0}"}
    :compact {:second {:type :simple :form "{n} s"} :minute {:type :simple :form "{n} m"} :hour {:type :simple :form "{n} o"} :day {:type :simple :form "{n} a"} :week {:type :simple :form "{n} h"} :month {:type :simple :form "{n} v"} :year {:type :simple :form "{n} t"} :half "{n}½" :delimiter "" :ago "{0} lasa" :in-future "ao anatin'ny {0}"}})

@@ -27,9 +27,9 @@
    :yesterday "dzulo"
    :day-after-tomorrow "mkucha"
    :day-before-yesterday "dzana"
-   :this-weekday "{weekday} ino"
-   :next-weekday "{weekday} yotsatira"
-   :last-weekday "{weekday} yatha"
+   :this-weekday "{weekday} lino"
+   :next-weekday "{weekday} lotsatira"
+   :last-weekday "{weekday} latha"
    :short-months (list "Jan" "Feb" "Mat" "Epu" "Mey" "Jun" "Jul" "Oga" "Sep" "Okt" "Nov" "Dis")
    :short-weekdays (list "Lam" "Lol" "Lch" "Lct" "Lcn" "Lcs" "Low")
    :short-day-format "{n}"

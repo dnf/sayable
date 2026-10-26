@@ -20,10 +20,10 @@ const SaLocale sa_locale_ay = {
     "ay",
     plural_ay,
     {
-        { "uru {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "simana {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "phaxsi {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "mara {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n} uru", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} simana", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} phaxsi", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} mara", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} chika", ", ", "Wawa machaqa",
     {
@@ -35,5 +35,5 @@ const SaLocale sa_locale_ay = {
         { "Jaqi", "" }
     },
     true, { true, { "{n} ur.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sim.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} phx.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mr.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

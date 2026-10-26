@@ -12,7 +12,7 @@
 locale_ro <- list(
   code = "ro",
   months = c("ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"),
-  weekdays = c("duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"),
+  weekdays = c("duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta"),
   day_format = "{n}",
   day_format_exceptions = list(),
   date_pattern = "{day} {month}",
@@ -22,7 +22,7 @@ locale_ro <- list(
   yesterday = "ieri",
   day_after_tomorrow = "poimâine",
   day_before_yesterday = "alaltăieri",
-  this_weekday = "această {weekday}",
+  this_weekday = "{weekday} aceasta",
   next_weekday = "{weekday} viitoare",
   last_weekday = "{weekday} trecută",
   months_in_date = c("ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"),

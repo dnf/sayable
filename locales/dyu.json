@@ -51,7 +51,7 @@
       "Utikalo",
       "Sɛtanburukalo",
       "Ɔkutɔburukalo",
-      "Nowanburdukalo",
+      "Nowanburukalo",
       "Desanburukalo"
     ],
     "weekdays": [
@@ -121,7 +121,7 @@
     "delimiter": ", ",
     "justNow": "sisan",
     "ago": "{0} tɛmɛnen",
-    "inFuture": "ka {0}",
+    "inFuture": "{0} kɔnɔ",
     "short": {
       "units": {
         "second": "sɛk. {n}",
@@ -133,7 +133,7 @@
         "year": "san {n}"
       },
       "ago": "{0} tɛmɛnen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -156,7 +156,7 @@
       "delimiter": "",
       "half": "{n}½",
       "ago": "{0} tɛmɛnen",
-      "inFuture": "ka {0}",
+      "inFuture": "{0} kɔnɔ",
       "clock": {
         "use24h": false,
         "amPm": [
@@ -186,18 +186,18 @@
       "midnight": "dugutilama",
       "noon": "tilgari",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "lɛrɛ {h}",
+        "5": "lɛrɛ {h} ni miniti duuru",
+        "10": "lɛrɛ {h} ni miniti tan",
+        "15": "lɛrɛ {h} ni miniti tan ni duuru",
+        "20": "lɛrɛ {h} ni miniti mugan",
+        "25": "lɛrɛ {h} ni miniti mugan ni duuru",
+        "30": "lɛrɛ {h} ni tilancɛ",
+        "35": "lɛrɛ {h} ni miniti bi saba ni duuru",
+        "40": "lɛrɛ {h} ni miniti bi naani",
+        "45": "lɛrɛ {h} ni miniti bi naani ni duuru",
+        "50": "lɛrɛ {h} ni miniti bi duuru",
+        "55": "lɛrɛ {h} ni miniti bi duuru ni duuru"
       }
     },
     "short": {
@@ -220,5 +220,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Dyula 'lɛrɛ {h}' (lɛrɛ = hour, from French, the everyday Dyula word and already used by this locale), additive 'lɛrɛ {h} ni miniti N' and 'lɛrɛ {h} ni tilancɛ'. Same numerals as Bambara, consistent with the existing hours list (duuru rather than Jula 'looru'). Standard 12-hour count."
+    }
+  ]
 }

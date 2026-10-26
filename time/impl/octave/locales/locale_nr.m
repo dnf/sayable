@@ -11,10 +11,10 @@
 
 function loc = locale_nr()
   loc.code = 'nr';
-  loc.clock.hours = {'itshumi lambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isitshiyagalombili', 'isitshiyagalolunye', 'itshumi', 'itshumi lanye'};
+  loc.clock.hours = {'letjhumi nambili', 'lokuthoma', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithandathu', 'lekhomba', 'lobunane', 'lethoba', 'letjhumi', 'letjhumi nanye'};
   loc.clock.midnight = 'phakathi kobusuku';
   loc.clock.noon = 'emini';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'ihora {h}', "p5", 'ihora {h} nemizuzu emihlanu', "p10", 'ihora {h} nemizuzu elitjhumi', "p15", 'ihora {h} nemizuzu elitjhumi nanhlanu', "p20", 'ihora {h} nemizuzu engamatjhumi amabili', "p25", 'ihora {h} nemizuzu engamatjhumi amabili nanhlanu', "p30", 'ihora {h} nesiquntu', "p35", 'ihora {h} nemizuzu engamatjhumi amathathu nanhlanu', "p40", 'ihora {h} nemizuzu engamatjhumi amane', "p45", 'ihora {h} nemizuzu engamatjhumi amane nanhlanu', "p50", 'ihora {h} nemizuzu engamatjhumi amahlanu', "p55", 'ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

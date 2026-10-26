@@ -21,7 +21,7 @@ const SduDurationLocale sdu_locale_shi = {
     "shi",
     plural_shi,
     {
-        { NULL, { NULL, "{n} tasint", NULL, "{n} tasinin", NULL, "{n} tasinin" } },
+        { NULL, { NULL, "{n} tasint", NULL, "{n} tisinin", NULL, "{n} tisinin" } },
         { NULL, { NULL, "{n} tusdiqt", NULL, "{n} tusdiqin", NULL, "{n} tusdiqin" } },
         { NULL, { NULL, "{n} tasragt", NULL, "{n} tisragin", NULL, "{n} tisragin" } },
         { NULL, { NULL, "{n} ass", NULL, "{n} ussan", NULL, "{n} ass" } },
@@ -32,6 +32,6 @@ const SduDurationLocale sdu_locale_shi = {
     "{0} d uzgen", ", ",
     "ɣilad",
     "ɣ {0} zzrin", "ɣ {0}",
-    true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "ɣ {0} zzrin", true, "ɣ {0}" },
+    true, { true, { NULL, { NULL, "{n} tasint", NULL, "{n} tasinin", NULL, "{n} tasinin" } }, true, { NULL, { NULL, "{n} tusdiqt", NULL, "{n} tusdiqin", NULL, "{n} tusdiqin" } }, true, { NULL, { NULL, "{n} tasragt", NULL, "{n} tisragin", NULL, "{n} tisragin" } }, true, { NULL, { NULL, "{n} ass", NULL, "{n} ussan", NULL, "{n} ass" } }, true, { NULL, { NULL, "{n} imalass", NULL, "{n} imalassn", NULL, "{n} imalass" } }, true, { NULL, { NULL, "{n} ayyur", NULL, "{n} ayyurn", NULL, "{n} ayyur" } }, true, { NULL, { NULL, "{n} aseggas", NULL, "{n} iseggasen", NULL, "{n} aseggas" } }, false, NULL, false, NULL, true, "ɣ {0} zzrin", true, "ɣ {0}" },
     true, { true, { "{n}s", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}h", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}mo", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "ɣ {0} zzrin", true, "ɣ {0}" }
 };

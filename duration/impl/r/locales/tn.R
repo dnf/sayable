@@ -13,8 +13,8 @@ locale_tn <- list(
   code = "tn",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = list(one = "motsotswana {n}", other = "dimetsotswana {n}"),
-    minute = list(one = "metsotso {n}", other = "dimetsotso {n}"),
+    second = list(one = "motsotswana {n}", other = "metsotswana {n}"),
+    minute = list(one = "motsotso {n}", other = "metsotso {n}"),
     hour = list(one = "ura {n}", other = "diura {n}"),
     day = list(one = "letsatsi {n}", other = "malatsi {n}"),
     week = list(one = "beke {n}", other = "dibeke {n}"),
@@ -28,8 +28,8 @@ locale_tn <- list(
   in_future = "ka {0}",
   short = list(
     units = list(
-      second = list(one = "motsotswana {n}", other = "dimetsotswana {n}"),
-      minute = list(one = "metsotso {n}", other = "dimetsotso {n}"),
+      second = list(one = "motsotswana {n}", other = "metsotswana {n}"),
+      minute = list(one = "motsotso {n}", other = "metsotso {n}"),
       hour = list(one = "ura {n}", other = "diura {n}"),
       day = list(one = "letsatsi {n}", other = "malatsi {n}"),
       week = list(one = "beke {n}", other = "dibeke {n}"),

@@ -10,22 +10,22 @@
 # Source: locales/nso.json
 
 function locale_nso {
-    $hours = @('lesome pedi', 'tee', 'pedi', 'tharo', 'nne', 'hlano', 'tshela', 'šupa', 'seswai', 'senyane', 'lesome', 'lesome tee')
+    $hours = @('lesomepedi', 'pele', 'bobedi', 'boraro', 'bone', 'bohlano', 'botshela', 'bošupa', 'seswai', 'senyane', 'lesome', 'lesometee')
     $midnight = 'bošego gare'
     $noon = 'mosegare'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'iri ya {h}'
+    $patterns[5] = 'iri ya {h} le metsotso ye mehlano'
+    $patterns[10] = 'iri ya {h} le metsotso ye lesome'
+    $patterns[15] = 'iri ya {h} le kotara'
+    $patterns[20] = 'iri ya {h} le metsotso ye masomepedi'
+    $patterns[25] = 'iri ya {h} le metsotso ye masomepedi-hlano'
+    $patterns[30] = 'iri ya {h} le seripagare'
+    $patterns[35] = 'iri ya {h} le metsotso ye masometharo-hlano'
+    $patterns[40] = 'iri ya {h} le metsotso ye masomenne'
+    $patterns[45] = 'iri ya {h} le metsotso ye masomenne-hlano'
+    $patterns[50] = 'iri ya {h} le metsotso ye masomehlano'
+    $patterns[55] = 'iri ya {h} le metsotso ye masomehlano-hlano'
     $clock = @{
         hours = $hours
         midnight = $midnight

@@ -20,7 +20,7 @@ function locale_id {
         month = '{n} bulan'
         year = '{n} tahun'
     }
-    $half = '{0} setengah'
+    $half = '{n} setengah'
     $delimiter = ', '
     $justBorn = 'Baru lahir'
     $stages = @{

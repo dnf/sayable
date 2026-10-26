@@ -23,7 +23,7 @@
    (lambda (n) (if (= n 1) "one" "other"))
    (hash "second" (hash "type" "pluralized" "forms" (hash "one" "isekondi {n}" "other" "amasekondi {n}"))
          "minute" (hash "type" "pluralized" "forms" (hash "one" "iminiti {n}" "other" "amaminiti {n}"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "insa {n}" "other" "amanso {n}"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "insa {n}" "other" "insa {n}"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "ubushiku {n}" "other" "inshiku {n}"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "umulungu {n}" "other" "imilungu {n}"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "umweshi {n}" "other" "imyeshi {n}"))

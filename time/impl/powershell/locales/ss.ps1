@@ -10,22 +10,22 @@
 # Source: locales/ss.json
 
 function locale_ss {
-    $hours = @('lishumi nambili', 'kunye', 'kubili', 'kutsatfu', 'kune', 'kusihlanu', 'sitfupha', 'sikhombisa', 'siphohlongo', 'sifisagcina', 'lishumi', 'lishumi nakunye')
+    $hours = @('lelishumi nakubili', 'lekucala', 'lesibili', 'lesitsatfu', 'lesine', 'lesihlanu', 'lesitfupha', 'lesikhombisa', 'lesiphohlongo', 'lemfica', 'lelishumi', 'lelishumi nakunye')
     $midnight = 'phakathi kwebusuku'
     $noon = 'emini'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'lihora {h}'
+    $patterns[5] = 'lihora {h} nemizuzu lemihlanu'
+    $patterns[10] = 'lihora {h} nemizuzu lelishumi'
+    $patterns[15] = 'lihora {h} nemizuzu lelishumi nesihlanu'
+    $patterns[20] = 'lihora {h} nemizuzu lemashumi lamabili'
+    $patterns[25] = 'lihora {h} nemizuzu lemashumi lamabili nesihlanu'
+    $patterns[30] = 'lihora {h} nenhafu'
+    $patterns[35] = 'lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu'
+    $patterns[40] = 'lihora {h} nemizuzu lemashumi lamane'
+    $patterns[45] = 'lihora {h} nemizuzu lemashumi lamane nesihlanu'
+    $patterns[50] = 'lihora {h} nemizuzu lemashumi lasihlanu'
+    $patterns[55] = 'lihora {h} nemizuzu lemashumi lasihlanu nesihlanu'
     $clock = @{
         hours = $hours
         midnight = $midnight

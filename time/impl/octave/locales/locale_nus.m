@@ -11,10 +11,10 @@
 
 function loc = locale_nus()
   loc.code = 'nus';
-  loc.clock.hours = {'thiäär ke rou', 'tök', 'rou', 'diäk', 'ŋuan', 'dhiëc', 'bäkɛl', 'dhorou', 'bät', 'kuɔn', 'thiäär', 'thiäär ku tök'};
+  loc.clock.hours = {'wäl wi̱ rɛw', 'kɛl', 'rɛw', 'diɔk', 'ŋuaan', 'dhieec', 'bäkɛl', 'bäärɔw', 'bädäk', 'bäŋuan', 'wäl', 'wäl wi̱ kɛl'};
   loc.clock.midnight = 'wakɔ̈u';
   loc.clock.noon = 'cäŋ kɔ̈k';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'thaar {h}', "p5", 'thaar {h} kɛnɛ minit dhieec', "p10", 'thaar {h} kɛnɛ minit wäl', "p15", 'thaar {h} kɛnɛ minit wäl wi̱ dhieec', "p20", 'thaar {h} kɛnɛ minit jiɛn rɛw', "p25", 'thaar {h} kɛnɛ minit jiɛn rɛw wi̱ dhieec', "p30", 'thaar {h} kɛnɛ minit jiɛn diɔk', "p35", 'thaar {h} kɛnɛ minit jiɛn diɔk wi̱ dhieec', "p40", 'thaar {h} kɛnɛ minit jiɛn ŋuaan', "p45", 'thaar {h} kɛnɛ minit jiɛn ŋuaan wi̱ dhieec', "p50", 'thaar {h} kɛnɛ minit jiɛn dhieec', "p55", 'thaar {h} kɛnɛ minit jiɛn dhieec wi̱ dhieec');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

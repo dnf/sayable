@@ -27,7 +27,7 @@ pub fn locale() -> types.DurationLocale {
     half: "{n}½",
     delimiter: ", ",
     just_now: "akkurat nå",
-    ago: "{0} siden",
+    ago: "for {0} siden",
     in_future: "om {0}",
     short: Ok(types.CompactnessOverride(
       units: Ok([
@@ -41,7 +41,7 @@ pub fn locale() -> types.DurationLocale {
       ]),
       half: Error(Nil),
       delimiter: Error(Nil),
-      ago: Ok("{0} siden"),
+      ago: Ok("for {0} siden"),
       in_future: Ok("om {0}"),
     )),
     compact: Ok(types.CompactnessOverride(
@@ -56,7 +56,7 @@ pub fn locale() -> types.DurationLocale {
       ]),
       half: Error(Nil),
       delimiter: Ok(""),
-      ago: Ok("{0} siden"),
+      ago: Ok("for {0} siden"),
       in_future: Ok("om {0}"),
     )),
   )

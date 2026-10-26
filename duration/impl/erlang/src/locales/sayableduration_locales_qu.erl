@@ -17,8 +17,8 @@ locale() ->
     #duration_locale{
         code = "qu",
         plural = fun(_) -> other end,
-        second = {simple, "{n} ñiqin"},
-        minute = {simple, "{n} chiniku"},
+        second = {simple, "{n} sikundu"},
+        minute = {simple, "{n} minutu"},
         hour = {simple, "{n} ura"},
         day = {simple, "{n} p'unchaw"},
         week = {simple, "{n} simana"},
@@ -29,6 +29,6 @@ locale() ->
         just_now = "kunanlla",
         ago = "{0} ñawpaqta",
         in_future = "{0} qhipata",
-        short = {just, #duration_compactness_override{second = {just, {simple, "{n} ñiq"}}, minute = {just, {simple, "{n} chi"}}, hour = {just, {simple, "{n} ura"}}, day = {just, {simple, "{n} p'un"}}, week = {just, {simple, "{n} sim"}}, month = {just, {simple, "{n} kil"}}, year = {just, {simple, "{n} wat"}}, half = nothing, delimiter = nothing, ago = {just, "{0} ñawpaqta"}, in_future = {just, "{0} qhipata"}}},
+        short = {just, #duration_compactness_override{second = {just, {simple, "{n} sik"}}, minute = {just, {simple, "{n} min"}}, hour = {just, {simple, "{n} ura"}}, day = {just, {simple, "{n} p'un"}}, week = {just, {simple, "{n} sim"}}, month = {just, {simple, "{n} kil"}}, year = {just, {simple, "{n} wat"}}, half = nothing, delimiter = nothing, ago = {just, "{0} ñawpaqta"}, in_future = {just, "{0} qhipata"}}},
         compact = {just, #duration_compactness_override{second = {just, {simple, "{n}s"}}, minute = {just, {simple, "{n}m"}}, hour = {just, {simple, "{n}h"}}, day = {just, {simple, "{n}d"}}, week = {just, {simple, "{n}w"}}, month = {just, {simple, "{n}m"}}, year = {just, {simple, "{n}y"}}, half = {just, "{n}½"}, delimiter = {just, ""}, ago = {just, "{0} ñawpaqta"}, in_future = {just, "{0} qhipata"}}}
     }.

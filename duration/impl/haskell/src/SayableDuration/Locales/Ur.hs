@@ -20,7 +20,10 @@ locale = DurationLocale
     , localeUnits = Units
         { unitSecond = Simple "{n} سیکنڈ"
         , unitMinute = Simple "{n} منٹ"
-        , unitHour = Simple "{n} گھنٹہ"
+        , unitHour = Pluralized
+          [ (One, "{n} گھنٹہ")
+          , (Other, "{n} گھنٹے")
+          ]
         , unitDay = Pluralized
           [ (One, "{n} دن")
           , (Other, "{n} دن")

@@ -15,22 +15,22 @@ module locales
 pub const locale_br = TimeLocale{
 	code: 'br'
 	clock: ClockConfig{
-		hours: ['12', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11']!
+		hours: ['daouzek eur', 'un eur', 'div eur', 'teir eur', 'peder eur', 'pemp eur', 'c\'hwec\'h eur', 'seizh eur', 'eizh eur', 'nav eur', 'dek eur', 'unnek eur']!
 		midnight: 'hanternoz'
 		noon: 'kreisteiz'
 		patterns: {
-			0: '{h}:00'
-			5: '{h}:05'
-			10: '{h}:10'
-			15: '{h}:15'
-			20: '{h}:20'
-			25: '{h}:25'
-			30: '{h}:30'
-			35: '{h}:35'
-			40: '{h}:40'
-			45: '{h}:45'
-			50: '{h}:50'
-			55: '{h}:55'
+			0: '{h}'
+			5: '{h} ha pemp'
+			10: '{h} ha dek'
+			15: '{h} ha kard'
+			20: '{h} hag ugent'
+			25: '{h} ha pemp warn-ugent'
+			30: '{h} hanter'
+			35: '{next_h} nemet pemp warn-ugent'
+			40: '{next_h} nemet ugent'
+			45: '{next_h} nemet kard'
+			50: '{next_h} nemet dek'
+			55: '{next_h} nemet pemp'
 		}
 	}
 	has_short: true

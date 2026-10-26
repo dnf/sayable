@@ -36,10 +36,10 @@ var KW = sa.AgeLocale{
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} dydh", sa.One: "dydh", sa.Two: "{n} dhydh", sa.Few: "{n} dydh", sa.Many: "{n} dydh", sa.Other: "{n} dydh"}),
-		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} seythun", sa.One: "seythun", sa.Two: "{n} seythun", sa.Few: "{n} seythun", sa.Many: "{n} seythun", sa.Other: "{n} seythun"}),
-		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} mis", sa.One: "mis", sa.Two: "{n} vis", sa.Few: "{n} mis", sa.Many: "{n} mis", sa.Other: "{n} mis"}),
-		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} blydhen", sa.One: "blydhen", sa.Two: "{n} vlydhen", sa.Few: "{n} blydhen", sa.Many: "{n} blydhen", sa.Other: "{n} blydhen"}),
+		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} dydh", sa.One: "{n} dydh", sa.Two: "{n} dhydh", sa.Few: "{n} dydh", sa.Many: "{n} dydh", sa.Other: "{n} dydh"}),
+		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} seythun", sa.One: "{n} seythun", sa.Two: "{n} seythun", sa.Few: "{n} seythun", sa.Many: "{n} seythun", sa.Other: "{n} seythun"}),
+		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} mis", sa.One: "{n} mis", sa.Two: "{n} vis", sa.Few: "{n} mis", sa.Many: "{n} mis", sa.Other: "{n} mis"}),
+		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.Zero: "{n} blydhen", sa.One: "{n} blydhen", sa.Two: "{n} vlydhen", sa.Few: "{n} blydhen", sa.Many: "{n} blydhen", sa.Other: "{n} blydhen"}),
 	},
 	Half:      "{0} hag hanter",
 	Delimiter: ", ",

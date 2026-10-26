@@ -22,7 +22,7 @@ our sub locale() {
             month => '{n} manis',
             year => '{n} yia',
         },
-        half => '{n} en haf',
+        half => '{0} en haf',
         delimiter => ', ',
         just-born => 'Niufala bebi',
         stages => {
@@ -49,6 +49,7 @@ our sub locale() {
                 year => '{n}y',
             },
             delimiter => '',
+            half => '{n}½',
         },
     }
 }

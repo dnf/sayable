@@ -1021,7 +1021,7 @@ test "ES years+months" {
 
 test "ES half marker" {
     var buf: [256]u8 = undefined;
-    try expectStr("3 y medio a\xc3\xb1os", fmtWith(&buf, &pt.locales.es, .normal, "2022-06-15", "2025-12-15"));
+    try expectStr("3 a\xc3\xb1os y medio", fmtWith(&buf, &pt.locales.es, .normal, "2022-06-15", "2025-12-15"));
 }
 
 test "ES integer years" {
@@ -1143,7 +1143,7 @@ test "he justBorn" {
 
 test "he 1 day one" {
     var buf: [256]u8 = undefined;
-    try expectStr("\xd7\x99\xd7\x95\xd7\x9d 1", fmtWith(&buf, &pt.locales.he, .normal, "2025-06-14", "2025-06-15"));
+    try expectStr("\xd7\x99\xd7\x95\xd7\x9d", fmtWith(&buf, &pt.locales.he, .normal, "2025-06-14", "2025-06-15"));
 }
 
 test "he 3 days other" {
@@ -1173,7 +1173,7 @@ test "he 3 months" {
 
 test "he 2y dual 1m one" {
     var buf: [256]u8 = undefined;
-    try expectStr("\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9 1", fmtWith(&buf, &pt.locales.he, .normal, "2023-06-15", "2025-07-15"));
+    try expectStr("\xd7\xa9\xd7\xa0\xd7\xaa\xd7\x99\xd7\x99\xd7\x9d, \xd7\x97\xd7\x95\xd7\x93\xd7\xa9", fmtWith(&buf, &pt.locales.he, .normal, "2023-06-15", "2025-07-15"));
 }
 
 test "he 3.5y half" {
@@ -1298,7 +1298,7 @@ test "id 6 months" {
 
 test "id 3.5y half" {
     var buf: [256]u8 = undefined;
-    try expectStr("3 tahun setengah", fmtWith(&buf, &pt.locales.id, .normal, "2022-06-15", "2025-12-15"));
+    try expectStr("3 setengah tahun", fmtWith(&buf, &pt.locales.id, .normal, "2022-06-15", "2025-12-15"));
 }
 
 test "id 7y" {

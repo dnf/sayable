@@ -29,7 +29,7 @@ KM = DurationLocale(
     delimiter=", ",
     just_now="ឥឡូវនេះ",
     ago="{0}មុន",
-    in_future="ក្នុង{0}",
+    in_future="{0}ទៀត",
     short=CompactnessOverride(
         units={
             "second": "{n} វិនាទី",
@@ -41,7 +41,7 @@ KM = DurationLocale(
             "year": "{n} ឆ្នាំ",
         },
         ago="{0}មុន",
-        in_future="ក្នុង{0}",
+        in_future="{0}ទៀត",
     ),
     compact=CompactnessOverride(
         units={
@@ -56,6 +56,6 @@ KM = DurationLocale(
         half="{n}½",
         delimiter="",
         ago="{0}មុន",
-        in_future="ក្នុង{0}",
+        in_future="{0}ទៀត",
     ),
 )

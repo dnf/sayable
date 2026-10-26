@@ -13,9 +13,9 @@ locale_ny <- list(
   code = "ny",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = "{n} sekondi",
-    minute = "{n} mphindi",
-    hour = "{n} ola",
+    second = "sekondi {n}",
+    minute = "mphindi {n}",
+    hour = list(one = "ola {n}", other = "maola {n}"),
     day = list(one = "tsiku {n}", other = "masiku {n}"),
     week = list(one = "sabata {n}", other = "masabata {n}"),
     month = list(one = "mwezi {n}", other = "miyezi {n}"),
@@ -30,7 +30,7 @@ locale_ny <- list(
     units = list(
       second = "sek {n}",
       minute = "mph {n}",
-      hour = "ola {n}",
+      hour = list(one = "ola {n}", other = "maola {n}"),
       day = list(one = "tsiku {n}", other = "mas {n}"),
       week = list(one = "sabata {n}", other = "masab {n}"),
       month = list(one = "mwezi {n}", other = "miyezi {n}"),

@@ -17,22 +17,22 @@ bn
 	locale := SayableTimeLocale new.
 	locale code: 'bn'.
 	clock := Dictionary new.
-	clock at: #hours put: (OrderedCollection withAll: { 'বারো'. 'এক'. 'দুই'. 'তিন'. 'চার'. 'পাঁচ'. 'ছয়'. 'সাত'. 'আট'. 'নয়'. 'দশ'. 'এগারো' }).
+	clock at: #hours put: (OrderedCollection withAll: { 'বারোটা'. 'একটা'. 'দুটো'. 'তিনটে'. 'চারটে'. 'পাঁচটা'. 'ছটা'. 'সাতটা'. 'আটটা'. 'নটা'. 'দশটা'. 'এগারোটা' }).
 	clock at: #midnight put: 'মধ্যরাত'.
-	clock at: #noon put: 'দুপুর'.
+	clock at: #noon put: 'দুপুর বারোটা'.
 	clock at: #patterns put: (Dictionary newFromPairs: {
-		0. '{h}:00'.
-		5. '{h}:05'.
-		10. '{h}:10'.
-		15. '{h}:15'.
-		20. '{h}:20'.
-		25. '{h}:25'.
-		30. '{h}:30'.
-		35. '{h}:35'.
-		40. '{h}:40'.
-		45. '{h}:45'.
-		50. '{h}:50'.
-		55. '{h}:55'.
+		0. '{h}'.
+		5. '{h} বেজে পাঁচ মিনিট'.
+		10. '{h} বেজে দশ মিনিট'.
+		15. 'সোয়া {h}'.
+		20. '{h} বেজে বিশ মিনিট'.
+		25. '{h} বেজে পঁচিশ মিনিট'.
+		30. '{h} বেজে ত্রিশ মিনিট'.
+		35. '{next_h} বাজতে পঁচিশ মিনিট বাকি'.
+		40. '{next_h} বাজতে বিশ মিনিট বাকি'.
+		45. 'পৌনে {next_h}'.
+		50. '{next_h} বাজতে দশ মিনিট বাকি'.
+		55. '{next_h} বাজতে পাঁচ মিনিট বাকি'.
 	}).
 	locale clock: clock.
 	locale short: (Dictionary newFromPairs: {

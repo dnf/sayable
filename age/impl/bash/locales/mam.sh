@@ -15,7 +15,7 @@ _sayableage_plural_mam() {
 
 _sayableage_locale_mam() {
     _unit_day='{n} q'\''ij'
-    _unit_week='{n} xjaw'
+    _unit_week='{n} seman'
     _unit_month='{n} xjaw'
     _unit_year='{n} ab'\''q'\''ii'
     _half='{0} nik'\'''
@@ -28,13 +28,14 @@ _sayableage_locale_mam() {
     _stage_teenager='Q'\''a'
     _stage_adult='Xjal'
     _short_unit_day='{n} q'\''ij'
-    _short_unit_week='{n} xjaw'
+    _short_unit_week='{n} seman'
     _short_unit_month='{n} xjaw'
     _short_unit_year='{n} ab'\''.'
     _compact_unit_day='{n}d'
     _compact_unit_week='{n}w'
     _compact_unit_month='{n}m'
     _compact_unit_year='{n}y'
+    _compact_half='{n}½'
     _compact_delimiter=''
     _plural_func=_sayableage_plural_mam
 }

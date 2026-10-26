@@ -10,22 +10,22 @@
 # Source: locales/tn.json
 
 function locale_tn {
-    $hours = @('lesome le bobedi', 'nngwe', 'pedi', 'tharo', 'nne', 'tlhano', 'thataro', 'supa', 'robedi', 'robongwe', 'lesome', 'lesome le bongwe')
+    $hours = @('ya lesome le bobedi', 'ya ntlha', 'ya bobedi', 'ya boraro', 'ya bone', 'ya botlhano', 'ya borataro', 'ya bosupa', 'ya borobedi', 'ya borobongwe', 'ya lesome', 'ya lesome le bongwe')
     $midnight = 'bosigo jwa magareng'
     $noon = 'motshegare'
     $patterns = @{}
-    $patterns[0] = '{h}:00'
-    $patterns[5] = '{h}:05'
-    $patterns[10] = '{h}:10'
-    $patterns[15] = '{h}:15'
-    $patterns[20] = '{h}:20'
-    $patterns[25] = '{h}:25'
-    $patterns[30] = '{h}:30'
-    $patterns[35] = '{h}:35'
-    $patterns[40] = '{h}:40'
-    $patterns[45] = '{h}:45'
-    $patterns[50] = '{h}:50'
-    $patterns[55] = '{h}:55'
+    $patterns[0] = 'ura {h}'
+    $patterns[5] = 'ura {h} le metsotso e metlhano'
+    $patterns[10] = 'ura {h} le metsotso e le lesome'
+    $patterns[15] = 'ura {h} le kotara'
+    $patterns[20] = 'ura {h} le metsotso e le masome a mabedi'
+    $patterns[25] = 'ura {h} le metsotso e le masome a mabedi le botlhano'
+    $patterns[30] = 'ura {h} le halofo'
+    $patterns[35] = 'ura {h} le metsotso e le masome a mararo le botlhano'
+    $patterns[40] = 'ura {h} le metsotso e le masome a mane'
+    $patterns[45] = 'ura {h} le metsotso e le masome a mane le botlhano'
+    $patterns[50] = 'ura {h} le metsotso e le masome a matlhano'
+    $patterns[55] = 'ura {h} le metsotso e le masome a matlhano le botlhano'
     $clock = @{
         hours = $hours
         midnight = $midnight

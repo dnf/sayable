@@ -28,7 +28,7 @@ let NE* = AgeLocale(
   stages: {
     "newborn": stageNeutral("नवजात शिशु"),
     "infant": stageNeutral("शिशु"),
-    "toddler": stageNeutral("बाल्यकाल"),
+    "toddler": stageNeutral("सानो बच्चा"),
     "child": stageNeutral("बालक"),
     "teenager": stageNeutral("किशोर"),
     "adult": stageNeutral("वयस्क"),

@@ -19,7 +19,7 @@ pub fn locale() -> types.AgeLocale {
     week: types.SimpleUnit("{n} minggu"),
     month: types.SimpleUnit("{n} bulan"),
     year: types.SimpleUnit("{n} tahun"),
-    half: "{0} setengah",
+    half: "{n} setengah",
     delimiter: ", ",
     just_born: "Baru lahir",
     newborn: types.NeutralStage("Baru lahir"),

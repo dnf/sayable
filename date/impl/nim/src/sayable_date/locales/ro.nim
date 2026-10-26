@@ -16,7 +16,7 @@ import ../locale
 let RO* = DateLocale(
   code: "ro",
   months: @["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"],
-  weekdays: @["duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"],
+  weekdays: @["duminica", "lunea", "marțea", "miercurea", "joia", "vinerea", "sâmbăta"],
   dayFormat: "{n}",
   dayFormatExceptions: initOrderedTable[string, string](),
   datePattern: "{day} {month}",
@@ -26,7 +26,7 @@ let RO* = DateLocale(
   yesterday: "ieri",
   dayAfterTomorrow: some("poimâine"),
   dayBeforeYesterday: some("alaltăieri"),
-  thisWeekday: some("această {weekday}"),
+  thisWeekday: some("{weekday} aceasta"),
   nextWeekday: some("{weekday} viitoare"),
   lastWeekday: some("{weekday} trecută"),
   monthsInDate: some(@["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"]),

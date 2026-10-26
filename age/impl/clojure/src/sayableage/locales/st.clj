@@ -21,6 +21,6 @@
    :half "{0} le halofo"
    :delimiter ", "
    :just-born "O sa tswa hlaha"
-   :stages {:newborn {:type :neutral :label "Lesea le sa tswa hlaha"} :infant {:type :neutral :label "Lesea"} :toddler {:type :neutral :label "Ngwanana"} :child {:type :neutral :label "Ngwana"} :teenager {:type :neutral :label "Mosha"} :adult {:type :neutral :label "Motho e moholo"}}
+   :stages {:newborn {:type :neutral :label "Lesea le sa tswa hlaha"} :infant {:type :neutral :label "Lesea"} :toddler {:type :neutral :label "Ngwana e monyane"} :child {:type :neutral :label "Ngwana"} :teenager {:type :neutral :label "Mosha"} :adult {:type :neutral :label "Motho e moholo"}}
    :short {:day {:type :pluralized :forms {:one "letsatsi {n}" :other "matsatsi {n}"}} :week {:type :pluralized :forms {:one "beke {n}" :other "dibeke {n}"}} :month {:type :pluralized :forms {:one "kgw. {n}" :other "dikgw. {n}"}} :year {:type :pluralized :forms {:one "sel. {n}" :other "dil. {n}"}} :half nil :delimiter nil :just-born nil}
    :compact {:day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}m"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :just-born nil}})

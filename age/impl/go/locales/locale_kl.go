@@ -16,14 +16,17 @@ import sa "github.com/dnf/sayable/age/impl/go"
 // KL is the Kalaallisut locale.
 var KL = sa.AgeLocale{
 	Code: "kl",
-	Plural: func(_ int) sa.PluralCategory {
+	Plural: func(n int) sa.PluralCategory {
+		if n == 1 {
+			return sa.One
+		}
 		return sa.Other
 	},
 	Units: struct{ Day, Week, Month, Year sa.UnitForms }{
-		Day:   sa.SimpleUnit("ullut {n}"),
-		Week:  sa.SimpleUnit("sapaatit {n}"),
-		Month: sa.SimpleUnit("qaammatit {n}"),
-		Year:  sa.SimpleUnit("ukiut {n}"),
+		Day:   sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "ulloq {n}", sa.Other: "ullut {n}"}),
+		Week:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "sapaatip akunnera {n}", sa.Other: "sapaatip akunneri {n}"}),
+		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "qaammat {n}", sa.Other: "qaammatit {n}"}),
+		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "ukioq {n}", sa.Other: "ukiut {n}"}),
 	},
 	Half:      "{0} affaa",
 	Delimiter: ", ",
@@ -38,7 +41,7 @@ var KL = sa.AgeLocale{
 	},
 	Short: &sa.CompactnessOverride{
 		Day:   &sa.UnitForms{Simple: "ull. {n}"},
-		Week:  &sa.UnitForms{Simple: "sap. {n}"},
+		Week:  &sa.UnitForms{Simple: "sap. ak. {n}"},
 		Month: &sa.UnitForms{Simple: "qaam. {n}"},
 		Year:  &sa.UnitForms{Simple: "uk. {n}"},
 	},
@@ -48,5 +51,6 @@ var KL = sa.AgeLocale{
 		Month:     &sa.UnitForms{Simple: "{n}m"},
 		Year:      &sa.UnitForms{Simple: "{n}y"},
 		Delimiter: strPtr(""),
+		Half:      strPtr("{n}½"),
 	},
 }

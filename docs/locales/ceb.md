@@ -6,6 +6,14 @@
 
 Plural rule: `one_other_zero_one` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [ceb.json](../../locales/ceb.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Spanish-derived system: hours carry the article ('ala una' singular, 'alas dos'...'alas dose'); '{h} y singko/diyes/kinse/beynte/beynte singko/medya'; subtractive 'menos kinse para {next_h}' for :35-:55. Kept existing 'kwatro' spelling.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `one_other_zero_one` (categories: one, other)
 | 2 years, 1 month  | 2 ka tuig, 1 ka bulan   | 2 ka tuig, 1 ka bulan   | 2y1m           |
 | 2 years, 6 months | 2 ka tuig, 6 ka bulan   | 2 ka tuig, 6 ka bulan   | 2y6m           |
 | 3 years           | 3 ka tuig               | 3 ka tuig               | 3y             |
-| 3½ years          | 3½ ka tuig              | 3½ ka tuig              | 3½y            |
+| 3½ years          | 3 ka tuig ug tunga      | 3 ka tuig ug tunga      | 3½y            |
 | 5 years           | 5 ka tuig               | 5 ka tuig               | 5y             |
-| 5½ years          | 5½ ka tuig              | 5½ ka tuig              | 5½y            |
+| 5½ years          | 5 ka tuig ug tunga      | 5 ka tuig ug tunga      | 5½y            |
 | 7 years           | 7 ka tuig               | 7 ka tuig               | 7y             |
 | 10 years          | 10 ka tuig              | 10 ka tuig              | 10y            |
 | 18 years          | 18 ka tuig              | 18 ka tuig              | 18y            |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | sunod ugma        | 3/17          |
 | Day before yesterday | miaging gahapon   | 3/13          |
 | This Thursday (+5)   | karong Huwebes    | 3/20          |
-| Last Monday (-4)     | miaging Martes    | 3/11          |
-| Next Wednesday (+12) | sunod nga Huwebes | 3/27          |
-| Same month (+20)     | Abril 4           | 4/4           |
+| Last Tuesday (-4)    | miaging Martes    | 3/11          |
+| Next Thursday (+12)  | sunod nga Huwebes | 3/27          |
+| Same year (+20)      | Abril 4           | 4/4           |
 | Different year       | Enero 10, 2026    | 1/10/26       |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 ka minuto                | 5 min                   | 5min       |
 | 45 minutes            | 45 ka minuto               | 45 min                  | 45min      |
 | 1 hour                | 1 ka oras                  | 1 oras                  | 1o         |
-| 1½ hours              | 1½ ka oras                 | 1½ oras                 | 1½o        |
+| 1½ hours              | 1 ka oras ug tunga         | 1 oras ug tunga         | 1½o        |
 | 3 hours               | 3 ka oras                  | 3 oras                  | 3o         |
 | 6 hours               | 6 ka oras                  | 6 oras                  | 6o         |
 | 1 day                 | 1 ka adlaw                 | 1 ka adlaw              | 1d         |
-| 1½ days               | 1½ ka adlaw                | 1½ ka adlaw             | 1½d        |
+| 1½ days               | 1 ka adlaw ug tunga        | 1 ka adlaw ug tunga     | 1½d        |
 | 3 days                | 3 ka adlaw                 | 3 ka adlaw              | 3d         |
 | 1 week                | 1 ka semana                | 1 ka semana             | 1sem       |
 | 2 weeks, 3 days       | 2 ka semana, 3 ka adlaw    | 2 ka semana, 3 ka adlaw | 2sem3d     |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal        | Short    | Compact |
-| --------------- | ------------- | -------- | ------- |
-| Midnight        | tungang gabii | 12:00 AM | 12:00a  |
-| 1:00 AM         | uno:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | nuwebe:05     | 9:05 AM  | 9:05a   |
-| Quarter past 10 | diyes:15      | 10:15 AM | 10:15a  |
-| Half past 11    | onse:30       | 11:30 AM | 11:30a  |
-| Noon            | udtong tutok  | 12:00 PM | 12:00p  |
-| Quarter to 3    | dos:45        | 2:45 PM  | 2:45p   |
-| 5 to 6          | singko:55     | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | otso:00       | 8:00 PM  | 8:00p   |
-| 10:30 PM        | diyes:30      | 10:30 PM | 10:30p  |
-| 11:58 PM        | tungang gabii | 11:58 PM | 11:58p  |
+| Time            | Normal                      | Short    | Compact |
+| --------------- | --------------------------- | -------- | ------- |
+| Midnight        | tungang gabii               | 12:00 AM | 12:00a  |
+| 1:00 AM         | ala una                     | 1:00 AM  | 1:00a   |
+| 5 past 9        | alas nuwebe y singko        | 9:05 AM  | 9:05a   |
+| Quarter past 10 | alas diyes y kinse          | 10:15 AM | 10:15a  |
+| Half past 11    | alas onse y medya           | 11:30 AM | 11:30a  |
+| Noon            | udtong tutok                | 12:00 PM | 12:00p  |
+| Quarter to 3    | menos kinse para alas tres  | 2:45 PM  | 2:45p   |
+| 5 to 6          | menos singko para alas sais | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | alas otso                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | alas diyes y medya          | 10:30 PM | 10:30p  |
+| 11:58 PM        | tungang gabii               | 11:58 PM | 11:58p  |

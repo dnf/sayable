@@ -14,19 +14,19 @@ class EELocale {
   static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "second": {"one": "sekend {n}", "other": "sekendwo {n}"},
-      "minute": {"one": "aɖabaƒoƒo {n}", "other": "aɖabaƒoƒowo {n}"},
-      "hour": {"one": "gaƒoƒo {n}", "other": "gaƒoƒowo {n}"},
-      "day": {"one": "ŋkeke {n}", "other": "ŋkekewo {n}"},
-      "week": {"one": "kɔsiɖa {n}", "other": "kɔsiɖawo {n}"},
-      "month": {"one": "ɣleti {n}", "other": "ɣletiwo {n}"},
-      "year": {"one": "ƒe {n}", "other": "ƒewo {n}"},
+      "second": "sekend {n}",
+      "minute": "aɖabaƒoƒo {n}",
+      "hour": "gaƒoƒo {n}",
+      "day": "ŋkeke {n}",
+      "week": "kɔsiɖa {n}",
+      "month": "ɣleti {n}",
+      "year": "ƒe {n}",
     }
   }
   static half { "{0} kple afã" }
   static delimiter { ", " }
   static justNow { "fifia" }
-  static ago { "ɖe {0} me" }
+  static ago { "{0} si va yi" }
   static inFuture { "le {0} me" }
   static short {
     return {
@@ -34,12 +34,12 @@ class EELocale {
         "second": "sek. {n}",
         "minute": "aɖaba. {n}",
         "hour": "gaƒ. {n}",
-        "day": "ŋkekewo {n}",
-        "week": {"one": "kɔsiɖa {n}", "other": "kɔsiɖawo {n}"},
-        "month": {"one": "ɣleti {n}", "other": "ɣletiwo {n}"},
-        "year": {"one": "ƒe {n}", "other": "ƒewo {n}"},
+        "day": "ŋkeke {n}",
+        "week": "kɔsiɖa {n}",
+        "month": "ɣleti {n}",
+        "year": "ƒe {n}",
       },
-      "ago": "ɖe {0} me",
+      "ago": "{0} si va yi",
       "inFuture": "le {0} me",
     }
   }
@@ -56,7 +56,7 @@ class EELocale {
       },
       "half": "{n}½",
       "delimiter": "",
-      "ago": "ɖe {0} me",
+      "ago": "{0} si va yi",
       "inFuture": "le {0} me",
     }
   }

@@ -26,7 +26,7 @@ bi
 		'month'. '{n} manis'.
 		'year'. '{n} yia'.
 	}).
-	locale half: '{n} mo haf'.
+	locale half: '{0} mo haf'.
 	locale delimiter: ', '.
 	locale justNow: 'jas nao'.
 	locale ago: '{0} bifo'.
@@ -54,6 +54,7 @@ bi
 			'month'. '{n}mo'.
 			'year'. '{n}y'.
 		}).
+		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} bifo'.
 		#inFuture. 'long {0}'.

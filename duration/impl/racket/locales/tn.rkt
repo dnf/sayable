@@ -21,8 +21,8 @@
   (duration-locale
    "tn"
    (lambda (n) (if (= n 1) "one" "other"))
-   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "motsotswana {n}" "other" "dimetsotswana {n}"))
-         "minute" (hash "type" "pluralized" "forms" (hash "one" "metsotso {n}" "other" "dimetsotso {n}"))
+   (hash "second" (hash "type" "pluralized" "forms" (hash "one" "motsotswana {n}" "other" "metsotswana {n}"))
+         "minute" (hash "type" "pluralized" "forms" (hash "one" "motsotso {n}" "other" "metsotso {n}"))
          "hour" (hash "type" "pluralized" "forms" (hash "one" "ura {n}" "other" "diura {n}"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "letsatsi {n}" "other" "malatsi {n}"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "beke {n}" "other" "dibeke {n}"))
@@ -33,6 +33,6 @@
    "jaanong fela"
    "{0} e e fetileng"
    "ka {0}"
-   (duration-compactness-override (hash "type" "pluralized" "forms" (hash "one" "motsotswana {n}" "other" "dimetsotswana {n}")) (hash "type" "pluralized" "forms" (hash "one" "metsotso {n}" "other" "dimetsotso {n}")) (hash "type" "pluralized" "forms" (hash "one" "ura {n}" "other" "diura {n}")) (hash "type" "pluralized" "forms" (hash "one" "letsatsi {n}" "other" "malatsi {n}")) (hash "type" "pluralized" "forms" (hash "one" "beke {n}" "other" "dibeke {n}")) (hash "type" "pluralized" "forms" (hash "one" "kgw. {n}" "other" "dikgw. {n}")) (hash "type" "pluralized" "forms" (hash "one" "ngw. {n}" "other" "dingw. {n}")) #f #f "{0} e e fetileng" "ka {0}")
+   (duration-compactness-override (hash "type" "pluralized" "forms" (hash "one" "motsotswana {n}" "other" "metsotswana {n}")) (hash "type" "pluralized" "forms" (hash "one" "motsotso {n}" "other" "metsotso {n}")) (hash "type" "pluralized" "forms" (hash "one" "ura {n}" "other" "diura {n}")) (hash "type" "pluralized" "forms" (hash "one" "letsatsi {n}" "other" "malatsi {n}")) (hash "type" "pluralized" "forms" (hash "one" "beke {n}" "other" "dibeke {n}")) (hash "type" "pluralized" "forms" (hash "one" "kgw. {n}" "other" "dikgw. {n}")) (hash "type" "pluralized" "forms" (hash "one" "ngw. {n}" "other" "dingw. {n}")) #f #f "{0} e e fetileng" "ka {0}")
    (duration-compactness-override (hash "type" "simple" "form" "{n}s") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" "{0} e e fetileng" "ka {0}")
   ))

@@ -19,7 +19,7 @@ M.units = {
     month = "{n} ka bulan",
     year = "{n} ka tuig",
 }
-M.half = "{n}½"
+M.half = "{0} ug tunga"
 M.delimiter = ", "
 M.just_born = "Bag-ong natawo"
 M.stages = {

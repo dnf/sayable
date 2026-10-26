@@ -27,7 +27,7 @@ function locale_km {
     $delimiter = ', '
     $justNow = 'ឥឡូវនេះ'
     $ago = '{0}មុន'
-    $inFuture = 'ក្នុង{0}'
+    $inFuture = '{0}ទៀត'
     $short = @{
         units = @{
             second = '{n} វិនាទី'
@@ -39,7 +39,7 @@ function locale_km {
             year = '{n} ឆ្នាំ'
         }
         ago = '{0}មុន'
-        inFuture = 'ក្នុង{0}'
+        inFuture = '{0}ទៀត'
     }
     $compact = @{
         units = @{
@@ -54,7 +54,7 @@ function locale_km {
         half = '{n}½'
         delimiter = ''
         ago = '{0}មុន'
-        inFuture = 'ក្នុង{0}'
+        inFuture = '{0}ទៀត'
     }
     return @{
         code = 'km'

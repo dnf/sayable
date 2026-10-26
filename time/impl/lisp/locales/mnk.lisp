@@ -17,10 +17,10 @@
   (make-time-locale
    :code "mnk"
    :clock (make-clock-config
-    :hours (list "tan ning fula" "kiliŋ" "fula" "saba" "naani" "luulu" "wɔɔrɔ" "wolonfila" "sey" "kɔnɔntɔ" "taŋ" "taŋ ning kiliŋ")
+    :hours (list "taŋ niŋ fula" "kiliŋ" "fula" "saba" "naani" "luulu" "wɔɔrɔ" "wolonfila" "sey" "kɔnɔntɔ" "taŋ" "taŋ niŋ kiliŋ")
     :midnight "sutu-tili-laŋ"
     :noon "tili-konto"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "talaŋ {h}") (cons 5 "talaŋ {h} aniŋ miniti luulu") (cons 10 "talaŋ {h} aniŋ miniti taŋ") (cons 15 "talaŋ {h} aniŋ miniti taŋ niŋ luulu") (cons 20 "talaŋ {h} aniŋ miniti muwaŋ") (cons 25 "talaŋ {h} aniŋ miniti muwaŋ niŋ luulu") (cons 30 "talaŋ {h} aniŋ talantee") (cons 35 "talaŋ {h} aniŋ miniti taŋ saba niŋ luulu") (cons 40 "talaŋ {h} aniŋ miniti taŋ naani") (cons 45 "talaŋ {h} aniŋ miniti taŋ naani niŋ luulu") (cons 50 "talaŋ {h} aniŋ miniti taŋ luulu") (cons 55 "talaŋ {h} aniŋ miniti taŋ luulu niŋ luulu")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

@@ -14,38 +14,28 @@
 sd_plural('ee', 1, one) :- !.
 sd_plural('ee', _, other).
 
-sd_unit('ee', second, one, 'sekend {n}').
-sd_unit('ee', second, other, 'sekendwo {n}').
-sd_unit('ee', minute, one, 'aɖabaƒoƒo {n}').
-sd_unit('ee', minute, other, 'aɖabaƒoƒowo {n}').
-sd_unit('ee', hour, one, 'gaƒoƒo {n}').
-sd_unit('ee', hour, other, 'gaƒoƒowo {n}').
-sd_unit('ee', day, one, 'ŋkeke {n}').
-sd_unit('ee', day, other, 'ŋkekewo {n}').
-sd_unit('ee', week, one, 'kɔsiɖa {n}').
-sd_unit('ee', week, other, 'kɔsiɖawo {n}').
-sd_unit('ee', month, one, 'ɣleti {n}').
-sd_unit('ee', month, other, 'ɣletiwo {n}').
-sd_unit('ee', year, one, 'ƒe {n}').
-sd_unit('ee', year, other, 'ƒewo {n}').
+sd_unit('ee', second, _, 'sekend {n}').
+sd_unit('ee', minute, _, 'aɖabaƒoƒo {n}').
+sd_unit('ee', hour, _, 'gaƒoƒo {n}').
+sd_unit('ee', day, _, 'ŋkeke {n}').
+sd_unit('ee', week, _, 'kɔsiɖa {n}').
+sd_unit('ee', month, _, 'ɣleti {n}').
+sd_unit('ee', year, _, 'ƒe {n}').
 
 sd_half('ee', '{0} kple afã').
 sd_delimiter('ee', ', ').
 sd_just_now('ee', 'fifia').
-sd_ago('ee', 'ɖe {0} me').
+sd_ago('ee', '{0} si va yi').
 sd_in_future('ee', 'le {0} me').
 
 short_sd_unit('ee', second, _, 'sek. {n}').
 short_sd_unit('ee', minute, _, 'aɖaba. {n}').
 short_sd_unit('ee', hour, _, 'gaƒ. {n}').
-short_sd_unit('ee', day, _, 'ŋkekewo {n}').
-short_sd_unit('ee', week, one, 'kɔsiɖa {n}').
-short_sd_unit('ee', week, other, 'kɔsiɖawo {n}').
-short_sd_unit('ee', month, one, 'ɣleti {n}').
-short_sd_unit('ee', month, other, 'ɣletiwo {n}').
-short_sd_unit('ee', year, one, 'ƒe {n}').
-short_sd_unit('ee', year, other, 'ƒewo {n}').
-short_sd_ago('ee', 'ɖe {0} me').
+short_sd_unit('ee', day, _, 'ŋkeke {n}').
+short_sd_unit('ee', week, _, 'kɔsiɖa {n}').
+short_sd_unit('ee', month, _, 'ɣleti {n}').
+short_sd_unit('ee', year, _, 'ƒe {n}').
+short_sd_ago('ee', '{0} si va yi').
 short_sd_in_future('ee', 'le {0} me').
 
 compact_sd_unit('ee', second, _, '{n}s').
@@ -57,5 +47,5 @@ compact_sd_unit('ee', month, _, '{n}m').
 compact_sd_unit('ee', year, _, '{n}y').
 compact_sd_half('ee', '{n}½').
 compact_sd_delimiter('ee', '').
-compact_sd_ago('ee', 'ɖe {0} me').
+compact_sd_ago('ee', '{0} si va yi').
 compact_sd_in_future('ee', 'le {0} me').

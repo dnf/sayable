@@ -27,7 +27,7 @@ pub fn locale() -> DateLocale {
         tomorrow: "tumora".to_string(),
         yesterday: "asde".to_string(),
         day_after_tomorrow: Some("haptumora".to_string()),
-        day_before_yesterday: Some("asde bipo".to_string()),
+        day_before_yesterday: Some("hapasde".to_string()),
         this_weekday: Some("dispela {weekday}".to_string()),
         next_weekday: Some("{weekday} bihain".to_string()),
         last_weekday: Some("{weekday} bipo".to_string()),

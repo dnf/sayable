@@ -21,7 +21,7 @@ sd_unit('tg', week, _, '{n} ҳафта').
 sd_unit('tg', month, _, '{n} моҳ').
 sd_unit('tg', year, _, '{n} сол').
 
-sd_half('tg', '{0} ним').
+sd_half('tg', '{0}у ним').
 sd_delimiter('tg', ', ').
 sd_just_now('tg', 'ҳамин ҳоло').
 sd_ago('tg', '{0} пеш').

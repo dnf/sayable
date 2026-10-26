@@ -49,6 +49,7 @@ locale_shn <- list(
       month = "{n}mo",
       year = "{n}y"
     ),
+    half = "{n}½",
     delimiter = "",
     ago = "{0} ပူၼ်ႉမႃး",
     in_future = "ထႅင်ႈ {0}"

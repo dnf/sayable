@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [nso.json](../../locales/nso.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Sotho 'iri ya <ordinal>' ('iri ya bobedi' = 2 o'clock, 'iri ya pele' = 1 o'clock), ordinals match the file's weekday names (Labobedi, Laboraro, Labone, Labohlano). Minutes additive: 'le metsotso ye mehlano/ye lesome/ye masomepedi...', :15 = 'le kotara', :30 = 'le seripagare' (the file's half word). Additive forms for :35-:55 rather than a 'to' construction.
+
 ## Age
 
 ### Age formatting
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | morago ga gosasa       | 17/3    |
 | Day before yesterday | maabane a go feta      | 13/3    |
 | This Thursday (+5)   | Labone ye              | 20/3    |
-| Last Monday (-4)     | Labobedi ye e fetilego | 11/3    |
-| Next Wednesday (+12) | Labone ye e tlago      | 27/3    |
-| Same month (+20)     | 4 Moranang             | 4/4     |
+| Last Tuesday (-4)    | Labobedi ye e fetilego | 11/3    |
+| Next Thursday (+12)  | Labone ye e tlago      | 27/3    |
+| Same year (+20)      | 4 Moranang             | 4/4     |
 | Different year       | 10 Pherekgong 2026     | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                         | Short                    | Compact |
-| --------------------- | ------------------------------ | ------------------------ | ------- |
-| 0 seconds             | bjale                          | bjale                    | bjale   |
-| 1 second              | motsotswana 1                  | mots. 1                  | 1s      |
-| 30 seconds            | dimetsotswana 30               | dimets. 30               | 30s     |
-| 1 minute              | metsotso 1                     | mets. 1                  | 1m      |
-| 2 minutes, 15 seconds | dimetsotso 2, dimetsotswana 15 | dimets. 2, dimets. 15    | 2m15s   |
-| 5 minutes             | dimetsotso 5                   | dimets. 5                | 5m      |
-| 45 minutes            | dimetsotso 45                  | dimets. 45               | 45m     |
-| 1 hour                | iri 1                          | iri 1                    | 1h      |
-| 1½ hours              | diiri 1 le seripagare          | diiri 1 le seripagare    | 1½h     |
-| 3 hours               | diiri 3                        | diiri 3                  | 3h      |
-| 6 hours               | diiri 6                        | diiri 6                  | 6h      |
-| 1 day                 | letšatši 1                     | letšatši 1               | 1d      |
-| 1½ days               | matšatši 1 le seripagare       | matšatši 1 le seripagare | 1½d     |
-| 3 days                | matšatši 3                     | matšatši 3               | 3d      |
-| 1 week                | beke 1                         | beke 1                   | 1w      |
-| 2 weeks, 3 days       | dibeke 2, matšatši 3           | dibeke 2, matšatši 3     | 2w3d    |
-| 1 month               | kgwedi 1                       | kgw. 1                   | 1m      |
-| 6 months              | dikgwedi 6                     | dikgw. 6                 | 6m      |
-| 1 year                | ngwaga 1                       | ngw. 1                   | 1y      |
-| 2 years, 3 months     | mengwaga 2, dikgwedi 3         | mengw. 2, dikgw. 3       | 2y3m    |
+| Duration              | Normal                     | Short                    | Compact |
+| --------------------- | -------------------------- | ------------------------ | ------- |
+| 0 seconds             | bjale                      | bjale                    | bjale   |
+| 1 second              | motsotswana 1              | motsotsw. 1              | 1s      |
+| 30 seconds            | metsotswana 30             | metsotsw. 30             | 30s     |
+| 1 minute              | motsotso 1                 | mots. 1                  | 1m      |
+| 2 minutes, 15 seconds | metsotso 2, metsotswana 15 | mets. 2, metsotsw. 15    | 2m15s   |
+| 5 minutes             | metsotso 5                 | mets. 5                  | 5m      |
+| 45 minutes            | metsotso 45                | mets. 45                 | 45m     |
+| 1 hour                | iri 1                      | iri 1                    | 1h      |
+| 1½ hours              | diiri 1 le seripagare      | diiri 1 le seripagare    | 1½h     |
+| 3 hours               | diiri 3                    | diiri 3                  | 3h      |
+| 6 hours               | diiri 6                    | diiri 6                  | 6h      |
+| 1 day                 | letšatši 1                 | letšatši 1               | 1d      |
+| 1½ days               | matšatši 1 le seripagare   | matšatši 1 le seripagare | 1½d     |
+| 3 days                | matšatši 3                 | matšatši 3               | 3d      |
+| 1 week                | beke 1                     | beke 1                   | 1w      |
+| 2 weeks, 3 days       | dibeke 2, matšatši 3       | dibeke 2, matšatši 3     | 2w3d    |
+| 1 month               | kgwedi 1                   | kgw. 1                   | 1m      |
+| 6 months              | dikgwedi 6                 | dikgw. 6                 | 6m      |
+| 1 year                | ngwaga 1                   | ngw. 1                   | 1y      |
+| 2 years, 3 months     | mengwaga 2, dikgwedi 3     | mengw. 2, dikgw. 3       | 2y3m    |
 
 ### Relative time
 
-| Offset        | Normal                     | Compact     |
-| ------------- | -------------------------- | ----------- |
-| 5 minutes ago | dimetsotso 5 ye e fetilego | 5m fetilego |
-| 2 hours ago   | diiri 2 ye e fetilego      | 2h fetilego |
-| in 30 minutes | ka dimetsotso 30           | ka 30m      |
-| in 3 hours    | ka diiri 3                 | ka 3h       |
+| Offset        | Normal                   | Compact     |
+| ------------- | ------------------------ | ----------- |
+| 5 minutes ago | metsotso 5 ye e fetilego | 5m fetilego |
+| 2 hours ago   | diiri 2 ye e fetilego    | 2h fetilego |
+| in 30 minutes | ka metsotso 30           | ka 30m      |
+| in 3 hours    | ka diiri 3               | ka 3h       |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal        | Short    | Compact |
-| --------------- | ------------- | -------- | ------- |
-| Midnight        | bošego gare   | 12:00 AM | 12:00a  |
-| 1:00 AM         | tee:00        | 1:00 AM  | 1:00a   |
-| 5 past 9        | senyane:05    | 9:05 AM  | 9:05a   |
-| Quarter past 10 | lesome:15     | 10:15 AM | 10:15a  |
-| Half past 11    | lesome tee:30 | 11:30 AM | 11:30a  |
-| Noon            | mosegare      | 12:00 PM | 12:00p  |
-| Quarter to 3    | pedi:45       | 2:45 PM  | 2:45p   |
-| 5 to 6          | hlano:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | seswai:00     | 8:00 PM  | 8:00p   |
-| 10:30 PM        | lesome:30     | 10:30 PM | 10:30p  |
-| 11:58 PM        | bošego gare   | 11:58 PM | 11:58p  |
+| Time            | Normal                                          | Short    | Compact |
+| --------------- | ----------------------------------------------- | -------- | ------- |
+| Midnight        | bošego gare                                     | 12:00 AM | 12:00a  |
+| 1:00 AM         | iri ya pele                                     | 1:00 AM  | 1:00a   |
+| 5 past 9        | iri ya senyane le metsotso ye mehlano           | 9:05 AM  | 9:05a   |
+| Quarter past 10 | iri ya lesome le kotara                         | 10:15 AM | 10:15a  |
+| Half past 11    | iri ya lesometee le seripagare                  | 11:30 AM | 11:30a  |
+| Noon            | mosegare                                        | 12:00 PM | 12:00p  |
+| Quarter to 3    | iri ya bobedi le metsotso ye masomenne-hlano    | 2:45 PM  | 2:45p   |
+| 5 to 6          | iri ya bohlano le metsotso ye masomehlano-hlano | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | iri ya seswai                                   | 8:00 PM  | 8:00p   |
+| 10:30 PM        | iri ya lesome le seripagare                     | 10:30 PM | 10:30p  |
+| 11:58 PM        | bošego gare                                     | 11:58 PM | 11:58p  |

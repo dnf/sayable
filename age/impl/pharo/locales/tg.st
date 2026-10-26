@@ -23,7 +23,7 @@ tg
 		'month'. '{n} моҳ'.
 		'year'. '{n} сол'.
 	}).
-	locale half: '{0} ним'.
+	locale half: '{0}у ним'.
 	locale delimiter: ', '.
 	locale justBorn: 'Навзод'.
 	locale stages: (Dictionary newFromPairs: {

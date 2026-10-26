@@ -16,20 +16,20 @@
 (defparameter *locale-shi*
   (make-date-locale
    :code "shi"
-   :months (list "ⵉⵏⵏⴰⵢⵔ" "ⴱⵕⴰⵢⵕ" "ⵎⴰⵕⵚ" "ⵉⴱⵔⵉⵔ" "ⵎⴰⵢⵢⵓ" "ⵢⵓⵏⵢⵓ" "ⵢⵓⵍⵢⵓⵣ" "ⵖⵓⵛⵜ" "ⵛⵓⵜⴰⵏⴱⵉⵔ" "ⴽⵜⵓⴱⵔ" "ⵏⵓⵡⴰⵏⴱⵉⵔ" "ⴷⵓⵊⴰⵏⴱⵉⵔ")
-   :weekdays (list "ⴰⵙⴰⵎⴰⵙ" "ⴰⵢⵏⴰⵙ" "ⴰⵙⵉⵏⴰⵙ" "ⴰⴽⵕⴰⵙ" "ⴰⴽⵡⴰⵙ" "ⴰⵙⵉⵎⵡⴰⵙ" "ⴰⵙⵉⴹⵢⴰⵙ")
+   :months (list "innayr" "bṛayṛ" "maṛṣ" "ibrir" "mayyu" "yunyu" "yulyuz" "ɣuct" "cutanbir" "ktubr" "nuwanbir" "dujanbir")
+   :weekdays (list "asamas" "aynas" "asinas" "akṛas" "akwas" "asimwas" "asiḍyas")
    :day-format "{n}"
    :day-format-exceptions nil
    :date-pattern "{day} {month}"
    :date-pattern-with-year "{day} {month} {year}"
-   :today "ⴰⵙⵙⴰ"
-   :tomorrow "ⴰⵙⴽⴽⴰ"
-   :yesterday "ⵉⴹⵍⵍⵉ"
-   :this-weekday "{weekday} ⴰⴷ"
-   :next-weekday "{weekday} ⴷ ⵉⴷⴷⴰⵏ"
-   :last-weekday "{weekday} ⵉⵣⵔⵉⵏ"
-   :short-months (list "ⵉⵏⵏ" "ⴱⵕⴰ" "ⵎⴰⵕ" "ⵉⴱⵔ" "ⵎⴰⵢ" "ⵢⵓⵏ" "ⵢⵓⵍ" "ⵖⵓⵛ" "ⵛⵓⵜ" "ⴽⵜⵓ" "ⵏⵓⵡ" "ⴷⵓⵊ")
-   :short-weekdays (list "ⴰⵙⴰ" "ⴰⵢⵏ" "ⴰⵙⵉ" "ⴰⴽⵕ" "ⴰⴽⵡ" "ⴰⵙⵉⵎ" "ⴰⵙⵉⴹ")
+   :today "assa"
+   :tomorrow "askka"
+   :yesterday "iḍlli"
+   :this-weekday "{weekday} ad"
+   :next-weekday "{weekday} d iddan"
+   :last-weekday "{weekday} izrin"
+   :short-months (list "inn" "bṛa" "maṛ" "ibr" "may" "yun" "yul" "ɣuc" "cut" "ktu" "nuw" "duj")
+   :short-weekdays (list "asa" "ayn" "asi" "akṛ" "akw" "asim" "asiḍ")
    :short-day-format "{n}"
    :short-date-pattern "{day} {month}"
    :short-date-pattern-with-year "{day} {month} {year}"

@@ -23,7 +23,7 @@ dv
 		'month'. '{n} މަސް'.
 		'year'. '{n} އަހަރު'.
 	}).
-	locale half: '{0} ބައި'.
+	locale half: '{n}½'.
 	locale delimiter: '، '.
 	locale justBorn: 'އަލަށް އުފަންވި'.
 	locale stages: (Dictionary newFromPairs: {

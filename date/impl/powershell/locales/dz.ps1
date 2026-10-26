@@ -21,7 +21,7 @@ function locale_dz {
     $yesterday = 'ཁ་ཙ'
     $dayAfterTomorrow = 'གནངས་ཚེ'
     $dayBeforeYesterday = 'ཁ་ཉིམ'
-    $thisWeekday = 'འདི་ {weekday}'
+    $thisWeekday = '{weekday} འདི'
     $nextWeekday = '{weekday} ཤུལ་མ'
     $lastWeekday = '{weekday} ཧེ་མ'
     $monthsInDate = $null

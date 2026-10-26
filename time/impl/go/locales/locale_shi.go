@@ -17,10 +17,10 @@ import st "github.com/dnf/sayable/time/impl/go"
 var SHI = st.TimeLocale{
 	Code: "shi",
 	Clock: st.ClockConfig{
-		Hours:    [12]string{"12", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"},
-		Midnight: "ⵏⵚ ⵏ ⵉⴹ",
-		Noon:     "ⵜⵉⵣⵡⴰⵔⵏⵉⵏ",
-		Patterns: map[int]string{0: "{h}:00", 5: "{h}:05", 10: "{h}:10", 15: "{h}:15", 20: "{h}:20", 25: "{h}:25", 30: "{h}:30", 35: "{h}:35", 40: "{h}:40", 45: "{h}:45", 50: "{h}:50", 55: "{h}:55"},
+		Hours:    [12]string{"tis snat d mrawt", "tis yat", "tis snat", "tis kṛaṭṭ", "tis kkuẕt", "tis smmust", "tis sḍist", "tis sat", "tis tamt", "tis tẕat", "tis mrawt", "tis yat d mrawt"},
+		Midnight: "nṣ n iḍ",
+		Noon:     "tizwarnin",
+		Patterns: map[int]string{0: "{h}", 5: "{h} d smmus tusdiqin", 10: "{h} d mraw tusdiqin", 15: "{h} d rrbɛ", 20: "{h} d ɛcrin n tusdiqt", 25: "{h} d xmsa u ɛcrin n tusdiqt", 30: "{h} d uzgen", 35: "{h} d xmsa u tlatin n tusdiqt", 40: "{h} d ṛbɛin n tusdiqt", 45: "{h} d xmsa u ṛbɛin n tusdiqt", 50: "{h} d xmsin n tusdiqt", 55: "{h} d xmsa u xmsin n tusdiqt"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

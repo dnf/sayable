@@ -61,7 +61,7 @@ var AR = sa.AgeLocale{
 	Compact: &sa.CompactnessOverride{
 		Day:       &sa.UnitForms{Simple: "{n} ي"},
 		Week:      &sa.UnitForms{Simple: "{n} أ"},
-		Month:     unitFormsPtr(map[sa.PluralCategory]string{sa.Zero: "{n} شهر", sa.One: "شهر", sa.Two: "شهران", sa.Few: "{n} أشهر", sa.Many: "{n} شهرًا", sa.Other: "{n} شهر"}),
+		Month:     &sa.UnitForms{Simple: "{n} شهر"},
 		Year:      &sa.UnitForms{Simple: "{n} سنة"},
 		Delimiter: strPtr(""),
 		Half:      strPtr("{n}½"),

@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} hepde")
          "month" (hash "type" "simple" "form" "{n} aý")
          "year" (hash "type" "simple" "form" "{n} ýaş"))
-   "{0}½"
+   "{n} ýarym"
    ", "
    "Täze doglan"
    (hash "newborn" (stage-label "Täze doglan" #f #f)
@@ -33,7 +33,7 @@
          "toddler" (stage-label "Kiçijik" #f #f)
          "child" (stage-label "Çaga" #f #f)
          "teenager" (stage-label "Ýetginjek" #f #f)
-         "adult" (stage-label "Ulular" #f #f))
+         "adult" (stage-label "Uly adam" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} g") (hash "type" "simple" "form" "{n} h") (hash "type" "simple" "form" "{n} a") (hash "type" "simple" "form" "{n} ý") #f #f #f)
    (compactness-override (hash "type" "simple" "form" "{n}g") (hash "type" "simple" "form" "{n}h") (hash "type" "simple" "form" "{n}a") (hash "type" "simple" "form" "{n}ý") "{n}½" "" #f)
   ))

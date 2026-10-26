@@ -11,22 +11,22 @@
 
 % Zulu locale.
 
-st_hours('zu', ['ishumi nambili', 'kunye', 'kubili', 'kuthathu', 'kune', 'kuhlanu', 'isithupha', 'isikhombisa', 'isishiyagalombili', 'isishiyagalolunye', 'ishumi', 'ishumi nanye']).
+st_hours('zu', ['leshumi nambili', 'lokuqala', 'lesibili', 'lesithathu', 'lesine', 'lesihlanu', 'lesithupha', 'lesikhombisa', 'lesishiyagalombili', 'lesishiyagalolunye', 'leshumi', 'leshumi nanye']).
 st_midnight('zu', 'phakathi kwamabili').
 st_noon('zu', 'emini').
 
-st_pattern('zu', 0, '{h} o\'clock').
-st_pattern('zu', 5, 'emva kwemizuzu emihlanu ngo-{h}').
-st_pattern('zu', 10, 'emva kwemizuzu eyishumi ngo-{h}').
-st_pattern('zu', 15, 'ikota edlule ngo-{h}').
-st_pattern('zu', 20, 'emva kwemizuzu engamashumi amabili ngo-{h}').
-st_pattern('zu', 25, 'emva kwemizuzu engamashumi amabili nanhlanu ngo-{h}').
-st_pattern('zu', 30, 'uhhafu edlule ngo-{h}').
-st_pattern('zu', 35, 'imizuzu engamashumi amabili nanhlanu ngaphambi kuka-{next_h}').
-st_pattern('zu', 40, 'imizuzu engamashumi amabili ngaphambi kuka-{next_h}').
-st_pattern('zu', 45, 'ikota ngaphambi kuka-{next_h}').
-st_pattern('zu', 50, 'imizuzu eyishumi ngaphambi kuka-{next_h}').
-st_pattern('zu', 55, 'imizuzu emihlanu ngaphambi kuka-{next_h}').
+st_pattern('zu', 0, 'ihora {h}').
+st_pattern('zu', 5, 'imizuzu emihlanu emva kwehora {h}').
+st_pattern('zu', 10, 'imizuzu eyishumi emva kwehora {h}').
+st_pattern('zu', 15, 'ikota emva kwehora {h}').
+st_pattern('zu', 20, 'imizuzu engamashumi amabili emva kwehora {h}').
+st_pattern('zu', 25, 'imizuzu engamashumi amabili nanhlanu emva kwehora {h}').
+st_pattern('zu', 30, 'uhhafu emva kwehora {h}').
+st_pattern('zu', 35, 'imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}').
+st_pattern('zu', 40, 'imizuzu engamashumi amabili ngaphambi kwehora {next_h}').
+st_pattern('zu', 45, 'ikota ngaphambi kwehora {next_h}').
+st_pattern('zu', 50, 'imizuzu eyishumi ngaphambi kwehora {next_h}').
+st_pattern('zu', 55, 'imizuzu emihlanu ngaphambi kwehora {next_h}').
 
 short_st_use24h('zu', false).
 short_st_format('zu', '{h}:{mm} {ampm}').

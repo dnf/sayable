@@ -29,9 +29,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2歳1ヶ月  | 2 年1 か月 | 2y1m    |
 | 2 years, 6 months | 2歳6ヶ月  | 2 年6 か月 | 2y6m    |
 | 3 years           | 3歳     | 3 年     | 3y      |
-| 3½ years          | 3歳半    | 3 年半    | 3y半     |
+| 3½ years          | 3歳半    | 3 年半    | 3½y     |
 | 5 years           | 5歳     | 5 年     | 5y      |
-| 5½ years          | 5歳半    | 5 年半    | 5y半     |
+| 5½ years          | 5歳半    | 5 年半    | 5½y     |
 | 7 years           | 7歳     | 7 年     | 7y      |
 | 10 years          | 10歳    | 10 年    | 10y     |
 | 18 years          | 18歳    | 18 年    | 18y     |
@@ -73,9 +73,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | 明後日        | 3/17    |
 | Day before yesterday | 一昨日        | 3/13    |
 | This Thursday (+5)   | 今度の木曜日     | 3/20    |
-| Last Monday (-4)     | 先週の火曜日     | 3/11    |
-| Next Wednesday (+12) | 来週の木曜日     | 3/27    |
-| Same month (+20)     | 4月4日       | 4/4     |
+| Last Tuesday (-4)    | 先週の火曜日     | 3/11    |
+| Next Thursday (+12)  | 来週の木曜日     | 3/27    |
+| Same year (+20)      | 4月4日       | 4/4     |
 | Different year       | 2026年1月10日 | 26/1/10 |
 
 ## Duration
@@ -92,18 +92,18 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5分     | 5 分     | 5m      |
 | 45 minutes            | 45分    | 45 分    | 45m     |
 | 1 hour                | 1時間    | 1 時間    | 1h      |
-| 1½ hours              | 1時間半   | 1 時間半   | 1h半     |
+| 1½ hours              | 1時間半   | 1 時間半   | 1½h     |
 | 3 hours               | 3時間    | 3 時間    | 3h      |
 | 6 hours               | 6時間    | 6 時間    | 6h      |
 | 1 day                 | 1日     | 1 日     | 1d      |
-| 1½ days               | 1日半    | 1 日半    | 1d半     |
+| 1½ days               | 1日半    | 1 日半    | 1½d     |
 | 3 days                | 3日     | 3 日     | 3d      |
 | 1 week                | 1週     | 1 週間    | 1w      |
 | 2 weeks, 3 days       | 2週3日   | 2 週間3 日 | 2w3d    |
 | 1 month               | 1ヶ月    | 1 か月    | 1m      |
 | 6 months              | 6ヶ月    | 6 か月    | 6m      |
-| 1 year                | 1歳     | 1 年     | 1y      |
-| 2 years, 3 months     | 2歳3ヶ月  | 2 年3 か月 | 2y3m    |
+| 1 year                | 1年     | 1 年     | 1y      |
+| 2 years, 3 months     | 2年3ヶ月  | 2 年3 か月 | 2y3m    |
 
 ### Relative time
 

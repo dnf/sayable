@@ -17,10 +17,10 @@
   (make-time-locale
    :code "kl"
    :clock (make-clock-config
-    :hours (list "akunneq marluk" "ataaseq" "marluk" "pingasut" "sisamat" "tallimat" "arfinillit" "arfineq-marluk" "arfineq-pingasut" "qulingiluat" "qulit" "akunneq ataaseq")
+    :hours (list "aqqaneq-marluk" "ataaseq" "marluk" "pingasut" "sisamat" "tallimat" "arfinillit" "arfineq-marluk" "arfineq-pingasut" "qulingiluat" "qulit" "aqqaneq-ataaseq")
     :midnight "unnuap qeqqa"
     :noon "ulloqeqqap qeqqa"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "nalunaaqutaq {h}") (cons 5 "{h} qaangiullugu minutsit tallimat") (cons 10 "{h} qaangiullugu minutsit qulit") (cons 15 "{h} qaangiullugu minutsit aqqaneq-tallimat") (cons 20 "{h} qaangiullugu minutsit marlunnik qulillit") (cons 25 "{h} qaangiullugu minutsit marlunnik qulillit tallimallu") (cons 30 "{h} affarlu") (cons 35 "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu") (cons 40 "{next_h} sioqqullugu minutsit marlunnik qulillit") (cons 45 "{next_h} sioqqullugu minutsit aqqaneq-tallimat") (cons 50 "{next_h} sioqqullugu minutsit qulit") (cons 55 "{next_h} sioqqullugu minutsit tallimat")))
    :short-clock (make-short-clock-config :use24h t :format "{h}.{mm}")
    :compact-clock (make-short-clock-config :use24h t :format "{h}.{mm}")
 ))

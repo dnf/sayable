@@ -22,7 +22,7 @@ class LVLocale {
     return {}
   }
   static datePattern { "{day} {month}" }
-  static datePatternWithYear { "{day} {month} {year}" }
+  static datePatternWithYear { "{year}. gada {day} {month}" }
   static today { "šodien" }
   static tomorrow { "rīt" }
   static yesterday { "vakar" }
@@ -38,7 +38,7 @@ class LVLocale {
       "weekdays": ["sv", "pr", "ot", "tr", "ce", "pk", "se"],
       "dayFormat": "{n}.",
       "datePattern": "{day} {month}",
-      "datePatternWithYear": "{day} {month} {year}",
+      "datePatternWithYear": "{year}. gada {day} {month}",
     }
   }
   static compact {

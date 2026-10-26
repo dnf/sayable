@@ -22,7 +22,7 @@ proc locale_date_ti {} {
     set yesterday {ትማሊ}
     set day_after_tomorrow {ድሕሪ ጽባሕ}
     set day_before_yesterday {ቅድሚ ትማሊ}
-    set this_weekday "እዛ {weekday}"
+    set this_weekday "እዚ {weekday}"
     set next_weekday "ዝመጽእ {weekday}"
     set last_weekday "ዝሓለፈ {weekday}"
     set months_in_date ""

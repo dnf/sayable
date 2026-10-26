@@ -33,7 +33,7 @@ fn build_dyu() -> DateLocale:
     var month7 = "Utikalo"
     var month8 = "Sɛtanburukalo"
     var month9 = "Ɔkutɔburukalo"
-    var month10 = "Nowanburdukalo"
+    var month10 = "Nowanburukalo"
     var month11 = "Desanburukalo"
     var weekday0 = "Kari"
     var weekday1 = "Ntɛnɛn"

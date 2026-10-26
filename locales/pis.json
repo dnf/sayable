@@ -9,7 +9,7 @@
       "month": "{n} manis",
       "year": "{n} yia"
     },
-    "half": "{n} en haf",
+    "half": "{0} en haf",
     "delimiter": ", ",
     "justBorn": "Niufala bebi",
     "stages": {
@@ -35,7 +35,8 @@
         "month": "{n}m",
         "year": "{n}y"
       },
-      "delimiter": ""
+      "delimiter": "",
+      "half": "{n}½"
     }
   },
   "date": {
@@ -116,7 +117,7 @@
       "month": "{n} manis",
       "year": "{n} yia"
     },
-    "half": "{n} en haf",
+    "half": "{0} en haf",
     "delimiter": ", ",
     "justNow": "nomoa nao",
     "ago": "{0} bifoa",
@@ -145,6 +146,7 @@
         "year": "{n}y"
       },
       "delimiter": "",
+      "half": "{n}½",
       "ago": "{0} bifoa",
       "inFuture": "long {0}"
     }
@@ -168,18 +170,18 @@
       "midnight": "midonaet",
       "noon": "midei",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h} kilok",
+        "5": "faev minit pas {h}",
+        "10": "ten minit pas {h}",
+        "15": "kwata pas {h}",
+        "20": "twenti minit pas {h}",
+        "25": "twenti faev minit pas {h}",
+        "30": "haf pas {h}",
+        "35": "twenti faev minit tu {next_h}",
+        "40": "twenti minit tu {next_h}",
+        "45": "kwata tu {next_h}",
+        "50": "ten minit tu {next_h}",
+        "55": "faev minit tu {next_h}"
       }
     },
     "short": {
@@ -202,5 +204,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "English-derived past/to system as in neighbouring Bislama: '{h} kilok', 'kwata pas / haf pas {h}', '<N> minit pas {h}', and 'kwata tu / <N> minit tu {next_h}'. 'kilok', 'kwata', 'haf pas', 'pas', 'minit' are attested Pijin; 'tu' for 'to' is taken from the Bislama pattern and is the least certain piece (1:45 renders as 'kwata tu tu')."
+    }
+  ]
 }

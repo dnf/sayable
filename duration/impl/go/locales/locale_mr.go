@@ -24,7 +24,7 @@ var MR = sd.DurationLocale{
 	},
 	Units: struct{ Second, Minute, Hour, Day, Week, Month, Year sd.UnitForms }{
 		Second: sd.SimpleUnit("{n} सेकंद"),
-		Minute: sd.SimpleUnit("{n} मिनिट"),
+		Minute: sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} मिनिट", sd.Other: "{n} मिनिटे"}),
 		Hour:   sd.SimpleUnit("{n} तास"),
 		Day:    sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} दिवस", sd.Other: "{n} दिवस"}),
 		Week:   sd.PluralUnit(map[sd.PluralCategory]string{sd.One: "{n} आठवडा", sd.Other: "{n} आठवडे"}),

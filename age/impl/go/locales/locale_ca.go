@@ -28,7 +28,7 @@ var CA = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mes", sa.Other: "{n} mesos"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} any", sa.Other: "{n} anys"}),
 	},
-	Half:      "{n} i mig",
+	Half:      "{0} i mig",
 	Delimiter: ", ",
 	JustBorn:  "Nounat",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

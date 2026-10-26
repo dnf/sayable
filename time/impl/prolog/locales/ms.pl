@@ -15,18 +15,18 @@ st_hours('ms', ['dua belas', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tu
 st_midnight('ms', 'tengah malam').
 st_noon('ms', 'tengah hari').
 
-st_pattern('ms', 0, '{h} o\'clock').
-st_pattern('ms', 5, 'lima lewat {h}').
-st_pattern('ms', 10, 'sepuluh lewat {h}').
-st_pattern('ms', 15, 'suku lewat {h}').
-st_pattern('ms', 20, 'dua puluh lewat {h}').
-st_pattern('ms', 25, 'dua puluh lima lewat {h}').
-st_pattern('ms', 30, 'setengah lewat {h}').
-st_pattern('ms', 35, 'dua puluh lima menjelang {next_h}').
-st_pattern('ms', 40, 'dua puluh menjelang {next_h}').
-st_pattern('ms', 45, 'suku menjelang {next_h}').
-st_pattern('ms', 50, 'sepuluh menjelang {next_h}').
-st_pattern('ms', 55, 'lima menjelang {next_h}').
+st_pattern('ms', 0, 'pukul {h}').
+st_pattern('ms', 5, 'pukul {h} lima minit').
+st_pattern('ms', 10, 'pukul {h} sepuluh minit').
+st_pattern('ms', 15, 'pukul {h} suku').
+st_pattern('ms', 20, 'pukul {h} dua puluh minit').
+st_pattern('ms', 25, 'pukul {h} dua puluh lima minit').
+st_pattern('ms', 30, 'pukul {h} setengah').
+st_pattern('ms', 35, 'pukul {next_h} kurang dua puluh lima minit').
+st_pattern('ms', 40, 'pukul {next_h} kurang dua puluh minit').
+st_pattern('ms', 45, 'pukul {next_h} kurang suku').
+st_pattern('ms', 50, 'pukul {next_h} kurang sepuluh minit').
+st_pattern('ms', 55, 'pukul {next_h} kurang lima minit').
 
 short_st_use24h('ms', true).
 short_st_format('ms', '{h}:{mm}').

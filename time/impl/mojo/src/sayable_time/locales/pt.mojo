@@ -35,7 +35,7 @@ fn build_pt() -> TimeLocale:
     var hour11 = "onze"
     var midnight = "meia-noite"
     var noon = "meio-dia"
-    var pattern0 = "{h} horas"
+    var pattern0 = "{h} em ponto"
     var pattern5 = "{h} e cinco"
     var pattern10 = "{h} e dez"
     var pattern15 = "{h} e um quarto"

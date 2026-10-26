@@ -13,10 +13,10 @@ proc locale_date_lt {} {
     set code {lt}
     set months [list {sausis} {vasaris} {kovas} {balandis} {gegužė} {birželis} {liepa} {rugpjūtis} {rugsėjis} {spalis} {lapkritis} {gruodis}]
     set weekdays [list {sekmadienis} {pirmadienis} {antradienis} {trečiadienis} {ketvirtadienis} {penktadienis} {šeštadienis}]
-    set day_format "{n}."
+    set day_format "{n} d."
     set day_format_exceptions [dict create]
-    set date_pattern "{day} {month}"
-    set date_pattern_with_year "{day} {month} {year}"
+    set date_pattern "{month} {day}"
+    set date_pattern_with_year "{year} m. {month} {day}"
     set today {šiandien}
     set tomorrow {rytoj}
     set yesterday {vakar}
@@ -29,9 +29,9 @@ proc locale_date_lt {} {
     set short [dict create \
         months [list {saus} {vas} {kov} {bal} {geg} {birž} {liep} {rugp} {rugs} {spal} {lapkr} {gruod}] \
         weekdays [list {sk} {pr} {an} {tr} {kt} {pn} {št}] \
-        day_format "{n}." \
-        date_pattern "{day} {month}" \
-        date_pattern_with_year "{day} {month} {year}" \
+        day_format "{n} d." \
+        date_pattern "{month} {day}" \
+        date_pattern_with_year "{year} m. {month} {day}" \
     ]
     set compact [dict create \
         date_pattern "{m}-{d}" \

@@ -15,9 +15,9 @@ const StTimeLocale st_locale_gn = {
     "gn",
     {
         { "pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ" },
-        "pyhareve",
+        "pyharepyte",
         "asaje",
-        { "{h}", "{h} ha po", "{h} ha pa", "{h} ha pa po", "{h} ha mokõi pa", "{h} ha mokõi pa po", "{h} ha mbohapy pa", "{next_h} mba'e mokõi pa po", "{next_h} mba'e mokõi pa", "{next_h} mba'e pa po", "{next_h} mba'e pa", "{next_h} mba'e po" }
+        { "{h}", "{h} ha po", "{h} ha pa", "{h} ha pa po", "{h} ha mokõi pa", "{h} ha mokõi pa po", "{h} ha mbohapy pa", "{h} ha mbohapy pa po", "{h} ha irundy pa", "{h} ha irundy pa po", "{h} ha po pa", "{h} ha po pa po" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

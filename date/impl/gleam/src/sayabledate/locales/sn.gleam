@@ -23,7 +23,7 @@ pub fn locale() -> types.DateLocale {
     today: "nhasi",
     tomorrow: "mangwana",
     yesterday: "nezuro",
-    day_after_tomorrow: Ok("mangwanani"),
+    day_after_tomorrow: Ok("kuswera mangwana"),
     day_before_yesterday: Ok("nezuro rakapera"),
     this_weekday: Ok("{weekday} ino"),
     next_weekday: Ok("{weekday} inotevera"),

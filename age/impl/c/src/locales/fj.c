@@ -25,7 +25,7 @@ const SaLocale sa_locale_fj = {
         { "{n} na vula", { NULL, NULL, NULL, NULL, NULL, NULL } },
         { "{n} na yabaki", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
-    "{n} kei na levu ni wasei", ", ", "Gone vou",
+    "{0} kei na veimama", ", ", "Gone vou",
     {
         { "Gone vou", "" },
         { "Gone lalai", "" },
@@ -35,5 +35,5 @@ const SaLocale sa_locale_fj = {
         { "Tamata qase", "" }
     },
     true, { true, { "{n} siga", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} mac.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} vula", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} yab.", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, false, NULL },
-    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, true, "", false, NULL }
+    true, { true, { "{n}d", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}w", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}m", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n}y", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", false, NULL }
 };

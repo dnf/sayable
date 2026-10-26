@@ -41,7 +41,7 @@ locale = Locale
         , stageInfant = Neutral "Lesea"
         , stageToddler = Neutral "Ngwana yo monnye"
         , stageChild = Neutral "Ngwana"
-        , stageTeenager = Neutral "Lekgarebe"
+        , stageTeenager = Neutral "Mosha"
         , stageAdult = Neutral "Motho yo mogolo"
         }
     , localeShort = Just $

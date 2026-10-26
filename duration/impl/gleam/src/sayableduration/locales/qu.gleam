@@ -16,8 +16,8 @@ pub fn locale() -> types.DurationLocale {
     code: "qu",
     plural: fn(_) { types.Other },
     units: [
-      #("second", types.SimpleUnit("{n} ñiqin")),
-      #("minute", types.SimpleUnit("{n} chiniku")),
+      #("second", types.SimpleUnit("{n} sikundu")),
+      #("minute", types.SimpleUnit("{n} minutu")),
       #("hour", types.SimpleUnit("{n} ura")),
       #("day", types.SimpleUnit("{n} p'unchaw")),
       #("week", types.SimpleUnit("{n} simana")),
@@ -31,8 +31,8 @@ pub fn locale() -> types.DurationLocale {
     in_future: "{0} qhipata",
     short: Ok(types.CompactnessOverride(
       units: Ok([
-        #("second", types.SimpleUnit("{n} ñiq")),
-        #("minute", types.SimpleUnit("{n} chi")),
+        #("second", types.SimpleUnit("{n} sik")),
+        #("minute", types.SimpleUnit("{n} min")),
         #("hour", types.SimpleUnit("{n} ura")),
         #("day", types.SimpleUnit("{n} p'un")),
         #("week", types.SimpleUnit("{n} sim")),

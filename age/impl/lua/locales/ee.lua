@@ -14,10 +14,10 @@ local M = {}
 M.code = "ee"
 M.plural = function(n) return n == 1 and "one" or "other" end
 M.units = {
-    day = { one = "ŋkeke {n}", other = "ŋkekewo {n}" },
-    week = { one = "kɔsiɖa {n}", other = "kɔsiɖawo {n}" },
-    month = { one = "ɣleti {n}", other = "ɣletiwo {n}" },
-    year = { one = "ƒe {n}", other = "ƒewo {n}" },
+    day = "ŋkeke {n}",
+    week = "kɔsiɖa {n}",
+    month = "ɣleti {n}",
+    year = "ƒe {n}",
 }
 M.half = "{0} kple afã"
 M.delimiter = ", "
@@ -27,15 +27,15 @@ M.stages = {
     infant = "Ɖevi",
     toddler = "Ɖevi sue",
     child = "Ɖevi",
-    teenager = "Ŋutsuviwo",
+    teenager = { m = "Ɖekakpui", f = "Ɖetugbi" },
     adult = "Ame tsitsi",
 }
 M.short = {
     units = {
-        day = "ŋkekewo {n}",
-        week = { one = "kɔsiɖa {n}", other = "kɔsiɖawo {n}" },
-        month = { one = "ɣleti {n}", other = "ɣletiwo {n}" },
-        year = { one = "ƒe {n}", other = "ƒewo {n}" },
+        day = "ŋkeke {n}",
+        week = "kɔsiɖa {n}",
+        month = "ɣleti {n}",
+        year = "ƒe {n}",
     },
 }
 M.compact = {

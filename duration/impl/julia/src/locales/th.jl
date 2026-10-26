@@ -27,7 +27,7 @@ const TH = DurationLocale(
     delimiter = " ",
     just_now = "เมื่อกี้",
     ago = "{0}ที่แล้ว",
-    in_future = "ใน{0}",
+    in_future = "ในอีก {0}",
     short_override = DurationCompactnessOverride(
         units = Dict(
             "second" => "{n} วิ",
@@ -39,7 +39,7 @@ const TH = DurationLocale(
             "year" => "{n} ปี",
         ),
         ago = "{0}ที่แล้ว",
-        in_future = "ใน{0}",
+        in_future = "ในอีก {0}",
     ),
     compact_override = DurationCompactnessOverride(
         units = Dict(
@@ -54,6 +54,6 @@ const TH = DurationLocale(
         half = "{n}½",
         delimiter = "",
         ago = "{0}ที่แล้ว",
-        in_future = "ใน{0}",
+        in_future = "ในอีก {0}",
     ),
 )

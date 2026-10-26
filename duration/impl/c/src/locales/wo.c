@@ -20,17 +20,17 @@ const SduDurationLocale sdu_locale_wo = {
     "wo",
     plural_wo,
     {
-        { "saa-yépp {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "simili {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "waxtu {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "bés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "ayubés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "weer {n}", { NULL, NULL, NULL, NULL, NULL, NULL } },
-        { "at {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }
+        { "{n} saa", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} simili", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} waxtu", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} fan", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} ayubés", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} weer", { NULL, NULL, NULL, NULL, NULL, NULL } },
+        { "{n} at", { NULL, NULL, NULL, NULL, NULL, NULL } }
     },
     "{0} ak genn-wàll", ", ",
     "léegi",
-    "{0} ci ginaaw", "ci {0}",
-    true, { true, { "saa-y. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sim. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "wax. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "bés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ayub. {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "weer {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "at {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ci ginaaw", true, "ci {0}" },
-    true, { true, { "saa {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "sim {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "wax {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "bés {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "ayub {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "weer {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "at {n}", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} ci gin.", true, "ci {0}" }
+    "{0} ci ginaaw", "fileek {0}",
+    true, { true, { "{n} saa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sim.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wax.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} fan", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ayub.", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} weer", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} at", { NULL, NULL, NULL, NULL, NULL, NULL } }, false, NULL, false, NULL, true, "{0} ci ginaaw", true, "fileek {0}" },
+    true, { true, { "{n} saa", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} sim", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} wax", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} fan", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} ayub", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} weer", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, { "{n} at", { NULL, NULL, NULL, NULL, NULL, NULL } }, true, "{n}½", true, "", true, "{0} ci gin.", true, "fileek {0}" }
 };

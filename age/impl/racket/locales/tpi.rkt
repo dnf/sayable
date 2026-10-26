@@ -25,7 +25,7 @@
          "week" (hash "type" "simple" "form" "{n} wik")
          "month" (hash "type" "simple" "form" "{n} mun")
          "year" (hash "type" "simple" "form" "{n} yia"))
-   "{n} na hap"
+   "{0} na hap"
    ", "
    "Nupela pikinini"
    (hash "newborn" (stage-label "Nupela pikinini" #f #f)
@@ -35,5 +35,5 @@
          "teenager" (stage-label "Yangpela" #f #f)
          "adult" (stage-label "Bikpela man" #f #f))
    (compactness-override (hash "type" "simple" "form" "{n} de") (hash "type" "simple" "form" "{n} wik") (hash "type" "simple" "form" "{n} mun") (hash "type" "simple" "form" "{n} yia") #f #f #f)
-   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") #f "" #f)
+   (compactness-override (hash "type" "simple" "form" "{n}d") (hash "type" "simple" "form" "{n}w") (hash "type" "simple" "form" "{n}m") (hash "type" "simple" "form" "{n}y") "{n}½" "" #f)
   ))

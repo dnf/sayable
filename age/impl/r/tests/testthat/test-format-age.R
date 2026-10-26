@@ -628,7 +628,7 @@ test_that("25.1-25.12 - Spanish locale format_age", {
   # 25.9
   expect_equal(pt$format_age("2023-06-15", "2025-12-15"), "2 a\u00f1os, 6 meses")
   # 25.10
-  expect_equal(pt$format_age("2022-06-15", "2025-12-15"), "3 y medio a\u00f1os")
+  expect_equal(pt$format_age("2022-06-15", "2025-12-15"), "3 a\u00f1os y medio")
   # 25.11
   expect_equal(pt$format_age("2022-06-15", "2025-06-15"), "3 a\u00f1os")
   # 25.12
@@ -717,7 +717,7 @@ test_that("29.1-29.14 - Hebrew locale", {
   # 29.1
   expect_equal(pt$format_age("2025-06-15", "2025-06-15"), "\u05e8\u05e7 \u05e0\u05d5\u05dc\u05d3")
   # 29.2
-  expect_equal(pt$format_age("2025-06-14", "2025-06-15"), "\u05d9\u05d5\u05dd 1")
+  expect_equal(pt$format_age("2025-06-14", "2025-06-15"), "\u05d9\u05d5\u05dd")
   # 29.3
   expect_equal(pt$format_age("2025-06-12", "2025-06-15"), "3 \u05d9\u05de\u05d9\u05dd")
   # 29.4
@@ -729,7 +729,7 @@ test_that("29.1-29.14 - Hebrew locale", {
   # 29.7
   expect_equal(pt$format_age("2025-03-15", "2025-06-15"), "3 \u05d7\u05d5\u05d3\u05e9\u05d9\u05dd")
   # 29.8
-  expect_equal(pt$format_age("2023-06-15", "2025-07-15"), "\u05e9\u05e0\u05ea\u05d9\u05d9\u05dd, \u05d7\u05d5\u05d3\u05e9 1")
+  expect_equal(pt$format_age("2023-06-15", "2025-07-15"), "\u05e9\u05e0\u05ea\u05d9\u05d9\u05dd, \u05d7\u05d5\u05d3\u05e9")
   # 29.9
   expect_equal(pt$format_age("2022-06-15", "2025-12-15"), "3 \u05e9\u05e0\u05d9\u05dd \u05d5\u05d7\u05e6\u05d9")
   # 29.10
@@ -798,7 +798,7 @@ test_that("29.28-29.33 - Indonesian locale", {
   # 29.31
   expect_equal(pt$format_age("2025-01-15", "2025-07-15"), "6 bulan")
   # 29.32
-  expect_equal(pt$format_age("2022-06-15", "2025-12-15"), "3 tahun setengah")
+  expect_equal(pt$format_age("2022-06-15", "2025-12-15"), "3 setengah tahun")
   # 29.33
   expect_equal(pt$format_age("2018-06-15", "2025-06-15"), "7 tahun")
 })

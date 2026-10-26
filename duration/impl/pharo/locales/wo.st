@@ -18,46 +18,46 @@ wo
 	locale code: 'wo'.
 	locale plural: [ :n | #other ].
 	locale units: (Dictionary newFromPairs: {
-		'second'. 'saa-yépp {n}'.
-		'minute'. 'simili {n}'.
-		'hour'. 'waxtu {n}'.
-		'day'. 'bés {n}'.
-		'week'. 'ayubés {n}'.
-		'month'. 'weer {n}'.
-		'year'. 'at {n}'.
+		'second'. '{n} saa'.
+		'minute'. '{n} simili'.
+		'hour'. '{n} waxtu'.
+		'day'. '{n} fan'.
+		'week'. '{n} ayubés'.
+		'month'. '{n} weer'.
+		'year'. '{n} at'.
 	}).
 	locale half: '{0} ak genn-wàll'.
 	locale delimiter: ', '.
 	locale justNow: 'léegi'.
 	locale ago: '{0} ci ginaaw'.
-	locale inFuture: 'ci {0}'.
+	locale inFuture: 'fileek {0}'.
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. 'saa-y. {n}'.
-			'minute'. 'sim. {n}'.
-			'hour'. 'wax. {n}'.
-			'day'. 'bés {n}'.
-			'week'. 'ayub. {n}'.
-			'month'. 'weer {n}'.
-			'year'. 'at {n}'.
+			'second'. '{n} saa'.
+			'minute'. '{n} sim.'.
+			'hour'. '{n} wax.'.
+			'day'. '{n} fan'.
+			'week'. '{n} ayub.'.
+			'month'. '{n} weer'.
+			'year'. '{n} at'.
 		}).
 		#ago. '{0} ci ginaaw'.
-		#inFuture. 'ci {0}'.
+		#inFuture. 'fileek {0}'.
 	}).
 	locale compact: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'second'. 'saa {n}'.
-			'minute'. 'sim {n}'.
-			'hour'. 'wax {n}'.
-			'day'. 'bés {n}'.
-			'week'. 'ayub {n}'.
-			'month'. 'weer {n}'.
-			'year'. 'at {n}'.
+			'second'. '{n} saa'.
+			'minute'. '{n} sim'.
+			'hour'. '{n} wax'.
+			'day'. '{n} fan'.
+			'week'. '{n} ayub'.
+			'month'. '{n} weer'.
+			'year'. '{n} at'.
 		}).
 		#half. '{n}½'.
 		#delimiter. ''.
 		#ago. '{0} ci gin.'.
-		#inFuture. 'ci {0}'.
+		#inFuture. 'fileek {0}'.
 	}).
 	^ locale
 ! !

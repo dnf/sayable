@@ -25,7 +25,7 @@ let locale : duration_locale =
   ; delimiter = ", "
   ; just_now = "sisan"
   ; ago = "{0} bɔlen"
-  ; in_future = "ka {0}"
+  ; in_future = "{0} kɔnɔ"
   ; short = Some
       { ovr_second = Some (Simple "sek. {n}")
       ; ovr_minute = Some (Simple "min. {n}")
@@ -37,7 +37,7 @@ let locale : duration_locale =
       ; ovr_half = None
       ; ovr_delimiter = None
       ; ovr_ago = Some "{0} bɔlen"
-      ; ovr_in_future = Some "ka {0}"
+      ; ovr_in_future = Some "{0} kɔnɔ"
       }
   ; compact = Some
       { ovr_second = Some (Simple "sek {n}")
@@ -50,6 +50,6 @@ let locale : duration_locale =
       ; ovr_half = Some "{n}½"
       ; ovr_delimiter = Some ""
       ; ovr_ago = Some "{0} bɔlen"
-      ; ovr_in_future = Some "ka {0}"
+      ; ovr_in_future = Some "{0} kɔnɔ"
       }
   }

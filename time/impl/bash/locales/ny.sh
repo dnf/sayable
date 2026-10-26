@@ -10,21 +10,21 @@
 # Source: locales/ny.json
 
 _sayabletime_locale_ny() {
-    _clock_hours=('khumi ndi ziwiri' 'imodzi' 'ziwiri' 'zitatu' 'zinayi' 'zisanu' 'zisanu ndi chimodzi' 'zisanu ndi ziwiri' 'zisanu ndi zitatu' 'zisanu ndi zinayi' 'khumi' 'khumi ndi chimodzi')
+    _clock_hours=('lakhumi ndi chiwiri' 'loyamba' 'lachiwiri' 'lachitatu' 'lachinayi' 'lachisanu' 'lachisanu ndi chimodzi' 'lachisanu ndi chiwiri' 'lachisanu ndi chitatu' 'lachisanu ndi chinayi' 'lakhumi' 'lakhumi ndi chimodzi')
     _clock_midnight='pakati pausiku'
     _clock_noon='usana'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='ola {h}'
+    _clock_pattern_5='ola {h} ndi mphindi zisanu'
+    _clock_pattern_10='ola {h} ndi mphindi khumi'
+    _clock_pattern_15='ola {h} ndi mphindi khumi ndi zisanu'
+    _clock_pattern_20='ola {h} ndi mphindi makumi awiri'
+    _clock_pattern_25='ola {h} ndi mphindi makumi awiri ndi zisanu'
+    _clock_pattern_30='ola {h} ndi theka'
+    _clock_pattern_35='ola {h} ndi mphindi makumi atatu ndi zisanu'
+    _clock_pattern_40='ola {h} ndi mphindi makumi anayi'
+    _clock_pattern_45='ola {h} ndi mphindi makumi anayi ndi zisanu'
+    _clock_pattern_50='ola {h} ndi mphindi makumi asanu'
+    _clock_pattern_55='ola {h} ndi mphindi makumi asanu ndi zisanu'
     _short_clock_use24h=0
     _short_clock_format='{h}:{mm} {ampm}'
     _short_clock_am='AM'

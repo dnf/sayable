@@ -31,7 +31,7 @@ locale_ff <- list(
       second = "majaango {n}",
       minute = "hojomaaje {n}",
       hour = list(one = "waktu {n}", other = "waktuuji {n}"),
-      day = "ñalɗe {n}",
+      day = list(one = "ñalawma {n}", other = "ñalɗe {n}"),
       week = list(one = "yontere {n}", other = "yontereeji {n}"),
       month = list(one = "lewru {n}", other = "lebbi {n}"),
       year = list(one = "hitaande {n}", other = "duuɓi {n}")
@@ -44,7 +44,7 @@ locale_ff <- list(
       second = "maj {n}",
       minute = "hoj {n}",
       hour = list(one = "wak {n}", other = "wakji {n}"),
-      day = "ñalɗe {n}",
+      day = list(one = "ñalawma {n}", other = "ñalɗe {n}"),
       week = list(one = "yont {n}", other = "yontji {n}"),
       month = list(one = "lew {n}", other = "leb {n}"),
       year = list(one = "hit {n}", other = "duuɓi {n}")

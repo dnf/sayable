@@ -26,7 +26,7 @@
    :just-born "नवजात शिशु"
    :stages (list (cons :newborn "नवजात शिशु")
                  (cons :infant "शिशु")
-                 (cons :toddler "बाल्यकाल")
+                 (cons :toddler "सानो बच्चा")
                  (cons :child "बालक")
                  (cons :teenager "किशोर")
                  (cons :adult "वयस्क"))

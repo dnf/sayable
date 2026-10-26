@@ -224,34 +224,34 @@
   "time": {
     "clock": {
       "hours": [
-        "دولس",
-        "یو",
-        "دوه",
-        "درې",
-        "څلور",
-        "پنځه",
-        "شپږ",
-        "اووه",
-        "اته",
-        "نهه",
-        "لس",
-        "یوولس"
+        "دولس بجې",
+        "یوه بجه",
+        "دوه بجې",
+        "درې بجې",
+        "څلور بجې",
+        "پنځه بجې",
+        "شپږ بجې",
+        "اووه بجې",
+        "اته بجې",
+        "نهه بجې",
+        "لس بجې",
+        "یوولس بجې"
       ],
       "midnight": "نیمه شپه",
       "noon": "غرمه",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "{h}",
+        "5": "{h} او پنځه دقیقې",
+        "10": "{h} او لس دقیقې",
+        "15": "{h} او پنځلس دقیقې",
+        "20": "{h} او شل دقیقې",
+        "25": "{h} او پنځه ویشت دقیقې",
+        "30": "{h} او دېرش دقیقې",
+        "35": "{h} او پنځه دېرش دقیقې",
+        "40": "{h} او څلوېښت دقیقې",
+        "45": "{h} او پنځه څلوېښت دقیقې",
+        "50": "{h} او پنځوس دقیقې",
+        "55": "{h} او پنځه پنځوس دقیقې"
       }
     },
     "short": {
@@ -274,5 +274,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "low",
+      "note": "Hours now carry the noun ('یوه بجه', 'دوه بجې', ...) so 1 o'clock gets the correct feminine singular 'یوه بجه' instead of 'یو بجې'. All minutes are additive: 'درې بجې او لس دقیقې'. Compromises: :30 is 'درې بجې او دېرش دقیقې' rather than the idiomatic 'درې نیمې بجې' (نیمې must sit between hour and بجې, impossible with the noun inside {h}); no subtractive 'to' phrases because they require the oblique hour ('څلورو بجو ته'), which the schema cannot produce. Doubts: whether 'دقیقې' or the colloquial 'منټه' is preferred; overall Pashto phrasing is best effort."
+    }
+  ]
 }

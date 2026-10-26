@@ -23,8 +23,8 @@
                (cons :day '((:one . "{n} நாள்") (:other . "{n} நாட்கள்")))
                (cons :week '((:one . "{n} வாரம்") (:other . "{n} வாரங்கள்")))
                (cons :month '((:one . "{n} மாதம்") (:other . "{n} மாதங்கள்")))
-               (cons :year '((:one . "{n} வயது") (:other . "{n} வயது"))))
-   :half "{0}ரை"
+               (cons :year '((:one . "{n} ஆண்டு") (:other . "{n} ஆண்டுகள்"))))
+   :half "{n}½"
    :delimiter ", "
    :just-now "இப்போதுதான்"
    :ago "{0} முன்"

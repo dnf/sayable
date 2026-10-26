@@ -22,7 +22,7 @@ static const char *sd_short_weekdays_mt[7] = {
 const SdDateLocale sd_locale_mt = {
     "mt",
     { "Jannar", "Frar", "Marzu", "April", "Mejju", "Ġunju", "Lulju", "Awwissu", "Settembru", "Ottubru", "Novembru", "Diċembru" },
-    { "Il-Ħadd", "It-Tnejn", "It-Tlieta", "L-Erbgħa", "Il-Ħamis", "Il-Ġimgħa", "Is-Sibt" },
+    { "il-Ħadd", "it-Tnejn", "it-Tlieta", "l-Erbgħa", "il-Ħamis", "il-Ġimgħa", "is-Sibt" },
     "{n}",
     (const SdDayFormatException *)0, 0,
     "{day} {month}",

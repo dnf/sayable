@@ -15,18 +15,18 @@ st_hours('sl', ['dvanajst', 'ena', 'dve', 'tri', 'štiri', 'pet', 'šest', 'sede
 st_midnight('sl', 'polnoč').
 st_noon('sl', 'poldne').
 
-st_pattern('sl', 0, '{h} ura').
-st_pattern('sl', 5, 'pet po {h}').
-st_pattern('sl', 10, 'deset po {h}').
-st_pattern('sl', 15, 'petnajst po {h}').
-st_pattern('sl', 20, 'dvajset po {h}').
-st_pattern('sl', 25, 'dvajset pet po {h}').
-st_pattern('sl', 30, 'trideset po {h}').
-st_pattern('sl', 35, 'dvajset pet do {next_h}').
-st_pattern('sl', 40, 'dvajset do {next_h}').
-st_pattern('sl', 45, 'petnajst do {next_h}').
-st_pattern('sl', 50, 'deset do {next_h}').
-st_pattern('sl', 55, 'pet do {next_h}').
+st_pattern('sl', 0, '{h}').
+st_pattern('sl', 5, 'pet čez {h}').
+st_pattern('sl', 10, 'deset čez {h}').
+st_pattern('sl', 15, 'petnajst čez {h}').
+st_pattern('sl', 20, 'dvajset čez {h}').
+st_pattern('sl', 25, 'petindvajset čez {h}').
+st_pattern('sl', 30, '{h} trideset').
+st_pattern('sl', 35, '{h} petintrideset').
+st_pattern('sl', 40, '{h} štirideset').
+st_pattern('sl', 45, '{h} petinštirideset').
+st_pattern('sl', 50, '{h} petdeset').
+st_pattern('sl', 55, '{h} petinpetdeset').
 
 short_st_use24h('sl', true).
 short_st_format('sl', '{h}:{mm}').

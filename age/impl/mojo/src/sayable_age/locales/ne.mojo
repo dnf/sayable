@@ -37,7 +37,7 @@ fn build_ne() -> AgeLocale:
 
     var newborn = stage_neutral("नवजात शिशु")
     var infant = stage_neutral("शिशु")
-    var toddler = stage_neutral("बाल्यकाल")
+    var toddler = stage_neutral("सानो बच्चा")
     var child = stage_neutral("बालक")
     var teenager = stage_neutral("किशोर")
     var adult = stage_neutral("वयस्क")

@@ -55,7 +55,7 @@ locale =
     , half = "{n}½"
     , delimiter = ", "
     , justNow = "lige nu"
-    , ago = "{0} siden"
+    , ago = "for {0} siden"
     , inFuture = "om {0}"
     , short =
         Just

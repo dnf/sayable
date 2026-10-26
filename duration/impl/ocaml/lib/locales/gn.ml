@@ -14,9 +14,9 @@ open Types
 let locale : duration_locale =
   { code = "gn"
   ; plural = (fun n -> if n = 1 then One else Other)
-  ; second = Simple "{n} aravo'i"
-  ; minute = Simple "{n} aravo"
-  ; hour = Simple "{n} aravo guasu"
+  ; second = Simple "{n} aravo'ive"
+  ; minute = Simple "{n} aravo'i"
+  ; hour = Simple "{n} aravo"
   ; day = Simple "{n} ára"
   ; week = Simple "{n} arapokõindy"
   ; month = Simple "{n} jasy"
@@ -27,9 +27,9 @@ let locale : duration_locale =
   ; ago = "{0} ohasava'ekue"
   ; in_future = "{0} rire"
   ; short = Some
-      { ovr_second = Some (Simple "{n} ara'i")
-      ; ovr_minute = Some (Simple "{n} ara")
-      ; ovr_hour = Some (Simple "{n} ara g")
+      { ovr_second = Some (Simple "{n} aravo'ive")
+      ; ovr_minute = Some (Simple "{n} aravo'i")
+      ; ovr_hour = Some (Simple "{n} aravo")
       ; ovr_day = Some (Simple "{n} ára")
       ; ovr_week = Some (Simple "{n} ara")
       ; ovr_month = Some (Simple "{n} jas")

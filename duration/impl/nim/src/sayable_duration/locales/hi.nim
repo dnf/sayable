@@ -19,7 +19,7 @@ let HI* = DurationLocale(
   units: {
     "second": simpleUnit("{n} सेकंड"),
     "minute": simpleUnit("{n} मिनट"),
-    "hour": simpleUnit("{n} घंटा"),
+    "hour": pluralUnit(@[(pcOne, "{n} घंटा"), (pcOther, "{n} घंटे")]),
     "day": pluralUnit(@[(pcOne, "{n} दिन"), (pcOther, "{n} दिन")]),
     "week": pluralUnit(@[(pcOne, "{n} सप्ताह"), (pcOther, "{n} सप्ताह")]),
     "month": pluralUnit(@[(pcOne, "{n} महीना"), (pcOther, "{n} महीने")]),

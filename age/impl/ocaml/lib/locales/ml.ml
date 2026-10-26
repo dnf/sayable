@@ -13,7 +13,7 @@ open Types
 
 let locale : locale =
   { code = "ml"
-  ; plural = (fun n -> if n = 0 || n = 1 then One else Other)
+  ; plural = (fun n -> if n = 1 then One else Other)
   ; day = Pluralized
       [ (One, "{n} ദിവസം")
       ; (Other, "{n} ദിവസങ്ങൾ")
@@ -30,7 +30,7 @@ let locale : locale =
       [ (One, "{n} വയസ്സ്")
       ; (Other, "{n} വയസ്സ്")
       ]
-  ; half = "{0} ര"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_born = "നവജാതശിശു"
   ; stages =

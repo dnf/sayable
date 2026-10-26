@@ -14,10 +14,10 @@
 const StTimeLocale st_locale_kpe = {
     "kpe",
     {
-        { "puu lɔŋ", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ" },
+        { "puu da feere", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ" },
         "kpindi kɔlɛ",
         "tili-ma",
-        { "{h}:00", "{h}:05", "{h}:10", "{h}:15", "{h}:20", "{h}:25", "{h}:30", "{h}:35", "{h}:40", "{h}:45", "{h}:50", "{h}:55" }
+        { "awa {h}", "awa {h} da miniti lɔɔlu", "awa {h} da miniti puu", "awa {h} da miniti puu da lɔɔlu", "awa {h} da miniti puu feere", "awa {h} da miniti puu feere da lɔɔlu", "awa {h} da miniti puu sawa", "awa {h} da miniti puu sawa da lɔɔlu", "awa {h} da miniti puu naŋ", "awa {h} da miniti puu naŋ da lɔɔlu", "awa {h} da miniti puu lɔɔlu", "awa {h} da miniti puu lɔɔlu da lɔɔlu" }
     },
     true, { false, { "AM", "PM" }, "{h}:{mm} {ampm}" },
     true, { false, { "a", "p" }, "{h}:{mm}{ampm}" }

@@ -55,6 +55,7 @@ sub locale {{
       year => '{n}y',
     },
     delimiter => '',
+    half => '{n}½',
     ago => '{0} qakab\'',
     in_future => 'chi {0}',
   },

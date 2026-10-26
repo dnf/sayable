@@ -18,10 +18,10 @@ ee
 	locale code: 'ee'.
 	locale plural: [ :n | n = 1 ifTrue: [ #one ] ifFalse: [ #other ] ].
 	locale units: (Dictionary newFromPairs: {
-		'day'. (Dictionary newFromPairs: { #one. 'ŋkeke {n}'. #other. 'ŋkekewo {n}' }).
-		'week'. (Dictionary newFromPairs: { #one. 'kɔsiɖa {n}'. #other. 'kɔsiɖawo {n}' }).
-		'month'. (Dictionary newFromPairs: { #one. 'ɣleti {n}'. #other. 'ɣletiwo {n}' }).
-		'year'. (Dictionary newFromPairs: { #one. 'ƒe {n}'. #other. 'ƒewo {n}' }).
+		'day'. 'ŋkeke {n}'.
+		'week'. 'kɔsiɖa {n}'.
+		'month'. 'ɣleti {n}'.
+		'year'. 'ƒe {n}'.
 	}).
 	locale half: '{0} kple afã'.
 	locale delimiter: ', '.
@@ -31,15 +31,15 @@ ee
 		#infant. 'Ɖevi'.
 		#toddler. 'Ɖevi sue'.
 		#child. 'Ɖevi'.
-		#teenager. 'Ŋutsuviwo'.
+		#teenager. (Dictionary newFromPairs: { #m. 'Ɖekakpui'. #f. 'Ɖetugbi' }).
 		#adult. 'Ame tsitsi'.
 	}).
 	locale short: (Dictionary newFromPairs: {
 		#units. (Dictionary newFromPairs: {
-			'day'. 'ŋkekewo {n}'.
-			'week'. (Dictionary newFromPairs: { #one. 'kɔsiɖa {n}'. #other. 'kɔsiɖawo {n}' }).
-			'month'. (Dictionary newFromPairs: { #one. 'ɣleti {n}'. #other. 'ɣletiwo {n}' }).
-			'year'. (Dictionary newFromPairs: { #one. 'ƒe {n}'. #other. 'ƒewo {n}' }).
+			'day'. 'ŋkeke {n}'.
+			'week'. 'kɔsiɖa {n}'.
+			'month'. 'ɣleti {n}'.
+			'year'. 'ƒe {n}'.
 		}).
 	}).
 	locale compact: (Dictionary newFromPairs: {

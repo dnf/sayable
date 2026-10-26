@@ -20,7 +20,7 @@ var MS = st.TimeLocale{
 		Hours:    [12]string{"dua belas", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "lapan", "sembilan", "sepuluh", "sebelas"},
 		Midnight: "tengah malam",
 		Noon:     "tengah hari",
-		Patterns: map[int]string{0: "{h} o'clock", 5: "lima lewat {h}", 10: "sepuluh lewat {h}", 15: "suku lewat {h}", 20: "dua puluh lewat {h}", 25: "dua puluh lima lewat {h}", 30: "setengah lewat {h}", 35: "dua puluh lima menjelang {next_h}", 40: "dua puluh menjelang {next_h}", 45: "suku menjelang {next_h}", 50: "sepuluh menjelang {next_h}", 55: "lima menjelang {next_h}"},
+		Patterns: map[int]string{0: "pukul {h}", 5: "pukul {h} lima minit", 10: "pukul {h} sepuluh minit", 15: "pukul {h} suku", 20: "pukul {h} dua puluh minit", 25: "pukul {h} dua puluh lima minit", 30: "pukul {h} setengah", 35: "pukul {next_h} kurang dua puluh lima minit", 40: "pukul {next_h} kurang dua puluh minit", 45: "pukul {next_h} kurang suku", 50: "pukul {next_h} kurang sepuluh minit", 55: "pukul {next_h} kurang lima minit"},
 	},
 	Short: &st.CompactnessOverride{
 		Clock: &st.ShortClockConfig{Use24h: true, Format: "{h}:{mm}"},

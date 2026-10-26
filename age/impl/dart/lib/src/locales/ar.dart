@@ -45,7 +45,7 @@ final ar = AgeLocale(
   compact: CompactnessOverride(
     day: simpleUnit('{n} ي'),
     week: simpleUnit('{n} أ'),
-    month: pluralUnit({PluralCategory.zero: '{n} شهر', PluralCategory.one: 'شهر', PluralCategory.two: 'شهران', PluralCategory.few: '{n} أشهر', PluralCategory.many: '{n} شهرًا', PluralCategory.other: '{n} شهر'}),
+    month: simpleUnit('{n} شهر'),
     year: simpleUnit('{n} سنة'),
     delimiter: '',
     half: '{n}½',

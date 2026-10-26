@@ -23,7 +23,7 @@ sa_delimiter('vi', ', ').
 sa_just_born('vi', 'Sơ sinh').
 
 sa_stage('vi', newborn, _, 'Sơ sinh').
-sa_stage('vi', infant, _, 'Trẻ sơ sinh').
+sa_stage('vi', infant, _, 'Trẻ nhũ nhi').
 sa_stage('vi', toddler, _, 'Trẻ mới biết đi').
 sa_stage('vi', child, _, 'Trẻ em').
 sa_stage('vi', teenager, _, 'Thiếu niên').

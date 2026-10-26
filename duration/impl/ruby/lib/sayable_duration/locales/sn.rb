@@ -16,9 +16,9 @@ module SayableDuration
       code: 'sn',
       plural: ->(n) { n == 1 ? :one : :other },
       units: {
-        'second' => '{n} sekondi',
-        'minute' => '{n} miniti',
-        'hour' => '{n} awa',
+        'second' => { one: 'sekondi {n}', other: 'masekondi {n}' },
+        'minute' => { one: 'miniti {n}', other: 'maminitsi {n}' },
+        'hour' => { one: 'awa {n}', other: 'maawa {n}' },
         'day' => { one: 'zuva {n}', other: 'mazuva {n}' },
         'week' => { one: 'vhiki {n}', other: 'mavhiki {n}' },
         'month' => { one: 'mwedzi {n}', other: 'mwedzi {n}' },

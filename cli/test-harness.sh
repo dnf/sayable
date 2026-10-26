@@ -250,7 +250,7 @@ run_test 'age:25.6' '2 semanas, 6 días' age 2025-05-26 -d 2025-06-15 -l es
 run_test 'age:25.7' '6 meses' age 2025-01-15 -d 2025-07-15 -l es
 run_test 'age:25.8' '2 años, 1 mes' age 2023-06-15 -d 2025-07-15 -l es
 run_test 'age:25.9' '2 años, 6 meses' age 2023-06-15 -d 2025-12-15 -l es
-run_test 'age:25.10' '3 y medio años' age 2022-06-15 -d 2025-12-15 -l es
+run_test 'age:25.10' '3 años y medio' age 2022-06-15 -d 2025-12-15 -l es
 run_test 'age:25.11' '3 años' age 2022-06-15 -d 2025-06-15 -l es
 run_test 'age:25.12' '7 años' age 2018-06-15 -d 2025-06-15 -l es
 run_test 'age:25.13' 'Recién nacido' stage 2025-06-15 -d 2025-06-15 -l es
@@ -285,13 +285,13 @@ run_test 'age:27.8' 'Newborn' age 2025-06-15 -d 2025-06-15 --compact
 
 # === Age 29: Locale-specific edge cases — plural rules ===
 run_test 'age:29.1' 'רק נולד' age 2025-06-15 -d 2025-06-15 -l he
-run_test 'age:29.2' 'יום 1' age 2025-06-14 -d 2025-06-15 -l he
+run_test 'age:29.2' 'יום' age 2025-06-14 -d 2025-06-15 -l he
 run_test 'age:29.3' '3 ימים' age 2025-06-12 -d 2025-06-15 -l he
 run_test 'age:29.4' 'שבועיים' age 2025-06-01 -d 2025-06-15 -l he
 run_test 'age:29.5' '3 שבועות' age 2025-05-25 -d 2025-06-15 -l he
 run_test 'age:29.6' '6 חודשים' age 2025-01-15 -d 2025-07-15 -l he
 run_test 'age:29.7' '3 חודשים' age 2025-03-15 -d 2025-06-15 -l he
-run_test 'age:29.8' 'שנתיים, חודש 1' age 2023-06-15 -d 2025-07-15 -l he
+run_test 'age:29.8' 'שנתיים, חודש' age 2023-06-15 -d 2025-07-15 -l he
 run_test 'age:29.9' '3 שנים וחצי' age 2022-06-15 -d 2025-12-15 -l he
 run_test 'age:29.10' '7 שנים' age 2018-06-15 -d 2025-06-15 -l he
 run_test 'age:29.11' 'רק נולד' stage 2025-06-15 -d 2025-06-15 -l he -g m
@@ -315,7 +315,7 @@ run_test 'age:29.28' 'Baru lahir' age 2025-06-15 -d 2025-06-15 -l id
 run_test 'age:29.29' '1 hari' age 2025-06-14 -d 2025-06-15 -l id
 run_test 'age:29.30' '3 hari' age 2025-06-12 -d 2025-06-15 -l id
 run_test 'age:29.31' '6 bulan' age 2025-01-15 -d 2025-07-15 -l id
-run_test 'age:29.32' '3 tahun setengah' age 2022-06-15 -d 2025-12-15 -l id
+run_test 'age:29.32' '3 setengah tahun' age 2022-06-15 -d 2025-12-15 -l id
 run_test 'age:29.33' '7 tahun' age 2018-06-15 -d 2025-06-15 -l id
 run_test 'age:29.34' 'አዲስ የተወለደ' age 2025-06-15 -d 2025-06-15 -l am
 run_test 'age:29.35' '1 ቀን' age 2025-06-14 -d 2025-06-15 -l am

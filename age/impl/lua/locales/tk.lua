@@ -19,7 +19,7 @@ M.units = {
     month = "{n} aý",
     year = "{n} ýaş",
 }
-M.half = "{0}½"
+M.half = "{n} ýarym"
 M.delimiter = ", "
 M.just_born = "Täze doglan"
 M.stages = {
@@ -28,7 +28,7 @@ M.stages = {
     toddler = "Kiçijik",
     child = "Çaga",
     teenager = "Ýetginjek",
-    adult = "Ulular",
+    adult = "Uly adam",
 }
 M.short = {
     units = {

@@ -15,18 +15,18 @@ st_hours('ky', ['он эки', 'бир', 'эки', 'үч', 'төрт', 'беш',
 st_midnight('ky', 'түн ортосу').
 st_noon('ky', 'түш').
 
-st_pattern('ky', 0, '{h}:00').
-st_pattern('ky', 5, '{h}:05').
-st_pattern('ky', 10, '{h}:10').
-st_pattern('ky', 15, '{h}:15').
-st_pattern('ky', 20, '{h}:20').
-st_pattern('ky', 25, '{h}:25').
-st_pattern('ky', 30, '{h}:30').
-st_pattern('ky', 35, '{h}:35').
-st_pattern('ky', 40, '{h}:40').
-st_pattern('ky', 45, '{h}:45').
-st_pattern('ky', 50, '{h}:50').
-st_pattern('ky', 55, '{h}:55').
+st_pattern('ky', 0, 'саат {h}').
+st_pattern('ky', 5, '{h} нөл беш').
+st_pattern('ky', 10, '{h} он').
+st_pattern('ky', 15, '{h} он беш').
+st_pattern('ky', 20, '{h} жыйырма').
+st_pattern('ky', 25, '{h} жыйырма беш').
+st_pattern('ky', 30, '{h} жарым').
+st_pattern('ky', 35, '{h} отуз беш').
+st_pattern('ky', 40, '{h} кырк').
+st_pattern('ky', 45, '{h} кырк беш').
+st_pattern('ky', 50, '{h} элүү').
+st_pattern('ky', 55, '{h} элүү беш').
 
 short_st_use24h('ky', true).
 short_st_format('ky', '{h}:{mm}').

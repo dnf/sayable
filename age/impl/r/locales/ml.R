@@ -11,14 +11,14 @@
 
 locale_ml <- list(
   code = "ml",
-  plural = function(n) if (n == 0 || n == 1) "one" else "other",
+  plural = function(n) if (n == 1) "one" else "other",
   units = list(
     day = list(one = "{n} ദിവസം", other = "{n} ദിവസങ്ങൾ"),
     week = list(one = "{n} ആഴ്ച", other = "{n} ആഴ്ചകൾ"),
     month = list(one = "{n} മാസം", other = "{n} മാസങ്ങൾ"),
     year = list(one = "{n} വയസ്സ്", other = "{n} വയസ്സ്")
   ),
-  half = "{0} ര",
+  half = "{n}½",
   delimiter = ", ",
   just_born = "നവജാതശിശു",
   stages = list(

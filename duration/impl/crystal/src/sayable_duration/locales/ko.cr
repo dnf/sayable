@@ -20,7 +20,7 @@ module SayableDuration
         "day" => UnitForms.new("{n}일"),
         "week" => UnitForms.new("{n}주"),
         "month" => UnitForms.new("{n}개월"),
-        "year" => UnitForms.new("{n}살"),
+        "year" => UnitForms.new("{n}년"),
       },
       half: "{0} 반",
       delimiter: " ",

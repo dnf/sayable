@@ -16,7 +16,7 @@ module SayableDuration
       units: {
         "second" => UnitForms.new("{n} ਸਕਿੰਟ"),
         "minute" => UnitForms.new("{n} ਮਿੰਟ"),
-        "hour" => UnitForms.new("{n} ਘੰਟਾ"),
+        "hour" => UnitForms.new(one: "{n} ਘੰਟਾ", other: "{n} ਘੰਟੇ"),
         "day" => UnitForms.new(one: "{n} ਦਿਨ", other: "{n} ਦਿਨ"),
         "week" => UnitForms.new(one: "{n} ਹਫ਼ਤਾ", other: "{n} ਹਫ਼ਤੇ"),
         "month" => UnitForms.new(one: "{n} ਮਹੀਨਾ", other: "{n} ਮਹੀਨੇ"),

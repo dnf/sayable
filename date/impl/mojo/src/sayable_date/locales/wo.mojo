@@ -49,11 +49,11 @@ fn build_wo() -> DateLocale:
     var today = "tey"
     var tomorrow = "suba"
     var yesterday = "démb"
-    var day_after_tomorrow = "suba-suba"
-    var day_before_yesterday = "démb-démb"
-    var this_weekday = "{weekday} bi"
-    var next_weekday = "{weekday} bi ñëw"
-    var last_weekday = "{weekday} bi weex"
+    var day_after_tomorrow = "gannaaw-suba"
+    var day_before_yesterday = "bërki-démb"
+    var this_weekday = "{weekday} jii"
+    var next_weekday = "{weekday} jiy ñëw"
+    var last_weekday = "{weekday} ji weesu"
     var has_months_in_date = False
 
     var short_ovr = build_compactness_override()

@@ -6,6 +6,14 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [dv.json](../../locales/dv.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (low confidence): Best effort, needs a native check. Structure used: 'ގަޑިން {h}' on the hour ('X by the clock'), '{h} ޖަހައި N މިނެޓު' ('X struck, N minutes') for minutes, '{h} ޖަހައި ބައި' for half past; additive throughout. Doubts: (1) whether 'ގަޑިން {h}' or '{h} ޖަހާއިރު' is the better standalone form for the exact hour; (2) whether colloquial speech prefers the compound 'N-ގަޑި ބައި' type (ތިންގަޑި ބައި) over 'ތިނެއް ޖަހައި ބައި'; (3) attributive number forms before މިނެޓު (ފަސް/ދިހަ rather than ފަހެއް/ދިހައެއް) I believe are right; (4) no subtractive 'ޖަހަން' form attempted.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `other_only` (categories: other)
 | 2 years, 1 month  | 2 އަހަރު، 1 މަސް   | 2 އަހަރު، 1 މަސް   | 2y1m            |
 | 2 years, 6 months | 2 އަހަރު، 6 މަސް   | 2 އަހަރު، 6 މަސް   | 2y6m            |
 | 3 years           | 3 އަހަރު           | 3 އަހަރު           | 3y              |
-| 3½ years          | 3 އަހަރު ބައި      | 3 އަހަރު ބައި      | 3y ބައި         |
+| 3½ years          | 3½ އަހަރު          | 3½ އަހަރު          | 3½y             |
 | 5 years           | 5 އަހަރު           | 5 އަހަރު           | 5y              |
-| 5½ years          | 5 އަހަރު ބައި      | 5 އަހަރު ބައި      | 5y ބައި         |
+| 5½ years          | 5½ އަހަރު          | 5½ އަހަރު          | 5½y             |
 | 7 years           | 7 އަހަރު           | 7 އަހަރު           | 7y              |
 | 10 years          | 10 އަހަރު          | 10 އަހަރު          | 10y             |
 | 18 years          | 18 އަހަރު          | 18 އަހަރު          | 18y             |
@@ -73,9 +81,9 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | އަނެއް ދުވަހު     | 17/3    |
 | Day before yesterday | ކުރީ ދުވަހު       | 13/3    |
 | This Thursday (+5)   | މި ބުރާސްފަތި     | 20/3    |
-| Last Monday (-4)     | ފާއިތުވި އަންގާރަ | 11/3    |
-| Next Wednesday (+12) | އަންނަ ބުރާސްފަތި | 27/3    |
-| Same month (+20)     | 4 އެޕްރީލު        | 4/4     |
+| Last Tuesday (-4)    | ފާއިތުވި އަންގާރަ | 11/3    |
+| Next Thursday (+12)  | އަންނަ ބުރާސްފަތި | 27/3    |
+| Same year (+20)      | 4 އެޕްރީލު        | 4/4     |
 | Different year       | 10 ޖެނުއަރީ 2026  | 10/1/26 |
 
 ## Duration
@@ -92,11 +100,11 @@ Relative to Saturday, March 15, 2025.
 | 5 minutes             | 5 މިނެޓު              | 5 މިނެ          | 5m      |
 | 45 minutes            | 45 މިނެޓު             | 45 މިނެ         | 45m     |
 | 1 hour                | 1 ގަޑިއިރު            | 1 ގަޑި          | 1h      |
-| 1½ hours              | 1 ގަޑިއިރު ބައި       | 1 ގަޑި ބައި     | 1h ބައި |
+| 1½ hours              | 1½ ގަޑިއިރު           | 1½ ގަޑި         | 1½h     |
 | 3 hours               | 3 ގަޑިއިރު            | 3 ގަޑި          | 3h      |
 | 6 hours               | 6 ގަޑިއިރު            | 6 ގަޑި          | 6h      |
 | 1 day                 | 1 ދުވަސް              | 1 ދުވަ          | 1d      |
-| 1½ days               | 1 ދުވަސް ބައި         | 1 ދުވަ ބައި     | 1d ބައި |
+| 1½ days               | 1½ ދުވަސް             | 1½ ދުވަ         | 1½d     |
 | 3 days                | 3 ދުވަސް              | 3 ދުވަ          | 3d      |
 | 1 week                | 1 ހަފްތާ              | 1 ހަފް          | 1w      |
 | 2 weeks, 3 days       | 2 ހަފްތާ، 3 ދުވަސް    | 2 ހަފް، 3 ދުވަ  | 2w3d    |
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal      | Short    | Compact |
-| --------------- | ----------- | -------- | ------- |
-| Midnight        | މެންދަމު    | 12:00 AM | 12:00a  |
-| 1:00 AM         | އެކެއް:00   | 1:00 AM  | 1:00a   |
-| 5 past 9        | ނުވައެއް:05 | 9:05 AM  | 9:05a   |
-| Quarter past 10 | ދިހައެއް:15 | 10:15 AM | 10:15a  |
-| Half past 11    | އެގާރަ:30   | 11:30 AM | 11:30a  |
-| Noon            | މެންދުރު    | 12:00 PM | 12:00p  |
-| Quarter to 3    | ދޭއް:45     | 2:45 PM  | 2:45p   |
-| 5 to 6          | ފަހެއް:55   | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | އަށެއް:00   | 8:00 PM  | 8:00p   |
-| 10:30 PM        | ދިހައެއް:30 | 10:30 PM | 10:30p  |
-| 11:58 PM        | މެންދަމު    | 11:58 PM | 11:58p  |
+| Time            | Normal                            | Short    | Compact |
+| --------------- | --------------------------------- | -------- | ------- |
+| Midnight        | މެންދަމު                          | 12:00 AM | 12:00a  |
+| 1:00 AM         | ގަޑިން އެކެއް                     | 1:00 AM  | 1:00a   |
+| 5 past 9        | ނުވައެއް ޖަހައި ފަސް މިނެޓު       | 9:05 AM  | 9:05a   |
+| Quarter past 10 | ދިހައެއް ޖަހައި ފަނަރަ މިނެޓު     | 10:15 AM | 10:15a  |
+| Half past 11    | އެގާރަ ޖަހައި ބައި                | 11:30 AM | 11:30a  |
+| Noon            | މެންދުރު                          | 12:00 PM | 12:00p  |
+| Quarter to 3    | ދޭއް ޖަހައި ސާޅީސްފަސް މިނެޓު     | 2:45 PM  | 2:45p   |
+| 5 to 6          | ފަހެއް ޖަހައި ފަންސާސްފަސް މިނެޓު | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ގަޑިން އަށެއް                     | 8:00 PM  | 8:00p   |
+| 10:30 PM        | ދިހައެއް ޖަހައި ބައި              | 10:30 PM | 10:30p  |
+| 11:58 PM        | މެންދަމު                          | 11:58 PM | 11:58p  |

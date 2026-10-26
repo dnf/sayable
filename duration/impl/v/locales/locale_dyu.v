@@ -30,7 +30,7 @@ pub const locale_dyu = DurationLocale{
 	delimiter: ', '
 	just_now: 'sisan'
 	ago: '{0} tɛmɛnen'
-	in_future: 'ka {0}'
+	in_future: '{0} kɔnɔ'
 	has_short: true
 	short_override: DurationCompactnessOverride{
 		second: simple_unit('sɛk. {n}')
@@ -49,7 +49,7 @@ pub const locale_dyu = DurationLocale{
 		has_year: true
 		ago: '{0} tɛmɛnen'
 		has_ago: true
-		in_future: 'ka {0}'
+		in_future: '{0} kɔnɔ'
 		has_in_future: true
 	}
 	has_compact: true
@@ -74,7 +74,7 @@ pub const locale_dyu = DurationLocale{
 		has_delimiter: true
 		ago: '{0} tɛmɛnen'
 		has_ago: true
-		in_future: 'ka {0}'
+		in_future: '{0} kɔnɔ'
 		has_in_future: true
 	}
 }

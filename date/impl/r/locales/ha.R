@@ -24,7 +24,7 @@ locale_ha <- list(
   day_before_yesterday = "shekaranjiya",
   this_weekday = "wannan {weekday}",
   next_weekday = "{weekday} mai zuwa",
-  last_weekday = "{weekday} da ya wuce",
+  last_weekday = "{weekday} da ta wuce",
   short = list(
     months = c("Jan", "Fab", "Mar", "Afr", "May", "Yun", "Yul", "Agu", "Sat", "Okt", "Nuw", "Dis"),
     weekdays = c("Lah", "Lit", "Tal", "Lar", "Alh", "Jum", "Asa"),

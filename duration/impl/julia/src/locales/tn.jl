@@ -15,8 +15,8 @@ const TN = DurationLocale(
     code = "tn",
     plural = n -> n == 1 ? "one" : "other",
     units = Dict(
-        "second" => Dict("one" => "motsotswana {n}", "other" => "dimetsotswana {n}"),
-        "minute" => Dict("one" => "metsotso {n}", "other" => "dimetsotso {n}"),
+        "second" => Dict("one" => "motsotswana {n}", "other" => "metsotswana {n}"),
+        "minute" => Dict("one" => "motsotso {n}", "other" => "metsotso {n}"),
         "hour" => Dict("one" => "ura {n}", "other" => "diura {n}"),
         "day" => Dict("one" => "letsatsi {n}", "other" => "malatsi {n}"),
         "week" => Dict("one" => "beke {n}", "other" => "dibeke {n}"),
@@ -30,8 +30,8 @@ const TN = DurationLocale(
     in_future = "ka {0}",
     short_override = DurationCompactnessOverride(
         units = Dict(
-            "second" => Dict("one" => "motsotswana {n}", "other" => "dimetsotswana {n}"),
-            "minute" => Dict("one" => "metsotso {n}", "other" => "dimetsotso {n}"),
+            "second" => Dict("one" => "motsotswana {n}", "other" => "metsotswana {n}"),
+            "minute" => Dict("one" => "motsotso {n}", "other" => "metsotso {n}"),
             "hour" => Dict("one" => "ura {n}", "other" => "diura {n}"),
             "day" => Dict("one" => "letsatsi {n}", "other" => "malatsi {n}"),
             "week" => Dict("one" => "beke {n}", "other" => "dibeke {n}"),

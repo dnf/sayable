@@ -6,6 +6,14 @@
 
 Plural rule: `one_other` (categories: one, other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [te.json](../../locales/te.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): Telugu, written so that every hour is grammatical: '{h} అయింది' (మూడు అయింది = it is three; avoids '{h} గంటలు', which is wrong for one o'clock where Telugu says 'ఒంటి గంట'), '{h} దాటి <minutes> నిమిషాలు' (మూడు దాటి ఐదు నిమిషాలు = five past three; avoids the plural-oblique 'గంటల' that is also wrong after one), fused '{h}ంపావు' for quarter past (మూడుంపావు, ఒకటింపావు, ఎనిమిదింపావు; the anusvara attaches correctly to both -u and -i final hours), fused '{h}న్నర' for half past (మూడున్నర, ఒకటిన్నర), 'పావు తక్కువ {next_h}' for quarter to, '{next_h} కావడానికి <minutes> నిమిషాలు' for 40/50/55 (నాలుగు కావడానికి పది నిమిషాలు = ten to four) and additive 'దాటి' at 35. hours[1] stays 'ఒకటి'. Schema follow-up (per-hour override): the idiomatic o'clock forms '{h} గంటలు' / 'ఒంటి గంట' and minute forms 'మూడు గంటల ఐదు నిమిషాలు' / 'ఒంటి గంట ఐదు నిమిషాలు' need the one-o'clock exception. Doubts: 'మూడు అయింది' is the answer to 'what time is it' (with a verb) rather than a bare noun phrase, and the fused spelling 'మూడైంది' is more usual than the spaced one a template can produce.
+
 ## Age
 
 ### Age formatting
@@ -29,9 +37,9 @@ Plural rule: `one_other` (categories: one, other)
 | 2 years, 1 month  | 2 సంవత్సరాలు, 1 నెల   | 2 సం., 1 నె.    | 2సం1నె       |
 | 2 years, 6 months | 2 సంవత్సరాలు, 6 నెలలు | 2 సం., 6 నె.    | 2సం6నె       |
 | 3 years           | 3 సంవత్సరాలు          | 3 సం.           | 3సం          |
-| 3½ years          | 3 సంవత్సరాలున్నర      | 3 సం.న్నర       | 3½సం         |
+| 3½ years          | 3½ సంవత్సరాలు         | 3½ సం.          | 3½సం         |
 | 5 years           | 5 సంవత్సరాలు          | 5 సం.           | 5సం          |
-| 5½ years          | 5 సంవత్సరాలున్నర      | 5 సం.న్నర       | 5½సం         |
+| 5½ years          | 5½ సంవత్సరాలు         | 5½ సం.          | 5½సం         |
 | 7 years           | 7 సంవత్సరాలు          | 7 సం.           | 7సం          |
 | 10 years          | 10 సంవత్సరాలు         | 10 సం.          | 10సం         |
 | 18 years          | 18 సంవత్సరాలు         | 18 సం.          | 18సం         |
@@ -73,61 +81,61 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | ఎల్లుండి       | 17/3    |
 | Day before yesterday | మొన్న          | 13/3    |
 | This Thursday (+5)   | ఈ గురువారం     | 20/3    |
-| Last Monday (-4)     | గత మంగళవారం    | 11/3    |
-| Next Wednesday (+12) | వచ్చే గురువారం | 27/3    |
-| Same month (+20)     | 4 ఏప్రిల్      | 4/4     |
+| Last Tuesday (-4)    | గత మంగళవారం    | 11/3    |
+| Next Thursday (+12)  | వచ్చే గురువారం | 27/3    |
+| Same year (+20)      | 4 ఏప్రిల్      | 4/4     |
 | Different year       | 10 జనవరి 2026  | 10/1/26 |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal                | Short            | Compact |
-| --------------------- | --------------------- | ---------------- | ------- |
-| 0 seconds             | ఇప్పుడే               | ఇప్పుడే          | ఇప్పుడే |
-| 1 second              | 1 సెకను               | 1 సె.            | 1సె     |
-| 30 seconds            | 30 సెకను              | 30 సెక.          | 30సె    |
-| 1 minute              | 1 నిమిషం              | 1 నిమి.          | 1ని     |
-| 2 minutes, 15 seconds | 2 నిమిషం, 15 సెకను    | 2 నిమి., 15 సెక. | 2ని15సె |
-| 5 minutes             | 5 నిమిషం              | 5 నిమి.          | 5ని     |
-| 45 minutes            | 45 నిమిషం             | 45 నిమి.         | 45ని    |
-| 1 hour                | 1 గంట                 | 1 గం.            | 1గం     |
-| 1½ hours              | 1 గంటన్నర             | 1 గం.న్నర        | 1½గం    |
-| 3 hours               | 3 గంట                 | 3 గం.            | 3గం     |
-| 6 hours               | 6 గంట                 | 6 గం.            | 6గం     |
-| 1 day                 | 1 రోజు                | 1 రోజు           | 1రో     |
-| 1½ days               | 1 రోజులున్నర          | 1 రోజులున్నర     | 1½రో    |
-| 3 days                | 3 రోజులు              | 3 రోజులు         | 3రో     |
-| 1 week                | 1 వారం                | 1 వా.            | 1వా     |
-| 2 weeks, 3 days       | 2 వారాలు, 3 రోజులు    | 2 వా., 3 రోజులు  | 2వా3రో  |
-| 1 month               | 1 నెల                 | 1 నె.            | 1నె     |
-| 6 months              | 6 నెలలు               | 6 నె.            | 6నె     |
-| 1 year                | 1 సంవత్సరం            | 1 సం.            | 1సం     |
-| 2 years, 3 months     | 2 సంవత్సరాలు, 3 నెలలు | 2 సం., 3 నె.     | 2సం3నె  |
+| Duration              | Normal                 | Short            | Compact |
+| --------------------- | ---------------------- | ---------------- | ------- |
+| 0 seconds             | ఇప్పుడే                | ఇప్పుడే          | ఇప్పుడే |
+| 1 second              | 1 సెకను                | 1 సె.            | 1సె     |
+| 30 seconds            | 30 సెకన్లు             | 30 సెక.          | 30సె    |
+| 1 minute              | 1 నిమిషం               | 1 నిమి.          | 1ని     |
+| 2 minutes, 15 seconds | 2 నిమిషాలు, 15 సెకన్లు | 2 నిమి., 15 సెక. | 2ని15సె |
+| 5 minutes             | 5 నిమిషాలు             | 5 నిమి.          | 5ని     |
+| 45 minutes            | 45 నిమిషాలు            | 45 నిమి.         | 45ని    |
+| 1 hour                | 1 గంట                  | 1 గం.            | 1గం     |
+| 1½ hours              | 1½ గంటలు               | 1½ గం.           | 1½గం    |
+| 3 hours               | 3 గంటలు                | 3 గం.            | 3గం     |
+| 6 hours               | 6 గంటలు                | 6 గం.            | 6గం     |
+| 1 day                 | 1 రోజు                 | 1 రోజు           | 1రో     |
+| 1½ days               | 1½ రోజులు              | 1½ రోజులు        | 1½రో    |
+| 3 days                | 3 రోజులు               | 3 రోజులు         | 3రో     |
+| 1 week                | 1 వారం                 | 1 వా.            | 1వా     |
+| 2 weeks, 3 days       | 2 వారాలు, 3 రోజులు     | 2 వా., 3 రోజులు  | 2వా3రో  |
+| 1 month               | 1 నెల                  | 1 నె.            | 1నె     |
+| 6 months              | 6 నెలలు                | 6 నె.            | 6నె     |
+| 1 year                | 1 సంవత్సరం             | 1 సం.            | 1సం     |
+| 2 years, 3 months     | 2 సంవత్సరాలు, 3 నెలలు  | 2 సం., 3 నె.     | 2సం3నె  |
 
 ### Relative time
 
-| Offset        | Normal           | Compact     |
-| ------------- | ---------------- | ----------- |
-| 5 minutes ago | 5 నిమిషం క్రితం  | 5ని క్రితం  |
-| 2 hours ago   | 2 గంట క్రితం     | 2గం క్రితం  |
-| in 30 minutes | 30 నిమిషం తర్వాత | 30ని తర్వాత |
-| in 3 hours    | 3 గంట తర్వాత     | 3గం తర్వాత  |
+| Offset        | Normal             | Compact     |
+| ------------- | ------------------ | ----------- |
+| 5 minutes ago | 5 నిమిషాలు క్రితం  | 5ని క్రితం  |
+| 2 hours ago   | 2 గంటలు క్రితం     | 2గం క్రితం  |
+| in 30 minutes | 30 నిమిషాలు తర్వాత | 30ని తర్వాత |
+| in 3 hours    | 3 గంటలు తర్వాత     | 3గం తర్వాత  |
 
 ## Time
 
 ### Clock time formatting
 
-| Time            | Normal      | Short    | Compact |
-| --------------- | ----------- | -------- | ------- |
-| Midnight        | అర్ధరాత్రి  | 12:00 AM | 12:00a  |
-| 1:00 AM         | ఒకటి:00     | 1:00 AM  | 1:00a   |
-| 5 past 9        | తొమ్మిది:05 | 9:05 AM  | 9:05a   |
-| Quarter past 10 | పది:15      | 10:15 AM | 10:15a  |
-| Half past 11    | పదకొండు:30  | 11:30 AM | 11:30a  |
-| Noon            | మధ్యాహ్నం   | 12:00 PM | 12:00p  |
-| Quarter to 3    | రెండు:45    | 2:45 PM  | 2:45p   |
-| 5 to 6          | ఐదు:55      | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | ఎనిమిది:00  | 8:00 PM  | 8:00p   |
-| 10:30 PM        | పది:30      | 10:30 PM | 10:30p  |
-| 11:58 PM        | అర్ధరాత్రి  | 11:58 PM | 11:58p  |
+| Time            | Normal                     | Short    | Compact |
+| --------------- | -------------------------- | -------- | ------- |
+| Midnight        | అర్ధరాత్రి                 | 12:00 AM | 12:00a  |
+| 1:00 AM         | ఒకటి అయింది                | 1:00 AM  | 1:00a   |
+| 5 past 9        | తొమ్మిది దాటి ఐదు నిమిషాలు | 9:05 AM  | 9:05a   |
+| Quarter past 10 | పదింపావు                   | 10:15 AM | 10:15a  |
+| Half past 11    | పదకొండున్నర                | 11:30 AM | 11:30a  |
+| Noon            | మధ్యాహ్నం                  | 12:00 PM | 12:00p  |
+| Quarter to 3    | పావు తక్కువ మూడు           | 2:45 PM  | 2:45p   |
+| 5 to 6          | ఆరు కావడానికి ఐదు నిమిషాలు | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | ఎనిమిది అయింది             | 8:00 PM  | 8:00p   |
+| 10:30 PM        | పదిన్నర                    | 10:30 PM | 10:30p  |
+| 11:58 PM        | అర్ధరాత్రి                 | 11:58 PM | 11:58p  |

@@ -14,10 +14,10 @@ class SOLocale {
   static plural { Fn.new {|n| n == 1 ? "one" : "other" } }
   static units {
     return {
-      "day": {"one": "maalin {n}", "other": "maalmood {n}"},
-      "week": {"one": "toddobaad {n}", "other": "toddobaadyo {n}"},
-      "month": {"one": "bil {n}", "other": "bilood {n}"},
-      "year": {"one": "sano {n}", "other": "sanooyin {n}"},
+      "day": {"one": "{n} maalin", "other": "{n} maalmood"},
+      "week": "{n} toddobaad",
+      "month": {"one": "{n} bil", "other": "{n} bilood"},
+      "year": "{n} sano",
     }
   }
   static half { "{n}½" }

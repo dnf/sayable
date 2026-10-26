@@ -14,10 +14,10 @@ class AYLocale {
   static plural { Fn.new {|n| "other" } }
   static units {
     return {
-      "day": "uru {n}",
-      "week": "simana {n}",
-      "month": "phaxsi {n}",
-      "year": "mara {n}",
+      "day": "{n} uru",
+      "week": "{n} simana",
+      "month": "{n} phaxsi",
+      "year": "{n} mara",
     }
   }
   static half { "{0} chika" }
@@ -51,6 +51,7 @@ class AYLocale {
         "month": "{n}m",
         "year": "{n}y",
       },
+      "half": "{n}½",
       "delimiter": "",
     }
   }

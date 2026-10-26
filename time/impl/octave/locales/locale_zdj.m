@@ -11,10 +11,10 @@
 
 function loc = locale_zdj()
   loc.code = 'zdj';
-  loc.clock.hours = {'kumi na mbili', 'moja', 'mbili', 'tatu', 'nne', 'tano', 'sita', 'saba', 'nane', 'tisa', 'kumi', 'kumi na moja'};
+  loc.clock.hours = {'kumi na mbili', 'moja', 'mbili', 'ndraru', 'nne', 'ntsanu', 'sita', 'saba', 'nane', 'shenda', 'kumi', 'kumi na moja'};
   loc.clock.midnight = 'usiku wa manane';
   loc.clock.noon = 'adhuhuri';
-  loc.clock.patterns = struct("p0", '{h}:00', "p5", '{h}:05', "p10", '{h}:10', "p15", '{h}:15', "p20", '{h}:20', "p25", '{h}:25', "p30", '{h}:30', "p35", '{h}:35', "p40", '{h}:40', "p45", '{h}:45', "p50", '{h}:50', "p55", '{h}:55');
+  loc.clock.patterns = struct("p0", 'saa {h}', "p5", 'saa {h} na ntsanu', "p10", 'saa {h} na kumi', "p15", 'saa {h} na kumi na ntsanu', "p20", 'saa {h} na shirini', "p25", 'saa {h} na shirini na ntsanu', "p30", 'saa {h} na nusu', "p35", 'saa {h} na thalathini na ntsanu', "p40", 'saa {h} na arubaini', "p45", 'saa {h} na arubaini na ntsanu', "p50", 'saa {h} na hamsini', "p55", 'saa {h} na hamsini na ntsanu');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

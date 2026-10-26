@@ -6,36 +6,44 @@
 
 Plural rule: `other_only` (categories: other)
 
+## Needs review
+
+These parts of the data are uncertain. If you speak the language, please check the
+examples below against them and fix [tet.json](../../locales/tet.json),
+deleting the note from its `review` list once the data is right.
+
+- **`time.clock`** (medium confidence): 'tuku {h}' (tuku = o'clock strike), 'tuku {h} ho balun' for half, and 'tuku {h} ho minutu <N>' counting up with Tetum numerals (numeral after noun, as in the locale's 'minutu {n}'). Portuguese-style 'menus kuartu' subtraction exists in Tetun Prasa but was not used because I could not verify it; the counting-up form is safe but may feel long at :45.
+
 ## Age
 
 ### Age formatting
 
-| Age               | Normal            | Short            | Compact     |
-| ----------------- | ----------------- | ---------------- | ----------- |
-| Born today        | Foin moris        | Foin moris       | Foin moris  |
-| 1 day             | loron 1           | loron 1          | 1d          |
-| 3 days            | loron 3           | loron 3          | 3d          |
-| 6 days            | loron 6           | loron 6          | 6d          |
-| 1 week            | semana 1          | sem. 1           | 1w          |
-| 1 week, 1 day     | semana 1, loron 1 | sem. 1, loron 1  | 1w1d        |
-| 2 weeks           | semana 2          | sem. 2           | 2w          |
-| 2 weeks, 3 days   | semana 2, loron 3 | sem. 2, loron 3  | 2w3d        |
-| 3 months          | fulan 3           | fulan 3          | 3m          |
-| 6 months          | fulan 6           | fulan 6          | 6m          |
-| 11 months         | fulan 11          | fulan 11         | 11m         |
-| 12 months         | fulan 12          | fulan 12         | 12m         |
-| 23 months         | fulan 23          | fulan 23         | 23m         |
-| 2 years           | tinan 2           | tinan 2          | 2y          |
-| 2 years, 1 month  | tinan 2, fulan 1  | tinan 2, fulan 1 | 2y1m        |
-| 2 years, 6 months | tinan 2, fulan 6  | tinan 2, fulan 6 | 2y6m        |
-| 3 years           | tinan 3           | tinan 3          | 3y          |
-| 3½ years          | tinan 3 ho balun  | tinan 3 ho balun | 3y ho balun |
-| 5 years           | tinan 5           | tinan 5          | 5y          |
-| 5½ years          | tinan 5 ho balun  | tinan 5 ho balun | 5y ho balun |
-| 7 years           | tinan 7           | tinan 7          | 7y          |
-| 10 years          | tinan 10          | tinan 10         | 10y         |
-| 18 years          | tinan 18          | tinan 18         | 18y         |
-| 45 years          | tinan 45          | tinan 45         | 45y         |
+| Age               | Normal            | Short            | Compact    |
+| ----------------- | ----------------- | ---------------- | ---------- |
+| Born today        | Foin moris        | Foin moris       | Foin moris |
+| 1 day             | loron 1           | loron 1          | 1d         |
+| 3 days            | loron 3           | loron 3          | 3d         |
+| 6 days            | loron 6           | loron 6          | 6d         |
+| 1 week            | semana 1          | sem. 1           | 1w         |
+| 1 week, 1 day     | semana 1, loron 1 | sem. 1, loron 1  | 1w1d       |
+| 2 weeks           | semana 2          | sem. 2           | 2w         |
+| 2 weeks, 3 days   | semana 2, loron 3 | sem. 2, loron 3  | 2w3d       |
+| 3 months          | fulan 3           | fulan 3          | 3m         |
+| 6 months          | fulan 6           | fulan 6          | 6m         |
+| 11 months         | fulan 11          | fulan 11         | 11m        |
+| 12 months         | fulan 12          | fulan 12         | 12m        |
+| 23 months         | fulan 23          | fulan 23         | 23m        |
+| 2 years           | tinan 2           | tinan 2          | 2y         |
+| 2 years, 1 month  | tinan 2, fulan 1  | tinan 2, fulan 1 | 2y1m       |
+| 2 years, 6 months | tinan 2, fulan 6  | tinan 2, fulan 6 | 2y6m       |
+| 3 years           | tinan 3           | tinan 3          | 3y         |
+| 3½ years          | tinan 3 ho balun  | tinan 3 ho balun | 3½y        |
+| 5 years           | tinan 5           | tinan 5          | 5y         |
+| 5½ years          | tinan 5 ho balun  | tinan 5 ho balun | 5½y        |
+| 7 years           | tinan 7           | tinan 7          | 7y         |
+| 10 years          | tinan 10          | tinan 10         | 10y        |
+| 18 years          | tinan 18          | tinan 18         | 18y        |
+| 45 years          | tinan 45          | tinan 45         | 45y        |
 
 ### Stages
 
@@ -73,37 +81,37 @@ Relative to Saturday, March 15, 2025.
 | Day after tomorrow   | aban bainrua    | 17/3     |
 | Day before yesterday | horiseik liu    | 13/3     |
 | This Thursday (+5)   | Kinta ida ne'e  | 20/3     |
-| Last Monday (-4)     | Tersa kotuk     | 11/3     |
-| Next Wednesday (+12) | Kinta oin mai   | 27/3     |
-| Same month (+20)     | 4 Abríl         | 4/4      |
+| Last Tuesday (-4)    | Tersa kotuk     | 11/3     |
+| Next Thursday (+12)  | Kinta oin mai   | 27/3     |
+| Same year (+20)      | 4 Abríl         | 4/4      |
 | Different year       | 10 Janeiru 2026 | 10/1/26  |
 
 ## Duration
 
 ### Duration formatting
 
-| Duration              | Normal               | Short            | Compact     |
-| --------------------- | -------------------- | ---------------- | ----------- |
-| 0 seconds             | agora deit           | agora deit       | agora deit  |
-| 1 second              | segundu 1            | seg. 1           | 1s          |
-| 30 seconds            | segundu 30           | seg. 30          | 30s         |
-| 1 minute              | minutu 1             | min. 1           | 1m          |
-| 2 minutes, 15 seconds | minutu 2, segundu 15 | min. 2, seg. 15  | 2m15s       |
-| 5 minutes             | minutu 5             | min. 5           | 5m          |
-| 45 minutes            | minutu 45            | min. 45          | 45m         |
-| 1 hour                | oras 1               | oras 1           | 1h          |
-| 1½ hours              | oras 1 ho balun      | oras 1 ho balun  | 1h ho balun |
-| 3 hours               | oras 3               | oras 3           | 3h          |
-| 6 hours               | oras 6               | oras 6           | 6h          |
-| 1 day                 | loron 1              | loron 1          | 1d          |
-| 1½ days               | loron 1 ho balun     | loron 1 ho balun | 1d ho balun |
-| 3 days                | loron 3              | loron 3          | 3d          |
-| 1 week                | semana 1             | sem. 1           | 1w          |
-| 2 weeks, 3 days       | semana 2, loron 3    | sem. 2, loron 3  | 2w3d        |
-| 1 month               | fulan 1              | fulan 1          | 1mo         |
-| 6 months              | fulan 6              | fulan 6          | 6mo         |
-| 1 year                | tinan 1              | tinan 1          | 1y          |
-| 2 years, 3 months     | tinan 2, fulan 3     | tinan 2, fulan 3 | 2y3mo       |
+| Duration              | Normal               | Short            | Compact    |
+| --------------------- | -------------------- | ---------------- | ---------- |
+| 0 seconds             | agora deit           | agora deit       | agora deit |
+| 1 second              | segundu 1            | seg. 1           | 1s         |
+| 30 seconds            | segundu 30           | seg. 30          | 30s        |
+| 1 minute              | minutu 1             | min. 1           | 1m         |
+| 2 minutes, 15 seconds | minutu 2, segundu 15 | min. 2, seg. 15  | 2m15s      |
+| 5 minutes             | minutu 5             | min. 5           | 5m         |
+| 45 minutes            | minutu 45            | min. 45          | 45m        |
+| 1 hour                | oras 1               | oras 1           | 1h         |
+| 1½ hours              | oras 1 ho balun      | oras 1 ho balun  | 1½h        |
+| 3 hours               | oras 3               | oras 3           | 3h         |
+| 6 hours               | oras 6               | oras 6           | 6h         |
+| 1 day                 | loron 1              | loron 1          | 1d         |
+| 1½ days               | loron 1 ho balun     | loron 1 ho balun | 1½d        |
+| 3 days                | loron 3              | loron 3          | 3d         |
+| 1 week                | semana 1             | sem. 1           | 1w         |
+| 2 weeks, 3 days       | semana 2, loron 3    | sem. 2, loron 3  | 2w3d       |
+| 1 month               | fulan 1              | fulan 1          | 1mo        |
+| 6 months              | fulan 6              | fulan 6          | 6mo        |
+| 1 year                | tinan 1              | tinan 1          | 1y         |
+| 2 years, 3 months     | tinan 2, fulan 3     | tinan 2, fulan 3 | 2y3mo      |
 
 ### Relative time
 
@@ -118,16 +126,16 @@ Relative to Saturday, March 15, 2025.
 
 ### Clock time formatting
 
-| Time            | Normal              | Short    | Compact |
-| --------------- | ------------------- | -------- | ------- |
-| Midnight        | meiu-kalan          | 12:00 AM | 12:00a  |
-| 1:00 AM         | ida:00              | 1:00 AM  | 1:00a   |
-| 5 past 9        | sia:05              | 9:05 AM  | 9:05a   |
-| Quarter past 10 | sanulu:15           | 10:15 AM | 10:15a  |
-| Half past 11    | sanulu-resin-ida:30 | 11:30 AM | 11:30a  |
-| Noon            | meiu-loron          | 12:00 PM | 12:00p  |
-| Quarter to 3    | rua:45              | 2:45 PM  | 2:45p   |
-| 5 to 6          | lima:55             | 5:55 PM  | 5:55p   |
-| 8 o'clock PM    | ualu:00             | 8:00 PM  | 8:00p   |
-| 10:30 PM        | sanulu:30           | 10:30 PM | 10:30p  |
-| 11:58 PM        | meiu-kalan          | 11:58 PM | 11:58p  |
+| Time            | Normal                                  | Short    | Compact |
+| --------------- | --------------------------------------- | -------- | ------- |
+| Midnight        | meiu-kalan                              | 12:00 AM | 12:00a  |
+| 1:00 AM         | tuku ida                                | 1:00 AM  | 1:00a   |
+| 5 past 9        | tuku sia ho minutu lima                 | 9:05 AM  | 9:05a   |
+| Quarter past 10 | tuku sanulu ho minutu sanulu-resin-lima | 10:15 AM | 10:15a  |
+| Half past 11    | tuku sanulu-resin-ida ho balun          | 11:30 AM | 11:30a  |
+| Noon            | meiu-loron                              | 12:00 PM | 12:00p  |
+| Quarter to 3    | tuku rua ho minutu haatnulu-resin-lima  | 2:45 PM  | 2:45p   |
+| 5 to 6          | tuku lima ho minutu limanulu-resin-lima | 5:55 PM  | 5:55p   |
+| 8 o'clock PM    | tuku ualu                               | 8:00 PM  | 8:00p   |
+| 10:30 PM        | tuku sanulu ho balun                    | 10:30 PM | 10:30p  |
+| 11:58 PM        | meiu-kalan                              | 11:58 PM | 11:58p  |

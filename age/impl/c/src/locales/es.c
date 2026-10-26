@@ -25,7 +25,7 @@ const SaLocale sa_locale_es = {
         { NULL, { NULL, "{n} mes", NULL, NULL, NULL, "{n} meses" } },
         { NULL, { NULL, "{n} año", NULL, NULL, NULL, "{n} años" } }
     },
-    "{n} y medio", ", ", "Recién nacido",
+    "{0} y medio", ", ", "Recién nacido",
     {
         { "Recién nacido", "Recién nacida" },
         { "Bebé", "" },

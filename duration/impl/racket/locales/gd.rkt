@@ -28,7 +28,7 @@
         [else "other"]))
    (hash "second" (hash "type" "pluralized" "forms" (hash "one" "{n} diog" "two" "{n} dhiog" "few" "{n} diogan" "other" "{n} diog"))
          "minute" (hash "type" "pluralized" "forms" (hash "one" "{n} mhionaid" "two" "{n} mhionaid" "few" "{n} mionaidean" "other" "{n} mionaid"))
-         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} uair" "two" "{n} uair" "few" "{n} uairean" "other" "{n} uair"))
+         "hour" (hash "type" "pluralized" "forms" (hash "one" "{n} uair a thìde" "two" "{n} uair a thìde" "few" "{n} uairean a thìde" "other" "{n} uair a thìde"))
          "day" (hash "type" "pluralized" "forms" (hash "one" "{n} latha" "two" "{n} latha" "few" "{n} làithean" "other" "{n} latha"))
          "week" (hash "type" "pluralized" "forms" (hash "one" "{n} sheachdain" "two" "{n} sheachdain" "few" "{n} seachdainean" "other" "{n} seachdain"))
          "month" (hash "type" "pluralized" "forms" (hash "one" "{n} mhìos" "two" "{n} mhìos" "few" "{n} mìosan" "other" "{n} mìos"))

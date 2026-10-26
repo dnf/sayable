@@ -22,17 +22,17 @@ pub fn locale() -> AgeLocale {
         },
         units: Units {
             day: UnitForms::plural(&[
-                (PluralCategory::One, "יום {n}"),
+                (PluralCategory::One, "יום"),
                 (PluralCategory::Two, "יומיים"),
                 (PluralCategory::Other, "{n} ימים"),
             ]),
             week: UnitForms::plural(&[
-                (PluralCategory::One, "שבוע {n}"),
+                (PluralCategory::One, "שבוע"),
                 (PluralCategory::Two, "שבועיים"),
                 (PluralCategory::Other, "{n} שבועות"),
             ]),
             month: UnitForms::plural(&[
-                (PluralCategory::One, "חודש {n}"),
+                (PluralCategory::One, "חודש"),
                 (PluralCategory::Two, "חודשיים"),
                 (PluralCategory::Other, "{n} חודשים"),
             ]),
@@ -47,8 +47,8 @@ pub fn locale() -> AgeLocale {
         just_born: "רק נולד".to_string(),
         stages: Stages {
             newborn: StageLabel::Gendered { m: "רק נולד".to_string(), f: "רק נולדה".to_string() },
-            infant: StageLabel::Neutral("תינוק".to_string()),
-            toddler: StageLabel::Neutral("פעוט".to_string()),
+            infant: StageLabel::Gendered { m: "תינוק".to_string(), f: "תינוקת".to_string() },
+            toddler: StageLabel::Gendered { m: "פעוט".to_string(), f: "פעוטה".to_string() },
             child: StageLabel::Gendered { m: "ילד".to_string(), f: "ילדה".to_string() },
             teenager: StageLabel::Gendered { m: "נער".to_string(), f: "נערה".to_string() },
             adult: StageLabel::Gendered { m: "מבוגר".to_string(), f: "מבוגרת".to_string() },

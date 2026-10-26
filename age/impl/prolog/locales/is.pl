@@ -23,7 +23,7 @@ sa_unit('is', month, other, '{n} mánuðir').
 sa_unit('is', year, one, '{n} ár').
 sa_unit('is', year, other, '{n} ár').
 
-sa_half('is', '{0} og hálft').
+sa_half('is', '{n} og hálft').
 sa_delimiter('is', ', ').
 sa_just_born('is', 'Nýfætt').
 

@@ -42,7 +42,7 @@ let locale : duration_locale =
       [ (One, "{n} ವರ್ಷ")
       ; (Other, "{n} ವರ್ಷಗಳು")
       ]
-  ; half = "{0}ವರೆ"
+  ; half = "{n}½"
   ; delimiter = ", "
   ; just_now = "ಈಗಷ್ಟೇ"
   ; ago = "{0} ಹಿಂದೆ"

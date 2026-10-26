@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "am",
-        clock = #clock_config{hours = ["አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት", "ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ"], midnight = "እኩለ ሌሊት", noon = "እኩለ ቀን", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["ስድስት", "ሰባት", "ስምንት", "ዘጠኝ", "አሥር", "አሥራ አንድ", "አሥራ ሁለት", "አንድ", "ሁለት", "ሦስት", "አራት", "አምስት"], midnight = "እኩለ ሌሊት", noon = "እኩለ ቀን", patterns = [{0, "{h} ሰዓት"}, {5, "{h} ሰዓት ከአምስት ደቂቃ"}, {10, "{h} ሰዓት ከአሥር ደቂቃ"}, {15, "{h} ሰዓት ከሩብ"}, {20, "{h} ሰዓት ከሃያ ደቂቃ"}, {25, "{h} ሰዓት ከሃያ አምስት ደቂቃ"}, {30, "{h} ሰዓት ተኩል"}, {35, "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ"}, {40, "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ"}, {45, "ለ{next_h} ሰዓት ሩብ ጉዳይ"}, {50, "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ"}, {55, "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = true, format = "{h}:{mm}", am_pm = nothing}}}}
     }.

@@ -16,15 +16,15 @@ function plural_si([int]$n) {
 
 function locale_si {
     $units = @{
-        second = '{n} තත්පරය'
-        minute = '{n} මිනිත්තුව'
-        hour = '{n} පැය'
+        second = 'තත්පර {n}'
+        minute = 'මිනිත්තු {n}'
+        hour = 'පැය {n}'
         day = @{ one = 'දින {n}'; other = 'දින {n}' }
         week = @{ one = 'සති {n}'; other = 'සති {n}' }
         month = @{ one = 'මාස {n}'; other = 'මාස {n}' }
         year = @{ one = 'වසර {n}'; other = 'වසර {n}' }
     }
-    $half = '{0}යි භාගයයි'
+    $half = '{n}½'
     $delimiter = ', '
     $justNow = 'දැන්'
     $ago = '{0}ට පෙර'

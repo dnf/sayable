@@ -11,7 +11,7 @@
 
 _sayableage_plural_ml() {
     local n=$1
-    if [ "${n}" -eq 0 ] || [ "${n}" -eq 1 ]; then echo "one"; return; fi
+    if [ "${n}" -eq 1 ]; then echo "one"; return; fi
     echo "other"
 }
 
@@ -24,7 +24,7 @@ _sayableage_locale_ml() {
     _unit_month_other='{n} മാസങ്ങൾ'
     _unit_year_one='{n} വയസ്സ്'
     _unit_year_other='{n} വയസ്സ്'
-    _half='{0} ര'
+    _half='{n}½'
     _delimiter=', '
     _just_born='നവജാതശിശു'
     _stage_newborn='നവജാതശിശു'

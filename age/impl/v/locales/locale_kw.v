@@ -35,10 +35,10 @@ fn plural_kw(n int) PluralCategory {
 pub const locale_kw = AgeLocale{
 	code: 'kw'
 	plural: plural_kw
-	day: plural_unit({PluralCategory.zero: '{n} dydh', PluralCategory.one: 'dydh', PluralCategory.two: '{n} dhydh', PluralCategory.few: '{n} dydh', PluralCategory.many: '{n} dydh', PluralCategory.other: '{n} dydh'})
-	week: plural_unit({PluralCategory.zero: '{n} seythun', PluralCategory.one: 'seythun', PluralCategory.two: '{n} seythun', PluralCategory.few: '{n} seythun', PluralCategory.many: '{n} seythun', PluralCategory.other: '{n} seythun'})
-	month: plural_unit({PluralCategory.zero: '{n} mis', PluralCategory.one: 'mis', PluralCategory.two: '{n} vis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'})
-	year: plural_unit({PluralCategory.zero: '{n} blydhen', PluralCategory.one: 'blydhen', PluralCategory.two: '{n} vlydhen', PluralCategory.few: '{n} blydhen', PluralCategory.many: '{n} blydhen', PluralCategory.other: '{n} blydhen'})
+	day: plural_unit({PluralCategory.zero: '{n} dydh', PluralCategory.one: '{n} dydh', PluralCategory.two: '{n} dhydh', PluralCategory.few: '{n} dydh', PluralCategory.many: '{n} dydh', PluralCategory.other: '{n} dydh'})
+	week: plural_unit({PluralCategory.zero: '{n} seythun', PluralCategory.one: '{n} seythun', PluralCategory.two: '{n} seythun', PluralCategory.few: '{n} seythun', PluralCategory.many: '{n} seythun', PluralCategory.other: '{n} seythun'})
+	month: plural_unit({PluralCategory.zero: '{n} mis', PluralCategory.one: '{n} mis', PluralCategory.two: '{n} vis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'})
+	year: plural_unit({PluralCategory.zero: '{n} blydhen', PluralCategory.one: '{n} blydhen', PluralCategory.two: '{n} vlydhen', PluralCategory.few: '{n} blydhen', PluralCategory.many: '{n} blydhen', PluralCategory.other: '{n} blydhen'})
 	half: '{0} hag hanter'
 	delimiter: ', '
 	just_born: 'Nowyth genys'

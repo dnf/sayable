@@ -27,7 +27,7 @@ pub fn locale() -> DurationLocale {
             month: UnitForms::simple("{n} ka bulan"),
             year: UnitForms::simple("{n} ka tuig"),
         },
-        half: "{n}½".to_string(),
+        half: "{0} ug tunga".to_string(),
         delimiter: ", ".to_string(),
         just_now: "karon lang".to_string(),
         ago: "{0} ang milabay".to_string(),

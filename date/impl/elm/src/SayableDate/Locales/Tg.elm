@@ -53,8 +53,8 @@ locale =
     , dayAfterTomorrow = Just "пасфардо"
     , dayBeforeYesterday = Just "парирӯз"
     , thisWeekday = Just "ин {weekday}"
-    , nextWeekday = Just "{weekday}-и оянда"
-    , lastWeekday = Just "{weekday}-и гузашта"
+    , nextWeekday = Just "{weekday}и оянда"
+    , lastWeekday = Just "{weekday}и гузашта"
     , monthsInDate = Nothing
     , short =
         Just

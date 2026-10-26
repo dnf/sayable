@@ -11,10 +11,10 @@
 
 function loc = locale_fil()
   loc.code = 'fil';
-  loc.clock.hours = {'dose', 'una', 'dos', 'tres', 'kwatro', 'singko', 'seis', 'syete', 'otso', 'nuwebe', 'diyes', 'onse'};
+  loc.clock.hours = {'alas-dose', 'ala-una', 'alas-dos', 'alas-tres', 'alas-kuwatro', 'alas-singko', 'alas-sais', 'alas-siyete', 'alas-otso', 'alas-nuwebe', 'alas-diyes', 'alas-onse'};
   loc.clock.midnight = 'hatinggabi';
   loc.clock.noon = 'tanghali';
-  loc.clock.patterns = struct("p0", '{h} o''clock', "p5", 'lima dan {h}', "p10", 'sampu dan {h}', "p15", 'labinlima dan {h}', "p20", 'dalawampu dan {h}', "p25", 'dalawampu''t lima dan {h}', "p30", 'tatlumpu dan {h}', "p35", 'dalawampu''t lima bago mag {next_h}', "p40", 'dalawampu bago mag {next_h}', "p45", 'labinlima bago mag {next_h}', "p50", 'sampu bago mag {next_h}', "p55", 'lima bago mag {next_h}');
+  loc.clock.patterns = struct("p0", '{h}', "p5", '{h} y singko', "p10", '{h} y diyes', "p15", '{h} y kinse', "p20", '{h} y beynte', "p25", '{h} y beynte singko', "p30", '{h} y medya', "p35", 'menos beynte singko para {next_h}', "p40", 'menos beynte para {next_h}', "p45", 'menos kinse para {next_h}', "p50", 'menos diyes para {next_h}', "p55", 'menos singko para {next_h}');
   loc.short.clock.use24h = false;
   loc.short.clock.format = '{h}:{mm} {ampm}';
   loc.short.clock.am_pm = {'AM', 'PM'};

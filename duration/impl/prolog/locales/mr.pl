@@ -15,7 +15,8 @@ sd_plural('mr', 1, one) :- !.
 sd_plural('mr', _, other).
 
 sd_unit('mr', second, _, '{n} सेकंद').
-sd_unit('mr', minute, _, '{n} मिनिट').
+sd_unit('mr', minute, one, '{n} मिनिट').
+sd_unit('mr', minute, other, '{n} मिनिटे').
 sd_unit('mr', hour, _, '{n} तास').
 sd_unit('mr', day, one, '{n} दिवस').
 sd_unit('mr', day, other, '{n} दिवस').

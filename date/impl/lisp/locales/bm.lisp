@@ -16,7 +16,7 @@
 (defparameter *locale-bm*
   (make-date-locale
    :code "bm"
-   :months (list "Zanwuye" "Fewuriye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "ɔkutɔburu" "Nowanbudu" "Desanburu")
+   :months (list "Zanwuye" "Feburuye" "Marisi" "Awirili" "Mɛ" "Zuwɛn" "Zuluye" "Uti" "Sɛtanburu" "Ɔkutɔburu" "Nowanburu" "Desanburu")
    :weekdays (list "Kari" "Ntɛnɛn" "Tarata" "Araba" "Alamisa" "Juma" "Sibiri")
    :day-format "{n}"
    :day-format-exceptions nil
@@ -30,7 +30,7 @@
    :this-weekday "{weekday} nin"
    :next-weekday "{weekday} nata"
    :last-weekday "{weekday} tɛmɛnen"
-   :short-months (list "Zan" "Few" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "ɔku" "Now" "Des")
+   :short-months (list "Zan" "Feb" "Mar" "Awi" "Mɛ" "Zuw" "Zul" "Uti" "Sɛt" "Ɔku" "Now" "Des")
    :short-weekdays (list "Kar" "Ntɛ" "Tar" "Ara" "Ala" "Jum" "Sib")
    :short-day-format "{n}"
    :short-date-pattern "{day} {month}"

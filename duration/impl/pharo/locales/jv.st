@@ -28,7 +28,7 @@ jv
 	}).
 	locale half: '{0} setengah'.
 	locale delimiter: ', '.
-	locale justNow: 'saiki'.
+	locale justNow: 'lagi waé'.
 	locale ago: '{0} kepungkur'.
 	locale inFuture: 'ing {0}'.
 	locale short: (Dictionary newFromPairs: {

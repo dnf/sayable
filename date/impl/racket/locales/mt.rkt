@@ -21,7 +21,7 @@
   (date-locale
    "mt"
    (list "Jannar" "Frar" "Marzu" "April" "Mejju" "Ġunju" "Lulju" "Awwissu" "Settembru" "Ottubru" "Novembru" "Diċembru")
-   (list "Il-Ħadd" "It-Tnejn" "It-Tlieta" "L-Erbgħa" "Il-Ħamis" "Il-Ġimgħa" "Is-Sibt")
+   (list "il-Ħadd" "it-Tnejn" "it-Tlieta" "l-Erbgħa" "il-Ħamis" "il-Ġimgħa" "is-Sibt")
    "{n}"
    (hash)
    "{day} {month}"

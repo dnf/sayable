@@ -28,18 +28,18 @@ locale_tzm <- list(
   just_born = "Iɣ d illul",
   stages = list(
     newborn = "Iɣ d illul",
-    infant = "Agellid",
+    infant = "Llufan",
     toddler = list(m = "Aḥenjir", f = "Taḥenjirt"),
-    child = list(m = "Afrux", f = "Tafruxṭ"),
+    child = list(m = "Afrux", f = "Tafruxt"),
     teenager = list(m = "Aɛrim", f = "Taɛrimt"),
     adult = list(m = "Argaz", f = "Tamṭṭuṭ")
   ),
   short = list(
     units = list(
-      day = "{n} d",
-      week = "{n} wk",
-      month = "{n} mo",
-      year = "{n} yr"
+      day = list(one = "{n} ass", other = "{n} ussan"),
+      week = list(one = "{n} imalass", other = "{n} imalassn"),
+      month = list(one = "{n} ayyur", other = "{n} ayyurn"),
+      year = list(one = "{n} aseggas", other = "{n} iseggasen")
     )
   ),
   compact = list(

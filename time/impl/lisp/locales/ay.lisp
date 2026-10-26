@@ -17,10 +17,10 @@
   (make-time-locale
    :code "ay"
    :clock (make-clock-config
-    :hours (list "tunka payani" "maya" "paya" "kimsa" "pusi" "phisqa" "suxta" "paqallqu" "kimsaqallqu" "llantunka" "tunka" "tunka mayani")
+    :hours (list "tunka payani" "maya" "paya" "kimsa" "pusi" "phisqa" "suxta" "paqallqu" "kimsaqallqu" "llätunka" "tunka" "tunka mayani")
     :midnight "aruma chika"
     :noon "chika uru"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "{h} ura") (cons 5 "{h} ura phisqa minutuni") (cons 10 "{h} ura tunka minutuni") (cons 15 "{h} ura tunka phisqani minutuni") (cons 20 "{h} ura pä tunka minutuni") (cons 25 "{h} ura pä tunka phisqani minutuni") (cons 30 "{h} ura chikani") (cons 35 "{h} ura kimsa tunka phisqani minutuni") (cons 40 "{h} ura pusi tunka minutuni") (cons 45 "{h} ura pusi tunka phisqani minutuni") (cons 50 "{h} ura phisqa tunka minutuni") (cons 55 "{h} ura phisqa tunka phisqani minutuni")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

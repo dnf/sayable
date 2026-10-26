@@ -29,12 +29,18 @@
       "infant": "Ɓinngel",
       "toddler": "Cukalel",
       "child": "Suka",
-      "teenager": "Suka debbo",
+      "teenager": {
+        "m": "Suka gorko",
+        "f": "Suka debbo"
+      },
       "adult": "Mawɗo"
     },
     "short": {
       "units": {
-        "day": "ñalɗe {n}",
+        "day": {
+          "one": "ñalawma {n}",
+          "other": "ñalɗe {n}"
+        },
         "week": {
           "one": "yontere {n}",
           "other": "yontereeji {n}"
@@ -51,7 +57,10 @@
     },
     "compact": {
       "units": {
-        "day": "ñalɗe {n}",
+        "day": {
+          "one": "ñalawma {n}",
+          "other": "ñalɗe {n}"
+        },
         "week": {
           "one": "yont {n}",
           "other": "yontji {n}"
@@ -175,7 +184,10 @@
           "one": "waktu {n}",
           "other": "waktuuji {n}"
         },
-        "day": "ñalɗe {n}",
+        "day": {
+          "one": "ñalawma {n}",
+          "other": "ñalɗe {n}"
+        },
         "week": {
           "one": "yontere {n}",
           "other": "yontereeji {n}"
@@ -208,7 +220,10 @@
           "one": "wak {n}",
           "other": "wakji {n}"
         },
-        "day": "ñalɗe {n}",
+        "day": {
+          "one": "ñalawma {n}",
+          "other": "ñalɗe {n}"
+        },
         "week": {
           "one": "yont {n}",
           "other": "yontji {n}"
@@ -255,18 +270,18 @@
       "midnight": "jamma hejjere",
       "noon": "zuhr",
       "patterns": {
-        "0": "{h}:00",
-        "5": "{h}:05",
-        "10": "{h}:10",
-        "15": "{h}:15",
-        "20": "{h}:20",
-        "25": "{h}:25",
-        "30": "{h}:30",
-        "35": "{h}:35",
-        "40": "{h}:40",
-        "45": "{h}:45",
-        "50": "{h}:50",
-        "55": "{h}:55"
+        "0": "waktu {h}",
+        "5": "waktu {h} e hojomaaje joy",
+        "10": "waktu {h} e hojomaaje sappo",
+        "15": "waktu {h} e hojomaaje sappo e joy",
+        "20": "waktu {h} e hojomaaje noogas",
+        "25": "waktu {h} e hojomaaje noogas e joy",
+        "30": "waktu {h} e feccere",
+        "35": "waktu {h} e hojomaaje cappanɗe tati e joy",
+        "40": "waktu {h} e hojomaaje cappanɗe nay",
+        "45": "waktu {h} e hojomaaje cappanɗe nay e joy",
+        "50": "waktu {h} e hojomaaje cappanɗe joy",
+        "55": "waktu {h} e hojomaaje cappanɗe joy e joy"
       }
     },
     "short": {
@@ -289,5 +304,12 @@
         "format": "{h}:{mm}{ampm}"
       }
     }
-  }
+  },
+  "review": [
+    {
+      "section": "time.clock",
+      "confidence": "medium",
+      "note": "Pulaar 'waktu {h}' (waktu = hour, already used by this locale), additive 'waktu {h} e hojomaaje N' and 'waktu {h} e feccere' (half). Fula numerals: joy, sappo, sappo e joy, noogas, cappanɗe tati/nay/joy. 'hojomaaje' reused from the locale's own minute unit; if it is the plural (as the audit suspects) it is still right after numerals >1. Standard 12-hour count. Noon 'zuhr' left as is (not in my batch's data fixes)."
+    }
+  ]
 }

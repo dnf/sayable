@@ -29,7 +29,7 @@ BM = DurationLocale(
     delimiter=", ",
     just_now="sisan",
     ago="{0} bɔlen",
-    in_future="ka {0}",
+    in_future="{0} kɔnɔ",
     short=CompactnessOverride(
         units={
             "second": "sek. {n}",
@@ -41,7 +41,7 @@ BM = DurationLocale(
             "year": "san {n}",
         },
         ago="{0} bɔlen",
-        in_future="ka {0}",
+        in_future="{0} kɔnɔ",
     ),
     compact=CompactnessOverride(
         units={
@@ -56,6 +56,6 @@ BM = DurationLocale(
         half="{n}½",
         delimiter="",
         ago="{0} bɔlen",
-        in_future="ka {0}",
+        in_future="{0} kɔnɔ",
     ),
 )

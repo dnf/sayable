@@ -13,9 +13,9 @@ locale_sn <- list(
   code = "sn",
   plural = function(n) if (n == 1) "one" else "other",
   units = list(
-    second = "{n} sekondi",
-    minute = "{n} miniti",
-    hour = "{n} awa",
+    second = list(one = "sekondi {n}", other = "masekondi {n}"),
+    minute = list(one = "miniti {n}", other = "maminitsi {n}"),
+    hour = list(one = "awa {n}", other = "maawa {n}"),
     day = list(one = "zuva {n}", other = "mazuva {n}"),
     week = list(one = "vhiki {n}", other = "mavhiki {n}"),
     month = list(one = "mwedzi {n}", other = "mwedzi {n}"),

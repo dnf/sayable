@@ -29,7 +29,7 @@
                  (cons :toddler "Umwana")
                  (cons :child "Umwana")
                  (cons :teenager "Umunyamata")
-                 (cons :adult "Umulumendo"))
+                 (cons :adult "Umukalamba"))
    :short-units (list (cons :day '((:one . "ubushiku {n}") (:other . "inshiku {n}")))
                        (cons :week '((:one . "umulungu {n}") (:other . "imilungu {n}")))
                        (cons :month '((:one . "umweshi {n}") (:other . "imyeshi {n}")))

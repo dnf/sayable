@@ -25,7 +25,7 @@ var DZ = sa.AgeLocale{
 		Month: sa.SimpleUnit("ཟླ་ {n}"),
 		Year:  sa.SimpleUnit("ལོ་ {n}"),
 	},
-	Half:      "{0} ཕྱེད",
+	Half:      "{0} དང་ཕྱེད",
 	Delimiter: " ",
 	JustBorn:  "གསར་སྐྱེས",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

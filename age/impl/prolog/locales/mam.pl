@@ -14,7 +14,7 @@
 sa_plural('mam', _, other).
 
 sa_unit('mam', day, _, '{n} q\'ij').
-sa_unit('mam', week, _, '{n} xjaw').
+sa_unit('mam', week, _, '{n} seman').
 sa_unit('mam', month, _, '{n} xjaw').
 sa_unit('mam', year, _, '{n} ab\'q\'ii').
 
@@ -30,7 +30,7 @@ sa_stage('mam', teenager, _, 'Q\'a').
 sa_stage('mam', adult, _, 'Xjal').
 
 short_sa_unit('mam', day, _, '{n} q\'ij').
-short_sa_unit('mam', week, _, '{n} xjaw').
+short_sa_unit('mam', week, _, '{n} seman').
 short_sa_unit('mam', month, _, '{n} xjaw').
 short_sa_unit('mam', year, _, '{n} ab\'.').
 
@@ -38,4 +38,5 @@ compact_sa_unit('mam', day, _, '{n}d').
 compact_sa_unit('mam', week, _, '{n}w').
 compact_sa_unit('mam', month, _, '{n}m').
 compact_sa_unit('mam', year, _, '{n}y').
+compact_sa_half('mam', '{n}½').
 compact_sa_delimiter('mam', '').

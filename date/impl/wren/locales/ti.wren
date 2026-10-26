@@ -28,7 +28,7 @@ class TILocale {
   static yesterday { "ትማሊ" }
   static dayAfterTomorrow { "ድሕሪ ጽባሕ" }
   static dayBeforeYesterday { "ቅድሚ ትማሊ" }
-  static thisWeekday { "እዛ {weekday}" }
+  static thisWeekday { "እዚ {weekday}" }
   static nextWeekday { "ዝመጽእ {weekday}" }
   static lastWeekday { "ዝሓለፈ {weekday}" }
   static monthsInDate { null }

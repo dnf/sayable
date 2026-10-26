@@ -17,10 +17,10 @@
   (make-time-locale
    :code "luo"
    :clock (make-clock-config
-    :hours (list "apar gi ariyo" "achiel" "ariyo" "adek" "ang'wen" "abich" "auchiel" "abiriyo" "aboro" "ochiko" "apar" "apar gi achiel")
+    :hours (list "auchiel" "abiriyo" "aboro" "ochiko" "apar" "apar gachiel" "apar gariyo" "achiel" "ariyo" "adek" "ang'wen" "abich")
     :midnight "dier otieno"
     :noon "odiechieng' tir"
-    :patterns (list (cons 0 "{h}:00") (cons 5 "{h}:05") (cons 10 "{h}:10") (cons 15 "{h}:15") (cons 20 "{h}:20") (cons 25 "{h}:25") (cons 30 "{h}:30") (cons 35 "{h}:35") (cons 40 "{h}:40") (cons 45 "{h}:45") (cons 50 "{h}:50") (cons 55 "{h}:55")))
+    :patterns (list (cons 0 "saa {h}") (cons 5 "saa {h} gi dakika abich") (cons 10 "saa {h} gi dakika apar") (cons 15 "saa {h} gi dakika apar gabich") (cons 20 "saa {h} gi dakika piero ariyo") (cons 25 "saa {h} gi dakika piero ariyo gabich") (cons 30 "saa {h} gi nus") (cons 35 "saa {h} gi dakika piero adek gabich") (cons 40 "saa {h} gi dakika piero ang'wen") (cons 45 "saa {h} gi dakika piero ang'wen gabich") (cons 50 "saa {h} gi dakika piero abich") (cons 55 "saa {h} gi dakika piero abich gabich")))
    :short-clock (make-short-clock-config :use24h nil :format "{h}:{mm} {ampm}" :am-pm (cons "AM" "PM"))
    :compact-clock (make-short-clock-config :use24h nil :format "{h}:{mm}{ampm}" :am-pm (cons "a" "p"))
 ))

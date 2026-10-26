@@ -16,7 +16,7 @@
 locale() ->
     #time_locale{
         code = "ee",
-        clock = #clock_config{hours = ["wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"], midnight = "zã titina", noon = "ŋdɔ", patterns = [{0, "{h}:00"}, {5, "{h}:05"}, {10, "{h}:10"}, {15, "{h}:15"}, {20, "{h}:20"}, {25, "{h}:25"}, {30, "{h}:30"}, {35, "{h}:35"}, {40, "{h}:40"}, {45, "{h}:45"}, {50, "{h}:50"}, {55, "{h}:55"}]},
+        clock = #clock_config{hours = ["wuieve", "ɖeka", "eve", "etɔ̃", "ene", "atɔ̃", "ade", "adre", "enyi", "asieke", "ewo", "wuiɖeka"], midnight = "zã titina", noon = "ŋdɔ", patterns = [{0, "ga {h}"}, {5, "ga {h} kple aɖabaƒoƒo atɔ̃"}, {10, "ga {h} kple aɖabaƒoƒo ewo"}, {15, "ga {h} kple aɖabaƒoƒo wuiatɔ̃"}, {20, "ga {h} kple aɖabaƒoƒo blaeve"}, {25, "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃"}, {30, "ga {h} kple afã"}, {35, "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃"}, {40, "ga {h} kple aɖabaƒoƒo blaene"}, {45, "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃"}, {50, "ga {h} kple aɖabaƒoƒo blaatɔ̃"}, {55, "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃"}]},
         short = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm} {ampm}", am_pm = {just, {"AM", "PM"}}}}}},
         compact = {just, #time_compactness_override{clock = {just, #short_clock_config{use24h = false, format = "{h}:{mm}{ampm}", am_pm = {just, {"a", "p"}}}}}}
     }.

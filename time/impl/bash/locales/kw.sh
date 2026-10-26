@@ -10,21 +10,21 @@
 # Source: locales/kw.json
 
 _sayabletime_locale_kw() {
-    _clock_hours=('12' '1' '2' '3' '4' '5' '6' '7' '8' '9' '10' '11')
+    _clock_hours=('dewdhek' 'unn' 'diw' 'teyr' 'peder' 'pymp' 'hwegh' 'seyth' 'eth' 'naw' 'deg' 'unnek')
     _clock_midnight='hanter nos'
     _clock_noon='hanter dydh'
-    _clock_pattern_0='{h}:00'
-    _clock_pattern_5='{h}:05'
-    _clock_pattern_10='{h}:10'
-    _clock_pattern_15='{h}:15'
-    _clock_pattern_20='{h}:20'
-    _clock_pattern_25='{h}:25'
-    _clock_pattern_30='{h}:30'
-    _clock_pattern_35='{h}:35'
-    _clock_pattern_40='{h}:40'
-    _clock_pattern_45='{h}:45'
-    _clock_pattern_50='{h}:50'
-    _clock_pattern_55='{h}:55'
+    _clock_pattern_0='{h} eur'
+    _clock_pattern_5='pymp mynysen wosa {h}'
+    _clock_pattern_10='deg mynysen wosa {h}'
+    _clock_pattern_15='kwarter wosa {h}'
+    _clock_pattern_20='ugens mynysen wosa {h}'
+    _clock_pattern_25='pymp mynysen warn ugens wosa {h}'
+    _clock_pattern_30='hanter wosa {h}'
+    _clock_pattern_35='pymp mynysen warn ugens dhe {next_h}'
+    _clock_pattern_40='ugens mynysen dhe {next_h}'
+    _clock_pattern_45='kwarter dhe {next_h}'
+    _clock_pattern_50='deg mynysen dhe {next_h}'
+    _clock_pattern_55='pymp mynysen dhe {next_h}'
     _short_clock_use24h=1
     _short_clock_format='{h}:{mm}'
     _compact_clock_use24h=1

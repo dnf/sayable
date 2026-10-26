@@ -44,7 +44,7 @@ fn build_mk() -> AgeLocale:
     var toddler = stage_neutral("Мало дете")
     var child = stage_neutral("Дете")
     var teenager = stage_neutral("Тинејџер")
-    var adult = stage_neutral("Возрасен")
+    var adult = stage_gendered("Возрасен", "Возрасна")
 
     var short_ovr = CompactnessOverride()
     short_ovr.day = plural_unit(one="{n} ден", other="{n} дена")

@@ -13,7 +13,7 @@
 module locales
 
 fn plural_ml(n int) PluralCategory {
-	if n == 0 || n == 1 {
+	if n == 1 {
 		return .one
 	}
 	return .other
@@ -29,7 +29,7 @@ pub const locale_ml = DurationLocale{
 	week: plural_unit({PluralCategory.one: '{n} ആഴ്ച', PluralCategory.other: '{n} ആഴ്ചകൾ'})
 	month: plural_unit({PluralCategory.one: '{n} മാസം', PluralCategory.other: '{n} മാസങ്ങൾ'})
 	year: plural_unit({PluralCategory.one: '{n} വർഷം', PluralCategory.other: '{n} വർഷങ്ങൾ'})
-	half: '{0} ര'
+	half: '{n}½'
 	delimiter: ', '
 	just_now: 'ഇപ്പോൾ'
 	ago: '{0} മുമ്പ്'

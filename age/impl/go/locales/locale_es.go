@@ -28,7 +28,7 @@ var ES = sa.AgeLocale{
 		Month: sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} mes", sa.Other: "{n} meses"}),
 		Year:  sa.PluralUnit(map[sa.PluralCategory]string{sa.One: "{n} año", sa.Other: "{n} años"}),
 	},
-	Half:      "{n} y medio",
+	Half:      "{0} y medio",
 	Delimiter: ", ",
 	JustBorn:  "Recién nacido",
 	Stages: struct{ Newborn, Infant, Toddler, Child, Teenager, Adult sa.StageLabel }{

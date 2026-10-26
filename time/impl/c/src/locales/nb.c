@@ -14,7 +14,7 @@
 const StTimeLocale st_locale_nb = {
     "nb",
     {
-        { "tolv", "en", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve" },
+        { "tolv", "ett", "to", "tre", "fire", "fem", "seks", "sju", "åtte", "ni", "ti", "elleve" },
         "midnatt",
         "middag",
         { "klokka {h}", "fem over {h}", "ti over {h}", "kvart over {h}", "tjue over {h}", "fem på halv {next_h}", "halv {next_h}", "fem over halv {next_h}", "tjue på {next_h}", "kvart på {next_h}", "ti på {next_h}", "fem på {next_h}" }

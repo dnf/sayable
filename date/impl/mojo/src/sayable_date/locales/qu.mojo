@@ -50,7 +50,7 @@ fn build_qu() -> DateLocale:
     var tomorrow = "paqarin"
     var yesterday = "qayna"
     var day_after_tomorrow = "minchha"
-    var day_before_yesterday = "qayna p'unchaw"
+    var day_before_yesterday = "qayninpa"
     var this_weekday = "kay {weekday}"
     var next_weekday = "hamuq {weekday}"
     var last_weekday = "qayna {weekday}"

@@ -13,18 +13,18 @@
 
 (def locale
   {:code "kl"
-   :plural (fn [_] :other)
-   :second {:type :simple :form "sekundit {n}"}
-   :minute {:type :simple :form "minutsit {n}"}
-   :hour {:type :simple :form "nalunaaqutap akunnera {n}"}
-   :day {:type :simple :form "ullut {n}"}
-   :week {:type :simple :form "sapaatit {n}"}
-   :month {:type :simple :form "qaammatit {n}"}
-   :year {:type :simple :form "ukiut {n}"}
+   :plural (fn [n] (if (== n 1) :one :other))
+   :second {:type :pluralized :forms {:one "sekundi {n}" :other "sekundit {n}"}}
+   :minute {:type :pluralized :forms {:one "minutsi {n}" :other "minutsit {n}"}}
+   :hour {:type :pluralized :forms {:one "nalunaaquttap akunnera {n}" :other "nalunaaquttap akunneri {n}"}}
+   :day {:type :pluralized :forms {:one "ulloq {n}" :other "ullut {n}"}}
+   :week {:type :pluralized :forms {:one "sapaatip akunnera {n}" :other "sapaatip akunneri {n}"}}
+   :month {:type :pluralized :forms {:one "qaammat {n}" :other "qaammatit {n}"}}
+   :year {:type :pluralized :forms {:one "ukioq {n}" :other "ukiut {n}"}}
    :half "{0} affaa"
    :delimiter ", "
    :just-now "maanna"
    :ago "{0} matuma siorna"
    :in-future "{0} siunissami"
-   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "min. {n}"} :hour {:type :simple :form "nal. {n}"} :day {:type :simple :form "ull. {n}"} :week {:type :simple :form "sap. {n}"} :month {:type :simple :form "qaam. {n}"} :year {:type :simple :form "uk. {n}"} :half nil :delimiter nil :ago "{0} matuma siorna" :in-future "{0} siunissami"}
-   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half nil :delimiter "" :ago "{0} matuma siorna" :in-future "{0} siunissami"}})
+   :short {:second {:type :simple :form "sek. {n}"} :minute {:type :simple :form "min. {n}"} :hour {:type :simple :form "nal. {n}"} :day {:type :simple :form "ull. {n}"} :week {:type :simple :form "sap. ak. {n}"} :month {:type :simple :form "qaam. {n}"} :year {:type :simple :form "uk. {n}"} :half nil :delimiter nil :ago "{0} matuma siorna" :in-future "{0} siunissami"}
+   :compact {:second {:type :simple :form "{n}s"} :minute {:type :simple :form "{n}m"} :hour {:type :simple :form "{n}h"} :day {:type :simple :form "{n}d"} :week {:type :simple :form "{n}w"} :month {:type :simple :form "{n}mo"} :year {:type :simple :form "{n}y"} :half "{n}½" :delimiter "" :ago "{0} matuma siorna" :in-future "{0} siunissami"}})

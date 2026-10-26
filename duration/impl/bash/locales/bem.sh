@@ -21,7 +21,7 @@ _sayableduration_locale_bem() {
     _unit_minute_one='iminiti {n}'
     _unit_minute_other='amaminiti {n}'
     _unit_hour_one='insa {n}'
-    _unit_hour_other='amanso {n}'
+    _unit_hour_other='insa {n}'
     _unit_day_one='ubushiku {n}'
     _unit_day_other='inshiku {n}'
     _unit_week_one='umulungu {n}'

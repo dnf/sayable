@@ -50,7 +50,7 @@ fn build_jv() -> DateLocale:
     var tomorrow = "sesuk"
     var yesterday = "wingi"
     var day_after_tomorrow = "embèn"
-    var day_before_yesterday = "dhèk wingi"
+    var day_before_yesterday = "wingenané"
     var this_weekday = "{weekday} iki"
     var next_weekday = "{weekday} ngarep"
     var last_weekday = "{weekday} wingi"

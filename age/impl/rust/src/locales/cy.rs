@@ -29,7 +29,7 @@ pub fn locale() -> AgeLocale {
                 (PluralCategory::One, "{n} diwrnod"),
                 (PluralCategory::Two, "{n} ddiwrnod"),
                 (PluralCategory::Few, "{n} diwrnod"),
-                (PluralCategory::Many, "{n} niwrnod"),
+                (PluralCategory::Many, "{n} diwrnod"),
                 (PluralCategory::Other, "{n} diwrnod"),
             ]),
             week: UnitForms::plural(&[
@@ -50,7 +50,7 @@ pub fn locale() -> AgeLocale {
             ]),
             year: UnitForms::plural(&[
                 (PluralCategory::Zero, "{n} blwyddyn"),
-                (PluralCategory::One, "{n} blwyddyn"),
+                (PluralCategory::One, "{n} flwyddyn"),
                 (PluralCategory::Two, "{n} flynedd"),
                 (PluralCategory::Few, "{n} blynedd"),
                 (PluralCategory::Many, "{n} blynedd"),

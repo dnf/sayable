@@ -24,7 +24,7 @@ module SayableAge
       just_born: "Sơ sinh",
       stages: {
         "newborn" => StageLabel.new("Sơ sinh"),
-        "infant" => StageLabel.new("Trẻ sơ sinh"),
+        "infant" => StageLabel.new("Trẻ nhũ nhi"),
         "toddler" => StageLabel.new("Trẻ mới biết đi"),
         "child" => StageLabel.new("Trẻ em"),
         "teenager" => StageLabel.new("Thiếu niên"),
