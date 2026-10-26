@@ -426,6 +426,7 @@ check:
     (cd time && {{python}} -m codegen.generate --check)
     {{python}} .hecatron/tools/codegen/dockerfile.py --check
     {{python}} tools/generate_compatibility.py --check
+    {{python}} tools/check_workflow_components.py
     uv run --with geopandas --with matplotlib {{python}} tools/geography/generate.py --check
 
 # Generate Dockerfile from per-language snippets
