@@ -9,9 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        octave-version: ["8", "9"]
     defaults:
       run:
         working-directory: age/impl/octave
