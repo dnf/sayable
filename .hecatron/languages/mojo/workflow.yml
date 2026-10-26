@@ -24,22 +24,25 @@ jobs:
       - name: Run tests
         run: pixi run mojo run -I src tests/test_format_age.mojo
 
-      # Check the real CLI against the canonical spec and the Python
-      # reference, independently of this language's own tests
-      # (docs/testing.md).
-      - name: Build CLI
-        if: runner.os != 'Windows'
-        working-directory: .
+  # Check the real CLI against the canonical spec and the Python reference,
+  # independently of this language's own tests (docs/testing.md). The CLI
+  # links all four libraries, and on Linux that build exhausts a 16 GB
+  # runner (memory log showed swap filling); on macOS it peaks at ~3.4 GB.
+  cli:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: prefix-dev/setup-pixi@v0.8.8
+        with:
+          run-install: false
+      - name: Install Mojo
+        working-directory: age/impl/mojo
         run: |
-          # TEMPORARY diagnostic: memory over time during the CLI build
-          free -m; nproc
-          vmstat -S M 5 &
-          bash cli/impl/mojo/build.sh
+          pixi init -c https://conda.modular.com/max/ -c conda-forge .
+          pixi add "mojo==0.26.1.0"
+      - name: Build CLI
+        run: bash cli/impl/mojo/build.sh
       - name: CLI REPL conformance and harness (single REPL process)
-        if: runner.os != 'Windows'
-        working-directory: .
         run: python3 cli/check-repl.py cli/impl/mojo/sayable && bash cli/test-harness.sh cli/impl/mojo/sayable
       - name: Fuzz against the Python reference
-        if: runner.os != 'Windows'
-        working-directory: .
         run: python3 cli/fuzz.py --langs mojo -n 2000

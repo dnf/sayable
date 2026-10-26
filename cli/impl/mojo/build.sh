@@ -19,10 +19,8 @@ else
 fi
 
 mkdir -p "${SCRIPT_DIR}/build"
-# One codegen thread and no debug info: linking all four libraries made
-# parallel codegen exhaust a 16 GB CI runner (debug info alone took the
-# macOS peak from ~8.9 GB to ~3.4 GB).
-"${mojo[@]}" build -g0 --num-threads=1 \
+# -g0: without debug info the build peaks at ~3.4 GB instead of ~8.9 GB.
+"${mojo[@]}" build -g0 \
     -I "${PROJECT_ROOT}/age/impl/mojo/src" \
     -I "${PROJECT_ROOT}/date/impl/mojo/src" \
     -I "${PROJECT_ROOT}/duration/impl/mojo/src" \
