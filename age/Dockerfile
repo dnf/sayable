@@ -56,7 +56,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     make \
     octave \
     opam \
-    openjdk-17-jdk-headless \
     perl \
     php-cli \
     php-mbstring \
@@ -72,6 +71,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rlwrap \
     ruby \
     ruby-bundler \
+    ruby-dev \
     sbcl \
     swi-prolog \
     tcl \
@@ -80,6 +80,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xz-utils \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
+
+# JDKs: Temurin, each version the components use (java's config.json and pin
+# files), in /usr/lib/jvm/temurin-<version> as java's install.sh installs
+# them, checksum verified; the default version, installed first, is linked as
+# /usr/lib/jvm/hecatron-default. Shared by the JVM languages (Clojure too), and
+# each installed once. A prefix resolves to its newest release.
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+ENV JAVA_HOME="/usr/lib/jvm/hecatron-default"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
 
 # Clojure CLI
 RUN curl -fsSL https://download.clojure.org/install/linux-install.sh | bash
@@ -103,14 +120,19 @@ RUN GLEAM_ARCH="$(uname -m)" && \
     curl -fsSL "https://github.com/gleam-lang/gleam/releases/download/v1.14.0/gleam-v1.14.0-${GLEAM_ARCH}-unknown-linux-musl.tar.gz" \
     | tar xz -C /usr/local/bin gleam
 
-# Go: the latest release, as install.sh installs it (golangci-lint needs a
-# recent Go)
-RUN ARCH="$(dpkg --print-architecture)" && \
-    VERSION="$(curl -fsSL 'https://go.dev/VERSION?m=text' | head -1)" && \
-    curl -fsSL "https://go.dev/dl/${VERSION}.linux-${ARCH}.tar.gz" | tar -C /usr/local -xz
+# Go: the default version (config.json) in /usr/local/go, as install.sh
+# installs it, and each other version the components use through Go's own
+# toolchain downloads. A prefix resolves to its newest stable release.
+RUN V="1.27.3" && \
+    if [ -z "1" ]; then V="$(curl -fsSL 'https://go.dev/dl/?mode=json&include=all' | python3 -c 'import json, sys; p = sys.argv[1].split("."); vs = [r["version"][2:] for r in json.load(sys.stdin) if r["stable"] and r["version"][2:].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: [int(x) for x in v.split(".")]))' "${V}")"; fi && \
+    if [ ! -x /usr/local/go/bin/go ]; then \
+      curl -fsSL "https://go.dev/dl/go${V}.linux-$(dpkg --print-architecture).tar.gz" | tar -C /usr/local -xz; \
+    elif [ "$(/usr/local/go/bin/go env GOVERSION)" != "go${V}" ]; then \
+      GOTOOLCHAIN="go${V}" /usr/local/go/bin/go version; \
+    fi
 ENV PATH="/usr/local/go/bin:${PATH}"
-# golangci-lint, built with this Go (see install.sh)
-RUN GOBIN=/usr/local/bin go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
+# golangci-lint, built with the default Go (see install.sh)
+RUN GOBIN=/usr/local/bin GOTOOLCHAIN=local go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
 
 # Goose
 RUN GOOSE_VERSION="v2026.3" && \
@@ -123,6 +145,29 @@ RUN GOOSE_VERSION="v2026.3" && \
     else \
         echo "Skipping Goose: no Linux $(uname -m) release"; \
     fi
+
+# JDKs: Temurin, each version the components use (java's config.json and pin
+# files), in /usr/lib/jvm/temurin-<version> as java's install.sh installs
+# them, checksum verified; the default version, installed first, is linked as
+# /usr/lib/jvm/hecatron-default. Shared by Java, Kotlin, Scala and Groovy, and
+# each installed once. A prefix resolves to its newest release.
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+ENV JAVA_HOME="/usr/lib/jvm/hecatron-default"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+# Groovy 5.1.3's own compiler, where groovy's install.sh puts it
+RUN curl -fsSL -o /tmp/groovy.zip https://repo1.maven.org/maven2/org/apache/groovy/groovy-binary/5.1.3/groovy-binary-5.1.3.zip && \
+    unzip -q /tmp/groovy.zip -d /tmp/groovy && mkdir -p /opt/groovy && \
+    mv /tmp/groovy/* /opt/groovy/5.1.3 && rm -rf /tmp/groovy /tmp/groovy.zip && \
+    ln -sfn /opt/groovy/5.1.3/bin/groovy /usr/local/bin/groovy && \
+    ln -sfn /opt/groovy/5.1.3/bin/groovyc /usr/local/bin/groovyc
 
 # Haskell (GHC + cabal) via ghcup
 RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
@@ -138,11 +183,50 @@ RUN cd /tmp && \
     cd janet-1.37.1 && make -j$(nproc) && make install && \
     rm -rf /tmp/janet-1.37.1
 
+# JDKs: Temurin, each version the components use (java's config.json and pin
+# files), in /usr/lib/jvm/temurin-<version> as java's install.sh installs
+# them, checksum verified; the default version, installed first, is linked as
+# /usr/lib/jvm/hecatron-default. Shared by Java, Kotlin, Scala and Groovy, and
+# each installed once. A prefix resolves to its newest release.
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+ENV JAVA_HOME="/usr/lib/jvm/hecatron-default"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
 # Julia: the official tarball (Debian and Ubuntu don't package it), latest stable
 RUN ARCH="$(uname -m)" && \
     URL="$(curl -fsSL https://julialang-s3.julialang.org/bin/versions.json | python3 -c 'import json, sys; r = json.load(sys.stdin); v = max((v for v in r if r[v]["stable"] and v.replace(".", "").isdigit()), key=lambda v: tuple(map(int, v.split(".")))); print(next(f["url"] for f in r[v]["files"] if f["os"] == "linux" and f["arch"] == sys.argv[1] and f["kind"] == "archive" and f["extension"] == "tar.gz"))' "$ARCH")" && \
     mkdir -p /opt/julia && curl -fsSL "$URL" | tar -C /opt/julia --strip-components=1 -xz && \
     ln -s /opt/julia/bin/julia /usr/local/bin/julia
+
+# JDKs: Temurin, each version the components use (java's config.json and pin
+# files), in /usr/lib/jvm/temurin-<version> as java's install.sh installs
+# them, checksum verified; the default version, installed first, is linked as
+# /usr/lib/jvm/hecatron-default. Shared by Java, Kotlin, Scala and Groovy, and
+# each installed once. A prefix resolves to its newest release.
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+ENV JAVA_HOME="/usr/lib/jvm/hecatron-default"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+# Kotlin 2.4.21's own compiler, where kotlin's install.sh puts it
+RUN curl -fsSL -o /tmp/kotlin.zip https://github.com/JetBrains/kotlin/releases/download/v2.4.21/kotlin-compiler-2.4.21.zip && \
+    unzip -q /tmp/kotlin.zip -d /tmp/kotlin && mkdir -p /opt/kotlin && \
+    mv /tmp/kotlin/* /opt/kotlin/2.4.21 && rm -rf /tmp/kotlin /tmp/kotlin.zip && \
+    ln -sfn /opt/kotlin/2.4.21/bin/kotlinc /usr/local/bin/kotlinc && \
+    ln -sfn /opt/kotlin/2.4.21/bin/kotlin /usr/local/bin/kotlin
 
 # Lua testing framework (busted) and linter (luacheck, which needs Lua 5.4;
 # see install.sh) via LuaRocks
@@ -205,15 +289,42 @@ RUN VERSION="$(curl -fsSLI -o /dev/null -w '%{url_effective}' https://github.com
     curl -fsSL "https://github.com/PowerShell/PowerShell/releases/download/v${VERSION}/powershell-${VERSION}-linux-${ARCH}.tar.gz" | tar -C /opt/microsoft/powershell/7 -xz && \
     chmod +x /opt/microsoft/powershell/7/pwsh && \
     ln -s /opt/microsoft/powershell/7/pwsh /usr/local/bin/pwsh
-RUN pwsh -Command "Install-Module -Name Pester -Force -SkipPublisherCheck -Scope AllUsers"
+RUN pwsh -Command "Install-Module -Name Pester, PSScriptAnalyzer -Force -SkipPublisherCheck -Scope AllUsers"
 
-# uv (Python package manager)
+# uv (Python package manager), and each Python version the components use,
+# where installed.sh finds them (uv resolves a prefix itself)
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:${PATH}"
+RUN uv python install 3.15.1
 
-# Rust stable via rustup
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# Rust via rustup, with each version the components use as a toolchain; the
+# default version (config.json), installed first, is rustup's default
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain none
 ENV PATH="/root/.cargo/bin:${PATH}"
+RUN rustup toolchain install 1.99.1 --profile default && \
+    { rustup default 2>/dev/null | grep -q . || rustup default 1.99.1; }
+
+# JDKs: Temurin, each version the components use (java's config.json and pin
+# files), in /usr/lib/jvm/temurin-<version> as java's install.sh installs
+# them, checksum verified; the default version, installed first, is linked as
+# /usr/lib/jvm/hecatron-default. Shared by Java, Kotlin, Scala and Groovy, and
+# each installed once. A prefix resolves to its newest release.
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+ENV JAVA_HOME="/usr/lib/jvm/hecatron-default"
+ENV PATH="${JAVA_HOME}/bin:${PATH}"
+
+# Scala 3.3.8 (LTS)'s own compiler, where scala's install.sh puts it
+RUN mkdir -p /opt/scala/3.3.8 && \
+    curl -fsSL https://github.com/scala/scala3/releases/download/3.3.8/scala3-3.3.8.tar.gz | tar -C /opt/scala/3.3.8 --strip-components=1 -xz && \
+    ln -sfn /opt/scala/3.3.8/bin/scala /usr/local/bin/scala && \
+    ln -sfn /opt/scala/3.3.8/bin/scalac /usr/local/bin/scalac
 
 # Swift: swift.org's build of the latest release for the image's distribution,
 # in its own prefix as install.sh installs it (merged into /usr/local, SwiftPM
@@ -225,15 +336,27 @@ RUN VERSION="$(curl -fsSL https://www.swift.org/api/v1/install/releases.json | p
     curl -fsSL "https://download.swift.org/swift-${VERSION}-release/$(echo "$PLATFORM" | tr -d .)${SUFFIX}/swift-${VERSION}-RELEASE/swift-${VERSION}-RELEASE-${PLATFORM}${SUFFIX}.tar.gz" | tar -C /opt/swift --strip-components=1 -xz && \
     ln -s /opt/swift/usr/bin/swift /opt/swift/usr/bin/swiftc /opt/swift/usr/bin/swift-format /opt/swift/usr/bin/sourcekit-lsp /usr/local/bin/
 
-# Node.js 22 via NodeSource
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
-    && apt-get install -y --no-install-recommends nodejs \
-    && rm -rf /var/lib/apt/lists/*
+# Node.js: each version the components use, the official build in
+# /opt/node/<version>, as install.sh installs it; the default version
+# (config.json), installed first, is linked into /usr/local/bin. A prefix
+# resolves to its newest release.
+RUN V="24.22.1" && \
+    if [ -z "1" ]; then V="$(curl -fsSL https://nodejs.org/dist/index.json | python3 -c 'import json, sys; p = sys.argv[1].split("."); vs = [r["version"][1:] for r in json.load(sys.stdin) if r["version"][1:].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: [int(x) for x in v.split(".")]))' "${V}")"; fi && \
+    if [ ! -d "/opt/node/${V}" ]; then \
+      mkdir -p "/opt/node/${V}" && \
+      curl -fsSL "https://nodejs.org/dist/v${V}/node-v${V}-linux-$(dpkg --print-architecture | sed 's/amd64/x64/').tar.xz" | \
+        tar -C "/opt/node/${V}" --strip-components=1 -xJ; \
+    fi && \
+    if [ ! -e /usr/local/bin/node ]; then \
+      for tool in node npm npx corepack; do ln -s "/opt/node/${V}/bin/${tool}" "/usr/local/bin/${tool}"; done; \
+    fi
 
-# Elm via npm — no arm64 Linux binary available
+# Elm via npm — no arm64 Linux binary available. Global packages go under
+# the official Node.js build's own directory, so link the commands onto PATH.
 RUN ARCH="$(dpkg --print-architecture)" && \
     if [ "$ARCH" != "arm64" ] && [ "$ARCH" != "aarch64" ]; then \
-      npm install -g elm elm-test; \
+      npm install -g elm elm-test && \
+      for tool in elm elm-test; do ln -sfn "$(npm prefix -g)/bin/${tool}" "/usr/local/bin/${tool}"; done; \
     else \
       echo "Skipping Elm: no arm64 Linux binary available"; \
     fi
@@ -245,7 +368,8 @@ RUN git clone --depth 1 https://github.com/vlang/v.git /opt/v && \
 
 # wren_cli, as install.sh installs it: the 0.4.0 release on x86_64 (the only
 # Linux build published), else built from source at the last commit on main
-# (0.4.0's source no longer compiles with current GCC)
+# (0.4.0's source no longer compiles with current GCC), without the x86-only
+# -m64 its makefile passes
 RUN if [ "$(uname -m)" = "x86_64" ]; then \
         curl -fsSL -o /tmp/wren-cli.zip https://github.com/wren-lang/wren-cli/releases/download/0.4.0/wren-cli-linux-0.4.0.zip && \
         unzip -o /tmp/wren-cli.zip -d /tmp && \
@@ -254,6 +378,7 @@ RUN if [ "$(uname -m)" = "x86_64" ]; then \
     else \
         COMMIT=18553636618a4d33f10af9b5ab92da6431784a8c && \
         curl -fsSL "https://github.com/wren-lang/wren-cli/archive/${COMMIT}.tar.gz" | tar -C /tmp -xz && \
+        sed -i 's/ -m64//g' "/tmp/wren-cli-${COMMIT}/projects/make/wren_cli.make" && \
         make -C "/tmp/wren-cli-${COMMIT}/projects/make" -j"$(nproc)" && \
         cp "/tmp/wren-cli-${COMMIT}/bin/wren_cli" /usr/local/bin/wren_cli && \
         rm -rf "/tmp/wren-cli-${COMMIT}"; \
