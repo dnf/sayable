@@ -18,6 +18,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     strategy:
       matrix:
         perl-version: ["5.32", "5.36", "5.38", "5.40"]
