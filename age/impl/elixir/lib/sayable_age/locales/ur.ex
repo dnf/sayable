@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.UR do
   def locale do
     %{
       code: "ur",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} دن", other: "{n} دن"},
         week: %{one: "{n} ہفتہ", other: "{n} ہفتے"},

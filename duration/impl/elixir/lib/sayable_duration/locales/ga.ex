@@ -15,15 +15,51 @@ defmodule SayableDuration.Locales.GA do
   def locale do
     %{
       code: "ga",
-      plural: (fn 1 -> :one; 2 -> :two; n when n >= 3 and n <= 6 -> :few; n when n >= 7 and n <= 10 -> :many; _ -> :other end),
+      plural: fn
+        1 -> :one
+        2 -> :two
+        n when n >= 3 and n <= 6 -> :few
+        n when n >= 7 and n <= 10 -> :many
+        _ -> :other
+      end,
       units: %{
-        second: %{one: "{n} soicind", two: "{n} shoicind", few: "{n} shoicind", many: "{n} soicind", other: "{n} soicind"},
-        minute: %{one: "{n} nóiméad", two: "{n} nóiméad", few: "{n} nóiméad", many: "{n} nóiméad", other: "{n} nóiméad"},
-        hour: %{one: "{n} uair an chloig", two: "{n} uair an chloig", few: "{n} huaire an chloig", many: "{n} n-uaire an chloig", other: "{n} uair an chloig"},
+        second: %{
+          one: "{n} soicind",
+          two: "{n} shoicind",
+          few: "{n} shoicind",
+          many: "{n} soicind",
+          other: "{n} soicind"
+        },
+        minute: %{
+          one: "{n} nóiméad",
+          two: "{n} nóiméad",
+          few: "{n} nóiméad",
+          many: "{n} nóiméad",
+          other: "{n} nóiméad"
+        },
+        hour: %{
+          one: "{n} uair an chloig",
+          two: "{n} uair an chloig",
+          few: "{n} huaire an chloig",
+          many: "{n} n-uaire an chloig",
+          other: "{n} uair an chloig"
+        },
         day: %{one: "{n} lá", two: "{n} lá", few: "{n} lá", many: "{n} lá", other: "{n} lá"},
-        week: %{one: "{n} seachtain", two: "{n} sheachtain", few: "{n} seachtaine", many: "{n} seachtaine", other: "{n} seachtain"},
+        week: %{
+          one: "{n} seachtain",
+          two: "{n} sheachtain",
+          few: "{n} seachtaine",
+          many: "{n} seachtaine",
+          other: "{n} seachtain"
+        },
         month: %{one: "{n} mhí", two: "{n} mhí", few: "{n} mhí", many: "{n} mí", other: "{n} mí"},
-        year: %{one: "{n} bhliain", two: "{n} bhliain", few: "{n} bliana", many: "{n} mbliana", other: "{n} bliain"}
+        year: %{
+          one: "{n} bhliain",
+          two: "{n} bhliain",
+          few: "{n} bliana",
+          many: "{n} mbliana",
+          other: "{n} bliain"
+        }
       },
       half: "{0} go leith",
       delimiter: ", ",
@@ -46,7 +82,13 @@ defmodule SayableDuration.Locales.GA do
       compact: %{
         units: %{
           second: "{n} soic",
-          minute: %{one: "{n} nóim", two: "{n} nóim", few: "{n} nóim", many: "{n}n", other: "{n} nóim"},
+          minute: %{
+            one: "{n} nóim",
+            two: "{n} nóim",
+            few: "{n} nóim",
+            many: "{n}n",
+            other: "{n} nóim"
+          },
           hour: "{n} u",
           day: "{n} lá",
           week: "{n} scht",

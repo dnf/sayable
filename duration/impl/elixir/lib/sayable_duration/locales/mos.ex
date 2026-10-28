@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.MOS do
   def locale do
     %{
       code: "mos",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sẽk {n}",
         minute: "minit {n}",

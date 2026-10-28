@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.FA do
   def locale do
     %{
       code: "fa",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} ثانیه",
         minute: "{n} دقیقه",

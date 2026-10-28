@@ -15,12 +15,30 @@ defmodule SayableAge.Locales.GA do
   def locale do
     %{
       code: "ga",
-      plural: (fn 1 -> :one; 2 -> :two; n when n >= 3 and n <= 6 -> :few; n when n >= 7 and n <= 10 -> :many; _ -> :other end),
+      plural: fn
+        1 -> :one
+        2 -> :two
+        n when n >= 3 and n <= 6 -> :few
+        n when n >= 7 and n <= 10 -> :many
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} lá", two: "{n} lá", few: "{n} lá", many: "{n} lá", other: "{n} lá"},
-        week: %{one: "{n} seachtain", two: "{n} sheachtain", few: "{n} seachtaine", many: "{n} seachtaine", other: "{n} seachtain"},
+        week: %{
+          one: "{n} seachtain",
+          two: "{n} sheachtain",
+          few: "{n} seachtaine",
+          many: "{n} seachtaine",
+          other: "{n} seachtain"
+        },
         month: %{one: "{n} mhí", two: "{n} mhí", few: "{n} mhí", many: "{n} mí", other: "{n} mí"},
-        year: %{one: "{n} bhliain", two: "{n} bhliain", few: "{n} bliana", many: "{n} mbliana", other: "{n} bliain"}
+        year: %{
+          one: "{n} bhliain",
+          two: "{n} bhliain",
+          few: "{n} bliana",
+          many: "{n} mbliana",
+          other: "{n} bliain"
+        }
       },
       half: "{0} go leith",
       delimiter: ", ",

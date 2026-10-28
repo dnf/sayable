@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.ET do
   def locale do
     %{
       code: "et",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} sekund", other: "{n} sekundit"},
         minute: %{one: "{n} minut", other: "{n} minutit"},

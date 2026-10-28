@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.MAM do
   def locale do
     %{
       code: "mam",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} q'ij",
         week: "{n} seman",

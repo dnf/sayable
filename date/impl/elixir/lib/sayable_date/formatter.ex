@@ -164,7 +164,8 @@ defmodule SayableDate.Formatter do
           day_format: day_format,
           day_format_exceptions: day_format_exceptions,
           date_pattern: Map.get(ovr, :date_pattern, locale.date_pattern),
-          date_pattern_with_year: Map.get(ovr, :date_pattern_with_year, locale.date_pattern_with_year),
+          date_pattern_with_year:
+            Map.get(ovr, :date_pattern_with_year, locale.date_pattern_with_year),
           today: Map.get(ovr, :today, locale.today),
           tomorrow: Map.get(ovr, :tomorrow, locale.tomorrow),
           yesterday: Map.get(ovr, :yesterday, locale.yesterday)

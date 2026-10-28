@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.KTU do
   def locale do
     %{
       code: "ktu",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sekonde {n}", other: "masekonde {n}"},
         minute: %{one: "miniti {n}", other: "maminiti {n}"},

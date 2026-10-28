@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.YAO do
   def locale do
     %{
       code: "yao",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sekunde {n}", other: "masekunde {n}"},
         minute: %{one: "dakika {n}", other: "madakika {n}"},

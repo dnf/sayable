@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.KM do
   def locale do
     %{
       code: "km",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} វិនាទី",
         minute: "{n} នាទី",

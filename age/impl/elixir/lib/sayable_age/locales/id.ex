@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.ID do
   def locale do
     %{
       code: "id",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} hari",
         week: "{n} minggu",

@@ -15,7 +15,16 @@ defmodule SayableAge.Locales.RU do
   def locale do
     %{
       code: "ru",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :many end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) ->
+          :few
+
+        _ ->
+          :many
+      end,
       units: %{
         day: %{one: "{n} день", few: "{n} дня", many: "{n} дней", other: "{n} дней"},
         week: %{one: "{n} неделя", few: "{n} недели", many: "{n} недель", other: "{n} недель"},

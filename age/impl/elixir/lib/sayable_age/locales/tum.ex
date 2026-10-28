@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.TUM do
   def locale do
     %{
       code: "tum",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "dazi {n}", other: "madazi {n}"},
         week: %{one: "sabata {n}", other: "masabata {n}"},

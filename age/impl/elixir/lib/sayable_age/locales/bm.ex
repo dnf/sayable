@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.BM do
   def locale do
     %{
       code: "bm",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "don {n}",
         week: "dɔgɔkun {n}",

@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.ZDJ do
   def locale do
     %{
       code: "zdj",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "suku {n}",
         week: "djumwa {n}",

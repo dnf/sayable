@@ -15,12 +15,47 @@ defmodule SayableAge.Locales.CY do
   def locale do
     %{
       code: "cy",
-      plural: (fn 0 -> :zero; 1 -> :one; 2 -> :two; 3 -> :few; 6 -> :many; _ -> :other end),
+      plural: fn
+        0 -> :zero
+        1 -> :one
+        2 -> :two
+        3 -> :few
+        6 -> :many
+        _ -> :other
+      end,
       units: %{
-        day: %{zero: "{n} diwrnod", one: "{n} diwrnod", two: "{n} ddiwrnod", few: "{n} diwrnod", many: "{n} diwrnod", other: "{n} diwrnod"},
-        week: %{zero: "{n} wythnos", one: "{n} wythnos", two: "{n} wythnos", few: "{n} wythnos", many: "{n} wythnos", other: "{n} wythnos"},
-        month: %{zero: "{n} mis", one: "{n} mis", two: "{n} fis", few: "{n} mis", many: "{n} mis", other: "{n} mis"},
-        year: %{zero: "{n} blwyddyn", one: "{n} flwyddyn", two: "{n} flynedd", few: "{n} blynedd", many: "{n} blynedd", other: "{n} blynedd"}
+        day: %{
+          zero: "{n} diwrnod",
+          one: "{n} diwrnod",
+          two: "{n} ddiwrnod",
+          few: "{n} diwrnod",
+          many: "{n} diwrnod",
+          other: "{n} diwrnod"
+        },
+        week: %{
+          zero: "{n} wythnos",
+          one: "{n} wythnos",
+          two: "{n} wythnos",
+          few: "{n} wythnos",
+          many: "{n} wythnos",
+          other: "{n} wythnos"
+        },
+        month: %{
+          zero: "{n} mis",
+          one: "{n} mis",
+          two: "{n} fis",
+          few: "{n} mis",
+          many: "{n} mis",
+          other: "{n} mis"
+        },
+        year: %{
+          zero: "{n} blwyddyn",
+          one: "{n} flwyddyn",
+          two: "{n} flynedd",
+          few: "{n} blynedd",
+          many: "{n} blynedd",
+          other: "{n} blynedd"
+        }
       },
       half: "{0} a hanner",
       delimiter: ", ",
@@ -35,16 +70,37 @@ defmodule SayableAge.Locales.CY do
       },
       short: %{
         units: %{
-          day: %{zero: "{n} diwrnod", one: "{n} diwrnod", two: "{n} ddiwrnod", few: "{n} diwrnod", many: "{n} diwrnod", other: "{n} diwrnod"},
+          day: %{
+            zero: "{n} diwrnod",
+            one: "{n} diwrnod",
+            two: "{n} ddiwrnod",
+            few: "{n} diwrnod",
+            many: "{n} diwrnod",
+            other: "{n} diwrnod"
+          },
           week: "{n} ws",
-          month: %{zero: "{n} mis", one: "{n} mis", two: "{n} fis", few: "{n} mis", many: "{n} mis", other: "{n} mis"},
+          month: %{
+            zero: "{n} mis",
+            one: "{n} mis",
+            two: "{n} fis",
+            few: "{n} mis",
+            many: "{n} mis",
+            other: "{n} mis"
+          },
           year: "{n} bl"
         }
       },
       compact: %{
         units: %{
           day: "{n}d",
-          week: %{zero: "{n} ws", one: "{n}w", two: "{n} ws", few: "{n} ws", many: "{n} ws", other: "{n}w"},
+          week: %{
+            zero: "{n} ws",
+            one: "{n}w",
+            two: "{n} ws",
+            few: "{n} ws",
+            many: "{n} ws",
+            other: "{n}w"
+          },
           month: "{n}m",
           year: "{n}bl"
         },

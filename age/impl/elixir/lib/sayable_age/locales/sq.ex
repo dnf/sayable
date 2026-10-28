@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.SQ do
   def locale do
     %{
       code: "sq",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} ditë", other: "{n} ditë"},
         week: %{one: "{n} javë", other: "{n} javë"},

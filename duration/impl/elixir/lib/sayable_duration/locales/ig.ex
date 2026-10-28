@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.IG do
   def locale do
     %{
       code: "ig",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sekọnd {n}",
         minute: "nkeji {n}",

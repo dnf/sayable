@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.KEK do
   def locale do
     %{
       code: "kek",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} segundo",
         minute: "{n} minuto",

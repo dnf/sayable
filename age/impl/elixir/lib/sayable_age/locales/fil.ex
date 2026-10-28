@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.FIL do
   def locale do
     %{
       code: "fil",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} araw",
         week: "{n} linggo",

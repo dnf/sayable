@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.IS do
   def locale do
     %{
       code: "is",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} sekúnda", other: "{n} sekúndur"},
         minute: %{one: "{n} mínúta", other: "{n} mínútur"},

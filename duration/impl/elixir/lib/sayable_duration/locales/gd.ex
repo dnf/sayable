@@ -15,15 +15,40 @@ defmodule SayableDuration.Locales.GD do
   def locale do
     %{
       code: "gd",
-      plural: (fn n when n in [1, 11] -> :one; n when n in [2, 12] -> :two; n when (n >= 3 and n <= 10) or (n >= 13 and n <= 19) -> :few; _ -> :other end),
+      plural: fn
+        n when n in [1, 11] -> :one
+        n when n in [2, 12] -> :two
+        n when (n >= 3 and n <= 10) or (n >= 13 and n <= 19) -> :few
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} diog", two: "{n} dhiog", few: "{n} diogan", other: "{n} diog"},
-        minute: %{one: "{n} mhionaid", two: "{n} mhionaid", few: "{n} mionaidean", other: "{n} mionaid"},
-        hour: %{one: "{n} uair a thìde", two: "{n} uair a thìde", few: "{n} uairean a thìde", other: "{n} uair a thìde"},
+        minute: %{
+          one: "{n} mhionaid",
+          two: "{n} mhionaid",
+          few: "{n} mionaidean",
+          other: "{n} mionaid"
+        },
+        hour: %{
+          one: "{n} uair a thìde",
+          two: "{n} uair a thìde",
+          few: "{n} uairean a thìde",
+          other: "{n} uair a thìde"
+        },
         day: %{one: "{n} latha", two: "{n} latha", few: "{n} làithean", other: "{n} latha"},
-        week: %{one: "{n} sheachdain", two: "{n} sheachdain", few: "{n} seachdainean", other: "{n} seachdain"},
+        week: %{
+          one: "{n} sheachdain",
+          two: "{n} sheachdain",
+          few: "{n} seachdainean",
+          other: "{n} seachdain"
+        },
         month: %{one: "{n} mhìos", two: "{n} mhìos", few: "{n} mìosan", other: "{n} mìos"},
-        year: %{one: "{n} bhliadhna", two: "{n} bhliadhna", few: "{n} bliadhna", other: "{n} bliadhna"}
+        year: %{
+          one: "{n} bhliadhna",
+          two: "{n} bhliadhna",
+          few: "{n} bliadhna",
+          other: "{n} bliadhna"
+        }
       },
       half: "{0} gu leth",
       delimiter: ", ",

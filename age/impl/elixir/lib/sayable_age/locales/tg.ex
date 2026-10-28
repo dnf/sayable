@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.TG do
   def locale do
     %{
       code: "tg",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} рӯз",
         week: "{n} ҳафта",

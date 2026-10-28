@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.BEM do
   def locale do
     %{
       code: "bem",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "ubushiku {n}", other: "inshiku {n}"},
         week: %{one: "umulungu {n}", other: "imilungu {n}"},

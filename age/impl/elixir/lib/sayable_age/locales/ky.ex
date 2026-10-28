@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.KY do
   def locale do
     %{
       code: "ky",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: "{n} күн",
         week: "{n} апта",

@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.KEK do
   def locale do
     %{
       code: "kek",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} q'e",
         week: "{n} seman",

@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.YUE do
   def locale do
     %{
       code: "yue",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n}日",
         week: "{n}個星期",

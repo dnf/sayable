@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.PIS do
   def locale do
     %{
       code: "pis",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} dei",
         week: "{n} wik",

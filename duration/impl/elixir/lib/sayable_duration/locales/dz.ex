@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.DZ do
   def locale do
     %{
       code: "dz",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "སྐར་ཆ་ {n}",
         minute: "སྐར་མ་ {n}",

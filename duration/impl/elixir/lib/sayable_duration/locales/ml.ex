@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.ML do
   def locale do
     %{
       code: "ml",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} സെക്കൻഡ്", other: "{n} സെക്കൻഡുകൾ"},
         minute: %{one: "{n} മിനിറ്റ്", other: "{n} മിനിറ്റുകൾ"},

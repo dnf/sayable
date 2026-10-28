@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.NUS do
   def locale do
     %{
       code: "nus",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "cäŋ {n}", other: "cëŋ {n}"},
         week: %{one: "korɛ {n}", other: "korni {n}"},

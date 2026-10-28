@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.GL do
   def locale do
     %{
       code: "gl",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} día", other: "{n} días"},
         week: %{one: "{n} semana", other: "{n} semanas"},

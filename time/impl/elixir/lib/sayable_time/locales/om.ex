@@ -49,16 +49,16 @@ defmodule SayableTime.Locales.OM do
       },
       short: %{
         clock: %{
-        use24h: false,
-        format: "{h}:{mm} {ampm}",
-        am_pm: {"AM", "PM"}
+          use24h: false,
+          format: "{h}:{mm} {ampm}",
+          am_pm: {"AM", "PM"}
         }
       },
       compact: %{
         clock: %{
-        use24h: false,
-        format: "{h}:{mm}{ampm}",
-        am_pm: {"a", "p"}
+          use24h: false,
+          format: "{h}:{mm}{ampm}",
+          am_pm: {"a", "p"}
         }
       }
     }

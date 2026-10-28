@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.TH do
   def locale do
     %{
       code: "th",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} วินาที",
         minute: "{n} นาที",

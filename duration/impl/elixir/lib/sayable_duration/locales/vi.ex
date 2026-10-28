@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.VI do
   def locale do
     %{
       code: "vi",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} giây",
         minute: "{n} phút",

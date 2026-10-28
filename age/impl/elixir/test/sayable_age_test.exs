@@ -2,12 +2,22 @@ defmodule SayableAgeTest do
   use ExUnit.Case, async: true
 
   # Helpers
-  defp age(dob, as_of), do: SayableAge.format_age(SayableAge.Locales.EN.locale(), :normal, dob, as_of)
-  defp age_short(dob, as_of), do: SayableAge.format_age(SayableAge.Locales.EN.locale(), :short, dob, as_of)
-  defp age_compact(dob, as_of), do: SayableAge.format_age(SayableAge.Locales.EN.locale(), :compact, dob, as_of)
+  defp age(dob, as_of),
+    do: SayableAge.format_age(SayableAge.Locales.EN.locale(), :normal, dob, as_of)
+
+  defp age_short(dob, as_of),
+    do: SayableAge.format_age(SayableAge.Locales.EN.locale(), :short, dob, as_of)
+
+  defp age_compact(dob, as_of),
+    do: SayableAge.format_age(SayableAge.Locales.EN.locale(), :compact, dob, as_of)
+
   defp age_locale(locale, dob, as_of), do: SayableAge.format_age(locale, :normal, dob, as_of)
-  defp stage(dob, as_of), do: SayableAge.format_stage(SayableAge.Locales.EN.locale(), dob, as_of, nil)
-  defp stage_locale(locale, dob, as_of, gender), do: SayableAge.format_stage(locale, dob, as_of, gender)
+
+  defp stage(dob, as_of),
+    do: SayableAge.format_stage(SayableAge.Locales.EN.locale(), dob, as_of, nil)
+
+  defp stage_locale(locale, dob, as_of, gender),
+    do: SayableAge.format_stage(locale, dob, as_of, gender)
 
   defp local_today do
     {{y, m, d}, _} = :calendar.local_time()
@@ -546,7 +556,9 @@ defmodule SayableAgeTest do
 
   test "24.3 - delegation: 1 week, 1 day" do
     en = SayableAge.Locales.EN.locale()
-    assert SayableAge.format_age(en, :normal, "2025-06-07", "2025-06-15") == {:ok, "1 week, 1 day"}
+
+    assert SayableAge.format_age(en, :normal, "2025-06-07", "2025-06-15") ==
+             {:ok, "1 week, 1 day"}
   end
 
   test "24.4 - delegation: 6 months" do
@@ -556,7 +568,9 @@ defmodule SayableAgeTest do
 
   test "24.5 - delegation: 2 years, 1 month" do
     en = SayableAge.Locales.EN.locale()
-    assert SayableAge.format_age(en, :normal, "2023-06-15", "2025-07-15") == {:ok, "2 years, 1 month"}
+
+    assert SayableAge.format_age(en, :normal, "2023-06-15", "2025-07-15") ==
+             {:ok, "2 years, 1 month"}
   end
 
   test "24.6 - delegation: 3½ years" do

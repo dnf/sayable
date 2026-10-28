@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.BN do
   def locale do
     %{
       code: "bn",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} দিন", other: "{n} দিন"},
         week: %{one: "{n} সপ্তাহ", other: "{n} সপ্তাহ"},

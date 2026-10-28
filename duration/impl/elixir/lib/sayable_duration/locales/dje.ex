@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.DJE do
   def locale do
     %{
       code: "dje",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sɛkondi {n}",
         minute: "miniti {n}",

@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.DYU do
   def locale do
     %{
       code: "dyu",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "don {n}",
         week: "dɔgɔkun {n}",

@@ -15,11 +15,30 @@ defmodule SayableAge.Locales.PL do
   def locale do
     %{
       code: "pl",
-      plural: (fn 1 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :many end),
+      plural: fn
+        1 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) ->
+          :few
+
+        _ ->
+          :many
+      end,
       units: %{
         day: %{one: "{n} dzień", few: "{n} dni", many: "{n} dni", other: "{n} dni"},
-        week: %{one: "{n} tydzień", few: "{n} tygodnie", many: "{n} tygodni", other: "{n} tygodni"},
-        month: %{one: "{n} miesiąc", few: "{n} miesiące", many: "{n} miesięcy", other: "{n} miesięcy"},
+        week: %{
+          one: "{n} tydzień",
+          few: "{n} tygodnie",
+          many: "{n} tygodni",
+          other: "{n} tygodni"
+        },
+        month: %{
+          one: "{n} miesiąc",
+          few: "{n} miesiące",
+          many: "{n} miesięcy",
+          other: "{n} miesięcy"
+        },
         year: %{one: "{n} rok", few: "{n} lata", many: "{n} lat", other: "{n} lat"}
       },
       half: "{n} i pół",

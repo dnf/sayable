@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.LO do
   def locale do
     %{
       code: "lo",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} ວິນາທີ",
         minute: "{n} ນາທີ",

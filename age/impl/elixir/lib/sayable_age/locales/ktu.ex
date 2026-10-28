@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.KTU do
   def locale do
     %{
       code: "ktu",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "lumbu {n}", other: "malumbu {n}"},
         week: %{one: "poso {n}", other: "maposo {n}"},

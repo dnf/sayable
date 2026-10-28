@@ -61,12 +61,12 @@ def emit_locale(data: dict) -> str:
         fmt = sc.get("format", "{h}:{mm}")
         am_pm = sc.get("amPm")
         sc_parts = []
-        sc_parts.append(f"{indent}  use24h: {use24h}")
-        sc_parts.append(f"{indent}  format: {_quote(fmt)}")
+        sc_parts.append(f"{indent}    use24h: {use24h}")
+        sc_parts.append(f"{indent}    format: {_quote(fmt)}")
         if am_pm:
-            sc_parts.append(f'{indent}  am_pm: {{{_quote(am_pm[0])}, {_quote(am_pm[1])}}}')
+            sc_parts.append(f'{indent}    am_pm: {{{_quote(am_pm[0])}, {_quote(am_pm[1])}}}')
         else:
-            sc_parts.append(f"{indent}  am_pm: nil")
+            sc_parts.append(f"{indent}    am_pm: nil")
         parts.append(f"{indent}short: %{{\n{indent}  clock: %{{\n" + ",\n".join(sc_parts) + f"\n{indent}  }}\n{indent}}}")
 
     # Compact override
@@ -76,12 +76,12 @@ def emit_locale(data: dict) -> str:
         fmt = sc.get("format", "{h}:{mm}")
         am_pm = sc.get("amPm")
         sc_parts = []
-        sc_parts.append(f"{indent}  use24h: {use24h}")
-        sc_parts.append(f"{indent}  format: {_quote(fmt)}")
+        sc_parts.append(f"{indent}    use24h: {use24h}")
+        sc_parts.append(f"{indent}    format: {_quote(fmt)}")
         if am_pm:
-            sc_parts.append(f'{indent}  am_pm: {{{_quote(am_pm[0])}, {_quote(am_pm[1])}}}')
+            sc_parts.append(f'{indent}    am_pm: {{{_quote(am_pm[0])}, {_quote(am_pm[1])}}}')
         else:
-            sc_parts.append(f"{indent}  am_pm: nil")
+            sc_parts.append(f"{indent}    am_pm: nil")
         parts.append(f"{indent}compact: %{{\n{indent}  clock: %{{\n" + ",\n".join(sc_parts) + f"\n{indent}  }}\n{indent}}}")
 
     lines.append(",\n".join(parts))

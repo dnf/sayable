@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.PS do
   def locale do
     %{
       code: "ps",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} ثانیه", other: "{n} ثانیې"},
         minute: %{one: "{n} دقیقه", other: "{n} دقیقې"},

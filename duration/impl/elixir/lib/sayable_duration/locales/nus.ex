@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.NUS do
   def locale do
     %{
       code: "nus",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "thɛkɛni {n}", other: "thɛkni {n}"},
         minute: %{one: "minit {n}", other: "minitni {n}"},

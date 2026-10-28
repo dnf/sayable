@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.YO do
   def locale do
     %{
       code: "yo",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "ìṣẹ́jú-àáyá {n}",
         minute: "ìṣẹ́jú {n}",

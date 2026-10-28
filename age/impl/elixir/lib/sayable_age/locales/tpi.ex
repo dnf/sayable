@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.TPI do
   def locale do
     %{
       code: "tpi",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} de",
         week: "{n} wik",

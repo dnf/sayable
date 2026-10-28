@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.TEM do
   def locale do
     %{
       code: "tem",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "ləfɔr {n}", other: "ɔfɔr {n}"},
         week: %{one: "wik {n}", other: "wik {n}"},

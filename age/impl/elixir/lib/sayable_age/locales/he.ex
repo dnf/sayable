@@ -15,7 +15,11 @@ defmodule SayableAge.Locales.HE do
   def locale do
     %{
       code: "he",
-      plural: (fn 1 -> :one; 2 -> :two; _ -> :other end),
+      plural: fn
+        1 -> :one
+        2 -> :two
+        _ -> :other
+      end,
       units: %{
         day: %{one: "יום", two: "יומיים", other: "{n} ימים"},
         week: %{one: "שבוע", two: "שבועיים", other: "{n} שבועות"},

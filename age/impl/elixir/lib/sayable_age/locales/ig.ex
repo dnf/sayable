@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.IG do
   def locale do
     %{
       code: "ig",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "ụbọchị {n}",
         week: "izu {n}",

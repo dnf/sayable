@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.HMN do
   def locale do
     %{
       code: "hmn",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} hnub",
         week: "{n} lub lim tiam",

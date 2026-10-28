@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.MY do
   def locale do
     %{
       code: "my",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} စက္ကန့်",
         minute: "{n} မိနစ်",

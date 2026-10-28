@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.BI do
   def locale do
     %{
       code: "bi",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} dei",
         week: "{n} wik",

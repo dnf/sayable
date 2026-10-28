@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.PA do
   def locale do
     %{
       code: "pa",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} ਸਕਿੰਟ",
         minute: "{n} ਮਿੰਟ",

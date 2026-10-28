@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.AF do
   def locale do
     %{
       code: "af",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} sekonde", other: "{n} sekondes"},
         minute: %{one: "{n} minuut", other: "{n} minute"},

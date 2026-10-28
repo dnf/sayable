@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.FI do
   def locale do
     %{
       code: "fi",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} päivä", other: "{n} päivää"},
         week: %{one: "{n} viikko", other: "{n} viikkoa"},

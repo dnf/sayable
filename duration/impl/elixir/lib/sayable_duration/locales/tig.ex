@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.TIG do
   def locale do
     %{
       code: "tig",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sanya {n}", other: "sanayat {n}"},
         minute: %{one: "daqiqa {n}", other: "daqiqat {n}"},

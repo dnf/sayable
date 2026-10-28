@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.ZH do
   def locale do
     %{
       code: "zh",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n}天",
         week: "{n}周",

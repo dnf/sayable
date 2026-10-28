@@ -15,14 +15,33 @@ defmodule SayableDuration.Locales.BS do
   def locale do
     %{
       code: "bs",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) ->
+          :few
+
+        _ ->
+          :other
+      end,
       units: %{
         second: %{one: "{n} sekunda", few: "{n} sekunde", other: "{n} sekundi"},
         minute: %{one: "{n} minuta", few: "{n} minute", other: "{n} minuta"},
         hour: %{one: "{n} sat", few: "{n} sata", other: "{n} sati"},
         day: %{one: "{n} dan", few: "{n} dana", many: "{n} dana", other: "{n} dana"},
-        week: %{one: "{n} sedmica", few: "{n} sedmice", many: "{n} sedmica", other: "{n} sedmica"},
-        month: %{one: "{n} mjesec", few: "{n} mjeseca", many: "{n} mjeseci", other: "{n} mjeseci"},
+        week: %{
+          one: "{n} sedmica",
+          few: "{n} sedmice",
+          many: "{n} sedmica",
+          other: "{n} sedmica"
+        },
+        month: %{
+          one: "{n} mjesec",
+          few: "{n} mjeseca",
+          many: "{n} mjeseci",
+          other: "{n} mjeseci"
+        },
         year: %{one: "{n} godina", few: "{n} godine", many: "{n} godina", other: "{n} godina"}
       },
       half: "{0} i po",

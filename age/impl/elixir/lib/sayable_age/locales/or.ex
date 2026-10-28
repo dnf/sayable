@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.OR do
   def locale do
     %{
       code: "or",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} ଦିନ", other: "{n} ଦିନ"},
         week: %{one: "{n} ସପ୍ତାହ", other: "{n} ସପ୍ତାହ"},

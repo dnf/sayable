@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.RW do
   def locale do
     %{
       code: "rw",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "isegonda {n}", other: "amasegonda {n}"},
         minute: %{one: "umunota {n}", other: "iminota {n}"},

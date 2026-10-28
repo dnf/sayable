@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.SU do
   def locale do
     %{
       code: "su",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} detik",
         minute: "{n} menit",

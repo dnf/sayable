@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.ZDJ do
   def locale do
     %{
       code: "zdj",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sekunde {n}",
         minute: "dakika {n}",

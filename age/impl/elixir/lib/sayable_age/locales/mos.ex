@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.MOS do
   def locale do
     %{
       code: "mos",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "daare {n}",
         week: "semaana {n}",

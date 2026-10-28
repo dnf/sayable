@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.SNK do
   def locale do
     %{
       code: "snk",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sɛgɔndi {n}",
         minute: "miniti {n}",

@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.AZ do
   def locale do
     %{
       code: "az",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} saniyə",
         minute: "{n} dəqiqə",

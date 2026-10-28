@@ -15,7 +15,11 @@ defmodule SayableDuration.Locales.HE do
   def locale do
     %{
       code: "he",
-      plural: (fn 1 -> :one; 2 -> :two; _ -> :other end),
+      plural: fn
+        1 -> :one
+        2 -> :two
+        _ -> :other
+      end,
       units: %{
         second: %{one: "שנייה", two: "שתי שניות", other: "{n} שניות"},
         minute: %{one: "דקה", two: "שתי דקות", other: "{n} דקות"},

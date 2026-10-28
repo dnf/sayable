@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.UMB do
   def locale do
     %{
       code: "umb",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "osekunde {n}", other: "olosekunde {n}"},
         minute: %{one: "ominute {n}", other: "olominute {n}"},

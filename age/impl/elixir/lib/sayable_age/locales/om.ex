@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.OM do
   def locale do
     %{
       code: "om",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "guyyaa {n}", other: "guyyoota {n}"},
         week: %{one: "torban {n}", other: "torbanota {n}"},

@@ -15,7 +15,11 @@ defmodule SayableDuration.Locales.CS do
   def locale do
     %{
       code: "cs",
-      plural: (fn 1 -> :one; n when n >= 2 and n <= 4 -> :few; _ -> :other end),
+      plural: fn
+        1 -> :one
+        n when n >= 2 and n <= 4 -> :few
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} sekunda", few: "{n} sekundy", other: "{n} sekund"},
         minute: %{one: "{n} minuta", few: "{n} minuty", other: "{n} minut"},

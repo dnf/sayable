@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.TA do
   def locale do
     %{
       code: "ta",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} நாள்", other: "{n} நாட்கள்"},
         week: %{one: "{n} வாரம்", other: "{n} வாரங்கள்"},

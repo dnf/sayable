@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.FAN do
   def locale do
     %{
       code: "fan",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "mos {n}", other: "bimos {n}"},
         week: %{one: "sone {n}", other: "bisone {n}"},

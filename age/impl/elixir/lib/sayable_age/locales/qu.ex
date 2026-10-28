@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.QU do
   def locale do
     %{
       code: "qu",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} p'unchaw",
         week: "{n} simana",

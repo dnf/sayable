@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.EU do
   def locale do
     %{
       code: "eu",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} egun",
         week: "{n} aste",

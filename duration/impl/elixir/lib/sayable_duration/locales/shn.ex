@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.SHN do
   def locale do
     %{
       code: "shn",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} ဝိၼႃးတီႇ",
         minute: "{n} မိၼိတ်ႉ",

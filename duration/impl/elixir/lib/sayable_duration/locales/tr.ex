@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.TR do
   def locale do
     %{
       code: "tr",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} saniye",
         minute: "{n} dakika",

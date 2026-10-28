@@ -15,15 +15,63 @@ defmodule SayableDuration.Locales.MT do
   def locale do
     %{
       code: "mt",
-      plural: (fn 1 -> :one; 2 -> :two; n when n == 0 or (rem(n, 100) >= 3 and rem(n, 100) <= 10) -> :few; n when rem(n, 100) >= 11 and rem(n, 100) <= 19 -> :many; _ -> :other end),
+      plural: fn
+        1 -> :one
+        2 -> :two
+        n when n == 0 or (rem(n, 100) >= 3 and rem(n, 100) <= 10) -> :few
+        n when rem(n, 100) >= 11 and rem(n, 100) <= 19 -> :many
+        _ -> :other
+      end,
       units: %{
-        second: %{one: "{n} sekonda", two: "{n} sekondi", few: "{n} sekondi", many: "{n}-il sekonda", other: "{n} sekonda"},
-        minute: %{one: "{n} minuta", two: "minutejn", few: "{n} minuti", many: "{n}-il minuta", other: "{n} minuta"},
-        hour: %{one: "{n} siegħa", two: "sagħtejn", few: "{n} sigħat", many: "{n}-il siegħa", other: "{n} siegħa"},
-        day: %{one: "ġurnata", two: "jumejn", few: "{n} ijiem", many: "{n}-il jum", other: "{n} jum"},
-        week: %{one: "ġimgħa", two: "ġimgħatejn", few: "{n} ġimgħat", many: "{n}-il ġimgħa", other: "{n} ġimgħa"},
-        month: %{one: "xahar", two: "xahrejn", few: "{n} xhur", many: "{n}-il xahar", other: "{n} xahar"},
-        year: %{one: "sena", two: "sentejn", few: "{n} snin", many: "{n}-il sena", other: "{n} sena"}
+        second: %{
+          one: "{n} sekonda",
+          two: "{n} sekondi",
+          few: "{n} sekondi",
+          many: "{n}-il sekonda",
+          other: "{n} sekonda"
+        },
+        minute: %{
+          one: "{n} minuta",
+          two: "minutejn",
+          few: "{n} minuti",
+          many: "{n}-il minuta",
+          other: "{n} minuta"
+        },
+        hour: %{
+          one: "{n} siegħa",
+          two: "sagħtejn",
+          few: "{n} sigħat",
+          many: "{n}-il siegħa",
+          other: "{n} siegħa"
+        },
+        day: %{
+          one: "ġurnata",
+          two: "jumejn",
+          few: "{n} ijiem",
+          many: "{n}-il jum",
+          other: "{n} jum"
+        },
+        week: %{
+          one: "ġimgħa",
+          two: "ġimgħatejn",
+          few: "{n} ġimgħat",
+          many: "{n}-il ġimgħa",
+          other: "{n} ġimgħa"
+        },
+        month: %{
+          one: "xahar",
+          two: "xahrejn",
+          few: "{n} xhur",
+          many: "{n}-il xahar",
+          other: "{n} xahar"
+        },
+        year: %{
+          one: "sena",
+          two: "sentejn",
+          few: "{n} snin",
+          many: "{n}-il sena",
+          other: "{n} sena"
+        }
       },
       half: "{0} u nofs",
       delimiter: " u ",

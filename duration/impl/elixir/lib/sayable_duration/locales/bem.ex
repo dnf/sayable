@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.BEM do
   def locale do
     %{
       code: "bem",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "isekondi {n}", other: "amasekondi {n}"},
         minute: %{one: "iminiti {n}", other: "amaminiti {n}"},

@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.CA do
   def locale do
     %{
       code: "ca",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} dia", other: "{n} dies"},
         week: %{one: "{n} setmana", other: "{n} setmanes"},

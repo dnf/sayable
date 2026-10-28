@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.FON do
   def locale do
     %{
       code: "fon",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "azǎn {n}",
         week: "aklunɔ̌zán {n}",

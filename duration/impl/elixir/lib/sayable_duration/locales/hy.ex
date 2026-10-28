@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.HY do
   def locale do
     %{
       code: "hy",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} վայրկյան", other: "{n} վայրկյան"},
         minute: %{one: "{n} րոպե", other: "{n} րոպե"},

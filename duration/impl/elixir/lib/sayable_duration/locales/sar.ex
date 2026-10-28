@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.SAR do
   def locale do
     %{
       code: "sar",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sɛɡɔn {n}",
         minute: "minít {n}",

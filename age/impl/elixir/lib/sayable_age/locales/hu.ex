@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.HU do
   def locale do
     %{
       code: "hu",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} nap",
         week: "{n} hét",

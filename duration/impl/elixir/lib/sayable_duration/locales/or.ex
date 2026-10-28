@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.OR do
   def locale do
     %{
       code: "or",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} ସେକେଣ୍ଡ", other: "{n} ସେକେଣ୍ଡ"},
         minute: %{one: "{n} ମିନିଟ୍", other: "{n} ମିନିଟ୍"},

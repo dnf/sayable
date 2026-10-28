@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.GL do
   def locale do
     %{
       code: "gl",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} segundo", other: "{n} segundos"},
         minute: %{one: "{n} minuto", other: "{n} minutos"},

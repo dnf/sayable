@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.VMW do
   def locale do
     %{
       code: "vmw",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "eshuku {n}", other: "mshuku {n}"},
         week: %{one: "esumana {n}", other: "msumana {n}"},
