@@ -9,14 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gu.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Gujarati locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "gu".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -44,7 +50,10 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("શિશુ".to_string()),
             toddler: StageLabel::Neutral("નાનું બાળક".to_string()),
             child: StageLabel::Neutral("બાળક".to_string()),
-            teenager: StageLabel::Gendered { m: "કિશોર".to_string(), f: "કિશોરી".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "કિશોર".to_string(),
+                f: "કિશોરી".to_string(),
+            },
             adult: StageLabel::Neutral("પુખ્ત".to_string()),
         },
         short: Some(CompactnessOverride {

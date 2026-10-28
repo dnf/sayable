@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/am.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Amharic locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "am".to_string(),
         clock: ClockConfig {
-            hours: ["ስድስት".to_string(), "ሰባት".to_string(), "ስምንት".to_string(), "ዘጠኝ".to_string(), "አሥር".to_string(), "አሥራ አንድ".to_string(), "አሥራ ሁለት".to_string(), "አንድ".to_string(), "ሁለት".to_string(), "ሦስት".to_string(), "አራት".to_string(), "አምስት".to_string()],
+            hours: [
+                "ስድስት".to_string(),
+                "ሰባት".to_string(),
+                "ስምንት".to_string(),
+                "ዘጠኝ".to_string(),
+                "አሥር".to_string(),
+                "አሥራ አንድ".to_string(),
+                "አሥራ ሁለት".to_string(),
+                "አንድ".to_string(),
+                "ሁለት".to_string(),
+                "ሦስት".to_string(),
+                "አራት".to_string(),
+                "አምስት".to_string(),
+            ],
             midnight: "እኩለ ሌሊት".to_string(),
             noon: "እኩለ ቀን".to_string(),
             patterns: HashMap::from([
-            (0, "{h} ሰዓት".to_string()),
-            (5, "{h} ሰዓት ከአምስት ደቂቃ".to_string()),
-            (10, "{h} ሰዓት ከአሥር ደቂቃ".to_string()),
-            (15, "{h} ሰዓት ከሩብ".to_string()),
-            (20, "{h} ሰዓት ከሃያ ደቂቃ".to_string()),
-            (25, "{h} ሰዓት ከሃያ አምስት ደቂቃ".to_string()),
-            (30, "{h} ሰዓት ተኩል".to_string()),
-            (35, "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ".to_string()),
-            (40, "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ".to_string()),
-            (45, "ለ{next_h} ሰዓት ሩብ ጉዳይ".to_string()),
-            (50, "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ".to_string()),
-            (55, "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ".to_string()),
-        ]),
+                (0, "{h} ሰዓት".to_string()),
+                (5, "{h} ሰዓት ከአምስት ደቂቃ".to_string()),
+                (10, "{h} ሰዓት ከአሥር ደቂቃ".to_string()),
+                (15, "{h} ሰዓት ከሩብ".to_string()),
+                (20, "{h} ሰዓት ከሃያ ደቂቃ".to_string()),
+                (25, "{h} ሰዓት ከሃያ አምስት ደቂቃ".to_string()),
+                (30, "{h} ሰዓት ተኩል".to_string()),
+                (35, "ለ{next_h} ሰዓት ሃያ አምስት ደቂቃ ጉዳይ".to_string()),
+                (40, "ለ{next_h} ሰዓት ሃያ ደቂቃ ጉዳይ".to_string()),
+                (45, "ለ{next_h} ሰዓት ሩብ ጉዳይ".to_string()),
+                (50, "ለ{next_h} ሰዓት አሥር ደቂቃ ጉዳይ".to_string()),
+                (55, "ለ{next_h} ሰዓት አምስት ደቂቃ ጉዳይ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

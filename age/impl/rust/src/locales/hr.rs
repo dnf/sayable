@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/hr.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Croatian locale.
 pub fn locale() -> AgeLocale {
@@ -18,9 +20,13 @@ pub fn locale() -> AgeLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if mod10 == 1 && mod100 != 11 {
+                PluralCategory::One
+            } else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

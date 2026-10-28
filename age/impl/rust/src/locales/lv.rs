@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/lv.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Latvian locale.
 pub fn locale() -> AgeLocale {
@@ -18,9 +20,13 @@ pub fn locale() -> AgeLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 0 || (11..=19).contains(&mod100) { PluralCategory::Zero }
-            else if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else { PluralCategory::Other }
+            if mod10 == 0 || (11..=19).contains(&mod100) {
+                PluralCategory::Zero
+            } else if mod10 == 1 && mod100 != 11 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -48,12 +54,27 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Jaundzimušais".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Jaundzimušais".to_string(), f: "Jaundzimušā".to_string() },
-            infant: StageLabel::Gendered { m: "Zīdainis".to_string(), f: "Zīdaine".to_string() },
-            toddler: StageLabel::Gendered { m: "Mazulis".to_string(), f: "Mazule".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Jaundzimušais".to_string(),
+                f: "Jaundzimušā".to_string(),
+            },
+            infant: StageLabel::Gendered {
+                m: "Zīdainis".to_string(),
+                f: "Zīdaine".to_string(),
+            },
+            toddler: StageLabel::Gendered {
+                m: "Mazulis".to_string(),
+                f: "Mazule".to_string(),
+            },
             child: StageLabel::Neutral("Bērns".to_string()),
-            teenager: StageLabel::Gendered { m: "Pusaudzis".to_string(), f: "Pusaudze".to_string() },
-            adult: StageLabel::Gendered { m: "Pieaugušais".to_string(), f: "Pieaugusī".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Pusaudzis".to_string(),
+                f: "Pusaudze".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "Pieaugušais".to_string(),
+                f: "Pieaugusī".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} d.")),

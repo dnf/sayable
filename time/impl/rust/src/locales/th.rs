@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/th.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Thai locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "th".to_string(),
         clock: ClockConfig {
-            hours: ["สิบสอง".to_string(), "หนึ่ง".to_string(), "สอง".to_string(), "สาม".to_string(), "สี่".to_string(), "ห้า".to_string(), "หก".to_string(), "เจ็ด".to_string(), "แปด".to_string(), "เก้า".to_string(), "สิบ".to_string(), "สิบเอ็ด".to_string()],
+            hours: [
+                "สิบสอง".to_string(),
+                "หนึ่ง".to_string(),
+                "สอง".to_string(),
+                "สาม".to_string(),
+                "สี่".to_string(),
+                "ห้า".to_string(),
+                "หก".to_string(),
+                "เจ็ด".to_string(),
+                "แปด".to_string(),
+                "เก้า".to_string(),
+                "สิบ".to_string(),
+                "สิบเอ็ด".to_string(),
+            ],
             midnight: "เที่ยงคืน".to_string(),
             noon: "เที่ยงวัน".to_string(),
             patterns: HashMap::from([
-            (0, "{h} นาฬิกา".to_string()),
-            (5, "{h} นาฬิกา ห้านาที".to_string()),
-            (10, "{h} นาฬิกา สิบนาที".to_string()),
-            (15, "{h} นาฬิกา สิบห้านาที".to_string()),
-            (20, "{h} นาฬิกา ยี่สิบนาที".to_string()),
-            (25, "{h} นาฬิกา ยี่สิบห้านาที".to_string()),
-            (30, "{h} นาฬิกา ครึ่ง".to_string()),
-            (35, "{h} นาฬิกา สามสิบห้านาที".to_string()),
-            (40, "{h} นาฬิกา สี่สิบนาที".to_string()),
-            (45, "{h} นาฬิกา สี่สิบห้านาที".to_string()),
-            (50, "{h} นาฬิกา ห้าสิบนาที".to_string()),
-            (55, "{h} นาฬิกา ห้าสิบห้านาที".to_string()),
-        ]),
+                (0, "{h} นาฬิกา".to_string()),
+                (5, "{h} นาฬิกา ห้านาที".to_string()),
+                (10, "{h} นาฬิกา สิบนาที".to_string()),
+                (15, "{h} นาฬิกา สิบห้านาที".to_string()),
+                (20, "{h} นาฬิกา ยี่สิบนาที".to_string()),
+                (25, "{h} นาฬิกา ยี่สิบห้านาที".to_string()),
+                (30, "{h} นาฬิกา ครึ่ง".to_string()),
+                (35, "{h} นาฬิกา สามสิบห้านาที".to_string()),
+                (40, "{h} นาฬิกา สี่สิบนาที".to_string()),
+                (45, "{h} นาฬิกา สี่สิบห้านาที".to_string()),
+                (50, "{h} นาฬิกา ห้าสิบนาที".to_string()),
+                (55, "{h} นาฬิกา ห้าสิบห้านาที".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

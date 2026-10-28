@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/az.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Azerbaijani locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "az".to_string(),
         clock: ClockConfig {
-            hours: ["on iki".to_string(), "bir".to_string(), "iki".to_string(), "üç".to_string(), "dörd".to_string(), "beş".to_string(), "altı".to_string(), "yeddi".to_string(), "səkkiz".to_string(), "doqquz".to_string(), "on".to_string(), "on bir".to_string()],
+            hours: [
+                "on iki".to_string(),
+                "bir".to_string(),
+                "iki".to_string(),
+                "üç".to_string(),
+                "dörd".to_string(),
+                "beş".to_string(),
+                "altı".to_string(),
+                "yeddi".to_string(),
+                "səkkiz".to_string(),
+                "doqquz".to_string(),
+                "on".to_string(),
+                "on bir".to_string(),
+            ],
             midnight: "gecə yarısı".to_string(),
             noon: "günorta".to_string(),
             patterns: HashMap::from([
-            (0, "saat {h}".to_string()),
-            (5, "{h} sıfır beş".to_string()),
-            (10, "{h} on".to_string()),
-            (15, "{h} on beş".to_string()),
-            (20, "{h} iyirmi".to_string()),
-            (25, "{h} iyirmi beş".to_string()),
-            (30, "{h} otuz".to_string()),
-            (35, "{h} otuz beş".to_string()),
-            (40, "{h} qırx".to_string()),
-            (45, "{h} qırx beş".to_string()),
-            (50, "{h} əlli".to_string()),
-            (55, "{h} əlli beş".to_string()),
-        ]),
+                (0, "saat {h}".to_string()),
+                (5, "{h} sıfır beş".to_string()),
+                (10, "{h} on".to_string()),
+                (15, "{h} on beş".to_string()),
+                (20, "{h} iyirmi".to_string()),
+                (25, "{h} iyirmi beş".to_string()),
+                (30, "{h} otuz".to_string()),
+                (35, "{h} otuz beş".to_string()),
+                (40, "{h} qırx".to_string()),
+                (45, "{h} qırx beş".to_string()),
+                (50, "{h} əlli".to_string()),
+                (55, "{h} əlli beş".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

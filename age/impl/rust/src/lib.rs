@@ -34,5 +34,8 @@ pub mod locales;
 pub mod types;
 
 // Re-export the main public API
-pub use formatter::{format_age, format_stage, SayableAge, VERSION, _set_now_for_testing};
-pub use types::{AgeLocale, Compactness, CompactnessOverride, Gender, PluralCategory, StageLabel, Stages, UnitForms, Units};
+pub use formatter::{_set_now_for_testing, format_age, format_stage, SayableAge, VERSION};
+pub use types::{
+    AgeLocale, Compactness, CompactnessOverride, Gender, PluralCategory, StageLabel, Stages,
+    UnitForms, Units,
+};

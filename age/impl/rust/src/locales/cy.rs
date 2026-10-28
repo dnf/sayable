@@ -9,19 +9,31 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/cy.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Welsh locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "cy".to_string(),
         plural: |n| {
-            if n == 0 { return PluralCategory::Zero; }
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
-            if n == 3 { PluralCategory::Few }
-            else if n == 6 { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if n == 0 {
+                return PluralCategory::Zero;
+            }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
+            if n == 3 {
+                PluralCategory::Few
+            } else if n == 6 {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

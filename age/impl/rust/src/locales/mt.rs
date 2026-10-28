@@ -9,19 +9,29 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mt.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Maltese locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "mt".to_string(),
         plural: |n| {
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
             let mod100 = n % 100;
-            if n == 0 || (3..=10).contains(&mod100) { PluralCategory::Few }
-            else if (11..=19).contains(&mod100) { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if n == 0 || (3..=10).contains(&mod100) {
+                PluralCategory::Few
+            } else if (11..=19).contains(&mod100) {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -59,10 +69,22 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Neutral("Tarbija ġdida".to_string()),
             infant: StageLabel::Neutral("Tarbija".to_string()),
-            toddler: StageLabel::Gendered { m: "Tifel żgħir".to_string(), f: "Tifla żgħira".to_string() },
-            child: StageLabel::Gendered { m: "Tifel".to_string(), f: "Tifla".to_string() },
-            teenager: StageLabel::Gendered { m: "Adolexxent".to_string(), f: "Adolexxenta".to_string() },
-            adult: StageLabel::Gendered { m: "Adult".to_string(), f: "Adulta".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "Tifel żgħir".to_string(),
+                f: "Tifla żgħira".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "Tifel".to_string(),
+                f: "Tifla".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "Adolexxent".to_string(),
+                f: "Adolexxenta".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "Adult".to_string(),
+                f: "Adulta".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} d")),

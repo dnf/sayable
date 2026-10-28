@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/is.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Icelandic locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "is".to_string(),
         clock: ClockConfig {
-            hours: ["tólf".to_string(), "eitt".to_string(), "tvö".to_string(), "þrjú".to_string(), "fjögur".to_string(), "fimm".to_string(), "sex".to_string(), "sjö".to_string(), "átta".to_string(), "níu".to_string(), "tíu".to_string(), "ellefu".to_string()],
+            hours: [
+                "tólf".to_string(),
+                "eitt".to_string(),
+                "tvö".to_string(),
+                "þrjú".to_string(),
+                "fjögur".to_string(),
+                "fimm".to_string(),
+                "sex".to_string(),
+                "sjö".to_string(),
+                "átta".to_string(),
+                "níu".to_string(),
+                "tíu".to_string(),
+                "ellefu".to_string(),
+            ],
             midnight: "miðnætti".to_string(),
             noon: "hádegi".to_string(),
             patterns: HashMap::from([
-            (0, "klukkan {h}".to_string()),
-            (5, "fimm yfir {h}".to_string()),
-            (10, "tíu yfir {h}".to_string()),
-            (15, "korter yfir {h}".to_string()),
-            (20, "tuttugu yfir {h}".to_string()),
-            (25, "tuttugu og fimm yfir {h}".to_string()),
-            (30, "hálf {next_h}".to_string()),
-            (35, "tuttugu og fimm í {next_h}".to_string()),
-            (40, "tuttugu í {next_h}".to_string()),
-            (45, "korter í {next_h}".to_string()),
-            (50, "tíu í {next_h}".to_string()),
-            (55, "fimm í {next_h}".to_string()),
-        ]),
+                (0, "klukkan {h}".to_string()),
+                (5, "fimm yfir {h}".to_string()),
+                (10, "tíu yfir {h}".to_string()),
+                (15, "korter yfir {h}".to_string()),
+                (20, "tuttugu yfir {h}".to_string()),
+                (25, "tuttugu og fimm yfir {h}".to_string()),
+                (30, "hálf {next_h}".to_string()),
+                (35, "tuttugu og fimm í {next_h}".to_string()),
+                (40, "tuttugu í {next_h}".to_string()),
+                (45, "korter í {next_h}".to_string()),
+                (50, "tíu í {next_h}".to_string()),
+                (55, "fimm í {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

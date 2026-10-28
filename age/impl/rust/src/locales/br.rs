@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/br.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Breton locale.
 pub fn locale() -> AgeLocale {
@@ -18,11 +20,21 @@ pub fn locale() -> AgeLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91 { PluralCategory::One }
-            else if mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92 { PluralCategory::Two }
-            else if (mod10 == 3 || mod10 == 4 || mod10 == 9) && !(10..=19).contains(&mod100) && !(70..=79).contains(&mod100) && !(90..=99).contains(&mod100) { PluralCategory::Few }
-            else if n != 0 && n % 1000000 == 0 { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91 {
+                PluralCategory::One
+            } else if mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92 {
+                PluralCategory::Two
+            } else if (mod10 == 3 || mod10 == 4 || mod10 == 9)
+                && !(10..=19).contains(&mod100)
+                && !(70..=79).contains(&mod100)
+                && !(90..=99).contains(&mod100)
+            {
+                PluralCategory::Few
+            } else if n != 0 && n % 1000000 == 0 {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

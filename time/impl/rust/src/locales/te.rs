@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/te.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Telugu locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "te".to_string(),
         clock: ClockConfig {
-            hours: ["పన్నెండు".to_string(), "ఒకటి".to_string(), "రెండు".to_string(), "మూడు".to_string(), "నాలుగు".to_string(), "ఐదు".to_string(), "ఆరు".to_string(), "ఏడు".to_string(), "ఎనిమిది".to_string(), "తొమ్మిది".to_string(), "పది".to_string(), "పదకొండు".to_string()],
+            hours: [
+                "పన్నెండు".to_string(),
+                "ఒకటి".to_string(),
+                "రెండు".to_string(),
+                "మూడు".to_string(),
+                "నాలుగు".to_string(),
+                "ఐదు".to_string(),
+                "ఆరు".to_string(),
+                "ఏడు".to_string(),
+                "ఎనిమిది".to_string(),
+                "తొమ్మిది".to_string(),
+                "పది".to_string(),
+                "పదకొండు".to_string(),
+            ],
             midnight: "అర్ధరాత్రి".to_string(),
             noon: "మధ్యాహ్నం".to_string(),
             patterns: HashMap::from([
-            (0, "{h} అయింది".to_string()),
-            (5, "{h} దాటి ఐదు నిమిషాలు".to_string()),
-            (10, "{h} దాటి పది నిమిషాలు".to_string()),
-            (15, "{h}ంపావు".to_string()),
-            (20, "{h} దాటి ఇరవై నిమిషాలు".to_string()),
-            (25, "{h} దాటి ఇరవై ఐదు నిమిషాలు".to_string()),
-            (30, "{h}న్నర".to_string()),
-            (35, "{h} దాటి ముప్పై ఐదు నిమిషాలు".to_string()),
-            (40, "{next_h} కావడానికి ఇరవై నిమిషాలు".to_string()),
-            (45, "పావు తక్కువ {next_h}".to_string()),
-            (50, "{next_h} కావడానికి పది నిమిషాలు".to_string()),
-            (55, "{next_h} కావడానికి ఐదు నిమిషాలు".to_string()),
-        ]),
+                (0, "{h} అయింది".to_string()),
+                (5, "{h} దాటి ఐదు నిమిషాలు".to_string()),
+                (10, "{h} దాటి పది నిమిషాలు".to_string()),
+                (15, "{h}ంపావు".to_string()),
+                (20, "{h} దాటి ఇరవై నిమిషాలు".to_string()),
+                (25, "{h} దాటి ఇరవై ఐదు నిమిషాలు".to_string()),
+                (30, "{h}న్నర".to_string()),
+                (35, "{h} దాటి ముప్పై ఐదు నిమిషాలు".to_string()),
+                (40, "{next_h} కావడానికి ఇరవై నిమిషాలు".to_string()),
+                (45, "పావు తక్కువ {next_h}".to_string()),
+                (50, "{next_h} కావడానికి పది నిమిషాలు".to_string()),
+                (55, "{next_h} కావడానికి ఐదు నిమిషాలు".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

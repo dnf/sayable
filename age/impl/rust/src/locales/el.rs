@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/el.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Greek locale.
 pub fn locale() -> AgeLocale {
@@ -48,8 +50,14 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Βρέφος".to_string()),
             toddler: StageLabel::Neutral("Νήπιο".to_string()),
             child: StageLabel::Neutral("Παιδί".to_string()),
-            teenager: StageLabel::Gendered { m: "Έφηβος".to_string(), f: "Έφηβη".to_string() },
-            adult: StageLabel::Gendered { m: "Ενήλικας".to_string(), f: "Ενήλικη".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Έφηβος".to_string(),
+                f: "Έφηβη".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "Ενήλικας".to_string(),
+                f: "Ενήλικη".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

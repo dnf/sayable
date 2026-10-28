@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mi.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Māori locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mi".to_string(),
         clock: ClockConfig {
-            hours: ["tekau mā rua".to_string(), "tahi".to_string(), "rua".to_string(), "toru".to_string(), "whā".to_string(), "rima".to_string(), "ono".to_string(), "whitu".to_string(), "waru".to_string(), "iwa".to_string(), "tekau".to_string(), "tekau mā tahi".to_string()],
+            hours: [
+                "tekau mā rua".to_string(),
+                "tahi".to_string(),
+                "rua".to_string(),
+                "toru".to_string(),
+                "whā".to_string(),
+                "rima".to_string(),
+                "ono".to_string(),
+                "whitu".to_string(),
+                "waru".to_string(),
+                "iwa".to_string(),
+                "tekau".to_string(),
+                "tekau mā tahi".to_string(),
+            ],
             midnight: "waenganui pō".to_string(),
             noon: "poupoutanga o te rā".to_string(),
             patterns: HashMap::from([
-            (0, "{h} karaka".to_string()),
-            (5, "rima meneti i muri i te {h}".to_string()),
-            (10, "tekau meneti i muri i te {h}".to_string()),
-            (15, "hauwhā i muri i te {h}".to_string()),
-            (20, "rua tekau meneti i muri i te {h}".to_string()),
-            (25, "rua tekau mā rima meneti i muri i te {h}".to_string()),
-            (30, "hāwhe i muri i te {h}".to_string()),
-            (35, "rua tekau mā rima meneti ki te {next_h}".to_string()),
-            (40, "rua tekau meneti ki te {next_h}".to_string()),
-            (45, "hauwhā ki te {next_h}".to_string()),
-            (50, "tekau meneti ki te {next_h}".to_string()),
-            (55, "rima meneti ki te {next_h}".to_string()),
-        ]),
+                (0, "{h} karaka".to_string()),
+                (5, "rima meneti i muri i te {h}".to_string()),
+                (10, "tekau meneti i muri i te {h}".to_string()),
+                (15, "hauwhā i muri i te {h}".to_string()),
+                (20, "rua tekau meneti i muri i te {h}".to_string()),
+                (25, "rua tekau mā rima meneti i muri i te {h}".to_string()),
+                (30, "hāwhe i muri i te {h}".to_string()),
+                (35, "rua tekau mā rima meneti ki te {next_h}".to_string()),
+                (40, "rua tekau meneti ki te {next_h}".to_string()),
+                (45, "hauwhā ki te {next_h}".to_string()),
+                (50, "tekau meneti ki te {next_h}".to_string()),
+                (55, "rima meneti ki te {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

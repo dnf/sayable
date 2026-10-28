@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mg.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Malagasy locale.
@@ -17,23 +17,39 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mg".to_string(),
         clock: ClockConfig {
-            hours: ["roa ambin'ny folo".to_string(), "iray".to_string(), "roa".to_string(), "telo".to_string(), "efatra".to_string(), "dimy".to_string(), "enina".to_string(), "fito".to_string(), "valo".to_string(), "sivy".to_string(), "folo".to_string(), "iraika ambin'ny folo".to_string()],
+            hours: [
+                "roa ambin'ny folo".to_string(),
+                "iray".to_string(),
+                "roa".to_string(),
+                "telo".to_string(),
+                "efatra".to_string(),
+                "dimy".to_string(),
+                "enina".to_string(),
+                "fito".to_string(),
+                "valo".to_string(),
+                "sivy".to_string(),
+                "folo".to_string(),
+                "iraika ambin'ny folo".to_string(),
+            ],
             midnight: "misasakalina".to_string(),
             noon: "atoandro".to_string(),
             patterns: HashMap::from([
-            (0, "{h} ora".to_string()),
-            (5, "{h} ora sy dimy minitra".to_string()),
-            (10, "{h} ora sy folo minitra".to_string()),
-            (15, "{h} ora sy fahefany".to_string()),
-            (20, "{h} ora sy roapolo minitra".to_string()),
-            (25, "{h} ora sy dimy amby roapolo minitra".to_string()),
-            (30, "{h} ora sy sasany".to_string()),
-            (35, "{next_h} ora latsaka dimy amby roapolo minitra".to_string()),
-            (40, "{next_h} ora latsaka roapolo minitra".to_string()),
-            (45, "{next_h} ora latsaka fahefany".to_string()),
-            (50, "{next_h} ora latsaka folo minitra".to_string()),
-            (55, "{next_h} ora latsaka dimy minitra".to_string()),
-        ]),
+                (0, "{h} ora".to_string()),
+                (5, "{h} ora sy dimy minitra".to_string()),
+                (10, "{h} ora sy folo minitra".to_string()),
+                (15, "{h} ora sy fahefany".to_string()),
+                (20, "{h} ora sy roapolo minitra".to_string()),
+                (25, "{h} ora sy dimy amby roapolo minitra".to_string()),
+                (30, "{h} ora sy sasany".to_string()),
+                (
+                    35,
+                    "{next_h} ora latsaka dimy amby roapolo minitra".to_string(),
+                ),
+                (40, "{next_h} ora latsaka roapolo minitra".to_string()),
+                (45, "{next_h} ora latsaka fahefany".to_string()),
+                (50, "{next_h} ora latsaka folo minitra".to_string()),
+                (55, "{next_h} ora latsaka dimy minitra".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

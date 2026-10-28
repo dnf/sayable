@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/en.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// English locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "en".to_string(),
         clock: ClockConfig {
-            hours: ["twelve".to_string(), "one".to_string(), "two".to_string(), "three".to_string(), "four".to_string(), "five".to_string(), "six".to_string(), "seven".to_string(), "eight".to_string(), "nine".to_string(), "ten".to_string(), "eleven".to_string()],
+            hours: [
+                "twelve".to_string(),
+                "one".to_string(),
+                "two".to_string(),
+                "three".to_string(),
+                "four".to_string(),
+                "five".to_string(),
+                "six".to_string(),
+                "seven".to_string(),
+                "eight".to_string(),
+                "nine".to_string(),
+                "ten".to_string(),
+                "eleven".to_string(),
+            ],
             midnight: "midnight".to_string(),
             noon: "noon".to_string(),
             patterns: HashMap::from([
-            (0, "{h} o'clock".to_string()),
-            (5, "five past {h}".to_string()),
-            (10, "ten past {h}".to_string()),
-            (15, "a quarter past {h}".to_string()),
-            (20, "twenty past {h}".to_string()),
-            (25, "twenty-five past {h}".to_string()),
-            (30, "half past {h}".to_string()),
-            (35, "twenty-five to {next_h}".to_string()),
-            (40, "twenty to {next_h}".to_string()),
-            (45, "a quarter to {next_h}".to_string()),
-            (50, "ten to {next_h}".to_string()),
-            (55, "five to {next_h}".to_string()),
-        ]),
+                (0, "{h} o'clock".to_string()),
+                (5, "five past {h}".to_string()),
+                (10, "ten past {h}".to_string()),
+                (15, "a quarter past {h}".to_string()),
+                (20, "twenty past {h}".to_string()),
+                (25, "twenty-five past {h}".to_string()),
+                (30, "half past {h}".to_string()),
+                (35, "twenty-five to {next_h}".to_string()),
+                (40, "twenty to {next_h}".to_string()),
+                (45, "a quarter to {next_h}".to_string()),
+                (50, "ten to {next_h}".to_string()),
+                (55, "five to {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

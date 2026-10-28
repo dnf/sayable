@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ha.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Hausa locale.
 pub fn locale() -> AgeLocale {
@@ -46,9 +48,18 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Neutral("Jariri".to_string()),
             infant: StageLabel::Neutral("Jariri".to_string()),
-            toddler: StageLabel::Gendered { m: "Ƙaramin yaro".to_string(), f: "Ƙaramar yarinya".to_string() },
-            child: StageLabel::Gendered { m: "Yaro".to_string(), f: "Yarinya".to_string() },
-            teenager: StageLabel::Gendered { m: "Saurayi".to_string(), f: "Budurwa".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "Ƙaramin yaro".to_string(),
+                f: "Ƙaramar yarinya".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "Yaro".to_string(),
+                f: "Yarinya".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "Saurayi".to_string(),
+                f: "Budurwa".to_string(),
+            },
             adult: StageLabel::Neutral("Babba".to_string()),
         },
         short: Some(CompactnessOverride {

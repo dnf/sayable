@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/pov.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Guinea-Bissau Creole locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "pov".to_string(),
         clock: ClockConfig {
-            hours: ["dozi ora".to_string(), "un ora".to_string(), "dos ora".to_string(), "tres ora".to_string(), "kuatru ora".to_string(), "sinku ora".to_string(), "seis ora".to_string(), "seti ora".to_string(), "oitu ora".to_string(), "novi ora".to_string(), "des ora".to_string(), "onzi ora".to_string()],
+            hours: [
+                "dozi ora".to_string(),
+                "un ora".to_string(),
+                "dos ora".to_string(),
+                "tres ora".to_string(),
+                "kuatru ora".to_string(),
+                "sinku ora".to_string(),
+                "seis ora".to_string(),
+                "seti ora".to_string(),
+                "oitu ora".to_string(),
+                "novi ora".to_string(),
+                "des ora".to_string(),
+                "onzi ora".to_string(),
+            ],
             midnight: "meia noti".to_string(),
             noon: "meiu dia".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} i sinku".to_string()),
-            (10, "{h} i des".to_string()),
-            (15, "{h} i kinzi".to_string()),
-            (20, "{h} i vinti".to_string()),
-            (25, "{h} i vinti i sinku".to_string()),
-            (30, "{h} i meiu".to_string()),
-            (35, "{h} i trinta i sinku".to_string()),
-            (40, "{h} i kuarenta".to_string()),
-            (45, "{h} i kuarenta i sinku".to_string()),
-            (50, "{h} i sinkuenta".to_string()),
-            (55, "{h} i sinkuenta i sinku".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} i sinku".to_string()),
+                (10, "{h} i des".to_string()),
+                (15, "{h} i kinzi".to_string()),
+                (20, "{h} i vinti".to_string()),
+                (25, "{h} i vinti i sinku".to_string()),
+                (30, "{h} i meiu".to_string()),
+                (35, "{h} i trinta i sinku".to_string()),
+                (40, "{h} i kuarenta".to_string()),
+                (45, "{h} i kuarenta i sinku".to_string()),
+                (50, "{h} i sinkuenta".to_string()),
+                (55, "{h} i sinkuenta i sinku".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

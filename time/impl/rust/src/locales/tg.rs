@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/tg.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Tajik locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "tg".to_string(),
         clock: ClockConfig {
-            hours: ["дувоздаҳ".to_string(), "як".to_string(), "ду".to_string(), "се".to_string(), "чор".to_string(), "панҷ".to_string(), "шаш".to_string(), "ҳафт".to_string(), "ҳашт".to_string(), "нӯҳ".to_string(), "даҳ".to_string(), "ёздаҳ".to_string()],
+            hours: [
+                "дувоздаҳ".to_string(),
+                "як".to_string(),
+                "ду".to_string(),
+                "се".to_string(),
+                "чор".to_string(),
+                "панҷ".to_string(),
+                "шаш".to_string(),
+                "ҳафт".to_string(),
+                "ҳашт".to_string(),
+                "нӯҳ".to_string(),
+                "даҳ".to_string(),
+                "ёздаҳ".to_string(),
+            ],
             midnight: "нимишаб".to_string(),
             noon: "нимирӯз".to_string(),
             patterns: HashMap::from([
-            (0, "соати {h}".to_string()),
-            (5, "соати {h} ва панҷ дақиқа".to_string()),
-            (10, "соати {h} ва даҳ дақиқа".to_string()),
-            (15, "соати {h} ва понздаҳ дақиқа".to_string()),
-            (20, "соати {h} ва бист дақиқа".to_string()),
-            (25, "соати {h} ва бисту панҷ дақиқа".to_string()),
-            (30, "соати {h} ва ним".to_string()),
-            (35, "соати {h} ва сию панҷ дақиқа".to_string()),
-            (40, "соати {h} ва чил дақиқа".to_string()),
-            (45, "соати {h} ва чилу панҷ дақиқа".to_string()),
-            (50, "соати {h} ва панҷоҳ дақиқа".to_string()),
-            (55, "соати {h} ва панҷоҳу панҷ дақиқа".to_string()),
-        ]),
+                (0, "соати {h}".to_string()),
+                (5, "соати {h} ва панҷ дақиқа".to_string()),
+                (10, "соати {h} ва даҳ дақиқа".to_string()),
+                (15, "соати {h} ва понздаҳ дақиқа".to_string()),
+                (20, "соати {h} ва бист дақиқа".to_string()),
+                (25, "соати {h} ва бисту панҷ дақиқа".to_string()),
+                (30, "соати {h} ва ним".to_string()),
+                (35, "соати {h} ва сию панҷ дақиқа".to_string()),
+                (40, "соати {h} ва чил дақиқа".to_string()),
+                (45, "соати {h} ва чилу панҷ дақиқа".to_string()),
+                (50, "соати {h} ва панҷоҳ дақиқа".to_string()),
+                (55, "соати {h} ва панҷоҳу панҷ дақиқа".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

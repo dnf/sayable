@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ku.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Kurdish locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ku".to_string(),
         clock: ClockConfig {
-            hours: ["diwanzdeh".to_string(), "yek".to_string(), "du".to_string(), "sê".to_string(), "çar".to_string(), "pênc".to_string(), "şeş".to_string(), "heft".to_string(), "heşt".to_string(), "neh".to_string(), "deh".to_string(), "yanzdeh".to_string()],
+            hours: [
+                "diwanzdeh".to_string(),
+                "yek".to_string(),
+                "du".to_string(),
+                "sê".to_string(),
+                "çar".to_string(),
+                "pênc".to_string(),
+                "şeş".to_string(),
+                "heft".to_string(),
+                "heşt".to_string(),
+                "neh".to_string(),
+                "deh".to_string(),
+                "yanzdeh".to_string(),
+            ],
             midnight: "nîvê şevê".to_string(),
             noon: "nîvro".to_string(),
             patterns: HashMap::from([
-            (0, "saet {h}".to_string()),
-            (5, "{h} û pênc deqe".to_string()),
-            (10, "{h} û deh deqe".to_string()),
-            (15, "{h} û çaryek".to_string()),
-            (20, "{h} û bîst deqe".to_string()),
-            (25, "{h} û bîst û pênc deqe".to_string()),
-            (30, "{h} û nîv".to_string()),
-            (35, "{next_h} kêm bîst û pênc deqe".to_string()),
-            (40, "{next_h} kêm bîst deqe".to_string()),
-            (45, "{next_h} kêm çaryek".to_string()),
-            (50, "{next_h} kêm deh deqe".to_string()),
-            (55, "{next_h} kêm pênc deqe".to_string()),
-        ]),
+                (0, "saet {h}".to_string()),
+                (5, "{h} û pênc deqe".to_string()),
+                (10, "{h} û deh deqe".to_string()),
+                (15, "{h} û çaryek".to_string()),
+                (20, "{h} û bîst deqe".to_string()),
+                (25, "{h} û bîst û pênc deqe".to_string()),
+                (30, "{h} û nîv".to_string()),
+                (35, "{next_h} kêm bîst û pênc deqe".to_string()),
+                (40, "{next_h} kêm bîst deqe".to_string()),
+                (45, "{next_h} kêm çaryek".to_string()),
+                (50, "{next_h} kêm deh deqe".to_string()),
+                (55, "{next_h} kêm pênc deqe".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

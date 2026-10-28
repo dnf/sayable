@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/snk.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Soninke locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "snk".to_string(),
         clock: ClockConfig {
-            hours: ["waxati tanmu do fillo".to_string(), "waxati baane".to_string(), "waxati fillo".to_string(), "waxati sikko".to_string(), "waxati naaxato".to_string(), "waxati karago".to_string(), "waxati tunmu".to_string(), "waxati ñerru".to_string(), "waxati segu".to_string(), "waxati kaburu".to_string(), "waxati tanmu".to_string(), "waxati tanmu do baane".to_string()],
+            hours: [
+                "waxati tanmu do fillo".to_string(),
+                "waxati baane".to_string(),
+                "waxati fillo".to_string(),
+                "waxati sikko".to_string(),
+                "waxati naaxato".to_string(),
+                "waxati karago".to_string(),
+                "waxati tunmu".to_string(),
+                "waxati ñerru".to_string(),
+                "waxati segu".to_string(),
+                "waxati kaburu".to_string(),
+                "waxati tanmu".to_string(),
+                "waxati tanmu do baane".to_string(),
+            ],
             midnight: "sulen noxo".to_string(),
             noon: "tili seren".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} do miniti karago".to_string()),
-            (10, "{h} do miniti tanmu".to_string()),
-            (15, "{h} do miniti tanmu do karago".to_string()),
-            (20, "{h} do miniti tanpille".to_string()),
-            (25, "{h} do miniti tanpille do karago".to_string()),
-            (30, "{h} do faabe".to_string()),
-            (35, "{h} do miniti tanjikke do karago".to_string()),
-            (40, "{h} do miniti tannaxate".to_string()),
-            (45, "{h} do miniti tannaxate do karago".to_string()),
-            (50, "{h} do miniti tankarage".to_string()),
-            (55, "{h} do miniti tankarage do karago".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} do miniti karago".to_string()),
+                (10, "{h} do miniti tanmu".to_string()),
+                (15, "{h} do miniti tanmu do karago".to_string()),
+                (20, "{h} do miniti tanpille".to_string()),
+                (25, "{h} do miniti tanpille do karago".to_string()),
+                (30, "{h} do faabe".to_string()),
+                (35, "{h} do miniti tanjikke do karago".to_string()),
+                (40, "{h} do miniti tannaxate".to_string()),
+                (45, "{h} do miniti tannaxate do karago".to_string()),
+                (50, "{h} do miniti tankarage".to_string()),
+                (55, "{h} do miniti tankarage do karago".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

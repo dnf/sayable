@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ig.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Igbo locale.
 pub fn locale() -> AgeLocale {
@@ -30,7 +32,10 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Nwa ọhụrụ".to_string()),
             toddler: StageLabel::Neutral("Nwa nta".to_string()),
             child: StageLabel::Neutral("Nwa".to_string()),
-            teenager: StageLabel::Gendered { m: "Nwokorobịa".to_string(), f: "Agbọghọbịa".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Nwokorobịa".to_string(),
+                f: "Agbọghọbịa".to_string(),
+            },
             adult: StageLabel::Neutral("Okenye".to_string()),
         },
         short: Some(CompactnessOverride {

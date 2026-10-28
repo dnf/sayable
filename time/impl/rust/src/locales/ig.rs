@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ig.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Igbo locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ig".to_string(),
         clock: ClockConfig {
-            hours: ["iri na abụọ".to_string(), "otu".to_string(), "abụọ".to_string(), "atọ".to_string(), "anọ".to_string(), "ise".to_string(), "isii".to_string(), "asaa".to_string(), "asatọ".to_string(), "itoolu".to_string(), "iri".to_string(), "iri na otu".to_string()],
+            hours: [
+                "iri na abụọ".to_string(),
+                "otu".to_string(),
+                "abụọ".to_string(),
+                "atọ".to_string(),
+                "anọ".to_string(),
+                "ise".to_string(),
+                "isii".to_string(),
+                "asaa".to_string(),
+                "asatọ".to_string(),
+                "itoolu".to_string(),
+                "iri".to_string(),
+                "iri na otu".to_string(),
+            ],
             midnight: "etiti abalị".to_string(),
             noon: "etiti ehihie".to_string(),
             patterns: HashMap::from([
-            (0, "elekere {h}".to_string()),
-            (5, "elekere {h} na nkeji ise".to_string()),
-            (10, "elekere {h} na nkeji iri".to_string()),
-            (15, "elekere {h} na nkeji iri na ise".to_string()),
-            (20, "elekere {h} na nkeji iri abụọ".to_string()),
-            (25, "elekere {h} na nkeji iri abụọ na ise".to_string()),
-            (30, "elekere {h} na ọkara".to_string()),
-            (35, "elekere {h} na nkeji iri atọ na ise".to_string()),
-            (40, "elekere {h} na nkeji iri anọ".to_string()),
-            (45, "elekere {h} na nkeji iri anọ na ise".to_string()),
-            (50, "elekere {h} na nkeji iri ise".to_string()),
-            (55, "elekere {h} na nkeji iri ise na ise".to_string()),
-        ]),
+                (0, "elekere {h}".to_string()),
+                (5, "elekere {h} na nkeji ise".to_string()),
+                (10, "elekere {h} na nkeji iri".to_string()),
+                (15, "elekere {h} na nkeji iri na ise".to_string()),
+                (20, "elekere {h} na nkeji iri abụọ".to_string()),
+                (25, "elekere {h} na nkeji iri abụọ na ise".to_string()),
+                (30, "elekere {h} na ọkara".to_string()),
+                (35, "elekere {h} na nkeji iri atọ na ise".to_string()),
+                (40, "elekere {h} na nkeji iri anọ".to_string()),
+                (45, "elekere {h} na nkeji iri anọ na ise".to_string()),
+                (50, "elekere {h} na nkeji iri ise".to_string()),
+                (55, "elekere {h} na nkeji iri ise na ise".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

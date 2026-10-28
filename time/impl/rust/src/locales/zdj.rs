@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/zdj.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Comorian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "zdj".to_string(),
         clock: ClockConfig {
-            hours: ["kumi na mbili".to_string(), "moja".to_string(), "mbili".to_string(), "ndraru".to_string(), "nne".to_string(), "ntsanu".to_string(), "sita".to_string(), "saba".to_string(), "nane".to_string(), "shenda".to_string(), "kumi".to_string(), "kumi na moja".to_string()],
+            hours: [
+                "kumi na mbili".to_string(),
+                "moja".to_string(),
+                "mbili".to_string(),
+                "ndraru".to_string(),
+                "nne".to_string(),
+                "ntsanu".to_string(),
+                "sita".to_string(),
+                "saba".to_string(),
+                "nane".to_string(),
+                "shenda".to_string(),
+                "kumi".to_string(),
+                "kumi na moja".to_string(),
+            ],
             midnight: "usiku wa manane".to_string(),
             noon: "adhuhuri".to_string(),
             patterns: HashMap::from([
-            (0, "saa {h}".to_string()),
-            (5, "saa {h} na ntsanu".to_string()),
-            (10, "saa {h} na kumi".to_string()),
-            (15, "saa {h} na kumi na ntsanu".to_string()),
-            (20, "saa {h} na shirini".to_string()),
-            (25, "saa {h} na shirini na ntsanu".to_string()),
-            (30, "saa {h} na nusu".to_string()),
-            (35, "saa {h} na thalathini na ntsanu".to_string()),
-            (40, "saa {h} na arubaini".to_string()),
-            (45, "saa {h} na arubaini na ntsanu".to_string()),
-            (50, "saa {h} na hamsini".to_string()),
-            (55, "saa {h} na hamsini na ntsanu".to_string()),
-        ]),
+                (0, "saa {h}".to_string()),
+                (5, "saa {h} na ntsanu".to_string()),
+                (10, "saa {h} na kumi".to_string()),
+                (15, "saa {h} na kumi na ntsanu".to_string()),
+                (20, "saa {h} na shirini".to_string()),
+                (25, "saa {h} na shirini na ntsanu".to_string()),
+                (30, "saa {h} na nusu".to_string()),
+                (35, "saa {h} na thalathini na ntsanu".to_string()),
+                (40, "saa {h} na arubaini".to_string()),
+                (45, "saa {h} na arubaini na ntsanu".to_string()),
+                (50, "saa {h} na hamsini".to_string()),
+                (55, "saa {h} na hamsini na ntsanu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

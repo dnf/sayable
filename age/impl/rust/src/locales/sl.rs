@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sl.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Slovenian locale.
 pub fn locale() -> AgeLocale {
@@ -17,10 +19,15 @@ pub fn locale() -> AgeLocale {
         code: "sl".to_string(),
         plural: |n| {
             let mod100 = n % 100;
-            if mod100 == 1 { PluralCategory::One }
-            else if mod100 == 2 { PluralCategory::Two }
-            else if mod100 == 3 || mod100 == 4 { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if mod100 == 1 {
+                PluralCategory::One
+            } else if mod100 == 2 {
+                PluralCategory::Two
+            } else if mod100 == 3 || mod100 == 4 {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -52,12 +59,27 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Novorojenček".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Novorojenček".to_string(), f: "Novorojenčica".to_string() },
-            infant: StageLabel::Gendered { m: "Dojenček".to_string(), f: "Dojenčica".to_string() },
-            toddler: StageLabel::Gendered { m: "Malček".to_string(), f: "Malčica".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Novorojenček".to_string(),
+                f: "Novorojenčica".to_string(),
+            },
+            infant: StageLabel::Gendered {
+                m: "Dojenček".to_string(),
+                f: "Dojenčica".to_string(),
+            },
+            toddler: StageLabel::Gendered {
+                m: "Malček".to_string(),
+                f: "Malčica".to_string(),
+            },
             child: StageLabel::Neutral("Otrok".to_string()),
-            teenager: StageLabel::Gendered { m: "Najstnik".to_string(), f: "Najstnica".to_string() },
-            adult: StageLabel::Gendered { m: "Odrasel".to_string(), f: "Odrasla".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Najstnik".to_string(),
+                f: "Najstnica".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "Odrasel".to_string(),
+                f: "Odrasla".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} d")),

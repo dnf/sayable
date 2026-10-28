@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sar.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Sara locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "sar".to_string(),
         clock: ClockConfig {
-            hours: ["lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi".to_string(), "lɛɛr kɨ̀ndá".to_string(), "lɛɛr ɗìi".to_string(), "lɛɛr mùtá".to_string(), "lɛɛr sɔ̀".to_string(), "lɛɛr mɨ̀ndɨ̀".to_string(), "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá".to_string(), "lɛɛr mɨ̀sá".to_string(), "lɛɛr mɨ̀ndɨ̀ mùtá".to_string(), "lɛɛr mɨ̀ndɨ̀ sɔ̀".to_string(), "lɛɛr mɔ̀ɔ́".to_string(), "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá".to_string()],
+            hours: [
+                "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi".to_string(),
+                "lɛɛr kɨ̀ndá".to_string(),
+                "lɛɛr ɗìi".to_string(),
+                "lɛɛr mùtá".to_string(),
+                "lɛɛr sɔ̀".to_string(),
+                "lɛɛr mɨ̀ndɨ̀".to_string(),
+                "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá".to_string(),
+                "lɛɛr mɨ̀sá".to_string(),
+                "lɛɛr mɨ̀ndɨ̀ mùtá".to_string(),
+                "lɛɛr mɨ̀ndɨ̀ sɔ̀".to_string(),
+                "lɛɛr mɔ̀ɔ́".to_string(),
+                "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá".to_string(),
+            ],
             midnight: "badɔ".to_string(),
             noon: "mbɔr ndɔ".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} kɨ̀ minít mɨ̀ndɨ̀".to_string()),
-            (10, "{h} kɨ̀ minít mɔ̀ɔ́".to_string()),
-            (15, "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
-            (20, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi".to_string()),
-            (25, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
-            (30, "{h} kɩ̀ ndá̰ŋ".to_string()),
-            (35, "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
-            (40, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀".to_string()),
-            (45, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
-            (50, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀".to_string()),
-            (55, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} kɨ̀ minít mɨ̀ndɨ̀".to_string()),
+                (10, "{h} kɨ̀ minít mɔ̀ɔ́".to_string()),
+                (15, "{h} kɨ̀ minít mɔ̀ɔ́ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
+                (20, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi".to_string()),
+                (25, "{h} kɨ̀ minít mɔ̀ɔ́ ɗìi gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
+                (30, "{h} kɩ̀ ndá̰ŋ".to_string()),
+                (35, "{h} kɨ̀ minít mɔ̀ɔ́ mùtá gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
+                (40, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀".to_string()),
+                (45, "{h} kɨ̀ minít mɔ̀ɔ́ sɔ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
+                (50, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀".to_string()),
+                (55, "{h} kɨ̀ minít mɔ̀ɔ́ mɨ̀ndɨ̀ gɨ́dɛ̀ ɓà mɨ̀ndɨ̀".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

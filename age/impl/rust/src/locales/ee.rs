@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ee.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Ewe locale.
 pub fn locale() -> AgeLocale {
@@ -36,7 +38,10 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Ɖevi".to_string()),
             toddler: StageLabel::Neutral("Ɖevi sue".to_string()),
             child: StageLabel::Neutral("Ɖevi".to_string()),
-            teenager: StageLabel::Gendered { m: "Ɖekakpui".to_string(), f: "Ɖetugbi".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Ɖekakpui".to_string(),
+                f: "Ɖetugbi".to_string(),
+            },
             adult: StageLabel::Neutral("Ame tsitsi".to_string()),
         },
         short: Some(CompactnessOverride {

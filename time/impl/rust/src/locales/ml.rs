@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ml.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Malayalam locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ml".to_string(),
         clock: ClockConfig {
-            hours: ["പന്ത്രണ്ട".to_string(), "ഒന്ന".to_string(), "രണ്ട".to_string(), "മൂന്ന".to_string(), "നാല".to_string(), "അഞ്ച".to_string(), "ആറ".to_string(), "ഏഴ".to_string(), "എട്ട".to_string(), "ഒമ്പത".to_string(), "പത്ത".to_string(), "പതിനൊന്ന".to_string()],
+            hours: [
+                "പന്ത്രണ്ട".to_string(),
+                "ഒന്ന".to_string(),
+                "രണ്ട".to_string(),
+                "മൂന്ന".to_string(),
+                "നാല".to_string(),
+                "അഞ്ച".to_string(),
+                "ആറ".to_string(),
+                "ഏഴ".to_string(),
+                "എട്ട".to_string(),
+                "ഒമ്പത".to_string(),
+                "പത്ത".to_string(),
+                "പതിനൊന്ന".to_string(),
+            ],
             midnight: "അർദ്ധരാത്രി".to_string(),
             noon: "ഉച്ച".to_string(),
             patterns: HashMap::from([
-            (0, "{h}് മണി".to_string()),
-            (5, "{h}് മണി അഞ്ച് മിനിറ്റ്".to_string()),
-            (10, "{h}് മണി പത്ത് മിനിറ്റ്".to_string()),
-            (15, "{h}േകാൽ".to_string()),
-            (20, "{h}് മണി ഇരുപത് മിനിറ്റ്".to_string()),
-            (25, "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്".to_string()),
-            (30, "{h}ര".to_string()),
-            (35, "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്".to_string()),
-            (40, "{h}് മണി നാൽപ്പത് മിനിറ്റ്".to_string()),
-            (45, "{h}േമുക്കാൽ".to_string()),
-            (50, "{h}് മണി അമ്പത് മിനിറ്റ്".to_string()),
-            (55, "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്".to_string()),
-        ]),
+                (0, "{h}് മണി".to_string()),
+                (5, "{h}് മണി അഞ്ച് മിനിറ്റ്".to_string()),
+                (10, "{h}് മണി പത്ത് മിനിറ്റ്".to_string()),
+                (15, "{h}േകാൽ".to_string()),
+                (20, "{h}് മണി ഇരുപത് മിനിറ്റ്".to_string()),
+                (25, "{h}് മണി ഇരുപത്തഞ്ച് മിനിറ്റ്".to_string()),
+                (30, "{h}ര".to_string()),
+                (35, "{h}് മണി മുപ്പത്തഞ്ച് മിനിറ്റ്".to_string()),
+                (40, "{h}് മണി നാൽപ്പത് മിനിറ്റ്".to_string()),
+                (45, "{h}േമുക്കാൽ".to_string()),
+                (50, "{h}് മണി അമ്പത് മിനിറ്റ്".to_string()),
+                (55, "{h}് മണി അമ്പത്തഞ്ച് മിനിറ്റ്".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

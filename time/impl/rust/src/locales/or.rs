@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/or.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Odia locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "or".to_string(),
         clock: ClockConfig {
-            hours: ["ବାରଟା".to_string(), "ଗୋଟିଏ".to_string(), "ଦୁଇଟା".to_string(), "ତିନିଟା".to_string(), "ଚାରିଟା".to_string(), "ପାଞ୍ଚଟା".to_string(), "ଛଅଟା".to_string(), "ସାତଟା".to_string(), "ଆଠଟା".to_string(), "ନଅଟା".to_string(), "ଦଶଟା".to_string(), "ଏଗାରଟା".to_string()],
+            hours: [
+                "ବାରଟା".to_string(),
+                "ଗୋଟିଏ".to_string(),
+                "ଦୁଇଟା".to_string(),
+                "ତିନିଟା".to_string(),
+                "ଚାରିଟା".to_string(),
+                "ପାଞ୍ଚଟା".to_string(),
+                "ଛଅଟା".to_string(),
+                "ସାତଟା".to_string(),
+                "ଆଠଟା".to_string(),
+                "ନଅଟା".to_string(),
+                "ଦଶଟା".to_string(),
+                "ଏଗାରଟା".to_string(),
+            ],
             midnight: "ମଧ୍ୟରାତ୍ରି".to_string(),
             noon: "ମଧ୍ୟାହ୍ନ".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍".to_string()),
-            (10, "{h} ବାଜି ଦଶ ମିନିଟ୍".to_string()),
-            (15, "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍".to_string()),
-            (20, "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍".to_string()),
-            (25, "{h} ବାଜି ପଚିଶ ମିନିଟ୍".to_string()),
-            (30, "{h} ବାଜି ତିରିଶ ମିନିଟ୍".to_string()),
-            (35, "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍".to_string()),
-            (40, "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍".to_string()),
-            (45, "ପାଉଣେ {next_h}".to_string()),
-            (50, "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍".to_string()),
-            (55, "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} ବାଜି ପାଞ୍ଚ ମିନିଟ୍".to_string()),
+                (10, "{h} ବାଜି ଦଶ ମିନିଟ୍".to_string()),
+                (15, "{h} ବାଜି ପନ୍ଦର ମିନିଟ୍".to_string()),
+                (20, "{h} ବାଜି କୋଡ଼ିଏ ମିନିଟ୍".to_string()),
+                (25, "{h} ବାଜି ପଚିଶ ମିନିଟ୍".to_string()),
+                (30, "{h} ବାଜି ତିରିଶ ମିନିଟ୍".to_string()),
+                (35, "{next_h} ବାଜିବାକୁ ପଚିଶ ମିନିଟ୍".to_string()),
+                (40, "{next_h} ବାଜିବାକୁ କୋଡ଼ିଏ ମିନିଟ୍".to_string()),
+                (45, "ପାଉଣେ {next_h}".to_string()),
+                (50, "{next_h} ବାଜିବାକୁ ଦଶ ମିନିଟ୍".to_string()),
+                (55, "{next_h} ବାଜିବାକୁ ପାଞ୍ଚ ମିନିଟ୍".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

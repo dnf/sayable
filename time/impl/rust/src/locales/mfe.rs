@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mfe.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Mauritian Creole locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mfe".to_string(),
         clock: ClockConfig {
-            hours: ["douzer".to_string(), "enn er".to_string(), "dezer".to_string(), "trwazer".to_string(), "katrer".to_string(), "senker".to_string(), "sizer".to_string(), "seter".to_string(), "witer".to_string(), "never".to_string(), "dizer".to_string(), "onzer".to_string()],
+            hours: [
+                "douzer".to_string(),
+                "enn er".to_string(),
+                "dezer".to_string(),
+                "trwazer".to_string(),
+                "katrer".to_string(),
+                "senker".to_string(),
+                "sizer".to_string(),
+                "seter".to_string(),
+                "witer".to_string(),
+                "never".to_string(),
+                "dizer".to_string(),
+                "onzer".to_string(),
+            ],
             midnight: "minwi".to_string(),
             noon: "midi".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} senk".to_string()),
-            (10, "{h} dis".to_string()),
-            (15, "{h} ekar".to_string()),
-            (20, "{h} vin".to_string()),
-            (25, "{h} vennsenk".to_string()),
-            (30, "{h} edmi".to_string()),
-            (35, "{next_h} mwin vennsenk".to_string()),
-            (40, "{next_h} mwin vin".to_string()),
-            (45, "{next_h} mwin kar".to_string()),
-            (50, "{next_h} mwin dis".to_string()),
-            (55, "{next_h} mwin senk".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} senk".to_string()),
+                (10, "{h} dis".to_string()),
+                (15, "{h} ekar".to_string()),
+                (20, "{h} vin".to_string()),
+                (25, "{h} vennsenk".to_string()),
+                (30, "{h} edmi".to_string()),
+                (35, "{next_h} mwin vennsenk".to_string()),
+                (40, "{next_h} mwin vin".to_string()),
+                (45, "{next_h} mwin kar".to_string()),
+                (50, "{next_h} mwin dis".to_string()),
+                (55, "{next_h} mwin senk".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

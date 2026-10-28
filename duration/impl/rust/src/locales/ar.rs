@@ -9,20 +9,30 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ar.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Arabic locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "ar".to_string(),
         plural: |n| {
-            if n == 0 { return PluralCategory::Zero; }
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
+            if n == 0 {
+                return PluralCategory::Zero;
+            }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
             let mod100 = n % 100;
-            if (3..=10).contains(&mod100) { PluralCategory::Few }
-            else if (11..=99).contains(&mod100) { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if (3..=10).contains(&mod100) {
+                PluralCategory::Few
+            } else if (11..=99).contains(&mod100) {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

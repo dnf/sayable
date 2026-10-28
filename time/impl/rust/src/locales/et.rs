@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/et.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Estonian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "et".to_string(),
         clock: ClockConfig {
-            hours: ["kaksteist".to_string(), "üks".to_string(), "kaks".to_string(), "kolm".to_string(), "neli".to_string(), "viis".to_string(), "kuus".to_string(), "seitse".to_string(), "kaheksa".to_string(), "üheksa".to_string(), "kümme".to_string(), "üksteist".to_string()],
+            hours: [
+                "kaksteist".to_string(),
+                "üks".to_string(),
+                "kaks".to_string(),
+                "kolm".to_string(),
+                "neli".to_string(),
+                "viis".to_string(),
+                "kuus".to_string(),
+                "seitse".to_string(),
+                "kaheksa".to_string(),
+                "üheksa".to_string(),
+                "kümme".to_string(),
+                "üksteist".to_string(),
+            ],
             midnight: "kesköö".to_string(),
             noon: "keskpäev".to_string(),
             patterns: HashMap::from([
-            (0, "kell {h}".to_string()),
-            (5, "viis minutit {h} läbi".to_string()),
-            (10, "kümme minutit {h} läbi".to_string()),
-            (15, "veerand {next_h}".to_string()),
-            (20, "kakskümmend minutit {h} läbi".to_string()),
-            (25, "kakskümmend viis minutit {h} läbi".to_string()),
-            (30, "pool {next_h}".to_string()),
-            (35, "kolmkümmend viis minutit {h} läbi".to_string()),
-            (40, "kahekümne minuti pärast {next_h}".to_string()),
-            (45, "kolmveerand {next_h}".to_string()),
-            (50, "kümne minuti pärast {next_h}".to_string()),
-            (55, "viie minuti pärast {next_h}".to_string()),
-        ]),
+                (0, "kell {h}".to_string()),
+                (5, "viis minutit {h} läbi".to_string()),
+                (10, "kümme minutit {h} läbi".to_string()),
+                (15, "veerand {next_h}".to_string()),
+                (20, "kakskümmend minutit {h} läbi".to_string()),
+                (25, "kakskümmend viis minutit {h} läbi".to_string()),
+                (30, "pool {next_h}".to_string()),
+                (35, "kolmkümmend viis minutit {h} läbi".to_string()),
+                (40, "kahekümne minuti pärast {next_h}".to_string()),
+                (45, "kolmveerand {next_h}".to_string()),
+                (50, "kümne minuti pärast {next_h}".to_string()),
+                (55, "viie minuti pärast {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

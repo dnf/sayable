@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/hy.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Armenian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "hy".to_string(),
         clock: ClockConfig {
-            hours: ["տասներկուսն".to_string(), "մեկն".to_string(), "երկուսն".to_string(), "երեքն".to_string(), "չորսն".to_string(), "հինգն".to_string(), "վեցն".to_string(), "յոթն".to_string(), "ութն".to_string(), "ինն".to_string(), "տասն".to_string(), "տասնմեկն".to_string()],
+            hours: [
+                "տասներկուսն".to_string(),
+                "մեկն".to_string(),
+                "երկուսն".to_string(),
+                "երեքն".to_string(),
+                "չորսն".to_string(),
+                "հինգն".to_string(),
+                "վեցն".to_string(),
+                "յոթն".to_string(),
+                "ութն".to_string(),
+                "ինն".to_string(),
+                "տասն".to_string(),
+                "տասնմեկն".to_string(),
+            ],
             midnight: "կեսգիշեր".to_string(),
             noon: "կեսօր".to_string(),
             patterns: HashMap::from([
-            (0, "ժամը {h} է".to_string()),
-            (5, "{h} անց հինգ".to_string()),
-            (10, "{h} անց տասը".to_string()),
-            (15, "{h} անց տասնհինգ".to_string()),
-            (20, "{h} անց քսան".to_string()),
-            (25, "{h} անց քսանհինգ".to_string()),
-            (30, "{h} անց կես".to_string()),
-            (35, "{h} անց երեսունհինգ".to_string()),
-            (40, "{h} անց քառասուն".to_string()),
-            (45, "{h} անց քառասունհինգ".to_string()),
-            (50, "{h} անց հիսուն".to_string()),
-            (55, "{h} անց հիսունհինգ".to_string()),
-        ]),
+                (0, "ժամը {h} է".to_string()),
+                (5, "{h} անց հինգ".to_string()),
+                (10, "{h} անց տասը".to_string()),
+                (15, "{h} անց տասնհինգ".to_string()),
+                (20, "{h} անց քսան".to_string()),
+                (25, "{h} անց քսանհինգ".to_string()),
+                (30, "{h} անց կես".to_string()),
+                (35, "{h} անց երեսունհինգ".to_string()),
+                (40, "{h} անց քառասուն".to_string()),
+                (45, "{h} անց քառասունհինգ".to_string()),
+                (50, "{h} անց հիսուն".to_string()),
+                (55, "{h} անց հիսունհինգ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

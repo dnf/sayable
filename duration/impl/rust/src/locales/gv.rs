@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gv.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Manx locale.
 pub fn locale() -> DurationLocale {
@@ -18,10 +18,15 @@ pub fn locale() -> DurationLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 1 { PluralCategory::One }
-            else if mod10 == 2 { PluralCategory::Two }
-            else if mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80 { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if mod10 == 1 {
+                PluralCategory::One
+            } else if mod10 == 2 {
+                PluralCategory::Two
+            } else if mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80 {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

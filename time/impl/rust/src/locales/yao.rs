@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/yao.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Yao locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "yao".to_string(),
         clock: ClockConfig {
-            hours: ["likumi na iwili".to_string(), "cimo".to_string(), "iwili".to_string(), "itatu".to_string(), "ncece".to_string(), "nsano".to_string(), "nsano nacimo".to_string(), "nsano nawili".to_string(), "nsano naitatu".to_string(), "nsano nancece".to_string(), "likumi".to_string(), "likumi nacimo".to_string()],
+            hours: [
+                "likumi na iwili".to_string(),
+                "cimo".to_string(),
+                "iwili".to_string(),
+                "itatu".to_string(),
+                "ncece".to_string(),
+                "nsano".to_string(),
+                "nsano nacimo".to_string(),
+                "nsano nawili".to_string(),
+                "nsano naitatu".to_string(),
+                "nsano nancece".to_string(),
+                "likumi".to_string(),
+                "likumi nacimo".to_string(),
+            ],
             midnight: "pakati pa usiku".to_string(),
             noon: "pakati pa lisiku".to_string(),
             patterns: HashMap::from([
-            (0, "saa {h}".to_string()),
-            (5, "saa {h} na nsano".to_string()),
-            (10, "saa {h} na likumi".to_string()),
-            (15, "saa {h} na likumi na nsano".to_string()),
-            (20, "saa {h} na makumi gaŵili".to_string()),
-            (25, "saa {h} na makumi gaŵili na nsano".to_string()),
-            (30, "saa {h} na nusu".to_string()),
-            (35, "saa {h} na makumi gatatu na nsano".to_string()),
-            (40, "saa {h} na makumi ncece".to_string()),
-            (45, "saa {h} na makumi ncece na nsano".to_string()),
-            (50, "saa {h} na makumi nsano".to_string()),
-            (55, "saa {h} na makumi nsano na nsano".to_string()),
-        ]),
+                (0, "saa {h}".to_string()),
+                (5, "saa {h} na nsano".to_string()),
+                (10, "saa {h} na likumi".to_string()),
+                (15, "saa {h} na likumi na nsano".to_string()),
+                (20, "saa {h} na makumi gaŵili".to_string()),
+                (25, "saa {h} na makumi gaŵili na nsano".to_string()),
+                (30, "saa {h} na nusu".to_string()),
+                (35, "saa {h} na makumi gatatu na nsano".to_string()),
+                (40, "saa {h} na makumi ncece".to_string()),
+                (45, "saa {h} na makumi ncece na nsano".to_string()),
+                (50, "saa {h} na makumi nsano".to_string()),
+                (55, "saa {h} na makumi nsano na nsano".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

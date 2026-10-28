@@ -9,15 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/tzm.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Central Atlas Tamazight locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "tzm".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 || (11..=99).contains(&n) { PluralCategory::One }
-            else { PluralCategory::Other }
+            if n == 0 || n == 1 || (11..=99).contains(&n) {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -43,10 +48,22 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Neutral("Iɣ d illul".to_string()),
             infant: StageLabel::Neutral("Llufan".to_string()),
-            toddler: StageLabel::Gendered { m: "Aḥenjir".to_string(), f: "Taḥenjirt".to_string() },
-            child: StageLabel::Gendered { m: "Afrux".to_string(), f: "Tafruxt".to_string() },
-            teenager: StageLabel::Gendered { m: "Aɛrim".to_string(), f: "Taɛrimt".to_string() },
-            adult: StageLabel::Gendered { m: "Argaz".to_string(), f: "Tamṭṭuṭ".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "Aḥenjir".to_string(),
+                f: "Taḥenjirt".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "Afrux".to_string(),
+                f: "Tafruxt".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "Aɛrim".to_string(),
+                f: "Taɛrimt".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "Argaz".to_string(),
+                f: "Tamṭṭuṭ".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

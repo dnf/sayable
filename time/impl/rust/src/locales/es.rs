@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/es.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Spanish locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "es".to_string(),
         clock: ClockConfig {
-            hours: ["doce".to_string(), "una".to_string(), "dos".to_string(), "tres".to_string(), "cuatro".to_string(), "cinco".to_string(), "seis".to_string(), "siete".to_string(), "ocho".to_string(), "nueve".to_string(), "diez".to_string(), "once".to_string()],
+            hours: [
+                "doce".to_string(),
+                "una".to_string(),
+                "dos".to_string(),
+                "tres".to_string(),
+                "cuatro".to_string(),
+                "cinco".to_string(),
+                "seis".to_string(),
+                "siete".to_string(),
+                "ocho".to_string(),
+                "nueve".to_string(),
+                "diez".to_string(),
+                "once".to_string(),
+            ],
             midnight: "medianoche".to_string(),
             noon: "mediodía".to_string(),
             patterns: HashMap::from([
-            (0, "{h} en punto".to_string()),
-            (5, "{h} y cinco".to_string()),
-            (10, "{h} y diez".to_string()),
-            (15, "{h} y cuarto".to_string()),
-            (20, "{h} y veinte".to_string()),
-            (25, "{h} y veinticinco".to_string()),
-            (30, "{h} y media".to_string()),
-            (35, "{next_h} menos veinticinco".to_string()),
-            (40, "{next_h} menos veinte".to_string()),
-            (45, "{next_h} menos cuarto".to_string()),
-            (50, "{next_h} menos diez".to_string()),
-            (55, "{next_h} menos cinco".to_string()),
-        ]),
+                (0, "{h} en punto".to_string()),
+                (5, "{h} y cinco".to_string()),
+                (10, "{h} y diez".to_string()),
+                (15, "{h} y cuarto".to_string()),
+                (20, "{h} y veinte".to_string()),
+                (25, "{h} y veinticinco".to_string()),
+                (30, "{h} y media".to_string()),
+                (35, "{next_h} menos veinticinco".to_string()),
+                (40, "{next_h} menos veinte".to_string()),
+                (45, "{next_h} menos cuarto".to_string()),
+                (50, "{next_h} menos diez".to_string()),
+                (55, "{next_h} menos cinco".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

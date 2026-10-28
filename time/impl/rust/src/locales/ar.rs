@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ar.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Arabic locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ar".to_string(),
         clock: ClockConfig {
-            hours: ["الثانية عشرة".to_string(), "الواحدة".to_string(), "الثانية".to_string(), "الثالثة".to_string(), "الرابعة".to_string(), "الخامسة".to_string(), "السادسة".to_string(), "السابعة".to_string(), "الثامنة".to_string(), "التاسعة".to_string(), "العاشرة".to_string(), "الحادية عشرة".to_string()],
+            hours: [
+                "الثانية عشرة".to_string(),
+                "الواحدة".to_string(),
+                "الثانية".to_string(),
+                "الثالثة".to_string(),
+                "الرابعة".to_string(),
+                "الخامسة".to_string(),
+                "السادسة".to_string(),
+                "السابعة".to_string(),
+                "الثامنة".to_string(),
+                "التاسعة".to_string(),
+                "العاشرة".to_string(),
+                "الحادية عشرة".to_string(),
+            ],
             midnight: "منتصف الليل".to_string(),
             noon: "الظهر".to_string(),
             patterns: HashMap::from([
-            (0, "الساعة {h}".to_string()),
-            (5, "{h} وخمس دقائق".to_string()),
-            (10, "{h} وعشر دقائق".to_string()),
-            (15, "{h} والربع".to_string()),
-            (20, "{h} والثلث".to_string()),
-            (25, "{h} والنصف إلا خمس دقائق".to_string()),
-            (30, "{h} والنصف".to_string()),
-            (35, "{h} والنصف وخمس دقائق".to_string()),
-            (40, "{next_h} إلا ثلثًا".to_string()),
-            (45, "{next_h} إلا ربعًا".to_string()),
-            (50, "{next_h} إلا عشر دقائق".to_string()),
-            (55, "{next_h} إلا خمس دقائق".to_string()),
-        ]),
+                (0, "الساعة {h}".to_string()),
+                (5, "{h} وخمس دقائق".to_string()),
+                (10, "{h} وعشر دقائق".to_string()),
+                (15, "{h} والربع".to_string()),
+                (20, "{h} والثلث".to_string()),
+                (25, "{h} والنصف إلا خمس دقائق".to_string()),
+                (30, "{h} والنصف".to_string()),
+                (35, "{h} والنصف وخمس دقائق".to_string()),
+                (40, "{next_h} إلا ثلثًا".to_string()),
+                (45, "{next_h} إلا ربعًا".to_string()),
+                (50, "{next_h} إلا عشر دقائق".to_string()),
+                (55, "{next_h} إلا خمس دقائق".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

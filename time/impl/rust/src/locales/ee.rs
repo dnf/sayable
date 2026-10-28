@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ee.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Ewe locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ee".to_string(),
         clock: ClockConfig {
-            hours: ["wuieve".to_string(), "ɖeka".to_string(), "eve".to_string(), "etɔ̃".to_string(), "ene".to_string(), "atɔ̃".to_string(), "ade".to_string(), "adre".to_string(), "enyi".to_string(), "asieke".to_string(), "ewo".to_string(), "wuiɖeka".to_string()],
+            hours: [
+                "wuieve".to_string(),
+                "ɖeka".to_string(),
+                "eve".to_string(),
+                "etɔ̃".to_string(),
+                "ene".to_string(),
+                "atɔ̃".to_string(),
+                "ade".to_string(),
+                "adre".to_string(),
+                "enyi".to_string(),
+                "asieke".to_string(),
+                "ewo".to_string(),
+                "wuiɖeka".to_string(),
+            ],
             midnight: "zã titina".to_string(),
             noon: "ŋdɔ".to_string(),
             patterns: HashMap::from([
-            (0, "ga {h}".to_string()),
-            (5, "ga {h} kple aɖabaƒoƒo atɔ̃".to_string()),
-            (10, "ga {h} kple aɖabaƒoƒo ewo".to_string()),
-            (15, "ga {h} kple aɖabaƒoƒo wuiatɔ̃".to_string()),
-            (20, "ga {h} kple aɖabaƒoƒo blaeve".to_string()),
-            (25, "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃".to_string()),
-            (30, "ga {h} kple afã".to_string()),
-            (35, "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃".to_string()),
-            (40, "ga {h} kple aɖabaƒoƒo blaene".to_string()),
-            (45, "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃".to_string()),
-            (50, "ga {h} kple aɖabaƒoƒo blaatɔ̃".to_string()),
-            (55, "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃".to_string()),
-        ]),
+                (0, "ga {h}".to_string()),
+                (5, "ga {h} kple aɖabaƒoƒo atɔ̃".to_string()),
+                (10, "ga {h} kple aɖabaƒoƒo ewo".to_string()),
+                (15, "ga {h} kple aɖabaƒoƒo wuiatɔ̃".to_string()),
+                (20, "ga {h} kple aɖabaƒoƒo blaeve".to_string()),
+                (25, "ga {h} kple aɖabaƒoƒo blaeve vɔ atɔ̃".to_string()),
+                (30, "ga {h} kple afã".to_string()),
+                (35, "ga {h} kple aɖabaƒoƒo blaetɔ̃ vɔ atɔ̃".to_string()),
+                (40, "ga {h} kple aɖabaƒoƒo blaene".to_string()),
+                (45, "ga {h} kple aɖabaƒoƒo blaene vɔ atɔ̃".to_string()),
+                (50, "ga {h} kple aɖabaƒoƒo blaatɔ̃".to_string()),
+                (55, "ga {h} kple aɖabaƒoƒo blaatɔ̃ vɔ atɔ̃".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

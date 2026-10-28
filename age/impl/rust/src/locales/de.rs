@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/de.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// German locale.
 pub fn locale() -> AgeLocale {
@@ -49,7 +51,10 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Kleinkind".to_string()),
             child: StageLabel::Neutral("Kind".to_string()),
             teenager: StageLabel::Neutral("Teenager".to_string()),
-            adult: StageLabel::Gendered { m: "Erwachsener".to_string(), f: "Erwachsene".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Erwachsener".to_string(),
+                f: "Erwachsene".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} Tg.")),

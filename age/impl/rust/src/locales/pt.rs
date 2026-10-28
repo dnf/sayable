@@ -9,14 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/pt.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Portuguese locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "pt".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -40,12 +46,18 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Recém-nascido".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Recém-nascido".to_string(), f: "Recém-nascida".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Recém-nascido".to_string(),
+                f: "Recém-nascida".to_string(),
+            },
             infant: StageLabel::Neutral("Bebê".to_string()),
             toddler: StageLabel::Neutral("Criança pequena".to_string()),
             child: StageLabel::Neutral("Criança".to_string()),
             teenager: StageLabel::Neutral("Adolescente".to_string()),
-            adult: StageLabel::Gendered { m: "Adulto".to_string(), f: "Adulta".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Adulto".to_string(),
+                f: "Adulta".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

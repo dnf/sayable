@@ -9,20 +9,33 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kw.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Cornish locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "kw".to_string(),
         plural: |n| {
-            if n == 0 { return PluralCategory::Zero; }
-            if n == 1 { return PluralCategory::One; }
+            if n == 0 {
+                return PluralCategory::Zero;
+            }
+            if n == 1 {
+                return PluralCategory::One;
+            }
             let mod100 = n % 100;
-            if mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82 { PluralCategory::Two }
-            else if mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83 { PluralCategory::Few }
-            else if n != 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81) { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82 {
+                PluralCategory::Two
+            } else if mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83 {
+                PluralCategory::Few
+            } else if n != 1
+                && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81)
+            {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

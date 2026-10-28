@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/yue.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Cantonese locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "yue".to_string(),
         clock: ClockConfig {
-            hours: ["十二".to_string(), "一".to_string(), "兩".to_string(), "三".to_string(), "四".to_string(), "五".to_string(), "六".to_string(), "七".to_string(), "八".to_string(), "九".to_string(), "十".to_string(), "十一".to_string()],
+            hours: [
+                "十二".to_string(),
+                "一".to_string(),
+                "兩".to_string(),
+                "三".to_string(),
+                "四".to_string(),
+                "五".to_string(),
+                "六".to_string(),
+                "七".to_string(),
+                "八".to_string(),
+                "九".to_string(),
+                "十".to_string(),
+                "十一".to_string(),
+            ],
             midnight: "午夜".to_string(),
             noon: "正午".to_string(),
             patterns: HashMap::from([
-            (0, "{h}點正".to_string()),
-            (5, "{h}點一個字".to_string()),
-            (10, "{h}點兩個字".to_string()),
-            (15, "{h}點三個字".to_string()),
-            (20, "{h}點四個字".to_string()),
-            (25, "{h}點五個字".to_string()),
-            (30, "{h}點半".to_string()),
-            (35, "{h}點七個字".to_string()),
-            (40, "{h}點八個字".to_string()),
-            (45, "{h}點九個字".to_string()),
-            (50, "{h}點十個字".to_string()),
-            (55, "{h}點十一個字".to_string()),
-        ]),
+                (0, "{h}點正".to_string()),
+                (5, "{h}點一個字".to_string()),
+                (10, "{h}點兩個字".to_string()),
+                (15, "{h}點三個字".to_string()),
+                (20, "{h}點四個字".to_string()),
+                (25, "{h}點五個字".to_string()),
+                (30, "{h}點半".to_string()),
+                (35, "{h}點七個字".to_string()),
+                (40, "{h}點八個字".to_string()),
+                (45, "{h}點九個字".to_string()),
+                (50, "{h}點十個字".to_string()),
+                (55, "{h}點十一個字".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

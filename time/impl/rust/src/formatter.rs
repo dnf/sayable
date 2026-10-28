@@ -134,7 +134,11 @@ fn is_real_date(date: &[u8]) -> bool {
     if date.len() != 10 || date[4] != b'-' || date[7] != b'-' {
         return false;
     }
-    match (digits(&date[0..4]), digits(&date[5..7]), digits(&date[8..10])) {
+    match (
+        digits(&date[0..4]),
+        digits(&date[5..7]),
+        digits(&date[8..10]),
+    ) {
         (Some(year), Some(month), Some(day)) => {
             (1..=12).contains(&month) && day >= 1 && day <= days_in_month(year, month)
         }
@@ -194,7 +198,9 @@ fn digits(run: &[u8]) -> Option<i32> {
     if run.is_empty() {
         return None;
     }
-    run.iter().try_fold(0, |n, &c| c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0')))
+    run.iter().try_fold(0, |n, &c| {
+        c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0'))
+    })
 }
 
 /// Rounds a minute value to the nearest 5.

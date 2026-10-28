@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/fi.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Finnish locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "fi".to_string(),
         clock: ClockConfig {
-            hours: ["kaksitoista".to_string(), "yksi".to_string(), "kaksi".to_string(), "kolme".to_string(), "neljä".to_string(), "viisi".to_string(), "kuusi".to_string(), "seitsemän".to_string(), "kahdeksan".to_string(), "yhdeksän".to_string(), "kymmenen".to_string(), "yksitoista".to_string()],
+            hours: [
+                "kaksitoista".to_string(),
+                "yksi".to_string(),
+                "kaksi".to_string(),
+                "kolme".to_string(),
+                "neljä".to_string(),
+                "viisi".to_string(),
+                "kuusi".to_string(),
+                "seitsemän".to_string(),
+                "kahdeksan".to_string(),
+                "yhdeksän".to_string(),
+                "kymmenen".to_string(),
+                "yksitoista".to_string(),
+            ],
             midnight: "keskiyö".to_string(),
             noon: "keskipäivä".to_string(),
             patterns: HashMap::from([
-            (0, "kello {h}".to_string()),
-            (5, "viisi yli {h}".to_string()),
-            (10, "kymmenen yli {h}".to_string()),
-            (15, "vartti yli {h}".to_string()),
-            (20, "kaksikymmentä yli {h}".to_string()),
-            (25, "kaksikymmentäviisi yli {h}".to_string()),
-            (30, "puoli {next_h}".to_string()),
-            (35, "kaksikymmentäviisi vaille {next_h}".to_string()),
-            (40, "kaksikymmentä vaille {next_h}".to_string()),
-            (45, "vartti vaille {next_h}".to_string()),
-            (50, "kymmenen vaille {next_h}".to_string()),
-            (55, "viisi vaille {next_h}".to_string()),
-        ]),
+                (0, "kello {h}".to_string()),
+                (5, "viisi yli {h}".to_string()),
+                (10, "kymmenen yli {h}".to_string()),
+                (15, "vartti yli {h}".to_string()),
+                (20, "kaksikymmentä yli {h}".to_string()),
+                (25, "kaksikymmentäviisi yli {h}".to_string()),
+                (30, "puoli {next_h}".to_string()),
+                (35, "kaksikymmentäviisi vaille {next_h}".to_string()),
+                (40, "kaksikymmentä vaille {next_h}".to_string()),
+                (45, "vartti vaille {next_h}".to_string()),
+                (50, "kymmenen vaille {next_h}".to_string()),
+                (55, "viisi vaille {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

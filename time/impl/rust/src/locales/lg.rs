@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/lg.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Luganda locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "lg".to_string(),
         clock: ClockConfig {
-            hours: ["mukaaga".to_string(), "musanvu".to_string(), "munaana".to_string(), "mwenda".to_string(), "kkumi".to_string(), "kkumi n'emu".to_string(), "kkumi n'ebbiri".to_string(), "emu".to_string(), "bbiri".to_string(), "ssatu".to_string(), "nnya".to_string(), "ttaano".to_string()],
+            hours: [
+                "mukaaga".to_string(),
+                "musanvu".to_string(),
+                "munaana".to_string(),
+                "mwenda".to_string(),
+                "kkumi".to_string(),
+                "kkumi n'emu".to_string(),
+                "kkumi n'ebbiri".to_string(),
+                "emu".to_string(),
+                "bbiri".to_string(),
+                "ssatu".to_string(),
+                "nnya".to_string(),
+                "ttaano".to_string(),
+            ],
             midnight: "ekiro eky'omu ttumbi".to_string(),
             noon: "ettuntu".to_string(),
             patterns: HashMap::from([
-            (0, "essaawa {h}".to_string()),
-            (5, "essaawa {h} n'eddakiika ttaano".to_string()),
-            (10, "essaawa {h} n'eddakiika kkumi".to_string()),
-            (15, "essaawa {h} n'eddakiika kkumi na ttaano".to_string()),
-            (20, "essaawa {h} n'eddakiika abiri".to_string()),
-            (25, "essaawa {h} n'eddakiika abiri mu ttaano".to_string()),
-            (30, "essaawa {h} n'ekitundu".to_string()),
-            (35, "essaawa {h} n'eddakiika asatu mu ttaano".to_string()),
-            (40, "essaawa {h} n'eddakiika ana".to_string()),
-            (45, "essaawa {h} n'eddakiika ana mu ttaano".to_string()),
-            (50, "essaawa {h} n'eddakiika ataano".to_string()),
-            (55, "essaawa {h} n'eddakiika ataano mu ttaano".to_string()),
-        ]),
+                (0, "essaawa {h}".to_string()),
+                (5, "essaawa {h} n'eddakiika ttaano".to_string()),
+                (10, "essaawa {h} n'eddakiika kkumi".to_string()),
+                (15, "essaawa {h} n'eddakiika kkumi na ttaano".to_string()),
+                (20, "essaawa {h} n'eddakiika abiri".to_string()),
+                (25, "essaawa {h} n'eddakiika abiri mu ttaano".to_string()),
+                (30, "essaawa {h} n'ekitundu".to_string()),
+                (35, "essaawa {h} n'eddakiika asatu mu ttaano".to_string()),
+                (40, "essaawa {h} n'eddakiika ana".to_string()),
+                (45, "essaawa {h} n'eddakiika ana mu ttaano".to_string()),
+                (50, "essaawa {h} n'eddakiika ataano".to_string()),
+                (55, "essaawa {h} n'eddakiika ataano mu ttaano".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

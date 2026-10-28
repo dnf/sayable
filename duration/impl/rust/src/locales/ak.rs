@@ -9,14 +9,18 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ak.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Akan locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "ak".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::simple("sɛkɛnd {n}"),

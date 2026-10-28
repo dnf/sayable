@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sl.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Slovenian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "sl".to_string(),
         clock: ClockConfig {
-            hours: ["dvanajst".to_string(), "ena".to_string(), "dve".to_string(), "tri".to_string(), "štiri".to_string(), "pet".to_string(), "šest".to_string(), "sedem".to_string(), "osem".to_string(), "devet".to_string(), "deset".to_string(), "enajst".to_string()],
+            hours: [
+                "dvanajst".to_string(),
+                "ena".to_string(),
+                "dve".to_string(),
+                "tri".to_string(),
+                "štiri".to_string(),
+                "pet".to_string(),
+                "šest".to_string(),
+                "sedem".to_string(),
+                "osem".to_string(),
+                "devet".to_string(),
+                "deset".to_string(),
+                "enajst".to_string(),
+            ],
             midnight: "polnoč".to_string(),
             noon: "poldne".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "pet čez {h}".to_string()),
-            (10, "deset čez {h}".to_string()),
-            (15, "petnajst čez {h}".to_string()),
-            (20, "dvajset čez {h}".to_string()),
-            (25, "petindvajset čez {h}".to_string()),
-            (30, "{h} trideset".to_string()),
-            (35, "{h} petintrideset".to_string()),
-            (40, "{h} štirideset".to_string()),
-            (45, "{h} petinštirideset".to_string()),
-            (50, "{h} petdeset".to_string()),
-            (55, "{h} petinpetdeset".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "pet čez {h}".to_string()),
+                (10, "deset čez {h}".to_string()),
+                (15, "petnajst čez {h}".to_string()),
+                (20, "dvajset čez {h}".to_string()),
+                (25, "petindvajset čez {h}".to_string()),
+                (30, "{h} trideset".to_string()),
+                (35, "{h} petintrideset".to_string()),
+                (40, "{h} štirideset".to_string()),
+                (45, "{h} petinštirideset".to_string()),
+                (50, "{h} petdeset".to_string()),
+                (55, "{h} petinpetdeset".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

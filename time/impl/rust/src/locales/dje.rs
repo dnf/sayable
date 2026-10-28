@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/dje.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Zarma locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "dje".to_string(),
         clock: ClockConfig {
-            hours: ["iway cindi hinka".to_string(), "fo".to_string(), "hinka".to_string(), "hinza".to_string(), "taaci".to_string(), "gu".to_string(), "iddu".to_string(), "iyye".to_string(), "ahakku".to_string(), "yagga".to_string(), "iway".to_string(), "iway cindi fo".to_string()],
+            hours: [
+                "iway cindi hinka".to_string(),
+                "fo".to_string(),
+                "hinka".to_string(),
+                "hinza".to_string(),
+                "taaci".to_string(),
+                "gu".to_string(),
+                "iddu".to_string(),
+                "iyye".to_string(),
+                "ahakku".to_string(),
+                "yagga".to_string(),
+                "iway".to_string(),
+                "iway cindi fo".to_string(),
+            ],
             midnight: "cin beri".to_string(),
             noon: "zaari gaaham".to_string(),
             patterns: HashMap::from([
-            (0, "guuru {h}".to_string()),
-            (5, "guuru {h} nda miniti gu".to_string()),
-            (10, "guuru {h} nda miniti iway".to_string()),
-            (15, "guuru {h} nda miniti iway cindi gu".to_string()),
-            (20, "guuru {h} nda miniti waranka".to_string()),
-            (25, "guuru {h} nda miniti waranka cindi gu".to_string()),
-            (30, "guuru {h} nda jare".to_string()),
-            (35, "guuru {h} nda miniti waranza cindi gu".to_string()),
-            (40, "guuru {h} nda miniti waytaaci".to_string()),
-            (45, "guuru {h} nda miniti waytaaci cindi gu".to_string()),
-            (50, "guuru {h} nda miniti waygu".to_string()),
-            (55, "guuru {h} nda miniti waygu cindi gu".to_string()),
-        ]),
+                (0, "guuru {h}".to_string()),
+                (5, "guuru {h} nda miniti gu".to_string()),
+                (10, "guuru {h} nda miniti iway".to_string()),
+                (15, "guuru {h} nda miniti iway cindi gu".to_string()),
+                (20, "guuru {h} nda miniti waranka".to_string()),
+                (25, "guuru {h} nda miniti waranka cindi gu".to_string()),
+                (30, "guuru {h} nda jare".to_string()),
+                (35, "guuru {h} nda miniti waranza cindi gu".to_string()),
+                (40, "guuru {h} nda miniti waytaaci".to_string()),
+                (45, "guuru {h} nda miniti waytaaci cindi gu".to_string()),
+                (50, "guuru {h} nda miniti waygu".to_string()),
+                (55, "guuru {h} nda miniti waygu cindi gu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

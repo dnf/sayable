@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ro.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Romanian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ro".to_string(),
         clock: ClockConfig {
-            hours: ["douăsprezece".to_string(), "unu".to_string(), "două".to_string(), "trei".to_string(), "patru".to_string(), "cinci".to_string(), "șase".to_string(), "șapte".to_string(), "opt".to_string(), "nouă".to_string(), "zece".to_string(), "unsprezece".to_string()],
+            hours: [
+                "douăsprezece".to_string(),
+                "unu".to_string(),
+                "două".to_string(),
+                "trei".to_string(),
+                "patru".to_string(),
+                "cinci".to_string(),
+                "șase".to_string(),
+                "șapte".to_string(),
+                "opt".to_string(),
+                "nouă".to_string(),
+                "zece".to_string(),
+                "unsprezece".to_string(),
+            ],
             midnight: "miezul nopții".to_string(),
             noon: "amiază".to_string(),
             patterns: HashMap::from([
-            (0, "ora {h}".to_string()),
-            (5, "{h} și cinci".to_string()),
-            (10, "{h} și zece".to_string()),
-            (15, "{h} și un sfert".to_string()),
-            (20, "{h} și douăzeci".to_string()),
-            (25, "{h} și douăzeci și cinci".to_string()),
-            (30, "{h} și jumătate".to_string()),
-            (35, "{next_h} fără douăzeci și cinci".to_string()),
-            (40, "{next_h} fără douăzeci".to_string()),
-            (45, "{next_h} fără un sfert".to_string()),
-            (50, "{next_h} fără zece".to_string()),
-            (55, "{next_h} fără cinci".to_string()),
-        ]),
+                (0, "ora {h}".to_string()),
+                (5, "{h} și cinci".to_string()),
+                (10, "{h} și zece".to_string()),
+                (15, "{h} și un sfert".to_string()),
+                (20, "{h} și douăzeci".to_string()),
+                (25, "{h} și douăzeci și cinci".to_string()),
+                (30, "{h} și jumătate".to_string()),
+                (35, "{next_h} fără douăzeci și cinci".to_string()),
+                (40, "{next_h} fără douăzeci".to_string()),
+                (45, "{next_h} fără un sfert".to_string()),
+                (50, "{next_h} fără zece".to_string()),
+                (55, "{next_h} fără cinci".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

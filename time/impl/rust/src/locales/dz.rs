@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/dz.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Dzongkha locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "dz".to_string(),
         clock: ClockConfig {
-            hours: ["བཅུ་གཉིས".to_string(), "གཅིག".to_string(), "གཉིས".to_string(), "གསུམ".to_string(), "བཞི".to_string(), "ལྔ".to_string(), "དྲུག".to_string(), "བདུན".to_string(), "བརྒྱད".to_string(), "དགུ".to_string(), "བཅུ".to_string(), "བཅུ་གཅིག".to_string()],
+            hours: [
+                "བཅུ་གཉིས".to_string(),
+                "གཅིག".to_string(),
+                "གཉིས".to_string(),
+                "གསུམ".to_string(),
+                "བཞི".to_string(),
+                "ལྔ".to_string(),
+                "དྲུག".to_string(),
+                "བདུན".to_string(),
+                "བརྒྱད".to_string(),
+                "དགུ".to_string(),
+                "བཅུ".to_string(),
+                "བཅུ་གཅིག".to_string(),
+            ],
             midnight: "ནམ་ཕྱེད".to_string(),
             noon: "ཉིན་གུང".to_string(),
             patterns: HashMap::from([
-            (0, "ཆུ་ཚོད་{h}".to_string()),
-            (5, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ".to_string()),
-            (10, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ".to_string()),
-            (15, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ".to_string()),
-            (20, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ".to_string()),
-            (25, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ".to_string()),
-            (30, "ཆུ་ཚོད་{h}་དང་ཕྱེད".to_string()),
-            (35, "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ".to_string()),
-            (40, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ".to_string()),
-            (45, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ".to_string()),
-            (50, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ".to_string()),
-            (55, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ".to_string()),
-        ]),
+                (0, "ཆུ་ཚོད་{h}".to_string()),
+                (5, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ".to_string()),
+                (10, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅུ".to_string()),
+                (15, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཅོ་ལྔ".to_string()),
+                (20, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉི་ཤུ".to_string()),
+                (25, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཉེར་ལྔ".to_string()),
+                (30, "ཆུ་ཚོད་{h}་དང་ཕྱེད".to_string()),
+                (35, "ཆུ་ཚོད་{h}་དང་སྐར་མ་སོ་ལྔ".to_string()),
+                (40, "ཆུ་ཚོད་{h}་དང་སྐར་མ་བཞི་བཅུ".to_string()),
+                (45, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ཞེ་ལྔ".to_string()),
+                (50, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ལྔ་བཅུ".to_string()),
+                (55, "ཆུ་ཚོད་{h}་དང་སྐར་མ་ང་ལྔ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

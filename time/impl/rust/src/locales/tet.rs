@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/tet.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Tetum locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "tet".to_string(),
         clock: ClockConfig {
-            hours: ["sanulu-resin-rua".to_string(), "ida".to_string(), "rua".to_string(), "tolu".to_string(), "haat".to_string(), "lima".to_string(), "neen".to_string(), "hitu".to_string(), "ualu".to_string(), "sia".to_string(), "sanulu".to_string(), "sanulu-resin-ida".to_string()],
+            hours: [
+                "sanulu-resin-rua".to_string(),
+                "ida".to_string(),
+                "rua".to_string(),
+                "tolu".to_string(),
+                "haat".to_string(),
+                "lima".to_string(),
+                "neen".to_string(),
+                "hitu".to_string(),
+                "ualu".to_string(),
+                "sia".to_string(),
+                "sanulu".to_string(),
+                "sanulu-resin-ida".to_string(),
+            ],
             midnight: "meiu-kalan".to_string(),
             noon: "meiu-loron".to_string(),
             patterns: HashMap::from([
-            (0, "tuku {h}".to_string()),
-            (5, "tuku {h} ho minutu lima".to_string()),
-            (10, "tuku {h} ho minutu sanulu".to_string()),
-            (15, "tuku {h} ho minutu sanulu-resin-lima".to_string()),
-            (20, "tuku {h} ho minutu ruanulu".to_string()),
-            (25, "tuku {h} ho minutu ruanulu-resin-lima".to_string()),
-            (30, "tuku {h} ho balun".to_string()),
-            (35, "tuku {h} ho minutu tolunulu-resin-lima".to_string()),
-            (40, "tuku {h} ho minutu haatnulu".to_string()),
-            (45, "tuku {h} ho minutu haatnulu-resin-lima".to_string()),
-            (50, "tuku {h} ho minutu limanulu".to_string()),
-            (55, "tuku {h} ho minutu limanulu-resin-lima".to_string()),
-        ]),
+                (0, "tuku {h}".to_string()),
+                (5, "tuku {h} ho minutu lima".to_string()),
+                (10, "tuku {h} ho minutu sanulu".to_string()),
+                (15, "tuku {h} ho minutu sanulu-resin-lima".to_string()),
+                (20, "tuku {h} ho minutu ruanulu".to_string()),
+                (25, "tuku {h} ho minutu ruanulu-resin-lima".to_string()),
+                (30, "tuku {h} ho balun".to_string()),
+                (35, "tuku {h} ho minutu tolunulu-resin-lima".to_string()),
+                (40, "tuku {h} ho minutu haatnulu".to_string()),
+                (45, "tuku {h} ho minutu haatnulu-resin-lima".to_string()),
+                (50, "tuku {h} ho minutu limanulu".to_string()),
+                (55, "tuku {h} ho minutu limanulu-resin-lima".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

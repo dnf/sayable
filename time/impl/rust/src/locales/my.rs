@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/my.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Burmese locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "my".to_string(),
         clock: ClockConfig {
-            hours: ["ဆယ့်နှစ်".to_string(), "တစ်".to_string(), "နှစ်".to_string(), "သုံး".to_string(), "လေး".to_string(), "ငါး".to_string(), "ခြောက်".to_string(), "ခုနစ်".to_string(), "ရှစ်".to_string(), "ကိုး".to_string(), "ဆယ်".to_string(), "ဆယ့်တစ်".to_string()],
+            hours: [
+                "ဆယ့်နှစ်".to_string(),
+                "တစ်".to_string(),
+                "နှစ်".to_string(),
+                "သုံး".to_string(),
+                "လေး".to_string(),
+                "ငါး".to_string(),
+                "ခြောက်".to_string(),
+                "ခုနစ်".to_string(),
+                "ရှစ်".to_string(),
+                "ကိုး".to_string(),
+                "ဆယ်".to_string(),
+                "ဆယ့်တစ်".to_string(),
+            ],
             midnight: "သန်းခေါင်".to_string(),
             noon: "မွန်းတည့်".to_string(),
             patterns: HashMap::from([
-            (0, "{h}နာရီ".to_string()),
-            (5, "{h}နာရီ ငါးမိနစ်".to_string()),
-            (10, "{h}နာရီ ဆယ်မိနစ်".to_string()),
-            (15, "{h}နာရီ ဆယ့်ငါးမိနစ်".to_string()),
-            (20, "{h}နာရီ နှစ်ဆယ်မိနစ်".to_string()),
-            (25, "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်".to_string()),
-            (30, "{h}နာရီခွဲ".to_string()),
-            (35, "{h}နာရီ သုံးဆယ့်ငါးမိနစ်".to_string()),
-            (40, "{h}နာရီ လေးဆယ်မိနစ်".to_string()),
-            (45, "{h}နာရီ လေးဆယ့်ငါးမိနစ်".to_string()),
-            (50, "{h}နာရီ ငါးဆယ်မိနစ်".to_string()),
-            (55, "{h}နာရီ ငါးဆယ့်ငါးမိနစ်".to_string()),
-        ]),
+                (0, "{h}နာရီ".to_string()),
+                (5, "{h}နာရီ ငါးမိနစ်".to_string()),
+                (10, "{h}နာရီ ဆယ်မိနစ်".to_string()),
+                (15, "{h}နာရီ ဆယ့်ငါးမိနစ်".to_string()),
+                (20, "{h}နာရီ နှစ်ဆယ်မိနစ်".to_string()),
+                (25, "{h}နာရီ နှစ်ဆယ့်ငါးမိနစ်".to_string()),
+                (30, "{h}နာရီခွဲ".to_string()),
+                (35, "{h}နာရီ သုံးဆယ့်ငါးမိနစ်".to_string()),
+                (40, "{h}နာရီ လေးဆယ်မိနစ်".to_string()),
+                (45, "{h}နာရီ လေးဆယ့်ငါးမိနစ်".to_string()),
+                (50, "{h}နာရီ ငါးဆယ်မိနစ်".to_string()),
+                (55, "{h}နာရီ ငါးဆယ့်ငါးမိနစ်".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/wo.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Wolof locale.
@@ -17,23 +17,39 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "wo".to_string(),
         clock: ClockConfig {
-            hours: ["fukk ak ñaari waxtu".to_string(), "benn waxtu".to_string(), "ñaari waxtu".to_string(), "ñetti waxtu".to_string(), "ñeenti waxtu".to_string(), "juróomi waxtu".to_string(), "juróom-benni waxtu".to_string(), "juróom-ñaari waxtu".to_string(), "juróom-ñetti waxtu".to_string(), "juróom-ñeenti waxtu".to_string(), "fukki waxtu".to_string(), "fukk ak benn waxtu".to_string()],
+            hours: [
+                "fukk ak ñaari waxtu".to_string(),
+                "benn waxtu".to_string(),
+                "ñaari waxtu".to_string(),
+                "ñetti waxtu".to_string(),
+                "ñeenti waxtu".to_string(),
+                "juróomi waxtu".to_string(),
+                "juróom-benni waxtu".to_string(),
+                "juróom-ñaari waxtu".to_string(),
+                "juróom-ñetti waxtu".to_string(),
+                "juróom-ñeenti waxtu".to_string(),
+                "fukki waxtu".to_string(),
+                "fukk ak benn waxtu".to_string(),
+            ],
             midnight: "digg-guddi".to_string(),
             noon: "digg-bëccëg".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} ak juróomi simili".to_string()),
-            (10, "{h} ak fukki simili".to_string()),
-            (15, "{h} ak fukk ak juróomi simili".to_string()),
-            (20, "{h} ak ñaar-fukki simili".to_string()),
-            (25, "{h} ak ñaar-fukk ak juróomi simili".to_string()),
-            (30, "{h} ak genn-wàll".to_string()),
-            (35, "{next_h} des na ñaar-fukk ak juróomi simili".to_string()),
-            (40, "{next_h} des na ñaar-fukki simili".to_string()),
-            (45, "{next_h} des na fukk ak juróomi simili".to_string()),
-            (50, "{next_h} des na fukki simili".to_string()),
-            (55, "{next_h} des na juróomi simili".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} ak juróomi simili".to_string()),
+                (10, "{h} ak fukki simili".to_string()),
+                (15, "{h} ak fukk ak juróomi simili".to_string()),
+                (20, "{h} ak ñaar-fukki simili".to_string()),
+                (25, "{h} ak ñaar-fukk ak juróomi simili".to_string()),
+                (30, "{h} ak genn-wàll".to_string()),
+                (
+                    35,
+                    "{next_h} des na ñaar-fukk ak juróomi simili".to_string(),
+                ),
+                (40, "{next_h} des na ñaar-fukki simili".to_string()),
+                (45, "{next_h} des na fukk ak juróomi simili".to_string()),
+                (50, "{next_h} des na fukki simili".to_string()),
+                (55, "{next_h} des na juróomi simili".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

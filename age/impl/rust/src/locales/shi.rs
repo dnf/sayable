@@ -9,16 +9,22 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/shi.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Tachelhit locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "shi".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One }
-            else if (2..=10).contains(&n) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else if (2..=10).contains(&n) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -48,10 +54,22 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Neutral("ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ".to_string()),
             infant: StageLabel::Neutral("ⵍⵍⵓⴼⴰⵏ".to_string()),
-            toddler: StageLabel::Gendered { m: "ⴰⵃⵏⵊⵉⵔ".to_string(), f: "ⵜⴰⵃⵏⵊⵉⵔⵜ".to_string() },
-            child: StageLabel::Gendered { m: "ⴰⴼⵔⵓⵅ".to_string(), f: "ⵜⴰⴼⵔⵓⵅⵜ".to_string() },
-            teenager: StageLabel::Gendered { m: "ⴰⵄⵔⵉⵎ".to_string(), f: "ⵜⴰⵄⵔⵉⵎⵜ".to_string() },
-            adult: StageLabel::Gendered { m: "ⴰⵔⴳⴰⵣ".to_string(), f: "ⵜⴰⵎⵟⵟⵓⵟ".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "ⴰⵃⵏⵊⵉⵔ".to_string(),
+                f: "ⵜⴰⵃⵏⵊⵉⵔⵜ".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "ⴰⴼⵔⵓⵅ".to_string(),
+                f: "ⵜⴰⴼⵔⵓⵅⵜ".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "ⴰⵄⵔⵉⵎ".to_string(),
+                f: "ⵜⴰⵄⵔⵉⵎⵜ".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "ⴰⵔⴳⴰⵣ".to_string(),
+                f: "ⵜⴰⵎⵟⵟⵓⵟ".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/vmw.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Makhuwa locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "vmw".to_string(),
         clock: ClockConfig {
-            hours: ["khumi na pili".to_string(), "mosa".to_string(), "pili".to_string(), "ttatthu".to_string(), "ncheche".to_string(), "thanu".to_string(), "thanu na mosa".to_string(), "thanu na pili".to_string(), "thanu na ttatthu".to_string(), "thanu na ncheche".to_string(), "khumi".to_string(), "khumi na mosa".to_string()],
+            hours: [
+                "khumi na pili".to_string(),
+                "mosa".to_string(),
+                "pili".to_string(),
+                "ttatthu".to_string(),
+                "ncheche".to_string(),
+                "thanu".to_string(),
+                "thanu na mosa".to_string(),
+                "thanu na pili".to_string(),
+                "thanu na ttatthu".to_string(),
+                "thanu na ncheche".to_string(),
+                "khumi".to_string(),
+                "khumi na mosa".to_string(),
+            ],
             midnight: "usiku wopakhala".to_string(),
             noon: "muttana".to_string(),
             patterns: HashMap::from([
-            (0, "hora {h}".to_string()),
-            (5, "hora {h} na thanu".to_string()),
-            (10, "hora {h} na khumi".to_string()),
-            (15, "hora {h} na khumi na thanu".to_string()),
-            (20, "hora {h} na makhumi mapili".to_string()),
-            (25, "hora {h} na makhumi mapili na thanu".to_string()),
-            (30, "hora {h} na mettenhe".to_string()),
-            (35, "hora {h} na makhumi mararu na thanu".to_string()),
-            (40, "hora {h} na makhumi mancheche".to_string()),
-            (45, "hora {h} na makhumi mancheche na thanu".to_string()),
-            (50, "hora {h} na makhumi mathanu".to_string()),
-            (55, "hora {h} na makhumi mathanu na thanu".to_string()),
-        ]),
+                (0, "hora {h}".to_string()),
+                (5, "hora {h} na thanu".to_string()),
+                (10, "hora {h} na khumi".to_string()),
+                (15, "hora {h} na khumi na thanu".to_string()),
+                (20, "hora {h} na makhumi mapili".to_string()),
+                (25, "hora {h} na makhumi mapili na thanu".to_string()),
+                (30, "hora {h} na mettenhe".to_string()),
+                (35, "hora {h} na makhumi mararu na thanu".to_string()),
+                (40, "hora {h} na makhumi mancheche".to_string()),
+                (45, "hora {h} na makhumi mancheche na thanu".to_string()),
+                (50, "hora {h} na makhumi mathanu".to_string()),
+                (55, "hora {h} na makhumi mathanu na thanu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,16 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/cs.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Czech locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "cs".to_string(),
         plural: |n| {
-            if n == 1 { PluralCategory::One }
-            else if (2..=4).contains(&n) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else if (2..=4).contains(&n) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

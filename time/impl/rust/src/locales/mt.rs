@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mt.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Maltese locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mt".to_string(),
         clock: ClockConfig {
-            hours: ["it-tnax".to_string(), "is-siegħa".to_string(), "is-sagħtejn".to_string(), "it-tlieta".to_string(), "l-erbgħa".to_string(), "il-ħamsa".to_string(), "is-sitta".to_string(), "is-sebgħa".to_string(), "it-tmienja".to_string(), "id-disgħa".to_string(), "l-għaxra".to_string(), "il-ħdax".to_string()],
+            hours: [
+                "it-tnax".to_string(),
+                "is-siegħa".to_string(),
+                "is-sagħtejn".to_string(),
+                "it-tlieta".to_string(),
+                "l-erbgħa".to_string(),
+                "il-ħamsa".to_string(),
+                "is-sitta".to_string(),
+                "is-sebgħa".to_string(),
+                "it-tmienja".to_string(),
+                "id-disgħa".to_string(),
+                "l-għaxra".to_string(),
+                "il-ħdax".to_string(),
+            ],
             midnight: "nofsillejl".to_string(),
             noon: "nofsinhar".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} u ħamsa".to_string()),
-            (10, "{h} u għaxra".to_string()),
-            (15, "{h} u kwart".to_string()),
-            (20, "{h} u għoxrin".to_string()),
-            (25, "{h} u ħamsa u għoxrin".to_string()),
-            (30, "{h} u nofs".to_string()),
-            (35, "{next_h} neqsin ħamsa u għoxrin".to_string()),
-            (40, "{next_h} neqsin għoxrin".to_string()),
-            (45, "{next_h} neqsin kwart".to_string()),
-            (50, "{next_h} neqsin għaxra".to_string()),
-            (55, "{next_h} neqsin ħamsa".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} u ħamsa".to_string()),
+                (10, "{h} u għaxra".to_string()),
+                (15, "{h} u kwart".to_string()),
+                (20, "{h} u għoxrin".to_string()),
+                (25, "{h} u ħamsa u għoxrin".to_string()),
+                (30, "{h} u nofs".to_string()),
+                (35, "{next_h} neqsin ħamsa u għoxrin".to_string()),
+                (40, "{next_h} neqsin għoxrin".to_string()),
+                (45, "{next_h} neqsin kwart".to_string()),
+                (50, "{next_h} neqsin għaxra".to_string()),
+                (55, "{next_h} neqsin ħamsa".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

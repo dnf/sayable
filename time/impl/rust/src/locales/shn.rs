@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/shn.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Shan locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "shn".to_string(),
         clock: ClockConfig {
-            hours: ["သိပ်းသွင်".to_string(), "ၼိုင်ႈ".to_string(), "သွင်".to_string(), "သၢမ်".to_string(), "သီႇ".to_string(), "ႁႃႈ".to_string(), "ႁူၵ်း".to_string(), "ၸဵတ်း".to_string(), "ပႅတ်ႇ".to_string(), "ၵဝ်ႈ".to_string(), "သိပ်း".to_string(), "သိပ်းဢဵတ်း".to_string()],
+            hours: [
+                "သိပ်းသွင်".to_string(),
+                "ၼိုင်ႈ".to_string(),
+                "သွင်".to_string(),
+                "သၢမ်".to_string(),
+                "သီႇ".to_string(),
+                "ႁႃႈ".to_string(),
+                "ႁူၵ်း".to_string(),
+                "ၸဵတ်း".to_string(),
+                "ပႅတ်ႇ".to_string(),
+                "ၵဝ်ႈ".to_string(),
+                "သိပ်း".to_string(),
+                "သိပ်းဢဵတ်း".to_string(),
+            ],
             midnight: "ၵၢင်ၶိုၼ်း".to_string(),
             noon: "ၵၢင်ဝၼ်း".to_string(),
             patterns: HashMap::from([
-            (0, "{h}မူင်း".to_string()),
-            (5, "{h}မူင်း ႁႃႈမိၼိတ်ႉ".to_string()),
-            (10, "{h}မူင်း သိပ်းမိၼိတ်ႉ".to_string()),
-            (15, "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
-            (20, "{h}မူင်း သၢဝ်းမိၼိတ်ႉ".to_string()),
-            (25, "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ".to_string()),
-            (30, "{h}မူင်းၶိုင်ႈ".to_string()),
-            (35, "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
-            (40, "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ".to_string()),
-            (45, "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
-            (50, "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ".to_string()),
-            (55, "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
-        ]),
+                (0, "{h}မူင်း".to_string()),
+                (5, "{h}မူင်း ႁႃႈမိၼိတ်ႉ".to_string()),
+                (10, "{h}မူင်း သိပ်းမိၼိတ်ႉ".to_string()),
+                (15, "{h}မူင်း သိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
+                (20, "{h}မူင်း သၢဝ်းမိၼိတ်ႉ".to_string()),
+                (25, "{h}မူင်း သၢဝ်းႁႃႈမိၼိတ်ႉ".to_string()),
+                (30, "{h}မူင်းၶိုင်ႈ".to_string()),
+                (35, "{h}မူင်း သၢမ်သိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
+                (40, "{h}မူင်း သီႇသိပ်းမိၼိတ်ႉ".to_string()),
+                (45, "{h}မူင်း သီႇသိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
+                (50, "{h}မူင်း ႁႃႈသိပ်းမိၼိတ်ႉ".to_string()),
+                (55, "{h}မူင်း ႁႃႈသိပ်းႁႃႈမိၼိတ်ႉ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

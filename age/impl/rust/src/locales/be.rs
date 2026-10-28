@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/be.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Belarusian locale.
 pub fn locale() -> AgeLocale {
@@ -18,9 +20,13 @@ pub fn locale() -> AgeLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
-            else { PluralCategory::Many }
+            if mod10 == 1 && mod100 != 11 {
+                PluralCategory::One
+            } else if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Many
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -52,12 +58,18 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Нованароджаны".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Нованароджаны".to_string(), f: "Нованароджаная".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Нованароджаны".to_string(),
+                f: "Нованароджаная".to_string(),
+            },
             infant: StageLabel::Neutral("Немаўля".to_string()),
             toddler: StageLabel::Neutral("Малыш".to_string()),
             child: StageLabel::Neutral("Дзіця".to_string()),
             teenager: StageLabel::Neutral("Падлетак".to_string()),
-            adult: StageLabel::Gendered { m: "Дарослы".to_string(), f: "Дарослая".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Дарослы".to_string(),
+                f: "Дарослая".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} дн.")),

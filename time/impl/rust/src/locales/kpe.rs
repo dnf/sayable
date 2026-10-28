@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kpe.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Kpelle locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "kpe".to_string(),
         clock: ClockConfig {
-            hours: ["puu da feere".to_string(), "tɔŋ".to_string(), "feere".to_string(), "sawa".to_string(), "naŋ".to_string(), "lɔɔlu".to_string(), "mɛi da tɔŋ".to_string(), "mɛi da feere".to_string(), "mɛi da sawa".to_string(), "mɛi da naŋ".to_string(), "puu".to_string(), "puu da tɔŋ".to_string()],
+            hours: [
+                "puu da feere".to_string(),
+                "tɔŋ".to_string(),
+                "feere".to_string(),
+                "sawa".to_string(),
+                "naŋ".to_string(),
+                "lɔɔlu".to_string(),
+                "mɛi da tɔŋ".to_string(),
+                "mɛi da feere".to_string(),
+                "mɛi da sawa".to_string(),
+                "mɛi da naŋ".to_string(),
+                "puu".to_string(),
+                "puu da tɔŋ".to_string(),
+            ],
             midnight: "kpindi kɔlɛ".to_string(),
             noon: "tili-ma".to_string(),
             patterns: HashMap::from([
-            (0, "awa {h}".to_string()),
-            (5, "awa {h} da miniti lɔɔlu".to_string()),
-            (10, "awa {h} da miniti puu".to_string()),
-            (15, "awa {h} da miniti puu da lɔɔlu".to_string()),
-            (20, "awa {h} da miniti puu feere".to_string()),
-            (25, "awa {h} da miniti puu feere da lɔɔlu".to_string()),
-            (30, "awa {h} da miniti puu sawa".to_string()),
-            (35, "awa {h} da miniti puu sawa da lɔɔlu".to_string()),
-            (40, "awa {h} da miniti puu naŋ".to_string()),
-            (45, "awa {h} da miniti puu naŋ da lɔɔlu".to_string()),
-            (50, "awa {h} da miniti puu lɔɔlu".to_string()),
-            (55, "awa {h} da miniti puu lɔɔlu da lɔɔlu".to_string()),
-        ]),
+                (0, "awa {h}".to_string()),
+                (5, "awa {h} da miniti lɔɔlu".to_string()),
+                (10, "awa {h} da miniti puu".to_string()),
+                (15, "awa {h} da miniti puu da lɔɔlu".to_string()),
+                (20, "awa {h} da miniti puu feere".to_string()),
+                (25, "awa {h} da miniti puu feere da lɔɔlu".to_string()),
+                (30, "awa {h} da miniti puu sawa".to_string()),
+                (35, "awa {h} da miniti puu sawa da lɔɔlu".to_string()),
+                (40, "awa {h} da miniti puu naŋ".to_string()),
+                (45, "awa {h} da miniti puu naŋ da lɔɔlu".to_string()),
+                (50, "awa {h} da miniti puu lɔɔlu".to_string()),
+                (55, "awa {h} da miniti puu lɔɔlu da lɔɔlu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

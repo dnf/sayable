@@ -9,16 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/shi.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Tachelhit locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "shi".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One }
-            else if (2..=10).contains(&n) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else if (2..=10).contains(&n) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

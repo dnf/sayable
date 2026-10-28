@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sd.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Sindhi locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "sd".to_string(),
         clock: ClockConfig {
-            hours: ["ٻارهن".to_string(), "هڪ".to_string(), "ٻه".to_string(), "ٽي".to_string(), "چار".to_string(), "پنج".to_string(), "ڇهه".to_string(), "ست".to_string(), "اٺ".to_string(), "نوَ".to_string(), "ڏهه".to_string(), "يارهن".to_string()],
+            hours: [
+                "ٻارهن".to_string(),
+                "هڪ".to_string(),
+                "ٻه".to_string(),
+                "ٽي".to_string(),
+                "چار".to_string(),
+                "پنج".to_string(),
+                "ڇهه".to_string(),
+                "ست".to_string(),
+                "اٺ".to_string(),
+                "نوَ".to_string(),
+                "ڏهه".to_string(),
+                "يارهن".to_string(),
+            ],
             midnight: "اڌ رات".to_string(),
             noon: "ٽپھر".to_string(),
             patterns: HashMap::from([
-            (0, "{h} وڳي".to_string()),
-            (5, "{h} وڳي پنج منٽ".to_string()),
-            (10, "{h} وڳي ڏهه منٽ".to_string()),
-            (15, "سوا {h} وڳي".to_string()),
-            (20, "{h} وڳي ويهه منٽ".to_string()),
-            (25, "{h} وڳي پنجويهه منٽ".to_string()),
-            (30, "{h} وڳي ٽيهه منٽ".to_string()),
-            (35, "{next_h} وڳڻ ۾ پنجويهه منٽ".to_string()),
-            (40, "{next_h} وڳڻ ۾ ويهه منٽ".to_string()),
-            (45, "پوڻا {next_h} وڳي".to_string()),
-            (50, "{next_h} وڳڻ ۾ ڏهه منٽ".to_string()),
-            (55, "{next_h} وڳڻ ۾ پنج منٽ".to_string()),
-        ]),
+                (0, "{h} وڳي".to_string()),
+                (5, "{h} وڳي پنج منٽ".to_string()),
+                (10, "{h} وڳي ڏهه منٽ".to_string()),
+                (15, "سوا {h} وڳي".to_string()),
+                (20, "{h} وڳي ويهه منٽ".to_string()),
+                (25, "{h} وڳي پنجويهه منٽ".to_string()),
+                (30, "{h} وڳي ٽيهه منٽ".to_string()),
+                (35, "{next_h} وڳڻ ۾ پنجويهه منٽ".to_string()),
+                (40, "{next_h} وڳڻ ۾ ويهه منٽ".to_string()),
+                (45, "پوڻا {next_h} وڳي".to_string()),
+                (50, "{next_h} وڳڻ ۾ ڏهه منٽ".to_string()),
+                (55, "{next_h} وڳڻ ۾ پنج منٽ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

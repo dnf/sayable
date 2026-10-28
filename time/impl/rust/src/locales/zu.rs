@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/zu.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Zulu locale.
@@ -17,23 +17,54 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "zu".to_string(),
         clock: ClockConfig {
-            hours: ["leshumi nambili".to_string(), "lokuqala".to_string(), "lesibili".to_string(), "lesithathu".to_string(), "lesine".to_string(), "lesihlanu".to_string(), "lesithupha".to_string(), "lesikhombisa".to_string(), "lesishiyagalombili".to_string(), "lesishiyagalolunye".to_string(), "leshumi".to_string(), "leshumi nanye".to_string()],
+            hours: [
+                "leshumi nambili".to_string(),
+                "lokuqala".to_string(),
+                "lesibili".to_string(),
+                "lesithathu".to_string(),
+                "lesine".to_string(),
+                "lesihlanu".to_string(),
+                "lesithupha".to_string(),
+                "lesikhombisa".to_string(),
+                "lesishiyagalombili".to_string(),
+                "lesishiyagalolunye".to_string(),
+                "leshumi".to_string(),
+                "leshumi nanye".to_string(),
+            ],
             midnight: "phakathi kwamabili".to_string(),
             noon: "emini".to_string(),
             patterns: HashMap::from([
-            (0, "ihora {h}".to_string()),
-            (5, "imizuzu emihlanu emva kwehora {h}".to_string()),
-            (10, "imizuzu eyishumi emva kwehora {h}".to_string()),
-            (15, "ikota emva kwehora {h}".to_string()),
-            (20, "imizuzu engamashumi amabili emva kwehora {h}".to_string()),
-            (25, "imizuzu engamashumi amabili nanhlanu emva kwehora {h}".to_string()),
-            (30, "uhhafu emva kwehora {h}".to_string()),
-            (35, "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}".to_string()),
-            (40, "imizuzu engamashumi amabili ngaphambi kwehora {next_h}".to_string()),
-            (45, "ikota ngaphambi kwehora {next_h}".to_string()),
-            (50, "imizuzu eyishumi ngaphambi kwehora {next_h}".to_string()),
-            (55, "imizuzu emihlanu ngaphambi kwehora {next_h}".to_string()),
-        ]),
+                (0, "ihora {h}".to_string()),
+                (5, "imizuzu emihlanu emva kwehora {h}".to_string()),
+                (10, "imizuzu eyishumi emva kwehora {h}".to_string()),
+                (15, "ikota emva kwehora {h}".to_string()),
+                (
+                    20,
+                    "imizuzu engamashumi amabili emva kwehora {h}".to_string(),
+                ),
+                (
+                    25,
+                    "imizuzu engamashumi amabili nanhlanu emva kwehora {h}".to_string(),
+                ),
+                (30, "uhhafu emva kwehora {h}".to_string()),
+                (
+                    35,
+                    "imizuzu engamashumi amabili nanhlanu ngaphambi kwehora {next_h}".to_string(),
+                ),
+                (
+                    40,
+                    "imizuzu engamashumi amabili ngaphambi kwehora {next_h}".to_string(),
+                ),
+                (45, "ikota ngaphambi kwehora {next_h}".to_string()),
+                (
+                    50,
+                    "imizuzu eyishumi ngaphambi kwehora {next_h}".to_string(),
+                ),
+                (
+                    55,
+                    "imizuzu emihlanu ngaphambi kwehora {next_h}".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/tig.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Tigre locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "tig".to_string(),
         clock: ClockConfig {
-            hours: ["ʿasərte wəkəlte".to_string(), "ḥante".to_string(), "kəlʾe".to_string(), "səleste".to_string(), "arbaʿte".to_string(), "ḥamməste".to_string(), "səste".to_string(), "sabʿate".to_string(), "səmmunte".to_string(), "təsʿate".to_string(), "ʿasərte".to_string(), "ʿasərte wəḥante".to_string()],
+            hours: [
+                "ʿasərte wəkəlte".to_string(),
+                "ḥante".to_string(),
+                "kəlʾe".to_string(),
+                "səleste".to_string(),
+                "arbaʿte".to_string(),
+                "ḥamməste".to_string(),
+                "səste".to_string(),
+                "sabʿate".to_string(),
+                "səmmunte".to_string(),
+                "təsʿate".to_string(),
+                "ʿasərte".to_string(),
+                "ʿasərte wəḥante".to_string(),
+            ],
             midnight: "nəs-leyla".to_string(),
             noon: "qayḥ".to_string(),
             patterns: HashMap::from([
-            (0, "saʿa {h}".to_string()),
-            (5, "saʿa {h} we ḥamməste".to_string()),
-            (10, "saʿa {h} we ʿasərte".to_string()),
-            (15, "saʿa {h} we ʿasərte we ḥamməste".to_string()),
-            (20, "saʿa {h} we ʿəsra".to_string()),
-            (25, "saʿa {h} we ʿəsra we ḥamməste".to_string()),
-            (30, "saʿa {h} we nəs".to_string()),
-            (35, "saʿa {h} we salasa we ḥamməste".to_string()),
-            (40, "saʿa {h} we arbaʿa".to_string()),
-            (45, "saʿa {h} we arbaʿa we ḥamməste".to_string()),
-            (50, "saʿa {h} we ḥamsa".to_string()),
-            (55, "saʿa {h} we ḥamsa we ḥamməste".to_string()),
-        ]),
+                (0, "saʿa {h}".to_string()),
+                (5, "saʿa {h} we ḥamməste".to_string()),
+                (10, "saʿa {h} we ʿasərte".to_string()),
+                (15, "saʿa {h} we ʿasərte we ḥamməste".to_string()),
+                (20, "saʿa {h} we ʿəsra".to_string()),
+                (25, "saʿa {h} we ʿəsra we ḥamməste".to_string()),
+                (30, "saʿa {h} we nəs".to_string()),
+                (35, "saʿa {h} we salasa we ḥamməste".to_string()),
+                (40, "saʿa {h} we arbaʿa".to_string()),
+                (45, "saʿa {h} we arbaʿa we ḥamməste".to_string()),
+                (50, "saʿa {h} we ḥamsa".to_string()),
+                (55, "saʿa {h} we ḥamsa we ḥamməste".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

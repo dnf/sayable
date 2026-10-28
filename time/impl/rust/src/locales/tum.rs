@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/tum.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Tumbuka locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "tum".to_string(),
         clock: ClockConfig {
-            hours: ["khumi na yibili".to_string(), "chimoza".to_string(), "vibili".to_string(), "vitatu".to_string(), "vinayi".to_string(), "vikhondi".to_string(), "vikhondi na kamoza".to_string(), "vikhondi na tubili".to_string(), "vikhondi na tutatu".to_string(), "vikhondi na tunayi".to_string(), "khumi".to_string(), "khumi na kamoza".to_string()],
+            hours: [
+                "khumi na yibili".to_string(),
+                "chimoza".to_string(),
+                "vibili".to_string(),
+                "vitatu".to_string(),
+                "vinayi".to_string(),
+                "vikhondi".to_string(),
+                "vikhondi na kamoza".to_string(),
+                "vikhondi na tubili".to_string(),
+                "vikhondi na tutatu".to_string(),
+                "vikhondi na tunayi".to_string(),
+                "khumi".to_string(),
+                "khumi na kamoza".to_string(),
+            ],
             midnight: "pakati pa usiku".to_string(),
             noon: "muhanya".to_string(),
             patterns: HashMap::from([
-            (0, "{h} koloko".to_string()),
-            (5, "{h} koloko na maminiti vinkhondi".to_string()),
-            (10, "{h} koloko na maminiti khumi".to_string()),
-            (15, "{h} koloko na maminiti khumi na vinkhondi".to_string()),
-            (20, "{h} koloko na maminiti makhumi ghaŵiri".to_string()),
-            (25, "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi".to_string()),
-            (30, "{h} koloko na hafu".to_string()),
-            (35, "{h} koloko na maminiti makhumi ghatatu na vinkhondi".to_string()),
-            (40, "{h} koloko na maminiti makhumi ghanayi".to_string()),
-            (45, "{h} koloko na maminiti makhumi ghanayi na vinkhondi".to_string()),
-            (50, "{h} koloko na maminiti makhumi ghankhondi".to_string()),
-            (55, "{h} koloko na maminiti makhumi ghankhondi na vinkhondi".to_string()),
-        ]),
+                (0, "{h} koloko".to_string()),
+                (5, "{h} koloko na maminiti vinkhondi".to_string()),
+                (10, "{h} koloko na maminiti khumi".to_string()),
+                (15, "{h} koloko na maminiti khumi na vinkhondi".to_string()),
+                (20, "{h} koloko na maminiti makhumi ghaŵiri".to_string()),
+                (
+                    25,
+                    "{h} koloko na maminiti makhumi ghaŵiri na vinkhondi".to_string(),
+                ),
+                (30, "{h} koloko na hafu".to_string()),
+                (
+                    35,
+                    "{h} koloko na maminiti makhumi ghatatu na vinkhondi".to_string(),
+                ),
+                (40, "{h} koloko na maminiti makhumi ghanayi".to_string()),
+                (
+                    45,
+                    "{h} koloko na maminiti makhumi ghanayi na vinkhondi".to_string(),
+                ),
+                (50, "{h} koloko na maminiti makhumi ghankhondi".to_string()),
+                (
+                    55,
+                    "{h} koloko na maminiti makhumi ghankhondi na vinkhondi".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

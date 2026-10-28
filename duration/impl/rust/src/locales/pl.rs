@@ -9,18 +9,23 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/pl.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Polish locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "pl".to_string(),
         plural: |n| {
-            if n == 1 { return PluralCategory::One; }
+            if n == 1 {
+                return PluralCategory::One;
+            }
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
-            else { PluralCategory::Many }
+            if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Many
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

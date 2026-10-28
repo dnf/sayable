@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mam.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Mam locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mam".to_string(),
         clock: ClockConfig {
-            hours: ["kab'laj".to_string(), "jun".to_string(), "kab'".to_string(), "oxe".to_string(), "kyaje".to_string(), "jwe'".to_string(), "qaq".to_string(), "wuq".to_string(), "wajxaq".to_string(), "b'elaj".to_string(), "laj".to_string(), "junlaj".to_string()],
+            hours: [
+                "kab'laj".to_string(),
+                "jun".to_string(),
+                "kab'".to_string(),
+                "oxe".to_string(),
+                "kyaje".to_string(),
+                "jwe'".to_string(),
+                "qaq".to_string(),
+                "wuq".to_string(),
+                "wajxaq".to_string(),
+                "b'elaj".to_string(),
+                "laj".to_string(),
+                "junlaj".to_string(),
+            ],
             midnight: "nik' aq'b'il".to_string(),
             noon: "nik' q'ij".to_string(),
             patterns: HashMap::from([
-            (0, "{h} or".to_string()),
-            (5, "{h} or tuk' jwe' minut".to_string()),
-            (10, "{h} or tuk' laj minut".to_string()),
-            (15, "{h} or tuk' o'laj minut".to_string()),
-            (20, "{h} or tuk' winqan minut".to_string()),
-            (25, "{h} or tuk' jwe' toj ka'wnaq minut".to_string()),
-            (30, "{h} or tuk' nik'".to_string()),
-            (35, "{h} or tuk' o'laj toj ka'wnaq minut".to_string()),
-            (40, "{h} or tuk' ka'wnaq minut".to_string()),
-            (45, "{h} or tuk' jwe' toj oxk'al minut".to_string()),
-            (50, "{h} or tuk' laj toj oxk'al minut".to_string()),
-            (55, "{h} or tuk' o'laj toj oxk'al minut".to_string()),
-        ]),
+                (0, "{h} or".to_string()),
+                (5, "{h} or tuk' jwe' minut".to_string()),
+                (10, "{h} or tuk' laj minut".to_string()),
+                (15, "{h} or tuk' o'laj minut".to_string()),
+                (20, "{h} or tuk' winqan minut".to_string()),
+                (25, "{h} or tuk' jwe' toj ka'wnaq minut".to_string()),
+                (30, "{h} or tuk' nik'".to_string()),
+                (35, "{h} or tuk' o'laj toj ka'wnaq minut".to_string()),
+                (40, "{h} or tuk' ka'wnaq minut".to_string()),
+                (45, "{h} or tuk' jwe' toj oxk'al minut".to_string()),
+                (50, "{h} or tuk' laj toj oxk'al minut".to_string()),
+                (55, "{h} or tuk' o'laj toj oxk'al minut".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

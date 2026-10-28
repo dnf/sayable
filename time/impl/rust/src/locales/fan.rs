@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/fan.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Fang locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "fan".to_string(),
         clock: ClockConfig {
-            hours: ["awom mebú".to_string(), "fóg".to_string(), "abúi".to_string(), "aláa".to_string(), "anyin".to_string(), "atán".to_string(), "asaman".to_string(), "zamgbala".to_string(), "mwom".to_string(), "ebulú".to_string(), "awom".to_string(), "awom mefóg".to_string()],
+            hours: [
+                "awom mebú".to_string(),
+                "fóg".to_string(),
+                "abúi".to_string(),
+                "aláa".to_string(),
+                "anyin".to_string(),
+                "atán".to_string(),
+                "asaman".to_string(),
+                "zamgbala".to_string(),
+                "mwom".to_string(),
+                "ebulú".to_string(),
+                "awom".to_string(),
+                "awom mefóg".to_string(),
+            ],
             midnight: "akiri alúk".to_string(),
             noon: "ewaŋ".to_string(),
             patterns: HashMap::from([
-            (0, "awola {h}".to_string()),
-            (5, "awola {h} ai minit tán".to_string()),
-            (10, "awola {h} ai minit awom".to_string()),
-            (15, "awola {h} ai minit awom ai tán".to_string()),
-            (20, "awola {h} ai minit mewom mebú".to_string()),
-            (25, "awola {h} ai minit mewom mebú ai tán".to_string()),
-            (30, "awola {h} ai minit mewom melaa".to_string()),
-            (35, "awola {h} ai minit mewom melaa ai tán".to_string()),
-            (40, "awola {h} ai minit mewom menyin".to_string()),
-            (45, "awola {h} ai minit mewom menyin ai tán".to_string()),
-            (50, "awola {h} ai minit mewom metán".to_string()),
-            (55, "awola {h} ai minit mewom metán ai tán".to_string()),
-        ]),
+                (0, "awola {h}".to_string()),
+                (5, "awola {h} ai minit tán".to_string()),
+                (10, "awola {h} ai minit awom".to_string()),
+                (15, "awola {h} ai minit awom ai tán".to_string()),
+                (20, "awola {h} ai minit mewom mebú".to_string()),
+                (25, "awola {h} ai minit mewom mebú ai tán".to_string()),
+                (30, "awola {h} ai minit mewom melaa".to_string()),
+                (35, "awola {h} ai minit mewom melaa ai tán".to_string()),
+                (40, "awola {h} ai minit mewom menyin".to_string()),
+                (45, "awola {h} ai minit mewom menyin ai tán".to_string()),
+                (50, "awola {h} ai minit mewom metán".to_string()),
+                (55, "awola {h} ai minit mewom metán ai tán".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

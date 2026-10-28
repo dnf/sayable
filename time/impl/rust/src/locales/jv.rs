@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/jv.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Javanese locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "jv".to_string(),
         clock: ClockConfig {
-            hours: ["rolas".to_string(), "siji".to_string(), "loro".to_string(), "telu".to_string(), "papat".to_string(), "lima".to_string(), "enem".to_string(), "pitu".to_string(), "wolu".to_string(), "sanga".to_string(), "sepuluh".to_string(), "sewelas".to_string()],
+            hours: [
+                "rolas".to_string(),
+                "siji".to_string(),
+                "loro".to_string(),
+                "telu".to_string(),
+                "papat".to_string(),
+                "lima".to_string(),
+                "enem".to_string(),
+                "pitu".to_string(),
+                "wolu".to_string(),
+                "sanga".to_string(),
+                "sepuluh".to_string(),
+                "sewelas".to_string(),
+            ],
             midnight: "tengah wengi".to_string(),
             noon: "tengah awan".to_string(),
             patterns: HashMap::from([
-            (0, "jam {h}".to_string()),
-            (5, "jam {h} luwih limang menit".to_string()),
-            (10, "jam {h} luwih sepuluh menit".to_string()),
-            (15, "jam {h} luwih seprapat".to_string()),
-            (20, "jam {h} luwih rong puluh menit".to_string()),
-            (25, "jam {h} luwih selawé menit".to_string()),
-            (30, "jam setengah {next_h}".to_string()),
-            (35, "jam {next_h} kurang selawé menit".to_string()),
-            (40, "jam {next_h} kurang rong puluh menit".to_string()),
-            (45, "jam {next_h} kurang seprapat".to_string()),
-            (50, "jam {next_h} kurang sepuluh menit".to_string()),
-            (55, "jam {next_h} kurang limang menit".to_string()),
-        ]),
+                (0, "jam {h}".to_string()),
+                (5, "jam {h} luwih limang menit".to_string()),
+                (10, "jam {h} luwih sepuluh menit".to_string()),
+                (15, "jam {h} luwih seprapat".to_string()),
+                (20, "jam {h} luwih rong puluh menit".to_string()),
+                (25, "jam {h} luwih selawé menit".to_string()),
+                (30, "jam setengah {next_h}".to_string()),
+                (35, "jam {next_h} kurang selawé menit".to_string()),
+                (40, "jam {next_h} kurang rong puluh menit".to_string()),
+                (45, "jam {next_h} kurang seprapat".to_string()),
+                (50, "jam {next_h} kurang sepuluh menit".to_string()),
+                (55, "jam {next_h} kurang limang menit".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

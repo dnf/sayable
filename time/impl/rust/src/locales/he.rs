@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/he.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Hebrew locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "he".to_string(),
         clock: ClockConfig {
-            hours: ["שתים עשרה".to_string(), "אחת".to_string(), "שתיים".to_string(), "שלוש".to_string(), "ארבע".to_string(), "חמש".to_string(), "שש".to_string(), "שבע".to_string(), "שמונה".to_string(), "תשע".to_string(), "עשר".to_string(), "אחת עשרה".to_string()],
+            hours: [
+                "שתים עשרה".to_string(),
+                "אחת".to_string(),
+                "שתיים".to_string(),
+                "שלוש".to_string(),
+                "ארבע".to_string(),
+                "חמש".to_string(),
+                "שש".to_string(),
+                "שבע".to_string(),
+                "שמונה".to_string(),
+                "תשע".to_string(),
+                "עשר".to_string(),
+                "אחת עשרה".to_string(),
+            ],
             midnight: "חצות".to_string(),
             noon: "צהריים".to_string(),
             patterns: HashMap::from([
-            (0, "השעה {h}".to_string()),
-            (5, "{h} וחמש".to_string()),
-            (10, "{h} ועשר".to_string()),
-            (15, "{h} ורבע".to_string()),
-            (20, "{h} ועשרים".to_string()),
-            (25, "{h} ועשרים וחמש".to_string()),
-            (30, "{h} וחצי".to_string()),
-            (35, "עשרים וחמש ל{next_h}".to_string()),
-            (40, "עשרים ל{next_h}".to_string()),
-            (45, "רבע ל{next_h}".to_string()),
-            (50, "עשר ל{next_h}".to_string()),
-            (55, "חמש ל{next_h}".to_string()),
-        ]),
+                (0, "השעה {h}".to_string()),
+                (5, "{h} וחמש".to_string()),
+                (10, "{h} ועשר".to_string()),
+                (15, "{h} ורבע".to_string()),
+                (20, "{h} ועשרים".to_string()),
+                (25, "{h} ועשרים וחמש".to_string()),
+                (30, "{h} וחצי".to_string()),
+                (35, "עשרים וחמש ל{next_h}".to_string()),
+                (40, "עשרים ל{next_h}".to_string()),
+                (45, "רבע ל{next_h}".to_string()),
+                (50, "עשר ל{next_h}".to_string()),
+                (55, "חמש ל{next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

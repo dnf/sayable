@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sq.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Albanian locale.
 pub fn locale() -> AgeLocale {
@@ -44,12 +46,24 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "I sapolindur".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "I sapolindur".to_string(), f: "E sapolindur".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "I sapolindur".to_string(),
+                f: "E sapolindur".to_string(),
+            },
             infant: StageLabel::Neutral("Foshnjë".to_string()),
-            toddler: StageLabel::Gendered { m: "Fëmijë i vogël".to_string(), f: "Fëmijë e vogël".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "Fëmijë i vogël".to_string(),
+                f: "Fëmijë e vogël".to_string(),
+            },
             child: StageLabel::Neutral("Fëmijë".to_string()),
-            teenager: StageLabel::Gendered { m: "Adoleshent".to_string(), f: "Adoleshente".to_string() },
-            adult: StageLabel::Gendered { m: "I rritur".to_string(), f: "E rritur".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Adoleshent".to_string(),
+                f: "Adoleshente".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "I rritur".to_string(),
+                f: "E rritur".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} ditë")),

@@ -9,18 +9,28 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ga.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Irish locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "ga".to_string(),
         plural: |n| {
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
-            if (3..=6).contains(&n) { PluralCategory::Few }
-            else if (7..=10).contains(&n) { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
+            if (3..=6).contains(&n) {
+                PluralCategory::Few
+            } else if (7..=10).contains(&n) {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

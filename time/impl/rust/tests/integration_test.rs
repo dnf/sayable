@@ -120,14 +120,22 @@ fn test_rounds_to_midnight() {
 #[test]
 fn test_rounds_to_twenty() {
     let f = SayableTime::new(&locales::EN, Compactness::Normal);
-    assert_time("rounds to twenty", f.format_time("07:22"), "twenty past seven");
+    assert_time(
+        "rounds to twenty",
+        f.format_time("07:22"),
+        "twenty past seven",
+    );
 }
 
 // 2.11
 #[test]
 fn test_iso_datetime_input() {
     let f = SayableTime::new(&locales::EN, Compactness::Normal);
-    assert_time("ISO datetime", f.format_time("2025-01-15T14:15:00"), "a quarter past two");
+    assert_time(
+        "ISO datetime",
+        f.format_time("2025-01-15T14:15:00"),
+        "a quarter past two",
+    );
 }
 
 // ================================================================
@@ -199,7 +207,11 @@ fn test_german_half_to() {
 #[test]
 fn test_french_quarter_past() {
     let f = SayableTime::new(&locales::FR, Compactness::Normal);
-    assert_time("French quarter past", f.format_time("15:15"), "trois heures et quart");
+    assert_time(
+        "French quarter past",
+        f.format_time("15:15"),
+        "trois heures et quart",
+    );
 }
 
 // 6.2
@@ -213,21 +225,33 @@ fn test_french_singular_hour() {
 #[test]
 fn test_french_half_past_singular_hour() {
     let f = SayableTime::new(&locales::FR, Compactness::Normal);
-    assert_time("French half past singular hour", f.format_time("13:30"), "une heure et demie");
+    assert_time(
+        "French half past singular hour",
+        f.format_time("13:30"),
+        "une heure et demie",
+    );
 }
 
 // 6.4
 #[test]
 fn test_french_quarter_to() {
     let f = SayableTime::new(&locales::FR, Compactness::Normal);
-    assert_time("French quarter to", f.format_time("14:45"), "trois heures moins le quart");
+    assert_time(
+        "French quarter to",
+        f.format_time("14:45"),
+        "trois heures moins le quart",
+    );
 }
 
 // 6.5
 #[test]
 fn test_french_ten_to() {
     let f = SayableTime::new(&locales::FR, Compactness::Normal);
-    assert_time("French ten to", f.format_time("14:50"), "trois heures moins dix");
+    assert_time(
+        "French ten to",
+        f.format_time("14:50"),
+        "trois heures moins dix",
+    );
 }
 
 // ================================================================
@@ -238,7 +262,11 @@ fn test_french_ten_to() {
 #[test]
 fn test_japanese_half_past() {
     let f = SayableTime::new(&locales::JA, Compactness::Normal);
-    assert_time("Japanese half past", f.format_time("15:30"), "\u{4e09}\u{6642}\u{534a}");
+    assert_time(
+        "Japanese half past",
+        f.format_time("15:30"),
+        "\u{4e09}\u{6642}\u{534a}",
+    );
 }
 
 // ================================================================
@@ -301,7 +329,6 @@ fn test_case_9_2() {
     assert_eq!(f.format_time("19:05"), Some("7:05p".to_string()));
 }
 
-
 // ── Section 10: Input validation ────────────────────────────────────
 
 // 10.1 — one-digit hour
@@ -350,14 +377,20 @@ fn test_case_10_6() {
 #[test]
 fn test_case_10_7() {
     let f = SayableTime::new(&locales::EN, Compactness::Normal);
-    assert_eq!(f.format_time("14:15:30"), Some("a quarter past two".to_string()));
+    assert_eq!(
+        f.format_time("14:15:30"),
+        Some("a quarter past two".to_string())
+    );
 }
 
 // 10.8 — ISO datetime with zone suffix (ignored)
 #[test]
 fn test_case_10_8() {
     let f = SayableTime::new(&locales::EN, Compactness::Normal);
-    assert_eq!(f.format_time("2025-01-15T14:15:00Z"), Some("a quarter past two".to_string()));
+    assert_eq!(
+        f.format_time("2025-01-15T14:15:00Z"),
+        Some("a quarter past two".to_string())
+    );
 }
 
 // 10.9 — ISO datetime with an impossible date
@@ -366,4 +399,3 @@ fn test_case_10_9() {
     let f = SayableTime::new(&locales::EN, Compactness::Normal);
     assert_eq!(f.format_time("2025-02-30T14:15:00"), None);
 }
-

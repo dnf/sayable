@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kw.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Cornish locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "kw".to_string(),
         clock: ClockConfig {
-            hours: ["dewdhek".to_string(), "unn".to_string(), "diw".to_string(), "teyr".to_string(), "peder".to_string(), "pymp".to_string(), "hwegh".to_string(), "seyth".to_string(), "eth".to_string(), "naw".to_string(), "deg".to_string(), "unnek".to_string()],
+            hours: [
+                "dewdhek".to_string(),
+                "unn".to_string(),
+                "diw".to_string(),
+                "teyr".to_string(),
+                "peder".to_string(),
+                "pymp".to_string(),
+                "hwegh".to_string(),
+                "seyth".to_string(),
+                "eth".to_string(),
+                "naw".to_string(),
+                "deg".to_string(),
+                "unnek".to_string(),
+            ],
             midnight: "hanter nos".to_string(),
             noon: "hanter dydh".to_string(),
             patterns: HashMap::from([
-            (0, "{h} eur".to_string()),
-            (5, "pymp mynysen wosa {h}".to_string()),
-            (10, "deg mynysen wosa {h}".to_string()),
-            (15, "kwarter wosa {h}".to_string()),
-            (20, "ugens mynysen wosa {h}".to_string()),
-            (25, "pymp mynysen warn ugens wosa {h}".to_string()),
-            (30, "hanter wosa {h}".to_string()),
-            (35, "pymp mynysen warn ugens dhe {next_h}".to_string()),
-            (40, "ugens mynysen dhe {next_h}".to_string()),
-            (45, "kwarter dhe {next_h}".to_string()),
-            (50, "deg mynysen dhe {next_h}".to_string()),
-            (55, "pymp mynysen dhe {next_h}".to_string()),
-        ]),
+                (0, "{h} eur".to_string()),
+                (5, "pymp mynysen wosa {h}".to_string()),
+                (10, "deg mynysen wosa {h}".to_string()),
+                (15, "kwarter wosa {h}".to_string()),
+                (20, "ugens mynysen wosa {h}".to_string()),
+                (25, "pymp mynysen warn ugens wosa {h}".to_string()),
+                (30, "hanter wosa {h}".to_string()),
+                (35, "pymp mynysen warn ugens dhe {next_h}".to_string()),
+                (40, "ugens mynysen dhe {next_h}".to_string()),
+                (45, "kwarter dhe {next_h}".to_string()),
+                (50, "deg mynysen dhe {next_h}".to_string()),
+                (55, "pymp mynysen dhe {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

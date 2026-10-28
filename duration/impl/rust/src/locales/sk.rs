@@ -9,16 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sk.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Slovak locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "sk".to_string(),
         plural: |n| {
-            if n == 1 { PluralCategory::One }
-            else if (2..=4).contains(&n) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else if (2..=4).contains(&n) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

@@ -9,18 +9,26 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ga.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Irish locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "ga".to_string(),
         plural: |n| {
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
-            if (3..=6).contains(&n) { PluralCategory::Few }
-            else if (7..=10).contains(&n) { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
+            if (3..=6).contains(&n) {
+                PluralCategory::Few
+            } else if (7..=10).contains(&n) {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

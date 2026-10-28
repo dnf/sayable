@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/fa.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Persian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "fa".to_string(),
         clock: ClockConfig {
-            hours: ["دوازده".to_string(), "یک".to_string(), "دو".to_string(), "سه".to_string(), "چهار".to_string(), "پنج".to_string(), "شش".to_string(), "هفت".to_string(), "هشت".to_string(), "نه".to_string(), "ده".to_string(), "یازده".to_string()],
+            hours: [
+                "دوازده".to_string(),
+                "یک".to_string(),
+                "دو".to_string(),
+                "سه".to_string(),
+                "چهار".to_string(),
+                "پنج".to_string(),
+                "شش".to_string(),
+                "هفت".to_string(),
+                "هشت".to_string(),
+                "نه".to_string(),
+                "ده".to_string(),
+                "یازده".to_string(),
+            ],
             midnight: "نیمه‌شب".to_string(),
             noon: "ظهر".to_string(),
             patterns: HashMap::from([
-            (0, "ساعت {h}".to_string()),
-            (5, "{h} و پنج دقیقه".to_string()),
-            (10, "{h} و ده دقیقه".to_string()),
-            (15, "{h} و ربع".to_string()),
-            (20, "{h} و بیست دقیقه".to_string()),
-            (25, "{h} و بیست و پنج دقیقه".to_string()),
-            (30, "{h} و نیم".to_string()),
-            (35, "بیست و پنج دقیقه به {next_h}".to_string()),
-            (40, "بیست دقیقه به {next_h}".to_string()),
-            (45, "ربع به {next_h}".to_string()),
-            (50, "ده دقیقه به {next_h}".to_string()),
-            (55, "پنج دقیقه به {next_h}".to_string()),
-        ]),
+                (0, "ساعت {h}".to_string()),
+                (5, "{h} و پنج دقیقه".to_string()),
+                (10, "{h} و ده دقیقه".to_string()),
+                (15, "{h} و ربع".to_string()),
+                (20, "{h} و بیست دقیقه".to_string()),
+                (25, "{h} و بیست و پنج دقیقه".to_string()),
+                (30, "{h} و نیم".to_string()),
+                (35, "بیست و پنج دقیقه به {next_h}".to_string()),
+                (40, "بیست دقیقه به {next_h}".to_string()),
+                (45, "ربع به {next_h}".to_string()),
+                (50, "ده دقیقه به {next_h}".to_string()),
+                (55, "پنج دقیقه به {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

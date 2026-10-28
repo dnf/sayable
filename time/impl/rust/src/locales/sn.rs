@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sn.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Shona locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "sn".to_string(),
         clock: ClockConfig {
-            hours: ["dzava gumi nembiri".to_string(), "yava imwe".to_string(), "dzava mbiri".to_string(), "dzava nhatu".to_string(), "dzava ina".to_string(), "dzava shanu".to_string(), "dzava nhanhatu".to_string(), "dzava nomwe".to_string(), "dzava sere".to_string(), "dzava pfumbamwe".to_string(), "dzava gumi".to_string(), "dzava gumi neimwe".to_string()],
+            hours: [
+                "dzava gumi nembiri".to_string(),
+                "yava imwe".to_string(),
+                "dzava mbiri".to_string(),
+                "dzava nhatu".to_string(),
+                "dzava ina".to_string(),
+                "dzava shanu".to_string(),
+                "dzava nhanhatu".to_string(),
+                "dzava nomwe".to_string(),
+                "dzava sere".to_string(),
+                "dzava pfumbamwe".to_string(),
+                "dzava gumi".to_string(),
+                "dzava gumi neimwe".to_string(),
+            ],
             midnight: "pakati peusiku".to_string(),
             noon: "masikati".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} nemaminitsi mashanu".to_string()),
-            (10, "{h} nemaminitsi gumi".to_string()),
-            (15, "{h} nemaminitsi gumi nemashanu".to_string()),
-            (20, "{h} nemaminitsi makumi maviri".to_string()),
-            (25, "{h} nemaminitsi makumi maviri nemashanu".to_string()),
-            (30, "{h} nehafu".to_string()),
-            (35, "{h} nemaminitsi makumi matatu nemashanu".to_string()),
-            (40, "{h} nemaminitsi makumi mana".to_string()),
-            (45, "{h} nemaminitsi makumi mana nemashanu".to_string()),
-            (50, "{h} nemaminitsi makumi mashanu".to_string()),
-            (55, "{h} nemaminitsi makumi mashanu nemashanu".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} nemaminitsi mashanu".to_string()),
+                (10, "{h} nemaminitsi gumi".to_string()),
+                (15, "{h} nemaminitsi gumi nemashanu".to_string()),
+                (20, "{h} nemaminitsi makumi maviri".to_string()),
+                (25, "{h} nemaminitsi makumi maviri nemashanu".to_string()),
+                (30, "{h} nehafu".to_string()),
+                (35, "{h} nemaminitsi makumi matatu nemashanu".to_string()),
+                (40, "{h} nemaminitsi makumi mana".to_string()),
+                (45, "{h} nemaminitsi makumi mana nemashanu".to_string()),
+                (50, "{h} nemaminitsi makumi mashanu".to_string()),
+                (55, "{h} nemaminitsi makumi mashanu nemashanu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

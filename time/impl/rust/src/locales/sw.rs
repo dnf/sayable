@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sw.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Swahili locale.
@@ -17,23 +17,39 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "sw".to_string(),
         clock: ClockConfig {
-            hours: ["sita".to_string(), "saba".to_string(), "nane".to_string(), "tisa".to_string(), "kumi".to_string(), "kumi na moja".to_string(), "kumi na mbili".to_string(), "moja".to_string(), "mbili".to_string(), "tatu".to_string(), "nne".to_string(), "tano".to_string()],
+            hours: [
+                "sita".to_string(),
+                "saba".to_string(),
+                "nane".to_string(),
+                "tisa".to_string(),
+                "kumi".to_string(),
+                "kumi na moja".to_string(),
+                "kumi na mbili".to_string(),
+                "moja".to_string(),
+                "mbili".to_string(),
+                "tatu".to_string(),
+                "nne".to_string(),
+                "tano".to_string(),
+            ],
             midnight: "saa sita usiku".to_string(),
             noon: "saa sita mchana".to_string(),
             patterns: HashMap::from([
-            (0, "saa {h}".to_string()),
-            (5, "saa {h} na dakika tano".to_string()),
-            (10, "saa {h} na dakika kumi".to_string()),
-            (15, "saa {h} na robo".to_string()),
-            (20, "saa {h} na dakika ishirini".to_string()),
-            (25, "saa {h} na dakika ishirini na tano".to_string()),
-            (30, "saa {h} na nusu".to_string()),
-            (35, "saa {next_h} kasoro dakika ishirini na tano".to_string()),
-            (40, "saa {next_h} kasoro dakika ishirini".to_string()),
-            (45, "saa {next_h} kasoro robo".to_string()),
-            (50, "saa {next_h} kasoro dakika kumi".to_string()),
-            (55, "saa {next_h} kasoro dakika tano".to_string()),
-        ]),
+                (0, "saa {h}".to_string()),
+                (5, "saa {h} na dakika tano".to_string()),
+                (10, "saa {h} na dakika kumi".to_string()),
+                (15, "saa {h} na robo".to_string()),
+                (20, "saa {h} na dakika ishirini".to_string()),
+                (25, "saa {h} na dakika ishirini na tano".to_string()),
+                (30, "saa {h} na nusu".to_string()),
+                (
+                    35,
+                    "saa {next_h} kasoro dakika ishirini na tano".to_string(),
+                ),
+                (40, "saa {next_h} kasoro dakika ishirini".to_string()),
+                (45, "saa {next_h} kasoro robo".to_string()),
+                (50, "saa {next_h} kasoro dakika kumi".to_string()),
+                (55, "saa {next_h} kasoro dakika tano".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

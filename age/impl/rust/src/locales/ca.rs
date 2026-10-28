@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ca.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Catalan locale.
 pub fn locale() -> AgeLocale {
@@ -44,12 +46,18 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Nounat".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Nounat".to_string(), f: "Nounada".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Nounat".to_string(),
+                f: "Nounada".to_string(),
+            },
             infant: StageLabel::Neutral("Nadó".to_string()),
             toddler: StageLabel::Neutral("Infant".to_string()),
             child: StageLabel::Neutral("Criatura".to_string()),
             teenager: StageLabel::Neutral("Adolescent".to_string()),
-            adult: StageLabel::Gendered { m: "Adult".to_string(), f: "Adulta".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Adult".to_string(),
+                f: "Adulta".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

@@ -9,16 +9,22 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/he.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Hebrew locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "he".to_string(),
         plural: |n| {
-            if n == 1 { PluralCategory::One }
-            else if n == 2 { PluralCategory::Two }
-            else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else if n == 2 {
+                PluralCategory::Two
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -46,12 +52,30 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "רק נולד".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "רק נולד".to_string(), f: "רק נולדה".to_string() },
-            infant: StageLabel::Gendered { m: "תינוק".to_string(), f: "תינוקת".to_string() },
-            toddler: StageLabel::Gendered { m: "פעוט".to_string(), f: "פעוטה".to_string() },
-            child: StageLabel::Gendered { m: "ילד".to_string(), f: "ילדה".to_string() },
-            teenager: StageLabel::Gendered { m: "נער".to_string(), f: "נערה".to_string() },
-            adult: StageLabel::Gendered { m: "מבוגר".to_string(), f: "מבוגרת".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "רק נולד".to_string(),
+                f: "רק נולדה".to_string(),
+            },
+            infant: StageLabel::Gendered {
+                m: "תינוק".to_string(),
+                f: "תינוקת".to_string(),
+            },
+            toddler: StageLabel::Gendered {
+                m: "פעוט".to_string(),
+                f: "פעוטה".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "ילד".to_string(),
+                f: "ילדה".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "נער".to_string(),
+                f: "נערה".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "מבוגר".to_string(),
+                f: "מבוגרת".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

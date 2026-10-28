@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ta.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Tamil locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ta".to_string(),
         clock: ClockConfig {
-            hours: ["பன்னிரண்ட".to_string(), "ஒன்ற".to_string(), "இரண்ட".to_string(), "மூன்ற".to_string(), "நான்க".to_string(), "ஐந்த".to_string(), "ஆற".to_string(), "ஏழ".to_string(), "எட்ட".to_string(), "ஒன்பத".to_string(), "பத்த".to_string(), "பதினொன்ற".to_string()],
+            hours: [
+                "பன்னிரண்ட".to_string(),
+                "ஒன்ற".to_string(),
+                "இரண்ட".to_string(),
+                "மூன்ற".to_string(),
+                "நான்க".to_string(),
+                "ஐந்த".to_string(),
+                "ஆற".to_string(),
+                "ஏழ".to_string(),
+                "எட்ட".to_string(),
+                "ஒன்பத".to_string(),
+                "பத்த".to_string(),
+                "பதினொன்ற".to_string(),
+            ],
             midnight: "நள்ளிரவு".to_string(),
             noon: "நண்பகல்".to_string(),
             patterns: HashMap::from([
-            (0, "{h}ு மணி".to_string()),
-            (5, "{h}ு மணி ஐந்து நிமிடம்".to_string()),
-            (10, "{h}ு மணி பத்து நிமிடம்".to_string()),
-            (15, "{h}ே கால்".to_string()),
-            (20, "{h}ு மணி இருபது நிமிடம்".to_string()),
-            (25, "{h}ு மணி இருபத்தைந்து நிமிடம்".to_string()),
-            (30, "{h}ரை".to_string()),
-            (35, "{h}ு மணி முப்பத்தைந்து நிமிடம்".to_string()),
-            (40, "{h}ு மணி நாற்பது நிமிடம்".to_string()),
-            (45, "{h}ே முக்கால்".to_string()),
-            (50, "{h}ு மணி ஐம்பது நிமிடம்".to_string()),
-            (55, "{h}ு மணி ஐம்பத்தைந்து நிமிடம்".to_string()),
-        ]),
+                (0, "{h}ு மணி".to_string()),
+                (5, "{h}ு மணி ஐந்து நிமிடம்".to_string()),
+                (10, "{h}ு மணி பத்து நிமிடம்".to_string()),
+                (15, "{h}ே கால்".to_string()),
+                (20, "{h}ு மணி இருபது நிமிடம்".to_string()),
+                (25, "{h}ு மணி இருபத்தைந்து நிமிடம்".to_string()),
+                (30, "{h}ரை".to_string()),
+                (35, "{h}ு மணி முப்பத்தைந்து நிமிடம்".to_string()),
+                (40, "{h}ு மணி நாற்பது நிமிடம்".to_string()),
+                (45, "{h}ே முக்கால்".to_string()),
+                (50, "{h}ு மணி ஐம்பது நிமிடம்".to_string()),
+                (55, "{h}ு மணி ஐம்பத்தைந்து நிமிடம்".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

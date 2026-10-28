@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ny.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Chichewa locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ny".to_string(),
         clock: ClockConfig {
-            hours: ["lakhumi ndi chiwiri".to_string(), "loyamba".to_string(), "lachiwiri".to_string(), "lachitatu".to_string(), "lachinayi".to_string(), "lachisanu".to_string(), "lachisanu ndi chimodzi".to_string(), "lachisanu ndi chiwiri".to_string(), "lachisanu ndi chitatu".to_string(), "lachisanu ndi chinayi".to_string(), "lakhumi".to_string(), "lakhumi ndi chimodzi".to_string()],
+            hours: [
+                "lakhumi ndi chiwiri".to_string(),
+                "loyamba".to_string(),
+                "lachiwiri".to_string(),
+                "lachitatu".to_string(),
+                "lachinayi".to_string(),
+                "lachisanu".to_string(),
+                "lachisanu ndi chimodzi".to_string(),
+                "lachisanu ndi chiwiri".to_string(),
+                "lachisanu ndi chitatu".to_string(),
+                "lachisanu ndi chinayi".to_string(),
+                "lakhumi".to_string(),
+                "lakhumi ndi chimodzi".to_string(),
+            ],
             midnight: "pakati pausiku".to_string(),
             noon: "usana".to_string(),
             patterns: HashMap::from([
-            (0, "ola {h}".to_string()),
-            (5, "ola {h} ndi mphindi zisanu".to_string()),
-            (10, "ola {h} ndi mphindi khumi".to_string()),
-            (15, "ola {h} ndi mphindi khumi ndi zisanu".to_string()),
-            (20, "ola {h} ndi mphindi makumi awiri".to_string()),
-            (25, "ola {h} ndi mphindi makumi awiri ndi zisanu".to_string()),
-            (30, "ola {h} ndi theka".to_string()),
-            (35, "ola {h} ndi mphindi makumi atatu ndi zisanu".to_string()),
-            (40, "ola {h} ndi mphindi makumi anayi".to_string()),
-            (45, "ola {h} ndi mphindi makumi anayi ndi zisanu".to_string()),
-            (50, "ola {h} ndi mphindi makumi asanu".to_string()),
-            (55, "ola {h} ndi mphindi makumi asanu ndi zisanu".to_string()),
-        ]),
+                (0, "ola {h}".to_string()),
+                (5, "ola {h} ndi mphindi zisanu".to_string()),
+                (10, "ola {h} ndi mphindi khumi".to_string()),
+                (15, "ola {h} ndi mphindi khumi ndi zisanu".to_string()),
+                (20, "ola {h} ndi mphindi makumi awiri".to_string()),
+                (
+                    25,
+                    "ola {h} ndi mphindi makumi awiri ndi zisanu".to_string(),
+                ),
+                (30, "ola {h} ndi theka".to_string()),
+                (
+                    35,
+                    "ola {h} ndi mphindi makumi atatu ndi zisanu".to_string(),
+                ),
+                (40, "ola {h} ndi mphindi makumi anayi".to_string()),
+                (
+                    45,
+                    "ola {h} ndi mphindi makumi anayi ndi zisanu".to_string(),
+                ),
+                (50, "ola {h} ndi mphindi makumi asanu".to_string()),
+                (
+                    55,
+                    "ola {h} ndi mphindi makumi asanu ndi zisanu".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

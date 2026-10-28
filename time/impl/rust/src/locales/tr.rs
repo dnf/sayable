@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/tr.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Turkish locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "tr".to_string(),
         clock: ClockConfig {
-            hours: ["on iki".to_string(), "bir".to_string(), "iki".to_string(), "üç".to_string(), "dört".to_string(), "beş".to_string(), "altı".to_string(), "yedi".to_string(), "sekiz".to_string(), "dokuz".to_string(), "on".to_string(), "on bir".to_string()],
+            hours: [
+                "on iki".to_string(),
+                "bir".to_string(),
+                "iki".to_string(),
+                "üç".to_string(),
+                "dört".to_string(),
+                "beş".to_string(),
+                "altı".to_string(),
+                "yedi".to_string(),
+                "sekiz".to_string(),
+                "dokuz".to_string(),
+                "on".to_string(),
+                "on bir".to_string(),
+            ],
             midnight: "gece yarısı".to_string(),
             noon: "öğle".to_string(),
             patterns: HashMap::from([
-            (0, "saat {h}".to_string()),
-            (5, "saat {h} sıfır beş".to_string()),
-            (10, "saat {h} on".to_string()),
-            (15, "saat {h} on beş".to_string()),
-            (20, "saat {h} yirmi".to_string()),
-            (25, "saat {h} yirmi beş".to_string()),
-            (30, "saat {h} buçuk".to_string()),
-            (35, "saat {h} otuz beş".to_string()),
-            (40, "saat {h} kırk".to_string()),
-            (45, "saat {h} kırk beş".to_string()),
-            (50, "saat {h} elli".to_string()),
-            (55, "saat {h} elli beş".to_string()),
-        ]),
+                (0, "saat {h}".to_string()),
+                (5, "saat {h} sıfır beş".to_string()),
+                (10, "saat {h} on".to_string()),
+                (15, "saat {h} on beş".to_string()),
+                (20, "saat {h} yirmi".to_string()),
+                (25, "saat {h} yirmi beş".to_string()),
+                (30, "saat {h} buçuk".to_string()),
+                (35, "saat {h} otuz beş".to_string()),
+                (40, "saat {h} kırk".to_string()),
+                (45, "saat {h} kırk beş".to_string()),
+                (50, "saat {h} elli".to_string()),
+                (55, "saat {h} elli beş".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

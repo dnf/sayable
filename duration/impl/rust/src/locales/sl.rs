@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sl.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Slovenian locale.
 pub fn locale() -> DurationLocale {
@@ -17,10 +17,15 @@ pub fn locale() -> DurationLocale {
         code: "sl".to_string(),
         plural: |n| {
             let mod100 = n % 100;
-            if mod100 == 1 { PluralCategory::One }
-            else if mod100 == 2 { PluralCategory::Two }
-            else if mod100 == 3 || mod100 == 4 { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if mod100 == 1 {
+                PluralCategory::One
+            } else if mod100 == 2 {
+                PluralCategory::Two
+            } else if mod100 == 3 || mod100 == 4 {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

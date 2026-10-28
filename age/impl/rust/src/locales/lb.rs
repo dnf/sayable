@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/lb.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Luxembourgish locale.
 pub fn locale() -> AgeLocale {
@@ -49,7 +51,10 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Klengkand".to_string()),
             child: StageLabel::Neutral("Kand".to_string()),
             teenager: StageLabel::Neutral("Jugendlechen".to_string()),
-            adult: StageLabel::Gendered { m: "Erwuessenen".to_string(), f: "Erwuessen".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Erwuessenen".to_string(),
+                f: "Erwuessen".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} D.")),

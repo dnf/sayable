@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/lb.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Luxembourgish locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "lb".to_string(),
         clock: ClockConfig {
-            hours: ["zwielef".to_string(), "eent".to_string(), "zwee".to_string(), "dräi".to_string(), "véier".to_string(), "fënnef".to_string(), "sechs".to_string(), "siwen".to_string(), "aacht".to_string(), "néng".to_string(), "zéng".to_string(), "eelef".to_string()],
+            hours: [
+                "zwielef".to_string(),
+                "eent".to_string(),
+                "zwee".to_string(),
+                "dräi".to_string(),
+                "véier".to_string(),
+                "fënnef".to_string(),
+                "sechs".to_string(),
+                "siwen".to_string(),
+                "aacht".to_string(),
+                "néng".to_string(),
+                "zéng".to_string(),
+                "eelef".to_string(),
+            ],
             midnight: "Mëtternuecht".to_string(),
             noon: "Mëtteg".to_string(),
             patterns: HashMap::from([
-            (0, "{h} Auer".to_string()),
-            (5, "fënnef op {h}".to_string()),
-            (10, "zéng op {h}".to_string()),
-            (15, "Véierel op {h}".to_string()),
-            (20, "zwanzeg op {h}".to_string()),
-            (25, "fënnef vir hallwer {next_h}".to_string()),
-            (30, "hallwer {next_h}".to_string()),
-            (35, "fënnef op hallwer {next_h}".to_string()),
-            (40, "zwanzeg vir {next_h}".to_string()),
-            (45, "Véierel vir {next_h}".to_string()),
-            (50, "zéng vir {next_h}".to_string()),
-            (55, "fënnef vir {next_h}".to_string()),
-        ]),
+                (0, "{h} Auer".to_string()),
+                (5, "fënnef op {h}".to_string()),
+                (10, "zéng op {h}".to_string()),
+                (15, "Véierel op {h}".to_string()),
+                (20, "zwanzeg op {h}".to_string()),
+                (25, "fënnef vir hallwer {next_h}".to_string()),
+                (30, "hallwer {next_h}".to_string()),
+                (35, "fënnef op hallwer {next_h}".to_string()),
+                (40, "zwanzeg vir {next_h}".to_string()),
+                (45, "Véierel vir {next_h}".to_string()),
+                (50, "zéng vir {next_h}".to_string()),
+                (55, "fënnef vir {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

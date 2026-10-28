@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gd.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Scottish Gaelic locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "gd".to_string(),
         clock: ClockConfig {
-            hours: ["dà uair dheug".to_string(), "uair".to_string(), "dà uair".to_string(), "trì uairean".to_string(), "ceithir uairean".to_string(), "còig uairean".to_string(), "sia uairean".to_string(), "seachd uairean".to_string(), "ochd uairean".to_string(), "naoi uairean".to_string(), "deich uairean".to_string(), "aon uair deug".to_string()],
+            hours: [
+                "dà uair dheug".to_string(),
+                "uair".to_string(),
+                "dà uair".to_string(),
+                "trì uairean".to_string(),
+                "ceithir uairean".to_string(),
+                "còig uairean".to_string(),
+                "sia uairean".to_string(),
+                "seachd uairean".to_string(),
+                "ochd uairean".to_string(),
+                "naoi uairean".to_string(),
+                "deich uairean".to_string(),
+                "aon uair deug".to_string(),
+            ],
             midnight: "meadhan-oidhche".to_string(),
             noon: "meadhan-latha".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "còig mionaidean an dèidh {h}".to_string()),
-            (10, "deich mionaidean an dèidh {h}".to_string()),
-            (15, "cairteal an dèidh {h}".to_string()),
-            (20, "fichead mionaid an dèidh {h}".to_string()),
-            (25, "còig mionaidean fichead an dèidh {h}".to_string()),
-            (30, "leth-uair an dèidh {h}".to_string()),
-            (35, "còig mionaidean fichead gu {next_h}".to_string()),
-            (40, "fichead mionaid gu {next_h}".to_string()),
-            (45, "cairteal gu {next_h}".to_string()),
-            (50, "deich mionaidean gu {next_h}".to_string()),
-            (55, "còig mionaidean gu {next_h}".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "còig mionaidean an dèidh {h}".to_string()),
+                (10, "deich mionaidean an dèidh {h}".to_string()),
+                (15, "cairteal an dèidh {h}".to_string()),
+                (20, "fichead mionaid an dèidh {h}".to_string()),
+                (25, "còig mionaidean fichead an dèidh {h}".to_string()),
+                (30, "leth-uair an dèidh {h}".to_string()),
+                (35, "còig mionaidean fichead gu {next_h}".to_string()),
+                (40, "fichead mionaid gu {next_h}".to_string()),
+                (45, "cairteal gu {next_h}".to_string()),
+                (50, "deich mionaidean gu {next_h}".to_string()),
+                (55, "còig mionaidean gu {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

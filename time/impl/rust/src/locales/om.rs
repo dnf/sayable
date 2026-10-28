@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/om.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Oromo locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "om".to_string(),
         clock: ClockConfig {
-            hours: ["jaha".to_string(), "torba".to_string(), "saddeet".to_string(), "sagal".to_string(), "kudhan".to_string(), "kudha tokko".to_string(), "kudha lama".to_string(), "tokko".to_string(), "lama".to_string(), "sadii".to_string(), "afur".to_string(), "shan".to_string()],
+            hours: [
+                "jaha".to_string(),
+                "torba".to_string(),
+                "saddeet".to_string(),
+                "sagal".to_string(),
+                "kudhan".to_string(),
+                "kudha tokko".to_string(),
+                "kudha lama".to_string(),
+                "tokko".to_string(),
+                "lama".to_string(),
+                "sadii".to_string(),
+                "afur".to_string(),
+                "shan".to_string(),
+            ],
             midnight: "walakkii halkan".to_string(),
             noon: "guyyaa walakkaa".to_string(),
             patterns: HashMap::from([
-            (0, "sa'aatii {h}".to_string()),
-            (5, "sa'aatii {h} fi daqiiqaa shan".to_string()),
-            (10, "sa'aatii {h} fi daqiiqaa kudhan".to_string()),
-            (15, "sa'aatii {h} fi daqiiqaa kudha shan".to_string()),
-            (20, "sa'aatii {h} fi daqiiqaa digdama".to_string()),
-            (25, "sa'aatii {h} fi daqiiqaa digdamii shan".to_string()),
-            (30, "sa'aatii {h} fi walakkaa".to_string()),
-            (35, "sa'aatii {h} fi daqiiqaa soddomii shan".to_string()),
-            (40, "sa'aatii {h} fi daqiiqaa afurtama".to_string()),
-            (45, "sa'aatii {h} fi daqiiqaa afurtamii shan".to_string()),
-            (50, "sa'aatii {h} fi daqiiqaa shantama".to_string()),
-            (55, "sa'aatii {h} fi daqiiqaa shantamii shan".to_string()),
-        ]),
+                (0, "sa'aatii {h}".to_string()),
+                (5, "sa'aatii {h} fi daqiiqaa shan".to_string()),
+                (10, "sa'aatii {h} fi daqiiqaa kudhan".to_string()),
+                (15, "sa'aatii {h} fi daqiiqaa kudha shan".to_string()),
+                (20, "sa'aatii {h} fi daqiiqaa digdama".to_string()),
+                (25, "sa'aatii {h} fi daqiiqaa digdamii shan".to_string()),
+                (30, "sa'aatii {h} fi walakkaa".to_string()),
+                (35, "sa'aatii {h} fi daqiiqaa soddomii shan".to_string()),
+                (40, "sa'aatii {h} fi daqiiqaa afurtama".to_string()),
+                (45, "sa'aatii {h} fi daqiiqaa afurtamii shan".to_string()),
+                (50, "sa'aatii {h} fi daqiiqaa shantama".to_string()),
+                (55, "sa'aatii {h} fi daqiiqaa shantamii shan".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

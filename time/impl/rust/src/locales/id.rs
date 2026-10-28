@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/id.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Indonesian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "id".to_string(),
         clock: ClockConfig {
-            hours: ["dua belas".to_string(), "satu".to_string(), "dua".to_string(), "tiga".to_string(), "empat".to_string(), "lima".to_string(), "enam".to_string(), "tujuh".to_string(), "delapan".to_string(), "sembilan".to_string(), "sepuluh".to_string(), "sebelas".to_string()],
+            hours: [
+                "dua belas".to_string(),
+                "satu".to_string(),
+                "dua".to_string(),
+                "tiga".to_string(),
+                "empat".to_string(),
+                "lima".to_string(),
+                "enam".to_string(),
+                "tujuh".to_string(),
+                "delapan".to_string(),
+                "sembilan".to_string(),
+                "sepuluh".to_string(),
+                "sebelas".to_string(),
+            ],
             midnight: "tengah malam".to_string(),
             noon: "tengah hari".to_string(),
             patterns: HashMap::from([
-            (0, "pukul {h}".to_string()),
-            (5, "pukul {h} lewat lima".to_string()),
-            (10, "pukul {h} lewat sepuluh".to_string()),
-            (15, "pukul {h} lewat seperempat".to_string()),
-            (20, "pukul {h} lewat dua puluh".to_string()),
-            (25, "pukul {h} lewat dua puluh lima".to_string()),
-            (30, "pukul setengah {next_h}".to_string()),
-            (35, "pukul {next_h} kurang dua puluh lima".to_string()),
-            (40, "pukul {next_h} kurang dua puluh".to_string()),
-            (45, "pukul {next_h} kurang seperempat".to_string()),
-            (50, "pukul {next_h} kurang sepuluh".to_string()),
-            (55, "pukul {next_h} kurang lima".to_string()),
-        ]),
+                (0, "pukul {h}".to_string()),
+                (5, "pukul {h} lewat lima".to_string()),
+                (10, "pukul {h} lewat sepuluh".to_string()),
+                (15, "pukul {h} lewat seperempat".to_string()),
+                (20, "pukul {h} lewat dua puluh".to_string()),
+                (25, "pukul {h} lewat dua puluh lima".to_string()),
+                (30, "pukul setengah {next_h}".to_string()),
+                (35, "pukul {next_h} kurang dua puluh lima".to_string()),
+                (40, "pukul {next_h} kurang dua puluh".to_string()),
+                (45, "pukul {next_h} kurang seperempat".to_string()),
+                (50, "pukul {next_h} kurang sepuluh".to_string()),
+                (55, "pukul {next_h} kurang lima".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

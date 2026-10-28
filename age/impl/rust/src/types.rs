@@ -103,7 +103,11 @@ impl StageLabel {
         match self {
             StageLabel::Neutral(s) => s,
             StageLabel::Gendered { m, f } => {
-                if gender == Some(Gender::F) { f } else { m }
+                if gender == Some(Gender::F) {
+                    f
+                } else {
+                    m
+                }
             }
         }
     }

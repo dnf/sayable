@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ss.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// siSwati locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ss".to_string(),
         clock: ClockConfig {
-            hours: ["lelishumi nakubili".to_string(), "lekucala".to_string(), "lesibili".to_string(), "lesitsatfu".to_string(), "lesine".to_string(), "lesihlanu".to_string(), "lesitfupha".to_string(), "lesikhombisa".to_string(), "lesiphohlongo".to_string(), "lemfica".to_string(), "lelishumi".to_string(), "lelishumi nakunye".to_string()],
+            hours: [
+                "lelishumi nakubili".to_string(),
+                "lekucala".to_string(),
+                "lesibili".to_string(),
+                "lesitsatfu".to_string(),
+                "lesine".to_string(),
+                "lesihlanu".to_string(),
+                "lesitfupha".to_string(),
+                "lesikhombisa".to_string(),
+                "lesiphohlongo".to_string(),
+                "lemfica".to_string(),
+                "lelishumi".to_string(),
+                "lelishumi nakunye".to_string(),
+            ],
             midnight: "phakathi kwebusuku".to_string(),
             noon: "emini".to_string(),
             patterns: HashMap::from([
-            (0, "lihora {h}".to_string()),
-            (5, "lihora {h} nemizuzu lemihlanu".to_string()),
-            (10, "lihora {h} nemizuzu lelishumi".to_string()),
-            (15, "lihora {h} nemizuzu lelishumi nesihlanu".to_string()),
-            (20, "lihora {h} nemizuzu lemashumi lamabili".to_string()),
-            (25, "lihora {h} nemizuzu lemashumi lamabili nesihlanu".to_string()),
-            (30, "lihora {h} nenhafu".to_string()),
-            (35, "lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu".to_string()),
-            (40, "lihora {h} nemizuzu lemashumi lamane".to_string()),
-            (45, "lihora {h} nemizuzu lemashumi lamane nesihlanu".to_string()),
-            (50, "lihora {h} nemizuzu lemashumi lasihlanu".to_string()),
-            (55, "lihora {h} nemizuzu lemashumi lasihlanu nesihlanu".to_string()),
-        ]),
+                (0, "lihora {h}".to_string()),
+                (5, "lihora {h} nemizuzu lemihlanu".to_string()),
+                (10, "lihora {h} nemizuzu lelishumi".to_string()),
+                (15, "lihora {h} nemizuzu lelishumi nesihlanu".to_string()),
+                (20, "lihora {h} nemizuzu lemashumi lamabili".to_string()),
+                (
+                    25,
+                    "lihora {h} nemizuzu lemashumi lamabili nesihlanu".to_string(),
+                ),
+                (30, "lihora {h} nenhafu".to_string()),
+                (
+                    35,
+                    "lihora {h} nemizuzu lemashumi lamatsatfu nesihlanu".to_string(),
+                ),
+                (40, "lihora {h} nemizuzu lemashumi lamane".to_string()),
+                (
+                    45,
+                    "lihora {h} nemizuzu lemashumi lamane nesihlanu".to_string(),
+                ),
+                (50, "lihora {h} nemizuzu lemashumi lasihlanu".to_string()),
+                (
+                    55,
+                    "lihora {h} nemizuzu lemashumi lasihlanu nesihlanu".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {
