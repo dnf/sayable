@@ -12,7 +12,9 @@ defmodule SayableAge.Formatter do
     case compute_age(dob, as_of) do
       {:ok, {months, diff_days}} when months <= @max_age_months ->
         {day, week, month, year, half, delim, just_born} = resolve_locale(locale, compactness)
-        {:ok, format_tier(locale, day, week, month, year, half, delim, just_born, months, diff_days)}
+
+        {:ok,
+         format_tier(locale, day, week, month, year, half, delim, just_born, months, diff_days)}
 
       _ ->
         :error
@@ -36,7 +38,18 @@ defmodule SayableAge.Formatter do
   defp format_tier(_locale, _day, _week, _month, _year, _half, _delim, just_born, _months, 0),
     do: just_born
 
-  defp format_tier(locale, day, _week, _month, _year, _half, _delim, _just_born, _months, diff_days)
+  defp format_tier(
+         locale,
+         day,
+         _week,
+         _month,
+         _year,
+         _half,
+         _delim,
+         _just_born,
+         _months,
+         diff_days
+       )
        when diff_days < 7,
        do: Locale.resolve_unit(diff_days, day, locale, "")
 
@@ -53,7 +66,18 @@ defmodule SayableAge.Formatter do
     end
   end
 
-  defp format_tier(locale, _day, _week, month, _year, _half, _delim, _just_born, months, _diff_days)
+  defp format_tier(
+         locale,
+         _day,
+         _week,
+         month,
+         _year,
+         _half,
+         _delim,
+         _just_born,
+         months,
+         _diff_days
+       )
        when months < 24,
        do: Locale.resolve_unit(months, month, locale, "")
 
@@ -70,7 +94,18 @@ defmodule SayableAge.Formatter do
     end
   end
 
-  defp format_tier(locale, _day, _week, _month, year, half, _delim, _just_born, months, _diff_days)
+  defp format_tier(
+         locale,
+         _day,
+         _week,
+         _month,
+         year,
+         half,
+         _delim,
+         _just_born,
+         months,
+         _diff_days
+       )
        when months < 84 do
     years = div(months, 12)
     rem_months = rem(months, 12)
@@ -82,7 +117,18 @@ defmodule SayableAge.Formatter do
     end
   end
 
-  defp format_tier(locale, _day, _week, _month, year, _half, _delim, _just_born, months, _diff_days) do
+  defp format_tier(
+         locale,
+         _day,
+         _week,
+         _month,
+         year,
+         _half,
+         _delim,
+         _just_born,
+         months,
+         _diff_days
+       ) do
     years = div(months, 12)
     Locale.resolve_unit(years, year, locale, "")
   end
@@ -90,8 +136,8 @@ defmodule SayableAge.Formatter do
   # Locale resolution with compactness overrides
 
   defp resolve_locale(locale, :normal) do
-    {locale.units.day, locale.units.week, locale.units.month, locale.units.year,
-     locale.half, locale.delimiter, locale.just_born}
+    {locale.units.day, locale.units.week, locale.units.month, locale.units.year, locale.half,
+     locale.delimiter, locale.just_born}
   end
 
   defp resolve_locale(locale, compactness) do
@@ -104,12 +150,9 @@ defmodule SayableAge.Formatter do
       ovr ->
         units = Map.get(ovr, :units, %{})
 
-        {ovr_unit(units, :day, locale.units.day),
-         ovr_unit(units, :week, locale.units.week),
-         ovr_unit(units, :month, locale.units.month),
-         ovr_unit(units, :year, locale.units.year),
-         Map.get(ovr, :half, locale.half),
-         Map.get(ovr, :delimiter, locale.delimiter),
+        {ovr_unit(units, :day, locale.units.day), ovr_unit(units, :week, locale.units.week),
+         ovr_unit(units, :month, locale.units.month), ovr_unit(units, :year, locale.units.year),
+         Map.get(ovr, :half, locale.half), Map.get(ovr, :delimiter, locale.delimiter),
          Map.get(ovr, :just_born, locale.just_born)}
     end
   end
@@ -129,7 +172,11 @@ defmodule SayableAge.Formatter do
 
   defp compute_age(dob, as_of) when as_of in [nil, ""] do
     {{year, month, day}, _time} = :calendar.local_time()
-    compute_age(dob, :io_lib.format("~4..0B-~2..0B-~2..0B", [year, month, day]) |> IO.iodata_to_binary())
+
+    compute_age(
+      dob,
+      :io_lib.format("~4..0B-~2..0B-~2..0B", [year, month, day]) |> IO.iodata_to_binary()
+    )
   end
 
   defp compute_age(dob, as_of) do

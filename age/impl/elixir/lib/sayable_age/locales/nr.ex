@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.NR do
   def locale do
     %{
       code: "nr",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "ilanga {n}", other: "amalanga {n}"},
         week: %{one: "iveke {n}", other: "amaveke {n}"},

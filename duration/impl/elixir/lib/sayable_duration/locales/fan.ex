@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.FAN do
   def locale do
     %{
       code: "fan",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sɛgon {n}", other: "bisɛgon {n}"},
         minute: %{one: "minit {n}", other: "biminit {n}"},

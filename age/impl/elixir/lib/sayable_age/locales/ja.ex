@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.JA do
   def locale do
     %{
       code: "ja",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n}日",
         week: "{n}週",

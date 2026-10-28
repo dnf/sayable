@@ -15,7 +15,11 @@ defmodule SayableDuration.Locales.SHI do
   def locale do
     %{
       code: "shi",
-      plural: (fn n when n in [0, 1] -> :one; n when n >= 2 and n <= 10 -> :few; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        n when n >= 2 and n <= 10 -> :few
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} ⵜⴰⵙⵉⵏⵜ", few: "{n} ⵜⵉⵙⵉⵏⵉⵏ", other: "{n} ⵜⵉⵙⵉⵏⵉⵏ"},
         minute: %{one: "{n} ⵜⵓⵙⴷⵉⵇⵜ", few: "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ", other: "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ"},

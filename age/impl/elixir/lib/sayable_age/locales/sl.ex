@@ -15,7 +15,12 @@ defmodule SayableAge.Locales.SL do
   def locale do
     %{
       code: "sl",
-      plural: (fn n when rem(n, 100) == 1 -> :one; n when rem(n, 100) == 2 -> :two; n when rem(n, 100) == 3 or rem(n, 100) == 4 -> :few; _ -> :other end),
+      plural: fn
+        n when rem(n, 100) == 1 -> :one
+        n when rem(n, 100) == 2 -> :two
+        n when rem(n, 100) == 3 or rem(n, 100) == 4 -> :few
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} dan", two: "{n} dneva", few: "{n} dni", other: "{n} dni"},
         week: %{one: "{n} teden", two: "{n} tedna", few: "{n} tedne", other: "{n} tednov"},

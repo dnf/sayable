@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.IT do
   def locale do
     %{
       code: "it",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} giorno", other: "{n} giorni"},
         week: %{one: "{n} settimana", other: "{n} settimane"},

@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.OM do
   def locale do
     %{
       code: "om",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sekondii {n}", other: "sekondoota {n}"},
         minute: %{one: "daqiiqaa {n}", other: "daqiiqoota {n}"},

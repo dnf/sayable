@@ -15,7 +15,11 @@ defmodule SayableAge.Locales.RO do
   def locale do
     %{
       code: "ro",
-      plural: (fn 1 -> :one; n when n == 0 or (rem(n, 100) >= 1 and rem(n, 100) <= 19) -> :few; _ -> :other end),
+      plural: fn
+        1 -> :one
+        n when n == 0 or (rem(n, 100) >= 1 and rem(n, 100) <= 19) -> :few
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} zi", few: "{n} zile", other: "{n} de zile"},
         week: %{one: "{n} săptămână", few: "{n} săptămâni", other: "{n} de săptămâni"},

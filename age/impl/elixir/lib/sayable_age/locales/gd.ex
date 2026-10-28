@@ -15,12 +15,27 @@ defmodule SayableAge.Locales.GD do
   def locale do
     %{
       code: "gd",
-      plural: (fn n when n in [1, 11] -> :one; n when n in [2, 12] -> :two; n when (n >= 3 and n <= 10) or (n >= 13 and n <= 19) -> :few; _ -> :other end),
+      plural: fn
+        n when n in [1, 11] -> :one
+        n when n in [2, 12] -> :two
+        n when (n >= 3 and n <= 10) or (n >= 13 and n <= 19) -> :few
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} latha", two: "{n} latha", few: "{n} làithean", other: "{n} latha"},
-        week: %{one: "{n} sheachdain", two: "{n} sheachdain", few: "{n} seachdainean", other: "{n} seachdain"},
+        week: %{
+          one: "{n} sheachdain",
+          two: "{n} sheachdain",
+          few: "{n} seachdainean",
+          other: "{n} seachdain"
+        },
         month: %{one: "{n} mhìos", two: "{n} mhìos", few: "{n} mìosan", other: "{n} mìos"},
-        year: %{one: "{n} bhliadhna", two: "{n} bhliadhna", few: "{n} bliadhna", other: "{n} bliadhna"}
+        year: %{
+          one: "{n} bhliadhna",
+          two: "{n} bhliadhna",
+          few: "{n} bliadhna",
+          other: "{n} bliadhna"
+        }
       },
       half: "{0} gu leth",
       delimiter: ", ",

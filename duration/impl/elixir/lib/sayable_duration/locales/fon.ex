@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.FON do
   def locale do
     %{
       code: "fon",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "segɔ́ndu {n}",
         minute: "miniti {n}",

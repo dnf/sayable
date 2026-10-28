@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.MFE do
   def locale do
     %{
       code: "mfe",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} segonn",
         minute: "{n} minit",

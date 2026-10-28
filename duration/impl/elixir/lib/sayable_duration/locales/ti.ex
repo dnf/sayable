@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.TI do
   def locale do
     %{
       code: "ti",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} ካልኢት", other: "{n} ካልኢታት"},
         minute: %{one: "{n} ደቒቓ", other: "{n} ደቒቓታት"},

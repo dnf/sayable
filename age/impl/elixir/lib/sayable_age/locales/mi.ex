@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.MI do
   def locale do
     %{
       code: "mi",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: "{n} rā",
         week: "{n} wiki",

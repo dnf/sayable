@@ -15,7 +15,16 @@ defmodule SayableAge.Locales.SR do
   def locale do
     %{
       code: "sr",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) ->
+          :few
+
+        _ ->
+          :other
+      end,
       units: %{
         day: %{one: "{n} дан", few: "{n} дана", many: "{n} дана", other: "{n} дана"},
         week: %{one: "{n} недеља", few: "{n} недеље", many: "{n} недеља", other: "{n} недеља"},

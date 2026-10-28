@@ -15,12 +15,47 @@ defmodule SayableAge.Locales.KW do
   def locale do
     %{
       code: "kw",
-      plural: (fn 0 -> :zero; 1 -> :one; n when rem(n, 100) in [2, 22, 42, 62, 82] -> :two; n when rem(n, 100) in [3, 23, 43, 63, 83] -> :few; n when n != 1 and rem(n, 100) in [1, 21, 41, 61, 81] -> :many; _ -> :other end),
+      plural: fn
+        0 -> :zero
+        1 -> :one
+        n when rem(n, 100) in [2, 22, 42, 62, 82] -> :two
+        n when rem(n, 100) in [3, 23, 43, 63, 83] -> :few
+        n when n != 1 and rem(n, 100) in [1, 21, 41, 61, 81] -> :many
+        _ -> :other
+      end,
       units: %{
-        day: %{zero: "{n} dydh", one: "{n} dydh", two: "{n} dhydh", few: "{n} dydh", many: "{n} dydh", other: "{n} dydh"},
-        week: %{zero: "{n} seythun", one: "{n} seythun", two: "{n} seythun", few: "{n} seythun", many: "{n} seythun", other: "{n} seythun"},
-        month: %{zero: "{n} mis", one: "{n} mis", two: "{n} vis", few: "{n} mis", many: "{n} mis", other: "{n} mis"},
-        year: %{zero: "{n} blydhen", one: "{n} blydhen", two: "{n} vlydhen", few: "{n} blydhen", many: "{n} blydhen", other: "{n} blydhen"}
+        day: %{
+          zero: "{n} dydh",
+          one: "{n} dydh",
+          two: "{n} dhydh",
+          few: "{n} dydh",
+          many: "{n} dydh",
+          other: "{n} dydh"
+        },
+        week: %{
+          zero: "{n} seythun",
+          one: "{n} seythun",
+          two: "{n} seythun",
+          few: "{n} seythun",
+          many: "{n} seythun",
+          other: "{n} seythun"
+        },
+        month: %{
+          zero: "{n} mis",
+          one: "{n} mis",
+          two: "{n} vis",
+          few: "{n} mis",
+          many: "{n} mis",
+          other: "{n} mis"
+        },
+        year: %{
+          zero: "{n} blydhen",
+          one: "{n} blydhen",
+          two: "{n} vlydhen",
+          few: "{n} blydhen",
+          many: "{n} blydhen",
+          other: "{n} blydhen"
+        }
       },
       half: "{0} hag hanter",
       delimiter: ", ",

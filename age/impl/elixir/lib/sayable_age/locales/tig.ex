@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.TIG do
   def locale do
     %{
       code: "tig",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "yom {n}", other: "ayam {n}"},
         week: %{one: "semun {n}", other: "semunat {n}"},

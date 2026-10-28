@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.TUM do
   def locale do
     %{
       code: "tum",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sekendi {n}", other: "masekendi {n}"},
         minute: %{one: "miniti {n}", other: "maminiti {n}"},

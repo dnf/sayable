@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.TZM do
   def locale do
     %{
       code: "tzm",
-      plural: (fn n when n in [0, 1] or (n >= 11 and n <= 99) -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] or (n >= 11 and n <= 99) -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} tasint", other: "{n} tisinin"},
         minute: %{one: "{n} tusdiqt", other: "{n} tusdiqin"},

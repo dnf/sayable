@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.KPE do
   def locale do
     %{
       code: "kpe",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sɛkɔŋ {n}",
         minute: "miniti {n}",

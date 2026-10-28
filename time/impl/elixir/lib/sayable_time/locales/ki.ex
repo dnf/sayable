@@ -49,16 +49,16 @@ defmodule SayableTime.Locales.KI do
       },
       short: %{
         clock: %{
-        use24h: true,
-        format: "{h}:{mm}",
-        am_pm: {"Kiroko", "Hwaĩ-inĩ"}
+          use24h: true,
+          format: "{h}:{mm}",
+          am_pm: {"Kiroko", "Hwaĩ-inĩ"}
         }
       },
       compact: %{
         clock: %{
-        use24h: true,
-        format: "{h}:{mm}",
-        am_pm: nil
+          use24h: true,
+          format: "{h}:{mm}",
+          am_pm: nil
         }
       }
     }

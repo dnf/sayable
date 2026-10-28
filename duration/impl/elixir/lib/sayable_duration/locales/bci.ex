@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.BCI do
   def locale do
     %{
       code: "bci",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sɛgɔn {n}",
         minute: "miniti {n}",

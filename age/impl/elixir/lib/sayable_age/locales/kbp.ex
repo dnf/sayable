@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.KBP do
   def locale do
     %{
       code: "kbp",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "kɩyakʊ {n}",
         week: "kpɩtaʊ {n}",

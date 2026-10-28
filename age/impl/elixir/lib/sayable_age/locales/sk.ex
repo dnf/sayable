@@ -15,7 +15,11 @@ defmodule SayableAge.Locales.SK do
   def locale do
     %{
       code: "sk",
-      plural: (fn 1 -> :one; n when n >= 2 and n <= 4 -> :few; _ -> :other end),
+      plural: fn
+        1 -> :one
+        n when n >= 2 and n <= 4 -> :few
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} deň", few: "{n} dni", other: "{n} dní"},
         week: %{one: "{n} týždeň", few: "{n} týždne", other: "{n} týždňov"},

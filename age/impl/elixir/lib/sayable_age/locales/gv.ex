@@ -15,10 +15,20 @@ defmodule SayableAge.Locales.GV do
   def locale do
     %{
       code: "gv",
-      plural: (fn n when rem(n, 10) == 1 -> :one; n when rem(n, 10) == 2 -> :two; n when rem(n, 100) in [0, 20, 40, 60, 80] -> :few; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 1 -> :one
+        n when rem(n, 10) == 2 -> :two
+        n when rem(n, 100) in [0, 20, 40, 60, 80] -> :few
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} laa", two: "{n} laa", few: "{n} laa", other: "{n} laa"},
-        week: %{one: "{n} hiaghtin", two: "{n} hiaghtin", few: "{n} shiaghtin", other: "{n} shiaghtin"},
+        week: %{
+          one: "{n} hiaghtin",
+          two: "{n} hiaghtin",
+          few: "{n} shiaghtin",
+          other: "{n} shiaghtin"
+        },
         month: %{one: "{n} vee", two: "{n} vee", few: "{n} mee", other: "{n} mee"},
         year: %{one: "{n} vlein", two: "{n} vlein", few: "{n} blein", other: "{n} blein"}
       },

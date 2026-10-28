@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.FIL do
   def locale do
     %{
       code: "fil",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} segundo",
         minute: "{n} minuto",

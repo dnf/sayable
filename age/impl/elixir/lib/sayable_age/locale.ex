@@ -12,6 +12,7 @@ defmodule SayableAge.Locale do
       end
 
     plural_fn = locale.plural
+
     template =
       case unit_forms do
         s when is_binary(s) -> s

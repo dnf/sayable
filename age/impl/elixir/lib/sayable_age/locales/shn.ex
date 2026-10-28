@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.SHN do
   def locale do
     %{
       code: "shn",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} ဝၼ်း",
         week: "{n} ဝူင်ႈ",

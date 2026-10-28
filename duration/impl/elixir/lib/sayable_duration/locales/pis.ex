@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.PIS do
   def locale do
     %{
       code: "pis",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} sekon",
         minute: "{n} minit",

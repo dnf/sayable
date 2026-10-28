@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.UZ do
   def locale do
     %{
       code: "uz",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} soniya",
         minute: "{n} daqiqa",

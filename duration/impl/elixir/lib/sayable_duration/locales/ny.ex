@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.NY do
   def locale do
     %{
       code: "ny",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "sekondi {n}",
         minute: "mphindi {n}",

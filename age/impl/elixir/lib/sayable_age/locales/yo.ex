@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.YO do
   def locale do
     %{
       code: "yo",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "ọjọ́ {n}",
         week: "ọ̀sẹ̀ {n}",

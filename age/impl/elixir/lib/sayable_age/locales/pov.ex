@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.POV do
   def locale do
     %{
       code: "pov",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} dia",
         week: "{n} simana",

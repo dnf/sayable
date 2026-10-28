@@ -15,15 +15,76 @@ defmodule SayableDuration.Locales.BR do
   def locale do
     %{
       code: "br",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 and rem(n, 100) != 71 and rem(n, 100) != 91 -> :one; n when rem(n, 10) == 2 and rem(n, 100) != 12 and rem(n, 100) != 72 and rem(n, 100) != 92 -> :two; n when rem(n, 10) in [3, 4, 9] and (rem(n, 100) < 10 or rem(n, 100) > 19) and (rem(n, 100) < 70 or rem(n, 100) > 79) and (rem(n, 100) < 90 or rem(n, 100) > 99) -> :few; n when n != 0 and rem(n, 1_000_000) == 0 -> :many; _ -> :other end),
+      plural: fn
+        n
+        when rem(n, 10) == 1 and rem(n, 100) != 11 and rem(n, 100) != 71 and rem(n, 100) != 91 ->
+          :one
+
+        n
+        when rem(n, 10) == 2 and rem(n, 100) != 12 and rem(n, 100) != 72 and rem(n, 100) != 92 ->
+          :two
+
+        n
+        when rem(n, 10) in [3, 4, 9] and (rem(n, 100) < 10 or rem(n, 100) > 19) and
+               (rem(n, 100) < 70 or rem(n, 100) > 79) and (rem(n, 100) < 90 or rem(n, 100) > 99) ->
+          :few
+
+        n when n != 0 and rem(n, 1_000_000) == 0 ->
+          :many
+
+        _ ->
+          :other
+      end,
       units: %{
-        second: %{one: "{n} eilenn", two: "{n} eilenn", few: "{n} eilenn", many: "{n} a eilennoù", other: "{n} eilenn"},
-        minute: %{one: "{n} munut", two: "{n} vunut", few: "{n} munut", many: "{n} a vunutoù", other: "{n} munut"},
-        hour: %{one: "{n} eur", two: "{n} eur", few: "{n} eur", many: "{n} a eurvezhioù", other: "{n} eur"},
-        day: %{one: "{n} devezh", two: "{n} zevezh", few: "{n} devezh", many: "{n} devezh", other: "{n} devezh"},
-        week: %{one: "{n} sizhun", two: "{n} sizhun", few: "{n} sizhun", many: "{n} sizhun", other: "{n} sizhun"},
-        month: %{one: "{n} miz", two: "{n} viz", few: "{n} miz", many: "{n} miz", other: "{n} miz"},
-        year: %{one: "{n} bloaz", two: "{n} vloaz", few: "{n} bloaz", many: "{n} bloaz", other: "{n} bloaz"}
+        second: %{
+          one: "{n} eilenn",
+          two: "{n} eilenn",
+          few: "{n} eilenn",
+          many: "{n} a eilennoù",
+          other: "{n} eilenn"
+        },
+        minute: %{
+          one: "{n} munut",
+          two: "{n} vunut",
+          few: "{n} munut",
+          many: "{n} a vunutoù",
+          other: "{n} munut"
+        },
+        hour: %{
+          one: "{n} eur",
+          two: "{n} eur",
+          few: "{n} eur",
+          many: "{n} a eurvezhioù",
+          other: "{n} eur"
+        },
+        day: %{
+          one: "{n} devezh",
+          two: "{n} zevezh",
+          few: "{n} devezh",
+          many: "{n} devezh",
+          other: "{n} devezh"
+        },
+        week: %{
+          one: "{n} sizhun",
+          two: "{n} sizhun",
+          few: "{n} sizhun",
+          many: "{n} sizhun",
+          other: "{n} sizhun"
+        },
+        month: %{
+          one: "{n} miz",
+          two: "{n} viz",
+          few: "{n} miz",
+          many: "{n} miz",
+          other: "{n} miz"
+        },
+        year: %{
+          one: "{n} bloaz",
+          two: "{n} vloaz",
+          few: "{n} bloaz",
+          many: "{n} bloaz",
+          other: "{n} bloaz"
+        }
       },
       half: "{0} hag un hanter",
       delimiter: ", ",

@@ -15,7 +15,11 @@ defmodule SayableDuration.Locales.SK do
   def locale do
     %{
       code: "sk",
-      plural: (fn 1 -> :one; n when n >= 2 and n <= 4 -> :few; _ -> :other end),
+      plural: fn
+        1 -> :one
+        n when n >= 2 and n <= 4 -> :few
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} sekunda", few: "{n} sekundy", other: "{n} sekúnd"},
         minute: %{one: "{n} minúta", few: "{n} minúty", other: "{n} minút"},

@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.LG do
   def locale do
     %{
       code: "lg",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "sikonda {n}",
         minute: "dakiika {n}",

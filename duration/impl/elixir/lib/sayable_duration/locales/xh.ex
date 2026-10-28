@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.XH do
   def locale do
     %{
       code: "xh",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "umzuzwana {n}", other: "imizuzwana {n}"},
         minute: %{one: "umzuzu {n}", other: "imizuzu {n}"},

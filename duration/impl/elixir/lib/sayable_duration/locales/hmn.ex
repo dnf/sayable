@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.HMN do
   def locale do
     %{
       code: "hmn",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} chib",
         minute: "{n} feeb",

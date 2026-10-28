@@ -15,15 +15,71 @@ defmodule SayableDuration.Locales.AR do
   def locale do
     %{
       code: "ar",
-      plural: (fn 0 -> :zero; 1 -> :one; 2 -> :two; n when rem(n, 100) >= 3 and rem(n, 100) <= 10 -> :few; n when rem(n, 100) >= 11 and rem(n, 100) <= 99 -> :many; _ -> :other end),
+      plural: fn
+        0 -> :zero
+        1 -> :one
+        2 -> :two
+        n when rem(n, 100) >= 3 and rem(n, 100) <= 10 -> :few
+        n when rem(n, 100) >= 11 and rem(n, 100) <= 99 -> :many
+        _ -> :other
+      end,
       units: %{
-        second: %{zero: "{n} ثانية", one: "ثانية", two: "ثانيتان", few: "{n} ثوانٍ", many: "{n} ثانية", other: "{n} ثانية"},
-        minute: %{zero: "{n} دقيقة", one: "دقيقة", two: "دقيقتان", few: "{n} دقائق", many: "{n} دقيقة", other: "{n} دقيقة"},
-        hour: %{zero: "{n} ساعة", one: "ساعة", two: "ساعتان", few: "{n} ساعات", many: "{n} ساعة", other: "{n} ساعة"},
-        day: %{zero: "{n} يوم", one: "يوم", two: "يومان", few: "{n} أيام", many: "{n} يومًا", other: "{n} يوم"},
-        week: %{zero: "{n} أسبوع", one: "أسبوع", two: "أسبوعان", few: "{n} أسابيع", many: "{n} أسبوعًا", other: "{n} أسبوع"},
-        month: %{zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"},
-        year: %{zero: "{n} سنة", one: "سنة", two: "سنتان", few: "{n} سنوات", many: "{n} سنة", other: "{n} سنة"}
+        second: %{
+          zero: "{n} ثانية",
+          one: "ثانية",
+          two: "ثانيتان",
+          few: "{n} ثوانٍ",
+          many: "{n} ثانية",
+          other: "{n} ثانية"
+        },
+        minute: %{
+          zero: "{n} دقيقة",
+          one: "دقيقة",
+          two: "دقيقتان",
+          few: "{n} دقائق",
+          many: "{n} دقيقة",
+          other: "{n} دقيقة"
+        },
+        hour: %{
+          zero: "{n} ساعة",
+          one: "ساعة",
+          two: "ساعتان",
+          few: "{n} ساعات",
+          many: "{n} ساعة",
+          other: "{n} ساعة"
+        },
+        day: %{
+          zero: "{n} يوم",
+          one: "يوم",
+          two: "يومان",
+          few: "{n} أيام",
+          many: "{n} يومًا",
+          other: "{n} يوم"
+        },
+        week: %{
+          zero: "{n} أسبوع",
+          one: "أسبوع",
+          two: "أسبوعان",
+          few: "{n} أسابيع",
+          many: "{n} أسبوعًا",
+          other: "{n} أسبوع"
+        },
+        month: %{
+          zero: "{n} شهر",
+          one: "شهر",
+          two: "شهران",
+          few: "{n} أشهر",
+          many: "{n} شهرًا",
+          other: "{n} شهر"
+        },
+        year: %{
+          zero: "{n} سنة",
+          one: "سنة",
+          two: "سنتان",
+          few: "{n} سنوات",
+          many: "{n} سنة",
+          other: "{n} سنة"
+        }
       },
       half: "{0} ونصف",
       delimiter: " و",
@@ -35,10 +91,38 @@ defmodule SayableDuration.Locales.AR do
           second: "{n} ث",
           minute: "{n} د",
           hour: "{n} س",
-          day: %{zero: "{n} يوم", one: "يوم", two: "يومان", few: "{n} أيام", many: "{n} يومًا", other: "{n} يوم"},
-          week: %{zero: "{n} أسبوع", one: "أسبوع", two: "أسبوعان", few: "{n} أسابيع", many: "{n} أسبوعًا", other: "{n} أسبوع"},
-          month: %{zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"},
-          year: %{zero: "{n} سنة", one: "سنة واحدة", two: "سنتان", few: "{n} سنوات", many: "{n} سنة", other: "{n} سنة"}
+          day: %{
+            zero: "{n} يوم",
+            one: "يوم",
+            two: "يومان",
+            few: "{n} أيام",
+            many: "{n} يومًا",
+            other: "{n} يوم"
+          },
+          week: %{
+            zero: "{n} أسبوع",
+            one: "أسبوع",
+            two: "أسبوعان",
+            few: "{n} أسابيع",
+            many: "{n} أسبوعًا",
+            other: "{n} أسبوع"
+          },
+          month: %{
+            zero: "{n} شهر",
+            one: "شهر",
+            two: "شهران",
+            few: "{n} أشهر",
+            many: "{n} شهرًا",
+            other: "{n} شهر"
+          },
+          year: %{
+            zero: "{n} سنة",
+            one: "سنة واحدة",
+            two: "سنتان",
+            few: "{n} سنوات",
+            many: "{n} سنة",
+            other: "{n} سنة"
+          }
         },
         ago: "منذ {0}",
         in_future: "بعد {0}"

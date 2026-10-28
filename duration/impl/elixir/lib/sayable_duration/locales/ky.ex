@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.KY do
   def locale do
     %{
       code: "ky",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} секунд",
         minute: "{n} мүнөт",

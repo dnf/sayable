@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.SQ do
   def locale do
     %{
       code: "sq",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} sekondë", other: "{n} sekonda"},
         minute: %{one: "{n} minutë", other: "{n} minuta"},

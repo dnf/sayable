@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.KN do
   def locale do
     %{
       code: "kn",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} ಸೆಕೆಂಡ್", other: "{n} ಸೆಕೆಂಡುಗಳು"},
         minute: %{one: "{n} ನಿಮಿಷ", other: "{n} ನಿಮಿಷಗಳು"},

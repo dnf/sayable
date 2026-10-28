@@ -15,7 +15,11 @@ defmodule SayableDuration.Locales.LV do
   def locale do
     %{
       code: "lv",
-      plural: (fn n when rem(n, 10) == 0 or (rem(n, 100) >= 11 and rem(n, 100) <= 19) -> :zero; n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 0 or (rem(n, 100) >= 11 and rem(n, 100) <= 19) -> :zero
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{zero: "{n} sekunžu", one: "{n} sekunde", other: "{n} sekundes"},
         minute: %{zero: "{n} minūšu", one: "{n} minūte", other: "{n} minūtes"},

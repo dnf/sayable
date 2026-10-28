@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.SAR do
   def locale do
     %{
       code: "sar",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "ndɔ {n}",
         week: "lɔtɛ {n}",

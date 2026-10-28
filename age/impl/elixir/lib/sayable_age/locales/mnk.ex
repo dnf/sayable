@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.MNK do
   def locale do
     %{
       code: "mnk",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "tili {n}",
         week: "lɔkɔ {n}",

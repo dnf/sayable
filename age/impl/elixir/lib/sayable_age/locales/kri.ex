@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.KRI do
   def locale do
     %{
       code: "kri",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} de",
         week: "{n} wik",

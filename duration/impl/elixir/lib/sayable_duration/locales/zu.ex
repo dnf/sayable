@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.ZU do
   def locale do
     %{
       code: "zu",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "isekhondi {n}", other: "amasekhondi {n}"},
         minute: %{one: "umzuzu {n}", other: "imizuzu {n}"},

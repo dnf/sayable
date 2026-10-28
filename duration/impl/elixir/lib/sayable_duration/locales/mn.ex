@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.MN do
   def locale do
     %{
       code: "mn",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} секунд",
         minute: "{n} минут",

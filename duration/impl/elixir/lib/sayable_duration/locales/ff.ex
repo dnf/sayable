@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.FF do
   def locale do
     %{
       code: "ff",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: "majaango {n}",
         minute: "hojomaaje {n}",

@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.NG do
   def locale do
     %{
       code: "ng",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "osekonde {n}", other: "oosekonde {n}"},
         minute: %{one: "ominute {n}", other: "oominute {n}"},

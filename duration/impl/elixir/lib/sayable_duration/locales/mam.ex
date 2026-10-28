@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.MAM do
   def locale do
     %{
       code: "mam",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} segundo",
         minute: "{n} minuto",

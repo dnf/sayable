@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.KM do
   def locale do
     %{
       code: "km",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} ថ្ងៃ",
         week: "{n} សប្ដាហ៍",

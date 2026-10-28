@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.MFE do
   def locale do
     %{
       code: "mfe",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} zour",
         week: "{n} semenn",

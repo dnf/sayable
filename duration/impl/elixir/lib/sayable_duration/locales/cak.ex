@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.CAK do
   def locale do
     %{
       code: "cak",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} tz'aqät",
         minute: "{n} ch'utik ramaj",

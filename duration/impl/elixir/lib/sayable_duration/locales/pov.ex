@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.POV do
   def locale do
     %{
       code: "pov",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} sigundu",
         minute: "{n} minutu",

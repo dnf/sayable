@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.TA do
   def locale do
     %{
       code: "ta",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} விநாடி",
         minute: "{n} நிமிடம்",

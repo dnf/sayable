@@ -15,7 +15,16 @@ defmodule SayableAge.Locales.LT do
   def locale do
     %{
       code: "lt",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 9 and (rem(n, 100) < 12 or rem(n, 100) > 19) -> :few; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 9 and (rem(n, 100) < 12 or rem(n, 100) > 19) ->
+          :few
+
+        _ ->
+          :other
+      end,
       units: %{
         day: %{one: "{n} diena", few: "{n} dienos", other: "{n} dienų"},
         week: %{one: "{n} savaitė", few: "{n} savaitės", other: "{n} savaičių"},

@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.UMB do
   def locale do
     %{
       code: "umb",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "elityi {n}", other: "omatyi {n}"},
         week: %{one: "osemana {n}", other: "olosemana {n}"},

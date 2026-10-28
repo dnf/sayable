@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.KRI do
   def locale do
     %{
       code: "kri",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n} sekon",
         minute: "{n} minit",

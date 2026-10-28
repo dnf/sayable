@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.LN do
   def locale do
     %{
       code: "ln",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: "segɔnde {n}",
         minute: "miniti {n}",

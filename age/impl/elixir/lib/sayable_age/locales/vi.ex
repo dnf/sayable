@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.VI do
   def locale do
     %{
       code: "vi",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} ngày",
         week: "{n} tuần",

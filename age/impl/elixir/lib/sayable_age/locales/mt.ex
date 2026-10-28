@@ -15,12 +15,42 @@ defmodule SayableAge.Locales.MT do
   def locale do
     %{
       code: "mt",
-      plural: (fn 1 -> :one; 2 -> :two; n when n == 0 or (rem(n, 100) >= 3 and rem(n, 100) <= 10) -> :few; n when rem(n, 100) >= 11 and rem(n, 100) <= 19 -> :many; _ -> :other end),
+      plural: fn
+        1 -> :one
+        2 -> :two
+        n when n == 0 or (rem(n, 100) >= 3 and rem(n, 100) <= 10) -> :few
+        n when rem(n, 100) >= 11 and rem(n, 100) <= 19 -> :many
+        _ -> :other
+      end,
       units: %{
-        day: %{one: "ġurnata", two: "jumejn", few: "{n} ijiem", many: "{n}-il jum", other: "{n} jum"},
-        week: %{one: "ġimgħa", two: "ġimgħatejn", few: "{n} ġimgħat", many: "{n}-il ġimgħa", other: "{n} ġimgħa"},
-        month: %{one: "xahar", two: "xahrejn", few: "{n} xhur", many: "{n}-il xahar", other: "{n} xahar"},
-        year: %{one: "sena", two: "sentejn", few: "{n} snin", many: "{n}-il sena", other: "{n} sena"}
+        day: %{
+          one: "ġurnata",
+          two: "jumejn",
+          few: "{n} ijiem",
+          many: "{n}-il jum",
+          other: "{n} jum"
+        },
+        week: %{
+          one: "ġimgħa",
+          two: "ġimgħatejn",
+          few: "{n} ġimgħat",
+          many: "{n}-il ġimgħa",
+          other: "{n} ġimgħa"
+        },
+        month: %{
+          one: "xahar",
+          two: "xahrejn",
+          few: "{n} xhur",
+          many: "{n}-il xahar",
+          other: "{n} xahar"
+        },
+        year: %{
+          one: "sena",
+          two: "sentejn",
+          few: "{n} snin",
+          many: "{n}-il sena",
+          other: "{n} sena"
+        }
       },
       half: "{0} u nofs",
       delimiter: " u ",

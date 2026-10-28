@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.AK do
   def locale do
     %{
       code: "ak",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         second: "sɛkɛnd {n}",
         minute: "sema {n}",

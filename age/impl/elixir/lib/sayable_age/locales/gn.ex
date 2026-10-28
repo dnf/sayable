@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.GN do
   def locale do
     %{
       code: "gn",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: "{n} ára",
         week: "{n} arapokõindy",

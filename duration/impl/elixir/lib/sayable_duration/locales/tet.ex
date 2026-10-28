@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.TET do
   def locale do
     %{
       code: "tet",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "segundu {n}",
         minute: "minutu {n}",

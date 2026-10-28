@@ -15,7 +15,11 @@ defmodule SayableAge.Locales.LV do
   def locale do
     %{
       code: "lv",
-      plural: (fn n when rem(n, 10) == 0 or (rem(n, 100) >= 11 and rem(n, 100) <= 19) -> :zero; n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 0 or (rem(n, 100) >= 11 and rem(n, 100) <= 19) -> :zero
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{zero: "{n} dienu", one: "{n} diena", other: "{n} dienas"},
         week: %{zero: "{n} nedēļu", one: "{n} nedēļa", other: "{n} nedēļas"},

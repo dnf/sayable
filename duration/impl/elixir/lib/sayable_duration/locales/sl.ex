@@ -15,9 +15,19 @@ defmodule SayableDuration.Locales.SL do
   def locale do
     %{
       code: "sl",
-      plural: (fn n when rem(n, 100) == 1 -> :one; n when rem(n, 100) == 2 -> :two; n when rem(n, 100) == 3 or rem(n, 100) == 4 -> :few; _ -> :other end),
+      plural: fn
+        n when rem(n, 100) == 1 -> :one
+        n when rem(n, 100) == 2 -> :two
+        n when rem(n, 100) == 3 or rem(n, 100) == 4 -> :few
+        _ -> :other
+      end,
       units: %{
-        second: %{one: "{n} sekunda", two: "{n} sekundi", few: "{n} sekunde", other: "{n} sekund"},
+        second: %{
+          one: "{n} sekunda",
+          two: "{n} sekundi",
+          few: "{n} sekunde",
+          other: "{n} sekund"
+        },
         minute: %{one: "{n} minuta", two: "{n} minuti", few: "{n} minute", other: "{n} minut"},
         hour: %{one: "{n} ura", two: "{n} uri", few: "{n} ure", other: "{n} ur"},
         day: %{one: "{n} dan", two: "{n} dneva", few: "{n} dni", other: "{n} dni"},

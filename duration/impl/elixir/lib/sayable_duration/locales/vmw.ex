@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.VMW do
   def locale do
     %{
       code: "vmw",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sekuundu {n}", other: "sekuundu {n}"},
         minute: %{one: "minuto {n}", other: "minuto {n}"},

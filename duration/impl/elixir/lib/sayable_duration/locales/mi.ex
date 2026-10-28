@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.MI do
   def locale do
     %{
       code: "mi",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: "{n} hēkona",
         minute: "{n} meneti",

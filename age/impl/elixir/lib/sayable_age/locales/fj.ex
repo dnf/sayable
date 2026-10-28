@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.FJ do
   def locale do
     %{
       code: "fj",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} na siga",
         week: "{n} na macawa",

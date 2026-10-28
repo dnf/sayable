@@ -15,14 +15,38 @@ defmodule SayableDuration.Locales.PL do
   def locale do
     %{
       code: "pl",
-      plural: (fn 1 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :many end),
+      plural: fn
+        1 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) ->
+          :few
+
+        _ ->
+          :many
+      end,
       units: %{
-        second: %{one: "{n} sekunda", few: "{n} sekundy", many: "{n} sekund", other: "{n} sekundy"},
+        second: %{
+          one: "{n} sekunda",
+          few: "{n} sekundy",
+          many: "{n} sekund",
+          other: "{n} sekundy"
+        },
         minute: %{one: "{n} minuta", few: "{n} minuty", many: "{n} minut", other: "{n} minuty"},
         hour: %{one: "{n} godzina", few: "{n} godziny", many: "{n} godzin", other: "{n} godziny"},
         day: %{one: "{n} dzień", few: "{n} dni", many: "{n} dni", other: "{n} dnia"},
-        week: %{one: "{n} tydzień", few: "{n} tygodnie", many: "{n} tygodni", other: "{n} tygodnia"},
-        month: %{one: "{n} miesiąc", few: "{n} miesiące", many: "{n} miesięcy", other: "{n} miesiąca"},
+        week: %{
+          one: "{n} tydzień",
+          few: "{n} tygodnie",
+          many: "{n} tygodni",
+          other: "{n} tygodnia"
+        },
+        month: %{
+          one: "{n} miesiąc",
+          few: "{n} miesiące",
+          many: "{n} miesięcy",
+          other: "{n} miesiąca"
+        },
         year: %{one: "{n} rok", few: "{n} lata", many: "{n} lat", other: "{n} roku"}
       },
       half: "{n} i pół",

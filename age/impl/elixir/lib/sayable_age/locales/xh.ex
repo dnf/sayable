@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.XH do
   def locale do
     %{
       code: "xh",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "usuku {n}", other: "iintsuku {n}"},
         week: %{one: "iveki {n}", other: "iiveki {n}"},

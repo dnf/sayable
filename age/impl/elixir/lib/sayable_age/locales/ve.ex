@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.VE do
   def locale do
     %{
       code: "ve",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "duvha {n}", other: "maduvha {n}"},
         week: %{one: "vhege {n}", other: "mavhege {n}"},

@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.CAK do
   def locale do
     %{
       code: "cak",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n} q'ij",
         week: "{n} wuqq'ij",

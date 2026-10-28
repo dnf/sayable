@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.BG do
   def locale do
     %{
       code: "bg",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "{n} секунда", other: "{n} секунди"},
         minute: %{one: "{n} минута", other: "{n} минути"},

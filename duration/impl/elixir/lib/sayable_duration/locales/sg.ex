@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.SG do
   def locale do
     %{
       code: "sg",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "ndo-sêse {n}",
         minute: "ndo {n}",

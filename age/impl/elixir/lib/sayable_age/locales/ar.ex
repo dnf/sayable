@@ -15,12 +15,47 @@ defmodule SayableAge.Locales.AR do
   def locale do
     %{
       code: "ar",
-      plural: (fn 0 -> :zero; 1 -> :one; 2 -> :two; n when rem(n, 100) >= 3 and rem(n, 100) <= 10 -> :few; n when rem(n, 100) >= 11 and rem(n, 100) <= 99 -> :many; _ -> :other end),
+      plural: fn
+        0 -> :zero
+        1 -> :one
+        2 -> :two
+        n when rem(n, 100) >= 3 and rem(n, 100) <= 10 -> :few
+        n when rem(n, 100) >= 11 and rem(n, 100) <= 99 -> :many
+        _ -> :other
+      end,
       units: %{
-        day: %{zero: "{n} يوم", one: "يوم", two: "يومان", few: "{n} أيام", many: "{n} يومًا", other: "{n} يوم"},
-        week: %{zero: "{n} أسبوع", one: "أسبوع", two: "أسبوعان", few: "{n} أسابيع", many: "{n} أسبوعًا", other: "{n} أسبوع"},
-        month: %{zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"},
-        year: %{zero: "{n} سنة", one: "سنة", two: "سنتان", few: "{n} سنوات", many: "{n} سنة", other: "{n} سنة"}
+        day: %{
+          zero: "{n} يوم",
+          one: "يوم",
+          two: "يومان",
+          few: "{n} أيام",
+          many: "{n} يومًا",
+          other: "{n} يوم"
+        },
+        week: %{
+          zero: "{n} أسبوع",
+          one: "أسبوع",
+          two: "أسبوعان",
+          few: "{n} أسابيع",
+          many: "{n} أسبوعًا",
+          other: "{n} أسبوع"
+        },
+        month: %{
+          zero: "{n} شهر",
+          one: "شهر",
+          two: "شهران",
+          few: "{n} أشهر",
+          many: "{n} شهرًا",
+          other: "{n} شهر"
+        },
+        year: %{
+          zero: "{n} سنة",
+          one: "سنة",
+          two: "سنتان",
+          few: "{n} سنوات",
+          many: "{n} سنة",
+          other: "{n} سنة"
+        }
       },
       half: "{0} ونصف",
       delimiter: " و",
@@ -35,10 +70,38 @@ defmodule SayableAge.Locales.AR do
       },
       short: %{
         units: %{
-          day: %{zero: "{n} يوم", one: "يوم", two: "يومان", few: "{n} أيام", many: "{n} يومًا", other: "{n} يوم"},
-          week: %{zero: "{n} أسبوع", one: "أسبوع", two: "أسبوعان", few: "{n} أسابيع", many: "{n} أسبوعًا", other: "{n} أسبوع"},
-          month: %{zero: "{n} شهر", one: "شهر", two: "شهران", few: "{n} أشهر", many: "{n} شهرًا", other: "{n} شهر"},
-          year: %{zero: "{n} سنة", one: "سنة واحدة", two: "سنتان", few: "{n} سنوات", many: "{n} سنة", other: "{n} سنة"}
+          day: %{
+            zero: "{n} يوم",
+            one: "يوم",
+            two: "يومان",
+            few: "{n} أيام",
+            many: "{n} يومًا",
+            other: "{n} يوم"
+          },
+          week: %{
+            zero: "{n} أسبوع",
+            one: "أسبوع",
+            two: "أسبوعان",
+            few: "{n} أسابيع",
+            many: "{n} أسبوعًا",
+            other: "{n} أسبوع"
+          },
+          month: %{
+            zero: "{n} شهر",
+            one: "شهر",
+            two: "شهران",
+            few: "{n} أشهر",
+            many: "{n} شهرًا",
+            other: "{n} شهر"
+          },
+          year: %{
+            zero: "{n} سنة",
+            one: "سنة واحدة",
+            two: "سنتان",
+            few: "{n} سنوات",
+            many: "{n} سنة",
+            other: "{n} سنة"
+          }
         }
       },
       compact: %{

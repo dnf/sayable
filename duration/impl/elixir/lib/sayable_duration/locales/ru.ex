@@ -15,9 +15,23 @@ defmodule SayableDuration.Locales.RU do
   def locale do
     %{
       code: "ru",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :many end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) ->
+          :few
+
+        _ ->
+          :many
+      end,
       units: %{
-        second: %{one: "{n} секунда", few: "{n} секунды", many: "{n} секунд", other: "{n} секунды"},
+        second: %{
+          one: "{n} секунда",
+          few: "{n} секунды",
+          many: "{n} секунд",
+          other: "{n} секунды"
+        },
         minute: %{one: "{n} минута", few: "{n} минуты", many: "{n} минут", other: "{n} минуты"},
         hour: %{one: "{n} час", few: "{n} часа", many: "{n} часов", other: "{n} часа"},
         day: %{one: "{n} день", few: "{n} дня", many: "{n} дней", other: "{n} дня"},

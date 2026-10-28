@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.NY do
   def locale do
     %{
       code: "ny",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "tsiku {n}", other: "masiku {n}"},
         week: %{one: "sabata {n}", other: "masabata {n}"},

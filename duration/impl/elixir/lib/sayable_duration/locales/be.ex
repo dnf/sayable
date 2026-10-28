@@ -15,10 +15,29 @@ defmodule SayableDuration.Locales.BE do
   def locale do
     %{
       code: "be",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) -> :few; _ -> :many end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 ->
+          :one
+
+        n when rem(n, 10) >= 2 and rem(n, 10) <= 4 and (rem(n, 100) < 12 or rem(n, 100) > 14) ->
+          :few
+
+        _ ->
+          :many
+      end,
       units: %{
-        second: %{one: "{n} секунда", few: "{n} секунды", many: "{n} секунд", other: "{n} секунды"},
-        minute: %{one: "{n} хвіліна", few: "{n} хвіліны", many: "{n} хвілін", other: "{n} хвіліны"},
+        second: %{
+          one: "{n} секунда",
+          few: "{n} секунды",
+          many: "{n} секунд",
+          other: "{n} секунды"
+        },
+        minute: %{
+          one: "{n} хвіліна",
+          few: "{n} хвіліны",
+          many: "{n} хвілін",
+          other: "{n} хвіліны"
+        },
         hour: %{one: "{n} гадзіна", few: "{n} гадзіны", many: "{n} гадзін", other: "{n} гадзіны"},
         day: %{one: "{n} дзень", few: "{n} дні", many: "{n} дзён", other: "{n} дня"},
         week: %{one: "{n} тыдзень", few: "{n} тыдні", many: "{n} тыдняў", other: "{n} тыдня"},

@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.CEB do
   def locale do
     %{
       code: "ceb",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         day: "{n} ka adlaw",
         week: "{n} ka semana",

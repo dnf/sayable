@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.ET do
   def locale do
     %{
       code: "et",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} päev", other: "{n} päeva"},
         week: %{one: "{n} nädal", other: "{n} nädalat"},

@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.NSO do
   def locale do
     %{
       code: "nso",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "letšatši {n}", other: "matšatši {n}"},
         week: %{one: "beke {n}", other: "dibeke {n}"},

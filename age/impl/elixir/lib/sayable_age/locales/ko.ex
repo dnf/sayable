@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.KO do
   def locale do
     %{
       code: "ko",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "{n}일",
         week: "{n}주",

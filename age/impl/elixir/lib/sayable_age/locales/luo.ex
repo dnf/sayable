@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.LUO do
   def locale do
     %{
       code: "luo",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "odiechieng' {n}", other: "ndalo {n}"},
         week: %{one: "juma {n}", other: "jumbe {n}"},

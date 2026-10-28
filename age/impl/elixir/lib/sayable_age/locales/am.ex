@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.AM do
   def locale do
     %{
       code: "am",
-      plural: (fn n when n in [0, 1] -> :one; _ -> :other end),
+      plural: fn
+        n when n in [0, 1] -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} ቀን", other: "{n} ቀናት"},
         week: %{one: "{n} ሳምንት", other: "{n} ሳምንታት"},

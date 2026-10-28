@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.PS do
   def locale do
     %{
       code: "ps",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} ورځ", other: "{n} ورځې"},
         week: "{n} اونۍ",

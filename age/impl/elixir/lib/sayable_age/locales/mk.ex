@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.MK do
   def locale do
     %{
       code: "mk",
-      plural: (fn n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one; _ -> :other end),
+      plural: fn
+        n when rem(n, 10) == 1 and rem(n, 100) != 11 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "{n} ден", other: "{n} дена"},
         week: %{one: "{n} недела", other: "{n} недели"},

@@ -7,6 +7,9 @@ from codegen.targets.elixir.plural_rules import get_ex_plural
 
 HEADER = make_header("codegen/targets/elixir/emitter.py", line_prefix="# ")
 
+# `mix format`'s default :line_length.
+_LINE_LENGTH = 98
+
 
 def _module_name(code: str) -> str:
     """Convert locale code to Elixir module suffix (uppercase, hyphens to underscores)."""
@@ -18,23 +21,34 @@ def _quote(s: str) -> str:
     return f'"{escaped}"'
 
 
-def _unit_forms(unit: object) -> str:
+def _keyed_map(key: str, pairs: list[str], indent: str) -> str:
+    """Return ``key: %{...}`` at ``indent`` the way `mix format` lays it out.
+
+    The map stays on one line when it fits, trailing comma included; otherwise
+    each pair goes on its own line, which `mix format` keeps because the map
+    opens and closes on a newline. Python counts code points and `mix format`
+    counts graphemes, which are never more, so a line that fits here fits there.
+    """
+    flat = f"{indent}{key}: %{{" + ", ".join(pairs) + "}"
+    if len(flat) + len(",") <= _LINE_LENGTH:
+        return flat
+    inner = indent + "  "
+    return f"{indent}{key}: %{{\n" + ",\n".join(inner + pair for pair in pairs) + f"\n{indent}}}"
+
+
+def _unit_entry(name: str, unit: object, indent: str) -> str:
     if isinstance(unit, str):
-        return _quote(unit)
+        return f"{indent}{name}: {_quote(unit)}"
     cats = ["zero", "one", "two", "few", "many", "other"]
-    pairs = []
-    for cat in cats:
-        if cat in unit:
-            pairs.append(f"{cat}: {_quote(unit[cat])}")
-    return "%{" + ", ".join(pairs) + "}"
+    pairs = [f"{cat}: {_quote(unit[cat])}" for cat in cats if cat in unit]
+    return _keyed_map(name, pairs, indent)
 
 
 def _build_units_map(units: dict, indent: str) -> str:
     inner = indent + "  "
     items = []
     for unit_name in ("second", "minute", "hour", "day", "week", "month", "year"):
-        val = _unit_forms(units[unit_name])
-        items.append(f"{inner}{unit_name}: {val}")
+        items.append(_unit_entry(unit_name, units[unit_name], inner))
     return f"{indent}units: %{{\n" + ",\n".join(items) + f"\n{indent}}}"
 
 
@@ -46,8 +60,7 @@ def _build_compactness(mode: str, ovr: dict, indent: str) -> str:
         u_items = []
         for unit_name in ("second", "minute", "hour", "day", "week", "month", "year"):
             if unit_name in ovr["units"]:
-                val = _unit_forms(ovr["units"][unit_name])
-                u_items.append(f"{inner2}{unit_name}: {val}")
+                u_items.append(_unit_entry(unit_name, ovr["units"][unit_name], inner2))
         ovr_parts.append(f"{inner}units: %{{\n" + ",\n".join(u_items) + f"\n{inner}}}")
     if "half" in ovr:
         ovr_parts.append(f"{inner}half: {_quote(ovr['half'])}")
@@ -76,8 +89,8 @@ def emit_locale(data: dict) -> str:
     parts = []
     parts.append(f"{indent}code: {_quote(code)}")
 
-    plural = get_ex_plural(rule)
-    parts.append(f"{indent}plural: ({plural})")
+    plural = get_ex_plural(rule, indent)
+    parts.append(f"{indent}plural: {plural}")
 
     parts.append(_build_units_map(data["units"], indent))
 

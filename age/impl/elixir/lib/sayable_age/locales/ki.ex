@@ -15,7 +15,10 @@ defmodule SayableAge.Locales.KI do
   def locale do
     %{
       code: "ki",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         day: %{one: "mũthenya {n}", other: "mĩthenya {n}"},
         week: %{one: "kiumia {n}", other: "kiumia {n}"},

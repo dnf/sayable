@@ -15,7 +15,7 @@ defmodule SayableAge.Locales.DJE do
   def locale do
     %{
       code: "dje",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         day: "zaari {n}",
         week: "hebu {n}",

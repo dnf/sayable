@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.VE do
   def locale do
     %{
       code: "ve",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "sekondhe {n}", other: "disekondhe {n}"},
         minute: %{one: "minidhi {n}", other: "diminidhi {n}"},

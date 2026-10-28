@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.BM do
   def locale do
     %{
       code: "bm",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "sekondi {n}",
         minute: "miniti {n}",

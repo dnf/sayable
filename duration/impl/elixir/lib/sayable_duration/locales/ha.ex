@@ -15,7 +15,10 @@ defmodule SayableDuration.Locales.HA do
   def locale do
     %{
       code: "ha",
-      plural: (fn 1 -> :one; _ -> :other end),
+      plural: fn
+        1 -> :one
+        _ -> :other
+      end,
       units: %{
         second: %{one: "daƙiƙa {n}", other: "daƙiƙoƙi {n}"},
         minute: %{one: "minti {n}", other: "mintoci {n}"},

@@ -15,7 +15,7 @@ defmodule SayableDuration.Locales.KO do
   def locale do
     %{
       code: "ko",
-      plural: (fn _ -> :other end),
+      plural: fn _ -> :other end,
       units: %{
         second: "{n}초",
         minute: "{n}분",
