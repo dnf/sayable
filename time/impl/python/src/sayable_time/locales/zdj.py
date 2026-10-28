@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 ZDJ = TimeLocale(
     code="zdj",
     clock=ClockConfig(
-        hours=["kumi na mbili", "moja", "mbili", "ndraru", "nne", "ntsanu", "sita", "saba", "nane", "shenda", "kumi", "kumi na moja"],
+        hours=[
+            "kumi na mbili",
+            "moja",
+            "mbili",
+            "ndraru",
+            "nne",
+            "ntsanu",
+            "sita",
+            "saba",
+            "nane",
+            "shenda",
+            "kumi",
+            "kumi na moja",
+        ],
         midnight="usiku wa manane",
         noon="adhuhuri",
         patterns={

@@ -32,7 +32,13 @@ MT = AgeLocale(
     plural=_plural,
     units={
         "day": {"one": "ġurnata", "two": "jumejn", "few": "{n} ijiem", "many": "{n}-il jum", "other": "{n} jum"},
-        "week": {"one": "ġimgħa", "two": "ġimgħatejn", "few": "{n} ġimgħat", "many": "{n}-il ġimgħa", "other": "{n} ġimgħa"},
+        "week": {
+            "one": "ġimgħa",
+            "two": "ġimgħatejn",
+            "few": "{n} ġimgħat",
+            "many": "{n}-il ġimgħa",
+            "other": "{n} ġimgħa",
+        },
         "month": {"one": "xahar", "two": "xahrejn", "few": "{n} xhur", "many": "{n}-il xahar", "other": "{n} xahar"},
         "year": {"one": "sena", "two": "sentejn", "few": "{n} snin", "many": "{n}-il sena", "other": "{n} sena"},
     },

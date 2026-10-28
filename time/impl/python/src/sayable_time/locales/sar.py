@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 SAR = TimeLocale(
     code="sar",
     clock=ClockConfig(
-        hours=["lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi", "lɛɛr kɨ̀ndá", "lɛɛr ɗìi", "lɛɛr mùtá", "lɛɛr sɔ̀", "lɛɛr mɨ̀ndɨ̀", "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá", "lɛɛr mɨ̀sá", "lɛɛr mɨ̀ndɨ̀ mùtá", "lɛɛr mɨ̀ndɨ̀ sɔ̀", "lɛɛr mɔ̀ɔ́", "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá"],
+        hours=[
+            "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà ɗìi",
+            "lɛɛr kɨ̀ndá",
+            "lɛɛr ɗìi",
+            "lɛɛr mùtá",
+            "lɛɛr sɔ̀",
+            "lɛɛr mɨ̀ndɨ̀",
+            "lɛɛr mɨ̀ndɨ̀ kɨ̀ndá",
+            "lɛɛr mɨ̀sá",
+            "lɛɛr mɨ̀ndɨ̀ mùtá",
+            "lɛɛr mɨ̀ndɨ̀ sɔ̀",
+            "lɛɛr mɔ̀ɔ́",
+            "lɛɛr mɔ̀ɔ́ gɨ́dɛ̀ ɓà kɨ̀ndá",
+        ],
         midnight="badɔ",
         noon="mbɔr ndɔ",
         patterns={

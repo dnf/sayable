@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 YAO = TimeLocale(
     code="yao",
     clock=ClockConfig(
-        hours=["likumi na iwili", "cimo", "iwili", "itatu", "ncece", "nsano", "nsano nacimo", "nsano nawili", "nsano naitatu", "nsano nancece", "likumi", "likumi nacimo"],
+        hours=[
+            "likumi na iwili",
+            "cimo",
+            "iwili",
+            "itatu",
+            "ncece",
+            "nsano",
+            "nsano nacimo",
+            "nsano nawili",
+            "nsano naitatu",
+            "nsano nancece",
+            "likumi",
+            "likumi nacimo",
+        ],
         midnight="pakati pa usiku",
         noon="pakati pa lisiku",
         patterns={

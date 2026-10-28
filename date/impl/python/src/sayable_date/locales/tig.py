@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 TIG = DateLocale(
     code="tig",
-    months=["Yannaayer", "Febbraayer", "Maaris", "Abriil", "Maay", "Yuunyo", "Yulyo", "Agoosṭo", "Seṭṭembre", "Oṭṭoobre", "Noovembre", "Diičembre"],
+    months=[
+        "Yannaayer",
+        "Febbraayer",
+        "Maaris",
+        "Abriil",
+        "Maay",
+        "Yuunyo",
+        "Yulyo",
+        "Agoosṭo",
+        "Seṭṭembre",
+        "Oṭṭoobre",
+        "Noovembre",
+        "Diičembre",
+    ],
     weekdays=["Sənbət", "Sənuy", "Sələs", "Rəbuʿ", "Ḥamus", "ʿArbi", "Qədami"],
     day_format="{n}",
     day_format_exceptions={},

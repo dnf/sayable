@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 FAN = TimeLocale(
     code="fan",
     clock=ClockConfig(
-        hours=["awom mebú", "fóg", "abúi", "aláa", "anyin", "atán", "asaman", "zamgbala", "mwom", "ebulú", "awom", "awom mefóg"],
+        hours=[
+            "awom mebú",
+            "fóg",
+            "abúi",
+            "aláa",
+            "anyin",
+            "atán",
+            "asaman",
+            "zamgbala",
+            "mwom",
+            "ebulú",
+            "awom",
+            "awom mefóg",
+        ],
         midnight="akiri alúk",
         noon="ewaŋ",
         patterns={

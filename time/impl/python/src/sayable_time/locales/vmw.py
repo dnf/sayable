@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 VMW = TimeLocale(
     code="vmw",
     clock=ClockConfig(
-        hours=["khumi na pili", "mosa", "pili", "ttatthu", "ncheche", "thanu", "thanu na mosa", "thanu na pili", "thanu na ttatthu", "thanu na ncheche", "khumi", "khumi na mosa"],
+        hours=[
+            "khumi na pili",
+            "mosa",
+            "pili",
+            "ttatthu",
+            "ncheche",
+            "thanu",
+            "thanu na mosa",
+            "thanu na pili",
+            "thanu na ttatthu",
+            "thanu na ncheche",
+            "khumi",
+            "khumi na mosa",
+        ],
         midnight="usiku wopakhala",
         noon="muttana",
         patterns={

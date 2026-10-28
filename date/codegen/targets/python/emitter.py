@@ -5,6 +5,7 @@ from __future__ import annotations
 import keyword
 
 from codegen.banner import locale_source_comment, make_header
+from codegen.targets.python.layout import Group, Value, call, dict_of, layout, list_of
 
 HEADER = make_header("codegen/targets/python/emitter.py", line_prefix="# ")
 
@@ -15,15 +16,38 @@ def _quote(s: str) -> str:
     return f'"{escaped}"'
 
 
-def _str_list(items: list[str]) -> str:
-    """Emit a Python list of strings on one line."""
-    return "[" + ", ".join(_quote(s) for s in items) + "]"
+def _str_list(items: list[str]) -> Group:
+    """Emit a Python list of strings."""
+    return list_of([_quote(s) for s in items])
 
 
-def _dict_str(d: dict[str, str]) -> str:
-    """Emit a Python dict of str→str on one line."""
-    pairs = [f"{_quote(k)}: {_quote(v)}" for k, v in d.items()]
-    return "{" + ", ".join(pairs) + "}"
+def _dict_str(d: dict[str, str]) -> Group:
+    """Emit a Python dict of str→str."""
+    return dict_of([(_quote(k), _quote(v)) for k, v in d.items()])
+
+
+def _short_override(ovr: dict) -> Group:
+    fields: list[tuple[str, Value]] = []
+    if "months" in ovr:
+        fields.append(("months=", _str_list(ovr["months"])))
+    if "weekdays" in ovr:
+        fields.append(("weekdays=", _str_list(ovr["weekdays"])))
+    if "dayFormat" in ovr:
+        fields.append(("day_format=", _quote(ovr["dayFormat"])))
+    if "datePattern" in ovr:
+        fields.append(("date_pattern=", _quote(ovr["datePattern"])))
+    if "datePatternWithYear" in ovr:
+        fields.append(("date_pattern_with_year=", _quote(ovr["datePatternWithYear"])))
+    return call("CompactnessOverride", fields, magic_trailing_comma=True)
+
+
+def _compact_override(ovr: dict) -> Group:
+    fields: list[tuple[str, Value]] = []
+    if "datePattern" in ovr:
+        fields.append(("date_pattern=", _quote(ovr["datePattern"])))
+    if "datePatternWithYear" in ovr:
+        fields.append(("date_pattern_with_year=", _quote(ovr["datePatternWithYear"])))
+    return call("CompactnessOverride", fields, magic_trailing_comma=True)
 
 
 def emit_locale(data: dict) -> str:
@@ -42,67 +66,35 @@ def emit_locale(data: dict) -> str:
 
     # Locale constant
     lines.append("")
-    lines.append(f"{code.upper()} = DateLocale(")
-    lines.append(f"    code={_quote(code)},")
-    lines.append(f"    months={_str_list(data['months'])},")
-    lines.append(f"    weekdays={_str_list(data['weekdays'])},")
-    lines.append(f"    day_format={_quote(data['dayFormat'])},")
-
-    if "dayFormatExceptions" in data:
-        lines.append(f"    day_format_exceptions={_dict_str(data['dayFormatExceptions'])},")
-    else:
-        lines.append("    day_format_exceptions={},")
-
-    lines.append(f"    date_pattern={_quote(data['datePattern'])},")
-    lines.append(f"    date_pattern_with_year={_quote(data['datePatternWithYear'])},")
-    lines.append(f"    today={_quote(data['today'])},")
-    lines.append(f"    tomorrow={_quote(data['tomorrow'])},")
-    lines.append(f"    yesterday={_quote(data['yesterday'])},")
-
+    fields: list[tuple[str, Value]] = [
+        ("code=", _quote(code)),
+        ("months=", _str_list(data["months"])),
+        ("weekdays=", _str_list(data["weekdays"])),
+        ("day_format=", _quote(data["dayFormat"])),
+        ("day_format_exceptions=", _dict_str(data.get("dayFormatExceptions", {}))),
+        ("date_pattern=", _quote(data["datePattern"])),
+        ("date_pattern_with_year=", _quote(data["datePatternWithYear"])),
+        ("today=", _quote(data["today"])),
+        ("tomorrow=", _quote(data["tomorrow"])),
+        ("yesterday=", _quote(data["yesterday"])),
+    ]
     if "dayAfterTomorrow" in data:
-        lines.append(f"    day_after_tomorrow={_quote(data['dayAfterTomorrow'])},")
+        fields.append(("day_after_tomorrow=", _quote(data["dayAfterTomorrow"])))
     if "dayBeforeYesterday" in data:
-        lines.append(f"    day_before_yesterday={_quote(data['dayBeforeYesterday'])},")
+        fields.append(("day_before_yesterday=", _quote(data["dayBeforeYesterday"])))
     if "thisWeekday" in data:
-        lines.append(f"    this_weekday={_quote(data['thisWeekday'])},")
+        fields.append(("this_weekday=", _quote(data["thisWeekday"])))
     if "nextWeekday" in data:
-        lines.append(f"    next_weekday={_quote(data['nextWeekday'])},")
+        fields.append(("next_weekday=", _quote(data["nextWeekday"])))
     if "lastWeekday" in data:
-        lines.append(f"    last_weekday={_quote(data['lastWeekday'])},")
+        fields.append(("last_weekday=", _quote(data["lastWeekday"])))
     if "monthsInDate" in data:
-        lines.append(f"    months_in_date={_str_list(data['monthsInDate'])},")
-
-    # Short override
+        fields.append(("months_in_date=", _str_list(data["monthsInDate"])))
     if has_short:
-        ovr = data["short"]
-        parts = []
-        if "months" in ovr:
-            parts.append(f"        months={_str_list(ovr['months'])},")
-        if "weekdays" in ovr:
-            parts.append(f"        weekdays={_str_list(ovr['weekdays'])},")
-        if "dayFormat" in ovr:
-            parts.append(f"        day_format={_quote(ovr['dayFormat'])},")
-        if "datePattern" in ovr:
-            parts.append(f"        date_pattern={_quote(ovr['datePattern'])},")
-        if "datePatternWithYear" in ovr:
-            parts.append(f"        date_pattern_with_year={_quote(ovr['datePatternWithYear'])},")
-        lines.append("    short=CompactnessOverride(")
-        lines.extend(parts)
-        lines.append("    ),")
-
-    # Compact override
+        fields.append(("short=", _short_override(data["short"])))
     if has_compact:
-        ovr = data["compact"]
-        parts = []
-        if "datePattern" in ovr:
-            parts.append(f"        date_pattern={_quote(ovr['datePattern'])},")
-        if "datePatternWithYear" in ovr:
-            parts.append(f"        date_pattern_with_year={_quote(ovr['datePatternWithYear'])},")
-        lines.append("    compact=CompactnessOverride(")
-        lines.extend(parts)
-        lines.append("    ),")
-
-    lines.append(")")
+        fields.append(("compact=", _compact_override(data["compact"])))
+    lines.extend(layout(call("DateLocale", fields, magic_trailing_comma=True), head=f"{code.upper()} = "))
     lines.append("")
 
     return "\n".join(lines)
@@ -135,26 +127,18 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append("")
 
     # Lookup dict + function
-    lines.append("_ALL: dict[str, DateLocale] = {")
-    entries = [f'"{loc["code"]}": {loc["code"].upper()}' for loc in sorted_locs]
-    for i in range(0, len(entries), 4):
-        chunk = ", ".join(entries[i : i + 4])
-        lines.append(f"    {chunk},")
-    lines.append("}")
+    by_code = dict_of([(_quote(loc["code"]), loc["code"].upper()) for loc in sorted_locs], magic_trailing_comma=True)
+    lines.extend(layout(by_code, head="_ALL: dict[str, DateLocale] = "))
     lines.append("")
     lines.append("")
     lines.append("def get_locale(code: str) -> DateLocale | None:")
     lines.append('    """Look up a locale by its code string."""')
     lines.append("    return _ALL.get(code)")
     lines.append("")
+    lines.append("")
 
-    lines.append("__all__ = [")
-    codes = [f'"{loc["code"].upper()}"' for loc in sorted_locs]
-    for i in range(0, len(codes), 8):
-        chunk = ", ".join(codes[i : i + 8])
-        lines.append(f"    {chunk},")
-    lines.append('    "get_locale",')
-    lines.append("]")
+    exported = [_quote(loc["code"].upper()) for loc in sorted_locs] + ['"get_locale"']
+    lines.extend(layout(list_of(exported, magic_trailing_comma=True), head="__all__ = "))
     lines.append("")
 
     return "\n".join(lines)

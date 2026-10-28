@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 GL = DateLocale(
     code="gl",
-    months=["xaneiro", "febreiro", "marzo", "abril", "maio", "xuño", "xullo", "agosto", "setembro", "outubro", "novembro", "decembro"],
+    months=[
+        "xaneiro",
+        "febreiro",
+        "marzo",
+        "abril",
+        "maio",
+        "xuño",
+        "xullo",
+        "agosto",
+        "setembro",
+        "outubro",
+        "novembro",
+        "decembro",
+    ],
     weekdays=["domingo", "luns", "martes", "mércores", "xoves", "venres", "sábado"],
     day_format="{n}",
     day_format_exceptions={},

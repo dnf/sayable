@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 VI = DateLocale(
     code="vi",
-    months=["tháng 1", "tháng 2", "tháng 3", "tháng 4", "tháng 5", "tháng 6", "tháng 7", "tháng 8", "tháng 9", "tháng 10", "tháng 11", "tháng 12"],
+    months=[
+        "tháng 1",
+        "tháng 2",
+        "tháng 3",
+        "tháng 4",
+        "tháng 5",
+        "tháng 6",
+        "tháng 7",
+        "tháng 8",
+        "tháng 9",
+        "tháng 10",
+        "tháng 11",
+        "tháng 12",
+    ],
     weekdays=["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"],
     day_format="{n}",
     day_format_exceptions={},

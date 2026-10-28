@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 GA = DateLocale(
     code="ga",
-    months=["Eanáir", "Feabhra", "Márta", "Aibreán", "Bealtaine", "Meitheamh", "Iúil", "Lúnasa", "Meán Fómhair", "Deireadh Fómhair", "Samhain", "Nollaig"],
+    months=[
+        "Eanáir",
+        "Feabhra",
+        "Márta",
+        "Aibreán",
+        "Bealtaine",
+        "Meitheamh",
+        "Iúil",
+        "Lúnasa",
+        "Meán Fómhair",
+        "Deireadh Fómhair",
+        "Samhain",
+        "Nollaig",
+    ],
     weekdays=["Dé Domhnaigh", "Dé Luain", "Dé Máirt", "Dé Céadaoin", "Déardaoin", "Dé hAoine", "Dé Sathairn"],
     day_format="{n}",
     day_format_exceptions={},

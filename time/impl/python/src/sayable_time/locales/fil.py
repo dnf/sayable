@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 FIL = TimeLocale(
     code="fil",
     clock=ClockConfig(
-        hours=["alas-dose", "ala-una", "alas-dos", "alas-tres", "alas-kuwatro", "alas-singko", "alas-sais", "alas-siyete", "alas-otso", "alas-nuwebe", "alas-diyes", "alas-onse"],
+        hours=[
+            "alas-dose",
+            "ala-una",
+            "alas-dos",
+            "alas-tres",
+            "alas-kuwatro",
+            "alas-singko",
+            "alas-sais",
+            "alas-siyete",
+            "alas-otso",
+            "alas-nuwebe",
+            "alas-diyes",
+            "alas-onse",
+        ],
         midnight="hatinggabi",
         noon="tanghali",
         patterns={

@@ -32,8 +32,20 @@ BR = AgeLocale(
     code="br",
     plural=_plural,
     units={
-        "day": {"one": "{n} devezh", "two": "{n} zevezh", "few": "{n} devezh", "many": "{n} devezh", "other": "{n} devezh"},
-        "week": {"one": "{n} sizhun", "two": "{n} sizhun", "few": "{n} sizhun", "many": "{n} sizhun", "other": "{n} sizhun"},
+        "day": {
+            "one": "{n} devezh",
+            "two": "{n} zevezh",
+            "few": "{n} devezh",
+            "many": "{n} devezh",
+            "other": "{n} devezh",
+        },
+        "week": {
+            "one": "{n} sizhun",
+            "two": "{n} sizhun",
+            "few": "{n} sizhun",
+            "many": "{n} sizhun",
+            "other": "{n} sizhun",
+        },
         "month": {"one": "{n} miz", "two": "{n} viz", "few": "{n} miz", "many": "{n} miz", "other": "{n} miz"},
         "year": {"one": "{n} bloaz", "two": "{n} vloaz", "few": "{n} bloaz", "many": "{n} bloaz", "other": "{n} bloaz"},
     },

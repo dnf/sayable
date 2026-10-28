@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 FIL = DateLocale(
     code="fil",
-    months=["Enero", "Pebrero", "Marso", "Abril", "Mayo", "Hunyo", "Hulyo", "Agosto", "Setyembre", "Oktubre", "Nobyembre", "Disyembre"],
+    months=[
+        "Enero",
+        "Pebrero",
+        "Marso",
+        "Abril",
+        "Mayo",
+        "Hunyo",
+        "Hulyo",
+        "Agosto",
+        "Setyembre",
+        "Oktubre",
+        "Nobyembre",
+        "Disyembre",
+    ],
     weekdays=["Linggo", "Lunes", "Martes", "Miyerkules", "Huwebes", "Biyernes", "Sabado"],
     day_format="{n}",
     day_format_exceptions={},

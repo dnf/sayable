@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 FR = TimeLocale(
     code="fr",
     clock=ClockConfig(
-        hours=["douze heures", "une heure", "deux heures", "trois heures", "quatre heures", "cinq heures", "six heures", "sept heures", "huit heures", "neuf heures", "dix heures", "onze heures"],
+        hours=[
+            "douze heures",
+            "une heure",
+            "deux heures",
+            "trois heures",
+            "quatre heures",
+            "cinq heures",
+            "six heures",
+            "sept heures",
+            "huit heures",
+            "neuf heures",
+            "dix heures",
+            "onze heures",
+        ],
         midnight="minuit",
         noon="midi",
         patterns={

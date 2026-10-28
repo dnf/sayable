@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 SNK = DateLocale(
     code="snk",
-    months=["Janwiye", "Feburiye", "Marasi", "Abirili", "Meyi", "Juwɛ", "Juliye", "Awutu", "Sɛtanburu", "Okutoburu", "Nuwanburu", "Desanburu"],
+    months=[
+        "Janwiye",
+        "Feburiye",
+        "Marasi",
+        "Abirili",
+        "Meyi",
+        "Juwɛ",
+        "Juliye",
+        "Awutu",
+        "Sɛtanburu",
+        "Okutoburu",
+        "Nuwanburu",
+        "Desanburu",
+    ],
     weekdays=["Alhadi", "Atinni", "Ataalaata", "Alarba", "Alxamiisa", "Arjuma", "Asibiti"],
     day_format="{n}",
     day_format_exceptions={},

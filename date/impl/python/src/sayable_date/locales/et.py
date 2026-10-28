@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 ET = DateLocale(
     code="et",
-    months=["jaanuar", "veebruar", "märts", "aprill", "mai", "juuni", "juuli", "august", "september", "oktoober", "november", "detsember"],
+    months=[
+        "jaanuar",
+        "veebruar",
+        "märts",
+        "aprill",
+        "mai",
+        "juuni",
+        "juuli",
+        "august",
+        "september",
+        "oktoober",
+        "november",
+        "detsember",
+    ],
     weekdays=["pühapäev", "esmaspäev", "teisipäev", "kolmapäev", "neljapäev", "reede", "laupäev"],
     day_format="{n}.",
     day_format_exceptions={},

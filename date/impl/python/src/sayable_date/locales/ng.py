@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 NG = DateLocale(
     code="ng",
-    months=["Januali", "Febluali", "Malitsi", "Aplili", "Mei", "Juni", "Juli", "Augustu", "Septemba", "Oktoba", "Novemba", "Desemba"],
+    months=[
+        "Januali",
+        "Febluali",
+        "Malitsi",
+        "Aplili",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Augustu",
+        "Septemba",
+        "Oktoba",
+        "Novemba",
+        "Desemba",
+    ],
     weekdays=["Osoondaha", "Omaandaha", "Etitatu", "Etitano", "Etine", "Oshitimuine", "Eshabati"],
     day_format="{n}",
     day_format_exceptions={},

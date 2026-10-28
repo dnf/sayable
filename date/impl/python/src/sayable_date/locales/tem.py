@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 TEM = DateLocale(
     code="tem",
-    months=["Janɛri", "Fɛbrɛri", "Mach", "Epril", "Me", "Jun", "Julai", "Ɔgɔst", "Sɛtɛmba", "Ɔktoba", "Novɛmba", "Disɛmba"],
+    months=[
+        "Janɛri",
+        "Fɛbrɛri",
+        "Mach",
+        "Epril",
+        "Me",
+        "Jun",
+        "Julai",
+        "Ɔgɔst",
+        "Sɛtɛmba",
+        "Ɔktoba",
+        "Novɛmba",
+        "Disɛmba",
+    ],
     weekdays=["Ləpɛt", "Lətalɛ", "Ləsalɛ", "Lərarɛ", "Lənɛr", "Ləjuma", "Ləsɛbɛ"],
     day_format="{n}",
     day_format_exceptions={},

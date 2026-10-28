@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 MFE = TimeLocale(
     code="mfe",
     clock=ClockConfig(
-        hours=["douzer", "enn er", "dezer", "trwazer", "katrer", "senker", "sizer", "seter", "witer", "never", "dizer", "onzer"],
+        hours=[
+            "douzer",
+            "enn er",
+            "dezer",
+            "trwazer",
+            "katrer",
+            "senker",
+            "sizer",
+            "seter",
+            "witer",
+            "never",
+            "dizer",
+            "onzer",
+        ],
         midnight="minwi",
         noon="midi",
         patterns={

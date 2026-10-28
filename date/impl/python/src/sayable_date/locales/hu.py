@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 HU = DateLocale(
     code="hu",
-    months=["január", "február", "március", "április", "május", "június", "július", "augusztus", "szeptember", "október", "november", "december"],
+    months=[
+        "január",
+        "február",
+        "március",
+        "április",
+        "május",
+        "június",
+        "július",
+        "augusztus",
+        "szeptember",
+        "október",
+        "november",
+        "december",
+    ],
     weekdays=["vasárnap", "hétfő", "kedd", "szerda", "csütörtök", "péntek", "szombat"],
     day_format="{n}.",
     day_format_exceptions={},

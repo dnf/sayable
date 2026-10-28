@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 BR = DateLocale(
     code="br",
-    months=["Genver", "C'hwevrer", "Meurzh", "Ebrel", "Mae", "Mezheven", "Gouere", "Eost", "Gwengolo", "Here", "Du", "Kerzu"],
+    months=[
+        "Genver",
+        "C'hwevrer",
+        "Meurzh",
+        "Ebrel",
+        "Mae",
+        "Mezheven",
+        "Gouere",
+        "Eost",
+        "Gwengolo",
+        "Here",
+        "Du",
+        "Kerzu",
+    ],
     weekdays=["Sul", "Lun", "Meurzh", "Merc'her", "Yaou", "Gwener", "Sadorn"],
     day_format="{n}",
     day_format_exceptions={},

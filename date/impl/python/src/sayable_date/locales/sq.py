@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 SQ = DateLocale(
     code="sq",
-    months=["janar", "shkurt", "mars", "prill", "maj", "qershor", "korrik", "gusht", "shtator", "tetor", "nëntor", "dhjetor"],
+    months=[
+        "janar",
+        "shkurt",
+        "mars",
+        "prill",
+        "maj",
+        "qershor",
+        "korrik",
+        "gusht",
+        "shtator",
+        "tetor",
+        "nëntor",
+        "dhjetor",
+    ],
     weekdays=["të dielën", "të hënën", "të martën", "të mërkurën", "të enjten", "të premten", "të shtunën"],
     day_format="{n}",
     day_format_exceptions={},

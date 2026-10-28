@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 LV = TimeLocale(
     code="lv",
     clock=ClockConfig(
-        hours=["divpadsmit", "viens", "divi", "trīs", "četri", "pieci", "seši", "septiņi", "astoņi", "deviņi", "desmit", "vienpadsmit"],
+        hours=[
+            "divpadsmit",
+            "viens",
+            "divi",
+            "trīs",
+            "četri",
+            "pieci",
+            "seši",
+            "septiņi",
+            "astoņi",
+            "deviņi",
+            "desmit",
+            "vienpadsmit",
+        ],
         midnight="pusnakts",
         noon="pusdiena",
         patterns={

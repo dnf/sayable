@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 VE = DateLocale(
     code="ve",
-    months=["Phando", "Luhuhi", "Thafamuhwe", "Lambamai", "Shundunthule", "Fulwi", "Fulwana", "Thangule", "Khubvumedzi", "Tshimedzi", "Lara", "Nyendavhusiku"],
+    months=[
+        "Phando",
+        "Luhuhi",
+        "Thafamuhwe",
+        "Lambamai",
+        "Shundunthule",
+        "Fulwi",
+        "Fulwana",
+        "Thangule",
+        "Khubvumedzi",
+        "Tshimedzi",
+        "Lara",
+        "Nyendavhusiku",
+    ],
     weekdays=["Swondaha", "Musumbuluwo", "Lavhuvhili", "Lavhuraru", "Lavhuna", "Lavhutanu", "Mugivhela"],
     day_format="{n}",
     day_format_exceptions={},

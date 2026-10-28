@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 WO = TimeLocale(
     code="wo",
     clock=ClockConfig(
-        hours=["fukk ak ñaari waxtu", "benn waxtu", "ñaari waxtu", "ñetti waxtu", "ñeenti waxtu", "juróomi waxtu", "juróom-benni waxtu", "juróom-ñaari waxtu", "juróom-ñetti waxtu", "juróom-ñeenti waxtu", "fukki waxtu", "fukk ak benn waxtu"],
+        hours=[
+            "fukk ak ñaari waxtu",
+            "benn waxtu",
+            "ñaari waxtu",
+            "ñetti waxtu",
+            "ñeenti waxtu",
+            "juróomi waxtu",
+            "juróom-benni waxtu",
+            "juróom-ñaari waxtu",
+            "juróom-ñetti waxtu",
+            "juróom-ñeenti waxtu",
+            "fukki waxtu",
+            "fukk ak benn waxtu",
+        ],
         midnight="digg-guddi",
         noon="digg-bëccëg",
         patterns={

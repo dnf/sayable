@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 RU = TimeLocale(
     code="ru",
     clock=ClockConfig(
-        hours=["двенадцать", "час", "два", "три", "четыре", "пять", "шесть", "семь", "восемь", "девять", "десять", "одиннадцать"],
+        hours=[
+            "двенадцать",
+            "час",
+            "два",
+            "три",
+            "четыре",
+            "пять",
+            "шесть",
+            "семь",
+            "восемь",
+            "девять",
+            "десять",
+            "одиннадцать",
+        ],
         midnight="полночь",
         noon="полдень",
         patterns={

@@ -88,5 +88,3 @@ def resolve_stage(label: StageLabel, gender: str | None = None) -> str:
     if isinstance(label, str):
         return label
     return label["f"] if gender == "f" else label["m"]
-
-

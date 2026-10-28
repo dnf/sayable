@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 TZM = DateLocale(
     code="tzm",
-    months=["Yennayer", "Yebrayer", "Mars", "Ibrir", "Mayyu", "Yunyu", "Yulyuz", "Ɣuct", "Cutanbir", "Kṭuber", "Nwanbir", "Dujanbir"],
+    months=[
+        "Yennayer",
+        "Yebrayer",
+        "Mars",
+        "Ibrir",
+        "Mayyu",
+        "Yunyu",
+        "Yulyuz",
+        "Ɣuct",
+        "Cutanbir",
+        "Kṭuber",
+        "Nwanbir",
+        "Dujanbir",
+    ],
     weekdays=["Asamas", "Aynas", "Asinas", "Akras", "Akwas", "Asimwas", "Asiḍyas"],
     day_format="{n}",
     day_format_exceptions={},

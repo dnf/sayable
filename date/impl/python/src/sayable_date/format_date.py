@@ -83,11 +83,7 @@ class SayableDate:
     ) -> None:
         self._locale = locale
         self._compactness = compactness
-        ovr = (
-            locale.short if compactness == "short"
-            else locale.compact if compactness == "compact"
-            else None
-        )
+        ovr = locale.short if compactness == "short" else locale.compact if compactness == "compact" else None
         self._months: list[str] = list(_pick(ovr, "months", locale.months))  # type: ignore[arg-type]
         self._months_in_date: list[str] | None = _pick(ovr, "months_in_date", locale.months_in_date)  # type: ignore[assignment]
         self._weekdays: list[str] = list(_pick(ovr, "weekdays", locale.weekdays))  # type: ignore[arg-type]

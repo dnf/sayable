@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 KTU = DateLocale(
     code="ktu",
-    months=["Yanvye", "Fevrye", "Marsi", "Avrili", "Mɛ", "Yuwɛ", "Yulɛ", "Uti", "Sɛtambre", "Ɔtɔbre", "Nɔvambre", "Desambre"],
+    months=[
+        "Yanvye",
+        "Fevrye",
+        "Marsi",
+        "Avrili",
+        "Mɛ",
+        "Yuwɛ",
+        "Yulɛ",
+        "Uti",
+        "Sɛtambre",
+        "Ɔtɔbre",
+        "Nɔvambre",
+        "Desambre",
+    ],
     weekdays=["Lumingu", "Kimosi", "Kizole", "Kizoluntatu", "Kinya", "Kisabala", "Kimpwanza"],
     day_format="{n}",
     day_format_exceptions={},

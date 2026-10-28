@@ -119,15 +119,10 @@ class SayableAge:
         compactness: Literal["normal", "short", "compact"] = "normal",
     ) -> None:
         self._locale = locale
-        ovr = (
-            locale.short if compactness == "short"
-            else locale.compact if compactness == "compact"
-            else None
-        )
+        ovr = locale.short if compactness == "short" else locale.compact if compactness == "compact" else None
         ovr_units = ovr.units if ovr else None
         self._units: dict[str, UnitForms] = {
-            k: (ovr_units.get(k) if ovr_units else None) or locale.units[k]
-            for k in ("day", "week", "month", "year")
+            k: (ovr_units.get(k) if ovr_units else None) or locale.units[k] for k in ("day", "week", "month", "year")
         }
         self._half: str = str(_pick(ovr, "half", locale.half))
         self._delimiter: str = str(_pick(ovr, "delimiter", locale.delimiter))

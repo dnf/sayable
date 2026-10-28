@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 KTU = TimeLocale(
     code="ktu",
     clock=ClockConfig(
-        hours=["zomi na zole", "mosi", "zole", "tatu", "ya", "tanu", "sambanu", "nsambwadi", "nana", "vwa", "zomi", "zomi na mosi"],
+        hours=[
+            "zomi na zole",
+            "mosi",
+            "zole",
+            "tatu",
+            "ya",
+            "tanu",
+            "sambanu",
+            "nsambwadi",
+            "nana",
+            "vwa",
+            "zomi",
+            "zomi na mosi",
+        ],
         midnight="midi ya butu",
         noon="midi",
         patterns={

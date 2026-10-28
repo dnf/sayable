@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 CAK = TimeLocale(
     code="cak",
     clock=ClockConfig(
-        hours=["kab'lajuj", "jun", "ka'i'", "oxi'", "kaji'", "wo'o'", "waqi'", "wuqu'", "waqxaqi'", "b'eleje'", "lajuj", "julajuj"],
+        hours=[
+            "kab'lajuj",
+            "jun",
+            "ka'i'",
+            "oxi'",
+            "kaji'",
+            "wo'o'",
+            "waqi'",
+            "wuqu'",
+            "waqxaqi'",
+            "b'eleje'",
+            "lajuj",
+            "julajuj",
+        ],
         midnight="nik'aj aq'a'",
         noon="nik'aj q'ij",
         patterns={

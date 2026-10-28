@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 DYU = TimeLocale(
     code="dyu",
     clock=ClockConfig(
-        hours=["tan ni fila", "kelen", "fila", "saba", "naani", "duuru", "wɔɔrɔ", "wolonwula", "segin", "kɔnɔntɔn", "tan", "tan ni kelen"],
+        hours=[
+            "tan ni fila",
+            "kelen",
+            "fila",
+            "saba",
+            "naani",
+            "duuru",
+            "wɔɔrɔ",
+            "wolonwula",
+            "segin",
+            "kɔnɔntɔn",
+            "tan",
+            "tan ni kelen",
+        ],
         midnight="dugutilama",
         noon="tilgari",
         patterns={

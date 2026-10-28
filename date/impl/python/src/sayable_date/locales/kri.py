@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 KRI = DateLocale(
     code="kri",
-    months=["Jenyuari", "Febyuari", "Mach", "Epril", "Me", "Jun", "Julay", "Ogost", "Septemba", "Oktoba", "Novemba", "Disemba"],
+    months=[
+        "Jenyuari",
+        "Febyuari",
+        "Mach",
+        "Epril",
+        "Me",
+        "Jun",
+        "Julay",
+        "Ogost",
+        "Septemba",
+        "Oktoba",
+        "Novemba",
+        "Disemba",
+    ],
     weekdays=["Sonde", "Monde", "Tyusde", "Wensde", "Tosde", "Frayde", "Satide"],
     day_format="{n}",
     day_format_exceptions={},

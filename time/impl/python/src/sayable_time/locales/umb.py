@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 UMB = TimeLocale(
     code="umb",
     clock=ClockConfig(
-        hours=["ekwi la vali", "mosi", "vali", "tatu", "kwãla", "tãlo", "epandu", "epanduvali", "ecelãla", "ecea", "ekwi", "ekwi la mosi"],
+        hours=[
+            "ekwi la vali",
+            "mosi",
+            "vali",
+            "tatu",
+            "kwãla",
+            "tãlo",
+            "epandu",
+            "epanduvali",
+            "ecelãla",
+            "ecea",
+            "ekwi",
+            "ekwi la mosi",
+        ],
         midnight="ocitapi",
         noon="ocivali",
         patterns={

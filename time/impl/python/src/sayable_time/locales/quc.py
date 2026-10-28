@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 QUC = TimeLocale(
     code="quc",
     clock=ClockConfig(
-        hours=["kab'lajuj", "jun", "keb'", "oxib'", "kajib'", "job'", "waqib'", "wuqub'", "wajxaqib'", "b'elejeb'", "lajuj", "julajuj"],
+        hours=[
+            "kab'lajuj",
+            "jun",
+            "keb'",
+            "oxib'",
+            "kajib'",
+            "job'",
+            "waqib'",
+            "wuqub'",
+            "wajxaqib'",
+            "b'elejeb'",
+            "lajuj",
+            "julajuj",
+        ],
         midnight="nik'aj aq'ab'",
         noon="nik'aj q'ij",
         patterns={

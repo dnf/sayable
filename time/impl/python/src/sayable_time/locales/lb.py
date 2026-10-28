@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 LB = TimeLocale(
     code="lb",
     clock=ClockConfig(
-        hours=["zwielef", "eent", "zwee", "dräi", "véier", "fënnef", "sechs", "siwen", "aacht", "néng", "zéng", "eelef"],
+        hours=[
+            "zwielef",
+            "eent",
+            "zwee",
+            "dräi",
+            "véier",
+            "fënnef",
+            "sechs",
+            "siwen",
+            "aacht",
+            "néng",
+            "zéng",
+            "eelef",
+        ],
         midnight="Mëtternuecht",
         noon="Mëtteg",
         patterns={
