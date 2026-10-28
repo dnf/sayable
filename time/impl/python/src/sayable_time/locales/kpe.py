@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 KPE = TimeLocale(
     code="kpe",
     clock=ClockConfig(
-        hours=["puu da feere", "tɔŋ", "feere", "sawa", "naŋ", "lɔɔlu", "mɛi da tɔŋ", "mɛi da feere", "mɛi da sawa", "mɛi da naŋ", "puu", "puu da tɔŋ"],
+        hours=[
+            "puu da feere",
+            "tɔŋ",
+            "feere",
+            "sawa",
+            "naŋ",
+            "lɔɔlu",
+            "mɛi da tɔŋ",
+            "mɛi da feere",
+            "mɛi da sawa",
+            "mɛi da naŋ",
+            "puu",
+            "puu da tɔŋ",
+        ],
         midnight="kpindi kɔlɛ",
         noon="tili-ma",
         patterns={

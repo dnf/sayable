@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 DJE = TimeLocale(
     code="dje",
     clock=ClockConfig(
-        hours=["iway cindi hinka", "fo", "hinka", "hinza", "taaci", "gu", "iddu", "iyye", "ahakku", "yagga", "iway", "iway cindi fo"],
+        hours=[
+            "iway cindi hinka",
+            "fo",
+            "hinka",
+            "hinza",
+            "taaci",
+            "gu",
+            "iddu",
+            "iyye",
+            "ahakku",
+            "yagga",
+            "iway",
+            "iway cindi fo",
+        ],
         midnight="cin beri",
         noon="zaari gaaham",
         patterns={

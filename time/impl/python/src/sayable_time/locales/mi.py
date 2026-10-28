@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 MI = TimeLocale(
     code="mi",
     clock=ClockConfig(
-        hours=["tekau mā rua", "tahi", "rua", "toru", "whā", "rima", "ono", "whitu", "waru", "iwa", "tekau", "tekau mā tahi"],
+        hours=[
+            "tekau mā rua",
+            "tahi",
+            "rua",
+            "toru",
+            "whā",
+            "rima",
+            "ono",
+            "whitu",
+            "waru",
+            "iwa",
+            "tekau",
+            "tekau mā tahi",
+        ],
         midnight="waenganui pō",
         noon="poupoutanga o te rā",
         patterns={

@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 TIG = TimeLocale(
     code="tig",
     clock=ClockConfig(
-        hours=["ʿasərte wəkəlte", "ḥante", "kəlʾe", "səleste", "arbaʿte", "ḥamməste", "səste", "sabʿate", "səmmunte", "təsʿate", "ʿasərte", "ʿasərte wəḥante"],
+        hours=[
+            "ʿasərte wəkəlte",
+            "ḥante",
+            "kəlʾe",
+            "səleste",
+            "arbaʿte",
+            "ḥamməste",
+            "səste",
+            "sabʿate",
+            "səmmunte",
+            "təsʿate",
+            "ʿasərte",
+            "ʿasərte wəḥante",
+        ],
         midnight="nəs-leyla",
         noon="qayḥ",
         patterns={

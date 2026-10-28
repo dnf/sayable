@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 TUM = TimeLocale(
     code="tum",
     clock=ClockConfig(
-        hours=["khumi na yibili", "chimoza", "vibili", "vitatu", "vinayi", "vikhondi", "vikhondi na kamoza", "vikhondi na tubili", "vikhondi na tutatu", "vikhondi na tunayi", "khumi", "khumi na kamoza"],
+        hours=[
+            "khumi na yibili",
+            "chimoza",
+            "vibili",
+            "vitatu",
+            "vinayi",
+            "vikhondi",
+            "vikhondi na kamoza",
+            "vikhondi na tubili",
+            "vikhondi na tutatu",
+            "vikhondi na tunayi",
+            "khumi",
+            "khumi na kamoza",
+        ],
         midnight="pakati pa usiku",
         noon="muhanya",
         patterns={

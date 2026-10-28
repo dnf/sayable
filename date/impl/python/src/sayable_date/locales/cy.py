@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 CY = DateLocale(
     code="cy",
-    months=["Ionawr", "Chwefror", "Mawrth", "Ebrill", "Mai", "Mehefin", "Gorffennaf", "Awst", "Medi", "Hydref", "Tachwedd", "Rhagfyr"],
+    months=[
+        "Ionawr",
+        "Chwefror",
+        "Mawrth",
+        "Ebrill",
+        "Mai",
+        "Mehefin",
+        "Gorffennaf",
+        "Awst",
+        "Medi",
+        "Hydref",
+        "Tachwedd",
+        "Rhagfyr",
+    ],
     weekdays=["Dydd Sul", "Dydd Llun", "Dydd Mawrth", "Dydd Mercher", "Dydd Iau", "Dydd Gwener", "Dydd Sadwrn"],
     day_format="{n}",
     day_format_exceptions={},

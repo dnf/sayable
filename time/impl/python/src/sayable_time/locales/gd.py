@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 GD = TimeLocale(
     code="gd",
     clock=ClockConfig(
-        hours=["dà uair dheug", "uair", "dà uair", "trì uairean", "ceithir uairean", "còig uairean", "sia uairean", "seachd uairean", "ochd uairean", "naoi uairean", "deich uairean", "aon uair deug"],
+        hours=[
+            "dà uair dheug",
+            "uair",
+            "dà uair",
+            "trì uairean",
+            "ceithir uairean",
+            "còig uairean",
+            "sia uairean",
+            "seachd uairean",
+            "ochd uairean",
+            "naoi uairean",
+            "deich uairean",
+            "aon uair deug",
+        ],
         midnight="meadhan-oidhche",
         noon="meadhan-latha",
         patterns={

@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 FI = TimeLocale(
     code="fi",
     clock=ClockConfig(
-        hours=["kaksitoista", "yksi", "kaksi", "kolme", "neljä", "viisi", "kuusi", "seitsemän", "kahdeksan", "yhdeksän", "kymmenen", "yksitoista"],
+        hours=[
+            "kaksitoista",
+            "yksi",
+            "kaksi",
+            "kolme",
+            "neljä",
+            "viisi",
+            "kuusi",
+            "seitsemän",
+            "kahdeksan",
+            "yhdeksän",
+            "kymmenen",
+            "yksitoista",
+        ],
         midnight="keskiyö",
         noon="keskipäivä",
         patterns={

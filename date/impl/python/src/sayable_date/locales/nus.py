@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 NUS = DateLocale(
     code="nus",
-    months=["Tiɔp thar", "Pɛt", "Duɔɔŋ", "Guak", "Duät", "Kornyot", "Payi", "Tio̱p in thii", "Laath", "Kur", "Tio̱p in laat", "Jiɔk"],
+    months=[
+        "Tiɔp thar",
+        "Pɛt",
+        "Duɔɔŋ",
+        "Guak",
+        "Duät",
+        "Kornyot",
+        "Payi",
+        "Tio̱p in thii",
+        "Laath",
+        "Kur",
+        "Tio̱p in laat",
+        "Jiɔk",
+    ],
     weekdays=["Cäŋ nhial", "Jiec la̱t", "Rɛw la̱t", "Diɔk la̱t", "Ŋuaan la̱t", "Dhieec la̱t", "Bäkɛl"],
     day_format="{n}",
     day_format_exceptions={},

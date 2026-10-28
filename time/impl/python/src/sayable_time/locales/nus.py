@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 NUS = TimeLocale(
     code="nus",
     clock=ClockConfig(
-        hours=["wäl wi̱ rɛw", "kɛl", "rɛw", "diɔk", "ŋuaan", "dhieec", "bäkɛl", "bäärɔw", "bädäk", "bäŋuan", "wäl", "wäl wi̱ kɛl"],
+        hours=[
+            "wäl wi̱ rɛw",
+            "kɛl",
+            "rɛw",
+            "diɔk",
+            "ŋuaan",
+            "dhieec",
+            "bäkɛl",
+            "bäärɔw",
+            "bädäk",
+            "bäŋuan",
+            "wäl",
+            "wäl wi̱ kɛl",
+        ],
         midnight="wakɔ̈u",
         noon="cäŋ kɔ̈k",
         patterns={

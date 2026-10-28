@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 TUM = DateLocale(
     code="tum",
-    months=["Janyuwale", "Feburuware", "Marichi", "Epurelo", "Meyi", "Juni", "Julayi", "Ogasiti", "Seputembala", "Okutobala", "Novembala", "Disembala"],
+    months=[
+        "Janyuwale",
+        "Feburuware",
+        "Marichi",
+        "Epurelo",
+        "Meyi",
+        "Juni",
+        "Julayi",
+        "Ogasiti",
+        "Seputembala",
+        "Okutobala",
+        "Novembala",
+        "Disembala",
+    ],
     weekdays=["Sabata", "Mande", "Chibiri", "Chitatu", "Chinayi", "Chinkondi", "Chisulo"],
     day_format="{n}",
     day_format_exceptions={},

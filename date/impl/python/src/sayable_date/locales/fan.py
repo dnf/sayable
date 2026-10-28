@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 FAN = DateLocale(
     code="fan",
-    months=["Nzas Ngon", "Nzas Mekié", "Nzas Okúa", "Nzas Angón", "Nzas Obuí", "Nzas Okéna", "Nzas Osúa", "Nzas Mwom", "Nzas Ebulú", "Nzas Owono", "Nzas Owono-abé", "Nzas Nkéng"],
+    months=[
+        "Nzas Ngon",
+        "Nzas Mekié",
+        "Nzas Okúa",
+        "Nzas Angón",
+        "Nzas Obuí",
+        "Nzas Okéna",
+        "Nzas Osúa",
+        "Nzas Mwom",
+        "Nzas Ebulú",
+        "Nzas Owono",
+        "Nzas Owono-abé",
+        "Nzas Nkéng",
+    ],
     weekdays=["Esig", "Amvus", "Amvus-abé", "Amvus-alú", "Amvus-anyin", "Mba", "Ngon"],
     day_format="{n}",
     day_format_exceptions={},

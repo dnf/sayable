@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 PS = TimeLocale(
     code="ps",
     clock=ClockConfig(
-        hours=["دولس بجې", "یوه بجه", "دوه بجې", "درې بجې", "څلور بجې", "پنځه بجې", "شپږ بجې", "اووه بجې", "اته بجې", "نهه بجې", "لس بجې", "یوولس بجې"],
+        hours=[
+            "دولس بجې",
+            "یوه بجه",
+            "دوه بجې",
+            "درې بجې",
+            "څلور بجې",
+            "پنځه بجې",
+            "شپږ بجې",
+            "اووه بجې",
+            "اته بجې",
+            "نهه بجې",
+            "لس بجې",
+            "یوولس بجې",
+        ],
         midnight="نیمه شپه",
         noon="غرمه",
         patterns={

@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 GN = TimeLocale(
     code="gn",
     clock=ClockConfig(
-        hours=["pa mokõi", "peteĩ", "mokõi", "mbohapy", "irundy", "po", "poteĩ", "pokõi", "poapy", "porundy", "pa", "pa peteĩ"],
+        hours=[
+            "pa mokõi",
+            "peteĩ",
+            "mokõi",
+            "mbohapy",
+            "irundy",
+            "po",
+            "poteĩ",
+            "pokõi",
+            "poapy",
+            "porundy",
+            "pa",
+            "pa peteĩ",
+        ],
         midnight="pyharepyte",
         noon="asaje",
         patterns={

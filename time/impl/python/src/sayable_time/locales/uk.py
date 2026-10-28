@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 UK = TimeLocale(
     code="uk",
     clock=ClockConfig(
-        hours=["дванадцята", "перша", "друга", "третя", "четверта", "п'ята", "шоста", "сьома", "восьма", "дев'ята", "десята", "одинадцята"],
+        hours=[
+            "дванадцята",
+            "перша",
+            "друга",
+            "третя",
+            "четверта",
+            "п'ята",
+            "шоста",
+            "сьома",
+            "восьма",
+            "дев'ята",
+            "десята",
+            "одинадцята",
+        ],
         midnight="опівніч",
         noon="полудень",
         patterns={

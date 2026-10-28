@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 MI = DateLocale(
     code="mi",
-    months=["Kohi-tātea", "Hui-tanguru", "Poutū-te-rangi", "Paenga-whāwhā", "Haratua", "Pipiri", "Hōngongoi", "Here-turi-kōkā", "Mahuru", "Whiringa-ā-nuku", "Whiringa-ā-rangi", "Hakihea"],
+    months=[
+        "Kohi-tātea",
+        "Hui-tanguru",
+        "Poutū-te-rangi",
+        "Paenga-whāwhā",
+        "Haratua",
+        "Pipiri",
+        "Hōngongoi",
+        "Here-turi-kōkā",
+        "Mahuru",
+        "Whiringa-ā-nuku",
+        "Whiringa-ā-rangi",
+        "Hakihea",
+    ],
     weekdays=["Rātapu", "Rāhina", "Rātū", "Rāapa", "Rāpare", "Rāmere", "Rāhoroi"],
     day_format="{n}",
     day_format_exceptions={},

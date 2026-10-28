@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 UMB = DateLocale(
     code="umb",
-    months=["Janelu", "Fevelelu", "Malsu", "Abili", "Mayu", "Junyu", "Julyu", "Agostu", "Setembu", "Otubu", "Novembu", "Desembu"],
+    months=[
+        "Janelu",
+        "Fevelelu",
+        "Malsu",
+        "Abili",
+        "Mayu",
+        "Junyu",
+        "Julyu",
+        "Agostu",
+        "Setembu",
+        "Otubu",
+        "Novembu",
+        "Desembu",
+    ],
     weekdays=["Lumingu", "Cimosi", "Civali", "Citathu", "Cinyali", "Citanu", "Cisabalu"],
     day_format="{n}",
     day_format_exceptions={},

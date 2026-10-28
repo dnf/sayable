@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 QU = DateLocale(
     code="qu",
-    months=["Qhulla puquy", "Hatun puquy", "Pawqar waray", "Ayriwa", "Aymuray", "Inti raymi", "Anta sitwa", "Qhapaq sitwa", "Uma raymi", "Kantaray", "Ayamarq'a", "Qhapaq raymi"],
+    months=[
+        "Qhulla puquy",
+        "Hatun puquy",
+        "Pawqar waray",
+        "Ayriwa",
+        "Aymuray",
+        "Inti raymi",
+        "Anta sitwa",
+        "Qhapaq sitwa",
+        "Uma raymi",
+        "Kantaray",
+        "Ayamarq'a",
+        "Qhapaq raymi",
+    ],
     weekdays=["Intichaw", "Killachaw", "Atipachaw", "Quyllurchaw", "Illapachaw", "Ch'askachaw", "K'uychichaw"],
     day_format="{n}",
     day_format_exceptions={},

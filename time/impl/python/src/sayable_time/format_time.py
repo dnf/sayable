@@ -77,11 +77,7 @@ class SayableTime:
     ) -> None:
         self._locale = locale
         self._compactness = compactness
-        ovr = (
-            locale.short if compactness == "short"
-            else locale.compact if compactness == "compact"
-            else None
-        )
+        ovr = locale.short if compactness == "short" else locale.compact if compactness == "compact" else None
         self._short_clock: ShortClockConfig | None = ovr.clock if ovr else None
 
     def format_time(self, input_str: str | None) -> str | None:
@@ -131,11 +127,7 @@ class SayableTime:
             h12 = 12
         am_pm = sc.am_pm or ("AM", "PM")
         ampm_str = am_pm[0] if hour < 12 else am_pm[1]
-        return (
-            fmt.replace("{h}", str(h12))
-            .replace("{mm}", str(minute).zfill(2))
-            .replace("{ampm}", ampm_str)
-        )
+        return fmt.replace("{h}", str(h12)).replace("{mm}", str(minute).zfill(2)).replace("{ampm}", ampm_str)
 
 
 _default = SayableTime(EN)

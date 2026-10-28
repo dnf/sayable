@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 IG = DateLocale(
     code="ig",
-    months=["Jenụwarị", "Febrụwarị", "Maachị", "Epreel", "Mee", "Juun", "Julaị", "Ọgọọst", "Septemba", "Ọktoba", "Novemba", "Disemba"],
+    months=[
+        "Jenụwarị",
+        "Febrụwarị",
+        "Maachị",
+        "Epreel",
+        "Mee",
+        "Juun",
+        "Julaị",
+        "Ọgọọst",
+        "Septemba",
+        "Ọktoba",
+        "Novemba",
+        "Disemba",
+    ],
     weekdays=["Ụbọchị Ụka", "Mọnde", "Tụụzdee", "Wenezdee", "Tọọzdee", "Fraịdee", "Satọdee"],
     day_format="{n}",
     day_format_exceptions={},

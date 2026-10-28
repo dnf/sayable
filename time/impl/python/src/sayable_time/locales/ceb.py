@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 CEB = TimeLocale(
     code="ceb",
     clock=ClockConfig(
-        hours=["alas dose", "ala una", "alas dos", "alas tres", "alas kwatro", "alas singko", "alas sais", "alas siyete", "alas otso", "alas nuwebe", "alas diyes", "alas onse"],
+        hours=[
+            "alas dose",
+            "ala una",
+            "alas dos",
+            "alas tres",
+            "alas kwatro",
+            "alas singko",
+            "alas sais",
+            "alas siyete",
+            "alas otso",
+            "alas nuwebe",
+            "alas diyes",
+            "alas onse",
+        ],
         midnight="tungang gabii",
         noon="udtong tutok",
         patterns={

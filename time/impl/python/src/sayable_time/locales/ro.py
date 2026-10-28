@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 RO = TimeLocale(
     code="ro",
     clock=ClockConfig(
-        hours=["douăsprezece", "unu", "două", "trei", "patru", "cinci", "șase", "șapte", "opt", "nouă", "zece", "unsprezece"],
+        hours=[
+            "douăsprezece",
+            "unu",
+            "două",
+            "trei",
+            "patru",
+            "cinci",
+            "șase",
+            "șapte",
+            "opt",
+            "nouă",
+            "zece",
+            "unsprezece",
+        ],
         midnight="miezul nopții",
         noon="amiază",
         patterns={

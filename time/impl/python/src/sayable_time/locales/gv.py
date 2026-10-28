@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 GV = TimeLocale(
     code="gv",
     clock=ClockConfig(
-        hours=["daa-yeig", "nane", "jees", "tree", "kiare", "queig", "shey", "shiaght", "hoght", "nuy", "jeih", "nane-jeig"],
+        hours=[
+            "daa-yeig",
+            "nane",
+            "jees",
+            "tree",
+            "kiare",
+            "queig",
+            "shey",
+            "shiaght",
+            "hoght",
+            "nuy",
+            "jeih",
+            "nane-jeig",
+        ],
         midnight="mean oie",
         noon="munlaa",
         patterns={

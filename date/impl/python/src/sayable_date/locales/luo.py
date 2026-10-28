@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 LUO = DateLocale(
     code="luo",
-    months=["Dwe mar Achiel", "Dwe mar Ariyo", "Dwe mar Adek", "Dwe mar Ang'wen", "Dwe mar Abich", "Dwe mar Auchiel", "Dwe mar Abiriyo", "Dwe mar Aboro", "Dwe mar Ochiko", "Dwe mar Apar", "Dwe mar Apar gi Achiel", "Dwe mar Apar gi Ariyo"],
+    months=[
+        "Dwe mar Achiel",
+        "Dwe mar Ariyo",
+        "Dwe mar Adek",
+        "Dwe mar Ang'wen",
+        "Dwe mar Abich",
+        "Dwe mar Auchiel",
+        "Dwe mar Abiriyo",
+        "Dwe mar Aboro",
+        "Dwe mar Ochiko",
+        "Dwe mar Apar",
+        "Dwe mar Apar gi Achiel",
+        "Dwe mar Apar gi Ariyo",
+    ],
     weekdays=["Jumapil", "Wuok Tich", "Tich Ariyo", "Tich Adek", "Tich Ang'wen", "Tich Abich", "Chieng' Ngeso"],
     day_format="{n}",
     day_format_exceptions={},

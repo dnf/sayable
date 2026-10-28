@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 FF = TimeLocale(
     code="ff",
     clock=ClockConfig(
-        hours=["sappo e ɗiɗi", "go'o", "ɗiɗi", "tati", "nay", "joy", "jeegom", "jeeɗiɗi", "jeetati", "jeenay", "sappo", "sappo e go'o"],
+        hours=[
+            "sappo e ɗiɗi",
+            "go'o",
+            "ɗiɗi",
+            "tati",
+            "nay",
+            "joy",
+            "jeegom",
+            "jeeɗiɗi",
+            "jeetati",
+            "jeenay",
+            "sappo",
+            "sappo e go'o",
+        ],
         midnight="jamma hejjere",
         noon="zuhr",
         patterns={

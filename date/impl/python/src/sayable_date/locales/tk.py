@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 TK = DateLocale(
     code="tk",
-    months=["ýanwar", "fewral", "mart", "aprel", "maý", "iýun", "iýul", "awgust", "sentýabr", "oktýabr", "noýabr", "dekabr"],
+    months=[
+        "ýanwar",
+        "fewral",
+        "mart",
+        "aprel",
+        "maý",
+        "iýun",
+        "iýul",
+        "awgust",
+        "sentýabr",
+        "oktýabr",
+        "noýabr",
+        "dekabr",
+    ],
     weekdays=["ýekşenbe", "duşenbe", "sişenbe", "çarşenbe", "penşenbe", "anna", "şenbe"],
     day_format="{n}",
     day_format_exceptions={},

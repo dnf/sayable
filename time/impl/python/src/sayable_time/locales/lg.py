@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 LG = TimeLocale(
     code="lg",
     clock=ClockConfig(
-        hours=["mukaaga", "musanvu", "munaana", "mwenda", "kkumi", "kkumi n'emu", "kkumi n'ebbiri", "emu", "bbiri", "ssatu", "nnya", "ttaano"],
+        hours=[
+            "mukaaga",
+            "musanvu",
+            "munaana",
+            "mwenda",
+            "kkumi",
+            "kkumi n'emu",
+            "kkumi n'ebbiri",
+            "emu",
+            "bbiri",
+            "ssatu",
+            "nnya",
+            "ttaano",
+        ],
         midnight="ekiro eky'omu ttumbi",
         noon="ettuntu",
         patterns={

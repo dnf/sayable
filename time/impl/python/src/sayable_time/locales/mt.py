@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 MT = TimeLocale(
     code="mt",
     clock=ClockConfig(
-        hours=["it-tnax", "is-siegħa", "is-sagħtejn", "it-tlieta", "l-erbgħa", "il-ħamsa", "is-sitta", "is-sebgħa", "it-tmienja", "id-disgħa", "l-għaxra", "il-ħdax"],
+        hours=[
+            "it-tnax",
+            "is-siegħa",
+            "is-sagħtejn",
+            "it-tlieta",
+            "l-erbgħa",
+            "il-ħamsa",
+            "is-sitta",
+            "is-sebgħa",
+            "it-tmienja",
+            "id-disgħa",
+            "l-għaxra",
+            "il-ħdax",
+        ],
         midnight="nofsillejl",
         noon="nofsinhar",
         patterns={

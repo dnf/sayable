@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 POV = TimeLocale(
     code="pov",
     clock=ClockConfig(
-        hours=["dozi ora", "un ora", "dos ora", "tres ora", "kuatru ora", "sinku ora", "seis ora", "seti ora", "oitu ora", "novi ora", "des ora", "onzi ora"],
+        hours=[
+            "dozi ora",
+            "un ora",
+            "dos ora",
+            "tres ora",
+            "kuatru ora",
+            "sinku ora",
+            "seis ora",
+            "seti ora",
+            "oitu ora",
+            "novi ora",
+            "des ora",
+            "onzi ora",
+        ],
         midnight="meia noti",
         noon="meiu dia",
         patterns={

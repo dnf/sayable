@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 NY = TimeLocale(
     code="ny",
     clock=ClockConfig(
-        hours=["lakhumi ndi chiwiri", "loyamba", "lachiwiri", "lachitatu", "lachinayi", "lachisanu", "lachisanu ndi chimodzi", "lachisanu ndi chiwiri", "lachisanu ndi chitatu", "lachisanu ndi chinayi", "lakhumi", "lakhumi ndi chimodzi"],
+        hours=[
+            "lakhumi ndi chiwiri",
+            "loyamba",
+            "lachiwiri",
+            "lachitatu",
+            "lachinayi",
+            "lachisanu",
+            "lachisanu ndi chimodzi",
+            "lachisanu ndi chiwiri",
+            "lachisanu ndi chitatu",
+            "lachisanu ndi chinayi",
+            "lakhumi",
+            "lakhumi ndi chimodzi",
+        ],
         midnight="pakati pausiku",
         noon="usana",
         patterns={

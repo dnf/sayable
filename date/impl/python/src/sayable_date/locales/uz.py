@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 UZ = DateLocale(
     code="uz",
-    months=["yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"],
+    months=[
+        "yanvar",
+        "fevral",
+        "mart",
+        "aprel",
+        "may",
+        "iyun",
+        "iyul",
+        "avgust",
+        "sentabr",
+        "oktabr",
+        "noyabr",
+        "dekabr",
+    ],
     weekdays=["yakshanba", "dushanba", "seshanba", "chorshanba", "payshanba", "juma", "shanba"],
     day_format="{n}-",
     day_format_exceptions={},

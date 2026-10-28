@@ -5,6 +5,7 @@ from __future__ import annotations
 import keyword
 
 from codegen.banner import locale_source_comment, make_header
+from codegen.targets.python.layout import Group, Value, call, dict_of, layout, list_of, tuple_of
 
 HEADER = make_header("codegen/targets/python/emitter.py", line_prefix="# ")
 
@@ -15,9 +16,38 @@ def _quote(s: str) -> str:
     return f'"{escaped}"'
 
 
-def _str_list(items: list[str]) -> str:
-    """Emit a Python list of strings on one line."""
-    return "[" + ", ".join(_quote(s) for s in items) + "]"
+_PATTERN_MINUTES = ("0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55")
+
+
+def _str_list(items: list[str]) -> Group:
+    """Emit a Python list of strings."""
+    return list_of([_quote(s) for s in items])
+
+
+def _clock_config(clock: dict) -> Group:
+    patterns = dict_of(
+        [(key, _quote(clock["patterns"][key])) for key in _PATTERN_MINUTES if key in clock["patterns"]],
+        magic_trailing_comma=True,
+    )
+    fields: list[tuple[str, Value]] = [
+        ("hours=", _str_list(clock["hours"])),
+        ("midnight=", _quote(clock["midnight"])),
+        ("noon=", _quote(clock["noon"])),
+        ("patterns=", patterns),
+    ]
+    return call("ClockConfig", fields, magic_trailing_comma=True)
+
+
+def _compactness_override(ovr: dict) -> Group:
+    sc = ovr.get("clock", {})
+    fields: list[tuple[str, Value]] = [
+        ("use24h=", str(sc.get("use24h", True))),
+        ("format=", _quote(sc.get("format", "{h}:{mm}"))),
+    ]
+    am_pm = sc.get("amPm")
+    if am_pm:
+        fields.append(("am_pm=", tuple_of([_quote(am_pm[0]), _quote(am_pm[1])])))
+    return call("CompactnessOverride", [("clock=", call("ShortClockConfig", fields))], magic_trailing_comma=True)
 
 
 def emit_locale(data: dict) -> str:
@@ -38,52 +68,15 @@ def emit_locale(data: dict) -> str:
 
     # Locale constant
     lines.append("")
-    lines.append(f"{code.upper()} = TimeLocale(")
-    lines.append(f"    code={_quote(code)},")
-
-    # Clock config
-    lines.append("    clock=ClockConfig(")
-    lines.append(f"        hours={_str_list(clock['hours'])},")
-    lines.append(f"        midnight={_quote(clock['midnight'])},")
-    lines.append(f"        noon={_quote(clock['noon'])},")
-    lines.append("        patterns={")
-    for key in ["0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]:
-        if key in clock["patterns"]:
-            lines.append(f"            {key}: {_quote(clock['patterns'][key])},")
-    lines.append("        },")
-    lines.append("    ),")
-
-    # Short override
+    fields: list[tuple[str, Value]] = [
+        ("code=", _quote(code)),
+        ("clock=", _clock_config(clock)),
+    ]
     if has_short:
-        sc = data["short"].get("clock", {})
-        use24h = sc.get("use24h", True)
-        fmt = sc.get("format", "{h}:{mm}")
-        am_pm = sc.get("amPm")
-        if am_pm:
-            lines.append("    short=CompactnessOverride(")
-            lines.append(f"        clock=ShortClockConfig(use24h={use24h}, format={_quote(fmt)}, am_pm=({_quote(am_pm[0])}, {_quote(am_pm[1])})),")
-            lines.append("    ),")
-        else:
-            lines.append("    short=CompactnessOverride(")
-            lines.append(f"        clock=ShortClockConfig(use24h={use24h}, format={_quote(fmt)}),")
-            lines.append("    ),")
-
-    # Compact override
+        fields.append(("short=", _compactness_override(data["short"])))
     if has_compact:
-        sc = data["compact"].get("clock", {})
-        use24h = sc.get("use24h", True)
-        fmt = sc.get("format", "{h}:{mm}")
-        am_pm = sc.get("amPm")
-        if am_pm:
-            lines.append("    compact=CompactnessOverride(")
-            lines.append(f"        clock=ShortClockConfig(use24h={use24h}, format={_quote(fmt)}, am_pm=({_quote(am_pm[0])}, {_quote(am_pm[1])})),")
-            lines.append("    ),")
-        else:
-            lines.append("    compact=CompactnessOverride(")
-            lines.append(f"        clock=ShortClockConfig(use24h={use24h}, format={_quote(fmt)}),")
-            lines.append("    ),")
-
-    lines.append(")")
+        fields.append(("compact=", _compactness_override(data["compact"])))
+    lines.extend(layout(call("TimeLocale", fields, magic_trailing_comma=True), head=f"{code.upper()} = "))
     lines.append("")
 
     return "\n".join(lines)
@@ -116,26 +109,18 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append("")
 
     # Lookup dict + function
-    lines.append("_ALL: dict[str, TimeLocale] = {")
-    entries = [f'"{loc["code"]}": {loc["code"].upper()}' for loc in sorted_locs]
-    for i in range(0, len(entries), 4):
-        chunk = ", ".join(entries[i : i + 4])
-        lines.append(f"    {chunk},")
-    lines.append("}")
+    by_code = dict_of([(_quote(loc["code"]), loc["code"].upper()) for loc in sorted_locs], magic_trailing_comma=True)
+    lines.extend(layout(by_code, head="_ALL: dict[str, TimeLocale] = "))
     lines.append("")
     lines.append("")
     lines.append("def get_locale(code: str) -> TimeLocale | None:")
     lines.append('    """Look up a locale by its code string."""')
     lines.append("    return _ALL.get(code)")
     lines.append("")
+    lines.append("")
 
-    lines.append("__all__ = [")
-    codes = [f'"{loc["code"].upper()}"' for loc in sorted_locs]
-    for i in range(0, len(codes), 8):
-        chunk = ", ".join(codes[i : i + 8])
-        lines.append(f"    {chunk},")
-    lines.append('    "get_locale",')
-    lines.append("]")
+    exported = [_quote(loc["code"].upper()) for loc in sorted_locs] + ['"get_locale"']
+    lines.extend(layout(list_of(exported, magic_trailing_comma=True), head="__all__ = "))
     lines.append("")
 
     return "\n".join(lines)

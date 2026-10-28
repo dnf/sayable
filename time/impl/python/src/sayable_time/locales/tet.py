@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 TET = TimeLocale(
     code="tet",
     clock=ClockConfig(
-        hours=["sanulu-resin-rua", "ida", "rua", "tolu", "haat", "lima", "neen", "hitu", "ualu", "sia", "sanulu", "sanulu-resin-ida"],
+        hours=[
+            "sanulu-resin-rua",
+            "ida",
+            "rua",
+            "tolu",
+            "haat",
+            "lima",
+            "neen",
+            "hitu",
+            "ualu",
+            "sia",
+            "sanulu",
+            "sanulu-resin-ida",
+        ],
         midnight="meiu-kalan",
         noon="meiu-loron",
         patterns={

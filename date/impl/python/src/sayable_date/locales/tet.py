@@ -15,7 +15,20 @@ from sayable_date.locale import CompactnessOverride, DateLocale
 
 TET = DateLocale(
     code="tet",
-    months=["Janeiru", "Fevereiru", "Marsu", "Abríl", "Maiu", "Juñu", "Jullu", "Agostu", "Setembru", "Outubru", "Novembru", "Dezembru"],
+    months=[
+        "Janeiru",
+        "Fevereiru",
+        "Marsu",
+        "Abríl",
+        "Maiu",
+        "Juñu",
+        "Jullu",
+        "Agostu",
+        "Setembru",
+        "Outubru",
+        "Novembru",
+        "Dezembru",
+    ],
     weekdays=["Domingu", "Segunda", "Tersa", "Kuarta", "Kinta", "Sesta", "Sábadu"],
     day_format="{n}",
     day_format_exceptions={},

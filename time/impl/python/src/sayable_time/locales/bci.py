@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 BCI = TimeLocale(
     code="bci",
     clock=ClockConfig(
-        hours=["blu-nin-nɲɔn", "kun", "nɲɔn", "nsan", "nan", "nnun", "nsiɛn", "nso", "mɔcuɛ", "ngwlan", "blu", "blu-nin-kun"],
+        hours=[
+            "blu-nin-nɲɔn",
+            "kun",
+            "nɲɔn",
+            "nsan",
+            "nan",
+            "nnun",
+            "nsiɛn",
+            "nso",
+            "mɔcuɛ",
+            "ngwlan",
+            "blu",
+            "blu-nin-kun",
+        ],
         midnight="kɔnguɛ afiɛn",
         noon="nnɔsua",
         patterns={

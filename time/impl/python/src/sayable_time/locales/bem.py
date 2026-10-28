@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 BEM = TimeLocale(
     code="bem",
     clock=ClockConfig(
-        hours=["ikumi na shibili", "imo", "shibili", "shitatu", "shine", "shisano", "mutanda", "cine lubali", "cine konse konse", "pabula", "ikumi", "ikumi na imo"],
+        hours=[
+            "ikumi na shibili",
+            "imo",
+            "shibili",
+            "shitatu",
+            "shine",
+            "shisano",
+            "mutanda",
+            "cine lubali",
+            "cine konse konse",
+            "pabula",
+            "ikumi",
+            "ikumi na imo",
+        ],
         midnight="pakati ka bushiku",
         noon="akasuba",
         patterns={

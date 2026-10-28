@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 MOS = TimeLocale(
     code="mos",
     clock=ClockConfig(
-        hours=["lɛɛr piig la a yiibu", "lɛɛr a yembre", "lɛɛr a yiibu", "lɛɛr a tãabo", "lɛɛr a naase", "lɛɛr a nu", "lɛɛr a yoobe", "lɛɛr a yopoe", "lɛɛr a nii", "lɛɛr a wae", "lɛɛr piiga", "lɛɛr piig la a yembre"],
+        hours=[
+            "lɛɛr piig la a yiibu",
+            "lɛɛr a yembre",
+            "lɛɛr a yiibu",
+            "lɛɛr a tãabo",
+            "lɛɛr a naase",
+            "lɛɛr a nu",
+            "lɛɛr a yoobe",
+            "lɛɛr a yopoe",
+            "lɛɛr a nii",
+            "lɛɛr a wae",
+            "lɛɛr piiga",
+            "lɛɛr piig la a yembre",
+        ],
         midnight="yʋng-vɩɩse",
         noon="wĩntoog zabre",
         patterns={

@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 ST = TimeLocale(
     code="st",
     clock=ClockConfig(
-        hours=["leshome le metso e mmedi", "pele", "bobedi", "boraro", "bone", "bohlano", "botshelela", "bosupa", "borobedi", "borobong", "leshome", "leshome le motso o le mong"],
+        hours=[
+            "leshome le metso e mmedi",
+            "pele",
+            "bobedi",
+            "boraro",
+            "bone",
+            "bohlano",
+            "botshelela",
+            "bosupa",
+            "borobedi",
+            "borobong",
+            "leshome",
+            "leshome le motso o le mong",
+        ],
         midnight="hara bosiu",
         noon="motsheare",
         patterns={

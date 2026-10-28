@@ -16,7 +16,20 @@ from sayable_time.locale import ClockConfig, CompactnessOverride, ShortClockConf
 NG = TimeLocale(
     code="ng",
     clock=ClockConfig(
-        hours=["omulongo nambali", "imwe", "mbali", "ndatu", "ne", "ntano", "hamano", "heyali", "hetatu", "omugoyi", "omulongo", "omulongo nimwe"],
+        hours=[
+            "omulongo nambali",
+            "imwe",
+            "mbali",
+            "ndatu",
+            "ne",
+            "ntano",
+            "hamano",
+            "heyali",
+            "hetatu",
+            "omugoyi",
+            "omulongo",
+            "omulongo nimwe",
+        ],
         midnight="onguloshi pakati",
         noon="omutenya",
         patterns={
