@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ar exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -26,65 +25,95 @@ locale =
                 mod100 =
                     modBy 100 n
             in
-            if n == 0 then Zero else if n == 1 then One else if n == 2 then Two else if mod100 >= 3 && mod100 <= 10 then Few else if mod100 >= 11 && mod100 <= 99 then Many else Other
+            if n == 0 then
+                Zero
+
+            else if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else if mod100 >= 3 && mod100 <= 10 then
+                Few
+
+            else if mod100 >= 11 && mod100 <= 99 then
+                Many
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( Zero, "{n} ثانية" )
-              , ( One, "ثانية" )
-              , ( Two, "ثانيتان" )
-              , ( Few, "{n} ثوانٍ" )
-              , ( Many, "{n} ثانية" )
-              , ( Other, "{n} ثانية" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( Zero, "{n} دقيقة" )
-              , ( One, "دقيقة" )
-              , ( Two, "دقيقتان" )
-              , ( Few, "{n} دقائق" )
-              , ( Many, "{n} دقيقة" )
-              , ( Other, "{n} دقيقة" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( Zero, "{n} ساعة" )
-              , ( One, "ساعة" )
-              , ( Two, "ساعتان" )
-              , ( Few, "{n} ساعات" )
-              , ( Many, "{n} ساعة" )
-              , ( Other, "{n} ساعة" )
-              ] )
-            , ( "day", Pluralized
-              [ ( Zero, "{n} يوم" )
-              , ( One, "يوم" )
-              , ( Two, "يومان" )
-              , ( Few, "{n} أيام" )
-              , ( Many, "{n} يومًا" )
-              , ( Other, "{n} يوم" )
-              ] )
-            , ( "week", Pluralized
-              [ ( Zero, "{n} أسبوع" )
-              , ( One, "أسبوع" )
-              , ( Two, "أسبوعان" )
-              , ( Few, "{n} أسابيع" )
-              , ( Many, "{n} أسبوعًا" )
-              , ( Other, "{n} أسبوع" )
-              ] )
-            , ( "month", Pluralized
-              [ ( Zero, "{n} شهر" )
-              , ( One, "شهر" )
-              , ( Two, "شهران" )
-              , ( Few, "{n} أشهر" )
-              , ( Many, "{n} شهرًا" )
-              , ( Other, "{n} شهر" )
-              ] )
-            , ( "year", Pluralized
-              [ ( Zero, "{n} سنة" )
-              , ( One, "سنة" )
-              , ( Two, "سنتان" )
-              , ( Few, "{n} سنوات" )
-              , ( Many, "{n} سنة" )
-              , ( Other, "{n} سنة" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( Zero, "{n} ثانية" )
+                    , ( One, "ثانية" )
+                    , ( Two, "ثانيتان" )
+                    , ( Few, "{n} ثوانٍ" )
+                    , ( Many, "{n} ثانية" )
+                    , ( Other, "{n} ثانية" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( Zero, "{n} دقيقة" )
+                    , ( One, "دقيقة" )
+                    , ( Two, "دقيقتان" )
+                    , ( Few, "{n} دقائق" )
+                    , ( Many, "{n} دقيقة" )
+                    , ( Other, "{n} دقيقة" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( Zero, "{n} ساعة" )
+                    , ( One, "ساعة" )
+                    , ( Two, "ساعتان" )
+                    , ( Few, "{n} ساعات" )
+                    , ( Many, "{n} ساعة" )
+                    , ( Other, "{n} ساعة" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( Zero, "{n} يوم" )
+                    , ( One, "يوم" )
+                    , ( Two, "يومان" )
+                    , ( Few, "{n} أيام" )
+                    , ( Many, "{n} يومًا" )
+                    , ( Other, "{n} يوم" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( Zero, "{n} أسبوع" )
+                    , ( One, "أسبوع" )
+                    , ( Two, "أسبوعان" )
+                    , ( Few, "{n} أسابيع" )
+                    , ( Many, "{n} أسبوعًا" )
+                    , ( Other, "{n} أسبوع" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( Zero, "{n} شهر" )
+                    , ( One, "شهر" )
+                    , ( Two, "شهران" )
+                    , ( Few, "{n} أشهر" )
+                    , ( Many, "{n} شهرًا" )
+                    , ( Other, "{n} شهر" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( Zero, "{n} سنة" )
+                    , ( One, "سنة" )
+                    , ( Two, "سنتان" )
+                    , ( Few, "{n} سنوات" )
+                    , ( Many, "{n} سنة" )
+                    , ( Other, "{n} سنة" )
+                    ]
+              )
             ]
     , half = "{0} ونصف"
     , delimiter = " و"
@@ -99,38 +128,46 @@ locale =
                         [ ( "second", Simple "{n} ث" )
                         , ( "minute", Simple "{n} د" )
                         , ( "hour", Simple "{n} س" )
-                        , ( "day", Pluralized
-                          [ ( Zero, "{n} يوم" )
-                          , ( One, "يوم" )
-                          , ( Two, "يومان" )
-                          , ( Few, "{n} أيام" )
-                          , ( Many, "{n} يومًا" )
-                          , ( Other, "{n} يوم" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( Zero, "{n} أسبوع" )
-                          , ( One, "أسبوع" )
-                          , ( Two, "أسبوعان" )
-                          , ( Few, "{n} أسابيع" )
-                          , ( Many, "{n} أسبوعًا" )
-                          , ( Other, "{n} أسبوع" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( Zero, "{n} شهر" )
-                          , ( One, "شهر" )
-                          , ( Two, "شهران" )
-                          , ( Few, "{n} أشهر" )
-                          , ( Many, "{n} شهرًا" )
-                          , ( Other, "{n} شهر" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( Zero, "{n} سنة" )
-                          , ( One, "سنة واحدة" )
-                          , ( Two, "سنتان" )
-                          , ( Few, "{n} سنوات" )
-                          , ( Many, "{n} سنة" )
-                          , ( Other, "{n} سنة" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( Zero, "{n} يوم" )
+                                , ( One, "يوم" )
+                                , ( Two, "يومان" )
+                                , ( Few, "{n} أيام" )
+                                , ( Many, "{n} يومًا" )
+                                , ( Other, "{n} يوم" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( Zero, "{n} أسبوع" )
+                                , ( One, "أسبوع" )
+                                , ( Two, "أسبوعان" )
+                                , ( Few, "{n} أسابيع" )
+                                , ( Many, "{n} أسبوعًا" )
+                                , ( Other, "{n} أسبوع" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( Zero, "{n} شهر" )
+                                , ( One, "شهر" )
+                                , ( Two, "شهران" )
+                                , ( Few, "{n} أشهر" )
+                                , ( Many, "{n} شهرًا" )
+                                , ( Other, "{n} شهر" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( Zero, "{n} سنة" )
+                                , ( One, "سنة واحدة" )
+                                , ( Two, "سنتان" )
+                                , ( Few, "{n} سنوات" )
+                                , ( Many, "{n} سنة" )
+                                , ( Other, "{n} سنة" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

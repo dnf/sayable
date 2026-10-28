@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ak exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ak"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "sɛkɛnd {n}" )
             , ( "minute", Simple "sema {n}" )
             , ( "hour", Simple "dɔnhwere {n}" )
-            , ( "day", Pluralized
-              [ ( One, "da {n}" )
-              , ( Other, "nna {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "dapɛn {n}" )
-              , ( Other, "nnapɛn {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "bosome {n}" )
-              , ( Other, "abosome {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "afe {n}" )
-              , ( Other, "mfe {n}" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "da {n}" )
+                    , ( Other, "nna {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "dapɛn {n}" )
+                    , ( Other, "nnapɛn {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "bosome {n}" )
+                    , ( Other, "abosome {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "afe {n}" )
+                    , ( Other, "mfe {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -56,22 +69,30 @@ locale =
                         [ ( "second", Simple "sɛkɛnd {n}" )
                         , ( "minute", Simple "sema {n}" )
                         , ( "hour", Simple "dɔnhwere {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "da {n}" )
-                          , ( Other, "nna {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "dapɛn {n}" )
-                          , ( Other, "nnapɛn {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "bosome {n}" )
-                          , ( Other, "abosome {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "afe {n}" )
-                          , ( Other, "mfe {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "da {n}" )
+                                , ( Other, "nna {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "dapɛn {n}" )
+                                , ( Other, "nnapɛn {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "bosome {n}" )
+                                , ( Other, "abosome {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "afe {n}" )
+                                , ( Other, "mfe {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -87,22 +108,30 @@ locale =
                         [ ( "second", Simple "sɛk {n}" )
                         , ( "minute", Simple "sem {n}" )
                         , ( "hour", Simple "dɔn {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "da {n}" )
-                          , ( Other, "nna {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "dapɛn {n}" )
-                          , ( Other, "nnapɛn {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "bos {n}" )
-                          , ( Other, "abos {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "afe {n}" )
-                          , ( Other, "mfe {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "da {n}" )
+                                , ( Other, "nna {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "dapɛn {n}" )
+                                , ( Other, "nnapɛn {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "bos {n}" )
+                                , ( Other, "abos {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "afe {n}" )
+                                , ( Other, "mfe {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

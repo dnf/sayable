@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Pa exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,31 +19,47 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "pa"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} ਸਕਿੰਟ" )
             , ( "minute", Simple "{n} ਮਿੰਟ" )
-            , ( "hour", Pluralized
-              [ ( One, "{n} ਘੰਟਾ" )
-              , ( Other, "{n} ਘੰਟੇ" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ਦਿਨ" )
-              , ( Other, "{n} ਦਿਨ" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} ਹਫ਼ਤਾ" )
-              , ( Other, "{n} ਹਫ਼ਤੇ" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ਮਹੀਨਾ" )
-              , ( Other, "{n} ਮਹੀਨੇ" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ਸਾਲ" )
-              , ( Other, "{n} ਸਾਲ" )
-              ] )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} ਘੰਟਾ" )
+                    , ( Other, "{n} ਘੰਟੇ" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ਦਿਨ" )
+                    , ( Other, "{n} ਦਿਨ" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} ਹਫ਼ਤਾ" )
+                    , ( Other, "{n} ਹਫ਼ਤੇ" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ਮਹੀਨਾ" )
+                    , ( Other, "{n} ਮਹੀਨੇ" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ਸਾਲ" )
+                    , ( Other, "{n} ਸਾਲ" )
+                    ]
+              )
             ]
     , half = "ਸਾਢੇ {n}"
     , delimiter = ", "
@@ -58,19 +73,25 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} ਸਕਿੰਟ" )
                         , ( "minute", Simple "{n} ਮਿੰਟ" )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} ਘੰਟਾ" )
-                          , ( Other, "{n} ਘੰਟੇ" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} ਘੰਟਾ" )
+                                , ( Other, "{n} ਘੰਟੇ" )
+                                ]
+                          )
                         , ( "day", Simple "{n} ਦਿਨ" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} ਹਫ਼ਤਾ" )
-                          , ( Other, "{n} ਹਫ਼ਤੇ" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} ਮਹੀਨਾ" )
-                          , ( Other, "{n} ਮਹੀਨੇ" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} ਹਫ਼ਤਾ" )
+                                , ( Other, "{n} ਹਫ਼ਤੇ" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} ਮਹੀਨਾ" )
+                                , ( Other, "{n} ਮਹੀਨੇ" )
+                                ]
+                          )
                         , ( "year", Simple "{n} ਸਾਲ" )
                         ]
                     )
@@ -86,19 +107,25 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} ਸਕਿੰਟ" )
                         , ( "minute", Simple "{n} ਮਿੰਟ" )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} ਘੰਟਾ" )
-                          , ( Other, "{n} ਘੰਟੇ" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} ਘੰਟਾ" )
+                                , ( Other, "{n} ਘੰਟੇ" )
+                                ]
+                          )
                         , ( "day", Simple "{n} ਦਿਨ" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} ਹਫ਼ਤਾ" )
-                          , ( Other, "{n} ਹਫ਼ਤੇ" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} ਮਹੀਨਾ" )
-                          , ( Other, "{n} ਮਹੀਨੇ" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} ਹਫ਼ਤਾ" )
+                                , ( Other, "{n} ਹਫ਼ਤੇ" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} ਮਹੀਨਾ" )
+                                , ( Other, "{n} ਮਹੀਨੇ" )
+                                ]
+                          )
                         , ( "year", Simple "{n} ਸਾਲ" )
                         ]
                     )

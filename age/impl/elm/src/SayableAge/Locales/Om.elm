@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Om exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "om"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "guyyaa {n}" )
-      , ( Other, "guyyoota {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "torban {n}" )
-      , ( Other, "torbanota {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ji'a {n}" )
-      , ( Other, "ji'oota {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "waggaa {n}" )
-      , ( Other, "waggoota {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "guyyaa {n}" )
+            , ( Other, "guyyoota {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "torban {n}" )
+            , ( Other, "torbanota {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ji'a {n}" )
+            , ( Other, "ji'oota {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "waggaa {n}" )
+            , ( Other, "waggoota {n}" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Dhalate haaraa"

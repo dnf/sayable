@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Xh exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "xh"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "usuku {n}" )
-      , ( Other, "iintsuku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "iveki {n}" )
-      , ( Other, "iiveki {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "inyanga {n}" )
-      , ( Other, "iinyanga {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "unyaka {n}" )
-      , ( Other, "iminyaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "usuku {n}" )
+            , ( Other, "iintsuku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "iveki {n}" )
+            , ( Other, "iiveki {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "inyanga {n}" )
+            , ( Other, "iinyanga {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "unyaka {n}" )
+            , ( Other, "iminyaka {n}" )
+            ]
     , half = "{0} nehafu"
     , delimiter = ", "
     , justBorn = "Usanda kuzalwa"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "usuku {n}" )
-                  , ( Other, "iintsuku {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "iveki {n}" )
-                  , ( Other, "iiveki {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "iny. {n}" )
-                  , ( Other, "iiny. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "uny. {n}" )
-                  , ( Other, "imy. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "usuku {n}" )
+                        , ( Other, "iintsuku {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "iveki {n}" )
+                        , ( Other, "iiveki {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "iny. {n}" )
+                        , ( Other, "iiny. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "uny. {n}" )
+                        , ( Other, "imy. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Lb exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "lb"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} Dag" )
-      , ( Other, "{n} Deeg" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} Woch" )
-      , ( Other, "{n} Wochen" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} Mount" )
-      , ( Other, "{n} Méint" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} Joer" )
-      , ( Other, "{n} Joer" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} Dag" )
+            , ( Other, "{n} Deeg" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} Woch" )
+            , ( Other, "{n} Wochen" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} Mount" )
+            , ( Other, "{n} Méint" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} Joer" )
+            , ( Other, "{n} Joer" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Neigebuerenen"

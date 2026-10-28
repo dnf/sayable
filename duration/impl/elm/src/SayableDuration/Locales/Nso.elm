@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Nso exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "nso"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "motsotswana {n}" )
-              , ( Other, "metsotswana {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "motsotso {n}" )
-              , ( Other, "metsotso {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "iri {n}" )
-              , ( Other, "diiri {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "letšatši {n}" )
-              , ( Other, "matšatši {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "beke {n}" )
-              , ( Other, "dibeke {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "kgwedi {n}" )
-              , ( Other, "dikgwedi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "ngwaga {n}" )
-              , ( Other, "mengwaga {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "motsotswana {n}" )
+                    , ( Other, "metsotswana {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "motsotso {n}" )
+                    , ( Other, "metsotso {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "iri {n}" )
+                    , ( Other, "diiri {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "letšatši {n}" )
+                    , ( Other, "matšatši {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "beke {n}" )
+                    , ( Other, "dibeke {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "kgwedi {n}" )
+                    , ( Other, "dikgwedi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "ngwaga {n}" )
+                    , ( Other, "mengwaga {n}" )
+                    ]
+              )
             ]
     , half = "{0} le seripagare"
     , delimiter = ", "
@@ -62,34 +81,48 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "motsotsw. {n}" )
-                          , ( Other, "metsotsw. {n}" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "mots. {n}" )
-                          , ( Other, "mets. {n}" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "iri {n}" )
-                          , ( Other, "diiri {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "letšatši {n}" )
-                          , ( Other, "matšatši {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "beke {n}" )
-                          , ( Other, "dibeke {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "kgw. {n}" )
-                          , ( Other, "dikgw. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "ngw. {n}" )
-                          , ( Other, "mengw. {n}" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "motsotsw. {n}" )
+                                , ( Other, "metsotsw. {n}" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "mots. {n}" )
+                                , ( Other, "mets. {n}" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "iri {n}" )
+                                , ( Other, "diiri {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "letšatši {n}" )
+                                , ( Other, "matšatši {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "beke {n}" )
+                                , ( Other, "dibeke {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "kgw. {n}" )
+                                , ( Other, "dikgw. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "ngw. {n}" )
+                                , ( Other, "mengw. {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

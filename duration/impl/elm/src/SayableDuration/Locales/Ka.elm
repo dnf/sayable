@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ka exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ka"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} წამი" )
             , ( "minute", Simple "{n} წუთი" )
             , ( "hour", Simple "{n} საათი" )
-            , ( "day", Pluralized
-              [ ( One, "{n} დღე" )
-              , ( Other, "{n} დღე" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} კვირა" )
-              , ( Other, "{n} კვირა" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} თვე" )
-              , ( Other, "{n} თვე" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} წელი" )
-              , ( Other, "{n} წელი" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} დღე" )
+                    , ( Other, "{n} დღე" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} კვირა" )
+                    , ( Other, "{n} კვირა" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} თვე" )
+                    , ( Other, "{n} თვე" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} წელი" )
+                    , ( Other, "{n} წელი" )
+                    ]
+              )
             ]
     , half = "{0} და ნახევარი"
     , delimiter = ", "

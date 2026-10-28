@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Tr exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "tr"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} saniye" )
             , ( "minute", Simple "{n} dakika" )
             , ( "hour", Simple "{n} saat" )
-            , ( "day", Pluralized
-              [ ( One, "{n} gün" )
-              , ( Other, "{n} gün" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} hafta" )
-              , ( Other, "{n} hafta" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ay" )
-              , ( Other, "{n} ay" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} yaş" )
-              , ( Other, "{n} yaş" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} gün" )
+                    , ( Other, "{n} gün" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} hafta" )
+                    , ( Other, "{n} hafta" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ay" )
+                    , ( Other, "{n} ay" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} yaş" )
+                    , ( Other, "{n} yaş" )
+                    ]
+              )
             ]
     , half = "{n} buçuk"
     , delimiter = ", "
@@ -74,10 +87,12 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n}sn" )
                         , ( "minute", Simple "{n}d" )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} sa" )
-                          , ( Other, "{n}s" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} sa" )
+                                , ( Other, "{n}s" )
+                                ]
+                          )
                         , ( "day", Simple "{n}g" )
                         , ( "week", Simple "{n}h" )
                         , ( "month", Simple "{n}a" )

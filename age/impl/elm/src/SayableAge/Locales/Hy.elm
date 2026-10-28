@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Hy exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "hy"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} օր" )
-      , ( Other, "{n} օր" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} շաբաթ" )
-      , ( Other, "{n} շաբաթ" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} ամիս" )
-      , ( Other, "{n} ամիս" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} տարի" )
-      , ( Other, "{n} տարի" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} օր" )
+            , ( Other, "{n} օր" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} շաբաթ" )
+            , ( Other, "{n} շաբաթ" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} ամիս" )
+            , ( Other, "{n} ամիս" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} տարի" )
+            , ( Other, "{n} տարի" )
+            ]
     , half = "{0} ու կես"
     , delimiter = ", "
     , justBorn = "Նորածին"

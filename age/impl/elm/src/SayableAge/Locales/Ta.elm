@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ta exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ta"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} நாள்" )
-      , ( Other, "{n} நாட்கள்" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} வாரம்" )
-      , ( Other, "{n} வாரங்கள்" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} மாதம்" )
-      , ( Other, "{n} மாதங்கள்" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} வயது" )
-      , ( Other, "{n} வயது" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} நாள்" )
+            , ( Other, "{n} நாட்கள்" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} வாரம்" )
+            , ( Other, "{n} வாரங்கள்" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} மாதம்" )
+            , ( Other, "{n} மாதங்கள்" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} வயது" )
+            , ( Other, "{n} வயது" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "பிறந்த குழந்தை"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} நாள்" )
-                  , ( Other, "{n} நாட்கள்" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} வாரம்" )
-                  , ( Other, "{n} வார." )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} மாதம்" )
-                  , ( Other, "{n} மாத." )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} ஆண்டு" )
-                  , ( Other, "{n} ஆண்டு." )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} நாள்" )
+                        , ( Other, "{n} நாட்கள்" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} வாரம்" )
+                        , ( Other, "{n} வார." )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} மாதம்" )
+                        , ( Other, "{n} மாத." )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ஆண்டு" )
+                        , ( Other, "{n} ஆண்டு." )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

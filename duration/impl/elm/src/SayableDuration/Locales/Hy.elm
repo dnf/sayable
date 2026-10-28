@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Hy exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "hy"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} վայրկյան" )
-              , ( Other, "{n} վայրկյան" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} րոպե" )
-              , ( Other, "{n} րոպե" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} ժամ" )
-              , ( Other, "{n} ժամ" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} օր" )
-              , ( Other, "{n} օր" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} շաբաթ" )
-              , ( Other, "{n} շաբաթ" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ամիս" )
-              , ( Other, "{n} ամիս" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} տարի" )
-              , ( Other, "{n} տարի" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} վայրկյան" )
+                    , ( Other, "{n} վայրկյան" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} րոպե" )
+                    , ( Other, "{n} րոպե" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} ժամ" )
+                    , ( Other, "{n} ժամ" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} օր" )
+                    , ( Other, "{n} օր" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} շաբաթ" )
+                    , ( Other, "{n} շաբաթ" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ամիս" )
+                    , ( Other, "{n} ամիս" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} տարի" )
+                    , ( Other, "{n} տարի" )
+                    ]
+              )
             ]
     , half = "{0} ու կես"
     , delimiter = ", "

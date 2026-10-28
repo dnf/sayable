@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Fan exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "fan"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "mos {n}" )
-      , ( Other, "bimos {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "sone {n}" )
-      , ( Other, "bisone {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ngon {n}" )
-      , ( Other, "mingon {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "mbu {n}" )
-      , ( Other, "mimbu {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "mos {n}" )
+            , ( Other, "bimos {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "sone {n}" )
+            , ( Other, "bisone {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ngon {n}" )
+            , ( Other, "mingon {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "mbu {n}" )
+            , ( Other, "mimbu {n}" )
+            ]
     , half = "{0} e ndamba"
     , delimiter = ", "
     , justBorn = "Mone a biai"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "mos {n}" )
-                  , ( Other, "bimos {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "sone {n}" )
-                  , ( Other, "bisone {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ngon {n}" )
-                  , ( Other, "mingon {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "mbu {n}" )
-                  , ( Other, "mimbu {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "mos {n}" )
+                        , ( Other, "bimos {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "sone {n}" )
+                        , ( Other, "bisone {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "ngon {n}" )
+                        , ( Other, "mingon {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "mbu {n}" )
+                        , ( Other, "mimbu {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

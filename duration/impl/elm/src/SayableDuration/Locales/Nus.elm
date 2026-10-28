@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Nus exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "nus"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "thɛkɛni {n}" )
-              , ( Other, "thɛkni {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minit {n}" )
-              , ( Other, "minitni {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "thaar {n}" )
-              , ( Other, "thaarni {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "cäŋ {n}" )
-              , ( Other, "cëŋ {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "korɛ {n}" )
-              , ( Other, "korni {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "pay {n}" )
-              , ( Other, "pei {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "ruɔ̈n {n}" )
-              , ( Other, "ruɔ̈ɔ̈ni {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "thɛkɛni {n}" )
+                    , ( Other, "thɛkni {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minit {n}" )
+                    , ( Other, "minitni {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "thaar {n}" )
+                    , ( Other, "thaarni {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "cäŋ {n}" )
+                    , ( Other, "cëŋ {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "korɛ {n}" )
+                    , ( Other, "korni {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "pay {n}" )
+                    , ( Other, "pei {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "ruɔ̈n {n}" )
+                    , ( Other, "ruɔ̈ɔ̈ni {n}" )
+                    ]
+              )
             ]
     , half = "{0} ku kel"
     , delimiter = ", "
@@ -62,34 +81,48 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "thɛk. {n}" )
-                          , ( Other, "thɛk. {n}" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "min. {n}" )
-                          , ( Other, "min. {n}" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "thaar {n}" )
-                          , ( Other, "thaarni {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "cäŋ {n}" )
-                          , ( Other, "cëŋ {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "kor. {n}" )
-                          , ( Other, "kor. {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "pay {n}" )
-                          , ( Other, "pei {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "ruɔ̈n {n}" )
-                          , ( Other, "ruɔ̈ɔ̈ni {n}" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "thɛk. {n}" )
+                                , ( Other, "thɛk. {n}" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "min. {n}" )
+                                , ( Other, "min. {n}" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "thaar {n}" )
+                                , ( Other, "thaarni {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "cäŋ {n}" )
+                                , ( Other, "cëŋ {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "kor. {n}" )
+                                , ( Other, "kor. {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "pay {n}" )
+                                , ( Other, "pei {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "ruɔ̈n {n}" )
+                                , ( Other, "ruɔ̈ɔ̈ni {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

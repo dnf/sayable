@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Sl exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -25,31 +24,45 @@ locale =
                 mod100 =
                     modBy 100 n
             in
-            if mod100 == 1 then One else if mod100 == 2 then Two else if mod100 == 3 || mod100 == 4 then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} dan" )
-      , ( Two, "{n} dneva" )
-      , ( Few, "{n} dni" )
-      , ( Other, "{n} dni" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} teden" )
-      , ( Two, "{n} tedna" )
-      , ( Few, "{n} tedne" )
-      , ( Other, "{n} tednov" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mesec" )
-      , ( Two, "{n} meseca" )
-      , ( Few, "{n} mesece" )
-      , ( Other, "{n} mesecev" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} leto" )
-      , ( Two, "{n} leti" )
-      , ( Few, "{n} leta" )
-      , ( Other, "{n} let" )
-      ]
+            if mod100 == 1 then
+                One
+
+            else if mod100 == 2 then
+                Two
+
+            else if mod100 == 3 || mod100 == 4 then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dan" )
+            , ( Two, "{n} dneva" )
+            , ( Few, "{n} dni" )
+            , ( Other, "{n} dni" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} teden" )
+            , ( Two, "{n} tedna" )
+            , ( Few, "{n} tedne" )
+            , ( Other, "{n} tednov" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mesec" )
+            , ( Two, "{n} meseca" )
+            , ( Few, "{n} mesece" )
+            , ( Other, "{n} mesecev" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} leto" )
+            , ( Two, "{n} leti" )
+            , ( Few, "{n} leta" )
+            , ( Other, "{n} let" )
+            ]
     , half = "{0} in pol"
     , delimiter = ", "
     , justBorn = "Novorojenček"

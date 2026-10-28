@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Am exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "am"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} ሰከንድ" )
-              , ( Other, "{n} ሰከንዶች" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} ደቂቃ" )
-              , ( Other, "{n} ደቂቃዎች" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} ሰዓት" )
-              , ( Other, "{n} ሰዓቶች" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ቀን" )
-              , ( Other, "{n} ቀናት" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} ሳምንት" )
-              , ( Other, "{n} ሳምንታት" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ወር" )
-              , ( Other, "{n} ወራት" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ዓመት" )
-              , ( Other, "{n} ዓመታት" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} ሰከንድ" )
+                    , ( Other, "{n} ሰከንዶች" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} ደቂቃ" )
+                    , ( Other, "{n} ደቂቃዎች" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} ሰዓት" )
+                    , ( Other, "{n} ሰዓቶች" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ቀን" )
+                    , ( Other, "{n} ቀናት" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} ሳምንት" )
+                    , ( Other, "{n} ሳምንታት" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ወር" )
+                    , ( Other, "{n} ወራት" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ዓመት" )
+                    , ( Other, "{n} ዓመታት" )
+                    ]
+              )
             ]
     , half = "{0} ተኩል"
     , delimiter = "፣ "
@@ -63,21 +82,27 @@ locale =
                 Just
                     (Dict.fromList
                         [ ( "second", Simple "{n} ሰከ" )
-                        , ( "minute", Pluralized
-                          [ ( One, "{n} ደቂ" )
-                          , ( Other, "{n} ደቂቃ" )
-                          ] )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "{n} ደቂ" )
+                                , ( Other, "{n} ደቂቃ" )
+                                ]
+                          )
                         , ( "hour", Simple "{n} ሰዓ" )
                         , ( "day", Simple "{n} ቀናት" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} ሳምንት" )
-                          , ( Other, "{n} ሳምንታት" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} ሳምንት" )
+                                , ( Other, "{n} ሳምንታት" )
+                                ]
+                          )
                         , ( "month", Simple "{n} ወራት" )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} ዓመት" )
-                          , ( Other, "{n} ዓመታት" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} ዓመት" )
+                                , ( Other, "{n} ዓመታት" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -96,10 +121,12 @@ locale =
                         , ( "day", Simple "{n} ቀ" )
                         , ( "week", Simple "{n} ሳምንት" )
                         , ( "month", Simple "{n} ወር" )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} ዓመት" )
-                          , ( Other, "{n} ዓ" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} ዓመት" )
+                                , ( Other, "{n} ዓ" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

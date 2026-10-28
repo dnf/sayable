@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Tem exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "tem"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "ləfɔr {n}" )
-      , ( Other, "ɔfɔr {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "wik {n}" )
-      , ( Other, "wik {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "kətha {n}" )
-      , ( Other, "ɔtha {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "əsor {n}" )
-      , ( Other, "ɔsor {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "ləfɔr {n}" )
+            , ( Other, "ɔfɔr {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "wik {n}" )
+            , ( Other, "wik {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "kətha {n}" )
+            , ( Other, "ɔtha {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "əsor {n}" )
+            , ( Other, "ɔsor {n}" )
+            ]
     , half = "{0} a gbankɛ"
     , delimiter = ", "
     , justBorn = "A mabɔrn"
@@ -49,19 +58,28 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "ləfɔr {n}" )
-                  , ( Other, "ɔfɔr {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "ləfɔr {n}" )
+                        , ( Other, "ɔfɔr {n}" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "wik {n}")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "kətha {n}" )
-                  , ( Other, "ɔtha {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "əsor {n}" )
-                  , ( Other, "ɔsor {n}" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "kətha {n}" )
+                        , ( Other, "ɔtha {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "əsor {n}" )
+                        , ( Other, "ɔsor {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

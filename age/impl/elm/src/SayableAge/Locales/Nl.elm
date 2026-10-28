@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Nl exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "nl"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} dag" )
-      , ( Other, "{n} dagen" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} week" )
-      , ( Other, "{n} weken" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} maand" )
-      , ( Other, "{n} maanden" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} jaar" )
-      , ( Other, "{n} jaar" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dag" )
+            , ( Other, "{n} dagen" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} week" )
+            , ( Other, "{n} weken" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} maand" )
+            , ( Other, "{n} maanden" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} jaar" )
+            , ( Other, "{n} jaar" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Pasgeboren"
@@ -49,14 +58,20 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} dag" )
-                  , ( Other, "{n} dagen" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} wk" )
-                  , ( Other, "{n} wkn" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} dag" )
+                        , ( Other, "{n} dagen" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} wk" )
+                        , ( Other, "{n} wkn" )
+                        ]
+                    )
             , ovrMonth = Just (Simple "{n} mnd")
             , ovrYear = Just (Simple "{n} jr")
             , ovrHalf = Nothing

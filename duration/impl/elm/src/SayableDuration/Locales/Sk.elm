@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Sk exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,44 +19,67 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "sk"
-    , plural = \n -> if n == 1 then One else if n >= 2 && n <= 4 then Few else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n >= 2 && n <= 4 then
+                Few
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekunda" )
-              , ( Few, "{n} sekundy" )
-              , ( Other, "{n} sekúnd" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minúta" )
-              , ( Few, "{n} minúty" )
-              , ( Other, "{n} minút" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} hodina" )
-              , ( Few, "{n} hodiny" )
-              , ( Other, "{n} hodín" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} deň" )
-              , ( Few, "{n} dni" )
-              , ( Other, "{n} dní" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} týždeň" )
-              , ( Few, "{n} týždne" )
-              , ( Other, "{n} týždňov" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} mesiac" )
-              , ( Few, "{n} mesiace" )
-              , ( Other, "{n} mesiacov" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} rok" )
-              , ( Few, "{n} roky" )
-              , ( Other, "{n} rokov" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekunda" )
+                    , ( Few, "{n} sekundy" )
+                    , ( Other, "{n} sekúnd" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minúta" )
+                    , ( Few, "{n} minúty" )
+                    , ( Other, "{n} minút" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} hodina" )
+                    , ( Few, "{n} hodiny" )
+                    , ( Other, "{n} hodín" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} deň" )
+                    , ( Few, "{n} dni" )
+                    , ( Other, "{n} dní" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} týždeň" )
+                    , ( Few, "{n} týždne" )
+                    , ( Other, "{n} týždňov" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} mesiac" )
+                    , ( Few, "{n} mesiace" )
+                    , ( Other, "{n} mesiacov" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} rok" )
+                    , ( Few, "{n} roky" )
+                    , ( Other, "{n} rokov" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -72,12 +94,14 @@ locale =
                         [ ( "second", Simple "{n} s" )
                         , ( "minute", Simple "{n} min" )
                         , ( "hour", Simple "{n} h" )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} deň" )
-                          , ( Few, "{n} dni" )
-                          , ( Many, "{n} dňa" )
-                          , ( Other, "{n} dní" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} deň" )
+                                , ( Few, "{n} dni" )
+                                , ( Many, "{n} dňa" )
+                                , ( Other, "{n} dní" )
+                                ]
+                          )
                         , ( "week", Simple "{n} týž." )
                         , ( "month", Simple "{n} mes." )
                         , ( "year", Simple "{n} r." )

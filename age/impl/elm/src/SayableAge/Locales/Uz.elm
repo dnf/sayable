@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Uz exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "uz"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} kun" )
-      , ( Other, "{n} kun" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} hafta" )
-      , ( Other, "{n} hafta" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} oy" )
-      , ( Other, "{n} oy" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} yosh" )
-      , ( Other, "{n} yosh" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} kun" )
+            , ( Other, "{n} kun" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} hafta" )
+            , ( Other, "{n} hafta" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} oy" )
+            , ( Other, "{n} oy" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} yosh" )
+            , ( Other, "{n} yosh" )
+            ]
     , half = "{n} yarim"
     , delimiter = ", "
     , justBorn = "Yangi tugʻilgan"

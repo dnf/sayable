@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Sd exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,21 +19,31 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "sd"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} سيڪنڊ" )
             , ( "minute", Simple "{n} منٽ" )
             , ( "hour", Simple "{n} ڪلاڪ" )
             , ( "day", Simple "{n} ڏينهن" )
-            , ( "week", Pluralized
-              [ ( One, "{n} هفتو" )
-              , ( Other, "{n} هفتا" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} مهينو" )
-              , ( Other, "{n} مهينا" )
-              ] )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} هفتو" )
+                    , ( Other, "{n} هفتا" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} مهينو" )
+                    , ( Other, "{n} مهينا" )
+                    ]
+              )
             , ( "year", Simple "{n} سال" )
             ]
     , half = "{n}½"
@@ -51,14 +60,18 @@ locale =
                         , ( "minute", Simple "{n} منٽ" )
                         , ( "hour", Simple "{n} ڪلاڪ" )
                         , ( "day", Simple "{n} ڏينهن" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} هفتو" )
-                          , ( Other, "{n} هفتا" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} مهينو" )
-                          , ( Other, "{n} مهينا" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} هفتو" )
+                                , ( Other, "{n} هفتا" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} مهينو" )
+                                , ( Other, "{n} مهينا" )
+                                ]
+                          )
                         , ( "year", Simple "{n} سال" )
                         ]
                     )

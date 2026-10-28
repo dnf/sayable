@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Sar exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 

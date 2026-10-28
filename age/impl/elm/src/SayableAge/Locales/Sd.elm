@@ -12,23 +12,30 @@
 
 module SayableAge.Locales.Sd exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "sd"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "{n} ڏينهن"
-    , week = Pluralized
-      [ ( One, "{n} هفتو" )
-      , ( Other, "{n} هفتا" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} مهينو" )
-      , ( Other, "{n} مهينا" )
-      ]
+    , week =
+        Pluralized
+            [ ( One, "{n} هفتو" )
+            , ( Other, "{n} هفتا" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} مهينو" )
+            , ( Other, "{n} مهينا" )
+            ]
     , year = Simple "{n} سال"
     , half = "{n}½"
     , delimiter = "، "
@@ -44,14 +51,20 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "{n} ڏينهن")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} هفتو" )
-                  , ( Other, "{n} هفتا" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} مهينو" )
-                  , ( Other, "{n} مهينا" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} هفتو" )
+                        , ( Other, "{n} هفتا" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} مهينو" )
+                        , ( Other, "{n} مهينا" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} سال")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing

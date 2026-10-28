@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Jv exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 

@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Be exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,34 +23,46 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Many
-    , day = Pluralized
-      [ ( One, "{n} дзень" )
-      , ( Few, "{n} дні" )
-      , ( Many, "{n} дзён" )
-      , ( Other, "{n} дзён" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} тыдзень" )
-      , ( Few, "{n} тыдні" )
-      , ( Many, "{n} тыдняў" )
-      , ( Other, "{n} тыдняў" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} месяц" )
-      , ( Few, "{n} месяцы" )
-      , ( Many, "{n} месяцаў" )
-      , ( Other, "{n} месяцаў" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} год" )
-      , ( Few, "{n} гады" )
-      , ( Many, "{n} гадоў" )
-      , ( Other, "{n} гадоў" )
-      ]
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Many
+    , day =
+        Pluralized
+            [ ( One, "{n} дзень" )
+            , ( Few, "{n} дні" )
+            , ( Many, "{n} дзён" )
+            , ( Other, "{n} дзён" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} тыдзень" )
+            , ( Few, "{n} тыдні" )
+            , ( Many, "{n} тыдняў" )
+            , ( Other, "{n} тыдняў" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} месяц" )
+            , ( Few, "{n} месяцы" )
+            , ( Many, "{n} месяцаў" )
+            , ( Other, "{n} месяцаў" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} год" )
+            , ( Few, "{n} гады" )
+            , ( Many, "{n} гадоў" )
+            , ( Other, "{n} гадоў" )
+            ]
     , half = "{n} з паловай"
     , delimiter = ", "
     , justBorn = "Нованароджаны"
@@ -68,12 +79,15 @@ locale =
             { ovrDay = Just (Simple "{n} дн.")
             , ovrWeek = Just (Simple "{n} тыд.")
             , ovrMonth = Just (Simple "{n} мес.")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} г." )
-                  , ( Few, "{n} г." )
-                  , ( Many, "{n} г." )
-                  , ( Other, "{n} г." )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} г." )
+                        , ( Few, "{n} г." )
+                        , ( Many, "{n} г." )
+                        , ( Other, "{n} г." )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
@@ -83,12 +97,15 @@ locale =
             { ovrDay = Just (Simple "{n} д.")
             , ovrWeek = Just (Simple "{n} т.")
             , ovrMonth = Just (Simple "{n} м.")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} г." )
-                  , ( Few, "{n} г." )
-                  , ( Many, "{n} г." )
-                  , ( Other, "{n} г." )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} г." )
+                        , ( Few, "{n} г." )
+                        , ( Many, "{n} г." )
+                        , ( Other, "{n} г." )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

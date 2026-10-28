@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ki exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ki"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekunde {n}" )
-              , ( Other, "sekunde {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "ndagĩka {n}" )
-              , ( Other, "ndagĩka {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "ithaa {n}" )
-              , ( Other, "mathaa {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "mũthenya {n}" )
-              , ( Other, "mĩthenya {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "kiumia {n}" )
-              , ( Other, "kiumia {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "mwerĩ {n}" )
-              , ( Other, "mĩerĩ {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "mwaka {n}" )
-              , ( Other, "mĩaka {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekunde {n}" )
+                    , ( Other, "sekunde {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "ndagĩka {n}" )
+                    , ( Other, "ndagĩka {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "ithaa {n}" )
+                    , ( Other, "mathaa {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "mũthenya {n}" )
+                    , ( Other, "mĩthenya {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "kiumia {n}" )
+                    , ( Other, "kiumia {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "mwerĩ {n}" )
+                    , ( Other, "mĩerĩ {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "mwaka {n}" )
+                    , ( Other, "mĩaka {n}" )
+                    ]
+              )
             ]
     , half = "{0} na nuthu"
     , delimiter = ", "
@@ -64,23 +83,31 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "sek. {n}" )
                         , ( "minute", Simple "ndag. {n}" )
-                        , ( "hour", Pluralized
-                          [ ( One, "ithaa {n}" )
-                          , ( Other, "mathaa {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "mũth. {n}" )
-                          , ( Other, "mĩth. {n}" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "ithaa {n}" )
+                                , ( Other, "mathaa {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "mũth. {n}" )
+                                , ( Other, "mĩth. {n}" )
+                                ]
+                          )
                         , ( "week", Simple "kiu. {n}" )
-                        , ( "month", Pluralized
-                          [ ( One, "mwerĩ {n}" )
-                          , ( Other, "mĩerĩ {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mwaka {n}" )
-                          , ( Other, "mĩaka {n}" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "mwerĩ {n}" )
+                                , ( Other, "mĩerĩ {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mwaka {n}" )
+                                , ( Other, "mĩaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

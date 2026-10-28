@@ -12,38 +12,53 @@
 
 module SayableAge.Locales.Gd exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "gd"
-    , plural = \n -> if n == 1 || n == 11 then One else if n == 2 || n == 12 then Two else if (n >= 3 && n <= 10) || (n >= 13 && n <= 19) then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} latha" )
-      , ( Two, "{n} latha" )
-      , ( Few, "{n} làithean" )
-      , ( Other, "{n} latha" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} sheachdain" )
-      , ( Two, "{n} sheachdain" )
-      , ( Few, "{n} seachdainean" )
-      , ( Other, "{n} seachdain" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mhìos" )
-      , ( Two, "{n} mhìos" )
-      , ( Few, "{n} mìosan" )
-      , ( Other, "{n} mìos" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} bhliadhna" )
-      , ( Two, "{n} bhliadhna" )
-      , ( Few, "{n} bliadhna" )
-      , ( Other, "{n} bliadhna" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 || n == 11 then
+                One
+
+            else if n == 2 || n == 12 then
+                Two
+
+            else if (n >= 3 && n <= 10) || (n >= 13 && n <= 19) then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} latha" )
+            , ( Two, "{n} latha" )
+            , ( Few, "{n} làithean" )
+            , ( Other, "{n} latha" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} sheachdain" )
+            , ( Two, "{n} sheachdain" )
+            , ( Few, "{n} seachdainean" )
+            , ( Other, "{n} seachdain" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mhìos" )
+            , ( Two, "{n} mhìos" )
+            , ( Few, "{n} mìosan" )
+            , ( Other, "{n} mìos" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} bhliadhna" )
+            , ( Two, "{n} bhliadhna" )
+            , ( Few, "{n} bliadhna" )
+            , ( Other, "{n} bliadhna" )
+            ]
     , half = "{0} gu leth"
     , delimiter = ", "
     , justBorn = "Ùr-bhreith"
@@ -58,24 +73,33 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "{n} là")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} shn" )
-                  , ( Two, "{n} shn" )
-                  , ( Few, "{n} sn" )
-                  , ( Other, "{n} sn" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} mhìos" )
-                  , ( Two, "{n} mhìos" )
-                  , ( Few, "{n} mìos" )
-                  , ( Other, "{n} mìos" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} bhlia" )
-                  , ( Two, "{n} bhlia" )
-                  , ( Few, "{n} blia" )
-                  , ( Other, "{n} blia" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} shn" )
+                        , ( Two, "{n} shn" )
+                        , ( Few, "{n} sn" )
+                        , ( Other, "{n} sn" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} mhìos" )
+                        , ( Two, "{n} mhìos" )
+                        , ( Few, "{n} mìos" )
+                        , ( Other, "{n} mìos" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} bhlia" )
+                        , ( Two, "{n} bhlia" )
+                        , ( Few, "{n} blia" )
+                        , ( Other, "{n} blia" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Hi exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "hi"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} दिन" )
-      , ( Other, "{n} दिन" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} सप्ताह" )
-      , ( Other, "{n} सप्ताह" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} महीना" )
-      , ( Other, "{n} महीने" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} साल" )
-      , ( Other, "{n} साल" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} दिन" )
+            , ( Other, "{n} दिन" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} सप्ताह" )
+            , ( Other, "{n} सप्ताह" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} महीना" )
+            , ( Other, "{n} महीने" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} साल" )
+            , ( Other, "{n} साल" )
+            ]
     , half = "साढ़े {n}"
     , delimiter = ", "
     , justBorn = "नवजात"

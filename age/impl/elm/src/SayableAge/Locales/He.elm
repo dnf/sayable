@@ -12,34 +12,46 @@
 
 module SayableAge.Locales.He exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "he"
-    , plural = \n -> if n == 1 then One else if n == 2 then Two else Other
-    , day = Pluralized
-      [ ( One, "יום" )
-      , ( Two, "יומיים" )
-      , ( Other, "{n} ימים" )
-      ]
-    , week = Pluralized
-      [ ( One, "שבוע" )
-      , ( Two, "שבועיים" )
-      , ( Other, "{n} שבועות" )
-      ]
-    , month = Pluralized
-      [ ( One, "חודש" )
-      , ( Two, "חודשיים" )
-      , ( Other, "{n} חודשים" )
-      ]
-    , year = Pluralized
-      [ ( One, "שנה" )
-      , ( Two, "שנתיים" )
-      , ( Other, "{n} שנים" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "יום" )
+            , ( Two, "יומיים" )
+            , ( Other, "{n} ימים" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "שבוע" )
+            , ( Two, "שבועיים" )
+            , ( Other, "{n} שבועות" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "חודש" )
+            , ( Two, "חודשיים" )
+            , ( Other, "{n} חודשים" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "שנה" )
+            , ( Two, "שנתיים" )
+            , ( Other, "{n} שנים" )
+            ]
     , half = "{0} וחצי"
     , delimiter = ", "
     , justBorn = "רק נולד"
@@ -53,22 +65,31 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} יום" )
-                  , ( Two, "יומיים" )
-                  , ( Other, "{n} ימ׳" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} שבוע" )
-                  , ( Two, "שבועיים" )
-                  , ( Other, "{n} שבועות" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} יום" )
+                        , ( Two, "יומיים" )
+                        , ( Other, "{n} ימ׳" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} שבוע" )
+                        , ( Two, "שבועיים" )
+                        , ( Other, "{n} שבועות" )
+                        ]
+                    )
             , ovrMonth = Just (Simple "{n} ח׳")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} שנה" )
-                  , ( Two, "{n} שנים" )
-                  , ( Other, "{n} שנים" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} שנה" )
+                        , ( Two, "{n} שנים" )
+                        , ( Other, "{n} שנים" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

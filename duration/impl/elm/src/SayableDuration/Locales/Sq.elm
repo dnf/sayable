@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Sq exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "sq"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekondë" )
-              , ( Other, "{n} sekonda" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minutë" )
-              , ( Other, "{n} minuta" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} orë" )
-              , ( Other, "{n} orë" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ditë" )
-              , ( Other, "{n} ditë" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} javë" )
-              , ( Other, "{n} javë" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} muaj" )
-              , ( Other, "{n} muaj" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} vit" )
-              , ( Other, "{n} vjet" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekondë" )
+                    , ( Other, "{n} sekonda" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minutë" )
+                    , ( Other, "{n} minuta" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} orë" )
+                    , ( Other, "{n} orë" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ditë" )
+                    , ( Other, "{n} ditë" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} javë" )
+                    , ( Other, "{n} javë" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} muaj" )
+                    , ( Other, "{n} muaj" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} vit" )
+                    , ( Other, "{n} vjet" )
+                    ]
+              )
             ]
     , half = "{0} e gjysmë"
     , delimiter = ", "
@@ -68,10 +87,12 @@ locale =
                         , ( "day", Simple "{n} ditë" )
                         , ( "week", Simple "{n} javë" )
                         , ( "month", Simple "{n} muaj" )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} vit" )
-                          , ( Other, "{n} vjet" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} vit" )
+                                , ( Other, "{n} vjet" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -90,10 +111,12 @@ locale =
                         , ( "day", Simple "{n} ditë" )
                         , ( "week", Simple "{n} javë" )
                         , ( "month", Simple "{n} muaj" )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} vit" )
-                          , ( Other, "{n} vjet" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} vit" )
+                                , ( Other, "{n} vjet" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

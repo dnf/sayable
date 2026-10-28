@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Kek exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Bem exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "bem"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "ubushiku {n}" )
-      , ( Other, "inshiku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "umulungu {n}" )
-      , ( Other, "imilungu {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "umweshi {n}" )
-      , ( Other, "imyeshi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "umwaka {n}" )
-      , ( Other, "imyaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "ubushiku {n}" )
+            , ( Other, "inshiku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "umulungu {n}" )
+            , ( Other, "imilungu {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "umweshi {n}" )
+            , ( Other, "imyeshi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "umwaka {n}" )
+            , ( Other, "imyaka {n}" )
+            ]
     , half = "{0} na hafu"
     , delimiter = ", "
     , justBorn = "Umwana uwafyalwa fye"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "ubushiku {n}" )
-                  , ( Other, "inshiku {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "umulungu {n}" )
-                  , ( Other, "imilungu {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "umweshi {n}" )
-                  , ( Other, "imyeshi {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "umwaka {n}" )
-                  , ( Other, "imyaka {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "ubushiku {n}" )
+                        , ( Other, "inshiku {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "umulungu {n}" )
+                        , ( Other, "imilungu {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "umweshi {n}" )
+                        , ( Other, "imyeshi {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "umwaka {n}" )
+                        , ( Other, "imyaka {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

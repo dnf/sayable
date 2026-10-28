@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Te exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "te"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} రోజు" )
-      , ( Other, "{n} రోజులు" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} వారం" )
-      , ( Other, "{n} వారాలు" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} నెల" )
-      , ( Other, "{n} నెలలు" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} సంవత్సరం" )
-      , ( Other, "{n} సంవత్సరాలు" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} రోజు" )
+            , ( Other, "{n} రోజులు" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} వారం" )
+            , ( Other, "{n} వారాలు" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} నెల" )
+            , ( Other, "{n} నెలలు" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} సంవత్సరం" )
+            , ( Other, "{n} సంవత్సరాలు" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "నవజాత శిశువు"
@@ -49,10 +58,13 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} రోజు" )
-                  , ( Other, "{n} రోజులు" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} రోజు" )
+                        , ( Other, "{n} రోజులు" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} వా.")
             , ovrMonth = Just (Simple "{n} నె.")
             , ovrYear = Just (Simple "{n} సం.")

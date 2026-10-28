@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Lb exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "lb"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} Sekonn" )
-              , ( Other, "{n} Sekonnen" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} Minutt" )
-              , ( Other, "{n} Minutten" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} Stonn" )
-              , ( Other, "{n} Stonnen" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} Dag" )
-              , ( Other, "{n} Deeg" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} Woch" )
-              , ( Other, "{n} Wochen" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} Mount" )
-              , ( Other, "{n} Méint" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} Joer" )
-              , ( Other, "{n} Joer" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} Sekonn" )
+                    , ( Other, "{n} Sekonnen" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} Minutt" )
+                    , ( Other, "{n} Minutten" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} Stonn" )
+                    , ( Other, "{n} Stonnen" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} Dag" )
+                    , ( Other, "{n} Deeg" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} Woch" )
+                    , ( Other, "{n} Wochen" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} Mount" )
+                    , ( Other, "{n} Méint" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} Joer" )
+                    , ( Other, "{n} Joer" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

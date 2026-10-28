@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Umb exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "umb"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "elityi {n}" )
-      , ( Other, "omatyi {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "osemana {n}" )
-      , ( Other, "olosemana {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ondjambi {n}" )
-      , ( Other, "olondjambi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "ombula {n}" )
-      , ( Other, "olombula {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "elityi {n}" )
+            , ( Other, "omatyi {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "osemana {n}" )
+            , ( Other, "olosemana {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ondjambi {n}" )
+            , ( Other, "olondjambi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "ombula {n}" )
+            , ( Other, "olombula {n}" )
+            ]
     , half = "{0} na oñali"
     , delimiter = ", "
     , justBorn = "Omola wa kulwa"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "elit. {n}" )
-                  , ( Other, "omat. {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "osem. {n}" )
-                  , ( Other, "olosem. {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ondj. {n}" )
-                  , ( Other, "olondj. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "omb. {n}" )
-                  , ( Other, "olomb. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "elit. {n}" )
+                        , ( Other, "omat. {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "osem. {n}" )
+                        , ( Other, "olosem. {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "ondj. {n}" )
+                        , ( Other, "olondj. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "omb. {n}" )
+                        , ( Other, "olomb. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

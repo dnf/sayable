@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Fil exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -43,15 +42,19 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} seg." )
                         , ( "minute", Simple "{n} min." )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} oras" )
-                          , ( Other, "{n} na oras" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} oras" )
+                                , ( Other, "{n} na oras" )
+                                ]
+                          )
                         , ( "day", Simple "{n} araw" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} linggo" )
-                          , ( Other, "{n} na linggo" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} linggo" )
+                                , ( Other, "{n} na linggo" )
+                                ]
+                          )
                         , ( "month", Simple "{n} buwan" )
                         , ( "year", Simple "{n} taon" )
                         ]
@@ -69,15 +72,19 @@ locale =
                         [ ( "second", Simple "{n}s" )
                         , ( "minute", Simple "{n}m" )
                         , ( "hour", Simple "{n} oras" )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} araw" )
-                          , ( Other, "{n} na araw" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} araw" )
+                                , ( Other, "{n} na araw" )
+                                ]
+                          )
                         , ( "week", Simple "{n}linggo" )
-                        , ( "month", Pluralized
-                          [ ( One, "{n}buwan" )
-                          , ( Other, "{n} buwan" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n}buwan" )
+                                , ( Other, "{n} buwan" )
+                                ]
+                          )
                         , ( "year", Simple "{n}taon" )
                         ]
                     )

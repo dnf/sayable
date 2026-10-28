@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.He exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,44 +19,67 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "he"
-    , plural = \n -> if n == 1 then One else if n == 2 then Two else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "שנייה" )
-              , ( Two, "שתי שניות" )
-              , ( Other, "{n} שניות" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "דקה" )
-              , ( Two, "שתי דקות" )
-              , ( Other, "{n} דקות" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "שעה" )
-              , ( Two, "שעתיים" )
-              , ( Other, "{n} שעות" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "יום" )
-              , ( Two, "יומיים" )
-              , ( Other, "{n} ימים" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "שבוע" )
-              , ( Two, "שבועיים" )
-              , ( Other, "{n} שבועות" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "חודש" )
-              , ( Two, "חודשיים" )
-              , ( Other, "{n} חודשים" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "שנה" )
-              , ( Two, "שנתיים" )
-              , ( Other, "{n} שנים" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "שנייה" )
+                    , ( Two, "שתי שניות" )
+                    , ( Other, "{n} שניות" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "דקה" )
+                    , ( Two, "שתי דקות" )
+                    , ( Other, "{n} דקות" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "שעה" )
+                    , ( Two, "שעתיים" )
+                    , ( Other, "{n} שעות" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "יום" )
+                    , ( Two, "יומיים" )
+                    , ( Other, "{n} ימים" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "שבוע" )
+                    , ( Two, "שבועיים" )
+                    , ( Other, "{n} שבועות" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "חודש" )
+                    , ( Two, "חודשיים" )
+                    , ( Other, "{n} חודשים" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "שנה" )
+                    , ( Two, "שנתיים" )
+                    , ( Other, "{n} שנים" )
+                    ]
+              )
             ]
     , half = "{0} וחצי"
     , delimiter = ", "
@@ -71,27 +93,35 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} שנ׳" )
                         , ( "minute", Simple "{n} דק׳" )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} שעה" )
-                          , ( Two, "שעתיים" )
-                          , ( Other, "{n} שע׳" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} יום" )
-                          , ( Two, "יומיים" )
-                          , ( Other, "{n} ימ׳" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} שבוע" )
-                          , ( Two, "שבועיים" )
-                          , ( Other, "{n} שבועות" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} שעה" )
+                                , ( Two, "שעתיים" )
+                                , ( Other, "{n} שע׳" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} יום" )
+                                , ( Two, "יומיים" )
+                                , ( Other, "{n} ימ׳" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} שבוע" )
+                                , ( Two, "שבועיים" )
+                                , ( Other, "{n} שבועות" )
+                                ]
+                          )
                         , ( "month", Simple "{n} ח׳" )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} שנה" )
-                          , ( Two, "{n} שנים" )
-                          , ( Other, "{n} שנים" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} שנה" )
+                                , ( Two, "{n} שנים" )
+                                , ( Other, "{n} שנים" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

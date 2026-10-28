@@ -12,14 +12,19 @@
 
 module SayableAge.Locales.Mn exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "mn"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "{n} өдөр"
     , week = Simple "{n} долоо хоног"
     , month = Simple "{n} сар"

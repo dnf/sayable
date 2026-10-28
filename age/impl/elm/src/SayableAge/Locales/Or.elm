@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Or exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "or"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ଦିନ" )
-      , ( Other, "{n} ଦିନ" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} ସପ୍ତାହ" )
-      , ( Other, "{n} ସପ୍ତାହ" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} ମାସ" )
-      , ( Other, "{n} ମାସ" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} ବର୍ଷ" )
-      , ( Other, "{n} ବର୍ଷ" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ଦିନ" )
+            , ( Other, "{n} ଦିନ" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} ସପ୍ତାହ" )
+            , ( Other, "{n} ସପ୍ତାହ" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} ମାସ" )
+            , ( Other, "{n} ମାସ" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} ବର୍ଷ" )
+            , ( Other, "{n} ବର୍ଷ" )
+            ]
     , half = "{0}ଅଧା"
     , delimiter = ", "
     , justBorn = "ନବଜାତ"

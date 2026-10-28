@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ku exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ku"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} roj" )
-      , ( Other, "{n} roj" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} hefte" )
-      , ( Other, "{n} hefte" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} meh" )
-      , ( Other, "{n} meh" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} sal" )
-      , ( Other, "{n} sal" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} roj" )
+            , ( Other, "{n} roj" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} hefte" )
+            , ( Other, "{n} hefte" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} meh" )
+            , ( Other, "{n} meh" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} sal" )
+            , ( Other, "{n} sal" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Nûbûyî"

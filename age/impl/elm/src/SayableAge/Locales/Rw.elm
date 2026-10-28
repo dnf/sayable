@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Rw exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "rw"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "umunsi {n}" )
-      , ( Other, "iminsi {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "icyumweru {n}" )
-      , ( Other, "ibyumweru {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ukwezi {n}" )
-      , ( Other, "amezi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "umwaka {n}" )
-      , ( Other, "imyaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "umunsi {n}" )
+            , ( Other, "iminsi {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "icyumweru {n}" )
+            , ( Other, "ibyumweru {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ukwezi {n}" )
+            , ( Other, "amezi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "umwaka {n}" )
+            , ( Other, "imyaka {n}" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Avutse"

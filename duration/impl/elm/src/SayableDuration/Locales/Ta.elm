@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ta exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ta"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} விநாடி" )
             , ( "minute", Simple "{n} நிமிடம்" )
             , ( "hour", Simple "{n} மணி நேரம்" )
-            , ( "day", Pluralized
-              [ ( One, "{n} நாள்" )
-              , ( Other, "{n} நாட்கள்" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} வாரம்" )
-              , ( Other, "{n} வாரங்கள்" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} மாதம்" )
-              , ( Other, "{n} மாதங்கள்" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ஆண்டு" )
-              , ( Other, "{n} ஆண்டுகள்" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} நாள்" )
+                    , ( Other, "{n} நாட்கள்" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} வாரம்" )
+                    , ( Other, "{n} வாரங்கள்" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} மாதம்" )
+                    , ( Other, "{n} மாதங்கள்" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ஆண்டு" )
+                    , ( Other, "{n} ஆண்டுகள்" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -56,22 +69,30 @@ locale =
                         [ ( "second", Simple "{n} விநாடி" )
                         , ( "minute", Simple "{n} நிமி." )
                         , ( "hour", Simple "{n} ம." )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} நாள்" )
-                          , ( Other, "{n} நாட்கள்" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} வாரம்" )
-                          , ( Other, "{n} வார." )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} மாதம்" )
-                          , ( Other, "{n} மாத." )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} ஆண்டு" )
-                          , ( Other, "{n} ஆண்டு." )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} நாள்" )
+                                , ( Other, "{n} நாட்கள்" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} வாரம்" )
+                                , ( Other, "{n} வார." )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} மாதம்" )
+                                , ( Other, "{n} மாத." )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} ஆண்டு" )
+                                , ( Other, "{n} ஆண்டு." )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

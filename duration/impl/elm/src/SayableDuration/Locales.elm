@@ -11,9 +11,7 @@
 
 module SayableDuration.Locales exposing (getLocale)
 
-
 import Dict exposing (Dict)
-import SayableDuration.Types exposing (Locale)
 import SayableDuration.Locales.Af as Af
 import SayableDuration.Locales.Ak as Ak
 import SayableDuration.Locales.Am as Am
@@ -182,6 +180,7 @@ import SayableDuration.Locales.Yue as Yue
 import SayableDuration.Locales.Zdj as Zdj
 import SayableDuration.Locales.Zh as Zh
 import SayableDuration.Locales.Zu as Zu
+import SayableDuration.Types exposing (Locale)
 
 
 allLocales : Dict String Locale

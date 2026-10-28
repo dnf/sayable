@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Men exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "men"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sɛkɔn {n}" )
-              , ( Other, "sɛkɔn {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "miniti {n}" )
-              , ( Other, "miniti {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "awa {n}" )
-              , ( Other, "awa {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "lɔhɔ {n}" )
-              , ( Other, "lɔhɔnga {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "wikii {n}" )
-              , ( Other, "wikii {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ndɔlɔ {n}" )
-              , ( Other, "ndɔlɔnga {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "saŋ {n}" )
-              , ( Other, "saŋga {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sɛkɔn {n}" )
+                    , ( Other, "sɛkɔn {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "miniti {n}" )
+                    , ( Other, "miniti {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "awa {n}" )
+                    , ( Other, "awa {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "lɔhɔ {n}" )
+                    , ( Other, "lɔhɔnga {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "wikii {n}" )
+                    , ( Other, "wikii {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ndɔlɔ {n}" )
+                    , ( Other, "ndɔlɔnga {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "saŋ {n}" )
+                    , ( Other, "saŋga {n}" )
+                    ]
+              )
             ]
     , half = "{0} ta fele"
     , delimiter = ", "
@@ -65,19 +84,25 @@ locale =
                         [ ( "second", Simple "sɛk. {n}" )
                         , ( "minute", Simple "min. {n}" )
                         , ( "hour", Simple "awa {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "lɔhɔ {n}" )
-                          , ( Other, "lɔhɔnga {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "lɔhɔ {n}" )
+                                , ( Other, "lɔhɔnga {n}" )
+                                ]
+                          )
                         , ( "week", Simple "wikii {n}" )
-                        , ( "month", Pluralized
-                          [ ( One, "ndɔlɔ {n}" )
-                          , ( Other, "ndɔlɔnga {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "saŋ {n}" )
-                          , ( Other, "saŋga {n}" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "ndɔlɔ {n}" )
+                                , ( Other, "ndɔlɔnga {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "saŋ {n}" )
+                                , ( Other, "saŋga {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

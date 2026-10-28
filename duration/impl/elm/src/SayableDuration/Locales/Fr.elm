@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Fr exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,34 +19,52 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "fr"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} seconde" )
-              , ( Other, "{n} secondes" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minute" )
-              , ( Other, "{n} minutes" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} heure" )
-              , ( Other, "{n} heures" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} jour" )
-              , ( Other, "{n} jours" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} semaine" )
-              , ( Other, "{n} semaines" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} seconde" )
+                    , ( Other, "{n} secondes" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minute" )
+                    , ( Other, "{n} minutes" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} heure" )
+                    , ( Other, "{n} heures" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} jour" )
+                    , ( Other, "{n} jours" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} semaine" )
+                    , ( Other, "{n} semaines" )
+                    ]
+              )
             , ( "month", Simple "{n} mois" )
-            , ( "year", Pluralized
-              [ ( One, "{n} an" )
-              , ( Other, "{n} ans" )
-              ] )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} an" )
+                    , ( Other, "{n} ans" )
+                    ]
+              )
             ]
     , half = "{0} et demi"
     , delimiter = ", "
@@ -59,16 +76,18 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Simple "{n} s" )
-                        , ( "minute", Simple "{n} min" )
-                        , ( "hour", Simple "{n} h" )
-                        , ( "day", Simple "{n} j" )
-                        , ( "week", Simple "{n} sem." )
-                        , ( "month", Simple "{n} m." )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} an" )
-                          , ( Other, "{n} ans" )
-                          ] )
+                        [ ( "second", Simple "{n}\u{202F}s" )
+                        , ( "minute", Simple "{n}\u{00A0}min" )
+                        , ( "hour", Simple "{n}\u{202F}h" )
+                        , ( "day", Simple "{n}\u{202F}j" )
+                        , ( "week", Simple "{n}\u{202F}sem." )
+                        , ( "month", Simple "{n}\u{202F}m." )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n}\u{00A0}an" )
+                                , ( Other, "{n}\u{00A0}ans" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

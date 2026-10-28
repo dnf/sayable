@@ -12,7 +12,6 @@
 
 module SayableDate.Locales.Mk exposing (locale)
 
-
 import Dict
 import SayableDate.Types exposing (..)
 
@@ -58,30 +57,32 @@ locale =
     , monthsInDate = Nothing
     , short =
         Just
-            { ovrMonths = Just
-                [ "јан"
-                , "фев"
-                , "мар"
-                , "апр"
-                , "мај"
-                , "јун"
-                , "јул"
-                , "авг"
-                , "сеп"
-                , "окт"
-                , "ное"
-                , "дек"
-                ]
+            { ovrMonths =
+                Just
+                    [ "јан"
+                    , "фев"
+                    , "мар"
+                    , "апр"
+                    , "мај"
+                    , "јун"
+                    , "јул"
+                    , "авг"
+                    , "сеп"
+                    , "окт"
+                    , "ное"
+                    , "дек"
+                    ]
             , ovrMonthsInDate = Nothing
-            , ovrWeekdays = Just
-                [ "нед"
-                , "пон"
-                , "вто"
-                , "сре"
-                , "чет"
-                , "пет"
-                , "саб"
-                ]
+            , ovrWeekdays =
+                Just
+                    [ "нед"
+                    , "пон"
+                    , "вто"
+                    , "сре"
+                    , "чет"
+                    , "пет"
+                    , "саб"
+                    ]
             , ovrDayFormat = Just "{n}"
             , ovrDayFormatExceptions = Just Dict.empty
             , ovrDatePattern = Just "{day} {month}"

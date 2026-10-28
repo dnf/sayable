@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Nus exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "nus"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "cäŋ {n}" )
-      , ( Other, "cëŋ {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "korɛ {n}" )
-      , ( Other, "korni {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "pay {n}" )
-      , ( Other, "pei {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "ruɔ̈n {n}" )
-      , ( Other, "ruɔ̈ɔ̈ni {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "cäŋ {n}" )
+            , ( Other, "cëŋ {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "korɛ {n}" )
+            , ( Other, "korni {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "pay {n}" )
+            , ( Other, "pei {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "ruɔ̈n {n}" )
+            , ( Other, "ruɔ̈ɔ̈ni {n}" )
+            ]
     , half = "{0} ku kel"
     , delimiter = ", "
     , justBorn = "Gaat mä dhiëëth"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "cäŋ {n}" )
-                  , ( Other, "cëŋ {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "kor. {n}" )
-                  , ( Other, "kor. {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "pay {n}" )
-                  , ( Other, "pei {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "ruɔ̈n {n}" )
-                  , ( Other, "ruɔ̈ɔ̈ni {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "cäŋ {n}" )
+                        , ( Other, "cëŋ {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "kor. {n}" )
+                        , ( Other, "kor. {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "pay {n}" )
+                        , ( Other, "pei {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "ruɔ̈n {n}" )
+                        , ( Other, "ruɔ̈ɔ̈ni {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

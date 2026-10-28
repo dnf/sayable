@@ -12,34 +12,46 @@
 
 module SayableAge.Locales.Sk exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "sk"
-    , plural = \n -> if n == 1 then One else if n >= 2 && n <= 4 then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} deň" )
-      , ( Few, "{n} dni" )
-      , ( Other, "{n} dní" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} týždeň" )
-      , ( Few, "{n} týždne" )
-      , ( Other, "{n} týždňov" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mesiac" )
-      , ( Few, "{n} mesiace" )
-      , ( Other, "{n} mesiacov" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} rok" )
-      , ( Few, "{n} roky" )
-      , ( Other, "{n} rokov" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n >= 2 && n <= 4 then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} deň" )
+            , ( Few, "{n} dni" )
+            , ( Other, "{n} dní" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} týždeň" )
+            , ( Few, "{n} týždne" )
+            , ( Other, "{n} týždňov" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mesiac" )
+            , ( Few, "{n} mesiace" )
+            , ( Other, "{n} mesiacov" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} rok" )
+            , ( Few, "{n} roky" )
+            , ( Other, "{n} rokov" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Novorodenec"
@@ -53,12 +65,15 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} deň" )
-                  , ( Few, "{n} dni" )
-                  , ( Many, "{n} dňa" )
-                  , ( Other, "{n} dní" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} deň" )
+                        , ( Few, "{n} dni" )
+                        , ( Many, "{n} dňa" )
+                        , ( Other, "{n} dní" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} týž.")
             , ovrMonth = Just (Simple "{n} mes.")
             , ovrYear = Just (Simple "{n} r.")

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Cy exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,65 +19,97 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "cy"
-    , plural = \n -> if n == 0 then Zero else if n == 1 then One else if n == 2 then Two else if n == 3 then Few else if n == 6 then Many else Other
+    , plural =
+        \n ->
+            if n == 0 then
+                Zero
+
+            else if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else if n == 3 then
+                Few
+
+            else if n == 6 then
+                Many
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( Zero, "{n} eiliad" )
-              , ( One, "{n} eiliad" )
-              , ( Two, "{n} eiliad" )
-              , ( Few, "{n} eiliad" )
-              , ( Many, "{n} eiliad" )
-              , ( Other, "{n} eiliad" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( Zero, "{n} munud" )
-              , ( One, "{n} munud" )
-              , ( Two, "{n} funud" )
-              , ( Few, "{n} munud" )
-              , ( Many, "{n} munud" )
-              , ( Other, "{n} munud" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( Zero, "{n} awr" )
-              , ( One, "{n} awr" )
-              , ( Two, "{n} awr" )
-              , ( Few, "{n} awr" )
-              , ( Many, "{n} awr" )
-              , ( Other, "{n} awr" )
-              ] )
-            , ( "day", Pluralized
-              [ ( Zero, "{n} diwrnod" )
-              , ( One, "{n} diwrnod" )
-              , ( Two, "{n} ddiwrnod" )
-              , ( Few, "{n} diwrnod" )
-              , ( Many, "{n} diwrnod" )
-              , ( Other, "{n} diwrnod" )
-              ] )
-            , ( "week", Pluralized
-              [ ( Zero, "{n} wythnos" )
-              , ( One, "{n} wythnos" )
-              , ( Two, "{n} wythnos" )
-              , ( Few, "{n} wythnos" )
-              , ( Many, "{n} wythnos" )
-              , ( Other, "{n} wythnos" )
-              ] )
-            , ( "month", Pluralized
-              [ ( Zero, "{n} mis" )
-              , ( One, "{n} mis" )
-              , ( Two, "{n} fis" )
-              , ( Few, "{n} mis" )
-              , ( Many, "{n} mis" )
-              , ( Other, "{n} mis" )
-              ] )
-            , ( "year", Pluralized
-              [ ( Zero, "{n} blwyddyn" )
-              , ( One, "{n} flwyddyn" )
-              , ( Two, "{n} flynedd" )
-              , ( Few, "{n} blynedd" )
-              , ( Many, "{n} blynedd" )
-              , ( Other, "{n} blynedd" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( Zero, "{n} eiliad" )
+                    , ( One, "{n} eiliad" )
+                    , ( Two, "{n} eiliad" )
+                    , ( Few, "{n} eiliad" )
+                    , ( Many, "{n} eiliad" )
+                    , ( Other, "{n} eiliad" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( Zero, "{n} munud" )
+                    , ( One, "{n} munud" )
+                    , ( Two, "{n} funud" )
+                    , ( Few, "{n} munud" )
+                    , ( Many, "{n} munud" )
+                    , ( Other, "{n} munud" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( Zero, "{n} awr" )
+                    , ( One, "{n} awr" )
+                    , ( Two, "{n} awr" )
+                    , ( Few, "{n} awr" )
+                    , ( Many, "{n} awr" )
+                    , ( Other, "{n} awr" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( Zero, "{n} diwrnod" )
+                    , ( One, "{n} diwrnod" )
+                    , ( Two, "{n} ddiwrnod" )
+                    , ( Few, "{n} diwrnod" )
+                    , ( Many, "{n} diwrnod" )
+                    , ( Other, "{n} diwrnod" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( Zero, "{n} wythnos" )
+                    , ( One, "{n} wythnos" )
+                    , ( Two, "{n} wythnos" )
+                    , ( Few, "{n} wythnos" )
+                    , ( Many, "{n} wythnos" )
+                    , ( Other, "{n} wythnos" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( Zero, "{n} mis" )
+                    , ( One, "{n} mis" )
+                    , ( Two, "{n} fis" )
+                    , ( Few, "{n} mis" )
+                    , ( Many, "{n} mis" )
+                    , ( Other, "{n} mis" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( Zero, "{n} blwyddyn" )
+                    , ( One, "{n} flwyddyn" )
+                    , ( Two, "{n} flynedd" )
+                    , ( Few, "{n} blynedd" )
+                    , ( Many, "{n} blynedd" )
+                    , ( Other, "{n} blynedd" )
+                    ]
+              )
             ]
     , half = "{0} a hanner"
     , delimiter = ", "
@@ -93,23 +124,27 @@ locale =
                         [ ( "second", Simple "{n} eil" )
                         , ( "minute", Simple "{n} mun" )
                         , ( "hour", Simple "{n} awr" )
-                        , ( "day", Pluralized
-                          [ ( Zero, "{n} diwrnod" )
-                          , ( One, "{n} diwrnod" )
-                          , ( Two, "{n} ddiwrnod" )
-                          , ( Few, "{n} diwrnod" )
-                          , ( Many, "{n} diwrnod" )
-                          , ( Other, "{n} diwrnod" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( Zero, "{n} diwrnod" )
+                                , ( One, "{n} diwrnod" )
+                                , ( Two, "{n} ddiwrnod" )
+                                , ( Few, "{n} diwrnod" )
+                                , ( Many, "{n} diwrnod" )
+                                , ( Other, "{n} diwrnod" )
+                                ]
+                          )
                         , ( "week", Simple "{n} ws" )
-                        , ( "month", Pluralized
-                          [ ( Zero, "{n} mis" )
-                          , ( One, "{n} mis" )
-                          , ( Two, "{n} fis" )
-                          , ( Few, "{n} mis" )
-                          , ( Many, "{n} mis" )
-                          , ( Other, "{n} mis" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( Zero, "{n} mis" )
+                                , ( One, "{n} mis" )
+                                , ( Two, "{n} fis" )
+                                , ( Few, "{n} mis" )
+                                , ( Many, "{n} mis" )
+                                , ( Other, "{n} mis" )
+                                ]
+                          )
                         , ( "year", Simple "{n} bl" )
                         ]
                     )
@@ -127,14 +162,16 @@ locale =
                         , ( "minute", Simple "{n}mun" )
                         , ( "hour", Simple "{n} awr" )
                         , ( "day", Simple "{n}d" )
-                        , ( "week", Pluralized
-                          [ ( Zero, "{n} ws" )
-                          , ( One, "{n}w" )
-                          , ( Two, "{n} ws" )
-                          , ( Few, "{n} ws" )
-                          , ( Many, "{n} ws" )
-                          , ( Other, "{n}w" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( Zero, "{n} ws" )
+                                , ( One, "{n}w" )
+                                , ( Two, "{n} ws" )
+                                , ( Few, "{n} ws" )
+                                , ( Many, "{n} ws" )
+                                , ( Other, "{n}w" )
+                                ]
+                          )
                         , ( "month", Simple "{n}m" )
                         , ( "year", Simple "{n}bl" )
                         ]

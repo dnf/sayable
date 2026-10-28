@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Te exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "te"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} సెకను" )
-              , ( Other, "{n} సెకన్లు" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} నిమిషం" )
-              , ( Other, "{n} నిమిషాలు" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} గంట" )
-              , ( Other, "{n} గంటలు" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} రోజు" )
-              , ( Other, "{n} రోజులు" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} వారం" )
-              , ( Other, "{n} వారాలు" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} నెల" )
-              , ( Other, "{n} నెలలు" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} సంవత్సరం" )
-              , ( Other, "{n} సంవత్సరాలు" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} సెకను" )
+                    , ( Other, "{n} సెకన్లు" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} నిమిషం" )
+                    , ( Other, "{n} నిమిషాలు" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} గంట" )
+                    , ( Other, "{n} గంటలు" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} రోజు" )
+                    , ( Other, "{n} రోజులు" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} వారం" )
+                    , ( Other, "{n} వారాలు" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} నెల" )
+                    , ( Other, "{n} నెలలు" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} సంవత్సరం" )
+                    , ( Other, "{n} సంవత్సరాలు" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -62,16 +81,20 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "{n} సె." )
-                          , ( Other, "{n} సెక." )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "{n} సె." )
+                                , ( Other, "{n} సెక." )
+                                ]
+                          )
                         , ( "minute", Simple "{n} నిమి." )
                         , ( "hour", Simple "{n} గం." )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} రోజు" )
-                          , ( Other, "{n} రోజులు" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} రోజు" )
+                                , ( Other, "{n} రోజులు" )
+                                ]
+                          )
                         , ( "week", Simple "{n} వా." )
                         , ( "month", Simple "{n} నె." )
                         , ( "year", Simple "{n} సం." )

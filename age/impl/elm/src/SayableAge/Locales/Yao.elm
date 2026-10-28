@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Yao exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "yao"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "lisiku {n}" )
-      , ( Other, "masiku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "juma {n}" )
-      , ( Other, "majuma {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ngondo {n}" )
-      , ( Other, "mingondo {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "chaka {n}" )
-      , ( Other, "vyaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "lisiku {n}" )
+            , ( Other, "masiku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "juma {n}" )
+            , ( Other, "majuma {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ngondo {n}" )
+            , ( Other, "mingondo {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "chaka {n}" )
+            , ( Other, "vyaka {n}" )
+            ]
     , half = "{0} na nusu"
     , delimiter = ", "
     , justBorn = "Mwanache jwabadwa"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "lis. {n}" )
-                  , ( Other, "mas. {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "juma {n}" )
-                  , ( Other, "maj. {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ngo. {n}" )
-                  , ( Other, "min. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "chaka {n}" )
-                  , ( Other, "vyaka {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "lis. {n}" )
+                        , ( Other, "mas. {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "juma {n}" )
+                        , ( Other, "maj. {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "ngo. {n}" )
+                        , ( Other, "min. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "chaka {n}" )
+                        , ( Other, "vyaka {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

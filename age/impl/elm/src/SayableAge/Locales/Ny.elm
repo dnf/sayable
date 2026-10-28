@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ny exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ny"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "tsiku {n}" )
-      , ( Other, "masiku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "sabata {n}" )
-      , ( Other, "masabata {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "mwezi {n}" )
-      , ( Other, "miyezi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "chaka {n}" )
-      , ( Other, "zaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "tsiku {n}" )
+            , ( Other, "masiku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "sabata {n}" )
+            , ( Other, "masabata {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "mwezi {n}" )
+            , ( Other, "miyezi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "chaka {n}" )
+            , ( Other, "zaka {n}" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Wobadwa kumene"
@@ -49,44 +58,68 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "tsiku {n}" )
-                  , ( Other, "mas {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "sabata {n}" )
-                  , ( Other, "masab {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "mwezi {n}" )
-                  , ( Other, "miyezi {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "chaka {n}" )
-                  , ( Other, "zaka {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "tsiku {n}" )
+                        , ( Other, "mas {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "sabata {n}" )
+                        , ( Other, "masab {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "mwezi {n}" )
+                        , ( Other, "miyezi {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "chaka {n}" )
+                        , ( Other, "zaka {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , compact =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "ts {n}" )
-                  , ( Other, "mas {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "sab {n}" )
-                  , ( Other, "msb {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "mw {n}" )
-                  , ( Other, "miy {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "ch {n}" )
-                  , ( Other, "z {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "ts {n}" )
+                        , ( Other, "mas {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "sab {n}" )
+                        , ( Other, "msb {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "mw {n}" )
+                        , ( Other, "miy {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "ch {n}" )
+                        , ( Other, "z {n}" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

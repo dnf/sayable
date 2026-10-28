@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Be exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,54 +24,76 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Many
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Many
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} секунда" )
-              , ( Few, "{n} секунды" )
-              , ( Many, "{n} секунд" )
-              , ( Other, "{n} секунды" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} хвіліна" )
-              , ( Few, "{n} хвіліны" )
-              , ( Many, "{n} хвілін" )
-              , ( Other, "{n} хвіліны" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} гадзіна" )
-              , ( Few, "{n} гадзіны" )
-              , ( Many, "{n} гадзін" )
-              , ( Other, "{n} гадзіны" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} дзень" )
-              , ( Few, "{n} дні" )
-              , ( Many, "{n} дзён" )
-              , ( Other, "{n} дня" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} тыдзень" )
-              , ( Few, "{n} тыдні" )
-              , ( Many, "{n} тыдняў" )
-              , ( Other, "{n} тыдня" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} месяц" )
-              , ( Few, "{n} месяцы" )
-              , ( Many, "{n} месяцаў" )
-              , ( Other, "{n} месяца" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} год" )
-              , ( Few, "{n} гады" )
-              , ( Many, "{n} гадоў" )
-              , ( Other, "{n} года" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} секунда" )
+                    , ( Few, "{n} секунды" )
+                    , ( Many, "{n} секунд" )
+                    , ( Other, "{n} секунды" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} хвіліна" )
+                    , ( Few, "{n} хвіліны" )
+                    , ( Many, "{n} хвілін" )
+                    , ( Other, "{n} хвіліны" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} гадзіна" )
+                    , ( Few, "{n} гадзіны" )
+                    , ( Many, "{n} гадзін" )
+                    , ( Other, "{n} гадзіны" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} дзень" )
+                    , ( Few, "{n} дні" )
+                    , ( Many, "{n} дзён" )
+                    , ( Other, "{n} дня" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} тыдзень" )
+                    , ( Few, "{n} тыдні" )
+                    , ( Many, "{n} тыдняў" )
+                    , ( Other, "{n} тыдня" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} месяц" )
+                    , ( Few, "{n} месяцы" )
+                    , ( Many, "{n} месяцаў" )
+                    , ( Other, "{n} месяца" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} год" )
+                    , ( Few, "{n} гады" )
+                    , ( Many, "{n} гадоў" )
+                    , ( Other, "{n} года" )
+                    ]
+              )
             ]
     , half = "{n} з паловай"
     , delimiter = ", "
@@ -90,12 +111,14 @@ locale =
                         , ( "day", Simple "{n} дн." )
                         , ( "week", Simple "{n} тыд." )
                         , ( "month", Simple "{n} мес." )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} г." )
-                          , ( Few, "{n} г." )
-                          , ( Many, "{n} г." )
-                          , ( Other, "{n} г." )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} г." )
+                                , ( Few, "{n} г." )
+                                , ( Many, "{n} г." )
+                                , ( Other, "{n} г." )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -114,12 +137,14 @@ locale =
                         , ( "day", Simple "{n} д." )
                         , ( "week", Simple "{n} т." )
                         , ( "month", Simple "{n} м." )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} г." )
-                          , ( Few, "{n} г." )
-                          , ( Many, "{n} г." )
-                          , ( Other, "{n} г." )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} г." )
+                                , ( Few, "{n} г." )
+                                , ( Many, "{n} г." )
+                                , ( Other, "{n} г." )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

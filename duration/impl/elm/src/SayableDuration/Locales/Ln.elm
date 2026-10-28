@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ln exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ln"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "segɔnde {n}" )
             , ( "minute", Simple "miniti {n}" )
             , ( "hour", Simple "ngonga {n}" )
-            , ( "day", Pluralized
-              [ ( One, "mokolo {n}" )
-              , ( Other, "mikolo {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "poso {n}" )
-              , ( Other, "baposo {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "sanza {n}" )
-              , ( Other, "basanza {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "mobu {n}" )
-              , ( Other, "mibu {n}" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "mokolo {n}" )
+                    , ( Other, "mikolo {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "poso {n}" )
+                    , ( Other, "baposo {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "sanza {n}" )
+                    , ( Other, "basanza {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "mobu {n}" )
+                    , ( Other, "mibu {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -56,22 +69,30 @@ locale =
                         [ ( "second", Simple "seg {n}" )
                         , ( "minute", Simple "mon {n}" )
                         , ( "hour", Simple "ng {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "mokolo {n}" )
-                          , ( Other, "mik {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "poso {n}" )
-                          , ( Other, "bap {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "sanza {n}" )
-                          , ( Other, "basanza {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mobu {n}" )
-                          , ( Other, "mibu {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "mokolo {n}" )
+                                , ( Other, "mik {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "poso {n}" )
+                                , ( Other, "bap {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "sanza {n}" )
+                                , ( Other, "basanza {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mobu {n}" )
+                                , ( Other, "mibu {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -87,22 +108,30 @@ locale =
                         [ ( "second", Simple "s {n}" )
                         , ( "minute", Simple "m {n}" )
                         , ( "hour", Simple "ng {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "mok {n}" )
-                          , ( Other, "mik {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "pos {n}" )
-                          , ( Other, "bap {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "sza {n}" )
-                          , ( Other, "bsza {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mb {n}" )
-                          , ( Other, "mib {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "mok {n}" )
+                                , ( Other, "mik {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "pos {n}" )
+                                , ( Other, "bap {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "sza {n}" )
+                                , ( Other, "bsza {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mb {n}" )
+                                , ( Other, "mib {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

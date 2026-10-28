@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ht exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,7 +19,13 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ht"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} segonn" )

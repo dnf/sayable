@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ne exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ne"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} सेकेन्ड" )
             , ( "minute", Simple "{n} मिनेट" )
             , ( "hour", Simple "{n} घण्टा" )
-            , ( "day", Pluralized
-              [ ( One, "{n} दिन" )
-              , ( Other, "{n} दिन" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} हप्ता" )
-              , ( Other, "{n} हप्ता" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} महिना" )
-              , ( Other, "{n} महिना" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} वर्ष" )
-              , ( Other, "{n} वर्ष" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} दिन" )
+                    , ( Other, "{n} दिन" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} हप्ता" )
+                    , ( Other, "{n} हप्ता" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} महिना" )
+                    , ( Other, "{n} महिना" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} वर्ष" )
+                    , ( Other, "{n} वर्ष" )
+                    ]
+              )
             ]
     , half = "साढे {n}"
     , delimiter = ", "

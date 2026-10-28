@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ro exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,44 +19,67 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ro"
-    , plural = \n -> if n == 1 then One else if n == 0 || (modBy 100 n >= 1 && modBy 100 n <= 19) then Few else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n == 0 || (modBy 100 n >= 1 && modBy 100 n <= 19) then
+                Few
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} secundă" )
-              , ( Few, "{n} secunde" )
-              , ( Other, "{n} de secunde" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minut" )
-              , ( Few, "{n} minute" )
-              , ( Other, "{n} de minute" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} oră" )
-              , ( Few, "{n} ore" )
-              , ( Other, "{n} de ore" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} zi" )
-              , ( Few, "{n} zile" )
-              , ( Other, "{n} de zile" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} săptămână" )
-              , ( Few, "{n} săptămâni" )
-              , ( Other, "{n} de săptămâni" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} lună" )
-              , ( Few, "{n} luni" )
-              , ( Other, "{n} de luni" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} an" )
-              , ( Few, "{n} ani" )
-              , ( Other, "{n} de ani" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} secundă" )
+                    , ( Few, "{n} secunde" )
+                    , ( Other, "{n} de secunde" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minut" )
+                    , ( Few, "{n} minute" )
+                    , ( Other, "{n} de minute" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} oră" )
+                    , ( Few, "{n} ore" )
+                    , ( Other, "{n} de ore" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} zi" )
+                    , ( Few, "{n} zile" )
+                    , ( Other, "{n} de zile" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} săptămână" )
+                    , ( Few, "{n} săptămâni" )
+                    , ( Other, "{n} de săptămâni" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} lună" )
+                    , ( Few, "{n} luni" )
+                    , ( Other, "{n} de luni" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} an" )
+                    , ( Few, "{n} ani" )
+                    , ( Other, "{n} de ani" )
+                    ]
+              )
             ]
     , half = "{0} și jumătate"
     , delimiter = ", "
@@ -71,27 +93,35 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} s" )
                         , ( "minute", Simple "{n} min." )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} oră" )
-                          , ( Few, "{n} ore" )
-                          , ( Other, "{n} ore" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} zi" )
-                          , ( Few, "{n} zile" )
-                          , ( Other, "{n} zile" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} oră" )
+                                , ( Few, "{n} ore" )
+                                , ( Other, "{n} ore" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} zi" )
+                                , ( Few, "{n} zile" )
+                                , ( Other, "{n} zile" )
+                                ]
+                          )
                         , ( "week", Simple "{n} săpt." )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} lună" )
-                          , ( Few, "{n} luni" )
-                          , ( Other, "{n} luni" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} an" )
-                          , ( Few, "{n} ani" )
-                          , ( Other, "{n} ani" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} lună" )
+                                , ( Few, "{n} luni" )
+                                , ( Other, "{n} luni" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} an" )
+                                , ( Few, "{n} ani" )
+                                , ( Other, "{n} ani" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

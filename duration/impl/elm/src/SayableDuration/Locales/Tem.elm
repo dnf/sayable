@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Tem exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "tem"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sɛkɔn {n}" )
-              , ( Other, "sɛkɔn {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minit {n}" )
-              , ( Other, "minit {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "awa {n}" )
-              , ( Other, "awa {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "ləfɔr {n}" )
-              , ( Other, "ɔfɔr {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "wik {n}" )
-              , ( Other, "wik {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "kətha {n}" )
-              , ( Other, "ɔtha {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "əsor {n}" )
-              , ( Other, "ɔsor {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sɛkɔn {n}" )
+                    , ( Other, "sɛkɔn {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minit {n}" )
+                    , ( Other, "minit {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "awa {n}" )
+                    , ( Other, "awa {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "ləfɔr {n}" )
+                    , ( Other, "ɔfɔr {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "wik {n}" )
+                    , ( Other, "wik {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "kətha {n}" )
+                    , ( Other, "ɔtha {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "əsor {n}" )
+                    , ( Other, "ɔsor {n}" )
+                    ]
+              )
             ]
     , half = "{0} a gbankɛ"
     , delimiter = ", "
@@ -65,19 +84,25 @@ locale =
                         [ ( "second", Simple "sɛk. {n}" )
                         , ( "minute", Simple "min. {n}" )
                         , ( "hour", Simple "awa {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "ləfɔr {n}" )
-                          , ( Other, "ɔfɔr {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "ləfɔr {n}" )
+                                , ( Other, "ɔfɔr {n}" )
+                                ]
+                          )
                         , ( "week", Simple "wik {n}" )
-                        , ( "month", Pluralized
-                          [ ( One, "kətha {n}" )
-                          , ( Other, "ɔtha {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "əsor {n}" )
-                          , ( Other, "ɔsor {n}" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "kətha {n}" )
+                                , ( Other, "ɔtha {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "əsor {n}" )
+                                , ( Other, "ɔsor {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

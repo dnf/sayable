@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Cs exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,44 +19,67 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "cs"
-    , plural = \n -> if n == 1 then One else if n >= 2 && n <= 4 then Few else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n >= 2 && n <= 4 then
+                Few
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekunda" )
-              , ( Few, "{n} sekundy" )
-              , ( Other, "{n} sekund" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minuta" )
-              , ( Few, "{n} minuty" )
-              , ( Other, "{n} minut" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} hodina" )
-              , ( Few, "{n} hodiny" )
-              , ( Other, "{n} hodin" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} den" )
-              , ( Few, "{n} dny" )
-              , ( Other, "{n} dní" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} týden" )
-              , ( Few, "{n} týdny" )
-              , ( Other, "{n} týdnů" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} měsíc" )
-              , ( Few, "{n} měsíce" )
-              , ( Other, "{n} měsíců" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} rok" )
-              , ( Few, "{n} roky" )
-              , ( Other, "{n} let" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekunda" )
+                    , ( Few, "{n} sekundy" )
+                    , ( Other, "{n} sekund" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minuta" )
+                    , ( Few, "{n} minuty" )
+                    , ( Other, "{n} minut" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} hodina" )
+                    , ( Few, "{n} hodiny" )
+                    , ( Other, "{n} hodin" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} den" )
+                    , ( Few, "{n} dny" )
+                    , ( Other, "{n} dní" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} týden" )
+                    , ( Few, "{n} týdny" )
+                    , ( Other, "{n} týdnů" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} měsíc" )
+                    , ( Few, "{n} měsíce" )
+                    , ( Other, "{n} měsíců" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} rok" )
+                    , ( Few, "{n} roky" )
+                    , ( Other, "{n} let" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -72,20 +94,24 @@ locale =
                         [ ( "second", Simple "{n} s" )
                         , ( "minute", Simple "{n} min" )
                         , ( "hour", Simple "{n} h" )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} den" )
-                          , ( Few, "{n} dny" )
-                          , ( Many, "{n} dne" )
-                          , ( Other, "{n} dnů" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} den" )
+                                , ( Few, "{n} dny" )
+                                , ( Many, "{n} dne" )
+                                , ( Other, "{n} dnů" )
+                                ]
+                          )
                         , ( "week", Simple "{n} týd." )
                         , ( "month", Simple "{n} měs." )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} rok" )
-                          , ( Few, "{n} roky" )
-                          , ( Many, "{n} roku" )
-                          , ( Other, "{n} let" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} rok" )
+                                , ( Few, "{n} roky" )
+                                , ( Many, "{n} roku" )
+                                , ( Other, "{n} let" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -104,12 +130,14 @@ locale =
                         , ( "day", Simple "{n} d." )
                         , ( "week", Simple "{n} t." )
                         , ( "month", Simple "{n} m." )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} r." )
-                          , ( Few, "{n} r." )
-                          , ( Many, "{n} r." )
-                          , ( Other, "{n} l." )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} r." )
+                                , ( Few, "{n} r." )
+                                , ( Many, "{n} r." )
+                                , ( Other, "{n} l." )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

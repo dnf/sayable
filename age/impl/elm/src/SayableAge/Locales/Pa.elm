@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Pa exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "pa"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ਦਿਨ" )
-      , ( Other, "{n} ਦਿਨ" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} ਹਫ਼ਤਾ" )
-      , ( Other, "{n} ਹਫ਼ਤੇ" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} ਮਹੀਨਾ" )
-      , ( Other, "{n} ਮਹੀਨੇ" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} ਸਾਲ" )
-      , ( Other, "{n} ਸਾਲ" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ਦਿਨ" )
+            , ( Other, "{n} ਦਿਨ" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} ਹਫ਼ਤਾ" )
+            , ( Other, "{n} ਹਫ਼ਤੇ" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} ਮਹੀਨਾ" )
+            , ( Other, "{n} ਮਹੀਨੇ" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} ਸਾਲ" )
+            , ( Other, "{n} ਸਾਲ" )
+            ]
     , half = "ਸਾਢੇ {n}"
     , delimiter = ", "
     , justBorn = "ਨਵਜੰਮਿਆ"
@@ -50,14 +59,20 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "{n} ਦਿਨ")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} ਹਫ਼ਤਾ" )
-                  , ( Other, "{n} ਹਫ਼ਤੇ" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} ਮਹੀਨਾ" )
-                  , ( Other, "{n} ਮਹੀਨੇ" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ਹਫ਼ਤਾ" )
+                        , ( Other, "{n} ਹਫ਼ਤੇ" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ਮਹੀਨਾ" )
+                        , ( Other, "{n} ਮਹੀਨੇ" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} ਸਾਲ")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
@@ -66,14 +81,20 @@ locale =
     , compact =
         Just
             { ovrDay = Just (Simple "{n} ਦਿਨ")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} ਹਫ਼ਤਾ" )
-                  , ( Other, "{n} ਹਫ਼ਤੇ" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} ਮਹੀਨਾ" )
-                  , ( Other, "{n} ਮਹੀਨੇ" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ਹਫ਼ਤਾ" )
+                        , ( Other, "{n} ਹਫ਼ਤੇ" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ਮਹੀਨਾ" )
+                        , ( Other, "{n} ਮਹੀਨੇ" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} ਸਾਲ")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""

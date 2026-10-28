@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Gu exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "gu"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} સેકન્ડ" )
             , ( "minute", Simple "{n} મિનિટ" )
             , ( "hour", Simple "{n} કલાક" )
-            , ( "day", Pluralized
-              [ ( One, "{n} દિવસ" )
-              , ( Other, "{n} દિવસ" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} અઠવાડિયું" )
-              , ( Other, "{n} અઠવાડિયા" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} મહિનો" )
-              , ( Other, "{n} મહિના" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} વર્ષ" )
-              , ( Other, "{n} વર્ષ" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} દિવસ" )
+                    , ( Other, "{n} દિવસ" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} અઠવાડિયું" )
+                    , ( Other, "{n} અઠવાડિયા" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} મહિનો" )
+                    , ( Other, "{n} મહિના" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} વર્ષ" )
+                    , ( Other, "{n} વર્ષ" )
+                    ]
+              )
             ]
     , half = "સાડા {n}"
     , delimiter = ", "
@@ -58,10 +71,12 @@ locale =
                         , ( "hour", Simple "{n} કલાક" )
                         , ( "day", Simple "{n} દિવસ" )
                         , ( "week", Simple "{n} અઠ." )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} મહિનો" )
-                          , ( Other, "{n} મહિના" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} મહિનો" )
+                                , ( Other, "{n} મહિના" )
+                                ]
+                          )
                         , ( "year", Simple "{n} વર્ષ" )
                         ]
                     )

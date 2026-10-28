@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Gd exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,51 +19,77 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "gd"
-    , plural = \n -> if n == 1 || n == 11 then One else if n == 2 || n == 12 then Two else if (n >= 3 && n <= 10) || (n >= 13 && n <= 19) then Few else Other
+    , plural =
+        \n ->
+            if n == 1 || n == 11 then
+                One
+
+            else if n == 2 || n == 12 then
+                Two
+
+            else if (n >= 3 && n <= 10) || (n >= 13 && n <= 19) then
+                Few
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} diog" )
-              , ( Two, "{n} dhiog" )
-              , ( Few, "{n} diogan" )
-              , ( Other, "{n} diog" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} mhionaid" )
-              , ( Two, "{n} mhionaid" )
-              , ( Few, "{n} mionaidean" )
-              , ( Other, "{n} mionaid" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} uair a thìde" )
-              , ( Two, "{n} uair a thìde" )
-              , ( Few, "{n} uairean a thìde" )
-              , ( Other, "{n} uair a thìde" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} latha" )
-              , ( Two, "{n} latha" )
-              , ( Few, "{n} làithean" )
-              , ( Other, "{n} latha" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} sheachdain" )
-              , ( Two, "{n} sheachdain" )
-              , ( Few, "{n} seachdainean" )
-              , ( Other, "{n} seachdain" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} mhìos" )
-              , ( Two, "{n} mhìos" )
-              , ( Few, "{n} mìosan" )
-              , ( Other, "{n} mìos" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} bhliadhna" )
-              , ( Two, "{n} bhliadhna" )
-              , ( Few, "{n} bliadhna" )
-              , ( Other, "{n} bliadhna" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} diog" )
+                    , ( Two, "{n} dhiog" )
+                    , ( Few, "{n} diogan" )
+                    , ( Other, "{n} diog" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} mhionaid" )
+                    , ( Two, "{n} mhionaid" )
+                    , ( Few, "{n} mionaidean" )
+                    , ( Other, "{n} mionaid" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} uair a thìde" )
+                    , ( Two, "{n} uair a thìde" )
+                    , ( Few, "{n} uairean a thìde" )
+                    , ( Other, "{n} uair a thìde" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} latha" )
+                    , ( Two, "{n} latha" )
+                    , ( Few, "{n} làithean" )
+                    , ( Other, "{n} latha" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} sheachdain" )
+                    , ( Two, "{n} sheachdain" )
+                    , ( Few, "{n} seachdainean" )
+                    , ( Other, "{n} seachdain" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} mhìos" )
+                    , ( Two, "{n} mhìos" )
+                    , ( Few, "{n} mìosan" )
+                    , ( Other, "{n} mìos" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} bhliadhna" )
+                    , ( Two, "{n} bhliadhna" )
+                    , ( Few, "{n} bliadhna" )
+                    , ( Other, "{n} bliadhna" )
+                    ]
+              )
             ]
     , half = "{0} gu leth"
     , delimiter = ", "
@@ -76,38 +101,48 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "{n} diog" )
-                          , ( Two, "{n} dhiog" )
-                          , ( Few, "{n} diog" )
-                          , ( Other, "{n} diog" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "{n} mhion" )
-                          , ( Two, "{n} mhion" )
-                          , ( Few, "{n} mion" )
-                          , ( Other, "{n} mion" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "{n} diog" )
+                                , ( Two, "{n} dhiog" )
+                                , ( Few, "{n} diog" )
+                                , ( Other, "{n} diog" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "{n} mhion" )
+                                , ( Two, "{n} mhion" )
+                                , ( Few, "{n} mion" )
+                                , ( Other, "{n} mion" )
+                                ]
+                          )
                         , ( "hour", Simple "{n} uair" )
                         , ( "day", Simple "{n} là" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} shn" )
-                          , ( Two, "{n} shn" )
-                          , ( Few, "{n} sn" )
-                          , ( Other, "{n} sn" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} mhìos" )
-                          , ( Two, "{n} mhìos" )
-                          , ( Few, "{n} mìos" )
-                          , ( Other, "{n} mìos" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} bhlia" )
-                          , ( Two, "{n} bhlia" )
-                          , ( Few, "{n} blia" )
-                          , ( Other, "{n} blia" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} shn" )
+                                , ( Two, "{n} shn" )
+                                , ( Few, "{n} sn" )
+                                , ( Other, "{n} sn" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} mhìos" )
+                                , ( Two, "{n} mhìos" )
+                                , ( Few, "{n} mìos" )
+                                , ( Other, "{n} mìos" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} bhlia" )
+                                , ( Two, "{n} bhlia" )
+                                , ( Few, "{n} blia" )
+                                , ( Other, "{n} blia" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Vmw exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "vmw"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekuundu {n}" )
-              , ( Other, "sekuundu {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minuto {n}" )
-              , ( Other, "minuto {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "hora {n}" )
-              , ( Other, "hora {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "eshuku {n}" )
-              , ( Other, "mshuku {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "esumana {n}" )
-              , ( Other, "msumana {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "mweri {n}" )
-              , ( Other, "miyeri {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "mwaka {n}" )
-              , ( Other, "miyaka {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekuundu {n}" )
+                    , ( Other, "sekuundu {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minuto {n}" )
+                    , ( Other, "minuto {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "hora {n}" )
+                    , ( Other, "hora {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "eshuku {n}" )
+                    , ( Other, "mshuku {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "esumana {n}" )
+                    , ( Other, "msumana {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "mweri {n}" )
+                    , ( Other, "miyeri {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "mwaka {n}" )
+                    , ( Other, "miyaka {n}" )
+                    ]
+              )
             ]
     , half = "{0} na mettenhe"
     , delimiter = ", "
@@ -65,22 +84,30 @@ locale =
                         [ ( "second", Simple "sek. {n}" )
                         , ( "minute", Simple "min. {n}" )
                         , ( "hour", Simple "hora {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "eshuku {n}" )
-                          , ( Other, "mshuku {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "esumana {n}" )
-                          , ( Other, "msumana {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "mweri {n}" )
-                          , ( Other, "miyeri {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mwaka {n}" )
-                          , ( Other, "miyaka {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "eshuku {n}" )
+                                , ( Other, "mshuku {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "esumana {n}" )
+                                , ( Other, "msumana {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "mweri {n}" )
+                                , ( Other, "miyeri {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mwaka {n}" )
+                                , ( Other, "miyaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

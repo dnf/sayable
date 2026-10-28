@@ -8,9 +8,12 @@ parseDate s =
             String.all Char.isDigit (String.slice from to s)
 
         isDateShape =
-            String.length s == 10
-                && String.slice 4 5 s == "-"
-                && String.slice 7 8 s == "-"
+            String.length s
+                == 10
+                && String.slice 4 5 s
+                == "-"
+                && String.slice 7 8 s
+                == "-"
                 && digitsAt 0 4
                 && digitsAt 5 7
                 && digitsAt 8 10

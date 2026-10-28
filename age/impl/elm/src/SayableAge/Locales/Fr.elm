@@ -12,27 +12,35 @@
 
 module SayableAge.Locales.Fr exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "fr"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} jour" )
-      , ( Other, "{n} jours" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} semaine" )
-      , ( Other, "{n} semaines" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} jour" )
+            , ( Other, "{n} jours" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} semaine" )
+            , ( Other, "{n} semaines" )
+            ]
     , month = Simple "{n} mois"
-    , year = Pluralized
-      [ ( One, "{n} an" )
-      , ( Other, "{n} ans" )
-      ]
+    , year =
+        Pluralized
+            [ ( One, "{n} an" )
+            , ( Other, "{n} ans" )
+            ]
     , half = "{0} et demi"
     , delimiter = ", "
     , justBorn = "Nouveau-né"
@@ -46,13 +54,16 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Simple "{n} j")
-            , ovrWeek = Just (Simple "{n} sem.")
-            , ovrMonth = Just (Simple "{n} m.")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} an" )
-                  , ( Other, "{n} ans" )
-                  ])
+            { ovrDay = Just (Simple "{n}\u{202F}j")
+            , ovrWeek = Just (Simple "{n}\u{202F}sem.")
+            , ovrMonth = Just (Simple "{n}\u{202F}m.")
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n}\u{00A0}an" )
+                        , ( Other, "{n}\u{00A0}ans" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

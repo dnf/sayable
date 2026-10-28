@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ff exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ff"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "ñalawma {n}" )
-      , ( Other, "ñalɗe {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "yontere {n}" )
-      , ( Other, "yontereeji {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "lewru {n}" )
-      , ( Other, "lebbi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "hitaande {n}" )
-      , ( Other, "duuɓi {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "ñalawma {n}" )
+            , ( Other, "ñalɗe {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "yontere {n}" )
+            , ( Other, "yontereeji {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "lewru {n}" )
+            , ( Other, "lebbi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "hitaande {n}" )
+            , ( Other, "duuɓi {n}" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Ɓinngel kesol"
@@ -49,44 +58,68 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "ñalawma {n}" )
-                  , ( Other, "ñalɗe {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "yontere {n}" )
-                  , ( Other, "yontereeji {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "lewru {n}" )
-                  , ( Other, "lebbi {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "hitaande {n}" )
-                  , ( Other, "duuɓi {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "ñalawma {n}" )
+                        , ( Other, "ñalɗe {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "yontere {n}" )
+                        , ( Other, "yontereeji {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "lewru {n}" )
+                        , ( Other, "lebbi {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "hitaande {n}" )
+                        , ( Other, "duuɓi {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , compact =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "ñalawma {n}" )
-                  , ( Other, "ñalɗe {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "yont {n}" )
-                  , ( Other, "yontji {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "lew {n}" )
-                  , ( Other, "leb {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "hit {n}" )
-                  , ( Other, "duuɓi {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "ñalawma {n}" )
+                        , ( Other, "ñalɗe {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "yont {n}" )
+                        , ( Other, "yontji {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "lew {n}" )
+                        , ( Other, "leb {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "hit {n}" )
+                        , ( Other, "duuɓi {n}" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

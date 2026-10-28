@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Ar exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -25,39 +24,59 @@ locale =
                 mod100 =
                     modBy 100 n
             in
-            if n == 0 then Zero else if n == 1 then One else if n == 2 then Two else if mod100 >= 3 && mod100 <= 10 then Few else if mod100 >= 11 && mod100 <= 99 then Many else Other
-    , day = Pluralized
-      [ ( Zero, "{n} يوم" )
-      , ( One, "يوم" )
-      , ( Two, "يومان" )
-      , ( Few, "{n} أيام" )
-      , ( Many, "{n} يومًا" )
-      , ( Other, "{n} يوم" )
-      ]
-    , week = Pluralized
-      [ ( Zero, "{n} أسبوع" )
-      , ( One, "أسبوع" )
-      , ( Two, "أسبوعان" )
-      , ( Few, "{n} أسابيع" )
-      , ( Many, "{n} أسبوعًا" )
-      , ( Other, "{n} أسبوع" )
-      ]
-    , month = Pluralized
-      [ ( Zero, "{n} شهر" )
-      , ( One, "شهر" )
-      , ( Two, "شهران" )
-      , ( Few, "{n} أشهر" )
-      , ( Many, "{n} شهرًا" )
-      , ( Other, "{n} شهر" )
-      ]
-    , year = Pluralized
-      [ ( Zero, "{n} سنة" )
-      , ( One, "سنة" )
-      , ( Two, "سنتان" )
-      , ( Few, "{n} سنوات" )
-      , ( Many, "{n} سنة" )
-      , ( Other, "{n} سنة" )
-      ]
+            if n == 0 then
+                Zero
+
+            else if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else if mod100 >= 3 && mod100 <= 10 then
+                Few
+
+            else if mod100 >= 11 && mod100 <= 99 then
+                Many
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( Zero, "{n} يوم" )
+            , ( One, "يوم" )
+            , ( Two, "يومان" )
+            , ( Few, "{n} أيام" )
+            , ( Many, "{n} يومًا" )
+            , ( Other, "{n} يوم" )
+            ]
+    , week =
+        Pluralized
+            [ ( Zero, "{n} أسبوع" )
+            , ( One, "أسبوع" )
+            , ( Two, "أسبوعان" )
+            , ( Few, "{n} أسابيع" )
+            , ( Many, "{n} أسبوعًا" )
+            , ( Other, "{n} أسبوع" )
+            ]
+    , month =
+        Pluralized
+            [ ( Zero, "{n} شهر" )
+            , ( One, "شهر" )
+            , ( Two, "شهران" )
+            , ( Few, "{n} أشهر" )
+            , ( Many, "{n} شهرًا" )
+            , ( Other, "{n} شهر" )
+            ]
+    , year =
+        Pluralized
+            [ ( Zero, "{n} سنة" )
+            , ( One, "سنة" )
+            , ( Two, "سنتان" )
+            , ( Few, "{n} سنوات" )
+            , ( Many, "{n} سنة" )
+            , ( Other, "{n} سنة" )
+            ]
     , half = "{0} ونصف"
     , delimiter = " و"
     , justBorn = "حديث الولادة"
@@ -71,38 +90,50 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( Zero, "{n} يوم" )
-                  , ( One, "يوم" )
-                  , ( Two, "يومان" )
-                  , ( Few, "{n} أيام" )
-                  , ( Many, "{n} يومًا" )
-                  , ( Other, "{n} يوم" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( Zero, "{n} أسبوع" )
-                  , ( One, "أسبوع" )
-                  , ( Two, "أسبوعان" )
-                  , ( Few, "{n} أسابيع" )
-                  , ( Many, "{n} أسبوعًا" )
-                  , ( Other, "{n} أسبوع" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( Zero, "{n} شهر" )
-                  , ( One, "شهر" )
-                  , ( Two, "شهران" )
-                  , ( Few, "{n} أشهر" )
-                  , ( Many, "{n} شهرًا" )
-                  , ( Other, "{n} شهر" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( Zero, "{n} سنة" )
-                  , ( One, "سنة واحدة" )
-                  , ( Two, "سنتان" )
-                  , ( Few, "{n} سنوات" )
-                  , ( Many, "{n} سنة" )
-                  , ( Other, "{n} سنة" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( Zero, "{n} يوم" )
+                        , ( One, "يوم" )
+                        , ( Two, "يومان" )
+                        , ( Few, "{n} أيام" )
+                        , ( Many, "{n} يومًا" )
+                        , ( Other, "{n} يوم" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( Zero, "{n} أسبوع" )
+                        , ( One, "أسبوع" )
+                        , ( Two, "أسبوعان" )
+                        , ( Few, "{n} أسابيع" )
+                        , ( Many, "{n} أسبوعًا" )
+                        , ( Other, "{n} أسبوع" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( Zero, "{n} شهر" )
+                        , ( One, "شهر" )
+                        , ( Two, "شهران" )
+                        , ( Few, "{n} أشهر" )
+                        , ( Many, "{n} شهرًا" )
+                        , ( Other, "{n} شهر" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( Zero, "{n} سنة" )
+                        , ( One, "سنة واحدة" )
+                        , ( Two, "سنتان" )
+                        , ( Few, "{n} سنوات" )
+                        , ( Many, "{n} سنة" )
+                        , ( Other, "{n} سنة" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Men exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "men"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "lɔhɔ {n}" )
-      , ( Other, "lɔhɔnga {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "wikii {n}" )
-      , ( Other, "wikii {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ndɔlɔ {n}" )
-      , ( Other, "ndɔlɔnga {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "saŋ {n}" )
-      , ( Other, "saŋga {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "lɔhɔ {n}" )
+            , ( Other, "lɔhɔnga {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "wikii {n}" )
+            , ( Other, "wikii {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ndɔlɔ {n}" )
+            , ( Other, "ndɔlɔnga {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "saŋ {n}" )
+            , ( Other, "saŋga {n}" )
+            ]
     , half = "{0} ta fele"
     , delimiter = ", "
     , justBorn = "Ndɔpɔi fele"
@@ -49,19 +58,28 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "lɔhɔ {n}" )
-                  , ( Other, "lɔhɔnga {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "lɔhɔ {n}" )
+                        , ( Other, "lɔhɔnga {n}" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "wikii {n}")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ndɔlɔ {n}" )
-                  , ( Other, "ndɔlɔnga {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "saŋ {n}" )
-                  , ( Other, "saŋga {n}" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "ndɔlɔ {n}" )
+                        , ( Other, "ndɔlɔnga {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "saŋ {n}" )
+                        , ( Other, "saŋga {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

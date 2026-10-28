@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Nr exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "nr"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "ilanga {n}" )
-      , ( Other, "amalanga {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "iveke {n}" )
-      , ( Other, "amaveke {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "inyanga {n}" )
-      , ( Other, "iinyanga {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "unyaka {n}" )
-      , ( Other, "iminyaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "ilanga {n}" )
+            , ( Other, "amalanga {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "iveke {n}" )
+            , ( Other, "amaveke {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "inyanga {n}" )
+            , ( Other, "iinyanga {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "unyaka {n}" )
+            , ( Other, "iminyaka {n}" )
+            ]
     , half = "{0} nesiquntu"
     , delimiter = ", "
     , justBorn = "Usana olusanda kubeletwa"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "ilanga {n}" )
-                  , ( Other, "amal. {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "iveke {n}" )
-                  , ( Other, "amav. {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "iny. {n}" )
-                  , ( Other, "iiny. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "uny. {n}" )
-                  , ( Other, "imin. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "ilanga {n}" )
+                        , ( Other, "amal. {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "iveke {n}" )
+                        , ( Other, "amav. {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "iny. {n}" )
+                        , ( Other, "iiny. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "uny. {n}" )
+                        , ( Other, "imin. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

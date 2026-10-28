@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Lg exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "lg"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "sikonda {n}" )
             , ( "minute", Simple "dakiika {n}" )
             , ( "hour", Simple "essaawa {n}" )
-            , ( "day", Pluralized
-              [ ( One, "olunaku {n}" )
-              , ( Other, "ennaku {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "sabbiiti {n}" )
-              , ( Other, "sabiiti {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "omwezi {n}" )
-              , ( Other, "emyezi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "omwaka {n}" )
-              , ( Other, "emyaka {n}" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "olunaku {n}" )
+                    , ( Other, "ennaku {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "sabbiiti {n}" )
+                    , ( Other, "sabiiti {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "omwezi {n}" )
+                    , ( Other, "emyezi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "omwaka {n}" )
+                    , ( Other, "emyaka {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -57,18 +70,24 @@ locale =
                         , ( "minute", Simple "dakiika {n}" )
                         , ( "hour", Simple "essaawa {n}" )
                         , ( "day", Simple "ennaku {n}" )
-                        , ( "week", Pluralized
-                          [ ( One, "sabbiiti {n}" )
-                          , ( Other, "sabiiti {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "omwezi {n}" )
-                          , ( Other, "emyezi {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "omwaka {n}" )
-                          , ( Other, "emyaka {n}" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "sabbiiti {n}" )
+                                , ( Other, "sabiiti {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "omwezi {n}" )
+                                , ( Other, "emyezi {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "omwaka {n}" )
+                                , ( Other, "emyaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -85,18 +104,24 @@ locale =
                         , ( "minute", Simple "dak {n}" )
                         , ( "hour", Simple "ssa {n}" )
                         , ( "day", Simple "ennaku {n}" )
-                        , ( "week", Pluralized
-                          [ ( One, "sab {n}" )
-                          , ( Other, "sab {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "mwezi {n}" )
-                          , ( Other, "myezi {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mwaka {n}" )
-                          , ( Other, "myaka {n}" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "sab {n}" )
+                                , ( Other, "sab {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "mwezi {n}" )
+                                , ( Other, "myezi {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mwaka {n}" )
+                                , ( Other, "myaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

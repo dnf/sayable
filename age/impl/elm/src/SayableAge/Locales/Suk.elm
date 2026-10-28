@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Suk exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "suk"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "isiku {n}" )
-      , ( Other, "amasiku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "ishuma {n}" )
-      , ( Other, "amashuma {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ngweli {n}" )
-      , ( Other, "ngweli {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "mwaka {n}" )
-      , ( Other, "myaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "isiku {n}" )
+            , ( Other, "amasiku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "ishuma {n}" )
+            , ( Other, "amashuma {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ngweli {n}" )
+            , ( Other, "ngweli {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "mwaka {n}" )
+            , ( Other, "myaka {n}" )
+            ]
     , half = "{0} na nusu"
     , delimiter = ", "
     , justBorn = "Mwana wa kubelekwa"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "isiku {n}" )
-                  , ( Other, "amasiku {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "ish. {n}" )
-                  , ( Other, "amash. {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ngw. {n}" )
-                  , ( Other, "ngw. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "mw. {n}" )
-                  , ( Other, "my. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "isiku {n}" )
+                        , ( Other, "amasiku {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "ish. {n}" )
+                        , ( Other, "amash. {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "ngw. {n}" )
+                        , ( Other, "ngw. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "mw. {n}" )
+                        , ( Other, "my. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

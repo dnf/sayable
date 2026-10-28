@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Suk exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "suk"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekunde {n}" )
-              , ( Other, "sekunde {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "dakika {n}" )
-              , ( Other, "dakika {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "isaa {n}" )
-              , ( Other, "amasaa {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "isiku {n}" )
-              , ( Other, "amasiku {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "ishuma {n}" )
-              , ( Other, "amashuma {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ngweli {n}" )
-              , ( Other, "ngweli {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "mwaka {n}" )
-              , ( Other, "myaka {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekunde {n}" )
+                    , ( Other, "sekunde {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "dakika {n}" )
+                    , ( Other, "dakika {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "isaa {n}" )
+                    , ( Other, "amasaa {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "isiku {n}" )
+                    , ( Other, "amasiku {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "ishuma {n}" )
+                    , ( Other, "amashuma {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ngweli {n}" )
+                    , ( Other, "ngweli {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "mwaka {n}" )
+                    , ( Other, "myaka {n}" )
+                    ]
+              )
             ]
     , half = "{0} na nusu"
     , delimiter = ", "
@@ -62,34 +81,48 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "sek. {n}" )
-                          , ( Other, "sek. {n}" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "dak. {n}" )
-                          , ( Other, "dak. {n}" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "isaa {n}" )
-                          , ( Other, "amasaa {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "isiku {n}" )
-                          , ( Other, "amasiku {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "ish. {n}" )
-                          , ( Other, "amash. {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "ngw. {n}" )
-                          , ( Other, "ngw. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mw. {n}" )
-                          , ( Other, "my. {n}" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "sek. {n}" )
+                                , ( Other, "sek. {n}" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "dak. {n}" )
+                                , ( Other, "dak. {n}" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "isaa {n}" )
+                                , ( Other, "amasaa {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "isiku {n}" )
+                                , ( Other, "amasiku {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "ish. {n}" )
+                                , ( Other, "amash. {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "ngw. {n}" )
+                                , ( Other, "ngw. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mw. {n}" )
+                                , ( Other, "my. {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

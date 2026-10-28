@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.St exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "st"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "letsatsi {n}" )
-      , ( Other, "matsatsi {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "beke {n}" )
-      , ( Other, "dibeke {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "kgwedi {n}" )
-      , ( Other, "dikgwedi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "selemo {n}" )
-      , ( Other, "dilemo {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "letsatsi {n}" )
+            , ( Other, "matsatsi {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "beke {n}" )
+            , ( Other, "dibeke {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "kgwedi {n}" )
+            , ( Other, "dikgwedi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "selemo {n}" )
+            , ( Other, "dilemo {n}" )
+            ]
     , half = "{0} le halofo"
     , delimiter = ", "
     , justBorn = "O sa tswa hlaha"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "letsatsi {n}" )
-                  , ( Other, "matsatsi {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "beke {n}" )
-                  , ( Other, "dibeke {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "kgw. {n}" )
-                  , ( Other, "dikgw. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "sel. {n}" )
-                  , ( Other, "dil. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "letsatsi {n}" )
+                        , ( Other, "matsatsi {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "beke {n}" )
+                        , ( Other, "dibeke {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "kgw. {n}" )
+                        , ( Other, "dikgw. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "sel. {n}" )
+                        , ( Other, "dil. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Sn exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "sn"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "zuva {n}" )
-      , ( Other, "mazuva {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "vhiki {n}" )
-      , ( Other, "mavhiki {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "mwedzi {n}" )
-      , ( Other, "mwedzi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "gore {n}" )
-      , ( Other, "makore {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "zuva {n}" )
+            , ( Other, "mazuva {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "vhiki {n}" )
+            , ( Other, "mavhiki {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "mwedzi {n}" )
+            , ( Other, "mwedzi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "gore {n}" )
+            , ( Other, "makore {n}" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Mwana mutsva"
@@ -49,38 +58,56 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "zuva {n}" )
-                  , ( Other, "maz {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "vhiki {n}" )
-                  , ( Other, "mavh {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "zuva {n}" )
+                        , ( Other, "maz {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "vhiki {n}" )
+                        , ( Other, "mavh {n}" )
+                        ]
+                    )
             , ovrMonth = Just (Simple "mwedzi {n}")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "gore {n}" )
-                  , ( Other, "mak {n}" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "gore {n}" )
+                        , ( Other, "mak {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , compact =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "z {n}" )
-                  , ( Other, "maz {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "vh {n}" )
-                  , ( Other, "mvh {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "z {n}" )
+                        , ( Other, "maz {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "vh {n}" )
+                        , ( Other, "mvh {n}" )
+                        ]
+                    )
             , ovrMonth = Just (Simple "mw {n}")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "g {n}" )
-                  , ( Other, "mak {n}" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "g {n}" )
+                        , ( Other, "mak {n}" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

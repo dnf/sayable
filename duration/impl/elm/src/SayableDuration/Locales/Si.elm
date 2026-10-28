@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Si exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "si"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "තත්පර {n}" )
             , ( "minute", Simple "මිනිත්තු {n}" )
             , ( "hour", Simple "පැය {n}" )
-            , ( "day", Pluralized
-              [ ( One, "දින {n}" )
-              , ( Other, "දින {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "සති {n}" )
-              , ( Other, "සති {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "මාස {n}" )
-              , ( Other, "මාස {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "වසර {n}" )
-              , ( Other, "වසර {n}" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "දින {n}" )
+                    , ( Other, "දින {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "සති {n}" )
+                    , ( Other, "සති {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "මාස {n}" )
+                    , ( Other, "මාස {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "වසර {n}" )
+                    , ( Other, "වසර {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

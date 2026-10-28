@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Kk exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "kk"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} секунд" )
             , ( "minute", Simple "{n} минут" )
             , ( "hour", Simple "{n} сағат" )
-            , ( "day", Pluralized
-              [ ( One, "{n} күн" )
-              , ( Other, "{n} күн" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} апта" )
-              , ( Other, "{n} апта" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ай" )
-              , ( Other, "{n} ай" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} жас" )
-              , ( Other, "{n} жас" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} күн" )
+                    , ( Other, "{n} күн" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} апта" )
+                    , ( Other, "{n} апта" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ай" )
+                    , ( Other, "{n} ай" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} жас" )
+                    , ( Other, "{n} жас" )
+                    ]
+              )
             ]
     , half = "{n} жарым"
     , delimiter = ", "

@@ -12,14 +12,19 @@
 
 module SayableAge.Locales.Tk exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "tk"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "{n} gün"
     , week = Simple "{n} hepde"
     , month = Simple "{n} aý"

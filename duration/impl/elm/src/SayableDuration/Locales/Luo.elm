@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Luo exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "luo"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "sekunde {n}" )
             , ( "minute", Simple "dakika {n}" )
             , ( "hour", Simple "saa {n}" )
-            , ( "day", Pluralized
-              [ ( One, "odiechieng' {n}" )
-              , ( Other, "ndalo {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "juma {n}" )
-              , ( Other, "jumbe {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "dwe {n}" )
-              , ( Other, "dweche {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "higa {n}" )
-              , ( Other, "higni {n}" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "odiechieng' {n}" )
+                    , ( Other, "ndalo {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "juma {n}" )
+                    , ( Other, "jumbe {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "dwe {n}" )
+                    , ( Other, "dweche {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "higa {n}" )
+                    , ( Other, "higni {n}" )
+                    ]
+              )
             ]
     , half = "{0} gi nus"
     , delimiter = ", "
@@ -56,22 +69,30 @@ locale =
                         [ ( "second", Simple "sek. {n}" )
                         , ( "minute", Simple "dak. {n}" )
                         , ( "hour", Simple "saa {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "odie. {n}" )
-                          , ( Other, "ndalo {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "juma {n}" )
-                          , ( Other, "jumbe {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "dwe {n}" )
-                          , ( Other, "dwe. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "higa {n}" )
-                          , ( Other, "higni {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "odie. {n}" )
+                                , ( Other, "ndalo {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "juma {n}" )
+                                , ( Other, "jumbe {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "dwe {n}" )
+                                , ( Other, "dwe. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "higa {n}" )
+                                , ( Other, "higni {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

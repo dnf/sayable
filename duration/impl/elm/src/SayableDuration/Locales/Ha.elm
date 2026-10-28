@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ha exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ha"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "daƙiƙa {n}" )
-              , ( Other, "daƙiƙoƙi {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minti {n}" )
-              , ( Other, "mintoci {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "awa {n}" )
-              , ( Other, "awanni {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "kwana {n}" )
-              , ( Other, "kwanaki {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "mako {n}" )
-              , ( Other, "makonni {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "wata {n}" )
-              , ( Other, "watanni {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "shekara {n}" )
-              , ( Other, "shekaru {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "daƙiƙa {n}" )
+                    , ( Other, "daƙiƙoƙi {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minti {n}" )
+                    , ( Other, "mintoci {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "awa {n}" )
+                    , ( Other, "awanni {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "kwana {n}" )
+                    , ( Other, "kwanaki {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "mako {n}" )
+                    , ( Other, "makonni {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "wata {n}" )
+                    , ( Other, "watanni {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "shekara {n}" )
+                    , ( Other, "shekaru {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

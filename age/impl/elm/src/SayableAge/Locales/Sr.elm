@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Sr exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,34 +23,46 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} дан" )
-      , ( Few, "{n} дана" )
-      , ( Many, "{n} дана" )
-      , ( Other, "{n} дана" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} недеља" )
-      , ( Few, "{n} недеље" )
-      , ( Many, "{n} недеља" )
-      , ( Other, "{n} недеља" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} месец" )
-      , ( Few, "{n} месеца" )
-      , ( Many, "{n} месеци" )
-      , ( Other, "{n} месеци" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} година" )
-      , ( Few, "{n} године" )
-      , ( Many, "{n} година" )
-      , ( Other, "{n} година" )
-      ]
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} дан" )
+            , ( Few, "{n} дана" )
+            , ( Many, "{n} дана" )
+            , ( Other, "{n} дана" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} недеља" )
+            , ( Few, "{n} недеље" )
+            , ( Many, "{n} недеља" )
+            , ( Other, "{n} недеља" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} месец" )
+            , ( Few, "{n} месеца" )
+            , ( Many, "{n} месеци" )
+            , ( Other, "{n} месеци" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} година" )
+            , ( Few, "{n} године" )
+            , ( Many, "{n} година" )
+            , ( Other, "{n} година" )
+            ]
     , half = "{0} и по"
     , delimiter = ", "
     , justBorn = "Новорођенче"
@@ -65,18 +76,24 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} дан" )
-                  , ( Few, "{n} дана" )
-                  , ( Other, "{n} дана" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} дан" )
+                        , ( Few, "{n} дана" )
+                        , ( Other, "{n} дана" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} нед.")
             , ovrMonth = Just (Simple "{n} мес.")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} год" )
-                  , ( Few, "{n} год." )
-                  , ( Other, "{n} год." )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} год" )
+                        , ( Few, "{n} год." )
+                        , ( Other, "{n} год." )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

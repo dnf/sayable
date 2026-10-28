@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import unicodedata
+
 from codegen.banner import locale_source_comment, make_header
 
 HEADER = make_header("codegen/targets/elm/emitter.py", line_prefix="-- ")
@@ -12,9 +14,27 @@ def _module_name(code: str) -> str:
     return code[0].upper() + code[1:]
 
 
+# elm-format writes control, format and unassigned characters and every space
+# but U+0020 (U+00A0, U+202F, ...) as \u{XXXX} escapes.
+_ESCAPED_CATEGORIES = {"Cc", "Cf", "Cs", "Co", "Cn", "Zl", "Zp", "Zs"}
+
+
+def _escape_char(c: str) -> str:
+    if c == "\\":
+        return "\\\\"
+    if c == '"':
+        return '\\"'
+    if c == "\n":
+        return "\\n"
+    if c == "\t":
+        return "\\t"
+    if c != " " and unicodedata.category(c) in _ESCAPED_CATEGORIES:
+        return f"\\u{{{ord(c):04X}}}"
+    return c
+
+
 def _quote(s: str) -> str:
-    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+    return '"' + "".join(_escape_char(c) for c in s) + '"'
 
 
 def _str_list(items: list[str], indent: int = 4) -> str:
@@ -53,7 +73,6 @@ def emit_locale(data: dict) -> str:
     lines = [HEADER + locale_source_comment(code, line_prefix="-- ")]
     lines.append("")
     lines.append(f"module SayableTime.Locales.{mod} exposing (locale)")
-    lines.append("")
     lines.append("")
     lines.append("import Dict")
     lines.append("import SayableTime.Types exposing (..)")
@@ -116,13 +135,13 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append("")
     lines.append("module SayableTime.Locales exposing (getLocale)")
     lines.append("")
-    lines.append("")
-    lines.append("import Dict exposing (Dict)")
-    lines.append("import SayableTime.Types exposing (Locale)")
 
+    # elm-format sorts imports by module name
+    imports = ["Dict exposing (Dict)", "SayableTime.Types exposing (Locale)"]
     for loc in sorted_locs:
         mod = _module_name(loc["code"])
-        lines.append(f"import SayableTime.Locales.{mod} as {mod}")
+        imports.append(f"SayableTime.Locales.{mod} as {mod}")
+    lines.extend(f"import {imp}" for imp in sorted(imports, key=lambda imp: imp.split()[0]))
 
     lines.append("")
     lines.append("")

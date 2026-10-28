@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ng exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ng"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "esiku {n}" )
-      , ( Other, "omasiku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "oshiwike {n}" )
-      , ( Other, "iiwike {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "omuedhi {n}" )
-      , ( Other, "omiedhi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "omvula {n}" )
-      , ( Other, "omivula {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "esiku {n}" )
+            , ( Other, "omasiku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "oshiwike {n}" )
+            , ( Other, "iiwike {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "omuedhi {n}" )
+            , ( Other, "omiedhi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "omvula {n}" )
+            , ( Other, "omivula {n}" )
+            ]
     , half = "{0} netata"
     , delimiter = ", "
     , justBorn = "Okwa dalwa po"
@@ -50,18 +59,27 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "omasiku {n}")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "oshiwike {n}" )
-                  , ( Other, "iiwike {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "omuedhi {n}" )
-                  , ( Other, "omiedhi {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "omvula {n}" )
-                  , ( Other, "omivula {n}" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "oshiwike {n}" )
+                        , ( Other, "iiwike {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "omuedhi {n}" )
+                        , ( Other, "omiedhi {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "omvula {n}" )
+                        , ( Other, "omivula {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
@@ -69,18 +87,27 @@ locale =
     , compact =
         Just
             { ovrDay = Just (Simple "omasiku {n}")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "oshiw {n}" )
-                  , ( Other, "iiw {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "omued {n}" )
-                  , ( Other, "omied {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "omv {n}" )
-                  , ( Other, "omiv {n}" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "oshiw {n}" )
+                        , ( Other, "iiw {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "omued {n}" )
+                        , ( Other, "omied {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "omv {n}" )
+                        , ( Other, "omiv {n}" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

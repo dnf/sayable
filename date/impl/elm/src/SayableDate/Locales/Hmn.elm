@@ -12,7 +12,6 @@
 
 module SayableDate.Locales.Hmn exposing (locale)
 
-
 import Dict
 import SayableDate.Types exposing (..)
 
@@ -58,30 +57,32 @@ locale =
     , monthsInDate = Nothing
     , short =
         Just
-            { ovrMonths = Just
-                [ "1 Hli"
-                , "2 Hli"
-                , "3 Hli"
-                , "4 Hli"
-                , "5 Hli"
-                , "6 Hli"
-                , "7 Hli"
-                , "8 Hli"
-                , "9 Hli"
-                , "10 Hli"
-                , "11 Hli"
-                , "12 Hli"
-                ]
+            { ovrMonths =
+                Just
+                    [ "1 Hli"
+                    , "2 Hli"
+                    , "3 Hli"
+                    , "4 Hli"
+                    , "5 Hli"
+                    , "6 Hli"
+                    , "7 Hli"
+                    , "8 Hli"
+                    , "9 Hli"
+                    , "10 Hli"
+                    , "11 Hli"
+                    , "12 Hli"
+                    ]
             , ovrMonthsInDate = Nothing
-            , ovrWeekdays = Just
-                [ "T1"
-                , "T2"
-                , "T3"
-                , "T4"
-                , "T5"
-                , "T6"
-                , "T7"
-                ]
+            , ovrWeekdays =
+                Just
+                    [ "T1"
+                    , "T2"
+                    , "T3"
+                    , "T4"
+                    , "T5"
+                    , "T6"
+                    , "T7"
+                    ]
             , ovrDayFormat = Just "{n}"
             , ovrDayFormatExceptions = Just Dict.empty
             , ovrDatePattern = Just "{day} {month}"

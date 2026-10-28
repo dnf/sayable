@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Af exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "af"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} dag" )
-      , ( Other, "{n} dae" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} week" )
-      , ( Other, "{n} weke" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} maand" )
-      , ( Other, "{n} maande" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} jaar" )
-      , ( Other, "{n} jaar" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dag" )
+            , ( Other, "{n} dae" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} week" )
+            , ( Other, "{n} weke" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} maand" )
+            , ( Other, "{n} maande" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} jaar" )
+            , ( Other, "{n} jaar" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Pasgebore"

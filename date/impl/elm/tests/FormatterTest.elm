@@ -141,11 +141,11 @@ suite =
             ]
         , describe "7. Locale - German"
             [ test "7.1 German format_date" <|
-                \_ -> Expect.equal (Just "15. M\u{00E4}rz") (formatDate De.locale Normal "2025-03-15")
+                \_ -> Expect.equal (Just "15. März") (formatDate De.locale Normal "2025-03-15")
             , test "7.2 German morgen" <|
                 \_ -> Expect.equal (Just "morgen") (formatRelative De.locale Normal "2025-03-16" "2025-03-15")
-            , test "7.3 German \u{00FC}bermorgen" <|
-                \_ -> Expect.equal (Just "\u{00FC}bermorgen") (formatRelative De.locale Normal "2025-03-17" "2025-03-15")
+            , test "7.3 German übermorgen" <|
+                \_ -> Expect.equal (Just "übermorgen") (formatRelative De.locale Normal "2025-03-17" "2025-03-15")
             , test "7.4 German this weekday" <|
                 \_ -> Expect.equal (Just "diesen Mittwoch") (formatRelative De.locale Normal "2025-03-19" "2025-03-15")
             ]
@@ -159,29 +159,29 @@ suite =
             ]
         , describe "9. Locale - Japanese"
             [ test "9.1 Japanese format_date" <|
-                \_ -> Expect.equal (Just "3\u{6708}15\u{65E5}") (formatDate Ja.locale Normal "2025-03-15")
-            , test "9.2 Japanese \u{660E}\u{65E5}" <|
-                \_ -> Expect.equal (Just "\u{660E}\u{65E5}") (formatRelative Ja.locale Normal "2025-03-16" "2025-03-15")
+                \_ -> Expect.equal (Just "3月15日") (formatDate Ja.locale Normal "2025-03-15")
+            , test "9.2 Japanese 明日" <|
+                \_ -> Expect.equal (Just "明日") (formatRelative Ja.locale Normal "2025-03-16" "2025-03-15")
             , test "9.3 Japanese this weekday" <|
-                \_ -> Expect.equal (Just "\u{4ECA}\u{5EA6}\u{306E}\u{6C34}\u{66DC}\u{65E5}") (formatRelative Ja.locale Normal "2025-03-19" "2025-03-15")
+                \_ -> Expect.equal (Just "今度の水曜日") (formatRelative Ja.locale Normal "2025-03-19" "2025-03-15")
             ]
         , describe "10. Locale - Russian (genitive months)"
             [ test "10.1 Russian genitive" <|
-                \_ -> Expect.equal (Just "15 \u{043C}\u{0430}\u{0440}\u{0442}\u{0430}") (formatDate Ru.locale Normal "2025-03-15")
-            , test "10.2 Russian \u{0437}\u{0430}\u{0432}\u{0442}\u{0440}\u{0430}" <|
-                \_ -> Expect.equal (Just "\u{0437}\u{0430}\u{0432}\u{0442}\u{0440}\u{0430}") (formatRelative Ru.locale Normal "2025-03-16" "2025-03-15")
+                \_ -> Expect.equal (Just "15 марта") (formatDate Ru.locale Normal "2025-03-15")
+            , test "10.2 Russian завтра" <|
+                \_ -> Expect.equal (Just "завтра") (formatRelative Ru.locale Normal "2025-03-16" "2025-03-15")
             ]
         , describe "11. Locale - Arabic"
             [ test "11.1 Arabic format_date" <|
-                \_ -> Expect.equal (Just "15 \u{0645}\u{0627}\u{0631}\u{0633}") (formatDate Ar.locale Normal "2025-03-15")
-            , test "11.2 Arabic \u{063A}\u{062F}\u{0627}\u{064B}" <|
-                \_ -> Expect.equal (Just "\u{063A}\u{062F}\u{0627}\u{064B}") (formatRelative Ar.locale Normal "2025-03-16" "2025-03-15")
+                \_ -> Expect.equal (Just "15 مارس") (formatDate Ar.locale Normal "2025-03-15")
+            , test "11.2 Arabic غداً" <|
+                \_ -> Expect.equal (Just "غداً") (formatRelative Ar.locale Normal "2025-03-16" "2025-03-15")
             ]
         , describe "12. Locale - Spanish"
             [ test "12.1 Spanish format_date" <|
                 \_ -> Expect.equal (Just "15 de marzo") (formatDate Es.locale Normal "2025-03-15")
-            , test "12.2 Spanish pasado ma\u{00F1}ana" <|
-                \_ -> Expect.equal (Just "pasado ma\u{00F1}ana") (formatRelative Es.locale Normal "2025-03-17" "2025-03-15")
+            , test "12.2 Spanish pasado mañana" <|
+                \_ -> Expect.equal (Just "pasado mañana") (formatRelative Es.locale Normal "2025-03-17" "2025-03-15")
             ]
         , describe "13. format_date_with_year"
             [ test "13.1 normal" <|
@@ -193,15 +193,15 @@ suite =
             , test "13.4 two-digit year keeps its leading zero" <|
                 \_ -> Expect.equal (Just "20/5/07") (withLocale "tg" (\loc -> formatDateWithYear loc Compact "2007-05-20"))
             , test "13.5 Finnish short" <|
-                \_ -> Expect.equal (Just "21. kes\u{00E4}kuuta 1996") (withLocale "fi" (\loc -> formatDateWithYear loc Short "1996-06-21"))
+                \_ -> Expect.equal (Just "21. kesäkuuta 1996") (withLocale "fi" (\loc -> formatDateWithYear loc Short "1996-06-21"))
             ]
         , describe "14. Short month names (locales that keep the full genitive)"
             [ test "14.1 Slovak" <|
-                \_ -> Expect.equal (Just "15. febru\u{00E1}ra") (withLocale "sk" (\loc -> formatDate loc Short "2031-02-15"))
+                \_ -> Expect.equal (Just "15. februára") (withLocale "sk" (\loc -> formatDate loc Short "2031-02-15"))
             , test "14.2 Czech" <|
                 \_ -> Expect.equal (Just "10. prosince") (withLocale "cs" (\loc -> formatDate loc Short "2025-12-10"))
             , test "14.3 Ukrainian" <|
-                \_ -> Expect.equal (Just "5 \u{043B}\u{0438}\u{0441}\u{0442}\u{043E}\u{043F}\u{0430}\u{0434}\u{0430}") (withLocale "uk" (\loc -> formatDate loc Short "2025-11-05"))
+                \_ -> Expect.equal (Just "5 листопада") (withLocale "uk" (\loc -> formatDate loc Short "2025-11-05"))
             , test "14.4 Finnish relative" <|
                 \_ -> Expect.equal (Just "8. elokuuta") (withLocale "fi" (\loc -> formatRelative loc Short "1998-08-08" "1998-08-15"))
             ]

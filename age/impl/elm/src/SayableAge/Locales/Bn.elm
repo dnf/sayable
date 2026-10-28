@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Bn exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "bn"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} দিন" )
-      , ( Other, "{n} দিন" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} সপ্তাহ" )
-      , ( Other, "{n} সপ্তাহ" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} মাস" )
-      , ( Other, "{n} মাস" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} বছর" )
-      , ( Other, "{n} বছর" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} দিন" )
+            , ( Other, "{n} দিন" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} সপ্তাহ" )
+            , ( Other, "{n} সপ্তাহ" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} মাস" )
+            , ( Other, "{n} মাস" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} বছর" )
+            , ( Other, "{n} বছর" )
+            ]
     , half = "সাড়ে {n}"
     , delimiter = ", "
     , justBorn = "নবজাতক"

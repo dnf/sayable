@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Kl exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "kl"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekundi {n}" )
-              , ( Other, "sekundit {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minutsi {n}" )
-              , ( Other, "minutsit {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "nalunaaquttap akunnera {n}" )
-              , ( Other, "nalunaaquttap akunneri {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "ulloq {n}" )
-              , ( Other, "ullut {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "sapaatip akunnera {n}" )
-              , ( Other, "sapaatip akunneri {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "qaammat {n}" )
-              , ( Other, "qaammatit {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "ukioq {n}" )
-              , ( Other, "ukiut {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekundi {n}" )
+                    , ( Other, "sekundit {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minutsi {n}" )
+                    , ( Other, "minutsit {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "nalunaaquttap akunnera {n}" )
+                    , ( Other, "nalunaaquttap akunneri {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "ulloq {n}" )
+                    , ( Other, "ullut {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "sapaatip akunnera {n}" )
+                    , ( Other, "sapaatip akunneri {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "qaammat {n}" )
+                    , ( Other, "qaammatit {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "ukioq {n}" )
+                    , ( Other, "ukiut {n}" )
+                    ]
+              )
             ]
     , half = "{0} affaa"
     , delimiter = ", "

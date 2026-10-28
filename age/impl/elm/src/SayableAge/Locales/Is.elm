@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Is exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,26 +23,35 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} dagur" )
-      , ( Other, "{n} dagar" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} vika" )
-      , ( Other, "{n} vikur" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mánuður" )
-      , ( Other, "{n} mánuðir" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} ár" )
-      , ( Other, "{n} ár" )
-      ]
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dagur" )
+            , ( Other, "{n} dagar" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} vika" )
+            , ( Other, "{n} vikur" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mánuður" )
+            , ( Other, "{n} mánuðir" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} ár" )
+            , ( Other, "{n} ár" )
+            ]
     , half = "{n} og hálft"
     , delimiter = ", "
     , justBorn = "Nýfætt"

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Din exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "din"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "akɔl {n}" )
-      , ( Other, "akɔl {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "bɛ̈t {n}" )
-      , ( Other, "bɛ̈t {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "pɛi {n}" )
-      , ( Other, "pɛi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "ruɔ̈n {n}" )
-      , ( Other, "ruɔ̈ɔ̈n {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "akɔl {n}" )
+            , ( Other, "akɔl {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "bɛ̈t {n}" )
+            , ( Other, "bɛ̈t {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "pɛi {n}" )
+            , ( Other, "pɛi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "ruɔ̈n {n}" )
+            , ( Other, "ruɔ̈ɔ̈n {n}" )
+            ]
     , half = "{0} ku abɛ̈c"
     , delimiter = ", "
     , justBorn = "Meth yen dhiëth"
@@ -52,10 +61,13 @@ locale =
             { ovrDay = Just (Simple "akɔl {n}")
             , ovrWeek = Just (Simple "bɛ̈t {n}")
             , ovrMonth = Just (Simple "pɛi {n}")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "ruɔ̈n {n}" )
-                  , ( Other, "ruɔ̈ɔ̈n {n}" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "ruɔ̈n {n}" )
+                        , ( Other, "ruɔ̈ɔ̈n {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

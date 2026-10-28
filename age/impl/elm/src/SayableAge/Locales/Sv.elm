@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Sv exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "sv"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} dag" )
-      , ( Other, "{n} dagar" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} vecka" )
-      , ( Other, "{n} veckor" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} månad" )
-      , ( Other, "{n} månader" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} år" )
-      , ( Other, "{n} år" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dag" )
+            , ( Other, "{n} dagar" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} vecka" )
+            , ( Other, "{n} veckor" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} månad" )
+            , ( Other, "{n} månader" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} år" )
+            , ( Other, "{n} år" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Nyfödd"

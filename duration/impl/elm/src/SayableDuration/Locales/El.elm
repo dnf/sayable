@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.El exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "el"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} δευτερόλεπτο" )
-              , ( Other, "{n} δευτερόλεπτα" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} λεπτό" )
-              , ( Other, "{n} λεπτά" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} ώρα" )
-              , ( Other, "{n} ώρες" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} μέρα" )
-              , ( Other, "{n} μέρες" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} εβδομάδα" )
-              , ( Other, "{n} εβδομάδες" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} μήνας" )
-              , ( Other, "{n} μήνες" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} χρόνος" )
-              , ( Other, "{n} χρόνια" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} δευτερόλεπτο" )
+                    , ( Other, "{n} δευτερόλεπτα" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} λεπτό" )
+                    , ( Other, "{n} λεπτά" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} ώρα" )
+                    , ( Other, "{n} ώρες" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} μέρα" )
+                    , ( Other, "{n} μέρες" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} εβδομάδα" )
+                    , ( Other, "{n} εβδομάδες" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} μήνας" )
+                    , ( Other, "{n} μήνες" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} χρόνος" )
+                    , ( Other, "{n} χρόνια" )
+                    ]
+              )
             ]
     , half = "{0} και μισό"
     , delimiter = ", "
@@ -65,10 +84,12 @@ locale =
                         [ ( "second", Simple "{n} δευτ." )
                         , ( "minute", Simple "{n} λ." )
                         , ( "hour", Simple "{n} ώ." )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} ημέρα" )
-                          , ( Other, "{n} ημέρες" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} ημέρα" )
+                                , ( Other, "{n} ημέρες" )
+                                ]
+                          )
                         , ( "week", Simple "{n} εβδ." )
                         , ( "month", Simple "{n} μήν." )
                         , ( "year", Simple "{n} έτ." )

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.El exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "el"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} μέρα" )
-      , ( Other, "{n} μέρες" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} εβδομάδα" )
-      , ( Other, "{n} εβδομάδες" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} μήνας" )
-      , ( Other, "{n} μήνες" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} χρόνος" )
-      , ( Other, "{n} χρόνια" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} μέρα" )
+            , ( Other, "{n} μέρες" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} εβδομάδα" )
+            , ( Other, "{n} εβδομάδες" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} μήνας" )
+            , ( Other, "{n} μήνες" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} χρόνος" )
+            , ( Other, "{n} χρόνια" )
+            ]
     , half = "{0} και μισό"
     , delimiter = ", "
     , justBorn = "Νεογέννητο"
@@ -49,10 +58,13 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} ημέρα" )
-                  , ( Other, "{n} ημέρες" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ημέρα" )
+                        , ( Other, "{n} ημέρες" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} εβδ.")
             , ovrMonth = Just (Simple "{n} μήν.")
             , ovrYear = Just (Simple "{n} έτ.")

@@ -12,23 +12,30 @@
 
 module SayableAge.Locales.So exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "so"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} maalin" )
-      , ( Other, "{n} maalmood" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} maalin" )
+            , ( Other, "{n} maalmood" )
+            ]
     , week = Simple "{n} toddobaad"
-    , month = Pluralized
-      [ ( One, "{n} bil" )
-      , ( Other, "{n} bilood" )
-      ]
+    , month =
+        Pluralized
+            [ ( One, "{n} bil" )
+            , ( Other, "{n} bilood" )
+            ]
     , year = Simple "{n} sano"
     , half = "{n}½"
     , delimiter = ", "

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Fi exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "fi"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekunti" )
-              , ( Other, "{n} sekuntia" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minuutti" )
-              , ( Other, "{n} minuuttia" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} tunti" )
-              , ( Other, "{n} tuntia" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} päivä" )
-              , ( Other, "{n} päivää" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} viikko" )
-              , ( Other, "{n} viikkoa" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} kuukausi" )
-              , ( Other, "{n} kuukautta" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} vuosi" )
-              , ( Other, "{n} vuotta" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekunti" )
+                    , ( Other, "{n} sekuntia" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minuutti" )
+                    , ( Other, "{n} minuuttia" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} tunti" )
+                    , ( Other, "{n} tuntia" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} päivä" )
+                    , ( Other, "{n} päivää" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} viikko" )
+                    , ( Other, "{n} viikkoa" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} kuukausi" )
+                    , ( Other, "{n} kuukautta" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} vuosi" )
+                    , ( Other, "{n} vuotta" )
+                    ]
+              )
             ]
     , half = "{n} ja puoli"
     , delimiter = ", "

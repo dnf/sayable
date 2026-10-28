@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Et exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "et"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} päev" )
-      , ( Other, "{n} päeva" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} nädal" )
-      , ( Other, "{n} nädalat" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} kuu" )
-      , ( Other, "{n} kuud" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} aasta" )
-      , ( Other, "{n} aastat" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} päev" )
+            , ( Other, "{n} päeva" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} nädal" )
+            , ( Other, "{n} nädalat" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} kuu" )
+            , ( Other, "{n} kuud" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} aasta" )
+            , ( Other, "{n} aastat" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Vastsündinu"
@@ -49,15 +58,21 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} päev" )
-                  , ( Other, "{n} päeva" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} päev" )
+                        , ( Other, "{n} päeva" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} näd")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} kuu" )
-                  , ( Other, "{n} kuud" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} kuu" )
+                        , ( Other, "{n} kuud" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} a")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing

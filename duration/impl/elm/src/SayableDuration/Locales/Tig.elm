@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Tig exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "tig"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sanya {n}" )
-              , ( Other, "sanayat {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "daqiqa {n}" )
-              , ( Other, "daqiqat {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "saʿa {n}" )
-              , ( Other, "saʿat {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "yom {n}" )
-              , ( Other, "ayam {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "semun {n}" )
-              , ( Other, "semunat {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "werḥi {n}" )
-              , ( Other, "awerḥi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "ʿam {n}" )
-              , ( Other, "aʿwam {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sanya {n}" )
+                    , ( Other, "sanayat {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "daqiqa {n}" )
+                    , ( Other, "daqiqat {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "saʿa {n}" )
+                    , ( Other, "saʿat {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "yom {n}" )
+                    , ( Other, "ayam {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "semun {n}" )
+                    , ( Other, "semunat {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "werḥi {n}" )
+                    , ( Other, "awerḥi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "ʿam {n}" )
+                    , ( Other, "aʿwam {n}" )
+                    ]
+              )
             ]
     , half = "{0} we nəs"
     , delimiter = ", "
@@ -65,22 +84,30 @@ locale =
                         [ ( "second", Simple "san. {n}" )
                         , ( "minute", Simple "daq. {n}" )
                         , ( "hour", Simple "saʿa {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "yom {n}" )
-                          , ( Other, "ayam {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "semun {n}" )
-                          , ( Other, "semunat {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "werḥi {n}" )
-                          , ( Other, "awerḥi {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "ʿam {n}" )
-                          , ( Other, "aʿwam {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "yom {n}" )
+                                , ( Other, "ayam {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "semun {n}" )
+                                , ( Other, "semunat {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "werḥi {n}" )
+                                , ( Other, "awerḥi {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "ʿam {n}" )
+                                , ( Other, "aʿwam {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

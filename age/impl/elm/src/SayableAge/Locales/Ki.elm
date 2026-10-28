@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ki exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ki"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "mũthenya {n}" )
-      , ( Other, "mĩthenya {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "kiumia {n}" )
-      , ( Other, "kiumia {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "mwerĩ {n}" )
-      , ( Other, "mĩerĩ {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "mwaka {n}" )
-      , ( Other, "mĩaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "mũthenya {n}" )
+            , ( Other, "mĩthenya {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "kiumia {n}" )
+            , ( Other, "kiumia {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "mwerĩ {n}" )
+            , ( Other, "mĩerĩ {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "mwaka {n}" )
+            , ( Other, "mĩaka {n}" )
+            ]
     , half = "{0} na nusu"
     , delimiter = ", "
     , justBorn = "Kaana gakĩ"
@@ -49,19 +58,28 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "mũth. {n}" )
-                  , ( Other, "mĩth. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "mũth. {n}" )
+                        , ( Other, "mĩth. {n}" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} kiu.")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "mwerĩ {n}" )
-                  , ( Other, "mĩerĩ {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "mwaka {n}" )
-                  , ( Other, "mĩaka {n}" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "mwerĩ {n}" )
+                        , ( Other, "mĩerĩ {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "mwaka {n}" )
+                        , ( Other, "mĩaka {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

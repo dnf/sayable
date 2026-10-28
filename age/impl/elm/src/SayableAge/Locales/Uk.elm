@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Uk exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,34 +23,46 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Many
-    , day = Pluralized
-      [ ( One, "{n} день" )
-      , ( Few, "{n} дні" )
-      , ( Many, "{n} днів" )
-      , ( Other, "{n} днів" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} тиждень" )
-      , ( Few, "{n} тижні" )
-      , ( Many, "{n} тижнів" )
-      , ( Other, "{n} тижнів" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} місяць" )
-      , ( Few, "{n} місяці" )
-      , ( Many, "{n} місяців" )
-      , ( Other, "{n} місяців" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} рік" )
-      , ( Few, "{n} роки" )
-      , ( Many, "{n} років" )
-      , ( Other, "{n} років" )
-      ]
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Many
+    , day =
+        Pluralized
+            [ ( One, "{n} день" )
+            , ( Few, "{n} дні" )
+            , ( Many, "{n} днів" )
+            , ( Other, "{n} днів" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} тиждень" )
+            , ( Few, "{n} тижні" )
+            , ( Many, "{n} тижнів" )
+            , ( Other, "{n} тижнів" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} місяць" )
+            , ( Few, "{n} місяці" )
+            , ( Many, "{n} місяців" )
+            , ( Other, "{n} місяців" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} рік" )
+            , ( Few, "{n} роки" )
+            , ( Many, "{n} років" )
+            , ( Other, "{n} років" )
+            ]
     , half = "{n} з половиною"
     , delimiter = ", "
     , justBorn = "Новонароджений"

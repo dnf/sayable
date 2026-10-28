@@ -11,9 +11,7 @@
 
 module SayableAge.Locales exposing (codes, getLocale)
 
-
 import Dict exposing (Dict)
-import SayableAge.Types exposing (Locale)
 import SayableAge.Locales.Af as Af
 import SayableAge.Locales.Ak as Ak
 import SayableAge.Locales.Am as Am
@@ -182,6 +180,7 @@ import SayableAge.Locales.Yue as Yue
 import SayableAge.Locales.Zdj as Zdj
 import SayableAge.Locales.Zh as Zh
 import SayableAge.Locales.Zu as Zu
+import SayableAge.Types exposing (Locale)
 
 
 allLocales : Dict String Locale
@@ -363,7 +362,8 @@ getLocale code =
     Dict.get code allLocales
 
 
-{-| Every locale code, sorted. -}
+{-| Every locale code, sorted.
+-}
 codes : List String
 codes =
     Dict.keys allLocales

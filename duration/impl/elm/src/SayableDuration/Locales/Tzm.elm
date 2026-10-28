@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Tzm exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "tzm"
-    , plural = \n -> if n == 0 || n == 1 || (n >= 11 && n <= 99) then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 || (n >= 11 && n <= 99) then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} tasint" )
-              , ( Other, "{n} tisinin" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} tusdiqt" )
-              , ( Other, "{n} tusdiqin" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} tasragt" )
-              , ( Other, "{n} tisragin" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ass" )
-              , ( Other, "{n} ussan" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} imalass" )
-              , ( Other, "{n} imalassn" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ayyur" )
-              , ( Other, "{n} ayyurn" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} aseggas" )
-              , ( Other, "{n} iseggasen" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} tasint" )
+                    , ( Other, "{n} tisinin" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} tusdiqt" )
+                    , ( Other, "{n} tusdiqin" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} tasragt" )
+                    , ( Other, "{n} tisragin" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ass" )
+                    , ( Other, "{n} ussan" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} imalass" )
+                    , ( Other, "{n} imalassn" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ayyur" )
+                    , ( Other, "{n} ayyurn" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} aseggas" )
+                    , ( Other, "{n} iseggasen" )
+                    ]
+              )
             ]
     , half = "{0} d uzgen"
     , delimiter = ", "
@@ -62,34 +81,48 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "{n} tasint" )
-                          , ( Other, "{n} tisinin" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "{n} tusdiqt" )
-                          , ( Other, "{n} tusdiqin" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} tasragt" )
-                          , ( Other, "{n} tisragin" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} ass" )
-                          , ( Other, "{n} ussan" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} imalass" )
-                          , ( Other, "{n} imalassn" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} ayyur" )
-                          , ( Other, "{n} ayyurn" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} aseggas" )
-                          , ( Other, "{n} iseggasen" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "{n} tasint" )
+                                , ( Other, "{n} tisinin" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "{n} tusdiqt" )
+                                , ( Other, "{n} tusdiqin" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} tasragt" )
+                                , ( Other, "{n} tisragin" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} ass" )
+                                , ( Other, "{n} ussan" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} imalass" )
+                                , ( Other, "{n} imalassn" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} ayyur" )
+                                , ( Other, "{n} ayyurn" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} aseggas" )
+                                , ( Other, "{n} iseggasen" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

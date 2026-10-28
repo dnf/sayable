@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Sw exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "sw"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "sekunde {n}" )
             , ( "minute", Simple "dakika {n}" )
             , ( "hour", Simple "saa {n}" )
-            , ( "day", Pluralized
-              [ ( One, "siku {n}" )
-              , ( Other, "siku {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "wiki {n}" )
-              , ( Other, "wiki {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "mwezi {n}" )
-              , ( Other, "miezi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "mwaka {n}" )
-              , ( Other, "miaka {n}" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "siku {n}" )
+                    , ( Other, "siku {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "wiki {n}" )
+                    , ( Other, "wiki {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "mwezi {n}" )
+                    , ( Other, "miezi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "mwaka {n}" )
+                    , ( Other, "miaka {n}" )
+                    ]
+              )
             ]
     , half = "{0} na nusu"
     , delimiter = ", "
@@ -58,14 +71,18 @@ locale =
                         , ( "hour", Simple "saa {n}" )
                         , ( "day", Simple "siku {n}" )
                         , ( "week", Simple "wiki {n}" )
-                        , ( "month", Pluralized
-                          [ ( One, "mwezi {n}" )
-                          , ( Other, "miezi {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mwaka {n}" )
-                          , ( Other, "miaka {n}" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "mwezi {n}" )
+                                , ( Other, "miezi {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mwaka {n}" )
+                                , ( Other, "miaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -83,14 +100,18 @@ locale =
                         , ( "hour", Simple "saa {n}" )
                         , ( "day", Simple "siku {n}" )
                         , ( "week", Simple "wiki {n}" )
-                        , ( "month", Pluralized
-                          [ ( One, "mwezi {n}" )
-                          , ( Other, "miezi {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mwaka {n}" )
-                          , ( Other, "miaka {n}" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "mwezi {n}" )
+                                , ( Other, "miezi {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mwaka {n}" )
+                                , ( Other, "miaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

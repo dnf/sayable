@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ve exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ve"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "duvha {n}" )
-      , ( Other, "maduvha {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "vhege {n}" )
-      , ( Other, "mavhege {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "nwedzi {n}" )
-      , ( Other, "minwedzi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "nwaha {n}" )
-      , ( Other, "minwaha {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "duvha {n}" )
+            , ( Other, "maduvha {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "vhege {n}" )
+            , ( Other, "mavhege {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "nwedzi {n}" )
+            , ( Other, "minwedzi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "nwaha {n}" )
+            , ( Other, "minwaha {n}" )
+            ]
     , half = "{0} na hafu"
     , delimiter = ", "
     , justBorn = "Mbuwe"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "duv. {n}" )
-                  , ( Other, "mad. {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "vheg. {n}" )
-                  , ( Other, "mav. {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "nwedzi {n}" )
-                  , ( Other, "min. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "nwaha {n}" )
-                  , ( Other, "min. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "duv. {n}" )
+                        , ( Other, "mad. {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "vheg. {n}" )
+                        , ( Other, "mav. {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "nwedzi {n}" )
+                        , ( Other, "min. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "nwaha {n}" )
+                        , ( Other, "min. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

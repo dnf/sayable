@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ts exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ts"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "siku {n}" )
-      , ( Other, "masiku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "vhiki {n}" )
-      , ( Other, "mavhiki {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "n'hweti {n}" )
-      , ( Other, "tin'hweti {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "lembe {n}" )
-      , ( Other, "malembe {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "siku {n}" )
+            , ( Other, "masiku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "vhiki {n}" )
+            , ( Other, "mavhiki {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "n'hweti {n}" )
+            , ( Other, "tin'hweti {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "lembe {n}" )
+            , ( Other, "malembe {n}" )
+            ]
     , half = "{0} ni hafu"
     , delimiter = ", "
     , justBorn = "N'wana loyi a ha ku velekiwa"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "siku {n}" )
-                  , ( Other, "masiku {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "vhiki {n}" )
-                  , ( Other, "mavhiki {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "n'hw. {n}" )
-                  , ( Other, "tin'hw. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "lembe {n}" )
-                  , ( Other, "mal. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "siku {n}" )
+                        , ( Other, "masiku {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "vhiki {n}" )
+                        , ( Other, "mavhiki {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "n'hw. {n}" )
+                        , ( Other, "tin'hw. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "lembe {n}" )
+                        , ( Other, "mal. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

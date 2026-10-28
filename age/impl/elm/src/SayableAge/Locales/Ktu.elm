@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ktu exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ktu"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "lumbu {n}" )
-      , ( Other, "malumbu {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "poso {n}" )
-      , ( Other, "maposo {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "ngonda {n}" )
-      , ( Other, "mingonda {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "mvula {n}" )
-      , ( Other, "mimvula {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "lumbu {n}" )
+            , ( Other, "malumbu {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "poso {n}" )
+            , ( Other, "maposo {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "ngonda {n}" )
+            , ( Other, "mingonda {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "mvula {n}" )
+            , ( Other, "mimvula {n}" )
+            ]
     , half = "{0} na ndambu"
     , delimiter = ", "
     , justBorn = "Mwana ya buta"
@@ -50,18 +59,27 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "malumbu {n}")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "poso {n}" )
-                  , ( Other, "maposo {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ngonda {n}" )
-                  , ( Other, "mingonda {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "mvula {n}" )
-                  , ( Other, "mimvula {n}" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "poso {n}" )
+                        , ( Other, "maposo {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "ngonda {n}" )
+                        , ( Other, "mingonda {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "mvula {n}" )
+                        , ( Other, "mimvula {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
@@ -69,18 +87,27 @@ locale =
     , compact =
         Just
             { ovrDay = Just (Simple "malumbu {n}")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "poso {n}" )
-                  , ( Other, "maposo {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "ngon {n}" )
-                  , ( Other, "mingon {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "mvula {n}" )
-                  , ( Other, "mimv {n}" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "poso {n}" )
+                        , ( Other, "maposo {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "ngon {n}" )
+                        , ( Other, "mingon {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "mvula {n}" )
+                        , ( Other, "mimv {n}" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

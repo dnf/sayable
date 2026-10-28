@@ -1,6 +1,12 @@
-"""Elm locale emitter for sayable-duration."""
+"""Elm locale emitter for sayable-duration.
+
+The output is already laid out the way elm-format 0.8.8 leaves it, so
+`elm-format --validate` passes on the generated files as they are.
+"""
 
 from __future__ import annotations
+
+import unicodedata
 
 from codegen.banner import locale_source_comment, make_header
 from codegen.targets.elm.plural_rules import get_elm_plural
@@ -12,27 +18,113 @@ _CAT_MAP = {
     "few": "Few", "many": "Many", "other": "Other",
 }
 
+_UNIT_NAMES = ["second", "minute", "hour", "day", "week", "month", "year"]
+
 
 def _module_name(code: str) -> str:
     """Convert locale code to Elm module name (capitalize first letter)."""
     return code[0].upper() + code[1:]
 
 
+# elm-format writes control, format and unassigned characters and every space
+# but U+0020 (U+00A0, U+202F, ...) as \u{XXXX} escapes.
+_ESCAPED_CATEGORIES = {"Cc", "Cf", "Cs", "Co", "Cn", "Zl", "Zp", "Zs"}
+
+
+def _escape_char(c: str) -> str:
+    if c == "\\":
+        return "\\\\"
+    if c == '"':
+        return '\\"'
+    if c == "\n":
+        return "\\n"
+    if c == "\t":
+        return "\\t"
+    if c != " " and unicodedata.category(c) in _ESCAPED_CATEGORIES:
+        return f"\\u{{{ord(c):04X}}}"
+    return c
+
+
 def _quote(s: str) -> str:
-    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+    return '"' + "".join(_escape_char(c) for c in s) + '"'
 
 
-def _unit_forms(unit: object, indent: int = 4) -> str:
-    pad = " " * indent
-    if isinstance(unit, str):
-        return f"Simple {_quote(unit)}"
+def _next_indent(column: int) -> int:
+    """elm-format indents a function's arguments to the next multiple of four."""
+    return (column // 4 + 1) * 4
+
+
+def _pluralized(unit: dict, column: int) -> list[str]:
+    """`Pluralized` (written at `column`) with its list of forms on the lines below."""
+    pad = " " * _next_indent(column)
     cats = ["zero", "one", "two", "few", "many", "other"]
-    pairs = []
-    for cat in cats:
-        if cat in unit:
-            pairs.append(f"( {_CAT_MAP[cat]}, {_quote(unit[cat])} )")
-    return "Pluralized\n" + pad + "[ " + ("\n" + pad + ", ").join(pairs) + "\n" + pad + "]"
+    pairs = [f"( {_CAT_MAP[cat]}, {_quote(unit[cat])} )" for cat in cats if cat in unit]
+    lines = ["Pluralized", f"{pad}[ {pairs[0]}"]
+    lines.extend(f"{pad}, {pair}" for pair in pairs[1:])
+    lines.append(f"{pad}]")
+    return lines
+
+
+def _unit_entries(units: dict, column: int) -> list[str]:
+    """The `[ ( "second", ... ) ... ]` list of a `Dict.fromList`, its `[` at `column`."""
+    pad = " " * column
+    tuple_pad = " " * (column + 2)
+    lines = []
+    names = [u for u in _UNIT_NAMES if u in units]
+    for i, name in enumerate(names):
+        prefix = "[ " if i == 0 else ", "
+        unit = units[name]
+        if isinstance(unit, str):
+            lines.append(f"{pad}{prefix}( \"{name}\", Simple {_quote(unit)} )")
+            continue
+        value = _pluralized(unit, column + 4)
+        lines.append(f"{pad}{prefix}( \"{name}\"")
+        lines.append(f"{tuple_pad}, {value[0]}")
+        lines.extend(value[1:])
+        lines.append(f"{tuple_pad})")
+    lines.append(f"{pad}]")
+    return lines
+
+
+def _if_chain(body: str, indent: int) -> list[str]:
+    """Lay out `if a then X else if b then Y else Z` the way elm-format does."""
+    pad = " " * indent
+    lines: list[str] = []
+    rest = body
+    keyword = "if"
+    while rest.startswith("if "):
+        cond, rest = rest[len("if "):].split(" then ", 1)
+        result, rest = rest.split(" else ", 1)
+        lines.append(f"{pad}{keyword} {cond} then")
+        lines.append(f"{pad}    {result}")
+        lines.append("")
+        keyword = "else if"
+    lines.append(f"{pad}else")
+    lines.append(f"{pad}    {rest}")
+    return lines
+
+
+def _plural_field(rule: str) -> list[str]:
+    bindings, body = get_elm_plural(rule)
+    if not bindings and not body.startswith("if "):
+        return [f"    , plural = \\n -> {body}"]
+    lines = ["    , plural =", "        \\n ->"]
+    if bindings:
+        lines.append("            let")
+        for i, (bname, bexpr) in enumerate(bindings):
+            if i > 0:
+                lines.append("")
+            lines.append(f"                {bname} =")
+            lines.append(f"                    {bexpr}")
+        lines.append("            in")
+    lines.extend(_if_chain(body, 12))
+    return lines
+
+
+def _maybe_str_field(field: str, value: str | None, pad: str) -> str:
+    if value is None:
+        return f"{pad}, {field} = Nothing"
+    return f"{pad}, {field} = Just {_quote(value)}"
 
 
 def _compactness_override(ovr: dict, indent: int = 4) -> str:
@@ -44,36 +136,16 @@ def _compactness_override(ovr: dict, indent: int = 4) -> str:
         lines.append(f"{pad}{{ ovrUnits =")
         lines.append(f"{pad}    Just")
         lines.append(f"{pad}        (Dict.fromList")
-        unit_names = ["second", "minute", "hour", "day", "week", "month", "year"]
-        entries = [(u, ovr["units"][u]) for u in unit_names if u in ovr["units"]]
-        for i, (u, val) in enumerate(entries):
-            prefix = "[ " if i == 0 else ", "
-            lines.append(f"{pad}            {prefix}( \"{u}\", {_unit_forms(val, indent + 14)} )")
-        lines.append(f"{pad}            ]")
+        lines.extend(_unit_entries(ovr["units"], indent + 12))
         lines.append(f"{pad}        )")
     else:
         lines.append(f"{pad}{{ ovrUnits = Nothing")
 
     # Simple fields
-    if "half" in ovr:
-        lines.append(f"{pad}, ovrHalf = Just {_quote(ovr['half'])}")
-    else:
-        lines.append(f"{pad}, ovrHalf = Nothing")
-
-    if "delimiter" in ovr:
-        lines.append(f"{pad}, ovrDelimiter = Just {_quote(ovr['delimiter'])}")
-    else:
-        lines.append(f"{pad}, ovrDelimiter = Nothing")
-
-    if "ago" in ovr:
-        lines.append(f"{pad}, ovrAgo = Just {_quote(ovr['ago'])}")
-    else:
-        lines.append(f"{pad}, ovrAgo = Nothing")
-
-    if "inFuture" in ovr:
-        lines.append(f"{pad}, ovrInFuture = Just {_quote(ovr['inFuture'])}")
-    else:
-        lines.append(f"{pad}, ovrInFuture = Nothing")
+    lines.append(_maybe_str_field("ovrHalf", ovr.get("half"), pad))
+    lines.append(_maybe_str_field("ovrDelimiter", ovr.get("delimiter"), pad))
+    lines.append(_maybe_str_field("ovrAgo", ovr.get("ago"), pad))
+    lines.append(_maybe_str_field("ovrInFuture", ovr.get("inFuture"), pad))
 
     lines.append(f"{pad}}}")
     return "\n".join(lines)
@@ -89,39 +161,19 @@ def emit_locale(data: dict) -> str:
     lines.append("")
     lines.append(f"module SayableDuration.Locales.{mod} exposing (locale)")
     lines.append("")
-    lines.append("")
     lines.append("import Dict")
     lines.append("import SayableDuration.Types exposing (..)")
     lines.append("")
     lines.append("")
     lines.append("locale : Locale")
     lines.append("locale =")
-
-    # Plural
-    bindings, body = get_elm_plural(rule)
-
     lines.append(f"    {{ code = {_quote(code)}")
-    if not bindings:
-        lines.append(f"    , plural = \\n -> {body}")
-    else:
-        lines.append("    , plural =")
-        lines.append("        \\n ->")
-        lines.append("            let")
-        for bname, bexpr in bindings:
-            lines.append(f"                {bname} =")
-            lines.append(f"                    {bexpr}")
-        lines.append("            in")
-        lines.append(f"            {body}")
+    lines.extend(_plural_field(rule))
 
     # Units
     lines.append("    , units =")
     lines.append("        Dict.fromList")
-    unit_names = ["second", "minute", "hour", "day", "week", "month", "year"]
-    for i, unit_name in enumerate(unit_names):
-        val = _unit_forms(data["units"][unit_name], indent=14)
-        prefix = "[ " if i == 0 else ", "
-        lines.append(f"            {prefix}( \"{unit_name}\", {val} )")
-    lines.append("            ]")
+    lines.extend(_unit_entries(data["units"], 12))
 
     # Simple fields
     lines.append(f"    , half = {_quote(data['half'])}")
@@ -152,13 +204,13 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append("")
     lines.append("module SayableDuration.Locales exposing (getLocale)")
     lines.append("")
-    lines.append("")
-    lines.append("import Dict exposing (Dict)")
-    lines.append("import SayableDuration.Types exposing (Locale)")
 
+    # elm-format sorts imports by module name
+    imports = ["Dict exposing (Dict)", "SayableDuration.Types exposing (Locale)"]
     for loc in sorted_locs:
         mod = _module_name(loc["code"])
-        lines.append(f"import SayableDuration.Locales.{mod} as {mod}")
+        imports.append(f"SayableDuration.Locales.{mod} as {mod}")
+    lines.extend(f"import {imp}" for imp in sorted(imports, key=lambda imp: imp.split()[0]))
 
     lines.append("")
     lines.append("")

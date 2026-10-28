@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Kri exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 

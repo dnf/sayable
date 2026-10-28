@@ -12,34 +12,46 @@
 
 module SayableAge.Locales.Shi exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "shi"
-    , plural = \n -> if n == 0 || n == 1 then One else if n >= 2 && n <= 10 then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} ⴰⵙⵙ" )
-      , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
-      , ( Other, "{n} ⴰⵙⵙ" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-      , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
-      , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
-      , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
-      , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-      , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
-      , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else if n >= 2 && n <= 10 then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ⴰⵙⵙ" )
+            , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+            , ( Other, "{n} ⴰⵙⵙ" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+            , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+            , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+            , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+            , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+            , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+            , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+            ]
     , half = "{0} ⴷ ⵓⵣⴳⵏ"
     , delimiter = ", "
     , justBorn = "ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ"
@@ -53,26 +65,38 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} ⴰⵙⵙ" )
-                  , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
-                  , ( Other, "{n} ⴰⵙⵙ" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-                  , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
-                  , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
-                  , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
-                  , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-                  , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
-                  , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ⴰⵙⵙ" )
+                        , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+                        , ( Other, "{n} ⴰⵙⵙ" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                        , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+                        , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+                        , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+                        , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                        , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+                        , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

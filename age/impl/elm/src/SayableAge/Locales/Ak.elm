@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ak exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ak"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "da {n}" )
-      , ( Other, "nna {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "dapɛn {n}" )
-      , ( Other, "nnapɛn {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "bosome {n}" )
-      , ( Other, "abosome {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "afe {n}" )
-      , ( Other, "mfe {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "da {n}" )
+            , ( Other, "nna {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "dapɛn {n}" )
+            , ( Other, "nnapɛn {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "bosome {n}" )
+            , ( Other, "abosome {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "afe {n}" )
+            , ( Other, "mfe {n}" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Abofra foforo"
@@ -49,44 +58,68 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "da {n}" )
-                  , ( Other, "nna {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "dapɛn {n}" )
-                  , ( Other, "nnapɛn {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "bosome {n}" )
-                  , ( Other, "abosome {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "afe {n}" )
-                  , ( Other, "mfe {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "da {n}" )
+                        , ( Other, "nna {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "dapɛn {n}" )
+                        , ( Other, "nnapɛn {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "bosome {n}" )
+                        , ( Other, "abosome {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "afe {n}" )
+                        , ( Other, "mfe {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , compact =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "da {n}" )
-                  , ( Other, "nna {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "dapɛn {n}" )
-                  , ( Other, "nnapɛn {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "bos {n}" )
-                  , ( Other, "abos {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "afe {n}" )
-                  , ( Other, "mfe {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "da {n}" )
+                        , ( Other, "nna {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "dapɛn {n}" )
+                        , ( Other, "nnapɛn {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "bos {n}" )
+                        , ( Other, "abos {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "afe {n}" )
+                        , ( Other, "mfe {n}" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

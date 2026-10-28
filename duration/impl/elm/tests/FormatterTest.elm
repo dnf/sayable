@@ -95,8 +95,8 @@ suite =
         , describe "5. Duration - hours + minutes tier (1-5 hr)"
             [ test "5.1 1 hour" <|
                 \_ -> Expect.equal (Just "1 hour") (dur 3600)
-            , test "5.2 1\u{00BD} hours (half marker)" <|
-                \_ -> Expect.equal (Just "1\u{00BD} hours") (dur 5400)
+            , test "5.2 1½ hours (half marker)" <|
+                \_ -> Expect.equal (Just "1½ hours") (dur 5400)
             , test "5.3 2 hours, 15 minutes" <|
                 \_ -> Expect.equal (Just "2 hours, 15 minutes") (dur 8100)
             , test "5.4 5 hours" <|
@@ -113,8 +113,8 @@ suite =
                 \_ -> Expect.equal (Just "1 day") (dur 86400)
             , test "7.2 1 day, 3 hours" <|
                 \_ -> Expect.equal (Just "1 day, 3 hours") (dur 97200)
-            , test "7.3 1\u{00BD} days (half marker)" <|
-                \_ -> Expect.equal (Just "1\u{00BD} days") (dur 129600)
+            , test "7.3 1½ days (half marker)" <|
+                \_ -> Expect.equal (Just "1½ days") (dur 129600)
             , test "7.4 5 days" <|
                 \_ -> Expect.equal (Just "5 days") (dur 432000)
             , test "7.5 2 days" <|
@@ -139,8 +139,8 @@ suite =
                 \_ -> Expect.equal (Just "1 year, 3 months") (dur 39420000)
             ]
         , describe "10. Duration from ISO timestamps"
-            [ test "10.1 1\u{00BD} hours from timestamps" <|
-                \_ -> Expect.equal (Just "1\u{00BD} hours") (formatDurationTimestamps en Normal "2025-01-15T10:00:00" "2025-01-15T11:30:00")
+            [ test "10.1 1½ hours from timestamps" <|
+                \_ -> Expect.equal (Just "1½ hours") (formatDurationTimestamps en Normal "2025-01-15T10:00:00" "2025-01-15T11:30:00")
             , test "10.2 45 minutes from timestamps" <|
                 \_ -> Expect.equal (Just "45 minutes") (formatDurationTimestamps en Normal "2025-01-15T10:00:00" "2025-01-15T10:45:00")
             ]
@@ -173,10 +173,10 @@ suite =
                 \_ -> Expect.equal (Just "2 heures") (formatDuration Fr.locale Normal 7200)
             ]
         , describe "15. Locale - Japanese"
-            [ test "15.1 Japanese 2\u{5206}" <|
-                \_ -> Expect.equal (Just "2\u{5206}") (formatDuration Ja.locale Normal 120)
-            , test "15.2 Japanese 1\u{6642}\u{9593}\u{524D}" <|
-                \_ -> Expect.equal (Just "1\u{6642}\u{9593}\u{524D}") (formatSince Ja.locale Normal "2025-01-15T10:00:00" "2025-01-15T11:00:00")
+            [ test "15.1 Japanese 2分" <|
+                \_ -> Expect.equal (Just "2分") (formatDuration Ja.locale Normal 120)
+            , test "15.2 Japanese 1時間前" <|
+                \_ -> Expect.equal (Just "1時間前") (formatSince Ja.locale Normal "2025-01-15T10:00:00" "2025-01-15T11:00:00")
             ]
         , describe "16. Short compactness - duration"
             [ test "16.1 short 1h" <|
@@ -193,7 +193,7 @@ suite =
         , describe "18. Short compactness - relative time"
             [ test "18.1 Mende keeps days and hours" <|
                 \_ ->
-                    Expect.equal (Just "l\u{0254}h\u{0254}nga 2, awa 14 taa gb\u{0254}y\u{0254}")
+                    Expect.equal (Just "lɔhɔnga 2, awa 14 taa gbɔyɔ")
                         (getLocale "men" |> Maybe.andThen (\loc -> formatSince loc Short "2025-01-20T01:32:11" "2025-01-22T15:39:16"))
             ]
         , describe "19. Range (500-year ceiling)"
@@ -210,7 +210,7 @@ suite =
             ]
         , describe "20. Timestamp validation"
             [ test "20.1 seconds are optional" <|
-                \_ -> Expect.equal (Just "1\u{00BD} hours") (formatDurationTimestamps en Normal "2025-01-15T10:00" "2025-01-15T11:30:00")
+                \_ -> Expect.equal (Just "1½ hours") (formatDurationTimestamps en Normal "2025-01-15T10:00" "2025-01-15T11:30:00")
             , test "20.2 minutes are required" <|
                 \_ -> Expect.equal Nothing (formatDurationTimestamps en Normal "2025-01-15T10" "2025-01-15T11:30:00")
             , test "20.3 unpadded date" <|
