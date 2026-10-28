@@ -1,6 +1,5 @@
 #![allow(missing_docs)]
 
-
 use sayable_duration::formatter::SayableDuration;
 use sayable_duration::types::Compactness;
 
@@ -40,14 +39,20 @@ fn test_format_until_none_target() {
 #[test]
 fn test_format_since_future_start() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_since("2025-01-15T10:00:00", "2025-01-15T09:00:00"), None);
+    assert_eq!(
+        sd.format_since("2025-01-15T10:00:00", "2025-01-15T09:00:00"),
+        None
+    );
 }
 
 // 1.6
 #[test]
 fn test_format_until_past_target() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_until("2025-01-15T09:00:00", "2025-01-15T10:00:00"), None);
+    assert_eq!(
+        sd.format_until("2025-01-15T09:00:00", "2025-01-15T10:00:00"),
+        None
+    );
 }
 
 // ================================================================
@@ -72,14 +77,20 @@ fn test_one_second() {
 #[test]
 fn test_45_seconds() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(45), Some("45 seconds".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(45),
+        Some("45 seconds".to_string())
+    );
 }
 
 // 2.4
 #[test]
 fn test_59_seconds() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(59), Some("59 seconds".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(59),
+        Some("59 seconds".to_string())
+    );
 }
 
 // ================================================================
@@ -97,21 +108,30 @@ fn test_one_minute() {
 #[test]
 fn test_one_minute_thirty() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(90), Some("1 minute, 30 seconds".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(90),
+        Some("1 minute, 30 seconds".to_string())
+    );
 }
 
 // 3.3
 #[test]
 fn test_four_minutes() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(240), Some("4 minutes".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(240),
+        Some("4 minutes".to_string())
+    );
 }
 
 // 3.4
 #[test]
 fn test_four_minutes_thirty() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(270), Some("4 minutes, 30 seconds".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(270),
+        Some("4 minutes, 30 seconds".to_string())
+    );
 }
 
 // ================================================================
@@ -122,21 +142,30 @@ fn test_four_minutes_thirty() {
 #[test]
 fn test_five_minutes() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(300), Some("5 minutes".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(300),
+        Some("5 minutes".to_string())
+    );
 }
 
 // 4.2
 #[test]
 fn test_25_minutes() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(1500), Some("25 minutes".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(1500),
+        Some("25 minutes".to_string())
+    );
 }
 
 // 4.3
 #[test]
 fn test_59_minutes() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(3540), Some("59 minutes".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(3540),
+        Some("59 minutes".to_string())
+    );
 }
 
 // ================================================================
@@ -154,21 +183,30 @@ fn test_one_hour() {
 #[test]
 fn test_one_and_half_hours() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(5400), Some("1\u{00BD} hours".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(5400),
+        Some("1\u{00BD} hours".to_string())
+    );
 }
 
 // 5.3
 #[test]
 fn test_two_hours_15_minutes() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(8100), Some("2 hours, 15 minutes".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(8100),
+        Some("2 hours, 15 minutes".to_string())
+    );
 }
 
 // 5.4
 #[test]
 fn test_five_hours() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(18000), Some("5 hours".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(18000),
+        Some("5 hours".to_string())
+    );
 }
 
 // ================================================================
@@ -179,14 +217,20 @@ fn test_five_hours() {
 #[test]
 fn test_eight_hours() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(28800), Some("8 hours".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(28800),
+        Some("8 hours".to_string())
+    );
 }
 
 // 6.2
 #[test]
 fn test_23_hours() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(82800), Some("23 hours".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(82800),
+        Some("23 hours".to_string())
+    );
 }
 
 // ================================================================
@@ -204,28 +248,40 @@ fn test_one_day() {
 #[test]
 fn test_one_day_three_hours() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(97200), Some("1 day, 3 hours".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(97200),
+        Some("1 day, 3 hours".to_string())
+    );
 }
 
 // 7.3
 #[test]
 fn test_one_and_half_days() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(129600), Some("1\u{00BD} days".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(129600),
+        Some("1\u{00BD} days".to_string())
+    );
 }
 
 // 7.4
 #[test]
 fn test_five_days() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(432000), Some("5 days".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(432000),
+        Some("5 days".to_string())
+    );
 }
 
 // 7.5
 #[test]
 fn test_two_days() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(172800), Some("2 days".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(172800),
+        Some("2 days".to_string())
+    );
 }
 
 // ================================================================
@@ -236,21 +292,30 @@ fn test_two_days() {
 #[test]
 fn test_one_week() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(604800), Some("1 week".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(604800),
+        Some("1 week".to_string())
+    );
 }
 
 // 8.2
 #[test]
 fn test_two_weeks_one_day() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(1296000), Some("2 weeks, 1 day".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(1296000),
+        Some("2 weeks, 1 day".to_string())
+    );
 }
 
 // 8.3
 #[test]
 fn test_four_weeks() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(2419200), Some("4 weeks".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(2419200),
+        Some("4 weeks".to_string())
+    );
 }
 
 // ================================================================
@@ -261,28 +326,40 @@ fn test_four_weeks() {
 #[test]
 fn test_one_month() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(2678400), Some("1 month".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(2678400),
+        Some("1 month".to_string())
+    );
 }
 
 // 9.2
 #[test]
 fn test_three_months() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(7884000), Some("3 months".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(7884000),
+        Some("3 months".to_string())
+    );
 }
 
 // 9.3
 #[test]
 fn test_one_year() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(31536000), Some("1 year".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(31536000),
+        Some("1 year".to_string())
+    );
 }
 
 // 9.4
 #[test]
 fn test_one_year_three_months() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(39420000), Some("1 year, 3 months".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(39420000),
+        Some("1 year, 3 months".to_string())
+    );
 }
 
 // ================================================================
@@ -395,7 +472,10 @@ fn test_until_in_3_hours() {
 #[test]
 fn test_german_one_hour() {
     let sd = SayableDuration::new(&sayable_duration::locales::DE, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(3600), Some("1 Stunde".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(3600),
+        Some("1 Stunde".to_string())
+    );
 }
 
 // 13.2
@@ -416,7 +496,10 @@ fn test_german_since_five_minutes() {
 #[test]
 fn test_french_two_hours() {
     let sd = SayableDuration::new(&sayable_duration::locales::FR, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(7200), Some("2 heures".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(7200),
+        Some("2 heures".to_string())
+    );
 }
 
 // ================================================================
@@ -427,7 +510,10 @@ fn test_french_two_hours() {
 #[test]
 fn test_japanese_two_minutes() {
     let sd = SayableDuration::new(&sayable_duration::locales::JA, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(120), Some("2\u{5206}".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(120),
+        Some("2\u{5206}".to_string())
+    );
 }
 
 // 15.2
@@ -482,9 +568,11 @@ fn test_compact_one_minute_thirty_seconds() {
 #[test]
 fn test_case_18_1() {
     let sd = SayableDuration::new(&sayable_duration::locales::MEN, Compactness::Normal);
-    assert_eq!(sd.format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16"), Some("lɔhɔnga 2, awa 14 taa gbɔyɔ".to_string()));
+    assert_eq!(
+        sd.format_since("2025-01-20T01:32:11", "2025-01-22T15:39:16"),
+        Some("lɔhɔnga 2, awa 14 taa gbɔyɔ".to_string())
+    );
 }
-
 
 // ── Section 19: Range (500-year ceiling) ────────────────────────────────────
 
@@ -492,7 +580,10 @@ fn test_case_18_1() {
 #[test]
 fn test_case_19_1() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_seconds(15778800000), Some("500 years".to_string()));
+    assert_eq!(
+        sd.format_duration_seconds(15778800000),
+        Some("500 years".to_string())
+    );
 }
 
 // 19.2 — over 6000 months
@@ -513,16 +604,21 @@ fn test_case_19_3() {
 #[test]
 fn test_case_19_4() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00"), None);
+    assert_eq!(
+        sd.format_since("1500-01-01T00:00:00", "2025-01-01T00:00:00"),
+        None
+    );
 }
 
 // 19.5 — 575 years from now
 #[test]
 fn test_case_19_5() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00"), None);
+    assert_eq!(
+        sd.format_until("2600-01-01T00:00:00", "2025-01-01T00:00:00"),
+        None
+    );
 }
-
 
 // ── Section 20: Timestamp validation ────────────────────────────────────
 
@@ -530,34 +626,48 @@ fn test_case_19_5() {
 #[test]
 fn test_case_20_1() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_iso("2025-01-15T10:00", "2025-01-15T11:30:00"), Some("1½ hours".to_string()));
+    assert_eq!(
+        sd.format_duration_iso("2025-01-15T10:00", "2025-01-15T11:30:00"),
+        Some("1½ hours".to_string())
+    );
 }
 
 // 20.2 — minutes are required
 #[test]
 fn test_case_20_2() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_iso("2025-01-15T10", "2025-01-15T11:30:00"), None);
+    assert_eq!(
+        sd.format_duration_iso("2025-01-15T10", "2025-01-15T11:30:00"),
+        None
+    );
 }
 
 // 20.3 — unpadded date
 #[test]
 fn test_case_20_3() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_iso("2025-1-5T10:00:00", "2025-01-15T11:30:00"), None);
+    assert_eq!(
+        sd.format_duration_iso("2025-1-5T10:00:00", "2025-01-15T11:30:00"),
+        None
+    );
 }
 
 // 20.4 — impossible date
 #[test]
 fn test_case_20_4() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_duration_iso("2025-02-30T10:00:00", "2025-03-15T11:30:00"), None);
+    assert_eq!(
+        sd.format_duration_iso("2025-02-30T10:00:00", "2025-03-15T11:30:00"),
+        None
+    );
 }
 
 // 20.5 — hour out of range
 #[test]
 fn test_case_20_5() {
     let sd = SayableDuration::new(&sayable_duration::locales::EN, Compactness::Normal);
-    assert_eq!(sd.format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00"), None);
+    assert_eq!(
+        sd.format_since("2025-01-15T10:00:00", "2025-01-15T25:00:00"),
+        None
+    );
 }
-

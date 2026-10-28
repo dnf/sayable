@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gl.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Galician locale.
 pub fn locale() -> AgeLocale {
@@ -44,12 +46,24 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Recén nacido".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Recén nacido".to_string(), f: "Recén nacida".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Recén nacido".to_string(),
+                f: "Recén nacida".to_string(),
+            },
             infant: StageLabel::Neutral("Bebé".to_string()),
-            toddler: StageLabel::Gendered { m: "Neno pequeno".to_string(), f: "Nena pequena".to_string() },
-            child: StageLabel::Gendered { m: "Neno".to_string(), f: "Nena".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "Neno pequeno".to_string(),
+                f: "Nena pequena".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "Neno".to_string(),
+                f: "Nena".to_string(),
+            },
             teenager: StageLabel::Neutral("Adolescente".to_string()),
-            adult: StageLabel::Gendered { m: "Adulto".to_string(), f: "Adulta".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Adulto".to_string(),
+                f: "Adulta".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} d.")),

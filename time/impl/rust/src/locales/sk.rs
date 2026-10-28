@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sk.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Slovak locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "sk".to_string(),
         clock: ClockConfig {
-            hours: ["dvanásť".to_string(), "jedna".to_string(), "dve".to_string(), "tri".to_string(), "štyri".to_string(), "päť".to_string(), "šesť".to_string(), "sedem".to_string(), "osem".to_string(), "deväť".to_string(), "desať".to_string(), "jedenásť".to_string()],
+            hours: [
+                "dvanásť".to_string(),
+                "jedna".to_string(),
+                "dve".to_string(),
+                "tri".to_string(),
+                "štyri".to_string(),
+                "päť".to_string(),
+                "šesť".to_string(),
+                "sedem".to_string(),
+                "osem".to_string(),
+                "deväť".to_string(),
+                "desať".to_string(),
+                "jedenásť".to_string(),
+            ],
             midnight: "polnoc".to_string(),
             noon: "poludnie".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} nula päť".to_string()),
-            (10, "{h} desať".to_string()),
-            (15, "{h} pätnásť".to_string()),
-            (20, "{h} dvadsať".to_string()),
-            (25, "{h} dvadsaťpäť".to_string()),
-            (30, "{h} tridsať".to_string()),
-            (35, "o dvadsaťpäť minút {next_h}".to_string()),
-            (40, "o dvadsať minút {next_h}".to_string()),
-            (45, "o pätnásť minút {next_h}".to_string()),
-            (50, "o desať minút {next_h}".to_string()),
-            (55, "o päť minút {next_h}".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} nula päť".to_string()),
+                (10, "{h} desať".to_string()),
+                (15, "{h} pätnásť".to_string()),
+                (20, "{h} dvadsať".to_string()),
+                (25, "{h} dvadsaťpäť".to_string()),
+                (30, "{h} tridsať".to_string()),
+                (35, "o dvadsaťpäť minút {next_h}".to_string()),
+                (40, "o dvadsať minút {next_h}".to_string()),
+                (45, "o pätnásť minút {next_h}".to_string()),
+                (50, "o desať minút {next_h}".to_string()),
+                (55, "o päť minút {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

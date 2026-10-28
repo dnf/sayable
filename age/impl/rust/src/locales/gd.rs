@@ -9,17 +9,24 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gd.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Scottish Gaelic locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "gd".to_string(),
         plural: |n| {
-            if n == 1 || n == 11 { PluralCategory::One }
-            else if n == 2 || n == 12 { PluralCategory::Two }
-            else if (3..=10).contains(&n) || (13..=19).contains(&n) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 1 || n == 11 {
+                PluralCategory::One
+            } else if n == 2 || n == 12 {
+                PluralCategory::Two
+            } else if (3..=10).contains(&n) || (13..=19).contains(&n) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

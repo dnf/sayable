@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/si.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Sinhala locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "si".to_string(),
         clock: ClockConfig {
-            hours: ["දොළහ".to_string(), "එක".to_string(), "දෙක".to_string(), "තුන".to_string(), "හතර".to_string(), "පහ".to_string(), "හය".to_string(), "හත".to_string(), "අට".to_string(), "නවය".to_string(), "දහය".to_string(), "එකොළහ".to_string()],
+            hours: [
+                "දොළහ".to_string(),
+                "එක".to_string(),
+                "දෙක".to_string(),
+                "තුන".to_string(),
+                "හතර".to_string(),
+                "පහ".to_string(),
+                "හය".to_string(),
+                "හත".to_string(),
+                "අට".to_string(),
+                "නවය".to_string(),
+                "දහය".to_string(),
+                "එකොළහ".to_string(),
+            ],
             midnight: "මධ්‍යම රාත්‍රිය".to_string(),
             noon: "මධ්‍යාහ්නය".to_string(),
             patterns: HashMap::from([
-            (0, "{h}යි".to_string()),
-            (5, "{h}යි විනාඩි පහයි".to_string()),
-            (10, "{h}යි විනාඩි දහයයි".to_string()),
-            (15, "{h}යි කාලයි".to_string()),
-            (20, "{h}යි විනාඩි විස්සයි".to_string()),
-            (25, "{h}යි විනාඩි විසිපහයි".to_string()),
-            (30, "{h} හමාරයි".to_string()),
-            (35, "{next_h}ට විනාඩි විසිපහයි".to_string()),
-            (40, "{next_h}ට විනාඩි විස්සයි".to_string()),
-            (45, "{next_h}ට කාලයි".to_string()),
-            (50, "{next_h}ට විනාඩි දහයයි".to_string()),
-            (55, "{next_h}ට විනාඩි පහයි".to_string()),
-        ]),
+                (0, "{h}යි".to_string()),
+                (5, "{h}යි විනාඩි පහයි".to_string()),
+                (10, "{h}යි විනාඩි දහයයි".to_string()),
+                (15, "{h}යි කාලයි".to_string()),
+                (20, "{h}යි විනාඩි විස්සයි".to_string()),
+                (25, "{h}යි විනාඩි විසිපහයි".to_string()),
+                (30, "{h} හමාරයි".to_string()),
+                (35, "{next_h}ට විනාඩි විසිපහයි".to_string()),
+                (40, "{next_h}ට විනාඩි විස්සයි".to_string()),
+                (45, "{next_h}ට කාලයි".to_string()),
+                (50, "{next_h}ට විනාඩි දහයයි".to_string()),
+                (55, "{next_h}ට විනාඩි පහයි".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

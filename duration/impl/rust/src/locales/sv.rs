@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sv.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Swedish locale.
 pub fn locale() -> DurationLocale {

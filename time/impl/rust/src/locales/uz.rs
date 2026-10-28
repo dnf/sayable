@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/uz.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Uzbek locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "uz".to_string(),
         clock: ClockConfig {
-            hours: ["o'n ikki".to_string(), "bir".to_string(), "ikki".to_string(), "uch".to_string(), "to'rt".to_string(), "besh".to_string(), "olti".to_string(), "yetti".to_string(), "sakkiz".to_string(), "to'qqiz".to_string(), "o'n".to_string(), "o'n bir".to_string()],
+            hours: [
+                "o'n ikki".to_string(),
+                "bir".to_string(),
+                "ikki".to_string(),
+                "uch".to_string(),
+                "to'rt".to_string(),
+                "besh".to_string(),
+                "olti".to_string(),
+                "yetti".to_string(),
+                "sakkiz".to_string(),
+                "to'qqiz".to_string(),
+                "o'n".to_string(),
+                "o'n bir".to_string(),
+            ],
             midnight: "yarim tun".to_string(),
             noon: "tush".to_string(),
             patterns: HashMap::from([
-            (0, "soat {h}".to_string()),
-            (5, "soat {h} nol besh".to_string()),
-            (10, "soat {h} o'n".to_string()),
-            (15, "soat {h} o'n besh".to_string()),
-            (20, "soat {h} yigirma".to_string()),
-            (25, "soat {h} yigirma besh".to_string()),
-            (30, "soat {h} yarim".to_string()),
-            (35, "soat {h} o'ttiz besh".to_string()),
-            (40, "soat {h} qirq".to_string()),
-            (45, "soat {h} qirq besh".to_string()),
-            (50, "soat {h} ellik".to_string()),
-            (55, "soat {h} ellik besh".to_string()),
-        ]),
+                (0, "soat {h}".to_string()),
+                (5, "soat {h} nol besh".to_string()),
+                (10, "soat {h} o'n".to_string()),
+                (15, "soat {h} o'n besh".to_string()),
+                (20, "soat {h} yigirma".to_string()),
+                (25, "soat {h} yigirma besh".to_string()),
+                (30, "soat {h} yarim".to_string()),
+                (35, "soat {h} o'ttiz besh".to_string()),
+                (40, "soat {h} qirq".to_string()),
+                (45, "soat {h} qirq besh".to_string()),
+                (50, "soat {h} ellik".to_string()),
+                (55, "soat {h} ellik besh".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

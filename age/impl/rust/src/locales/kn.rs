@@ -9,14 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kn.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Kannada locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "kn".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

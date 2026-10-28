@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/pa.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Punjabi locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "pa".to_string(),
         clock: ClockConfig {
-            hours: ["ਬਾਰਾਂ".to_string(), "ਇੱਕ".to_string(), "ਦੋ".to_string(), "ਤਿੰਨ".to_string(), "ਚਾਰ".to_string(), "ਪੰਜ".to_string(), "ਛੇ".to_string(), "ਸੱਤ".to_string(), "ਅੱਠ".to_string(), "ਨੌਂ".to_string(), "ਦਸ".to_string(), "ਗਿਆਰਾਂ".to_string()],
+            hours: [
+                "ਬਾਰਾਂ".to_string(),
+                "ਇੱਕ".to_string(),
+                "ਦੋ".to_string(),
+                "ਤਿੰਨ".to_string(),
+                "ਚਾਰ".to_string(),
+                "ਪੰਜ".to_string(),
+                "ਛੇ".to_string(),
+                "ਸੱਤ".to_string(),
+                "ਅੱਠ".to_string(),
+                "ਨੌਂ".to_string(),
+                "ਦਸ".to_string(),
+                "ਗਿਆਰਾਂ".to_string(),
+            ],
             midnight: "ਅੱਧੀ ਰਾਤ".to_string(),
             noon: "ਦੁਪਹਿਰ".to_string(),
             patterns: HashMap::from([
-            (0, "{h} ਵਜੇ".to_string()),
-            (5, "{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ".to_string()),
-            (10, "{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ".to_string()),
-            (15, "ਸਵਾ {h} ਵਜੇ".to_string()),
-            (20, "{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ".to_string()),
-            (25, "{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ".to_string()),
-            (30, "{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ".to_string()),
-            (35, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ".to_string()),
-            (40, "{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ".to_string()),
-            (45, "ਪੌਣੇ {next_h} ਵਜੇ".to_string()),
-            (50, "{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ".to_string()),
-            (55, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ".to_string()),
-        ]),
+                (0, "{h} ਵਜੇ".to_string()),
+                (5, "{h} ਵੱਜ ਕੇ ਪੰਜ ਮਿੰਟ".to_string()),
+                (10, "{h} ਵੱਜ ਕੇ ਦਸ ਮਿੰਟ".to_string()),
+                (15, "ਸਵਾ {h} ਵਜੇ".to_string()),
+                (20, "{h} ਵੱਜ ਕੇ ਵੀਹ ਮਿੰਟ".to_string()),
+                (25, "{h} ਵੱਜ ਕੇ ਪੱਚੀ ਮਿੰਟ".to_string()),
+                (30, "{h} ਵੱਜ ਕੇ ਤੀਹ ਮਿੰਟ".to_string()),
+                (35, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੱਚੀ ਮਿੰਟ".to_string()),
+                (40, "{next_h} ਵੱਜਣ ਵਿੱਚ ਵੀਹ ਮਿੰਟ".to_string()),
+                (45, "ਪੌਣੇ {next_h} ਵਜੇ".to_string()),
+                (50, "{next_h} ਵੱਜਣ ਵਿੱਚ ਦਸ ਮਿੰਟ".to_string()),
+                (55, "{next_h} ਵੱਜਣ ਵਿੱਚ ਪੰਜ ਮਿੰਟ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

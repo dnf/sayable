@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/dv.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Dhivehi locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "dv".to_string(),
         clock: ClockConfig {
-            hours: ["ބާރަ".to_string(), "އެކެއް".to_string(), "ދޭއް".to_string(), "ތިނެއް".to_string(), "ހަތަރެއް".to_string(), "ފަހެއް".to_string(), "ހައެއް".to_string(), "ހަތެއް".to_string(), "އަށެއް".to_string(), "ނުވައެއް".to_string(), "ދިހައެއް".to_string(), "އެގާރަ".to_string()],
+            hours: [
+                "ބާރަ".to_string(),
+                "އެކެއް".to_string(),
+                "ދޭއް".to_string(),
+                "ތިނެއް".to_string(),
+                "ހަތަރެއް".to_string(),
+                "ފަހެއް".to_string(),
+                "ހައެއް".to_string(),
+                "ހަތެއް".to_string(),
+                "އަށެއް".to_string(),
+                "ނުވައެއް".to_string(),
+                "ދިހައެއް".to_string(),
+                "އެގާރަ".to_string(),
+            ],
             midnight: "މެންދަމު".to_string(),
             noon: "މެންދުރު".to_string(),
             patterns: HashMap::from([
-            (0, "ގަޑިން {h}".to_string()),
-            (5, "{h} ޖަހައި ފަސް މިނެޓު".to_string()),
-            (10, "{h} ޖަހައި ދިހަ މިނެޓު".to_string()),
-            (15, "{h} ޖަހައި ފަނަރަ މިނެޓު".to_string()),
-            (20, "{h} ޖަހައި ވިހި މިނެޓު".to_string()),
-            (25, "{h} ޖަހައި ފަންސަވީސް މިނެޓު".to_string()),
-            (30, "{h} ޖަހައި ބައި".to_string()),
-            (35, "{h} ޖަހައި ތިރީސްފަސް މިނެޓު".to_string()),
-            (40, "{h} ޖަހައި ސާޅީސް މިނެޓު".to_string()),
-            (45, "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު".to_string()),
-            (50, "{h} ޖަހައި ފަންސާސް މިނެޓު".to_string()),
-            (55, "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު".to_string()),
-        ]),
+                (0, "ގަޑިން {h}".to_string()),
+                (5, "{h} ޖަހައި ފަސް މިނެޓު".to_string()),
+                (10, "{h} ޖަހައި ދިހަ މިނެޓު".to_string()),
+                (15, "{h} ޖަހައި ފަނަރަ މިނެޓު".to_string()),
+                (20, "{h} ޖަހައި ވިހި މިނެޓު".to_string()),
+                (25, "{h} ޖަހައި ފަންސަވީސް މިނެޓު".to_string()),
+                (30, "{h} ޖަހައި ބައި".to_string()),
+                (35, "{h} ޖަހައި ތިރީސްފަސް މިނެޓު".to_string()),
+                (40, "{h} ޖަހައި ސާޅީސް މިނެޓު".to_string()),
+                (45, "{h} ޖަހައި ސާޅީސްފަސް މިނެޓު".to_string()),
+                (50, "{h} ޖަހައި ފަންސާސް މިނެޓު".to_string()),
+                (55, "{h} ޖަހައި ފަންސާސްފަސް މިނެޓު".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

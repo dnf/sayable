@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gv.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Manx locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "gv".to_string(),
         clock: ClockConfig {
-            hours: ["daa-yeig".to_string(), "nane".to_string(), "jees".to_string(), "tree".to_string(), "kiare".to_string(), "queig".to_string(), "shey".to_string(), "shiaght".to_string(), "hoght".to_string(), "nuy".to_string(), "jeih".to_string(), "nane-jeig".to_string()],
+            hours: [
+                "daa-yeig".to_string(),
+                "nane".to_string(),
+                "jees".to_string(),
+                "tree".to_string(),
+                "kiare".to_string(),
+                "queig".to_string(),
+                "shey".to_string(),
+                "shiaght".to_string(),
+                "hoght".to_string(),
+                "nuy".to_string(),
+                "jeih".to_string(),
+                "nane-jeig".to_string(),
+            ],
             midnight: "mean oie".to_string(),
             noon: "munlaa".to_string(),
             patterns: HashMap::from([
-            (0, "{h} er y chlag".to_string()),
-            (5, "queig minnidyn lurg {h}".to_string()),
-            (10, "jeih minnidyn lurg {h}".to_string()),
-            (15, "kerroo lurg {h}".to_string()),
-            (20, "feed minnid lurg {h}".to_string()),
-            (25, "queig minnidyn as feed lurg {h}".to_string()),
-            (30, "lieh-oor lurg {h}".to_string()),
-            (35, "queig minnidyn as feed gys {next_h}".to_string()),
-            (40, "feed minnid gys {next_h}".to_string()),
-            (45, "kerroo gys {next_h}".to_string()),
-            (50, "jeih minnidyn gys {next_h}".to_string()),
-            (55, "queig minnidyn gys {next_h}".to_string()),
-        ]),
+                (0, "{h} er y chlag".to_string()),
+                (5, "queig minnidyn lurg {h}".to_string()),
+                (10, "jeih minnidyn lurg {h}".to_string()),
+                (15, "kerroo lurg {h}".to_string()),
+                (20, "feed minnid lurg {h}".to_string()),
+                (25, "queig minnidyn as feed lurg {h}".to_string()),
+                (30, "lieh-oor lurg {h}".to_string()),
+                (35, "queig minnidyn as feed gys {next_h}".to_string()),
+                (40, "feed minnid gys {next_h}".to_string()),
+                (45, "kerroo gys {next_h}".to_string()),
+                (50, "jeih minnidyn gys {next_h}".to_string()),
+                (55, "queig minnidyn gys {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

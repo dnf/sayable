@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ur.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Urdu locale.
 pub fn locale() -> AgeLocale {
@@ -46,8 +48,14 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Neutral("نومولود".to_string()),
             infant: StageLabel::Neutral("شیرخوار".to_string()),
-            toddler: StageLabel::Gendered { m: "چھوٹا بچہ".to_string(), f: "چھوٹی بچی".to_string() },
-            child: StageLabel::Gendered { m: "بچہ".to_string(), f: "بچی".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "چھوٹا بچہ".to_string(),
+                f: "چھوٹی بچی".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "بچہ".to_string(),
+                f: "بچی".to_string(),
+            },
             teenager: StageLabel::Neutral("نوجوان".to_string()),
             adult: StageLabel::Neutral("بالغ".to_string()),
         },

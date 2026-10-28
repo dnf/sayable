@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/nl.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Dutch locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "nl".to_string(),
         clock: ClockConfig {
-            hours: ["twaalf".to_string(), "een".to_string(), "twee".to_string(), "drie".to_string(), "vier".to_string(), "vijf".to_string(), "zes".to_string(), "zeven".to_string(), "acht".to_string(), "negen".to_string(), "tien".to_string(), "elf".to_string()],
+            hours: [
+                "twaalf".to_string(),
+                "een".to_string(),
+                "twee".to_string(),
+                "drie".to_string(),
+                "vier".to_string(),
+                "vijf".to_string(),
+                "zes".to_string(),
+                "zeven".to_string(),
+                "acht".to_string(),
+                "negen".to_string(),
+                "tien".to_string(),
+                "elf".to_string(),
+            ],
             midnight: "middernacht".to_string(),
             noon: "twaalf uur 's middags".to_string(),
             patterns: HashMap::from([
-            (0, "{h} uur".to_string()),
-            (5, "vijf over {h}".to_string()),
-            (10, "tien over {h}".to_string()),
-            (15, "kwart over {h}".to_string()),
-            (20, "tien voor half {next_h}".to_string()),
-            (25, "vijf voor half {next_h}".to_string()),
-            (30, "half {next_h}".to_string()),
-            (35, "vijf over half {next_h}".to_string()),
-            (40, "tien over half {next_h}".to_string()),
-            (45, "kwart voor {next_h}".to_string()),
-            (50, "tien voor {next_h}".to_string()),
-            (55, "vijf voor {next_h}".to_string()),
-        ]),
+                (0, "{h} uur".to_string()),
+                (5, "vijf over {h}".to_string()),
+                (10, "tien over {h}".to_string()),
+                (15, "kwart over {h}".to_string()),
+                (20, "tien voor half {next_h}".to_string()),
+                (25, "vijf voor half {next_h}".to_string()),
+                (30, "half {next_h}".to_string()),
+                (35, "vijf over half {next_h}".to_string()),
+                (40, "tien over half {next_h}".to_string()),
+                (45, "kwart voor {next_h}".to_string()),
+                (50, "tien voor {next_h}".to_string()),
+                (55, "vijf voor {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/qu.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Quechua locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "qu".to_string(),
         clock: ClockConfig {
-            hours: ["chunka iskayniyuq".to_string(), "huk".to_string(), "iskay".to_string(), "kimsa".to_string(), "tawa".to_string(), "pichqa".to_string(), "suqta".to_string(), "qanchis".to_string(), "pusaq".to_string(), "isqun".to_string(), "chunka".to_string(), "chunka hukniyuq".to_string()],
+            hours: [
+                "chunka iskayniyuq".to_string(),
+                "huk".to_string(),
+                "iskay".to_string(),
+                "kimsa".to_string(),
+                "tawa".to_string(),
+                "pichqa".to_string(),
+                "suqta".to_string(),
+                "qanchis".to_string(),
+                "pusaq".to_string(),
+                "isqun".to_string(),
+                "chunka".to_string(),
+                "chunka hukniyuq".to_string(),
+            ],
             midnight: "chawpi tuta".to_string(),
             noon: "chawpi p'unchaw".to_string(),
             patterns: HashMap::from([
-            (0, "{h} ura".to_string()),
-            (5, "{h} ura pichqa".to_string()),
-            (10, "{h} ura chunka".to_string()),
-            (15, "{h} ura chunka pichqayuq".to_string()),
-            (20, "{h} ura iskay chunka".to_string()),
-            (25, "{h} ura iskay chunka pichqayuq".to_string()),
-            (30, "{h} ura kimsa chunka".to_string()),
-            (35, "{h} ura kimsa chunka pichqayuq".to_string()),
-            (40, "{h} ura tawa chunka".to_string()),
-            (45, "{h} ura tawa chunka pichqayuq".to_string()),
-            (50, "{h} ura pichqa chunka".to_string()),
-            (55, "{h} ura pichqa chunka pichqayuq".to_string()),
-        ]),
+                (0, "{h} ura".to_string()),
+                (5, "{h} ura pichqa".to_string()),
+                (10, "{h} ura chunka".to_string()),
+                (15, "{h} ura chunka pichqayuq".to_string()),
+                (20, "{h} ura iskay chunka".to_string()),
+                (25, "{h} ura iskay chunka pichqayuq".to_string()),
+                (30, "{h} ura kimsa chunka".to_string()),
+                (35, "{h} ura kimsa chunka pichqayuq".to_string()),
+                (40, "{h} ura tawa chunka".to_string()),
+                (45, "{h} ura tawa chunka pichqayuq".to_string()),
+                (50, "{h} ura pichqa chunka".to_string()),
+                (55, "{h} ura pichqa chunka pichqayuq".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

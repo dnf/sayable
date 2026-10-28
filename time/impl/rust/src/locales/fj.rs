@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/fj.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Fijian locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "fj".to_string(),
         clock: ClockConfig {
-            hours: ["tini ka rua".to_string(), "dua".to_string(), "rua".to_string(), "tolu".to_string(), "vā".to_string(), "lima".to_string(), "ono".to_string(), "vitu".to_string(), "walu".to_string(), "ciwa".to_string(), "tini".to_string(), "tini ka dua".to_string()],
+            hours: [
+                "tini ka rua".to_string(),
+                "dua".to_string(),
+                "rua".to_string(),
+                "tolu".to_string(),
+                "vā".to_string(),
+                "lima".to_string(),
+                "ono".to_string(),
+                "vitu".to_string(),
+                "walu".to_string(),
+                "ciwa".to_string(),
+                "tini".to_string(),
+                "tini ka dua".to_string(),
+            ],
             midnight: "bogi levu".to_string(),
             noon: "sigalevu".to_string(),
             patterns: HashMap::from([
-            (0, "{h} na kaloko".to_string()),
-            (5, "{h} na kaloko ka lima na miniti".to_string()),
-            (10, "{h} na kaloko ka tini na miniti".to_string()),
-            (15, "{h} na kaloko ka tini ka lima na miniti".to_string()),
-            (20, "{h} na kaloko ka ruasagavulu na miniti".to_string()),
-            (25, "{h} na kaloko ka ruasagavulu ka lima na miniti".to_string()),
-            (30, "{h} na kaloko ka tolusagavulu na miniti".to_string()),
-            (35, "{h} na kaloko ka tolusagavulu ka lima na miniti".to_string()),
-            (40, "{h} na kaloko ka vāsagavulu na miniti".to_string()),
-            (45, "{h} na kaloko ka vāsagavulu ka lima na miniti".to_string()),
-            (50, "{h} na kaloko ka limasagavulu na miniti".to_string()),
-            (55, "{h} na kaloko ka limasagavulu ka lima na miniti".to_string()),
-        ]),
+                (0, "{h} na kaloko".to_string()),
+                (5, "{h} na kaloko ka lima na miniti".to_string()),
+                (10, "{h} na kaloko ka tini na miniti".to_string()),
+                (15, "{h} na kaloko ka tini ka lima na miniti".to_string()),
+                (20, "{h} na kaloko ka ruasagavulu na miniti".to_string()),
+                (
+                    25,
+                    "{h} na kaloko ka ruasagavulu ka lima na miniti".to_string(),
+                ),
+                (30, "{h} na kaloko ka tolusagavulu na miniti".to_string()),
+                (
+                    35,
+                    "{h} na kaloko ka tolusagavulu ka lima na miniti".to_string(),
+                ),
+                (40, "{h} na kaloko ka vāsagavulu na miniti".to_string()),
+                (
+                    45,
+                    "{h} na kaloko ka vāsagavulu ka lima na miniti".to_string(),
+                ),
+                (50, "{h} na kaloko ka limasagavulu na miniti".to_string()),
+                (
+                    55,
+                    "{h} na kaloko ka limasagavulu ka lima na miniti".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

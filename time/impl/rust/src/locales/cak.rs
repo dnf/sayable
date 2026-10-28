@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/cak.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Kaqchikel locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "cak".to_string(),
         clock: ClockConfig {
-            hours: ["kab'lajuj".to_string(), "jun".to_string(), "ka'i'".to_string(), "oxi'".to_string(), "kaji'".to_string(), "wo'o'".to_string(), "waqi'".to_string(), "wuqu'".to_string(), "waqxaqi'".to_string(), "b'eleje'".to_string(), "lajuj".to_string(), "julajuj".to_string()],
+            hours: [
+                "kab'lajuj".to_string(),
+                "jun".to_string(),
+                "ka'i'".to_string(),
+                "oxi'".to_string(),
+                "kaji'".to_string(),
+                "wo'o'".to_string(),
+                "waqi'".to_string(),
+                "wuqu'".to_string(),
+                "waqxaqi'".to_string(),
+                "b'eleje'".to_string(),
+                "lajuj".to_string(),
+                "julajuj".to_string(),
+            ],
             midnight: "nik'aj aq'a'".to_string(),
             noon: "nik'aj q'ij".to_string(),
             patterns: HashMap::from([
-            (0, "{h} ramaj".to_string()),
-            (5, "{h} ramaj rik'in wo'o'".to_string()),
-            (10, "{h} ramaj rik'in lajuj".to_string()),
-            (15, "{h} ramaj rik'in wolajuj".to_string()),
-            (20, "{h} ramaj rik'in juk'al".to_string()),
-            (25, "{h} ramaj rik'in juk'al wo'o'".to_string()),
-            (30, "{h} ramaj rik'in nik'aj".to_string()),
-            (35, "{h} ramaj rik'in juk'al wolajuj".to_string()),
-            (40, "{h} ramaj rik'in kak'al".to_string()),
-            (45, "{h} ramaj rik'in kak'al wo'o'".to_string()),
-            (50, "{h} ramaj rik'in kak'al lajuj".to_string()),
-            (55, "{h} ramaj rik'in kak'al wolajuj".to_string()),
-        ]),
+                (0, "{h} ramaj".to_string()),
+                (5, "{h} ramaj rik'in wo'o'".to_string()),
+                (10, "{h} ramaj rik'in lajuj".to_string()),
+                (15, "{h} ramaj rik'in wolajuj".to_string()),
+                (20, "{h} ramaj rik'in juk'al".to_string()),
+                (25, "{h} ramaj rik'in juk'al wo'o'".to_string()),
+                (30, "{h} ramaj rik'in nik'aj".to_string()),
+                (35, "{h} ramaj rik'in juk'al wolajuj".to_string()),
+                (40, "{h} ramaj rik'in kak'al".to_string()),
+                (45, "{h} ramaj rik'in kak'al wo'o'".to_string()),
+                (50, "{h} ramaj rik'in kak'al lajuj".to_string()),
+                (55, "{h} ramaj rik'in kak'al wolajuj".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

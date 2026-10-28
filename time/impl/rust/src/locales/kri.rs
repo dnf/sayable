@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kri.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Krio locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "kri".to_string(),
         clock: ClockConfig {
-            hours: ["twelv".to_string(), "wan".to_string(), "tu".to_string(), "tri".to_string(), "fo".to_string(), "fayv".to_string(), "siks".to_string(), "sevin".to_string(), "et".to_string(), "nayn".to_string(), "ten".to_string(), "ilevin".to_string()],
+            hours: [
+                "twelv".to_string(),
+                "wan".to_string(),
+                "tu".to_string(),
+                "tri".to_string(),
+                "fo".to_string(),
+                "fayv".to_string(),
+                "siks".to_string(),
+                "sevin".to_string(),
+                "et".to_string(),
+                "nayn".to_string(),
+                "ten".to_string(),
+                "ilevin".to_string(),
+            ],
             midnight: "midul net".to_string(),
             noon: "midul de".to_string(),
             patterns: HashMap::from([
-            (0, "{h} oklok".to_string()),
-            (5, "fayv pas {h}".to_string()),
-            (10, "ten pas {h}".to_string()),
-            (15, "kwota pas {h}".to_string()),
-            (20, "twenti pas {h}".to_string()),
-            (25, "twenti fayv pas {h}".to_string()),
-            (30, "af pas {h}".to_string()),
-            (35, "twenti fayv tu {next_h}".to_string()),
-            (40, "twenti tu {next_h}".to_string()),
-            (45, "kwota tu {next_h}".to_string()),
-            (50, "ten tu {next_h}".to_string()),
-            (55, "fayv tu {next_h}".to_string()),
-        ]),
+                (0, "{h} oklok".to_string()),
+                (5, "fayv pas {h}".to_string()),
+                (10, "ten pas {h}".to_string()),
+                (15, "kwota pas {h}".to_string()),
+                (20, "twenti pas {h}".to_string()),
+                (25, "twenti fayv pas {h}".to_string()),
+                (30, "af pas {h}".to_string()),
+                (35, "twenti fayv tu {next_h}".to_string()),
+                (40, "twenti tu {next_h}".to_string()),
+                (45, "kwota tu {next_h}".to_string()),
+                (50, "ten tu {next_h}".to_string()),
+                (55, "fayv tu {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

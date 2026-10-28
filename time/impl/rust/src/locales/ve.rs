@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ve.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Venda locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ve".to_string(),
         clock: ClockConfig {
-            hours: ["ya fumi na mbili".to_string(), "ya u thoma".to_string(), "ya vhuvhili".to_string(), "ya vhuraru".to_string(), "ya vhuṋa".to_string(), "ya vhuṱanu".to_string(), "ya vhurathi".to_string(), "ya vhusumbe".to_string(), "ya vhumalo".to_string(), "ya vhuṱahe".to_string(), "ya fumi".to_string(), "ya fumi na nthihi".to_string()],
+            hours: [
+                "ya fumi na mbili".to_string(),
+                "ya u thoma".to_string(),
+                "ya vhuvhili".to_string(),
+                "ya vhuraru".to_string(),
+                "ya vhuṋa".to_string(),
+                "ya vhuṱanu".to_string(),
+                "ya vhurathi".to_string(),
+                "ya vhusumbe".to_string(),
+                "ya vhumalo".to_string(),
+                "ya vhuṱahe".to_string(),
+                "ya fumi".to_string(),
+                "ya fumi na nthihi".to_string(),
+            ],
             midnight: "vhukati ha vhusiku".to_string(),
             noon: "vhukati ha masiari".to_string(),
             patterns: HashMap::from([
-            (0, "awara {h}".to_string()),
-            (5, "awara {h} na ṱhanu".to_string()),
-            (10, "awara {h} na fumi".to_string()),
-            (15, "awara {h} na kotara".to_string()),
-            (20, "awara {h} na mahumi mavhili".to_string()),
-            (25, "awara {h} na mahumi mavhili na ṱhanu".to_string()),
-            (30, "awara {h} na hafu".to_string()),
-            (35, "awara {h} na mahumi mararu na ṱhanu".to_string()),
-            (40, "awara {h} na mahumi maṋa".to_string()),
-            (45, "awara {h} na mahumi maṋa na ṱhanu".to_string()),
-            (50, "awara {h} na mahumi maṱanu".to_string()),
-            (55, "awara {h} na mahumi maṱanu na ṱhanu".to_string()),
-        ]),
+                (0, "awara {h}".to_string()),
+                (5, "awara {h} na ṱhanu".to_string()),
+                (10, "awara {h} na fumi".to_string()),
+                (15, "awara {h} na kotara".to_string()),
+                (20, "awara {h} na mahumi mavhili".to_string()),
+                (25, "awara {h} na mahumi mavhili na ṱhanu".to_string()),
+                (30, "awara {h} na hafu".to_string()),
+                (35, "awara {h} na mahumi mararu na ṱhanu".to_string()),
+                (40, "awara {h} na mahumi maṋa".to_string()),
+                (45, "awara {h} na mahumi maṋa na ṱhanu".to_string()),
+                (50, "awara {h} na mahumi maṱanu".to_string()),
+                (55, "awara {h} na mahumi maṱanu na ṱhanu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

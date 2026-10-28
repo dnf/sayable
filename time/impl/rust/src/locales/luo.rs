@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/luo.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Dholuo locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "luo".to_string(),
         clock: ClockConfig {
-            hours: ["auchiel".to_string(), "abiriyo".to_string(), "aboro".to_string(), "ochiko".to_string(), "apar".to_string(), "apar gachiel".to_string(), "apar gariyo".to_string(), "achiel".to_string(), "ariyo".to_string(), "adek".to_string(), "ang'wen".to_string(), "abich".to_string()],
+            hours: [
+                "auchiel".to_string(),
+                "abiriyo".to_string(),
+                "aboro".to_string(),
+                "ochiko".to_string(),
+                "apar".to_string(),
+                "apar gachiel".to_string(),
+                "apar gariyo".to_string(),
+                "achiel".to_string(),
+                "ariyo".to_string(),
+                "adek".to_string(),
+                "ang'wen".to_string(),
+                "abich".to_string(),
+            ],
             midnight: "dier otieno".to_string(),
             noon: "odiechieng' tir".to_string(),
             patterns: HashMap::from([
-            (0, "saa {h}".to_string()),
-            (5, "saa {h} gi dakika abich".to_string()),
-            (10, "saa {h} gi dakika apar".to_string()),
-            (15, "saa {h} gi dakika apar gabich".to_string()),
-            (20, "saa {h} gi dakika piero ariyo".to_string()),
-            (25, "saa {h} gi dakika piero ariyo gabich".to_string()),
-            (30, "saa {h} gi nus".to_string()),
-            (35, "saa {h} gi dakika piero adek gabich".to_string()),
-            (40, "saa {h} gi dakika piero ang'wen".to_string()),
-            (45, "saa {h} gi dakika piero ang'wen gabich".to_string()),
-            (50, "saa {h} gi dakika piero abich".to_string()),
-            (55, "saa {h} gi dakika piero abich gabich".to_string()),
-        ]),
+                (0, "saa {h}".to_string()),
+                (5, "saa {h} gi dakika abich".to_string()),
+                (10, "saa {h} gi dakika apar".to_string()),
+                (15, "saa {h} gi dakika apar gabich".to_string()),
+                (20, "saa {h} gi dakika piero ariyo".to_string()),
+                (25, "saa {h} gi dakika piero ariyo gabich".to_string()),
+                (30, "saa {h} gi nus".to_string()),
+                (35, "saa {h} gi dakika piero adek gabich".to_string()),
+                (40, "saa {h} gi dakika piero ang'wen".to_string()),
+                (45, "saa {h} gi dakika piero ang'wen gabich".to_string()),
+                (50, "saa {h} gi dakika piero abich".to_string()),
+                (55, "saa {h} gi dakika piero abich gabich".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

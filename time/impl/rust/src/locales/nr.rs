@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/nr.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Southern Ndebele locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "nr".to_string(),
         clock: ClockConfig {
-            hours: ["letjhumi nambili".to_string(), "lokuthoma".to_string(), "lesibili".to_string(), "lesithathu".to_string(), "lesine".to_string(), "lesihlanu".to_string(), "lesithandathu".to_string(), "lekhomba".to_string(), "lobunane".to_string(), "lethoba".to_string(), "letjhumi".to_string(), "letjhumi nanye".to_string()],
+            hours: [
+                "letjhumi nambili".to_string(),
+                "lokuthoma".to_string(),
+                "lesibili".to_string(),
+                "lesithathu".to_string(),
+                "lesine".to_string(),
+                "lesihlanu".to_string(),
+                "lesithandathu".to_string(),
+                "lekhomba".to_string(),
+                "lobunane".to_string(),
+                "lethoba".to_string(),
+                "letjhumi".to_string(),
+                "letjhumi nanye".to_string(),
+            ],
             midnight: "phakathi kobusuku".to_string(),
             noon: "emini".to_string(),
             patterns: HashMap::from([
-            (0, "ihora {h}".to_string()),
-            (5, "ihora {h} nemizuzu emihlanu".to_string()),
-            (10, "ihora {h} nemizuzu elitjhumi".to_string()),
-            (15, "ihora {h} nemizuzu elitjhumi nanhlanu".to_string()),
-            (20, "ihora {h} nemizuzu engamatjhumi amabili".to_string()),
-            (25, "ihora {h} nemizuzu engamatjhumi amabili nanhlanu".to_string()),
-            (30, "ihora {h} nesiquntu".to_string()),
-            (35, "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu".to_string()),
-            (40, "ihora {h} nemizuzu engamatjhumi amane".to_string()),
-            (45, "ihora {h} nemizuzu engamatjhumi amane nanhlanu".to_string()),
-            (50, "ihora {h} nemizuzu engamatjhumi amahlanu".to_string()),
-            (55, "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu".to_string()),
-        ]),
+                (0, "ihora {h}".to_string()),
+                (5, "ihora {h} nemizuzu emihlanu".to_string()),
+                (10, "ihora {h} nemizuzu elitjhumi".to_string()),
+                (15, "ihora {h} nemizuzu elitjhumi nanhlanu".to_string()),
+                (20, "ihora {h} nemizuzu engamatjhumi amabili".to_string()),
+                (
+                    25,
+                    "ihora {h} nemizuzu engamatjhumi amabili nanhlanu".to_string(),
+                ),
+                (30, "ihora {h} nesiquntu".to_string()),
+                (
+                    35,
+                    "ihora {h} nemizuzu engamatjhumi amathathu nanhlanu".to_string(),
+                ),
+                (40, "ihora {h} nemizuzu engamatjhumi amane".to_string()),
+                (
+                    45,
+                    "ihora {h} nemizuzu engamatjhumi amane nanhlanu".to_string(),
+                ),
+                (50, "ihora {h} nemizuzu engamatjhumi amahlanu".to_string()),
+                (
+                    55,
+                    "ihora {h} nemizuzu engamatjhumi amahlanu nanhlanu".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

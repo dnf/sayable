@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/br.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Breton locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "br".to_string(),
         clock: ClockConfig {
-            hours: ["daouzek eur".to_string(), "un eur".to_string(), "div eur".to_string(), "teir eur".to_string(), "peder eur".to_string(), "pemp eur".to_string(), "c'hwec'h eur".to_string(), "seizh eur".to_string(), "eizh eur".to_string(), "nav eur".to_string(), "dek eur".to_string(), "unnek eur".to_string()],
+            hours: [
+                "daouzek eur".to_string(),
+                "un eur".to_string(),
+                "div eur".to_string(),
+                "teir eur".to_string(),
+                "peder eur".to_string(),
+                "pemp eur".to_string(),
+                "c'hwec'h eur".to_string(),
+                "seizh eur".to_string(),
+                "eizh eur".to_string(),
+                "nav eur".to_string(),
+                "dek eur".to_string(),
+                "unnek eur".to_string(),
+            ],
             midnight: "hanternoz".to_string(),
             noon: "kreisteiz".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} ha pemp".to_string()),
-            (10, "{h} ha dek".to_string()),
-            (15, "{h} ha kard".to_string()),
-            (20, "{h} hag ugent".to_string()),
-            (25, "{h} ha pemp warn-ugent".to_string()),
-            (30, "{h} hanter".to_string()),
-            (35, "{next_h} nemet pemp warn-ugent".to_string()),
-            (40, "{next_h} nemet ugent".to_string()),
-            (45, "{next_h} nemet kard".to_string()),
-            (50, "{next_h} nemet dek".to_string()),
-            (55, "{next_h} nemet pemp".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} ha pemp".to_string()),
+                (10, "{h} ha dek".to_string()),
+                (15, "{h} ha kard".to_string()),
+                (20, "{h} hag ugent".to_string()),
+                (25, "{h} ha pemp warn-ugent".to_string()),
+                (30, "{h} hanter".to_string()),
+                (35, "{next_h} nemet pemp warn-ugent".to_string()),
+                (40, "{next_h} nemet ugent".to_string()),
+                (45, "{next_h} nemet kard".to_string()),
+                (50, "{next_h} nemet dek".to_string()),
+                (55, "{next_h} nemet pemp".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,14 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/fr.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// French locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "fr".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -37,11 +43,17 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Nouveau-né".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Nouveau-né".to_string(), f: "Nouveau-née".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Nouveau-né".to_string(),
+                f: "Nouveau-née".to_string(),
+            },
             infant: StageLabel::Neutral("Nourrisson".to_string()),
             toddler: StageLabel::Neutral("Tout-petit".to_string()),
             child: StageLabel::Neutral("Enfant".to_string()),
-            teenager: StageLabel::Gendered { m: "Adolescent".to_string(), f: "Adolescente".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Adolescent".to_string(),
+                f: "Adolescente".to_string(),
+            },
             adult: StageLabel::Neutral("Adulte".to_string()),
         },
         short: Some(CompactnessOverride {

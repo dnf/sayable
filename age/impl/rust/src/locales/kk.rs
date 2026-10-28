@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kk.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Kazakh locale.
 pub fn locale() -> AgeLocale {

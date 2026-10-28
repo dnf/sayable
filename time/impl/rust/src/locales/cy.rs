@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/cy.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Welsh locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "cy".to_string(),
         clock: ClockConfig {
-            hours: ["deuddeg".to_string(), "un".to_string(), "dau".to_string(), "tri".to_string(), "pedwar".to_string(), "pump".to_string(), "chwech".to_string(), "saith".to_string(), "wyth".to_string(), "naw".to_string(), "deg".to_string(), "un ar ddeg".to_string()],
+            hours: [
+                "deuddeg".to_string(),
+                "un".to_string(),
+                "dau".to_string(),
+                "tri".to_string(),
+                "pedwar".to_string(),
+                "pump".to_string(),
+                "chwech".to_string(),
+                "saith".to_string(),
+                "wyth".to_string(),
+                "naw".to_string(),
+                "deg".to_string(),
+                "un ar ddeg".to_string(),
+            ],
             midnight: "hanner nos".to_string(),
             noon: "hanner dydd".to_string(),
             patterns: HashMap::from([
-            (0, "{h} o'r gloch".to_string()),
-            (5, "pum munud wedi {h}".to_string()),
-            (10, "deg munud wedi {h}".to_string()),
-            (15, "chwarter wedi {h}".to_string()),
-            (20, "ugain munud wedi {h}".to_string()),
-            (25, "pum munud ar hugain wedi {h}".to_string()),
-            (30, "hanner awr wedi {h}".to_string()),
-            (35, "pum munud ar hugain i {next_h}".to_string()),
-            (40, "ugain munud i {next_h}".to_string()),
-            (45, "chwarter i {next_h}".to_string()),
-            (50, "deg munud i {next_h}".to_string()),
-            (55, "pum munud i {next_h}".to_string()),
-        ]),
+                (0, "{h} o'r gloch".to_string()),
+                (5, "pum munud wedi {h}".to_string()),
+                (10, "deg munud wedi {h}".to_string()),
+                (15, "chwarter wedi {h}".to_string()),
+                (20, "ugain munud wedi {h}".to_string()),
+                (25, "pum munud ar hugain wedi {h}".to_string()),
+                (30, "hanner awr wedi {h}".to_string()),
+                (35, "pum munud ar hugain i {next_h}".to_string()),
+                (40, "ugain munud i {next_h}".to_string()),
+                (45, "chwarter i {next_h}".to_string()),
+                (50, "deg munud i {next_h}".to_string()),
+                (55, "pum munud i {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

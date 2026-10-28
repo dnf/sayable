@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/so.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Somali locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "so".to_string(),
         clock: ClockConfig {
-            hours: ["laba iyo tobanka".to_string(), "kowda".to_string(), "labada".to_string(), "saddexda".to_string(), "afarta".to_string(), "shanta".to_string(), "lixda".to_string(), "toddobada".to_string(), "siddeedda".to_string(), "sagaasha".to_string(), "tobanka".to_string(), "kow iyo tobanka".to_string()],
+            hours: [
+                "laba iyo tobanka".to_string(),
+                "kowda".to_string(),
+                "labada".to_string(),
+                "saddexda".to_string(),
+                "afarta".to_string(),
+                "shanta".to_string(),
+                "lixda".to_string(),
+                "toddobada".to_string(),
+                "siddeedda".to_string(),
+                "sagaasha".to_string(),
+                "tobanka".to_string(),
+                "kow iyo tobanka".to_string(),
+            ],
             midnight: "saqda dhexe".to_string(),
             noon: "duhur".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} iyo shan".to_string()),
-            (10, "{h} iyo toban".to_string()),
-            (15, "{h} iyo rubuc".to_string()),
-            (20, "{h} iyo labaatan".to_string()),
-            (25, "{h} iyo shan iyo labaatan".to_string()),
-            (30, "{h} iyo bar".to_string()),
-            (35, "{next_h} shan iyo labaatan la'".to_string()),
-            (40, "{next_h} labaatan la'".to_string()),
-            (45, "{next_h} rubuc la'".to_string()),
-            (50, "{next_h} toban la'".to_string()),
-            (55, "{next_h} shan la'".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} iyo shan".to_string()),
+                (10, "{h} iyo toban".to_string()),
+                (15, "{h} iyo rubuc".to_string()),
+                (20, "{h} iyo labaatan".to_string()),
+                (25, "{h} iyo shan iyo labaatan".to_string()),
+                (30, "{h} iyo bar".to_string()),
+                (35, "{next_h} shan iyo labaatan la'".to_string()),
+                (40, "{next_h} labaatan la'".to_string()),
+                (45, "{next_h} rubuc la'".to_string()),
+                (50, "{next_h} toban la'".to_string()),
+                (55, "{next_h} shan la'".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

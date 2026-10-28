@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/eu.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Basque locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "eu".to_string(),
         clock: ClockConfig {
-            hours: ["hamabiak".to_string(), "ordu bata".to_string(), "ordu biak".to_string(), "hirurak".to_string(), "laurak".to_string(), "bostak".to_string(), "seiak".to_string(), "zazpiak".to_string(), "zortziak".to_string(), "bederatziak".to_string(), "hamarrak".to_string(), "hamaikak".to_string()],
+            hours: [
+                "hamabiak".to_string(),
+                "ordu bata".to_string(),
+                "ordu biak".to_string(),
+                "hirurak".to_string(),
+                "laurak".to_string(),
+                "bostak".to_string(),
+                "seiak".to_string(),
+                "zazpiak".to_string(),
+                "zortziak".to_string(),
+                "bederatziak".to_string(),
+                "hamarrak".to_string(),
+                "hamaikak".to_string(),
+            ],
             midnight: "gauerdia".to_string(),
             noon: "eguerdia".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} eta bost".to_string()),
-            (10, "{h} eta hamar".to_string()),
-            (15, "{h} eta laurden".to_string()),
-            (20, "{h} eta hogei".to_string()),
-            (25, "{h} eta hogeita bost".to_string()),
-            (30, "{h} eta erdiak".to_string()),
-            (35, "{next_h} hogeita bost gutxi".to_string()),
-            (40, "{next_h} hogei gutxi".to_string()),
-            (45, "{next_h} laurden gutxi".to_string()),
-            (50, "{next_h} hamar gutxi".to_string()),
-            (55, "{next_h} bost gutxi".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} eta bost".to_string()),
+                (10, "{h} eta hamar".to_string()),
+                (15, "{h} eta laurden".to_string()),
+                (20, "{h} eta hogei".to_string()),
+                (25, "{h} eta hogeita bost".to_string()),
+                (30, "{h} eta erdiak".to_string()),
+                (35, "{next_h} hogeita bost gutxi".to_string()),
+                (40, "{next_h} hogei gutxi".to_string()),
+                (45, "{next_h} laurden gutxi".to_string()),
+                (50, "{next_h} hamar gutxi".to_string()),
+                (55, "{next_h} bost gutxi".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/bs.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Bosnian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "bs".to_string(),
         clock: ClockConfig {
-            hours: ["dvanaest".to_string(), "jedan".to_string(), "dva".to_string(), "tri".to_string(), "četiri".to_string(), "pet".to_string(), "šest".to_string(), "sedam".to_string(), "osam".to_string(), "devet".to_string(), "deset".to_string(), "jedanaest".to_string()],
+            hours: [
+                "dvanaest".to_string(),
+                "jedan".to_string(),
+                "dva".to_string(),
+                "tri".to_string(),
+                "četiri".to_string(),
+                "pet".to_string(),
+                "šest".to_string(),
+                "sedam".to_string(),
+                "osam".to_string(),
+                "devet".to_string(),
+                "deset".to_string(),
+                "jedanaest".to_string(),
+            ],
             midnight: "ponoć".to_string(),
             noon: "podne".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} i pet".to_string()),
-            (10, "{h} i deset".to_string()),
-            (15, "{h} i petnaest".to_string()),
-            (20, "{h} i dvadeset".to_string()),
-            (25, "{h} i dvadeset pet".to_string()),
-            (30, "pola {next_h}".to_string()),
-            (35, "dvadeset pet do {next_h}".to_string()),
-            (40, "dvadeset do {next_h}".to_string()),
-            (45, "petnaest do {next_h}".to_string()),
-            (50, "deset do {next_h}".to_string()),
-            (55, "pet do {next_h}".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} i pet".to_string()),
+                (10, "{h} i deset".to_string()),
+                (15, "{h} i petnaest".to_string()),
+                (20, "{h} i dvadeset".to_string()),
+                (25, "{h} i dvadeset pet".to_string()),
+                (30, "pola {next_h}".to_string()),
+                (35, "dvadeset pet do {next_h}".to_string()),
+                (40, "dvadeset do {next_h}".to_string()),
+                (45, "petnaest do {next_h}".to_string()),
+                (50, "deset do {next_h}".to_string()),
+                (55, "pet do {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

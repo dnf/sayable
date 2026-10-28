@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ktu.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Kituba locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ktu".to_string(),
         clock: ClockConfig {
-            hours: ["zomi na zole".to_string(), "mosi".to_string(), "zole".to_string(), "tatu".to_string(), "ya".to_string(), "tanu".to_string(), "sambanu".to_string(), "nsambwadi".to_string(), "nana".to_string(), "vwa".to_string(), "zomi".to_string(), "zomi na mosi".to_string()],
+            hours: [
+                "zomi na zole".to_string(),
+                "mosi".to_string(),
+                "zole".to_string(),
+                "tatu".to_string(),
+                "ya".to_string(),
+                "tanu".to_string(),
+                "sambanu".to_string(),
+                "nsambwadi".to_string(),
+                "nana".to_string(),
+                "vwa".to_string(),
+                "zomi".to_string(),
+                "zomi na mosi".to_string(),
+            ],
             midnight: "midi ya butu".to_string(),
             noon: "midi".to_string(),
             patterns: HashMap::from([
-            (0, "ngunga {h}".to_string()),
-            (5, "ngunga {h} na miniti tanu".to_string()),
-            (10, "ngunga {h} na miniti zomi".to_string()),
-            (15, "ngunga {h} na miniti zomi na tanu".to_string()),
-            (20, "ngunga {h} na miniti makumi zole".to_string()),
-            (25, "ngunga {h} na miniti makumi zole na tanu".to_string()),
-            (30, "ngunga {h} na ndambu".to_string()),
-            (35, "ngunga {h} na miniti makumi tatu na tanu".to_string()),
-            (40, "ngunga {h} na miniti makumi ya".to_string()),
-            (45, "ngunga {h} na miniti makumi ya na tanu".to_string()),
-            (50, "ngunga {h} na miniti makumi tanu".to_string()),
-            (55, "ngunga {h} na miniti makumi tanu na tanu".to_string()),
-        ]),
+                (0, "ngunga {h}".to_string()),
+                (5, "ngunga {h} na miniti tanu".to_string()),
+                (10, "ngunga {h} na miniti zomi".to_string()),
+                (15, "ngunga {h} na miniti zomi na tanu".to_string()),
+                (20, "ngunga {h} na miniti makumi zole".to_string()),
+                (25, "ngunga {h} na miniti makumi zole na tanu".to_string()),
+                (30, "ngunga {h} na ndambu".to_string()),
+                (35, "ngunga {h} na miniti makumi tatu na tanu".to_string()),
+                (40, "ngunga {h} na miniti makumi ya".to_string()),
+                (45, "ngunga {h} na miniti makumi ya na tanu".to_string()),
+                (50, "ngunga {h} na miniti makumi tanu".to_string()),
+                (55, "ngunga {h} na miniti makumi tanu na tanu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

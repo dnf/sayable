@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ur.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Urdu locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ur".to_string(),
         clock: ClockConfig {
-            hours: ["بارہ".to_string(), "ایک".to_string(), "دو".to_string(), "تین".to_string(), "چار".to_string(), "پانچ".to_string(), "چھ".to_string(), "سات".to_string(), "آٹھ".to_string(), "نو".to_string(), "دس".to_string(), "گیارہ".to_string()],
+            hours: [
+                "بارہ".to_string(),
+                "ایک".to_string(),
+                "دو".to_string(),
+                "تین".to_string(),
+                "چار".to_string(),
+                "پانچ".to_string(),
+                "چھ".to_string(),
+                "سات".to_string(),
+                "آٹھ".to_string(),
+                "نو".to_string(),
+                "دس".to_string(),
+                "گیارہ".to_string(),
+            ],
             midnight: "آدھی رات".to_string(),
             noon: "دوپہر".to_string(),
             patterns: HashMap::from([
-            (0, "{h} بجے".to_string()),
-            (5, "{h} بج کر پانچ منٹ".to_string()),
-            (10, "{h} بج کر دس منٹ".to_string()),
-            (15, "سوا {h} بجے".to_string()),
-            (20, "{h} بج کر بیس منٹ".to_string()),
-            (25, "{h} بج کر پچیس منٹ".to_string()),
-            (30, "{h} بج کر تیس منٹ".to_string()),
-            (35, "{h} بج کر پینتیس منٹ".to_string()),
-            (40, "{next_h} بجنے میں بیس منٹ".to_string()),
-            (45, "پونے {next_h} بجے".to_string()),
-            (50, "{next_h} بجنے میں دس منٹ".to_string()),
-            (55, "{next_h} بجنے میں پانچ منٹ".to_string()),
-        ]),
+                (0, "{h} بجے".to_string()),
+                (5, "{h} بج کر پانچ منٹ".to_string()),
+                (10, "{h} بج کر دس منٹ".to_string()),
+                (15, "سوا {h} بجے".to_string()),
+                (20, "{h} بج کر بیس منٹ".to_string()),
+                (25, "{h} بج کر پچیس منٹ".to_string()),
+                (30, "{h} بج کر تیس منٹ".to_string()),
+                (35, "{h} بج کر پینتیس منٹ".to_string()),
+                (40, "{next_h} بجنے میں بیس منٹ".to_string()),
+                (45, "پونے {next_h} بجے".to_string()),
+                (50, "{next_h} بجنے میں دس منٹ".to_string()),
+                (55, "{next_h} بجنے میں پانچ منٹ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

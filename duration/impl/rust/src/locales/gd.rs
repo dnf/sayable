@@ -9,17 +9,22 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gd.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Scottish Gaelic locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "gd".to_string(),
         plural: |n| {
-            if n == 1 || n == 11 { PluralCategory::One }
-            else if n == 2 || n == 12 { PluralCategory::Two }
-            else if (3..=10).contains(&n) || (13..=19).contains(&n) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 1 || n == 11 {
+                PluralCategory::One
+            } else if n == 2 || n == 12 {
+                PluralCategory::Two
+            } else if (3..=10).contains(&n) || (13..=19).contains(&n) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

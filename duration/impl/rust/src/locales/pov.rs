@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/pov.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Guinea-Bissau Creole locale.
 pub fn locale() -> DurationLocale {

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ga.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Irish locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ga".to_string(),
         clock: ClockConfig {
-            hours: ["dó dhéag".to_string(), "haon".to_string(), "dó".to_string(), "trí".to_string(), "ceathair".to_string(), "cúig".to_string(), "sé".to_string(), "seacht".to_string(), "hocht".to_string(), "naoi".to_string(), "deich".to_string(), "haon déag".to_string()],
+            hours: [
+                "dó dhéag".to_string(),
+                "haon".to_string(),
+                "dó".to_string(),
+                "trí".to_string(),
+                "ceathair".to_string(),
+                "cúig".to_string(),
+                "sé".to_string(),
+                "seacht".to_string(),
+                "hocht".to_string(),
+                "naoi".to_string(),
+                "deich".to_string(),
+                "haon déag".to_string(),
+            ],
             midnight: "meán oíche".to_string(),
             noon: "meán lae".to_string(),
             patterns: HashMap::from([
-            (0, "a {h} a chlog".to_string()),
-            (5, "cúig tar éis a {h}".to_string()),
-            (10, "deich tar éis a {h}".to_string()),
-            (15, "ceathrú tar éis a {h}".to_string()),
-            (20, "fiche tar éis a {h}".to_string()),
-            (25, "fiche cúig tar éis a {h}".to_string()),
-            (30, "leathuair tar éis a {h}".to_string()),
-            (35, "fiche cúig chun a {next_h}".to_string()),
-            (40, "fiche chun a {next_h}".to_string()),
-            (45, "ceathrú chun a {next_h}".to_string()),
-            (50, "deich chun a {next_h}".to_string()),
-            (55, "cúig chun a {next_h}".to_string()),
-        ]),
+                (0, "a {h} a chlog".to_string()),
+                (5, "cúig tar éis a {h}".to_string()),
+                (10, "deich tar éis a {h}".to_string()),
+                (15, "ceathrú tar éis a {h}".to_string()),
+                (20, "fiche tar éis a {h}".to_string()),
+                (25, "fiche cúig tar éis a {h}".to_string()),
+                (30, "leathuair tar éis a {h}".to_string()),
+                (35, "fiche cúig chun a {next_h}".to_string()),
+                (40, "fiche chun a {next_h}".to_string()),
+                (45, "ceathrú chun a {next_h}".to_string()),
+                (50, "deich chun a {next_h}".to_string()),
+                (55, "cúig chun a {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

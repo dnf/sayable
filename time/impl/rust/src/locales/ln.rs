@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ln.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Lingala locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ln".to_string(),
         clock: ClockConfig {
-            hours: ["zómi na míbalé".to_string(), "mɔ̌kɔ́".to_string(), "míbalé".to_string(), "mísáto".to_string(), "mínéi".to_string(), "mítáno".to_string(), "motóba".to_string(), "nsambo".to_string(), "mwambe".to_string(), "libwá".to_string(), "zómi".to_string(), "zómi na mɔ̌kɔ́".to_string()],
+            hours: [
+                "zómi na míbalé".to_string(),
+                "mɔ̌kɔ́".to_string(),
+                "míbalé".to_string(),
+                "mísáto".to_string(),
+                "mínéi".to_string(),
+                "mítáno".to_string(),
+                "motóba".to_string(),
+                "nsambo".to_string(),
+                "mwambe".to_string(),
+                "libwá".to_string(),
+                "zómi".to_string(),
+                "zómi na mɔ̌kɔ́".to_string(),
+            ],
             midnight: "midí ya butú".to_string(),
             noon: "midí".to_string(),
             patterns: HashMap::from([
-            (0, "ngonga ya {h}".to_string()),
-            (5, "ngonga ya {h} na miniti mítáno".to_string()),
-            (10, "ngonga ya {h} na miniti zómi".to_string()),
-            (15, "ngonga ya {h} na miniti zómi na mítáno".to_string()),
-            (20, "ngonga ya {h} na miniti ntúkú míbalé".to_string()),
-            (25, "ngonga ya {h} na miniti ntúkú míbalé na mítáno".to_string()),
-            (30, "ngonga ya {h} na ndámbo".to_string()),
-            (35, "ngonga ya {h} na miniti ntúkú mísáto na mítáno".to_string()),
-            (40, "ngonga ya {h} na miniti ntúkú mínéi".to_string()),
-            (45, "ngonga ya {h} na miniti ntúkú mínéi na mítáno".to_string()),
-            (50, "ngonga ya {h} na miniti ntúkú mítáno".to_string()),
-            (55, "ngonga ya {h} na miniti ntúkú mítáno na mítáno".to_string()),
-        ]),
+                (0, "ngonga ya {h}".to_string()),
+                (5, "ngonga ya {h} na miniti mítáno".to_string()),
+                (10, "ngonga ya {h} na miniti zómi".to_string()),
+                (15, "ngonga ya {h} na miniti zómi na mítáno".to_string()),
+                (20, "ngonga ya {h} na miniti ntúkú míbalé".to_string()),
+                (
+                    25,
+                    "ngonga ya {h} na miniti ntúkú míbalé na mítáno".to_string(),
+                ),
+                (30, "ngonga ya {h} na ndámbo".to_string()),
+                (
+                    35,
+                    "ngonga ya {h} na miniti ntúkú mísáto na mítáno".to_string(),
+                ),
+                (40, "ngonga ya {h} na miniti ntúkú mínéi".to_string()),
+                (
+                    45,
+                    "ngonga ya {h} na miniti ntúkú mínéi na mítáno".to_string(),
+                ),
+                (50, "ngonga ya {h} na miniti ntúkú mítáno".to_string()),
+                (
+                    55,
+                    "ngonga ya {h} na miniti ntúkú mítáno na mítáno".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

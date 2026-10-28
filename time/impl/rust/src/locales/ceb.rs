@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ceb.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Cebuano locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ceb".to_string(),
         clock: ClockConfig {
-            hours: ["alas dose".to_string(), "ala una".to_string(), "alas dos".to_string(), "alas tres".to_string(), "alas kwatro".to_string(), "alas singko".to_string(), "alas sais".to_string(), "alas siyete".to_string(), "alas otso".to_string(), "alas nuwebe".to_string(), "alas diyes".to_string(), "alas onse".to_string()],
+            hours: [
+                "alas dose".to_string(),
+                "ala una".to_string(),
+                "alas dos".to_string(),
+                "alas tres".to_string(),
+                "alas kwatro".to_string(),
+                "alas singko".to_string(),
+                "alas sais".to_string(),
+                "alas siyete".to_string(),
+                "alas otso".to_string(),
+                "alas nuwebe".to_string(),
+                "alas diyes".to_string(),
+                "alas onse".to_string(),
+            ],
             midnight: "tungang gabii".to_string(),
             noon: "udtong tutok".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} y singko".to_string()),
-            (10, "{h} y diyes".to_string()),
-            (15, "{h} y kinse".to_string()),
-            (20, "{h} y beynte".to_string()),
-            (25, "{h} y beynte singko".to_string()),
-            (30, "{h} y medya".to_string()),
-            (35, "menos beynte singko para {next_h}".to_string()),
-            (40, "menos beynte para {next_h}".to_string()),
-            (45, "menos kinse para {next_h}".to_string()),
-            (50, "menos diyes para {next_h}".to_string()),
-            (55, "menos singko para {next_h}".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} y singko".to_string()),
+                (10, "{h} y diyes".to_string()),
+                (15, "{h} y kinse".to_string()),
+                (20, "{h} y beynte".to_string()),
+                (25, "{h} y beynte singko".to_string()),
+                (30, "{h} y medya".to_string()),
+                (35, "menos beynte singko para {next_h}".to_string()),
+                (40, "menos beynte para {next_h}".to_string()),
+                (45, "menos kinse para {next_h}".to_string()),
+                (50, "menos diyes para {next_h}".to_string()),
+                (55, "menos singko para {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

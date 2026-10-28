@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/el.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Greek locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "el".to_string(),
         clock: ClockConfig {
-            hours: ["δώδεκα".to_string(), "μία".to_string(), "δύο".to_string(), "τρεις".to_string(), "τέσσερις".to_string(), "πέντε".to_string(), "έξι".to_string(), "εφτά".to_string(), "οκτώ".to_string(), "εννιά".to_string(), "δέκα".to_string(), "έντεκα".to_string()],
+            hours: [
+                "δώδεκα".to_string(),
+                "μία".to_string(),
+                "δύο".to_string(),
+                "τρεις".to_string(),
+                "τέσσερις".to_string(),
+                "πέντε".to_string(),
+                "έξι".to_string(),
+                "εφτά".to_string(),
+                "οκτώ".to_string(),
+                "εννιά".to_string(),
+                "δέκα".to_string(),
+                "έντεκα".to_string(),
+            ],
             midnight: "μεσάνυχτα".to_string(),
             noon: "μεσημέρι".to_string(),
             patterns: HashMap::from([
-            (0, "{h} η ώρα".to_string()),
-            (5, "{h} και πέντε".to_string()),
-            (10, "{h} και δέκα".to_string()),
-            (15, "{h} και τέταρτο".to_string()),
-            (20, "{h} και είκοσι".to_string()),
-            (25, "{h} και είκοσι πέντε".to_string()),
-            (30, "{h} και μισή".to_string()),
-            (35, "{next_h} παρά είκοσι πέντε".to_string()),
-            (40, "{next_h} παρά είκοσι".to_string()),
-            (45, "{next_h} παρά τέταρτο".to_string()),
-            (50, "{next_h} παρά δέκα".to_string()),
-            (55, "{next_h} παρά πέντε".to_string()),
-        ]),
+                (0, "{h} η ώρα".to_string()),
+                (5, "{h} και πέντε".to_string()),
+                (10, "{h} και δέκα".to_string()),
+                (15, "{h} και τέταρτο".to_string()),
+                (20, "{h} και είκοσι".to_string()),
+                (25, "{h} και είκοσι πέντε".to_string()),
+                (30, "{h} και μισή".to_string()),
+                (35, "{next_h} παρά είκοσι πέντε".to_string()),
+                (40, "{next_h} παρά είκοσι".to_string()),
+                (45, "{next_h} παρά τέταρτο".to_string()),
+                (50, "{next_h} παρά δέκα".to_string()),
+                (55, "{next_h} παρά πέντε".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

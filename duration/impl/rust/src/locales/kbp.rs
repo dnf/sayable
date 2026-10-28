@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kbp.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Kabiye locale.
 pub fn locale() -> DurationLocale {

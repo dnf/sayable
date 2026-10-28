@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/jv.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Javanese locale.
 pub fn locale() -> DurationLocale {

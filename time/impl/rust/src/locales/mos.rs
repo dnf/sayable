@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mos.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Moore locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mos".to_string(),
         clock: ClockConfig {
-            hours: ["lɛɛr piig la a yiibu".to_string(), "lɛɛr a yembre".to_string(), "lɛɛr a yiibu".to_string(), "lɛɛr a tãabo".to_string(), "lɛɛr a naase".to_string(), "lɛɛr a nu".to_string(), "lɛɛr a yoobe".to_string(), "lɛɛr a yopoe".to_string(), "lɛɛr a nii".to_string(), "lɛɛr a wae".to_string(), "lɛɛr piiga".to_string(), "lɛɛr piig la a yembre".to_string()],
+            hours: [
+                "lɛɛr piig la a yiibu".to_string(),
+                "lɛɛr a yembre".to_string(),
+                "lɛɛr a yiibu".to_string(),
+                "lɛɛr a tãabo".to_string(),
+                "lɛɛr a naase".to_string(),
+                "lɛɛr a nu".to_string(),
+                "lɛɛr a yoobe".to_string(),
+                "lɛɛr a yopoe".to_string(),
+                "lɛɛr a nii".to_string(),
+                "lɛɛr a wae".to_string(),
+                "lɛɛr piiga".to_string(),
+                "lɛɛr piig la a yembre".to_string(),
+            ],
             midnight: "yʋng-vɩɩse".to_string(),
             noon: "wĩntoog zabre".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} la minit a nu".to_string()),
-            (10, "{h} la minit piiga".to_string()),
-            (15, "{h} la minit piig la a nu".to_string()),
-            (20, "{h} la minit pisi".to_string()),
-            (25, "{h} la minit pisi la a nu".to_string()),
-            (30, "{h} la pʋɩ-sʋka".to_string()),
-            (35, "{h} la minit pis-tã la a nu".to_string()),
-            (40, "{h} la minit pis-naase".to_string()),
-            (45, "{h} la minit pis-naase la a nu".to_string()),
-            (50, "{h} la minit pis-nu".to_string()),
-            (55, "{h} la minit pis-nu la a nu".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} la minit a nu".to_string()),
+                (10, "{h} la minit piiga".to_string()),
+                (15, "{h} la minit piig la a nu".to_string()),
+                (20, "{h} la minit pisi".to_string()),
+                (25, "{h} la minit pisi la a nu".to_string()),
+                (30, "{h} la pʋɩ-sʋka".to_string()),
+                (35, "{h} la minit pis-tã la a nu".to_string()),
+                (40, "{h} la minit pis-naase".to_string()),
+                (45, "{h} la minit pis-naase la a nu".to_string()),
+                (50, "{h} la minit pis-nu".to_string()),
+                (55, "{h} la minit pis-nu la a nu".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

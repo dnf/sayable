@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/fon.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Fon locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "fon".to_string(),
         clock: ClockConfig {
-            hours: ["wěwè".to_string(), "ɖokpo".to_string(), "wè".to_string(), "atɔn".to_string(), "ɛnɛ".to_string(), "atɔ́ɔ́n".to_string(), "ayizɛ̀n".to_string(), "tɛnwè".to_string(), "tantɔn".to_string(), "tɛnɛnɛ".to_string(), "wǒ".to_string(), "wěɖokpo".to_string()],
+            hours: [
+                "wěwè".to_string(),
+                "ɖokpo".to_string(),
+                "wè".to_string(),
+                "atɔn".to_string(),
+                "ɛnɛ".to_string(),
+                "atɔ́ɔ́n".to_string(),
+                "ayizɛ̀n".to_string(),
+                "tɛnwè".to_string(),
+                "tantɔn".to_string(),
+                "tɛnɛnɛ".to_string(),
+                "wǒ".to_string(),
+                "wěɖokpo".to_string(),
+            ],
             midnight: "zǎnmɛ".to_string(),
             noon: "hwemɛnu".to_string(),
             patterns: HashMap::from([
-            (0, "gan {h}".to_string()),
-            (5, "gan {h} kpo cɛju atɔ́ɔ́n kpo".to_string()),
-            (10, "gan {h} kpo cɛju wǒ kpo".to_string()),
-            (15, "gan {h} kpo cɛju afɔtɔ́n kpo".to_string()),
-            (20, "gan {h} kpo cɛju ko kpo".to_string()),
-            (25, "gan {h} kpo cɛju koatɔ́ɔ́n kpo".to_string()),
-            (30, "gan {h} kpo cɛju gban kpo".to_string()),
-            (35, "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo".to_string()),
-            (40, "gan {h} kpo cɛju kanɖé kpo".to_string()),
-            (45, "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo".to_string()),
-            (50, "gan {h} kpo cɛju kanɖéwǒ kpo".to_string()),
-            (55, "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo".to_string()),
-        ]),
+                (0, "gan {h}".to_string()),
+                (5, "gan {h} kpo cɛju atɔ́ɔ́n kpo".to_string()),
+                (10, "gan {h} kpo cɛju wǒ kpo".to_string()),
+                (15, "gan {h} kpo cɛju afɔtɔ́n kpo".to_string()),
+                (20, "gan {h} kpo cɛju ko kpo".to_string()),
+                (25, "gan {h} kpo cɛju koatɔ́ɔ́n kpo".to_string()),
+                (30, "gan {h} kpo cɛju gban kpo".to_string()),
+                (35, "gan {h} kpo cɛju gbanatɔ́ɔ́n kpo".to_string()),
+                (40, "gan {h} kpo cɛju kanɖé kpo".to_string()),
+                (45, "gan {h} kpo cɛju kanɖéatɔ́ɔ́n kpo".to_string()),
+                (50, "gan {h} kpo cɛju kanɖéwǒ kpo".to_string()),
+                (55, "gan {h} kpo cɛju kanɖéafɔtɔ́n kpo".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

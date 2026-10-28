@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ff.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Fulah locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ff".to_string(),
         clock: ClockConfig {
-            hours: ["sappo e ɗiɗi".to_string(), "go'o".to_string(), "ɗiɗi".to_string(), "tati".to_string(), "nay".to_string(), "joy".to_string(), "jeegom".to_string(), "jeeɗiɗi".to_string(), "jeetati".to_string(), "jeenay".to_string(), "sappo".to_string(), "sappo e go'o".to_string()],
+            hours: [
+                "sappo e ɗiɗi".to_string(),
+                "go'o".to_string(),
+                "ɗiɗi".to_string(),
+                "tati".to_string(),
+                "nay".to_string(),
+                "joy".to_string(),
+                "jeegom".to_string(),
+                "jeeɗiɗi".to_string(),
+                "jeetati".to_string(),
+                "jeenay".to_string(),
+                "sappo".to_string(),
+                "sappo e go'o".to_string(),
+            ],
             midnight: "jamma hejjere".to_string(),
             noon: "zuhr".to_string(),
             patterns: HashMap::from([
-            (0, "waktu {h}".to_string()),
-            (5, "waktu {h} e hojomaaje joy".to_string()),
-            (10, "waktu {h} e hojomaaje sappo".to_string()),
-            (15, "waktu {h} e hojomaaje sappo e joy".to_string()),
-            (20, "waktu {h} e hojomaaje noogas".to_string()),
-            (25, "waktu {h} e hojomaaje noogas e joy".to_string()),
-            (30, "waktu {h} e feccere".to_string()),
-            (35, "waktu {h} e hojomaaje cappanɗe tati e joy".to_string()),
-            (40, "waktu {h} e hojomaaje cappanɗe nay".to_string()),
-            (45, "waktu {h} e hojomaaje cappanɗe nay e joy".to_string()),
-            (50, "waktu {h} e hojomaaje cappanɗe joy".to_string()),
-            (55, "waktu {h} e hojomaaje cappanɗe joy e joy".to_string()),
-        ]),
+                (0, "waktu {h}".to_string()),
+                (5, "waktu {h} e hojomaaje joy".to_string()),
+                (10, "waktu {h} e hojomaaje sappo".to_string()),
+                (15, "waktu {h} e hojomaaje sappo e joy".to_string()),
+                (20, "waktu {h} e hojomaaje noogas".to_string()),
+                (25, "waktu {h} e hojomaaje noogas e joy".to_string()),
+                (30, "waktu {h} e feccere".to_string()),
+                (35, "waktu {h} e hojomaaje cappanɗe tati e joy".to_string()),
+                (40, "waktu {h} e hojomaaje cappanɗe nay".to_string()),
+                (45, "waktu {h} e hojomaaje cappanɗe nay e joy".to_string()),
+                (50, "waktu {h} e hojomaaje cappanɗe joy".to_string()),
+                (55, "waktu {h} e hojomaaje cappanɗe joy e joy".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

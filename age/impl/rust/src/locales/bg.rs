@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/bg.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Bulgarian locale.
 pub fn locale() -> AgeLocale {
@@ -49,7 +51,10 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Малко дете".to_string()),
             child: StageLabel::Neutral("Дете".to_string()),
             teenager: StageLabel::Neutral("Тийнейджър".to_string()),
-            adult: StageLabel::Gendered { m: "Възрастен".to_string(), f: "Възрастна".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Възрастен".to_string(),
+                f: "Възрастна".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::simple("{n} д")),

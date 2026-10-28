@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ps.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Pashto locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ps".to_string(),
         clock: ClockConfig {
-            hours: ["دولس بجې".to_string(), "یوه بجه".to_string(), "دوه بجې".to_string(), "درې بجې".to_string(), "څلور بجې".to_string(), "پنځه بجې".to_string(), "شپږ بجې".to_string(), "اووه بجې".to_string(), "اته بجې".to_string(), "نهه بجې".to_string(), "لس بجې".to_string(), "یوولس بجې".to_string()],
+            hours: [
+                "دولس بجې".to_string(),
+                "یوه بجه".to_string(),
+                "دوه بجې".to_string(),
+                "درې بجې".to_string(),
+                "څلور بجې".to_string(),
+                "پنځه بجې".to_string(),
+                "شپږ بجې".to_string(),
+                "اووه بجې".to_string(),
+                "اته بجې".to_string(),
+                "نهه بجې".to_string(),
+                "لس بجې".to_string(),
+                "یوولس بجې".to_string(),
+            ],
             midnight: "نیمه شپه".to_string(),
             noon: "غرمه".to_string(),
             patterns: HashMap::from([
-            (0, "{h}".to_string()),
-            (5, "{h} او پنځه دقیقې".to_string()),
-            (10, "{h} او لس دقیقې".to_string()),
-            (15, "{h} او پنځلس دقیقې".to_string()),
-            (20, "{h} او شل دقیقې".to_string()),
-            (25, "{h} او پنځه ویشت دقیقې".to_string()),
-            (30, "{h} او دېرش دقیقې".to_string()),
-            (35, "{h} او پنځه دېرش دقیقې".to_string()),
-            (40, "{h} او څلوېښت دقیقې".to_string()),
-            (45, "{h} او پنځه څلوېښت دقیقې".to_string()),
-            (50, "{h} او پنځوس دقیقې".to_string()),
-            (55, "{h} او پنځه پنځوس دقیقې".to_string()),
-        ]),
+                (0, "{h}".to_string()),
+                (5, "{h} او پنځه دقیقې".to_string()),
+                (10, "{h} او لس دقیقې".to_string()),
+                (15, "{h} او پنځلس دقیقې".to_string()),
+                (20, "{h} او شل دقیقې".to_string()),
+                (25, "{h} او پنځه ویشت دقیقې".to_string()),
+                (30, "{h} او دېرش دقیقې".to_string()),
+                (35, "{h} او پنځه دېرش دقیقې".to_string()),
+                (40, "{h} او څلوېښت دقیقې".to_string()),
+                (45, "{h} او پنځه څلوېښت دقیقې".to_string()),
+                (50, "{h} او پنځوس دقیقې".to_string()),
+                (55, "{h} او پنځه پنځوس دقیقې".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

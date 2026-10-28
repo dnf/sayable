@@ -1,4 +1,4 @@
-use crate::types::{Compactness, DurationLocale, UnitForms, resolve_unit};
+use crate::types::{resolve_unit, Compactness, DurationLocale, UnitForms};
 
 /// Durations over 6000 months (500 years) have no value: the same ceiling as sayable-age.
 const MAX_DURATION_MONTHS: i64 = 6000;
@@ -333,7 +333,9 @@ fn digits(run: &[u8]) -> Option<i32> {
     if run.is_empty() {
         return None;
     }
-    run.iter().try_fold(0, |n, &c| c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0')))
+    run.iter().try_fold(0, |n, &c| {
+        c.is_ascii_digit().then(|| n * 10 + i32::from(c - b'0'))
+    })
 }
 
 /// Returns true if the given year is a leap year.

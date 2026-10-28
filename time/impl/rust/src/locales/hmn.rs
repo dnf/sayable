@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/hmn.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Hmong locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "hmn".to_string(),
         clock: ClockConfig {
-            hours: ["kaum ob".to_string(), "ib".to_string(), "ob".to_string(), "peb".to_string(), "plaub".to_string(), "tsib".to_string(), "rau".to_string(), "xya".to_string(), "yim".to_string(), "cuaj".to_string(), "kaum".to_string(), "kaum ib".to_string()],
+            hours: [
+                "kaum ob".to_string(),
+                "ib".to_string(),
+                "ob".to_string(),
+                "peb".to_string(),
+                "plaub".to_string(),
+                "tsib".to_string(),
+                "rau".to_string(),
+                "xya".to_string(),
+                "yim".to_string(),
+                "cuaj".to_string(),
+                "kaum".to_string(),
+                "kaum ib".to_string(),
+            ],
             midnight: "ib tag hmo".to_string(),
             noon: "tav su".to_string(),
             patterns: HashMap::from([
-            (0, "{h} teev".to_string()),
-            (5, "{h} teev tsib feeb".to_string()),
-            (10, "{h} teev kaum feeb".to_string()),
-            (15, "{h} teev kaum tsib feeb".to_string()),
-            (20, "{h} teev nees nkaum feeb".to_string()),
-            (25, "{h} teev nees nkaum tsib feeb".to_string()),
-            (30, "{h} teev ib nrab".to_string()),
-            (35, "{h} teev peb caug tsib feeb".to_string()),
-            (40, "{h} teev plaub caug feeb".to_string()),
-            (45, "{h} teev plaub caug tsib feeb".to_string()),
-            (50, "{h} teev tsib caug feeb".to_string()),
-            (55, "{h} teev tsib caug tsib feeb".to_string()),
-        ]),
+                (0, "{h} teev".to_string()),
+                (5, "{h} teev tsib feeb".to_string()),
+                (10, "{h} teev kaum feeb".to_string()),
+                (15, "{h} teev kaum tsib feeb".to_string()),
+                (20, "{h} teev nees nkaum feeb".to_string()),
+                (25, "{h} teev nees nkaum tsib feeb".to_string()),
+                (30, "{h} teev ib nrab".to_string()),
+                (35, "{h} teev peb caug tsib feeb".to_string()),
+                (40, "{h} teev plaub caug feeb".to_string()),
+                (45, "{h} teev plaub caug tsib feeb".to_string()),
+                (50, "{h} teev tsib caug feeb".to_string()),
+                (55, "{h} teev tsib caug tsib feeb".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

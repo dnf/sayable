@@ -9,16 +9,22 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ro.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Romanian locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "ro".to_string(),
         plural: |n| {
-            if n == 1 { PluralCategory::One }
-            else if n == 0 || (1..=19).contains(&(n % 100)) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else if n == 0 || (1..=19).contains(&(n % 100)) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -46,12 +52,21 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "Nou-născut".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Nou-născut".to_string(), f: "Nou-născută".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Nou-născut".to_string(),
+                f: "Nou-născută".to_string(),
+            },
             infant: StageLabel::Neutral("Sugar".to_string()),
             toddler: StageLabel::Neutral("Copil mic".to_string()),
             child: StageLabel::Neutral("Copil".to_string()),
-            teenager: StageLabel::Gendered { m: "Adolescent".to_string(), f: "Adolescentă".to_string() },
-            adult: StageLabel::Gendered { m: "Adult".to_string(), f: "Adultă".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Adolescent".to_string(),
+                f: "Adolescentă".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "Adult".to_string(),
+                f: "Adultă".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

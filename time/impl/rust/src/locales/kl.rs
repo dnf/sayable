@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kl.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Kalaallisut locale.
@@ -17,23 +17,51 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "kl".to_string(),
         clock: ClockConfig {
-            hours: ["aqqaneq-marluk".to_string(), "ataaseq".to_string(), "marluk".to_string(), "pingasut".to_string(), "sisamat".to_string(), "tallimat".to_string(), "arfinillit".to_string(), "arfineq-marluk".to_string(), "arfineq-pingasut".to_string(), "qulingiluat".to_string(), "qulit".to_string(), "aqqaneq-ataaseq".to_string()],
+            hours: [
+                "aqqaneq-marluk".to_string(),
+                "ataaseq".to_string(),
+                "marluk".to_string(),
+                "pingasut".to_string(),
+                "sisamat".to_string(),
+                "tallimat".to_string(),
+                "arfinillit".to_string(),
+                "arfineq-marluk".to_string(),
+                "arfineq-pingasut".to_string(),
+                "qulingiluat".to_string(),
+                "qulit".to_string(),
+                "aqqaneq-ataaseq".to_string(),
+            ],
             midnight: "unnuap qeqqa".to_string(),
             noon: "ulloqeqqap qeqqa".to_string(),
             patterns: HashMap::from([
-            (0, "nalunaaqutaq {h}".to_string()),
-            (5, "{h} qaangiullugu minutsit tallimat".to_string()),
-            (10, "{h} qaangiullugu minutsit qulit".to_string()),
-            (15, "{h} qaangiullugu minutsit aqqaneq-tallimat".to_string()),
-            (20, "{h} qaangiullugu minutsit marlunnik qulillit".to_string()),
-            (25, "{h} qaangiullugu minutsit marlunnik qulillit tallimallu".to_string()),
-            (30, "{h} affarlu".to_string()),
-            (35, "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu".to_string()),
-            (40, "{next_h} sioqqullugu minutsit marlunnik qulillit".to_string()),
-            (45, "{next_h} sioqqullugu minutsit aqqaneq-tallimat".to_string()),
-            (50, "{next_h} sioqqullugu minutsit qulit".to_string()),
-            (55, "{next_h} sioqqullugu minutsit tallimat".to_string()),
-        ]),
+                (0, "nalunaaqutaq {h}".to_string()),
+                (5, "{h} qaangiullugu minutsit tallimat".to_string()),
+                (10, "{h} qaangiullugu minutsit qulit".to_string()),
+                (15, "{h} qaangiullugu minutsit aqqaneq-tallimat".to_string()),
+                (
+                    20,
+                    "{h} qaangiullugu minutsit marlunnik qulillit".to_string(),
+                ),
+                (
+                    25,
+                    "{h} qaangiullugu minutsit marlunnik qulillit tallimallu".to_string(),
+                ),
+                (30, "{h} affarlu".to_string()),
+                (
+                    35,
+                    "{next_h} sioqqullugu minutsit marlunnik qulillit tallimallu".to_string(),
+                ),
+                (
+                    40,
+                    "{next_h} sioqqullugu minutsit marlunnik qulillit".to_string(),
+                ),
+                (
+                    45,
+                    "{next_h} sioqqullugu minutsit aqqaneq-tallimat".to_string(),
+                ),
+                (50, "{next_h} sioqqullugu minutsit qulit".to_string()),
+                (55, "{next_h} sioqqullugu minutsit tallimat".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

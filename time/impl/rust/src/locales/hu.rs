@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/hu.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Hungarian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "hu".to_string(),
         clock: ClockConfig {
-            hours: ["tizenkettő".to_string(), "egy".to_string(), "kettő".to_string(), "három".to_string(), "négy".to_string(), "öt".to_string(), "hat".to_string(), "hét".to_string(), "nyolc".to_string(), "kilenc".to_string(), "tíz".to_string(), "tizenegy".to_string()],
+            hours: [
+                "tizenkettő".to_string(),
+                "egy".to_string(),
+                "kettő".to_string(),
+                "három".to_string(),
+                "négy".to_string(),
+                "öt".to_string(),
+                "hat".to_string(),
+                "hét".to_string(),
+                "nyolc".to_string(),
+                "kilenc".to_string(),
+                "tíz".to_string(),
+                "tizenegy".to_string(),
+            ],
             midnight: "éjfél".to_string(),
             noon: "dél".to_string(),
             patterns: HashMap::from([
-            (0, "{h} óra".to_string()),
-            (5, "öt perccel múlt {h}".to_string()),
-            (10, "tíz perccel múlt {h}".to_string()),
-            (15, "negyed {next_h}".to_string()),
-            (20, "húsz perccel múlt {h}".to_string()),
-            (25, "öt perc múlva fél {next_h}".to_string()),
-            (30, "fél {next_h}".to_string()),
-            (35, "öt perccel múlt fél {next_h}".to_string()),
-            (40, "húsz perc múlva {next_h}".to_string()),
-            (45, "háromnegyed {next_h}".to_string()),
-            (50, "tíz perc múlva {next_h}".to_string()),
-            (55, "öt perc múlva {next_h}".to_string()),
-        ]),
+                (0, "{h} óra".to_string()),
+                (5, "öt perccel múlt {h}".to_string()),
+                (10, "tíz perccel múlt {h}".to_string()),
+                (15, "negyed {next_h}".to_string()),
+                (20, "húsz perccel múlt {h}".to_string()),
+                (25, "öt perc múlva fél {next_h}".to_string()),
+                (30, "fél {next_h}".to_string()),
+                (35, "öt perccel múlt fél {next_h}".to_string()),
+                (40, "húsz perc múlva {next_h}".to_string()),
+                (45, "háromnegyed {next_h}".to_string()),
+                (50, "tíz perc múlva {next_h}".to_string()),
+                (55, "öt perc múlva {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

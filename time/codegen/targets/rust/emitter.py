@@ -3,53 +3,38 @@
 from __future__ import annotations
 
 from codegen.banner import locale_source_comment, make_header
+from codegen.targets.rust.layout import arr, call, lit, render_expr, struct, to_string, tup, use_line
 
 HEADER = make_header("codegen/targets/rust/emitter.py")
 
 
-def _quote(s: str) -> str:
-    """Quote a string for Rust."""
-    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+def _str_array_12(items: list[str]) -> object:
+    """A Rust [String; 12] literal."""
+    return arr([to_string(s) for s in items])
 
 
-def _str_array_12(items: list[str]) -> str:
-    """Emit a Rust [String; 12] literal."""
-    return "[" + ", ".join(f"{_quote(s)}.to_string()" for s in items) + "]"
-
-
-def _patterns_map(patterns: dict[str, str]) -> str:
-    """Emit a Rust HashMap::from([...]) for minute patterns."""
+def _patterns_map(patterns: dict[str, str]) -> object:
+    """A Rust HashMap::from([...]) for minute patterns."""
     keys = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
-    pairs = []
-    for key in keys:
-        skey = str(key)
-        if skey in patterns:
-            pairs.append(f"({key}, {_quote(patterns[skey])}.to_string())")
-    return "HashMap::from([\n" + "".join(f"            {p},\n" for p in pairs) + "        ])"
+    pairs = [tup(lit(str(key)), to_string(patterns[str(key)])) for key in keys if str(key) in patterns]
+    return call("HashMap::from", arr(pairs))
 
 
-def _clock_override(clock: dict, indent: str) -> list[str]:
-    """Emit a ShortClockConfig struct for short/compact overrides."""
-    lines = []
+def _clock_override(clock: dict) -> object:
+    """A ShortClockConfig struct for short/compact overrides."""
     use24h = "true" if clock.get("use24h", True) else "false"
     am_pm = clock.get("amPm")
     fmt = clock.get("format", "{h}:{mm}")
+    am_pm_value = call("Some", tup(to_string(am_pm[0]), to_string(am_pm[1]))) if am_pm else lit("None")
+    return call("Some", struct("ShortClockConfig", [
+        ("use24h", lit(use24h)),
+        ("am_pm", am_pm_value),
+        ("format", to_string(fmt)),
+    ]))
 
-    if am_pm:
-        lines.append(f"{indent}clock: Some(ShortClockConfig {{")
-        lines.append(f"{indent}    use24h: {use24h},")
-        lines.append(f"{indent}    am_pm: Some(({_quote(am_pm[0])}.to_string(), {_quote(am_pm[1])}.to_string())),")
-        lines.append(f"{indent}    format: {_quote(fmt)}.to_string(),")
-        lines.append(f"{indent}}}),")
-    else:
-        lines.append(f"{indent}clock: Some(ShortClockConfig {{")
-        lines.append(f"{indent}    use24h: {use24h},")
-        lines.append(f"{indent}    am_pm: None,")
-        lines.append(f"{indent}    format: {_quote(fmt)}.to_string(),")
-        lines.append(f"{indent}}}),")
 
-    return lines
+def _override(ovr: dict) -> object:
+    return call("Some", struct("CompactnessOverride", [("clock", _clock_override(ovr["clock"]))]))
 
 
 def emit_locale(data: dict) -> str:
@@ -60,45 +45,29 @@ def emit_locale(data: dict) -> str:
 
     lines = [HEADER + locale_source_comment(code)]
 
-    # Imports
     imports = ["TimeLocale", "ClockConfig"]
     has_overrides = "short" in data or "compact" in data
     if has_overrides:
         imports.extend(["CompactnessOverride", "ShortClockConfig"])
-    lines.append(f"use crate::types::{{{', '.join(imports)}}};")
+    lines.append(use_line("crate::types", imports))
     lines.append("use std::collections::HashMap;")
     lines.append("")
 
+    fields: list[tuple[str, object]] = [
+        ("code", to_string(code)),
+        ("clock", struct("ClockConfig", [
+            ("hours", _str_array_12(clock["hours"])),
+            ("midnight", to_string(clock["midnight"])),
+            ("noon", to_string(clock["noon"])),
+            ("patterns", _patterns_map(clock["patterns"])),
+        ])),
+    ]
+    for mode in ("short", "compact"):
+        fields.append((mode, _override(data[mode]) if mode in data else lit("None")))
+
     lines.append(f"/// {name} locale.")
     lines.append("pub fn locale() -> TimeLocale {")
-    lines.append("    TimeLocale {")
-    lines.append(f"        code: {_quote(code)}.to_string(),")
-
-    # Clock config
-    lines.append("        clock: ClockConfig {")
-    lines.append(f"            hours: {_str_array_12(clock['hours'])},")
-    lines.append(f"            midnight: {_quote(clock['midnight'])}.to_string(),")
-    lines.append(f"            noon: {_quote(clock['noon'])}.to_string(),")
-    lines.append(f"            patterns: {_patterns_map(clock['patterns'])},")
-    lines.append("        },")
-
-    # Short override
-    if "short" in data:
-        lines.append("        short: Some(CompactnessOverride {")
-        lines.extend(_clock_override(data["short"]["clock"], "            "))
-        lines.append("        }),")
-    else:
-        lines.append("        short: None,")
-
-    # Compact override
-    if "compact" in data:
-        lines.append("        compact: Some(CompactnessOverride {")
-        lines.extend(_clock_override(data["compact"]["clock"], "            "))
-        lines.append("        }),")
-    else:
-        lines.append("        compact: None,")
-
-    lines.append("    }")
+    lines.append("    " + render_expr(struct("TimeLocale", fields), 4, 4))
     lines.append("}")
     lines.append("")
 

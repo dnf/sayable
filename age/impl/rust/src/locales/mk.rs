@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mk.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Macedonian locale.
 pub fn locale() -> AgeLocale {
@@ -18,8 +20,11 @@ pub fn locale() -> AgeLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else { PluralCategory::Other }
+            if mod10 == 1 && mod100 != 11 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -48,7 +53,10 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Мало дете".to_string()),
             child: StageLabel::Neutral("Дете".to_string()),
             teenager: StageLabel::Neutral("Тинејџер".to_string()),
-            adult: StageLabel::Gendered { m: "Возрасен".to_string(), f: "Возрасна".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Возрасен".to_string(),
+                f: "Возрасна".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

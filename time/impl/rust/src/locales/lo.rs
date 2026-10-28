@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/lo.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Lao locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "lo".to_string(),
         clock: ClockConfig {
-            hours: ["ສິບສອງ".to_string(), "ໜຶ່ງ".to_string(), "ສອງ".to_string(), "ສາມ".to_string(), "ສີ່".to_string(), "ຫ້າ".to_string(), "ຫົກ".to_string(), "ເຈັດ".to_string(), "ແປດ".to_string(), "ເກົ້າ".to_string(), "ສິບ".to_string(), "ສິບເອັດ".to_string()],
+            hours: [
+                "ສິບສອງ".to_string(),
+                "ໜຶ່ງ".to_string(),
+                "ສອງ".to_string(),
+                "ສາມ".to_string(),
+                "ສີ່".to_string(),
+                "ຫ້າ".to_string(),
+                "ຫົກ".to_string(),
+                "ເຈັດ".to_string(),
+                "ແປດ".to_string(),
+                "ເກົ້າ".to_string(),
+                "ສິບ".to_string(),
+                "ສິບເອັດ".to_string(),
+            ],
             midnight: "ທ່ຽງຄືນ".to_string(),
             noon: "ທ່ຽງ".to_string(),
             patterns: HashMap::from([
-            (0, "{h}ໂມງ".to_string()),
-            (5, "{h}ໂມງ ຫ້ານາທີ".to_string()),
-            (10, "{h}ໂມງ ສິບນາທີ".to_string()),
-            (15, "{h}ໂມງ ສິບຫ້ານາທີ".to_string()),
-            (20, "{h}ໂມງ ຊາວນາທີ".to_string()),
-            (25, "{h}ໂມງ ຊາວຫ້ານາທີ".to_string()),
-            (30, "{h}ໂມງເຄິ່ງ".to_string()),
-            (35, "{h}ໂມງ ສາມສິບຫ້ານາທີ".to_string()),
-            (40, "{h}ໂມງ ສີ່ສິບນາທີ".to_string()),
-            (45, "{h}ໂມງ ສີ່ສິບຫ້ານາທີ".to_string()),
-            (50, "{h}ໂມງ ຫ້າສິບນາທີ".to_string()),
-            (55, "{h}ໂມງ ຫ້າສິບຫ້ານາທີ".to_string()),
-        ]),
+                (0, "{h}ໂມງ".to_string()),
+                (5, "{h}ໂມງ ຫ້ານາທີ".to_string()),
+                (10, "{h}ໂມງ ສິບນາທີ".to_string()),
+                (15, "{h}ໂມງ ສິບຫ້ານາທີ".to_string()),
+                (20, "{h}ໂມງ ຊາວນາທີ".to_string()),
+                (25, "{h}ໂມງ ຊາວຫ້ານາທີ".to_string()),
+                (30, "{h}ໂມງເຄິ່ງ".to_string()),
+                (35, "{h}ໂມງ ສາມສິບຫ້ານາທີ".to_string()),
+                (40, "{h}ໂມງ ສີ່ສິບນາທີ".to_string()),
+                (45, "{h}ໂມງ ສີ່ສິບຫ້ານາທີ".to_string()),
+                (50, "{h}ໂມງ ຫ້າສິບນາທີ".to_string()),
+                (55, "{h}ໂມງ ຫ້າສິບຫ້ານາທີ".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

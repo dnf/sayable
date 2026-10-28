@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ti.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Tigrinya locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ti".to_string(),
         clock: ClockConfig {
-            hours: ["ዓሰርተ ክልተ".to_string(), "ሓደ".to_string(), "ክልተ".to_string(), "ሰለስተ".to_string(), "ኣርባዕተ".to_string(), "ሓሙሽተ".to_string(), "ሽድሽተ".to_string(), "ሸውዓተ".to_string(), "ሸሞንተ".to_string(), "ትሽዓተ".to_string(), "ዓሰርተ".to_string(), "ዓሰርተ ሓደ".to_string()],
+            hours: [
+                "ዓሰርተ ክልተ".to_string(),
+                "ሓደ".to_string(),
+                "ክልተ".to_string(),
+                "ሰለስተ".to_string(),
+                "ኣርባዕተ".to_string(),
+                "ሓሙሽተ".to_string(),
+                "ሽድሽተ".to_string(),
+                "ሸውዓተ".to_string(),
+                "ሸሞንተ".to_string(),
+                "ትሽዓተ".to_string(),
+                "ዓሰርተ".to_string(),
+                "ዓሰርተ ሓደ".to_string(),
+            ],
             midnight: "ፍርቂ ለይቲ".to_string(),
             noon: "ቀትሪ".to_string(),
             patterns: HashMap::from([
-            (0, "{h} ሰዓት".to_string()),
-            (5, "{h}ን ሓሙሽተን".to_string()),
-            (10, "{h}ን ዓሰርተን".to_string()),
-            (15, "{h}ን ርብዒን".to_string()),
-            (20, "{h}ን ዕስራን".to_string()),
-            (25, "{h}ን ዕስራን ሓሙሽተን".to_string()),
-            (30, "{h}ን ፈረቓን".to_string()),
-            (35, "{h}ን ሰላሳን ሓሙሽተን".to_string()),
-            (40, "ዕስራ ጎደል {next_h}".to_string()),
-            (45, "ርብዒ ጎደል {next_h}".to_string()),
-            (50, "ዓሰርተ ጎደል {next_h}".to_string()),
-            (55, "ሓሙሽተ ጎደል {next_h}".to_string()),
-        ]),
+                (0, "{h} ሰዓት".to_string()),
+                (5, "{h}ን ሓሙሽተን".to_string()),
+                (10, "{h}ን ዓሰርተን".to_string()),
+                (15, "{h}ን ርብዒን".to_string()),
+                (20, "{h}ን ዕስራን".to_string()),
+                (25, "{h}ን ዕስራን ሓሙሽተን".to_string()),
+                (30, "{h}ን ፈረቓን".to_string()),
+                (35, "{h}ን ሰላሳን ሓሙሽተን".to_string()),
+                (40, "ዕስራ ጎደል {next_h}".to_string()),
+                (45, "ርብዒ ጎደል {next_h}".to_string()),
+                (50, "ዓሰርተ ጎደል {next_h}".to_string()),
+                (55, "ሓሙሽተ ጎደል {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

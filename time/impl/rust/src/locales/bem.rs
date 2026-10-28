@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/bem.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Bemba locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "bem".to_string(),
         clock: ClockConfig {
-            hours: ["ikumi na shibili".to_string(), "imo".to_string(), "shibili".to_string(), "shitatu".to_string(), "shine".to_string(), "shisano".to_string(), "mutanda".to_string(), "cine lubali".to_string(), "cine konse konse".to_string(), "pabula".to_string(), "ikumi".to_string(), "ikumi na imo".to_string()],
+            hours: [
+                "ikumi na shibili".to_string(),
+                "imo".to_string(),
+                "shibili".to_string(),
+                "shitatu".to_string(),
+                "shine".to_string(),
+                "shisano".to_string(),
+                "mutanda".to_string(),
+                "cine lubali".to_string(),
+                "cine konse konse".to_string(),
+                "pabula".to_string(),
+                "ikumi".to_string(),
+                "ikumi na imo".to_string(),
+            ],
             midnight: "pakati ka bushiku".to_string(),
             noon: "akasuba".to_string(),
             patterns: HashMap::from([
-            (0, "insa {h}".to_string()),
-            (5, "insa {h} na maminiti yasano".to_string()),
-            (10, "insa {h} na maminiti ikumi".to_string()),
-            (15, "insa {h} na maminiti ikumi na yasano".to_string()),
-            (20, "insa {h} na maminiti amakumi yabili".to_string()),
-            (25, "insa {h} na maminiti amakumi yabili na yasano".to_string()),
-            (30, "insa {h} na hafu".to_string()),
-            (35, "insa {h} na maminiti amakumi yatatu na yasano".to_string()),
-            (40, "insa {h} na maminiti amakumi yane".to_string()),
-            (45, "insa {h} na maminiti amakumi yane na yasano".to_string()),
-            (50, "insa {h} na maminiti amakumi yasano".to_string()),
-            (55, "insa {h} na maminiti amakumi yasano na yasano".to_string()),
-        ]),
+                (0, "insa {h}".to_string()),
+                (5, "insa {h} na maminiti yasano".to_string()),
+                (10, "insa {h} na maminiti ikumi".to_string()),
+                (15, "insa {h} na maminiti ikumi na yasano".to_string()),
+                (20, "insa {h} na maminiti amakumi yabili".to_string()),
+                (
+                    25,
+                    "insa {h} na maminiti amakumi yabili na yasano".to_string(),
+                ),
+                (30, "insa {h} na hafu".to_string()),
+                (
+                    35,
+                    "insa {h} na maminiti amakumi yatatu na yasano".to_string(),
+                ),
+                (40, "insa {h} na maminiti amakumi yane".to_string()),
+                (
+                    45,
+                    "insa {h} na maminiti amakumi yane na yasano".to_string(),
+                ),
+                (50, "insa {h} na maminiti amakumi yasano".to_string()),
+                (
+                    55,
+                    "insa {h} na maminiti amakumi yasano na yasano".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

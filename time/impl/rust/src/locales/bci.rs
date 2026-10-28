@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/bci.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Baoulé locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "bci".to_string(),
         clock: ClockConfig {
-            hours: ["blu-nin-nɲɔn".to_string(), "kun".to_string(), "nɲɔn".to_string(), "nsan".to_string(), "nan".to_string(), "nnun".to_string(), "nsiɛn".to_string(), "nso".to_string(), "mɔcuɛ".to_string(), "ngwlan".to_string(), "blu".to_string(), "blu-nin-kun".to_string()],
+            hours: [
+                "blu-nin-nɲɔn".to_string(),
+                "kun".to_string(),
+                "nɲɔn".to_string(),
+                "nsan".to_string(),
+                "nan".to_string(),
+                "nnun".to_string(),
+                "nsiɛn".to_string(),
+                "nso".to_string(),
+                "mɔcuɛ".to_string(),
+                "ngwlan".to_string(),
+                "blu".to_string(),
+                "blu-nin-kun".to_string(),
+            ],
             midnight: "kɔnguɛ afiɛn".to_string(),
             noon: "nnɔsua".to_string(),
             patterns: HashMap::from([
-            (0, "dɔ {h}".to_string()),
-            (5, "dɔ {h} nin miniti nnun".to_string()),
-            (10, "dɔ {h} nin miniti blu".to_string()),
-            (15, "dɔ {h} nin miniti blu-nin-nnun".to_string()),
-            (20, "dɔ {h} nin miniti ablaɔn".to_string()),
-            (25, "dɔ {h} nin miniti ablaɔn-nin-nnun".to_string()),
-            (30, "dɔ {h} nin miniti ablasan".to_string()),
-            (35, "dɔ {h} nin miniti ablasan-nin-nnun".to_string()),
-            (40, "dɔ {h} nin miniti ablanan".to_string()),
-            (45, "dɔ {h} nin miniti ablanan-nin-nnun".to_string()),
-            (50, "dɔ {h} nin miniti ablenun".to_string()),
-            (55, "dɔ {h} nin miniti ablenun-nin-nnun".to_string()),
-        ]),
+                (0, "dɔ {h}".to_string()),
+                (5, "dɔ {h} nin miniti nnun".to_string()),
+                (10, "dɔ {h} nin miniti blu".to_string()),
+                (15, "dɔ {h} nin miniti blu-nin-nnun".to_string()),
+                (20, "dɔ {h} nin miniti ablaɔn".to_string()),
+                (25, "dɔ {h} nin miniti ablaɔn-nin-nnun".to_string()),
+                (30, "dɔ {h} nin miniti ablasan".to_string()),
+                (35, "dɔ {h} nin miniti ablasan-nin-nnun".to_string()),
+                (40, "dɔ {h} nin miniti ablanan".to_string()),
+                (45, "dɔ {h} nin miniti ablanan-nin-nnun".to_string()),
+                (50, "dɔ {h} nin miniti ablenun".to_string()),
+                (55, "dɔ {h} nin miniti ablenun-nin-nnun".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

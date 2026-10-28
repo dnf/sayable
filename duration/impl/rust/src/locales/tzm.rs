@@ -9,15 +9,18 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/tzm.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Central Atlas Tamazight locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "tzm".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 || (11..=99).contains(&n) { PluralCategory::One }
-            else { PluralCategory::Other }
+            if n == 0 || n == 1 || (11..=99).contains(&n) {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

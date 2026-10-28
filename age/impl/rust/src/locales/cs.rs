@@ -9,16 +9,22 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/cs.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Czech locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "cs".to_string(),
         plural: |n| {
-            if n == 1 { PluralCategory::One }
-            else if (2..=4).contains(&n) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else if (2..=4).contains(&n) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -51,7 +57,10 @@ pub fn locale() -> AgeLocale {
             toddler: StageLabel::Neutral("Batole".to_string()),
             child: StageLabel::Neutral("Dítě".to_string()),
             teenager: StageLabel::Neutral("Teenager".to_string()),
-            adult: StageLabel::Gendered { m: "Dospělý".to_string(), f: "Dospělá".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Dospělý".to_string(),
+                f: "Dospělá".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

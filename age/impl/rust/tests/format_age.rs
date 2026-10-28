@@ -41,9 +41,19 @@ fn assert_nil(name: &str, got: Option<String>) {
 fn test_format_age_null_edge_cases() {
     assert_nil("empty string", format_age("", Some("2025-06-15"))); // 1.1, 1.3
     assert_nil("future dob", format_age("2025-07-01", Some("2025-06-15"))); // 1.4
-    assert_age("exactly 500 years", format_age("1525-06-15", Some("2025-06-15")), "500 years"); // 1.5
-    assert_nil("501 years exceeds max", format_age("1524-06-15", Some("2025-06-15"))); // 1.6
-    assert_nil("1000 years exceeds max", format_age("1025-06-15", Some("2025-06-15"))); // 1.7
+    assert_age(
+        "exactly 500 years",
+        format_age("1525-06-15", Some("2025-06-15")),
+        "500 years",
+    ); // 1.5
+    assert_nil(
+        "501 years exceeds max",
+        format_age("1524-06-15", Some("2025-06-15")),
+    ); // 1.6
+    assert_nil(
+        "1000 years exceeds max",
+        format_age("1025-06-15", Some("2025-06-15")),
+    ); // 1.7
 }
 
 // ================================================================
@@ -54,8 +64,8 @@ fn test_format_age_days_tier() {
     let tests = vec![
         ("born today", "2025-06-15", "2025-06-15", "Newborn"), // 2.1
         ("1 day ago (singular)", "2025-06-14", "2025-06-15", "1 day"), // 2.2
-        ("3 days ago", "2025-06-12", "2025-06-15", "3 days"), // 2.3
-        ("6 days ago", "2025-06-09", "2025-06-15", "6 days"), // 2.4
+        ("3 days ago", "2025-06-12", "2025-06-15", "3 days"),  // 2.3
+        ("6 days ago", "2025-06-09", "2025-06-15", "6 days"),  // 2.4
         ("7 days -> 1 week", "2025-06-08", "2025-06-15", "1 week"), // 2.5
     ];
     for (name, dob, as_of, want) in tests {
@@ -364,14 +374,14 @@ fn test_format_age_half_year_tier() {
             "2025-12-15",
             "4\u{00BD} years",
         ), // 11.6
-        ("5 years", "2020-06-15", "2025-06-15", "5 years"), // 11.7
+        ("5 years", "2020-06-15", "2025-06-15", "5 years"),         // 11.7
         (
             "5\u{00BD} years at 5y8m",
             "2020-06-15",
             "2026-02-15",
             "5\u{00BD} years",
         ), // 11.8
-        ("6 years", "2019-06-15", "2025-06-15", "6 years"), // 11.9
+        ("6 years", "2019-06-15", "2025-06-15", "6 years"),         // 11.9
         (
             "6\u{00BD} years",
             "2019-06-15",
@@ -494,8 +504,16 @@ fn test_format_age_born_on_31st() {
 #[test]
 fn test_format_age_default_as_of() {
     sayable_age::_set_now_for_testing(Some((2025, 6, 15)));
-    assert_age("5 years from today", format_age("2020-01-01", None), "5 years"); // 15.1
-    assert_age("5 days from today", format_age("2025-06-10", None), "5 days"); // 15.2
+    assert_age(
+        "5 years from today",
+        format_age("2020-01-01", None),
+        "5 years",
+    ); // 15.1
+    assert_age(
+        "5 days from today",
+        format_age("2025-06-10", None),
+        "5 days",
+    ); // 15.2
     sayable_age::_set_now_for_testing(None);
 }
 
@@ -509,8 +527,15 @@ fn test_format_stage_null_edge_cases() {
         "future dob",
         format_stage("2025-07-01", Some("2025-06-15"), None),
     ); // 16.4
-    assert_age("stage 500 years", format_stage("1525-06-15", Some("2025-06-15"), None), "Adult"); // 16.5
-    assert_nil("stage 501 years exceeds max", format_stage("1524-06-15", Some("2025-06-15"), None)); // 16.6
+    assert_age(
+        "stage 500 years",
+        format_stage("1525-06-15", Some("2025-06-15"), None),
+        "Adult",
+    ); // 16.5
+    assert_nil(
+        "stage 501 years exceeds max",
+        format_stage("1524-06-15", Some("2025-06-15"), None),
+    ); // 16.6
 }
 
 // ================================================================
@@ -820,12 +845,24 @@ fn test_sayable_age_spanish() {
         delimiter: ", ".to_string(),
         just_born: "Reci\u{00E9}n nacido".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "Reci\u{00E9}n nacido".to_string(), f: "Reci\u{00E9}n nacida".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "Reci\u{00E9}n nacido".to_string(),
+                f: "Reci\u{00E9}n nacida".to_string(),
+            },
             infant: StageLabel::Neutral("Beb\u{00E9}".to_string()),
-            toddler: StageLabel::Gendered { m: "Ni\u{00F1}o peque\u{00F1}o".to_string(), f: "Ni\u{00F1}a peque\u{00F1}a".to_string() },
-            child: StageLabel::Gendered { m: "Ni\u{00F1}o".to_string(), f: "Ni\u{00F1}a".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "Ni\u{00F1}o peque\u{00F1}o".to_string(),
+                f: "Ni\u{00F1}a peque\u{00F1}a".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "Ni\u{00F1}o".to_string(),
+                f: "Ni\u{00F1}a".to_string(),
+            },
             teenager: StageLabel::Neutral("Adolescente".to_string()),
-            adult: StageLabel::Gendered { m: "Adulto".to_string(), f: "Adulta".to_string() },
+            adult: StageLabel::Gendered {
+                m: "Adulto".to_string(),
+                f: "Adulta".to_string(),
+            },
         },
         short: None,
         compact: None,
@@ -1285,18 +1322,54 @@ fn test_sayable_age_polish() {
 fn test_all_locales_construct() {
     // Verify every locale can be constructed and produce valid output
     let locale_refs: Vec<&std::sync::LazyLock<AgeLocale>> = vec![
-        &locales::AR, &locales::BG, &locales::BN, &locales::BS,
-        &locales::CA, &locales::CS, &locales::DA, &locales::DE,
-        &locales::EL, &locales::EN, &locales::ES, &locales::ET,
-        &locales::EU, &locales::FA, &locales::FI, &locales::FR,
-        &locales::GA, &locales::GU, &locales::HI, &locales::HR,
-        &locales::HU, &locales::IT, &locales::JA, &locales::JV,
-        &locales::KO, &locales::LT, &locales::LV, &locales::MR,
-        &locales::MS, &locales::NB, &locales::NL, &locales::PA,
-        &locales::PL, &locales::PT, &locales::RO, &locales::RU,
-        &locales::SK, &locales::SL, &locales::SQ, &locales::SR,
-        &locales::SV, &locales::TA, &locales::TE, &locales::TH,
-        &locales::TR, &locales::UK, &locales::UR, &locales::VI,
+        &locales::AR,
+        &locales::BG,
+        &locales::BN,
+        &locales::BS,
+        &locales::CA,
+        &locales::CS,
+        &locales::DA,
+        &locales::DE,
+        &locales::EL,
+        &locales::EN,
+        &locales::ES,
+        &locales::ET,
+        &locales::EU,
+        &locales::FA,
+        &locales::FI,
+        &locales::FR,
+        &locales::GA,
+        &locales::GU,
+        &locales::HI,
+        &locales::HR,
+        &locales::HU,
+        &locales::IT,
+        &locales::JA,
+        &locales::JV,
+        &locales::KO,
+        &locales::LT,
+        &locales::LV,
+        &locales::MR,
+        &locales::MS,
+        &locales::NB,
+        &locales::NL,
+        &locales::PA,
+        &locales::PL,
+        &locales::PT,
+        &locales::RO,
+        &locales::RU,
+        &locales::SK,
+        &locales::SL,
+        &locales::SQ,
+        &locales::SR,
+        &locales::SV,
+        &locales::TA,
+        &locales::TE,
+        &locales::TH,
+        &locales::TR,
+        &locales::UK,
+        &locales::UR,
+        &locales::VI,
         &locales::ZH,
     ];
 
@@ -1631,69 +1704,225 @@ fn test_format_stage_gender_defaults_to_masculine() {
 fn test_locale_hebrew() {
     let pt = SayableAge::new(&locales::HE, Compactness::Normal);
 
-    assert_age("he justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "רק נולד"); // 29.1
-    assert_age("he 1 day one", pt.format_age("2025-06-14", Some("2025-06-15")), "יום"); // 29.2
-    assert_age("he 3 days other", pt.format_age("2025-06-12", Some("2025-06-15")), "3 ימים"); // 29.3
-    assert_age("he 2 weeks dual", pt.format_age("2025-06-01", Some("2025-06-15")), "שבועיים"); // 29.4
-    assert_age("he 3 weeks other", pt.format_age("2025-05-25", Some("2025-06-15")), "3 שבועות"); // 29.5
-    assert_age("he 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 חודשים"); // 29.6
-    assert_age("he 3 months", pt.format_age("2025-03-15", Some("2025-06-15")), "3 חודשים"); // 29.7
-    assert_age("he 2y dual 1m one", pt.format_age("2023-06-15", Some("2025-07-15")), "שנתיים, חודש"); // 29.8
-    assert_age("he 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 שנים וחצי"); // 29.9
-    assert_age("he 7y other", pt.format_age("2018-06-15", Some("2025-06-15")), "7 שנים"); // 29.10
-    assert_age("he stage m newborn", pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)), "רק נולד"); // 29.11
-    assert_age("he stage f newborn", pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)), "רק נולדה"); // 29.12
-    assert_age("he stage m adult", pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::M)), "מבוגר"); // 29.13
-    assert_age("he stage f adult", pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::F)), "מבוגרת"); // 29.14
+    assert_age(
+        "he justBorn",
+        pt.format_age("2025-06-15", Some("2025-06-15")),
+        "רק נולד",
+    ); // 29.1
+    assert_age(
+        "he 1 day one",
+        pt.format_age("2025-06-14", Some("2025-06-15")),
+        "יום",
+    ); // 29.2
+    assert_age(
+        "he 3 days other",
+        pt.format_age("2025-06-12", Some("2025-06-15")),
+        "3 ימים",
+    ); // 29.3
+    assert_age(
+        "he 2 weeks dual",
+        pt.format_age("2025-06-01", Some("2025-06-15")),
+        "שבועיים",
+    ); // 29.4
+    assert_age(
+        "he 3 weeks other",
+        pt.format_age("2025-05-25", Some("2025-06-15")),
+        "3 שבועות",
+    ); // 29.5
+    assert_age(
+        "he 6 months",
+        pt.format_age("2025-01-15", Some("2025-07-15")),
+        "6 חודשים",
+    ); // 29.6
+    assert_age(
+        "he 3 months",
+        pt.format_age("2025-03-15", Some("2025-06-15")),
+        "3 חודשים",
+    ); // 29.7
+    assert_age(
+        "he 2y dual 1m one",
+        pt.format_age("2023-06-15", Some("2025-07-15")),
+        "שנתיים, חודש",
+    ); // 29.8
+    assert_age(
+        "he 3.5y half",
+        pt.format_age("2022-06-15", Some("2025-12-15")),
+        "3 שנים וחצי",
+    ); // 29.9
+    assert_age(
+        "he 7y other",
+        pt.format_age("2018-06-15", Some("2025-06-15")),
+        "7 שנים",
+    ); // 29.10
+    assert_age(
+        "he stage m newborn",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "רק נולד",
+    ); // 29.11
+    assert_age(
+        "he stage f newborn",
+        pt.format_stage("2025-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "רק נולדה",
+    ); // 29.12
+    assert_age(
+        "he stage m adult",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::M)),
+        "מבוגר",
+    ); // 29.13
+    assert_age(
+        "he stage f adult",
+        pt.format_stage("2007-06-15", Some("2025-06-15"), Some(Gender::F)),
+        "מבוגרת",
+    ); // 29.14
 }
 
 #[test]
 fn test_locale_macedonian() {
     let pt = SayableAge::new(&locales::MK, Compactness::Normal);
 
-    assert_age("mk justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "Новороденче"); // 29.15
-    assert_age("mk 1 day one", pt.format_age("2025-06-14", Some("2025-06-15")), "1 ден"); // 29.16
-    assert_age("mk 3 days other", pt.format_age("2025-06-12", Some("2025-06-15")), "3 дена"); // 29.17
-    assert_age("mk 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 месеци"); // 29.18
-    assert_age("mk 2y1m one month", pt.format_age("2023-06-15", Some("2025-07-15")), "2 години, 1 месец"); // 29.19
-    assert_age("mk 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 години и пол"); // 29.20
-    assert_age("mk 7y", pt.format_age("2018-06-15", Some("2025-06-15")), "7 години"); // 29.21
+    assert_age(
+        "mk justBorn",
+        pt.format_age("2025-06-15", Some("2025-06-15")),
+        "Новороденче",
+    ); // 29.15
+    assert_age(
+        "mk 1 day one",
+        pt.format_age("2025-06-14", Some("2025-06-15")),
+        "1 ден",
+    ); // 29.16
+    assert_age(
+        "mk 3 days other",
+        pt.format_age("2025-06-12", Some("2025-06-15")),
+        "3 дена",
+    ); // 29.17
+    assert_age(
+        "mk 6 months",
+        pt.format_age("2025-01-15", Some("2025-07-15")),
+        "6 месеци",
+    ); // 29.18
+    assert_age(
+        "mk 2y1m one month",
+        pt.format_age("2023-06-15", Some("2025-07-15")),
+        "2 години, 1 месец",
+    ); // 29.19
+    assert_age(
+        "mk 3.5y half",
+        pt.format_age("2022-06-15", Some("2025-12-15")),
+        "3 години и пол",
+    ); // 29.20
+    assert_age(
+        "mk 7y",
+        pt.format_age("2018-06-15", Some("2025-06-15")),
+        "7 години",
+    ); // 29.21
 }
 
 #[test]
 fn test_locale_swahili() {
     let pt = SayableAge::new(&locales::SW, Compactness::Normal);
 
-    assert_age("sw justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "Mzaliwa mpya"); // 29.22
-    assert_age("sw 1 day", pt.format_age("2025-06-14", Some("2025-06-15")), "siku 1"); // 29.23
-    assert_age("sw 3 days", pt.format_age("2025-06-12", Some("2025-06-15")), "siku 3"); // 29.24
-    assert_age("sw 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "miezi 6"); // 29.25
-    assert_age("sw 2y 1m", pt.format_age("2023-06-15", Some("2025-07-15")), "miaka 2, mwezi 1"); // 29.26
-    assert_age("sw 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "miaka 3 na nusu"); // 29.27
+    assert_age(
+        "sw justBorn",
+        pt.format_age("2025-06-15", Some("2025-06-15")),
+        "Mzaliwa mpya",
+    ); // 29.22
+    assert_age(
+        "sw 1 day",
+        pt.format_age("2025-06-14", Some("2025-06-15")),
+        "siku 1",
+    ); // 29.23
+    assert_age(
+        "sw 3 days",
+        pt.format_age("2025-06-12", Some("2025-06-15")),
+        "siku 3",
+    ); // 29.24
+    assert_age(
+        "sw 6 months",
+        pt.format_age("2025-01-15", Some("2025-07-15")),
+        "miezi 6",
+    ); // 29.25
+    assert_age(
+        "sw 2y 1m",
+        pt.format_age("2023-06-15", Some("2025-07-15")),
+        "miaka 2, mwezi 1",
+    ); // 29.26
+    assert_age(
+        "sw 3.5y half",
+        pt.format_age("2022-06-15", Some("2025-12-15")),
+        "miaka 3 na nusu",
+    ); // 29.27
 }
 
 #[test]
 fn test_locale_indonesian() {
     let pt = SayableAge::new(&locales::ID, Compactness::Normal);
 
-    assert_age("id justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "Baru lahir"); // 29.28
-    assert_age("id 1 day", pt.format_age("2025-06-14", Some("2025-06-15")), "1 hari"); // 29.29
-    assert_age("id 3 days", pt.format_age("2025-06-12", Some("2025-06-15")), "3 hari"); // 29.30
-    assert_age("id 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 bulan"); // 29.31
-    assert_age("id 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 setengah tahun"); // 29.32
-    assert_age("id 7y", pt.format_age("2018-06-15", Some("2025-06-15")), "7 tahun"); // 29.33
+    assert_age(
+        "id justBorn",
+        pt.format_age("2025-06-15", Some("2025-06-15")),
+        "Baru lahir",
+    ); // 29.28
+    assert_age(
+        "id 1 day",
+        pt.format_age("2025-06-14", Some("2025-06-15")),
+        "1 hari",
+    ); // 29.29
+    assert_age(
+        "id 3 days",
+        pt.format_age("2025-06-12", Some("2025-06-15")),
+        "3 hari",
+    ); // 29.30
+    assert_age(
+        "id 6 months",
+        pt.format_age("2025-01-15", Some("2025-07-15")),
+        "6 bulan",
+    ); // 29.31
+    assert_age(
+        "id 3.5y half",
+        pt.format_age("2022-06-15", Some("2025-12-15")),
+        "3 setengah tahun",
+    ); // 29.32
+    assert_age(
+        "id 7y",
+        pt.format_age("2018-06-15", Some("2025-06-15")),
+        "7 tahun",
+    ); // 29.33
 }
 
 #[test]
 fn test_locale_amharic() {
     let pt = SayableAge::new(&locales::AM, Compactness::Normal);
 
-    assert_age("am justBorn", pt.format_age("2025-06-15", Some("2025-06-15")), "አዲስ የተወለደ"); // 29.34
-    assert_age("am 1 day", pt.format_age("2025-06-14", Some("2025-06-15")), "1 ቀን"); // 29.35
-    assert_age("am 3 days", pt.format_age("2025-06-12", Some("2025-06-15")), "3 ቀናት"); // 29.36
-    assert_age("am 1w1d ethiopic", pt.format_age("2025-06-07", Some("2025-06-15")), "1 ሳምንት፣ 1 ቀን"); // 29.37
-    assert_age("am 6 months", pt.format_age("2025-01-15", Some("2025-07-15")), "6 ወራት"); // 29.38
-    assert_age("am 3.5y half", pt.format_age("2022-06-15", Some("2025-12-15")), "3 ዓመታት ተኩል"); // 29.39
+    assert_age(
+        "am justBorn",
+        pt.format_age("2025-06-15", Some("2025-06-15")),
+        "አዲስ የተወለደ",
+    ); // 29.34
+    assert_age(
+        "am 1 day",
+        pt.format_age("2025-06-14", Some("2025-06-15")),
+        "1 ቀን",
+    ); // 29.35
+    assert_age(
+        "am 3 days",
+        pt.format_age("2025-06-12", Some("2025-06-15")),
+        "3 ቀናት",
+    ); // 29.36
+    assert_age(
+        "am 1w1d ethiopic",
+        pt.format_age("2025-06-07", Some("2025-06-15")),
+        "1 ሳምንት፣ 1 ቀን",
+    ); // 29.37
+    assert_age(
+        "am 6 months",
+        pt.format_age("2025-01-15", Some("2025-07-15")),
+        "6 ወራት",
+    ); // 29.38
+    assert_age(
+        "am 3.5y half",
+        pt.format_age("2022-06-15", Some("2025-12-15")),
+        "3 ዓመታት ተኩል",
+    ); // 29.39
 }
 
 // ================================================================
@@ -1719,7 +1948,10 @@ fn test_locale_lookup() {
     assert!(locales::get("").is_none(), "get(\"\") should be None");
 
     // 30.5 Case-sensitive
-    assert!(locales::get("EN").is_none(), "get(\"EN\") should be None (case-sensitive)");
+    assert!(
+        locales::get("EN").is_none(),
+        "get(\"EN\") should be None (case-sensitive)"
+    );
 }
 
 // ================================================================
@@ -1729,14 +1961,30 @@ fn test_locale_lookup() {
 #[test]
 fn test_weeks_and_days_across_month_ends() {
     // 31.1
-    assert_age("31.1", format_age("2016-12-31", Some("2017-03-29")), "12 weeks, 4 days");
+    assert_age(
+        "31.1",
+        format_age("2016-12-31", Some("2017-03-29")),
+        "12 weeks, 4 days",
+    );
     // 31.2
-    assert_age("31.2", format_age("1991-11-27", Some("1992-02-25")), "12 weeks, 6 days");
+    assert_age(
+        "31.2",
+        format_age("1991-11-27", Some("1992-02-25")),
+        "12 weeks, 6 days",
+    );
     // 31.3
-    assert_age("31.3", format_age("2020-11-30", Some("2021-01-02")), "4 weeks, 5 days");
+    assert_age(
+        "31.3",
+        format_age("2020-11-30", Some("2021-01-02")),
+        "4 weeks, 5 days",
+    );
     // 31.4
     let compact = SayableAge::new(&locales::EN, Compactness::Compact);
-    assert_age("31.4", compact.format_age("2016-12-31", Some("2017-03-29")), "12w4d");
+    assert_age(
+        "31.4",
+        compact.format_age("2016-12-31", Some("2017-03-29")),
+        "12w4d",
+    );
 }
 
 // ================================================================
@@ -1747,13 +1995,25 @@ fn test_weeks_and_days_across_month_ends() {
 fn test_half_year_plural_from_whole_years() {
     // 32.1
     let pl = SayableAge::new(&locales::PL, Compactness::Normal);
-    assert_age("32.1", pl.format_age("2021-06-15", Some("2025-01-15")), "3 i pół lata");
+    assert_age(
+        "32.1",
+        pl.format_age("2021-06-15", Some("2025-01-15")),
+        "3 i pół lata",
+    );
     // 32.2
     let pl_short = SayableAge::new(&locales::PL, Compactness::Short);
-    assert_age("32.2", pl_short.format_age("2020-06-15", Some("2025-12-15")), "5 i pół lat");
+    assert_age(
+        "32.2",
+        pl_short.format_age("2020-06-15", Some("2025-12-15")),
+        "5 i pół lat",
+    );
     // 32.3
     let shi = SayableAge::new(&locales::SHI, Compactness::Normal);
-    assert_age("32.3", shi.format_age("2005-06-08", Some("2012-06-07")), "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ");
+    assert_age(
+        "32.3",
+        shi.format_age("2005-06-08", Some("2012-06-07")),
+        "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ",
+    );
 }
 
 // ================================================================
@@ -1768,8 +2028,15 @@ fn test_input_validation() {
     assert_nil("33.4", format_age("2025-06-00", Some("2027-02-25"))); // 33.4
     assert_nil("33.5", format_age("2025-6-1", Some("2027-02-25"))); // 33.5
     assert_nil("33.6", format_age(" 2025-06-01", Some("2027-02-25"))); // 33.6
-    assert_nil("33.7", format_age("2025-06-15T10:00:00", Some("2027-02-25"))); // 33.7
+    assert_nil(
+        "33.7",
+        format_age("2025-06-15T10:00:00", Some("2027-02-25")),
+    ); // 33.7
     assert_nil("33.8", format_age("2020-01-01", Some("2025-04-31"))); // 33.8
     assert_nil("33.9", format_stage("2025-02-30", Some("2027-09-05"), None)); // 33.9
-    assert_age("33.10", format_age("2024-02-29", Some("2026-03-01")), "2 years"); // 33.10
+    assert_age(
+        "33.10",
+        format_age("2024-02-29", Some("2026-03-01")),
+        "2 years",
+    ); // 33.10
 }

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/sg.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Sango locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "sg".to_string(),
         clock: ClockConfig {
-            hours: ["balë-ôko na ûse".to_string(), "ôko".to_string(), "ûse".to_string(), "otâ".to_string(), "usïö".to_string(), "okü".to_string(), "omanä".to_string(), "mbâsâmbârâ".to_string(), "miombe".to_string(), "gümbâyä".to_string(), "balë-ôko".to_string(), "balë-ôko na ôko".to_string()],
+            hours: [
+                "balë-ôko na ûse".to_string(),
+                "ôko".to_string(),
+                "ûse".to_string(),
+                "otâ".to_string(),
+                "usïö".to_string(),
+                "okü".to_string(),
+                "omanä".to_string(),
+                "mbâsâmbârâ".to_string(),
+                "miombe".to_string(),
+                "gümbâyä".to_string(),
+                "balë-ôko".to_string(),
+                "balë-ôko na ôko".to_string(),
+            ],
             midnight: "gï na lögö".to_string(),
             noon: "lâ nzönï".to_string(),
             patterns: HashMap::from([
-            (0, "ngbonga {h}".to_string()),
-            (5, "ngbonga {h} na minüti okü".to_string()),
-            (10, "ngbonga {h} na minüti balë-ôko".to_string()),
-            (15, "ngbonga {h} na minüti balë-ôko na okü".to_string()),
-            (20, "ngbonga {h} na minüti balë-ûse".to_string()),
-            (25, "ngbonga {h} na minüti balë-ûse na okü".to_string()),
-            (30, "ngbonga {h} na ndâmbo".to_string()),
-            (35, "ngbonga {h} na minüti balë-otâ na okü".to_string()),
-            (40, "ngbonga {h} na minüti balë-usïö".to_string()),
-            (45, "ngbonga {h} na minüti balë-usïö na okü".to_string()),
-            (50, "ngbonga {h} na minüti balë-okü".to_string()),
-            (55, "ngbonga {h} na minüti balë-okü na okü".to_string()),
-        ]),
+                (0, "ngbonga {h}".to_string()),
+                (5, "ngbonga {h} na minüti okü".to_string()),
+                (10, "ngbonga {h} na minüti balë-ôko".to_string()),
+                (15, "ngbonga {h} na minüti balë-ôko na okü".to_string()),
+                (20, "ngbonga {h} na minüti balë-ûse".to_string()),
+                (25, "ngbonga {h} na minüti balë-ûse na okü".to_string()),
+                (30, "ngbonga {h} na ndâmbo".to_string()),
+                (35, "ngbonga {h} na minüti balë-otâ na okü".to_string()),
+                (40, "ngbonga {h} na minüti balë-usïö".to_string()),
+                (45, "ngbonga {h} na minüti balë-usïö na okü".to_string()),
+                (50, "ngbonga {h} na minüti balë-okü".to_string()),
+                (55, "ngbonga {h} na minüti balë-okü na okü".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mn.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Mongolian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mn".to_string(),
         clock: ClockConfig {
-            hours: ["арван хоёр".to_string(), "нэг".to_string(), "хоёр".to_string(), "гурван".to_string(), "дөрвөн".to_string(), "таван".to_string(), "зургаан".to_string(), "долоон".to_string(), "найман".to_string(), "есөн".to_string(), "арван".to_string(), "арван нэгэн".to_string()],
+            hours: [
+                "арван хоёр".to_string(),
+                "нэг".to_string(),
+                "хоёр".to_string(),
+                "гурван".to_string(),
+                "дөрвөн".to_string(),
+                "таван".to_string(),
+                "зургаан".to_string(),
+                "долоон".to_string(),
+                "найман".to_string(),
+                "есөн".to_string(),
+                "арван".to_string(),
+                "арван нэгэн".to_string(),
+            ],
             midnight: "шөнө дунд".to_string(),
             noon: "үд дунд".to_string(),
             patterns: HashMap::from([
-            (0, "{h} цаг".to_string()),
-            (5, "{h} цаг таван минут".to_string()),
-            (10, "{h} цаг арван минут".to_string()),
-            (15, "{h} цаг арван таван минут".to_string()),
-            (20, "{h} цаг хорин минут".to_string()),
-            (25, "{h} цаг хорин таван минут".to_string()),
-            (30, "{h} цаг хагас".to_string()),
-            (35, "{h} цаг гучин таван минут".to_string()),
-            (40, "{h} цаг дөчин минут".to_string()),
-            (45, "{h} цаг дөчин таван минут".to_string()),
-            (50, "{h} цаг тавин минут".to_string()),
-            (55, "{h} цаг тавин таван минут".to_string()),
-        ]),
+                (0, "{h} цаг".to_string()),
+                (5, "{h} цаг таван минут".to_string()),
+                (10, "{h} цаг арван минут".to_string()),
+                (15, "{h} цаг арван таван минут".to_string()),
+                (20, "{h} цаг хорин минут".to_string()),
+                (25, "{h} цаг хорин таван минут".to_string()),
+                (30, "{h} цаг хагас".to_string()),
+                (35, "{h} цаг гучин таван минут".to_string()),
+                (40, "{h} цаг дөчин минут".to_string()),
+                (45, "{h} цаг дөчин таван минут".to_string()),
+                (50, "{h} цаг тавин минут".to_string()),
+                (55, "{h} цаг тавин таван минут".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

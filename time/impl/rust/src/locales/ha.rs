@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ha.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Hausa locale.
@@ -17,23 +17,39 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ha".to_string(),
         clock: ClockConfig {
-            hours: ["sha biyu".to_string(), "ɗaya".to_string(), "biyu".to_string(), "uku".to_string(), "huɗu".to_string(), "biyar".to_string(), "shida".to_string(), "bakwai".to_string(), "takwas".to_string(), "tara".to_string(), "goma".to_string(), "sha ɗaya".to_string()],
+            hours: [
+                "sha biyu".to_string(),
+                "ɗaya".to_string(),
+                "biyu".to_string(),
+                "uku".to_string(),
+                "huɗu".to_string(),
+                "biyar".to_string(),
+                "shida".to_string(),
+                "bakwai".to_string(),
+                "takwas".to_string(),
+                "tara".to_string(),
+                "goma".to_string(),
+                "sha ɗaya".to_string(),
+            ],
             midnight: "tsakar dare".to_string(),
             noon: "tsakar rana".to_string(),
             patterns: HashMap::from([
-            (0, "ƙarfe {h}".to_string()),
-            (5, "ƙarfe {h} da minti biyar".to_string()),
-            (10, "ƙarfe {h} da minti goma".to_string()),
-            (15, "ƙarfe {h} da kwata".to_string()),
-            (20, "ƙarfe {h} da minti ashirin".to_string()),
-            (25, "ƙarfe {h} da minti ashirin da biyar".to_string()),
-            (30, "ƙarfe {h} da rabi".to_string()),
-            (35, "ƙarfe {next_h} saura minti ashirin da biyar".to_string()),
-            (40, "ƙarfe {next_h} saura minti ashirin".to_string()),
-            (45, "ƙarfe {next_h} saura kwata".to_string()),
-            (50, "ƙarfe {next_h} saura minti goma".to_string()),
-            (55, "ƙarfe {next_h} saura minti biyar".to_string()),
-        ]),
+                (0, "ƙarfe {h}".to_string()),
+                (5, "ƙarfe {h} da minti biyar".to_string()),
+                (10, "ƙarfe {h} da minti goma".to_string()),
+                (15, "ƙarfe {h} da kwata".to_string()),
+                (20, "ƙarfe {h} da minti ashirin".to_string()),
+                (25, "ƙarfe {h} da minti ashirin da biyar".to_string()),
+                (30, "ƙarfe {h} da rabi".to_string()),
+                (
+                    35,
+                    "ƙarfe {next_h} saura minti ashirin da biyar".to_string(),
+                ),
+                (40, "ƙarfe {next_h} saura minti ashirin".to_string()),
+                (45, "ƙarfe {next_h} saura kwata".to_string()),
+                (50, "ƙarfe {next_h} saura minti goma".to_string()),
+                (55, "ƙarfe {next_h} saura minti biyar".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

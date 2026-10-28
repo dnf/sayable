@@ -9,14 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/hi.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Hindi locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "hi".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -42,9 +48,18 @@ pub fn locale() -> AgeLocale {
         stages: Stages {
             newborn: StageLabel::Neutral("नवजात".to_string()),
             infant: StageLabel::Neutral("शिशु".to_string()),
-            toddler: StageLabel::Gendered { m: "छोटा बच्चा".to_string(), f: "छोटी बच्ची".to_string() },
-            child: StageLabel::Gendered { m: "बच्चा".to_string(), f: "बच्ची".to_string() },
-            teenager: StageLabel::Gendered { m: "किशोर".to_string(), f: "किशोरी".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "छोटा बच्चा".to_string(),
+                f: "छोटी बच्ची".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "बच्चा".to_string(),
+                f: "बच्ची".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "किशोर".to_string(),
+                f: "किशोरी".to_string(),
+            },
             adult: StageLabel::Neutral("वयस्क".to_string()),
         },
         short: Some(CompactnessOverride {

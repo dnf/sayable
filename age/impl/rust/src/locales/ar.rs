@@ -9,20 +9,32 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ar.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Arabic locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "ar".to_string(),
         plural: |n| {
-            if n == 0 { return PluralCategory::Zero; }
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
+            if n == 0 {
+                return PluralCategory::Zero;
+            }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
             let mod100 = n % 100;
-            if (3..=10).contains(&mod100) { PluralCategory::Few }
-            else if (11..=99).contains(&mod100) { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if (3..=10).contains(&mod100) {
+                PluralCategory::Few
+            } else if (11..=99).contains(&mod100) {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -62,12 +74,30 @@ pub fn locale() -> AgeLocale {
         delimiter: " و".to_string(),
         just_born: "حديث الولادة".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "حديث الولادة".to_string(), f: "حديثة الولادة".to_string() },
-            infant: StageLabel::Gendered { m: "رضيع".to_string(), f: "رضيعة".to_string() },
-            toddler: StageLabel::Gendered { m: "طفل صغير".to_string(), f: "طفلة صغيرة".to_string() },
-            child: StageLabel::Gendered { m: "طفل".to_string(), f: "طفلة".to_string() },
-            teenager: StageLabel::Gendered { m: "مراهق".to_string(), f: "مراهقة".to_string() },
-            adult: StageLabel::Gendered { m: "بالغ".to_string(), f: "بالغة".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "حديث الولادة".to_string(),
+                f: "حديثة الولادة".to_string(),
+            },
+            infant: StageLabel::Gendered {
+                m: "رضيع".to_string(),
+                f: "رضيعة".to_string(),
+            },
+            toddler: StageLabel::Gendered {
+                m: "طفل صغير".to_string(),
+                f: "طفلة صغيرة".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "طفل".to_string(),
+                f: "طفلة".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "مراهق".to_string(),
+                f: "مراهقة".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "بالغ".to_string(),
+                f: "بالغة".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

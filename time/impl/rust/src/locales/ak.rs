@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ak.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Akan locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ak".to_string(),
         clock: ClockConfig {
-            hours: ["dumienu".to_string(), "baako".to_string(), "mmienu".to_string(), "mmiensa".to_string(), "anan".to_string(), "anum".to_string(), "nsia".to_string(), "nson".to_string(), "nwɔtwe".to_string(), "nkron".to_string(), "edu".to_string(), "dubaako".to_string()],
+            hours: [
+                "dumienu".to_string(),
+                "baako".to_string(),
+                "mmienu".to_string(),
+                "mmiensa".to_string(),
+                "anan".to_string(),
+                "anum".to_string(),
+                "nsia".to_string(),
+                "nson".to_string(),
+                "nwɔtwe".to_string(),
+                "nkron".to_string(),
+                "edu".to_string(),
+                "dubaako".to_string(),
+            ],
             midnight: "ɔdasuom".to_string(),
             noon: "owigyinae".to_string(),
             patterns: HashMap::from([
-            (0, "nnɔn {h}".to_string()),
-            (5, "nnɔn {h} ne sima anum".to_string()),
-            (10, "nnɔn {h} ne sima edu".to_string()),
-            (15, "nnɔn {h} ne sima dunum".to_string()),
-            (20, "nnɔn {h} ne sima aduonu".to_string()),
-            (25, "nnɔn {h} ne sima aduonu num".to_string()),
-            (30, "nnɔn {h} ne fa".to_string()),
-            (35, "aka sima aduonu num na abɔ nnɔn {next_h}".to_string()),
-            (40, "aka sima aduonu na abɔ nnɔn {next_h}".to_string()),
-            (45, "aka sima dunum na abɔ nnɔn {next_h}".to_string()),
-            (50, "aka sima edu na abɔ nnɔn {next_h}".to_string()),
-            (55, "aka sima anum na abɔ nnɔn {next_h}".to_string()),
-        ]),
+                (0, "nnɔn {h}".to_string()),
+                (5, "nnɔn {h} ne sima anum".to_string()),
+                (10, "nnɔn {h} ne sima edu".to_string()),
+                (15, "nnɔn {h} ne sima dunum".to_string()),
+                (20, "nnɔn {h} ne sima aduonu".to_string()),
+                (25, "nnɔn {h} ne sima aduonu num".to_string()),
+                (30, "nnɔn {h} ne fa".to_string()),
+                (35, "aka sima aduonu num na abɔ nnɔn {next_h}".to_string()),
+                (40, "aka sima aduonu na abɔ nnɔn {next_h}".to_string()),
+                (45, "aka sima dunum na abɔ nnɔn {next_h}".to_string()),
+                (50, "aka sima edu na abɔ nnɔn {next_h}".to_string()),
+                (55, "aka sima anum na abɔ nnɔn {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

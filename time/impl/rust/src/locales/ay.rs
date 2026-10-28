@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ay.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Aymara locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ay".to_string(),
         clock: ClockConfig {
-            hours: ["tunka payani".to_string(), "maya".to_string(), "paya".to_string(), "kimsa".to_string(), "pusi".to_string(), "phisqa".to_string(), "suxta".to_string(), "paqallqu".to_string(), "kimsaqallqu".to_string(), "llätunka".to_string(), "tunka".to_string(), "tunka mayani".to_string()],
+            hours: [
+                "tunka payani".to_string(),
+                "maya".to_string(),
+                "paya".to_string(),
+                "kimsa".to_string(),
+                "pusi".to_string(),
+                "phisqa".to_string(),
+                "suxta".to_string(),
+                "paqallqu".to_string(),
+                "kimsaqallqu".to_string(),
+                "llätunka".to_string(),
+                "tunka".to_string(),
+                "tunka mayani".to_string(),
+            ],
             midnight: "aruma chika".to_string(),
             noon: "chika uru".to_string(),
             patterns: HashMap::from([
-            (0, "{h} ura".to_string()),
-            (5, "{h} ura phisqa minutuni".to_string()),
-            (10, "{h} ura tunka minutuni".to_string()),
-            (15, "{h} ura tunka phisqani minutuni".to_string()),
-            (20, "{h} ura pä tunka minutuni".to_string()),
-            (25, "{h} ura pä tunka phisqani minutuni".to_string()),
-            (30, "{h} ura chikani".to_string()),
-            (35, "{h} ura kimsa tunka phisqani minutuni".to_string()),
-            (40, "{h} ura pusi tunka minutuni".to_string()),
-            (45, "{h} ura pusi tunka phisqani minutuni".to_string()),
-            (50, "{h} ura phisqa tunka minutuni".to_string()),
-            (55, "{h} ura phisqa tunka phisqani minutuni".to_string()),
-        ]),
+                (0, "{h} ura".to_string()),
+                (5, "{h} ura phisqa minutuni".to_string()),
+                (10, "{h} ura tunka minutuni".to_string()),
+                (15, "{h} ura tunka phisqani minutuni".to_string()),
+                (20, "{h} ura pä tunka minutuni".to_string()),
+                (25, "{h} ura pä tunka phisqani minutuni".to_string()),
+                (30, "{h} ura chikani".to_string()),
+                (35, "{h} ura kimsa tunka phisqani minutuni".to_string()),
+                (40, "{h} ura pusi tunka minutuni".to_string()),
+                (45, "{h} ura pusi tunka phisqani minutuni".to_string()),
+                (50, "{h} ura phisqa tunka minutuni".to_string()),
+                (55, "{h} ura phisqa tunka phisqani minutuni".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

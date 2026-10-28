@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/kk.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Kazakh locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "kk".to_string(),
         clock: ClockConfig {
-            hours: ["он екі".to_string(), "бір".to_string(), "екі".to_string(), "үш".to_string(), "төрт".to_string(), "бес".to_string(), "алты".to_string(), "жеті".to_string(), "сегіз".to_string(), "тоғыз".to_string(), "он".to_string(), "он бір".to_string()],
+            hours: [
+                "он екі".to_string(),
+                "бір".to_string(),
+                "екі".to_string(),
+                "үш".to_string(),
+                "төрт".to_string(),
+                "бес".to_string(),
+                "алты".to_string(),
+                "жеті".to_string(),
+                "сегіз".to_string(),
+                "тоғыз".to_string(),
+                "он".to_string(),
+                "он бір".to_string(),
+            ],
             midnight: "түн ортасы".to_string(),
             noon: "түс".to_string(),
             patterns: HashMap::from([
-            (0, "сағат {h}".to_string()),
-            (5, "{h} нөл бес".to_string()),
-            (10, "{h} он".to_string()),
-            (15, "{h} он бес".to_string()),
-            (20, "{h} жиырма".to_string()),
-            (25, "{h} жиырма бес".to_string()),
-            (30, "{h} жарым".to_string()),
-            (35, "{h} отыз бес".to_string()),
-            (40, "{h} қырық".to_string()),
-            (45, "{h} қырық бес".to_string()),
-            (50, "{h} елу".to_string()),
-            (55, "{h} елу бес".to_string()),
-        ]),
+                (0, "сағат {h}".to_string()),
+                (5, "{h} нөл бес".to_string()),
+                (10, "{h} он".to_string()),
+                (15, "{h} он бес".to_string()),
+                (20, "{h} жиырма".to_string()),
+                (25, "{h} жиырма бес".to_string()),
+                (30, "{h} жарым".to_string()),
+                (35, "{h} отыз бес".to_string()),
+                (40, "{h} қырық".to_string()),
+                (45, "{h} қырық бес".to_string()),
+                (50, "{h} елу".to_string()),
+                (55, "{h} елу бес".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

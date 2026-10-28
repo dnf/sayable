@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/xh.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Xhosa locale.
@@ -17,23 +17,48 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "xh".to_string(),
         clock: ClockConfig {
-            hours: ["yeshumi elinesibini".to_string(), "yokuqala".to_string(), "yesibini".to_string(), "yesithathu".to_string(), "yesine".to_string(), "yesihlanu".to_string(), "yesithandathu".to_string(), "yesixhenxe".to_string(), "yesibhozo".to_string(), "yethoba".to_string(), "yeshumi".to_string(), "yeshumi elinanye".to_string()],
+            hours: [
+                "yeshumi elinesibini".to_string(),
+                "yokuqala".to_string(),
+                "yesibini".to_string(),
+                "yesithathu".to_string(),
+                "yesine".to_string(),
+                "yesihlanu".to_string(),
+                "yesithandathu".to_string(),
+                "yesixhenxe".to_string(),
+                "yesibhozo".to_string(),
+                "yethoba".to_string(),
+                "yeshumi".to_string(),
+                "yeshumi elinanye".to_string(),
+            ],
             midnight: "ezinzulwini zobusuku".to_string(),
             noon: "emini".to_string(),
             patterns: HashMap::from([
-            (0, "intsimbi {h}".to_string()),
-            (5, "imizuzu emihlanu emva kwentsimbi {h}".to_string()),
-            (10, "imizuzu elishumi emva kwentsimbi {h}".to_string()),
-            (15, "ikota emva kwentsimbi {h}".to_string()),
-            (20, "imizuzu engamashumi amabini emva kwentsimbi {h}".to_string()),
-            (25, "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}".to_string()),
-            (30, "isiqingatha emva kwentsimbi {h}".to_string()),
-            (35, "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}".to_string()),
-            (40, "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}".to_string()),
-            (45, "ikota ukuya kwintsimbi {next_h}".to_string()),
-            (50, "imizuzu elishumi ukuya kwintsimbi {next_h}".to_string()),
-            (55, "imizuzu emihlanu ukuya kwintsimbi {next_h}".to_string()),
-        ]),
+                (0, "intsimbi {h}".to_string()),
+                (5, "imizuzu emihlanu emva kwentsimbi {h}".to_string()),
+                (10, "imizuzu elishumi emva kwentsimbi {h}".to_string()),
+                (15, "ikota emva kwentsimbi {h}".to_string()),
+                (
+                    20,
+                    "imizuzu engamashumi amabini emva kwentsimbi {h}".to_string(),
+                ),
+                (
+                    25,
+                    "imizuzu engamashumi amabini anesihlanu emva kwentsimbi {h}".to_string(),
+                ),
+                (30, "isiqingatha emva kwentsimbi {h}".to_string()),
+                (
+                    35,
+                    "imizuzu engamashumi amabini anesihlanu ukuya kwintsimbi {next_h}".to_string(),
+                ),
+                (
+                    40,
+                    "imizuzu engamashumi amabini ukuya kwintsimbi {next_h}".to_string(),
+                ),
+                (45, "ikota ukuya kwintsimbi {next_h}".to_string()),
+                (50, "imizuzu elishumi ukuya kwintsimbi {next_h}".to_string()),
+                (55, "imizuzu emihlanu ukuya kwintsimbi {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

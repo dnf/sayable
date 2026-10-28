@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/be.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Belarusian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "be".to_string(),
         clock: ClockConfig {
-            hours: ["дванаццаць".to_string(), "гадзіна".to_string(), "дзве".to_string(), "тры".to_string(), "чатыры".to_string(), "пяць".to_string(), "шэсць".to_string(), "сем".to_string(), "восем".to_string(), "дзевяць".to_string(), "дзесяць".to_string(), "адзінаццаць".to_string()],
+            hours: [
+                "дванаццаць".to_string(),
+                "гадзіна".to_string(),
+                "дзве".to_string(),
+                "тры".to_string(),
+                "чатыры".to_string(),
+                "пяць".to_string(),
+                "шэсць".to_string(),
+                "сем".to_string(),
+                "восем".to_string(),
+                "дзевяць".to_string(),
+                "дзесяць".to_string(),
+                "адзінаццаць".to_string(),
+            ],
             midnight: "поўнач".to_string(),
             noon: "поўдзень".to_string(),
             patterns: HashMap::from([
-            (0, "роўна {h}".to_string()),
-            (5, "{h} нуль пяць".to_string()),
-            (10, "{h} дзесяць".to_string()),
-            (15, "{h} пятнаццаць".to_string()),
-            (20, "{h} дваццаць".to_string()),
-            (25, "{h} дваццаць пяць".to_string()),
-            (30, "{h} трыццаць".to_string()),
-            (35, "без дваццаці пяці {next_h}".to_string()),
-            (40, "без дваццаці {next_h}".to_string()),
-            (45, "без чвэрці {next_h}".to_string()),
-            (50, "без дзесяці {next_h}".to_string()),
-            (55, "без пяці {next_h}".to_string()),
-        ]),
+                (0, "роўна {h}".to_string()),
+                (5, "{h} нуль пяць".to_string()),
+                (10, "{h} дзесяць".to_string()),
+                (15, "{h} пятнаццаць".to_string()),
+                (20, "{h} дваццаць".to_string()),
+                (25, "{h} дваццаць пяць".to_string()),
+                (30, "{h} трыццаць".to_string()),
+                (35, "без дваццаці пяці {next_h}".to_string()),
+                (40, "без дваццаці {next_h}".to_string()),
+                (45, "без чвэрці {next_h}".to_string()),
+                (50, "без дзесяці {next_h}".to_string()),
+                (55, "без пяці {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

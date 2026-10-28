@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from codegen.banner import locale_source_comment, make_header
+from codegen.targets.rust.layout import arr, call, lit, quote, raw, ref, render_expr, struct, to_string, tup, use_line
 from codegen.targets.rust.plural_rules import get_rs_plural
 
 HEADER = make_header("codegen/targets/rust/emitter.py")
@@ -17,20 +18,29 @@ _CAT_MAP = {
 _UNIT_NAMES = ("second", "minute", "hour", "day", "week", "month", "year")
 
 
-def _quote(s: str) -> str:
-    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
-
-
-def _unit_forms(unit: object) -> str:
+def _unit_forms(unit: object) -> object:
     if isinstance(unit, str):
-        return f"UnitForms::simple({_quote(unit)})"
+        return call("UnitForms::simple", lit(quote(unit)))
     cats = ["zero", "one", "two", "few", "many", "other"]
-    pairs = []
-    for cat in cats:
-        if cat in unit:
-            pairs.append(f"({_CAT_MAP[cat]}, {_quote(unit[cat])})")
-    return "UnitForms::plural(&[\n" + "".join(f"                {p},\n" for p in pairs) + "            ])"
+    pairs = [tup(lit(_CAT_MAP[cat]), lit(quote(unit[cat]))) for cat in cats if cat in unit]
+    return call("UnitForms::plural", ref(arr(pairs)))
+
+
+def _some_string(value: str) -> object:
+    return call("Some", lit("String::new()") if value == "" else to_string(value))
+
+
+def _override(ovr: dict) -> object:
+    units = ovr.get("units", {})
+    fields: list[tuple[str, object]] = [
+        (unit_name, call("Some", _unit_forms(units[unit_name])) if unit_name in units else lit("None"))
+        for unit_name in _UNIT_NAMES
+    ]
+    fields.append(("half", call("Some", to_string(ovr["half"])) if "half" in ovr else lit("None")))
+    fields.append(("delimiter", _some_string(ovr["delimiter"]) if "delimiter" in ovr else lit("None")))
+    fields.append(("ago", call("Some", to_string(ovr["ago"])) if "ago" in ovr else lit("None")))
+    fields.append(("in_future", call("Some", to_string(ovr["inFuture"])) if "inFuture" in ovr else lit("None")))
+    return call("Some", struct("CompactnessOverride", fields))
 
 
 def emit_locale(data: dict) -> str:
@@ -40,76 +50,30 @@ def emit_locale(data: dict) -> str:
 
     lines = [HEADER + locale_source_comment(code)]
 
-    # Imports
     imports = ["DurationLocale", "PluralCategory", "Units", "UnitForms"]
     has_overrides = "short" in data or "compact" in data
     if has_overrides:
         imports.append("CompactnessOverride")
-    lines.append(f"use crate::types::{{{', '.join(imports)}}};\n")
+    lines.append(use_line("crate::types", imports) + "\n")
+
+    fields: list[tuple[str, object]] = [
+        ("code", to_string(code)),
+        ("plural", raw(get_rs_plural(rule))),
+        ("units", struct("Units", [(u, _unit_forms(data["units"][u])) for u in _UNIT_NAMES])),
+        ("half", to_string(data["half"])),
+        ("delimiter", to_string(data["delimiter"])),
+        ("just_now", to_string(data["justNow"])),
+        ("ago", to_string(data["ago"])),
+        ("in_future", to_string(data["inFuture"])),
+    ]
+    for mode in ("short", "compact"):
+        fields.append((mode, _override(data[mode]) if mode in data else lit("None")))
+    fields.append(("format_number", lit("None")))
+    fields.append(("format_unit", lit("None")))
 
     lines.append(f"/// {name} locale.")
     lines.append("pub fn locale() -> DurationLocale {")
-    lines.append("    DurationLocale {")
-    lines.append(f"        code: {_quote(code)}.to_string(),")
-
-    # Plural
-    plural = get_rs_plural(rule)
-    lines.append(f"        plural: {plural},")
-
-    # Units (all 7)
-    lines.append("        units: Units {")
-    for unit_name in _UNIT_NAMES:
-        val = _unit_forms(data["units"][unit_name])
-        lines.append(f"            {unit_name}: {val},")
-    lines.append("        },")
-
-    # Simple fields
-    lines.append(f"        half: {_quote(data['half'])}.to_string(),")
-    lines.append(f"        delimiter: {_quote(data['delimiter'])}.to_string(),")
-    lines.append(f"        just_now: {_quote(data['justNow'])}.to_string(),")
-    lines.append(f"        ago: {_quote(data['ago'])}.to_string(),")
-    lines.append(f"        in_future: {_quote(data['inFuture'])}.to_string(),")
-
-    # Short/compact overrides
-    for mode in ("short", "compact"):
-        if mode in data:
-            ovr = data[mode]
-            lines.append(f"        {mode}: Some(CompactnessOverride {{")
-            for unit_name in _UNIT_NAMES:
-                if "units" in ovr and unit_name in ovr["units"]:
-                    val = ovr["units"][unit_name]
-                    if isinstance(val, str):
-                        lines.append(f"            {unit_name}: Some(UnitForms::simple({_quote(val)})),")
-                    else:
-                        lines.append(f"            {unit_name}: Some({_unit_forms(val)}),")
-                else:
-                    lines.append(f"            {unit_name}: None,")
-            if "half" in ovr:
-                lines.append(f"            half: Some({_quote(ovr['half'])}.to_string()),")
-            else:
-                lines.append("            half: None,")
-            if "delimiter" in ovr:
-                if ovr["delimiter"] == "":
-                    lines.append("            delimiter: Some(String::new()),")
-                else:
-                    lines.append(f"            delimiter: Some({_quote(ovr['delimiter'])}.to_string()),")
-            else:
-                lines.append("            delimiter: None,")
-            if "ago" in ovr:
-                lines.append(f"            ago: Some({_quote(ovr['ago'])}.to_string()),")
-            else:
-                lines.append("            ago: None,")
-            if "inFuture" in ovr:
-                lines.append(f"            in_future: Some({_quote(ovr['inFuture'])}.to_string()),")
-            else:
-                lines.append("            in_future: None,")
-            lines.append("        }),")
-        else:
-            lines.append(f"        {mode}: None,")
-
-    lines.append("        format_number: None,")
-    lines.append("        format_unit: None,")
-    lines.append("    }")
+    lines.append("    " + render_expr(struct("DurationLocale", fields), 4, 4))
     lines.append("}")
     lines.append("")
 

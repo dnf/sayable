@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/vi.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Vietnamese locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "vi".to_string(),
         clock: ClockConfig {
-            hours: ["mười hai".to_string(), "một".to_string(), "hai".to_string(), "ba".to_string(), "bốn".to_string(), "năm".to_string(), "sáu".to_string(), "bảy".to_string(), "tám".to_string(), "chín".to_string(), "mười".to_string(), "mười một".to_string()],
+            hours: [
+                "mười hai".to_string(),
+                "một".to_string(),
+                "hai".to_string(),
+                "ba".to_string(),
+                "bốn".to_string(),
+                "năm".to_string(),
+                "sáu".to_string(),
+                "bảy".to_string(),
+                "tám".to_string(),
+                "chín".to_string(),
+                "mười".to_string(),
+                "mười một".to_string(),
+            ],
             midnight: "nửa đêm".to_string(),
             noon: "mười hai giờ trưa".to_string(),
             patterns: HashMap::from([
-            (0, "{h} giờ".to_string()),
-            (5, "{h} giờ năm phút".to_string()),
-            (10, "{h} giờ mười phút".to_string()),
-            (15, "{h} giờ mười lăm phút".to_string()),
-            (20, "{h} giờ hai mươi phút".to_string()),
-            (25, "{h} giờ hai mươi lăm phút".to_string()),
-            (30, "{h} giờ rưỡi".to_string()),
-            (35, "{next_h} giờ kém hai mươi lăm".to_string()),
-            (40, "{next_h} giờ kém hai mươi".to_string()),
-            (45, "{next_h} giờ kém mười lăm".to_string()),
-            (50, "{next_h} giờ kém mười".to_string()),
-            (55, "{next_h} giờ kém năm".to_string()),
-        ]),
+                (0, "{h} giờ".to_string()),
+                (5, "{h} giờ năm phút".to_string()),
+                (10, "{h} giờ mười phút".to_string()),
+                (15, "{h} giờ mười lăm phút".to_string()),
+                (20, "{h} giờ hai mươi phút".to_string()),
+                (25, "{h} giờ hai mươi lăm phút".to_string()),
+                (30, "{h} giờ rưỡi".to_string()),
+                (35, "{next_h} giờ kém hai mươi lăm".to_string()),
+                (40, "{next_h} giờ kém hai mươi".to_string()),
+                (45, "{next_h} giờ kém mười lăm".to_string()),
+                (50, "{next_h} giờ kém mười".to_string()),
+                (55, "{next_h} giờ kém năm".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/is.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Icelandic locale.
 pub fn locale() -> AgeLocale {
@@ -18,8 +20,11 @@ pub fn locale() -> AgeLocale {
         plural: |n| {
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if mod10 == 1 && mod100 != 11 { PluralCategory::One }
-            else { PluralCategory::Other }
+            if mod10 == 1 && mod100 != 11 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[

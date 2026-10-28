@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/nb.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Norwegian Bokmål locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "nb".to_string(),
         clock: ClockConfig {
-            hours: ["tolv".to_string(), "ett".to_string(), "to".to_string(), "tre".to_string(), "fire".to_string(), "fem".to_string(), "seks".to_string(), "sju".to_string(), "åtte".to_string(), "ni".to_string(), "ti".to_string(), "elleve".to_string()],
+            hours: [
+                "tolv".to_string(),
+                "ett".to_string(),
+                "to".to_string(),
+                "tre".to_string(),
+                "fire".to_string(),
+                "fem".to_string(),
+                "seks".to_string(),
+                "sju".to_string(),
+                "åtte".to_string(),
+                "ni".to_string(),
+                "ti".to_string(),
+                "elleve".to_string(),
+            ],
             midnight: "midnatt".to_string(),
             noon: "middag".to_string(),
             patterns: HashMap::from([
-            (0, "klokka {h}".to_string()),
-            (5, "fem over {h}".to_string()),
-            (10, "ti over {h}".to_string()),
-            (15, "kvart over {h}".to_string()),
-            (20, "tjue over {h}".to_string()),
-            (25, "fem på halv {next_h}".to_string()),
-            (30, "halv {next_h}".to_string()),
-            (35, "fem over halv {next_h}".to_string()),
-            (40, "tjue på {next_h}".to_string()),
-            (45, "kvart på {next_h}".to_string()),
-            (50, "ti på {next_h}".to_string()),
-            (55, "fem på {next_h}".to_string()),
-        ]),
+                (0, "klokka {h}".to_string()),
+                (5, "fem over {h}".to_string()),
+                (10, "ti over {h}".to_string()),
+                (15, "kvart over {h}".to_string()),
+                (20, "tjue over {h}".to_string()),
+                (25, "fem på halv {next_h}".to_string()),
+                (30, "halv {next_h}".to_string()),
+                (35, "fem over halv {next_h}".to_string()),
+                (40, "tjue på {next_h}".to_string()),
+                (45, "kvart på {next_h}".to_string()),
+                (50, "ti på {next_h}".to_string()),
+                (55, "fem på {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,16 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ro.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Romanian locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "ro".to_string(),
         plural: |n| {
-            if n == 1 { PluralCategory::One }
-            else if n == 0 || (1..=19).contains(&(n % 100)) { PluralCategory::Few }
-            else { PluralCategory::Other }
+            if n == 1 {
+                PluralCategory::One
+            } else if n == 0 || (1..=19).contains(&(n % 100)) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

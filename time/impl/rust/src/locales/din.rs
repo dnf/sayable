@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/din.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Dinka locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "din".to_string(),
         clock: ClockConfig {
-            hours: ["thiäär ku rou".to_string(), "tök".to_string(), "rou".to_string(), "diäk".to_string(), "ŋuän".to_string(), "dhiëc".to_string(), "dhetem".to_string(), "dhorou".to_string(), "bɛ̈t".to_string(), "dhoŋuan".to_string(), "thiäär".to_string(), "thiäär ku tök".to_string()],
+            hours: [
+                "thiäär ku rou".to_string(),
+                "tök".to_string(),
+                "rou".to_string(),
+                "diäk".to_string(),
+                "ŋuän".to_string(),
+                "dhiëc".to_string(),
+                "dhetem".to_string(),
+                "dhorou".to_string(),
+                "bɛ̈t".to_string(),
+                "dhoŋuan".to_string(),
+                "thiäär".to_string(),
+                "thiäär ku tök".to_string(),
+            ],
             midnight: "wakɔ̈u".to_string(),
             noon: "akɔ̈l ciëŋ".to_string(),
             patterns: HashMap::from([
-            (0, "thä {h}".to_string()),
-            (5, "thä {h} ku minitö dhiëc".to_string()),
-            (10, "thä {h} ku minitö thiäär".to_string()),
-            (15, "thä {h} ku minitö thiäär ku dhiëc".to_string()),
-            (20, "thä {h} ku minitö thiärou".to_string()),
-            (25, "thä {h} ku minitö thiärou ku dhiëc".to_string()),
-            (30, "thä {h} ku minitö thiärdiäk".to_string()),
-            (35, "thä {h} ku minitö thiärdiäk ku dhiëc".to_string()),
-            (40, "thä {h} ku minitö thiärŋuan".to_string()),
-            (45, "thä {h} ku minitö thiärŋuan ku dhiëc".to_string()),
-            (50, "thä {h} ku minitö thiärdhiëc".to_string()),
-            (55, "thä {h} ku minitö thiärdhiëc ku dhiëc".to_string()),
-        ]),
+                (0, "thä {h}".to_string()),
+                (5, "thä {h} ku minitö dhiëc".to_string()),
+                (10, "thä {h} ku minitö thiäär".to_string()),
+                (15, "thä {h} ku minitö thiäär ku dhiëc".to_string()),
+                (20, "thä {h} ku minitö thiärou".to_string()),
+                (25, "thä {h} ku minitö thiärou ku dhiëc".to_string()),
+                (30, "thä {h} ku minitö thiärdiäk".to_string()),
+                (35, "thä {h} ku minitö thiärdiäk ku dhiëc".to_string()),
+                (40, "thä {h} ku minitö thiärŋuan".to_string()),
+                (45, "thä {h} ku minitö thiärŋuan ku dhiëc".to_string()),
+                (50, "thä {h} ku minitö thiärdhiëc".to_string()),
+                (55, "thä {h} ku minitö thiärdhiëc ku dhiëc".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

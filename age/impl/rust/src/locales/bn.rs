@@ -9,14 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/bn.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Bengali locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "bn".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -44,7 +50,10 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("শিশু".to_string()),
             toddler: StageLabel::Neutral("ছোট শিশু".to_string()),
             child: StageLabel::Neutral("শিশু".to_string()),
-            teenager: StageLabel::Gendered { m: "কিশোর".to_string(), f: "কিশোরী".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "কিশোর".to_string(),
+                f: "কিশোরী".to_string(),
+            },
             adult: StageLabel::Neutral("প্রাপ্তবয়স্ক".to_string()),
         },
         short: Some(CompactnessOverride {

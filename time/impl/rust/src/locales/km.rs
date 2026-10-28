@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/km.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Khmer locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "km".to_string(),
         clock: ClockConfig {
-            hours: ["ដប់ពីរ".to_string(), "មួយ".to_string(), "ពីរ".to_string(), "បី".to_string(), "បួន".to_string(), "ប្រាំ".to_string(), "ប្រាំមួយ".to_string(), "ប្រាំពីរ".to_string(), "ប្រាំបី".to_string(), "ប្រាំបួន".to_string(), "ដប់".to_string(), "ដប់មួយ".to_string()],
+            hours: [
+                "ដប់ពីរ".to_string(),
+                "មួយ".to_string(),
+                "ពីរ".to_string(),
+                "បី".to_string(),
+                "បួន".to_string(),
+                "ប្រាំ".to_string(),
+                "ប្រាំមួយ".to_string(),
+                "ប្រាំពីរ".to_string(),
+                "ប្រាំបី".to_string(),
+                "ប្រាំបួន".to_string(),
+                "ដប់".to_string(),
+                "ដប់មួយ".to_string(),
+            ],
             midnight: "កណ្ដាលអធ្រាត្រ".to_string(),
             noon: "ថ្ងៃត្រង់".to_string(),
             patterns: HashMap::from([
-            (0, "ម៉ោង{h}".to_string()),
-            (5, "ម៉ោង{h} ប្រាំនាទី".to_string()),
-            (10, "ម៉ោង{h} ដប់នាទី".to_string()),
-            (15, "ម៉ោង{h} ដប់ប្រាំនាទី".to_string()),
-            (20, "ម៉ោង{h} ម្ភៃនាទី".to_string()),
-            (25, "ម៉ោង{h} ម្ភៃប្រាំនាទី".to_string()),
-            (30, "ម៉ោង{h}កន្លះ".to_string()),
-            (35, "ម៉ោង{h} សាមសិបប្រាំនាទី".to_string()),
-            (40, "ម៉ោង{h} សែសិបនាទី".to_string()),
-            (45, "ម៉ោង{h} សែសិបប្រាំនាទី".to_string()),
-            (50, "ម៉ោង{h} ហាសិបនាទី".to_string()),
-            (55, "ម៉ោង{h} ហាសិបប្រាំនាទី".to_string()),
-        ]),
+                (0, "ម៉ោង{h}".to_string()),
+                (5, "ម៉ោង{h} ប្រាំនាទី".to_string()),
+                (10, "ម៉ោង{h} ដប់នាទី".to_string()),
+                (15, "ម៉ោង{h} ដប់ប្រាំនាទី".to_string()),
+                (20, "ម៉ោង{h} ម្ភៃនាទី".to_string()),
+                (25, "ម៉ោង{h} ម្ភៃប្រាំនាទី".to_string()),
+                (30, "ម៉ោង{h}កន្លះ".to_string()),
+                (35, "ម៉ោង{h} សាមសិបប្រាំនាទី".to_string()),
+                (40, "ម៉ោង{h} សែសិបនាទី".to_string()),
+                (45, "ម៉ោង{h} សែសិបប្រាំនាទី".to_string()),
+                (50, "ម៉ោង{h} ហាសិបនាទី".to_string()),
+                (55, "ម៉ោង{h} ហាសិបប្រាំនាទី".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

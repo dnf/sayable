@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 from codegen.banner import locale_source_comment, make_header
-from codegen.targets.rust.plural_rules import get_rs_plural, is_simple_plural
+from codegen.targets.rust.layout import arr, call, lit, quote, raw, ref, render_expr, struct, to_string, tup, use_line
+from codegen.targets.rust.plural_rules import get_rs_plural
 
 HEADER = make_header("codegen/targets/rust/emitter.py")
 
@@ -13,27 +14,37 @@ _CAT_MAP = {
     "many": "PluralCategory::Many", "other": "PluralCategory::Other",
 }
 
-
-def _quote(s: str) -> str:
-    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+_UNIT_NAMES = ("day", "week", "month", "year")
 
 
-def _unit_forms(unit: object) -> str:
+def _unit_forms(unit: object) -> object:
     if isinstance(unit, str):
-        return f"UnitForms::simple({_quote(unit)})"
+        return call("UnitForms::simple", lit(quote(unit)))
     cats = ["zero", "one", "two", "few", "many", "other"]
-    pairs = []
-    for cat in cats:
-        if cat in unit:
-            pairs.append(f"({_CAT_MAP[cat]}, {_quote(unit[cat])})")
-    return "UnitForms::plural(&[\n" + "".join(f"                {p},\n" for p in pairs) + "            ])"
+    pairs = [tup(lit(_CAT_MAP[cat]), lit(quote(unit[cat]))) for cat in cats if cat in unit]
+    return call("UnitForms::plural", ref(arr(pairs)))
 
 
-def _stage_label(stage: object) -> str:
+def _stage_label(stage: object) -> object:
     if isinstance(stage, str):
-        return f'StageLabel::Neutral({_quote(stage)}.to_string())'
-    return f'StageLabel::Gendered {{ m: {_quote(stage["m"])}.to_string(), f: {_quote(stage["f"])}.to_string() }}'
+        return call("StageLabel::Neutral", to_string(stage))
+    return struct("StageLabel::Gendered", [("m", to_string(stage["m"])), ("f", to_string(stage["f"]))])
+
+
+def _some_string(value: str) -> object:
+    return call("Some", lit("String::new()") if value == "" else to_string(value))
+
+
+def _override(ovr: dict) -> object:
+    units = ovr.get("units", {})
+    fields: list[tuple[str, object]] = [
+        (unit_name, call("Some", _unit_forms(units[unit_name])) if unit_name in units else lit("None"))
+        for unit_name in _UNIT_NAMES
+    ]
+    fields.append(("half", call("Some", to_string(ovr["half"])) if "half" in ovr else lit("None")))
+    fields.append(("delimiter", _some_string(ovr["delimiter"]) if "delimiter" in ovr else lit("None")))
+    fields.append(("just_born", call("Some", to_string(ovr["justBorn"])) if "justBorn" in ovr else lit("None")))
+    return call("Some", struct("CompactnessOverride", fields))
 
 
 def emit_locale(data: dict) -> str:
@@ -43,77 +54,32 @@ def emit_locale(data: dict) -> str:
 
     lines = [HEADER + locale_source_comment(code)]
 
-    # Imports
     imports = ["AgeLocale", "PluralCategory", "Units", "UnitForms", "Stages", "StageLabel"]
     has_overrides = "short" in data or "compact" in data
     if has_overrides:
         imports.append("CompactnessOverride")
-    lines.append(f"use crate::types::{{{', '.join(imports)}}};\n")
+    lines.append(use_line("crate::types", imports) + "\n")
+
+    fields: list[tuple[str, object]] = [
+        ("code", to_string(code)),
+        ("plural", raw(get_rs_plural(rule))),
+        ("units", struct("Units", [(u, _unit_forms(data["units"][u])) for u in _UNIT_NAMES])),
+        ("half", to_string(data["half"])),
+        ("delimiter", to_string(data["delimiter"])),
+        ("just_born", to_string(data["justBorn"])),
+        ("stages", struct("Stages", [
+            (stage, _stage_label(data["stages"][stage]))
+            for stage in ("newborn", "infant", "toddler", "child", "teenager", "adult")
+        ])),
+    ]
+    for mode in ("short", "compact"):
+        fields.append((mode, _override(data[mode]) if mode in data else lit("None")))
+    fields.append(("format_number", lit("None")))
+    fields.append(("format_unit", lit("None")))
 
     lines.append(f"/// {name} locale.")
     lines.append("pub fn locale() -> AgeLocale {")
-    lines.append("    AgeLocale {")
-    lines.append(f"        code: {_quote(code)}.to_string(),")
-
-    # Plural
-    plural = get_rs_plural(rule)
-    lines.append(f"        plural: {plural},")
-
-    # Units
-    lines.append("        units: Units {")
-    for unit_name in ("day", "week", "month", "year"):
-        val = _unit_forms(data["units"][unit_name])
-        lines.append(f"            {unit_name}: {val},")
-    lines.append("        },")
-
-    # Simple fields
-    lines.append(f"        half: {_quote(data['half'])}.to_string(),")
-    lines.append(f"        delimiter: {_quote(data['delimiter'])}.to_string(),")
-    lines.append(f"        just_born: {_quote(data['justBorn'])}.to_string(),")
-
-    # Stages
-    lines.append("        stages: Stages {")
-    for stage in ("newborn", "infant", "toddler", "child", "teenager", "adult"):
-        val = _stage_label(data["stages"][stage])
-        lines.append(f"            {stage}: {val},")
-    lines.append("        },")
-
-    # Short/compact
-    for mode in ("short", "compact"):
-        if mode in data:
-            ovr = data[mode]
-            lines.append(f"        {mode}: Some(CompactnessOverride {{")
-            for unit_name in ("day", "week", "month", "year"):
-                if "units" in ovr and unit_name in ovr["units"]:
-                    val = ovr["units"][unit_name]
-                    if isinstance(val, str):
-                        lines.append(f"            {unit_name}: Some(UnitForms::simple({_quote(val)})),")
-                    else:
-                        lines.append(f"            {unit_name}: Some({_unit_forms(val)}),")
-                else:
-                    lines.append(f"            {unit_name}: None,")
-            if "half" in ovr:
-                lines.append(f"            half: Some({_quote(ovr['half'])}.to_string()),")
-            else:
-                lines.append("            half: None,")
-            if "delimiter" in ovr:
-                if ovr["delimiter"] == "":
-                    lines.append("            delimiter: Some(String::new()),")
-                else:
-                    lines.append(f"            delimiter: Some({_quote(ovr['delimiter'])}.to_string()),")
-            else:
-                lines.append("            delimiter: None,")
-            if "justBorn" in ovr:
-                lines.append(f"            just_born: Some({_quote(ovr['justBorn'])}.to_string()),")
-            else:
-                lines.append("            just_born: None,")
-            lines.append("        }),")
-        else:
-            lines.append(f"        {mode}: None,")
-
-    lines.append("        format_number: None,")
-    lines.append("        format_unit: None,")
-    lines.append("    }")
+    lines.append("    " + render_expr(struct("AgeLocale", fields), 4, 4))
     lines.append("}")
     lines.append("")
 

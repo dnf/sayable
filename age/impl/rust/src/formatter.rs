@@ -1,4 +1,3 @@
-
 use std::sync::Mutex;
 use std::time::{SystemTime, UNIX_EPOCH};
 
@@ -15,7 +14,6 @@ static NOW_OVERRIDE: Mutex<Option<(i32, i32, i32)>> = Mutex::new(None);
 pub fn _set_now_for_testing(date: Option<(i32, i32, i32)>) {
     *NOW_OVERRIDE.lock().unwrap() = date;
 }
-
 
 const MAX_AGE_MONTHS: i32 = 6000;
 
@@ -338,7 +336,12 @@ impl SayableAge {
     /// Returns the developmental stage label based on age.
     /// Pass an optional `gender` to select masculine/feminine forms in gendered locales.
     /// Returns `None` if `dob` is empty or in the future.
-    pub fn format_stage(&self, dob: &str, as_of: Option<&str>, gender: Option<Gender>) -> Option<String> {
+    pub fn format_stage(
+        &self,
+        dob: &str,
+        as_of: Option<&str>,
+        gender: Option<Gender>,
+    ) -> Option<String> {
         let age = parse_age(dob, as_of)?;
         let key = stage_key(age.months);
         let label = match key {

@@ -9,19 +9,29 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/cy.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Welsh locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "cy".to_string(),
         plural: |n| {
-            if n == 0 { return PluralCategory::Zero; }
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
-            if n == 3 { PluralCategory::Few }
-            else if n == 6 { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if n == 0 {
+                return PluralCategory::Zero;
+            }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
+            if n == 3 {
+                PluralCategory::Few
+            } else if n == 6 {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

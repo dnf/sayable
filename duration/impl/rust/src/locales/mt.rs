@@ -9,19 +9,27 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mt.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Maltese locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "mt".to_string(),
         plural: |n| {
-            if n == 1 { return PluralCategory::One; }
-            if n == 2 { return PluralCategory::Two; }
+            if n == 1 {
+                return PluralCategory::One;
+            }
+            if n == 2 {
+                return PluralCategory::Two;
+            }
             let mod100 = n % 100;
-            if n == 0 || (3..=10).contains(&mod100) { PluralCategory::Few }
-            else if (11..=19).contains(&mod100) { PluralCategory::Many }
-            else { PluralCategory::Other }
+            if n == 0 || (3..=10).contains(&mod100) {
+                PluralCategory::Few
+            } else if (11..=19).contains(&mod100) {
+                PluralCategory::Many
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::plural(&[

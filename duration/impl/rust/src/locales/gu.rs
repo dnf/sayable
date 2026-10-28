@@ -9,14 +9,18 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/gu.json
 
-use crate::types::{DurationLocale, PluralCategory, Units, UnitForms, CompactnessOverride};
+use crate::types::{CompactnessOverride, DurationLocale, PluralCategory, UnitForms, Units};
 
 /// Gujarati locale.
 pub fn locale() -> DurationLocale {
     DurationLocale {
         code: "gu".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             second: UnitForms::simple("{n} સેકન્ડ"),

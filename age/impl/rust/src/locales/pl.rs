@@ -9,18 +9,25 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/pl.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Polish locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "pl".to_string(),
         plural: |n| {
-            if n == 1 { return PluralCategory::One; }
+            if n == 1 {
+                return PluralCategory::One;
+            }
             let mod10 = n % 10;
             let mod100 = n % 100;
-            if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) { PluralCategory::Few }
-            else { PluralCategory::Many }
+            if (2..=4).contains(&mod10) && !(12..=14).contains(&mod100) {
+                PluralCategory::Few
+            } else {
+                PluralCategory::Many
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -56,8 +63,14 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Niemowlę".to_string()),
             toddler: StageLabel::Neutral("Maluch".to_string()),
             child: StageLabel::Neutral("Dziecko".to_string()),
-            teenager: StageLabel::Gendered { m: "Nastolatek".to_string(), f: "Nastolatka".to_string() },
-            adult: StageLabel::Gendered { m: "Dorosły".to_string(), f: "Dorosła".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Nastolatek".to_string(),
+                f: "Nastolatka".to_string(),
+            },
+            adult: StageLabel::Gendered {
+                m: "Dorosły".to_string(),
+                f: "Dorosła".to_string(),
+            },
         },
         short: Some(CompactnessOverride {
             day: Some(UnitForms::plural(&[

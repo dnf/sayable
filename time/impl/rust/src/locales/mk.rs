@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mk.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Macedonian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "mk".to_string(),
         clock: ClockConfig {
-            hours: ["дванаесет".to_string(), "еден".to_string(), "два".to_string(), "три".to_string(), "четири".to_string(), "пет".to_string(), "шест".to_string(), "седум".to_string(), "осум".to_string(), "девет".to_string(), "десет".to_string(), "единаесет".to_string()],
+            hours: [
+                "дванаесет".to_string(),
+                "еден".to_string(),
+                "два".to_string(),
+                "три".to_string(),
+                "четири".to_string(),
+                "пет".to_string(),
+                "шест".to_string(),
+                "седум".to_string(),
+                "осум".to_string(),
+                "девет".to_string(),
+                "десет".to_string(),
+                "единаесет".to_string(),
+            ],
             midnight: "полноќ".to_string(),
             noon: "пладне".to_string(),
             patterns: HashMap::from([
-            (0, "{h} часот".to_string()),
-            (5, "{h} и пет".to_string()),
-            (10, "{h} и десет".to_string()),
-            (15, "{h} и петнаесет".to_string()),
-            (20, "{h} и дваесет".to_string()),
-            (25, "{h} и дваесет и пет".to_string()),
-            (30, "{h} и пол".to_string()),
-            (35, "дваесет и пет до {next_h}".to_string()),
-            (40, "дваесет до {next_h}".to_string()),
-            (45, "петнаесет до {next_h}".to_string()),
-            (50, "десет до {next_h}".to_string()),
-            (55, "пет до {next_h}".to_string()),
-        ]),
+                (0, "{h} часот".to_string()),
+                (5, "{h} и пет".to_string()),
+                (10, "{h} и десет".to_string()),
+                (15, "{h} и петнаесет".to_string()),
+                (20, "{h} и дваесет".to_string()),
+                (25, "{h} и дваесет и пет".to_string()),
+                (30, "{h} и пол".to_string()),
+                (35, "дваесет и пет до {next_h}".to_string()),
+                (40, "дваесет до {next_h}".to_string()),
+                (45, "петнаесет до {next_h}".to_string()),
+                (50, "десет до {next_h}".to_string()),
+                (55, "пет до {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

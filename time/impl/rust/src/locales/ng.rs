@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ng.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Oshiwambo locale.
@@ -17,23 +17,45 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ng".to_string(),
         clock: ClockConfig {
-            hours: ["omulongo nambali".to_string(), "imwe".to_string(), "mbali".to_string(), "ndatu".to_string(), "ne".to_string(), "ntano".to_string(), "hamano".to_string(), "heyali".to_string(), "hetatu".to_string(), "omugoyi".to_string(), "omulongo".to_string(), "omulongo nimwe".to_string()],
+            hours: [
+                "omulongo nambali".to_string(),
+                "imwe".to_string(),
+                "mbali".to_string(),
+                "ndatu".to_string(),
+                "ne".to_string(),
+                "ntano".to_string(),
+                "hamano".to_string(),
+                "heyali".to_string(),
+                "hetatu".to_string(),
+                "omugoyi".to_string(),
+                "omulongo".to_string(),
+                "omulongo nimwe".to_string(),
+            ],
             midnight: "onguloshi pakati".to_string(),
             noon: "omutenya".to_string(),
             patterns: HashMap::from([
-            (0, "otundi {h}".to_string()),
-            (5, "otundi {h} noominute ntano".to_string()),
-            (10, "otundi {h} noominute omulongo".to_string()),
-            (15, "otundi {h} noominute omulongo nantano".to_string()),
-            (20, "otundi {h} noominute omilongo mbali".to_string()),
-            (25, "otundi {h} noominute omilongo mbali nantano".to_string()),
-            (30, "otundi {h} netata".to_string()),
-            (35, "otundi {h} noominute omilongo ndatu nantano".to_string()),
-            (40, "otundi {h} noominute omilongo ne".to_string()),
-            (45, "otundi {h} noominute omilongo ne nantano".to_string()),
-            (50, "otundi {h} noominute omilongo ntano".to_string()),
-            (55, "otundi {h} noominute omilongo ntano nantano".to_string()),
-        ]),
+                (0, "otundi {h}".to_string()),
+                (5, "otundi {h} noominute ntano".to_string()),
+                (10, "otundi {h} noominute omulongo".to_string()),
+                (15, "otundi {h} noominute omulongo nantano".to_string()),
+                (20, "otundi {h} noominute omilongo mbali".to_string()),
+                (
+                    25,
+                    "otundi {h} noominute omilongo mbali nantano".to_string(),
+                ),
+                (30, "otundi {h} netata".to_string()),
+                (
+                    35,
+                    "otundi {h} noominute omilongo ndatu nantano".to_string(),
+                ),
+                (40, "otundi {h} noominute omilongo ne".to_string()),
+                (45, "otundi {h} noominute omilongo ne nantano".to_string()),
+                (50, "otundi {h} noominute omilongo ntano".to_string()),
+                (
+                    55,
+                    "otundi {h} noominute omilongo ntano nantano".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

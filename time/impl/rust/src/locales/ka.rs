@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ka.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Georgian locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ka".to_string(),
         clock: ClockConfig {
-            hours: ["თორმეტი".to_string(), "ერთი".to_string(), "ორი".to_string(), "სამი".to_string(), "ოთხი".to_string(), "ხუთი".to_string(), "ექვსი".to_string(), "შვიდი".to_string(), "რვა".to_string(), "ცხრა".to_string(), "ათი".to_string(), "თერთმეტი".to_string()],
+            hours: [
+                "თორმეტი".to_string(),
+                "ერთი".to_string(),
+                "ორი".to_string(),
+                "სამი".to_string(),
+                "ოთხი".to_string(),
+                "ხუთი".to_string(),
+                "ექვსი".to_string(),
+                "შვიდი".to_string(),
+                "რვა".to_string(),
+                "ცხრა".to_string(),
+                "ათი".to_string(),
+                "თერთმეტი".to_string(),
+            ],
             midnight: "შუაღამე".to_string(),
             noon: "შუადღე".to_string(),
             patterns: HashMap::from([
-            (0, "{h} საათი".to_string()),
-            (5, "{h} საათი და ხუთი წუთი".to_string()),
-            (10, "{h} საათი და ათი წუთი".to_string()),
-            (15, "{h} საათი და თხუთმეტი წუთი".to_string()),
-            (20, "{h} საათი და ოცი წუთი".to_string()),
-            (25, "{h} საათი და ოცდახუთი წუთი".to_string()),
-            (30, "{h} საათი და ოცდაათი წუთი".to_string()),
-            (35, "{h} საათი და ოცდათხუთმეტი წუთი".to_string()),
-            (40, "{h} საათი და ორმოცი წუთი".to_string()),
-            (45, "{h} საათი და ორმოცდახუთი წუთი".to_string()),
-            (50, "{h} საათი და ორმოცდაათი წუთი".to_string()),
-            (55, "{h} საათი და ორმოცდათხუთმეტი წუთი".to_string()),
-        ]),
+                (0, "{h} საათი".to_string()),
+                (5, "{h} საათი და ხუთი წუთი".to_string()),
+                (10, "{h} საათი და ათი წუთი".to_string()),
+                (15, "{h} საათი და თხუთმეტი წუთი".to_string()),
+                (20, "{h} საათი და ოცი წუთი".to_string()),
+                (25, "{h} საათი და ოცდახუთი წუთი".to_string()),
+                (30, "{h} საათი და ოცდაათი წუთი".to_string()),
+                (35, "{h} საათი და ოცდათხუთმეტი წუთი".to_string()),
+                (40, "{h} საათი და ორმოცი წუთი".to_string()),
+                (45, "{h} საათი და ორმოცდახუთი წუთი".to_string()),
+                (50, "{h} საათი და ორმოცდაათი წუთი".to_string()),
+                (55, "{h} საათი და ორმოცდათხუთმეტი წუთი".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,14 +9,20 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/pa.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Punjabi locale.
 pub fn locale() -> AgeLocale {
     AgeLocale {
         code: "pa".to_string(),
         plural: |n| {
-            if n == 0 || n == 1 { PluralCategory::One } else { PluralCategory::Other }
+            if n == 0 || n == 1 {
+                PluralCategory::One
+            } else {
+                PluralCategory::Other
+            }
         },
         units: Units {
             day: UnitForms::plural(&[
@@ -40,11 +46,23 @@ pub fn locale() -> AgeLocale {
         delimiter: ", ".to_string(),
         just_born: "ਨਵਜੰਮਿਆ".to_string(),
         stages: Stages {
-            newborn: StageLabel::Gendered { m: "ਨਵਜੰਮਿਆ".to_string(), f: "ਨਵਜੰਮੀ".to_string() },
+            newborn: StageLabel::Gendered {
+                m: "ਨਵਜੰਮਿਆ".to_string(),
+                f: "ਨਵਜੰਮੀ".to_string(),
+            },
             infant: StageLabel::Neutral("ਸ਼ਿਸ਼ੂ".to_string()),
-            toddler: StageLabel::Gendered { m: "ਛੋਟਾ ਬੱਚਾ".to_string(), f: "ਛੋਟੀ ਬੱਚੀ".to_string() },
-            child: StageLabel::Gendered { m: "ਬੱਚਾ".to_string(), f: "ਬੱਚੀ".to_string() },
-            teenager: StageLabel::Gendered { m: "ਕਿਸ਼ੋਰ".to_string(), f: "ਕਿਸ਼ੋਰੀ".to_string() },
+            toddler: StageLabel::Gendered {
+                m: "ਛੋਟਾ ਬੱਚਾ".to_string(),
+                f: "ਛੋਟੀ ਬੱਚੀ".to_string(),
+            },
+            child: StageLabel::Gendered {
+                m: "ਬੱਚਾ".to_string(),
+                f: "ਬੱਚੀ".to_string(),
+            },
+            teenager: StageLabel::Gendered {
+                m: "ਕਿਸ਼ੋਰ".to_string(),
+                f: "ਕਿਸ਼ੋਰੀ".to_string(),
+            },
             adult: StageLabel::Neutral("ਬਾਲਗ".to_string()),
         },
         short: Some(CompactnessOverride {

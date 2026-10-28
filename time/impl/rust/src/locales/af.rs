@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/af.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Afrikaans locale.
@@ -17,23 +17,36 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "af".to_string(),
         clock: ClockConfig {
-            hours: ["twaalf".to_string(), "een".to_string(), "twee".to_string(), "drie".to_string(), "vier".to_string(), "vyf".to_string(), "ses".to_string(), "sewe".to_string(), "agt".to_string(), "nege".to_string(), "tien".to_string(), "elf".to_string()],
+            hours: [
+                "twaalf".to_string(),
+                "een".to_string(),
+                "twee".to_string(),
+                "drie".to_string(),
+                "vier".to_string(),
+                "vyf".to_string(),
+                "ses".to_string(),
+                "sewe".to_string(),
+                "agt".to_string(),
+                "nege".to_string(),
+                "tien".to_string(),
+                "elf".to_string(),
+            ],
             midnight: "middernag".to_string(),
             noon: "middag".to_string(),
             patterns: HashMap::from([
-            (0, "{h}-uur".to_string()),
-            (5, "vyf oor {h}".to_string()),
-            (10, "tien oor {h}".to_string()),
-            (15, "kwart oor {h}".to_string()),
-            (20, "twintig oor {h}".to_string()),
-            (25, "vyf voor half {next_h}".to_string()),
-            (30, "half {next_h}".to_string()),
-            (35, "vyf oor half {next_h}".to_string()),
-            (40, "twintig voor {next_h}".to_string()),
-            (45, "kwart voor {next_h}".to_string()),
-            (50, "tien voor {next_h}".to_string()),
-            (55, "vyf voor {next_h}".to_string()),
-        ]),
+                (0, "{h}-uur".to_string()),
+                (5, "vyf oor {h}".to_string()),
+                (10, "tien oor {h}".to_string()),
+                (15, "kwart oor {h}".to_string()),
+                (20, "twintig oor {h}".to_string()),
+                (25, "vyf voor half {next_h}".to_string()),
+                (30, "half {next_h}".to_string()),
+                (35, "vyf oor half {next_h}".to_string()),
+                (40, "twintig voor {next_h}".to_string()),
+                (45, "kwart voor {next_h}".to_string()),
+                (50, "tien voor {next_h}".to_string()),
+                (55, "vyf voor {next_h}".to_string()),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

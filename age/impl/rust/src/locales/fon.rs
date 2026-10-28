@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/fon.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Fon locale.
 pub fn locale() -> AgeLocale {
@@ -30,7 +32,10 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("Vǐ".to_string()),
             toddler: StageLabel::Neutral("Vǐ".to_string()),
             child: StageLabel::Neutral("Vǐ".to_string()),
-            teenager: StageLabel::Gendered { m: "Dɔnkpɛvu".to_string(), f: "Ɖyɔ̌vǐ".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "Dɔnkpɛvu".to_string(),
+                f: "Ɖyɔ̌vǐ".to_string(),
+            },
             adult: StageLabel::Neutral("Mɛ̌xo".to_string()),
         },
         short: Some(CompactnessOverride {

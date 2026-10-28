@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/ki.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Kikuyu locale.
@@ -17,23 +17,42 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "ki".to_string(),
         clock: ClockConfig {
-            hours: ["ithathatũ".to_string(), "mũgwanja".to_string(), "inyanya".to_string(), "kenda".to_string(), "ikũmi".to_string(), "ikũmi na ĩmwe".to_string(), "ikũmi na igĩrĩ".to_string(), "ĩmwe".to_string(), "igĩrĩ".to_string(), "ithatũ".to_string(), "inya".to_string(), "ithano".to_string()],
+            hours: [
+                "ithathatũ".to_string(),
+                "mũgwanja".to_string(),
+                "inyanya".to_string(),
+                "kenda".to_string(),
+                "ikũmi".to_string(),
+                "ikũmi na ĩmwe".to_string(),
+                "ikũmi na igĩrĩ".to_string(),
+                "ĩmwe".to_string(),
+                "igĩrĩ".to_string(),
+                "ithatũ".to_string(),
+                "inya".to_string(),
+                "ithano".to_string(),
+            ],
             midnight: "ũtukũ gatagatĩ".to_string(),
             noon: "mũthenya gatagatĩ".to_string(),
             patterns: HashMap::from([
-            (0, "thaa {h}".to_string()),
-            (5, "thaa {h} na ndagĩka ithano".to_string()),
-            (10, "thaa {h} na ndagĩka ikũmi".to_string()),
-            (15, "thaa {h} na ndagĩka ikũmi na ithano".to_string()),
-            (20, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ".to_string()),
-            (25, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano".to_string()),
-            (30, "thaa {h} na nuthu".to_string()),
-            (35, "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano".to_string()),
-            (40, "thaa {h} na ndagĩka mĩrongo ĩna".to_string()),
-            (45, "thaa {h} na ndagĩka mĩrongo ĩna na ithano".to_string()),
-            (50, "thaa {h} na ndagĩka mĩrongo ĩtano".to_string()),
-            (55, "thaa {h} na ndagĩka mĩrongo ĩtano na ithano".to_string()),
-        ]),
+                (0, "thaa {h}".to_string()),
+                (5, "thaa {h} na ndagĩka ithano".to_string()),
+                (10, "thaa {h} na ndagĩka ikũmi".to_string()),
+                (15, "thaa {h} na ndagĩka ikũmi na ithano".to_string()),
+                (20, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ".to_string()),
+                (25, "thaa {h} na ndagĩka mĩrongo ĩĩrĩ na ithano".to_string()),
+                (30, "thaa {h} na nuthu".to_string()),
+                (
+                    35,
+                    "thaa {h} na ndagĩka mĩrongo ĩtatũ na ithano".to_string(),
+                ),
+                (40, "thaa {h} na ndagĩka mĩrongo ĩna".to_string()),
+                (45, "thaa {h} na ndagĩka mĩrongo ĩna na ithano".to_string()),
+                (50, "thaa {h} na ndagĩka mĩrongo ĩtano".to_string()),
+                (
+                    55,
+                    "thaa {h} na ndagĩka mĩrongo ĩtano na ithano".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,7 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/nso.json
 
-use crate::types::{TimeLocale, ClockConfig, CompactnessOverride, ShortClockConfig};
+use crate::types::{ClockConfig, CompactnessOverride, ShortClockConfig, TimeLocale};
 use std::collections::HashMap;
 
 /// Northern Sotho locale.
@@ -17,23 +17,42 @@ pub fn locale() -> TimeLocale {
     TimeLocale {
         code: "nso".to_string(),
         clock: ClockConfig {
-            hours: ["lesomepedi".to_string(), "pele".to_string(), "bobedi".to_string(), "boraro".to_string(), "bone".to_string(), "bohlano".to_string(), "botshela".to_string(), "bošupa".to_string(), "seswai".to_string(), "senyane".to_string(), "lesome".to_string(), "lesometee".to_string()],
+            hours: [
+                "lesomepedi".to_string(),
+                "pele".to_string(),
+                "bobedi".to_string(),
+                "boraro".to_string(),
+                "bone".to_string(),
+                "bohlano".to_string(),
+                "botshela".to_string(),
+                "bošupa".to_string(),
+                "seswai".to_string(),
+                "senyane".to_string(),
+                "lesome".to_string(),
+                "lesometee".to_string(),
+            ],
             midnight: "bošego gare".to_string(),
             noon: "mosegare".to_string(),
             patterns: HashMap::from([
-            (0, "iri ya {h}".to_string()),
-            (5, "iri ya {h} le metsotso ye mehlano".to_string()),
-            (10, "iri ya {h} le metsotso ye lesome".to_string()),
-            (15, "iri ya {h} le kotara".to_string()),
-            (20, "iri ya {h} le metsotso ye masomepedi".to_string()),
-            (25, "iri ya {h} le metsotso ye masomepedi-hlano".to_string()),
-            (30, "iri ya {h} le seripagare".to_string()),
-            (35, "iri ya {h} le metsotso ye masometharo-hlano".to_string()),
-            (40, "iri ya {h} le metsotso ye masomenne".to_string()),
-            (45, "iri ya {h} le metsotso ye masomenne-hlano".to_string()),
-            (50, "iri ya {h} le metsotso ye masomehlano".to_string()),
-            (55, "iri ya {h} le metsotso ye masomehlano-hlano".to_string()),
-        ]),
+                (0, "iri ya {h}".to_string()),
+                (5, "iri ya {h} le metsotso ye mehlano".to_string()),
+                (10, "iri ya {h} le metsotso ye lesome".to_string()),
+                (15, "iri ya {h} le kotara".to_string()),
+                (20, "iri ya {h} le metsotso ye masomepedi".to_string()),
+                (25, "iri ya {h} le metsotso ye masomepedi-hlano".to_string()),
+                (30, "iri ya {h} le seripagare".to_string()),
+                (
+                    35,
+                    "iri ya {h} le metsotso ye masometharo-hlano".to_string(),
+                ),
+                (40, "iri ya {h} le metsotso ye masomenne".to_string()),
+                (45, "iri ya {h} le metsotso ye masomenne-hlano".to_string()),
+                (50, "iri ya {h} le metsotso ye masomehlano".to_string()),
+                (
+                    55,
+                    "iri ya {h} le metsotso ye masomehlano-hlano".to_string(),
+                ),
+            ]),
         },
         short: Some(CompactnessOverride {
             clock: Some(ShortClockConfig {

@@ -9,7 +9,9 @@
 // ╚══════════════════════════════════════════════════════════════╝
 // Source: locales/mr.json
 
-use crate::types::{AgeLocale, PluralCategory, Units, UnitForms, Stages, StageLabel, CompactnessOverride};
+use crate::types::{
+    AgeLocale, CompactnessOverride, PluralCategory, StageLabel, Stages, UnitForms, Units,
+};
 
 /// Marathi locale.
 pub fn locale() -> AgeLocale {
@@ -48,7 +50,10 @@ pub fn locale() -> AgeLocale {
             infant: StageLabel::Neutral("अर्भक".to_string()),
             toddler: StageLabel::Neutral("बाळ".to_string()),
             child: StageLabel::Neutral("मूल".to_string()),
-            teenager: StageLabel::Gendered { m: "किशोर".to_string(), f: "किशोरी".to_string() },
+            teenager: StageLabel::Gendered {
+                m: "किशोर".to_string(),
+                f: "किशोरी".to_string(),
+            },
             adult: StageLabel::Neutral("प्रौढ".to_string()),
         },
         short: Some(CompactnessOverride {
