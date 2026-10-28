@@ -18,10 +18,22 @@ final ml = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ദിവസം', PluralCategory.other: '{n} ദിവസങ്ങൾ'}),
-  week: pluralUnit({PluralCategory.one: '{n} ആഴ്ച', PluralCategory.other: '{n} ആഴ്ചകൾ'}),
-  month: pluralUnit({PluralCategory.one: '{n} മാസം', PluralCategory.other: '{n} മാസങ്ങൾ'}),
-  year: pluralUnit({PluralCategory.one: '{n} വയസ്സ്', PluralCategory.other: '{n} വയസ്സ്'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ദിവസം',
+    PluralCategory.other: '{n} ദിവസങ്ങൾ',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} ആഴ്ച',
+    PluralCategory.other: '{n} ആഴ്ചകൾ',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} മാസം',
+    PluralCategory.other: '{n} മാസങ്ങൾ',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} വയസ്സ്',
+    PluralCategory.other: '{n} വയസ്സ്',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'നവജാതശിശു',

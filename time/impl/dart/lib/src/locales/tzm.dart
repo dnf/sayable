@@ -15,7 +15,20 @@ import '../types.dart';
 final tzm = TimeLocale(
   code: 'tzm',
   clock: ClockConfig(
-    hours: ['tis snat d mrawt', 'tis yat', 'tis snat', 'tis kṛaṭṭ', 'tis kkuẕt', 'tis smmust', 'tis sḍist', 'tis sat', 'tis tamt', 'tis tẕat', 'tis mrawt', 'tis yat d mrawt'],
+    hours: [
+      'tis snat d mrawt',
+      'tis yat',
+      'tis snat',
+      'tis kṛaṭṭ',
+      'tis kkuẕt',
+      'tis smmust',
+      'tis sḍist',
+      'tis sat',
+      'tis tamt',
+      'tis tẕat',
+      'tis mrawt',
+      'tis yat d mrawt',
+    ],
     midnight: 'nṣ n iḍ',
     noon: 'tizwarnin',
     patterns: {

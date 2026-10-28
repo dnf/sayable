@@ -19,13 +19,34 @@ final hy = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} վայրկյան', PluralCategory.other: '{n} վայրկյան'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} րոպե', PluralCategory.other: '{n} րոպե'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ժամ', PluralCategory.other: '{n} ժամ'}),
-    'day': pluralUnit({PluralCategory.one: '{n} օր', PluralCategory.other: '{n} օր'}),
-    'week': pluralUnit({PluralCategory.one: '{n} շաբաթ', PluralCategory.other: '{n} շաբաթ'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ամիս', PluralCategory.other: '{n} ամիս'}),
-    'year': pluralUnit({PluralCategory.one: '{n} տարի', PluralCategory.other: '{n} տարի'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} վայրկյան',
+      PluralCategory.other: '{n} վայրկյան',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} րոպե',
+      PluralCategory.other: '{n} րոպե',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ժամ',
+      PluralCategory.other: '{n} ժամ',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} օր',
+      PluralCategory.other: '{n} օր',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} շաբաթ',
+      PluralCategory.other: '{n} շաբաթ',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ամիս',
+      PluralCategory.other: '{n} ամիս',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} տարի',
+      PluralCategory.other: '{n} տարի',
+    }),
   },
   half: '{0} ու կես',
   delimiter: ', ',

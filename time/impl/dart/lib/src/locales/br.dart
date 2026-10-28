@@ -15,7 +15,20 @@ import '../types.dart';
 final br = TimeLocale(
   code: 'br',
   clock: ClockConfig(
-    hours: ['daouzek eur', 'un eur', 'div eur', 'teir eur', 'peder eur', 'pemp eur', 'c\'hwec\'h eur', 'seizh eur', 'eizh eur', 'nav eur', 'dek eur', 'unnek eur'],
+    hours: [
+      'daouzek eur',
+      'un eur',
+      'div eur',
+      'teir eur',
+      'peder eur',
+      'pemp eur',
+      'c\'hwec\'h eur',
+      'seizh eur',
+      'eizh eur',
+      'nav eur',
+      'dek eur',
+      'unnek eur',
+    ],
     midnight: 'hanternoz',
     noon: 'kreisteiz',
     patterns: {

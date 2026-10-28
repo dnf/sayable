@@ -15,7 +15,20 @@ import '../types.dart';
 final ku = TimeLocale(
   code: 'ku',
   clock: ClockConfig(
-    hours: ['diwanzdeh', 'yek', 'du', 'sê', 'çar', 'pênc', 'şeş', 'heft', 'heşt', 'neh', 'deh', 'yanzdeh'],
+    hours: [
+      'diwanzdeh',
+      'yek',
+      'du',
+      'sê',
+      'çar',
+      'pênc',
+      'şeş',
+      'heft',
+      'heşt',
+      'neh',
+      'deh',
+      'yanzdeh',
+    ],
     midnight: 'nîvê şevê',
     noon: 'nîvro',
     patterns: {

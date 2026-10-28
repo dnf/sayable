@@ -22,10 +22,22 @@ final az = DurationLocale(
     'second': simpleUnit('{n} saniyə'),
     'minute': simpleUnit('{n} dəqiqə'),
     'hour': simpleUnit('{n} saat'),
-    'day': pluralUnit({PluralCategory.one: '{n} gün', PluralCategory.other: '{n} gün'}),
-    'week': pluralUnit({PluralCategory.one: '{n} həftə', PluralCategory.other: '{n} həftə'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ay', PluralCategory.other: '{n} ay'}),
-    'year': pluralUnit({PluralCategory.one: '{n} yaş', PluralCategory.other: '{n} yaş'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} gün',
+      PluralCategory.other: '{n} gün',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} həftə',
+      PluralCategory.other: '{n} həftə',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ay',
+      PluralCategory.other: '{n} ay',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} yaş',
+      PluralCategory.other: '{n} yaş',
+    }),
   },
   half: '{n} yarım',
   delimiter: ', ',

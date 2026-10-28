@@ -21,11 +21,26 @@ final ur = DurationLocale(
   units: {
     'second': simpleUnit('{n} سیکنڈ'),
     'minute': simpleUnit('{n} منٹ'),
-    'hour': pluralUnit({PluralCategory.one: '{n} گھنٹہ', PluralCategory.other: '{n} گھنٹے'}),
-    'day': pluralUnit({PluralCategory.one: '{n} دن', PluralCategory.other: '{n} دن'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
-    'month': pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
-    'year': pluralUnit({PluralCategory.one: '{n} سال', PluralCategory.other: '{n} سال'}),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} گھنٹہ',
+      PluralCategory.other: '{n} گھنٹے',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} دن',
+      PluralCategory.other: '{n} دن',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ہفتہ',
+      PluralCategory.other: '{n} ہفتے',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} مہینہ',
+      PluralCategory.other: '{n} مہینے',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} سال',
+      PluralCategory.other: '{n} سال',
+    }),
   },
   half: 'ساڑھے {n}',
   delimiter: '، ',
@@ -36,10 +51,19 @@ final ur = DurationLocale(
     units: {
       'second': simpleUnit('{n} سیکنڈ'),
       'minute': simpleUnit('{n} منٹ'),
-      'hour': pluralUnit({PluralCategory.one: '{n} گھنٹہ', PluralCategory.other: '{n} گھنٹے'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} گھنٹہ',
+        PluralCategory.other: '{n} گھنٹے',
+      }),
       'day': simpleUnit('{n} دن'),
-      'week': pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
-      'month': pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} ہفتہ',
+        PluralCategory.other: '{n} ہفتے',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} مہینہ',
+        PluralCategory.other: '{n} مہینے',
+      }),
       'year': simpleUnit('{n} سال'),
     },
     ago: '{0} پہلے',
@@ -49,10 +73,19 @@ final ur = DurationLocale(
     units: {
       'second': simpleUnit('{n} سیکنڈ'),
       'minute': simpleUnit('{n} منٹ'),
-      'hour': pluralUnit({PluralCategory.one: '{n} گھنٹہ', PluralCategory.other: '{n} گھنٹے'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} گھنٹہ',
+        PluralCategory.other: '{n} گھنٹے',
+      }),
       'day': simpleUnit('{n} دن'),
-      'week': pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
-      'month': pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} ہفتہ',
+        PluralCategory.other: '{n} ہفتے',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} مہینہ',
+        PluralCategory.other: '{n} مہینے',
+      }),
       'year': simpleUnit('{n} سال'),
     },
     half: '{n}½',

@@ -15,7 +15,20 @@ import '../types.dart';
 final snk = TimeLocale(
   code: 'snk',
   clock: ClockConfig(
-    hours: ['waxati tanmu do fillo', 'waxati baane', 'waxati fillo', 'waxati sikko', 'waxati naaxato', 'waxati karago', 'waxati tunmu', 'waxati ñerru', 'waxati segu', 'waxati kaburu', 'waxati tanmu', 'waxati tanmu do baane'],
+    hours: [
+      'waxati tanmu do fillo',
+      'waxati baane',
+      'waxati fillo',
+      'waxati sikko',
+      'waxati naaxato',
+      'waxati karago',
+      'waxati tunmu',
+      'waxati ñerru',
+      'waxati segu',
+      'waxati kaburu',
+      'waxati tanmu',
+      'waxati tanmu do baane',
+    ],
     midnight: 'sulen noxo',
     noon: 'tili seren',
     patterns: {
@@ -34,9 +47,17 @@ final snk = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

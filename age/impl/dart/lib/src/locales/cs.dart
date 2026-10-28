@@ -19,10 +19,26 @@ final cs = AgeLocale(
     if (n >= 2 && n <= 4) return PluralCategory.few;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} den', PluralCategory.few: '{n} dny', PluralCategory.other: '{n} dní'}),
-  week: pluralUnit({PluralCategory.one: '{n} týden', PluralCategory.few: '{n} týdny', PluralCategory.other: '{n} týdnů'}),
-  month: pluralUnit({PluralCategory.one: '{n} měsíc', PluralCategory.few: '{n} měsíce', PluralCategory.other: '{n} měsíců'}),
-  year: pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} roky', PluralCategory.other: '{n} let'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} den',
+    PluralCategory.few: '{n} dny',
+    PluralCategory.other: '{n} dní',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} týden',
+    PluralCategory.few: '{n} týdny',
+    PluralCategory.other: '{n} týdnů',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} měsíc',
+    PluralCategory.few: '{n} měsíce',
+    PluralCategory.other: '{n} měsíců',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} rok',
+    PluralCategory.few: '{n} roky',
+    PluralCategory.other: '{n} let',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Novorozenec',
@@ -33,16 +49,31 @@ final cs = AgeLocale(
   teenager: stageNeutral('Teenager'),
   adult: stageGendered('Dospělý', 'Dospělá'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} den', PluralCategory.few: '{n} dny', PluralCategory.many: '{n} dne', PluralCategory.other: '{n} dnů'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} den',
+      PluralCategory.few: '{n} dny',
+      PluralCategory.many: '{n} dne',
+      PluralCategory.other: '{n} dnů',
+    }),
     week: simpleUnit('{n} týd.'),
     month: simpleUnit('{n} měs.'),
-    year: pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} roky', PluralCategory.many: '{n} roku', PluralCategory.other: '{n} let'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} rok',
+      PluralCategory.few: '{n} roky',
+      PluralCategory.many: '{n} roku',
+      PluralCategory.other: '{n} let',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} d.'),
     week: simpleUnit('{n} t.'),
     month: simpleUnit('{n} m.'),
-    year: pluralUnit({PluralCategory.one: '{n} r.', PluralCategory.few: '{n} r.', PluralCategory.many: '{n} r.', PluralCategory.other: '{n} l.'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} r.',
+      PluralCategory.few: '{n} r.',
+      PluralCategory.many: '{n} r.',
+      PluralCategory.other: '{n} l.',
+    }),
     delimiter: '',
   ),
 );

@@ -18,10 +18,22 @@ final ha = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'kwana {n}', PluralCategory.other: 'kwanaki {n}'}),
-  week: pluralUnit({PluralCategory.one: 'mako {n}', PluralCategory.other: 'makonni {n}'}),
-  month: pluralUnit({PluralCategory.one: 'wata {n}', PluralCategory.other: 'watanni {n}'}),
-  year: pluralUnit({PluralCategory.one: 'shekara {n}', PluralCategory.other: 'shekaru {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'kwana {n}',
+    PluralCategory.other: 'kwanaki {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'mako {n}',
+    PluralCategory.other: 'makonni {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'wata {n}',
+    PluralCategory.other: 'watanni {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'shekara {n}',
+    PluralCategory.other: 'shekaru {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Sabon haihuwa',

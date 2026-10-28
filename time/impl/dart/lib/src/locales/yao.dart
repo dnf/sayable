@@ -15,7 +15,20 @@ import '../types.dart';
 final yao = TimeLocale(
   code: 'yao',
   clock: ClockConfig(
-    hours: ['likumi na iwili', 'cimo', 'iwili', 'itatu', 'ncece', 'nsano', 'nsano nacimo', 'nsano nawili', 'nsano naitatu', 'nsano nancece', 'likumi', 'likumi nacimo'],
+    hours: [
+      'likumi na iwili',
+      'cimo',
+      'iwili',
+      'itatu',
+      'ncece',
+      'nsano',
+      'nsano nacimo',
+      'nsano nawili',
+      'nsano naitatu',
+      'nsano nancece',
+      'likumi',
+      'likumi nacimo',
+    ],
     midnight: 'pakati pa usiku',
     noon: 'pakati pa lisiku',
     patterns: {
@@ -34,9 +47,17 @@ final yao = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

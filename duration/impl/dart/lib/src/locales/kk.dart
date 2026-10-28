@@ -22,10 +22,22 @@ final kk = DurationLocale(
     'second': simpleUnit('{n} секунд'),
     'minute': simpleUnit('{n} минут'),
     'hour': simpleUnit('{n} сағат'),
-    'day': pluralUnit({PluralCategory.one: '{n} күн', PluralCategory.other: '{n} күн'}),
-    'week': pluralUnit({PluralCategory.one: '{n} апта', PluralCategory.other: '{n} апта'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ай', PluralCategory.other: '{n} ай'}),
-    'year': pluralUnit({PluralCategory.one: '{n} жас', PluralCategory.other: '{n} жас'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} күн',
+      PluralCategory.other: '{n} күн',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} апта',
+      PluralCategory.other: '{n} апта',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ай',
+      PluralCategory.other: '{n} ай',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} жас',
+      PluralCategory.other: '{n} жас',
+    }),
   },
   half: '{n} жарым',
   delimiter: ', ',

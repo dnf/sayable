@@ -15,7 +15,20 @@ import '../types.dart';
 final kn = TimeLocale(
   code: 'kn',
   clock: ClockConfig(
-    hours: ['ಹನ್ನೆರಡು', 'ಒಂದು', 'ಎರಡು', 'ಮೂರು', 'ನಾಲ್ಕು', 'ಐದು', 'ಆರು', 'ಏಳು', 'ಎಂಟು', 'ಒಂಬತ್ತು', 'ಹತ್ತು', 'ಹನ್ನೊಂದು'],
+    hours: [
+      'ಹನ್ನೆರಡು',
+      'ಒಂದು',
+      'ಎರಡು',
+      'ಮೂರು',
+      'ನಾಲ್ಕು',
+      'ಐದು',
+      'ಆರು',
+      'ಏಳು',
+      'ಎಂಟು',
+      'ಒಂಬತ್ತು',
+      'ಹತ್ತು',
+      'ಹನ್ನೊಂದು',
+    ],
     midnight: 'ಮಧ್ಯರಾತ್ರಿ',
     noon: 'ಮಧ್ಯಾಹ್ನ ಹನ್ನೆರಡು ಗಂಟೆ',
     patterns: {
@@ -34,9 +47,17 @@ final kn = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

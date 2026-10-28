@@ -15,7 +15,20 @@ import '../types.dart';
 final ig = TimeLocale(
   code: 'ig',
   clock: ClockConfig(
-    hours: ['iri na abụọ', 'otu', 'abụọ', 'atọ', 'anọ', 'ise', 'isii', 'asaa', 'asatọ', 'itoolu', 'iri', 'iri na otu'],
+    hours: [
+      'iri na abụọ',
+      'otu',
+      'abụọ',
+      'atọ',
+      'anọ',
+      'ise',
+      'isii',
+      'asaa',
+      'asatọ',
+      'itoolu',
+      'iri',
+      'iri na otu',
+    ],
     midnight: 'etiti abalị',
     noon: 'etiti ehihie',
     patterns: {
@@ -34,9 +47,17 @@ final ig = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

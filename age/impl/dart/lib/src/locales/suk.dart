@@ -18,10 +18,22 @@ final suk = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'isiku {n}', PluralCategory.other: 'amasiku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'ishuma {n}', PluralCategory.other: 'amashuma {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ngweli {n}', PluralCategory.other: 'ngweli {n}'}),
-  year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'myaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'isiku {n}',
+    PluralCategory.other: 'amasiku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'ishuma {n}',
+    PluralCategory.other: 'amashuma {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ngweli {n}',
+    PluralCategory.other: 'ngweli {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'mwaka {n}',
+    PluralCategory.other: 'myaka {n}',
+  }),
   half: '{0} na nusu',
   delimiter: ', ',
   justBorn: 'Mwana wa kubelekwa',
@@ -32,10 +44,22 @@ final suk = AgeLocale(
   teenager: stageNeutral('Mhemba'),
   adult: stageNeutral('Muntu mkulu'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'isiku {n}', PluralCategory.other: 'amasiku {n}'}),
-    week: pluralUnit({PluralCategory.one: 'ish. {n}', PluralCategory.other: 'amash. {n}'}),
-    month: pluralUnit({PluralCategory.one: 'ngw. {n}', PluralCategory.other: 'ngw. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mw. {n}', PluralCategory.other: 'my. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'isiku {n}',
+      PluralCategory.other: 'amasiku {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'ish. {n}',
+      PluralCategory.other: 'amash. {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'ngw. {n}',
+      PluralCategory.other: 'ngw. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mw. {n}',
+      PluralCategory.other: 'my. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

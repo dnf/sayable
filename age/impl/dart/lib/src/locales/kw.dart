@@ -18,15 +18,62 @@ final kw = AgeLocale(
     if (n == 0) return PluralCategory.zero;
     if (n == 1) return PluralCategory.one;
     final mod100 = n % 100;
-    if (mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82) return PluralCategory.two;
-    if (mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83) return PluralCategory.few;
-    if (n != 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81)) return PluralCategory.many;
+    if (mod100 == 2 ||
+        mod100 == 22 ||
+        mod100 == 42 ||
+        mod100 == 62 ||
+        mod100 == 82) {
+      return PluralCategory.two;
+    }
+    if (mod100 == 3 ||
+        mod100 == 23 ||
+        mod100 == 43 ||
+        mod100 == 63 ||
+        mod100 == 83) {
+      return PluralCategory.few;
+    }
+    if (n != 1 &&
+        (mod100 == 1 ||
+            mod100 == 21 ||
+            mod100 == 41 ||
+            mod100 == 61 ||
+            mod100 == 81)) {
+      return PluralCategory.many;
+    }
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.zero: '{n} dydh', PluralCategory.one: '{n} dydh', PluralCategory.two: '{n} dhydh', PluralCategory.few: '{n} dydh', PluralCategory.many: '{n} dydh', PluralCategory.other: '{n} dydh'}),
-  week: pluralUnit({PluralCategory.zero: '{n} seythun', PluralCategory.one: '{n} seythun', PluralCategory.two: '{n} seythun', PluralCategory.few: '{n} seythun', PluralCategory.many: '{n} seythun', PluralCategory.other: '{n} seythun'}),
-  month: pluralUnit({PluralCategory.zero: '{n} mis', PluralCategory.one: '{n} mis', PluralCategory.two: '{n} vis', PluralCategory.few: '{n} mis', PluralCategory.many: '{n} mis', PluralCategory.other: '{n} mis'}),
-  year: pluralUnit({PluralCategory.zero: '{n} blydhen', PluralCategory.one: '{n} blydhen', PluralCategory.two: '{n} vlydhen', PluralCategory.few: '{n} blydhen', PluralCategory.many: '{n} blydhen', PluralCategory.other: '{n} blydhen'}),
+  day: pluralUnit({
+    PluralCategory.zero: '{n} dydh',
+    PluralCategory.one: '{n} dydh',
+    PluralCategory.two: '{n} dhydh',
+    PluralCategory.few: '{n} dydh',
+    PluralCategory.many: '{n} dydh',
+    PluralCategory.other: '{n} dydh',
+  }),
+  week: pluralUnit({
+    PluralCategory.zero: '{n} seythun',
+    PluralCategory.one: '{n} seythun',
+    PluralCategory.two: '{n} seythun',
+    PluralCategory.few: '{n} seythun',
+    PluralCategory.many: '{n} seythun',
+    PluralCategory.other: '{n} seythun',
+  }),
+  month: pluralUnit({
+    PluralCategory.zero: '{n} mis',
+    PluralCategory.one: '{n} mis',
+    PluralCategory.two: '{n} vis',
+    PluralCategory.few: '{n} mis',
+    PluralCategory.many: '{n} mis',
+    PluralCategory.other: '{n} mis',
+  }),
+  year: pluralUnit({
+    PluralCategory.zero: '{n} blydhen',
+    PluralCategory.one: '{n} blydhen',
+    PluralCategory.two: '{n} vlydhen',
+    PluralCategory.few: '{n} blydhen',
+    PluralCategory.many: '{n} blydhen',
+    PluralCategory.other: '{n} blydhen',
+  }),
   half: '{0} hag hanter',
   delimiter: ', ',
   justBorn: 'Nowyth genys',

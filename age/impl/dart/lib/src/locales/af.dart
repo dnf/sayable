@@ -18,10 +18,22 @@ final af = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dae'}),
-  week: pluralUnit({PluralCategory.one: '{n} week', PluralCategory.other: '{n} weke'}),
-  month: pluralUnit({PluralCategory.one: '{n} maand', PluralCategory.other: '{n} maande'}),
-  year: pluralUnit({PluralCategory.one: '{n} jaar', PluralCategory.other: '{n} jaar'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dag',
+    PluralCategory.other: '{n} dae',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} week',
+    PluralCategory.other: '{n} weke',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} maand',
+    PluralCategory.other: '{n} maande',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} jaar',
+    PluralCategory.other: '{n} jaar',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Pasgebore',

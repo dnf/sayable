@@ -19,13 +19,34 @@ final ti = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} ካልኢት', PluralCategory.other: '{n} ካልኢታት'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} ደቒቓ', PluralCategory.other: '{n} ደቒቓታት'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ሰዓት', PluralCategory.other: '{n} ሰዓታት'}),
-    'day': pluralUnit({PluralCategory.one: '{n} መዓልቲ', PluralCategory.other: '{n} መዓልትታት'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ሰሙን', PluralCategory.other: '{n} ሰሙናት'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ወርሒ', PluralCategory.other: '{n} ኣዋርሕ'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} ካልኢት',
+      PluralCategory.other: '{n} ካልኢታት',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} ደቒቓ',
+      PluralCategory.other: '{n} ደቒቓታት',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ሰዓት',
+      PluralCategory.other: '{n} ሰዓታት',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} መዓልቲ',
+      PluralCategory.other: '{n} መዓልትታት',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ሰሙን',
+      PluralCategory.other: '{n} ሰሙናት',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ወርሒ',
+      PluralCategory.other: '{n} ኣዋርሕ',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ዓመት',
+      PluralCategory.other: '{n} ዓመታት',
+    }),
   },
   half: '{0} ተኹል',
   delimiter: '፣ ',
@@ -35,12 +56,21 @@ final ti = DurationLocale(
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('{n} ካል'),
-      'minute': pluralUnit({PluralCategory.one: '{n} ደቒ', PluralCategory.other: '{n} ደቒቓ'}),
+      'minute': pluralUnit({
+        PluralCategory.one: '{n} ደቒ',
+        PluralCategory.other: '{n} ደቒቓ',
+      }),
       'hour': simpleUnit('{n} ሰዓ'),
       'day': simpleUnit('{n} መዓልትታት'),
-      'week': pluralUnit({PluralCategory.one: '{n} ሰሙን', PluralCategory.other: '{n} ሰሙናት'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} ሰሙን',
+        PluralCategory.other: '{n} ሰሙናት',
+      }),
       'month': simpleUnit('{n} ኣዋርሕ'),
-      'year': pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} ዓመት',
+        PluralCategory.other: '{n} ዓመታት',
+      }),
     },
     ago: 'ቅድሚ {0}',
     inFuture: 'ድሕሪ {0}',
@@ -53,7 +83,10 @@ final ti = DurationLocale(
       'day': simpleUnit('{n} መ'),
       'week': simpleUnit('{n} ሰሙን'),
       'month': simpleUnit('{n} ወር'),
-      'year': pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓ'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} ዓመት',
+        PluralCategory.other: '{n} ዓ',
+      }),
     },
     half: '{n}½',
     delimiter: '',

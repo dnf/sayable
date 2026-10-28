@@ -18,10 +18,22 @@ final zu = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'izinsuku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'iviki {n}', PluralCategory.other: 'amaviki {n}'}),
-  month: pluralUnit({PluralCategory.one: 'inyanga {n}', PluralCategory.other: 'izinyanga {n}'}),
-  year: pluralUnit({PluralCategory.one: 'unyaka {n}', PluralCategory.other: 'iminyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'usuku {n}',
+    PluralCategory.other: 'izinsuku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'iviki {n}',
+    PluralCategory.other: 'amaviki {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'inyanga {n}',
+    PluralCategory.other: 'izinyanga {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'unyaka {n}',
+    PluralCategory.other: 'iminyaka {n}',
+  }),
   half: '{0} nohhafu',
   delimiter: ', ',
   justBorn: 'Usanda kuzalwa',
@@ -32,10 +44,22 @@ final zu = AgeLocale(
   teenager: stageNeutral('Intsha'),
   adult: stageNeutral('Umuntu omdala'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'izinsuku {n}'}),
-    week: pluralUnit({PluralCategory.one: 'iviki {n}', PluralCategory.other: 'amaviki {n}'}),
-    month: pluralUnit({PluralCategory.one: 'inyanga {n}', PluralCategory.other: 'izinyanga {n}'}),
-    year: pluralUnit({PluralCategory.one: 'unyaka {n}', PluralCategory.other: 'iminyaka {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'usuku {n}',
+      PluralCategory.other: 'izinsuku {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'iviki {n}',
+      PluralCategory.other: 'amaviki {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'inyanga {n}',
+      PluralCategory.other: 'izinyanga {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'unyaka {n}',
+      PluralCategory.other: 'iminyaka {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} ns'),

@@ -28,7 +28,9 @@ _DART = {
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   }""",
     "ro": """\
@@ -42,7 +44,9 @@ _DART = {
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   }""",
     "pl": """\
@@ -50,7 +54,9 @@ _DART = {
     if (n == 1) return PluralCategory.one;
     final mod10 = n % 10;
     final mod100 = n % 100;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   }""",
     "ru_uk": """\
@@ -58,7 +64,9 @@ _DART = {
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   }""",
     "sl": """\
@@ -83,7 +91,9 @@ _DART = {
   (int n) {
     final mod10 = n % 10;
     final mod100 = n % 100;
-    if (mod10 == 0 || (mod100 >= 11 && mod100 <= 19)) return PluralCategory.zero;
+    if (mod10 == 0 || (mod100 >= 11 && mod100 <= 19)) {
+      return PluralCategory.zero;
+    }
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
     return PluralCategory.other;
   }""",
@@ -115,7 +125,13 @@ _DART = {
     final mod100 = n % 100;
     if (mod10 == 1) return PluralCategory.one;
     if (mod10 == 2) return PluralCategory.two;
-    if (mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80) return PluralCategory.few;
+    if (mod100 == 0 ||
+        mod100 == 20 ||
+        mod100 == 40 ||
+        mod100 == 60 ||
+        mod100 == 80) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   }""",
     "gd": """\
@@ -146,9 +162,18 @@ _DART = {
   (int n) {
     final mod10 = n % 10;
     final mod100 = n % 100;
-    if (mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91) return PluralCategory.one;
-    if (mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92) return PluralCategory.two;
-    if ((mod10 == 3 || mod10 == 4 || mod10 == 9) && (mod100 < 10 || mod100 > 19) && (mod100 < 70 || mod100 > 79) && (mod100 < 90 || mod100 > 99)) return PluralCategory.few;
+    if (mod10 == 1 && mod100 != 11 && mod100 != 71 && mod100 != 91) {
+      return PluralCategory.one;
+    }
+    if (mod10 == 2 && mod100 != 12 && mod100 != 72 && mod100 != 92) {
+      return PluralCategory.two;
+    }
+    if ((mod10 == 3 || mod10 == 4 || mod10 == 9) &&
+        (mod100 < 10 || mod100 > 19) &&
+        (mod100 < 70 || mod100 > 79) &&
+        (mod100 < 90 || mod100 > 99)) {
+      return PluralCategory.few;
+    }
     if (n != 0 && n % 1000000 == 0) return PluralCategory.many;
     return PluralCategory.other;
   }""",
@@ -157,9 +182,28 @@ _DART = {
     if (n == 0) return PluralCategory.zero;
     if (n == 1) return PluralCategory.one;
     final mod100 = n % 100;
-    if (mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82) return PluralCategory.two;
-    if (mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83) return PluralCategory.few;
-    if (n != 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81)) return PluralCategory.many;
+    if (mod100 == 2 ||
+        mod100 == 22 ||
+        mod100 == 42 ||
+        mod100 == 62 ||
+        mod100 == 82) {
+      return PluralCategory.two;
+    }
+    if (mod100 == 3 ||
+        mod100 == 23 ||
+        mod100 == 43 ||
+        mod100 == 63 ||
+        mod100 == 83) {
+      return PluralCategory.few;
+    }
+    if (n != 1 &&
+        (mod100 == 1 ||
+            mod100 == 21 ||
+            mod100 == 41 ||
+            mod100 == 61 ||
+            mod100 == 81)) {
+      return PluralCategory.many;
+    }
     return PluralCategory.other;
   }""",
     "shi": """\

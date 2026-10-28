@@ -18,10 +18,19 @@ final fr = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} jour', PluralCategory.other: '{n} jours'}),
-  week: pluralUnit({PluralCategory.one: '{n} semaine', PluralCategory.other: '{n} semaines'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} jour',
+    PluralCategory.other: '{n} jours',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} semaine',
+    PluralCategory.other: '{n} semaines',
+  }),
   month: simpleUnit('{n} mois'),
-  year: pluralUnit({PluralCategory.one: '{n} an', PluralCategory.other: '{n} ans'}),
+  year: pluralUnit({
+    PluralCategory.one: '{n} an',
+    PluralCategory.other: '{n} ans',
+  }),
   half: '{0} et demi',
   delimiter: ', ',
   justBorn: 'Nouveau-né',
@@ -35,7 +44,10 @@ final fr = AgeLocale(
     day: simpleUnit('{n} j'),
     week: simpleUnit('{n} sem.'),
     month: simpleUnit('{n} m.'),
-    year: pluralUnit({PluralCategory.one: '{n} an', PluralCategory.other: '{n} ans'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} an',
+      PluralCategory.other: '{n} ans',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}j'),

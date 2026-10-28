@@ -21,13 +21,34 @@ final mk = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} секунда', PluralCategory.other: '{n} секунди'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} минута', PluralCategory.other: '{n} минути'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} час', PluralCategory.other: '{n} часа'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дена'}),
-    'week': pluralUnit({PluralCategory.one: '{n} недела', PluralCategory.other: '{n} недели'}),
-    'month': pluralUnit({PluralCategory.one: '{n} месец', PluralCategory.other: '{n} месеци'}),
-    'year': pluralUnit({PluralCategory.one: '{n} година', PluralCategory.other: '{n} години'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} секунда',
+      PluralCategory.other: '{n} секунди',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} минута',
+      PluralCategory.other: '{n} минути',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} час',
+      PluralCategory.other: '{n} часа',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ден',
+      PluralCategory.other: '{n} дена',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} недела',
+      PluralCategory.other: '{n} недели',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} месец',
+      PluralCategory.other: '{n} месеци',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} година',
+      PluralCategory.other: '{n} години',
+    }),
   },
   half: '{0} и пол',
   delimiter: ', ',
@@ -39,7 +60,10 @@ final mk = DurationLocale(
       'second': simpleUnit('{n} сек.'),
       'minute': simpleUnit('{n} мин.'),
       'hour': simpleUnit('{n} ч.'),
-      'day': pluralUnit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дена'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} ден',
+        PluralCategory.other: '{n} дена',
+      }),
       'week': simpleUnit('{n} сед.'),
       'month': simpleUnit('{n} мес.'),
       'year': simpleUnit('{n} год.'),

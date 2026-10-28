@@ -35,8 +35,9 @@ const _maxDurationMonths = 6000;
 
 /// YYYY-MM-DDTHH:MM with optional :SS, fraction and zone suffix (ignored).
 final _timestampPattern = RegExp(
-    r'^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})'
-    r'(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$');
+  r'^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{1,2}):([0-9]{2})'
+  r'(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$',
+);
 
 /// Parses an ISO timestamp to epoch-ish seconds for diffing; null if malformed.
 int? _parseIsoToSeconds(String isoStr) {
@@ -68,9 +69,10 @@ class SayableDuration {
   final String _ago;
   final String _inFuture;
 
-  SayableDuration(DurationLocale locale,
-      [Compactness compactness = Compactness.normal])
-      : _locale = locale,
+  SayableDuration(
+    DurationLocale locale, [
+    Compactness compactness = Compactness.normal,
+  ])  : _locale = locale,
         _units = _resolveUnits(locale, compactness),
         _half = _resolveHalf(locale, compactness),
         _delimiter = _resolveDelimiter(locale, compactness),
@@ -79,31 +81,61 @@ class SayableDuration {
         _inFuture = _resolveInFuture(locale, compactness);
 
   static Map<String, UnitForms> _resolveUnits(DurationLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     final ovrUnits = ovr?.units;
     return {
-      for (final k in ['second', 'minute', 'hour', 'day', 'week', 'month', 'year'])
-        k: (ovrUnits != null && ovrUnits.containsKey(k)) ? ovrUnits[k]! : l.units[k]!,
+      for (final k in [
+        'second',
+        'minute',
+        'hour',
+        'day',
+        'week',
+        'month',
+        'year',
+      ])
+        k: (ovrUnits != null && ovrUnits.containsKey(k))
+            ? ovrUnits[k]!
+            : l.units[k]!,
     };
   }
 
   static String _resolveHalf(DurationLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.half, l.half);
   }
 
   static String _resolveDelimiter(DurationLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.delimiter, l.delimiter);
   }
 
   static String _resolveAgo(DurationLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.ago, l.ago);
   }
 
   static String _resolveInFuture(DurationLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.inFuture, l.inFuture);
   }
 
@@ -142,7 +174,8 @@ class SayableDuration {
     if (totalMinutes < 5) {
       var result = resolveUnit(totalMinutes, _units['minute']!, _locale);
       if (remainderSeconds > 0) {
-        result += _delimiter + resolveUnit(remainderSeconds, _units['second']!, _locale);
+        result += _delimiter +
+            resolveUnit(remainderSeconds, _units['second']!, _locale);
       }
       return result;
     }
@@ -162,7 +195,8 @@ class SayableDuration {
       }
       var result = resolveUnit(totalHours, _units['hour']!, _locale);
       if (remainderMinutes > 0) {
-        result += _delimiter + resolveUnit(remainderMinutes, _units['minute']!, _locale);
+        result += _delimiter +
+            resolveUnit(remainderMinutes, _units['minute']!, _locale);
       }
       return result;
     }
@@ -182,7 +216,8 @@ class SayableDuration {
       }
       var result = resolveUnit(totalDays, _units['day']!, _locale);
       if (remainderHours > 0) {
-        result += _delimiter + resolveUnit(remainderHours, _units['hour']!, _locale);
+        result +=
+            _delimiter + resolveUnit(remainderHours, _units['hour']!, _locale);
       }
       return result;
     }
@@ -199,7 +234,8 @@ class SayableDuration {
     if (totalDays < 30) {
       var result = resolveUnit(totalWeeks, _units['week']!, _locale);
       if (remainderDays > 0) {
-        result += _delimiter + resolveUnit(remainderDays, _units['day']!, _locale);
+        result +=
+            _delimiter + resolveUnit(remainderDays, _units['day']!, _locale);
       }
       return result;
     }
@@ -219,13 +255,15 @@ class SayableDuration {
     final remainderMonths = totalMonths % 12;
     var result = resolveUnit(totalYears, _units['year']!, _locale);
     if (remainderMonths > 0) {
-      result += _delimiter + resolveUnit(remainderMonths, _units['month']!, _locale);
+      result +=
+          _delimiter + resolveUnit(remainderMonths, _units['month']!, _locale);
     }
     return result;
   }
 
   String? formatSince(String? start, String? asOf) {
-    if (start == null || start.isEmpty || asOf == null || asOf.isEmpty) return null;
+    if (start == null || start.isEmpty || asOf == null || asOf.isEmpty)
+      return null;
     final s = _parseIsoToSeconds(start);
     final a = _parseIsoToSeconds(asOf);
     if (s == null || a == null) return null;
@@ -237,7 +275,8 @@ class SayableDuration {
   }
 
   String? formatUntil(String? target, String? asOf) {
-    if (target == null || target.isEmpty || asOf == null || asOf.isEmpty) return null;
+    if (target == null || target.isEmpty || asOf == null || asOf.isEmpty)
+      return null;
     final t = _parseIsoToSeconds(target);
     final a = _parseIsoToSeconds(asOf);
     if (t == null || a == null) return null;

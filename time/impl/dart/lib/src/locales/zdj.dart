@@ -15,7 +15,20 @@ import '../types.dart';
 final zdj = TimeLocale(
   code: 'zdj',
   clock: ClockConfig(
-    hours: ['kumi na mbili', 'moja', 'mbili', 'ndraru', 'nne', 'ntsanu', 'sita', 'saba', 'nane', 'shenda', 'kumi', 'kumi na moja'],
+    hours: [
+      'kumi na mbili',
+      'moja',
+      'mbili',
+      'ndraru',
+      'nne',
+      'ntsanu',
+      'sita',
+      'saba',
+      'nane',
+      'shenda',
+      'kumi',
+      'kumi na moja',
+    ],
     midnight: 'usiku wa manane',
     noon: 'adhuhuri',
     patterns: {
@@ -34,9 +47,17 @@ final zdj = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

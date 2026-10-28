@@ -15,7 +15,20 @@ import '../types.dart';
 final tum = TimeLocale(
   code: 'tum',
   clock: ClockConfig(
-    hours: ['khumi na yibili', 'chimoza', 'vibili', 'vitatu', 'vinayi', 'vikhondi', 'vikhondi na kamoza', 'vikhondi na tubili', 'vikhondi na tutatu', 'vikhondi na tunayi', 'khumi', 'khumi na kamoza'],
+    hours: [
+      'khumi na yibili',
+      'chimoza',
+      'vibili',
+      'vitatu',
+      'vinayi',
+      'vikhondi',
+      'vikhondi na kamoza',
+      'vikhondi na tubili',
+      'vikhondi na tutatu',
+      'vikhondi na tunayi',
+      'khumi',
+      'khumi na kamoza',
+    ],
     midnight: 'pakati pa usiku',
     noon: 'muhanya',
     patterns: {
@@ -34,9 +47,17 @@ final tum = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

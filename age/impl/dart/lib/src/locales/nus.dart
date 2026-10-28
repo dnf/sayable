@@ -18,10 +18,22 @@ final nus = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'cäŋ {n}', PluralCategory.other: 'cëŋ {n}'}),
-  week: pluralUnit({PluralCategory.one: 'korɛ {n}', PluralCategory.other: 'korni {n}'}),
-  month: pluralUnit({PluralCategory.one: 'pay {n}', PluralCategory.other: 'pei {n}'}),
-  year: pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈ni {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'cäŋ {n}',
+    PluralCategory.other: 'cëŋ {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'korɛ {n}',
+    PluralCategory.other: 'korni {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'pay {n}',
+    PluralCategory.other: 'pei {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'ruɔ̈n {n}',
+    PluralCategory.other: 'ruɔ̈ɔ̈ni {n}',
+  }),
   half: '{0} ku kel',
   delimiter: ', ',
   justBorn: 'Gaat mä dhiëëth',
@@ -32,10 +44,22 @@ final nus = AgeLocale(
   teenager: stageNeutral('Raan thok'),
   adult: stageNeutral('Raan dit'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'cäŋ {n}', PluralCategory.other: 'cëŋ {n}'}),
-    week: pluralUnit({PluralCategory.one: 'kor. {n}', PluralCategory.other: 'kor. {n}'}),
-    month: pluralUnit({PluralCategory.one: 'pay {n}', PluralCategory.other: 'pei {n}'}),
-    year: pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈ni {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'cäŋ {n}',
+      PluralCategory.other: 'cëŋ {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'kor. {n}',
+      PluralCategory.other: 'kor. {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'pay {n}',
+      PluralCategory.other: 'pei {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'ruɔ̈n {n}',
+      PluralCategory.other: 'ruɔ̈ɔ̈ni {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

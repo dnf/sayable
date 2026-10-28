@@ -20,10 +20,30 @@ final gd = AgeLocale(
     if ((n >= 3 && n <= 10) || (n >= 13 && n <= 19)) return PluralCategory.few;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} latha', PluralCategory.two: '{n} latha', PluralCategory.few: '{n} làithean', PluralCategory.other: '{n} latha'}),
-  week: pluralUnit({PluralCategory.one: '{n} sheachdain', PluralCategory.two: '{n} sheachdain', PluralCategory.few: '{n} seachdainean', PluralCategory.other: '{n} seachdain'}),
-  month: pluralUnit({PluralCategory.one: '{n} mhìos', PluralCategory.two: '{n} mhìos', PluralCategory.few: '{n} mìosan', PluralCategory.other: '{n} mìos'}),
-  year: pluralUnit({PluralCategory.one: '{n} bhliadhna', PluralCategory.two: '{n} bhliadhna', PluralCategory.few: '{n} bliadhna', PluralCategory.other: '{n} bliadhna'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} latha',
+    PluralCategory.two: '{n} latha',
+    PluralCategory.few: '{n} làithean',
+    PluralCategory.other: '{n} latha',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} sheachdain',
+    PluralCategory.two: '{n} sheachdain',
+    PluralCategory.few: '{n} seachdainean',
+    PluralCategory.other: '{n} seachdain',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mhìos',
+    PluralCategory.two: '{n} mhìos',
+    PluralCategory.few: '{n} mìosan',
+    PluralCategory.other: '{n} mìos',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} bhliadhna',
+    PluralCategory.two: '{n} bhliadhna',
+    PluralCategory.few: '{n} bliadhna',
+    PluralCategory.other: '{n} bliadhna',
+  }),
   half: '{0} gu leth',
   delimiter: ', ',
   justBorn: 'Ùr-bhreith',
@@ -35,9 +55,24 @@ final gd = AgeLocale(
   adult: stageNeutral('Inbheach'),
   short: CompactnessOverride(
     day: simpleUnit('{n} là'),
-    week: pluralUnit({PluralCategory.one: '{n} shn', PluralCategory.two: '{n} shn', PluralCategory.few: '{n} sn', PluralCategory.other: '{n} sn'}),
-    month: pluralUnit({PluralCategory.one: '{n} mhìos', PluralCategory.two: '{n} mhìos', PluralCategory.few: '{n} mìos', PluralCategory.other: '{n} mìos'}),
-    year: pluralUnit({PluralCategory.one: '{n} bhlia', PluralCategory.two: '{n} bhlia', PluralCategory.few: '{n} blia', PluralCategory.other: '{n} blia'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} shn',
+      PluralCategory.two: '{n} shn',
+      PluralCategory.few: '{n} sn',
+      PluralCategory.other: '{n} sn',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} mhìos',
+      PluralCategory.two: '{n} mhìos',
+      PluralCategory.few: '{n} mìos',
+      PluralCategory.other: '{n} mìos',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} bhlia',
+      PluralCategory.two: '{n} bhlia',
+      PluralCategory.few: '{n} blia',
+      PluralCategory.other: '{n} blia',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}là'),

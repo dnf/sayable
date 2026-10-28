@@ -15,7 +15,20 @@ import '../types.dart';
 final sq = TimeLocale(
   code: 'sq',
   clock: ClockConfig(
-    hours: ['dymbëdhjetë', 'një', 'dy', 'tre', 'katër', 'pesë', 'gjashtë', 'shtatë', 'tetë', 'nëntë', 'dhjetë', 'njëmbëdhjetë'],
+    hours: [
+      'dymbëdhjetë',
+      'një',
+      'dy',
+      'tre',
+      'katër',
+      'pesë',
+      'gjashtë',
+      'shtatë',
+      'tetë',
+      'nëntë',
+      'dhjetë',
+      'njëmbëdhjetë',
+    ],
     midnight: 'mesnata',
     noon: 'mesdita',
     patterns: {

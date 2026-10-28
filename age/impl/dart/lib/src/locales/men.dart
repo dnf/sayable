@@ -18,10 +18,22 @@ final men = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'lɔhɔ {n}', PluralCategory.other: 'lɔhɔnga {n}'}),
-  week: pluralUnit({PluralCategory.one: 'wikii {n}', PluralCategory.other: 'wikii {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ndɔlɔ {n}', PluralCategory.other: 'ndɔlɔnga {n}'}),
-  year: pluralUnit({PluralCategory.one: 'saŋ {n}', PluralCategory.other: 'saŋga {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'lɔhɔ {n}',
+    PluralCategory.other: 'lɔhɔnga {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'wikii {n}',
+    PluralCategory.other: 'wikii {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ndɔlɔ {n}',
+    PluralCategory.other: 'ndɔlɔnga {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'saŋ {n}',
+    PluralCategory.other: 'saŋga {n}',
+  }),
   half: '{0} ta fele',
   delimiter: ', ',
   justBorn: 'Ndɔpɔi fele',
@@ -32,10 +44,19 @@ final men = AgeLocale(
   teenager: stageNeutral('Ndakpayei'),
   adult: stageNeutral('Numu-waa'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'lɔhɔ {n}', PluralCategory.other: 'lɔhɔnga {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'lɔhɔ {n}',
+      PluralCategory.other: 'lɔhɔnga {n}',
+    }),
     week: simpleUnit('wikii {n}'),
-    month: pluralUnit({PluralCategory.one: 'ndɔlɔ {n}', PluralCategory.other: 'ndɔlɔnga {n}'}),
-    year: pluralUnit({PluralCategory.one: 'saŋ {n}', PluralCategory.other: 'saŋga {n}'}),
+    month: pluralUnit({
+      PluralCategory.one: 'ndɔlɔ {n}',
+      PluralCategory.other: 'ndɔlɔnga {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'saŋ {n}',
+      PluralCategory.other: 'saŋga {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

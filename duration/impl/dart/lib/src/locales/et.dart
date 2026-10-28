@@ -19,13 +19,34 @@ final et = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekund', PluralCategory.other: '{n} sekundit'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minut', PluralCategory.other: '{n} minutit'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} tund', PluralCategory.other: '{n} tundi'}),
-    'day': pluralUnit({PluralCategory.one: '{n} päev', PluralCategory.other: '{n} päeva'}),
-    'week': pluralUnit({PluralCategory.one: '{n} nädal', PluralCategory.other: '{n} nädalat'}),
-    'month': pluralUnit({PluralCategory.one: '{n} kuu', PluralCategory.other: '{n} kuud'}),
-    'year': pluralUnit({PluralCategory.one: '{n} aasta', PluralCategory.other: '{n} aastat'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekund',
+      PluralCategory.other: '{n} sekundit',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minut',
+      PluralCategory.other: '{n} minutit',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} tund',
+      PluralCategory.other: '{n} tundi',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} päev',
+      PluralCategory.other: '{n} päeva',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} nädal',
+      PluralCategory.other: '{n} nädalat',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} kuu',
+      PluralCategory.other: '{n} kuud',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} aasta',
+      PluralCategory.other: '{n} aastat',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -37,9 +58,15 @@ final et = DurationLocale(
       'second': simpleUnit('{n} sek'),
       'minute': simpleUnit('{n} min'),
       'hour': simpleUnit('{n} t'),
-      'day': pluralUnit({PluralCategory.one: '{n} päev', PluralCategory.other: '{n} päeva'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} päev',
+        PluralCategory.other: '{n} päeva',
+      }),
       'week': simpleUnit('{n} näd'),
-      'month': pluralUnit({PluralCategory.one: '{n} kuu', PluralCategory.other: '{n} kuud'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} kuu',
+        PluralCategory.other: '{n} kuud',
+      }),
       'year': simpleUnit('{n} a'),
     },
     ago: '{0} tagasi',

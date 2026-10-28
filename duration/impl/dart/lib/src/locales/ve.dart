@@ -19,13 +19,34 @@ final ve = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekondhe {n}', PluralCategory.other: 'disekondhe {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minidhi {n}', PluralCategory.other: 'diminidhi {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'awara {n}', PluralCategory.other: 'diawara {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'duvha {n}', PluralCategory.other: 'maduvha {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'vhege {n}', PluralCategory.other: 'mavhege {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'nwedzi {n}', PluralCategory.other: 'minwedzi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'nwaha {n}', PluralCategory.other: 'minwaha {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekondhe {n}',
+      PluralCategory.other: 'disekondhe {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minidhi {n}',
+      PluralCategory.other: 'diminidhi {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'awara {n}',
+      PluralCategory.other: 'diawara {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'duvha {n}',
+      PluralCategory.other: 'maduvha {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'vhege {n}',
+      PluralCategory.other: 'mavhege {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'nwedzi {n}',
+      PluralCategory.other: 'minwedzi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'nwaha {n}',
+      PluralCategory.other: 'minwaha {n}',
+    }),
   },
   half: '{0} na hafu',
   delimiter: ', ',
@@ -36,11 +57,26 @@ final ve = DurationLocale(
     units: {
       'second': simpleUnit('sek. {n}'),
       'minute': simpleUnit('min. {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'aw. {n}', PluralCategory.other: 'diaw. {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'duv. {n}', PluralCategory.other: 'mad. {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'vheg. {n}', PluralCategory.other: 'mav. {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'nwedzi {n}', PluralCategory.other: 'min. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'nwaha {n}', PluralCategory.other: 'min. {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'aw. {n}',
+        PluralCategory.other: 'diaw. {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'duv. {n}',
+        PluralCategory.other: 'mad. {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'vheg. {n}',
+        PluralCategory.other: 'mav. {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'nwedzi {n}',
+        PluralCategory.other: 'min. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'nwaha {n}',
+        PluralCategory.other: 'min. {n}',
+      }),
     },
     ago: '{0} yo fhiraho',
     inFuture: 'nga {0}',

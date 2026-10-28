@@ -20,13 +20,41 @@ final shi = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} ⵜⴰⵙⵉⵏⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵉⵏⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵉⵏⵉⵏ'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} ⵜⵓⵙⴷⵉⵇⵜ', PluralCategory.few: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ', PluralCategory.other: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ⵜⴰⵙⵔⴰⴳⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} ⵜⴰⵙⵉⵏⵜ',
+      PluralCategory.few: '{n} ⵜⵉⵙⵉⵏⵉⵏ',
+      PluralCategory.other: '{n} ⵜⵉⵙⵉⵏⵉⵏ',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} ⵜⵓⵙⴷⵉⵇⵜ',
+      PluralCategory.few: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ',
+      PluralCategory.other: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ⵜⴰⵙⵔⴰⴳⵜ',
+      PluralCategory.few: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ',
+      PluralCategory.other: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ⴰⵙⵙ',
+      PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ',
+      PluralCategory.other: '{n} ⴰⵙⵙ',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+      PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ',
+      PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ',
+      PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ',
+      PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+      PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ',
+      PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+    }),
   },
   half: '{0} ⴷ ⵓⵣⴳⵏ',
   delimiter: ', ',
@@ -35,13 +63,41 @@ final shi = DurationLocale(
   inFuture: 'ⵖ {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: '{n} ⵜⴰⵙⵉⵏⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵉⵏⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵉⵏⵉⵏ'}),
-      'minute': pluralUnit({PluralCategory.one: '{n} ⵜⵓⵙⴷⵉⵇⵜ', PluralCategory.few: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ', PluralCategory.other: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ'}),
-      'hour': pluralUnit({PluralCategory.one: '{n} ⵜⴰⵙⵔⴰⴳⵜ', PluralCategory.few: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ', PluralCategory.other: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ'}),
-      'day': pluralUnit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'}),
-      'week': pluralUnit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'}),
-      'month': pluralUnit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'}),
-      'year': pluralUnit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'}),
+      'second': pluralUnit({
+        PluralCategory.one: '{n} ⵜⴰⵙⵉⵏⵜ',
+        PluralCategory.few: '{n} ⵜⵉⵙⵉⵏⵉⵏ',
+        PluralCategory.other: '{n} ⵜⵉⵙⵉⵏⵉⵏ',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: '{n} ⵜⵓⵙⴷⵉⵇⵜ',
+        PluralCategory.few: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ',
+        PluralCategory.other: '{n} ⵜⵓⵙⴷⵉⵇⵉⵏ',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} ⵜⴰⵙⵔⴰⴳⵜ',
+        PluralCategory.few: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ',
+        PluralCategory.other: '{n} ⵜⵉⵙⵔⴰⴳⵉⵏ',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} ⴰⵙⵙ',
+        PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ',
+        PluralCategory.other: '{n} ⴰⵙⵙ',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+        PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ',
+        PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ',
+        PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ',
+        PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+        PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ',
+        PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+      }),
     },
     ago: 'ⵖ {0} ⵣⵣⵔⵉⵏ',
     inFuture: 'ⵖ {0}',

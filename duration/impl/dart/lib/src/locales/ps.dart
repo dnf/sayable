@@ -19,13 +19,31 @@ final ps = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} ثانیه', PluralCategory.other: '{n} ثانیې'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} دقیقه', PluralCategory.other: '{n} دقیقې'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ساعت', PluralCategory.other: '{n} ساعتونه'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ورځ', PluralCategory.other: '{n} ورځې'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} ثانیه',
+      PluralCategory.other: '{n} ثانیې',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} دقیقه',
+      PluralCategory.other: '{n} دقیقې',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ساعت',
+      PluralCategory.other: '{n} ساعتونه',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ورځ',
+      PluralCategory.other: '{n} ورځې',
+    }),
     'week': simpleUnit('{n} اونۍ'),
-    'month': pluralUnit({PluralCategory.one: '{n} مياشت', PluralCategory.other: '{n} مياشتې'}),
-    'year': pluralUnit({PluralCategory.one: '{n} کال', PluralCategory.other: '{n} کالونه'}),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} مياشت',
+      PluralCategory.other: '{n} مياشتې',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} کال',
+      PluralCategory.other: '{n} کالونه',
+    }),
   },
   half: '{n}½',
   delimiter: '، ',
@@ -34,13 +52,31 @@ final ps = DurationLocale(
   inFuture: 'په {0} کې',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: '{n} ثانیه', PluralCategory.other: '{n} ثانیې'}),
-      'minute': pluralUnit({PluralCategory.one: '{n} دقیقه', PluralCategory.other: '{n} دقیقې'}),
-      'hour': pluralUnit({PluralCategory.one: '{n} ساعت', PluralCategory.other: '{n} ساعتونه'}),
-      'day': pluralUnit({PluralCategory.one: '{n} ورځ', PluralCategory.other: '{n} ورځې'}),
+      'second': pluralUnit({
+        PluralCategory.one: '{n} ثانیه',
+        PluralCategory.other: '{n} ثانیې',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: '{n} دقیقه',
+        PluralCategory.other: '{n} دقیقې',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} ساعت',
+        PluralCategory.other: '{n} ساعتونه',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} ورځ',
+        PluralCategory.other: '{n} ورځې',
+      }),
       'week': simpleUnit('{n} اونۍ'),
-      'month': pluralUnit({PluralCategory.one: '{n} مياشت', PluralCategory.other: '{n} مياشتې'}),
-      'year': pluralUnit({PluralCategory.one: '{n} کال', PluralCategory.other: '{n} کالونه'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} مياشت',
+        PluralCategory.other: '{n} مياشتې',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} کال',
+        PluralCategory.other: '{n} کالونه',
+      }),
     },
     ago: 'د {0} مخکې',
     inFuture: 'په {0} کې',

@@ -18,17 +18,54 @@ final ru = DurationLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} секунда', PluralCategory.few: '{n} секунды', PluralCategory.many: '{n} секунд', PluralCategory.other: '{n} секунды'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} минута', PluralCategory.few: '{n} минуты', PluralCategory.many: '{n} минут', PluralCategory.other: '{n} минуты'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} час', PluralCategory.few: '{n} часа', PluralCategory.many: '{n} часов', PluralCategory.other: '{n} часа'}),
-    'day': pluralUnit({PluralCategory.one: '{n} день', PluralCategory.few: '{n} дня', PluralCategory.many: '{n} дней', PluralCategory.other: '{n} дня'}),
-    'week': pluralUnit({PluralCategory.one: '{n} неделя', PluralCategory.few: '{n} недели', PluralCategory.many: '{n} недель', PluralCategory.other: '{n} недели'}),
-    'month': pluralUnit({PluralCategory.one: '{n} месяц', PluralCategory.few: '{n} месяца', PluralCategory.many: '{n} месяцев', PluralCategory.other: '{n} месяца'}),
-    'year': pluralUnit({PluralCategory.one: '{n} год', PluralCategory.few: '{n} года', PluralCategory.many: '{n} лет', PluralCategory.other: '{n} года'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} секунда',
+      PluralCategory.few: '{n} секунды',
+      PluralCategory.many: '{n} секунд',
+      PluralCategory.other: '{n} секунды',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} минута',
+      PluralCategory.few: '{n} минуты',
+      PluralCategory.many: '{n} минут',
+      PluralCategory.other: '{n} минуты',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} час',
+      PluralCategory.few: '{n} часа',
+      PluralCategory.many: '{n} часов',
+      PluralCategory.other: '{n} часа',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} день',
+      PluralCategory.few: '{n} дня',
+      PluralCategory.many: '{n} дней',
+      PluralCategory.other: '{n} дня',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} неделя',
+      PluralCategory.few: '{n} недели',
+      PluralCategory.many: '{n} недель',
+      PluralCategory.other: '{n} недели',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} месяц',
+      PluralCategory.few: '{n} месяца',
+      PluralCategory.many: '{n} месяцев',
+      PluralCategory.other: '{n} месяца',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} год',
+      PluralCategory.few: '{n} года',
+      PluralCategory.many: '{n} лет',
+      PluralCategory.other: '{n} года',
+    }),
   },
   half: '{n} с половиной',
   delimiter: ', ',
@@ -43,7 +80,12 @@ final ru = DurationLocale(
       'day': simpleUnit('{n} дн.'),
       'week': simpleUnit('{n} нед.'),
       'month': simpleUnit('{n} мес.'),
-      'year': pluralUnit({PluralCategory.one: '{n} г.', PluralCategory.few: '{n} г.', PluralCategory.many: '{n} л.', PluralCategory.other: '{n} г.'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} г.',
+        PluralCategory.few: '{n} г.',
+        PluralCategory.many: '{n} л.',
+        PluralCategory.other: '{n} г.',
+      }),
     },
     ago: '{0} назад',
     inFuture: 'через {0}',
@@ -56,7 +98,12 @@ final ru = DurationLocale(
       'day': simpleUnit('{n} д.'),
       'week': simpleUnit('{n} н.'),
       'month': simpleUnit('{n} м.'),
-      'year': pluralUnit({PluralCategory.one: '{n} г.', PluralCategory.few: '{n} г.', PluralCategory.many: '{n} л.', PluralCategory.other: '{n} г.'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} г.',
+        PluralCategory.few: '{n} г.',
+        PluralCategory.many: '{n} л.',
+        PluralCategory.other: '{n} г.',
+      }),
     },
     half: '{n}½',
     delimiter: '',

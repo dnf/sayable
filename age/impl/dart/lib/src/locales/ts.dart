@@ -18,10 +18,22 @@ final ts = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'siku {n}', PluralCategory.other: 'masiku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavhiki {n}'}),
-  month: pluralUnit({PluralCategory.one: 'n\'hweti {n}', PluralCategory.other: 'tin\'hweti {n}'}),
-  year: pluralUnit({PluralCategory.one: 'lembe {n}', PluralCategory.other: 'malembe {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'siku {n}',
+    PluralCategory.other: 'masiku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'vhiki {n}',
+    PluralCategory.other: 'mavhiki {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'n\'hweti {n}',
+    PluralCategory.other: 'tin\'hweti {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'lembe {n}',
+    PluralCategory.other: 'malembe {n}',
+  }),
   half: '{0} ni hafu',
   delimiter: ', ',
   justBorn: 'N\'wana loyi a ha ku velekiwa',
@@ -32,10 +44,22 @@ final ts = AgeLocale(
   teenager: stageNeutral('Jaha'),
   adult: stageNeutral('Munhu lonkulu'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'siku {n}', PluralCategory.other: 'masiku {n}'}),
-    week: pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavhiki {n}'}),
-    month: pluralUnit({PluralCategory.one: 'n\'hw. {n}', PluralCategory.other: 'tin\'hw. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'lembe {n}', PluralCategory.other: 'mal. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'siku {n}',
+      PluralCategory.other: 'masiku {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'vhiki {n}',
+      PluralCategory.other: 'mavhiki {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'n\'hw. {n}',
+      PluralCategory.other: 'tin\'hw. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'lembe {n}',
+      PluralCategory.other: 'mal. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

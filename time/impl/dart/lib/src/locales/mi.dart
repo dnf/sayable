@@ -15,7 +15,20 @@ import '../types.dart';
 final mi = TimeLocale(
   code: 'mi',
   clock: ClockConfig(
-    hours: ['tekau mā rua', 'tahi', 'rua', 'toru', 'whā', 'rima', 'ono', 'whitu', 'waru', 'iwa', 'tekau', 'tekau mā tahi'],
+    hours: [
+      'tekau mā rua',
+      'tahi',
+      'rua',
+      'toru',
+      'whā',
+      'rima',
+      'ono',
+      'whitu',
+      'waru',
+      'iwa',
+      'tekau',
+      'tekau mā tahi',
+    ],
     midnight: 'waenganui pō',
     noon: 'poupoutanga o te rā',
     patterns: {
@@ -34,9 +47,17 @@ final mi = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

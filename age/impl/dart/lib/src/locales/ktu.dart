@@ -18,10 +18,22 @@ final ktu = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'lumbu {n}', PluralCategory.other: 'malumbu {n}'}),
-  week: pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'maposo {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ngonda {n}', PluralCategory.other: 'mingonda {n}'}),
-  year: pluralUnit({PluralCategory.one: 'mvula {n}', PluralCategory.other: 'mimvula {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'lumbu {n}',
+    PluralCategory.other: 'malumbu {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'poso {n}',
+    PluralCategory.other: 'maposo {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ngonda {n}',
+    PluralCategory.other: 'mingonda {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'mvula {n}',
+    PluralCategory.other: 'mimvula {n}',
+  }),
   half: '{0} na ndambu',
   delimiter: ', ',
   justBorn: 'Mwana ya buta',
@@ -33,15 +45,33 @@ final ktu = AgeLocale(
   adult: stageNeutral('Muntu ya nene'),
   short: CompactnessOverride(
     day: simpleUnit('malumbu {n}'),
-    week: pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'maposo {n}'}),
-    month: pluralUnit({PluralCategory.one: 'ngonda {n}', PluralCategory.other: 'mingonda {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mvula {n}', PluralCategory.other: 'mimvula {n}'}),
+    week: pluralUnit({
+      PluralCategory.one: 'poso {n}',
+      PluralCategory.other: 'maposo {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'ngonda {n}',
+      PluralCategory.other: 'mingonda {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mvula {n}',
+      PluralCategory.other: 'mimvula {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('malumbu {n}'),
-    week: pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'maposo {n}'}),
-    month: pluralUnit({PluralCategory.one: 'ngon {n}', PluralCategory.other: 'mingon {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mvula {n}', PluralCategory.other: 'mimv {n}'}),
+    week: pluralUnit({
+      PluralCategory.one: 'poso {n}',
+      PluralCategory.other: 'maposo {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'ngon {n}',
+      PluralCategory.other: 'mingon {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mvula {n}',
+      PluralCategory.other: 'mimv {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

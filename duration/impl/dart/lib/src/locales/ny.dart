@@ -21,11 +21,26 @@ final ny = DurationLocale(
   units: {
     'second': simpleUnit('sekondi {n}'),
     'minute': simpleUnit('mphindi {n}'),
-    'hour': pluralUnit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'masiku {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masabata {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'zaka {n}'}),
+    'hour': pluralUnit({
+      PluralCategory.one: 'ola {n}',
+      PluralCategory.other: 'maola {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'tsiku {n}',
+      PluralCategory.other: 'masiku {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'sabata {n}',
+      PluralCategory.other: 'masabata {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'mwezi {n}',
+      PluralCategory.other: 'miyezi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'chaka {n}',
+      PluralCategory.other: 'zaka {n}',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -36,11 +51,26 @@ final ny = DurationLocale(
     units: {
       'second': simpleUnit('sek {n}'),
       'minute': simpleUnit('mph {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'mas {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masab {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'zaka {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ola {n}',
+        PluralCategory.other: 'maola {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'tsiku {n}',
+        PluralCategory.other: 'mas {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'sabata {n}',
+        PluralCategory.other: 'masab {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'mwezi {n}',
+        PluralCategory.other: 'miyezi {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'chaka {n}',
+        PluralCategory.other: 'zaka {n}',
+      }),
     },
     ago: '{0} zapitazo',
     inFuture: 'mu {0}',
@@ -50,10 +80,22 @@ final ny = DurationLocale(
       'second': simpleUnit('s {n}'),
       'minute': simpleUnit('m {n}'),
       'hour': simpleUnit('o {n}'),
-      'day': pluralUnit({PluralCategory.one: 'ts {n}', PluralCategory.other: 'mas {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'sab {n}', PluralCategory.other: 'msb {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'mw {n}', PluralCategory.other: 'miy {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'ch {n}', PluralCategory.other: 'z {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'ts {n}',
+        PluralCategory.other: 'mas {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'sab {n}',
+        PluralCategory.other: 'msb {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'mw {n}',
+        PluralCategory.other: 'miy {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'ch {n}',
+        PluralCategory.other: 'z {n}',
+      }),
     },
     half: '{n}½',
     delimiter: '',

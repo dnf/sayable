@@ -18,9 +18,15 @@ final so = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} maalin', PluralCategory.other: '{n} maalmood'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} maalin',
+    PluralCategory.other: '{n} maalmood',
+  }),
   week: simpleUnit('{n} toddobaad'),
-  month: pluralUnit({PluralCategory.one: '{n} bil', PluralCategory.other: '{n} bilood'}),
+  month: pluralUnit({
+    PluralCategory.one: '{n} bil',
+    PluralCategory.other: '{n} bilood',
+  }),
   year: simpleUnit('{n} sano'),
   half: '{n}½',
   delimiter: ', ',

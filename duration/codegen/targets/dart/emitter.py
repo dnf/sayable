@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from codegen.banner import locale_source_comment, make_header
+from codegen.targets.dart.layout import Atom, Group, Node, call, map_literal, render
 from codegen.targets.dart.plural_rules import get_dart_plural
 
 HEADER = make_header("codegen/targets/dart/emitter.py")
@@ -43,15 +44,33 @@ def _quote(s: str) -> str:
     return f"'{escaped}'"
 
 
-def _unit_forms(unit: object) -> str:
+_UNIT_NAMES = ("second", "minute", "hour", "day", "week", "month", "year")
+
+
+def _unit_forms(unit: object) -> Group:
     if isinstance(unit, str):
-        return f"simpleUnit({_quote(unit)})"
+        return call("simpleUnit", Atom(_quote(unit)))
     cats = ["zero", "one", "two", "few", "many", "other"]
-    pairs = []
-    for cat in cats:
-        if cat in unit:
-            pairs.append(f"{_CAT_MAP[cat]}: {_quote(unit[cat])}")
-    return "pluralUnit({" + ", ".join(pairs) + "})"
+    pairs = [(_CAT_MAP[cat], Atom(_quote(unit[cat]))) for cat in cats if cat in unit]
+    return call("pluralUnit", map_literal(pairs))
+
+
+def _units(units: dict) -> Group:
+    return map_literal([
+        (_quote(unit_name), _unit_forms(units[unit_name]))
+        for unit_name in _UNIT_NAMES
+        if unit_name in units
+    ])
+
+
+def _override(ovr: dict) -> Group:
+    fields: dict[str, Node] = {}
+    if "units" in ovr:
+        fields["units"] = _units(ovr["units"])
+    for key in ("half", "delimiter", "ago", "inFuture"):
+        if key in ovr:
+            fields[key] = Atom(_quote(ovr[key]))
+    return call("CompactnessOverride", **fields)
 
 
 def emit_locale(data: dict) -> str:
@@ -59,55 +78,22 @@ def emit_locale(data: dict) -> str:
     rule = data["pluralRule"]
     name = data["name"]
 
+    fields: dict[str, Node] = {
+        "code": Atom(_quote(code)),
+        "plural": Atom(get_dart_plural(rule).strip()),
+        "units": _units({unit_name: data["units"][unit_name] for unit_name in _UNIT_NAMES}),
+    }
+    for key in ("half", "delimiter", "justNow", "ago", "inFuture"):
+        fields[key] = Atom(_quote(data[key]))
+    for mode in ("short", "compact"):
+        if mode in data:
+            fields[mode] = _override(data[mode])
+
     lines = [HEADER + locale_source_comment(code)]
     lines.append("import '../types.dart';")
     lines.append("")
     lines.append(f"/// {name} locale.")
-    lines.append(f"final {_safe_id(code)} = DurationLocale(")
-
-    lines.append(f"  code: {_quote(code)},")
-
-    # Plural
-    plural = get_dart_plural(rule)
-    lines.append(f"  plural: {plural.strip()},")
-
-    # Units
-    lines.append("  units: {")
-    for unit_name in ("second", "minute", "hour", "day", "week", "month", "year"):
-        val = _unit_forms(data["units"][unit_name])
-        lines.append(f"    {_quote(unit_name)}: {val},")
-    lines.append("  },")
-
-    # Simple fields
-    lines.append(f"  half: {_quote(data['half'])},")
-    lines.append(f"  delimiter: {_quote(data['delimiter'])},")
-    lines.append(f"  justNow: {_quote(data['justNow'])},")
-    lines.append(f"  ago: {_quote(data['ago'])},")
-    lines.append(f"  inFuture: {_quote(data['inFuture'])},")
-
-    # Short/compact
-    for mode in ("short", "compact"):
-        if mode in data:
-            ovr = data[mode]
-            lines.append(f"  {mode}: CompactnessOverride(")
-            if "units" in ovr:
-                lines.append("    units: {")
-                for unit_name in ("second", "minute", "hour", "day", "week", "month", "year"):
-                    if unit_name in ovr["units"]:
-                        val = _unit_forms(ovr["units"][unit_name])
-                        lines.append(f"      {_quote(unit_name)}: {val},")
-                lines.append("    },")
-            if "half" in ovr:
-                lines.append(f"    half: {_quote(ovr['half'])},")
-            if "delimiter" in ovr:
-                lines.append(f"    delimiter: {_quote(ovr['delimiter'])},")
-            if "ago" in ovr:
-                lines.append(f"    ago: {_quote(ovr['ago'])},")
-            if "inFuture" in ovr:
-                lines.append(f"    inFuture: {_quote(ovr['inFuture'])},")
-            lines.append("  ),")
-
-    lines.append(");")
+    lines.append(render(call("DurationLocale", **fields), lead=f"final {_safe_id(code)} = ", trail=";"))
     lines.append("")
 
     return "\n".join(lines)

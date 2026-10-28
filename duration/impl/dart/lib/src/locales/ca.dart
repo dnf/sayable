@@ -19,13 +19,34 @@ final ca = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} segon', PluralCategory.other: '{n} segons'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minut', PluralCategory.other: '{n} minuts'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} hora', PluralCategory.other: '{n} hores'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dies'}),
-    'week': pluralUnit({PluralCategory.one: '{n} setmana', PluralCategory.other: '{n} setmanes'}),
-    'month': pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} mesos'}),
-    'year': pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} segon',
+      PluralCategory.other: '{n} segons',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minut',
+      PluralCategory.other: '{n} minuts',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} hora',
+      PluralCategory.other: '{n} hores',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dia',
+      PluralCategory.other: '{n} dies',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} setmana',
+      PluralCategory.other: '{n} setmanes',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} mes',
+      PluralCategory.other: '{n} mesos',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} any',
+      PluralCategory.other: '{n} anys',
+    }),
   },
   half: '{n} i mig',
   delimiter: ', ',
@@ -37,10 +58,19 @@ final ca = DurationLocale(
       'second': simpleUnit('{n} s'),
       'minute': simpleUnit('{n} min'),
       'hour': simpleUnit('{n} h'),
-      'day': pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dies'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} dia',
+        PluralCategory.other: '{n} dies',
+      }),
       'week': simpleUnit('{n} setm.'),
-      'month': pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} m'}),
-      'year': pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} mes',
+        PluralCategory.other: '{n} m',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} any',
+        PluralCategory.other: '{n} anys',
+      }),
     },
     ago: 'fa {0}',
     inFuture: 'd\'aquí a {0}',
@@ -53,7 +83,10 @@ final ca = DurationLocale(
       'day': simpleUnit('{n} d'),
       'week': simpleUnit('{n} setm.'),
       'month': simpleUnit('{n} m'),
-      'year': pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} any',
+        PluralCategory.other: '{n} anys',
+      }),
     },
     half: '{n}½',
     delimiter: '',

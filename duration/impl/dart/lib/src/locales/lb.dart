@@ -19,13 +19,34 @@ final lb = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} Sekonn', PluralCategory.other: '{n} Sekonnen'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} Minutt', PluralCategory.other: '{n} Minutten'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} Stonn', PluralCategory.other: '{n} Stonnen'}),
-    'day': pluralUnit({PluralCategory.one: '{n} Dag', PluralCategory.other: '{n} Deeg'}),
-    'week': pluralUnit({PluralCategory.one: '{n} Woch', PluralCategory.other: '{n} Wochen'}),
-    'month': pluralUnit({PluralCategory.one: '{n} Mount', PluralCategory.other: '{n} Méint'}),
-    'year': pluralUnit({PluralCategory.one: '{n} Joer', PluralCategory.other: '{n} Joer'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} Sekonn',
+      PluralCategory.other: '{n} Sekonnen',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} Minutt',
+      PluralCategory.other: '{n} Minutten',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} Stonn',
+      PluralCategory.other: '{n} Stonnen',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} Dag',
+      PluralCategory.other: '{n} Deeg',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} Woch',
+      PluralCategory.other: '{n} Wochen',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} Mount',
+      PluralCategory.other: '{n} Méint',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} Joer',
+      PluralCategory.other: '{n} Joer',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

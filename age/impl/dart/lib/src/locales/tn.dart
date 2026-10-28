@@ -18,10 +18,22 @@ final tn = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'letsatsi {n}', PluralCategory.other: 'malatsi {n}'}),
-  week: pluralUnit({PluralCategory.one: 'beke {n}', PluralCategory.other: 'dibeke {n}'}),
-  month: pluralUnit({PluralCategory.one: 'kgwedi {n}', PluralCategory.other: 'dikgwedi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'ngwaga {n}', PluralCategory.other: 'dingwaga {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'letsatsi {n}',
+    PluralCategory.other: 'malatsi {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'beke {n}',
+    PluralCategory.other: 'dibeke {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'kgwedi {n}',
+    PluralCategory.other: 'dikgwedi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'ngwaga {n}',
+    PluralCategory.other: 'dingwaga {n}',
+  }),
   half: '{0} le halofo',
   delimiter: ', ',
   justBorn: 'O sa tswa tsalwa',
@@ -32,10 +44,22 @@ final tn = AgeLocale(
   teenager: stageNeutral('Mosha'),
   adult: stageNeutral('Motho yo mogolo'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'letsatsi {n}', PluralCategory.other: 'malatsi {n}'}),
-    week: pluralUnit({PluralCategory.one: 'beke {n}', PluralCategory.other: 'dibeke {n}'}),
-    month: pluralUnit({PluralCategory.one: 'kgw. {n}', PluralCategory.other: 'dikgw. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'ngw. {n}', PluralCategory.other: 'dingw. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'letsatsi {n}',
+      PluralCategory.other: 'malatsi {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'beke {n}',
+      PluralCategory.other: 'dibeke {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'kgw. {n}',
+      PluralCategory.other: 'dikgw. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'ngw. {n}',
+      PluralCategory.other: 'dingw. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

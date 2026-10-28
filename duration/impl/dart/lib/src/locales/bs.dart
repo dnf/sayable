@@ -18,17 +18,51 @@ final bs = DurationLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekunda', PluralCategory.few: '{n} sekunde', PluralCategory.other: '{n} sekundi'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minuta', PluralCategory.few: '{n} minute', PluralCategory.other: '{n} minuta'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} sat', PluralCategory.few: '{n} sata', PluralCategory.other: '{n} sati'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dan', PluralCategory.few: '{n} dana', PluralCategory.many: '{n} dana', PluralCategory.other: '{n} dana'}),
-    'week': pluralUnit({PluralCategory.one: '{n} sedmica', PluralCategory.few: '{n} sedmice', PluralCategory.many: '{n} sedmica', PluralCategory.other: '{n} sedmica'}),
-    'month': pluralUnit({PluralCategory.one: '{n} mjesec', PluralCategory.few: '{n} mjeseca', PluralCategory.many: '{n} mjeseci', PluralCategory.other: '{n} mjeseci'}),
-    'year': pluralUnit({PluralCategory.one: '{n} godina', PluralCategory.few: '{n} godine', PluralCategory.many: '{n} godina', PluralCategory.other: '{n} godina'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekunda',
+      PluralCategory.few: '{n} sekunde',
+      PluralCategory.other: '{n} sekundi',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minuta',
+      PluralCategory.few: '{n} minute',
+      PluralCategory.other: '{n} minuta',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} sat',
+      PluralCategory.few: '{n} sata',
+      PluralCategory.other: '{n} sati',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dan',
+      PluralCategory.few: '{n} dana',
+      PluralCategory.many: '{n} dana',
+      PluralCategory.other: '{n} dana',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} sedmica',
+      PluralCategory.few: '{n} sedmice',
+      PluralCategory.many: '{n} sedmica',
+      PluralCategory.other: '{n} sedmica',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} mjesec',
+      PluralCategory.few: '{n} mjeseca',
+      PluralCategory.many: '{n} mjeseci',
+      PluralCategory.other: '{n} mjeseci',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} godina',
+      PluralCategory.few: '{n} godine',
+      PluralCategory.many: '{n} godina',
+      PluralCategory.other: '{n} godina',
+    }),
   },
   half: '{0} i po',
   delimiter: ', ',
@@ -40,7 +74,11 @@ final bs = DurationLocale(
       'second': simpleUnit('{n} sek.'),
       'minute': simpleUnit('{n} min.'),
       'hour': simpleUnit('{n} h'),
-      'day': pluralUnit({PluralCategory.one: '{n} dan', PluralCategory.few: '{n} dana', PluralCategory.other: '{n} dana'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} dan',
+        PluralCategory.few: '{n} dana',
+        PluralCategory.other: '{n} dana',
+      }),
       'week': simpleUnit('{n} sedm.'),
       'month': simpleUnit('{n} mj.'),
       'year': simpleUnit('{n} god.'),

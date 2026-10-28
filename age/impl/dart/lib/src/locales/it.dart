@@ -18,10 +18,22 @@ final it = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} giorno', PluralCategory.other: '{n} giorni'}),
-  week: pluralUnit({PluralCategory.one: '{n} settimana', PluralCategory.other: '{n} settimane'}),
-  month: pluralUnit({PluralCategory.one: '{n} mese', PluralCategory.other: '{n} mesi'}),
-  year: pluralUnit({PluralCategory.one: '{n} anno', PluralCategory.other: '{n} anni'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} giorno',
+    PluralCategory.other: '{n} giorni',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} settimana',
+    PluralCategory.other: '{n} settimane',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mese',
+    PluralCategory.other: '{n} mesi',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} anno',
+    PluralCategory.other: '{n} anni',
+  }),
   half: '{0} e mezzo',
   delimiter: ', ',
   justBorn: 'Neonato',
@@ -32,16 +44,34 @@ final it = AgeLocale(
   teenager: stageNeutral('Adolescente'),
   adult: stageGendered('Adulto', 'Adulta'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} giorno', PluralCategory.other: '{n} giorni'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} giorno',
+      PluralCategory.other: '{n} giorni',
+    }),
     week: simpleUnit('{n} sett.'),
-    month: pluralUnit({PluralCategory.one: '{n} mese', PluralCategory.other: '{n} mesi'}),
-    year: pluralUnit({PluralCategory.one: '{n} anno', PluralCategory.other: '{n} anni'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} mese',
+      PluralCategory.other: '{n} mesi',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} anno',
+      PluralCategory.other: '{n} anni',
+    }),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n}g', PluralCategory.other: '{n}gg'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n}g',
+      PluralCategory.other: '{n}gg',
+    }),
     week: simpleUnit('{n}sett.'),
-    month: pluralUnit({PluralCategory.one: '{n} mese', PluralCategory.other: '{n} mesi'}),
-    year: pluralUnit({PluralCategory.one: '{n}anno', PluralCategory.other: '{n}anni'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} mese',
+      PluralCategory.other: '{n} mesi',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n}anno',
+      PluralCategory.other: '{n}anni',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

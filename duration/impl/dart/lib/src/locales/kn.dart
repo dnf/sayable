@@ -19,13 +19,34 @@ final kn = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} ಸೆಕೆಂಡ್', PluralCategory.other: '{n} ಸೆಕೆಂಡುಗಳು'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} ನಿಮಿಷ', PluralCategory.other: '{n} ನಿಮಿಷಗಳು'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ಗಂಟೆ', PluralCategory.other: '{n} ಗಂಟೆಗಳು'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ದಿನ', PluralCategory.other: '{n} ದಿನಗಳು'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ವಾರ', PluralCategory.other: '{n} ವಾರಗಳು'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ತಿಂಗಳು', PluralCategory.other: '{n} ತಿಂಗಳುಗಳು'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ವರ್ಷ', PluralCategory.other: '{n} ವರ್ಷಗಳು'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} ಸೆಕೆಂಡ್',
+      PluralCategory.other: '{n} ಸೆಕೆಂಡುಗಳು',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} ನಿಮಿಷ',
+      PluralCategory.other: '{n} ನಿಮಿಷಗಳು',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ಗಂಟೆ',
+      PluralCategory.other: '{n} ಗಂಟೆಗಳು',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ದಿನ',
+      PluralCategory.other: '{n} ದಿನಗಳು',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ವಾರ',
+      PluralCategory.other: '{n} ವಾರಗಳು',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ತಿಂಗಳು',
+      PluralCategory.other: '{n} ತಿಂಗಳುಗಳು',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ವರ್ಷ',
+      PluralCategory.other: '{n} ವರ್ಷಗಳು',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

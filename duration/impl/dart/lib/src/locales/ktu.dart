@@ -19,13 +19,34 @@ final ktu = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekonde {n}', PluralCategory.other: 'masekonde {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'miniti {n}', PluralCategory.other: 'maminiti {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'ngonga {n}', PluralCategory.other: 'mingonga {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'lumbu {n}', PluralCategory.other: 'malumbu {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'maposo {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ngonda {n}', PluralCategory.other: 'mingonda {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'mvula {n}', PluralCategory.other: 'mimvula {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekonde {n}',
+      PluralCategory.other: 'masekonde {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'miniti {n}',
+      PluralCategory.other: 'maminiti {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'ngonga {n}',
+      PluralCategory.other: 'mingonga {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'lumbu {n}',
+      PluralCategory.other: 'malumbu {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'poso {n}',
+      PluralCategory.other: 'maposo {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ngonda {n}',
+      PluralCategory.other: 'mingonda {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'mvula {n}',
+      PluralCategory.other: 'mimvula {n}',
+    }),
   },
   half: '{0} na ndambu',
   delimiter: ', ',
@@ -36,11 +57,23 @@ final ktu = DurationLocale(
     units: {
       'second': simpleUnit('masekonde {n}'),
       'minute': simpleUnit('maminiti {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'ngonga {n}', PluralCategory.other: 'mingonga {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ngonga {n}',
+        PluralCategory.other: 'mingonga {n}',
+      }),
       'day': simpleUnit('malumbu {n}'),
-      'week': pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'maposo {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'ngonda {n}', PluralCategory.other: 'mingonda {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'mvula {n}', PluralCategory.other: 'mimvula {n}'}),
+      'week': pluralUnit({
+        PluralCategory.one: 'poso {n}',
+        PluralCategory.other: 'maposo {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'ngonda {n}',
+        PluralCategory.other: 'mingonda {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'mvula {n}',
+        PluralCategory.other: 'mimvula {n}',
+      }),
     },
     ago: '{0} ya vioka',
     inFuture: 'na {0}',
@@ -49,11 +82,23 @@ final ktu = DurationLocale(
     units: {
       'second': simpleUnit('masek {n}'),
       'minute': simpleUnit('mamin {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'ngon {n}', PluralCategory.other: 'mingon {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ngon {n}',
+        PluralCategory.other: 'mingon {n}',
+      }),
       'day': simpleUnit('malum {n}'),
-      'week': pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'maposo {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'ngon {n}', PluralCategory.other: 'mingon {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'mvula {n}', PluralCategory.other: 'mimv {n}'}),
+      'week': pluralUnit({
+        PluralCategory.one: 'poso {n}',
+        PluralCategory.other: 'maposo {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'ngon {n}',
+        PluralCategory.other: 'mingon {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'mvula {n}',
+        PluralCategory.other: 'mimv {n}',
+      }),
     },
     half: '{n}½',
     delimiter: '',

@@ -15,7 +15,20 @@ import '../types.dart';
 final wo = TimeLocale(
   code: 'wo',
   clock: ClockConfig(
-    hours: ['fukk ak ñaari waxtu', 'benn waxtu', 'ñaari waxtu', 'ñetti waxtu', 'ñeenti waxtu', 'juróomi waxtu', 'juróom-benni waxtu', 'juróom-ñaari waxtu', 'juróom-ñetti waxtu', 'juróom-ñeenti waxtu', 'fukki waxtu', 'fukk ak benn waxtu'],
+    hours: [
+      'fukk ak ñaari waxtu',
+      'benn waxtu',
+      'ñaari waxtu',
+      'ñetti waxtu',
+      'ñeenti waxtu',
+      'juróomi waxtu',
+      'juróom-benni waxtu',
+      'juróom-ñaari waxtu',
+      'juróom-ñetti waxtu',
+      'juróom-ñeenti waxtu',
+      'fukki waxtu',
+      'fukk ak benn waxtu',
+    ],
     midnight: 'digg-guddi',
     noon: 'digg-bëccëg',
     patterns: {
@@ -34,9 +47,17 @@ final wo = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

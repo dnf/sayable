@@ -15,7 +15,20 @@ import '../types.dart';
 final pov = TimeLocale(
   code: 'pov',
   clock: ClockConfig(
-    hours: ['dozi ora', 'un ora', 'dos ora', 'tres ora', 'kuatru ora', 'sinku ora', 'seis ora', 'seti ora', 'oitu ora', 'novi ora', 'des ora', 'onzi ora'],
+    hours: [
+      'dozi ora',
+      'un ora',
+      'dos ora',
+      'tres ora',
+      'kuatru ora',
+      'sinku ora',
+      'seis ora',
+      'seti ora',
+      'oitu ora',
+      'novi ora',
+      'des ora',
+      'onzi ora',
+    ],
     midnight: 'meia noti',
     noon: 'meiu dia',
     patterns: {
@@ -34,9 +47,17 @@ final pov = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

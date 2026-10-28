@@ -18,10 +18,22 @@ final ng = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'esiku {n}', PluralCategory.other: 'omasiku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'oshiwike {n}', PluralCategory.other: 'iiwike {n}'}),
-  month: pluralUnit({PluralCategory.one: 'omuedhi {n}', PluralCategory.other: 'omiedhi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'omvula {n}', PluralCategory.other: 'omivula {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'esiku {n}',
+    PluralCategory.other: 'omasiku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'oshiwike {n}',
+    PluralCategory.other: 'iiwike {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'omuedhi {n}',
+    PluralCategory.other: 'omiedhi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'omvula {n}',
+    PluralCategory.other: 'omivula {n}',
+  }),
   half: '{0} netata',
   delimiter: ', ',
   justBorn: 'Okwa dalwa po',
@@ -33,15 +45,33 @@ final ng = AgeLocale(
   adult: stageNeutral('Omuntu omukulu'),
   short: CompactnessOverride(
     day: simpleUnit('omasiku {n}'),
-    week: pluralUnit({PluralCategory.one: 'oshiwike {n}', PluralCategory.other: 'iiwike {n}'}),
-    month: pluralUnit({PluralCategory.one: 'omuedhi {n}', PluralCategory.other: 'omiedhi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'omvula {n}', PluralCategory.other: 'omivula {n}'}),
+    week: pluralUnit({
+      PluralCategory.one: 'oshiwike {n}',
+      PluralCategory.other: 'iiwike {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'omuedhi {n}',
+      PluralCategory.other: 'omiedhi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'omvula {n}',
+      PluralCategory.other: 'omivula {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('omasiku {n}'),
-    week: pluralUnit({PluralCategory.one: 'oshiw {n}', PluralCategory.other: 'iiw {n}'}),
-    month: pluralUnit({PluralCategory.one: 'omued {n}', PluralCategory.other: 'omied {n}'}),
-    year: pluralUnit({PluralCategory.one: 'omv {n}', PluralCategory.other: 'omiv {n}'}),
+    week: pluralUnit({
+      PluralCategory.one: 'oshiw {n}',
+      PluralCategory.other: 'iiw {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'omued {n}',
+      PluralCategory.other: 'omied {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'omv {n}',
+      PluralCategory.other: 'omiv {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

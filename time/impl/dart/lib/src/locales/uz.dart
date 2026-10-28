@@ -15,7 +15,20 @@ import '../types.dart';
 final uz = TimeLocale(
   code: 'uz',
   clock: ClockConfig(
-    hours: ['o\'n ikki', 'bir', 'ikki', 'uch', 'to\'rt', 'besh', 'olti', 'yetti', 'sakkiz', 'to\'qqiz', 'o\'n', 'o\'n bir'],
+    hours: [
+      'o\'n ikki',
+      'bir',
+      'ikki',
+      'uch',
+      'to\'rt',
+      'besh',
+      'olti',
+      'yetti',
+      'sakkiz',
+      'to\'qqiz',
+      'o\'n',
+      'o\'n bir',
+    ],
     midnight: 'yarim tun',
     noon: 'tush',
     patterns: {

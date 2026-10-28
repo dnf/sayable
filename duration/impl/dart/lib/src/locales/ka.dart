@@ -22,10 +22,22 @@ final ka = DurationLocale(
     'second': simpleUnit('{n} წამი'),
     'minute': simpleUnit('{n} წუთი'),
     'hour': simpleUnit('{n} საათი'),
-    'day': pluralUnit({PluralCategory.one: '{n} დღე', PluralCategory.other: '{n} დღე'}),
-    'week': pluralUnit({PluralCategory.one: '{n} კვირა', PluralCategory.other: '{n} კვირა'}),
-    'month': pluralUnit({PluralCategory.one: '{n} თვე', PluralCategory.other: '{n} თვე'}),
-    'year': pluralUnit({PluralCategory.one: '{n} წელი', PluralCategory.other: '{n} წელი'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} დღე',
+      PluralCategory.other: '{n} დღე',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} კვირა',
+      PluralCategory.other: '{n} კვირა',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} თვე',
+      PluralCategory.other: '{n} თვე',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} წელი',
+      PluralCategory.other: '{n} წელი',
+    }),
   },
   half: '{0} და ნახევარი',
   delimiter: ', ',

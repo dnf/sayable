@@ -19,13 +19,34 @@ final sq = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekondë', PluralCategory.other: '{n} sekonda'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minutë', PluralCategory.other: '{n} minuta'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} orë', PluralCategory.other: '{n} orë'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ditë', PluralCategory.other: '{n} ditë'}),
-    'week': pluralUnit({PluralCategory.one: '{n} javë', PluralCategory.other: '{n} javë'}),
-    'month': pluralUnit({PluralCategory.one: '{n} muaj', PluralCategory.other: '{n} muaj'}),
-    'year': pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekondë',
+      PluralCategory.other: '{n} sekonda',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minutë',
+      PluralCategory.other: '{n} minuta',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} orë',
+      PluralCategory.other: '{n} orë',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ditë',
+      PluralCategory.other: '{n} ditë',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} javë',
+      PluralCategory.other: '{n} javë',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} muaj',
+      PluralCategory.other: '{n} muaj',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} vit',
+      PluralCategory.other: '{n} vjet',
+    }),
   },
   half: '{0} e gjysmë',
   delimiter: ', ',
@@ -40,7 +61,10 @@ final sq = DurationLocale(
       'day': simpleUnit('{n} ditë'),
       'week': simpleUnit('{n} javë'),
       'month': simpleUnit('{n} muaj'),
-      'year': pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} vit',
+        PluralCategory.other: '{n} vjet',
+      }),
     },
     ago: '{0} më parë',
     inFuture: 'për {0}',
@@ -53,7 +77,10 @@ final sq = DurationLocale(
       'day': simpleUnit('{n} ditë'),
       'week': simpleUnit('{n} javë'),
       'month': simpleUnit('{n} muaj'),
-      'year': pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} vit',
+        PluralCategory.other: '{n} vjet',
+      }),
     },
     half: '{n}½',
     delimiter: '',

@@ -18,10 +18,22 @@ final xh = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'iintsuku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'iveki {n}', PluralCategory.other: 'iiveki {n}'}),
-  month: pluralUnit({PluralCategory.one: 'inyanga {n}', PluralCategory.other: 'iinyanga {n}'}),
-  year: pluralUnit({PluralCategory.one: 'unyaka {n}', PluralCategory.other: 'iminyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'usuku {n}',
+    PluralCategory.other: 'iintsuku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'iveki {n}',
+    PluralCategory.other: 'iiveki {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'inyanga {n}',
+    PluralCategory.other: 'iinyanga {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'unyaka {n}',
+    PluralCategory.other: 'iminyaka {n}',
+  }),
   half: '{0} nehafu',
   delimiter: ', ',
   justBorn: 'Usanda kuzalwa',
@@ -32,10 +44,22 @@ final xh = AgeLocale(
   teenager: stageNeutral('Ulutsha'),
   adult: stageNeutral('Umntu omdala'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'iintsuku {n}'}),
-    week: pluralUnit({PluralCategory.one: 'iveki {n}', PluralCategory.other: 'iiveki {n}'}),
-    month: pluralUnit({PluralCategory.one: 'iny. {n}', PluralCategory.other: 'iiny. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'uny. {n}', PluralCategory.other: 'imy. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'usuku {n}',
+      PluralCategory.other: 'iintsuku {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'iveki {n}',
+      PluralCategory.other: 'iiveki {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'iny. {n}',
+      PluralCategory.other: 'iiny. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'uny. {n}',
+      PluralCategory.other: 'imy. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

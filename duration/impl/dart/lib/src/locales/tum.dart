@@ -19,13 +19,34 @@ final tum = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekendi {n}', PluralCategory.other: 'masekendi {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'miniti {n}', PluralCategory.other: 'maminiti {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'dazi {n}', PluralCategory.other: 'madazi {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masabata {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekendi {n}',
+      PluralCategory.other: 'masekendi {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'miniti {n}',
+      PluralCategory.other: 'maminiti {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'ola {n}',
+      PluralCategory.other: 'maola {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'dazi {n}',
+      PluralCategory.other: 'madazi {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'sabata {n}',
+      PluralCategory.other: 'masabata {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'mwezi {n}',
+      PluralCategory.other: 'miyezi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'chaka {n}',
+      PluralCategory.other: 'vyaka {n}',
+    }),
   },
   half: '{0} na hafu',
   delimiter: ', ',
@@ -36,11 +57,26 @@ final tum = DurationLocale(
     units: {
       'second': simpleUnit('sek. {n}'),
       'minute': simpleUnit('min. {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'ola {n}', PluralCategory.other: 'maola {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'dazi {n}', PluralCategory.other: 'mad. {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'sab. {n}', PluralCategory.other: 'mas. {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miy. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ola {n}',
+        PluralCategory.other: 'maola {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'dazi {n}',
+        PluralCategory.other: 'mad. {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'sab. {n}',
+        PluralCategory.other: 'mas. {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'mwezi {n}',
+        PluralCategory.other: 'miy. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'chaka {n}',
+        PluralCategory.other: 'vyaka {n}',
+      }),
     },
     ago: '{0} yamala',
     inFuture: 'mu {0}',

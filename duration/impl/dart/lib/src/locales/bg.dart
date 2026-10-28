@@ -19,13 +19,34 @@ final bg = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} секунда', PluralCategory.other: '{n} секунди'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} минута', PluralCategory.other: '{n} минути'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} час', PluralCategory.other: '{n} часа'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дни'}),
-    'week': pluralUnit({PluralCategory.one: '{n} седмица', PluralCategory.other: '{n} седмици'}),
-    'month': pluralUnit({PluralCategory.one: '{n} месец', PluralCategory.other: '{n} месеца'}),
-    'year': pluralUnit({PluralCategory.one: '{n} година', PluralCategory.other: '{n} години'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} секунда',
+      PluralCategory.other: '{n} секунди',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} минута',
+      PluralCategory.other: '{n} минути',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} час',
+      PluralCategory.other: '{n} часа',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ден',
+      PluralCategory.other: '{n} дни',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} седмица',
+      PluralCategory.other: '{n} седмици',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} месец',
+      PluralCategory.other: '{n} месеца',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} година',
+      PluralCategory.other: '{n} години',
+    }),
   },
   half: '{0} и половина',
   delimiter: ', ',

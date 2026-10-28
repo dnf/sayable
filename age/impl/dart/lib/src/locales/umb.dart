@@ -18,10 +18,22 @@ final umb = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'elityi {n}', PluralCategory.other: 'omatyi {n}'}),
-  week: pluralUnit({PluralCategory.one: 'osemana {n}', PluralCategory.other: 'olosemana {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ondjambi {n}', PluralCategory.other: 'olondjambi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'ombula {n}', PluralCategory.other: 'olombula {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'elityi {n}',
+    PluralCategory.other: 'omatyi {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'osemana {n}',
+    PluralCategory.other: 'olosemana {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ondjambi {n}',
+    PluralCategory.other: 'olondjambi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'ombula {n}',
+    PluralCategory.other: 'olombula {n}',
+  }),
   half: '{0} na oñali',
   delimiter: ', ',
   justBorn: 'Omola wa kulwa',
@@ -32,10 +44,22 @@ final umb = AgeLocale(
   teenager: stageNeutral('Oloneke'),
   adult: stageNeutral('Omundu onene'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'elit. {n}', PluralCategory.other: 'omat. {n}'}),
-    week: pluralUnit({PluralCategory.one: 'osem. {n}', PluralCategory.other: 'olosem. {n}'}),
-    month: pluralUnit({PluralCategory.one: 'ondj. {n}', PluralCategory.other: 'olondj. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'omb. {n}', PluralCategory.other: 'olomb. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'elit. {n}',
+      PluralCategory.other: 'omat. {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'osem. {n}',
+      PluralCategory.other: 'olosem. {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'ondj. {n}',
+      PluralCategory.other: 'olondj. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'omb. {n}',
+      PluralCategory.other: 'olomb. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

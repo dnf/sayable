@@ -18,13 +18,35 @@ final uk = AgeLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   },
-  day: pluralUnit({PluralCategory.one: '{n} день', PluralCategory.few: '{n} дні', PluralCategory.many: '{n} днів', PluralCategory.other: '{n} днів'}),
-  week: pluralUnit({PluralCategory.one: '{n} тиждень', PluralCategory.few: '{n} тижні', PluralCategory.many: '{n} тижнів', PluralCategory.other: '{n} тижнів'}),
-  month: pluralUnit({PluralCategory.one: '{n} місяць', PluralCategory.few: '{n} місяці', PluralCategory.many: '{n} місяців', PluralCategory.other: '{n} місяців'}),
-  year: pluralUnit({PluralCategory.one: '{n} рік', PluralCategory.few: '{n} роки', PluralCategory.many: '{n} років', PluralCategory.other: '{n} років'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} день',
+    PluralCategory.few: '{n} дні',
+    PluralCategory.many: '{n} днів',
+    PluralCategory.other: '{n} днів',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} тиждень',
+    PluralCategory.few: '{n} тижні',
+    PluralCategory.many: '{n} тижнів',
+    PluralCategory.other: '{n} тижнів',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} місяць',
+    PluralCategory.few: '{n} місяці',
+    PluralCategory.many: '{n} місяців',
+    PluralCategory.other: '{n} місяців',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} рік',
+    PluralCategory.few: '{n} роки',
+    PluralCategory.many: '{n} років',
+    PluralCategory.other: '{n} років',
+  }),
   half: '{n} з половиною',
   delimiter: ', ',
   justBorn: 'Новонароджений',

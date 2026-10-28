@@ -15,7 +15,20 @@ import '../types.dart';
 final shn = TimeLocale(
   code: 'shn',
   clock: ClockConfig(
-    hours: ['သိပ်းသွင်', 'ၼိုင်ႈ', 'သွင်', 'သၢမ်', 'သီႇ', 'ႁႃႈ', 'ႁူၵ်း', 'ၸဵတ်း', 'ပႅတ်ႇ', 'ၵဝ်ႈ', 'သိပ်း', 'သိပ်းဢဵတ်း'],
+    hours: [
+      'သိပ်းသွင်',
+      'ၼိုင်ႈ',
+      'သွင်',
+      'သၢမ်',
+      'သီႇ',
+      'ႁႃႈ',
+      'ႁူၵ်း',
+      'ၸဵတ်း',
+      'ပႅတ်ႇ',
+      'ၵဝ်ႈ',
+      'သိပ်း',
+      'သိပ်းဢဵတ်း',
+    ],
     midnight: 'ၵၢင်ၶိုၼ်း',
     noon: 'ၵၢင်ဝၼ်း',
     patterns: {
@@ -34,9 +47,17 @@ final shn = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

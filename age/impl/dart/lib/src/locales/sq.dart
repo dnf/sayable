@@ -18,10 +18,22 @@ final sq = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ditë', PluralCategory.other: '{n} ditë'}),
-  week: pluralUnit({PluralCategory.one: '{n} javë', PluralCategory.other: '{n} javë'}),
-  month: pluralUnit({PluralCategory.one: '{n} muaj', PluralCategory.other: '{n} muaj'}),
-  year: pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ditë',
+    PluralCategory.other: '{n} ditë',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} javë',
+    PluralCategory.other: '{n} javë',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} muaj',
+    PluralCategory.other: '{n} muaj',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} vit',
+    PluralCategory.other: '{n} vjet',
+  }),
   half: '{0} e gjysmë',
   delimiter: ', ',
   justBorn: 'I sapolindur',
@@ -35,13 +47,19 @@ final sq = AgeLocale(
     day: simpleUnit('{n} ditë'),
     week: simpleUnit('{n} javë'),
     month: simpleUnit('{n} muaj'),
-    year: pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} vit',
+      PluralCategory.other: '{n} vjet',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} ditë'),
     week: simpleUnit('{n} javë'),
     month: simpleUnit('{n} muaj'),
-    year: pluralUnit({PluralCategory.one: '{n} vit', PluralCategory.other: '{n} vjet'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} vit',
+      PluralCategory.other: '{n} vjet',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

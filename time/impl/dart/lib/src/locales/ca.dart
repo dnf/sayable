@@ -15,7 +15,20 @@ import '../types.dart';
 final ca = TimeLocale(
   code: 'ca',
   clock: ClockConfig(
-    hours: ['les dotze', 'la una', 'les dues', 'les tres', 'les quatre', 'les cinc', 'les sis', 'les set', 'les vuit', 'les nou', 'les deu', 'les onze'],
+    hours: [
+      'les dotze',
+      'la una',
+      'les dues',
+      'les tres',
+      'les quatre',
+      'les cinc',
+      'les sis',
+      'les set',
+      'les vuit',
+      'les nou',
+      'les deu',
+      'les onze',
+    ],
     midnight: 'mitjanit',
     noon: 'migdia',
     patterns: {

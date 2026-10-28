@@ -19,13 +19,34 @@ final am = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} ሰከንድ', PluralCategory.other: '{n} ሰከንዶች'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} ደቂቃ', PluralCategory.other: '{n} ደቂቃዎች'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ሰዓት', PluralCategory.other: '{n} ሰዓቶች'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ቀን', PluralCategory.other: '{n} ቀናት'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ሳምንት', PluralCategory.other: '{n} ሳምንታት'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ወር', PluralCategory.other: '{n} ወራት'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} ሰከንድ',
+      PluralCategory.other: '{n} ሰከንዶች',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} ደቂቃ',
+      PluralCategory.other: '{n} ደቂቃዎች',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ሰዓት',
+      PluralCategory.other: '{n} ሰዓቶች',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ቀን',
+      PluralCategory.other: '{n} ቀናት',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ሳምንት',
+      PluralCategory.other: '{n} ሳምንታት',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ወር',
+      PluralCategory.other: '{n} ወራት',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ዓመት',
+      PluralCategory.other: '{n} ዓመታት',
+    }),
   },
   half: '{0} ተኩል',
   delimiter: '፣ ',
@@ -35,12 +56,21 @@ final am = DurationLocale(
   short: CompactnessOverride(
     units: {
       'second': simpleUnit('{n} ሰከ'),
-      'minute': pluralUnit({PluralCategory.one: '{n} ደቂ', PluralCategory.other: '{n} ደቂቃ'}),
+      'minute': pluralUnit({
+        PluralCategory.one: '{n} ደቂ',
+        PluralCategory.other: '{n} ደቂቃ',
+      }),
       'hour': simpleUnit('{n} ሰዓ'),
       'day': simpleUnit('{n} ቀናት'),
-      'week': pluralUnit({PluralCategory.one: '{n} ሳምንት', PluralCategory.other: '{n} ሳምንታት'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} ሳምንት',
+        PluralCategory.other: '{n} ሳምንታት',
+      }),
       'month': simpleUnit('{n} ወራት'),
-      'year': pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} ዓመት',
+        PluralCategory.other: '{n} ዓመታት',
+      }),
     },
     ago: 'ከ{0} በፊት',
     inFuture: 'በ{0} ውስጥ',
@@ -53,7 +83,10 @@ final am = DurationLocale(
       'day': simpleUnit('{n} ቀ'),
       'week': simpleUnit('{n} ሳምንት'),
       'month': simpleUnit('{n} ወር'),
-      'year': pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓ'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} ዓመት',
+        PluralCategory.other: '{n} ዓ',
+      }),
     },
     half: '{n}½',
     delimiter: '',

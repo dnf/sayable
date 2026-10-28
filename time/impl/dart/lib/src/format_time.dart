@@ -6,7 +6,8 @@ const String version = '0.5.0';
 /// A clock time: H:MM or HH:MM, optional :SS and fraction, optional zone
 /// suffix (validated but ignored).
 final _clockPattern = RegExp(
-    r'^([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$');
+  r'^([0-9]{1,2}):([0-9]{2})(?::([0-9]{2})(?:\.[0-9]+)?)?(?:Z|[+-][0-9]{2}:[0-9]{2})?$',
+);
 final _datePattern = RegExp(r'^([0-9]{4})-([0-9]{2})-([0-9]{2})$');
 
 bool _isLeapYear(int year) =>
@@ -23,7 +24,10 @@ bool _isRealDate(String datePart) {
   final year = int.parse(m[1]!);
   final month = int.parse(m[2]!);
   final day = int.parse(m[3]!);
-  return month >= 1 && month <= 12 && day >= 1 && day <= _daysInMonth(year, month);
+  return month >= 1 &&
+      month <= 12 &&
+      day >= 1 &&
+      day <= _daysInMonth(year, month);
 }
 
 /// Parses a clock time, alone or after the T of an ISO datetime whose date

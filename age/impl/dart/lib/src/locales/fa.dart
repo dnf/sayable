@@ -18,10 +18,22 @@ final fa = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} روز', PluralCategory.other: '{n} روز'}),
-  week: pluralUnit({PluralCategory.one: '{n} هفته', PluralCategory.other: '{n} هفته'}),
-  month: pluralUnit({PluralCategory.one: '{n} ماه', PluralCategory.other: '{n} ماه'}),
-  year: pluralUnit({PluralCategory.one: '{n} سال', PluralCategory.other: '{n} سال'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} روز',
+    PluralCategory.other: '{n} روز',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} هفته',
+    PluralCategory.other: '{n} هفته',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ماه',
+    PluralCategory.other: '{n} ماه',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} سال',
+    PluralCategory.other: '{n} سال',
+  }),
   half: '{0} و نیم',
   delimiter: ' و ',
   justBorn: 'نوزاد',

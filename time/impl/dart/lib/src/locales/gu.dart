@@ -15,7 +15,20 @@ import '../types.dart';
 final gu = TimeLocale(
   code: 'gu',
   clock: ClockConfig(
-    hours: ['બાર', 'એક', 'બે', 'ત્રણ', 'ચાર', 'પાંચ', 'છ', 'સાત', 'આઠ', 'નવ', 'દસ', 'અગિયાર'],
+    hours: [
+      'બાર',
+      'એક',
+      'બે',
+      'ત્રણ',
+      'ચાર',
+      'પાંચ',
+      'છ',
+      'સાત',
+      'આઠ',
+      'નવ',
+      'દસ',
+      'અગિયાર',
+    ],
     midnight: 'મધ્યરાત્રિ',
     noon: 'બપોરે બાર વાગ્યે',
     patterns: {
@@ -34,9 +47,17 @@ final gu = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

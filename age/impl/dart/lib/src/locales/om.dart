@@ -18,10 +18,22 @@ final om = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'guyyaa {n}', PluralCategory.other: 'guyyoota {n}'}),
-  week: pluralUnit({PluralCategory.one: 'torban {n}', PluralCategory.other: 'torbanota {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ji\'a {n}', PluralCategory.other: 'ji\'oota {n}'}),
-  year: pluralUnit({PluralCategory.one: 'waggaa {n}', PluralCategory.other: 'waggoota {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'guyyaa {n}',
+    PluralCategory.other: 'guyyoota {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'torban {n}',
+    PluralCategory.other: 'torbanota {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ji\'a {n}',
+    PluralCategory.other: 'ji\'oota {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'waggaa {n}',
+    PluralCategory.other: 'waggoota {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Dhalate haaraa',

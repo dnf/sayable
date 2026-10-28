@@ -32,14 +32,23 @@ final fil = AgeLocale(
   adult: stageNeutral('Adulto'),
   short: CompactnessOverride(
     day: simpleUnit('{n} araw'),
-    week: pluralUnit({PluralCategory.one: '{n} linggo', PluralCategory.other: '{n} na linggo'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} linggo',
+      PluralCategory.other: '{n} na linggo',
+    }),
     month: simpleUnit('{n} buwan'),
     year: simpleUnit('{n} taon'),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} araw', PluralCategory.other: '{n} na araw'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} araw',
+      PluralCategory.other: '{n} na araw',
+    }),
     week: simpleUnit('{n}linggo'),
-    month: pluralUnit({PluralCategory.one: '{n}buwan', PluralCategory.other: '{n} buwan'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n}buwan',
+      PluralCategory.other: '{n} buwan',
+    }),
     year: simpleUnit('{n}taon'),
     delimiter: '',
     half: '{n}½',

@@ -19,10 +19,26 @@ final he = AgeLocale(
     if (n == 2) return PluralCategory.two;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'}),
-  week: pluralUnit({PluralCategory.one: 'שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'}),
-  month: pluralUnit({PluralCategory.one: 'חודש', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'}),
-  year: pluralUnit({PluralCategory.one: 'שנה', PluralCategory.two: 'שנתיים', PluralCategory.other: '{n} שנים'}),
+  day: pluralUnit({
+    PluralCategory.one: 'יום',
+    PluralCategory.two: 'יומיים',
+    PluralCategory.other: '{n} ימים',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'שבוע',
+    PluralCategory.two: 'שבועיים',
+    PluralCategory.other: '{n} שבועות',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'חודש',
+    PluralCategory.two: 'חודשיים',
+    PluralCategory.other: '{n} חודשים',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'שנה',
+    PluralCategory.two: 'שנתיים',
+    PluralCategory.other: '{n} שנים',
+  }),
   half: '{0} וחצי',
   delimiter: ', ',
   justBorn: 'רק נולד',
@@ -33,10 +49,22 @@ final he = AgeLocale(
   teenager: stageGendered('נער', 'נערה'),
   adult: stageGendered('מבוגר', 'מבוגרת'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימ׳'}),
-    week: pluralUnit({PluralCategory.one: '{n} שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} יום',
+      PluralCategory.two: 'יומיים',
+      PluralCategory.other: '{n} ימ׳',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: '{n} שבוע',
+      PluralCategory.two: 'שבועיים',
+      PluralCategory.other: '{n} שבועות',
+    }),
     month: simpleUnit('{n} ח׳'),
-    year: pluralUnit({PluralCategory.one: '{n} שנה', PluralCategory.two: '{n} שנים', PluralCategory.other: '{n} שנים'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} שנה',
+      PluralCategory.two: '{n} שנים',
+      PluralCategory.other: '{n} שנים',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} י׳'),

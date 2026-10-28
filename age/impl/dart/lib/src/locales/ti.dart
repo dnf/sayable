@@ -18,10 +18,22 @@ final ti = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} መዓልቲ', PluralCategory.other: '{n} መዓልትታት'}),
-  week: pluralUnit({PluralCategory.one: '{n} ሰሙን', PluralCategory.other: '{n} ሰሙናት'}),
-  month: pluralUnit({PluralCategory.one: '{n} ወርሒ', PluralCategory.other: '{n} ኣዋርሕ'}),
-  year: pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} መዓልቲ',
+    PluralCategory.other: '{n} መዓልትታት',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} ሰሙን',
+    PluralCategory.other: '{n} ሰሙናት',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ወርሒ',
+    PluralCategory.other: '{n} ኣዋርሕ',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ዓመት',
+    PluralCategory.other: '{n} ዓመታት',
+  }),
   half: '{0} ተኹል',
   delimiter: '፣ ',
   justBorn: 'ሓድሽ ዝተወልደ',
@@ -33,15 +45,24 @@ final ti = AgeLocale(
   adult: stageNeutral('ዓቢይ'),
   short: CompactnessOverride(
     day: simpleUnit('{n} መዓልትታት'),
-    week: pluralUnit({PluralCategory.one: '{n} ሰሙን', PluralCategory.other: '{n} ሰሙናት'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} ሰሙን',
+      PluralCategory.other: '{n} ሰሙናት',
+    }),
     month: simpleUnit('{n} ኣዋርሕ'),
-    year: pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ዓመት',
+      PluralCategory.other: '{n} ዓመታት',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} መ'),
     week: simpleUnit('{n} ሰሙን'),
     month: simpleUnit('{n} ወር'),
-    year: pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓ'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ዓመት',
+      PluralCategory.other: '{n} ዓ',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

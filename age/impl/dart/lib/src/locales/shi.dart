@@ -19,10 +19,26 @@ final shi = AgeLocale(
     if (n >= 2 && n <= 10) return PluralCategory.few;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'}),
-  week: pluralUnit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'}),
-  month: pluralUnit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'}),
-  year: pluralUnit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ⴰⵙⵙ',
+    PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ',
+    PluralCategory.other: '{n} ⴰⵙⵙ',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+    PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ',
+    PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ',
+    PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ',
+    PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+    PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ',
+    PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+  }),
   half: '{0} ⴷ ⵓⵣⴳⵏ',
   delimiter: ', ',
   justBorn: 'ⵉⵖ ⴷ ⵉⵍⵍⵓⵍ',
@@ -33,10 +49,26 @@ final shi = AgeLocale(
   teenager: stageGendered('ⴰⵄⵔⵉⵎ', 'ⵜⴰⵄⵔⵉⵎⵜ'),
   adult: stageGendered('ⴰⵔⴳⴰⵣ', 'ⵜⴰⵎⵟⵟⵓⵟ'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} ⴰⵙⵙ', PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ', PluralCategory.other: '{n} ⴰⵙⵙ'}),
-    week: pluralUnit({PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ', PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ', PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ'}),
-    month: pluralUnit({PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ', PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ', PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ'}),
-    year: pluralUnit({PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ', PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ', PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} ⴰⵙⵙ',
+      PluralCategory.few: '{n} ⵓⵙⵙⴰⵏ',
+      PluralCategory.other: '{n} ⴰⵙⵙ',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+      PluralCategory.few: '{n} ⵉⵎⴰⵍⴰⵙⵙⵏ',
+      PluralCategory.other: '{n} ⵉⵎⴰⵍⴰⵙⵙ',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} ⴰⵢⵢⵓⵔ',
+      PluralCategory.few: '{n} ⴰⵢⵢⵓⵔⵏ',
+      PluralCategory.other: '{n} ⴰⵢⵢⵓⵔ',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+      PluralCategory.few: '{n} ⵉⵙⴳⴳⵯⴰⵙⵏ',
+      PluralCategory.other: '{n} ⴰⵙⴳⴳⵯⴰⵙ',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} ⴰⵙⵙ'),

@@ -18,10 +18,22 @@ final rw = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'umunsi {n}', PluralCategory.other: 'iminsi {n}'}),
-  week: pluralUnit({PluralCategory.one: 'icyumweru {n}', PluralCategory.other: 'ibyumweru {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ukwezi {n}', PluralCategory.other: 'amezi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'umwaka {n}', PluralCategory.other: 'imyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'umunsi {n}',
+    PluralCategory.other: 'iminsi {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'icyumweru {n}',
+    PluralCategory.other: 'ibyumweru {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ukwezi {n}',
+    PluralCategory.other: 'amezi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'umwaka {n}',
+    PluralCategory.other: 'imyaka {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Avutse',

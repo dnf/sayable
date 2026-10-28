@@ -18,10 +18,22 @@ final pt = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dias'}),
-  week: pluralUnit({PluralCategory.one: '{n} semana', PluralCategory.other: '{n} semanas'}),
-  month: pluralUnit({PluralCategory.one: '{n} mês', PluralCategory.other: '{n} meses'}),
-  year: pluralUnit({PluralCategory.one: '{n} ano', PluralCategory.other: '{n} anos'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dia',
+    PluralCategory.other: '{n} dias',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} semana',
+    PluralCategory.other: '{n} semanas',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mês',
+    PluralCategory.other: '{n} meses',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ano',
+    PluralCategory.other: '{n} anos',
+  }),
   half: '{0} e meio',
   delimiter: ', ',
   justBorn: 'Recém-nascido',
@@ -32,16 +44,34 @@ final pt = AgeLocale(
   teenager: stageNeutral('Adolescente'),
   adult: stageGendered('Adulto', 'Adulta'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dias'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} dia',
+      PluralCategory.other: '{n} dias',
+    }),
     week: simpleUnit('{n} sem.'),
-    month: pluralUnit({PluralCategory.one: '{n} mês', PluralCategory.other: '{n} meses'}),
-    year: pluralUnit({PluralCategory.one: '{n} ano', PluralCategory.other: '{n} anos'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} mês',
+      PluralCategory.other: '{n} meses',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ano',
+      PluralCategory.other: '{n} anos',
+    }),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dias'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} dia',
+      PluralCategory.other: '{n} dias',
+    }),
     week: simpleUnit('{n} sem.'),
-    month: pluralUnit({PluralCategory.one: '{n} mês', PluralCategory.other: '{n} meses'}),
-    year: pluralUnit({PluralCategory.one: '{n} ano', PluralCategory.other: '{n} anos'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} mês',
+      PluralCategory.other: '{n} meses',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ano',
+      PluralCategory.other: '{n} anos',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

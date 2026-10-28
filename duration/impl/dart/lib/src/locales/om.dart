@@ -19,13 +19,34 @@ final om = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekondii {n}', PluralCategory.other: 'sekondoota {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'daqiiqaa {n}', PluralCategory.other: 'daqiiqoota {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'sa\'aatii {n}', PluralCategory.other: 'sa\'aatota {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'guyyaa {n}', PluralCategory.other: 'guyyoota {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'torban {n}', PluralCategory.other: 'torbanota {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ji\'a {n}', PluralCategory.other: 'ji\'oota {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'waggaa {n}', PluralCategory.other: 'waggoota {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekondii {n}',
+      PluralCategory.other: 'sekondoota {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'daqiiqaa {n}',
+      PluralCategory.other: 'daqiiqoota {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'sa\'aatii {n}',
+      PluralCategory.other: 'sa\'aatota {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'guyyaa {n}',
+      PluralCategory.other: 'guyyoota {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'torban {n}',
+      PluralCategory.other: 'torbanota {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ji\'a {n}',
+      PluralCategory.other: 'ji\'oota {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'waggaa {n}',
+      PluralCategory.other: 'waggoota {n}',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

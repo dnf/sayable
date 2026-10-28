@@ -22,10 +22,34 @@ final mt = AgeLocale(
     if (mod100 >= 11 && mod100 <= 19) return PluralCategory.many;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'ġurnata', PluralCategory.two: 'jumejn', PluralCategory.few: '{n} ijiem', PluralCategory.many: '{n}-il jum', PluralCategory.other: '{n} jum'}),
-  week: pluralUnit({PluralCategory.one: 'ġimgħa', PluralCategory.two: 'ġimgħatejn', PluralCategory.few: '{n} ġimgħat', PluralCategory.many: '{n}-il ġimgħa', PluralCategory.other: '{n} ġimgħa'}),
-  month: pluralUnit({PluralCategory.one: 'xahar', PluralCategory.two: 'xahrejn', PluralCategory.few: '{n} xhur', PluralCategory.many: '{n}-il xahar', PluralCategory.other: '{n} xahar'}),
-  year: pluralUnit({PluralCategory.one: 'sena', PluralCategory.two: 'sentejn', PluralCategory.few: '{n} snin', PluralCategory.many: '{n}-il sena', PluralCategory.other: '{n} sena'}),
+  day: pluralUnit({
+    PluralCategory.one: 'ġurnata',
+    PluralCategory.two: 'jumejn',
+    PluralCategory.few: '{n} ijiem',
+    PluralCategory.many: '{n}-il jum',
+    PluralCategory.other: '{n} jum',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'ġimgħa',
+    PluralCategory.two: 'ġimgħatejn',
+    PluralCategory.few: '{n} ġimgħat',
+    PluralCategory.many: '{n}-il ġimgħa',
+    PluralCategory.other: '{n} ġimgħa',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'xahar',
+    PluralCategory.two: 'xahrejn',
+    PluralCategory.few: '{n} xhur',
+    PluralCategory.many: '{n}-il xahar',
+    PluralCategory.other: '{n} xahar',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'sena',
+    PluralCategory.two: 'sentejn',
+    PluralCategory.few: '{n} snin',
+    PluralCategory.many: '{n}-il sena',
+    PluralCategory.other: '{n} sena',
+  }),
   half: '{0} u nofs',
   delimiter: ' u ',
   justBorn: 'Tarbija ġdida',

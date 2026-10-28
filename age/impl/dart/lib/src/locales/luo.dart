@@ -18,10 +18,22 @@ final luo = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'odiechieng\' {n}', PluralCategory.other: 'ndalo {n}'}),
-  week: pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'jumbe {n}'}),
-  month: pluralUnit({PluralCategory.one: 'dwe {n}', PluralCategory.other: 'dweche {n}'}),
-  year: pluralUnit({PluralCategory.one: 'higa {n}', PluralCategory.other: 'higni {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'odiechieng\' {n}',
+    PluralCategory.other: 'ndalo {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'juma {n}',
+    PluralCategory.other: 'jumbe {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'dwe {n}',
+    PluralCategory.other: 'dweche {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'higa {n}',
+    PluralCategory.other: 'higni {n}',
+  }),
   half: '{0} gi nus',
   delimiter: ', ',
   justBorn: 'Nyathi manyien',
@@ -32,10 +44,22 @@ final luo = AgeLocale(
   teenager: stageNeutral('Rawera'),
   adult: stageNeutral('Ng\'ama duong\''),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'odie. {n}', PluralCategory.other: 'ndalo {n}'}),
-    week: pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'jumbe {n}'}),
-    month: pluralUnit({PluralCategory.one: 'dwe {n}', PluralCategory.other: 'dwe. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'higa {n}', PluralCategory.other: 'higni {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'odie. {n}',
+      PluralCategory.other: 'ndalo {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'juma {n}',
+      PluralCategory.other: 'jumbe {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'dwe {n}',
+      PluralCategory.other: 'dwe. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'higa {n}',
+      PluralCategory.other: 'higni {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

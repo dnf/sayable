@@ -15,7 +15,20 @@ import '../types.dart';
 final tig = TimeLocale(
   code: 'tig',
   clock: ClockConfig(
-    hours: ['ʿasərte wəkəlte', 'ḥante', 'kəlʾe', 'səleste', 'arbaʿte', 'ḥamməste', 'səste', 'sabʿate', 'səmmunte', 'təsʿate', 'ʿasərte', 'ʿasərte wəḥante'],
+    hours: [
+      'ʿasərte wəkəlte',
+      'ḥante',
+      'kəlʾe',
+      'səleste',
+      'arbaʿte',
+      'ḥamməste',
+      'səste',
+      'sabʿate',
+      'səmmunte',
+      'təsʿate',
+      'ʿasərte',
+      'ʿasərte wəḥante',
+    ],
     midnight: 'nəs-leyla',
     noon: 'qayḥ',
     patterns: {
@@ -34,9 +47,17 @@ final tig = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

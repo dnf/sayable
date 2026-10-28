@@ -15,7 +15,20 @@ import '../types.dart';
 final tet = TimeLocale(
   code: 'tet',
   clock: ClockConfig(
-    hours: ['sanulu-resin-rua', 'ida', 'rua', 'tolu', 'haat', 'lima', 'neen', 'hitu', 'ualu', 'sia', 'sanulu', 'sanulu-resin-ida'],
+    hours: [
+      'sanulu-resin-rua',
+      'ida',
+      'rua',
+      'tolu',
+      'haat',
+      'lima',
+      'neen',
+      'hitu',
+      'ualu',
+      'sia',
+      'sanulu',
+      'sanulu-resin-ida',
+    ],
     midnight: 'meiu-kalan',
     noon: 'meiu-loron',
     patterns: {
@@ -34,9 +47,17 @@ final tet = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

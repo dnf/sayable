@@ -23,10 +23,16 @@ void main() {
       expect(formatUntil(null, '2025-01-15T10:00:00'), isNull); // 1.4
     });
     test('format_since asOf before start', () {
-      expect(formatSince('2025-01-15T10:00:00', '2025-01-15T09:00:00'), isNull); // 1.5
+      expect(
+        formatSince('2025-01-15T10:00:00', '2025-01-15T09:00:00'),
+        isNull,
+      ); // 1.5
     });
     test('format_until target in past', () {
-      expect(formatUntil('2025-01-15T09:00:00', '2025-01-15T10:00:00'), isNull); // 1.6
+      expect(
+        formatUntil('2025-01-15T09:00:00', '2025-01-15T10:00:00'),
+        isNull,
+      ); // 1.6
     });
   });
 
@@ -170,10 +176,16 @@ void main() {
   // ================================================================
   group('Duration from ISO timestamps', () {
     test('1½ hours', () {
-      expect(formatDuration('2025-01-15T10:00:00', '2025-01-15T11:30:00'), '1½ hours'); // 10.1
+      expect(
+        formatDuration('2025-01-15T10:00:00', '2025-01-15T11:30:00'),
+        '1½ hours',
+      ); // 10.1
     });
     test('45 minutes', () {
-      expect(formatDuration('2025-01-15T10:00:00', '2025-01-15T10:45:00'), '45 minutes'); // 10.2
+      expect(
+        formatDuration('2025-01-15T10:00:00', '2025-01-15T10:45:00'),
+        '45 minutes',
+      ); // 10.2
     });
   });
 
@@ -182,16 +194,28 @@ void main() {
   // ================================================================
   group('Relative time — since', () {
     test('just now', () {
-      expect(formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:00'), 'just now'); // 11.1
+      expect(
+        formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:00'),
+        'just now',
+      ); // 11.1
     });
     test('30 seconds ago', () {
-      expect(formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:30'), '30 seconds ago'); // 11.2
+      expect(
+        formatSince('2025-01-15T10:00:00', '2025-01-15T10:00:30'),
+        '30 seconds ago',
+      ); // 11.2
     });
     test('45 minutes ago', () {
-      expect(formatSince('2025-01-15T10:00:00', '2025-01-15T10:45:00'), '45 minutes ago'); // 11.3
+      expect(
+        formatSince('2025-01-15T10:00:00', '2025-01-15T10:45:00'),
+        '45 minutes ago',
+      ); // 11.3
     });
     test('3 hours ago', () {
-      expect(formatSince('2025-01-15T10:00:00', '2025-01-15T13:00:00'), '3 hours ago'); // 11.4
+      expect(
+        formatSince('2025-01-15T10:00:00', '2025-01-15T13:00:00'),
+        '3 hours ago',
+      ); // 11.4
     });
   });
 
@@ -200,13 +224,22 @@ void main() {
   // ================================================================
   group('Relative time — until', () {
     test('just now', () {
-      expect(formatUntil('2025-01-15T10:00:00', '2025-01-15T10:00:00'), 'just now'); // 12.1
+      expect(
+        formatUntil('2025-01-15T10:00:00', '2025-01-15T10:00:00'),
+        'just now',
+      ); // 12.1
     });
     test('in 20 minutes', () {
-      expect(formatUntil('2025-01-15T10:20:00', '2025-01-15T10:00:00'), 'in 20 minutes'); // 12.2
+      expect(
+        formatUntil('2025-01-15T10:20:00', '2025-01-15T10:00:00'),
+        'in 20 minutes',
+      ); // 12.2
     });
     test('in 3 hours', () {
-      expect(formatUntil('2025-01-15T13:00:00', '2025-01-15T10:00:00'), 'in 3 hours'); // 12.3
+      expect(
+        formatUntil('2025-01-15T13:00:00', '2025-01-15T10:00:00'),
+        'in 3 hours',
+      ); // 12.3
     });
   });
 
@@ -219,7 +252,10 @@ void main() {
       expect(sd.formatDuration(3600), '1 Stunde'); // 13.1
     });
     test('vor 5 Minuten', () {
-      expect(sd.formatSince('2025-01-15T10:00:00', '2025-01-15T10:05:00'), 'vor 5 Minuten'); // 13.2
+      expect(
+        sd.formatSince('2025-01-15T10:00:00', '2025-01-15T10:05:00'),
+        'vor 5 Minuten',
+      ); // 13.2
     });
   });
 
@@ -242,7 +278,10 @@ void main() {
       expect(sd.formatDuration(120), '2分'); // 15.1
     });
     test('1時間前', () {
-      expect(sd.formatSince('2025-01-15T10:00:00', '2025-01-15T11:00:00'), '1時間前'); // 15.2
+      expect(
+        sd.formatSince('2025-01-15T10:00:00', '2025-01-15T11:00:00'),
+        '1時間前',
+      ); // 15.2
     });
   });
 
@@ -278,8 +317,10 @@ void main() {
   group('Short compactness — relative time', () {
     test('days and hours both kept', () {
       final sd = SayableDuration(getLocale('men')!, Compactness.short);
-      expect(sd.formatSince('2025-01-20T01:32:11', '2025-01-22T15:39:16'),
-          'lɔhɔnga 2, awa 14 taa gbɔyɔ'); // 18.1
+      expect(
+        sd.formatSince('2025-01-20T01:32:11', '2025-01-22T15:39:16'),
+        'lɔhɔnga 2, awa 14 taa gbɔyɔ',
+      ); // 18.1
     });
   });
 
@@ -297,12 +338,16 @@ void main() {
       expect(formatDuration(99999999999), isNull); // 19.3
     });
     test('525 years ago', () {
-      expect(formatSince('1500-01-01T00:00:00', '2025-01-01T00:00:00'),
-          isNull); // 19.4
+      expect(
+        formatSince('1500-01-01T00:00:00', '2025-01-01T00:00:00'),
+        isNull,
+      ); // 19.4
     });
     test('575 years from now', () {
-      expect(formatUntil('2600-01-01T00:00:00', '2025-01-01T00:00:00'),
-          isNull); // 19.5
+      expect(
+        formatUntil('2600-01-01T00:00:00', '2025-01-01T00:00:00'),
+        isNull,
+      ); // 19.5
     });
   });
 
@@ -311,24 +356,34 @@ void main() {
   // ================================================================
   group('Timestamp validation', () {
     test('seconds are optional', () {
-      expect(formatDuration('2025-01-15T10:00', '2025-01-15T11:30:00'),
-          '1½ hours'); // 20.1
+      expect(
+        formatDuration('2025-01-15T10:00', '2025-01-15T11:30:00'),
+        '1½ hours',
+      ); // 20.1
     });
     test('minutes are required', () {
-      expect(formatDuration('2025-01-15T10', '2025-01-15T11:30:00'),
-          isNull); // 20.2
+      expect(
+        formatDuration('2025-01-15T10', '2025-01-15T11:30:00'),
+        isNull,
+      ); // 20.2
     });
     test('unpadded date', () {
-      expect(formatDuration('2025-1-5T10:00:00', '2025-01-15T11:30:00'),
-          isNull); // 20.3
+      expect(
+        formatDuration('2025-1-5T10:00:00', '2025-01-15T11:30:00'),
+        isNull,
+      ); // 20.3
     });
     test('impossible date', () {
-      expect(formatDuration('2025-02-30T10:00:00', '2025-03-15T11:30:00'),
-          isNull); // 20.4
+      expect(
+        formatDuration('2025-02-30T10:00:00', '2025-03-15T11:30:00'),
+        isNull,
+      ); // 20.4
     });
     test('hour out of range', () {
-      expect(formatSince('2025-01-15T10:00:00', '2025-01-15T25:00:00'),
-          isNull); // 20.5
+      expect(
+        formatSince('2025-01-15T10:00:00', '2025-01-15T25:00:00'),
+        isNull,
+      ); // 20.5
     });
   });
 }

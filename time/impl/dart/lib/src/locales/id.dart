@@ -15,7 +15,20 @@ import '../types.dart';
 final id = TimeLocale(
   code: 'id',
   clock: ClockConfig(
-    hours: ['dua belas', 'satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas'],
+    hours: [
+      'dua belas',
+      'satu',
+      'dua',
+      'tiga',
+      'empat',
+      'lima',
+      'enam',
+      'tujuh',
+      'delapan',
+      'sembilan',
+      'sepuluh',
+      'sebelas',
+    ],
     midnight: 'tengah malam',
     noon: 'tengah hari',
     patterns: {

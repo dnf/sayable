@@ -19,13 +19,34 @@ final te = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} సెకను', PluralCategory.other: '{n} సెకన్లు'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} నిమిషం', PluralCategory.other: '{n} నిమిషాలు'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} గంట', PluralCategory.other: '{n} గంటలు'}),
-    'day': pluralUnit({PluralCategory.one: '{n} రోజు', PluralCategory.other: '{n} రోజులు'}),
-    'week': pluralUnit({PluralCategory.one: '{n} వారం', PluralCategory.other: '{n} వారాలు'}),
-    'month': pluralUnit({PluralCategory.one: '{n} నెల', PluralCategory.other: '{n} నెలలు'}),
-    'year': pluralUnit({PluralCategory.one: '{n} సంవత్సరం', PluralCategory.other: '{n} సంవత్సరాలు'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} సెకను',
+      PluralCategory.other: '{n} సెకన్లు',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} నిమిషం',
+      PluralCategory.other: '{n} నిమిషాలు',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} గంట',
+      PluralCategory.other: '{n} గంటలు',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} రోజు',
+      PluralCategory.other: '{n} రోజులు',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} వారం',
+      PluralCategory.other: '{n} వారాలు',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} నెల',
+      PluralCategory.other: '{n} నెలలు',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} సంవత్సరం',
+      PluralCategory.other: '{n} సంవత్సరాలు',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -34,10 +55,16 @@ final te = DurationLocale(
   inFuture: '{0} తర్వాత',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: '{n} సె.', PluralCategory.other: '{n} సెక.'}),
+      'second': pluralUnit({
+        PluralCategory.one: '{n} సె.',
+        PluralCategory.other: '{n} సెక.',
+      }),
       'minute': simpleUnit('{n} నిమి.'),
       'hour': simpleUnit('{n} గం.'),
-      'day': pluralUnit({PluralCategory.one: '{n} రోజు', PluralCategory.other: '{n} రోజులు'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} రోజు',
+        PluralCategory.other: '{n} రోజులు',
+      }),
       'week': simpleUnit('{n} వా.'),
       'month': simpleUnit('{n} నె.'),
       'year': simpleUnit('{n} సం.'),

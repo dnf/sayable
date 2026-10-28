@@ -18,10 +18,22 @@ final sw = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'siku {n}', PluralCategory.other: 'siku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'wiki {n}', PluralCategory.other: 'wiki {n}'}),
-  month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miezi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'miaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'siku {n}',
+    PluralCategory.other: 'siku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'wiki {n}',
+    PluralCategory.other: 'wiki {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'mwezi {n}',
+    PluralCategory.other: 'miezi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'mwaka {n}',
+    PluralCategory.other: 'miaka {n}',
+  }),
   half: '{0} na nusu',
   delimiter: ', ',
   justBorn: 'Mzaliwa mpya',
@@ -34,14 +46,26 @@ final sw = AgeLocale(
   short: CompactnessOverride(
     day: simpleUnit('siku {n}'),
     week: simpleUnit('wiki {n}'),
-    month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miezi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'miaka {n}'}),
+    month: pluralUnit({
+      PluralCategory.one: 'mwezi {n}',
+      PluralCategory.other: 'miezi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mwaka {n}',
+      PluralCategory.other: 'miaka {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('siku {n}'),
     week: simpleUnit('wiki {n}'),
-    month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miezi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'miaka {n}'}),
+    month: pluralUnit({
+      PluralCategory.one: 'mwezi {n}',
+      PluralCategory.other: 'miezi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mwaka {n}',
+      PluralCategory.other: 'miaka {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

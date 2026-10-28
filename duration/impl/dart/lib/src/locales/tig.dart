@@ -19,13 +19,34 @@ final tig = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sanya {n}', PluralCategory.other: 'sanayat {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'daqiqa {n}', PluralCategory.other: 'daqiqat {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'saʿa {n}', PluralCategory.other: 'saʿat {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'yom {n}', PluralCategory.other: 'ayam {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'semun {n}', PluralCategory.other: 'semunat {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'werḥi {n}', PluralCategory.other: 'awerḥi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'ʿam {n}', PluralCategory.other: 'aʿwam {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sanya {n}',
+      PluralCategory.other: 'sanayat {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'daqiqa {n}',
+      PluralCategory.other: 'daqiqat {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'saʿa {n}',
+      PluralCategory.other: 'saʿat {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'yom {n}',
+      PluralCategory.other: 'ayam {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'semun {n}',
+      PluralCategory.other: 'semunat {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'werḥi {n}',
+      PluralCategory.other: 'awerḥi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'ʿam {n}',
+      PluralCategory.other: 'aʿwam {n}',
+    }),
   },
   half: '{0} we nəs',
   delimiter: ', ',
@@ -37,10 +58,22 @@ final tig = DurationLocale(
       'second': simpleUnit('san. {n}'),
       'minute': simpleUnit('daq. {n}'),
       'hour': simpleUnit('saʿa {n}'),
-      'day': pluralUnit({PluralCategory.one: 'yom {n}', PluralCategory.other: 'ayam {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'semun {n}', PluralCategory.other: 'semunat {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'werḥi {n}', PluralCategory.other: 'awerḥi {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'ʿam {n}', PluralCategory.other: 'aʿwam {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'yom {n}',
+        PluralCategory.other: 'ayam {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'semun {n}',
+        PluralCategory.other: 'semunat {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'werḥi {n}',
+        PluralCategory.other: 'awerḥi {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'ʿam {n}',
+        PluralCategory.other: 'aʿwam {n}',
+      }),
     },
     ago: 'qədmi {0}',
     inFuture: 'ba {0}',

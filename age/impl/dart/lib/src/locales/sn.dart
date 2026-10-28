@@ -18,10 +18,22 @@ final sn = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'zuva {n}', PluralCategory.other: 'mazuva {n}'}),
-  week: pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavhiki {n}'}),
-  month: pluralUnit({PluralCategory.one: 'mwedzi {n}', PluralCategory.other: 'mwedzi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'gore {n}', PluralCategory.other: 'makore {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'zuva {n}',
+    PluralCategory.other: 'mazuva {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'vhiki {n}',
+    PluralCategory.other: 'mavhiki {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'mwedzi {n}',
+    PluralCategory.other: 'mwedzi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'gore {n}',
+    PluralCategory.other: 'makore {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Mwana mutsva',
@@ -32,16 +44,34 @@ final sn = AgeLocale(
   teenager: stageNeutral('Mudiki'),
   adult: stageNeutral('Munhu mukuru'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'zuva {n}', PluralCategory.other: 'maz {n}'}),
-    week: pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavh {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'zuva {n}',
+      PluralCategory.other: 'maz {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'vhiki {n}',
+      PluralCategory.other: 'mavh {n}',
+    }),
     month: simpleUnit('mwedzi {n}'),
-    year: pluralUnit({PluralCategory.one: 'gore {n}', PluralCategory.other: 'mak {n}'}),
+    year: pluralUnit({
+      PluralCategory.one: 'gore {n}',
+      PluralCategory.other: 'mak {n}',
+    }),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'z {n}', PluralCategory.other: 'maz {n}'}),
-    week: pluralUnit({PluralCategory.one: 'vh {n}', PluralCategory.other: 'mvh {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'z {n}',
+      PluralCategory.other: 'maz {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'vh {n}',
+      PluralCategory.other: 'mvh {n}',
+    }),
     month: simpleUnit('mw {n}'),
-    year: pluralUnit({PluralCategory.one: 'g {n}', PluralCategory.other: 'mak {n}'}),
+    year: pluralUnit({
+      PluralCategory.one: 'g {n}',
+      PluralCategory.other: 'mak {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

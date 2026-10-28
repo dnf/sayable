@@ -20,13 +20,41 @@ final sk = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekunda', PluralCategory.few: '{n} sekundy', PluralCategory.other: '{n} sekúnd'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minúta', PluralCategory.few: '{n} minúty', PluralCategory.other: '{n} minút'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} hodina', PluralCategory.few: '{n} hodiny', PluralCategory.other: '{n} hodín'}),
-    'day': pluralUnit({PluralCategory.one: '{n} deň', PluralCategory.few: '{n} dni', PluralCategory.other: '{n} dní'}),
-    'week': pluralUnit({PluralCategory.one: '{n} týždeň', PluralCategory.few: '{n} týždne', PluralCategory.other: '{n} týždňov'}),
-    'month': pluralUnit({PluralCategory.one: '{n} mesiac', PluralCategory.few: '{n} mesiace', PluralCategory.other: '{n} mesiacov'}),
-    'year': pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} roky', PluralCategory.other: '{n} rokov'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekunda',
+      PluralCategory.few: '{n} sekundy',
+      PluralCategory.other: '{n} sekúnd',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minúta',
+      PluralCategory.few: '{n} minúty',
+      PluralCategory.other: '{n} minút',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} hodina',
+      PluralCategory.few: '{n} hodiny',
+      PluralCategory.other: '{n} hodín',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} deň',
+      PluralCategory.few: '{n} dni',
+      PluralCategory.other: '{n} dní',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} týždeň',
+      PluralCategory.few: '{n} týždne',
+      PluralCategory.other: '{n} týždňov',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} mesiac',
+      PluralCategory.few: '{n} mesiace',
+      PluralCategory.other: '{n} mesiacov',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} rok',
+      PluralCategory.few: '{n} roky',
+      PluralCategory.other: '{n} rokov',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -38,7 +66,12 @@ final sk = DurationLocale(
       'second': simpleUnit('{n} s'),
       'minute': simpleUnit('{n} min'),
       'hour': simpleUnit('{n} h'),
-      'day': pluralUnit({PluralCategory.one: '{n} deň', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dňa', PluralCategory.other: '{n} dní'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} deň',
+        PluralCategory.few: '{n} dni',
+        PluralCategory.many: '{n} dňa',
+        PluralCategory.other: '{n} dní',
+      }),
       'week': simpleUnit('{n} týž.'),
       'month': simpleUnit('{n} mes.'),
       'year': simpleUnit('{n} r.'),

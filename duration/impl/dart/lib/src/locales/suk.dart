@@ -19,13 +19,34 @@ final suk = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekunde {n}', PluralCategory.other: 'sekunde {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'dakika {n}', PluralCategory.other: 'dakika {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'isaa {n}', PluralCategory.other: 'amasaa {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'isiku {n}', PluralCategory.other: 'amasiku {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'ishuma {n}', PluralCategory.other: 'amashuma {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ngweli {n}', PluralCategory.other: 'ngweli {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'myaka {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekunde {n}',
+      PluralCategory.other: 'sekunde {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'dakika {n}',
+      PluralCategory.other: 'dakika {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'isaa {n}',
+      PluralCategory.other: 'amasaa {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'isiku {n}',
+      PluralCategory.other: 'amasiku {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'ishuma {n}',
+      PluralCategory.other: 'amashuma {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ngweli {n}',
+      PluralCategory.other: 'ngweli {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'mwaka {n}',
+      PluralCategory.other: 'myaka {n}',
+    }),
   },
   half: '{0} na nusu',
   delimiter: ', ',
@@ -34,13 +55,34 @@ final suk = DurationLocale(
   inFuture: 'kwa {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: 'sek. {n}', PluralCategory.other: 'sek. {n}'}),
-      'minute': pluralUnit({PluralCategory.one: 'dak. {n}', PluralCategory.other: 'dak. {n}'}),
-      'hour': pluralUnit({PluralCategory.one: 'isaa {n}', PluralCategory.other: 'amasaa {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'isiku {n}', PluralCategory.other: 'amasiku {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'ish. {n}', PluralCategory.other: 'amash. {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'ngw. {n}', PluralCategory.other: 'ngw. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'mw. {n}', PluralCategory.other: 'my. {n}'}),
+      'second': pluralUnit({
+        PluralCategory.one: 'sek. {n}',
+        PluralCategory.other: 'sek. {n}',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: 'dak. {n}',
+        PluralCategory.other: 'dak. {n}',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: 'isaa {n}',
+        PluralCategory.other: 'amasaa {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'isiku {n}',
+        PluralCategory.other: 'amasiku {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'ish. {n}',
+        PluralCategory.other: 'amash. {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'ngw. {n}',
+        PluralCategory.other: 'ngw. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'mw. {n}',
+        PluralCategory.other: 'my. {n}',
+      }),
     },
     ago: '{0} zilizopita',
     inFuture: 'kwa {0}',

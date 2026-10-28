@@ -19,10 +19,26 @@ final sk = AgeLocale(
     if (n >= 2 && n <= 4) return PluralCategory.few;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} deň', PluralCategory.few: '{n} dni', PluralCategory.other: '{n} dní'}),
-  week: pluralUnit({PluralCategory.one: '{n} týždeň', PluralCategory.few: '{n} týždne', PluralCategory.other: '{n} týždňov'}),
-  month: pluralUnit({PluralCategory.one: '{n} mesiac', PluralCategory.few: '{n} mesiace', PluralCategory.other: '{n} mesiacov'}),
-  year: pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} roky', PluralCategory.other: '{n} rokov'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} deň',
+    PluralCategory.few: '{n} dni',
+    PluralCategory.other: '{n} dní',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} týždeň',
+    PluralCategory.few: '{n} týždne',
+    PluralCategory.other: '{n} týždňov',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mesiac',
+    PluralCategory.few: '{n} mesiace',
+    PluralCategory.other: '{n} mesiacov',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} rok',
+    PluralCategory.few: '{n} roky',
+    PluralCategory.other: '{n} rokov',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Novorodenec',
@@ -33,7 +49,12 @@ final sk = AgeLocale(
   teenager: stageNeutral('Tínedžer'),
   adult: stageGendered('Dospelý', 'Dospelá'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} deň', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dňa', PluralCategory.other: '{n} dní'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} deň',
+      PluralCategory.few: '{n} dni',
+      PluralCategory.many: '{n} dňa',
+      PluralCategory.other: '{n} dní',
+    }),
     week: simpleUnit('{n} týž.'),
     month: simpleUnit('{n} mes.'),
     year: simpleUnit('{n} r.'),

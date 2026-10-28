@@ -15,7 +15,20 @@ import '../types.dart';
 final dje = TimeLocale(
   code: 'dje',
   clock: ClockConfig(
-    hours: ['iway cindi hinka', 'fo', 'hinka', 'hinza', 'taaci', 'gu', 'iddu', 'iyye', 'ahakku', 'yagga', 'iway', 'iway cindi fo'],
+    hours: [
+      'iway cindi hinka',
+      'fo',
+      'hinka',
+      'hinza',
+      'taaci',
+      'gu',
+      'iddu',
+      'iyye',
+      'ahakku',
+      'yagga',
+      'iway',
+      'iway cindi fo',
+    ],
     midnight: 'cin beri',
     noon: 'zaari gaaham',
     patterns: {
@@ -34,9 +47,17 @@ final dje = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

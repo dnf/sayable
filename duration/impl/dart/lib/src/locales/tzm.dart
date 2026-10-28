@@ -19,13 +19,34 @@ final tzm = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} tasint', PluralCategory.other: '{n} tisinin'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} tusdiqt', PluralCategory.other: '{n} tusdiqin'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} tasragt', PluralCategory.other: '{n} tisragin'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ass', PluralCategory.other: '{n} ussan'}),
-    'week': pluralUnit({PluralCategory.one: '{n} imalass', PluralCategory.other: '{n} imalassn'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ayyur', PluralCategory.other: '{n} ayyurn'}),
-    'year': pluralUnit({PluralCategory.one: '{n} aseggas', PluralCategory.other: '{n} iseggasen'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} tasint',
+      PluralCategory.other: '{n} tisinin',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} tusdiqt',
+      PluralCategory.other: '{n} tusdiqin',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} tasragt',
+      PluralCategory.other: '{n} tisragin',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ass',
+      PluralCategory.other: '{n} ussan',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} imalass',
+      PluralCategory.other: '{n} imalassn',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ayyur',
+      PluralCategory.other: '{n} ayyurn',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} aseggas',
+      PluralCategory.other: '{n} iseggasen',
+    }),
   },
   half: '{0} d uzgen',
   delimiter: ', ',
@@ -34,13 +55,34 @@ final tzm = DurationLocale(
   inFuture: 'ɣ {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: '{n} tasint', PluralCategory.other: '{n} tisinin'}),
-      'minute': pluralUnit({PluralCategory.one: '{n} tusdiqt', PluralCategory.other: '{n} tusdiqin'}),
-      'hour': pluralUnit({PluralCategory.one: '{n} tasragt', PluralCategory.other: '{n} tisragin'}),
-      'day': pluralUnit({PluralCategory.one: '{n} ass', PluralCategory.other: '{n} ussan'}),
-      'week': pluralUnit({PluralCategory.one: '{n} imalass', PluralCategory.other: '{n} imalassn'}),
-      'month': pluralUnit({PluralCategory.one: '{n} ayyur', PluralCategory.other: '{n} ayyurn'}),
-      'year': pluralUnit({PluralCategory.one: '{n} aseggas', PluralCategory.other: '{n} iseggasen'}),
+      'second': pluralUnit({
+        PluralCategory.one: '{n} tasint',
+        PluralCategory.other: '{n} tisinin',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: '{n} tusdiqt',
+        PluralCategory.other: '{n} tusdiqin',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} tasragt',
+        PluralCategory.other: '{n} tisragin',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} ass',
+        PluralCategory.other: '{n} ussan',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} imalass',
+        PluralCategory.other: '{n} imalassn',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} ayyur',
+        PluralCategory.other: '{n} ayyurn',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} aseggas',
+        PluralCategory.other: '{n} iseggasen',
+      }),
     },
     ago: 'ɣ {0} zzrin',
     inFuture: 'ɣ {0}',

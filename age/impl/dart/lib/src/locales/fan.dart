@@ -18,10 +18,22 @@ final fan = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'mos {n}', PluralCategory.other: 'bimos {n}'}),
-  week: pluralUnit({PluralCategory.one: 'sone {n}', PluralCategory.other: 'bisone {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ngon {n}', PluralCategory.other: 'mingon {n}'}),
-  year: pluralUnit({PluralCategory.one: 'mbu {n}', PluralCategory.other: 'mimbu {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'mos {n}',
+    PluralCategory.other: 'bimos {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'sone {n}',
+    PluralCategory.other: 'bisone {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ngon {n}',
+    PluralCategory.other: 'mingon {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'mbu {n}',
+    PluralCategory.other: 'mimbu {n}',
+  }),
   half: '{0} e ndamba',
   delimiter: ', ',
   justBorn: 'Mone a biai',
@@ -32,10 +44,22 @@ final fan = AgeLocale(
   teenager: stageNeutral('Mon-nnam'),
   adult: stageNeutral('Mot'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'mos {n}', PluralCategory.other: 'bimos {n}'}),
-    week: pluralUnit({PluralCategory.one: 'sone {n}', PluralCategory.other: 'bisone {n}'}),
-    month: pluralUnit({PluralCategory.one: 'ngon {n}', PluralCategory.other: 'mingon {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mbu {n}', PluralCategory.other: 'mimbu {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'mos {n}',
+      PluralCategory.other: 'bimos {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'sone {n}',
+      PluralCategory.other: 'bisone {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'ngon {n}',
+      PluralCategory.other: 'mingon {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mbu {n}',
+      PluralCategory.other: 'mimbu {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

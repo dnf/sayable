@@ -18,10 +18,22 @@ final kl = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'ulloq {n}', PluralCategory.other: 'ullut {n}'}),
-  week: pluralUnit({PluralCategory.one: 'sapaatip akunnera {n}', PluralCategory.other: 'sapaatip akunneri {n}'}),
-  month: pluralUnit({PluralCategory.one: 'qaammat {n}', PluralCategory.other: 'qaammatit {n}'}),
-  year: pluralUnit({PluralCategory.one: 'ukioq {n}', PluralCategory.other: 'ukiut {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'ulloq {n}',
+    PluralCategory.other: 'ullut {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'sapaatip akunnera {n}',
+    PluralCategory.other: 'sapaatip akunneri {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'qaammat {n}',
+    PluralCategory.other: 'qaammatit {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'ukioq {n}',
+    PluralCategory.other: 'ukiut {n}',
+  }),
   half: '{0} affaa',
   delimiter: ', ',
   justBorn: 'Inuuneq nutaaq',

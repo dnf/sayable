@@ -20,12 +20,27 @@ final mr = DurationLocale(
   },
   units: {
     'second': simpleUnit('{n} सेकंद'),
-    'minute': pluralUnit({PluralCategory.one: '{n} मिनिट', PluralCategory.other: '{n} मिनिटे'}),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} मिनिट',
+      PluralCategory.other: '{n} मिनिटे',
+    }),
     'hour': simpleUnit('{n} तास'),
-    'day': pluralUnit({PluralCategory.one: '{n} दिवस', PluralCategory.other: '{n} दिवस'}),
-    'week': pluralUnit({PluralCategory.one: '{n} आठवडा', PluralCategory.other: '{n} आठवडे'}),
-    'month': pluralUnit({PluralCategory.one: '{n} महिना', PluralCategory.other: '{n} महिने'}),
-    'year': pluralUnit({PluralCategory.one: '{n} वर्ष', PluralCategory.other: '{n} वर्षे'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} दिवस',
+      PluralCategory.other: '{n} दिवस',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} आठवडा',
+      PluralCategory.other: '{n} आठवडे',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} महिना',
+      PluralCategory.other: '{n} महिने',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} वर्ष',
+      PluralCategory.other: '{n} वर्षे',
+    }),
   },
   half: 'साडे {n}',
   delimiter: ', ',
@@ -39,8 +54,14 @@ final mr = DurationLocale(
       'hour': simpleUnit('{n} ता'),
       'day': simpleUnit('{n} दिवस'),
       'week': simpleUnit('{n} आ'),
-      'month': pluralUnit({PluralCategory.one: '{n} महिना', PluralCategory.other: '{n} महिने'}),
-      'year': pluralUnit({PluralCategory.one: '{n} वर्ष', PluralCategory.other: '{n} वर्षे'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} महिना',
+        PluralCategory.other: '{n} महिने',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} वर्ष',
+        PluralCategory.other: '{n} वर्षे',
+      }),
     },
     ago: '{0} पूर्वी',
     inFuture: '{0} मध्ये',

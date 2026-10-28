@@ -18,10 +18,22 @@ final gu = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} દિવસ', PluralCategory.other: '{n} દિવસ'}),
-  week: pluralUnit({PluralCategory.one: '{n} અઠવાડિયું', PluralCategory.other: '{n} અઠવાડિયા'}),
-  month: pluralUnit({PluralCategory.one: '{n} મહિનો', PluralCategory.other: '{n} મહિના'}),
-  year: pluralUnit({PluralCategory.one: '{n} વર્ષ', PluralCategory.other: '{n} વર્ષ'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} દિવસ',
+    PluralCategory.other: '{n} દિવસ',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} અઠવાડિયું',
+    PluralCategory.other: '{n} અઠવાડિયા',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} મહિનો',
+    PluralCategory.other: '{n} મહિના',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} વર્ષ',
+    PluralCategory.other: '{n} વર્ષ',
+  }),
   half: 'સાડા {n}',
   delimiter: ', ',
   justBorn: 'નવજાત',
@@ -34,7 +46,10 @@ final gu = AgeLocale(
   short: CompactnessOverride(
     day: simpleUnit('{n} દિવસ'),
     week: simpleUnit('{n} અઠ.'),
-    month: pluralUnit({PluralCategory.one: '{n} મહિનો', PluralCategory.other: '{n} મહિના'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} મહિનો',
+      PluralCategory.other: '{n} મહિના',
+    }),
     year: simpleUnit('{n} વર્ષ'),
   ),
   compact: CompactnessOverride(

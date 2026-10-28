@@ -21,11 +21,26 @@ final ff = DurationLocale(
   units: {
     'second': simpleUnit('majaango {n}'),
     'minute': simpleUnit('hojomaaje {n}'),
-    'hour': pluralUnit({PluralCategory.one: 'waktu {n}', PluralCategory.other: 'waktuuji {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'yontere {n}', PluralCategory.other: 'yontereeji {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'lewru {n}', PluralCategory.other: 'lebbi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'hitaande {n}', PluralCategory.other: 'duuɓi {n}'}),
+    'hour': pluralUnit({
+      PluralCategory.one: 'waktu {n}',
+      PluralCategory.other: 'waktuuji {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'ñalawma {n}',
+      PluralCategory.other: 'ñalɗe {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'yontere {n}',
+      PluralCategory.other: 'yontereeji {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'lewru {n}',
+      PluralCategory.other: 'lebbi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'hitaande {n}',
+      PluralCategory.other: 'duuɓi {n}',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -36,11 +51,26 @@ final ff = DurationLocale(
     units: {
       'second': simpleUnit('majaango {n}'),
       'minute': simpleUnit('hojomaaje {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'waktu {n}', PluralCategory.other: 'waktuuji {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'yontere {n}', PluralCategory.other: 'yontereeji {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'lewru {n}', PluralCategory.other: 'lebbi {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'hitaande {n}', PluralCategory.other: 'duuɓi {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'waktu {n}',
+        PluralCategory.other: 'waktuuji {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'ñalawma {n}',
+        PluralCategory.other: 'ñalɗe {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'yontere {n}',
+        PluralCategory.other: 'yontereeji {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'lewru {n}',
+        PluralCategory.other: 'lebbi {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'hitaande {n}',
+        PluralCategory.other: 'duuɓi {n}',
+      }),
     },
     ago: '{0} ɓennuɗo',
     inFuture: 'nder {0}',
@@ -49,11 +79,26 @@ final ff = DurationLocale(
     units: {
       'second': simpleUnit('maj {n}'),
       'minute': simpleUnit('hoj {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'wak {n}', PluralCategory.other: 'wakji {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'yont {n}', PluralCategory.other: 'yontji {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'lew {n}', PluralCategory.other: 'leb {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'hit {n}', PluralCategory.other: 'duuɓi {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'wak {n}',
+        PluralCategory.other: 'wakji {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'ñalawma {n}',
+        PluralCategory.other: 'ñalɗe {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'yont {n}',
+        PluralCategory.other: 'yontji {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'lew {n}',
+        PluralCategory.other: 'leb {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'hit {n}',
+        PluralCategory.other: 'duuɓi {n}',
+      }),
     },
     half: '{n}½',
     delimiter: '',

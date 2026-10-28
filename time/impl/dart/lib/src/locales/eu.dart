@@ -15,7 +15,20 @@ import '../types.dart';
 final eu = TimeLocale(
   code: 'eu',
   clock: ClockConfig(
-    hours: ['hamabiak', 'ordu bata', 'ordu biak', 'hirurak', 'laurak', 'bostak', 'seiak', 'zazpiak', 'zortziak', 'bederatziak', 'hamarrak', 'hamaikak'],
+    hours: [
+      'hamabiak',
+      'ordu bata',
+      'ordu biak',
+      'hirurak',
+      'laurak',
+      'bostak',
+      'seiak',
+      'zazpiak',
+      'zortziak',
+      'bederatziak',
+      'hamarrak',
+      'hamaikak',
+    ],
     midnight: 'gauerdia',
     noon: 'eguerdia',
     patterns: {

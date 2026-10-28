@@ -19,13 +19,34 @@ final sn = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekondi {n}', PluralCategory.other: 'masekondi {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'miniti {n}', PluralCategory.other: 'maminitsi {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'awa {n}', PluralCategory.other: 'maawa {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'zuva {n}', PluralCategory.other: 'mazuva {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavhiki {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'mwedzi {n}', PluralCategory.other: 'mwedzi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'gore {n}', PluralCategory.other: 'makore {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekondi {n}',
+      PluralCategory.other: 'masekondi {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'miniti {n}',
+      PluralCategory.other: 'maminitsi {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'awa {n}',
+      PluralCategory.other: 'maawa {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'zuva {n}',
+      PluralCategory.other: 'mazuva {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'vhiki {n}',
+      PluralCategory.other: 'mavhiki {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'mwedzi {n}',
+      PluralCategory.other: 'mwedzi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'gore {n}',
+      PluralCategory.other: 'makore {n}',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -37,10 +58,19 @@ final sn = DurationLocale(
       'second': simpleUnit('sek {n}'),
       'minute': simpleUnit('min {n}'),
       'hour': simpleUnit('awa {n}'),
-      'day': pluralUnit({PluralCategory.one: 'zuva {n}', PluralCategory.other: 'maz {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavh {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'zuva {n}',
+        PluralCategory.other: 'maz {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'vhiki {n}',
+        PluralCategory.other: 'mavh {n}',
+      }),
       'month': simpleUnit('mwedzi {n}'),
-      'year': pluralUnit({PluralCategory.one: 'gore {n}', PluralCategory.other: 'mak {n}'}),
+      'year': pluralUnit({
+        PluralCategory.one: 'gore {n}',
+        PluralCategory.other: 'mak {n}',
+      }),
     },
     ago: '{0} yapfuura',
     inFuture: 'mu{0}',
@@ -50,10 +80,19 @@ final sn = DurationLocale(
       'second': simpleUnit('s {n}'),
       'minute': simpleUnit('m {n}'),
       'hour': simpleUnit('a {n}'),
-      'day': pluralUnit({PluralCategory.one: 'z {n}', PluralCategory.other: 'maz {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'vh {n}', PluralCategory.other: 'mvh {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'z {n}',
+        PluralCategory.other: 'maz {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'vh {n}',
+        PluralCategory.other: 'mvh {n}',
+      }),
       'month': simpleUnit('mw {n}'),
-      'year': pluralUnit({PluralCategory.one: 'g {n}', PluralCategory.other: 'mak {n}'}),
+      'year': pluralUnit({
+        PluralCategory.one: 'g {n}',
+        PluralCategory.other: 'mak {n}',
+      }),
     },
     half: '{n}½',
     delimiter: '',

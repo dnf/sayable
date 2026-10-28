@@ -18,10 +18,22 @@ final bn = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} দিন', PluralCategory.other: '{n} দিন'}),
-  week: pluralUnit({PluralCategory.one: '{n} সপ্তাহ', PluralCategory.other: '{n} সপ্তাহ'}),
-  month: pluralUnit({PluralCategory.one: '{n} মাস', PluralCategory.other: '{n} মাস'}),
-  year: pluralUnit({PluralCategory.one: '{n} বছর', PluralCategory.other: '{n} বছর'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} দিন',
+    PluralCategory.other: '{n} দিন',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} সপ্তাহ',
+    PluralCategory.other: '{n} সপ্তাহ',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} মাস',
+    PluralCategory.other: '{n} মাস',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} বছর',
+    PluralCategory.other: '{n} বছর',
+  }),
   half: 'সাড়ে {n}',
   delimiter: ', ',
   justBorn: 'নবজাতক',

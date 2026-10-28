@@ -19,13 +19,34 @@ final nl = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} seconde', PluralCategory.other: '{n} seconden'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minuut', PluralCategory.other: '{n} minuten'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} uur', PluralCategory.other: '{n} uur'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dagen'}),
-    'week': pluralUnit({PluralCategory.one: '{n} week', PluralCategory.other: '{n} weken'}),
-    'month': pluralUnit({PluralCategory.one: '{n} maand', PluralCategory.other: '{n} maanden'}),
-    'year': pluralUnit({PluralCategory.one: '{n} jaar', PluralCategory.other: '{n} jaar'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} seconde',
+      PluralCategory.other: '{n} seconden',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minuut',
+      PluralCategory.other: '{n} minuten',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} uur',
+      PluralCategory.other: '{n} uur',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dag',
+      PluralCategory.other: '{n} dagen',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} week',
+      PluralCategory.other: '{n} weken',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} maand',
+      PluralCategory.other: '{n} maanden',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} jaar',
+      PluralCategory.other: '{n} jaar',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -37,8 +58,14 @@ final nl = DurationLocale(
       'second': simpleUnit('{n} sec'),
       'minute': simpleUnit('{n} min'),
       'hour': simpleUnit('{n} uur'),
-      'day': pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dagen'}),
-      'week': pluralUnit({PluralCategory.one: '{n} wk', PluralCategory.other: '{n} wkn'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} dag',
+        PluralCategory.other: '{n} dagen',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} wk',
+        PluralCategory.other: '{n} wkn',
+      }),
       'month': simpleUnit('{n} mnd'),
       'year': simpleUnit('{n} jr'),
     },

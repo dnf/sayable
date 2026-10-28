@@ -15,7 +15,20 @@ import '../types.dart';
 final ve = TimeLocale(
   code: 've',
   clock: ClockConfig(
-    hours: ['ya fumi na mbili', 'ya u thoma', 'ya vhuvhili', 'ya vhuraru', 'ya vhuṋa', 'ya vhuṱanu', 'ya vhurathi', 'ya vhusumbe', 'ya vhumalo', 'ya vhuṱahe', 'ya fumi', 'ya fumi na nthihi'],
+    hours: [
+      'ya fumi na mbili',
+      'ya u thoma',
+      'ya vhuvhili',
+      'ya vhuraru',
+      'ya vhuṋa',
+      'ya vhuṱanu',
+      'ya vhurathi',
+      'ya vhusumbe',
+      'ya vhumalo',
+      'ya vhuṱahe',
+      'ya fumi',
+      'ya fumi na nthihi',
+    ],
     midnight: 'vhukati ha vhusiku',
     noon: 'vhukati ha masiari',
     patterns: {
@@ -34,9 +47,17 @@ final ve = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );
