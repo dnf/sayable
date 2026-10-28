@@ -19,13 +19,34 @@ final da = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekund', PluralCategory.other: '{n} sekunder'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minut', PluralCategory.other: '{n} minutter'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} time', PluralCategory.other: '{n} timer'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dage'}),
-    'week': pluralUnit({PluralCategory.one: '{n} uge', PluralCategory.other: '{n} uger'}),
-    'month': pluralUnit({PluralCategory.one: '{n} måned', PluralCategory.other: '{n} måneder'}),
-    'year': pluralUnit({PluralCategory.one: '{n} år', PluralCategory.other: '{n} år'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekund',
+      PluralCategory.other: '{n} sekunder',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minut',
+      PluralCategory.other: '{n} minutter',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} time',
+      PluralCategory.other: '{n} timer',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dag',
+      PluralCategory.other: '{n} dage',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} uge',
+      PluralCategory.other: '{n} uger',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} måned',
+      PluralCategory.other: '{n} måneder',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} år',
+      PluralCategory.other: '{n} år',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -37,9 +58,18 @@ final da = DurationLocale(
       'second': simpleUnit('{n} sek.'),
       'minute': simpleUnit('{n} min.'),
       'hour': simpleUnit('{n} t.'),
-      'day': pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dage'}),
-      'week': pluralUnit({PluralCategory.one: '{n} uge', PluralCategory.other: '{n} uger'}),
-      'month': pluralUnit({PluralCategory.one: '{n} md.', PluralCategory.other: '{n} mdr.'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} dag',
+        PluralCategory.other: '{n} dage',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} uge',
+        PluralCategory.other: '{n} uger',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} md.',
+        PluralCategory.other: '{n} mdr.',
+      }),
       'year': simpleUnit('{n} år'),
     },
     ago: '{0} siden',

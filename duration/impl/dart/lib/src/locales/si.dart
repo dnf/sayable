@@ -22,10 +22,22 @@ final si = DurationLocale(
     'second': simpleUnit('තත්පර {n}'),
     'minute': simpleUnit('මිනිත්තු {n}'),
     'hour': simpleUnit('පැය {n}'),
-    'day': pluralUnit({PluralCategory.one: 'දින {n}', PluralCategory.other: 'දින {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'සති {n}', PluralCategory.other: 'සති {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'මාස {n}', PluralCategory.other: 'මාස {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'වසර {n}', PluralCategory.other: 'වසර {n}'}),
+    'day': pluralUnit({
+      PluralCategory.one: 'දින {n}',
+      PluralCategory.other: 'දින {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'සති {n}',
+      PluralCategory.other: 'සති {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'මාස {n}',
+      PluralCategory.other: 'මාස {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'වසර {n}',
+      PluralCategory.other: 'වසර {n}',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

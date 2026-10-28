@@ -19,13 +19,34 @@ final vmw = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekuundu {n}', PluralCategory.other: 'sekuundu {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minuto {n}', PluralCategory.other: 'minuto {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'hora {n}', PluralCategory.other: 'hora {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'eshuku {n}', PluralCategory.other: 'mshuku {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'esumana {n}', PluralCategory.other: 'msumana {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'mweri {n}', PluralCategory.other: 'miyeri {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'miyaka {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekuundu {n}',
+      PluralCategory.other: 'sekuundu {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minuto {n}',
+      PluralCategory.other: 'minuto {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'hora {n}',
+      PluralCategory.other: 'hora {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'eshuku {n}',
+      PluralCategory.other: 'mshuku {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'esumana {n}',
+      PluralCategory.other: 'msumana {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'mweri {n}',
+      PluralCategory.other: 'miyeri {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'mwaka {n}',
+      PluralCategory.other: 'miyaka {n}',
+    }),
   },
   half: '{0} na mettenhe',
   delimiter: ', ',
@@ -37,10 +58,22 @@ final vmw = DurationLocale(
       'second': simpleUnit('sek. {n}'),
       'minute': simpleUnit('min. {n}'),
       'hour': simpleUnit('hora {n}'),
-      'day': pluralUnit({PluralCategory.one: 'eshuku {n}', PluralCategory.other: 'mshuku {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'esumana {n}', PluralCategory.other: 'msumana {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'mweri {n}', PluralCategory.other: 'miyeri {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'miyaka {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'eshuku {n}',
+        PluralCategory.other: 'mshuku {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'esumana {n}',
+        PluralCategory.other: 'msumana {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'mweri {n}',
+        PluralCategory.other: 'miyeri {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'mwaka {n}',
+        PluralCategory.other: 'miyaka {n}',
+      }),
     },
     ago: '{0} zapita',
     inFuture: 'mu {0}',

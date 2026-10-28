@@ -20,13 +20,41 @@ final ro = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} secundă', PluralCategory.few: '{n} secunde', PluralCategory.other: '{n} de secunde'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minut', PluralCategory.few: '{n} minute', PluralCategory.other: '{n} de minute'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} oră', PluralCategory.few: '{n} ore', PluralCategory.other: '{n} de ore'}),
-    'day': pluralUnit({PluralCategory.one: '{n} zi', PluralCategory.few: '{n} zile', PluralCategory.other: '{n} de zile'}),
-    'week': pluralUnit({PluralCategory.one: '{n} săptămână', PluralCategory.few: '{n} săptămâni', PluralCategory.other: '{n} de săptămâni'}),
-    'month': pluralUnit({PluralCategory.one: '{n} lună', PluralCategory.few: '{n} luni', PluralCategory.other: '{n} de luni'}),
-    'year': pluralUnit({PluralCategory.one: '{n} an', PluralCategory.few: '{n} ani', PluralCategory.other: '{n} de ani'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} secundă',
+      PluralCategory.few: '{n} secunde',
+      PluralCategory.other: '{n} de secunde',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minut',
+      PluralCategory.few: '{n} minute',
+      PluralCategory.other: '{n} de minute',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} oră',
+      PluralCategory.few: '{n} ore',
+      PluralCategory.other: '{n} de ore',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} zi',
+      PluralCategory.few: '{n} zile',
+      PluralCategory.other: '{n} de zile',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} săptămână',
+      PluralCategory.few: '{n} săptămâni',
+      PluralCategory.other: '{n} de săptămâni',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} lună',
+      PluralCategory.few: '{n} luni',
+      PluralCategory.other: '{n} de luni',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} an',
+      PluralCategory.few: '{n} ani',
+      PluralCategory.other: '{n} de ani',
+    }),
   },
   half: '{0} și jumătate',
   delimiter: ', ',
@@ -37,11 +65,27 @@ final ro = DurationLocale(
     units: {
       'second': simpleUnit('{n} s'),
       'minute': simpleUnit('{n} min.'),
-      'hour': pluralUnit({PluralCategory.one: '{n} oră', PluralCategory.few: '{n} ore', PluralCategory.other: '{n} ore'}),
-      'day': pluralUnit({PluralCategory.one: '{n} zi', PluralCategory.few: '{n} zile', PluralCategory.other: '{n} zile'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} oră',
+        PluralCategory.few: '{n} ore',
+        PluralCategory.other: '{n} ore',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} zi',
+        PluralCategory.few: '{n} zile',
+        PluralCategory.other: '{n} zile',
+      }),
       'week': simpleUnit('{n} săpt.'),
-      'month': pluralUnit({PluralCategory.one: '{n} lună', PluralCategory.few: '{n} luni', PluralCategory.other: '{n} luni'}),
-      'year': pluralUnit({PluralCategory.one: '{n} an', PluralCategory.few: '{n} ani', PluralCategory.other: '{n} ani'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} lună',
+        PluralCategory.few: '{n} luni',
+        PluralCategory.other: '{n} luni',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} an',
+        PluralCategory.few: '{n} ani',
+        PluralCategory.other: '{n} ani',
+      }),
     },
     ago: 'acum {0}',
     inFuture: 'peste {0}',

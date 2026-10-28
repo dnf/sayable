@@ -19,13 +19,34 @@ final sv = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekund', PluralCategory.other: '{n} sekunder'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minut', PluralCategory.other: '{n} minuter'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} timme', PluralCategory.other: '{n} timmar'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dagar'}),
-    'week': pluralUnit({PluralCategory.one: '{n} vecka', PluralCategory.other: '{n} veckor'}),
-    'month': pluralUnit({PluralCategory.one: '{n} månad', PluralCategory.other: '{n} månader'}),
-    'year': pluralUnit({PluralCategory.one: '{n} år', PluralCategory.other: '{n} år'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekund',
+      PluralCategory.other: '{n} sekunder',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minut',
+      PluralCategory.other: '{n} minuter',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} timme',
+      PluralCategory.other: '{n} timmar',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dag',
+      PluralCategory.other: '{n} dagar',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} vecka',
+      PluralCategory.other: '{n} veckor',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} månad',
+      PluralCategory.other: '{n} månader',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} år',
+      PluralCategory.other: '{n} år',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

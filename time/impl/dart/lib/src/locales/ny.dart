@@ -15,7 +15,20 @@ import '../types.dart';
 final ny = TimeLocale(
   code: 'ny',
   clock: ClockConfig(
-    hours: ['lakhumi ndi chiwiri', 'loyamba', 'lachiwiri', 'lachitatu', 'lachinayi', 'lachisanu', 'lachisanu ndi chimodzi', 'lachisanu ndi chiwiri', 'lachisanu ndi chitatu', 'lachisanu ndi chinayi', 'lakhumi', 'lakhumi ndi chimodzi'],
+    hours: [
+      'lakhumi ndi chiwiri',
+      'loyamba',
+      'lachiwiri',
+      'lachitatu',
+      'lachinayi',
+      'lachisanu',
+      'lachisanu ndi chimodzi',
+      'lachisanu ndi chiwiri',
+      'lachisanu ndi chitatu',
+      'lachisanu ndi chinayi',
+      'lakhumi',
+      'lakhumi ndi chimodzi',
+    ],
     midnight: 'pakati pausiku',
     noon: 'usana',
     patterns: {
@@ -34,9 +47,17 @@ final ny = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

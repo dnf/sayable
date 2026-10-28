@@ -15,7 +15,20 @@ import '../types.dart';
 final hi = TimeLocale(
   code: 'hi',
   clock: ClockConfig(
-    hours: ['बारह', 'एक', 'दो', 'तीन', 'चार', 'पाँच', 'छह', 'सात', 'आठ', 'नौ', 'दस', 'ग्यारह'],
+    hours: [
+      'बारह',
+      'एक',
+      'दो',
+      'तीन',
+      'चार',
+      'पाँच',
+      'छह',
+      'सात',
+      'आठ',
+      'नौ',
+      'दस',
+      'ग्यारह',
+    ],
     midnight: 'आधी रात',
     noon: 'दोपहर के बारह बजे',
     patterns: {
@@ -34,9 +47,17 @@ final hi = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

@@ -15,7 +15,20 @@ import '../types.dart';
 final kbp = TimeLocale(
   code: 'kbp',
   clock: ClockConfig(
-    hours: ['hiu nɛ naalɛ', 'kʊɖʊm', 'naalɛ', 'naadozo', 'naanaza', 'kagbanzɩ', 'loɖo', 'lʊbɛ', 'lɛɛtɛ', 'nakʊ', 'hiu', 'hiu nɛ kʊɖʊm'],
+    hours: [
+      'hiu nɛ naalɛ',
+      'kʊɖʊm',
+      'naalɛ',
+      'naadozo',
+      'naanaza',
+      'kagbanzɩ',
+      'loɖo',
+      'lʊbɛ',
+      'lɛɛtɛ',
+      'nakʊ',
+      'hiu',
+      'hiu nɛ kʊɖʊm',
+    ],
     midnight: 'ɖoo hɛkʊ',
     noon: 'wɩsɩ taa',
     patterns: {
@@ -34,9 +47,17 @@ final kbp = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

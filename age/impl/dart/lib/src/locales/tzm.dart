@@ -18,10 +18,22 @@ final tzm = AgeLocale(
     if (n == 0 || n == 1 || (n >= 11 && n <= 99)) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ass', PluralCategory.other: '{n} ussan'}),
-  week: pluralUnit({PluralCategory.one: '{n} imalass', PluralCategory.other: '{n} imalassn'}),
-  month: pluralUnit({PluralCategory.one: '{n} ayyur', PluralCategory.other: '{n} ayyurn'}),
-  year: pluralUnit({PluralCategory.one: '{n} aseggas', PluralCategory.other: '{n} iseggasen'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ass',
+    PluralCategory.other: '{n} ussan',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} imalass',
+    PluralCategory.other: '{n} imalassn',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ayyur',
+    PluralCategory.other: '{n} ayyurn',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} aseggas',
+    PluralCategory.other: '{n} iseggasen',
+  }),
   half: '{0} d uzgen',
   delimiter: ', ',
   justBorn: 'Iɣ d illul',
@@ -32,10 +44,22 @@ final tzm = AgeLocale(
   teenager: stageGendered('Aɛrim', 'Taɛrimt'),
   adult: stageGendered('Argaz', 'Tamṭṭuṭ'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} ass', PluralCategory.other: '{n} ussan'}),
-    week: pluralUnit({PluralCategory.one: '{n} imalass', PluralCategory.other: '{n} imalassn'}),
-    month: pluralUnit({PluralCategory.one: '{n} ayyur', PluralCategory.other: '{n} ayyurn'}),
-    year: pluralUnit({PluralCategory.one: '{n} aseggas', PluralCategory.other: '{n} iseggasen'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} ass',
+      PluralCategory.other: '{n} ussan',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: '{n} imalass',
+      PluralCategory.other: '{n} imalassn',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} ayyur',
+      PluralCategory.other: '{n} ayyurn',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} aseggas',
+      PluralCategory.other: '{n} iseggasen',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

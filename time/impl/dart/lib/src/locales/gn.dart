@@ -15,7 +15,20 @@ import '../types.dart';
 final gn = TimeLocale(
   code: 'gn',
   clock: ClockConfig(
-    hours: ['pa mokõi', 'peteĩ', 'mokõi', 'mbohapy', 'irundy', 'po', 'poteĩ', 'pokõi', 'poapy', 'porundy', 'pa', 'pa peteĩ'],
+    hours: [
+      'pa mokõi',
+      'peteĩ',
+      'mokõi',
+      'mbohapy',
+      'irundy',
+      'po',
+      'poteĩ',
+      'pokõi',
+      'poapy',
+      'porundy',
+      'pa',
+      'pa peteĩ',
+    ],
     midnight: 'pyharepyte',
     noon: 'asaje',
     patterns: {
@@ -34,9 +47,17 @@ final gn = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

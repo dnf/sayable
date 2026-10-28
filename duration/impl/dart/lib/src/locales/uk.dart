@@ -18,17 +18,54 @@ final uk = DurationLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} секунда', PluralCategory.few: '{n} секунди', PluralCategory.many: '{n} секунд', PluralCategory.other: '{n} секунди'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} хвилина', PluralCategory.few: '{n} хвилини', PluralCategory.many: '{n} хвилин', PluralCategory.other: '{n} хвилини'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} година', PluralCategory.few: '{n} години', PluralCategory.many: '{n} годин', PluralCategory.other: '{n} години'}),
-    'day': pluralUnit({PluralCategory.one: '{n} день', PluralCategory.few: '{n} дні', PluralCategory.many: '{n} днів', PluralCategory.other: '{n} дня'}),
-    'week': pluralUnit({PluralCategory.one: '{n} тиждень', PluralCategory.few: '{n} тижні', PluralCategory.many: '{n} тижнів', PluralCategory.other: '{n} тижня'}),
-    'month': pluralUnit({PluralCategory.one: '{n} місяць', PluralCategory.few: '{n} місяці', PluralCategory.many: '{n} місяців', PluralCategory.other: '{n} місяця'}),
-    'year': pluralUnit({PluralCategory.one: '{n} рік', PluralCategory.few: '{n} роки', PluralCategory.many: '{n} років', PluralCategory.other: '{n} року'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} секунда',
+      PluralCategory.few: '{n} секунди',
+      PluralCategory.many: '{n} секунд',
+      PluralCategory.other: '{n} секунди',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} хвилина',
+      PluralCategory.few: '{n} хвилини',
+      PluralCategory.many: '{n} хвилин',
+      PluralCategory.other: '{n} хвилини',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} година',
+      PluralCategory.few: '{n} години',
+      PluralCategory.many: '{n} годин',
+      PluralCategory.other: '{n} години',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} день',
+      PluralCategory.few: '{n} дні',
+      PluralCategory.many: '{n} днів',
+      PluralCategory.other: '{n} дня',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} тиждень',
+      PluralCategory.few: '{n} тижні',
+      PluralCategory.many: '{n} тижнів',
+      PluralCategory.other: '{n} тижня',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} місяць',
+      PluralCategory.few: '{n} місяці',
+      PluralCategory.many: '{n} місяців',
+      PluralCategory.other: '{n} місяця',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} рік',
+      PluralCategory.few: '{n} роки',
+      PluralCategory.many: '{n} років',
+      PluralCategory.other: '{n} року',
+    }),
   },
   half: '{n} з половиною',
   delimiter: ', ',

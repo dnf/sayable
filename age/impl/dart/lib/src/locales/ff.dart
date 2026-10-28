@@ -18,10 +18,22 @@ final ff = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'}),
-  week: pluralUnit({PluralCategory.one: 'yontere {n}', PluralCategory.other: 'yontereeji {n}'}),
-  month: pluralUnit({PluralCategory.one: 'lewru {n}', PluralCategory.other: 'lebbi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'hitaande {n}', PluralCategory.other: 'duuɓi {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'ñalawma {n}',
+    PluralCategory.other: 'ñalɗe {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'yontere {n}',
+    PluralCategory.other: 'yontereeji {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'lewru {n}',
+    PluralCategory.other: 'lebbi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'hitaande {n}',
+    PluralCategory.other: 'duuɓi {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Ɓinngel kesol',
@@ -32,16 +44,40 @@ final ff = AgeLocale(
   teenager: stageGendered('Suka gorko', 'Suka debbo'),
   adult: stageNeutral('Mawɗo'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'}),
-    week: pluralUnit({PluralCategory.one: 'yontere {n}', PluralCategory.other: 'yontereeji {n}'}),
-    month: pluralUnit({PluralCategory.one: 'lewru {n}', PluralCategory.other: 'lebbi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'hitaande {n}', PluralCategory.other: 'duuɓi {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'ñalawma {n}',
+      PluralCategory.other: 'ñalɗe {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'yontere {n}',
+      PluralCategory.other: 'yontereeji {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'lewru {n}',
+      PluralCategory.other: 'lebbi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'hitaande {n}',
+      PluralCategory.other: 'duuɓi {n}',
+    }),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'ñalawma {n}', PluralCategory.other: 'ñalɗe {n}'}),
-    week: pluralUnit({PluralCategory.one: 'yont {n}', PluralCategory.other: 'yontji {n}'}),
-    month: pluralUnit({PluralCategory.one: 'lew {n}', PluralCategory.other: 'leb {n}'}),
-    year: pluralUnit({PluralCategory.one: 'hit {n}', PluralCategory.other: 'duuɓi {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'ñalawma {n}',
+      PluralCategory.other: 'ñalɗe {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'yont {n}',
+      PluralCategory.other: 'yontji {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'lew {n}',
+      PluralCategory.other: 'leb {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'hit {n}',
+      PluralCategory.other: 'duuɓi {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

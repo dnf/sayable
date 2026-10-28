@@ -15,7 +15,20 @@ import '../types.dart';
 final umb = TimeLocale(
   code: 'umb',
   clock: ClockConfig(
-    hours: ['ekwi la vali', 'mosi', 'vali', 'tatu', 'kwãla', 'tãlo', 'epandu', 'epanduvali', 'ecelãla', 'ecea', 'ekwi', 'ekwi la mosi'],
+    hours: [
+      'ekwi la vali',
+      'mosi',
+      'vali',
+      'tatu',
+      'kwãla',
+      'tãlo',
+      'epandu',
+      'epanduvali',
+      'ecelãla',
+      'ecea',
+      'ekwi',
+      'ekwi la mosi',
+    ],
     midnight: 'ocitapi',
     noon: 'ocivali',
     patterns: {
@@ -34,9 +47,17 @@ final umb = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

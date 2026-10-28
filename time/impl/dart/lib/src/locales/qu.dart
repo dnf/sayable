@@ -15,7 +15,20 @@ import '../types.dart';
 final qu = TimeLocale(
   code: 'qu',
   clock: ClockConfig(
-    hours: ['chunka iskayniyuq', 'huk', 'iskay', 'kimsa', 'tawa', 'pichqa', 'suqta', 'qanchis', 'pusaq', 'isqun', 'chunka', 'chunka hukniyuq'],
+    hours: [
+      'chunka iskayniyuq',
+      'huk',
+      'iskay',
+      'kimsa',
+      'tawa',
+      'pichqa',
+      'suqta',
+      'qanchis',
+      'pusaq',
+      'isqun',
+      'chunka',
+      'chunka hukniyuq',
+    ],
     midnight: 'chawpi tuta',
     noon: 'chawpi p\'unchaw',
     patterns: {
@@ -34,9 +47,17 @@ final qu = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

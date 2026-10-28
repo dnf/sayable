@@ -22,10 +22,22 @@ final ne = DurationLocale(
     'second': simpleUnit('{n} सेकेन्ड'),
     'minute': simpleUnit('{n} मिनेट'),
     'hour': simpleUnit('{n} घण्टा'),
-    'day': pluralUnit({PluralCategory.one: '{n} दिन', PluralCategory.other: '{n} दिन'}),
-    'week': pluralUnit({PluralCategory.one: '{n} हप्ता', PluralCategory.other: '{n} हप्ता'}),
-    'month': pluralUnit({PluralCategory.one: '{n} महिना', PluralCategory.other: '{n} महिना'}),
-    'year': pluralUnit({PluralCategory.one: '{n} वर्ष', PluralCategory.other: '{n} वर्ष'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} दिन',
+      PluralCategory.other: '{n} दिन',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} हप्ता',
+      PluralCategory.other: '{n} हप्ता',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} महिना',
+      PluralCategory.other: '{n} महिना',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} वर्ष',
+      PluralCategory.other: '{n} वर्ष',
+    }),
   },
   half: 'साढे {n}',
   delimiter: ', ',

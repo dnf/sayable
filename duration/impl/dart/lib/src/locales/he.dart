@@ -20,13 +20,41 @@ final he = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'שנייה', PluralCategory.two: 'שתי שניות', PluralCategory.other: '{n} שניות'}),
-    'minute': pluralUnit({PluralCategory.one: 'דקה', PluralCategory.two: 'שתי דקות', PluralCategory.other: '{n} דקות'}),
-    'hour': pluralUnit({PluralCategory.one: 'שעה', PluralCategory.two: 'שעתיים', PluralCategory.other: '{n} שעות'}),
-    'day': pluralUnit({PluralCategory.one: 'יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימים'}),
-    'week': pluralUnit({PluralCategory.one: 'שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'}),
-    'month': pluralUnit({PluralCategory.one: 'חודש', PluralCategory.two: 'חודשיים', PluralCategory.other: '{n} חודשים'}),
-    'year': pluralUnit({PluralCategory.one: 'שנה', PluralCategory.two: 'שנתיים', PluralCategory.other: '{n} שנים'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'שנייה',
+      PluralCategory.two: 'שתי שניות',
+      PluralCategory.other: '{n} שניות',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'דקה',
+      PluralCategory.two: 'שתי דקות',
+      PluralCategory.other: '{n} דקות',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'שעה',
+      PluralCategory.two: 'שעתיים',
+      PluralCategory.other: '{n} שעות',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'יום',
+      PluralCategory.two: 'יומיים',
+      PluralCategory.other: '{n} ימים',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'שבוע',
+      PluralCategory.two: 'שבועיים',
+      PluralCategory.other: '{n} שבועות',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'חודש',
+      PluralCategory.two: 'חודשיים',
+      PluralCategory.other: '{n} חודשים',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'שנה',
+      PluralCategory.two: 'שנתיים',
+      PluralCategory.other: '{n} שנים',
+    }),
   },
   half: '{0} וחצי',
   delimiter: ', ',
@@ -37,11 +65,27 @@ final he = DurationLocale(
     units: {
       'second': simpleUnit('{n} שנ׳'),
       'minute': simpleUnit('{n} דק׳'),
-      'hour': pluralUnit({PluralCategory.one: '{n} שעה', PluralCategory.two: 'שעתיים', PluralCategory.other: '{n} שע׳'}),
-      'day': pluralUnit({PluralCategory.one: '{n} יום', PluralCategory.two: 'יומיים', PluralCategory.other: '{n} ימ׳'}),
-      'week': pluralUnit({PluralCategory.one: '{n} שבוע', PluralCategory.two: 'שבועיים', PluralCategory.other: '{n} שבועות'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} שעה',
+        PluralCategory.two: 'שעתיים',
+        PluralCategory.other: '{n} שע׳',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} יום',
+        PluralCategory.two: 'יומיים',
+        PluralCategory.other: '{n} ימ׳',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} שבוע',
+        PluralCategory.two: 'שבועיים',
+        PluralCategory.other: '{n} שבועות',
+      }),
       'month': simpleUnit('{n} ח׳'),
-      'year': pluralUnit({PluralCategory.one: '{n} שנה', PluralCategory.two: '{n} שנים', PluralCategory.other: '{n} שנים'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} שנה',
+        PluralCategory.two: '{n} שנים',
+        PluralCategory.other: '{n} שנים',
+      }),
     },
     ago: 'לפני {0}',
     inFuture: 'בעוד {0}',

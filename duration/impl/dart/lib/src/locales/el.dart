@@ -19,13 +19,34 @@ final el = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} δευτερόλεπτο', PluralCategory.other: '{n} δευτερόλεπτα'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} λεπτό', PluralCategory.other: '{n} λεπτά'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ώρα', PluralCategory.other: '{n} ώρες'}),
-    'day': pluralUnit({PluralCategory.one: '{n} μέρα', PluralCategory.other: '{n} μέρες'}),
-    'week': pluralUnit({PluralCategory.one: '{n} εβδομάδα', PluralCategory.other: '{n} εβδομάδες'}),
-    'month': pluralUnit({PluralCategory.one: '{n} μήνας', PluralCategory.other: '{n} μήνες'}),
-    'year': pluralUnit({PluralCategory.one: '{n} χρόνος', PluralCategory.other: '{n} χρόνια'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} δευτερόλεπτο',
+      PluralCategory.other: '{n} δευτερόλεπτα',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} λεπτό',
+      PluralCategory.other: '{n} λεπτά',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ώρα',
+      PluralCategory.other: '{n} ώρες',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} μέρα',
+      PluralCategory.other: '{n} μέρες',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} εβδομάδα',
+      PluralCategory.other: '{n} εβδομάδες',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} μήνας',
+      PluralCategory.other: '{n} μήνες',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} χρόνος',
+      PluralCategory.other: '{n} χρόνια',
+    }),
   },
   half: '{0} και μισό',
   delimiter: ', ',
@@ -37,7 +58,10 @@ final el = DurationLocale(
       'second': simpleUnit('{n} δευτ.'),
       'minute': simpleUnit('{n} λ.'),
       'hour': simpleUnit('{n} ώ.'),
-      'day': pluralUnit({PluralCategory.one: '{n} ημέρα', PluralCategory.other: '{n} ημέρες'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} ημέρα',
+        PluralCategory.other: '{n} ημέρες',
+      }),
       'week': simpleUnit('{n} εβδ.'),
       'month': simpleUnit('{n} μήν.'),
       'year': simpleUnit('{n} έτ.'),

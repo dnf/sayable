@@ -19,13 +19,34 @@ final af = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekonde', PluralCategory.other: '{n} sekondes'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minuut', PluralCategory.other: '{n} minute'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} uur', PluralCategory.other: '{n} uur'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dae'}),
-    'week': pluralUnit({PluralCategory.one: '{n} week', PluralCategory.other: '{n} weke'}),
-    'month': pluralUnit({PluralCategory.one: '{n} maand', PluralCategory.other: '{n} maande'}),
-    'year': pluralUnit({PluralCategory.one: '{n} jaar', PluralCategory.other: '{n} jaar'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekonde',
+      PluralCategory.other: '{n} sekondes',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minuut',
+      PluralCategory.other: '{n} minute',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} uur',
+      PluralCategory.other: '{n} uur',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dag',
+      PluralCategory.other: '{n} dae',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} week',
+      PluralCategory.other: '{n} weke',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} maand',
+      PluralCategory.other: '{n} maande',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} jaar',
+      PluralCategory.other: '{n} jaar',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

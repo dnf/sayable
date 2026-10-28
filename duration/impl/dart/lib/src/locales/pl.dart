@@ -18,17 +18,54 @@ final pl = DurationLocale(
     if (n == 1) return PluralCategory.one;
     final mod10 = n % 10;
     final mod100 = n % 100;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekunda', PluralCategory.few: '{n} sekundy', PluralCategory.many: '{n} sekund', PluralCategory.other: '{n} sekundy'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minuta', PluralCategory.few: '{n} minuty', PluralCategory.many: '{n} minut', PluralCategory.other: '{n} minuty'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} godzina', PluralCategory.few: '{n} godziny', PluralCategory.many: '{n} godzin', PluralCategory.other: '{n} godziny'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dzień', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dni', PluralCategory.other: '{n} dnia'}),
-    'week': pluralUnit({PluralCategory.one: '{n} tydzień', PluralCategory.few: '{n} tygodnie', PluralCategory.many: '{n} tygodni', PluralCategory.other: '{n} tygodnia'}),
-    'month': pluralUnit({PluralCategory.one: '{n} miesiąc', PluralCategory.few: '{n} miesiące', PluralCategory.many: '{n} miesięcy', PluralCategory.other: '{n} miesiąca'}),
-    'year': pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} lata', PluralCategory.many: '{n} lat', PluralCategory.other: '{n} roku'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekunda',
+      PluralCategory.few: '{n} sekundy',
+      PluralCategory.many: '{n} sekund',
+      PluralCategory.other: '{n} sekundy',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minuta',
+      PluralCategory.few: '{n} minuty',
+      PluralCategory.many: '{n} minut',
+      PluralCategory.other: '{n} minuty',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} godzina',
+      PluralCategory.few: '{n} godziny',
+      PluralCategory.many: '{n} godzin',
+      PluralCategory.other: '{n} godziny',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dzień',
+      PluralCategory.few: '{n} dni',
+      PluralCategory.many: '{n} dni',
+      PluralCategory.other: '{n} dnia',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} tydzień',
+      PluralCategory.few: '{n} tygodnie',
+      PluralCategory.many: '{n} tygodni',
+      PluralCategory.other: '{n} tygodnia',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} miesiąc',
+      PluralCategory.few: '{n} miesiące',
+      PluralCategory.many: '{n} miesięcy',
+      PluralCategory.other: '{n} miesiąca',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} rok',
+      PluralCategory.few: '{n} lata',
+      PluralCategory.many: '{n} lat',
+      PluralCategory.other: '{n} roku',
+    }),
   },
   half: '{n} i pół',
   delimiter: ', ',
@@ -40,10 +77,25 @@ final pl = DurationLocale(
       'second': simpleUnit('{n} sek.'),
       'minute': simpleUnit('{n} min'),
       'hour': simpleUnit('{n} godz.'),
-      'day': pluralUnit({PluralCategory.one: '{n} dzień', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dni', PluralCategory.other: '{n} dnia'}),
-      'week': pluralUnit({PluralCategory.one: '{n} tydz.', PluralCategory.few: '{n} tyg.', PluralCategory.many: '{n} tyg.', PluralCategory.other: '{n} tyg.'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} dzień',
+        PluralCategory.few: '{n} dni',
+        PluralCategory.many: '{n} dni',
+        PluralCategory.other: '{n} dnia',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} tydz.',
+        PluralCategory.few: '{n} tyg.',
+        PluralCategory.many: '{n} tyg.',
+        PluralCategory.other: '{n} tyg.',
+      }),
       'month': simpleUnit('{n} mies.'),
-      'year': pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} lata', PluralCategory.many: '{n} lat', PluralCategory.other: '{n} roku'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} rok',
+        PluralCategory.few: '{n} lata',
+        PluralCategory.many: '{n} lat',
+        PluralCategory.other: '{n} roku',
+      }),
     },
     ago: '{0} temu',
     inFuture: 'za {0}',
@@ -55,8 +107,18 @@ final pl = DurationLocale(
       'hour': simpleUnit('{n} h'),
       'day': simpleUnit('{n} d.'),
       'week': simpleUnit('{n} t.'),
-      'month': pluralUnit({PluralCategory.one: '{n} m-c', PluralCategory.few: '{n} m-ce', PluralCategory.many: '{n} m-cy', PluralCategory.other: '{n} m-ca'}),
-      'year': pluralUnit({PluralCategory.one: '{n} r.', PluralCategory.few: '{n} l.', PluralCategory.many: '{n} l.', PluralCategory.other: '{n} r.'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} m-c',
+        PluralCategory.few: '{n} m-ce',
+        PluralCategory.many: '{n} m-cy',
+        PluralCategory.other: '{n} m-ca',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} r.',
+        PluralCategory.few: '{n} l.',
+        PluralCategory.many: '{n} l.',
+        PluralCategory.other: '{n} r.',
+      }),
     },
     half: '{n}½',
     delimiter: '',

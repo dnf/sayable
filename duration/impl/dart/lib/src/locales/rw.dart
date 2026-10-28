@@ -19,13 +19,34 @@ final rw = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'isegonda {n}', PluralCategory.other: 'amasegonda {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'umunota {n}', PluralCategory.other: 'iminota {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'isaha {n}', PluralCategory.other: 'amasaha {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'umunsi {n}', PluralCategory.other: 'iminsi {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'icyumweru {n}', PluralCategory.other: 'ibyumweru {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ukwezi {n}', PluralCategory.other: 'amezi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'umwaka {n}', PluralCategory.other: 'imyaka {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'isegonda {n}',
+      PluralCategory.other: 'amasegonda {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'umunota {n}',
+      PluralCategory.other: 'iminota {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'isaha {n}',
+      PluralCategory.other: 'amasaha {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'umunsi {n}',
+      PluralCategory.other: 'iminsi {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'icyumweru {n}',
+      PluralCategory.other: 'ibyumweru {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ukwezi {n}',
+      PluralCategory.other: 'amezi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'umwaka {n}',
+      PluralCategory.other: 'imyaka {n}',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

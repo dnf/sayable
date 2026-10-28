@@ -15,7 +15,20 @@ import '../types.dart';
 final kek = TimeLocale(
   code: 'kek',
   clock: ClockConfig(
-    hours: ['kab\'laju', 'jun', 'kiib\'', 'oxib\'', 'kaahib\'', 'oob\'', 'waqib\'', 'wuqub\'', 'waqxaqib\'', 'b\'eleeb\'', 'lajeeb\'', 'junlaju'],
+    hours: [
+      'kab\'laju',
+      'jun',
+      'kiib\'',
+      'oxib\'',
+      'kaahib\'',
+      'oob\'',
+      'waqib\'',
+      'wuqub\'',
+      'waqxaqib\'',
+      'b\'eleeb\'',
+      'lajeeb\'',
+      'junlaju',
+    ],
     midnight: 'chaq\' xkab\'',
     noon: 'chaq\' chaab\'il',
     patterns: {
@@ -34,9 +47,17 @@ final kek = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

@@ -18,10 +18,22 @@ final ak = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'da {n}', PluralCategory.other: 'nna {n}'}),
-  week: pluralUnit({PluralCategory.one: 'dapɛn {n}', PluralCategory.other: 'nnapɛn {n}'}),
-  month: pluralUnit({PluralCategory.one: 'bosome {n}', PluralCategory.other: 'abosome {n}'}),
-  year: pluralUnit({PluralCategory.one: 'afe {n}', PluralCategory.other: 'mfe {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'da {n}',
+    PluralCategory.other: 'nna {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'dapɛn {n}',
+    PluralCategory.other: 'nnapɛn {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'bosome {n}',
+    PluralCategory.other: 'abosome {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'afe {n}',
+    PluralCategory.other: 'mfe {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Abofra foforo',
@@ -32,16 +44,40 @@ final ak = AgeLocale(
   teenager: stageGendered('Abarimaa', 'Abaayewa'),
   adult: stageNeutral('Ɔpanyin'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'da {n}', PluralCategory.other: 'nna {n}'}),
-    week: pluralUnit({PluralCategory.one: 'dapɛn {n}', PluralCategory.other: 'nnapɛn {n}'}),
-    month: pluralUnit({PluralCategory.one: 'bosome {n}', PluralCategory.other: 'abosome {n}'}),
-    year: pluralUnit({PluralCategory.one: 'afe {n}', PluralCategory.other: 'mfe {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'da {n}',
+      PluralCategory.other: 'nna {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'dapɛn {n}',
+      PluralCategory.other: 'nnapɛn {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'bosome {n}',
+      PluralCategory.other: 'abosome {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'afe {n}',
+      PluralCategory.other: 'mfe {n}',
+    }),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'da {n}', PluralCategory.other: 'nna {n}'}),
-    week: pluralUnit({PluralCategory.one: 'dapɛn {n}', PluralCategory.other: 'nnapɛn {n}'}),
-    month: pluralUnit({PluralCategory.one: 'bos {n}', PluralCategory.other: 'abos {n}'}),
-    year: pluralUnit({PluralCategory.one: 'afe {n}', PluralCategory.other: 'mfe {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'da {n}',
+      PluralCategory.other: 'nna {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'dapɛn {n}',
+      PluralCategory.other: 'nnapɛn {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'bos {n}',
+      PluralCategory.other: 'abos {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'afe {n}',
+      PluralCategory.other: 'mfe {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

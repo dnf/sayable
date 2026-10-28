@@ -19,13 +19,34 @@ final de = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} Sekunde', PluralCategory.other: '{n} Sekunden'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} Minute', PluralCategory.other: '{n} Minuten'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} Stunde', PluralCategory.other: '{n} Stunden'}),
-    'day': pluralUnit({PluralCategory.one: '{n} Tag', PluralCategory.other: '{n} Tage'}),
-    'week': pluralUnit({PluralCategory.one: '{n} Woche', PluralCategory.other: '{n} Wochen'}),
-    'month': pluralUnit({PluralCategory.one: '{n} Monat', PluralCategory.other: '{n} Monate'}),
-    'year': pluralUnit({PluralCategory.one: '{n} Jahr', PluralCategory.other: '{n} Jahre'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} Sekunde',
+      PluralCategory.other: '{n} Sekunden',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} Minute',
+      PluralCategory.other: '{n} Minuten',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} Stunde',
+      PluralCategory.other: '{n} Stunden',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} Tag',
+      PluralCategory.other: '{n} Tage',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} Woche',
+      PluralCategory.other: '{n} Wochen',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} Monat',
+      PluralCategory.other: '{n} Monate',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} Jahr',
+      PluralCategory.other: '{n} Jahre',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

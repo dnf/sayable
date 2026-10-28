@@ -15,7 +15,20 @@ import '../types.dart';
 final om = TimeLocale(
   code: 'om',
   clock: ClockConfig(
-    hours: ['jaha', 'torba', 'saddeet', 'sagal', 'kudhan', 'kudha tokko', 'kudha lama', 'tokko', 'lama', 'sadii', 'afur', 'shan'],
+    hours: [
+      'jaha',
+      'torba',
+      'saddeet',
+      'sagal',
+      'kudhan',
+      'kudha tokko',
+      'kudha lama',
+      'tokko',
+      'lama',
+      'sadii',
+      'afur',
+      'shan',
+    ],
     midnight: 'walakkii halkan',
     noon: 'guyyaa walakkaa',
     patterns: {
@@ -34,9 +47,17 @@ final om = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

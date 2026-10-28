@@ -15,7 +15,20 @@ import '../types.dart';
 final ceb = TimeLocale(
   code: 'ceb',
   clock: ClockConfig(
-    hours: ['alas dose', 'ala una', 'alas dos', 'alas tres', 'alas kwatro', 'alas singko', 'alas sais', 'alas siyete', 'alas otso', 'alas nuwebe', 'alas diyes', 'alas onse'],
+    hours: [
+      'alas dose',
+      'ala una',
+      'alas dos',
+      'alas tres',
+      'alas kwatro',
+      'alas singko',
+      'alas sais',
+      'alas siyete',
+      'alas otso',
+      'alas nuwebe',
+      'alas diyes',
+      'alas onse',
+    ],
     midnight: 'tungang gabii',
     noon: 'udtong tutok',
     patterns: {
@@ -34,9 +47,17 @@ final ceb = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

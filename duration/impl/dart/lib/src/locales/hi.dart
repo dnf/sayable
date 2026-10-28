@@ -21,11 +21,26 @@ final hi = DurationLocale(
   units: {
     'second': simpleUnit('{n} सेकंड'),
     'minute': simpleUnit('{n} मिनट'),
-    'hour': pluralUnit({PluralCategory.one: '{n} घंटा', PluralCategory.other: '{n} घंटे'}),
-    'day': pluralUnit({PluralCategory.one: '{n} दिन', PluralCategory.other: '{n} दिन'}),
-    'week': pluralUnit({PluralCategory.one: '{n} सप्ताह', PluralCategory.other: '{n} सप्ताह'}),
-    'month': pluralUnit({PluralCategory.one: '{n} महीना', PluralCategory.other: '{n} महीने'}),
-    'year': pluralUnit({PluralCategory.one: '{n} साल', PluralCategory.other: '{n} साल'}),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} घंटा',
+      PluralCategory.other: '{n} घंटे',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} दिन',
+      PluralCategory.other: '{n} दिन',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} सप्ताह',
+      PluralCategory.other: '{n} सप्ताह',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} महीना',
+      PluralCategory.other: '{n} महीने',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} साल',
+      PluralCategory.other: '{n} साल',
+    }),
   },
   half: 'साढ़े {n}',
   delimiter: ', ',

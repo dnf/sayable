@@ -18,10 +18,22 @@ final bg = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дни'}),
-  week: pluralUnit({PluralCategory.one: '{n} седмица', PluralCategory.other: '{n} седмици'}),
-  month: pluralUnit({PluralCategory.one: '{n} месец', PluralCategory.other: '{n} месеца'}),
-  year: pluralUnit({PluralCategory.one: '{n} година', PluralCategory.other: '{n} години'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ден',
+    PluralCategory.other: '{n} дни',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} седмица',
+    PluralCategory.other: '{n} седмици',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} месец',
+    PluralCategory.other: '{n} месеца',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} година',
+    PluralCategory.other: '{n} години',
+  }),
   half: '{0} и половина',
   delimiter: ', ',
   justBorn: 'Новородено',

@@ -19,17 +19,58 @@ final gv = DurationLocale(
     final mod100 = n % 100;
     if (mod10 == 1) return PluralCategory.one;
     if (mod10 == 2) return PluralCategory.two;
-    if (mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80) return PluralCategory.few;
+    if (mod100 == 0 ||
+        mod100 == 20 ||
+        mod100 == 40 ||
+        mod100 == 60 ||
+        mod100 == 80) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} çhiaghtoo', PluralCategory.two: '{n} çhiaghtoo', PluralCategory.few: '{n} çhiaghtoo', PluralCategory.other: '{n} çhiaghtooyn'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} vinnid', PluralCategory.two: '{n} vinnid', PluralCategory.few: '{n} minnidyn', PluralCategory.other: '{n} minnid'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} oor', PluralCategory.two: '{n} oor', PluralCategory.few: '{n} ooryn', PluralCategory.other: '{n} oor'}),
-    'day': pluralUnit({PluralCategory.one: '{n} laa', PluralCategory.two: '{n} laa', PluralCategory.few: '{n} laa', PluralCategory.other: '{n} laa'}),
-    'week': pluralUnit({PluralCategory.one: '{n} hiaghtin', PluralCategory.two: '{n} hiaghtin', PluralCategory.few: '{n} shiaghtin', PluralCategory.other: '{n} shiaghtin'}),
-    'month': pluralUnit({PluralCategory.one: '{n} vee', PluralCategory.two: '{n} vee', PluralCategory.few: '{n} mee', PluralCategory.other: '{n} mee'}),
-    'year': pluralUnit({PluralCategory.one: '{n} vlein', PluralCategory.two: '{n} vlein', PluralCategory.few: '{n} blein', PluralCategory.other: '{n} blein'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} çhiaghtoo',
+      PluralCategory.two: '{n} çhiaghtoo',
+      PluralCategory.few: '{n} çhiaghtoo',
+      PluralCategory.other: '{n} çhiaghtooyn',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} vinnid',
+      PluralCategory.two: '{n} vinnid',
+      PluralCategory.few: '{n} minnidyn',
+      PluralCategory.other: '{n} minnid',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} oor',
+      PluralCategory.two: '{n} oor',
+      PluralCategory.few: '{n} ooryn',
+      PluralCategory.other: '{n} oor',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} laa',
+      PluralCategory.two: '{n} laa',
+      PluralCategory.few: '{n} laa',
+      PluralCategory.other: '{n} laa',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} hiaghtin',
+      PluralCategory.two: '{n} hiaghtin',
+      PluralCategory.few: '{n} shiaghtin',
+      PluralCategory.other: '{n} shiaghtin',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} vee',
+      PluralCategory.two: '{n} vee',
+      PluralCategory.few: '{n} mee',
+      PluralCategory.other: '{n} mee',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} vlein',
+      PluralCategory.two: '{n} vlein',
+      PluralCategory.few: '{n} blein',
+      PluralCategory.other: '{n} blein',
+    }),
   },
   half: '{0} as lieh',
   delimiter: ', ',

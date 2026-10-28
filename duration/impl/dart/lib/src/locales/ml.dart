@@ -19,13 +19,34 @@ final ml = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} സെക്കൻഡ്', PluralCategory.other: '{n} സെക്കൻഡുകൾ'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} മിനിറ്റ്', PluralCategory.other: '{n} മിനിറ്റുകൾ'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} മണിക്കൂർ', PluralCategory.other: '{n} മണിക്കൂറുകൾ'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ദിവസം', PluralCategory.other: '{n} ദിവസങ്ങൾ'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ആഴ്ച', PluralCategory.other: '{n} ആഴ്ചകൾ'}),
-    'month': pluralUnit({PluralCategory.one: '{n} മാസം', PluralCategory.other: '{n} മാസങ്ങൾ'}),
-    'year': pluralUnit({PluralCategory.one: '{n} വർഷം', PluralCategory.other: '{n} വർഷങ്ങൾ'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} സെക്കൻഡ്',
+      PluralCategory.other: '{n} സെക്കൻഡുകൾ',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} മിനിറ്റ്',
+      PluralCategory.other: '{n} മിനിറ്റുകൾ',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} മണിക്കൂർ',
+      PluralCategory.other: '{n} മണിക്കൂറുകൾ',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ദിവസം',
+      PluralCategory.other: '{n} ദിവസങ്ങൾ',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ആഴ്ച',
+      PluralCategory.other: '{n} ആഴ്ചകൾ',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} മാസം',
+      PluralCategory.other: '{n} മാസങ്ങൾ',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} വർഷം',
+      PluralCategory.other: '{n} വർഷങ്ങൾ',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

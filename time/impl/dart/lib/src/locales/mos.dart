@@ -15,7 +15,20 @@ import '../types.dart';
 final mos = TimeLocale(
   code: 'mos',
   clock: ClockConfig(
-    hours: ['lɛɛr piig la a yiibu', 'lɛɛr a yembre', 'lɛɛr a yiibu', 'lɛɛr a tãabo', 'lɛɛr a naase', 'lɛɛr a nu', 'lɛɛr a yoobe', 'lɛɛr a yopoe', 'lɛɛr a nii', 'lɛɛr a wae', 'lɛɛr piiga', 'lɛɛr piig la a yembre'],
+    hours: [
+      'lɛɛr piig la a yiibu',
+      'lɛɛr a yembre',
+      'lɛɛr a yiibu',
+      'lɛɛr a tãabo',
+      'lɛɛr a naase',
+      'lɛɛr a nu',
+      'lɛɛr a yoobe',
+      'lɛɛr a yopoe',
+      'lɛɛr a nii',
+      'lɛɛr a wae',
+      'lɛɛr piiga',
+      'lɛɛr piig la a yembre',
+    ],
     midnight: 'yʋng-vɩɩse',
     noon: 'wĩntoog zabre',
     patterns: {
@@ -34,9 +47,17 @@ final mos = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

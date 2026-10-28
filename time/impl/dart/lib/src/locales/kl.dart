@@ -15,7 +15,20 @@ import '../types.dart';
 final kl = TimeLocale(
   code: 'kl',
   clock: ClockConfig(
-    hours: ['aqqaneq-marluk', 'ataaseq', 'marluk', 'pingasut', 'sisamat', 'tallimat', 'arfinillit', 'arfineq-marluk', 'arfineq-pingasut', 'qulingiluat', 'qulit', 'aqqaneq-ataaseq'],
+    hours: [
+      'aqqaneq-marluk',
+      'ataaseq',
+      'marluk',
+      'pingasut',
+      'sisamat',
+      'tallimat',
+      'arfinillit',
+      'arfineq-marluk',
+      'arfineq-pingasut',
+      'qulingiluat',
+      'qulit',
+      'aqqaneq-ataaseq',
+    ],
     midnight: 'unnuap qeqqa',
     noon: 'ulloqeqqap qeqqa',
     patterns: {

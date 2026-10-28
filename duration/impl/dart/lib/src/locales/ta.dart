@@ -22,10 +22,22 @@ final ta = DurationLocale(
     'second': simpleUnit('{n} விநாடி'),
     'minute': simpleUnit('{n} நிமிடம்'),
     'hour': simpleUnit('{n} மணி நேரம்'),
-    'day': pluralUnit({PluralCategory.one: '{n} நாள்', PluralCategory.other: '{n} நாட்கள்'}),
-    'week': pluralUnit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வாரங்கள்'}),
-    'month': pluralUnit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாதங்கள்'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ஆண்டு', PluralCategory.other: '{n} ஆண்டுகள்'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} நாள்',
+      PluralCategory.other: '{n} நாட்கள்',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} வாரம்',
+      PluralCategory.other: '{n} வாரங்கள்',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} மாதம்',
+      PluralCategory.other: '{n} மாதங்கள்',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ஆண்டு',
+      PluralCategory.other: '{n} ஆண்டுகள்',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',
@@ -37,10 +49,22 @@ final ta = DurationLocale(
       'second': simpleUnit('{n} விநாடி'),
       'minute': simpleUnit('{n} நிமி.'),
       'hour': simpleUnit('{n} ம.'),
-      'day': pluralUnit({PluralCategory.one: '{n} நாள்', PluralCategory.other: '{n} நாட்கள்'}),
-      'week': pluralUnit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வார.'}),
-      'month': pluralUnit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாத.'}),
-      'year': pluralUnit({PluralCategory.one: '{n} ஆண்டு', PluralCategory.other: '{n} ஆண்டு.'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} நாள்',
+        PluralCategory.other: '{n} நாட்கள்',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} வாரம்',
+        PluralCategory.other: '{n} வார.',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} மாதம்',
+        PluralCategory.other: '{n} மாத.',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} ஆண்டு',
+        PluralCategory.other: '{n} ஆண்டு.',
+      }),
     },
     ago: '{0} முன்',
     inFuture: '{0} கழித்து',

@@ -15,7 +15,20 @@ import '../types.dart';
 final lb = TimeLocale(
   code: 'lb',
   clock: ClockConfig(
-    hours: ['zwielef', 'eent', 'zwee', 'dräi', 'véier', 'fënnef', 'sechs', 'siwen', 'aacht', 'néng', 'zéng', 'eelef'],
+    hours: [
+      'zwielef',
+      'eent',
+      'zwee',
+      'dräi',
+      'véier',
+      'fënnef',
+      'sechs',
+      'siwen',
+      'aacht',
+      'néng',
+      'zéng',
+      'eelef',
+    ],
     midnight: 'Mëtternuecht',
     noon: 'Mëtteg',
     patterns: {

@@ -18,10 +18,22 @@ final ki = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'mũthenya {n}', PluralCategory.other: 'mĩthenya {n}'}),
-  week: pluralUnit({PluralCategory.one: 'kiumia {n}', PluralCategory.other: 'kiumia {n}'}),
-  month: pluralUnit({PluralCategory.one: 'mwerĩ {n}', PluralCategory.other: 'mĩerĩ {n}'}),
-  year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'mĩaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'mũthenya {n}',
+    PluralCategory.other: 'mĩthenya {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'kiumia {n}',
+    PluralCategory.other: 'kiumia {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'mwerĩ {n}',
+    PluralCategory.other: 'mĩerĩ {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'mwaka {n}',
+    PluralCategory.other: 'mĩaka {n}',
+  }),
   half: '{0} na nusu',
   delimiter: ', ',
   justBorn: 'Kaana gakĩ',
@@ -32,10 +44,19 @@ final ki = AgeLocale(
   teenager: stageNeutral('Kĩhĩĩ'),
   adult: stageNeutral('Mũndũ mũkũrũ'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'mũth. {n}', PluralCategory.other: 'mĩth. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'mũth. {n}',
+      PluralCategory.other: 'mĩth. {n}',
+    }),
     week: simpleUnit('{n} kiu.'),
-    month: pluralUnit({PluralCategory.one: 'mwerĩ {n}', PluralCategory.other: 'mĩerĩ {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'mĩaka {n}'}),
+    month: pluralUnit({
+      PluralCategory.one: 'mwerĩ {n}',
+      PluralCategory.other: 'mĩerĩ {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mwaka {n}',
+      PluralCategory.other: 'mĩaka {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

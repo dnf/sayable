@@ -18,10 +18,22 @@ final lg = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'olunaku {n}', PluralCategory.other: 'ennaku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'sabbiiti {n}', PluralCategory.other: 'sabiiti {n}'}),
-  month: pluralUnit({PluralCategory.one: 'omwezi {n}', PluralCategory.other: 'emyezi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'omwaka {n}', PluralCategory.other: 'emyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'olunaku {n}',
+    PluralCategory.other: 'ennaku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'sabbiiti {n}',
+    PluralCategory.other: 'sabiiti {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'omwezi {n}',
+    PluralCategory.other: 'emyezi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'omwaka {n}',
+    PluralCategory.other: 'emyaka {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Omwana omuto',
@@ -33,15 +45,33 @@ final lg = AgeLocale(
   adult: stageNeutral('Omukulu'),
   short: CompactnessOverride(
     day: simpleUnit('ennaku {n}'),
-    week: pluralUnit({PluralCategory.one: 'sabbiiti {n}', PluralCategory.other: 'sabiiti {n}'}),
-    month: pluralUnit({PluralCategory.one: 'omwezi {n}', PluralCategory.other: 'emyezi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'omwaka {n}', PluralCategory.other: 'emyaka {n}'}),
+    week: pluralUnit({
+      PluralCategory.one: 'sabbiiti {n}',
+      PluralCategory.other: 'sabiiti {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'omwezi {n}',
+      PluralCategory.other: 'emyezi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'omwaka {n}',
+      PluralCategory.other: 'emyaka {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('ennaku {n}'),
-    week: pluralUnit({PluralCategory.one: 'sab {n}', PluralCategory.other: 'sab {n}'}),
-    month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'myezi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'myaka {n}'}),
+    week: pluralUnit({
+      PluralCategory.one: 'sab {n}',
+      PluralCategory.other: 'sab {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'mwezi {n}',
+      PluralCategory.other: 'myezi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mwaka {n}',
+      PluralCategory.other: 'myaka {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

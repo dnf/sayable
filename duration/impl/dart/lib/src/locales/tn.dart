@@ -19,13 +19,34 @@ final tn = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'motsotswana {n}', PluralCategory.other: 'metsotswana {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'motsotso {n}', PluralCategory.other: 'metsotso {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'ura {n}', PluralCategory.other: 'diura {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'letsatsi {n}', PluralCategory.other: 'malatsi {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'beke {n}', PluralCategory.other: 'dibeke {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'kgwedi {n}', PluralCategory.other: 'dikgwedi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'ngwaga {n}', PluralCategory.other: 'dingwaga {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'motsotswana {n}',
+      PluralCategory.other: 'metsotswana {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'motsotso {n}',
+      PluralCategory.other: 'metsotso {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'ura {n}',
+      PluralCategory.other: 'diura {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'letsatsi {n}',
+      PluralCategory.other: 'malatsi {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'beke {n}',
+      PluralCategory.other: 'dibeke {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'kgwedi {n}',
+      PluralCategory.other: 'dikgwedi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'ngwaga {n}',
+      PluralCategory.other: 'dingwaga {n}',
+    }),
   },
   half: '{0} le halofo',
   delimiter: ', ',
@@ -34,13 +55,34 @@ final tn = DurationLocale(
   inFuture: 'ka {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: 'motsotswana {n}', PluralCategory.other: 'metsotswana {n}'}),
-      'minute': pluralUnit({PluralCategory.one: 'motsotso {n}', PluralCategory.other: 'metsotso {n}'}),
-      'hour': pluralUnit({PluralCategory.one: 'ura {n}', PluralCategory.other: 'diura {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'letsatsi {n}', PluralCategory.other: 'malatsi {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'beke {n}', PluralCategory.other: 'dibeke {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'kgw. {n}', PluralCategory.other: 'dikgw. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'ngw. {n}', PluralCategory.other: 'dingw. {n}'}),
+      'second': pluralUnit({
+        PluralCategory.one: 'motsotswana {n}',
+        PluralCategory.other: 'metsotswana {n}',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: 'motsotso {n}',
+        PluralCategory.other: 'metsotso {n}',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ura {n}',
+        PluralCategory.other: 'diura {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'letsatsi {n}',
+        PluralCategory.other: 'malatsi {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'beke {n}',
+        PluralCategory.other: 'dibeke {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'kgw. {n}',
+        PluralCategory.other: 'dikgw. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'ngw. {n}',
+        PluralCategory.other: 'dingw. {n}',
+      }),
     },
     ago: '{0} e e fetileng',
     inFuture: 'ka {0}',

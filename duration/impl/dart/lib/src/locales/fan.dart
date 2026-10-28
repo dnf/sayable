@@ -19,13 +19,34 @@ final fan = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sɛgon {n}', PluralCategory.other: 'bisɛgon {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minit {n}', PluralCategory.other: 'biminit {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'awola {n}', PluralCategory.other: 'biawola {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'mos {n}', PluralCategory.other: 'bimos {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'sone {n}', PluralCategory.other: 'bisone {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ngon {n}', PluralCategory.other: 'mingon {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'mbu {n}', PluralCategory.other: 'mimbu {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sɛgon {n}',
+      PluralCategory.other: 'bisɛgon {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minit {n}',
+      PluralCategory.other: 'biminit {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'awola {n}',
+      PluralCategory.other: 'biawola {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'mos {n}',
+      PluralCategory.other: 'bimos {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'sone {n}',
+      PluralCategory.other: 'bisone {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ngon {n}',
+      PluralCategory.other: 'mingon {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'mbu {n}',
+      PluralCategory.other: 'mimbu {n}',
+    }),
   },
   half: '{0} e ndamba',
   delimiter: ', ',
@@ -37,10 +58,22 @@ final fan = DurationLocale(
       'second': simpleUnit('sɛg. {n}'),
       'minute': simpleUnit('min. {n}'),
       'hour': simpleUnit('aw. {n}'),
-      'day': pluralUnit({PluralCategory.one: 'mos {n}', PluralCategory.other: 'bimos {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'sone {n}', PluralCategory.other: 'bisone {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'ngon {n}', PluralCategory.other: 'mingon {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'mbu {n}', PluralCategory.other: 'mimbu {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'mos {n}',
+        PluralCategory.other: 'bimos {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'sone {n}',
+        PluralCategory.other: 'bisone {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'ngon {n}',
+        PluralCategory.other: 'mingon {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'mbu {n}',
+        PluralCategory.other: 'mimbu {n}',
+      }),
     },
     ago: '{0} a ja',
     inFuture: 'a {0}',

@@ -18,10 +18,22 @@ final kk = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} күн', PluralCategory.other: '{n} күн'}),
-  week: pluralUnit({PluralCategory.one: '{n} апта', PluralCategory.other: '{n} апта'}),
-  month: pluralUnit({PluralCategory.one: '{n} ай', PluralCategory.other: '{n} ай'}),
-  year: pluralUnit({PluralCategory.one: '{n} жас', PluralCategory.other: '{n} жас'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} күн',
+    PluralCategory.other: '{n} күн',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} апта',
+    PluralCategory.other: '{n} апта',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ай',
+    PluralCategory.other: '{n} ай',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} жас',
+    PluralCategory.other: '{n} жас',
+  }),
   half: '{n} жарым',
   delimiter: ', ',
   justBorn: 'Жаңа туған',

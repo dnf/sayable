@@ -15,7 +15,20 @@ import '../types.dart';
 final vmw = TimeLocale(
   code: 'vmw',
   clock: ClockConfig(
-    hours: ['khumi na pili', 'mosa', 'pili', 'ttatthu', 'ncheche', 'thanu', 'thanu na mosa', 'thanu na pili', 'thanu na ttatthu', 'thanu na ncheche', 'khumi', 'khumi na mosa'],
+    hours: [
+      'khumi na pili',
+      'mosa',
+      'pili',
+      'ttatthu',
+      'ncheche',
+      'thanu',
+      'thanu na mosa',
+      'thanu na pili',
+      'thanu na ttatthu',
+      'thanu na ncheche',
+      'khumi',
+      'khumi na mosa',
+    ],
     midnight: 'usiku wopakhala',
     noon: 'muttana',
     patterns: {
@@ -34,9 +47,17 @@ final vmw = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

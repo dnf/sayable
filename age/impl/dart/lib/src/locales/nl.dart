@@ -18,10 +18,22 @@ final nl = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dagen'}),
-  week: pluralUnit({PluralCategory.one: '{n} week', PluralCategory.other: '{n} weken'}),
-  month: pluralUnit({PluralCategory.one: '{n} maand', PluralCategory.other: '{n} maanden'}),
-  year: pluralUnit({PluralCategory.one: '{n} jaar', PluralCategory.other: '{n} jaar'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dag',
+    PluralCategory.other: '{n} dagen',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} week',
+    PluralCategory.other: '{n} weken',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} maand',
+    PluralCategory.other: '{n} maanden',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} jaar',
+    PluralCategory.other: '{n} jaar',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Pasgeboren',
@@ -32,8 +44,14 @@ final nl = AgeLocale(
   teenager: stageNeutral('Tiener'),
   adult: stageNeutral('Volwassene'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dagen'}),
-    week: pluralUnit({PluralCategory.one: '{n} wk', PluralCategory.other: '{n} wkn'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} dag',
+      PluralCategory.other: '{n} dagen',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: '{n} wk',
+      PluralCategory.other: '{n} wkn',
+    }),
     month: simpleUnit('{n} mnd'),
     year: simpleUnit('{n} jr'),
   ),

@@ -22,10 +22,22 @@ final gu = DurationLocale(
     'second': simpleUnit('{n} સેકન્ડ'),
     'minute': simpleUnit('{n} મિનિટ'),
     'hour': simpleUnit('{n} કલાક'),
-    'day': pluralUnit({PluralCategory.one: '{n} દિવસ', PluralCategory.other: '{n} દિવસ'}),
-    'week': pluralUnit({PluralCategory.one: '{n} અઠવાડિયું', PluralCategory.other: '{n} અઠવાડિયા'}),
-    'month': pluralUnit({PluralCategory.one: '{n} મહિનો', PluralCategory.other: '{n} મહિના'}),
-    'year': pluralUnit({PluralCategory.one: '{n} વર્ષ', PluralCategory.other: '{n} વર્ષ'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} દિવસ',
+      PluralCategory.other: '{n} દિવસ',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} અઠવાડિયું',
+      PluralCategory.other: '{n} અઠવાડિયા',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} મહિનો',
+      PluralCategory.other: '{n} મહિના',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} વર્ષ',
+      PluralCategory.other: '{n} વર્ષ',
+    }),
   },
   half: 'સાડા {n}',
   delimiter: ', ',
@@ -39,7 +51,10 @@ final gu = DurationLocale(
       'hour': simpleUnit('{n} કલાક'),
       'day': simpleUnit('{n} દિવસ'),
       'week': simpleUnit('{n} અઠ.'),
-      'month': pluralUnit({PluralCategory.one: '{n} મહિનો', PluralCategory.other: '{n} મહિના'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} મહિનો',
+        PluralCategory.other: '{n} મહિના',
+      }),
       'year': simpleUnit('{n} વર્ષ'),
     },
     ago: '{0} પહેલાં',

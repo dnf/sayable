@@ -15,7 +15,20 @@ import '../types.dart';
 final fan = TimeLocale(
   code: 'fan',
   clock: ClockConfig(
-    hours: ['awom mebú', 'fóg', 'abúi', 'aláa', 'anyin', 'atán', 'asaman', 'zamgbala', 'mwom', 'ebulú', 'awom', 'awom mefóg'],
+    hours: [
+      'awom mebú',
+      'fóg',
+      'abúi',
+      'aláa',
+      'anyin',
+      'atán',
+      'asaman',
+      'zamgbala',
+      'mwom',
+      'ebulú',
+      'awom',
+      'awom mefóg',
+    ],
     midnight: 'akiri alúk',
     noon: 'ewaŋ',
     patterns: {
@@ -34,9 +47,17 @@ final fan = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

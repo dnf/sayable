@@ -18,10 +18,22 @@ final te = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} రోజు', PluralCategory.other: '{n} రోజులు'}),
-  week: pluralUnit({PluralCategory.one: '{n} వారం', PluralCategory.other: '{n} వారాలు'}),
-  month: pluralUnit({PluralCategory.one: '{n} నెల', PluralCategory.other: '{n} నెలలు'}),
-  year: pluralUnit({PluralCategory.one: '{n} సంవత్సరం', PluralCategory.other: '{n} సంవత్సరాలు'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} రోజు',
+    PluralCategory.other: '{n} రోజులు',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} వారం',
+    PluralCategory.other: '{n} వారాలు',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} నెల',
+    PluralCategory.other: '{n} నెలలు',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} సంవత్సరం',
+    PluralCategory.other: '{n} సంవత్సరాలు',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'నవజాత శిశువు',
@@ -32,7 +44,10 @@ final te = AgeLocale(
   teenager: stageNeutral('కౌమారదశ'),
   adult: stageNeutral('వయోజనులు'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} రోజు', PluralCategory.other: '{n} రోజులు'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} రోజు',
+      PluralCategory.other: '{n} రోజులు',
+    }),
     week: simpleUnit('{n} వా.'),
     month: simpleUnit('{n} నె.'),
     year: simpleUnit('{n} సం.'),

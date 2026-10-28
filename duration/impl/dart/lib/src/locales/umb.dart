@@ -19,13 +19,34 @@ final umb = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'osekunde {n}', PluralCategory.other: 'olosekunde {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'ominute {n}', PluralCategory.other: 'olominute {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'ohola {n}', PluralCategory.other: 'olohola {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'elityi {n}', PluralCategory.other: 'omatyi {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'osemana {n}', PluralCategory.other: 'olosemana {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ondjambi {n}', PluralCategory.other: 'olondjambi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'ombula {n}', PluralCategory.other: 'olombula {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'osekunde {n}',
+      PluralCategory.other: 'olosekunde {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'ominute {n}',
+      PluralCategory.other: 'olominute {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'ohola {n}',
+      PluralCategory.other: 'olohola {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'elityi {n}',
+      PluralCategory.other: 'omatyi {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'osemana {n}',
+      PluralCategory.other: 'olosemana {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ondjambi {n}',
+      PluralCategory.other: 'olondjambi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'ombula {n}',
+      PluralCategory.other: 'olombula {n}',
+    }),
   },
   half: '{0} na oñali',
   delimiter: ', ',
@@ -34,13 +55,34 @@ final umb = DurationLocale(
   inFuture: 'ko {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: 'osek. {n}', PluralCategory.other: 'olosek. {n}'}),
-      'minute': pluralUnit({PluralCategory.one: 'omin. {n}', PluralCategory.other: 'olomin. {n}'}),
-      'hour': pluralUnit({PluralCategory.one: 'ohola {n}', PluralCategory.other: 'olohola {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'elit. {n}', PluralCategory.other: 'omat. {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'osem. {n}', PluralCategory.other: 'olosem. {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'ondj. {n}', PluralCategory.other: 'olondj. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'omb. {n}', PluralCategory.other: 'olomb. {n}'}),
+      'second': pluralUnit({
+        PluralCategory.one: 'osek. {n}',
+        PluralCategory.other: 'olosek. {n}',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: 'omin. {n}',
+        PluralCategory.other: 'olomin. {n}',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ohola {n}',
+        PluralCategory.other: 'olohola {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'elit. {n}',
+        PluralCategory.other: 'omat. {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'osem. {n}',
+        PluralCategory.other: 'olosem. {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'ondj. {n}',
+        PluralCategory.other: 'olondj. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'omb. {n}',
+        PluralCategory.other: 'olomb. {n}',
+      }),
     },
     ago: '{0} ya pita',
     inFuture: 'ko {0}',

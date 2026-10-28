@@ -18,10 +18,22 @@ final lb = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} Dag', PluralCategory.other: '{n} Deeg'}),
-  week: pluralUnit({PluralCategory.one: '{n} Woch', PluralCategory.other: '{n} Wochen'}),
-  month: pluralUnit({PluralCategory.one: '{n} Mount', PluralCategory.other: '{n} Méint'}),
-  year: pluralUnit({PluralCategory.one: '{n} Joer', PluralCategory.other: '{n} Joer'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} Dag',
+    PluralCategory.other: '{n} Deeg',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} Woch',
+    PluralCategory.other: '{n} Wochen',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} Mount',
+    PluralCategory.other: '{n} Méint',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} Joer',
+    PluralCategory.other: '{n} Joer',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Neigebuerenen',

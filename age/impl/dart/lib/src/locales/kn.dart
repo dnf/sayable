@@ -18,10 +18,22 @@ final kn = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ದಿನ', PluralCategory.other: '{n} ದಿನಗಳು'}),
-  week: pluralUnit({PluralCategory.one: '{n} ವಾರ', PluralCategory.other: '{n} ವಾರಗಳು'}),
-  month: pluralUnit({PluralCategory.one: '{n} ತಿಂಗಳು', PluralCategory.other: '{n} ತಿಂಗಳುಗಳು'}),
-  year: pluralUnit({PluralCategory.one: '{n} ವರ್ಷ', PluralCategory.other: '{n} ವರ್ಷಗಳು'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ದಿನ',
+    PluralCategory.other: '{n} ದಿನಗಳು',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} ವಾರ',
+    PluralCategory.other: '{n} ವಾರಗಳು',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ತಿಂಗಳು',
+    PluralCategory.other: '{n} ತಿಂಗಳುಗಳು',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ವರ್ಷ',
+    PluralCategory.other: '{n} ವರ್ಷಗಳು',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'ನವಜಾತ ಶಿಶು',

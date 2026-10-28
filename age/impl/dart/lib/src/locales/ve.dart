@@ -18,10 +18,22 @@ final ve = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'duvha {n}', PluralCategory.other: 'maduvha {n}'}),
-  week: pluralUnit({PluralCategory.one: 'vhege {n}', PluralCategory.other: 'mavhege {n}'}),
-  month: pluralUnit({PluralCategory.one: 'nwedzi {n}', PluralCategory.other: 'minwedzi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'nwaha {n}', PluralCategory.other: 'minwaha {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'duvha {n}',
+    PluralCategory.other: 'maduvha {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'vhege {n}',
+    PluralCategory.other: 'mavhege {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'nwedzi {n}',
+    PluralCategory.other: 'minwedzi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'nwaha {n}',
+    PluralCategory.other: 'minwaha {n}',
+  }),
   half: '{0} na hafu',
   delimiter: ', ',
   justBorn: 'Mbuwe',
@@ -32,10 +44,22 @@ final ve = AgeLocale(
   teenager: stageNeutral('Mutukana'),
   adult: stageNeutral('Muthu muhulwane'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'duv. {n}', PluralCategory.other: 'mad. {n}'}),
-    week: pluralUnit({PluralCategory.one: 'vheg. {n}', PluralCategory.other: 'mav. {n}'}),
-    month: pluralUnit({PluralCategory.one: 'nwedzi {n}', PluralCategory.other: 'min. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'nwaha {n}', PluralCategory.other: 'min. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'duv. {n}',
+      PluralCategory.other: 'mad. {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'vheg. {n}',
+      PluralCategory.other: 'mav. {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'nwedzi {n}',
+      PluralCategory.other: 'min. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'nwaha {n}',
+      PluralCategory.other: 'min. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

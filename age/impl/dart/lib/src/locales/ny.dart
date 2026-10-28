@@ -18,10 +18,22 @@ final ny = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'masiku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masabata {n}'}),
-  month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'zaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'tsiku {n}',
+    PluralCategory.other: 'masiku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'sabata {n}',
+    PluralCategory.other: 'masabata {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'mwezi {n}',
+    PluralCategory.other: 'miyezi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'chaka {n}',
+    PluralCategory.other: 'zaka {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Wobadwa kumene',
@@ -32,16 +44,40 @@ final ny = AgeLocale(
   teenager: stageNeutral('Mnyamata'),
   adult: stageNeutral('Munthu wamkulu'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'tsiku {n}', PluralCategory.other: 'mas {n}'}),
-    week: pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masab {n}'}),
-    month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'zaka {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'tsiku {n}',
+      PluralCategory.other: 'mas {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'sabata {n}',
+      PluralCategory.other: 'masab {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'mwezi {n}',
+      PluralCategory.other: 'miyezi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'chaka {n}',
+      PluralCategory.other: 'zaka {n}',
+    }),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'ts {n}', PluralCategory.other: 'mas {n}'}),
-    week: pluralUnit({PluralCategory.one: 'sab {n}', PluralCategory.other: 'msb {n}'}),
-    month: pluralUnit({PluralCategory.one: 'mw {n}', PluralCategory.other: 'miy {n}'}),
-    year: pluralUnit({PluralCategory.one: 'ch {n}', PluralCategory.other: 'z {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'ts {n}',
+      PluralCategory.other: 'mas {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'sab {n}',
+      PluralCategory.other: 'msb {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'mw {n}',
+      PluralCategory.other: 'miy {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'ch {n}',
+      PluralCategory.other: 'z {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

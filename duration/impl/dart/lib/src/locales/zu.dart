@@ -19,13 +19,34 @@ final zu = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'isekhondi {n}', PluralCategory.other: 'amasekhondi {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'umzuzu {n}', PluralCategory.other: 'imizuzu {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'ihora {n}', PluralCategory.other: 'amahora {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'izinsuku {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'iviki {n}', PluralCategory.other: 'amaviki {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'inyanga {n}', PluralCategory.other: 'izinyanga {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'unyaka {n}', PluralCategory.other: 'iminyaka {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'isekhondi {n}',
+      PluralCategory.other: 'amasekhondi {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'umzuzu {n}',
+      PluralCategory.other: 'imizuzu {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'ihora {n}',
+      PluralCategory.other: 'amahora {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'usuku {n}',
+      PluralCategory.other: 'izinsuku {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'iviki {n}',
+      PluralCategory.other: 'amaviki {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'inyanga {n}',
+      PluralCategory.other: 'izinyanga {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'unyaka {n}',
+      PluralCategory.other: 'iminyaka {n}',
+    }),
   },
   half: '{0} nohhafu',
   delimiter: ', ',
@@ -34,13 +55,34 @@ final zu = DurationLocale(
   inFuture: 'ngo-{0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: 'isekhondi {n}', PluralCategory.other: 'amasekhondi {n}'}),
-      'minute': pluralUnit({PluralCategory.one: 'umzuzu {n}', PluralCategory.other: 'imizuzu {n}'}),
-      'hour': pluralUnit({PluralCategory.one: 'ihora {n}', PluralCategory.other: 'amahora {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'izinsuku {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'iviki {n}', PluralCategory.other: 'amaviki {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'inyanga {n}', PluralCategory.other: 'izinyanga {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'unyaka {n}', PluralCategory.other: 'iminyaka {n}'}),
+      'second': pluralUnit({
+        PluralCategory.one: 'isekhondi {n}',
+        PluralCategory.other: 'amasekhondi {n}',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: 'umzuzu {n}',
+        PluralCategory.other: 'imizuzu {n}',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ihora {n}',
+        PluralCategory.other: 'amahora {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'usuku {n}',
+        PluralCategory.other: 'izinsuku {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'iviki {n}',
+        PluralCategory.other: 'amaviki {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'inyanga {n}',
+        PluralCategory.other: 'izinyanga {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'unyaka {n}',
+        PluralCategory.other: 'iminyaka {n}',
+      }),
     },
     ago: '{0} edlule',
     inFuture: 'ngo-{0}',

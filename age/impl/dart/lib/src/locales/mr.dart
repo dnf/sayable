@@ -18,10 +18,22 @@ final mr = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} दिवस', PluralCategory.other: '{n} दिवस'}),
-  week: pluralUnit({PluralCategory.one: '{n} आठवडा', PluralCategory.other: '{n} आठवडे'}),
-  month: pluralUnit({PluralCategory.one: '{n} महिना', PluralCategory.other: '{n} महिने'}),
-  year: pluralUnit({PluralCategory.one: '{n} वर्ष', PluralCategory.other: '{n} वर्षे'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} दिवस',
+    PluralCategory.other: '{n} दिवस',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} आठवडा',
+    PluralCategory.other: '{n} आठवडे',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} महिना',
+    PluralCategory.other: '{n} महिने',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} वर्ष',
+    PluralCategory.other: '{n} वर्षे',
+  }),
   half: 'साडे {n}',
   delimiter: ', ',
   justBorn: 'नवजात',
@@ -34,8 +46,14 @@ final mr = AgeLocale(
   short: CompactnessOverride(
     day: simpleUnit('{n} दिवस'),
     week: simpleUnit('{n} आ'),
-    month: pluralUnit({PluralCategory.one: '{n} महिना', PluralCategory.other: '{n} महिने'}),
-    year: pluralUnit({PluralCategory.one: '{n} वर्ष', PluralCategory.other: '{n} वर्षे'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} महिना',
+      PluralCategory.other: '{n} महिने',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} वर्ष',
+      PluralCategory.other: '{n} वर्षे',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}दि'),

@@ -15,7 +15,20 @@ import '../types.dart';
 final hu = TimeLocale(
   code: 'hu',
   clock: ClockConfig(
-    hours: ['tizenkettő', 'egy', 'kettő', 'három', 'négy', 'öt', 'hat', 'hét', 'nyolc', 'kilenc', 'tíz', 'tizenegy'],
+    hours: [
+      'tizenkettő',
+      'egy',
+      'kettő',
+      'három',
+      'négy',
+      'öt',
+      'hat',
+      'hét',
+      'nyolc',
+      'kilenc',
+      'tíz',
+      'tizenegy',
+    ],
     midnight: 'éjfél',
     noon: 'dél',
     patterns: {

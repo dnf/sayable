@@ -15,7 +15,20 @@ import '../types.dart';
 final cy = TimeLocale(
   code: 'cy',
   clock: ClockConfig(
-    hours: ['deuddeg', 'un', 'dau', 'tri', 'pedwar', 'pump', 'chwech', 'saith', 'wyth', 'naw', 'deg', 'un ar ddeg'],
+    hours: [
+      'deuddeg',
+      'un',
+      'dau',
+      'tri',
+      'pedwar',
+      'pump',
+      'chwech',
+      'saith',
+      'wyth',
+      'naw',
+      'deg',
+      'un ar ddeg',
+    ],
     midnight: 'hanner nos',
     noon: 'hanner dydd',
     patterns: {

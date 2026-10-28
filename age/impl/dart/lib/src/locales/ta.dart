@@ -18,10 +18,22 @@ final ta = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} நாள்', PluralCategory.other: '{n} நாட்கள்'}),
-  week: pluralUnit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வாரங்கள்'}),
-  month: pluralUnit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாதங்கள்'}),
-  year: pluralUnit({PluralCategory.one: '{n} வயது', PluralCategory.other: '{n} வயது'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} நாள்',
+    PluralCategory.other: '{n} நாட்கள்',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} வாரம்',
+    PluralCategory.other: '{n} வாரங்கள்',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} மாதம்',
+    PluralCategory.other: '{n} மாதங்கள்',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} வயது',
+    PluralCategory.other: '{n} வயது',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'பிறந்த குழந்தை',
@@ -32,10 +44,22 @@ final ta = AgeLocale(
   teenager: stageNeutral('இளம்பருவம்'),
   adult: stageNeutral('பெரியவர்'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} நாள்', PluralCategory.other: '{n} நாட்கள்'}),
-    week: pluralUnit({PluralCategory.one: '{n} வாரம்', PluralCategory.other: '{n} வார.'}),
-    month: pluralUnit({PluralCategory.one: '{n} மாதம்', PluralCategory.other: '{n} மாத.'}),
-    year: pluralUnit({PluralCategory.one: '{n} ஆண்டு', PluralCategory.other: '{n} ஆண்டு.'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} நாள்',
+      PluralCategory.other: '{n} நாட்கள்',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: '{n} வாரம்',
+      PluralCategory.other: '{n} வார.',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} மாதம்',
+      PluralCategory.other: '{n} மாத.',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ஆண்டு',
+      PluralCategory.other: '{n} ஆண்டு.',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} நா'),

@@ -18,10 +18,22 @@ final din = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'akɔl {n}', PluralCategory.other: 'akɔl {n}'}),
-  week: pluralUnit({PluralCategory.one: 'bɛ̈t {n}', PluralCategory.other: 'bɛ̈t {n}'}),
-  month: pluralUnit({PluralCategory.one: 'pɛi {n}', PluralCategory.other: 'pɛi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈n {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'akɔl {n}',
+    PluralCategory.other: 'akɔl {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'bɛ̈t {n}',
+    PluralCategory.other: 'bɛ̈t {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'pɛi {n}',
+    PluralCategory.other: 'pɛi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'ruɔ̈n {n}',
+    PluralCategory.other: 'ruɔ̈ɔ̈n {n}',
+  }),
   half: '{0} ku abɛ̈c',
   delimiter: ', ',
   justBorn: 'Meth yen dhiëth',
@@ -35,7 +47,10 @@ final din = AgeLocale(
     day: simpleUnit('akɔl {n}'),
     week: simpleUnit('bɛ̈t {n}'),
     month: simpleUnit('pɛi {n}'),
-    year: pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈n {n}'}),
+    year: pluralUnit({
+      PluralCategory.one: 'ruɔ̈n {n}',
+      PluralCategory.other: 'ruɔ̈ɔ̈n {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

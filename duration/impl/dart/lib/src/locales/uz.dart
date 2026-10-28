@@ -22,10 +22,22 @@ final uz = DurationLocale(
     'second': simpleUnit('{n} soniya'),
     'minute': simpleUnit('{n} daqiqa'),
     'hour': simpleUnit('{n} soat'),
-    'day': pluralUnit({PluralCategory.one: '{n} kun', PluralCategory.other: '{n} kun'}),
-    'week': pluralUnit({PluralCategory.one: '{n} hafta', PluralCategory.other: '{n} hafta'}),
-    'month': pluralUnit({PluralCategory.one: '{n} oy', PluralCategory.other: '{n} oy'}),
-    'year': pluralUnit({PluralCategory.one: '{n} yosh', PluralCategory.other: '{n} yosh'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} kun',
+      PluralCategory.other: '{n} kun',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} hafta',
+      PluralCategory.other: '{n} hafta',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} oy',
+      PluralCategory.other: '{n} oy',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} yosh',
+      PluralCategory.other: '{n} yosh',
+    }),
   },
   half: '{n} yarim',
   delimiter: ', ',

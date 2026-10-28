@@ -19,13 +19,34 @@ final fi = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekunti', PluralCategory.other: '{n} sekuntia'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minuutti', PluralCategory.other: '{n} minuuttia'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} tunti', PluralCategory.other: '{n} tuntia'}),
-    'day': pluralUnit({PluralCategory.one: '{n} päivä', PluralCategory.other: '{n} päivää'}),
-    'week': pluralUnit({PluralCategory.one: '{n} viikko', PluralCategory.other: '{n} viikkoa'}),
-    'month': pluralUnit({PluralCategory.one: '{n} kuukausi', PluralCategory.other: '{n} kuukautta'}),
-    'year': pluralUnit({PluralCategory.one: '{n} vuosi', PluralCategory.other: '{n} vuotta'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekunti',
+      PluralCategory.other: '{n} sekuntia',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minuutti',
+      PluralCategory.other: '{n} minuuttia',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} tunti',
+      PluralCategory.other: '{n} tuntia',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} päivä',
+      PluralCategory.other: '{n} päivää',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} viikko',
+      PluralCategory.other: '{n} viikkoa',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} kuukausi',
+      PluralCategory.other: '{n} kuukautta',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} vuosi',
+      PluralCategory.other: '{n} vuotta',
+    }),
   },
   half: '{n} ja puoli',
   delimiter: ', ',

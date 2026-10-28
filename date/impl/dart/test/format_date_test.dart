@@ -91,43 +91,82 @@ void main() {
       expect(formatRelative('2025-03-15', asOf: '2025-03-15'), 'today'); // 5.1
     });
     test('tomorrow', () {
-      expect(formatRelative('2025-03-16', asOf: '2025-03-15'), 'tomorrow'); // 5.2
+      expect(
+        formatRelative('2025-03-16', asOf: '2025-03-15'),
+        'tomorrow',
+      ); // 5.2
     });
     test('yesterday', () {
-      expect(formatRelative('2025-03-14', asOf: '2025-03-15'), 'yesterday'); // 5.3
+      expect(
+        formatRelative('2025-03-14', asOf: '2025-03-15'),
+        'yesterday',
+      ); // 5.3
     });
     test('day after tomorrow', () {
-      expect(formatRelative('2025-03-17', asOf: '2025-03-15'), 'the day after tomorrow'); // 5.4
+      expect(
+        formatRelative('2025-03-17', asOf: '2025-03-15'),
+        'the day after tomorrow',
+      ); // 5.4
     });
     test('day before yesterday', () {
-      expect(formatRelative('2025-03-13', asOf: '2025-03-15'), 'the day before yesterday'); // 5.5
+      expect(
+        formatRelative('2025-03-13', asOf: '2025-03-15'),
+        'the day before yesterday',
+      ); // 5.5
     });
     test('this Wednesday (+4)', () {
-      expect(formatRelative('2025-03-19', asOf: '2025-03-15'), 'this Wednesday'); // 5.6
+      expect(
+        formatRelative('2025-03-19', asOf: '2025-03-15'),
+        'this Wednesday',
+      ); // 5.6
     });
     test('this Thursday (+5)', () {
-      expect(formatRelative('2025-03-20', asOf: '2025-03-15'), 'this Thursday'); // 5.7
+      expect(
+        formatRelative('2025-03-20', asOf: '2025-03-15'),
+        'this Thursday',
+      ); // 5.7
     });
     test('last Tuesday (-4)', () {
-      expect(formatRelative('2025-03-11', asOf: '2025-03-15'), 'last Tuesday'); // 5.8
+      expect(
+        formatRelative('2025-03-11', asOf: '2025-03-15'),
+        'last Tuesday',
+      ); // 5.8
     });
     test('next Saturday (+7)', () {
-      expect(formatRelative('2025-03-22', asOf: '2025-03-15'), 'next Saturday'); // 5.9
+      expect(
+        formatRelative('2025-03-22', asOf: '2025-03-15'),
+        'next Saturday',
+      ); // 5.9
     });
     test('next Thursday (+12)', () {
-      expect(formatRelative('2025-03-27', asOf: '2025-03-15'), 'next Thursday'); // 5.10
+      expect(
+        formatRelative('2025-03-27', asOf: '2025-03-15'),
+        'next Thursday',
+      ); // 5.10
     });
     test('calendar fallback same year (-14)', () {
-      expect(formatRelative('2025-03-01', asOf: '2025-03-15'), 'March 1st'); // 5.11
+      expect(
+        formatRelative('2025-03-01', asOf: '2025-03-15'),
+        'March 1st',
+      ); // 5.11
     });
     test('calendar fallback same year (+26)', () {
-      expect(formatRelative('2025-04-10', asOf: '2025-03-15'), 'April 10th'); // 5.12
+      expect(
+        formatRelative('2025-04-10', asOf: '2025-03-15'),
+        'April 10th',
+      ); // 5.12
     });
     test('different year future', () {
-      expect(formatRelative('2026-01-05', asOf: '2025-03-15'), 'January 5th, 2026'); // 5.13
+      expect(
+        formatRelative('2026-01-05', asOf: '2025-03-15'),
+        'January 5th, 2026',
+      ); // 5.13
     });
     test('different year past', () {
-      expect(formatRelative('2024-12-25', asOf: '2025-03-15'), 'December 25th, 2024'); // 5.14
+      expect(
+        formatRelative('2024-12-25', asOf: '2025-03-15'),
+        'December 25th, 2024',
+      ); // 5.14
     });
   });
 
@@ -137,16 +176,28 @@ void main() {
   group('format_relative — compact', () {
     final sd = SayableDate(getLocale('en')!, Compactness.compact);
     test('today', () {
-      expect(sd.formatRelative('2025-03-15', asOf: '2025-03-15'), 'today'); // 6.1
+      expect(
+        sd.formatRelative('2025-03-15', asOf: '2025-03-15'),
+        'today',
+      ); // 6.1
     });
     test('tomorrow', () {
-      expect(sd.formatRelative('2025-03-16', asOf: '2025-03-15'), 'tomorrow'); // 6.2
+      expect(
+        sd.formatRelative('2025-03-16', asOf: '2025-03-15'),
+        'tomorrow',
+      ); // 6.2
     });
     test('compact goes to numeric', () {
-      expect(sd.formatRelative('2025-03-19', asOf: '2025-03-15'), '3/19'); // 6.3
+      expect(
+        sd.formatRelative('2025-03-19', asOf: '2025-03-15'),
+        '3/19',
+      ); // 6.3
     });
     test('compact with year', () {
-      expect(sd.formatRelative('2026-01-05', asOf: '2025-03-15'), '1/5/26'); // 6.4
+      expect(
+        sd.formatRelative('2026-01-05', asOf: '2025-03-15'),
+        '1/5/26',
+      ); // 6.4
     });
   });
 
@@ -159,13 +210,22 @@ void main() {
       expect(sd.formatDate('2025-03-15'), '15. März'); // 7.1
     });
     test('morgen', () {
-      expect(sd.formatRelative('2025-03-16', asOf: '2025-03-15'), 'morgen'); // 7.2
+      expect(
+        sd.formatRelative('2025-03-16', asOf: '2025-03-15'),
+        'morgen',
+      ); // 7.2
     });
     test('übermorgen', () {
-      expect(sd.formatRelative('2025-03-17', asOf: '2025-03-15'), 'übermorgen'); // 7.3
+      expect(
+        sd.formatRelative('2025-03-17', asOf: '2025-03-15'),
+        'übermorgen',
+      ); // 7.3
     });
     test('diesen Mittwoch', () {
-      expect(sd.formatRelative('2025-03-19', asOf: '2025-03-15'), 'diesen Mittwoch'); // 7.4
+      expect(
+        sd.formatRelative('2025-03-19', asOf: '2025-03-15'),
+        'diesen Mittwoch',
+      ); // 7.4
     });
   });
 
@@ -181,7 +241,10 @@ void main() {
       expect(sd.formatDate('2025-03-15'), '15 mars'); // 8.2
     });
     test('demain', () {
-      expect(sd.formatRelative('2025-03-16', asOf: '2025-03-15'), 'demain'); // 8.3
+      expect(
+        sd.formatRelative('2025-03-16', asOf: '2025-03-15'),
+        'demain',
+      ); // 8.3
     });
   });
 
@@ -197,7 +260,10 @@ void main() {
       expect(sd.formatRelative('2025-03-16', asOf: '2025-03-15'), '明日'); // 9.2
     });
     test('今度の水曜日', () {
-      expect(sd.formatRelative('2025-03-19', asOf: '2025-03-15'), '今度の水曜日'); // 9.3
+      expect(
+        sd.formatRelative('2025-03-19', asOf: '2025-03-15'),
+        '今度の水曜日',
+      ); // 9.3
     });
   });
 
@@ -210,7 +276,10 @@ void main() {
       expect(sd.formatDate('2025-03-15'), '15 марта'); // 10.1
     });
     test('завтра', () {
-      expect(sd.formatRelative('2025-03-16', asOf: '2025-03-15'), 'завтра'); // 10.2
+      expect(
+        sd.formatRelative('2025-03-16', asOf: '2025-03-15'),
+        'завтра',
+      ); // 10.2
     });
   });
 
@@ -223,7 +292,10 @@ void main() {
       expect(sd.formatDate('2025-03-15'), '15 مارس'); // 11.1
     });
     test('غداً', () {
-      expect(sd.formatRelative('2025-03-16', asOf: '2025-03-15'), 'غداً'); // 11.2
+      expect(
+        sd.formatRelative('2025-03-16', asOf: '2025-03-15'),
+        'غداً',
+      ); // 11.2
     });
   });
 
@@ -236,7 +308,10 @@ void main() {
       expect(sd.formatDate('2025-03-15'), '15 de marzo'); // 12.1
     });
     test('pasado mañana', () {
-      expect(sd.formatRelative('2025-03-17', asOf: '2025-03-15'), 'pasado mañana'); // 12.2
+      expect(
+        sd.formatRelative('2025-03-17', asOf: '2025-03-15'),
+        'pasado mañana',
+      ); // 12.2
     });
   });
 
@@ -284,7 +359,10 @@ void main() {
     });
     test('fi short relative', () {
       final sd = SayableDate(getLocale('fi')!, Compactness.short);
-      expect(sd.formatRelative('1998-08-08', asOf: '1998-08-15'), '8. elokuuta'); // 14.4
+      expect(
+        sd.formatRelative('1998-08-08', asOf: '1998-08-15'),
+        '8. elokuuta',
+      ); // 14.4
     });
   });
 
@@ -294,15 +372,24 @@ void main() {
   group('format_relative — short phrases', () {
     test('kw day after tomorrow', () {
       final sd = SayableDate(getLocale('kw')!, Compactness.short);
-      expect(sd.formatRelative('2035-12-04', asOf: '2035-12-02'), 'an Mth ma'); // 15.1
+      expect(
+        sd.formatRelative('2035-12-04', asOf: '2035-12-02'),
+        'an Mth ma',
+      ); // 15.1
     });
     test('mam day before yesterday', () {
       final sd = SayableDate(getLocale('mam')!, Compactness.short);
-      expect(sd.formatRelative('2000-01-23', asOf: '2000-01-25'), "Dom nchi'j"); // 15.2
+      expect(
+        sd.formatRelative('2000-01-23', asOf: '2000-01-25'),
+        "Dom nchi'j",
+      ); // 15.2
     });
     test('kek day after tomorrow', () {
       final sd = SayableDate(getLocale('kek')!, Compactness.short);
-      expect(sd.formatRelative('2014-10-24', asOf: '2014-10-22'), "a'in Vie"); // 15.3
+      expect(
+        sd.formatRelative('2014-10-24', asOf: '2014-10-22'),
+        "a'in Vie",
+      ); // 15.3
     });
   });
 

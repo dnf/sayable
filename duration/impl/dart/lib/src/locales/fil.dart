@@ -35,9 +35,15 @@ final fil = DurationLocale(
     units: {
       'second': simpleUnit('{n} seg.'),
       'minute': simpleUnit('{n} min.'),
-      'hour': pluralUnit({PluralCategory.one: '{n} oras', PluralCategory.other: '{n} na oras'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} oras',
+        PluralCategory.other: '{n} na oras',
+      }),
       'day': simpleUnit('{n} araw'),
-      'week': pluralUnit({PluralCategory.one: '{n} linggo', PluralCategory.other: '{n} na linggo'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} linggo',
+        PluralCategory.other: '{n} na linggo',
+      }),
       'month': simpleUnit('{n} buwan'),
       'year': simpleUnit('{n} taon'),
     },
@@ -49,9 +55,15 @@ final fil = DurationLocale(
       'second': simpleUnit('{n}s'),
       'minute': simpleUnit('{n}m'),
       'hour': simpleUnit('{n} oras'),
-      'day': pluralUnit({PluralCategory.one: '{n} araw', PluralCategory.other: '{n} na araw'}),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} araw',
+        PluralCategory.other: '{n} na araw',
+      }),
       'week': simpleUnit('{n}linggo'),
-      'month': pluralUnit({PluralCategory.one: '{n}buwan', PluralCategory.other: '{n} buwan'}),
+      'month': pluralUnit({
+        PluralCategory.one: '{n}buwan',
+        PluralCategory.other: '{n} buwan',
+      }),
       'year': simpleUnit('{n}taon'),
     },
     half: '{n}½',

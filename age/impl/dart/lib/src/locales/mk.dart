@@ -20,10 +20,22 @@ final mk = AgeLocale(
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дена'}),
-  week: pluralUnit({PluralCategory.one: '{n} недела', PluralCategory.other: '{n} недели'}),
-  month: pluralUnit({PluralCategory.one: '{n} месец', PluralCategory.other: '{n} месеци'}),
-  year: pluralUnit({PluralCategory.one: '{n} година', PluralCategory.other: '{n} години'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ден',
+    PluralCategory.other: '{n} дена',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} недела',
+    PluralCategory.other: '{n} недели',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} месец',
+    PluralCategory.other: '{n} месеци',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} година',
+    PluralCategory.other: '{n} години',
+  }),
   half: '{0} и пол',
   delimiter: ', ',
   justBorn: 'Новороденче',
@@ -34,7 +46,10 @@ final mk = AgeLocale(
   teenager: stageNeutral('Тинејџер'),
   adult: stageGendered('Возрасен', 'Возрасна'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} ден', PluralCategory.other: '{n} дена'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} ден',
+      PluralCategory.other: '{n} дена',
+    }),
     week: simpleUnit('{n} сед.'),
     month: simpleUnit('{n} мес.'),
     year: simpleUnit('{n} год.'),

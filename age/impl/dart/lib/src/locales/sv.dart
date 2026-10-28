@@ -18,10 +18,22 @@ final sv = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dagar'}),
-  week: pluralUnit({PluralCategory.one: '{n} vecka', PluralCategory.other: '{n} veckor'}),
-  month: pluralUnit({PluralCategory.one: '{n} månad', PluralCategory.other: '{n} månader'}),
-  year: pluralUnit({PluralCategory.one: '{n} år', PluralCategory.other: '{n} år'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dag',
+    PluralCategory.other: '{n} dagar',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} vecka',
+    PluralCategory.other: '{n} veckor',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} månad',
+    PluralCategory.other: '{n} månader',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} år',
+    PluralCategory.other: '{n} år',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Nyfödd',

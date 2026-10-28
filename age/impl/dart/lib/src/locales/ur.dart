@@ -18,10 +18,22 @@ final ur = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} دن', PluralCategory.other: '{n} دن'}),
-  week: pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
-  month: pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
-  year: pluralUnit({PluralCategory.one: '{n} سال', PluralCategory.other: '{n} سال'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} دن',
+    PluralCategory.other: '{n} دن',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} ہفتہ',
+    PluralCategory.other: '{n} ہفتے',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} مہینہ',
+    PluralCategory.other: '{n} مہینے',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} سال',
+    PluralCategory.other: '{n} سال',
+  }),
   half: 'ساڑھے {n}',
   delimiter: '، ',
   justBorn: 'نومولود',
@@ -33,14 +45,26 @@ final ur = AgeLocale(
   adult: stageNeutral('بالغ'),
   short: CompactnessOverride(
     day: simpleUnit('{n} دن'),
-    week: pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
-    month: pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} ہفتہ',
+      PluralCategory.other: '{n} ہفتے',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} مہینہ',
+      PluralCategory.other: '{n} مہینے',
+    }),
     year: simpleUnit('{n} سال'),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} دن'),
-    week: pluralUnit({PluralCategory.one: '{n} ہفتہ', PluralCategory.other: '{n} ہفتے'}),
-    month: pluralUnit({PluralCategory.one: '{n} مہینہ', PluralCategory.other: '{n} مہینے'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} ہفتہ',
+      PluralCategory.other: '{n} ہفتے',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} مہینہ',
+      PluralCategory.other: '{n} مہینے',
+    }),
     year: simpleUnit('{n} سال'),
     delimiter: '',
     half: '{n}½',

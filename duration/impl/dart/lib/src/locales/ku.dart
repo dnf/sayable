@@ -19,13 +19,34 @@ final ku = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} çirke', PluralCategory.other: '{n} çirke'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} deqîqe', PluralCategory.other: '{n} deqîqe'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} saet', PluralCategory.other: '{n} saet'}),
-    'day': pluralUnit({PluralCategory.one: '{n} roj', PluralCategory.other: '{n} roj'}),
-    'week': pluralUnit({PluralCategory.one: '{n} hefte', PluralCategory.other: '{n} hefte'}),
-    'month': pluralUnit({PluralCategory.one: '{n} meh', PluralCategory.other: '{n} meh'}),
-    'year': pluralUnit({PluralCategory.one: '{n} sal', PluralCategory.other: '{n} sal'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} çirke',
+      PluralCategory.other: '{n} çirke',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} deqîqe',
+      PluralCategory.other: '{n} deqîqe',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} saet',
+      PluralCategory.other: '{n} saet',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} roj',
+      PluralCategory.other: '{n} roj',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} hefte',
+      PluralCategory.other: '{n} hefte',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} meh',
+      PluralCategory.other: '{n} meh',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} sal',
+      PluralCategory.other: '{n} sal',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

@@ -15,7 +15,20 @@ import '../types.dart';
 final nl = TimeLocale(
   code: 'nl',
   clock: ClockConfig(
-    hours: ['twaalf', 'een', 'twee', 'drie', 'vier', 'vijf', 'zes', 'zeven', 'acht', 'negen', 'tien', 'elf'],
+    hours: [
+      'twaalf',
+      'een',
+      'twee',
+      'drie',
+      'vier',
+      'vijf',
+      'zes',
+      'zeven',
+      'acht',
+      'negen',
+      'tien',
+      'elf',
+    ],
     midnight: 'middernacht',
     noon: 'twaalf uur \'s middags',
     patterns: {

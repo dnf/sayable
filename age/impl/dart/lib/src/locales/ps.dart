@@ -18,10 +18,19 @@ final ps = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ورځ', PluralCategory.other: '{n} ورځې'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ورځ',
+    PluralCategory.other: '{n} ورځې',
+  }),
   week: simpleUnit('{n} اونۍ'),
-  month: pluralUnit({PluralCategory.one: '{n} مياشت', PluralCategory.other: '{n} مياشتې'}),
-  year: pluralUnit({PluralCategory.one: '{n} کال', PluralCategory.other: '{n} کالونه'}),
+  month: pluralUnit({
+    PluralCategory.one: '{n} مياشت',
+    PluralCategory.other: '{n} مياشتې',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} کال',
+    PluralCategory.other: '{n} کالونه',
+  }),
   half: '{n}½',
   delimiter: '، ',
   justBorn: 'نوي زېږېدلی',
@@ -32,10 +41,19 @@ final ps = AgeLocale(
   teenager: stageNeutral('ځوان'),
   adult: stageNeutral('لوی'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} ورځ', PluralCategory.other: '{n} ورځې'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} ورځ',
+      PluralCategory.other: '{n} ورځې',
+    }),
     week: simpleUnit('{n} اونۍ'),
-    month: pluralUnit({PluralCategory.one: '{n} مياشت', PluralCategory.other: '{n} مياشتې'}),
-    year: pluralUnit({PluralCategory.one: '{n} کال', PluralCategory.other: '{n} کالونه'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} مياشت',
+      PluralCategory.other: '{n} مياشتې',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} کال',
+      PluralCategory.other: '{n} کالونه',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} و'),

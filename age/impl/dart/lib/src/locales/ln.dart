@@ -18,10 +18,22 @@ final ln = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'mokolo {n}', PluralCategory.other: 'mikolo {n}'}),
-  week: pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'baposo {n}'}),
-  month: pluralUnit({PluralCategory.one: 'sanza {n}', PluralCategory.other: 'basanza {n}'}),
-  year: pluralUnit({PluralCategory.one: 'mobu {n}', PluralCategory.other: 'mibu {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'mokolo {n}',
+    PluralCategory.other: 'mikolo {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'poso {n}',
+    PluralCategory.other: 'baposo {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'sanza {n}',
+    PluralCategory.other: 'basanza {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'mobu {n}',
+    PluralCategory.other: 'mibu {n}',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Mwana ya sika',
@@ -32,16 +44,40 @@ final ln = AgeLocale(
   teenager: stageNeutral('Elɛ́ngɛ'),
   adult: stageNeutral('Mokóló'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'mokolo {n}', PluralCategory.other: 'mik {n}'}),
-    week: pluralUnit({PluralCategory.one: 'poso {n}', PluralCategory.other: 'bap {n}'}),
-    month: pluralUnit({PluralCategory.one: 'sanza {n}', PluralCategory.other: 'basanza {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mobu {n}', PluralCategory.other: 'mibu {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'mokolo {n}',
+      PluralCategory.other: 'mik {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'poso {n}',
+      PluralCategory.other: 'bap {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'sanza {n}',
+      PluralCategory.other: 'basanza {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mobu {n}',
+      PluralCategory.other: 'mibu {n}',
+    }),
   ),
   compact: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'mok {n}', PluralCategory.other: 'mik {n}'}),
-    week: pluralUnit({PluralCategory.one: 'pos {n}', PluralCategory.other: 'bap {n}'}),
-    month: pluralUnit({PluralCategory.one: 'sza {n}', PluralCategory.other: 'bsza {n}'}),
-    year: pluralUnit({PluralCategory.one: 'mb {n}', PluralCategory.other: 'mib {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'mok {n}',
+      PluralCategory.other: 'mik {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'pos {n}',
+      PluralCategory.other: 'bap {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'sza {n}',
+      PluralCategory.other: 'bsza {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'mb {n}',
+      PluralCategory.other: 'mib {n}',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

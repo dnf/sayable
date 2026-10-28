@@ -15,7 +15,20 @@ import '../types.dart';
 final ay = TimeLocale(
   code: 'ay',
   clock: ClockConfig(
-    hours: ['tunka payani', 'maya', 'paya', 'kimsa', 'pusi', 'phisqa', 'suxta', 'paqallqu', 'kimsaqallqu', 'llätunka', 'tunka', 'tunka mayani'],
+    hours: [
+      'tunka payani',
+      'maya',
+      'paya',
+      'kimsa',
+      'pusi',
+      'phisqa',
+      'suxta',
+      'paqallqu',
+      'kimsaqallqu',
+      'llätunka',
+      'tunka',
+      'tunka mayani',
+    ],
     midnight: 'aruma chika',
     noon: 'chika uru',
     patterns: {
@@ -34,9 +47,17 @@ final ay = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

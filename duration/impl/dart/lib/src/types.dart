@@ -85,8 +85,10 @@ String resolveUnit(
   if (unitForms.simple != null && unitForms.simple!.isNotEmpty) {
     template = unitForms.simple!;
   } else {
-    final category = half.isNotEmpty ? PluralCategory.other : locale.plural(count);
-    template = unitForms.forms![category] ?? unitForms.forms![PluralCategory.other]!;
+    final category =
+        half.isNotEmpty ? PluralCategory.other : locale.plural(count);
+    template =
+        unitForms.forms![category] ?? unitForms.forms![PluralCategory.other]!;
   }
 
   var result = template.replaceFirst('{n}', n);

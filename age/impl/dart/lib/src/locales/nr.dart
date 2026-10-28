@@ -18,10 +18,22 @@ final nr = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'ilanga {n}', PluralCategory.other: 'amalanga {n}'}),
-  week: pluralUnit({PluralCategory.one: 'iveke {n}', PluralCategory.other: 'amaveke {n}'}),
-  month: pluralUnit({PluralCategory.one: 'inyanga {n}', PluralCategory.other: 'iinyanga {n}'}),
-  year: pluralUnit({PluralCategory.one: 'unyaka {n}', PluralCategory.other: 'iminyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'ilanga {n}',
+    PluralCategory.other: 'amalanga {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'iveke {n}',
+    PluralCategory.other: 'amaveke {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'inyanga {n}',
+    PluralCategory.other: 'iinyanga {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'unyaka {n}',
+    PluralCategory.other: 'iminyaka {n}',
+  }),
   half: '{0} nesiquntu',
   delimiter: ', ',
   justBorn: 'Usana olusanda kubeletwa',
@@ -32,10 +44,22 @@ final nr = AgeLocale(
   teenager: stageNeutral('Isokana'),
   adult: stageNeutral('Umuntu omkhulu'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'ilanga {n}', PluralCategory.other: 'amal. {n}'}),
-    week: pluralUnit({PluralCategory.one: 'iveke {n}', PluralCategory.other: 'amav. {n}'}),
-    month: pluralUnit({PluralCategory.one: 'iny. {n}', PluralCategory.other: 'iiny. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'uny. {n}', PluralCategory.other: 'imin. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'ilanga {n}',
+      PluralCategory.other: 'amal. {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'iveke {n}',
+      PluralCategory.other: 'amav. {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'iny. {n}',
+      PluralCategory.other: 'iiny. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'uny. {n}',
+      PluralCategory.other: 'imin. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

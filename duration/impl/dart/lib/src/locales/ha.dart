@@ -19,13 +19,34 @@ final ha = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'daƙiƙa {n}', PluralCategory.other: 'daƙiƙoƙi {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minti {n}', PluralCategory.other: 'mintoci {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'awa {n}', PluralCategory.other: 'awanni {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'kwana {n}', PluralCategory.other: 'kwanaki {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'mako {n}', PluralCategory.other: 'makonni {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'wata {n}', PluralCategory.other: 'watanni {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'shekara {n}', PluralCategory.other: 'shekaru {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'daƙiƙa {n}',
+      PluralCategory.other: 'daƙiƙoƙi {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minti {n}',
+      PluralCategory.other: 'mintoci {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'awa {n}',
+      PluralCategory.other: 'awanni {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'kwana {n}',
+      PluralCategory.other: 'kwanaki {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'mako {n}',
+      PluralCategory.other: 'makonni {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'wata {n}',
+      PluralCategory.other: 'watanni {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'shekara {n}',
+      PluralCategory.other: 'shekaru {n}',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

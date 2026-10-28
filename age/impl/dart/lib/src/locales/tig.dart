@@ -18,10 +18,22 @@ final tig = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'yom {n}', PluralCategory.other: 'ayam {n}'}),
-  week: pluralUnit({PluralCategory.one: 'semun {n}', PluralCategory.other: 'semunat {n}'}),
-  month: pluralUnit({PluralCategory.one: 'werḥi {n}', PluralCategory.other: 'awerḥi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'ʿam {n}', PluralCategory.other: 'aʿwam {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'yom {n}',
+    PluralCategory.other: 'ayam {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'semun {n}',
+    PluralCategory.other: 'semunat {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'werḥi {n}',
+    PluralCategory.other: 'awerḥi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'ʿam {n}',
+    PluralCategory.other: 'aʿwam {n}',
+  }),
   half: '{0} we nəs',
   delimiter: ', ',
   justBorn: 'Ḥadis tewlid',
@@ -32,10 +44,22 @@ final tig = AgeLocale(
   teenager: stageNeutral('Mänäʿ'),
   adult: stageNeutral('Säb'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'yom {n}', PluralCategory.other: 'ayam {n}'}),
-    week: pluralUnit({PluralCategory.one: 'semun {n}', PluralCategory.other: 'semunat {n}'}),
-    month: pluralUnit({PluralCategory.one: 'werḥi {n}', PluralCategory.other: 'awerḥi {n}'}),
-    year: pluralUnit({PluralCategory.one: 'ʿam {n}', PluralCategory.other: 'aʿwam {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'yom {n}',
+      PluralCategory.other: 'ayam {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'semun {n}',
+      PluralCategory.other: 'semunat {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'werḥi {n}',
+      PluralCategory.other: 'awerḥi {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'ʿam {n}',
+      PluralCategory.other: 'aʿwam {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

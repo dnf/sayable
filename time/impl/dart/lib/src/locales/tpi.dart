@@ -15,7 +15,20 @@ import '../types.dart';
 final tpi = TimeLocale(
   code: 'tpi',
   clock: ClockConfig(
-    hours: ['twelp', 'wan', 'tu', 'tri', 'foa', 'faiv', 'sikis', 'seven', 'et', 'nain', 'ten', 'eleven'],
+    hours: [
+      'twelp',
+      'wan',
+      'tu',
+      'tri',
+      'foa',
+      'faiv',
+      'sikis',
+      'seven',
+      'et',
+      'nain',
+      'ten',
+      'eleven',
+    ],
     midnight: 'biknait',
     noon: 'belo',
     patterns: {
@@ -34,9 +47,17 @@ final tpi = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

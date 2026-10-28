@@ -15,7 +15,20 @@ import '../types.dart';
 final bci = TimeLocale(
   code: 'bci',
   clock: ClockConfig(
-    hours: ['blu-nin-nɲɔn', 'kun', 'nɲɔn', 'nsan', 'nan', 'nnun', 'nsiɛn', 'nso', 'mɔcuɛ', 'ngwlan', 'blu', 'blu-nin-kun'],
+    hours: [
+      'blu-nin-nɲɔn',
+      'kun',
+      'nɲɔn',
+      'nsan',
+      'nan',
+      'nnun',
+      'nsiɛn',
+      'nso',
+      'mɔcuɛ',
+      'ngwlan',
+      'blu',
+      'blu-nin-kun',
+    ],
     midnight: 'kɔnguɛ afiɛn',
     noon: 'nnɔsua',
     patterns: {
@@ -34,9 +47,17 @@ final bci = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

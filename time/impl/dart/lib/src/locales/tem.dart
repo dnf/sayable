@@ -15,7 +15,20 @@ import '../types.dart';
 final tem = TimeLocale(
   code: 'tem',
   clock: ClockConfig(
-    hours: ['awa pɛn nɛ rɔŋ', 'awa kɩrɩŋ', 'awa rɔŋ', 'awa rasar', 'awa rɔŋ-anat', 'awa rɔman', 'awa rɔmata', 'awa rɔmbot', 'awa rɔmɔntat', 'awa rɔmɔntaŋka', 'awa pɛn', 'awa pɛn nɛ kɩrɩŋ'],
+    hours: [
+      'awa pɛn nɛ rɔŋ',
+      'awa kɩrɩŋ',
+      'awa rɔŋ',
+      'awa rasar',
+      'awa rɔŋ-anat',
+      'awa rɔman',
+      'awa rɔmata',
+      'awa rɔmbot',
+      'awa rɔmɔntat',
+      'awa rɔmɔntaŋka',
+      'awa pɛn',
+      'awa pɛn nɛ kɩrɩŋ',
+    ],
     midnight: 'rofɛt anpa',
     noon: 'lən',
     patterns: {
@@ -34,9 +47,17 @@ final tem = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

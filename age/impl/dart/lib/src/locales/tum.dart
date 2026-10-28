@@ -18,10 +18,22 @@ final tum = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'dazi {n}', PluralCategory.other: 'madazi {n}'}),
-  week: pluralUnit({PluralCategory.one: 'sabata {n}', PluralCategory.other: 'masabata {n}'}),
-  month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miyezi {n}'}),
-  year: pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'dazi {n}',
+    PluralCategory.other: 'madazi {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'sabata {n}',
+    PluralCategory.other: 'masabata {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'mwezi {n}',
+    PluralCategory.other: 'miyezi {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'chaka {n}',
+    PluralCategory.other: 'vyaka {n}',
+  }),
   half: '{0} na hafu',
   delimiter: ', ',
   justBorn: 'Mwana wabadwa wala',
@@ -32,10 +44,22 @@ final tum = AgeLocale(
   teenager: stageNeutral('Munyamata'),
   adult: stageNeutral('Munthu mukuru'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'dazi {n}', PluralCategory.other: 'mad. {n}'}),
-    week: pluralUnit({PluralCategory.one: 'sab. {n}', PluralCategory.other: 'mas. {n}'}),
-    month: pluralUnit({PluralCategory.one: 'mwezi {n}', PluralCategory.other: 'miy. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'dazi {n}',
+      PluralCategory.other: 'mad. {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'sab. {n}',
+      PluralCategory.other: 'mas. {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'mwezi {n}',
+      PluralCategory.other: 'miy. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'chaka {n}',
+      PluralCategory.other: 'vyaka {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

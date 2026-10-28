@@ -19,13 +19,34 @@ final din = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'thiɛ̈kɛn {n}', PluralCategory.other: 'thiɛ̈kɛn {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minitö {n}', PluralCategory.other: 'minitö {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'thä {n}', PluralCategory.other: 'thä {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'akɔl {n}', PluralCategory.other: 'akɔl {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'bɛ̈t {n}', PluralCategory.other: 'bɛ̈t {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'pɛi {n}', PluralCategory.other: 'pɛi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈n {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'thiɛ̈kɛn {n}',
+      PluralCategory.other: 'thiɛ̈kɛn {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minitö {n}',
+      PluralCategory.other: 'minitö {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'thä {n}',
+      PluralCategory.other: 'thä {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'akɔl {n}',
+      PluralCategory.other: 'akɔl {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'bɛ̈t {n}',
+      PluralCategory.other: 'bɛ̈t {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'pɛi {n}',
+      PluralCategory.other: 'pɛi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'ruɔ̈n {n}',
+      PluralCategory.other: 'ruɔ̈ɔ̈n {n}',
+    }),
   },
   half: '{0} ku abɛ̈c',
   delimiter: ', ',
@@ -40,7 +61,10 @@ final din = DurationLocale(
       'day': simpleUnit('akɔl {n}'),
       'week': simpleUnit('bɛ̈t {n}'),
       'month': simpleUnit('pɛi {n}'),
-      'year': pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈n {n}'}),
+      'year': pluralUnit({
+        PluralCategory.one: 'ruɔ̈n {n}',
+        PluralCategory.other: 'ruɔ̈ɔ̈n {n}',
+      }),
     },
     ago: '{0} cï wëëŋ',
     inFuture: 'ka {0}',

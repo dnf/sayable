@@ -20,10 +20,22 @@ final is_ = AgeLocale(
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dagur', PluralCategory.other: '{n} dagar'}),
-  week: pluralUnit({PluralCategory.one: '{n} vika', PluralCategory.other: '{n} vikur'}),
-  month: pluralUnit({PluralCategory.one: '{n} mánuður', PluralCategory.other: '{n} mánuðir'}),
-  year: pluralUnit({PluralCategory.one: '{n} ár', PluralCategory.other: '{n} ár'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dagur',
+    PluralCategory.other: '{n} dagar',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} vika',
+    PluralCategory.other: '{n} vikur',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mánuður',
+    PluralCategory.other: '{n} mánuðir',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ár',
+    PluralCategory.other: '{n} ár',
+  }),
   half: '{n} og hálft',
   delimiter: ', ',
   justBorn: 'Nýfætt',

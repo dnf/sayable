@@ -18,10 +18,22 @@ final nd = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'insuku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'iviki {n}', PluralCategory.other: 'amaviki {n}'}),
-  month: pluralUnit({PluralCategory.one: 'inyanga {n}', PluralCategory.other: 'izinyanga {n}'}),
-  year: pluralUnit({PluralCategory.one: 'umnyaka {n}', PluralCategory.other: 'iminyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'usuku {n}',
+    PluralCategory.other: 'insuku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'iviki {n}',
+    PluralCategory.other: 'amaviki {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'inyanga {n}',
+    PluralCategory.other: 'izinyanga {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'umnyaka {n}',
+    PluralCategory.other: 'iminyaka {n}',
+  }),
   half: '{0} lengxenye',
   delimiter: ', ',
   justBorn: 'Usanda kuzalwa',
@@ -32,10 +44,22 @@ final nd = AgeLocale(
   teenager: stageNeutral('Isitsha'),
   adult: stageNeutral('Umuntu omdala'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'usuku {n}', PluralCategory.other: 'insuku {n}'}),
-    week: pluralUnit({PluralCategory.one: 'iviki {n}', PluralCategory.other: 'amaviki {n}'}),
-    month: pluralUnit({PluralCategory.one: 'iny. {n}', PluralCategory.other: 'iziny. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'umny. {n}', PluralCategory.other: 'iminy. {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'usuku {n}',
+      PluralCategory.other: 'insuku {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'iviki {n}',
+      PluralCategory.other: 'amaviki {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'iny. {n}',
+      PluralCategory.other: 'iziny. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'umny. {n}',
+      PluralCategory.other: 'iminy. {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

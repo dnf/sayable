@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from codegen.banner import locale_source_comment, make_header
+from codegen.targets.dart.layout import Atom, Group, Node, call, list_literal, map_literal, render
 
 HEADER = make_header("codegen/targets/dart/emitter.py")
 
@@ -33,81 +34,63 @@ def _quote(s: str) -> str:
     return f"'{escaped}'"
 
 
-def _str_list(items: list[str]) -> str:
-    return "[" + ", ".join(_quote(s) for s in items) + "]"
+def _str_list(items: list[str]) -> Group:
+    return list_literal([Atom(_quote(s)) for s in items])
 
 
-def _str_map(d: dict[str, str]) -> str:
-    pairs = [f"{_quote(k)}: {_quote(v)}" for k, v in d.items()]
-    return "{" + ", ".join(pairs) + "}"
+def _str_map(d: dict[str, str]) -> Group:
+    return map_literal([(_quote(k), Atom(_quote(v))) for k, v in d.items()])
+
+
+_STRING_LISTS = ("months", "weekdays", "monthsInDate")
+_STRING_MAPS = ("dayFormatExceptions",)
+
+
+def _fields(data: dict, keys: tuple[str, ...]) -> dict[str, Node]:
+    """The Dart argument for each of ``keys`` that ``data`` has, in order."""
+    fields: dict[str, Node] = {}
+    for key in keys:
+        if key not in data:
+            continue
+        if key in _STRING_LISTS:
+            fields[key] = _str_list(data[key])
+        elif key in _STRING_MAPS:
+            fields[key] = _str_map(data[key])
+        else:
+            fields[key] = Atom(_quote(data[key]))
+    return fields
+
+
+_LOCALE_KEYS = (
+    "code", "months", "weekdays", "dayFormat", "dayFormatExceptions",
+    "datePattern", "datePatternWithYear", "today", "tomorrow", "yesterday",
+    "dayAfterTomorrow", "dayBeforeYesterday", "thisWeekday", "nextWeekday",
+    "lastWeekday", "monthsInDate",
+)
+_SHORT_KEYS = (
+    "months", "weekdays", "dayFormat", "dayFormatExceptions",
+    "datePattern", "datePatternWithYear",
+)
+_COMPACT_KEYS = ("datePattern", "datePatternWithYear")
 
 
 def emit_locale(data: dict) -> str:
     code = data["code"]
     name = data["name"]
 
+    # An empty dayFormatExceptions is left out at the top level only.
+    top = {k: v for k, v in data.items() if k != "dayFormatExceptions" or v}
+    fields = _fields(top, _LOCALE_KEYS)
+    if "short" in data:
+        fields["short"] = call("CompactnessOverride", **_fields(data["short"], _SHORT_KEYS))
+    if "compact" in data:
+        fields["compact"] = call("CompactnessOverride", **_fields(data["compact"], _COMPACT_KEYS))
+
     lines = [HEADER + locale_source_comment(code)]
     lines.append("import '../types.dart';")
     lines.append("")
     lines.append(f"/// {name} locale.")
-    lines.append(f"final {_safe_id(code)} = DateLocale(")
-
-    lines.append(f"  code: {_quote(code)},")
-    lines.append(f"  months: {_str_list(data['months'])},")
-    lines.append(f"  weekdays: {_str_list(data['weekdays'])},")
-    lines.append(f"  dayFormat: {_quote(data['dayFormat'])},")
-
-    if "dayFormatExceptions" in data and data["dayFormatExceptions"]:
-        lines.append(f"  dayFormatExceptions: {_str_map(data['dayFormatExceptions'])},")
-
-    lines.append(f"  datePattern: {_quote(data['datePattern'])},")
-    lines.append(f"  datePatternWithYear: {_quote(data['datePatternWithYear'])},")
-    lines.append(f"  today: {_quote(data['today'])},")
-    lines.append(f"  tomorrow: {_quote(data['tomorrow'])},")
-    lines.append(f"  yesterday: {_quote(data['yesterday'])},")
-
-    if "dayAfterTomorrow" in data:
-        lines.append(f"  dayAfterTomorrow: {_quote(data['dayAfterTomorrow'])},")
-    if "dayBeforeYesterday" in data:
-        lines.append(f"  dayBeforeYesterday: {_quote(data['dayBeforeYesterday'])},")
-    if "thisWeekday" in data:
-        lines.append(f"  thisWeekday: {_quote(data['thisWeekday'])},")
-    if "nextWeekday" in data:
-        lines.append(f"  nextWeekday: {_quote(data['nextWeekday'])},")
-    if "lastWeekday" in data:
-        lines.append(f"  lastWeekday: {_quote(data['lastWeekday'])},")
-    if "monthsInDate" in data:
-        lines.append(f"  monthsInDate: {_str_list(data['monthsInDate'])},")
-
-    # Short override
-    if "short" in data:
-        ovr = data["short"]
-        lines.append("  short: CompactnessOverride(")
-        if "months" in ovr:
-            lines.append(f"    months: {_str_list(ovr['months'])},")
-        if "weekdays" in ovr:
-            lines.append(f"    weekdays: {_str_list(ovr['weekdays'])},")
-        if "dayFormat" in ovr:
-            lines.append(f"    dayFormat: {_quote(ovr['dayFormat'])},")
-        if "dayFormatExceptions" in ovr:
-            lines.append(f"    dayFormatExceptions: {_str_map(ovr['dayFormatExceptions'])},")
-        if "datePattern" in ovr:
-            lines.append(f"    datePattern: {_quote(ovr['datePattern'])},")
-        if "datePatternWithYear" in ovr:
-            lines.append(f"    datePatternWithYear: {_quote(ovr['datePatternWithYear'])},")
-        lines.append("  ),")
-
-    # Compact override
-    if "compact" in data:
-        ovr = data["compact"]
-        lines.append("  compact: CompactnessOverride(")
-        if "datePattern" in ovr:
-            lines.append(f"    datePattern: {_quote(ovr['datePattern'])},")
-        if "datePatternWithYear" in ovr:
-            lines.append(f"    datePatternWithYear: {_quote(ovr['datePatternWithYear'])},")
-        lines.append("  ),")
-
-    lines.append(");")
+    lines.append(render(call("DateLocale", **fields), lead=f"final {_safe_id(code)} = ", trail=";"))
     lines.append("")
 
     return "\n".join(lines)

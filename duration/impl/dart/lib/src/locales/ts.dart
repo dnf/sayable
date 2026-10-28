@@ -19,13 +19,34 @@ final ts = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'xikontiri {n}', PluralCategory.other: 'swikontiri {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minete {n}', PluralCategory.other: 'timinete {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'awara {n}', PluralCategory.other: 'tiawara {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'siku {n}', PluralCategory.other: 'masiku {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavhiki {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'n\'hweti {n}', PluralCategory.other: 'tin\'hweti {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'lembe {n}', PluralCategory.other: 'malembe {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'xikontiri {n}',
+      PluralCategory.other: 'swikontiri {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minete {n}',
+      PluralCategory.other: 'timinete {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'awara {n}',
+      PluralCategory.other: 'tiawara {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'siku {n}',
+      PluralCategory.other: 'masiku {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'vhiki {n}',
+      PluralCategory.other: 'mavhiki {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'n\'hweti {n}',
+      PluralCategory.other: 'tin\'hweti {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'lembe {n}',
+      PluralCategory.other: 'malembe {n}',
+    }),
   },
   half: '{0} ni hafu',
   delimiter: ', ',
@@ -34,13 +55,34 @@ final ts = DurationLocale(
   inFuture: 'hi {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: 'xikon. {n}', PluralCategory.other: 'swikon. {n}'}),
-      'minute': pluralUnit({PluralCategory.one: 'min. {n}', PluralCategory.other: 'timin. {n}'}),
-      'hour': pluralUnit({PluralCategory.one: 'awa. {n}', PluralCategory.other: 'tiawa. {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'siku {n}', PluralCategory.other: 'masiku {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'vhiki {n}', PluralCategory.other: 'mavhiki {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'n\'hw. {n}', PluralCategory.other: 'tin\'hw. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'lembe {n}', PluralCategory.other: 'mal. {n}'}),
+      'second': pluralUnit({
+        PluralCategory.one: 'xikon. {n}',
+        PluralCategory.other: 'swikon. {n}',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: 'min. {n}',
+        PluralCategory.other: 'timin. {n}',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: 'awa. {n}',
+        PluralCategory.other: 'tiawa. {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'siku {n}',
+        PluralCategory.other: 'masiku {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'vhiki {n}',
+        PluralCategory.other: 'mavhiki {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'n\'hw. {n}',
+        PluralCategory.other: 'tin\'hw. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'lembe {n}',
+        PluralCategory.other: 'mal. {n}',
+      }),
     },
     ago: '{0} leri nga hundza',
     inFuture: 'hi {0}',

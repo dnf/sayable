@@ -21,10 +21,30 @@ final sl = AgeLocale(
     if (mod100 == 3 || mod100 == 4) return PluralCategory.few;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dan', PluralCategory.two: '{n} dneva', PluralCategory.few: '{n} dni', PluralCategory.other: '{n} dni'}),
-  week: pluralUnit({PluralCategory.one: '{n} teden', PluralCategory.two: '{n} tedna', PluralCategory.few: '{n} tedne', PluralCategory.other: '{n} tednov'}),
-  month: pluralUnit({PluralCategory.one: '{n} mesec', PluralCategory.two: '{n} meseca', PluralCategory.few: '{n} mesece', PluralCategory.other: '{n} mesecev'}),
-  year: pluralUnit({PluralCategory.one: '{n} leto', PluralCategory.two: '{n} leti', PluralCategory.few: '{n} leta', PluralCategory.other: '{n} let'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dan',
+    PluralCategory.two: '{n} dneva',
+    PluralCategory.few: '{n} dni',
+    PluralCategory.other: '{n} dni',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} teden',
+    PluralCategory.two: '{n} tedna',
+    PluralCategory.few: '{n} tedne',
+    PluralCategory.other: '{n} tednov',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mesec',
+    PluralCategory.two: '{n} meseca',
+    PluralCategory.few: '{n} mesece',
+    PluralCategory.other: '{n} mesecev',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} leto',
+    PluralCategory.two: '{n} leti',
+    PluralCategory.few: '{n} leta',
+    PluralCategory.other: '{n} let',
+  }),
   half: '{0} in pol',
   delimiter: ', ',
   justBorn: 'Novorojenček',

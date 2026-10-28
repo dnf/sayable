@@ -39,7 +39,13 @@ int _toJdn(int year, int month, int day) {
   final a = (14 - month) ~/ 12;
   final y = year + 4800 - a;
   final m = month + 12 * a - 3;
-  return day + (153 * m + 2) ~/ 5 + 365 * y + y ~/ 4 - y ~/ 100 + y ~/ 400 - 32045;
+  return day +
+      (153 * m + 2) ~/ 5 +
+      365 * y +
+      y ~/ 4 -
+      y ~/ 100 +
+      y ~/ 400 -
+      32045;
 }
 
 int _weekday(int year, int month, int day) {
@@ -78,55 +84,100 @@ class SayableDate {
         _yesterday = _resolveYesterday(locale, compactness);
 
   static List<String> _resolveMonths(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.months, l.months);
   }
 
   static List<String>? _resolveMonthsInDate(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.monthsInDate, l.monthsInDate);
   }
 
   static List<String> _resolveWeekdays(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.weekdays, l.weekdays);
   }
 
   static String _resolveDayFormat(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.dayFormat, l.dayFormat);
   }
 
-  static Map<String, String> _resolveDayFormatExceptions(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
-    if (ovr != null && ovr.dayFormat != null && ovr.dayFormatExceptions == null) {
+  static Map<String, String> _resolveDayFormatExceptions(
+    DateLocale l,
+    Compactness c,
+  ) {
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
+    if (ovr != null &&
+        ovr.dayFormat != null &&
+        ovr.dayFormatExceptions == null) {
       return {};
     }
     return _pick(ovr?.dayFormatExceptions, l.dayFormatExceptions);
   }
 
   static String _resolveDatePattern(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.datePattern, l.datePattern);
   }
 
   static String _resolveDatePatternWithYear(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.datePatternWithYear, l.datePatternWithYear);
   }
 
   static String _resolveToday(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.today, l.today);
   }
 
   static String _resolveTomorrow(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.tomorrow, l.tomorrow);
   }
 
   static String _resolveYesterday(DateLocale l, Compactness c) {
-    final ovr = c == Compactness.short ? l.short : c == Compactness.compact ? l.compact : null;
+    final ovr = c == Compactness.short
+        ? l.short
+        : c == Compactness.compact
+            ? l.compact
+            : null;
     return _pick(ovr?.yesterday, l.yesterday);
   }
 
@@ -147,7 +198,8 @@ class SayableDate {
   }
 
   String? formatRelative(String? date, {required String? asOf}) {
-    if (date == null || date.isEmpty || asOf == null || asOf.isEmpty) return null;
+    if (date == null || date.isEmpty || asOf == null || asOf.isEmpty)
+      return null;
     final parsedDate = _parseDate(date);
     final parsedAsOf = _parseDate(asOf);
     if (parsedDate == null || parsedAsOf == null) return null;
@@ -190,7 +242,12 @@ class SayableDate {
     return _formatAbsolute(dy, dm, dd, includeYear: dy != ay);
   }
 
-  String _formatAbsolute(int year, int month, int day, {required bool includeYear}) {
+  String _formatAbsolute(
+    int year,
+    int month,
+    int day, {
+    required bool includeYear,
+  }) {
     final dayStr = day.toString();
     final fmt = _dayFormatExceptions[dayStr] ?? _dayFormat;
     final formattedDay = fmt.replaceAll('{n}', dayStr);

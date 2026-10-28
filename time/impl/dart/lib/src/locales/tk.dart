@@ -15,7 +15,20 @@ import '../types.dart';
 final tk = TimeLocale(
   code: 'tk',
   clock: ClockConfig(
-    hours: ['on iki', 'bir', 'iki', 'üç', 'dört', 'bäş', 'alty', 'ýedi', 'sekiz', 'dokuz', 'on', 'on bir'],
+    hours: [
+      'on iki',
+      'bir',
+      'iki',
+      'üç',
+      'dört',
+      'bäş',
+      'alty',
+      'ýedi',
+      'sekiz',
+      'dokuz',
+      'on',
+      'on bir',
+    ],
     midnight: 'ýary gije',
     noon: 'günorta',
     patterns: {

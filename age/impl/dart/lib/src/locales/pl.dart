@@ -18,13 +18,35 @@ final pl = AgeLocale(
     if (n == 1) return PluralCategory.one;
     final mod10 = n % 10;
     final mod100 = n % 100;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dzień', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dni', PluralCategory.other: '{n} dni'}),
-  week: pluralUnit({PluralCategory.one: '{n} tydzień', PluralCategory.few: '{n} tygodnie', PluralCategory.many: '{n} tygodni', PluralCategory.other: '{n} tygodni'}),
-  month: pluralUnit({PluralCategory.one: '{n} miesiąc', PluralCategory.few: '{n} miesiące', PluralCategory.many: '{n} miesięcy', PluralCategory.other: '{n} miesięcy'}),
-  year: pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} lata', PluralCategory.many: '{n} lat', PluralCategory.other: '{n} lat'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dzień',
+    PluralCategory.few: '{n} dni',
+    PluralCategory.many: '{n} dni',
+    PluralCategory.other: '{n} dni',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} tydzień',
+    PluralCategory.few: '{n} tygodnie',
+    PluralCategory.many: '{n} tygodni',
+    PluralCategory.other: '{n} tygodni',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} miesiąc',
+    PluralCategory.few: '{n} miesiące',
+    PluralCategory.many: '{n} miesięcy',
+    PluralCategory.other: '{n} miesięcy',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} rok',
+    PluralCategory.few: '{n} lata',
+    PluralCategory.many: '{n} lat',
+    PluralCategory.other: '{n} lat',
+  }),
   half: '{n} i pół',
   delimiter: ', ',
   justBorn: 'Noworodek',
@@ -35,16 +57,41 @@ final pl = AgeLocale(
   teenager: stageGendered('Nastolatek', 'Nastolatka'),
   adult: stageGendered('Dorosły', 'Dorosła'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} dzień', PluralCategory.few: '{n} dni', PluralCategory.many: '{n} dni', PluralCategory.other: '{n} dnia'}),
-    week: pluralUnit({PluralCategory.one: '{n} tydz.', PluralCategory.few: '{n} tyg.', PluralCategory.many: '{n} tyg.', PluralCategory.other: '{n} tyg.'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} dzień',
+      PluralCategory.few: '{n} dni',
+      PluralCategory.many: '{n} dni',
+      PluralCategory.other: '{n} dnia',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: '{n} tydz.',
+      PluralCategory.few: '{n} tyg.',
+      PluralCategory.many: '{n} tyg.',
+      PluralCategory.other: '{n} tyg.',
+    }),
     month: simpleUnit('{n} mies.'),
-    year: pluralUnit({PluralCategory.one: '{n} rok', PluralCategory.few: '{n} lata', PluralCategory.many: '{n} lat', PluralCategory.other: '{n} roku'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} rok',
+      PluralCategory.few: '{n} lata',
+      PluralCategory.many: '{n} lat',
+      PluralCategory.other: '{n} roku',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} d.'),
     week: simpleUnit('{n} t.'),
-    month: pluralUnit({PluralCategory.one: '{n} m-c', PluralCategory.few: '{n} m-ce', PluralCategory.many: '{n} m-cy', PluralCategory.other: '{n} m-ca'}),
-    year: pluralUnit({PluralCategory.one: '{n} r.', PluralCategory.few: '{n} l.', PluralCategory.many: '{n} l.', PluralCategory.other: '{n} r.'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} m-c',
+      PluralCategory.few: '{n} m-ce',
+      PluralCategory.many: '{n} m-cy',
+      PluralCategory.other: '{n} m-ca',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} r.',
+      PluralCategory.few: '{n} l.',
+      PluralCategory.many: '{n} l.',
+      PluralCategory.other: '{n} r.',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

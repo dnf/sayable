@@ -20,11 +20,23 @@ final so = DurationLocale(
   },
   units: {
     'second': simpleUnit('{n} ilbiriqsi'),
-    'minute': pluralUnit({PluralCategory.one: '{n} daqiiqad', PluralCategory.other: '{n} daqiiqo'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} saacad', PluralCategory.other: '{n} saacadood'}),
-    'day': pluralUnit({PluralCategory.one: '{n} maalin', PluralCategory.other: '{n} maalmood'}),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} daqiiqad',
+      PluralCategory.other: '{n} daqiiqo',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} saacad',
+      PluralCategory.other: '{n} saacadood',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} maalin',
+      PluralCategory.other: '{n} maalmood',
+    }),
     'week': simpleUnit('{n} toddobaad'),
-    'month': pluralUnit({PluralCategory.one: '{n} bil', PluralCategory.other: '{n} bilood'}),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} bil',
+      PluralCategory.other: '{n} bilood',
+    }),
     'year': simpleUnit('{n} sano'),
   },
   half: '{n}½',

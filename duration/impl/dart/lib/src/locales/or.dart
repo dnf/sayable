@@ -19,13 +19,34 @@ final or = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} ସେକେଣ୍ଡ', PluralCategory.other: '{n} ସେକେଣ୍ଡ'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} ମିନିଟ୍', PluralCategory.other: '{n} ମିନିଟ୍'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} ଘଣ୍ଟା', PluralCategory.other: '{n} ଘଣ୍ଟା'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ଦିନ', PluralCategory.other: '{n} ଦିନ'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ସପ୍ତାହ', PluralCategory.other: '{n} ସପ୍ତାହ'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ମାସ', PluralCategory.other: '{n} ମାସ'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ବର୍ଷ', PluralCategory.other: '{n} ବର୍ଷ'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} ସେକେଣ୍ଡ',
+      PluralCategory.other: '{n} ସେକେଣ୍ଡ',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} ମିନିଟ୍',
+      PluralCategory.other: '{n} ମିନିଟ୍',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ଘଣ୍ଟା',
+      PluralCategory.other: '{n} ଘଣ୍ଟା',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ଦିନ',
+      PluralCategory.other: '{n} ଦିନ',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ସପ୍ତାହ',
+      PluralCategory.other: '{n} ସପ୍ତାହ',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ମାସ',
+      PluralCategory.other: '{n} ମାସ',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ବର୍ଷ',
+      PluralCategory.other: '{n} ବର୍ଷ',
+    }),
   },
   half: '{0}ଅଧା',
   delimiter: ', ',

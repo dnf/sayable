@@ -130,8 +130,10 @@ class SayableAge {
   final String _justBorn;
 
   /// Creates a new SayableAge instance with the given locale and optional compactness.
-  factory SayableAge(AgeLocale locale,
-      [Compactness compactness = Compactness.normal]) {
+  factory SayableAge(
+    AgeLocale locale, [
+    Compactness compactness = Compactness.normal,
+  ]) {
     var day = locale.day;
     var week = locale.week;
     var month = locale.month;
@@ -160,12 +162,28 @@ class SayableAge {
       if (ovr.justBorn != null) justBorn = ovr.justBorn!;
     }
 
-    return SayableAge._(locale, day, week, month, year, half, delimiter,
-        justBorn);
+    return SayableAge._(
+      locale,
+      day,
+      week,
+      month,
+      year,
+      half,
+      delimiter,
+      justBorn,
+    );
   }
 
-  const SayableAge._(this._locale, this._day, this._week, this._month,
-      this._year, this._half, this._delimiter, this._justBorn);
+  const SayableAge._(
+    this._locale,
+    this._day,
+    this._week,
+    this._month,
+    this._year,
+    this._half,
+    this._delimiter,
+    this._justBorn,
+  );
 
   /// Formats a human-friendly age string.
   /// Returns null if dateOfBirth is empty or in the future.

@@ -19,13 +19,34 @@ final yao = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekunde {n}', PluralCategory.other: 'masekunde {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'dakika {n}', PluralCategory.other: 'madakika {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'saa {n}', PluralCategory.other: 'masaa {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'lisiku {n}', PluralCategory.other: 'masiku {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'majuma {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ngondo {n}', PluralCategory.other: 'mingondo {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekunde {n}',
+      PluralCategory.other: 'masekunde {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'dakika {n}',
+      PluralCategory.other: 'madakika {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'saa {n}',
+      PluralCategory.other: 'masaa {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'lisiku {n}',
+      PluralCategory.other: 'masiku {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'juma {n}',
+      PluralCategory.other: 'majuma {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ngondo {n}',
+      PluralCategory.other: 'mingondo {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'chaka {n}',
+      PluralCategory.other: 'vyaka {n}',
+    }),
   },
   half: '{0} na nusu',
   delimiter: ', ',
@@ -36,11 +57,26 @@ final yao = DurationLocale(
     units: {
       'second': simpleUnit('sek. {n}'),
       'minute': simpleUnit('dak. {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'saa {n}', PluralCategory.other: 'masaa {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'lis. {n}', PluralCategory.other: 'mas. {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'maj. {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'ngo. {n}', PluralCategory.other: 'min. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'saa {n}',
+        PluralCategory.other: 'masaa {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'lis. {n}',
+        PluralCategory.other: 'mas. {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'juma {n}',
+        PluralCategory.other: 'maj. {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'ngo. {n}',
+        PluralCategory.other: 'min. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'chaka {n}',
+        PluralCategory.other: 'vyaka {n}',
+      }),
     },
     ago: '{0} lyapite',
     inFuture: 'mu {0}',

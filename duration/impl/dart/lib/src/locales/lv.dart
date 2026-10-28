@@ -17,18 +17,48 @@ final lv = DurationLocale(
   plural: (int n) {
     final mod10 = n % 10;
     final mod100 = n % 100;
-    if (mod10 == 0 || (mod100 >= 11 && mod100 <= 19)) return PluralCategory.zero;
+    if (mod10 == 0 || (mod100 >= 11 && mod100 <= 19)) {
+      return PluralCategory.zero;
+    }
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.zero: '{n} sekunžu', PluralCategory.one: '{n} sekunde', PluralCategory.other: '{n} sekundes'}),
-    'minute': pluralUnit({PluralCategory.zero: '{n} minūšu', PluralCategory.one: '{n} minūte', PluralCategory.other: '{n} minūtes'}),
-    'hour': pluralUnit({PluralCategory.zero: '{n} stundu', PluralCategory.one: '{n} stunda', PluralCategory.other: '{n} stundas'}),
-    'day': pluralUnit({PluralCategory.zero: '{n} dienu', PluralCategory.one: '{n} diena', PluralCategory.other: '{n} dienas'}),
-    'week': pluralUnit({PluralCategory.zero: '{n} nedēļu', PluralCategory.one: '{n} nedēļa', PluralCategory.other: '{n} nedēļas'}),
-    'month': pluralUnit({PluralCategory.zero: '{n} mēnešu', PluralCategory.one: '{n} mēnesis', PluralCategory.other: '{n} mēneši'}),
-    'year': pluralUnit({PluralCategory.zero: '{n} gadu', PluralCategory.one: '{n} gads', PluralCategory.other: '{n} gadi'}),
+    'second': pluralUnit({
+      PluralCategory.zero: '{n} sekunžu',
+      PluralCategory.one: '{n} sekunde',
+      PluralCategory.other: '{n} sekundes',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.zero: '{n} minūšu',
+      PluralCategory.one: '{n} minūte',
+      PluralCategory.other: '{n} minūtes',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.zero: '{n} stundu',
+      PluralCategory.one: '{n} stunda',
+      PluralCategory.other: '{n} stundas',
+    }),
+    'day': pluralUnit({
+      PluralCategory.zero: '{n} dienu',
+      PluralCategory.one: '{n} diena',
+      PluralCategory.other: '{n} dienas',
+    }),
+    'week': pluralUnit({
+      PluralCategory.zero: '{n} nedēļu',
+      PluralCategory.one: '{n} nedēļa',
+      PluralCategory.other: '{n} nedēļas',
+    }),
+    'month': pluralUnit({
+      PluralCategory.zero: '{n} mēnešu',
+      PluralCategory.one: '{n} mēnesis',
+      PluralCategory.other: '{n} mēneši',
+    }),
+    'year': pluralUnit({
+      PluralCategory.zero: '{n} gadu',
+      PluralCategory.one: '{n} gads',
+      PluralCategory.other: '{n} gadi',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

@@ -15,7 +15,20 @@ import '../types.dart';
 final ktu = TimeLocale(
   code: 'ktu',
   clock: ClockConfig(
-    hours: ['zomi na zole', 'mosi', 'zole', 'tatu', 'ya', 'tanu', 'sambanu', 'nsambwadi', 'nana', 'vwa', 'zomi', 'zomi na mosi'],
+    hours: [
+      'zomi na zole',
+      'mosi',
+      'zole',
+      'tatu',
+      'ya',
+      'tanu',
+      'sambanu',
+      'nsambwadi',
+      'nana',
+      'vwa',
+      'zomi',
+      'zomi na mosi',
+    ],
     midnight: 'midi ya butu',
     noon: 'midi',
     patterns: {
@@ -34,9 +47,17 @@ final ktu = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

@@ -18,13 +18,35 @@ final hr = AgeLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dan', PluralCategory.few: '{n} dana', PluralCategory.many: '{n} dana', PluralCategory.other: '{n} dana'}),
-  week: pluralUnit({PluralCategory.one: '{n} tjedan', PluralCategory.few: '{n} tjedna', PluralCategory.many: '{n} tjedana', PluralCategory.other: '{n} tjedana'}),
-  month: pluralUnit({PluralCategory.one: '{n} mjesec', PluralCategory.few: '{n} mjeseca', PluralCategory.many: '{n} mjeseci', PluralCategory.other: '{n} mjeseci'}),
-  year: pluralUnit({PluralCategory.one: '{n} godina', PluralCategory.few: '{n} godine', PluralCategory.many: '{n} godina', PluralCategory.other: '{n} godina'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dan',
+    PluralCategory.few: '{n} dana',
+    PluralCategory.many: '{n} dana',
+    PluralCategory.other: '{n} dana',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} tjedan',
+    PluralCategory.few: '{n} tjedna',
+    PluralCategory.many: '{n} tjedana',
+    PluralCategory.other: '{n} tjedana',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mjesec',
+    PluralCategory.few: '{n} mjeseca',
+    PluralCategory.many: '{n} mjeseci',
+    PluralCategory.other: '{n} mjeseci',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} godina',
+    PluralCategory.few: '{n} godine',
+    PluralCategory.many: '{n} godina',
+    PluralCategory.other: '{n} godina',
+  }),
   half: '{0} i pol',
   delimiter: ', ',
   justBorn: 'Novorođenče',
@@ -35,7 +57,11 @@ final hr = AgeLocale(
   teenager: stageNeutral('Tinejdžer'),
   adult: stageNeutral('Odrasla osoba'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} dan', PluralCategory.few: '{n} dana', PluralCategory.other: '{n} dana'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} dan',
+      PluralCategory.few: '{n} dana',
+      PluralCategory.other: '{n} dana',
+    }),
     week: simpleUnit('{n} tj.'),
     month: simpleUnit('{n} mj.'),
     year: simpleUnit('{n} g.'),

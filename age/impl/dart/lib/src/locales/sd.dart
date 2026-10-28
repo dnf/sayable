@@ -19,8 +19,14 @@ final sd = AgeLocale(
     return PluralCategory.other;
   },
   day: simpleUnit('{n} ڏينهن'),
-  week: pluralUnit({PluralCategory.one: '{n} هفتو', PluralCategory.other: '{n} هفتا'}),
-  month: pluralUnit({PluralCategory.one: '{n} مهينو', PluralCategory.other: '{n} مهينا'}),
+  week: pluralUnit({
+    PluralCategory.one: '{n} هفتو',
+    PluralCategory.other: '{n} هفتا',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} مهينو',
+    PluralCategory.other: '{n} مهينا',
+  }),
   year: simpleUnit('{n} سال'),
   half: '{n}½',
   delimiter: '، ',
@@ -33,8 +39,14 @@ final sd = AgeLocale(
   adult: stageNeutral('وڏو'),
   short: CompactnessOverride(
     day: simpleUnit('{n} ڏينهن'),
-    week: pluralUnit({PluralCategory.one: '{n} هفتو', PluralCategory.other: '{n} هفتا'}),
-    month: pluralUnit({PluralCategory.one: '{n} مهينو', PluralCategory.other: '{n} مهينا'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} هفتو',
+      PluralCategory.other: '{n} هفتا',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} مهينو',
+      PluralCategory.other: '{n} مهينا',
+    }),
     year: simpleUnit('{n} سال'),
   ),
   compact: CompactnessOverride(

@@ -21,13 +21,34 @@ final locale_is = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekúnda', PluralCategory.other: '{n} sekúndur'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} mínúta', PluralCategory.other: '{n} mínútur'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} klukkustund', PluralCategory.other: '{n} klukkustundir'}),
-    'day': pluralUnit({PluralCategory.one: '{n} dagur', PluralCategory.other: '{n} dagar'}),
-    'week': pluralUnit({PluralCategory.one: '{n} vika', PluralCategory.other: '{n} vikur'}),
-    'month': pluralUnit({PluralCategory.one: '{n} mánuður', PluralCategory.other: '{n} mánuðir'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ár', PluralCategory.other: '{n} ár'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekúnda',
+      PluralCategory.other: '{n} sekúndur',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} mínúta',
+      PluralCategory.other: '{n} mínútur',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} klukkustund',
+      PluralCategory.other: '{n} klukkustundir',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} dagur',
+      PluralCategory.other: '{n} dagar',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} vika',
+      PluralCategory.other: '{n} vikur',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} mánuður',
+      PluralCategory.other: '{n} mánuðir',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ár',
+      PluralCategory.other: '{n} ár',
+    }),
   },
   half: '{n} og hálf',
   delimiter: ', ',

@@ -15,7 +15,20 @@ import '../types.dart';
 final dz = TimeLocale(
   code: 'dz',
   clock: ClockConfig(
-    hours: ['བཅུ་གཉིས', 'གཅིག', 'གཉིས', 'གསུམ', 'བཞི', 'ལྔ', 'དྲུག', 'བདུན', 'བརྒྱད', 'དགུ', 'བཅུ', 'བཅུ་གཅིག'],
+    hours: [
+      'བཅུ་གཉིས',
+      'གཅིག',
+      'གཉིས',
+      'གསུམ',
+      'བཞི',
+      'ལྔ',
+      'དྲུག',
+      'བདུན',
+      'བརྒྱད',
+      'དགུ',
+      'བཅུ',
+      'བཅུ་གཅིག',
+    ],
     midnight: 'ནམ་ཕྱེད',
     noon: 'ཉིན་གུང',
     patterns: {
@@ -34,9 +47,17 @@ final dz = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

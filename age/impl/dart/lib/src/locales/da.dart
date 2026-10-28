@@ -18,10 +18,22 @@ final da = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dage'}),
-  week: pluralUnit({PluralCategory.one: '{n} uge', PluralCategory.other: '{n} uger'}),
-  month: pluralUnit({PluralCategory.one: '{n} måned', PluralCategory.other: '{n} måneder'}),
-  year: pluralUnit({PluralCategory.one: '{n} år', PluralCategory.other: '{n} år'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dag',
+    PluralCategory.other: '{n} dage',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} uge',
+    PluralCategory.other: '{n} uger',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} måned',
+    PluralCategory.other: '{n} måneder',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} år',
+    PluralCategory.other: '{n} år',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Nyfødt',
@@ -32,9 +44,18 @@ final da = AgeLocale(
   teenager: stageNeutral('Teenager'),
   adult: stageNeutral('Voksen'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} dag', PluralCategory.other: '{n} dage'}),
-    week: pluralUnit({PluralCategory.one: '{n} uge', PluralCategory.other: '{n} uger'}),
-    month: pluralUnit({PluralCategory.one: '{n} md.', PluralCategory.other: '{n} mdr.'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} dag',
+      PluralCategory.other: '{n} dage',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: '{n} uge',
+      PluralCategory.other: '{n} uger',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} md.',
+      PluralCategory.other: '{n} mdr.',
+    }),
     year: simpleUnit('{n} år'),
   ),
   compact: CompactnessOverride(

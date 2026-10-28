@@ -23,8 +23,14 @@ final sd = DurationLocale(
     'minute': simpleUnit('{n} منٽ'),
     'hour': simpleUnit('{n} ڪلاڪ'),
     'day': simpleUnit('{n} ڏينهن'),
-    'week': pluralUnit({PluralCategory.one: '{n} هفتو', PluralCategory.other: '{n} هفتا'}),
-    'month': pluralUnit({PluralCategory.one: '{n} مهينو', PluralCategory.other: '{n} مهينا'}),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} هفتو',
+      PluralCategory.other: '{n} هفتا',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} مهينو',
+      PluralCategory.other: '{n} مهينا',
+    }),
     'year': simpleUnit('{n} سال'),
   },
   half: '{n}½',
@@ -38,8 +44,14 @@ final sd = DurationLocale(
       'minute': simpleUnit('{n} منٽ'),
       'hour': simpleUnit('{n} ڪلاڪ'),
       'day': simpleUnit('{n} ڏينهن'),
-      'week': pluralUnit({PluralCategory.one: '{n} هفتو', PluralCategory.other: '{n} هفتا'}),
-      'month': pluralUnit({PluralCategory.one: '{n} مهينو', PluralCategory.other: '{n} مهينا'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} هفتو',
+        PluralCategory.other: '{n} هفتا',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} مهينو',
+        PluralCategory.other: '{n} مهينا',
+      }),
       'year': simpleUnit('{n} سال'),
     },
     ago: '{0} اڳ',

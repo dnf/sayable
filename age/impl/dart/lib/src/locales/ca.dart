@@ -18,10 +18,22 @@ final ca = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dies'}),
-  week: pluralUnit({PluralCategory.one: '{n} setmana', PluralCategory.other: '{n} setmanes'}),
-  month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} mesos'}),
-  year: pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} dia',
+    PluralCategory.other: '{n} dies',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} setmana',
+    PluralCategory.other: '{n} setmanes',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mes',
+    PluralCategory.other: '{n} mesos',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} any',
+    PluralCategory.other: '{n} anys',
+  }),
   half: '{0} i mig',
   delimiter: ', ',
   justBorn: 'Nounat',
@@ -32,16 +44,28 @@ final ca = AgeLocale(
   teenager: stageNeutral('Adolescent'),
   adult: stageGendered('Adult', 'Adulta'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} dia', PluralCategory.other: '{n} dies'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} dia',
+      PluralCategory.other: '{n} dies',
+    }),
     week: simpleUnit('{n} setm.'),
-    month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} m'}),
-    year: pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} mes',
+      PluralCategory.other: '{n} m',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} any',
+      PluralCategory.other: '{n} anys',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} d'),
     week: simpleUnit('{n} setm.'),
     month: simpleUnit('{n} m'),
-    year: pluralUnit({PluralCategory.one: '{n} any', PluralCategory.other: '{n} anys'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} any',
+      PluralCategory.other: '{n} anys',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

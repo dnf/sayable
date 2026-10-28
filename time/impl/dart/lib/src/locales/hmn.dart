@@ -15,7 +15,20 @@ import '../types.dart';
 final hmn = TimeLocale(
   code: 'hmn',
   clock: ClockConfig(
-    hours: ['kaum ob', 'ib', 'ob', 'peb', 'plaub', 'tsib', 'rau', 'xya', 'yim', 'cuaj', 'kaum', 'kaum ib'],
+    hours: [
+      'kaum ob',
+      'ib',
+      'ob',
+      'peb',
+      'plaub',
+      'tsib',
+      'rau',
+      'xya',
+      'yim',
+      'cuaj',
+      'kaum',
+      'kaum ib',
+    ],
     midnight: 'ib tag hmo',
     noon: 'tav su',
     patterns: {
@@ -34,9 +47,17 @@ final hmn = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

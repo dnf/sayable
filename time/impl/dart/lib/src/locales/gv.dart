@@ -15,7 +15,20 @@ import '../types.dart';
 final gv = TimeLocale(
   code: 'gv',
   clock: ClockConfig(
-    hours: ['daa-yeig', 'nane', 'jees', 'tree', 'kiare', 'queig', 'shey', 'shiaght', 'hoght', 'nuy', 'jeih', 'nane-jeig'],
+    hours: [
+      'daa-yeig',
+      'nane',
+      'jees',
+      'tree',
+      'kiare',
+      'queig',
+      'shey',
+      'shiaght',
+      'hoght',
+      'nuy',
+      'jeih',
+      'nane-jeig',
+    ],
     midnight: 'mean oie',
     noon: 'munlaa',
     patterns: {

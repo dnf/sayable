@@ -15,7 +15,20 @@ import '../types.dart';
 final ga = TimeLocale(
   code: 'ga',
   clock: ClockConfig(
-    hours: ['dó dhéag', 'haon', 'dó', 'trí', 'ceathair', 'cúig', 'sé', 'seacht', 'hocht', 'naoi', 'deich', 'haon déag'],
+    hours: [
+      'dó dhéag',
+      'haon',
+      'dó',
+      'trí',
+      'ceathair',
+      'cúig',
+      'sé',
+      'seacht',
+      'hocht',
+      'naoi',
+      'deich',
+      'haon déag',
+    ],
     midnight: 'meán oíche',
     noon: 'meán lae',
     patterns: {

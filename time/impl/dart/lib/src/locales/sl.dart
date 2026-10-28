@@ -15,7 +15,20 @@ import '../types.dart';
 final sl = TimeLocale(
   code: 'sl',
   clock: ClockConfig(
-    hours: ['dvanajst', 'ena', 'dve', 'tri', 'štiri', 'pet', 'šest', 'sedem', 'osem', 'devet', 'deset', 'enajst'],
+    hours: [
+      'dvanajst',
+      'ena',
+      'dve',
+      'tri',
+      'štiri',
+      'pet',
+      'šest',
+      'sedem',
+      'osem',
+      'devet',
+      'deset',
+      'enajst',
+    ],
     midnight: 'polnoč',
     noon: 'poldne',
     patterns: {

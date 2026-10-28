@@ -19,13 +19,34 @@ final tem = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sɛkɔn {n}', PluralCategory.other: 'sɛkɔn {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minit {n}', PluralCategory.other: 'minit {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'awa {n}', PluralCategory.other: 'awa {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'ləfɔr {n}', PluralCategory.other: 'ɔfɔr {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'wik {n}', PluralCategory.other: 'wik {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'kətha {n}', PluralCategory.other: 'ɔtha {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'əsor {n}', PluralCategory.other: 'ɔsor {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sɛkɔn {n}',
+      PluralCategory.other: 'sɛkɔn {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minit {n}',
+      PluralCategory.other: 'minit {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'awa {n}',
+      PluralCategory.other: 'awa {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'ləfɔr {n}',
+      PluralCategory.other: 'ɔfɔr {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'wik {n}',
+      PluralCategory.other: 'wik {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'kətha {n}',
+      PluralCategory.other: 'ɔtha {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'əsor {n}',
+      PluralCategory.other: 'ɔsor {n}',
+    }),
   },
   half: '{0} a gbankɛ',
   delimiter: ', ',
@@ -37,10 +58,19 @@ final tem = DurationLocale(
       'second': simpleUnit('sɛk. {n}'),
       'minute': simpleUnit('min. {n}'),
       'hour': simpleUnit('awa {n}'),
-      'day': pluralUnit({PluralCategory.one: 'ləfɔr {n}', PluralCategory.other: 'ɔfɔr {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'ləfɔr {n}',
+        PluralCategory.other: 'ɔfɔr {n}',
+      }),
       'week': simpleUnit('wik {n}'),
-      'month': pluralUnit({PluralCategory.one: 'kətha {n}', PluralCategory.other: 'ɔtha {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'əsor {n}', PluralCategory.other: 'ɔsor {n}'}),
+      'month': pluralUnit({
+        PluralCategory.one: 'kətha {n}',
+        PluralCategory.other: 'ɔtha {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'əsor {n}',
+        PluralCategory.other: 'ɔsor {n}',
+      }),
     },
     ago: '{0} ro ba',
     inFuture: 'ro {0}',

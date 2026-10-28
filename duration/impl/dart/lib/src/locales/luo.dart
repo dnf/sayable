@@ -22,10 +22,22 @@ final luo = DurationLocale(
     'second': simpleUnit('sekunde {n}'),
     'minute': simpleUnit('dakika {n}'),
     'hour': simpleUnit('saa {n}'),
-    'day': pluralUnit({PluralCategory.one: 'odiechieng\' {n}', PluralCategory.other: 'ndalo {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'jumbe {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'dwe {n}', PluralCategory.other: 'dweche {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'higa {n}', PluralCategory.other: 'higni {n}'}),
+    'day': pluralUnit({
+      PluralCategory.one: 'odiechieng\' {n}',
+      PluralCategory.other: 'ndalo {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'juma {n}',
+      PluralCategory.other: 'jumbe {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'dwe {n}',
+      PluralCategory.other: 'dweche {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'higa {n}',
+      PluralCategory.other: 'higni {n}',
+    }),
   },
   half: '{0} gi nus',
   delimiter: ', ',
@@ -37,10 +49,22 @@ final luo = DurationLocale(
       'second': simpleUnit('sek. {n}'),
       'minute': simpleUnit('dak. {n}'),
       'hour': simpleUnit('saa {n}'),
-      'day': pluralUnit({PluralCategory.one: 'odie. {n}', PluralCategory.other: 'ndalo {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'jumbe {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'dwe {n}', PluralCategory.other: 'dwe. {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'higa {n}', PluralCategory.other: 'higni {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'odie. {n}',
+        PluralCategory.other: 'ndalo {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'juma {n}',
+        PluralCategory.other: 'jumbe {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'dwe {n}',
+        PluralCategory.other: 'dwe. {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'higa {n}',
+        PluralCategory.other: 'higni {n}',
+      }),
     },
     ago: '{0} mokalo',
     inFuture: 'bang\' {0}',

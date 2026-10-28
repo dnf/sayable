@@ -18,10 +18,22 @@ final et = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} päev', PluralCategory.other: '{n} päeva'}),
-  week: pluralUnit({PluralCategory.one: '{n} nädal', PluralCategory.other: '{n} nädalat'}),
-  month: pluralUnit({PluralCategory.one: '{n} kuu', PluralCategory.other: '{n} kuud'}),
-  year: pluralUnit({PluralCategory.one: '{n} aasta', PluralCategory.other: '{n} aastat'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} päev',
+    PluralCategory.other: '{n} päeva',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} nädal',
+    PluralCategory.other: '{n} nädalat',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} kuu',
+    PluralCategory.other: '{n} kuud',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} aasta',
+    PluralCategory.other: '{n} aastat',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Vastsündinu',
@@ -32,9 +44,15 @@ final et = AgeLocale(
   teenager: stageNeutral('Teismeline'),
   adult: stageNeutral('Täiskasvanu'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} päev', PluralCategory.other: '{n} päeva'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} päev',
+      PluralCategory.other: '{n} päeva',
+    }),
     week: simpleUnit('{n} näd'),
-    month: pluralUnit({PluralCategory.one: '{n} kuu', PluralCategory.other: '{n} kuud'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} kuu',
+      PluralCategory.other: '{n} kuud',
+    }),
     year: simpleUnit('{n} a'),
   ),
   compact: CompactnessOverride(

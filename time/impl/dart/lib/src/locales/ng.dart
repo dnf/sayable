@@ -15,7 +15,20 @@ import '../types.dart';
 final ng = TimeLocale(
   code: 'ng',
   clock: ClockConfig(
-    hours: ['omulongo nambali', 'imwe', 'mbali', 'ndatu', 'ne', 'ntano', 'hamano', 'heyali', 'hetatu', 'omugoyi', 'omulongo', 'omulongo nimwe'],
+    hours: [
+      'omulongo nambali',
+      'imwe',
+      'mbali',
+      'ndatu',
+      'ne',
+      'ntano',
+      'hamano',
+      'heyali',
+      'hetatu',
+      'omugoyi',
+      'omulongo',
+      'omulongo nimwe',
+    ],
     midnight: 'onguloshi pakati',
     noon: 'omutenya',
     patterns: {
@@ -34,9 +47,17 @@ final ng = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

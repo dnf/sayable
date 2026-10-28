@@ -19,13 +19,34 @@ final ki = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekunde {n}', PluralCategory.other: 'sekunde {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'ndagĩka {n}', PluralCategory.other: 'ndagĩka {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'ithaa {n}', PluralCategory.other: 'mathaa {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'mũthenya {n}', PluralCategory.other: 'mĩthenya {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'kiumia {n}', PluralCategory.other: 'kiumia {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'mwerĩ {n}', PluralCategory.other: 'mĩerĩ {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'mĩaka {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekunde {n}',
+      PluralCategory.other: 'sekunde {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'ndagĩka {n}',
+      PluralCategory.other: 'ndagĩka {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'ithaa {n}',
+      PluralCategory.other: 'mathaa {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'mũthenya {n}',
+      PluralCategory.other: 'mĩthenya {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'kiumia {n}',
+      PluralCategory.other: 'kiumia {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'mwerĩ {n}',
+      PluralCategory.other: 'mĩerĩ {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'mwaka {n}',
+      PluralCategory.other: 'mĩaka {n}',
+    }),
   },
   half: '{0} na nuthu',
   delimiter: ', ',
@@ -36,11 +57,23 @@ final ki = DurationLocale(
     units: {
       'second': simpleUnit('sek. {n}'),
       'minute': simpleUnit('ndag. {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'ithaa {n}', PluralCategory.other: 'mathaa {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'mũth. {n}', PluralCategory.other: 'mĩth. {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'ithaa {n}',
+        PluralCategory.other: 'mathaa {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'mũth. {n}',
+        PluralCategory.other: 'mĩth. {n}',
+      }),
       'week': simpleUnit('kiu. {n}'),
-      'month': pluralUnit({PluralCategory.one: 'mwerĩ {n}', PluralCategory.other: 'mĩerĩ {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'mwaka {n}', PluralCategory.other: 'mĩaka {n}'}),
+      'month': pluralUnit({
+        PluralCategory.one: 'mwerĩ {n}',
+        PluralCategory.other: 'mĩerĩ {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'mwaka {n}',
+        PluralCategory.other: 'mĩaka {n}',
+      }),
     },
     ago: '{0} ĩhĩtũkĩte',
     inFuture: 'thutha wa {0}',

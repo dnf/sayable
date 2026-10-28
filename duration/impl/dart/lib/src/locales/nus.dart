@@ -19,13 +19,34 @@ final nus = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'thɛkɛni {n}', PluralCategory.other: 'thɛkni {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minit {n}', PluralCategory.other: 'minitni {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'thaar {n}', PluralCategory.other: 'thaarni {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'cäŋ {n}', PluralCategory.other: 'cëŋ {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'korɛ {n}', PluralCategory.other: 'korni {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'pay {n}', PluralCategory.other: 'pei {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈ni {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'thɛkɛni {n}',
+      PluralCategory.other: 'thɛkni {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minit {n}',
+      PluralCategory.other: 'minitni {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'thaar {n}',
+      PluralCategory.other: 'thaarni {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'cäŋ {n}',
+      PluralCategory.other: 'cëŋ {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'korɛ {n}',
+      PluralCategory.other: 'korni {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'pay {n}',
+      PluralCategory.other: 'pei {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'ruɔ̈n {n}',
+      PluralCategory.other: 'ruɔ̈ɔ̈ni {n}',
+    }),
   },
   half: '{0} ku kel',
   delimiter: ', ',
@@ -34,13 +55,34 @@ final nus = DurationLocale(
   inFuture: 'ka {0}',
   short: CompactnessOverride(
     units: {
-      'second': pluralUnit({PluralCategory.one: 'thɛk. {n}', PluralCategory.other: 'thɛk. {n}'}),
-      'minute': pluralUnit({PluralCategory.one: 'min. {n}', PluralCategory.other: 'min. {n}'}),
-      'hour': pluralUnit({PluralCategory.one: 'thaar {n}', PluralCategory.other: 'thaarni {n}'}),
-      'day': pluralUnit({PluralCategory.one: 'cäŋ {n}', PluralCategory.other: 'cëŋ {n}'}),
-      'week': pluralUnit({PluralCategory.one: 'kor. {n}', PluralCategory.other: 'kor. {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'pay {n}', PluralCategory.other: 'pei {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'ruɔ̈n {n}', PluralCategory.other: 'ruɔ̈ɔ̈ni {n}'}),
+      'second': pluralUnit({
+        PluralCategory.one: 'thɛk. {n}',
+        PluralCategory.other: 'thɛk. {n}',
+      }),
+      'minute': pluralUnit({
+        PluralCategory.one: 'min. {n}',
+        PluralCategory.other: 'min. {n}',
+      }),
+      'hour': pluralUnit({
+        PluralCategory.one: 'thaar {n}',
+        PluralCategory.other: 'thaarni {n}',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: 'cäŋ {n}',
+        PluralCategory.other: 'cëŋ {n}',
+      }),
+      'week': pluralUnit({
+        PluralCategory.one: 'kor. {n}',
+        PluralCategory.other: 'kor. {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'pay {n}',
+        PluralCategory.other: 'pei {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'ruɔ̈n {n}',
+        PluralCategory.other: 'ruɔ̈ɔ̈ni {n}',
+      }),
     },
     ago: '{0} cï kuɔ̈ɔ̈t',
     inFuture: 'ka {0}',

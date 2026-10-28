@@ -19,13 +19,34 @@ final men = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sɛkɔn {n}', PluralCategory.other: 'sɛkɔn {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'miniti {n}', PluralCategory.other: 'miniti {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'awa {n}', PluralCategory.other: 'awa {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'lɔhɔ {n}', PluralCategory.other: 'lɔhɔnga {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'wikii {n}', PluralCategory.other: 'wikii {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'ndɔlɔ {n}', PluralCategory.other: 'ndɔlɔnga {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'saŋ {n}', PluralCategory.other: 'saŋga {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sɛkɔn {n}',
+      PluralCategory.other: 'sɛkɔn {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'miniti {n}',
+      PluralCategory.other: 'miniti {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'awa {n}',
+      PluralCategory.other: 'awa {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'lɔhɔ {n}',
+      PluralCategory.other: 'lɔhɔnga {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'wikii {n}',
+      PluralCategory.other: 'wikii {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'ndɔlɔ {n}',
+      PluralCategory.other: 'ndɔlɔnga {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'saŋ {n}',
+      PluralCategory.other: 'saŋga {n}',
+    }),
   },
   half: '{0} ta fele',
   delimiter: ', ',
@@ -37,10 +58,19 @@ final men = DurationLocale(
       'second': simpleUnit('sɛk. {n}'),
       'minute': simpleUnit('min. {n}'),
       'hour': simpleUnit('awa {n}'),
-      'day': pluralUnit({PluralCategory.one: 'lɔhɔ {n}', PluralCategory.other: 'lɔhɔnga {n}'}),
+      'day': pluralUnit({
+        PluralCategory.one: 'lɔhɔ {n}',
+        PluralCategory.other: 'lɔhɔnga {n}',
+      }),
       'week': simpleUnit('wikii {n}'),
-      'month': pluralUnit({PluralCategory.one: 'ndɔlɔ {n}', PluralCategory.other: 'ndɔlɔnga {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'saŋ {n}', PluralCategory.other: 'saŋga {n}'}),
+      'month': pluralUnit({
+        PluralCategory.one: 'ndɔlɔ {n}',
+        PluralCategory.other: 'ndɔlɔnga {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'saŋ {n}',
+        PluralCategory.other: 'saŋga {n}',
+      }),
     },
     ago: '{0} taa gbɔyɔ',
     inFuture: 'yɛ {0}',

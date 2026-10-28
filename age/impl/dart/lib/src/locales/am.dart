@@ -18,10 +18,22 @@ final am = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ቀን', PluralCategory.other: '{n} ቀናት'}),
-  week: pluralUnit({PluralCategory.one: '{n} ሳምንት', PluralCategory.other: '{n} ሳምንታት'}),
-  month: pluralUnit({PluralCategory.one: '{n} ወር', PluralCategory.other: '{n} ወራት'}),
-  year: pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ቀን',
+    PluralCategory.other: '{n} ቀናት',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} ሳምንት',
+    PluralCategory.other: '{n} ሳምንታት',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ወር',
+    PluralCategory.other: '{n} ወራት',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ዓመት',
+    PluralCategory.other: '{n} ዓመታት',
+  }),
   half: '{0} ተኩል',
   delimiter: '፣ ',
   justBorn: 'አዲስ የተወለደ',
@@ -33,15 +45,24 @@ final am = AgeLocale(
   adult: stageNeutral('አዋቂ'),
   short: CompactnessOverride(
     day: simpleUnit('{n} ቀናት'),
-    week: pluralUnit({PluralCategory.one: '{n} ሳምንት', PluralCategory.other: '{n} ሳምንታት'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} ሳምንት',
+      PluralCategory.other: '{n} ሳምንታት',
+    }),
     month: simpleUnit('{n} ወራት'),
-    year: pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓመታት'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ዓመት',
+      PluralCategory.other: '{n} ዓመታት',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} ቀ'),
     week: simpleUnit('{n} ሳምንት'),
     month: simpleUnit('{n} ወር'),
-    year: pluralUnit({PluralCategory.one: '{n} ዓመት', PluralCategory.other: '{n} ዓ'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} ዓመት',
+      PluralCategory.other: '{n} ዓ',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

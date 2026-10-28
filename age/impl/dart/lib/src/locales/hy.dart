@@ -18,10 +18,22 @@ final hy = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} օր', PluralCategory.other: '{n} օր'}),
-  week: pluralUnit({PluralCategory.one: '{n} շաբաթ', PluralCategory.other: '{n} շաբաթ'}),
-  month: pluralUnit({PluralCategory.one: '{n} ամիս', PluralCategory.other: '{n} ամիս'}),
-  year: pluralUnit({PluralCategory.one: '{n} տարի', PluralCategory.other: '{n} տարի'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} օր',
+    PluralCategory.other: '{n} օր',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} շաբաթ',
+    PluralCategory.other: '{n} շաբաթ',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ամիս',
+    PluralCategory.other: '{n} ամիս',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} տարի',
+    PluralCategory.other: '{n} տարի',
+  }),
   half: '{0} ու կես',
   delimiter: ', ',
   justBorn: 'Նորածին',

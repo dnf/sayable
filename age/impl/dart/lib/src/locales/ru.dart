@@ -18,13 +18,35 @@ final ru = AgeLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.many;
   },
-  day: pluralUnit({PluralCategory.one: '{n} день', PluralCategory.few: '{n} дня', PluralCategory.many: '{n} дней', PluralCategory.other: '{n} дней'}),
-  week: pluralUnit({PluralCategory.one: '{n} неделя', PluralCategory.few: '{n} недели', PluralCategory.many: '{n} недель', PluralCategory.other: '{n} недель'}),
-  month: pluralUnit({PluralCategory.one: '{n} месяц', PluralCategory.few: '{n} месяца', PluralCategory.many: '{n} месяцев', PluralCategory.other: '{n} месяцев'}),
-  year: pluralUnit({PluralCategory.one: '{n} год', PluralCategory.few: '{n} года', PluralCategory.many: '{n} лет', PluralCategory.other: '{n} лет'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} день',
+    PluralCategory.few: '{n} дня',
+    PluralCategory.many: '{n} дней',
+    PluralCategory.other: '{n} дней',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} неделя',
+    PluralCategory.few: '{n} недели',
+    PluralCategory.many: '{n} недель',
+    PluralCategory.other: '{n} недель',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} месяц',
+    PluralCategory.few: '{n} месяца',
+    PluralCategory.many: '{n} месяцев',
+    PluralCategory.other: '{n} месяцев',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} год',
+    PluralCategory.few: '{n} года',
+    PluralCategory.many: '{n} лет',
+    PluralCategory.other: '{n} лет',
+  }),
   half: '{n} с половиной',
   delimiter: ', ',
   justBorn: 'Новорождённый',
@@ -38,13 +60,23 @@ final ru = AgeLocale(
     day: simpleUnit('{n} дн.'),
     week: simpleUnit('{n} нед.'),
     month: simpleUnit('{n} мес.'),
-    year: pluralUnit({PluralCategory.one: '{n} г.', PluralCategory.few: '{n} г.', PluralCategory.many: '{n} л.', PluralCategory.other: '{n} г.'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} г.',
+      PluralCategory.few: '{n} г.',
+      PluralCategory.many: '{n} л.',
+      PluralCategory.other: '{n} г.',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} д.'),
     week: simpleUnit('{n} н.'),
     month: simpleUnit('{n} м.'),
-    year: pluralUnit({PluralCategory.one: '{n} г.', PluralCategory.few: '{n} г.', PluralCategory.many: '{n} л.', PluralCategory.other: '{n} г.'}),
+    year: pluralUnit({
+      PluralCategory.one: '{n} г.',
+      PluralCategory.few: '{n} г.',
+      PluralCategory.many: '{n} л.',
+      PluralCategory.other: '{n} г.',
+    }),
     delimiter: '',
     half: '{n}½',
   ),

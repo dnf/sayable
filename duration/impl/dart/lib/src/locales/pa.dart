@@ -21,11 +21,26 @@ final pa = DurationLocale(
   units: {
     'second': simpleUnit('{n} ਸਕਿੰਟ'),
     'minute': simpleUnit('{n} ਮਿੰਟ'),
-    'hour': pluralUnit({PluralCategory.one: '{n} ਘੰਟਾ', PluralCategory.other: '{n} ਘੰਟੇ'}),
-    'day': pluralUnit({PluralCategory.one: '{n} ਦਿਨ', PluralCategory.other: '{n} ਦਿਨ'}),
-    'week': pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
-    'year': pluralUnit({PluralCategory.one: '{n} ਸਾਲ', PluralCategory.other: '{n} ਸਾਲ'}),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} ਘੰਟਾ',
+      PluralCategory.other: '{n} ਘੰਟੇ',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} ਦਿਨ',
+      PluralCategory.other: '{n} ਦਿਨ',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} ਹਫ਼ਤਾ',
+      PluralCategory.other: '{n} ਹਫ਼ਤੇ',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ਮਹੀਨਾ',
+      PluralCategory.other: '{n} ਮਹੀਨੇ',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} ਸਾਲ',
+      PluralCategory.other: '{n} ਸਾਲ',
+    }),
   },
   half: 'ਸਾਢੇ {n}',
   delimiter: ', ',
@@ -36,10 +51,19 @@ final pa = DurationLocale(
     units: {
       'second': simpleUnit('{n} ਸਕਿੰਟ'),
       'minute': simpleUnit('{n} ਮਿੰਟ'),
-      'hour': pluralUnit({PluralCategory.one: '{n} ਘੰਟਾ', PluralCategory.other: '{n} ਘੰਟੇ'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} ਘੰਟਾ',
+        PluralCategory.other: '{n} ਘੰਟੇ',
+      }),
       'day': simpleUnit('{n} ਦਿਨ'),
-      'week': pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
-      'month': pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} ਹਫ਼ਤਾ',
+        PluralCategory.other: '{n} ਹਫ਼ਤੇ',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} ਮਹੀਨਾ',
+        PluralCategory.other: '{n} ਮਹੀਨੇ',
+      }),
       'year': simpleUnit('{n} ਸਾਲ'),
     },
     ago: '{0} ਪਹਿਲਾਂ',
@@ -49,10 +73,19 @@ final pa = DurationLocale(
     units: {
       'second': simpleUnit('{n} ਸਕਿੰਟ'),
       'minute': simpleUnit('{n} ਮਿੰਟ'),
-      'hour': pluralUnit({PluralCategory.one: '{n} ਘੰਟਾ', PluralCategory.other: '{n} ਘੰਟੇ'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} ਘੰਟਾ',
+        PluralCategory.other: '{n} ਘੰਟੇ',
+      }),
       'day': simpleUnit('{n} ਦਿਨ'),
-      'week': pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
-      'month': pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
+      'week': pluralUnit({
+        PluralCategory.one: '{n} ਹਫ਼ਤਾ',
+        PluralCategory.other: '{n} ਹਫ਼ਤੇ',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: '{n} ਮਹੀਨਾ',
+        PluralCategory.other: '{n} ਮਹੀਨੇ',
+      }),
       'year': simpleUnit('{n} ਸਾਲ'),
     },
     half: '{n}½',

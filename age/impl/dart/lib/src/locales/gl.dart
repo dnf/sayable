@@ -18,10 +18,22 @@ final gl = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} día', PluralCategory.other: '{n} días'}),
-  week: pluralUnit({PluralCategory.one: '{n} semana', PluralCategory.other: '{n} semanas'}),
-  month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} meses'}),
-  year: pluralUnit({PluralCategory.one: '{n} ano', PluralCategory.other: '{n} anos'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} día',
+    PluralCategory.other: '{n} días',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} semana',
+    PluralCategory.other: '{n} semanas',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} mes',
+    PluralCategory.other: '{n} meses',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ano',
+    PluralCategory.other: '{n} anos',
+  }),
   half: '{0} e medio',
   delimiter: ', ',
   justBorn: 'Recén nacido',

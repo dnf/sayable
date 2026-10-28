@@ -18,10 +18,22 @@ final el = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} μέρα', PluralCategory.other: '{n} μέρες'}),
-  week: pluralUnit({PluralCategory.one: '{n} εβδομάδα', PluralCategory.other: '{n} εβδομάδες'}),
-  month: pluralUnit({PluralCategory.one: '{n} μήνας', PluralCategory.other: '{n} μήνες'}),
-  year: pluralUnit({PluralCategory.one: '{n} χρόνος', PluralCategory.other: '{n} χρόνια'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} μέρα',
+    PluralCategory.other: '{n} μέρες',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} εβδομάδα',
+    PluralCategory.other: '{n} εβδομάδες',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} μήνας',
+    PluralCategory.other: '{n} μήνες',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} χρόνος',
+    PluralCategory.other: '{n} χρόνια',
+  }),
   half: '{0} και μισό',
   delimiter: ', ',
   justBorn: 'Νεογέννητο',
@@ -32,7 +44,10 @@ final el = AgeLocale(
   teenager: stageGendered('Έφηβος', 'Έφηβη'),
   adult: stageGendered('Ενήλικας', 'Ενήλικη'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} ημέρα', PluralCategory.other: '{n} ημέρες'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} ημέρα',
+      PluralCategory.other: '{n} ημέρες',
+    }),
     week: simpleUnit('{n} εβδ.'),
     month: simpleUnit('{n} μήν.'),
     year: simpleUnit('{n} έτ.'),

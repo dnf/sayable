@@ -18,10 +18,22 @@ final pa = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} ਦਿਨ', PluralCategory.other: '{n} ਦਿਨ'}),
-  week: pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
-  month: pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
-  year: pluralUnit({PluralCategory.one: '{n} ਸਾਲ', PluralCategory.other: '{n} ਸਾਲ'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} ਦਿਨ',
+    PluralCategory.other: '{n} ਦਿਨ',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} ਹਫ਼ਤਾ',
+    PluralCategory.other: '{n} ਹਫ਼ਤੇ',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ਮਹੀਨਾ',
+    PluralCategory.other: '{n} ਮਹੀਨੇ',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} ਸਾਲ',
+    PluralCategory.other: '{n} ਸਾਲ',
+  }),
   half: 'ਸਾਢੇ {n}',
   delimiter: ', ',
   justBorn: 'ਨਵਜੰਮਿਆ',
@@ -33,14 +45,26 @@ final pa = AgeLocale(
   adult: stageNeutral('ਬਾਲਗ'),
   short: CompactnessOverride(
     day: simpleUnit('{n} ਦਿਨ'),
-    week: pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
-    month: pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} ਹਫ਼ਤਾ',
+      PluralCategory.other: '{n} ਹਫ਼ਤੇ',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} ਮਹੀਨਾ',
+      PluralCategory.other: '{n} ਮਹੀਨੇ',
+    }),
     year: simpleUnit('{n} ਸਾਲ'),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} ਦਿਨ'),
-    week: pluralUnit({PluralCategory.one: '{n} ਹਫ਼ਤਾ', PluralCategory.other: '{n} ਹਫ਼ਤੇ'}),
-    month: pluralUnit({PluralCategory.one: '{n} ਮਹੀਨਾ', PluralCategory.other: '{n} ਮਹੀਨੇ'}),
+    week: pluralUnit({
+      PluralCategory.one: '{n} ਹਫ਼ਤਾ',
+      PluralCategory.other: '{n} ਹਫ਼ਤੇ',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: '{n} ਮਹੀਨਾ',
+      PluralCategory.other: '{n} ਮਹੀਨੇ',
+    }),
     year: simpleUnit('{n} ਸਾਲ'),
     delimiter: '',
     half: '{n}½',

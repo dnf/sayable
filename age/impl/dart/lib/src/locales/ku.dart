@@ -18,10 +18,22 @@ final ku = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} roj', PluralCategory.other: '{n} roj'}),
-  week: pluralUnit({PluralCategory.one: '{n} hefte', PluralCategory.other: '{n} hefte'}),
-  month: pluralUnit({PluralCategory.one: '{n} meh', PluralCategory.other: '{n} meh'}),
-  year: pluralUnit({PluralCategory.one: '{n} sal', PluralCategory.other: '{n} sal'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} roj',
+    PluralCategory.other: '{n} roj',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} hefte',
+    PluralCategory.other: '{n} hefte',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} meh',
+    PluralCategory.other: '{n} meh',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} sal',
+    PluralCategory.other: '{n} sal',
+  }),
   half: '{n}½',
   delimiter: ', ',
   justBorn: 'Nûbûyî',

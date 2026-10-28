@@ -18,10 +18,22 @@ final yao = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'lisiku {n}', PluralCategory.other: 'masiku {n}'}),
-  week: pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'majuma {n}'}),
-  month: pluralUnit({PluralCategory.one: 'ngondo {n}', PluralCategory.other: 'mingondo {n}'}),
-  year: pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'lisiku {n}',
+    PluralCategory.other: 'masiku {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'juma {n}',
+    PluralCategory.other: 'majuma {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'ngondo {n}',
+    PluralCategory.other: 'mingondo {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'chaka {n}',
+    PluralCategory.other: 'vyaka {n}',
+  }),
   half: '{0} na nusu',
   delimiter: ', ',
   justBorn: 'Mwanache jwabadwa',
@@ -32,10 +44,22 @@ final yao = AgeLocale(
   teenager: stageNeutral('Jeje'),
   adult: stageNeutral('Mundu'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'lis. {n}', PluralCategory.other: 'mas. {n}'}),
-    week: pluralUnit({PluralCategory.one: 'juma {n}', PluralCategory.other: 'maj. {n}'}),
-    month: pluralUnit({PluralCategory.one: 'ngo. {n}', PluralCategory.other: 'min. {n}'}),
-    year: pluralUnit({PluralCategory.one: 'chaka {n}', PluralCategory.other: 'vyaka {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'lis. {n}',
+      PluralCategory.other: 'mas. {n}',
+    }),
+    week: pluralUnit({
+      PluralCategory.one: 'juma {n}',
+      PluralCategory.other: 'maj. {n}',
+    }),
+    month: pluralUnit({
+      PluralCategory.one: 'ngo. {n}',
+      PluralCategory.other: 'min. {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'chaka {n}',
+      PluralCategory.other: 'vyaka {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

@@ -15,7 +15,20 @@ import '../types.dart';
 final kri = TimeLocale(
   code: 'kri',
   clock: ClockConfig(
-    hours: ['twelv', 'wan', 'tu', 'tri', 'fo', 'fayv', 'siks', 'sevin', 'et', 'nayn', 'ten', 'ilevin'],
+    hours: [
+      'twelv',
+      'wan',
+      'tu',
+      'tri',
+      'fo',
+      'fayv',
+      'siks',
+      'sevin',
+      'et',
+      'nayn',
+      'ten',
+      'ilevin',
+    ],
     midnight: 'midul net',
     noon: 'midul de',
     patterns: {
@@ -34,9 +47,17 @@ final kri = TimeLocale(
     },
   ),
   short: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm} {ampm}', amPm: ['AM', 'PM']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm} {ampm}',
+      amPm: ['AM', 'PM'],
+    ),
   ),
   compact: CompactnessOverride(
-    clock: ShortClockConfig(use24h: false, format: '{h}:{mm}{ampm}', amPm: ['a', 'p']),
+    clock: ShortClockConfig(
+      use24h: false,
+      format: '{h}:{mm}{ampm}',
+      amPm: ['a', 'p'],
+    ),
   ),
 );

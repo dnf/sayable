@@ -224,10 +224,16 @@ void main() {
       expect(formatAge('2023-06-15', '2025-07-15'), '2 years, 1 month'); // 10.2
     });
     test('2 years 6 months', () {
-      expect(formatAge('2023-06-15', '2025-12-15'), '2 years, 6 months'); // 10.3
+      expect(
+        formatAge('2023-06-15', '2025-12-15'),
+        '2 years, 6 months',
+      ); // 10.3
     });
     test('2 years 11 months', () {
-      expect(formatAge('2023-06-15', '2026-05-15'), '2 years, 11 months'); // 10.4
+      expect(
+        formatAge('2023-06-15', '2026-05-15'),
+        '2 years, 11 months',
+      ); // 10.4
     });
     test('one day before 24mo', () {
       expect(formatAge('2023-06-15', '2025-06-14'), '23 months'); // 10.5
@@ -272,7 +278,10 @@ void main() {
       expect(formatAge('2019-06-15', '2026-05-15'), '6\u00BD years'); // 11.11
     });
     test('one day before 3rd bday', () {
-      expect(formatAge('2022-06-15', '2025-06-14'), '2 years, 11 months'); // 11.12
+      expect(
+        formatAge('2022-06-15', '2025-06-14'),
+        '2 years, 11 months',
+      ); // 11.12
     });
   });
 
@@ -505,7 +514,10 @@ void main() {
       expect(pt.formatAge('2025-01-15', '2025-07-15'), '6 months'); // 24.4
     });
     test('2y 1mo', () {
-      expect(pt.formatAge('2023-06-15', '2025-07-15'), '2 years, 1 month'); // 24.5
+      expect(
+        pt.formatAge('2023-06-15', '2025-07-15'),
+        '2 years, 1 month',
+      ); // 24.5
     });
     test('3½ years', () {
       expect(pt.formatAge('2022-06-15', '2025-12-15'), '3\u00BD years'); // 24.6
@@ -546,10 +558,22 @@ void main() {
     final es = AgeLocale(
       code: 'es',
       plural: (int n) => n == 1 ? PluralCategory.one : PluralCategory.other,
-      day: pluralUnit({PluralCategory.one: '{n} día', PluralCategory.other: '{n} días'}),
-      week: pluralUnit({PluralCategory.one: '{n} semana', PluralCategory.other: '{n} semanas'}),
-      month: pluralUnit({PluralCategory.one: '{n} mes', PluralCategory.other: '{n} meses'}),
-      year: pluralUnit({PluralCategory.one: '{n} año', PluralCategory.other: '{n} años'}),
+      day: pluralUnit({
+        PluralCategory.one: '{n} día',
+        PluralCategory.other: '{n} días',
+      }),
+      week: pluralUnit({
+        PluralCategory.one: '{n} semana',
+        PluralCategory.other: '{n} semanas',
+      }),
+      month: pluralUnit({
+        PluralCategory.one: '{n} mes',
+        PluralCategory.other: '{n} meses',
+      }),
+      year: pluralUnit({
+        PluralCategory.one: '{n} año',
+        PluralCategory.other: '{n} años',
+      }),
       half: '{0} y medio',
       delimiter: ', ',
       justBorn: 'Recién nacido',
@@ -576,10 +600,16 @@ void main() {
       expect(pt.formatAge('2025-06-08', '2025-06-15'), '1 semana'); // 25.4
     });
     test('weeks+days', () {
-      expect(pt.formatAge('2025-06-07', '2025-06-15'), '1 semana, 1 día'); // 25.5
+      expect(
+        pt.formatAge('2025-06-07', '2025-06-15'),
+        '1 semana, 1 día',
+      ); // 25.5
     });
     test('plural weeks+days', () {
-      expect(pt.formatAge('2025-05-26', '2025-06-15'), '2 semanas, 6 días'); // 25.6
+      expect(
+        pt.formatAge('2025-05-26', '2025-06-15'),
+        '2 semanas, 6 días',
+      ); // 25.6
     });
     test('months', () {
       expect(pt.formatAge('2025-01-15', '2025-07-15'), '6 meses'); // 25.7
@@ -588,10 +618,16 @@ void main() {
       expect(pt.formatAge('2023-06-15', '2025-07-15'), '2 años, 1 mes'); // 25.8
     });
     test('years+months', () {
-      expect(pt.formatAge('2023-06-15', '2025-12-15'), '2 años, 6 meses'); // 25.9
+      expect(
+        pt.formatAge('2023-06-15', '2025-12-15'),
+        '2 años, 6 meses',
+      ); // 25.9
     });
     test('half marker', () {
-      expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 años y medio'); // 25.10
+      expect(
+        pt.formatAge('2022-06-15', '2025-12-15'),
+        '3 años y medio',
+      ); // 25.10
     });
     test('integer years', () {
       expect(pt.formatAge('2022-06-15', '2025-06-15'), '3 años'); // 25.11
@@ -600,19 +636,28 @@ void main() {
       expect(pt.formatAge('2018-06-15', '2025-06-15'), '7 años'); // 25.12
     });
     test('stage newborn', () {
-      expect(pt.formatStage('2025-06-15', '2025-06-15'), 'Recién nacido'); // 25.13
+      expect(
+        pt.formatStage('2025-06-15', '2025-06-15'),
+        'Recién nacido',
+      ); // 25.13
     });
     test('stage infant', () {
       expect(pt.formatStage('2025-01-15', '2025-06-15'), 'Bebé'); // 25.14
     });
     test('stage toddler', () {
-      expect(pt.formatStage('2024-06-15', '2025-06-15'), 'Niño pequeño'); // 25.15
+      expect(
+        pt.formatStage('2024-06-15', '2025-06-15'),
+        'Niño pequeño',
+      ); // 25.15
     });
     test('stage child', () {
       expect(pt.formatStage('2022-06-15', '2025-06-15'), 'Niño'); // 25.16
     });
     test('stage teenager', () {
-      expect(pt.formatStage('2012-06-15', '2025-06-15'), 'Adolescente'); // 25.17
+      expect(
+        pt.formatStage('2012-06-15', '2025-06-15'),
+        'Adolescente',
+      ); // 25.17
     });
     test('stage adult', () {
       expect(pt.formatStage('2007-06-15', '2025-06-15'), 'Adulto'); // 25.18
@@ -906,16 +951,25 @@ void main() {
       expect(pt.formatAge('2018-06-15', '2025-06-15'), '7 שנים'); // 29.10
     });
     test('he stage m newborn', () {
-      expect(pt.formatStage('2025-06-15', '2025-06-15', 'm'), 'רק נולד'); // 29.11
+      expect(
+        pt.formatStage('2025-06-15', '2025-06-15', 'm'),
+        'רק נולד',
+      ); // 29.11
     });
     test('he stage f newborn', () {
-      expect(pt.formatStage('2025-06-15', '2025-06-15', 'f'), 'רק נולדה'); // 29.12
+      expect(
+        pt.formatStage('2025-06-15', '2025-06-15', 'f'),
+        'רק נולדה',
+      ); // 29.12
     });
     test('he stage m adult', () {
       expect(pt.formatStage('2007-06-15', '2025-06-15', 'm'), 'מבוגר'); // 29.13
     });
     test('he stage f adult', () {
-      expect(pt.formatStage('2007-06-15', '2025-06-15', 'f'), 'מבוגרת'); // 29.14
+      expect(
+        pt.formatStage('2007-06-15', '2025-06-15', 'f'),
+        'מבוגרת',
+      ); // 29.14
     });
   });
 
@@ -935,10 +989,16 @@ void main() {
       expect(pt.formatAge('2025-01-15', '2025-07-15'), '6 месеци'); // 29.18
     });
     test('mk 2y1m one month', () {
-      expect(pt.formatAge('2023-06-15', '2025-07-15'), '2 години, 1 месец'); // 29.19
+      expect(
+        pt.formatAge('2023-06-15', '2025-07-15'),
+        '2 години, 1 месец',
+      ); // 29.19
     });
     test('mk 3.5y half', () {
-      expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 години и пол'); // 29.20
+      expect(
+        pt.formatAge('2022-06-15', '2025-12-15'),
+        '3 години и пол',
+      ); // 29.20
     });
     test('mk 7y', () {
       expect(pt.formatAge('2018-06-15', '2025-06-15'), '7 години'); // 29.21
@@ -961,10 +1021,16 @@ void main() {
       expect(pt.formatAge('2025-01-15', '2025-07-15'), 'miezi 6'); // 29.25
     });
     test('sw 2y 1m', () {
-      expect(pt.formatAge('2023-06-15', '2025-07-15'), 'miaka 2, mwezi 1'); // 29.26
+      expect(
+        pt.formatAge('2023-06-15', '2025-07-15'),
+        'miaka 2, mwezi 1',
+      ); // 29.26
     });
     test('sw 3.5y half', () {
-      expect(pt.formatAge('2022-06-15', '2025-12-15'), 'miaka 3 na nusu'); // 29.27
+      expect(
+        pt.formatAge('2022-06-15', '2025-12-15'),
+        'miaka 3 na nusu',
+      ); // 29.27
     });
   });
 
@@ -984,7 +1050,10 @@ void main() {
       expect(pt.formatAge('2025-01-15', '2025-07-15'), '6 bulan'); // 29.31
     });
     test('id 3.5y half', () {
-      expect(pt.formatAge('2022-06-15', '2025-12-15'), '3 setengah tahun'); // 29.32
+      expect(
+        pt.formatAge('2022-06-15', '2025-12-15'),
+        '3 setengah tahun',
+      ); // 29.32
     });
     test('id 7y', () {
       expect(pt.formatAge('2018-06-15', '2025-06-15'), '7 tahun'); // 29.33
@@ -1072,7 +1141,10 @@ void main() {
     });
     test('Tachelhit 6 is few', () {
       final pt = SayableAge(getLocale('shi')!);
-      expect(pt.formatAge('2005-06-08', '2012-06-07'), '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ'); // 32.3
+      expect(
+        pt.formatAge('2005-06-08', '2012-06-07'),
+        '6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ',
+      ); // 32.3
     });
   });
 

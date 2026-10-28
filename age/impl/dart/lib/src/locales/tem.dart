@@ -18,10 +18,22 @@ final tem = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: 'ləfɔr {n}', PluralCategory.other: 'ɔfɔr {n}'}),
-  week: pluralUnit({PluralCategory.one: 'wik {n}', PluralCategory.other: 'wik {n}'}),
-  month: pluralUnit({PluralCategory.one: 'kətha {n}', PluralCategory.other: 'ɔtha {n}'}),
-  year: pluralUnit({PluralCategory.one: 'əsor {n}', PluralCategory.other: 'ɔsor {n}'}),
+  day: pluralUnit({
+    PluralCategory.one: 'ləfɔr {n}',
+    PluralCategory.other: 'ɔfɔr {n}',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: 'wik {n}',
+    PluralCategory.other: 'wik {n}',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: 'kətha {n}',
+    PluralCategory.other: 'ɔtha {n}',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: 'əsor {n}',
+    PluralCategory.other: 'ɔsor {n}',
+  }),
   half: '{0} a gbankɛ',
   delimiter: ', ',
   justBorn: 'A mabɔrn',
@@ -32,10 +44,19 @@ final tem = AgeLocale(
   teenager: stageNeutral('Ɔkəranthɔ'),
   adult: stageNeutral('Ɔpa'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: 'ləfɔr {n}', PluralCategory.other: 'ɔfɔr {n}'}),
+    day: pluralUnit({
+      PluralCategory.one: 'ləfɔr {n}',
+      PluralCategory.other: 'ɔfɔr {n}',
+    }),
     week: simpleUnit('wik {n}'),
-    month: pluralUnit({PluralCategory.one: 'kətha {n}', PluralCategory.other: 'ɔtha {n}'}),
-    year: pluralUnit({PluralCategory.one: 'əsor {n}', PluralCategory.other: 'ɔsor {n}'}),
+    month: pluralUnit({
+      PluralCategory.one: 'kətha {n}',
+      PluralCategory.other: 'ɔtha {n}',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: 'əsor {n}',
+      PluralCategory.other: 'ɔsor {n}',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n}d'),

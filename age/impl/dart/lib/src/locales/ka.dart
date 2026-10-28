@@ -18,10 +18,22 @@ final ka = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} დღე', PluralCategory.other: '{n} დღე'}),
-  week: pluralUnit({PluralCategory.one: '{n} კვირა', PluralCategory.other: '{n} კვირა'}),
-  month: pluralUnit({PluralCategory.one: '{n} თვე', PluralCategory.other: '{n} თვე'}),
-  year: pluralUnit({PluralCategory.one: '{n} წელი', PluralCategory.other: '{n} წელი'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} დღე',
+    PluralCategory.other: '{n} დღე',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} კვირა',
+    PluralCategory.other: '{n} კვირა',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} თვე',
+    PluralCategory.other: '{n} თვე',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} წელი',
+    PluralCategory.other: '{n} წელი',
+  }),
   half: '{0} და ნახევარი',
   delimiter: ', ',
   justBorn: 'ახალშობილი',

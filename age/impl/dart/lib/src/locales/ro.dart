@@ -19,10 +19,26 @@ final ro = AgeLocale(
     if (n == 0 || (n % 100 >= 1 && n % 100 <= 19)) return PluralCategory.few;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} zi', PluralCategory.few: '{n} zile', PluralCategory.other: '{n} de zile'}),
-  week: pluralUnit({PluralCategory.one: '{n} săptămână', PluralCategory.few: '{n} săptămâni', PluralCategory.other: '{n} de săptămâni'}),
-  month: pluralUnit({PluralCategory.one: '{n} lună', PluralCategory.few: '{n} luni', PluralCategory.other: '{n} de luni'}),
-  year: pluralUnit({PluralCategory.one: '{n} an', PluralCategory.few: '{n} ani', PluralCategory.other: '{n} de ani'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} zi',
+    PluralCategory.few: '{n} zile',
+    PluralCategory.other: '{n} de zile',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} săptămână',
+    PluralCategory.few: '{n} săptămâni',
+    PluralCategory.other: '{n} de săptămâni',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} lună',
+    PluralCategory.few: '{n} luni',
+    PluralCategory.other: '{n} de luni',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} an',
+    PluralCategory.few: '{n} ani',
+    PluralCategory.other: '{n} de ani',
+  }),
   half: '{0} și jumătate',
   delimiter: ', ',
   justBorn: 'Nou-născut',
@@ -33,10 +49,22 @@ final ro = AgeLocale(
   teenager: stageGendered('Adolescent', 'Adolescentă'),
   adult: stageGendered('Adult', 'Adultă'),
   short: CompactnessOverride(
-    day: pluralUnit({PluralCategory.one: '{n} zi', PluralCategory.few: '{n} zile', PluralCategory.other: '{n} zile'}),
+    day: pluralUnit({
+      PluralCategory.one: '{n} zi',
+      PluralCategory.few: '{n} zile',
+      PluralCategory.other: '{n} zile',
+    }),
     week: simpleUnit('{n} săpt.'),
-    month: pluralUnit({PluralCategory.one: '{n} lună', PluralCategory.few: '{n} luni', PluralCategory.other: '{n} luni'}),
-    year: pluralUnit({PluralCategory.one: '{n} an', PluralCategory.few: '{n} ani', PluralCategory.other: '{n} ani'}),
+    month: pluralUnit({
+      PluralCategory.one: '{n} lună',
+      PluralCategory.few: '{n} luni',
+      PluralCategory.other: '{n} luni',
+    }),
+    year: pluralUnit({
+      PluralCategory.one: '{n} an',
+      PluralCategory.few: '{n} ani',
+      PluralCategory.other: '{n} ani',
+    }),
   ),
   compact: CompactnessOverride(
     day: simpleUnit('{n} z'),

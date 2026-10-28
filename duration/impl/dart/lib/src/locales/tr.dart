@@ -22,10 +22,22 @@ final tr = DurationLocale(
     'second': simpleUnit('{n} saniye'),
     'minute': simpleUnit('{n} dakika'),
     'hour': simpleUnit('{n} saat'),
-    'day': pluralUnit({PluralCategory.one: '{n} gün', PluralCategory.other: '{n} gün'}),
-    'week': pluralUnit({PluralCategory.one: '{n} hafta', PluralCategory.other: '{n} hafta'}),
-    'month': pluralUnit({PluralCategory.one: '{n} ay', PluralCategory.other: '{n} ay'}),
-    'year': pluralUnit({PluralCategory.one: '{n} yaş', PluralCategory.other: '{n} yaş'}),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} gün',
+      PluralCategory.other: '{n} gün',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} hafta',
+      PluralCategory.other: '{n} hafta',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} ay',
+      PluralCategory.other: '{n} ay',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} yaş',
+      PluralCategory.other: '{n} yaş',
+    }),
   },
   half: '{n} buçuk',
   delimiter: ', ',
@@ -49,7 +61,10 @@ final tr = DurationLocale(
     units: {
       'second': simpleUnit('{n}sn'),
       'minute': simpleUnit('{n}d'),
-      'hour': pluralUnit({PluralCategory.one: '{n} sa', PluralCategory.other: '{n}s'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} sa',
+        PluralCategory.other: '{n}s',
+      }),
       'day': simpleUnit('{n}g'),
       'week': simpleUnit('{n}h'),
       'month': simpleUnit('{n}a'),

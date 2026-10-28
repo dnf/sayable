@@ -19,13 +19,34 @@ final kl = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'sekundi {n}', PluralCategory.other: 'sekundit {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'minutsi {n}', PluralCategory.other: 'minutsit {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'nalunaaquttap akunnera {n}', PluralCategory.other: 'nalunaaquttap akunneri {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'ulloq {n}', PluralCategory.other: 'ullut {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'sapaatip akunnera {n}', PluralCategory.other: 'sapaatip akunneri {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'qaammat {n}', PluralCategory.other: 'qaammatit {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'ukioq {n}', PluralCategory.other: 'ukiut {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'sekundi {n}',
+      PluralCategory.other: 'sekundit {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'minutsi {n}',
+      PluralCategory.other: 'minutsit {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'nalunaaquttap akunnera {n}',
+      PluralCategory.other: 'nalunaaquttap akunneri {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'ulloq {n}',
+      PluralCategory.other: 'ullut {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'sapaatip akunnera {n}',
+      PluralCategory.other: 'sapaatip akunneri {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'qaammat {n}',
+      PluralCategory.other: 'qaammatit {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'ukioq {n}',
+      PluralCategory.other: 'ukiut {n}',
+    }),
   },
   half: '{0} affaa',
   delimiter: ', ',

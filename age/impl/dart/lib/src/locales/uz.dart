@@ -18,10 +18,22 @@ final uz = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} kun', PluralCategory.other: '{n} kun'}),
-  week: pluralUnit({PluralCategory.one: '{n} hafta', PluralCategory.other: '{n} hafta'}),
-  month: pluralUnit({PluralCategory.one: '{n} oy', PluralCategory.other: '{n} oy'}),
-  year: pluralUnit({PluralCategory.one: '{n} yosh', PluralCategory.other: '{n} yosh'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} kun',
+    PluralCategory.other: '{n} kun',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} hafta',
+    PluralCategory.other: '{n} hafta',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} oy',
+    PluralCategory.other: '{n} oy',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} yosh',
+    PluralCategory.other: '{n} yosh',
+  }),
   half: '{n} yarim',
   delimiter: ', ',
   justBorn: 'Yangi tugʻilgan',

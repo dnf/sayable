@@ -18,17 +18,47 @@ final lt = DurationLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} sekundė', PluralCategory.few: '{n} sekundės', PluralCategory.other: '{n} sekundžių'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} minutė', PluralCategory.few: '{n} minutės', PluralCategory.other: '{n} minučių'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} valanda', PluralCategory.few: '{n} valandos', PluralCategory.other: '{n} valandų'}),
-    'day': pluralUnit({PluralCategory.one: '{n} diena', PluralCategory.few: '{n} dienos', PluralCategory.other: '{n} dienų'}),
-    'week': pluralUnit({PluralCategory.one: '{n} savaitė', PluralCategory.few: '{n} savaitės', PluralCategory.other: '{n} savaičių'}),
-    'month': pluralUnit({PluralCategory.one: '{n} mėnuo', PluralCategory.few: '{n} mėnesiai', PluralCategory.other: '{n} mėnesių'}),
-    'year': pluralUnit({PluralCategory.one: '{n} metai', PluralCategory.few: '{n} metai', PluralCategory.other: '{n} metų'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} sekundė',
+      PluralCategory.few: '{n} sekundės',
+      PluralCategory.other: '{n} sekundžių',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} minutė',
+      PluralCategory.few: '{n} minutės',
+      PluralCategory.other: '{n} minučių',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} valanda',
+      PluralCategory.few: '{n} valandos',
+      PluralCategory.other: '{n} valandų',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} diena',
+      PluralCategory.few: '{n} dienos',
+      PluralCategory.other: '{n} dienų',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} savaitė',
+      PluralCategory.few: '{n} savaitės',
+      PluralCategory.other: '{n} savaičių',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} mėnuo',
+      PluralCategory.few: '{n} mėnesiai',
+      PluralCategory.other: '{n} mėnesių',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} metai',
+      PluralCategory.few: '{n} metai',
+      PluralCategory.other: '{n} metų',
+    }),
   },
   half: '{n}½',
   delimiter: ', ',

@@ -19,13 +19,34 @@ final ng = DurationLocale(
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: 'osekonde {n}', PluralCategory.other: 'oosekonde {n}'}),
-    'minute': pluralUnit({PluralCategory.one: 'ominute {n}', PluralCategory.other: 'oominute {n}'}),
-    'hour': pluralUnit({PluralCategory.one: 'owoola {n}', PluralCategory.other: 'iiwoola {n}'}),
-    'day': pluralUnit({PluralCategory.one: 'esiku {n}', PluralCategory.other: 'omasiku {n}'}),
-    'week': pluralUnit({PluralCategory.one: 'oshiwike {n}', PluralCategory.other: 'iiwike {n}'}),
-    'month': pluralUnit({PluralCategory.one: 'omuedhi {n}', PluralCategory.other: 'omiedhi {n}'}),
-    'year': pluralUnit({PluralCategory.one: 'omvula {n}', PluralCategory.other: 'omivula {n}'}),
+    'second': pluralUnit({
+      PluralCategory.one: 'osekonde {n}',
+      PluralCategory.other: 'oosekonde {n}',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: 'ominute {n}',
+      PluralCategory.other: 'oominute {n}',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: 'owoola {n}',
+      PluralCategory.other: 'iiwoola {n}',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: 'esiku {n}',
+      PluralCategory.other: 'omasiku {n}',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: 'oshiwike {n}',
+      PluralCategory.other: 'iiwike {n}',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: 'omuedhi {n}',
+      PluralCategory.other: 'omiedhi {n}',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: 'omvula {n}',
+      PluralCategory.other: 'omivula {n}',
+    }),
   },
   half: '{0} netata',
   delimiter: ', ',
@@ -36,11 +57,23 @@ final ng = DurationLocale(
     units: {
       'second': simpleUnit('oosekonde {n}'),
       'minute': simpleUnit('oominute {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'owoola {n}', PluralCategory.other: 'iiwoola {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'owoola {n}',
+        PluralCategory.other: 'iiwoola {n}',
+      }),
       'day': simpleUnit('omasiku {n}'),
-      'week': pluralUnit({PluralCategory.one: 'oshiwike {n}', PluralCategory.other: 'iiwike {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'omuedhi {n}', PluralCategory.other: 'omiedhi {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'omvula {n}', PluralCategory.other: 'omivula {n}'}),
+      'week': pluralUnit({
+        PluralCategory.one: 'oshiwike {n}',
+        PluralCategory.other: 'iiwike {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'omuedhi {n}',
+        PluralCategory.other: 'omiedhi {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'omvula {n}',
+        PluralCategory.other: 'omivula {n}',
+      }),
     },
     ago: '{0} ya pita',
     inFuture: 'mo {0}',
@@ -49,11 +82,23 @@ final ng = DurationLocale(
     units: {
       'second': simpleUnit('oosek {n}'),
       'minute': simpleUnit('oomin {n}'),
-      'hour': pluralUnit({PluralCategory.one: 'owool {n}', PluralCategory.other: 'iiwool {n}'}),
+      'hour': pluralUnit({
+        PluralCategory.one: 'owool {n}',
+        PluralCategory.other: 'iiwool {n}',
+      }),
       'day': simpleUnit('omasik {n}'),
-      'week': pluralUnit({PluralCategory.one: 'oshiw {n}', PluralCategory.other: 'iiw {n}'}),
-      'month': pluralUnit({PluralCategory.one: 'omued {n}', PluralCategory.other: 'omied {n}'}),
-      'year': pluralUnit({PluralCategory.one: 'omv {n}', PluralCategory.other: 'omiv {n}'}),
+      'week': pluralUnit({
+        PluralCategory.one: 'oshiw {n}',
+        PluralCategory.other: 'iiw {n}',
+      }),
+      'month': pluralUnit({
+        PluralCategory.one: 'omued {n}',
+        PluralCategory.other: 'omied {n}',
+      }),
+      'year': pluralUnit({
+        PluralCategory.one: 'omv {n}',
+        PluralCategory.other: 'omiv {n}',
+      }),
     },
     half: '{n}½',
     delimiter: '',

@@ -18,10 +18,22 @@ final az = AgeLocale(
     if (n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} gün', PluralCategory.other: '{n} gün'}),
-  week: pluralUnit({PluralCategory.one: '{n} həftə', PluralCategory.other: '{n} həftə'}),
-  month: pluralUnit({PluralCategory.one: '{n} ay', PluralCategory.other: '{n} ay'}),
-  year: pluralUnit({PluralCategory.one: '{n} yaş', PluralCategory.other: '{n} yaş'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} gün',
+    PluralCategory.other: '{n} gün',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} həftə',
+    PluralCategory.other: '{n} həftə',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} ay',
+    PluralCategory.other: '{n} ay',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} yaş',
+    PluralCategory.other: '{n} yaş',
+  }),
   half: '{n} yarım',
   delimiter: ', ',
   justBorn: 'Təzə doğulub',

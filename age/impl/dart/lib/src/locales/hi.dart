@@ -18,10 +18,22 @@ final hi = AgeLocale(
     if (n == 0 || n == 1) return PluralCategory.one;
     return PluralCategory.other;
   },
-  day: pluralUnit({PluralCategory.one: '{n} दिन', PluralCategory.other: '{n} दिन'}),
-  week: pluralUnit({PluralCategory.one: '{n} सप्ताह', PluralCategory.other: '{n} सप्ताह'}),
-  month: pluralUnit({PluralCategory.one: '{n} महीना', PluralCategory.other: '{n} महीने'}),
-  year: pluralUnit({PluralCategory.one: '{n} साल', PluralCategory.other: '{n} साल'}),
+  day: pluralUnit({
+    PluralCategory.one: '{n} दिन',
+    PluralCategory.other: '{n} दिन',
+  }),
+  week: pluralUnit({
+    PluralCategory.one: '{n} सप्ताह',
+    PluralCategory.other: '{n} सप्ताह',
+  }),
+  month: pluralUnit({
+    PluralCategory.one: '{n} महीना',
+    PluralCategory.other: '{n} महीने',
+  }),
+  year: pluralUnit({
+    PluralCategory.one: '{n} साल',
+    PluralCategory.other: '{n} साल',
+  }),
   half: 'साढ़े {n}',
   delimiter: ', ',
   justBorn: 'नवजात',

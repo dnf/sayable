@@ -18,17 +18,51 @@ final sr = DurationLocale(
     final mod10 = n % 10;
     final mod100 = n % 100;
     if (mod10 == 1 && mod100 != 11) return PluralCategory.one;
-    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return PluralCategory.few;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+      return PluralCategory.few;
+    }
     return PluralCategory.other;
   },
   units: {
-    'second': pluralUnit({PluralCategory.one: '{n} секунда', PluralCategory.few: '{n} секунде', PluralCategory.other: '{n} секунди'}),
-    'minute': pluralUnit({PluralCategory.one: '{n} минут', PluralCategory.few: '{n} минута', PluralCategory.other: '{n} минута'}),
-    'hour': pluralUnit({PluralCategory.one: '{n} сат', PluralCategory.few: '{n} сата', PluralCategory.other: '{n} сати'}),
-    'day': pluralUnit({PluralCategory.one: '{n} дан', PluralCategory.few: '{n} дана', PluralCategory.many: '{n} дана', PluralCategory.other: '{n} дана'}),
-    'week': pluralUnit({PluralCategory.one: '{n} недеља', PluralCategory.few: '{n} недеље', PluralCategory.many: '{n} недеља', PluralCategory.other: '{n} недеља'}),
-    'month': pluralUnit({PluralCategory.one: '{n} месец', PluralCategory.few: '{n} месеца', PluralCategory.many: '{n} месеци', PluralCategory.other: '{n} месеци'}),
-    'year': pluralUnit({PluralCategory.one: '{n} година', PluralCategory.few: '{n} године', PluralCategory.many: '{n} година', PluralCategory.other: '{n} година'}),
+    'second': pluralUnit({
+      PluralCategory.one: '{n} секунда',
+      PluralCategory.few: '{n} секунде',
+      PluralCategory.other: '{n} секунди',
+    }),
+    'minute': pluralUnit({
+      PluralCategory.one: '{n} минут',
+      PluralCategory.few: '{n} минута',
+      PluralCategory.other: '{n} минута',
+    }),
+    'hour': pluralUnit({
+      PluralCategory.one: '{n} сат',
+      PluralCategory.few: '{n} сата',
+      PluralCategory.other: '{n} сати',
+    }),
+    'day': pluralUnit({
+      PluralCategory.one: '{n} дан',
+      PluralCategory.few: '{n} дана',
+      PluralCategory.many: '{n} дана',
+      PluralCategory.other: '{n} дана',
+    }),
+    'week': pluralUnit({
+      PluralCategory.one: '{n} недеља',
+      PluralCategory.few: '{n} недеље',
+      PluralCategory.many: '{n} недеља',
+      PluralCategory.other: '{n} недеља',
+    }),
+    'month': pluralUnit({
+      PluralCategory.one: '{n} месец',
+      PluralCategory.few: '{n} месеца',
+      PluralCategory.many: '{n} месеци',
+      PluralCategory.other: '{n} месеци',
+    }),
+    'year': pluralUnit({
+      PluralCategory.one: '{n} година',
+      PluralCategory.few: '{n} године',
+      PluralCategory.many: '{n} година',
+      PluralCategory.other: '{n} година',
+    }),
   },
   half: '{0} и по',
   delimiter: ', ',
@@ -39,11 +73,23 @@ final sr = DurationLocale(
     units: {
       'second': simpleUnit('{n} сек'),
       'minute': simpleUnit('{n} мин'),
-      'hour': pluralUnit({PluralCategory.one: '{n} сат', PluralCategory.few: '{n} сата', PluralCategory.other: '{n} сати'}),
-      'day': pluralUnit({PluralCategory.one: '{n} дан', PluralCategory.few: '{n} дана', PluralCategory.other: '{n} дана'}),
+      'hour': pluralUnit({
+        PluralCategory.one: '{n} сат',
+        PluralCategory.few: '{n} сата',
+        PluralCategory.other: '{n} сати',
+      }),
+      'day': pluralUnit({
+        PluralCategory.one: '{n} дан',
+        PluralCategory.few: '{n} дана',
+        PluralCategory.other: '{n} дана',
+      }),
       'week': simpleUnit('{n} нед.'),
       'month': simpleUnit('{n} мес.'),
-      'year': pluralUnit({PluralCategory.one: '{n} год', PluralCategory.few: '{n} год.', PluralCategory.other: '{n} год.'}),
+      'year': pluralUnit({
+        PluralCategory.one: '{n} год',
+        PluralCategory.few: '{n} год.',
+        PluralCategory.other: '{n} год.',
+      }),
     },
     ago: 'пре {0}',
     inFuture: 'за {0}',

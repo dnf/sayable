@@ -15,7 +15,20 @@ import '../types.dart';
 final jv = TimeLocale(
   code: 'jv',
   clock: ClockConfig(
-    hours: ['rolas', 'siji', 'loro', 'telu', 'papat', 'lima', 'enem', 'pitu', 'wolu', 'sanga', 'sepuluh', 'sewelas'],
+    hours: [
+      'rolas',
+      'siji',
+      'loro',
+      'telu',
+      'papat',
+      'lima',
+      'enem',
+      'pitu',
+      'wolu',
+      'sanga',
+      'sepuluh',
+      'sewelas',
+    ],
     midnight: 'tengah wengi',
     noon: 'tengah awan',
     patterns: {

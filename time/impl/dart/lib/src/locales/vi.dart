@@ -15,7 +15,20 @@ import '../types.dart';
 final vi = TimeLocale(
   code: 'vi',
   clock: ClockConfig(
-    hours: ['mười hai', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười', 'mười một'],
+    hours: [
+      'mười hai',
+      'một',
+      'hai',
+      'ba',
+      'bốn',
+      'năm',
+      'sáu',
+      'bảy',
+      'tám',
+      'chín',
+      'mười',
+      'mười một',
+    ],
     midnight: 'nửa đêm',
     noon: 'mười hai giờ trưa',
     patterns: {
