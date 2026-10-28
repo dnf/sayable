@@ -15,13 +15,13 @@ ENV LANG=C.UTF-8
 
 # System packages + language runtimes available from distro
 RUN apt-get update && apt-get install -y --no-install-recommends \
+    autoconf \
     binutils \
     build-essential \
     ca-certificates \
     clang \
     cmake \
     curl \
-    dotnet-sdk-10.0 \
     dub \
     elixir \
     erlang-dev \
@@ -40,12 +40,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libcurl4-openssl-dev \
     libedit2 \
     libevent-dev \
+    libffi-dev \
     libgmp-dev \
     libicu-dev \
     liblua5.4-dev \
     libncurses-dev \
     libpcre2-dev \
     libpython3-dev \
+    libreadline-dev \
     libsqlite3-0 \
     libssl-dev \
     libxml2-dev \
@@ -57,9 +59,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     octave \
     opam \
     perl \
-    php-cli \
-    php-mbstring \
-    php-xml \
     pkg-config \
     python3 \
     python3-venv \
@@ -69,9 +68,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rakudo \
     rebar3 \
     rlwrap \
-    ruby \
-    ruby-bundler \
-    ruby-dev \
     sbcl \
     swi-prolog \
     tcl \
@@ -94,6 +90,14 @@ RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" &&
       rm -f /tmp/jdk.tar.gz; \
     fi && \
     { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/21/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "21" "") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
 ENV JAVA_HOME="/usr/lib/jvm/hecatron-default"
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
@@ -109,11 +113,65 @@ RUN VERSION="$(curl -fsSLI -o /dev/null -w '%{url_effective}' https://github.com
     curl -fsSL "https://github.com/crystal-lang/crystal/releases/download/${VERSION}/crystal-${VERSION}-1-linux-$(uname -m).tar.gz" | tar -C /opt/crystal --strip-components=1 -xz && \
     ln -s /opt/crystal/bin/crystal /opt/crystal/bin/shards /usr/local/bin/
 
+# .NET SDKs: each version the components use, with Microsoft's
+# dotnet-install.sh into /opt/dotnet as install.sh installs them, beside ICU,
+# which .NET needs; the dotnet there is linked into /usr/local/bin. Shared by
+# C#, F# and VB.NET, and each installed once. A prefix resolves to its newest
+# release in Microsoft's release metadata.
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+      "$(apt-cache pkgnames libicu | grep -E '^libicu[0-9]+$' | sort -V | tail -1)" && \
+    rm -rf /var/lib/apt/lists/*
+RUN V="10.0.403" && \
+    if [ -z "1" ]; then V="$(curl -fsSL https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json | python3 -c 'import json, sys, urllib.request; p = sys.argv[1].split("."); vs = [s["version"] for c in json.load(sys.stdin)["releases-index"] if c["channel-version"].split(".")[:len(p[:2])] == p[:2] for r in json.load(urllib.request.urlopen(c["releases.json"]))["releases"] for s in (r.get("sdks") or [r["sdk"]])]; vs = [v for v in vs if v.split("-")[0].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: ([int(x) for x in v.split("-")[0].split(".")], "-" not in v)))' "${V}")"; fi && \
+    if [ ! -d "/opt/dotnet/sdk/${V}" ]; then \
+      curl -fsSL --retry 4 --retry-delay 3 --retry-all-errors -o /tmp/dotnet-install.sh https://dot.net/v1/dotnet-install.sh && \
+      bash /tmp/dotnet-install.sh --version "${V}" --install-dir /opt/dotnet --no-path && rm -f /tmp/dotnet-install.sh; \
+    fi && \
+    { [ -e /usr/local/bin/dotnet ] || ln -s /opt/dotnet/dotnet /usr/local/bin/dotnet; }
+# Each SDK's view, as install.sh makes them: /opt/dotnet-views/<version>,
+# where dotnet sees that SDK alone, for the components whose version it is.
+RUN for SDK in /opt/dotnet/sdk/*/; do \
+      V="$(basename "${SDK}")" && mkdir -p "/opt/dotnet-views/${V}/sdk" && \
+      cp -f /opt/dotnet/dotnet "/opt/dotnet-views/${V}/dotnet" && \
+      for ENTRY in /opt/dotnet/*; do \
+        case "$(basename "${ENTRY}")" in dotnet | sdk) ;; *) ln -sfn "${ENTRY}" "/opt/dotnet-views/${V}/" ;; esac; \
+      done && \
+      ln -sfn "${SDK%/}" "/opt/dotnet-views/${V}/sdk/${V}"; \
+    done
+ENV DOTNET_ROOT="/opt/dotnet"
+
 # Dart SDK (its archive names x86_64 "x64")
 RUN case "$(uname -m)" in aarch64) ARCH=arm64 ;; *) ARCH=x64 ;; esac && \
     curl -fsSL "https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-${ARCH}-release.zip" -o /tmp/dart.zip && \
     unzip -q /tmp/dart.zip -d /opt && rm /tmp/dart.zip
 ENV PATH="/opt/dart-sdk/bin:${PATH}"
+
+# .NET SDKs: each version the components use, with Microsoft's
+# dotnet-install.sh into /opt/dotnet as install.sh installs them, beside ICU,
+# which .NET needs; the dotnet there is linked into /usr/local/bin. Shared by
+# C#, F# and VB.NET, and each installed once. A prefix resolves to its newest
+# release in Microsoft's release metadata.
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+      "$(apt-cache pkgnames libicu | grep -E '^libicu[0-9]+$' | sort -V | tail -1)" && \
+    rm -rf /var/lib/apt/lists/*
+RUN V="10.0.403" && \
+    if [ -z "1" ]; then V="$(curl -fsSL https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json | python3 -c 'import json, sys, urllib.request; p = sys.argv[1].split("."); vs = [s["version"] for c in json.load(sys.stdin)["releases-index"] if c["channel-version"].split(".")[:len(p[:2])] == p[:2] for r in json.load(urllib.request.urlopen(c["releases.json"]))["releases"] for s in (r.get("sdks") or [r["sdk"]])]; vs = [v for v in vs if v.split("-")[0].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: ([int(x) for x in v.split("-")[0].split(".")], "-" not in v)))' "${V}")"; fi && \
+    if [ ! -d "/opt/dotnet/sdk/${V}" ]; then \
+      curl -fsSL --retry 4 --retry-delay 3 --retry-all-errors -o /tmp/dotnet-install.sh https://dot.net/v1/dotnet-install.sh && \
+      bash /tmp/dotnet-install.sh --version "${V}" --install-dir /opt/dotnet --no-path && rm -f /tmp/dotnet-install.sh; \
+    fi && \
+    { [ -e /usr/local/bin/dotnet ] || ln -s /opt/dotnet/dotnet /usr/local/bin/dotnet; }
+# Each SDK's view, as install.sh makes them: /opt/dotnet-views/<version>,
+# where dotnet sees that SDK alone, for the components whose version it is.
+RUN for SDK in /opt/dotnet/sdk/*/; do \
+      V="$(basename "${SDK}")" && mkdir -p "/opt/dotnet-views/${V}/sdk" && \
+      cp -f /opt/dotnet/dotnet "/opt/dotnet-views/${V}/dotnet" && \
+      for ENTRY in /opt/dotnet/*; do \
+        case "$(basename "${ENTRY}")" in dotnet | sdk) ;; *) ln -sfn "${ENTRY}" "/opt/dotnet-views/${V}/" ;; esac; \
+      done && \
+      ln -sfn "${SDK%/}" "/opt/dotnet-views/${V}/sdk/${V}"; \
+    done
+ENV DOTNET_ROOT="/opt/dotnet"
 
 # Gleam
 RUN GLEAM_ARCH="$(uname -m)" && \
@@ -125,6 +183,13 @@ RUN GLEAM_ARCH="$(uname -m)" && \
 # toolchain downloads. A prefix resolves to its newest stable release.
 RUN V="1.27.3" && \
     if [ -z "1" ]; then V="$(curl -fsSL 'https://go.dev/dl/?mode=json&include=all' | python3 -c 'import json, sys; p = sys.argv[1].split("."); vs = [r["version"][2:] for r in json.load(sys.stdin) if r["stable"] and r["version"][2:].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: [int(x) for x in v.split(".")]))' "${V}")"; fi && \
+    if [ ! -x /usr/local/go/bin/go ]; then \
+      curl -fsSL "https://go.dev/dl/go${V}.linux-$(dpkg --print-architecture).tar.gz" | tar -C /usr/local -xz; \
+    elif [ "$(/usr/local/go/bin/go env GOVERSION)" != "go${V}" ]; then \
+      GOTOOLCHAIN="go${V}" /usr/local/go/bin/go version; \
+    fi
+RUN V="1.21" && \
+    if [ -z "" ]; then V="$(curl -fsSL 'https://go.dev/dl/?mode=json&include=all' | python3 -c 'import json, sys; p = sys.argv[1].split("."); vs = [r["version"][2:] for r in json.load(sys.stdin) if r["stable"] and r["version"][2:].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: [int(x) for x in v.split(".")]))' "${V}")"; fi && \
     if [ ! -x /usr/local/go/bin/go ]; then \
       curl -fsSL "https://go.dev/dl/go${V}.linux-$(dpkg --print-architecture).tar.gz" | tar -C /usr/local -xz; \
     elif [ "$(/usr/local/go/bin/go env GOVERSION)" != "go${V}" ]; then \
@@ -153,6 +218,14 @@ RUN GOOSE_VERSION="v2026.3" && \
 # each installed once. A prefix resolves to its newest release.
 RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
     set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/21/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "21" "") && \
     if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
       curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
       mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
@@ -196,6 +269,14 @@ RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" &&
       rm -f /tmp/jdk.tar.gz; \
     fi && \
     { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/21/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "21" "") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
 ENV JAVA_HOME="/usr/lib/jvm/hecatron-default"
 ENV PATH="${JAVA_HOME}/bin:${PATH}"
 
@@ -212,6 +293,14 @@ RUN ARCH="$(uname -m)" && \
 # each installed once. A prefix resolves to its newest release.
 RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
     set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/21/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "21" "") && \
     if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
       curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
       mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
@@ -265,19 +354,42 @@ RUN RELEASE="$(curl -fsSLI -o /dev/null -w '%{url_effective}' https://github.com
     curl -fsSL "https://github.com/odin-lang/Odin/releases/download/${RELEASE}/odin-linux-${ARCH}-${RELEASE}.tar.gz" | tar -C /opt/odin --strip-components=1 -xz && \
     ln -s /opt/odin/odin /usr/local/bin/odin
 
-# Pharo: Pharo 12's VM for the image's architecture, as install.sh installs it
-# (get.pharo.org's script only knows x86 Linux): the stable VM, else the
-# latest, which is all Pharo publishes for aarch64. The launcher finds its
-# libraries from the path it was run by, so `pharo` is a wrapper.
-RUN BASE="https://files.pharo.org/get-files/120/pharo-vm-Linux-$(uname -m)" && \
-    URL="${BASE}-stable.zip" && \
-    { curl -fsSI -o /dev/null "$URL" || URL="${BASE}-latest.zip"; } && \
-    curl -fsSL -o /tmp/pharo-vm.zip "$URL" && \
-    mkdir -p /opt/pharo/vm && unzip -q /tmp/pharo-vm.zip -d /opt/pharo/vm && rm /tmp/pharo-vm.zip && \
-    printf '#!/bin/sh\nexec /opt/pharo/vm/bin/pharo --headless "$@"\n' > /usr/local/bin/pharo && \
-    chmod +x /usr/local/bin/pharo
+# PHP: each line the components use (a version's first two parts), from the
+# distribution when it packages that line, else Ondřej Surý's packages (his
+# PPA on Ubuntu, packages.sury.org on Debian), as install.sh installs them,
+# with /opt/php/<line>/bin/php choosing it on a component's PATH.
+RUN L="$(echo "8.5.12" | cut -d. -f1-2)" && apt-get update -qq && \
+    if ! apt-cache policy "php${L}-cli" | grep -q 'Candidate: [0-9]' && [ ! -f /etc/apt/sources.list.d/php.sources ]; then \
+      . /etc/os-release && mkdir -p /etc/apt/keyrings && \
+      if [ "${ID}" = "ubuntu" ]; then \
+        U="https://ppa.launchpadcontent.net/ondrej/php/ubuntu" K=/etc/apt/keyrings/ondrej-php.asc && \
+        curl -fsSL -o "${K}" "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"; \
+      else \
+        U="https://packages.sury.org/php" K=/etc/apt/keyrings/sury-php.gpg && \
+        curl -fsSL -o "${K}" https://packages.sury.org/php/apt.gpg; \
+      fi && \
+      printf 'Types: deb\nURIs: %s\nSuites: %s\nComponents: main\nSigned-By: %s\n' "${U}" "${VERSION_CODENAME}" "${K}" > /etc/apt/sources.list.d/php.sources && \
+      apt-get update -qq; \
+    fi && \
+    apt-get install -y --no-install-recommends "php${L}-cli" "php${L}-xml" "php${L}-mbstring" && \
+    mkdir -p "/opt/php/${L}/bin" && ln -sfn "/usr/bin/php${L}" "/opt/php/${L}/bin/php"
+RUN L="$(echo "8.4" | cut -d. -f1-2)" && apt-get update -qq && \
+    if ! apt-cache policy "php${L}-cli" | grep -q 'Candidate: [0-9]' && [ ! -f /etc/apt/sources.list.d/php.sources ]; then \
+      . /etc/os-release && mkdir -p /etc/apt/keyrings && \
+      if [ "${ID}" = "ubuntu" ]; then \
+        U="https://ppa.launchpadcontent.net/ondrej/php/ubuntu" K=/etc/apt/keyrings/ondrej-php.asc && \
+        curl -fsSL -o "${K}" "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x14AA40EC0831756756D7F66C4F4EA0AAE5267A6C"; \
+      else \
+        U="https://packages.sury.org/php" K=/etc/apt/keyrings/sury-php.gpg && \
+        curl -fsSL -o "${K}" https://packages.sury.org/php/apt.gpg; \
+      fi && \
+      printf 'Types: deb\nURIs: %s\nSuites: %s\nComponents: main\nSigned-By: %s\n' "${U}" "${VERSION_CODENAME}" "${K}" > /etc/apt/sources.list.d/php.sources && \
+      apt-get update -qq; \
+    fi && \
+    apt-get install -y --no-install-recommends "php${L}-cli" "php${L}-xml" "php${L}-mbstring" && \
+    mkdir -p "/opt/php/${L}/bin" && ln -sfn "/usr/bin/php${L}" "/opt/php/${L}/bin/php"
 
-# Composer (PHP package manager)
+# Composer (PHP package manager), which runs on the php on PATH
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # PowerShell: the official tarball (distributions don't package it, and
@@ -289,13 +401,60 @@ RUN VERSION="$(curl -fsSLI -o /dev/null -w '%{url_effective}' https://github.com
     curl -fsSL "https://github.com/PowerShell/PowerShell/releases/download/v${VERSION}/powershell-${VERSION}-linux-${ARCH}.tar.gz" | tar -C /opt/microsoft/powershell/7 -xz && \
     chmod +x /opt/microsoft/powershell/7/pwsh && \
     ln -s /opt/microsoft/powershell/7/pwsh /usr/local/bin/pwsh
-RUN pwsh -Command "Install-Module -Name Pester, PSScriptAnalyzer -Force -SkipPublisherCheck -Scope AllUsers"
+# Pester for the default test hook, PSScriptAnalyzer for the lint hook, as
+# install.sh installs them. Install-Module reports a failed lookup ("No match
+# was found") without failing, so check each, try twice more, and fail the
+# build if it's still missing.
+RUN for MODULE in Pester PSScriptAnalyzer; do \
+      for ATTEMPT in 1 2 3; do \
+        pwsh -NoProfile -Command "Install-Module -Name ${MODULE} -Force -SkipPublisherCheck -Scope AllUsers"; \
+        pwsh -NoProfile -Command "if (-not (Get-Module -ListAvailable -Name ${MODULE})) { exit 1 }" && break; \
+        [ "${ATTEMPT}" -lt 3 ] || { echo "${MODULE} didn't install" >&2; exit 1; }; \
+        sleep 10; \
+      done; \
+    done
 
 # uv (Python package manager), and each Python version the components use,
 # where installed.sh finds them (uv resolves a prefix itself)
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:${PATH}"
 RUN uv python install 3.15.1
+RUN uv python install 3.13
+
+# Ruby: each version the components use, built by ruby-build into
+# /opt/ruby/<version> as install.sh builds it, with the libraries it and gems
+# with native extensions build against; the default version (config.json),
+# built first, is linked into /usr/local/bin. A prefix resolves to the newest
+# release ruby-build knows.
+RUN git clone --quiet --depth 1 https://github.com/rbenv/ruby-build.git /opt/ruby-build
+RUN V="4.0.9" && \
+    if [ -z "1" ]; then V="$(/opt/ruby-build/bin/ruby-build --definitions | python3 -c 'import re, sys; p = sys.argv[1].split("."); vs = [v.strip() for v in sys.stdin if re.fullmatch(r"\d+\.\d+\.\d+", v.strip()) and v.strip().split(".")[:len(p)] == p]; print(max(vs, key=lambda v: [int(x) for x in v.split(".")]))' "${V}")"; fi && \
+    if [ ! -x "/opt/ruby/${V}/bin/ruby" ]; then \
+      RUBY_CONFIGURE_OPTS=--disable-install-doc /opt/ruby-build/bin/ruby-build "${V}" "/opt/ruby/${V}"; \
+    fi && \
+    if [ ! -e /usr/local/bin/ruby ]; then \
+      for tool in "/opt/ruby/${V}"/bin/*; do ln -s "${tool}" "/usr/local/bin/$(basename "${tool}")"; done; \
+    fi
+RUN V="3.3" && \
+    if [ -z "" ]; then V="$(/opt/ruby-build/bin/ruby-build --definitions | python3 -c 'import re, sys; p = sys.argv[1].split("."); vs = [v.strip() for v in sys.stdin if re.fullmatch(r"\d+\.\d+\.\d+", v.strip()) and v.strip().split(".")[:len(p)] == p]; print(max(vs, key=lambda v: [int(x) for x in v.split(".")]))' "${V}")"; fi && \
+    if [ ! -x "/opt/ruby/${V}/bin/ruby" ]; then \
+      RUBY_CONFIGURE_OPTS=--disable-install-doc /opt/ruby-build/bin/ruby-build "${V}" "/opt/ruby/${V}"; \
+    fi && \
+    if [ ! -e /usr/local/bin/ruby ]; then \
+      for tool in "/opt/ruby/${V}"/bin/*; do ln -s "${tool}" "/usr/local/bin/$(basename "${tool}")"; done; \
+    fi
+
+# Pharo: Pharo 12's VM for the image's architecture, as install.sh installs it
+# (get.pharo.org's script only knows x86 Linux): the stable VM, else the
+# latest, which is all Pharo publishes for aarch64. The launcher finds its
+# libraries from the path it was run by, so `pharo` is a wrapper.
+RUN BASE="https://files.pharo.org/get-files/120/pharo-vm-Linux-$(uname -m)" && \
+    URL="${BASE}-stable.zip" && \
+    { curl -fsSI -o /dev/null "$URL" || URL="${BASE}-latest.zip"; } && \
+    curl -fsSL -o /tmp/pharo-vm.zip "$URL" && \
+    mkdir -p /opt/pharo/vm && unzip -q /tmp/pharo-vm.zip -d /opt/pharo/vm && rm /tmp/pharo-vm.zip && \
+    printf '#!/bin/sh\nexec /opt/pharo/vm/bin/pharo --headless "$@"\n' > /usr/local/bin/pharo && \
+    chmod +x /usr/local/bin/pharo
 
 # Rust via rustup, with each version the components use as a toolchain; the
 # default version (config.json), installed first, is rustup's default
@@ -311,6 +470,14 @@ RUN rustup toolchain install 1.99.1 --profile default && \
 # each installed once. A prefix resolves to its newest release.
 RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
     set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/25/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "25.0.5" "1") && \
+    if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
+      curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
+      mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
+      rm -f /tmp/jdk.tar.gz; \
+    fi && \
+    { [ -e /usr/lib/jvm/hecatron-default ] || ln -s "temurin-$1" /usr/lib/jvm/hecatron-default; }
+RUN ARCH="$(dpkg --print-architecture | sed 's/amd64/x64/;s/arm64/aarch64/')" && \
+    set -- $(curl -fsSL "https://api.adoptium.net/v3/assets/feature_releases/21/ga?os=linux&architecture=${ARCH}&image_type=jdk&jvm_impl=hotspot&page_size=100" | python3 -c 'import json, sys; spec, exact = sys.argv[1], sys.argv[2]; p = spec.split("."); rs = [(r["release_name"][4:].split("+")[0], r["binaries"][0]["package"]) for r in json.load(sys.stdin)]; rs = [(v, b) for v, b in rs if (v == spec if exact else v.split(".")[:len(p)] == p)]; v, b = max(rs, key=lambda r: [int(x) for x in r[0].split(".")]); print(v, b["link"], b["checksum"])' "21" "") && \
     if [ ! -d "/usr/lib/jvm/temurin-$1" ]; then \
       curl -fsSL -o /tmp/jdk.tar.gz "$2" && echo "$3  /tmp/jdk.tar.gz" | sha256sum -c - && \
       mkdir -p "/usr/lib/jvm/temurin-$1" && tar -C "/usr/lib/jvm/temurin-$1" --strip-components=1 -xzf /tmp/jdk.tar.gz && \
@@ -350,6 +517,16 @@ RUN V="24.22.1" && \
     if [ ! -e /usr/local/bin/node ]; then \
       for tool in node npm npx corepack; do ln -s "/opt/node/${V}/bin/${tool}" "/usr/local/bin/${tool}"; done; \
     fi
+RUN V="22" && \
+    if [ -z "" ]; then V="$(curl -fsSL https://nodejs.org/dist/index.json | python3 -c 'import json, sys; p = sys.argv[1].split("."); vs = [r["version"][1:] for r in json.load(sys.stdin) if r["version"][1:].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: [int(x) for x in v.split(".")]))' "${V}")"; fi && \
+    if [ ! -d "/opt/node/${V}" ]; then \
+      mkdir -p "/opt/node/${V}" && \
+      curl -fsSL "https://nodejs.org/dist/v${V}/node-v${V}-linux-$(dpkg --print-architecture | sed 's/amd64/x64/').tar.xz" | \
+        tar -C "/opt/node/${V}" --strip-components=1 -xJ; \
+    fi && \
+    if [ ! -e /usr/local/bin/node ]; then \
+      for tool in node npm npx corepack; do ln -s "/opt/node/${V}/bin/${tool}" "/usr/local/bin/${tool}"; done; \
+    fi
 
 # Elm via npm — no arm64 Linux binary available. Global packages go under
 # the official Node.js build's own directory, so link the commands onto PATH.
@@ -365,6 +542,33 @@ RUN ARCH="$(dpkg --print-architecture)" && \
 RUN git clone --depth 1 https://github.com/vlang/v.git /opt/v && \
     cd /opt/v && make && \
     ln -s /opt/v/v /usr/local/bin/v
+
+# .NET SDKs: each version the components use, with Microsoft's
+# dotnet-install.sh into /opt/dotnet as install.sh installs them, beside ICU,
+# which .NET needs; the dotnet there is linked into /usr/local/bin. Shared by
+# C#, F# and VB.NET, and each installed once. A prefix resolves to its newest
+# release in Microsoft's release metadata.
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
+      "$(apt-cache pkgnames libicu | grep -E '^libicu[0-9]+$' | sort -V | tail -1)" && \
+    rm -rf /var/lib/apt/lists/*
+RUN V="10.0.403" && \
+    if [ -z "1" ]; then V="$(curl -fsSL https://builds.dotnet.microsoft.com/dotnet/release-metadata/releases-index.json | python3 -c 'import json, sys, urllib.request; p = sys.argv[1].split("."); vs = [s["version"] for c in json.load(sys.stdin)["releases-index"] if c["channel-version"].split(".")[:len(p[:2])] == p[:2] for r in json.load(urllib.request.urlopen(c["releases.json"]))["releases"] for s in (r.get("sdks") or [r["sdk"]])]; vs = [v for v in vs if v.split("-")[0].split(".")[:len(p)] == p]; print(max(vs, key=lambda v: ([int(x) for x in v.split("-")[0].split(".")], "-" not in v)))' "${V}")"; fi && \
+    if [ ! -d "/opt/dotnet/sdk/${V}" ]; then \
+      curl -fsSL --retry 4 --retry-delay 3 --retry-all-errors -o /tmp/dotnet-install.sh https://dot.net/v1/dotnet-install.sh && \
+      bash /tmp/dotnet-install.sh --version "${V}" --install-dir /opt/dotnet --no-path && rm -f /tmp/dotnet-install.sh; \
+    fi && \
+    { [ -e /usr/local/bin/dotnet ] || ln -s /opt/dotnet/dotnet /usr/local/bin/dotnet; }
+# Each SDK's view, as install.sh makes them: /opt/dotnet-views/<version>,
+# where dotnet sees that SDK alone, for the components whose version it is.
+RUN for SDK in /opt/dotnet/sdk/*/; do \
+      V="$(basename "${SDK}")" && mkdir -p "/opt/dotnet-views/${V}/sdk" && \
+      cp -f /opt/dotnet/dotnet "/opt/dotnet-views/${V}/dotnet" && \
+      for ENTRY in /opt/dotnet/*; do \
+        case "$(basename "${ENTRY}")" in dotnet | sdk) ;; *) ln -sfn "${ENTRY}" "/opt/dotnet-views/${V}/" ;; esac; \
+      done && \
+      ln -sfn "${SDK%/}" "/opt/dotnet-views/${V}/sdk/${V}"; \
+    done
+ENV DOTNET_ROOT="/opt/dotnet"
 
 # wren_cli, as install.sh installs it: the 0.4.0 release on x86_64 (the only
 # Linux build published), else built from source at the last commit on main
