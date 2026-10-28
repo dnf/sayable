@@ -12,14 +12,19 @@
 
 module SayableAge.Locales.Ky exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ky"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "{n} күн"
     , week = Simple "{n} апта"
     , month = Simple "{n} ай"

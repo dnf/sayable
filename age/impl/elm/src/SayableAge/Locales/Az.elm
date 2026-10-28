@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Az exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "az"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} gün" )
-      , ( Other, "{n} gün" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} həftə" )
-      , ( Other, "{n} həftə" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} ay" )
-      , ( Other, "{n} ay" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} yaş" )
-      , ( Other, "{n} yaş" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} gün" )
+            , ( Other, "{n} gün" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} həftə" )
+            , ( Other, "{n} həftə" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} ay" )
+            , ( Other, "{n} ay" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} yaş" )
+            , ( Other, "{n} yaş" )
+            ]
     , half = "{n} yarım"
     , delimiter = ", "
     , justBorn = "Təzə doğulub"

@@ -12,34 +12,46 @@
 
 module SayableAge.Locales.Ro exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ro"
-    , plural = \n -> if n == 1 then One else if n == 0 || (modBy 100 n >= 1 && modBy 100 n <= 19) then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} zi" )
-      , ( Few, "{n} zile" )
-      , ( Other, "{n} de zile" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} săptămână" )
-      , ( Few, "{n} săptămâni" )
-      , ( Other, "{n} de săptămâni" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} lună" )
-      , ( Few, "{n} luni" )
-      , ( Other, "{n} de luni" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} an" )
-      , ( Few, "{n} ani" )
-      , ( Other, "{n} de ani" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n == 0 || (modBy 100 n >= 1 && modBy 100 n <= 19) then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} zi" )
+            , ( Few, "{n} zile" )
+            , ( Other, "{n} de zile" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} săptămână" )
+            , ( Few, "{n} săptămâni" )
+            , ( Other, "{n} de săptămâni" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} lună" )
+            , ( Few, "{n} luni" )
+            , ( Other, "{n} de luni" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} an" )
+            , ( Few, "{n} ani" )
+            , ( Other, "{n} de ani" )
+            ]
     , half = "{0} și jumătate"
     , delimiter = ", "
     , justBorn = "Nou-născut"
@@ -53,22 +65,31 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} zi" )
-                  , ( Few, "{n} zile" )
-                  , ( Other, "{n} zile" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} zi" )
+                        , ( Few, "{n} zile" )
+                        , ( Other, "{n} zile" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} săpt.")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} lună" )
-                  , ( Few, "{n} luni" )
-                  , ( Other, "{n} luni" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} an" )
-                  , ( Few, "{n} ani" )
-                  , ( Other, "{n} ani" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} lună" )
+                        , ( Few, "{n} luni" )
+                        , ( Other, "{n} luni" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} an" )
+                        , ( Few, "{n} ani" )
+                        , ( Other, "{n} ani" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

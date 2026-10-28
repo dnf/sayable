@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Az exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "az"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} saniyə" )
             , ( "minute", Simple "{n} dəqiqə" )
             , ( "hour", Simple "{n} saat" )
-            , ( "day", Pluralized
-              [ ( One, "{n} gün" )
-              , ( Other, "{n} gün" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} həftə" )
-              , ( Other, "{n} həftə" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ay" )
-              , ( Other, "{n} ay" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} yaş" )
-              , ( Other, "{n} yaş" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} gün" )
+                    , ( Other, "{n} gün" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} həftə" )
+                    , ( Other, "{n} həftə" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ay" )
+                    , ( Other, "{n} ay" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} yaş" )
+                    , ( Other, "{n} yaş" )
+                    ]
+              )
             ]
     , half = "{n} yarım"
     , delimiter = ", "

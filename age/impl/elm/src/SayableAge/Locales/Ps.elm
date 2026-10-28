@@ -12,27 +12,35 @@
 
 module SayableAge.Locales.Ps exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ps"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ورځ" )
-      , ( Other, "{n} ورځې" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ورځ" )
+            , ( Other, "{n} ورځې" )
+            ]
     , week = Simple "{n} اونۍ"
-    , month = Pluralized
-      [ ( One, "{n} مياشت" )
-      , ( Other, "{n} مياشتې" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} کال" )
-      , ( Other, "{n} کالونه" )
-      ]
+    , month =
+        Pluralized
+            [ ( One, "{n} مياشت" )
+            , ( Other, "{n} مياشتې" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} کال" )
+            , ( Other, "{n} کالونه" )
+            ]
     , half = "{n}½"
     , delimiter = "، "
     , justBorn = "نوي زېږېدلی"
@@ -46,19 +54,28 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} ورځ" )
-                  , ( Other, "{n} ورځې" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ورځ" )
+                        , ( Other, "{n} ورځې" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} اونۍ")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} مياشت" )
-                  , ( Other, "{n} مياشتې" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} کال" )
-                  , ( Other, "{n} کالونه" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} مياشت" )
+                        , ( Other, "{n} مياشتې" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} کال" )
+                        , ( Other, "{n} کالونه" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

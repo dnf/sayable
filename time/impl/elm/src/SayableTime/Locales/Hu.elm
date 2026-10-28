@@ -12,7 +12,6 @@
 
 module SayableTime.Locales.Hu exposing (locale)
 
-
 import Dict
 import SayableTime.Types exposing (..)
 

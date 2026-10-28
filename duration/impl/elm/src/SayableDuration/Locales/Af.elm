@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Af exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "af"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekonde" )
-              , ( Other, "{n} sekondes" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minuut" )
-              , ( Other, "{n} minute" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} uur" )
-              , ( Other, "{n} uur" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} dag" )
-              , ( Other, "{n} dae" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} week" )
-              , ( Other, "{n} weke" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} maand" )
-              , ( Other, "{n} maande" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} jaar" )
-              , ( Other, "{n} jaar" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekonde" )
+                    , ( Other, "{n} sekondes" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minuut" )
+                    , ( Other, "{n} minute" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} uur" )
+                    , ( Other, "{n} uur" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} dag" )
+                    , ( Other, "{n} dae" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} week" )
+                    , ( Other, "{n} weke" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} maand" )
+                    , ( Other, "{n} maande" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} jaar" )
+                    , ( Other, "{n} jaar" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

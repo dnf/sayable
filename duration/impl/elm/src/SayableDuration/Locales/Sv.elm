@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Sv exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "sv"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekund" )
-              , ( Other, "{n} sekunder" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minut" )
-              , ( Other, "{n} minuter" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} timme" )
-              , ( Other, "{n} timmar" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} dag" )
-              , ( Other, "{n} dagar" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} vecka" )
-              , ( Other, "{n} veckor" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} månad" )
-              , ( Other, "{n} månader" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} år" )
-              , ( Other, "{n} år" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekund" )
+                    , ( Other, "{n} sekunder" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minut" )
+                    , ( Other, "{n} minuter" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} timme" )
+                    , ( Other, "{n} timmar" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} dag" )
+                    , ( Other, "{n} dagar" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} vecka" )
+                    , ( Other, "{n} veckor" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} månad" )
+                    , ( Other, "{n} månader" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} år" )
+                    , ( Other, "{n} år" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

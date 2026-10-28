@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Sq exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "sq"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ditë" )
-      , ( Other, "{n} ditë" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} javë" )
-      , ( Other, "{n} javë" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} muaj" )
-      , ( Other, "{n} muaj" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} vit" )
-      , ( Other, "{n} vjet" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ditë" )
+            , ( Other, "{n} ditë" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} javë" )
+            , ( Other, "{n} javë" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} muaj" )
+            , ( Other, "{n} muaj" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} vit" )
+            , ( Other, "{n} vjet" )
+            ]
     , half = "{0} e gjysmë"
     , delimiter = ", "
     , justBorn = "I sapolindur"
@@ -52,10 +61,13 @@ locale =
             { ovrDay = Just (Simple "{n} ditë")
             , ovrWeek = Just (Simple "{n} javë")
             , ovrMonth = Just (Simple "{n} muaj")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} vit" )
-                  , ( Other, "{n} vjet" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} vit" )
+                        , ( Other, "{n} vjet" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
@@ -65,10 +77,13 @@ locale =
             { ovrDay = Just (Simple "{n} ditë")
             , ovrWeek = Just (Simple "{n} javë")
             , ovrMonth = Just (Simple "{n} muaj")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} vit" )
-                  , ( Other, "{n} vjet" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} vit" )
+                        , ( Other, "{n} vjet" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

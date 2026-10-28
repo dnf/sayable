@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ur exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,31 +19,47 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ur"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} سیکنڈ" )
             , ( "minute", Simple "{n} منٹ" )
-            , ( "hour", Pluralized
-              [ ( One, "{n} گھنٹہ" )
-              , ( Other, "{n} گھنٹے" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} دن" )
-              , ( Other, "{n} دن" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} ہفتہ" )
-              , ( Other, "{n} ہفتے" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} مہینہ" )
-              , ( Other, "{n} مہینے" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} سال" )
-              , ( Other, "{n} سال" )
-              ] )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} گھنٹہ" )
+                    , ( Other, "{n} گھنٹے" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} دن" )
+                    , ( Other, "{n} دن" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} ہفتہ" )
+                    , ( Other, "{n} ہفتے" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} مہینہ" )
+                    , ( Other, "{n} مہینے" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} سال" )
+                    , ( Other, "{n} سال" )
+                    ]
+              )
             ]
     , half = "ساڑھے {n}"
     , delimiter = "، "
@@ -58,19 +73,25 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} سیکنڈ" )
                         , ( "minute", Simple "{n} منٹ" )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} گھنٹہ" )
-                          , ( Other, "{n} گھنٹے" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} گھنٹہ" )
+                                , ( Other, "{n} گھنٹے" )
+                                ]
+                          )
                         , ( "day", Simple "{n} دن" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} ہفتہ" )
-                          , ( Other, "{n} ہفتے" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} مہینہ" )
-                          , ( Other, "{n} مہینے" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} ہفتہ" )
+                                , ( Other, "{n} ہفتے" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} مہینہ" )
+                                , ( Other, "{n} مہینے" )
+                                ]
+                          )
                         , ( "year", Simple "{n} سال" )
                         ]
                     )
@@ -86,19 +107,25 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} سیکنڈ" )
                         , ( "minute", Simple "{n} منٹ" )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} گھنٹہ" )
-                          , ( Other, "{n} گھنٹے" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} گھنٹہ" )
+                                , ( Other, "{n} گھنٹے" )
+                                ]
+                          )
                         , ( "day", Simple "{n} دن" )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} ہفتہ" )
-                          , ( Other, "{n} ہفتے" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} مہینہ" )
-                          , ( Other, "{n} مہینے" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} ہفتہ" )
+                                , ( Other, "{n} ہفتے" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} مہینہ" )
+                                , ( Other, "{n} مہینے" )
+                                ]
+                          )
                         , ( "year", Simple "{n} سال" )
                         ]
                     )

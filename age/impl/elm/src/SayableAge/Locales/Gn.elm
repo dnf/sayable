@@ -12,14 +12,19 @@
 
 module SayableAge.Locales.Gn exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "gn"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "{n} ára"
     , week = Simple "{n} arapokõindy"
     , month = Simple "{n} jasy"

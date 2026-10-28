@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ml exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ml"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ദിവസം" )
-      , ( Other, "{n} ദിവസങ്ങൾ" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} ആഴ്ച" )
-      , ( Other, "{n} ആഴ്ചകൾ" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} മാസം" )
-      , ( Other, "{n} മാസങ്ങൾ" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} വയസ്സ്" )
-      , ( Other, "{n} വയസ്സ്" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ദിവസം" )
+            , ( Other, "{n} ദിവസങ്ങൾ" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} ആഴ്ച" )
+            , ( Other, "{n} ആഴ്ചകൾ" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} മാസം" )
+            , ( Other, "{n} മാസങ്ങൾ" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} വയസ്സ്" )
+            , ( Other, "{n} വയസ്സ്" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "നവജാതശിശു"

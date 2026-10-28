@@ -1,10 +1,11 @@
 module SayableDuration.Internal exposing (parseIsoToSeconds)
 
-
 {-| YYYY-MM-DDTHH:MM (one- or two-digit hour), then an optional :SS with an
 optional fraction, then an optional zone suffix (Z or ±HH:MM) that is
 validated but not applied.
 -}
+
+
 parseIsoToSeconds : String -> Maybe Int
 parseIsoToSeconds isoStr =
     if String.slice 10 11 isoStr /= "T" then
@@ -23,9 +24,12 @@ parseDatePart : String -> Maybe ( Int, Int, Int )
 parseDatePart s =
     let
         isDateShape =
-            String.length s == 10
-                && String.slice 4 5 s == "-"
-                && String.slice 7 8 s == "-"
+            String.length s
+                == 10
+                && String.slice 4 5 s
+                == "-"
+                && String.slice 7 8 s
+                == "-"
                 && isDigits 4 (String.slice 0 4 s)
                 && isDigits 2 (String.slice 5 7 s)
                 && isDigits 2 (String.slice 8 10 s)
@@ -111,10 +115,12 @@ isZoneSuffix : String -> Bool
 isZoneSuffix zone =
     let
         isOffset =
-            String.length zone == 6
+            String.length zone
+                == 6
                 && List.member (String.left 1 zone) [ "+", "-" ]
                 && isDigits 2 (String.slice 1 3 zone)
-                && String.slice 3 4 zone == ":"
+                && String.slice 3 4 zone
+                == ":"
                 && isDigits 2 (String.slice 4 6 zone)
     in
     zone == "" || zone == "Z" || isOffset

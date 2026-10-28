@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Lv exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,47 +24,69 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) then Zero else if mod10 == 1 && mod100 /= 11 then One else Other
+            if mod10 == 0 || (mod100 >= 11 && mod100 <= 19) then
+                Zero
+
+            else if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( Zero, "{n} sekunžu" )
-              , ( One, "{n} sekunde" )
-              , ( Other, "{n} sekundes" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( Zero, "{n} minūšu" )
-              , ( One, "{n} minūte" )
-              , ( Other, "{n} minūtes" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( Zero, "{n} stundu" )
-              , ( One, "{n} stunda" )
-              , ( Other, "{n} stundas" )
-              ] )
-            , ( "day", Pluralized
-              [ ( Zero, "{n} dienu" )
-              , ( One, "{n} diena" )
-              , ( Other, "{n} dienas" )
-              ] )
-            , ( "week", Pluralized
-              [ ( Zero, "{n} nedēļu" )
-              , ( One, "{n} nedēļa" )
-              , ( Other, "{n} nedēļas" )
-              ] )
-            , ( "month", Pluralized
-              [ ( Zero, "{n} mēnešu" )
-              , ( One, "{n} mēnesis" )
-              , ( Other, "{n} mēneši" )
-              ] )
-            , ( "year", Pluralized
-              [ ( Zero, "{n} gadu" )
-              , ( One, "{n} gads" )
-              , ( Other, "{n} gadi" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( Zero, "{n} sekunžu" )
+                    , ( One, "{n} sekunde" )
+                    , ( Other, "{n} sekundes" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( Zero, "{n} minūšu" )
+                    , ( One, "{n} minūte" )
+                    , ( Other, "{n} minūtes" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( Zero, "{n} stundu" )
+                    , ( One, "{n} stunda" )
+                    , ( Other, "{n} stundas" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( Zero, "{n} dienu" )
+                    , ( One, "{n} diena" )
+                    , ( Other, "{n} dienas" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( Zero, "{n} nedēļu" )
+                    , ( One, "{n} nedēļa" )
+                    , ( Other, "{n} nedēļas" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( Zero, "{n} mēnešu" )
+                    , ( One, "{n} mēnesis" )
+                    , ( Other, "{n} mēneši" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( Zero, "{n} gadu" )
+                    , ( One, "{n} gads" )
+                    , ( Other, "{n} gadi" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Et exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "et"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekund" )
-              , ( Other, "{n} sekundit" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minut" )
-              , ( Other, "{n} minutit" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} tund" )
-              , ( Other, "{n} tundi" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} päev" )
-              , ( Other, "{n} päeva" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} nädal" )
-              , ( Other, "{n} nädalat" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} kuu" )
-              , ( Other, "{n} kuud" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} aasta" )
-              , ( Other, "{n} aastat" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekund" )
+                    , ( Other, "{n} sekundit" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minut" )
+                    , ( Other, "{n} minutit" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} tund" )
+                    , ( Other, "{n} tundi" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} päev" )
+                    , ( Other, "{n} päeva" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} nädal" )
+                    , ( Other, "{n} nädalat" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} kuu" )
+                    , ( Other, "{n} kuud" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} aasta" )
+                    , ( Other, "{n} aastat" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -65,15 +84,19 @@ locale =
                         [ ( "second", Simple "{n} sek" )
                         , ( "minute", Simple "{n} min" )
                         , ( "hour", Simple "{n} t" )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} päev" )
-                          , ( Other, "{n} päeva" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} päev" )
+                                , ( Other, "{n} päeva" )
+                                ]
+                          )
                         , ( "week", Simple "{n} näd" )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} kuu" )
-                          , ( Other, "{n} kuud" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} kuu" )
+                                , ( Other, "{n} kuud" )
+                                ]
+                          )
                         , ( "year", Simple "{n} a" )
                         ]
                     )

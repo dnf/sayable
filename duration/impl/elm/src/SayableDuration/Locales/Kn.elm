@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Kn exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "kn"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} ಸೆಕೆಂಡ್" )
-              , ( Other, "{n} ಸೆಕೆಂಡುಗಳು" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} ನಿಮಿಷ" )
-              , ( Other, "{n} ನಿಮಿಷಗಳು" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} ಗಂಟೆ" )
-              , ( Other, "{n} ಗಂಟೆಗಳು" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ದಿನ" )
-              , ( Other, "{n} ದಿನಗಳು" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} ವಾರ" )
-              , ( Other, "{n} ವಾರಗಳು" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ತಿಂಗಳು" )
-              , ( Other, "{n} ತಿಂಗಳುಗಳು" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ವರ್ಷ" )
-              , ( Other, "{n} ವರ್ಷಗಳು" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} ಸೆಕೆಂಡ್" )
+                    , ( Other, "{n} ಸೆಕೆಂಡುಗಳು" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} ನಿಮಿಷ" )
+                    , ( Other, "{n} ನಿಮಿಷಗಳು" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} ಗಂಟೆ" )
+                    , ( Other, "{n} ಗಂಟೆಗಳು" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ದಿನ" )
+                    , ( Other, "{n} ದಿನಗಳು" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} ವಾರ" )
+                    , ( Other, "{n} ವಾರಗಳು" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ತಿಂಗಳು" )
+                    , ( Other, "{n} ತಿಂಗಳುಗಳು" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ವರ್ಷ" )
+                    , ( Other, "{n} ವರ್ಷಗಳು" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

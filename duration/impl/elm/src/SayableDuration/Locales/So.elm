@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.So exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,27 +19,41 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "so"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} ilbiriqsi" )
-            , ( "minute", Pluralized
-              [ ( One, "{n} daqiiqad" )
-              , ( Other, "{n} daqiiqo" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} saacad" )
-              , ( Other, "{n} saacadood" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} maalin" )
-              , ( Other, "{n} maalmood" )
-              ] )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} daqiiqad" )
+                    , ( Other, "{n} daqiiqo" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} saacad" )
+                    , ( Other, "{n} saacadood" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} maalin" )
+                    , ( Other, "{n} maalmood" )
+                    ]
+              )
             , ( "week", Simple "{n} toddobaad" )
-            , ( "month", Pluralized
-              [ ( One, "{n} bil" )
-              , ( Other, "{n} bilood" )
-              ] )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} bil" )
+                    , ( Other, "{n} bilood" )
+                    ]
+              )
             , ( "year", Simple "{n} sano" )
             ]
     , half = "{n}½"

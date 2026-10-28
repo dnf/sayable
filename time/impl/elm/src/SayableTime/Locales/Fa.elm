@@ -12,7 +12,6 @@
 
 module SayableTime.Locales.Fa exposing (locale)
 
-
 import Dict
 import SayableTime.Types exposing (..)
 
@@ -35,7 +34,7 @@ locale =
             , "ده"
             , "یازده"
             ]
-        , midnight = "نیمه‌شب"
+        , midnight = "نیمه\u{200C}شب"
         , noon = "ظهر"
         , patterns =
             Dict.fromList

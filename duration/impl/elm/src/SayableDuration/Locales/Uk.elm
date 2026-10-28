@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Uk exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,54 +24,76 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Many
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Many
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} секунда" )
-              , ( Few, "{n} секунди" )
-              , ( Many, "{n} секунд" )
-              , ( Other, "{n} секунди" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} хвилина" )
-              , ( Few, "{n} хвилини" )
-              , ( Many, "{n} хвилин" )
-              , ( Other, "{n} хвилини" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} година" )
-              , ( Few, "{n} години" )
-              , ( Many, "{n} годин" )
-              , ( Other, "{n} години" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} день" )
-              , ( Few, "{n} дні" )
-              , ( Many, "{n} днів" )
-              , ( Other, "{n} дня" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} тиждень" )
-              , ( Few, "{n} тижні" )
-              , ( Many, "{n} тижнів" )
-              , ( Other, "{n} тижня" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} місяць" )
-              , ( Few, "{n} місяці" )
-              , ( Many, "{n} місяців" )
-              , ( Other, "{n} місяця" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} рік" )
-              , ( Few, "{n} роки" )
-              , ( Many, "{n} років" )
-              , ( Other, "{n} року" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} секунда" )
+                    , ( Few, "{n} секунди" )
+                    , ( Many, "{n} секунд" )
+                    , ( Other, "{n} секунди" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} хвилина" )
+                    , ( Few, "{n} хвилини" )
+                    , ( Many, "{n} хвилин" )
+                    , ( Other, "{n} хвилини" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} година" )
+                    , ( Few, "{n} години" )
+                    , ( Many, "{n} годин" )
+                    , ( Other, "{n} години" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} день" )
+                    , ( Few, "{n} дні" )
+                    , ( Many, "{n} днів" )
+                    , ( Other, "{n} дня" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} тиждень" )
+                    , ( Few, "{n} тижні" )
+                    , ( Many, "{n} тижнів" )
+                    , ( Other, "{n} тижня" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} місяць" )
+                    , ( Few, "{n} місяці" )
+                    , ( Many, "{n} місяців" )
+                    , ( Other, "{n} місяця" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} рік" )
+                    , ( Few, "{n} роки" )
+                    , ( Many, "{n} років" )
+                    , ( Other, "{n} року" )
+                    ]
+              )
             ]
     , half = "{n} з половиною"
     , delimiter = ", "

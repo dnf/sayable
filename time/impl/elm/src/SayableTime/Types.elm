@@ -1,7 +1,7 @@
 module SayableTime.Types exposing
-    ( Compactness(..)
+    ( ClockConfig
+    , Compactness(..)
     , CompactnessOverride
-    , ClockConfig
     , Locale
     , ShortClockConfig
     )

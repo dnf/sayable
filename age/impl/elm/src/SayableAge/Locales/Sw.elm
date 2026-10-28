@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Sw exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "sw"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "siku {n}" )
-      , ( Other, "siku {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "wiki {n}" )
-      , ( Other, "wiki {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "mwezi {n}" )
-      , ( Other, "miezi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "mwaka {n}" )
-      , ( Other, "miaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "siku {n}" )
+            , ( Other, "siku {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "wiki {n}" )
+            , ( Other, "wiki {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "mwezi {n}" )
+            , ( Other, "miezi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "mwaka {n}" )
+            , ( Other, "miaka {n}" )
+            ]
     , half = "{0} na nusu"
     , delimiter = ", "
     , justBorn = "Mzaliwa mpya"
@@ -51,14 +60,20 @@ locale =
         Just
             { ovrDay = Just (Simple "siku {n}")
             , ovrWeek = Just (Simple "wiki {n}")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "mwezi {n}" )
-                  , ( Other, "miezi {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "mwaka {n}" )
-                  , ( Other, "miaka {n}" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "mwezi {n}" )
+                        , ( Other, "miezi {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "mwaka {n}" )
+                        , ( Other, "miaka {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
@@ -67,14 +82,20 @@ locale =
         Just
             { ovrDay = Just (Simple "siku {n}")
             , ovrWeek = Just (Simple "wiki {n}")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "mwezi {n}" )
-                  , ( Other, "miezi {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "mwaka {n}" )
-                  , ( Other, "miaka {n}" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "mwezi {n}" )
+                        , ( Other, "miezi {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "mwaka {n}" )
+                        , ( Other, "miaka {n}" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

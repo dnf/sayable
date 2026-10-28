@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Umb exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "umb"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "osekunde {n}" )
-              , ( Other, "olosekunde {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "ominute {n}" )
-              , ( Other, "olominute {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "ohola {n}" )
-              , ( Other, "olohola {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "elityi {n}" )
-              , ( Other, "omatyi {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "osemana {n}" )
-              , ( Other, "olosemana {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ondjambi {n}" )
-              , ( Other, "olondjambi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "ombula {n}" )
-              , ( Other, "olombula {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "osekunde {n}" )
+                    , ( Other, "olosekunde {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "ominute {n}" )
+                    , ( Other, "olominute {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "ohola {n}" )
+                    , ( Other, "olohola {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "elityi {n}" )
+                    , ( Other, "omatyi {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "osemana {n}" )
+                    , ( Other, "olosemana {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ondjambi {n}" )
+                    , ( Other, "olondjambi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "ombula {n}" )
+                    , ( Other, "olombula {n}" )
+                    ]
+              )
             ]
     , half = "{0} na oñali"
     , delimiter = ", "
@@ -62,34 +81,48 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "osek. {n}" )
-                          , ( Other, "olosek. {n}" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "omin. {n}" )
-                          , ( Other, "olomin. {n}" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "ohola {n}" )
-                          , ( Other, "olohola {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "elit. {n}" )
-                          , ( Other, "omat. {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "osem. {n}" )
-                          , ( Other, "olosem. {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "ondj. {n}" )
-                          , ( Other, "olondj. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "omb. {n}" )
-                          , ( Other, "olomb. {n}" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "osek. {n}" )
+                                , ( Other, "olosek. {n}" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "omin. {n}" )
+                                , ( Other, "olomin. {n}" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "ohola {n}" )
+                                , ( Other, "olohola {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "elit. {n}" )
+                                , ( Other, "omat. {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "osem. {n}" )
+                                , ( Other, "olosem. {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "ondj. {n}" )
+                                , ( Other, "olondj. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "omb. {n}" )
+                                , ( Other, "olomb. {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

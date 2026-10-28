@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Bg exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "bg"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} секунда" )
-              , ( Other, "{n} секунди" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} минута" )
-              , ( Other, "{n} минути" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} час" )
-              , ( Other, "{n} часа" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ден" )
-              , ( Other, "{n} дни" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} седмица" )
-              , ( Other, "{n} седмици" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} месец" )
-              , ( Other, "{n} месеца" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} година" )
-              , ( Other, "{n} години" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} секунда" )
+                    , ( Other, "{n} секунди" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} минута" )
+                    , ( Other, "{n} минути" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} час" )
+                    , ( Other, "{n} часа" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ден" )
+                    , ( Other, "{n} дни" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} седмица" )
+                    , ( Other, "{n} седмици" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} месец" )
+                    , ( Other, "{n} месеца" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} година" )
+                    , ( Other, "{n} години" )
+                    ]
+              )
             ]
     , half = "{0} и половина"
     , delimiter = ", "

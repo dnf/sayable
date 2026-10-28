@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ve exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ve"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekondhe {n}" )
-              , ( Other, "disekondhe {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minidhi {n}" )
-              , ( Other, "diminidhi {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "awara {n}" )
-              , ( Other, "diawara {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "duvha {n}" )
-              , ( Other, "maduvha {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "vhege {n}" )
-              , ( Other, "mavhege {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "nwedzi {n}" )
-              , ( Other, "minwedzi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "nwaha {n}" )
-              , ( Other, "minwaha {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekondhe {n}" )
+                    , ( Other, "disekondhe {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minidhi {n}" )
+                    , ( Other, "diminidhi {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "awara {n}" )
+                    , ( Other, "diawara {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "duvha {n}" )
+                    , ( Other, "maduvha {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "vhege {n}" )
+                    , ( Other, "mavhege {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "nwedzi {n}" )
+                    , ( Other, "minwedzi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "nwaha {n}" )
+                    , ( Other, "minwaha {n}" )
+                    ]
+              )
             ]
     , half = "{0} na hafu"
     , delimiter = ", "
@@ -64,26 +83,36 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "sek. {n}" )
                         , ( "minute", Simple "min. {n}" )
-                        , ( "hour", Pluralized
-                          [ ( One, "aw. {n}" )
-                          , ( Other, "diaw. {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "duv. {n}" )
-                          , ( Other, "mad. {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "vheg. {n}" )
-                          , ( Other, "mav. {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "nwedzi {n}" )
-                          , ( Other, "min. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "nwaha {n}" )
-                          , ( Other, "min. {n}" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "aw. {n}" )
+                                , ( Other, "diaw. {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "duv. {n}" )
+                                , ( Other, "mad. {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "vheg. {n}" )
+                                , ( Other, "mav. {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "nwedzi {n}" )
+                                , ( Other, "min. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "nwaha {n}" )
+                                , ( Other, "min. {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

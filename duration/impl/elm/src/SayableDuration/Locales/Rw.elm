@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Rw exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "rw"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "isegonda {n}" )
-              , ( Other, "amasegonda {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "umunota {n}" )
-              , ( Other, "iminota {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "isaha {n}" )
-              , ( Other, "amasaha {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "umunsi {n}" )
-              , ( Other, "iminsi {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "icyumweru {n}" )
-              , ( Other, "ibyumweru {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ukwezi {n}" )
-              , ( Other, "amezi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "umwaka {n}" )
-              , ( Other, "imyaka {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "isegonda {n}" )
+                    , ( Other, "amasegonda {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "umunota {n}" )
+                    , ( Other, "iminota {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "isaha {n}" )
+                    , ( Other, "amasaha {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "umunsi {n}" )
+                    , ( Other, "iminsi {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "icyumweru {n}" )
+                    , ( Other, "ibyumweru {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ukwezi {n}" )
+                    , ( Other, "amezi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "umwaka {n}" )
+                    , ( Other, "imyaka {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Bs exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,34 +23,46 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} dan" )
-      , ( Few, "{n} dana" )
-      , ( Many, "{n} dana" )
-      , ( Other, "{n} dana" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} sedmica" )
-      , ( Few, "{n} sedmice" )
-      , ( Many, "{n} sedmica" )
-      , ( Other, "{n} sedmica" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mjesec" )
-      , ( Few, "{n} mjeseca" )
-      , ( Many, "{n} mjeseci" )
-      , ( Other, "{n} mjeseci" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} godina" )
-      , ( Few, "{n} godine" )
-      , ( Many, "{n} godina" )
-      , ( Other, "{n} godina" )
-      ]
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dan" )
+            , ( Few, "{n} dana" )
+            , ( Many, "{n} dana" )
+            , ( Other, "{n} dana" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} sedmica" )
+            , ( Few, "{n} sedmice" )
+            , ( Many, "{n} sedmica" )
+            , ( Other, "{n} sedmica" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mjesec" )
+            , ( Few, "{n} mjeseca" )
+            , ( Many, "{n} mjeseci" )
+            , ( Other, "{n} mjeseci" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} godina" )
+            , ( Few, "{n} godine" )
+            , ( Many, "{n} godina" )
+            , ( Other, "{n} godina" )
+            ]
     , half = "{0} i po"
     , delimiter = ", "
     , justBorn = "Novorođenče"
@@ -65,11 +76,14 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} dan" )
-                  , ( Few, "{n} dana" )
-                  , ( Other, "{n} dana" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} dan" )
+                        , ( Few, "{n} dana" )
+                        , ( Other, "{n} dana" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} sedm.")
             , ovrMonth = Just (Simple "{n} mj.")
             , ovrYear = Just (Simple "{n} god.")

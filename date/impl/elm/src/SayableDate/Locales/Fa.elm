@@ -12,7 +12,6 @@
 
 module SayableDate.Locales.Fa exposing (locale)
 
-
 import Dict
 import SayableDate.Types exposing (..)
 
@@ -37,7 +36,7 @@ locale =
     , weekdays =
         [ "یکشنبه"
         , "دوشنبه"
-        , "سه‌شنبه"
+        , "سه\u{200C}شنبه"
         , "چهارشنبه"
         , "پنجشنبه"
         , "جمعه"
@@ -50,7 +49,7 @@ locale =
     , today = "امروز"
     , tomorrow = "فردا"
     , yesterday = "دیروز"
-    , dayAfterTomorrow = Just "پس‌فردا"
+    , dayAfterTomorrow = Just "پس\u{200C}فردا"
     , dayBeforeYesterday = Just "پریروز"
     , thisWeekday = Just "این {weekday}"
     , nextWeekday = Just "{weekday} آینده"
@@ -58,30 +57,32 @@ locale =
     , monthsInDate = Nothing
     , short =
         Just
-            { ovrMonths = Just
-                [ "ژان"
-                , "فور"
-                , "مار"
-                , "آور"
-                , "مه"
-                , "ژوئن"
-                , "ژوئیه"
-                , "اوت"
-                , "سپت"
-                , "اکت"
-                , "نوا"
-                , "دسا"
-                ]
+            { ovrMonths =
+                Just
+                    [ "ژان"
+                    , "فور"
+                    , "مار"
+                    , "آور"
+                    , "مه"
+                    , "ژوئن"
+                    , "ژوئیه"
+                    , "اوت"
+                    , "سپت"
+                    , "اکت"
+                    , "نوا"
+                    , "دسا"
+                    ]
             , ovrMonthsInDate = Nothing
-            , ovrWeekdays = Just
-                [ "یکش"
-                , "دوش"
-                , "سه‌ش"
-                , "چهار"
-                , "پنجش"
-                , "جمعه"
-                , "شنبه"
-                ]
+            , ovrWeekdays =
+                Just
+                    [ "یکش"
+                    , "دوش"
+                    , "سه\u{200C}ش"
+                    , "چهار"
+                    , "پنجش"
+                    , "جمعه"
+                    , "شنبه"
+                    ]
             , ovrDayFormat = Just "{n}"
             , ovrDayFormatExceptions = Just Dict.empty
             , ovrDatePattern = Just "{day} {month}"

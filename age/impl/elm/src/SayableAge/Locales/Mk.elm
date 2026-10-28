@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Mk exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,26 +23,35 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ден" )
-      , ( Other, "{n} дена" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} недела" )
-      , ( Other, "{n} недели" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} месец" )
-      , ( Other, "{n} месеци" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} година" )
-      , ( Other, "{n} години" )
-      ]
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ден" )
+            , ( Other, "{n} дена" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} недела" )
+            , ( Other, "{n} недели" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} месец" )
+            , ( Other, "{n} месеци" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} година" )
+            , ( Other, "{n} години" )
+            ]
     , half = "{0} и пол"
     , delimiter = ", "
     , justBorn = "Новороденче"
@@ -57,10 +65,13 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} ден" )
-                  , ( Other, "{n} дена" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ден" )
+                        , ( Other, "{n} дена" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} сед.")
             , ovrMonth = Just (Simple "{n} мес.")
             , ovrYear = Just (Simple "{n} год.")

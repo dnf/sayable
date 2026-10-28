@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Mt exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -26,58 +25,85 @@ locale =
                 mod100 =
                     modBy 100 n
             in
-            if n == 1 then One else if n == 2 then Two else if n == 0 || (mod100 >= 3 && mod100 <= 10) then Few else if mod100 >= 11 && mod100 <= 19 then Many else Other
+            if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else if n == 0 || (mod100 >= 3 && mod100 <= 10) then
+                Few
+
+            else if mod100 >= 11 && mod100 <= 19 then
+                Many
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekonda" )
-              , ( Two, "{n} sekondi" )
-              , ( Few, "{n} sekondi" )
-              , ( Many, "{n}-il sekonda" )
-              , ( Other, "{n} sekonda" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minuta" )
-              , ( Two, "minutejn" )
-              , ( Few, "{n} minuti" )
-              , ( Many, "{n}-il minuta" )
-              , ( Other, "{n} minuta" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} siegħa" )
-              , ( Two, "sagħtejn" )
-              , ( Few, "{n} sigħat" )
-              , ( Many, "{n}-il siegħa" )
-              , ( Other, "{n} siegħa" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "ġurnata" )
-              , ( Two, "jumejn" )
-              , ( Few, "{n} ijiem" )
-              , ( Many, "{n}-il jum" )
-              , ( Other, "{n} jum" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "ġimgħa" )
-              , ( Two, "ġimgħatejn" )
-              , ( Few, "{n} ġimgħat" )
-              , ( Many, "{n}-il ġimgħa" )
-              , ( Other, "{n} ġimgħa" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "xahar" )
-              , ( Two, "xahrejn" )
-              , ( Few, "{n} xhur" )
-              , ( Many, "{n}-il xahar" )
-              , ( Other, "{n} xahar" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "sena" )
-              , ( Two, "sentejn" )
-              , ( Few, "{n} snin" )
-              , ( Many, "{n}-il sena" )
-              , ( Other, "{n} sena" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekonda" )
+                    , ( Two, "{n} sekondi" )
+                    , ( Few, "{n} sekondi" )
+                    , ( Many, "{n}-il sekonda" )
+                    , ( Other, "{n} sekonda" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minuta" )
+                    , ( Two, "minutejn" )
+                    , ( Few, "{n} minuti" )
+                    , ( Many, "{n}-il minuta" )
+                    , ( Other, "{n} minuta" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} siegħa" )
+                    , ( Two, "sagħtejn" )
+                    , ( Few, "{n} sigħat" )
+                    , ( Many, "{n}-il siegħa" )
+                    , ( Other, "{n} siegħa" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "ġurnata" )
+                    , ( Two, "jumejn" )
+                    , ( Few, "{n} ijiem" )
+                    , ( Many, "{n}-il jum" )
+                    , ( Other, "{n} jum" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "ġimgħa" )
+                    , ( Two, "ġimgħatejn" )
+                    , ( Few, "{n} ġimgħat" )
+                    , ( Many, "{n}-il ġimgħa" )
+                    , ( Other, "{n} ġimgħa" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "xahar" )
+                    , ( Two, "xahrejn" )
+                    , ( Few, "{n} xhur" )
+                    , ( Many, "{n}-il xahar" )
+                    , ( Other, "{n} xahar" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "sena" )
+                    , ( Two, "sentejn" )
+                    , ( Few, "{n} snin" )
+                    , ( Many, "{n}-il sena" )
+                    , ( Other, "{n} sena" )
+                    ]
+              )
             ]
     , half = "{0} u nofs"
     , delimiter = " u "

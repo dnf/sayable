@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import unicodedata
+
 from codegen.banner import locale_source_comment, make_header
 
 HEADER = make_header("codegen/targets/elm/emitter.py", line_prefix="-- ")
@@ -12,9 +14,27 @@ def _module_name(code: str) -> str:
     return code[0].upper() + code[1:]
 
 
+# elm-format writes control, format and unassigned characters and every space
+# but U+0020 (U+00A0, U+202F, ...) as \u{XXXX} escapes.
+_ESCAPED_CATEGORIES = {"Cc", "Cf", "Cs", "Co", "Cn", "Zl", "Zp", "Zs"}
+
+
+def _escape_char(c: str) -> str:
+    if c == "\\":
+        return "\\\\"
+    if c == '"':
+        return '\\"'
+    if c == "\n":
+        return "\\n"
+    if c == "\t":
+        return "\\t"
+    if c != " " and unicodedata.category(c) in _ESCAPED_CATEGORIES:
+        return f"\\u{{{ord(c):04X}}}"
+    return c
+
+
 def _quote(s: str) -> str:
-    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
-    return f'"{escaped}"'
+    return '"' + "".join(_escape_char(c) for c in s) + '"'
 
 
 def _str_list(items: list[str], indent: int = 4) -> str:
@@ -44,9 +64,10 @@ def _compactness_override(ovr: dict, indent: int = 4) -> str:
     pad = " " * indent
 
     def _maybe_list(key: str) -> str:
+        """The text after a field's `=`: ` Nothing`, or `Just` and the list below it."""
         if key in ovr:
-            return f"Just\n{_str_list(ovr[key], indent + 4)}"
-        return "Nothing"
+            return f"\n{pad}    Just\n{_str_list(ovr[key], indent + 8)}"
+        return " Nothing"
 
     def _maybe_str(key: str) -> str:
         if key in ovr:
@@ -54,19 +75,21 @@ def _compactness_override(ovr: dict, indent: int = 4) -> str:
         return "Nothing"
 
     def _maybe_dict(key: str) -> str:
+        """The text after a field's `=`: ` Nothing`, or `Just (Dict.fromList ...)` below it."""
         if key in ovr and ovr[key]:
-            return f"Just\n{pad}    (Dict.fromList\n{_dict_entries(ovr[key], indent + 8)}\n{pad}    )"
-        return "Nothing"
+            entries = _dict_entries(ovr[key], indent + 12)
+            return f"\n{pad}    Just\n{pad}        (Dict.fromList\n{entries}\n{pad}        )"
+        return " Nothing"
 
-    lines = [f"{pad}{{ ovrMonths = {_maybe_list('months')}"]
-    lines.append(f"{pad}, ovrMonthsInDate = {_maybe_list('monthsInDate')}")
-    lines.append(f"{pad}, ovrWeekdays = {_maybe_list('weekdays')}")
+    lines = [f"{pad}{{ ovrMonths ={_maybe_list('months')}"]
+    lines.append(f"{pad}, ovrMonthsInDate ={_maybe_list('monthsInDate')}")
+    lines.append(f"{pad}, ovrWeekdays ={_maybe_list('weekdays')}")
     lines.append(f"{pad}, ovrDayFormat = {_maybe_str('dayFormat')}")
 
     if "dayFormat" in ovr and "dayFormatExceptions" not in ovr:
         lines.append(f"{pad}, ovrDayFormatExceptions = Just Dict.empty")
     else:
-        lines.append(f"{pad}, ovrDayFormatExceptions = {_maybe_dict('dayFormatExceptions')}")
+        lines.append(f"{pad}, ovrDayFormatExceptions ={_maybe_dict('dayFormatExceptions')}")
 
     lines.append(f"{pad}, ovrDatePattern = {_maybe_str('datePattern')}")
     lines.append(f"{pad}, ovrDatePatternWithYear = {_maybe_str('datePatternWithYear')}")
@@ -85,7 +108,6 @@ def emit_locale(data: dict) -> str:
     lines = [HEADER + locale_source_comment(code, line_prefix="-- ")]
     lines.append("")
     lines.append(f"module SayableDate.Locales.{mod} exposing (locale)")
-    lines.append("")
     lines.append("")
     lines.append("import Dict")
     lines.append("import SayableDate.Types exposing (..)")
@@ -168,14 +190,13 @@ def emit_barrel(all_locales: list[dict]) -> str:
     lines.append("")
     lines.append("module SayableDate.Locales exposing (getLocale)")
     lines.append("")
-    lines.append("")
-    lines.append("import Dict exposing (Dict)")
-    lines.append("import SayableDate.Types exposing (Locale)")
 
-    # Imports
+    # elm-format sorts imports by module name
+    imports = ["Dict exposing (Dict)", "SayableDate.Types exposing (Locale)"]
     for loc in sorted_locs:
         mod = _module_name(loc["code"])
-        lines.append(f"import SayableDate.Locales.{mod} as {mod}")
+        imports.append(f"SayableDate.Locales.{mod} as {mod}")
+    lines.extend(f"import {imp}" for imp in sorted(imports, key=lambda imp: imp.split()[0]))
 
     lines.append("")
     lines.append("")

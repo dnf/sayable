@@ -206,24 +206,24 @@ suite =
                 \_ -> Expect.equal (Just "3 years") (fmt "2022-06-15" "2025-06-15")
             , test "11.2 3y5m = 3 years" <|
                 \_ -> Expect.equal (Just "3 years") (fmt "2022-06-15" "2025-11-15")
-            , test "11.3 3y6m = 3\u{00BD} years" <|
-                \_ -> Expect.equal (Just "3\u{00BD} years") (fmt "2022-06-15" "2025-12-15")
-            , test "11.4 3y11m = 3\u{00BD} years" <|
-                \_ -> Expect.equal (Just "3\u{00BD} years") (fmt "2022-06-15" "2026-05-15")
+            , test "11.3 3y6m = 3½ years" <|
+                \_ -> Expect.equal (Just "3½ years") (fmt "2022-06-15" "2025-12-15")
+            , test "11.4 3y11m = 3½ years" <|
+                \_ -> Expect.equal (Just "3½ years") (fmt "2022-06-15" "2026-05-15")
             , test "11.5 4 years" <|
                 \_ -> Expect.equal (Just "4 years") (fmt "2021-06-15" "2025-06-15")
-            , test "11.6 4y6m = 4\u{00BD} years" <|
-                \_ -> Expect.equal (Just "4\u{00BD} years") (fmt "2021-06-15" "2025-12-15")
+            , test "11.6 4y6m = 4½ years" <|
+                \_ -> Expect.equal (Just "4½ years") (fmt "2021-06-15" "2025-12-15")
             , test "11.7 5 years" <|
                 \_ -> Expect.equal (Just "5 years") (fmt "2020-06-15" "2025-06-15")
-            , test "11.8 5y8m = 5\u{00BD} years" <|
-                \_ -> Expect.equal (Just "5\u{00BD} years") (fmt "2020-06-15" "2026-02-15")
+            , test "11.8 5y8m = 5½ years" <|
+                \_ -> Expect.equal (Just "5½ years") (fmt "2020-06-15" "2026-02-15")
             , test "11.9 6 years" <|
                 \_ -> Expect.equal (Just "6 years") (fmt "2019-06-15" "2025-06-15")
-            , test "11.10 6y6m = 6\u{00BD} years" <|
-                \_ -> Expect.equal (Just "6\u{00BD} years") (fmt "2019-06-15" "2025-12-15")
-            , test "11.11 6y11m = 6\u{00BD} years" <|
-                \_ -> Expect.equal (Just "6\u{00BD} years") (fmt "2019-06-15" "2026-05-15")
+            , test "11.10 6y6m = 6½ years" <|
+                \_ -> Expect.equal (Just "6½ years") (fmt "2019-06-15" "2025-12-15")
+            , test "11.11 6y11m = 6½ years" <|
+                \_ -> Expect.equal (Just "6½ years") (fmt "2019-06-15" "2026-05-15")
             , test "11.12 day before 3rd birthday = 2 years, 11 months" <|
                 \_ -> Expect.equal (Just "2 years, 11 months") (fmt "2022-06-15" "2025-06-14")
             ]
@@ -257,6 +257,7 @@ suite =
             , test "14.5 Jan31 -> Jul31 = 6 months" <|
                 \_ -> Expect.equal (Just "6 months") (fmt "2025-01-31" "2025-07-31")
             ]
+
         -- 15.1: not applicable — Elm has no default asOf, and pure code cannot read the system clock (Time.now is a Task)
         -- 15.2: not applicable — same reason as 15.1
         , describe "16. formatStage null/edge"
@@ -337,6 +338,7 @@ suite =
             , test "22.3 45 years" <|
                 \_ -> Expect.equal (Just "Adult") (stg "1980-01-01" "2025-06-15")
             ]
+
         -- 23.1: not applicable — Elm has no default asOf, and pure code cannot read the system clock (Time.now is a Task)
         -- 23.2: not applicable — same reason as 23.1
         -- 23.3: not applicable — same reason as 23.1
@@ -351,8 +353,8 @@ suite =
                 \_ -> Expect.equal (Just "6 months") (fmt "2025-01-15" "2025-07-15")
             , test "24.5 2 years, 1 month" <|
                 \_ -> Expect.equal (Just "2 years, 1 month") (fmt "2023-06-15" "2025-07-15")
-            , test "24.6 3\u{00BD} years" <|
-                \_ -> Expect.equal (Just "3\u{00BD} years") (fmt "2022-06-15" "2025-12-15")
+            , test "24.6 3½ years" <|
+                \_ -> Expect.equal (Just "3½ years") (fmt "2022-06-15" "2025-12-15")
             , test "24.7 7 years" <|
                 \_ -> Expect.equal (Just "7 years") (fmt "2018-06-15" "2025-06-15")
             , test "24.8 stage Newborn" <|
@@ -374,37 +376,37 @@ suite =
             ]
         , describe "25. i18n - Spanish"
             [ test "25.1 justBorn" <|
-                \_ -> Expect.equal (Just "Reci\u{00E9}n nacido") (fmtLoc Es.locale "2025-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "Recién nacido") (fmtLoc Es.locale "2025-06-15" "2025-06-15")
             , test "25.2 singular day" <|
-                \_ -> Expect.equal (Just "1 d\u{00ED}a") (fmtLoc Es.locale "2025-06-14" "2025-06-15")
+                \_ -> Expect.equal (Just "1 día") (fmtLoc Es.locale "2025-06-14" "2025-06-15")
             , test "25.3 plural days" <|
-                \_ -> Expect.equal (Just "3 d\u{00ED}as") (fmtLoc Es.locale "2025-06-12" "2025-06-15")
+                \_ -> Expect.equal (Just "3 días") (fmtLoc Es.locale "2025-06-12" "2025-06-15")
             , test "25.4 singular week" <|
                 \_ -> Expect.equal (Just "1 semana") (fmtLoc Es.locale "2025-06-08" "2025-06-15")
             , test "25.5 compound" <|
-                \_ -> Expect.equal (Just "1 semana, 1 d\u{00ED}a") (fmtLoc Es.locale "2025-06-07" "2025-06-15")
+                \_ -> Expect.equal (Just "1 semana, 1 día") (fmtLoc Es.locale "2025-06-07" "2025-06-15")
             , test "25.6 plural compound" <|
-                \_ -> Expect.equal (Just "2 semanas, 6 d\u{00ED}as") (fmtLoc Es.locale "2025-05-26" "2025-06-15")
+                \_ -> Expect.equal (Just "2 semanas, 6 días") (fmtLoc Es.locale "2025-05-26" "2025-06-15")
             , test "25.7 months" <|
                 \_ -> Expect.equal (Just "6 meses") (fmtLoc Es.locale "2025-01-15" "2025-07-15")
             , test "25.8 singular month" <|
-                \_ -> Expect.equal (Just "2 a\u{00F1}os, 1 mes") (fmtLoc Es.locale "2023-06-15" "2025-07-15")
+                \_ -> Expect.equal (Just "2 años, 1 mes") (fmtLoc Es.locale "2023-06-15" "2025-07-15")
             , test "25.9 years+months" <|
-                \_ -> Expect.equal (Just "2 a\u{00F1}os, 6 meses") (fmtLoc Es.locale "2023-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "2 años, 6 meses") (fmtLoc Es.locale "2023-06-15" "2025-12-15")
             , test "25.10 half marker" <|
-                \_ -> Expect.equal (Just "3 a\u{00F1}os y medio") (fmtLoc Es.locale "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3 años y medio") (fmtLoc Es.locale "2022-06-15" "2025-12-15")
             , test "25.11 no half" <|
-                \_ -> Expect.equal (Just "3 a\u{00F1}os") (fmtLoc Es.locale "2022-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "3 años") (fmtLoc Es.locale "2022-06-15" "2025-06-15")
             , test "25.12 7+ years" <|
-                \_ -> Expect.equal (Just "7 a\u{00F1}os") (fmtLoc Es.locale "2018-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "7 años") (fmtLoc Es.locale "2018-06-15" "2025-06-15")
             , test "25.13 stage Newborn" <|
-                \_ -> Expect.equal (Just "Reci\u{00E9}n nacido") (formatStage Es.locale "2025-06-15" "2025-06-15" Nothing)
+                \_ -> Expect.equal (Just "Recién nacido") (formatStage Es.locale "2025-06-15" "2025-06-15" Nothing)
             , test "25.14 stage Infant" <|
-                \_ -> Expect.equal (Just "Beb\u{00E9}") (formatStage Es.locale "2025-01-15" "2025-06-15" Nothing)
+                \_ -> Expect.equal (Just "Bebé") (formatStage Es.locale "2025-01-15" "2025-06-15" Nothing)
             , test "25.15 stage Toddler" <|
-                \_ -> Expect.equal (Just "Ni\u{00F1}o peque\u{00F1}o") (formatStage Es.locale "2024-06-15" "2025-06-15" Nothing)
+                \_ -> Expect.equal (Just "Niño pequeño") (formatStage Es.locale "2024-06-15" "2025-06-15" Nothing)
             , test "25.16 stage Child" <|
-                \_ -> Expect.equal (Just "Ni\u{00F1}o") (formatStage Es.locale "2022-06-15" "2025-06-15" Nothing)
+                \_ -> Expect.equal (Just "Niño") (formatStage Es.locale "2022-06-15" "2025-06-15" Nothing)
             , test "25.17 stage Teenager" <|
                 \_ -> Expect.equal (Just "Adolescente") (formatStage Es.locale "2012-06-15" "2025-06-15" Nothing)
             , test "25.18 stage Adult" <|
@@ -426,7 +428,7 @@ suite =
             , test "26.5 short years+months" <|
                 \_ -> Expect.equal (Just "2 yr, 1 mo") (fmtShort "2023-06-15" "2025-07-15")
             , test "26.6 short half" <|
-                \_ -> Expect.equal (Just "3\u{00BD} yr") (fmtShort "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3½ yr") (fmtShort "2022-06-15" "2025-12-15")
             , test "26.7 short years" <|
                 \_ -> Expect.equal (Just "7 yr") (fmtShort "2018-06-15" "2025-06-15")
             , test "26.8 justBorn unchanged" <|
@@ -446,7 +448,7 @@ suite =
             , test "27.5 no delimiter" <|
                 \_ -> Expect.equal (Just "2y1m") (fmtCompact "2023-06-15" "2025-07-15")
             , test "27.6 compact half" <|
-                \_ -> Expect.equal (Just "3\u{00BD}y") (fmtCompact "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3½y") (fmtCompact "2022-06-15" "2025-12-15")
             , test "27.7 compact years" <|
                 \_ -> Expect.equal (Just "7y") (fmtCompact "2018-06-15" "2025-06-15")
             , test "27.8 justBorn unchanged" <|
@@ -454,49 +456,49 @@ suite =
             ]
         , describe "29.1 Hebrew dual forms"
             [ test "29.1 justBorn" <|
-                \_ -> Expect.equal (Just "\u{05E8}\u{05E7} \u{05E0}\u{05D5}\u{05DC}\u{05D3}") (fmtLoc He.locale "2025-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "רק נולד") (fmtLoc He.locale "2025-06-15" "2025-06-15")
             , test "29.2 1 day" <|
-                \_ -> Expect.equal (Just "\u{05D9}\u{05D5}\u{05DD}") (fmtLoc He.locale "2025-06-14" "2025-06-15")
+                \_ -> Expect.equal (Just "יום") (fmtLoc He.locale "2025-06-14" "2025-06-15")
             , test "29.3 3 days" <|
-                \_ -> Expect.equal (Just "3 \u{05D9}\u{05DE}\u{05D9}\u{05DD}") (fmtLoc He.locale "2025-06-12" "2025-06-15")
+                \_ -> Expect.equal (Just "3 ימים") (fmtLoc He.locale "2025-06-12" "2025-06-15")
             , test "29.4 2 weeks dual" <|
-                \_ -> Expect.equal (Just "\u{05E9}\u{05D1}\u{05D5}\u{05E2}\u{05D9}\u{05D9}\u{05DD}") (fmtLoc He.locale "2025-06-01" "2025-06-15")
+                \_ -> Expect.equal (Just "שבועיים") (fmtLoc He.locale "2025-06-01" "2025-06-15")
             , test "29.5 3 weeks" <|
-                \_ -> Expect.equal (Just "3 \u{05E9}\u{05D1}\u{05D5}\u{05E2}\u{05D5}\u{05EA}") (fmtLoc He.locale "2025-05-25" "2025-06-15")
+                \_ -> Expect.equal (Just "3 שבועות") (fmtLoc He.locale "2025-05-25" "2025-06-15")
             , test "29.6 6 months" <|
-                \_ -> Expect.equal (Just "6 \u{05D7}\u{05D5}\u{05D3}\u{05E9}\u{05D9}\u{05DD}") (fmtLoc He.locale "2025-01-15" "2025-07-15")
+                \_ -> Expect.equal (Just "6 חודשים") (fmtLoc He.locale "2025-01-15" "2025-07-15")
             , test "29.7 3 months" <|
-                \_ -> Expect.equal (Just "3 \u{05D7}\u{05D5}\u{05D3}\u{05E9}\u{05D9}\u{05DD}") (fmtLoc He.locale "2025-03-15" "2025-06-15")
+                \_ -> Expect.equal (Just "3 חודשים") (fmtLoc He.locale "2025-03-15" "2025-06-15")
             , test "29.8 2y dual + 1m" <|
-                \_ -> Expect.equal (Just "\u{05E9}\u{05E0}\u{05EA}\u{05D9}\u{05D9}\u{05DD}, \u{05D7}\u{05D5}\u{05D3}\u{05E9}") (fmtLoc He.locale "2023-06-15" "2025-07-15")
+                \_ -> Expect.equal (Just "שנתיים, חודש") (fmtLoc He.locale "2023-06-15" "2025-07-15")
             , test "29.9 3.5 years" <|
-                \_ -> Expect.equal (Just "3 \u{05E9}\u{05E0}\u{05D9}\u{05DD} \u{05D5}\u{05D7}\u{05E6}\u{05D9}") (fmtLoc He.locale "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3 שנים וחצי") (fmtLoc He.locale "2022-06-15" "2025-12-15")
             , test "29.10 7 years" <|
-                \_ -> Expect.equal (Just "7 \u{05E9}\u{05E0}\u{05D9}\u{05DD}") (fmtLoc He.locale "2018-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "7 שנים") (fmtLoc He.locale "2018-06-15" "2025-06-15")
             , test "29.11 masculine newborn" <|
-                \_ -> Expect.equal (Just "\u{05E8}\u{05E7} \u{05E0}\u{05D5}\u{05DC}\u{05D3}") (stgG He.locale "2025-06-15" "2025-06-15" (Just M))
+                \_ -> Expect.equal (Just "רק נולד") (stgG He.locale "2025-06-15" "2025-06-15" (Just M))
             , test "29.12 feminine newborn" <|
-                \_ -> Expect.equal (Just "\u{05E8}\u{05E7} \u{05E0}\u{05D5}\u{05DC}\u{05D3}\u{05D4}") (stgG He.locale "2025-06-15" "2025-06-15" (Just F))
+                \_ -> Expect.equal (Just "רק נולדה") (stgG He.locale "2025-06-15" "2025-06-15" (Just F))
             , test "29.13 masculine adult" <|
-                \_ -> Expect.equal (Just "\u{05DE}\u{05D1}\u{05D5}\u{05D2}\u{05E8}") (stgG He.locale "2007-06-15" "2025-06-15" (Just M))
+                \_ -> Expect.equal (Just "מבוגר") (stgG He.locale "2007-06-15" "2025-06-15" (Just M))
             , test "29.14 feminine adult" <|
-                \_ -> Expect.equal (Just "\u{05DE}\u{05D1}\u{05D5}\u{05D2}\u{05E8}\u{05EA}") (stgG He.locale "2007-06-15" "2025-06-15" (Just F))
+                \_ -> Expect.equal (Just "מבוגרת") (stgG He.locale "2007-06-15" "2025-06-15" (Just F))
             ]
         , describe "29.2 Macedonian"
             [ test "29.15 justBorn" <|
-                \_ -> Expect.equal (Just "\u{041D}\u{043E}\u{0432}\u{043E}\u{0440}\u{043E}\u{0434}\u{0435}\u{043D}\u{0447}\u{0435}") (fmtLoc Mk.locale "2025-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "Новороденче") (fmtLoc Mk.locale "2025-06-15" "2025-06-15")
             , test "29.16 1 day" <|
-                \_ -> Expect.equal (Just "1 \u{0434}\u{0435}\u{043D}") (fmtLoc Mk.locale "2025-06-14" "2025-06-15")
+                \_ -> Expect.equal (Just "1 ден") (fmtLoc Mk.locale "2025-06-14" "2025-06-15")
             , test "29.17 3 days" <|
-                \_ -> Expect.equal (Just "3 \u{0434}\u{0435}\u{043D}\u{0430}") (fmtLoc Mk.locale "2025-06-12" "2025-06-15")
+                \_ -> Expect.equal (Just "3 дена") (fmtLoc Mk.locale "2025-06-12" "2025-06-15")
             , test "29.18 6 months" <|
-                \_ -> Expect.equal (Just "6 \u{043C}\u{0435}\u{0441}\u{0435}\u{0446}\u{0438}") (fmtLoc Mk.locale "2025-01-15" "2025-07-15")
+                \_ -> Expect.equal (Just "6 месеци") (fmtLoc Mk.locale "2025-01-15" "2025-07-15")
             , test "29.19 2y1m" <|
-                \_ -> Expect.equal (Just "2 \u{0433}\u{043E}\u{0434}\u{0438}\u{043D}\u{0438}, 1 \u{043C}\u{0435}\u{0441}\u{0435}\u{0446}") (fmtLoc Mk.locale "2023-06-15" "2025-07-15")
+                \_ -> Expect.equal (Just "2 години, 1 месец") (fmtLoc Mk.locale "2023-06-15" "2025-07-15")
             , test "29.20 3.5 years" <|
-                \_ -> Expect.equal (Just "3 \u{0433}\u{043E}\u{0434}\u{0438}\u{043D}\u{0438} \u{0438} \u{043F}\u{043E}\u{043B}") (fmtLoc Mk.locale "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3 години и пол") (fmtLoc Mk.locale "2022-06-15" "2025-12-15")
             , test "29.21 7 years" <|
-                \_ -> Expect.equal (Just "7 \u{0433}\u{043E}\u{0434}\u{0438}\u{043D}\u{0438}") (fmtLoc Mk.locale "2018-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "7 години") (fmtLoc Mk.locale "2018-06-15" "2025-06-15")
             ]
         , describe "29.3 Swahili"
             [ test "29.22 justBorn" <|
@@ -528,17 +530,17 @@ suite =
             ]
         , describe "29.5 Amharic"
             [ test "29.34 justBorn" <|
-                \_ -> Expect.equal (Just "\u{12A0}\u{12F2}\u{1235} \u{12E8}\u{1270}\u{12C8}\u{1208}\u{12F0}") (fmtLoc Am.locale "2025-06-15" "2025-06-15")
+                \_ -> Expect.equal (Just "አዲስ የተወለደ") (fmtLoc Am.locale "2025-06-15" "2025-06-15")
             , test "29.35 1 day" <|
-                \_ -> Expect.equal (Just "1 \u{1240}\u{1295}") (fmtLoc Am.locale "2025-06-14" "2025-06-15")
+                \_ -> Expect.equal (Just "1 ቀን") (fmtLoc Am.locale "2025-06-14" "2025-06-15")
             , test "29.36 3 days" <|
-                \_ -> Expect.equal (Just "3 \u{1240}\u{1293}\u{1275}") (fmtLoc Am.locale "2025-06-12" "2025-06-15")
+                \_ -> Expect.equal (Just "3 ቀናት") (fmtLoc Am.locale "2025-06-12" "2025-06-15")
             , test "29.37 1w1d ethiopic delimiter" <|
-                \_ -> Expect.equal (Just "1 \u{1233}\u{121D}\u{1295}\u{1275}\u{1363} 1 \u{1240}\u{1295}") (fmtLoc Am.locale "2025-06-07" "2025-06-15")
+                \_ -> Expect.equal (Just "1 ሳምንት፣ 1 ቀን") (fmtLoc Am.locale "2025-06-07" "2025-06-15")
             , test "29.38 6 months" <|
-                \_ -> Expect.equal (Just "6 \u{12C8}\u{122B}\u{1275}") (fmtLoc Am.locale "2025-01-15" "2025-07-15")
+                \_ -> Expect.equal (Just "6 ወራት") (fmtLoc Am.locale "2025-01-15" "2025-07-15")
             , test "29.39 3.5 years" <|
-                \_ -> Expect.equal (Just "3 \u{12D3}\u{1218}\u{1273}\u{1275} \u{1270}\u{12A9}\u{120D}") (fmtLoc Am.locale "2022-06-15" "2025-12-15")
+                \_ -> Expect.equal (Just "3 ዓመታት ተኩል") (fmtLoc Am.locale "2022-06-15" "2025-12-15")
             ]
         , describe "30. Locale lookup"
             [ test "30.1 known locale en" <|
@@ -568,7 +570,7 @@ suite =
             , test "32.2 Polish 5 is many" <|
                 \_ -> Expect.equal (Just "5 i pół lat") (fmtCode "pl" Short "2020-06-15" "2025-12-15")
             , test "32.3 Tachelhit 6 is few" <|
-                \_ -> Expect.equal (Just "6 \u{2D49}\u{2D59}\u{2D33}\u{2D33}\u{2D6F}\u{2D30}\u{2D59}\u{2D4F} \u{2D37} \u{2D53}\u{2D63}\u{2D33}\u{2D4F}") (fmtCode "shi" Normal "2005-06-08" "2012-06-07")
+                \_ -> Expect.equal (Just "6 ⵉⵙⴳⴳⵯⴰⵙⵏ ⴷ ⵓⵣⴳⵏ") (fmtCode "shi" Normal "2005-06-08" "2012-06-07")
             ]
         , describe "33. Input validation"
             [ test "33.1 February 30" <|

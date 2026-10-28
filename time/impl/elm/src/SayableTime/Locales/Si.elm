@@ -12,7 +12,6 @@
 
 module SayableTime.Locales.Si exposing (locale)
 
-
 import Dict
 import SayableTime.Types exposing (..)
 
@@ -35,8 +34,8 @@ locale =
             , "දහය"
             , "එකොළහ"
             ]
-        , midnight = "මධ්‍යම රාත්‍රිය"
-        , noon = "මධ්‍යාහ්නය"
+        , midnight = "මධ්\u{200D}යම රාත්\u{200D}රිය"
+        , noon = "මධ්\u{200D}යාහ්නය"
         , patterns =
             Dict.fromList
                 [ ( 0, "{h}යි" )

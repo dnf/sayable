@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Lt exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,30 +23,42 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19) then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} diena" )
-      , ( Few, "{n} dienos" )
-      , ( Other, "{n} dienų" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} savaitė" )
-      , ( Few, "{n} savaitės" )
-      , ( Other, "{n} savaičių" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mėnuo" )
-      , ( Few, "{n} mėnesiai" )
-      , ( Other, "{n} mėnesių" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} metai" )
-      , ( Few, "{n} metai" )
-      , ( Other, "{n} metų" )
-      ]
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19) then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} diena" )
+            , ( Few, "{n} dienos" )
+            , ( Other, "{n} dienų" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} savaitė" )
+            , ( Few, "{n} savaitės" )
+            , ( Other, "{n} savaičių" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mėnuo" )
+            , ( Few, "{n} mėnesiai" )
+            , ( Other, "{n} mėnesių" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} metai" )
+            , ( Few, "{n} metai" )
+            , ( Other, "{n} metų" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Naujagimis"

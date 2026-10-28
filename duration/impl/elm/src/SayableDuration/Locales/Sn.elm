@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Sn exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "sn"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekondi {n}" )
-              , ( Other, "masekondi {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "miniti {n}" )
-              , ( Other, "maminitsi {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "awa {n}" )
-              , ( Other, "maawa {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "zuva {n}" )
-              , ( Other, "mazuva {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "vhiki {n}" )
-              , ( Other, "mavhiki {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "mwedzi {n}" )
-              , ( Other, "mwedzi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "gore {n}" )
-              , ( Other, "makore {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekondi {n}" )
+                    , ( Other, "masekondi {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "miniti {n}" )
+                    , ( Other, "maminitsi {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "awa {n}" )
+                    , ( Other, "maawa {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "zuva {n}" )
+                    , ( Other, "mazuva {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "vhiki {n}" )
+                    , ( Other, "mavhiki {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "mwedzi {n}" )
+                    , ( Other, "mwedzi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "gore {n}" )
+                    , ( Other, "makore {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -65,19 +84,25 @@ locale =
                         [ ( "second", Simple "sek {n}" )
                         , ( "minute", Simple "min {n}" )
                         , ( "hour", Simple "awa {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "zuva {n}" )
-                          , ( Other, "maz {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "vhiki {n}" )
-                          , ( Other, "mavh {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "zuva {n}" )
+                                , ( Other, "maz {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "vhiki {n}" )
+                                , ( Other, "mavh {n}" )
+                                ]
+                          )
                         , ( "month", Simple "mwedzi {n}" )
-                        , ( "year", Pluralized
-                          [ ( One, "gore {n}" )
-                          , ( Other, "mak {n}" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "gore {n}" )
+                                , ( Other, "mak {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -93,19 +118,25 @@ locale =
                         [ ( "second", Simple "s {n}" )
                         , ( "minute", Simple "m {n}" )
                         , ( "hour", Simple "a {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "z {n}" )
-                          , ( Other, "maz {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "vh {n}" )
-                          , ( Other, "mvh {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "z {n}" )
+                                , ( Other, "maz {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "vh {n}" )
+                                , ( Other, "mvh {n}" )
+                                ]
+                          )
                         , ( "month", Simple "mw {n}" )
-                        , ( "year", Pluralized
-                          [ ( One, "g {n}" )
-                          , ( Other, "mak {n}" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "g {n}" )
+                                , ( Other, "mak {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

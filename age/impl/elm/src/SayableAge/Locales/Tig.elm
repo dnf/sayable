@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Tig exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "tig"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "yom {n}" )
-      , ( Other, "ayam {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "semun {n}" )
-      , ( Other, "semunat {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "werḥi {n}" )
-      , ( Other, "awerḥi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "ʿam {n}" )
-      , ( Other, "aʿwam {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "yom {n}" )
+            , ( Other, "ayam {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "semun {n}" )
+            , ( Other, "semunat {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "werḥi {n}" )
+            , ( Other, "awerḥi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "ʿam {n}" )
+            , ( Other, "aʿwam {n}" )
+            ]
     , half = "{0} we nəs"
     , delimiter = ", "
     , justBorn = "Ḥadis tewlid"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "yom {n}" )
-                  , ( Other, "ayam {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "semun {n}" )
-                  , ( Other, "semunat {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "werḥi {n}" )
-                  , ( Other, "awerḥi {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "ʿam {n}" )
-                  , ( Other, "aʿwam {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "yom {n}" )
+                        , ( Other, "ayam {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "semun {n}" )
+                        , ( Other, "semunat {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "werḥi {n}" )
+                        , ( Other, "awerḥi {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "ʿam {n}" )
+                        , ( Other, "aʿwam {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

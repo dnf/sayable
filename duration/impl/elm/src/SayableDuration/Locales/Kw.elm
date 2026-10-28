@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Kw exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -26,65 +25,95 @@ locale =
                 mod100 =
                     modBy 100 n
             in
-            if n == 0 then Zero else if n == 1 then One else if mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82 then Two else if mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83 then Few else if n /= 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81) then Many else Other
+            if n == 0 then
+                Zero
+
+            else if n == 1 then
+                One
+
+            else if mod100 == 2 || mod100 == 22 || mod100 == 42 || mod100 == 62 || mod100 == 82 then
+                Two
+
+            else if mod100 == 3 || mod100 == 23 || mod100 == 43 || mod100 == 63 || mod100 == 83 then
+                Few
+
+            else if n /= 1 && (mod100 == 1 || mod100 == 21 || mod100 == 41 || mod100 == 61 || mod100 == 81) then
+                Many
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( Zero, "{n} sekond" )
-              , ( One, "{n} sekond" )
-              , ( Two, "{n} sekond" )
-              , ( Few, "{n} sekond" )
-              , ( Many, "{n} sekond" )
-              , ( Other, "{n} sekondow" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( Zero, "{n} mynysen" )
-              , ( One, "{n} mynysen" )
-              , ( Two, "{n} vynysen" )
-              , ( Few, "{n} mynysen" )
-              , ( Many, "{n} mynysen" )
-              , ( Other, "{n} mynysen" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( Zero, "{n} our" )
-              , ( One, "{n} our" )
-              , ( Two, "{n} our" )
-              , ( Few, "{n} our" )
-              , ( Many, "{n} our" )
-              , ( Other, "{n} our" )
-              ] )
-            , ( "day", Pluralized
-              [ ( Zero, "{n} dydh" )
-              , ( One, "{n} dydh" )
-              , ( Two, "{n} dhydh" )
-              , ( Few, "{n} dydh" )
-              , ( Many, "{n} dydh" )
-              , ( Other, "{n} dydh" )
-              ] )
-            , ( "week", Pluralized
-              [ ( Zero, "{n} seythun" )
-              , ( One, "{n} seythun" )
-              , ( Two, "{n} seythun" )
-              , ( Few, "{n} seythun" )
-              , ( Many, "{n} seythun" )
-              , ( Other, "{n} seythun" )
-              ] )
-            , ( "month", Pluralized
-              [ ( Zero, "{n} mis" )
-              , ( One, "{n} mis" )
-              , ( Two, "{n} vis" )
-              , ( Few, "{n} mis" )
-              , ( Many, "{n} mis" )
-              , ( Other, "{n} mis" )
-              ] )
-            , ( "year", Pluralized
-              [ ( Zero, "{n} blydhen" )
-              , ( One, "{n} blydhen" )
-              , ( Two, "{n} vlydhen" )
-              , ( Few, "{n} blydhen" )
-              , ( Many, "{n} blydhen" )
-              , ( Other, "{n} blydhen" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( Zero, "{n} sekond" )
+                    , ( One, "{n} sekond" )
+                    , ( Two, "{n} sekond" )
+                    , ( Few, "{n} sekond" )
+                    , ( Many, "{n} sekond" )
+                    , ( Other, "{n} sekondow" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( Zero, "{n} mynysen" )
+                    , ( One, "{n} mynysen" )
+                    , ( Two, "{n} vynysen" )
+                    , ( Few, "{n} mynysen" )
+                    , ( Many, "{n} mynysen" )
+                    , ( Other, "{n} mynysen" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( Zero, "{n} our" )
+                    , ( One, "{n} our" )
+                    , ( Two, "{n} our" )
+                    , ( Few, "{n} our" )
+                    , ( Many, "{n} our" )
+                    , ( Other, "{n} our" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( Zero, "{n} dydh" )
+                    , ( One, "{n} dydh" )
+                    , ( Two, "{n} dhydh" )
+                    , ( Few, "{n} dydh" )
+                    , ( Many, "{n} dydh" )
+                    , ( Other, "{n} dydh" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( Zero, "{n} seythun" )
+                    , ( One, "{n} seythun" )
+                    , ( Two, "{n} seythun" )
+                    , ( Few, "{n} seythun" )
+                    , ( Many, "{n} seythun" )
+                    , ( Other, "{n} seythun" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( Zero, "{n} mis" )
+                    , ( One, "{n} mis" )
+                    , ( Two, "{n} vis" )
+                    , ( Few, "{n} mis" )
+                    , ( Many, "{n} mis" )
+                    , ( Other, "{n} mis" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( Zero, "{n} blydhen" )
+                    , ( One, "{n} blydhen" )
+                    , ( Two, "{n} vlydhen" )
+                    , ( Few, "{n} blydhen" )
+                    , ( Many, "{n} blydhen" )
+                    , ( Other, "{n} blydhen" )
+                    ]
+              )
             ]
     , half = "{0} hag hanter"
     , delimiter = ", "

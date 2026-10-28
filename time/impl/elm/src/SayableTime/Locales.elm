@@ -11,9 +11,7 @@
 
 module SayableTime.Locales exposing (getLocale)
 
-
 import Dict exposing (Dict)
-import SayableTime.Types exposing (Locale)
 import SayableTime.Locales.Af as Af
 import SayableTime.Locales.Ak as Ak
 import SayableTime.Locales.Am as Am
@@ -182,6 +180,7 @@ import SayableTime.Locales.Yue as Yue
 import SayableTime.Locales.Zdj as Zdj
 import SayableTime.Locales.Zh as Zh
 import SayableTime.Locales.Zu as Zu
+import SayableTime.Types exposing (Locale)
 
 
 allLocales : Dict String Locale

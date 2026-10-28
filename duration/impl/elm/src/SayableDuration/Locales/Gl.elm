@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Gl exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "gl"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} segundo" )
-              , ( Other, "{n} segundos" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minuto" )
-              , ( Other, "{n} minutos" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} hora" )
-              , ( Other, "{n} horas" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} día" )
-              , ( Other, "{n} días" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} semana" )
-              , ( Other, "{n} semanas" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} mes" )
-              , ( Other, "{n} meses" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ano" )
-              , ( Other, "{n} anos" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} segundo" )
+                    , ( Other, "{n} segundos" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minuto" )
+                    , ( Other, "{n} minutos" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} hora" )
+                    , ( Other, "{n} horas" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} día" )
+                    , ( Other, "{n} días" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} semana" )
+                    , ( Other, "{n} semanas" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} mes" )
+                    , ( Other, "{n} meses" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ano" )
+                    , ( Other, "{n} anos" )
+                    ]
+              )
             ]
     , half = "{n} e medio"
     , delimiter = ", "

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Luo exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "luo"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "odiechieng' {n}" )
-      , ( Other, "ndalo {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "juma {n}" )
-      , ( Other, "jumbe {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "dwe {n}" )
-      , ( Other, "dweche {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "higa {n}" )
-      , ( Other, "higni {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "odiechieng' {n}" )
+            , ( Other, "ndalo {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "juma {n}" )
+            , ( Other, "jumbe {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "dwe {n}" )
+            , ( Other, "dweche {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "higa {n}" )
+            , ( Other, "higni {n}" )
+            ]
     , half = "{0} gi nus"
     , delimiter = ", "
     , justBorn = "Nyathi manyien"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "odie. {n}" )
-                  , ( Other, "ndalo {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "juma {n}" )
-                  , ( Other, "jumbe {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "dwe {n}" )
-                  , ( Other, "dwe. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "higa {n}" )
-                  , ( Other, "higni {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "odie. {n}" )
+                        , ( Other, "ndalo {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "juma {n}" )
+                        , ( Other, "jumbe {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "dwe {n}" )
+                        , ( Other, "dwe. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "higa {n}" )
+                        , ( Other, "higni {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

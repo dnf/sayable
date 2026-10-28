@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Dje exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Mr exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "mr"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} दिवस" )
-      , ( Other, "{n} दिवस" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} आठवडा" )
-      , ( Other, "{n} आठवडे" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} महिना" )
-      , ( Other, "{n} महिने" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} वर्ष" )
-      , ( Other, "{n} वर्षे" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} दिवस" )
+            , ( Other, "{n} दिवस" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} आठवडा" )
+            , ( Other, "{n} आठवडे" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} महिना" )
+            , ( Other, "{n} महिने" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} वर्ष" )
+            , ( Other, "{n} वर्षे" )
+            ]
     , half = "साडे {n}"
     , delimiter = ", "
     , justBorn = "नवजात"
@@ -51,14 +60,20 @@ locale =
         Just
             { ovrDay = Just (Simple "{n} दिवस")
             , ovrWeek = Just (Simple "{n} आ")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} महिना" )
-                  , ( Other, "{n} महिने" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} वर्ष" )
-                  , ( Other, "{n} वर्षे" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} महिना" )
+                        , ( Other, "{n} महिने" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} वर्ष" )
+                        , ( Other, "{n} वर्षे" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

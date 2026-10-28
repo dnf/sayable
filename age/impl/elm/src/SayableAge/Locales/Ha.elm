@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ha exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ha"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "kwana {n}" )
-      , ( Other, "kwanaki {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "mako {n}" )
-      , ( Other, "makonni {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "wata {n}" )
-      , ( Other, "watanni {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "shekara {n}" )
-      , ( Other, "shekaru {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "kwana {n}" )
+            , ( Other, "kwanaki {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "mako {n}" )
+            , ( Other, "makonni {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "wata {n}" )
+            , ( Other, "watanni {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "shekara {n}" )
+            , ( Other, "shekaru {n}" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Sabon haihuwa"

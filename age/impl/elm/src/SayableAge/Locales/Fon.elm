@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Fon exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 

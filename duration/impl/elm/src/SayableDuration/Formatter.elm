@@ -133,7 +133,6 @@ formatSince loc compactness start asOf =
                     let
                         r =
                             resolveLocale loc compactness
-
                     in
                     formatWithinCeiling loc r diff
                         |> Maybe.map (\dur -> String.replace "{0}" dur r.ago)
@@ -168,7 +167,6 @@ formatUntil loc compactness target asOf =
                     let
                         r =
                             resolveLocale loc compactness
-
                     in
                     formatWithinCeiling loc r diff
                         |> Maybe.map (\dur -> String.replace "{0}" dur r.inFuture)

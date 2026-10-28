@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ktu exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ktu"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekonde {n}" )
-              , ( Other, "masekonde {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "miniti {n}" )
-              , ( Other, "maminiti {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "ngonga {n}" )
-              , ( Other, "mingonga {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "lumbu {n}" )
-              , ( Other, "malumbu {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "poso {n}" )
-              , ( Other, "maposo {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ngonda {n}" )
-              , ( Other, "mingonda {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "mvula {n}" )
-              , ( Other, "mimvula {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekonde {n}" )
+                    , ( Other, "masekonde {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "miniti {n}" )
+                    , ( Other, "maminiti {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "ngonga {n}" )
+                    , ( Other, "mingonga {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "lumbu {n}" )
+                    , ( Other, "malumbu {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "poso {n}" )
+                    , ( Other, "maposo {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ngonda {n}" )
+                    , ( Other, "mingonda {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "mvula {n}" )
+                    , ( Other, "mimvula {n}" )
+                    ]
+              )
             ]
     , half = "{0} na ndambu"
     , delimiter = ", "
@@ -64,23 +83,31 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "masekonde {n}" )
                         , ( "minute", Simple "maminiti {n}" )
-                        , ( "hour", Pluralized
-                          [ ( One, "ngonga {n}" )
-                          , ( Other, "mingonga {n}" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "ngonga {n}" )
+                                , ( Other, "mingonga {n}" )
+                                ]
+                          )
                         , ( "day", Simple "malumbu {n}" )
-                        , ( "week", Pluralized
-                          [ ( One, "poso {n}" )
-                          , ( Other, "maposo {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "ngonda {n}" )
-                          , ( Other, "mingonda {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mvula {n}" )
-                          , ( Other, "mimvula {n}" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "poso {n}" )
+                                , ( Other, "maposo {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "ngonda {n}" )
+                                , ( Other, "mingonda {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mvula {n}" )
+                                , ( Other, "mimvula {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -95,23 +122,31 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "masek {n}" )
                         , ( "minute", Simple "mamin {n}" )
-                        , ( "hour", Pluralized
-                          [ ( One, "ngon {n}" )
-                          , ( Other, "mingon {n}" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "ngon {n}" )
+                                , ( Other, "mingon {n}" )
+                                ]
+                          )
                         , ( "day", Simple "malum {n}" )
-                        , ( "week", Pluralized
-                          [ ( One, "poso {n}" )
-                          , ( Other, "maposo {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "ngon {n}" )
-                          , ( Other, "mingon {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mvula {n}" )
-                          , ( Other, "mimv {n}" )
-                          ] )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "poso {n}" )
+                                , ( Other, "maposo {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "ngon {n}" )
+                                , ( Other, "mingon {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mvula {n}" )
+                                , ( Other, "mimv {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

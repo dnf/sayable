@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ps exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,34 +19,52 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ps"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} ثانیه" )
-              , ( Other, "{n} ثانیې" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} دقیقه" )
-              , ( Other, "{n} دقیقې" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} ساعت" )
-              , ( Other, "{n} ساعتونه" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ورځ" )
-              , ( Other, "{n} ورځې" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} ثانیه" )
+                    , ( Other, "{n} ثانیې" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} دقیقه" )
+                    , ( Other, "{n} دقیقې" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} ساعت" )
+                    , ( Other, "{n} ساعتونه" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ورځ" )
+                    , ( Other, "{n} ورځې" )
+                    ]
+              )
             , ( "week", Simple "{n} اونۍ" )
-            , ( "month", Pluralized
-              [ ( One, "{n} مياشت" )
-              , ( Other, "{n} مياشتې" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} کال" )
-              , ( Other, "{n} کالونه" )
-              ] )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} مياشت" )
+                    , ( Other, "{n} مياشتې" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} کال" )
+                    , ( Other, "{n} کالونه" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = "، "
@@ -59,31 +76,43 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "{n} ثانیه" )
-                          , ( Other, "{n} ثانیې" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "{n} دقیقه" )
-                          , ( Other, "{n} دقیقې" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} ساعت" )
-                          , ( Other, "{n} ساعتونه" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} ورځ" )
-                          , ( Other, "{n} ورځې" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "{n} ثانیه" )
+                                , ( Other, "{n} ثانیې" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "{n} دقیقه" )
+                                , ( Other, "{n} دقیقې" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} ساعت" )
+                                , ( Other, "{n} ساعتونه" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} ورځ" )
+                                , ( Other, "{n} ورځې" )
+                                ]
+                          )
                         , ( "week", Simple "{n} اونۍ" )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} مياشت" )
-                          , ( Other, "{n} مياشتې" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} کال" )
-                          , ( Other, "{n} کالونه" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} مياشت" )
+                                , ( Other, "{n} مياشتې" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} کال" )
+                                , ( Other, "{n} کالونه" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

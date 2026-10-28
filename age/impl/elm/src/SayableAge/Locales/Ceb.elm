@@ -12,14 +12,19 @@
 
 module SayableAge.Locales.Ceb exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ceb"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "{n} ka adlaw"
     , week = Simple "{n} ka semana"
     , month = Simple "{n} ka bulan"

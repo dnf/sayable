@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Is exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,40 +24,59 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else Other
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekúnda" )
-              , ( Other, "{n} sekúndur" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} mínúta" )
-              , ( Other, "{n} mínútur" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} klukkustund" )
-              , ( Other, "{n} klukkustundir" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} dagur" )
-              , ( Other, "{n} dagar" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} vika" )
-              , ( Other, "{n} vikur" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} mánuður" )
-              , ( Other, "{n} mánuðir" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ár" )
-              , ( Other, "{n} ár" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekúnda" )
+                    , ( Other, "{n} sekúndur" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} mínúta" )
+                    , ( Other, "{n} mínútur" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} klukkustund" )
+                    , ( Other, "{n} klukkustundir" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} dagur" )
+                    , ( Other, "{n} dagar" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} vika" )
+                    , ( Other, "{n} vikur" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} mánuður" )
+                    , ( Other, "{n} mánuðir" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ár" )
+                    , ( Other, "{n} ár" )
+                    ]
+              )
             ]
     , half = "{n} og hálf"
     , delimiter = ", "

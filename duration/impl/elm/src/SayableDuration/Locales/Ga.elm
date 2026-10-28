@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ga exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,58 +19,87 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ga"
-    , plural = \n -> if n == 1 then One else if n == 2 then Two else if n >= 3 && n <= 6 then Few else if n >= 7 && n <= 10 then Many else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else if n >= 3 && n <= 6 then
+                Few
+
+            else if n >= 7 && n <= 10 then
+                Many
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} soicind" )
-              , ( Two, "{n} shoicind" )
-              , ( Few, "{n} shoicind" )
-              , ( Many, "{n} soicind" )
-              , ( Other, "{n} soicind" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} nóiméad" )
-              , ( Two, "{n} nóiméad" )
-              , ( Few, "{n} nóiméad" )
-              , ( Many, "{n} nóiméad" )
-              , ( Other, "{n} nóiméad" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} uair an chloig" )
-              , ( Two, "{n} uair an chloig" )
-              , ( Few, "{n} huaire an chloig" )
-              , ( Many, "{n} n-uaire an chloig" )
-              , ( Other, "{n} uair an chloig" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} lá" )
-              , ( Two, "{n} lá" )
-              , ( Few, "{n} lá" )
-              , ( Many, "{n} lá" )
-              , ( Other, "{n} lá" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} seachtain" )
-              , ( Two, "{n} sheachtain" )
-              , ( Few, "{n} seachtaine" )
-              , ( Many, "{n} seachtaine" )
-              , ( Other, "{n} seachtain" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} mhí" )
-              , ( Two, "{n} mhí" )
-              , ( Few, "{n} mhí" )
-              , ( Many, "{n} mí" )
-              , ( Other, "{n} mí" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} bhliain" )
-              , ( Two, "{n} bhliain" )
-              , ( Few, "{n} bliana" )
-              , ( Many, "{n} mbliana" )
-              , ( Other, "{n} bliain" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} soicind" )
+                    , ( Two, "{n} shoicind" )
+                    , ( Few, "{n} shoicind" )
+                    , ( Many, "{n} soicind" )
+                    , ( Other, "{n} soicind" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} nóiméad" )
+                    , ( Two, "{n} nóiméad" )
+                    , ( Few, "{n} nóiméad" )
+                    , ( Many, "{n} nóiméad" )
+                    , ( Other, "{n} nóiméad" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} uair an chloig" )
+                    , ( Two, "{n} uair an chloig" )
+                    , ( Few, "{n} huaire an chloig" )
+                    , ( Many, "{n} n-uaire an chloig" )
+                    , ( Other, "{n} uair an chloig" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} lá" )
+                    , ( Two, "{n} lá" )
+                    , ( Few, "{n} lá" )
+                    , ( Many, "{n} lá" )
+                    , ( Other, "{n} lá" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} seachtain" )
+                    , ( Two, "{n} sheachtain" )
+                    , ( Few, "{n} seachtaine" )
+                    , ( Many, "{n} seachtaine" )
+                    , ( Other, "{n} seachtain" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} mhí" )
+                    , ( Two, "{n} mhí" )
+                    , ( Few, "{n} mhí" )
+                    , ( Many, "{n} mí" )
+                    , ( Other, "{n} mí" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} bhliain" )
+                    , ( Two, "{n} bhliain" )
+                    , ( Few, "{n} bliana" )
+                    , ( Many, "{n} mbliana" )
+                    , ( Other, "{n} bliain" )
+                    ]
+              )
             ]
     , half = "{0} go leith"
     , delimiter = ", "
@@ -88,13 +116,15 @@ locale =
                         , ( "hour", Simple "{n} u" )
                         , ( "day", Simple "{n} lá" )
                         , ( "week", Simple "{n} scht" )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} mí" )
-                          , ( Two, "{n} mí" )
-                          , ( Few, "{n} mí" )
-                          , ( Many, "{n} mí" )
-                          , ( Other, "{n} m" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} mí" )
+                                , ( Two, "{n} mí" )
+                                , ( Few, "{n} mí" )
+                                , ( Many, "{n} mí" )
+                                , ( Other, "{n} m" )
+                                ]
+                          )
                         , ( "year", Simple "{n} bl" )
                         ]
                     )
@@ -109,23 +139,27 @@ locale =
                 Just
                     (Dict.fromList
                         [ ( "second", Simple "{n} soic" )
-                        , ( "minute", Pluralized
-                          [ ( One, "{n} nóim" )
-                          , ( Two, "{n} nóim" )
-                          , ( Few, "{n} nóim" )
-                          , ( Many, "{n}n" )
-                          , ( Other, "{n} nóim" )
-                          ] )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "{n} nóim" )
+                                , ( Two, "{n} nóim" )
+                                , ( Few, "{n} nóim" )
+                                , ( Many, "{n}n" )
+                                , ( Other, "{n} nóim" )
+                                ]
+                          )
                         , ( "hour", Simple "{n} u" )
                         , ( "day", Simple "{n} lá" )
                         , ( "week", Simple "{n} scht" )
-                        , ( "month", Pluralized
-                          [ ( One, "{n}m" )
-                          , ( Two, "{n}m" )
-                          , ( Few, "{n}m" )
-                          , ( Many, "{n}m" )
-                          , ( Other, "{n} m" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n}m" )
+                                , ( Two, "{n}m" )
+                                , ( Few, "{n}m" )
+                                , ( Many, "{n}m" )
+                                , ( Other, "{n} m" )
+                                ]
+                          )
                         , ( "year", Simple "{n} bl" )
                         ]
                     )

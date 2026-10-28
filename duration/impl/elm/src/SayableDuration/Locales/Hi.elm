@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Hi exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,31 +19,47 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "hi"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} सेकंड" )
             , ( "minute", Simple "{n} मिनट" )
-            , ( "hour", Pluralized
-              [ ( One, "{n} घंटा" )
-              , ( Other, "{n} घंटे" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} दिन" )
-              , ( Other, "{n} दिन" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} सप्ताह" )
-              , ( Other, "{n} सप्ताह" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} महीना" )
-              , ( Other, "{n} महीने" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} साल" )
-              , ( Other, "{n} साल" )
-              ] )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} घंटा" )
+                    , ( Other, "{n} घंटे" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} दिन" )
+                    , ( Other, "{n} दिन" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} सप्ताह" )
+                    , ( Other, "{n} सप्ताह" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} महीना" )
+                    , ( Other, "{n} महीने" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} साल" )
+                    , ( Other, "{n} साल" )
+                    ]
+              )
             ]
     , half = "साढ़े {n}"
     , delimiter = ", "

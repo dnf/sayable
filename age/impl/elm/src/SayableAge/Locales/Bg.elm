@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Bg exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "bg"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ден" )
-      , ( Other, "{n} дни" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} седмица" )
-      , ( Other, "{n} седмици" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} месец" )
-      , ( Other, "{n} месеца" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} година" )
-      , ( Other, "{n} години" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ден" )
+            , ( Other, "{n} дни" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} седмица" )
+            , ( Other, "{n} седмици" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} месец" )
+            , ( Other, "{n} месеца" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} година" )
+            , ( Other, "{n} години" )
+            ]
     , half = "{0} и половина"
     , delimiter = ", "
     , justBorn = "Новородено"

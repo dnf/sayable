@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Tzm exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "tzm"
-    , plural = \n -> if n == 0 || n == 1 || (n >= 11 && n <= 99) then One else Other
-    , day = Pluralized
-      [ ( One, "{n} ass" )
-      , ( Other, "{n} ussan" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} imalass" )
-      , ( Other, "{n} imalassn" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} ayyur" )
-      , ( Other, "{n} ayyurn" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} aseggas" )
-      , ( Other, "{n} iseggasen" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 || (n >= 11 && n <= 99) then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} ass" )
+            , ( Other, "{n} ussan" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} imalass" )
+            , ( Other, "{n} imalassn" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} ayyur" )
+            , ( Other, "{n} ayyurn" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} aseggas" )
+            , ( Other, "{n} iseggasen" )
+            ]
     , half = "{0} d uzgen"
     , delimiter = ", "
     , justBorn = "Iɣ d illul"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} ass" )
-                  , ( Other, "{n} ussan" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} imalass" )
-                  , ( Other, "{n} imalassn" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} ayyur" )
-                  , ( Other, "{n} ayyurn" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} aseggas" )
-                  , ( Other, "{n} iseggasen" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ass" )
+                        , ( Other, "{n} ussan" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} imalass" )
+                        , ( Other, "{n} imalassn" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ayyur" )
+                        , ( Other, "{n} ayyurn" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} aseggas" )
+                        , ( Other, "{n} iseggasen" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

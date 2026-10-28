@@ -12,14 +12,19 @@
 
 module SayableAge.Locales.Ee exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ee"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "ŋkeke {n}"
     , week = Simple "kɔsiɖa {n}"
     , month = Simple "ɣleti {n}"

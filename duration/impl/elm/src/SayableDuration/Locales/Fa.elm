@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Fa exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,28 +19,42 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "fa"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} ثانیه" )
             , ( "minute", Simple "{n} دقیقه" )
             , ( "hour", Simple "{n} ساعت" )
-            , ( "day", Pluralized
-              [ ( One, "{n} روز" )
-              , ( Other, "{n} روز" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} هفته" )
-              , ( Other, "{n} هفته" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ماه" )
-              , ( Other, "{n} ماه" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} سال" )
-              , ( Other, "{n} سال" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} روز" )
+                    , ( Other, "{n} روز" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} هفته" )
+                    , ( Other, "{n} هفته" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ماه" )
+                    , ( Other, "{n} ماه" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} سال" )
+                    , ( Other, "{n} سال" )
+                    ]
+              )
             ]
     , half = "{0} و نیم"
     , delimiter = " و "

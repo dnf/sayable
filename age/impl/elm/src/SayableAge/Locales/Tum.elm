@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Tum exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "tum"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "dazi {n}" )
-      , ( Other, "madazi {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "sabata {n}" )
-      , ( Other, "masabata {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "mwezi {n}" )
-      , ( Other, "miyezi {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "chaka {n}" )
-      , ( Other, "vyaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "dazi {n}" )
+            , ( Other, "madazi {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "sabata {n}" )
+            , ( Other, "masabata {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "mwezi {n}" )
+            , ( Other, "miyezi {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "chaka {n}" )
+            , ( Other, "vyaka {n}" )
+            ]
     , half = "{0} na hafu"
     , delimiter = ", "
     , justBorn = "Mwana wabadwa wala"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "dazi {n}" )
-                  , ( Other, "mad. {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "sab. {n}" )
-                  , ( Other, "mas. {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "mwezi {n}" )
-                  , ( Other, "miy. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "chaka {n}" )
-                  , ( Other, "vyaka {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "dazi {n}" )
+                        , ( Other, "mad. {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "sab. {n}" )
+                        , ( Other, "mas. {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "mwezi {n}" )
+                        , ( Other, "miy. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "chaka {n}" )
+                        , ( Other, "vyaka {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

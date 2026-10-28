@@ -12,7 +12,6 @@
 
 module SayableDate.Locales.Si exposing (locale)
 
-
 import Dict
 import SayableDate.Types exposing (..)
 
@@ -24,7 +23,7 @@ locale =
         [ "ජනවාරි"
         , "පෙබරවාරි"
         , "මාර්තු"
-        , "අප්‍රේල්"
+        , "අප්\u{200D}රේල්"
         , "මැයි"
         , "ජූනි"
         , "ජූලි"
@@ -39,7 +38,7 @@ locale =
         , "සඳුදා"
         , "අඟහරුවාදා"
         , "බදාදා"
-        , "බ්‍රහස්පතින්දා"
+        , "බ්\u{200D}රහස්පතින්දා"
         , "සිකුරාදා"
         , "සෙනසුරාදා"
         ]
@@ -58,30 +57,32 @@ locale =
     , monthsInDate = Nothing
     , short =
         Just
-            { ovrMonths = Just
-                [ "ජන"
-                , "පෙබ"
-                , "මාර්"
-                , "අප්‍"
-                , "මැයි"
-                , "ජූනි"
-                , "ජූලි"
-                , "අගෝ"
-                , "සැප්"
-                , "ඔක්"
-                , "නොවැ"
-                , "දෙසැ"
-                ]
+            { ovrMonths =
+                Just
+                    [ "ජන"
+                    , "පෙබ"
+                    , "මාර්"
+                    , "අප්\u{200D}"
+                    , "මැයි"
+                    , "ජූනි"
+                    , "ජූලි"
+                    , "අගෝ"
+                    , "සැප්"
+                    , "ඔක්"
+                    , "නොවැ"
+                    , "දෙසැ"
+                    ]
             , ovrMonthsInDate = Nothing
-            , ovrWeekdays = Just
-                [ "ඉරි"
-                , "සඳු"
-                , "අඟ"
-                , "බදා"
-                , "බ්‍ර"
-                , "සිකු"
-                , "සෙන"
-                ]
+            , ovrWeekdays =
+                Just
+                    [ "ඉරි"
+                    , "සඳු"
+                    , "අඟ"
+                    , "බදා"
+                    , "බ්\u{200D}ර"
+                    , "සිකු"
+                    , "සෙන"
+                    ]
             , ovrDayFormat = Just "{n}"
             , ovrDayFormatExceptions = Just Dict.empty
             , ovrDatePattern = Just "{day} {month}"

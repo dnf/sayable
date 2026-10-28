@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Fan exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "fan"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sɛgon {n}" )
-              , ( Other, "bisɛgon {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minit {n}" )
-              , ( Other, "biminit {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "awola {n}" )
-              , ( Other, "biawola {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "mos {n}" )
-              , ( Other, "bimos {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "sone {n}" )
-              , ( Other, "bisone {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ngon {n}" )
-              , ( Other, "mingon {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "mbu {n}" )
-              , ( Other, "mimbu {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sɛgon {n}" )
+                    , ( Other, "bisɛgon {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minit {n}" )
+                    , ( Other, "biminit {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "awola {n}" )
+                    , ( Other, "biawola {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "mos {n}" )
+                    , ( Other, "bimos {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "sone {n}" )
+                    , ( Other, "bisone {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ngon {n}" )
+                    , ( Other, "mingon {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "mbu {n}" )
+                    , ( Other, "mimbu {n}" )
+                    ]
+              )
             ]
     , half = "{0} e ndamba"
     , delimiter = ", "
@@ -65,22 +84,30 @@ locale =
                         [ ( "second", Simple "sɛg. {n}" )
                         , ( "minute", Simple "min. {n}" )
                         , ( "hour", Simple "aw. {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "mos {n}" )
-                          , ( Other, "bimos {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "sone {n}" )
-                          , ( Other, "bisone {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "ngon {n}" )
-                          , ( Other, "mingon {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "mbu {n}" )
-                          , ( Other, "mimbu {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "mos {n}" )
+                                , ( Other, "bimos {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "sone {n}" )
+                                , ( Other, "bisone {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "ngon {n}" )
+                                , ( Other, "mingon {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "mbu {n}" )
+                                , ( Other, "mimbu {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

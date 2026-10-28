@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Kbp exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 

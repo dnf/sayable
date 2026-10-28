@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Shi exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,44 +19,67 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "shi"
-    , plural = \n -> if n == 0 || n == 1 then One else if n >= 2 && n <= 10 then Few else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else if n >= 2 && n <= 10 then
+                Few
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} ⵜⴰⵙⵉⵏⵜ" )
-              , ( Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
-              , ( Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} ⵜⵓⵙⴷⵉⵇⵜ" )
-              , ( Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
-              , ( Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} ⵜⴰⵙⵔⴰⴳⵜ" )
-              , ( Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
-              , ( Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} ⴰⵙⵙ" )
-              , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
-              , ( Other, "{n} ⴰⵙⵙ" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-              , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
-              , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
-              , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
-              , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-              , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
-              , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} ⵜⴰⵙⵉⵏⵜ" )
+                    , ( Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
+                    , ( Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} ⵜⵓⵙⴷⵉⵇⵜ" )
+                    , ( Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
+                    , ( Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} ⵜⴰⵙⵔⴰⴳⵜ" )
+                    , ( Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
+                    , ( Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} ⴰⵙⵙ" )
+                    , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+                    , ( Other, "{n} ⴰⵙⵙ" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                    , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+                    , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+                    , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+                    , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                    , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+                    , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                    ]
+              )
             ]
     , half = "{0} ⴷ ⵓⵣⴳⵏ"
     , delimiter = ", "
@@ -69,41 +91,55 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "{n} ⵜⴰⵙⵉⵏⵜ" )
-                          , ( Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
-                          , ( Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "{n} ⵜⵓⵙⴷⵉⵇⵜ" )
-                          , ( Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
-                          , ( Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} ⵜⴰⵙⵔⴰⴳⵜ" )
-                          , ( Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
-                          , ( Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} ⴰⵙⵙ" )
-                          , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
-                          , ( Other, "{n} ⴰⵙⵙ" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-                          , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
-                          , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
-                          , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
-                          , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-                          , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
-                          , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "{n} ⵜⴰⵙⵉⵏⵜ" )
+                                , ( Few, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
+                                , ( Other, "{n} ⵜⵉⵙⵉⵏⵉⵏ" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "{n} ⵜⵓⵙⴷⵉⵇⵜ" )
+                                , ( Few, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
+                                , ( Other, "{n} ⵜⵓⵙⴷⵉⵇⵉⵏ" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} ⵜⴰⵙⵔⴰⴳⵜ" )
+                                , ( Few, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
+                                , ( Other, "{n} ⵜⵉⵙⵔⴰⴳⵉⵏ" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} ⴰⵙⵙ" )
+                                , ( Few, "{n} ⵓⵙⵙⴰⵏ" )
+                                , ( Other, "{n} ⴰⵙⵙ" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                                , ( Few, "{n} ⵉⵎⴰⵍⴰⵙⵙⵏ" )
+                                , ( Other, "{n} ⵉⵎⴰⵍⴰⵙⵙ" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} ⴰⵢⵢⵓⵔ" )
+                                , ( Few, "{n} ⴰⵢⵢⵓⵔⵏ" )
+                                , ( Other, "{n} ⴰⵢⵢⵓⵔ" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                                , ( Few, "{n} ⵉⵙⴳⴳⵯⴰⵙⵏ" )
+                                , ( Other, "{n} ⴰⵙⴳⴳⵯⴰⵙ" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

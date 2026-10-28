@@ -12,46 +12,67 @@
 
 module SayableAge.Locales.Cy exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "cy"
-    , plural = \n -> if n == 0 then Zero else if n == 1 then One else if n == 2 then Two else if n == 3 then Few else if n == 6 then Many else Other
-    , day = Pluralized
-      [ ( Zero, "{n} diwrnod" )
-      , ( One, "{n} diwrnod" )
-      , ( Two, "{n} ddiwrnod" )
-      , ( Few, "{n} diwrnod" )
-      , ( Many, "{n} diwrnod" )
-      , ( Other, "{n} diwrnod" )
-      ]
-    , week = Pluralized
-      [ ( Zero, "{n} wythnos" )
-      , ( One, "{n} wythnos" )
-      , ( Two, "{n} wythnos" )
-      , ( Few, "{n} wythnos" )
-      , ( Many, "{n} wythnos" )
-      , ( Other, "{n} wythnos" )
-      ]
-    , month = Pluralized
-      [ ( Zero, "{n} mis" )
-      , ( One, "{n} mis" )
-      , ( Two, "{n} fis" )
-      , ( Few, "{n} mis" )
-      , ( Many, "{n} mis" )
-      , ( Other, "{n} mis" )
-      ]
-    , year = Pluralized
-      [ ( Zero, "{n} blwyddyn" )
-      , ( One, "{n} flwyddyn" )
-      , ( Two, "{n} flynedd" )
-      , ( Few, "{n} blynedd" )
-      , ( Many, "{n} blynedd" )
-      , ( Other, "{n} blynedd" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 then
+                Zero
+
+            else if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else if n == 3 then
+                Few
+
+            else if n == 6 then
+                Many
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( Zero, "{n} diwrnod" )
+            , ( One, "{n} diwrnod" )
+            , ( Two, "{n} ddiwrnod" )
+            , ( Few, "{n} diwrnod" )
+            , ( Many, "{n} diwrnod" )
+            , ( Other, "{n} diwrnod" )
+            ]
+    , week =
+        Pluralized
+            [ ( Zero, "{n} wythnos" )
+            , ( One, "{n} wythnos" )
+            , ( Two, "{n} wythnos" )
+            , ( Few, "{n} wythnos" )
+            , ( Many, "{n} wythnos" )
+            , ( Other, "{n} wythnos" )
+            ]
+    , month =
+        Pluralized
+            [ ( Zero, "{n} mis" )
+            , ( One, "{n} mis" )
+            , ( Two, "{n} fis" )
+            , ( Few, "{n} mis" )
+            , ( Many, "{n} mis" )
+            , ( Other, "{n} mis" )
+            ]
+    , year =
+        Pluralized
+            [ ( Zero, "{n} blwyddyn" )
+            , ( One, "{n} flwyddyn" )
+            , ( Two, "{n} flynedd" )
+            , ( Few, "{n} blynedd" )
+            , ( Many, "{n} blynedd" )
+            , ( Other, "{n} blynedd" )
+            ]
     , half = "{0} a hanner"
     , delimiter = ", "
     , justBorn = "Newydd-anedig"
@@ -65,23 +86,29 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( Zero, "{n} diwrnod" )
-                  , ( One, "{n} diwrnod" )
-                  , ( Two, "{n} ddiwrnod" )
-                  , ( Few, "{n} diwrnod" )
-                  , ( Many, "{n} diwrnod" )
-                  , ( Other, "{n} diwrnod" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( Zero, "{n} diwrnod" )
+                        , ( One, "{n} diwrnod" )
+                        , ( Two, "{n} ddiwrnod" )
+                        , ( Few, "{n} diwrnod" )
+                        , ( Many, "{n} diwrnod" )
+                        , ( Other, "{n} diwrnod" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} ws")
-            , ovrMonth = Just (Pluralized
-                  [ ( Zero, "{n} mis" )
-                  , ( One, "{n} mis" )
-                  , ( Two, "{n} fis" )
-                  , ( Few, "{n} mis" )
-                  , ( Many, "{n} mis" )
-                  , ( Other, "{n} mis" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( Zero, "{n} mis" )
+                        , ( One, "{n} mis" )
+                        , ( Two, "{n} fis" )
+                        , ( Few, "{n} mis" )
+                        , ( Many, "{n} mis" )
+                        , ( Other, "{n} mis" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} bl")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
@@ -90,14 +117,17 @@ locale =
     , compact =
         Just
             { ovrDay = Just (Simple "{n}d")
-            , ovrWeek = Just (Pluralized
-                  [ ( Zero, "{n} ws" )
-                  , ( One, "{n}w" )
-                  , ( Two, "{n} ws" )
-                  , ( Few, "{n} ws" )
-                  , ( Many, "{n} ws" )
-                  , ( Other, "{n}w" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( Zero, "{n} ws" )
+                        , ( One, "{n}w" )
+                        , ( Two, "{n} ws" )
+                        , ( Few, "{n} ws" )
+                        , ( Many, "{n} ws" )
+                        , ( Other, "{n}w" )
+                        ]
+                    )
             , ovrMonth = Just (Simple "{n}m")
             , ovrYear = Just (Simple "{n}bl")
             , ovrHalf = Just "{n}½"

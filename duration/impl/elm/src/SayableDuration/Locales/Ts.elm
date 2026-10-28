@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ts exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ts"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "xikontiri {n}" )
-              , ( Other, "swikontiri {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minete {n}" )
-              , ( Other, "timinete {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "awara {n}" )
-              , ( Other, "tiawara {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "siku {n}" )
-              , ( Other, "masiku {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "vhiki {n}" )
-              , ( Other, "mavhiki {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "n'hweti {n}" )
-              , ( Other, "tin'hweti {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "lembe {n}" )
-              , ( Other, "malembe {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "xikontiri {n}" )
+                    , ( Other, "swikontiri {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minete {n}" )
+                    , ( Other, "timinete {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "awara {n}" )
+                    , ( Other, "tiawara {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "siku {n}" )
+                    , ( Other, "masiku {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "vhiki {n}" )
+                    , ( Other, "mavhiki {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "n'hweti {n}" )
+                    , ( Other, "tin'hweti {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "lembe {n}" )
+                    , ( Other, "malembe {n}" )
+                    ]
+              )
             ]
     , half = "{0} ni hafu"
     , delimiter = ", "
@@ -62,34 +81,48 @@ locale =
             { ovrUnits =
                 Just
                     (Dict.fromList
-                        [ ( "second", Pluralized
-                          [ ( One, "xikon. {n}" )
-                          , ( Other, "swikon. {n}" )
-                          ] )
-                        , ( "minute", Pluralized
-                          [ ( One, "min. {n}" )
-                          , ( Other, "timin. {n}" )
-                          ] )
-                        , ( "hour", Pluralized
-                          [ ( One, "awa. {n}" )
-                          , ( Other, "tiawa. {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "siku {n}" )
-                          , ( Other, "masiku {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "vhiki {n}" )
-                          , ( Other, "mavhiki {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "n'hw. {n}" )
-                          , ( Other, "tin'hw. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "lembe {n}" )
-                          , ( Other, "mal. {n}" )
-                          ] )
+                        [ ( "second"
+                          , Pluralized
+                                [ ( One, "xikon. {n}" )
+                                , ( Other, "swikon. {n}" )
+                                ]
+                          )
+                        , ( "minute"
+                          , Pluralized
+                                [ ( One, "min. {n}" )
+                                , ( Other, "timin. {n}" )
+                                ]
+                          )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "awa. {n}" )
+                                , ( Other, "tiawa. {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "siku {n}" )
+                                , ( Other, "masiku {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "vhiki {n}" )
+                                , ( Other, "mavhiki {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "n'hw. {n}" )
+                                , ( Other, "tin'hw. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "lembe {n}" )
+                                , ( Other, "mal. {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

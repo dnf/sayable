@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Fil exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -38,10 +37,13 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "{n} araw")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} linggo" )
-                  , ( Other, "{n} na linggo" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} linggo" )
+                        , ( Other, "{n} na linggo" )
+                        ]
+                    )
             , ovrMonth = Just (Simple "{n} buwan")
             , ovrYear = Just (Simple "{n} taon")
             , ovrHalf = Nothing
@@ -50,15 +52,21 @@ locale =
             }
     , compact =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} araw" )
-                  , ( Other, "{n} na araw" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} araw" )
+                        , ( Other, "{n} na araw" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n}linggo")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n}buwan" )
-                  , ( Other, "{n} buwan" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n}buwan" )
+                        , ( Other, "{n} buwan" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n}taon")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""

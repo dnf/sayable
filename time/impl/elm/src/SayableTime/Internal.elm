@@ -97,10 +97,12 @@ isZoneSuffix : String -> Bool
 isZoneSuffix zone =
     let
         isOffset =
-            String.length zone == 6
+            String.length zone
+                == 6
                 && List.member (String.left 1 zone) [ "+", "-" ]
                 && isDigits 2 (String.slice 1 3 zone)
-                && String.slice 3 4 zone == ":"
+                && String.slice 3 4 zone
+                == ":"
                 && isDigits 2 (String.slice 4 6 zone)
     in
     zone == "" || zone == "Z" || isOffset
@@ -110,9 +112,12 @@ isRealDate : String -> Bool
 isRealDate s =
     let
         isDateShape =
-            String.length s == 10
-                && String.slice 4 5 s == "-"
-                && String.slice 7 8 s == "-"
+            String.length s
+                == 10
+                && String.slice 4 5 s
+                == "-"
+                && String.slice 7 8 s
+                == "-"
                 && isDigits 4 (String.slice 0 4 s)
                 && isDigits 2 (String.slice 5 7 s)
                 && isDigits 2 (String.slice 8 10 s)

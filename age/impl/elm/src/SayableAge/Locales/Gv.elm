@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Gv exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,34 +23,49 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 then One else if mod10 == 2 then Two else if mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80 then Few else Other
-    , day = Pluralized
-      [ ( One, "{n} laa" )
-      , ( Two, "{n} laa" )
-      , ( Few, "{n} laa" )
-      , ( Other, "{n} laa" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} hiaghtin" )
-      , ( Two, "{n} hiaghtin" )
-      , ( Few, "{n} shiaghtin" )
-      , ( Other, "{n} shiaghtin" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} vee" )
-      , ( Two, "{n} vee" )
-      , ( Few, "{n} mee" )
-      , ( Other, "{n} mee" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} vlein" )
-      , ( Two, "{n} vlein" )
-      , ( Few, "{n} blein" )
-      , ( Other, "{n} blein" )
-      ]
+            if mod10 == 1 then
+                One
+
+            else if mod10 == 2 then
+                Two
+
+            else if mod100 == 0 || mod100 == 20 || mod100 == 40 || mod100 == 60 || mod100 == 80 then
+                Few
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} laa" )
+            , ( Two, "{n} laa" )
+            , ( Few, "{n} laa" )
+            , ( Other, "{n} laa" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} hiaghtin" )
+            , ( Two, "{n} hiaghtin" )
+            , ( Few, "{n} shiaghtin" )
+            , ( Other, "{n} shiaghtin" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} vee" )
+            , ( Two, "{n} vee" )
+            , ( Few, "{n} mee" )
+            , ( Other, "{n} mee" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} vlein" )
+            , ( Two, "{n} vlein" )
+            , ( Few, "{n} blein" )
+            , ( Other, "{n} blein" )
+            ]
     , half = "{0} as lieh"
     , delimiter = ", "
     , justBorn = "Ruggit noa"

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Pt exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "pt"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} segundo" )
-              , ( Other, "{n} segundos" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minuto" )
-              , ( Other, "{n} minutos" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} hora" )
-              , ( Other, "{n} horas" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} dia" )
-              , ( Other, "{n} dias" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} semana" )
-              , ( Other, "{n} semanas" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} mês" )
-              , ( Other, "{n} meses" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} ano" )
-              , ( Other, "{n} anos" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} segundo" )
+                    , ( Other, "{n} segundos" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minuto" )
+                    , ( Other, "{n} minutos" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} hora" )
+                    , ( Other, "{n} horas" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} dia" )
+                    , ( Other, "{n} dias" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} semana" )
+                    , ( Other, "{n} semanas" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} mês" )
+                    , ( Other, "{n} meses" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} ano" )
+                    , ( Other, "{n} anos" )
+                    ]
+              )
             ]
     , half = "{0} e meio"
     , delimiter = ", "
@@ -65,19 +84,25 @@ locale =
                         [ ( "second", Simple "{n} s" )
                         , ( "minute", Simple "{n} min" )
                         , ( "hour", Simple "{n} h" )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} dia" )
-                          , ( Other, "{n} dias" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} dia" )
+                                , ( Other, "{n} dias" )
+                                ]
+                          )
                         , ( "week", Simple "{n} sem." )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} mês" )
-                          , ( Other, "{n} meses" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} ano" )
-                          , ( Other, "{n} anos" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} mês" )
+                                , ( Other, "{n} meses" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} ano" )
+                                , ( Other, "{n} anos" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -93,19 +118,25 @@ locale =
                         [ ( "second", Simple "{n} s" )
                         , ( "minute", Simple "{n} min" )
                         , ( "hour", Simple "{n} h" )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} dia" )
-                          , ( Other, "{n} dias" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} dia" )
+                                , ( Other, "{n} dias" )
+                                ]
+                          )
                         , ( "week", Simple "{n} sem." )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} mês" )
-                          , ( Other, "{n} meses" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} ano" )
-                          , ( Other, "{n} anos" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} mês" )
+                                , ( Other, "{n} meses" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} ano" )
+                                , ( Other, "{n} anos" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

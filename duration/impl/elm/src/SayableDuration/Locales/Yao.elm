@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Yao exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "yao"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekunde {n}" )
-              , ( Other, "masekunde {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "dakika {n}" )
-              , ( Other, "madakika {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "saa {n}" )
-              , ( Other, "masaa {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "lisiku {n}" )
-              , ( Other, "masiku {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "juma {n}" )
-              , ( Other, "majuma {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ngondo {n}" )
-              , ( Other, "mingondo {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "chaka {n}" )
-              , ( Other, "vyaka {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekunde {n}" )
+                    , ( Other, "masekunde {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "dakika {n}" )
+                    , ( Other, "madakika {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "saa {n}" )
+                    , ( Other, "masaa {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "lisiku {n}" )
+                    , ( Other, "masiku {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "juma {n}" )
+                    , ( Other, "majuma {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ngondo {n}" )
+                    , ( Other, "mingondo {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "chaka {n}" )
+                    , ( Other, "vyaka {n}" )
+                    ]
+              )
             ]
     , half = "{0} na nusu"
     , delimiter = ", "
@@ -64,26 +83,36 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "sek. {n}" )
                         , ( "minute", Simple "dak. {n}" )
-                        , ( "hour", Pluralized
-                          [ ( One, "saa {n}" )
-                          , ( Other, "masaa {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "lis. {n}" )
-                          , ( Other, "mas. {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "juma {n}" )
-                          , ( Other, "maj. {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "ngo. {n}" )
-                          , ( Other, "min. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "chaka {n}" )
-                          , ( Other, "vyaka {n}" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "saa {n}" )
+                                , ( Other, "masaa {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "lis. {n}" )
+                                , ( Other, "mas. {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "juma {n}" )
+                                , ( Other, "maj. {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "ngo. {n}" )
+                                , ( Other, "min. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "chaka {n}" )
+                                , ( Other, "vyaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

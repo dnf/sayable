@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Om exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "om"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "sekondii {n}" )
-              , ( Other, "sekondoota {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "daqiiqaa {n}" )
-              , ( Other, "daqiiqoota {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "sa'aatii {n}" )
-              , ( Other, "sa'aatota {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "guyyaa {n}" )
-              , ( Other, "guyyoota {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "torban {n}" )
-              , ( Other, "torbanota {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "ji'a {n}" )
-              , ( Other, "ji'oota {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "waggaa {n}" )
-              , ( Other, "waggoota {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "sekondii {n}" )
+                    , ( Other, "sekondoota {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "daqiiqaa {n}" )
+                    , ( Other, "daqiiqoota {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "sa'aatii {n}" )
+                    , ( Other, "sa'aatota {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "guyyaa {n}" )
+                    , ( Other, "guyyoota {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "torban {n}" )
+                    , ( Other, "torbanota {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "ji'a {n}" )
+                    , ( Other, "ji'oota {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "waggaa {n}" )
+                    , ( Other, "waggoota {n}" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

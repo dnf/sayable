@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Da exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "da"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekund" )
-              , ( Other, "{n} sekunder" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minut" )
-              , ( Other, "{n} minutter" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} time" )
-              , ( Other, "{n} timer" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} dag" )
-              , ( Other, "{n} dage" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} uge" )
-              , ( Other, "{n} uger" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} måned" )
-              , ( Other, "{n} måneder" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} år" )
-              , ( Other, "{n} år" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekund" )
+                    , ( Other, "{n} sekunder" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minut" )
+                    , ( Other, "{n} minutter" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} time" )
+                    , ( Other, "{n} timer" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} dag" )
+                    , ( Other, "{n} dage" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} uge" )
+                    , ( Other, "{n} uger" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} måned" )
+                    , ( Other, "{n} måneder" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} år" )
+                    , ( Other, "{n} år" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "
@@ -65,18 +84,24 @@ locale =
                         [ ( "second", Simple "{n} sek." )
                         , ( "minute", Simple "{n} min." )
                         , ( "hour", Simple "{n} t." )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} dag" )
-                          , ( Other, "{n} dage" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} uge" )
-                          , ( Other, "{n} uger" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} md." )
-                          , ( Other, "{n} mdr." )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} dag" )
+                                , ( Other, "{n} dage" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} uge" )
+                                , ( Other, "{n} uger" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} md." )
+                                , ( Other, "{n} mdr." )
+                                ]
+                          )
                         , ( "year", Simple "{n} år" )
                         ]
                     )

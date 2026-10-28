@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Ku exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "ku"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} çirke" )
-              , ( Other, "{n} çirke" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} deqîqe" )
-              , ( Other, "{n} deqîqe" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} saet" )
-              , ( Other, "{n} saet" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} roj" )
-              , ( Other, "{n} roj" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} hefte" )
-              , ( Other, "{n} hefte" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} meh" )
-              , ( Other, "{n} meh" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} sal" )
-              , ( Other, "{n} sal" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} çirke" )
+                    , ( Other, "{n} çirke" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} deqîqe" )
+                    , ( Other, "{n} deqîqe" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} saet" )
+                    , ( Other, "{n} saet" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} roj" )
+                    , ( Other, "{n} roj" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} hefte" )
+                    , ( Other, "{n} hefte" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} meh" )
+                    , ( Other, "{n} meh" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} sal" )
+                    , ( Other, "{n} sal" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

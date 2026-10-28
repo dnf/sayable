@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Din exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "din"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "thiɛ̈kɛn {n}" )
-              , ( Other, "thiɛ̈kɛn {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "minitö {n}" )
-              , ( Other, "minitö {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "thä {n}" )
-              , ( Other, "thä {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "akɔl {n}" )
-              , ( Other, "akɔl {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "bɛ̈t {n}" )
-              , ( Other, "bɛ̈t {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "pɛi {n}" )
-              , ( Other, "pɛi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "ruɔ̈n {n}" )
-              , ( Other, "ruɔ̈ɔ̈n {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "thiɛ̈kɛn {n}" )
+                    , ( Other, "thiɛ̈kɛn {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "minitö {n}" )
+                    , ( Other, "minitö {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "thä {n}" )
+                    , ( Other, "thä {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "akɔl {n}" )
+                    , ( Other, "akɔl {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "bɛ̈t {n}" )
+                    , ( Other, "bɛ̈t {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "pɛi {n}" )
+                    , ( Other, "pɛi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "ruɔ̈n {n}" )
+                    , ( Other, "ruɔ̈ɔ̈n {n}" )
+                    ]
+              )
             ]
     , half = "{0} ku abɛ̈c"
     , delimiter = ", "
@@ -68,10 +87,12 @@ locale =
                         , ( "day", Simple "akɔl {n}" )
                         , ( "week", Simple "bɛ̈t {n}" )
                         , ( "month", Simple "pɛi {n}" )
-                        , ( "year", Pluralized
-                          [ ( One, "ruɔ̈n {n}" )
-                          , ( Other, "ruɔ̈ɔ̈n {n}" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "ruɔ̈n {n}" )
+                                , ( Other, "ruɔ̈ɔ̈n {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

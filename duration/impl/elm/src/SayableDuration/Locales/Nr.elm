@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Nr exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "nr"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "isekendi {n}" )
-              , ( Other, "amasekendi {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "umzuzu {n}" )
-              , ( Other, "imizuzu {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "ihora {n}" )
-              , ( Other, "amahora {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "ilanga {n}" )
-              , ( Other, "amalanga {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "iveke {n}" )
-              , ( Other, "amaveke {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "inyanga {n}" )
-              , ( Other, "iinyanga {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "unyaka {n}" )
-              , ( Other, "iminyaka {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "isekendi {n}" )
+                    , ( Other, "amasekendi {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "umzuzu {n}" )
+                    , ( Other, "imizuzu {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "ihora {n}" )
+                    , ( Other, "amahora {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "ilanga {n}" )
+                    , ( Other, "amalanga {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "iveke {n}" )
+                    , ( Other, "amaveke {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "inyanga {n}" )
+                    , ( Other, "iinyanga {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "unyaka {n}" )
+                    , ( Other, "iminyaka {n}" )
+                    ]
+              )
             ]
     , half = "{0} nesiquntu"
     , delimiter = ", "
@@ -64,26 +83,36 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "isek. {n}" )
                         , ( "minute", Simple "umz. {n}" )
-                        , ( "hour", Pluralized
-                          [ ( One, "ihora {n}" )
-                          , ( Other, "amah. {n}" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "ilanga {n}" )
-                          , ( Other, "amal. {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "iveke {n}" )
-                          , ( Other, "amav. {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "iny. {n}" )
-                          , ( Other, "iiny. {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "uny. {n}" )
-                          , ( Other, "imin. {n}" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "ihora {n}" )
+                                , ( Other, "amah. {n}" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "ilanga {n}" )
+                                , ( Other, "amal. {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "iveke {n}" )
+                                , ( Other, "amav. {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "iny. {n}" )
+                                , ( Other, "iiny. {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "uny. {n}" )
+                                , ( Other, "imin. {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

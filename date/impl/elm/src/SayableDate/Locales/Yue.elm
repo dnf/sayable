@@ -12,7 +12,6 @@
 
 module SayableDate.Locales.Yue exposing (locale)
 
-
 import Dict
 import SayableDate.Types exposing (..)
 
@@ -58,30 +57,32 @@ locale =
     , monthsInDate = Nothing
     , short =
         Just
-            { ovrMonths = Just
-                [ "1月"
-                , "2月"
-                , "3月"
-                , "4月"
-                , "5月"
-                , "6月"
-                , "7月"
-                , "8月"
-                , "9月"
-                , "10月"
-                , "11月"
-                , "12月"
-                ]
+            { ovrMonths =
+                Just
+                    [ "1月"
+                    , "2月"
+                    , "3月"
+                    , "4月"
+                    , "5月"
+                    , "6月"
+                    , "7月"
+                    , "8月"
+                    , "9月"
+                    , "10月"
+                    , "11月"
+                    , "12月"
+                    ]
             , ovrMonthsInDate = Nothing
-            , ovrWeekdays = Just
-                [ "日"
-                , "一"
-                , "二"
-                , "三"
-                , "四"
-                , "五"
-                , "六"
-                ]
+            , ovrWeekdays =
+                Just
+                    [ "日"
+                    , "一"
+                    , "二"
+                    , "三"
+                    , "四"
+                    , "五"
+                    , "六"
+                    ]
             , ovrDayFormat = Just "{n}日"
             , ovrDayFormatExceptions = Just Dict.empty
             , ovrDatePattern = Just "{month}{day}"

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Bci exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 

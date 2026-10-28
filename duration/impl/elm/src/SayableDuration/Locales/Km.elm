@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Km exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -42,7 +41,7 @@ locale =
                 Just
                     (Dict.fromList
                         [ ( "second", Simple "{n} វិនាទី" )
-                        , ( "minute", Simple "{n} នាទី" )
+                        , ( "minute", Simple "{n}\u{00A0}នាទី" )
                         , ( "hour", Simple "{n} ម៉ោង" )
                         , ( "day", Simple "{n} ថ្ងៃ" )
                         , ( "week", Simple "{n} សប្ដាហ៍" )
@@ -61,7 +60,7 @@ locale =
                 Just
                     (Dict.fromList
                         [ ( "second", Simple "{n} វិនាទី" )
-                        , ( "minute", Simple "{n} នាទី" )
+                        , ( "minute", Simple "{n}\u{00A0}នាទី" )
                         , ( "hour", Simple "{n} ម៉ោង" )
                         , ( "day", Simple "{n} ថ្ងៃ" )
                         , ( "week", Simple "{n} សប្ដាហ៍" )

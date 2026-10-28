@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Lt exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,47 +24,69 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19) then Few else Other
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 9 && (mod100 < 12 || mod100 > 19) then
+                Few
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekundė" )
-              , ( Few, "{n} sekundės" )
-              , ( Other, "{n} sekundžių" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minutė" )
-              , ( Few, "{n} minutės" )
-              , ( Other, "{n} minučių" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} valanda" )
-              , ( Few, "{n} valandos" )
-              , ( Other, "{n} valandų" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} diena" )
-              , ( Few, "{n} dienos" )
-              , ( Other, "{n} dienų" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} savaitė" )
-              , ( Few, "{n} savaitės" )
-              , ( Other, "{n} savaičių" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} mėnuo" )
-              , ( Few, "{n} mėnesiai" )
-              , ( Other, "{n} mėnesių" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} metai" )
-              , ( Few, "{n} metai" )
-              , ( Other, "{n} metų" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekundė" )
+                    , ( Few, "{n} sekundės" )
+                    , ( Other, "{n} sekundžių" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minutė" )
+                    , ( Few, "{n} minutės" )
+                    , ( Other, "{n} minučių" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} valanda" )
+                    , ( Few, "{n} valandos" )
+                    , ( Other, "{n} valandų" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} diena" )
+                    , ( Few, "{n} dienos" )
+                    , ( Other, "{n} dienų" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} savaitė" )
+                    , ( Few, "{n} savaitės" )
+                    , ( Other, "{n} savaičių" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} mėnuo" )
+                    , ( Few, "{n} mėnesiai" )
+                    , ( Other, "{n} mėnesių" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} metai" )
+                    , ( Few, "{n} metai" )
+                    , ( Other, "{n} metų" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

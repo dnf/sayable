@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Br exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,61 +24,89 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 && mod100 /= 71 && mod100 /= 91 then One else if mod10 == 2 && mod100 /= 12 && mod100 /= 72 && mod100 /= 92 then Two else if (mod10 == 3 || mod10 == 4 || mod10 == 9) && (mod100 < 10 || mod100 > 19) && (mod100 < 70 || mod100 > 79) && (mod100 < 90 || mod100 > 99) then Few else if n /= 0 && modBy 1000000 n == 0 then Many else Other
+            if mod10 == 1 && mod100 /= 11 && mod100 /= 71 && mod100 /= 91 then
+                One
+
+            else if mod10 == 2 && mod100 /= 12 && mod100 /= 72 && mod100 /= 92 then
+                Two
+
+            else if (mod10 == 3 || mod10 == 4 || mod10 == 9) && (mod100 < 10 || mod100 > 19) && (mod100 < 70 || mod100 > 79) && (mod100 < 90 || mod100 > 99) then
+                Few
+
+            else if n /= 0 && modBy 1000000 n == 0 then
+                Many
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} eilenn" )
-              , ( Two, "{n} eilenn" )
-              , ( Few, "{n} eilenn" )
-              , ( Many, "{n} a eilennoù" )
-              , ( Other, "{n} eilenn" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} munut" )
-              , ( Two, "{n} vunut" )
-              , ( Few, "{n} munut" )
-              , ( Many, "{n} a vunutoù" )
-              , ( Other, "{n} munut" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} eur" )
-              , ( Two, "{n} eur" )
-              , ( Few, "{n} eur" )
-              , ( Many, "{n} a eurvezhioù" )
-              , ( Other, "{n} eur" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} devezh" )
-              , ( Two, "{n} zevezh" )
-              , ( Few, "{n} devezh" )
-              , ( Many, "{n} devezh" )
-              , ( Other, "{n} devezh" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} sizhun" )
-              , ( Two, "{n} sizhun" )
-              , ( Few, "{n} sizhun" )
-              , ( Many, "{n} sizhun" )
-              , ( Other, "{n} sizhun" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} miz" )
-              , ( Two, "{n} viz" )
-              , ( Few, "{n} miz" )
-              , ( Many, "{n} miz" )
-              , ( Other, "{n} miz" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} bloaz" )
-              , ( Two, "{n} vloaz" )
-              , ( Few, "{n} bloaz" )
-              , ( Many, "{n} bloaz" )
-              , ( Other, "{n} bloaz" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} eilenn" )
+                    , ( Two, "{n} eilenn" )
+                    , ( Few, "{n} eilenn" )
+                    , ( Many, "{n} a eilennoù" )
+                    , ( Other, "{n} eilenn" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} munut" )
+                    , ( Two, "{n} vunut" )
+                    , ( Few, "{n} munut" )
+                    , ( Many, "{n} a vunutoù" )
+                    , ( Other, "{n} munut" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} eur" )
+                    , ( Two, "{n} eur" )
+                    , ( Few, "{n} eur" )
+                    , ( Many, "{n} a eurvezhioù" )
+                    , ( Other, "{n} eur" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} devezh" )
+                    , ( Two, "{n} zevezh" )
+                    , ( Few, "{n} devezh" )
+                    , ( Many, "{n} devezh" )
+                    , ( Other, "{n} devezh" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} sizhun" )
+                    , ( Two, "{n} sizhun" )
+                    , ( Few, "{n} sizhun" )
+                    , ( Many, "{n} sizhun" )
+                    , ( Other, "{n} sizhun" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} miz" )
+                    , ( Two, "{n} viz" )
+                    , ( Few, "{n} miz" )
+                    , ( Many, "{n} miz" )
+                    , ( Other, "{n} miz" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} bloaz" )
+                    , ( Two, "{n} vloaz" )
+                    , ( Few, "{n} bloaz" )
+                    , ( Many, "{n} bloaz" )
+                    , ( Other, "{n} bloaz" )
+                    ]
+              )
             ]
     , half = "{0} hag un hanter"
     , delimiter = ", "

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Fi exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "fi"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} päivä" )
-      , ( Other, "{n} päivää" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} viikko" )
-      , ( Other, "{n} viikkoa" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} kuukausi" )
-      , ( Other, "{n} kuukautta" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} vuosi" )
-      , ( Other, "{n} vuotta" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} päivä" )
+            , ( Other, "{n} päivää" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} viikko" )
+            , ( Other, "{n} viikkoa" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} kuukausi" )
+            , ( Other, "{n} kuukautta" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} vuosi" )
+            , ( Other, "{n} vuotta" )
+            ]
     , half = "{n} ja puoli"
     , delimiter = ", "
     , justBorn = "Vastasyntynyt"

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ti exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ti"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} መዓልቲ" )
-      , ( Other, "{n} መዓልትታት" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} ሰሙን" )
-      , ( Other, "{n} ሰሙናት" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} ወርሒ" )
-      , ( Other, "{n} ኣዋርሕ" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} ዓመት" )
-      , ( Other, "{n} ዓመታት" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} መዓልቲ" )
+            , ( Other, "{n} መዓልትታት" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} ሰሙን" )
+            , ( Other, "{n} ሰሙናት" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} ወርሒ" )
+            , ( Other, "{n} ኣዋርሕ" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} ዓመት" )
+            , ( Other, "{n} ዓመታት" )
+            ]
     , half = "{0} ተኹል"
     , delimiter = "፣ "
     , justBorn = "ሓድሽ ዝተወልደ"
@@ -50,15 +59,21 @@ locale =
     , short =
         Just
             { ovrDay = Just (Simple "{n} መዓልትታት")
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} ሰሙን" )
-                  , ( Other, "{n} ሰሙናት" )
-                  ])
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ሰሙን" )
+                        , ( Other, "{n} ሰሙናት" )
+                        ]
+                    )
             , ovrMonth = Just (Simple "{n} ኣዋርሕ")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} ዓመት" )
-                  , ( Other, "{n} ዓመታት" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ዓመት" )
+                        , ( Other, "{n} ዓመታት" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
@@ -68,10 +83,13 @@ locale =
             { ovrDay = Just (Simple "{n} መ")
             , ovrWeek = Just (Simple "{n} ሰሙን")
             , ovrMonth = Just (Simple "{n} ወር")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} ዓመት" )
-                  , ( Other, "{n} ዓ" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ዓመት" )
+                        , ( Other, "{n} ዓ" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

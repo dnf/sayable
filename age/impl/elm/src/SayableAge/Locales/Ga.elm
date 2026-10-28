@@ -12,42 +12,60 @@
 
 module SayableAge.Locales.Ga exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ga"
-    , plural = \n -> if n == 1 then One else if n == 2 then Two else if n >= 3 && n <= 6 then Few else if n >= 7 && n <= 10 then Many else Other
-    , day = Pluralized
-      [ ( One, "{n} lá" )
-      , ( Two, "{n} lá" )
-      , ( Few, "{n} lá" )
-      , ( Many, "{n} lá" )
-      , ( Other, "{n} lá" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} seachtain" )
-      , ( Two, "{n} sheachtain" )
-      , ( Few, "{n} seachtaine" )
-      , ( Many, "{n} seachtaine" )
-      , ( Other, "{n} seachtain" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mhí" )
-      , ( Two, "{n} mhí" )
-      , ( Few, "{n} mhí" )
-      , ( Many, "{n} mí" )
-      , ( Other, "{n} mí" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} bhliain" )
-      , ( Two, "{n} bhliain" )
-      , ( Few, "{n} bliana" )
-      , ( Many, "{n} mbliana" )
-      , ( Other, "{n} bliain" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else if n == 2 then
+                Two
+
+            else if n >= 3 && n <= 6 then
+                Few
+
+            else if n >= 7 && n <= 10 then
+                Many
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} lá" )
+            , ( Two, "{n} lá" )
+            , ( Few, "{n} lá" )
+            , ( Many, "{n} lá" )
+            , ( Other, "{n} lá" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} seachtain" )
+            , ( Two, "{n} sheachtain" )
+            , ( Few, "{n} seachtaine" )
+            , ( Many, "{n} seachtaine" )
+            , ( Other, "{n} seachtain" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mhí" )
+            , ( Two, "{n} mhí" )
+            , ( Few, "{n} mhí" )
+            , ( Many, "{n} mí" )
+            , ( Other, "{n} mí" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} bhliain" )
+            , ( Two, "{n} bhliain" )
+            , ( Few, "{n} bliana" )
+            , ( Many, "{n} mbliana" )
+            , ( Other, "{n} bliain" )
+            ]
     , half = "{0} go leith"
     , delimiter = ", "
     , justBorn = "Nuabheirthe"
@@ -63,13 +81,16 @@ locale =
         Just
             { ovrDay = Just (Simple "{n} lá")
             , ovrWeek = Just (Simple "{n} scht")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} mí" )
-                  , ( Two, "{n} mí" )
-                  , ( Few, "{n} mí" )
-                  , ( Many, "{n} mí" )
-                  , ( Other, "{n} m" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} mí" )
+                        , ( Two, "{n} mí" )
+                        , ( Few, "{n} mí" )
+                        , ( Many, "{n} mí" )
+                        , ( Other, "{n} m" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} bl")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
@@ -79,13 +100,16 @@ locale =
         Just
             { ovrDay = Just (Simple "{n} lá")
             , ovrWeek = Just (Simple "{n} scht")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n}m" )
-                  , ( Two, "{n}m" )
-                  , ( Few, "{n}m" )
-                  , ( Many, "{n}m" )
-                  , ( Other, "{n} m" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n}m" )
+                        , ( Two, "{n}m" )
+                        , ( Few, "{n}m" )
+                        , ( Many, "{n}m" )
+                        , ( Other, "{n} m" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} bl")
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Sr exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,51 +24,73 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if mod10 == 1 && mod100 /= 11 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Other
+            if mod10 == 1 && mod100 /= 11 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} секунда" )
-              , ( Few, "{n} секунде" )
-              , ( Other, "{n} секунди" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} минут" )
-              , ( Few, "{n} минута" )
-              , ( Other, "{n} минута" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} сат" )
-              , ( Few, "{n} сата" )
-              , ( Other, "{n} сати" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} дан" )
-              , ( Few, "{n} дана" )
-              , ( Many, "{n} дана" )
-              , ( Other, "{n} дана" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} недеља" )
-              , ( Few, "{n} недеље" )
-              , ( Many, "{n} недеља" )
-              , ( Other, "{n} недеља" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} месец" )
-              , ( Few, "{n} месеца" )
-              , ( Many, "{n} месеци" )
-              , ( Other, "{n} месеци" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} година" )
-              , ( Few, "{n} године" )
-              , ( Many, "{n} година" )
-              , ( Other, "{n} година" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} секунда" )
+                    , ( Few, "{n} секунде" )
+                    , ( Other, "{n} секунди" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} минут" )
+                    , ( Few, "{n} минута" )
+                    , ( Other, "{n} минута" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} сат" )
+                    , ( Few, "{n} сата" )
+                    , ( Other, "{n} сати" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} дан" )
+                    , ( Few, "{n} дана" )
+                    , ( Many, "{n} дана" )
+                    , ( Other, "{n} дана" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} недеља" )
+                    , ( Few, "{n} недеље" )
+                    , ( Many, "{n} недеља" )
+                    , ( Other, "{n} недеља" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} месец" )
+                    , ( Few, "{n} месеца" )
+                    , ( Many, "{n} месеци" )
+                    , ( Other, "{n} месеци" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} година" )
+                    , ( Few, "{n} године" )
+                    , ( Many, "{n} година" )
+                    , ( Other, "{n} година" )
+                    ]
+              )
             ]
     , half = "{0} и по"
     , delimiter = ", "
@@ -83,23 +104,29 @@ locale =
                     (Dict.fromList
                         [ ( "second", Simple "{n} сек" )
                         , ( "minute", Simple "{n} мин" )
-                        , ( "hour", Pluralized
-                          [ ( One, "{n} сат" )
-                          , ( Few, "{n} сата" )
-                          , ( Other, "{n} сати" )
-                          ] )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} дан" )
-                          , ( Few, "{n} дана" )
-                          , ( Other, "{n} дана" )
-                          ] )
+                        , ( "hour"
+                          , Pluralized
+                                [ ( One, "{n} сат" )
+                                , ( Few, "{n} сата" )
+                                , ( Other, "{n} сати" )
+                                ]
+                          )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} дан" )
+                                , ( Few, "{n} дана" )
+                                , ( Other, "{n} дана" )
+                                ]
+                          )
                         , ( "week", Simple "{n} нед." )
                         , ( "month", Simple "{n} мес." )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} год" )
-                          , ( Few, "{n} год." )
-                          , ( Other, "{n} год." )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} год" )
+                                , ( Few, "{n} год." )
+                                , ( Other, "{n} год." )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

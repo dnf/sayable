@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Kl exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "kl"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "ulloq {n}" )
-      , ( Other, "ullut {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "sapaatip akunnera {n}" )
-      , ( Other, "sapaatip akunneri {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "qaammat {n}" )
-      , ( Other, "qaammatit {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "ukioq {n}" )
-      , ( Other, "ukiut {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "ulloq {n}" )
+            , ( Other, "ullut {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "sapaatip akunnera {n}" )
+            , ( Other, "sapaatip akunneri {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "qaammat {n}" )
+            , ( Other, "qaammatit {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "ukioq {n}" )
+            , ( Other, "ukiut {n}" )
+            ]
     , half = "{0} affaa"
     , delimiter = ", "
     , justBorn = "Inuuneq nutaaq"

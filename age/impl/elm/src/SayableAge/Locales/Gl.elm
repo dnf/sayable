@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Gl exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "gl"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} día" )
-      , ( Other, "{n} días" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} semana" )
-      , ( Other, "{n} semanas" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mes" )
-      , ( Other, "{n} meses" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} ano" )
-      , ( Other, "{n} anos" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} día" )
+            , ( Other, "{n} días" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} semana" )
+            , ( Other, "{n} semanas" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mes" )
+            , ( Other, "{n} meses" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} ano" )
+            , ( Other, "{n} anos" )
+            ]
     , half = "{0} e medio"
     , delimiter = ", "
     , justBorn = "Recén nacido"

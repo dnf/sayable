@@ -12,14 +12,19 @@
 
 module SayableAge.Locales.Ht exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ht"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
     , day = Simple "{n} jou"
     , week = Simple "{n} semèn"
     , month = Simple "{n} mwa"

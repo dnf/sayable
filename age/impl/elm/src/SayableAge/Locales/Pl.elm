@@ -12,7 +12,6 @@
 
 module SayableAge.Locales.Pl exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
@@ -24,34 +23,46 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if n == 1 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Many
-    , day = Pluralized
-      [ ( One, "{n} dzień" )
-      , ( Few, "{n} dni" )
-      , ( Many, "{n} dni" )
-      , ( Other, "{n} dni" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} tydzień" )
-      , ( Few, "{n} tygodnie" )
-      , ( Many, "{n} tygodni" )
-      , ( Other, "{n} tygodni" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} miesiąc" )
-      , ( Few, "{n} miesiące" )
-      , ( Many, "{n} miesięcy" )
-      , ( Other, "{n} miesięcy" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} rok" )
-      , ( Few, "{n} lata" )
-      , ( Many, "{n} lat" )
-      , ( Other, "{n} lat" )
-      ]
+            if n == 1 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Many
+    , day =
+        Pluralized
+            [ ( One, "{n} dzień" )
+            , ( Few, "{n} dni" )
+            , ( Many, "{n} dni" )
+            , ( Other, "{n} dni" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} tydzień" )
+            , ( Few, "{n} tygodnie" )
+            , ( Many, "{n} tygodni" )
+            , ( Other, "{n} tygodni" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} miesiąc" )
+            , ( Few, "{n} miesiące" )
+            , ( Many, "{n} miesięcy" )
+            , ( Other, "{n} miesięcy" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} rok" )
+            , ( Few, "{n} lata" )
+            , ( Many, "{n} lat" )
+            , ( Other, "{n} lat" )
+            ]
     , half = "{n} i pół"
     , delimiter = ", "
     , justBorn = "Noworodek"
@@ -65,25 +76,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} dzień" )
-                  , ( Few, "{n} dni" )
-                  , ( Many, "{n} dni" )
-                  , ( Other, "{n} dnia" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} tydz." )
-                  , ( Few, "{n} tyg." )
-                  , ( Many, "{n} tyg." )
-                  , ( Other, "{n} tyg." )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} dzień" )
+                        , ( Few, "{n} dni" )
+                        , ( Many, "{n} dni" )
+                        , ( Other, "{n} dnia" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} tydz." )
+                        , ( Few, "{n} tyg." )
+                        , ( Many, "{n} tyg." )
+                        , ( Other, "{n} tyg." )
+                        ]
+                    )
             , ovrMonth = Just (Simple "{n} mies.")
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} rok" )
-                  , ( Few, "{n} lata" )
-                  , ( Many, "{n} lat" )
-                  , ( Other, "{n} roku" )
-                  ])
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} rok" )
+                        , ( Few, "{n} lata" )
+                        , ( Many, "{n} lat" )
+                        , ( Other, "{n} roku" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
@@ -92,18 +112,24 @@ locale =
         Just
             { ovrDay = Just (Simple "{n} d.")
             , ovrWeek = Just (Simple "{n} t.")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} m-c" )
-                  , ( Few, "{n} m-ce" )
-                  , ( Many, "{n} m-cy" )
-                  , ( Other, "{n} m-ca" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} r." )
-                  , ( Few, "{n} l." )
-                  , ( Many, "{n} l." )
-                  , ( Other, "{n} r." )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} m-c" )
+                        , ( Few, "{n} m-ce" )
+                        , ( Many, "{n} m-cy" )
+                        , ( Other, "{n} m-ca" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} r." )
+                        , ( Few, "{n} l." )
+                        , ( Many, "{n} l." )
+                        , ( Other, "{n} r." )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

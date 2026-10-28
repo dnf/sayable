@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Ss exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "ss"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "lilanga {n}" )
-      , ( Other, "emalanga {n}" )
-      ]
-    , week = Pluralized
-      [ ( One, "liviki {n}" )
-      , ( Other, "emaviki {n}" )
-      ]
-    , month = Pluralized
-      [ ( One, "inyanga {n}" )
-      , ( Other, "tinyanga {n}" )
-      ]
-    , year = Pluralized
-      [ ( One, "umnyaka {n}" )
-      , ( Other, "iminyaka {n}" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "lilanga {n}" )
+            , ( Other, "emalanga {n}" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "liviki {n}" )
+            , ( Other, "emaviki {n}" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "inyanga {n}" )
+            , ( Other, "tinyanga {n}" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "umnyaka {n}" )
+            , ( Other, "iminyaka {n}" )
+            ]
     , half = "{0} nenhafu"
     , delimiter = ", "
     , justBorn = "Usandza kutalwa"
@@ -49,22 +58,34 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "lilanga {n}" )
-                  , ( Other, "emalanga {n}" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "liviki {n}" )
-                  , ( Other, "emaviki {n}" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "iny. {n}" )
-                  , ( Other, "tiny. {n}" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "umny. {n}" )
-                  , ( Other, "imy. {n}" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "lilanga {n}" )
+                        , ( Other, "emalanga {n}" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "liviki {n}" )
+                        , ( Other, "emaviki {n}" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "iny. {n}" )
+                        , ( Other, "tiny. {n}" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "umny. {n}" )
+                        , ( Other, "imy. {n}" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing

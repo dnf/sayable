@@ -14,8 +14,10 @@ parseDate s =
             String.length s == 10 || (String.length s > 10 && String.slice 10 11 s == "T")
 
         isDateShape =
-            String.slice 4 5 datePart == "-"
-                && String.slice 7 8 datePart == "-"
+            String.slice 4 5 datePart
+                == "-"
+                && String.slice 7 8 datePart
+                == "-"
                 && digitsAt 0 4
                 && digitsAt 5 7
                 && digitsAt 8 10

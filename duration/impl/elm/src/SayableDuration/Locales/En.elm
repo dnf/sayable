@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.En exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "en"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} second" )
-              , ( Other, "{n} seconds" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minute" )
-              , ( Other, "{n} minutes" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} hour" )
-              , ( Other, "{n} hours" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} day" )
-              , ( Other, "{n} days" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} week" )
-              , ( Other, "{n} weeks" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} month" )
-              , ( Other, "{n} months" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} year" )
-              , ( Other, "{n} years" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} second" )
+                    , ( Other, "{n} seconds" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minute" )
+                    , ( Other, "{n} minutes" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} hour" )
+                    , ( Other, "{n} hours" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} day" )
+                    , ( Other, "{n} days" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} week" )
+                    , ( Other, "{n} weeks" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} month" )
+                    , ( Other, "{n} months" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} year" )
+                    , ( Other, "{n} years" )
+                    ]
+              )
             ]
     , half = "{n}½"
     , delimiter = ", "

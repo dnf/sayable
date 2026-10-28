@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Mr exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,31 +19,47 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "mr"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
             [ ( "second", Simple "{n} सेकंद" )
-            , ( "minute", Pluralized
-              [ ( One, "{n} मिनिट" )
-              , ( Other, "{n} मिनिटे" )
-              ] )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} मिनिट" )
+                    , ( Other, "{n} मिनिटे" )
+                    ]
+              )
             , ( "hour", Simple "{n} तास" )
-            , ( "day", Pluralized
-              [ ( One, "{n} दिवस" )
-              , ( Other, "{n} दिवस" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} आठवडा" )
-              , ( Other, "{n} आठवडे" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} महिना" )
-              , ( Other, "{n} महिने" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} वर्ष" )
-              , ( Other, "{n} वर्षे" )
-              ] )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} दिवस" )
+                    , ( Other, "{n} दिवस" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} आठवडा" )
+                    , ( Other, "{n} आठवडे" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} महिना" )
+                    , ( Other, "{n} महिने" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} वर्ष" )
+                    , ( Other, "{n} वर्षे" )
+                    ]
+              )
             ]
     , half = "साडे {n}"
     , delimiter = ", "
@@ -61,14 +76,18 @@ locale =
                         , ( "hour", Simple "{n} ता" )
                         , ( "day", Simple "{n} दिवस" )
                         , ( "week", Simple "{n} आ" )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} महिना" )
-                          , ( Other, "{n} महिने" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} वर्ष" )
-                          , ( Other, "{n} वर्षे" )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} महिना" )
+                                , ( Other, "{n} महिने" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} वर्ष" )
+                                , ( Other, "{n} वर्षे" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

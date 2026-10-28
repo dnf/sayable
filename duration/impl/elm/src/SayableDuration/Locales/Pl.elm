@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Pl exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -25,54 +24,76 @@ locale =
             let
                 mod10 =
                     modBy 10 n
+
                 mod100 =
                     modBy 100 n
             in
-            if n == 1 then One else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then Few else Many
+            if n == 1 then
+                One
+
+            else if mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14) then
+                Few
+
+            else
+                Many
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "{n} sekunda" )
-              , ( Few, "{n} sekundy" )
-              , ( Many, "{n} sekund" )
-              , ( Other, "{n} sekundy" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "{n} minuta" )
-              , ( Few, "{n} minuty" )
-              , ( Many, "{n} minut" )
-              , ( Other, "{n} minuty" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "{n} godzina" )
-              , ( Few, "{n} godziny" )
-              , ( Many, "{n} godzin" )
-              , ( Other, "{n} godziny" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "{n} dzień" )
-              , ( Few, "{n} dni" )
-              , ( Many, "{n} dni" )
-              , ( Other, "{n} dnia" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "{n} tydzień" )
-              , ( Few, "{n} tygodnie" )
-              , ( Many, "{n} tygodni" )
-              , ( Other, "{n} tygodnia" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "{n} miesiąc" )
-              , ( Few, "{n} miesiące" )
-              , ( Many, "{n} miesięcy" )
-              , ( Other, "{n} miesiąca" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "{n} rok" )
-              , ( Few, "{n} lata" )
-              , ( Many, "{n} lat" )
-              , ( Other, "{n} roku" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "{n} sekunda" )
+                    , ( Few, "{n} sekundy" )
+                    , ( Many, "{n} sekund" )
+                    , ( Other, "{n} sekundy" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "{n} minuta" )
+                    , ( Few, "{n} minuty" )
+                    , ( Many, "{n} minut" )
+                    , ( Other, "{n} minuty" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "{n} godzina" )
+                    , ( Few, "{n} godziny" )
+                    , ( Many, "{n} godzin" )
+                    , ( Other, "{n} godziny" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "{n} dzień" )
+                    , ( Few, "{n} dni" )
+                    , ( Many, "{n} dni" )
+                    , ( Other, "{n} dnia" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "{n} tydzień" )
+                    , ( Few, "{n} tygodnie" )
+                    , ( Many, "{n} tygodni" )
+                    , ( Other, "{n} tygodnia" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "{n} miesiąc" )
+                    , ( Few, "{n} miesiące" )
+                    , ( Many, "{n} miesięcy" )
+                    , ( Other, "{n} miesiąca" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "{n} rok" )
+                    , ( Few, "{n} lata" )
+                    , ( Many, "{n} lat" )
+                    , ( Other, "{n} roku" )
+                    ]
+              )
             ]
     , half = "{n} i pół"
     , delimiter = ", "
@@ -87,25 +108,31 @@ locale =
                         [ ( "second", Simple "{n} sek." )
                         , ( "minute", Simple "{n} min" )
                         , ( "hour", Simple "{n} godz." )
-                        , ( "day", Pluralized
-                          [ ( One, "{n} dzień" )
-                          , ( Few, "{n} dni" )
-                          , ( Many, "{n} dni" )
-                          , ( Other, "{n} dnia" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "{n} tydz." )
-                          , ( Few, "{n} tyg." )
-                          , ( Many, "{n} tyg." )
-                          , ( Other, "{n} tyg." )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "{n} dzień" )
+                                , ( Few, "{n} dni" )
+                                , ( Many, "{n} dni" )
+                                , ( Other, "{n} dnia" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "{n} tydz." )
+                                , ( Few, "{n} tyg." )
+                                , ( Many, "{n} tyg." )
+                                , ( Other, "{n} tyg." )
+                                ]
+                          )
                         , ( "month", Simple "{n} mies." )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} rok" )
-                          , ( Few, "{n} lata" )
-                          , ( Many, "{n} lat" )
-                          , ( Other, "{n} roku" )
-                          ] )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} rok" )
+                                , ( Few, "{n} lata" )
+                                , ( Many, "{n} lat" )
+                                , ( Other, "{n} roku" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing
@@ -123,18 +150,22 @@ locale =
                         , ( "hour", Simple "{n} h" )
                         , ( "day", Simple "{n} d." )
                         , ( "week", Simple "{n} t." )
-                        , ( "month", Pluralized
-                          [ ( One, "{n} m-c" )
-                          , ( Few, "{n} m-ce" )
-                          , ( Many, "{n} m-cy" )
-                          , ( Other, "{n} m-ca" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "{n} r." )
-                          , ( Few, "{n} l." )
-                          , ( Many, "{n} l." )
-                          , ( Other, "{n} r." )
-                          ] )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "{n} m-c" )
+                                , ( Few, "{n} m-ce" )
+                                , ( Many, "{n} m-cy" )
+                                , ( Other, "{n} m-ca" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "{n} r." )
+                                , ( Few, "{n} l." )
+                                , ( Many, "{n} l." )
+                                , ( Other, "{n} r." )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Just "{n}½"

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Pt exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "pt"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} dia" )
-      , ( Other, "{n} dias" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} semana" )
-      , ( Other, "{n} semanas" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} mês" )
-      , ( Other, "{n} meses" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} ano" )
-      , ( Other, "{n} anos" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dia" )
+            , ( Other, "{n} dias" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} semana" )
+            , ( Other, "{n} semanas" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} mês" )
+            , ( Other, "{n} meses" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} ano" )
+            , ( Other, "{n} anos" )
+            ]
     , half = "{0} e meio"
     , delimiter = ", "
     , justBorn = "Recém-nascido"
@@ -49,38 +58,56 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} dia" )
-                  , ( Other, "{n} dias" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} dia" )
+                        , ( Other, "{n} dias" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} sem.")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} mês" )
-                  , ( Other, "{n} meses" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} ano" )
-                  , ( Other, "{n} anos" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} mês" )
+                        , ( Other, "{n} meses" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ano" )
+                        , ( Other, "{n} anos" )
+                        ]
+                    )
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
             , ovrJustBorn = Nothing
             }
     , compact =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} dia" )
-                  , ( Other, "{n} dias" )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} dia" )
+                        , ( Other, "{n} dias" )
+                        ]
+                    )
             , ovrWeek = Just (Simple "{n} sem.")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} mês" )
-                  , ( Other, "{n} meses" )
-                  ])
-            , ovrYear = Just (Pluralized
-                  [ ( One, "{n} ano" )
-                  , ( Other, "{n} anos" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} mês" )
+                        , ( Other, "{n} meses" )
+                        ]
+                    )
+            , ovrYear =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} ano" )
+                        , ( Other, "{n} anos" )
+                        ]
+                    )
             , ovrHalf = Just "{n}½"
             , ovrDelimiter = Just ""
             , ovrJustBorn = Nothing

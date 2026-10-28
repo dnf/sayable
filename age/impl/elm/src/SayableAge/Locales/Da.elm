@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Da exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "da"
-    , plural = \n -> if n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} dag" )
-      , ( Other, "{n} dage" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} uge" )
-      , ( Other, "{n} uger" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} måned" )
-      , ( Other, "{n} måneder" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} år" )
-      , ( Other, "{n} år" )
-      ]
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} dag" )
+            , ( Other, "{n} dage" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} uge" )
+            , ( Other, "{n} uger" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} måned" )
+            , ( Other, "{n} måneder" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} år" )
+            , ( Other, "{n} år" )
+            ]
     , half = "{n}½"
     , delimiter = ", "
     , justBorn = "Nyfødt"
@@ -49,18 +58,27 @@ locale =
         }
     , short =
         Just
-            { ovrDay = Just (Pluralized
-                  [ ( One, "{n} dag" )
-                  , ( Other, "{n} dage" )
-                  ])
-            , ovrWeek = Just (Pluralized
-                  [ ( One, "{n} uge" )
-                  , ( Other, "{n} uger" )
-                  ])
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} md." )
-                  , ( Other, "{n} mdr." )
-                  ])
+            { ovrDay =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} dag" )
+                        , ( Other, "{n} dage" )
+                        ]
+                    )
+            , ovrWeek =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} uge" )
+                        , ( Other, "{n} uger" )
+                        ]
+                    )
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} md." )
+                        , ( Other, "{n} mdr." )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} år")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing

@@ -12,7 +12,6 @@
 
 module SayableDuration.Locales.Bem exposing (locale)
 
-
 import Dict
 import SayableDuration.Types exposing (..)
 
@@ -20,37 +19,57 @@ import SayableDuration.Types exposing (..)
 locale : Locale
 locale =
     { code = "bem"
-    , plural = \n -> if n == 1 then One else Other
+    , plural =
+        \n ->
+            if n == 1 then
+                One
+
+            else
+                Other
     , units =
         Dict.fromList
-            [ ( "second", Pluralized
-              [ ( One, "isekondi {n}" )
-              , ( Other, "amasekondi {n}" )
-              ] )
-            , ( "minute", Pluralized
-              [ ( One, "iminiti {n}" )
-              , ( Other, "amaminiti {n}" )
-              ] )
-            , ( "hour", Pluralized
-              [ ( One, "insa {n}" )
-              , ( Other, "insa {n}" )
-              ] )
-            , ( "day", Pluralized
-              [ ( One, "ubushiku {n}" )
-              , ( Other, "inshiku {n}" )
-              ] )
-            , ( "week", Pluralized
-              [ ( One, "umulungu {n}" )
-              , ( Other, "imilungu {n}" )
-              ] )
-            , ( "month", Pluralized
-              [ ( One, "umweshi {n}" )
-              , ( Other, "imyeshi {n}" )
-              ] )
-            , ( "year", Pluralized
-              [ ( One, "umwaka {n}" )
-              , ( Other, "imyaka {n}" )
-              ] )
+            [ ( "second"
+              , Pluralized
+                    [ ( One, "isekondi {n}" )
+                    , ( Other, "amasekondi {n}" )
+                    ]
+              )
+            , ( "minute"
+              , Pluralized
+                    [ ( One, "iminiti {n}" )
+                    , ( Other, "amaminiti {n}" )
+                    ]
+              )
+            , ( "hour"
+              , Pluralized
+                    [ ( One, "insa {n}" )
+                    , ( Other, "insa {n}" )
+                    ]
+              )
+            , ( "day"
+              , Pluralized
+                    [ ( One, "ubushiku {n}" )
+                    , ( Other, "inshiku {n}" )
+                    ]
+              )
+            , ( "week"
+              , Pluralized
+                    [ ( One, "umulungu {n}" )
+                    , ( Other, "imilungu {n}" )
+                    ]
+              )
+            , ( "month"
+              , Pluralized
+                    [ ( One, "umweshi {n}" )
+                    , ( Other, "imyeshi {n}" )
+                    ]
+              )
+            , ( "year"
+              , Pluralized
+                    [ ( One, "umwaka {n}" )
+                    , ( Other, "imyaka {n}" )
+                    ]
+              )
             ]
     , half = "{0} na hafu"
     , delimiter = ", "
@@ -65,22 +84,30 @@ locale =
                         [ ( "second", Simple "sek. {n}" )
                         , ( "minute", Simple "min. {n}" )
                         , ( "hour", Simple "insa {n}" )
-                        , ( "day", Pluralized
-                          [ ( One, "ubushiku {n}" )
-                          , ( Other, "inshiku {n}" )
-                          ] )
-                        , ( "week", Pluralized
-                          [ ( One, "umulungu {n}" )
-                          , ( Other, "imilungu {n}" )
-                          ] )
-                        , ( "month", Pluralized
-                          [ ( One, "umweshi {n}" )
-                          , ( Other, "imyeshi {n}" )
-                          ] )
-                        , ( "year", Pluralized
-                          [ ( One, "umwaka {n}" )
-                          , ( Other, "imyaka {n}" )
-                          ] )
+                        , ( "day"
+                          , Pluralized
+                                [ ( One, "ubushiku {n}" )
+                                , ( Other, "inshiku {n}" )
+                                ]
+                          )
+                        , ( "week"
+                          , Pluralized
+                                [ ( One, "umulungu {n}" )
+                                , ( Other, "imilungu {n}" )
+                                ]
+                          )
+                        , ( "month"
+                          , Pluralized
+                                [ ( One, "umweshi {n}" )
+                                , ( Other, "imyeshi {n}" )
+                                ]
+                          )
+                        , ( "year"
+                          , Pluralized
+                                [ ( One, "umwaka {n}" )
+                                , ( Other, "imyaka {n}" )
+                                ]
+                          )
                         ]
                     )
             , ovrHalf = Nothing

@@ -12,30 +12,39 @@
 
 module SayableAge.Locales.Gu exposing (locale)
 
-
 import SayableAge.Types exposing (..)
 
 
 locale : Locale
 locale =
     { code = "gu"
-    , plural = \n -> if n == 0 || n == 1 then One else Other
-    , day = Pluralized
-      [ ( One, "{n} દિવસ" )
-      , ( Other, "{n} દિવસ" )
-      ]
-    , week = Pluralized
-      [ ( One, "{n} અઠવાડિયું" )
-      , ( Other, "{n} અઠવાડિયા" )
-      ]
-    , month = Pluralized
-      [ ( One, "{n} મહિનો" )
-      , ( Other, "{n} મહિના" )
-      ]
-    , year = Pluralized
-      [ ( One, "{n} વર્ષ" )
-      , ( Other, "{n} વર્ષ" )
-      ]
+    , plural =
+        \n ->
+            if n == 0 || n == 1 then
+                One
+
+            else
+                Other
+    , day =
+        Pluralized
+            [ ( One, "{n} દિવસ" )
+            , ( Other, "{n} દિવસ" )
+            ]
+    , week =
+        Pluralized
+            [ ( One, "{n} અઠવાડિયું" )
+            , ( Other, "{n} અઠવાડિયા" )
+            ]
+    , month =
+        Pluralized
+            [ ( One, "{n} મહિનો" )
+            , ( Other, "{n} મહિના" )
+            ]
+    , year =
+        Pluralized
+            [ ( One, "{n} વર્ષ" )
+            , ( Other, "{n} વર્ષ" )
+            ]
     , half = "સાડા {n}"
     , delimiter = ", "
     , justBorn = "નવજાત"
@@ -51,10 +60,13 @@ locale =
         Just
             { ovrDay = Just (Simple "{n} દિવસ")
             , ovrWeek = Just (Simple "{n} અઠ.")
-            , ovrMonth = Just (Pluralized
-                  [ ( One, "{n} મહિનો" )
-                  , ( Other, "{n} મહિના" )
-                  ])
+            , ovrMonth =
+                Just
+                    (Pluralized
+                        [ ( One, "{n} મહિનો" )
+                        , ( Other, "{n} મહિના" )
+                        ]
+                    )
             , ovrYear = Just (Simple "{n} વર્ષ")
             , ovrHalf = Nothing
             , ovrDelimiter = Nothing
